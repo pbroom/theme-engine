@@ -2,10 +2,18 @@ declare const styles: {
   readonly "container": string;
   readonly "mb-4": string;
   readonly "flex": string;
+  readonly "h-2": string;
+  readonly "h-1": string;
+  readonly "h-4": string;
+  readonly "h-8": string;
+  readonly "h-full": string;
+  readonly "w-full": string;
   readonly "resize": string;
   readonly "flex-row": string;
   readonly "gap-4": string;
   readonly "gap-2": string;
+  readonly "gap-1": string;
+  readonly "rounded-sm": string;
   readonly "border": string;
   readonly "bg-slate-500": string;
   readonly "bg-red-600": string;
