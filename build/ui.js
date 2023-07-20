@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de9503b5-53b8-475e-bbdb-09db348dd3d7/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ee34594-eaf9-44cf-8a38-0b9074b070ff/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de9503b5-53b8-475e-bbdb-09db348dd3d7/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ee34594-eaf9-44cf-8a38-0b9074b070ff/tailwind.js"() {
       if (document.getElementById("f8ad1fdc80") === null) {
         const element = document.createElement("style");
         element.id = "f8ad1fdc80";
@@ -631,6 +631,9 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1126,10 +1129,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fdba0853-532c-499e-80ae-549806fd48d2/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63e8904c-3b3e-47ea-a586-e624b8549d5d/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fdba0853-532c-499e-80ae-549806fd48d2/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63e8904c-3b3e-47ea-a586-e624b8549d5d/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -1188,10 +1191,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/99a30241-ca4e-410b-8a98-b5cc9a23b740/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd23c443-6aee-424c-8590-1411a64fbb1e/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/99a30241-ca4e-410b-8a98-b5cc9a23b740/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd23c443-6aee-424c-8590-1411a64fbb1e/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -1854,10 +1857,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7634ed9e-0720-4fb1-82b7-d390d6ccb85f/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/706398fa-7b89-4959-a87d-49b434703654/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7634ed9e-0720-4fb1-82b7-d390d6ccb85f/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/706398fa-7b89-4959-a87d-49b434703654/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2346,10 +2349,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad407276-9069-44f7-95e3-904c940d991c/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0534639f-70a3-4b96-9943-87316742bd12/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad407276-9069-44f7-95e3-904c940d991c/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0534639f-70a3-4b96-9943-87316742bd12/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -2696,10 +2699,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fba826c5-b63f-48ad-baac-4918371b641b/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae728c3d-a40b-44ad-933e-4dce6f0baa7f/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fba826c5-b63f-48ad-baac-4918371b641b/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae728c3d-a40b-44ad-933e-4dce6f0baa7f/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -2738,10 +2741,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcf14d0f-f3a0-4019-abdb-7d58222db96f/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3fbb5544-fa6b-4846-9e64-57489be2e970/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcf14d0f-f3a0-4019-abdb-7d58222db96f/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3fbb5544-fa6b-4846-9e64-57489be2e970/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -2780,9 +2783,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07cc93c4-cb22-4510-b3bb-3c7f5aded37b/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7cfca3e2-6716-40fd-9020-4c6960081177/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07cc93c4-cb22-4510-b3bb-3c7f5aded37b/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7cfca3e2-6716-40fd-9020-4c6960081177/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -2933,14 +2936,17 @@ svg {
     const [hue, setHue] = h2(0);
     const [chroma, setChroma] = h2(0);
     const [tone, setTone] = h2(0);
+    const [hexFromHct, setHexFromHct] = h2("#397456");
     function handleHexColorInput(event) {
       const newHexColor = event.currentTarget.value;
+      const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
       setHexColor(newHexColor);
       parent.postMessage(
         {
           pluginMessage: {
             type: "colorChange",
-            newHexColor
+            newHexColor,
+            toneStops
           }
         },
         "*"
@@ -2949,14 +2955,14 @@ svg {
     }
     onmessage = (event) => {
       const hct = event.data.pluginMessage;
-      console.log(hct);
-      console.log(hue);
       const newHue = Math.round(hct.hue);
       setHue(newHue);
       const newChroma = Math.round(hct.chroma);
       setChroma(newChroma);
       const newTone = Math.round(hct.tone);
       setTone(newTone);
+      const newHexFromHct = hct.hex;
+      setHexFromHct(newHexFromHct);
     };
     function handleOpacityInput(event) {
       const newOpacity = event.currentTarget.value;
@@ -2977,12 +2983,14 @@ svg {
       console.log(newColor);
       const name = newColor.colorName;
       const color = newColor.backgroundColor;
+      const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
       parent.postMessage(
         {
           pluginMessage: {
             type: "build",
             name,
-            color
+            color,
+            toneStops
           }
         },
         "*"
@@ -3010,9 +3018,9 @@ svg {
       "div",
       {
         className: "h-8 rounded-sm w-full",
-        style: { backgroundColor: hexColor }
+        style: { backgroundColor: hexFromHct }
       }
-    ), /* @__PURE__ */ y("p", null, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: handleClick, fullWidth: true }, "Build")));
+    ), /* @__PURE__ */ y("p", null, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("p", null, hexFromHct), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: handleClick, fullWidth: true }, "Build")));
   }
   var ui_default;
   var init_ui = __esm({

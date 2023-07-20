@@ -191,6 +191,9 @@ function argbFromLinrgb(linrgb) {
   const b = delinearized(linrgb[2]);
   return argbFromRgb(r, g, b);
 }
+function alphaFromArgb(argb) {
+  return argb >> 24 & 255;
+}
 function redFromArgb(argb) {
   return argb >> 16 & 255;
 }
@@ -251,6 +254,13 @@ function delinearized(rgbComponent) {
 }
 function whitePointD65() {
   return WHITE_POINT_D65;
+}
+function rgbaFromArgb(argb) {
+  const r = redFromArgb(argb);
+  const g = greenFromArgb(argb);
+  const b = blueFromArgb(argb);
+  const a = alphaFromArgb(argb);
+  return { r, g, b, a };
 }
 function labF(t) {
   const e = 216 / 24389;
@@ -2966,6 +2976,47 @@ var init_score = __esm({
 });
 
 // node_modules/@material/material-color-utilities/utils/string_utils.js
+function hexFromArgb(argb) {
+  const r = redFromArgb(argb);
+  const g = greenFromArgb(argb);
+  const b = blueFromArgb(argb);
+  const outParts = [r.toString(16), g.toString(16), b.toString(16)];
+  for (const [i, part] of outParts.entries()) {
+    if (part.length === 1) {
+      outParts[i] = "0" + part;
+    }
+  }
+  return "#" + outParts.join("");
+}
+function argbFromHex(hex) {
+  hex = hex.replace("#", "");
+  const isThree = hex.length === 3;
+  const isSix = hex.length === 6;
+  const isEight = hex.length === 8;
+  if (!isThree && !isSix && !isEight) {
+    throw new Error("unexpected hex " + hex);
+  }
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  if (isThree) {
+    r = parseIntHex(hex.slice(0, 1).repeat(2));
+    g = parseIntHex(hex.slice(1, 2).repeat(2));
+    b = parseIntHex(hex.slice(2, 3).repeat(2));
+  } else if (isSix) {
+    r = parseIntHex(hex.slice(0, 2));
+    g = parseIntHex(hex.slice(2, 4));
+    b = parseIntHex(hex.slice(4, 6));
+  } else if (isEight) {
+    r = parseIntHex(hex.slice(2, 4));
+    g = parseIntHex(hex.slice(4, 6));
+    b = parseIntHex(hex.slice(6, 8));
+  }
+  return (255 << 24 | (r & 255) << 16 | (g & 255) << 8 | b & 255) >>> 0;
+}
+function parseIntHex(value) {
+  return parseInt(value, 16);
+}
 var init_string_utils = __esm({
   "node_modules/@material/material-color-utilities/utils/string_utils.js"() {
     init_color_utils();
@@ -3035,25 +3086,48 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: 240, width: 280 });
+  showUI({ height: 400, width: 280 });
 }
-var hctFromHex;
+var toneStops, fromHex, paletteTones;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
     init_material_color_utilities();
-    hctFromHex = (hexColor) => {
-      const hctColor = Hct.fromInt(parseInt(hexColor.slice(1), 16));
+    toneStops = (stops) => {
+      const defaultToneStops = [];
+      const toneStops2 = stops != null ? stops : defaultToneStops;
+      for (let stop = 0; stop <= 100; stop++) {
+        defaultToneStops.push(stop);
+      }
+      return toneStops2;
+    };
+    fromHex = (hexColor) => {
+      const hctColor = Hct.fromInt(argbFromHex(hexColor));
       const hue = hctColor.hue;
       const chroma = hctColor.chroma;
       const tone = hctColor.tone;
-      return { hue, chroma, tone };
+      const argb = Hct.from(hue, chroma, tone).toInt();
+      const rgba = rgbaFromArgb(argb);
+      const hex = hexFromArgb(argb);
+      return { hue, chroma, tone, argb, rgba, hex };
+    };
+    paletteTones = (hexColor, stops, rgba) => {
+      const paletteToneStops = toneStops(stops);
+      const color = fromHex(hexColor);
+      const paletteColor = TonalPalette.fromHueAndChroma(color.hue, color.chroma);
+      const palette = {};
+      for (let tone of paletteToneStops) {
+        const argb = paletteColor.tone(tone);
+        const hex = hexFromArgb(argb);
+        const rgbaFormat = rgbaFromArgb(argb);
+        palette[tone] = rgba ? rgbaFormat : hex;
+      }
+      return palette;
     };
     figma.ui.onmessage = (pluginMessage) => {
       var _a, _b, _c;
       if (pluginMessage.type === "build") {
-        console.log(pluginMessage);
         const colorName = pluginMessage.name;
         const hexColor = pluginMessage.color;
         const rgbColor = convertHexColorToRgbColor(hexColor);
@@ -3069,8 +3143,11 @@ var init_main = __esm({
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;
-        const hctColor = hctFromHex(color);
+        const stops = pluginMessage.toneStops;
+        const hctColor = fromHex(color);
+        const palette = paletteTones(color, stops, true);
         figma.ui.postMessage(hctColor);
+        console.log(palette);
       }
     };
   }

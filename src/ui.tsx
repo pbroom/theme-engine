@@ -23,12 +23,14 @@ function Plugin() {
 	const [hue, setHue] = useState<number>(0);
 	const [chroma, setChroma] = useState<number>(0);
 	const [tone, setTone] = useState<number>(0);
+	const [hexFromHct, setHexFromHct] = useState<string>('#397456');
 
 	// Function to handle changes in the hexColor input field
 	function handleHexColorInput(
 		event: h.JSX.TargetedEvent<HTMLInputElement, Event>
 	) {
 		const newHexColor = event.currentTarget.value;
+		const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 		// console.log(newHexColor);
 		setHexColor(newHexColor);
 		parent.postMessage(
@@ -36,6 +38,7 @@ function Plugin() {
 				pluginMessage: {
 					type: 'colorChange',
 					newHexColor: newHexColor,
+					toneStops: toneStops,
 				},
 			},
 			'*'
@@ -46,14 +49,14 @@ function Plugin() {
 	// Function to handle changes in the hexColor input field from main.ts
 	onmessage = (event) => {
 		const hct = event.data.pluginMessage;
-		console.log(hct);
-		console.log(hue);
 		const newHue = Math.round(hct.hue);
 		setHue(newHue);
 		const newChroma = Math.round(hct.chroma);
 		setChroma(newChroma);
 		const newTone = Math.round(hct.tone);
 		setTone(newTone);
+		const newHexFromHct = hct.hex;
+		setHexFromHct(newHexFromHct);
 	};
 
 	// Function to handle changes in the opacity input field
@@ -84,12 +87,14 @@ function Plugin() {
 		console.log(newColor);
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
+		const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 		parent.postMessage(
 			{
 				pluginMessage: {
 					type: 'build',
 					name: name,
 					color: color,
+					toneStops: toneStops,
 				},
 			},
 			'*'
@@ -124,11 +129,12 @@ function Plugin() {
 				</div>
 				<div
 					className='h-8 rounded-sm w-full'
-					style={{ backgroundColor: hexColor }}
+					style={{ backgroundColor: hexFromHct }}
 				></div>
 				<p>
 					H: {hue} C: {chroma} T: {tone}
 				</p>
+				<p>{hexFromHct}</p>
 				<VerticalSpace space='large' />
 				<Button onClick={handleClick} fullWidth>
 					Build

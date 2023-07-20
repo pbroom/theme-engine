@@ -20,6 +20,7 @@ declare const styles: {
   readonly "bg-black": string;
   readonly "px-2": string;
   readonly "py-2": string;
+  readonly "pb-4": string;
   readonly "text-lg": string;
   readonly "text-sm": string;
   readonly "text-xs": string;
