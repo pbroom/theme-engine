@@ -3129,11 +3129,13 @@ var init_main = __esm({
       var _a, _b, _c;
       if (pluginMessage.type === "build") {
         const colorName = pluginMessage.name;
+        const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
         const rgbColor = convertHexColorToRgbColor(hexColor);
         const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
         const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
         const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
+        const palette = paletteTones(hexColor, [toneStops2], false);
         const frame = figma.createFrame();
         frame.x = Math.floor(figma.viewport.center.x);
         frame.y = Math.floor(figma.viewport.center.y);
@@ -3143,11 +3145,10 @@ var init_main = __esm({
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;
-        const stops = pluginMessage.toneStops;
         const hctColor = fromHex(color);
-        const palette = paletteTones(color, stops, true);
-        figma.ui.postMessage(hctColor);
-        console.log(palette);
+        const palettePreview = paletteTones(color);
+        const message = { hctColor, palettePreview };
+        figma.ui.postMessage(message);
       }
     };
   }

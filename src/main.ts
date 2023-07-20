@@ -63,12 +63,16 @@ const paletteTones = (hexColor: string, stops?: number[], rgba?: boolean) => {
 figma.ui.onmessage = (pluginMessage) => {
 	if (pluginMessage.type === 'build') {
 		const colorName = pluginMessage.name;
+		const toneStops = pluginMessage.toneStops;
 		// Color conversion
 		const hexColor = pluginMessage.color;
 		const rgbColor = convertHexColorToRgbColor(hexColor);
 		const red = rgbColor?.r ?? 0;
 		const green = rgbColor?.g ?? 0;
 		const blue = rgbColor?.b ?? 0;
+
+		const palette = paletteTones(hexColor, [toneStops], false);
+		// console.log(palette);
 
 		const frame = figma.createFrame();
 
@@ -83,10 +87,10 @@ figma.ui.onmessage = (pluginMessage) => {
 
 	if (pluginMessage.type === 'colorChange') {
 		const color = pluginMessage.newHexColor;
-		const stops = pluginMessage.toneStops;
+		// const stops = pluginMessage.toneStops;
 		const hctColor = fromHex(color);
-		const palette = paletteTones(color, stops, true);
-		figma.ui.postMessage(hctColor);
-		console.log(palette);
+		const palettePreview = paletteTones(color);
+		const message = { hctColor, palettePreview };
+		figma.ui.postMessage(message);
 	}
 };

@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ee34594-eaf9-44cf-8a38-0b9074b070ff/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5a0a329-e986-4653-87c4-8ac68cf6f744/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ee34594-eaf9-44cf-8a38-0b9074b070ff/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5a0a329-e986-4653-87c4-8ac68cf6f744/tailwind.js"() {
       if (document.getElementById("f8ad1fdc80") === null) {
         const element = document.createElement("style");
         element.id = "f8ad1fdc80";
@@ -566,8 +566,15 @@ video {
     max-width: 1536px;
   }
 }
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .flex {
   display: flex;
@@ -631,8 +638,18 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pb-4 {
   padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -660,6 +677,9 @@ video {
 }
 .underline {
   text-decoration-line: underline;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .container {
@@ -1129,10 +1149,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63e8904c-3b3e-47ea-a586-e624b8549d5d/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1b62a7a-2433-40e0-ba9d-cab14d26df50/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63e8904c-3b3e-47ea-a586-e624b8549d5d/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1b62a7a-2433-40e0-ba9d-cab14d26df50/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -1191,10 +1211,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd23c443-6aee-424c-8590-1411a64fbb1e/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d09e7437-fb55-4ebb-b90e-09926c1f96f1/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd23c443-6aee-424c-8590-1411a64fbb1e/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d09e7437-fb55-4ebb-b90e-09926c1f96f1/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -1386,6 +1406,116 @@ video {
   }
   var init_get_current_from_ref = __esm({
     "node_modules/@create-figma-plugin/ui/lib/utilities/get-current-from-ref.js"() {
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0836475-ae7b-45bd-baf3-d9b258128746/icon-toggle-button.module.js
+  var icon_toggle_button_module_default;
+  var init_icon_toggle_button_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0836475-ae7b-45bd-baf3-d9b258128746/icon-toggle-button.module.js"() {
+      if (document.getElementById("9c0659a995") === null) {
+        const element = document.createElement("style");
+        element.id = "9c0659a995";
+        element.textContent = `._iconToggleButton_lawt0_1 {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+._input_lawt0_7 {
+  position: absolute;
+  z-index: var(--z-index-1); /* stack above .icon */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+}
+._disabled_lawt0_17 ._input_lawt0_7 {
+  cursor: not-allowed;
+}
+
+._box_lawt0_21 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-2);
+}
+._iconToggleButton_lawt0_1:not(._disabled_lawt0_17) ._input_lawt0_7:not(:checked) ~ ._box_lawt0_21 {
+  color: var(--figma-color-icon);
+}
+._iconToggleButton_lawt0_1:not(._disabled_lawt0_17) ._input_lawt0_7:not(:checked):hover ~ ._box_lawt0_21 {
+  background-color: var(--figma-color-bg-hover);
+}
+._iconToggleButton_lawt0_1:not(._disabled_lawt0_17) ._input_lawt0_7:focus ~ ._box_lawt0_21 {
+  border-color: var(--figma-color-border-brand-strong);
+}
+._iconToggleButton_lawt0_1:not(._disabled_lawt0_17) ._input_lawt0_7:checked ~ ._box_lawt0_21 {
+  background-color: var(--figma-color-bg-brand);
+  color: var(--figma-color-icon-onbrand);
+}
+._disabled_lawt0_17 ._input_lawt0_7:not(:checked) ~ ._box_lawt0_21 {
+  color: var(--figma-color-icon-disabled);
+}
+._disabled_lawt0_17 ._input_lawt0_7:checked ~ ._box_lawt0_21 {
+  background-color: var(--figma-color-bg-disabled);
+  color: var(--figma-color-icon-ondisabled);
+}
+
+._icon_lawt0_1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9pY29uLXRvZ2dsZS1idXR0b24vaWNvbi10b2dnbGUtYnV0dG9uLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUIsRUFBRSxzQkFBc0I7RUFDakQsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLGNBQWM7RUFDZCxXQUFXO0FBQ2I7QUFDQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLDZCQUE2QjtFQUM3QixxQ0FBcUM7QUFDdkM7QUFDQTtFQUNFLDhCQUE4QjtBQUNoQztBQUNBO0VBQ0UsNkNBQTZDO0FBQy9DO0FBQ0E7RUFDRSxvREFBb0Q7QUFDdEQ7QUFDQTtFQUNFLDZDQUE2QztFQUM3QyxzQ0FBc0M7QUFDeEM7QUFDQTtFQUNFLHVDQUF1QztBQUN6QztBQUNBO0VBQ0UsZ0RBQWdEO0VBQ2hELHlDQUF5QztBQUMzQzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUNULGdDQUFnQztBQUNsQyIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvaWNvbi10b2dnbGUtYnV0dG9uL2ljb24tdG9nZ2xlLWJ1dHRvbi5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmljb25Ub2dnbGVCdXR0b24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAzMHB4O1xuICBoZWlnaHQ6IDMwcHg7XG59XG5cbi5pbnB1dCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0xKTsgLyogc3RhY2sgYWJvdmUgLmljb24gKi9cbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG59XG4uZGlzYWJsZWQgLmlucHV0IHtcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbn1cblxuLmJveCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyOiAycHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG59XG4uaWNvblRvZ2dsZUJ1dHRvbjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6bm90KDpjaGVja2VkKSB+IC5ib3gge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbik7XG59XG4uaWNvblRvZ2dsZUJ1dHRvbjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6bm90KDpjaGVja2VkKTpob3ZlciB+IC5ib3gge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1iZy1ob3Zlcik7XG59XG4uaWNvblRvZ2dsZUJ1dHRvbjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6Zm9jdXMgfiAuYm94IHtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5pY29uVG9nZ2xlQnV0dG9uOm5vdCguZGlzYWJsZWQpIC5pbnB1dDpjaGVja2VkIH4gLmJveCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWJyYW5kKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tb25icmFuZCk7XG59XG4uZGlzYWJsZWQgLmlucHV0Om5vdCg6Y2hlY2tlZCkgfiAuYm94IHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuLmRpc2FibGVkIC5pbnB1dDpjaGVja2VkIH4gLmJveCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWRpc2FibGVkKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tb25kaXNhYmxlZCk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbiJdfQ== */`;
+        document.head.append(element);
+      }
+      icon_toggle_button_module_default = { "iconToggleButton": "_iconToggleButton_lawt0_1", "input": "_input_lawt0_7", "disabled": "_disabled_lawt0_17", "box": "_box_lawt0_21", "icon": "_icon_lawt0_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/icon-toggle-button/icon-toggle-button.js
+  function IconToggleButton(_a) {
+    var _b = _a, { children, disabled = false, name, onChange = function() {
+    }, onValueChange = function() {
+    }, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["children", "disabled", "name", "onChange", "onValueChange", "propagateEscapeKeyDown", "value"]);
+    const handleChange2 = T2(function(event) {
+      onValueChange(!value2, name);
+      onChange(event);
+    }, [name, onChange, onValueChange, value2]);
+    const handleKeyDown = T2(function(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (propagateEscapeKeyDown === false) {
+        event.stopPropagation();
+      }
+      event.currentTarget.blur();
+    }, [propagateEscapeKeyDown]);
+    return y(
+      "label",
+      { class: createClassName([
+        icon_toggle_button_module_default.iconToggleButton,
+        disabled === true ? icon_toggle_button_module_default.disabled : null
+      ]) },
+      y("input", __spreadProps(__spreadValues({}, rest), { checked: value2 === true, class: icon_toggle_button_module_default.input, disabled: disabled === true, name, onChange: handleChange2, onKeyDown: disabled === true ? void 0 : handleKeyDown, tabIndex: disabled === true ? -1 : 0, type: "checkbox" })),
+      y(
+        "div",
+        { class: icon_toggle_button_module_default.box },
+        y("div", { class: icon_toggle_button_module_default.icon }, children)
+      )
+    );
+  }
+  var init_icon_toggle_button = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/icon-toggle-button/icon-toggle-button.js"() {
+      init_preact_module();
+      init_hooks_module();
+      init_create_class_name();
+      init_icon_toggle_button_module();
     }
   });
 
@@ -1857,10 +1987,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/706398fa-7b89-4959-a87d-49b434703654/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e1c1a04b-b840-4435-a4ed-a9882db17e8c/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/706398fa-7b89-4959-a87d-49b434703654/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e1c1a04b-b840-4435-a4ed-a9882db17e8c/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2349,10 +2479,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0534639f-70a3-4b96-9943-87316742bd12/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f7629079-84ec-40cf-a559-e228adba1d2f/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0534639f-70a3-4b96-9943-87316742bd12/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f7629079-84ec-40cf-a559-e228adba1d2f/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -2699,10 +2829,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae728c3d-a40b-44ad-933e-4dce6f0baa7f/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d87cb120-d362-4d88-8cb3-17d7814d73f7/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae728c3d-a40b-44ad-933e-4dce6f0baa7f/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d87cb120-d362-4d88-8cb3-17d7814d73f7/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -2741,10 +2871,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3fbb5544-fa6b-4846-9e64-57489be2e970/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae035b65-6ff3-4167-a53b-44fb8fe464fa/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3fbb5544-fa6b-4846-9e64-57489be2e970/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ae035b65-6ff3-4167-a53b-44fb8fe464fa/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -2783,9 +2913,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7cfca3e2-6716-40fd-9020-4c6960081177/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f4b43e1-558d-4acc-8277-54c45a0afb8d/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7cfca3e2-6716-40fd-9020-4c6960081177/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f4b43e1-558d-4acc-8277-54c45a0afb8d/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -2917,6 +3047,7 @@ svg {
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
       init_button();
+      init_icon_toggle_button();
       init_textbox();
       init_textbox_color();
       init_container();
@@ -2937,9 +3068,12 @@ svg {
     const [chroma, setChroma] = h2(0);
     const [tone, setTone] = h2(0);
     const [hexFromHct, setHexFromHct] = h2("#397456");
+    const [paletteGradient, setPaletteGradient] = h2(
+      "#000000, #397456, #ffffff"
+    );
     function handleHexColorInput(event) {
       const newHexColor = event.currentTarget.value;
-      const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      const toneStops = textAreaValue;
       setHexColor(newHexColor);
       parent.postMessage(
         {
@@ -2953,8 +3087,17 @@ svg {
       );
       return newHexColor;
     }
+    const getValues = (paletteObject) => {
+      let hexString = "";
+      for (let key in paletteObject) {
+        hexString += paletteObject[key] + ", ";
+      }
+      hexString = hexString.slice(0, -2);
+      return hexString;
+    };
     onmessage = (event) => {
-      const hct = event.data.pluginMessage;
+      const message = event.data.pluginMessage;
+      const hct = message.hctColor;
       const newHue = Math.round(hct.hue);
       setHue(newHue);
       const newChroma = Math.round(hct.chroma);
@@ -2963,27 +3106,71 @@ svg {
       setTone(newTone);
       const newHexFromHct = hct.hex;
       setHexFromHct(newHexFromHct);
+      const palette = message.palettePreview;
+      const newPaletteGradient = getValues(palette);
+      setPaletteGradient(newPaletteGradient);
     };
     function handleOpacityInput(event) {
       const newOpacity = event.currentTarget.value;
-      console.log(newOpacity);
       setOpacity(newOpacity);
     }
     const [value2, setValue] = h2("color");
     function handleInput(event) {
       const newValue = event.currentTarget.value;
-      console.log(newValue);
       setValue(newValue);
     }
+    const defaultPaletteTones = [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      95,
+      99,
+      100,
+      4,
+      5,
+      6,
+      12,
+      17,
+      22,
+      24,
+      25,
+      35,
+      87,
+      92,
+      94,
+      96,
+      98
+    ];
+    const [textAreaValue, setTextAreaValue] = h2(
+      `${defaultPaletteTones}`
+    );
+    const [numberArray, setNumberArray] = h2([]);
+    function handleTextAreaInput(event) {
+      const newTextAreaValue = event.currentTarget.value;
+      setTextAreaValue(newTextAreaValue);
+    }
     function handleClick() {
+      const numberStrings = textAreaValue.split(/\s|,/);
+      const integersOnly = numberStrings.filter((str) => /^\d+$/.test(str));
+      const parsedNumbers = integersOnly.map(Number);
+      const validNumbers = parsedNumbers.filter((num) => num >= 0 && num <= 100);
+      const uniqueNumbers = Array.from(new Set(validNumbers));
+      setNumberArray(uniqueNumbers);
       const newColor = {
         colorName: value2,
         backgroundColor: hexColor
       };
-      console.log(newColor);
       const name = newColor.colorName;
       const color = newColor.backgroundColor;
-      const toneStops = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      const toneStops = numberArray;
+      console.log("toneStops", toneStops);
       parent.postMessage(
         {
           pluginMessage: {
@@ -2996,7 +3183,15 @@ svg {
         "*"
       );
     }
-    return /* @__PURE__ */ y("div", { className: "h-full" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("h2", { className: "text-lg mb-4" }, "Hello there"), /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
+    return /* @__PURE__ */ y("div", { className: "h-full" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("h2", { className: "text-lg mb-4" }, "Hello there"), /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y(
+      "div",
+      {
+        className: "h-8 rounded-sm w-full",
+        style: {
+          background: `linear-gradient(to right, ${paletteGradient})`
+        }
+      }
+    ), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
       Textbox,
       {
         onInput: handleInput,
@@ -3014,13 +3209,7 @@ svg {
         onOpacityInput: handleOpacityInput,
         opacity
       }
-    )), /* @__PURE__ */ y(
-      "div",
-      {
-        className: "h-8 rounded-sm w-full",
-        style: { backgroundColor: hexFromHct }
-      }
-    ), /* @__PURE__ */ y("p", null, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("p", null, hexFromHct), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: handleClick, fullWidth: true }, "Build")));
+    )), /* @__PURE__ */ y("p", { className: "pb-2" }, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y(IconToggleButton, { onChange: handleChange, value: value2 }, /* @__PURE__ */ y("code", null, "1")), ";", /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: handleClick, fullWidth: true }, "Build")));
   }
   var ui_default;
   var init_ui = __esm({

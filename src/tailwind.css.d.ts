@@ -1,6 +1,8 @@
 declare const styles: {
   readonly "container": string;
+  readonly "my-8": string;
   readonly "mb-4": string;
+  readonly "mb-8": string;
   readonly "flex": string;
   readonly "h-2": string;
   readonly "h-1": string;
@@ -20,7 +22,10 @@ declare const styles: {
   readonly "bg-black": string;
   readonly "px-2": string;
   readonly "py-2": string;
+  readonly "py-8": string;
   readonly "pb-4": string;
+  readonly "pb-2": string;
+  readonly "font-mono": string;
   readonly "text-lg": string;
   readonly "text-sm": string;
   readonly "text-xs": string;
@@ -28,6 +33,7 @@ declare const styles: {
   readonly "text-red-300": string;
   readonly "text-red-500": string;
   readonly "underline": string;
+  readonly "filter": string;
   readonly "editor": string;
 };
 export = styles;
