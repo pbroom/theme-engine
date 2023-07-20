@@ -3068,13 +3068,9 @@ var init_main = __esm({
         frame.fills = [{ type: "SOLID", color: { r: red, g: green, b: blue } }];
       }
       if (pluginMessage.type === "colorChange") {
-        const hctColor = hctFromHex(pluginMessage.newHexColor);
-        figma.ui.postMessage({
-          pluginMessage: {
-            type: "hctColor",
-            hctColor
-          }
-        });
+        const color = pluginMessage.newHexColor;
+        const hctColor = hctFromHex(color);
+        figma.ui.postMessage(hctColor);
       }
     };
   }

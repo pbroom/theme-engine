@@ -20,13 +20,16 @@ function Plugin() {
 	// Defining state variables for hexColor and opacity
 	const [hexColor, setHexColor] = useState<string>('397456');
 	const [opacity, setOpacity] = useState<string>('');
+	const [hue, setHue] = useState<number>(0);
+	const [chroma, setChroma] = useState<number>(0);
+	const [tone, setTone] = useState<number>(0);
 
 	// Function to handle changes in the hexColor input field
 	function handleHexColorInput(
 		event: h.JSX.TargetedEvent<HTMLInputElement, Event>
 	) {
 		const newHexColor = event.currentTarget.value;
-		console.log(newHexColor);
+		// console.log(newHexColor);
 		setHexColor(newHexColor);
 		parent.postMessage(
 			{
@@ -42,8 +45,15 @@ function Plugin() {
 
 	// Function to handle changes in the hexColor input field from main.ts
 	onmessage = (event) => {
-		const hct = event.data.pluginMessage.hctColor;
+		const hct = event.data.pluginMessage;
 		console.log(hct);
+		console.log(hue);
+		const newHue = Math.round(hct.hue);
+		setHue(newHue);
+		const newChroma = Math.round(hct.chroma);
+		setChroma(newChroma);
+		const newTone = Math.round(hct.tone);
+		setTone(newTone);
 	};
 
 	// Function to handle changes in the opacity input field
@@ -116,7 +126,9 @@ function Plugin() {
 					className='h-8 rounded-sm w-full'
 					style={{ backgroundColor: hexColor }}
 				></div>
-				<p>H: #{hexColor}</p>
+				<p>
+					H: {hue} C: {chroma} T: {tone}
+				</p>
 				<VerticalSpace space='large' />
 				<Button onClick={handleClick} fullWidth>
 					Build

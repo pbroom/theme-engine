@@ -51,12 +51,8 @@ figma.ui.onmessage = (pluginMessage) => {
 	}
 
 	if (pluginMessage.type === 'colorChange') {
-		const hctColor = hctFromHex(pluginMessage.newHexColor);
-		figma.ui.postMessage({
-			pluginMessage: {
-				type: 'hctColor',
-				hctColor: hctColor,
-			},
-		});
+		const color = pluginMessage.newHexColor;
+		const hctColor = hctFromHex(color);
+		figma.ui.postMessage(hctColor);
 	}
 };
