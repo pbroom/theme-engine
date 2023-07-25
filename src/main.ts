@@ -72,17 +72,70 @@ const paletteSwatch = (colorName: string, hexColor: string, tone: number) => {
 };
 
 const localCollections = figma.variables.getLocalVariableCollections();
+
+class VariableCollection {
+	id: string;
+	name: string;
+	variableIds: string[];
+	defaultModeId: string;
+	modes: { modeId: string; name: string }[];
+	remote: boolean;
+	key: string;
+
+	constructor(
+		id: string,
+		name: string,
+		variableIds: string[],
+		defaultModeId: string,
+		modes: { modeId: string; name: string }[],
+		remote: boolean,
+		key: string
+	) {
+		this.id = id;
+		this.name = name;
+		this.variableIds = variableIds;
+		this.defaultModeId = defaultModeId;
+		this.modes = modes;
+		this.remote = remote;
+		this.key = key;
+	}
+
+	toJSON() {
+		return {
+			id: this.id,
+			name: this.name,
+			variableIds: this.variableIds,
+			defaultModeId: this.defaultModeId,
+			modes: this.modes,
+			remote: this.remote,
+			key: this.key,
+		};
+	}
+}
+
 figma.on('run', () => {
 	const type = 'localCollections';
 	const options = [];
+	const collections = [];
 	for (let i = 0; i < localCollections.length; i++) {
-		const collection = localCollections[i].name;
-		options.push({ value: collection });
+		const newCollection = new VariableCollection(
+			localCollections[i].id,
+			localCollections[i].name,
+			localCollections[i].variableIds,
+			localCollections[i].defaultModeId,
+			localCollections[i].modes,
+			localCollections[i].remote,
+			localCollections[i].key
+		);
+		const collectionName = newCollection.name;
+		collections.push(newCollection);
+		options.push({ value: collectionName });
 	}
-	console.log(options);
-	const message = { type, options };
+	const message = { type, options, collections };
+	console.log(message);
 	figma.ui.postMessage(message);
 });
+
 const paletteVariable = (
 	// collectionId: string,
 	colorName?: string,
