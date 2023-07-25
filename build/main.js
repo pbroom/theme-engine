@@ -3086,9 +3086,9 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: 400, width: 280 });
+  showUI({ height: 328, width: 280 });
 }
-var toneStops, fromHex, paletteTones;
+var toneStops, fromHex, paletteTones, paletteSwatch, paletteVariable, paletteGroup;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3096,11 +3096,14 @@ var init_main = __esm({
     init_material_color_utilities();
     toneStops = (stops) => {
       const defaultToneStops = [];
-      const toneStops2 = stops != null ? stops : defaultToneStops;
-      for (let stop = 0; stop <= 100; stop++) {
-        defaultToneStops.push(stop);
+      if (stops && stops.length > 0) {
+        return stops;
+      } else {
+        for (let stop = 0; stop <= 100; stop++) {
+          defaultToneStops.push(stop);
+        }
+        return defaultToneStops;
       }
-      return toneStops2;
     };
     fromHex = (hexColor) => {
       const hctColor = Hct.fromInt(argbFromHex(hexColor));
@@ -3112,7 +3115,7 @@ var init_main = __esm({
       const hex = hexFromArgb(argb);
       return { hue, chroma, tone, argb, rgba, hex };
     };
-    paletteTones = (hexColor, stops, rgba) => {
+    paletteTones = (hexColor, stops) => {
       const paletteToneStops = toneStops(stops);
       const color = fromHex(hexColor);
       const paletteColor = TonalPalette.fromHueAndChroma(color.hue, color.chroma);
@@ -3120,28 +3123,56 @@ var init_main = __esm({
       for (let tone of paletteToneStops) {
         const argb = paletteColor.tone(tone);
         const hex = hexFromArgb(argb);
-        const rgbaFormat = rgbaFromArgb(argb);
-        palette[tone] = rgba ? rgbaFormat : hex;
+        palette[tone] = hex;
       }
       return palette;
     };
-    figma.ui.onmessage = (pluginMessage) => {
+    paletteSwatch = (colorName, hexColor, tone) => {
       var _a, _b, _c;
+      const frame = figma.createFrame();
+      frame.name = colorName + "-" + tone + ": " + hexColor + ";";
+      const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
+      const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
+      const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
+      const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
+      const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
+      frame.fills = [{ type: "SOLID", color: { r: red, g: green, b: blue } }];
+      frame.resize(128, 64);
+      return frame;
+    };
+    paletteVariable = (colorName, hexColor, tone) => {
+      const localCollections = figma.variables.getLocalVariableCollections();
+      console.log(localCollections);
+    };
+    paletteGroup = (colorName, originalColor, palette) => {
+      const frame = figma.createFrame();
+      frame.name = colorName + " - (Source hex: #" + originalColor + ")";
+      frame.layoutMode = "VERTICAL";
+      frame.primaryAxisSizingMode = "AUTO";
+      frame.counterAxisSizingMode = "AUTO";
+      let swatches = Object.entries(palette).map(([tone, color]) => {
+        const hexColor = color;
+        return paletteSwatch(colorName, String(hexColor), Number(tone));
+      });
+      swatches.forEach((swatch) => frame.appendChild(swatch));
+      frame.x = Math.round(figma.viewport.center.x - frame.width / 2);
+      frame.y = Math.round(figma.viewport.center.y - frame.height / 2);
+      return frame;
+    };
+    figma.ui.onmessage = (pluginMessage) => {
       if (pluginMessage.type === "build") {
-        const colorName = pluginMessage.name;
+        const colorName = pluginMessage.name ? pluginMessage.name : "color";
         const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
-        const rgbColor = convertHexColorToRgbColor(hexColor);
-        const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
-        const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
-        const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
-        const palette = paletteTones(hexColor, [toneStops2], false);
-        const frame = figma.createFrame();
-        frame.x = Math.floor(figma.viewport.center.x);
-        frame.y = Math.floor(figma.viewport.center.y);
-        frame.resize(96, 96);
-        frame.name = colorName;
-        frame.fills = [{ type: "SOLID", color: { r: red, g: green, b: blue } }];
+        const palette = paletteTones(hexColor, toneStops2);
+        const swatches = paletteGroup(colorName, hexColor, palette);
+        return swatches;
+      }
+      if (pluginMessage.type === "createVariables") {
+        const colorName = pluginMessage.name ? pluginMessage.name : "color";
+        const toneStops2 = pluginMessage.toneStops;
+        const hexColor = pluginMessage.color;
+        return paletteVariable();
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;

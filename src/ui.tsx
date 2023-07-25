@@ -10,8 +10,6 @@ import {
 	TextboxMultiline,
 	TextboxColor,
 	Textbox,
-	IconToggleButton,
-	IconToggleButtonProps,
 } from '@create-figma-plugin/ui';
 
 // Importing preact and preact/hooks libraries
@@ -20,7 +18,8 @@ import { useCallback, useState } from 'preact/hooks';
 
 // Defining the Plugin component
 function Plugin() {
-	// Defining state variables for hexColor and opacity
+	// Defining state variables
+	const [value, setValue] = useState<string>('color');
 	const [hexColor, setHexColor] = useState<string>('397456');
 	const [opacity, setOpacity] = useState<string>('');
 	const [hue, setHue] = useState<number>(0);
@@ -30,6 +29,12 @@ function Plugin() {
 	const [paletteGradient, setPaletteGradient] = useState<string>(
 		'#000000, #397456, #ffffff'
 	);
+
+	// Function to handle changes in the Textbox component
+	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newValue = event.currentTarget.value;
+		setValue(newValue);
+	}
 
 	// Function to handle changes in the hexColor input field
 	function handleHexColorInput(
@@ -92,14 +97,6 @@ function Plugin() {
 		setOpacity(newOpacity);
 	}
 
-	// Defining state variable for the Textbox component
-	const [value, setValue] = useState<string>('color');
-
-	// Function to handle changes in the Textbox component
-	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
-		const newValue = event.currentTarget.value;
-		setValue(newValue);
-	}
 	const defaultPaletteTones = [
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
 		25, 35, 87, 92, 94, 96, 98,
@@ -107,33 +104,42 @@ function Plugin() {
 	const [textAreaValue, setTextAreaValue] = useState<string>(
 		`${defaultPaletteTones}`
 	);
-	const [numberArray, setNumberArray] = useState<number[]>([]);
+
 	function handleTextAreaInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
 		const newTextAreaValue = event.currentTarget.value;
 		setTextAreaValue(newTextAreaValue);
 	}
 
-	// Function to handle button click
-	function handleClick() {
-		const numberStrings = textAreaValue.split(/\s|,/);
-		const integersOnly = numberStrings.filter((str) => /^\d+$/.test(str));
-		const parsedNumbers = integersOnly.map(Number);
-		const validNumbers = parsedNumbers.filter((num) => num >= 0 && num <= 100);
-		const uniqueNumbers = Array.from(new Set(validNumbers));
-		setNumberArray(uniqueNumbers);
+	function getStopsFromString(text: string): number[] {
+		// Extract all integers from the text
+		const allIntegers = text.match(/\b\d+\b/g)?.map(Number);
+		// If no integers are found, return an empty array
+		if (!allIntegers) {
+			return [];
+		}
+		// Create a Set to ensure uniqueness, and filter out values outside the 0-100 range
+		const stops: Set<number> = new Set(
+			allIntegers.filter((n) => n >= 0 && n <= 100)
+		);
+		// Convert the Set back to an array
+		return Array.from(stops);
+	}
 
+	// const paletteInfo =
+	// Function to handle button click
+	function handleClick(type: string) {
 		const newColor = {
 			colorName: value,
 			backgroundColor: hexColor,
 		};
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
-		const toneStops = numberArray;
-		console.log('toneStops', toneStops);
+		const toneStops = getStopsFromString(textAreaValue);
+		// console.log('toneStops', toneStops);
 		parent.postMessage(
 			{
 				pluginMessage: {
-					type: 'build',
+					type: type,
 					name: name,
 					color: color,
 					toneStops: toneStops,
@@ -146,23 +152,24 @@ function Plugin() {
 	// Rendering the UI
 	// TODO could I share the theme info in an encoded image?
 	return (
-		<div className='h-full'>
+		<div className='h-full py-4'>
 			<Container space='medium'>
-				<VerticalSpace space='small' />
-				<h2 className='text-lg mb-4'>Hello there</h2>
 				<p className='text-xs'>Select a color to create a dynamic palette</p>
 				<div
-					className='h-8 rounded-sm w-full'
+					className='h-8 rounded-sm w-full mt-3'
 					style={{
 						background: `linear-gradient(to right, ${paletteGradient})`,
 					}}
 				></div>
+				<p className='p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md'>
+					H: {hue} C: {chroma} T: {tone}
+				</p>
 				<div className='flex flex-row gap-1 py-2'>
 					<Textbox
 						onInput={handleInput}
 						value={value}
 						variant='border'
-						placeholder='Color name'
+						placeholder='Name thy color'
 					/>
 					<TextboxColor
 						id='hexColor1'
@@ -175,16 +182,18 @@ function Plugin() {
 						// variant='underline'
 					/>
 				</div>
-				<p className='pb-2'>
-					H: {hue} C: {chroma} T: {tone}
-				</p>
-				<IconToggleButton onChange={handleChange} value={value}>
-					<code>1</code>
-				</IconToggleButton>
-				;
+				<TextboxMultiline
+					onInput={handleTextAreaInput}
+					value={textAreaValue}
+					variant='border'
+					placeholder='All tone stops (0-100)'
+				/>
 				<VerticalSpace space='large' />
-				<Button onClick={handleClick} fullWidth>
-					Build
+				<Button onClick={() => handleClick('build')} className='mb-1' fullWidth>
+					Build Palette
+				</Button>
+				<Button onClick={() => handleClick('createVariables')} fullWidth secondary>
+					Create Variables
 				</Button>
 			</Container>
 		</div>
