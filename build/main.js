@@ -3086,9 +3086,9 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: 328, width: 280 });
+  showUI({ height: 350, width: 280 });
 }
-var toneStops, fromHex, paletteTones, paletteSwatch, paletteVariable, paletteGroup;
+var toneStops, fromHex, paletteTones, paletteSwatch, localCollections, paletteVariable, paletteGroup;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3140,8 +3140,19 @@ var init_main = __esm({
       frame.resize(128, 64);
       return frame;
     };
+    localCollections = figma.variables.getLocalVariableCollections();
+    figma.on("run", () => {
+      const type = "localCollections";
+      const options = [];
+      for (let i = 0; i < localCollections.length; i++) {
+        const collection = localCollections[i].name;
+        options.push({ value: collection });
+      }
+      console.log(options);
+      const message = { type, options };
+      figma.ui.postMessage(message);
+    });
     paletteVariable = (colorName, hexColor, tone) => {
-      const localCollections = figma.variables.getLocalVariableCollections();
       console.log(localCollections);
     };
     paletteGroup = (colorName, originalColor, palette) => {
@@ -3176,9 +3187,10 @@ var init_main = __esm({
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;
+        const type = "colorChange";
         const hctColor = fromHex(color);
         const palettePreview = paletteTones(color);
-        const message = { hctColor, palettePreview };
+        const message = { type, hctColor, palettePreview };
         figma.ui.postMessage(message);
       }
     };

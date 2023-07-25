@@ -12,7 +12,7 @@ import {
 } from '@material/material-color-utilities';
 
 export default function () {
-	showUI({ height: 328, width: 280 });
+	showUI({ height: 350, width: 280 });
 }
 
 // Create tones from stops
@@ -71,13 +71,24 @@ const paletteSwatch = (colorName: string, hexColor: string, tone: number) => {
 	return frame;
 };
 
+const localCollections = figma.variables.getLocalVariableCollections();
+figma.on('run', () => {
+	const type = 'localCollections';
+	const options = [];
+	for (let i = 0; i < localCollections.length; i++) {
+		const collection = localCollections[i].name;
+		options.push({ value: collection });
+	}
+	console.log(options);
+	const message = { type, options };
+	figma.ui.postMessage(message);
+});
 const paletteVariable = (
 	// collectionId: string,
 	colorName?: string,
 	hexColor?: string,
 	tone?: number
 ) => {
-	const localCollections = figma.variables.getLocalVariableCollections();
 	console.log(localCollections);
 	// const variable = figma.variables.createVariable(
 	// 	'new-variable',
@@ -159,9 +170,10 @@ figma.ui.onmessage = (pluginMessage) => {
 
 	if (pluginMessage.type === 'colorChange') {
 		const color = pluginMessage.newHexColor;
+		const type = 'colorChange';
 		const hctColor = fromHex(color);
 		const palettePreview = paletteTones(color);
-		const message = { hctColor, palettePreview };
+		const message = { type, hctColor, palettePreview };
 		figma.ui.postMessage(message);
 	}
 };

@@ -10,6 +10,8 @@ import {
 	TextboxMultiline,
 	TextboxColor,
 	Textbox,
+	Dropdown,
+	DropdownOption,
 } from '@create-figma-plugin/ui';
 
 // Importing preact and preact/hooks libraries
@@ -73,20 +75,29 @@ function Plugin() {
 	// Function to handle changes in the hexColor input field from main.ts
 	onmessage = (event) => {
 		const message = event.data.pluginMessage;
-		// hct
-		const hct = message.hctColor;
-		const newHue = Math.round(hct.hue);
-		setHue(newHue);
-		const newChroma = Math.round(hct.chroma);
-		setChroma(newChroma);
-		const newTone = Math.round(hct.tone);
-		setTone(newTone);
-		const newHexFromHct = hct.hex;
-		setHexFromHct(newHexFromHct);
-		// palette
-		const palette = message.palettePreview;
-		const newPaletteGradient = getValues(palette);
-		setPaletteGradient(newPaletteGradient);
+		if (message.type === 'colorChange') {
+			// hct
+			const hct = message.hctColor;
+			const newHue = Math.round(hct.hue);
+			setHue(newHue);
+			const newChroma = Math.round(hct.chroma);
+			setChroma(newChroma);
+			const newTone = Math.round(hct.tone);
+			setTone(newTone);
+			const newHexFromHct = hct.hex;
+			setHexFromHct(newHexFromHct);
+			// palette
+			const palette = message.palettePreview;
+			const newPaletteGradient = getValues(palette);
+			setPaletteGradient(newPaletteGradient);
+		}
+		if (message.type === 'localCollections') {
+			const dropdownOptions = message.options;
+			for (let i = 0; i < dropdownOptions.length; i++) {
+				options.push(dropdownOptions[i]);
+			}
+			// return options;
+		}
 	};
 
 	// Function to handle changes in the opacity input field
@@ -125,7 +136,6 @@ function Plugin() {
 		return Array.from(stops);
 	}
 
-	// const paletteInfo =
 	// Function to handle button click
 	function handleClick(type: string) {
 		const newColor = {
@@ -148,12 +158,33 @@ function Plugin() {
 			'*'
 		);
 	}
+	// TODO: find out how to dynamically add options to the dropdown
+	const [dropdownValue, setDropdownValue] = useState<null | string>(null);
+	const options: Array<DropdownOption> = [
+		{
+			header: 'Collections',
+		},
+		{
+			value: 'default',
+		},
+	];
+	function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newDropdownValue = event.currentTarget.value;
+		console.log(newDropdownValue);
+		setDropdownValue(newDropdownValue);
+	}
 
 	// Rendering the UI
 	// TODO could I share the theme info in an encoded image?
 	return (
 		<div className='h-full py-4'>
 			<Container space='medium'>
+				<Dropdown
+					onChange={handleChange}
+					placeholder='Choose a collection'
+					options={options}
+					value={dropdownValue}
+				/>
 				<p className='text-xs'>Select a color to create a dynamic palette</p>
 				<div
 					className='h-8 rounded-sm w-full mt-3'
@@ -178,8 +209,6 @@ function Plugin() {
 						onHexColorInput={handleHexColorInput}
 						onOpacityInput={handleOpacityInput}
 						opacity={opacity}
-						// opacityPlaceholder='%'
-						// variant='underline'
 					/>
 				</div>
 				<TextboxMultiline
