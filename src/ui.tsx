@@ -93,10 +93,12 @@ function Plugin() {
 		}
 		if (message.type === 'localCollections') {
 			const dropdownOptions = message.options;
+			const newOptions = [...options];
 			for (let i = 0; i < dropdownOptions.length; i++) {
-				options.push(dropdownOptions[i]);
+				newOptions.push({ value: dropdownOptions[i].value });
 			}
-			// return options;
+			console.log(newOptions);
+			setOptions(newOptions);
 		}
 	};
 
@@ -158,16 +160,13 @@ function Plugin() {
 			'*'
 		);
 	}
-	// TODO: find out how to dynamically add options to the dropdown
+
 	const [dropdownValue, setDropdownValue] = useState<null | string>(null);
-	const options: Array<DropdownOption> = [
+	const [options, setOptions] = useState<Array<DropdownOption>>([
 		{
-			header: 'Collections',
+			header: 'Choose a collection',
 		},
-		{
-			value: 'default',
-		},
-	];
+	]);
 	function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newDropdownValue = event.currentTarget.value;
 		console.log(newDropdownValue);
@@ -175,7 +174,6 @@ function Plugin() {
 	}
 
 	// Rendering the UI
-	// TODO could I share the theme info in an encoded image?
 	return (
 		<div className='h-full py-4'>
 			<Container space='medium'>
