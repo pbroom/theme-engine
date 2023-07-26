@@ -136,33 +136,20 @@ figma.on('run' || 'documentChange', () => {
 	figma.ui.postMessage(message);
 });
 
+// TODO: setup mode handling for variables
 const paletteVariable = (
-	// collectionId: string,
+	collectionId: string,
 	colorName?: string,
 	hexColor?: string,
 	tone?: number
 ) => {
-	console.log(localCollections);
-	// const variable = figma.variables.createVariable(
-	// 	'new-variable',
-	// 	collectionId,
-	// 	'COLOR'
-	// );
-	// variable.name = 'color/primitives/' + colorName + '-' + tone;
-	// const cleanedHexColor = hexColor.startsWith('#')
-	// 	? hexColor.slice(1)
-	// 	: hexColor;
-
-	// const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-	// const red = rgbColor?.r ?? 0;
-	// const green = rgbColor?.g ?? 0;
-	// const blue = rgbColor?.b ?? 0;
-	// const color = { r: red, g: green, b: blue };
-	// const lightModeId = collectionId.modes[0].modeId;
-	// const darkModeId = collectionId.addMode("dark");
-	// variable.setValueForMode(lightModeId, color);
-	// variable.setValueForMode(darkModeId, color);
-	// return variable;
+	const variable = figma.variables.createVariable(
+		(colorName = 'color'),
+		collectionId,
+		'COLOR'
+	);
+	variable.name = 'color/primitives/' + colorName + '-' + tone;
+	variable.setValueForMode = hexColor;
 };
 
 const paletteGroup = (
@@ -218,7 +205,9 @@ figma.ui.onmessage = (pluginMessage) => {
 		const colorName = pluginMessage.name ? pluginMessage.name : 'color';
 		const toneStops = pluginMessage.toneStops;
 		const hexColor = pluginMessage.color;
-		return paletteVariable();
+		const collectionId = pluginMessage.collectionId;
+		console.log(paletteVariable(collectionId, colorName, hexColor, toneStops));
+		// return paletteVariable();
 	}
 
 	if (pluginMessage.type === 'colorChange') {

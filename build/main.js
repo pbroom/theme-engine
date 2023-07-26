@@ -3185,8 +3185,14 @@ var init_main = __esm({
       console.log(message);
       figma.ui.postMessage(message);
     });
-    paletteVariable = (colorName, hexColor, tone) => {
-      console.log(localCollections);
+    paletteVariable = (collectionId, colorName, hexColor, tone) => {
+      const variable = figma.variables.createVariable(
+        colorName = "color",
+        collectionId,
+        "COLOR"
+      );
+      variable.name = "color/primitives/" + colorName + "-" + tone;
+      variable.setValueForMode = hexColor;
     };
     paletteGroup = (colorName, originalColor, palette) => {
       const frame = figma.createFrame();
@@ -3216,7 +3222,8 @@ var init_main = __esm({
         const colorName = pluginMessage.name ? pluginMessage.name : "color";
         const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
-        return paletteVariable();
+        const collectionId = pluginMessage.collectionId;
+        console.log(paletteVariable(collectionId, colorName, hexColor, toneStops2));
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;

@@ -155,6 +155,7 @@ function Plugin() {
 		const color = newColor.backgroundColor;
 		const toneStops = getStopsFromString(textAreaValue);
 		const collectionId = collections[parseInt(optionId) - 1].id;
+		console.log(collectionId);
 		parent.postMessage(
 			{
 				pluginMessage: {
