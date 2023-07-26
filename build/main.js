@@ -3088,7 +3088,7 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: 350, width: 280 });
 }
-var toneStops, fromHex, paletteTones, paletteSwatch, localCollections, paletteVariable, paletteGroup;
+var toneStops, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, paletteVariable, paletteGroup;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3141,15 +3141,48 @@ var init_main = __esm({
       return frame;
     };
     localCollections = figma.variables.getLocalVariableCollections();
+    VariableCollection = class {
+      constructor(id, name, variableIds, defaultModeId, modes, remote, key) {
+        this.id = id;
+        this.name = name;
+        this.variableIds = variableIds;
+        this.defaultModeId = defaultModeId;
+        this.modes = modes;
+        this.remote = remote;
+        this.key = key;
+      }
+      toJSON() {
+        return {
+          id: this.id,
+          name: this.name,
+          variableIds: this.variableIds,
+          defaultModeId: this.defaultModeId,
+          modes: this.modes,
+          remote: this.remote,
+          key: this.key
+        };
+      }
+    };
     figma.on("run", () => {
       const type = "localCollections";
       const options = [];
+      const collections = [];
       for (let i = 0; i < localCollections.length; i++) {
-        const collection = localCollections[i].name;
-        options.push({ value: collection });
+        const newCollection = new VariableCollection(
+          localCollections[i].id,
+          localCollections[i].name,
+          localCollections[i].variableIds,
+          localCollections[i].defaultModeId,
+          localCollections[i].modes,
+          localCollections[i].remote,
+          localCollections[i].key
+        );
+        const collectionName = newCollection.name;
+        collections.push(newCollection);
+        options.push({ value: collectionName });
       }
-      console.log(options);
-      const message = { type, options };
+      const message = { type, options, collections };
+      console.log(message);
       figma.ui.postMessage(message);
     });
     paletteVariable = (colorName, hexColor, tone) => {

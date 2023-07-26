@@ -22,6 +22,7 @@ import { useCallback, useState } from 'preact/hooks';
 function Plugin() {
 	// Defining state variables
 	const [value, setValue] = useState<string>('color');
+	const [collections, setCollections] = useState<VariableCollection[]>([]);
 	const [hexColor, setHexColor] = useState<string>('397456');
 	const [opacity, setOpacity] = useState<string>('');
 	const [hue, setHue] = useState<number>(0);
@@ -31,6 +32,7 @@ function Plugin() {
 	const [paletteGradient, setPaletteGradient] = useState<string>(
 		'#000000, #397456, #ffffff'
 	);
+	const [optionId, setOptionId] = useState<null | string>(null);
 
 	// Function to handle changes in the Textbox component
 	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
@@ -92,12 +94,14 @@ function Plugin() {
 			setPaletteGradient(newPaletteGradient);
 		}
 		if (message.type === 'localCollections') {
-			const dropdownOptions = message.options;
+			const collections = message.collections;
+			setCollections(collections);
 			const newOptions = [...options];
-			for (let i = 0; i < dropdownOptions.length; i++) {
-				newOptions.push({ value: dropdownOptions[i].value });
+			for (let i = 0; i < collections.length; i++) {
+				newOptions.push({ value: collections[i].name });
 			}
-			console.log(newOptions);
+			const newDropdownValue = collections[0].name;
+			setDropdownValue(newDropdownValue);
 			setOptions(newOptions);
 		}
 	};
@@ -140,6 +144,9 @@ function Plugin() {
 
 	// Function to handle button click
 	function handleClick(type: string) {
+		if (!optionId) {
+			return;
+		}
 		const newColor = {
 			colorName: value,
 			backgroundColor: hexColor,
@@ -147,7 +154,7 @@ function Plugin() {
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
 		const toneStops = getStopsFromString(textAreaValue);
-		// console.log('toneStops', toneStops);
+		const collectionId = collections[parseInt(optionId) - 1].id;
 		parent.postMessage(
 			{
 				pluginMessage: {
@@ -155,6 +162,7 @@ function Plugin() {
 					name: name,
 					color: color,
 					toneStops: toneStops,
+					collectionId: collectionId,
 				},
 			},
 			'*'
@@ -169,7 +177,9 @@ function Plugin() {
 	]);
 	function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newDropdownValue = event.currentTarget.value;
-		console.log(newDropdownValue);
+		const newOptionId = event.currentTarget.getAttribute('data-dropdown-item-id');
+		console.log(newOptionId);
+		setOptionId(newOptionId);
 		setDropdownValue(newDropdownValue);
 	}
 

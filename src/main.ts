@@ -113,7 +113,7 @@ class VariableCollection {
 	}
 }
 
-figma.on('run', () => {
+figma.on('run' || 'documentChange', () => {
 	const type = 'localCollections';
 	const options = [];
 	const collections = [];
