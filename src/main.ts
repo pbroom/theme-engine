@@ -210,9 +210,11 @@ const paletteVariable = (
 	collectionId: string,
 	colorName = 'color',
 	hexColor: string,
-	tone: number
+	tone?: number
 ) => {
-	const name = `color/primitives/${colorName}-${tone}`;
+	const keyColorName = `color/primitives/${colorName}/${colorName}-key/${colorName}`;
+	const toneColorName = `color/primitives/${colorName}/${colorName}-${tone}`;
+	const name = tone || tone === 0 ? toneColorName : keyColorName;
 	const variableId = variableFromName(name)?.id;
 	const color = new Color(hexColor);
 	const fill = color.getFigmaSolidColor().color;
@@ -236,6 +238,7 @@ const paletteVariable = (
 	// variable.name = `color/primitives/${colorName}-${tone}`;
 	variable.setValueForMode(lightModeId, fill);
 	variable.setValueForMode(darkModeId, fill);
+	figma.notify('Success!');
 };
 
 const paletteGroup = (
@@ -260,20 +263,19 @@ const paletteGroup = (
 };
 
 const paletteVariableCollection = (
+	collectionId: string,
 	colorName: string,
 	originalColor: string,
 	palette: { [key: number]: string }
 ) => {
-	const collection = figma.variables.createVariableCollection('new-collection');
-	const variable = figma.variables.createVariable(
-		'color-variable-name',
-		collection.id,
-		'COLOR'
-	);
-	let swatches = Object.entries(palette).map(([tone, color]) => {
-		const hexColor = color;
-		return paletteSwatch(colorName, String(hexColor), Number(tone));
+	const collection = collectionId;
+	const name = colorName;
+	const color = originalColor;
+	paletteVariable(collection, name, color);
+	let variables = Object.entries(palette).map(([tone, color]) => {
+		return paletteVariable(collection, name, color, Number(tone));
 	});
+	return variables;
 };
 
 figma.ui.onmessage = (pluginMessage) => {
@@ -292,8 +294,8 @@ figma.ui.onmessage = (pluginMessage) => {
 		const toneStops = pluginMessage.toneStops;
 		const hexColor = pluginMessage.color;
 		const collectionId = pluginMessage.collectionId;
-		// console.log(paletteVariable(collectionId, colorName, hexColor, toneStops));
-		return paletteVariable(collectionId, colorName, hexColor, 50);
+		const palette = paletteTones(hexColor, toneStops);
+		return paletteVariableCollection(collectionId, colorName, hexColor, palette);
 	}
 
 	if (pluginMessage.type === 'colorChange') {

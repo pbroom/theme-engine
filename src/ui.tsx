@@ -151,6 +151,9 @@ function Plugin() {
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
 		const toneStops = getStopsFromString(textAreaValue);
+		if (!optionId) {
+			return;
+		}
 		const collectionId = collections[parseInt(optionId) - 1].id;
 		parent.postMessage(
 			{

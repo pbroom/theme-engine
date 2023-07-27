@@ -3088,7 +3088,7 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: 350, width: 280 });
 }
-var toneStops, Color, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup;
+var toneStops, Color, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup, paletteVariableCollection;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3228,7 +3228,9 @@ var init_main = __esm({
     };
     paletteVariable = (collectionId, colorName = "color", hexColor, tone) => {
       var _a;
-      const name = `color/primitives/${colorName}-${tone}`;
+      const keyColorName = `color/primitives/${colorName}/${colorName}-key/${colorName}`;
+      const toneColorName = `color/primitives/${colorName}/${colorName}-${tone}`;
+      const name = tone || tone === 0 ? toneColorName : keyColorName;
       const variableId = (_a = variableFromName(name)) == null ? void 0 : _a.id;
       const color = new Color(hexColor);
       const fill = color.getFigmaSolidColor().color;
@@ -3246,6 +3248,7 @@ var init_main = __esm({
       }
       variable.setValueForMode(lightModeId, fill);
       variable.setValueForMode(darkModeId, fill);
+      figma.notify("Success!");
     };
     paletteGroup = (colorName, originalColor, palette) => {
       const frame = figma.createFrame();
@@ -3262,6 +3265,16 @@ var init_main = __esm({
       frame.y = Math.round(figma.viewport.center.y - frame.height / 2);
       return frame;
     };
+    paletteVariableCollection = (collectionId, colorName, originalColor, palette) => {
+      const collection = collectionId;
+      const name = colorName;
+      const color = originalColor;
+      paletteVariable(collection, name, color);
+      let variables = Object.entries(palette).map(([tone, color2]) => {
+        return paletteVariable(collection, name, color2, Number(tone));
+      });
+      return variables;
+    };
     figma.ui.onmessage = (pluginMessage) => {
       if (pluginMessage.type === "build") {
         const colorName = pluginMessage.name ? pluginMessage.name : "color";
@@ -3276,7 +3289,8 @@ var init_main = __esm({
         const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
         const collectionId = pluginMessage.collectionId;
-        return paletteVariable(collectionId, colorName, hexColor, 50);
+        const palette = paletteTones(hexColor, toneStops2);
+        return paletteVariableCollection(collectionId, colorName, hexColor, palette);
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;
