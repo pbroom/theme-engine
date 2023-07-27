@@ -28,6 +28,67 @@ const toneStops = (stops?: number[]) => {
 	}
 };
 
+class Color {
+	private argb: number;
+	private rgba: string | Rgba;
+	private hex: string;
+	private hue: number;
+	private chroma: number;
+	private tone: number;
+	private figmaSolidColor: SolidPaint;
+
+	constructor(hexColor: string) {
+		const cleanedHexColor = hexColor.startsWith('#')
+			? hexColor.slice(1)
+			: hexColor;
+
+		const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
+		const red = rgbColor?.r ?? 0;
+		const green = rgbColor?.g ?? 0;
+		const blue = rgbColor?.b ?? 0;
+		this.figmaSolidColor = {
+			type: 'SOLID',
+			color: { r: red, g: green, b: blue },
+		};
+
+		const hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
+		this.hue = hctColor.hue;
+		this.chroma = hctColor.chroma;
+		this.tone = hctColor.tone;
+		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+		this.rgba = rgbaFromArgb(this.argb);
+		this.hex = hexFromArgb(this.argb);
+	}
+
+	getHue() {
+		return this.hue;
+	}
+
+	getChroma() {
+		return this.chroma;
+	}
+
+	getTone() {
+		return this.tone;
+	}
+
+	getArgb() {
+		return this.argb;
+	}
+
+	getRgba() {
+		return this.rgba;
+	}
+
+	getHex() {
+		return this.hex;
+	}
+
+	getFigmaSolidColor() {
+		return this.figmaSolidColor;
+	}
+}
+
 // Convert hex to Hct and back again
 const fromHex = (hexColor: string) => {
 	const hctColor = Hct.fromInt(argbFromHex(hexColor));
@@ -58,15 +119,18 @@ const paletteTones = (hexColor: string, stops?: number[]) => {
 const paletteSwatch = (colorName: string, hexColor: string, tone: number) => {
 	const frame = figma.createFrame();
 	frame.name = colorName + '-' + tone + ': ' + hexColor + ';';
-	const cleanedHexColor = hexColor.startsWith('#')
-		? hexColor.slice(1)
-		: hexColor;
+	const color = new Color(hexColor);
+	const fill = color.getFigmaSolidColor();
+	// const cleanedHexColor = hexColor.startsWith('#')
+	// 	? hexColor.slice(1)
+	// 	: hexColor;
 
-	const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-	const red = rgbColor?.r ?? 0;
-	const green = rgbColor?.g ?? 0;
-	const blue = rgbColor?.b ?? 0;
-	frame.fills = [{ type: 'SOLID', color: { r: red, g: green, b: blue } }];
+	// const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
+	// const red = rgbColor?.r ?? 0;
+	// const green = rgbColor?.g ?? 0;
+	// const blue = rgbColor?.b ?? 0;
+	// const figmaSolidColor = { r: red, g: green, b: blue };
+	frame.fills = [fill];
 	frame.resize(128, 64);
 	return frame;
 };
@@ -113,7 +177,7 @@ class VariableCollection {
 	}
 }
 
-figma.on('run' || 'documentChange', () => {
+figma.on('run', () => {
 	const type = 'localCollections';
 	const options = [];
 	const collections = [];
@@ -132,24 +196,46 @@ figma.on('run' || 'documentChange', () => {
 		options.push({ value: collectionName });
 	}
 	const message = { type, options, collections };
-	console.log(message);
 	figma.ui.postMessage(message);
 });
 
 // TODO: setup mode handling for variables
+
+const variableFromName = (name: string) => {
+	const variablesToCheck = figma.variables.getLocalVariables('COLOR');
+	return variablesToCheck.find((variable) => variable.name === name);
+};
+
 const paletteVariable = (
 	collectionId: string,
-	colorName?: string,
-	hexColor?: string,
-	tone?: number
+	colorName = 'color',
+	hexColor: string,
+	tone: number
 ) => {
-	const variable = figma.variables.createVariable(
-		(colorName = 'color'),
-		collectionId,
-		'COLOR'
-	);
-	variable.name = 'color/primitives/' + colorName + '-' + tone;
-	variable.setValueForMode = hexColor;
+	const name = `color/primitives/${colorName}-${tone}`;
+	const variableId = variableFromName(name)?.id;
+	const color = new Color(hexColor);
+	const fill = color.getFigmaSolidColor().color;
+	const collection = figma.variables.getVariableCollectionById(collectionId);
+
+	const variable = variableId
+		? figma.variables.getVariableById(variableId)
+		: figma.variables.createVariable(name, collectionId, 'COLOR');
+	if (!collection) {
+		figma.notify('Collection not found');
+		return;
+	}
+	const lightModeId = collection.modes[0].modeId;
+	const darkModeId = collection.modes[1]
+		? collection.modes[1].modeId
+		: collection.addMode('dark');
+	if (!variable) {
+		figma.notify('Variable not found');
+		return;
+	}
+	// variable.name = `color/primitives/${colorName}-${tone}`;
+	variable.setValueForMode(lightModeId, fill);
+	variable.setValueForMode(darkModeId, fill);
 };
 
 const paletteGroup = (
@@ -206,8 +292,8 @@ figma.ui.onmessage = (pluginMessage) => {
 		const toneStops = pluginMessage.toneStops;
 		const hexColor = pluginMessage.color;
 		const collectionId = pluginMessage.collectionId;
-		console.log(paletteVariable(collectionId, colorName, hexColor, toneStops));
-		// return paletteVariable();
+		// console.log(paletteVariable(collectionId, colorName, hexColor, toneStops));
+		return paletteVariable(collectionId, colorName, hexColor, 50);
 	}
 
 	if (pluginMessage.type === 'colorChange') {

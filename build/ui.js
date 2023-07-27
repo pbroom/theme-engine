@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/992e9885-a509-4e11-bab6-4f203ede74a8/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a6aec54-ec59-4c85-8512-945654df9b0a/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/992e9885-a509-4e11-bab6-4f203ede74a8/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a6aec54-ec59-4c85-8512-945654df9b0a/tailwind.js"() {
       if (document.getElementById("f8ad1fdc80") === null) {
         const element = document.createElement("style");
         element.id = "f8ad1fdc80";
@@ -1292,10 +1292,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8034706-2e50-43a9-9a32-6a24c0fb8977/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/507774ff-f055-41df-885b-acc08ce6fa54/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8034706-2e50-43a9-9a32-6a24c0fb8977/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/507774ff-f055-41df-885b-acc08ce6fa54/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -1354,10 +1354,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff9ab0be-087d-40be-82d5-181bfbb08f1a/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ec23e6d-e414-4feb-8b67-5e001e0bfdb4/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff9ab0be-087d-40be-82d5-181bfbb08f1a/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ec23e6d-e414-4feb-8b67-5e001e0bfdb4/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -1540,10 +1540,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b6bd3af-ac92-45af-a6f4-518680c1d3fb/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31c2d719-a4b5-4248-b490-ee57090148ae/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b6bd3af-ac92-45af-a6f4-518680c1d3fb/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31c2d719-a4b5-4248-b490-ee57090148ae/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1579,10 +1579,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f094b2c1-fb34-46a2-92ea-039296ae1f64/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edad443f-c634-4762-bafb-dbf22c507f5a/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f094b2c1-fb34-46a2-92ea-039296ae1f64/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edad443f-c634-4762-bafb-dbf22c507f5a/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -1817,10 +1817,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e214ccdc-52d5-4c88-b337-461f1716c5d3/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c925cd8f-9f5c-4b9a-8f5b-e0c11a3ee8af/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e214ccdc-52d5-4c88-b337-461f1716c5d3/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c925cd8f-9f5c-4b9a-8f5b-e0c11a3ee8af/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -2695,10 +2695,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08c1c9e4-15e5-4fc0-b598-d8bae29b2f8b/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b5e6f0-8f92-4dac-a655-ef8257fb2616/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08c1c9e4-15e5-4fc0-b598-d8bae29b2f8b/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b5e6f0-8f92-4dac-a655-ef8257fb2616/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3187,10 +3187,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20a89756-3ca0-4351-99a5-bb87f24e97cc/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57e99896-5fc8-4c22-9481-a30ccca838ec/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20a89756-3ca0-4351-99a5-bb87f24e97cc/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57e99896-5fc8-4c22-9481-a30ccca838ec/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3537,10 +3537,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d536f5de-d033-4430-b0ce-21aefa053cab/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cca8b7f7-ec22-427e-ba9a-45e9f0469e6a/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d536f5de-d033-4430-b0ce-21aefa053cab/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cca8b7f7-ec22-427e-ba9a-45e9f0469e6a/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3723,10 +3723,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3e0c9bc-677d-4d62-813a-530429a4ccb8/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04fb896a-98e1-4838-87be-0d97125163b2/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3e0c9bc-677d-4d62-813a-530429a4ccb8/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04fb896a-98e1-4838-87be-0d97125163b2/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -3765,10 +3765,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68b712a7-f279-40e0-804c-a9529492830a/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5a4da35d-6199-4604-b0d9-1995b75bd36a/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68b712a7-f279-40e0-804c-a9529492830a/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5a4da35d-6199-4604-b0d9-1995b75bd36a/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -3807,9 +3807,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/92bcef77-f50c-4501-96b2-e5e210913c30/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aba8d5d0-2bba-4613-8fe2-227d797d8440/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/92bcef77-f50c-4501-96b2-e5e210913c30/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aba8d5d0-2bba-4613-8fe2-227d797d8440/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -3968,7 +3968,7 @@ svg {
     const [paletteGradient, setPaletteGradient] = h2(
       "#000000, #397456, #ffffff"
     );
-    const [optionId, setOptionId] = h2(null);
+    const [optionId, setOptionId] = h2("1");
     function handleInput(event) {
       const newValue = event.currentTarget.value;
       setValue(newValue);
@@ -4077,9 +4077,6 @@ svg {
       return Array.from(stops);
     }
     function handleClick(type) {
-      if (!optionId) {
-        return;
-      }
       const newColor = {
         colorName: value2,
         backgroundColor: hexColor
@@ -4088,7 +4085,6 @@ svg {
       const color = newColor.backgroundColor;
       const toneStops = getStopsFromString(textAreaValue);
       const collectionId = collections[parseInt(optionId) - 1].id;
-      console.log(collectionId);
       parent.postMessage(
         {
           pluginMessage: {

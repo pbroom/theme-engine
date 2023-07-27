@@ -32,7 +32,7 @@ function Plugin() {
 	const [paletteGradient, setPaletteGradient] = useState<string>(
 		'#000000, #397456, #ffffff'
 	);
-	const [optionId, setOptionId] = useState<null | string>(null);
+	const [optionId, setOptionId] = useState<null | string>('1');
 
 	// Function to handle changes in the Textbox component
 	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
@@ -144,9 +144,6 @@ function Plugin() {
 
 	// Function to handle button click
 	function handleClick(type: string) {
-		if (!optionId) {
-			return;
-		}
 		const newColor = {
 			colorName: value,
 			backgroundColor: hexColor,
@@ -155,7 +152,6 @@ function Plugin() {
 		const color = newColor.backgroundColor;
 		const toneStops = getStopsFromString(textAreaValue);
 		const collectionId = collections[parseInt(optionId) - 1].id;
-		console.log(collectionId);
 		parent.postMessage(
 			{
 				pluginMessage: {

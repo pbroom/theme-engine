@@ -3088,7 +3088,7 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: 350, width: 280 });
 }
-var toneStops, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, paletteVariable, paletteGroup;
+var toneStops, Color, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3103,6 +3103,48 @@ var init_main = __esm({
           defaultToneStops.push(stop);
         }
         return defaultToneStops;
+      }
+    };
+    Color = class {
+      constructor(hexColor) {
+        var _a, _b, _c;
+        const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
+        const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
+        const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
+        const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
+        const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
+        this.figmaSolidColor = {
+          type: "SOLID",
+          color: { r: red, g: green, b: blue }
+        };
+        const hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
+        this.hue = hctColor.hue;
+        this.chroma = hctColor.chroma;
+        this.tone = hctColor.tone;
+        this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+        this.rgba = rgbaFromArgb(this.argb);
+        this.hex = hexFromArgb(this.argb);
+      }
+      getHue() {
+        return this.hue;
+      }
+      getChroma() {
+        return this.chroma;
+      }
+      getTone() {
+        return this.tone;
+      }
+      getArgb() {
+        return this.argb;
+      }
+      getRgba() {
+        return this.rgba;
+      }
+      getHex() {
+        return this.hex;
+      }
+      getFigmaSolidColor() {
+        return this.figmaSolidColor;
       }
     };
     fromHex = (hexColor) => {
@@ -3128,15 +3170,11 @@ var init_main = __esm({
       return palette;
     };
     paletteSwatch = (colorName, hexColor, tone) => {
-      var _a, _b, _c;
       const frame = figma.createFrame();
       frame.name = colorName + "-" + tone + ": " + hexColor + ";";
-      const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
-      const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-      const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
-      const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
-      const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
-      frame.fills = [{ type: "SOLID", color: { r: red, g: green, b: blue } }];
+      const color = new Color(hexColor);
+      const fill = color.getFigmaSolidColor();
+      frame.fills = [fill];
       frame.resize(128, 64);
       return frame;
     };
@@ -3182,17 +3220,32 @@ var init_main = __esm({
         options.push({ value: collectionName });
       }
       const message = { type, options, collections };
-      console.log(message);
       figma.ui.postMessage(message);
     });
-    paletteVariable = (collectionId, colorName, hexColor, tone) => {
-      const variable = figma.variables.createVariable(
-        colorName = "color",
-        collectionId,
-        "COLOR"
-      );
-      variable.name = "color/primitives/" + colorName + "-" + tone;
-      variable.setValueForMode = hexColor;
+    variableFromName = (name) => {
+      const variablesToCheck = figma.variables.getLocalVariables("COLOR");
+      return variablesToCheck.find((variable) => variable.name === name);
+    };
+    paletteVariable = (collectionId, colorName = "color", hexColor, tone) => {
+      var _a;
+      const name = `color/primitives/${colorName}-${tone}`;
+      const variableId = (_a = variableFromName(name)) == null ? void 0 : _a.id;
+      const color = new Color(hexColor);
+      const fill = color.getFigmaSolidColor().color;
+      const collection = figma.variables.getVariableCollectionById(collectionId);
+      const variable = variableId ? figma.variables.getVariableById(variableId) : figma.variables.createVariable(name, collectionId, "COLOR");
+      if (!collection) {
+        figma.notify("Collection not found");
+        return;
+      }
+      const lightModeId = collection.modes[0].modeId;
+      const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
+      if (!variable) {
+        figma.notify("Variable not found");
+        return;
+      }
+      variable.setValueForMode(lightModeId, fill);
+      variable.setValueForMode(darkModeId, fill);
     };
     paletteGroup = (colorName, originalColor, palette) => {
       const frame = figma.createFrame();
@@ -3223,7 +3276,7 @@ var init_main = __esm({
         const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
         const collectionId = pluginMessage.collectionId;
-        console.log(paletteVariable(collectionId, colorName, hexColor, toneStops2));
+        return paletteVariable(collectionId, colorName, hexColor, 50);
       }
       if (pluginMessage.type === "colorChange") {
         const color = pluginMessage.newHexColor;
