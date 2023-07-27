@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/80350539-4aeb-4f05-a4dd-1263706fbaa3/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19824d2a-d1d3-4cc2-8ba4-cf29d6ecb4e5/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/80350539-4aeb-4f05-a4dd-1263706fbaa3/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19824d2a-d1d3-4cc2-8ba4-cf29d6ecb4e5/tailwind.js"() {
       if (document.getElementById("f8ad1fdc80") === null) {
         const element = document.createElement("style");
         element.id = "f8ad1fdc80";
@@ -595,6 +595,12 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .flex {
   display: flex;
 }
@@ -722,6 +728,9 @@ video {
 .pr-8 {
   padding-right: 2rem;
 }
+.pl-1 {
+  padding-left: 0.25rem;
+}
 .text-center {
   text-align: center;
 }
@@ -834,6 +843,3384 @@ video {
 `;
         document.head.append(element);
       }
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/utils/math_utils.js
+  function signum(num) {
+    if (num < 0) {
+      return -1;
+    } else if (num === 0) {
+      return 0;
+    } else {
+      return 1;
+    }
+  }
+  function lerp(start, stop, amount) {
+    return (1 - amount) * start + amount * stop;
+  }
+  function clampInt(min, max, input) {
+    if (input < min) {
+      return min;
+    } else if (input > max) {
+      return max;
+    }
+    return input;
+  }
+  function clampDouble(min, max, input) {
+    if (input < min) {
+      return min;
+    } else if (input > max) {
+      return max;
+    }
+    return input;
+  }
+  function sanitizeDegreesInt(degrees) {
+    degrees = degrees % 360;
+    if (degrees < 0) {
+      degrees = degrees + 360;
+    }
+    return degrees;
+  }
+  function sanitizeDegreesDouble(degrees) {
+    degrees = degrees % 360;
+    if (degrees < 0) {
+      degrees = degrees + 360;
+    }
+    return degrees;
+  }
+  function differenceDegrees(a3, b3) {
+    return 180 - Math.abs(Math.abs(a3 - b3) - 180);
+  }
+  function matrixMultiply(row, matrix) {
+    const a3 = row[0] * matrix[0][0] + row[1] * matrix[0][1] + row[2] * matrix[0][2];
+    const b3 = row[0] * matrix[1][0] + row[1] * matrix[1][1] + row[2] * matrix[1][2];
+    const c3 = row[0] * matrix[2][0] + row[1] * matrix[2][1] + row[2] * matrix[2][2];
+    return [a3, b3, c3];
+  }
+  var init_math_utils = __esm({
+    "node_modules/@material/material-color-utilities/utils/math_utils.js"() {
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/utils/color_utils.js
+  function argbFromRgb(red, green, blue) {
+    return (255 << 24 | (red & 255) << 16 | (green & 255) << 8 | blue & 255) >>> 0;
+  }
+  function argbFromLinrgb(linrgb) {
+    const r3 = delinearized(linrgb[0]);
+    const g3 = delinearized(linrgb[1]);
+    const b3 = delinearized(linrgb[2]);
+    return argbFromRgb(r3, g3, b3);
+  }
+  function alphaFromArgb(argb) {
+    return argb >> 24 & 255;
+  }
+  function redFromArgb(argb) {
+    return argb >> 16 & 255;
+  }
+  function greenFromArgb(argb) {
+    return argb >> 8 & 255;
+  }
+  function blueFromArgb(argb) {
+    return argb & 255;
+  }
+  function argbFromXyz(x2, y2, z3) {
+    const matrix = XYZ_TO_SRGB;
+    const linearR = matrix[0][0] * x2 + matrix[0][1] * y2 + matrix[0][2] * z3;
+    const linearG = matrix[1][0] * x2 + matrix[1][1] * y2 + matrix[1][2] * z3;
+    const linearB = matrix[2][0] * x2 + matrix[2][1] * y2 + matrix[2][2] * z3;
+    const r3 = delinearized(linearR);
+    const g3 = delinearized(linearG);
+    const b3 = delinearized(linearB);
+    return argbFromRgb(r3, g3, b3);
+  }
+  function xyzFromArgb(argb) {
+    const r3 = linearized(redFromArgb(argb));
+    const g3 = linearized(greenFromArgb(argb));
+    const b3 = linearized(blueFromArgb(argb));
+    return matrixMultiply([r3, g3, b3], SRGB_TO_XYZ);
+  }
+  function argbFromLstar(lstar) {
+    const y2 = yFromLstar(lstar);
+    const component = delinearized(y2);
+    return argbFromRgb(component, component, component);
+  }
+  function lstarFromArgb(argb) {
+    const y2 = xyzFromArgb(argb)[1];
+    return 116 * labF(y2 / 100) - 16;
+  }
+  function yFromLstar(lstar) {
+    return 100 * labInvf((lstar + 16) / 116);
+  }
+  function lstarFromY(y2) {
+    return labF(y2 / 100) * 116 - 16;
+  }
+  function linearized(rgbComponent) {
+    const normalized = rgbComponent / 255;
+    if (normalized <= 0.040449936) {
+      return normalized / 12.92 * 100;
+    } else {
+      return Math.pow((normalized + 0.055) / 1.055, 2.4) * 100;
+    }
+  }
+  function delinearized(rgbComponent) {
+    const normalized = rgbComponent / 100;
+    let delinearized2 = 0;
+    if (normalized <= 31308e-7) {
+      delinearized2 = normalized * 12.92;
+    } else {
+      delinearized2 = 1.055 * Math.pow(normalized, 1 / 2.4) - 0.055;
+    }
+    return clampInt(0, 255, Math.round(delinearized2 * 255));
+  }
+  function whitePointD65() {
+    return WHITE_POINT_D65;
+  }
+  function rgbaFromArgb(argb) {
+    const r3 = redFromArgb(argb);
+    const g3 = greenFromArgb(argb);
+    const b3 = blueFromArgb(argb);
+    const a3 = alphaFromArgb(argb);
+    return { r: r3, g: g3, b: b3, a: a3 };
+  }
+  function labF(t3) {
+    const e3 = 216 / 24389;
+    const kappa = 24389 / 27;
+    if (t3 > e3) {
+      return Math.pow(t3, 1 / 3);
+    } else {
+      return (kappa * t3 + 16) / 116;
+    }
+  }
+  function labInvf(ft) {
+    const e3 = 216 / 24389;
+    const kappa = 24389 / 27;
+    const ft3 = ft * ft * ft;
+    if (ft3 > e3) {
+      return ft3;
+    } else {
+      return (116 * ft - 16) / kappa;
+    }
+  }
+  var SRGB_TO_XYZ, XYZ_TO_SRGB, WHITE_POINT_D65;
+  var init_color_utils = __esm({
+    "node_modules/@material/material-color-utilities/utils/color_utils.js"() {
+      init_math_utils();
+      SRGB_TO_XYZ = [
+        [0.41233895, 0.35762064, 0.18051042],
+        [0.2126, 0.7152, 0.0722],
+        [0.01932141, 0.11916382, 0.95034478]
+      ];
+      XYZ_TO_SRGB = [
+        [
+          3.2413774792388685,
+          -1.5376652402851851,
+          -0.49885366846268053
+        ],
+        [
+          -0.9691452513005321,
+          1.8758853451067872,
+          0.04156585616912061
+        ],
+        [
+          0.05562093689691305,
+          -0.20395524564742123,
+          1.0571799111220335
+        ]
+      ];
+      WHITE_POINT_D65 = [95.047, 100, 108.883];
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/hct/viewing_conditions.js
+  var ViewingConditions;
+  var init_viewing_conditions = __esm({
+    "node_modules/@material/material-color-utilities/hct/viewing_conditions.js"() {
+      init_color_utils();
+      init_math_utils();
+      ViewingConditions = class {
+        /**
+         * Create ViewingConditions from a simple, physically relevant, set of
+         * parameters.
+         *
+         * @param whitePoint White point, measured in the XYZ color space.
+         *     default = D65, or sunny day afternoon
+         * @param adaptingLuminance The luminance of the adapting field. Informally,
+         *     how bright it is in the room where the color is viewed. Can be
+         *     calculated from lux by multiplying lux by 0.0586. default = 11.72,
+         *     or 200 lux.
+         * @param backgroundLstar The lightness of the area surrounding the color.
+         *     measured by L* in L*a*b*. default = 50.0
+         * @param surround A general description of the lighting surrounding the
+         *     color. 0 is pitch dark, like watching a movie in a theater. 1.0 is a
+         *     dimly light room, like watching TV at home at night. 2.0 means there
+         *     is no difference between the lighting on the color and around it.
+         *     default = 2.0
+         * @param discountingIlluminant Whether the eye accounts for the tint of the
+         *     ambient lighting, such as knowing an apple is still red in green light.
+         *     default = false, the eye does not perform this process on
+         *       self-luminous objects like displays.
+         */
+        static make(whitePoint = whitePointD65(), adaptingLuminance = 200 / Math.PI * yFromLstar(50) / 100, backgroundLstar = 50, surround = 2, discountingIlluminant = false) {
+          const xyz = whitePoint;
+          const rW = xyz[0] * 0.401288 + xyz[1] * 0.650173 + xyz[2] * -0.051461;
+          const gW = xyz[0] * -0.250268 + xyz[1] * 1.204414 + xyz[2] * 0.045854;
+          const bW = xyz[0] * -2079e-6 + xyz[1] * 0.048952 + xyz[2] * 0.953127;
+          const f3 = 0.8 + surround / 10;
+          const c3 = f3 >= 0.9 ? lerp(0.59, 0.69, (f3 - 0.9) * 10) : lerp(0.525, 0.59, (f3 - 0.8) * 10);
+          let d3 = discountingIlluminant ? 1 : f3 * (1 - 1 / 3.6 * Math.exp((-adaptingLuminance - 42) / 92));
+          d3 = d3 > 1 ? 1 : d3 < 0 ? 0 : d3;
+          const nc = f3;
+          const rgbD = [
+            d3 * (100 / rW) + 1 - d3,
+            d3 * (100 / gW) + 1 - d3,
+            d3 * (100 / bW) + 1 - d3
+          ];
+          const k3 = 1 / (5 * adaptingLuminance + 1);
+          const k4 = k3 * k3 * k3 * k3;
+          const k4F = 1 - k4;
+          const fl = k4 * adaptingLuminance + 0.1 * k4F * k4F * Math.cbrt(5 * adaptingLuminance);
+          const n2 = yFromLstar(backgroundLstar) / whitePoint[1];
+          const z3 = 1.48 + Math.sqrt(n2);
+          const nbb = 0.725 / Math.pow(n2, 0.2);
+          const ncb = nbb;
+          const rgbAFactors = [
+            Math.pow(fl * rgbD[0] * rW / 100, 0.42),
+            Math.pow(fl * rgbD[1] * gW / 100, 0.42),
+            Math.pow(fl * rgbD[2] * bW / 100, 0.42)
+          ];
+          const rgbA = [
+            400 * rgbAFactors[0] / (rgbAFactors[0] + 27.13),
+            400 * rgbAFactors[1] / (rgbAFactors[1] + 27.13),
+            400 * rgbAFactors[2] / (rgbAFactors[2] + 27.13)
+          ];
+          const aw = (2 * rgbA[0] + rgbA[1] + 0.05 * rgbA[2]) * nbb;
+          return new ViewingConditions(n2, aw, nbb, ncb, c3, nc, rgbD, fl, Math.pow(fl, 0.25), z3);
+        }
+        /**
+         * Parameters are intermediate values of the CAM16 conversion process. Their
+         * names are shorthand for technical color science terminology, this class
+         * would not benefit from documenting them individually. A brief overview
+         * is available in the CAM16 specification, and a complete overview requires
+         * a color science textbook, such as Fairchild's Color Appearance Models.
+         */
+        constructor(n2, aw, nbb, ncb, c3, nc, rgbD, fl, fLRoot, z3) {
+          this.n = n2;
+          this.aw = aw;
+          this.nbb = nbb;
+          this.ncb = ncb;
+          this.c = c3;
+          this.nc = nc;
+          this.rgbD = rgbD;
+          this.fl = fl;
+          this.fLRoot = fLRoot;
+          this.z = z3;
+        }
+      };
+      ViewingConditions.DEFAULT = ViewingConditions.make();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/hct/cam16.js
+  var Cam16;
+  var init_cam16 = __esm({
+    "node_modules/@material/material-color-utilities/hct/cam16.js"() {
+      init_color_utils();
+      init_math_utils();
+      init_viewing_conditions();
+      Cam16 = class {
+        /**
+         * All of the CAM16 dimensions can be calculated from 3 of the dimensions, in
+         * the following combinations:
+         *      -  {j or q} and {c, m, or s} and hue
+         *      - jstar, astar, bstar
+         * Prefer using a static method that constructs from 3 of those dimensions.
+         * This constructor is intended for those methods to use to return all
+         * possible dimensions.
+         *
+         * @param hue
+         * @param chroma informally, colorfulness / color intensity. like saturation
+         *     in HSL, except perceptually accurate.
+         * @param j lightness
+         * @param q brightness; ratio of lightness to white point's lightness
+         * @param m colorfulness
+         * @param s saturation; ratio of chroma to white point's chroma
+         * @param jstar CAM16-UCS J coordinate
+         * @param astar CAM16-UCS a coordinate
+         * @param bstar CAM16-UCS b coordinate
+         */
+        constructor(hue, chroma, j3, q2, m3, s3, jstar, astar, bstar) {
+          this.hue = hue;
+          this.chroma = chroma;
+          this.j = j3;
+          this.q = q2;
+          this.m = m3;
+          this.s = s3;
+          this.jstar = jstar;
+          this.astar = astar;
+          this.bstar = bstar;
+        }
+        /**
+         * CAM16 instances also have coordinates in the CAM16-UCS space, called J*,
+         * a*, b*, or jstar, astar, bstar in code. CAM16-UCS is included in the CAM16
+         * specification, and is used to measure distances between colors.
+         */
+        distance(other) {
+          const dJ = this.jstar - other.jstar;
+          const dA = this.astar - other.astar;
+          const dB = this.bstar - other.bstar;
+          const dEPrime = Math.sqrt(dJ * dJ + dA * dA + dB * dB);
+          const dE = 1.41 * Math.pow(dEPrime, 0.63);
+          return dE;
+        }
+        /**
+         * @param argb ARGB representation of a color.
+         * @return CAM16 color, assuming the color was viewed in default viewing
+         *     conditions.
+         */
+        static fromInt(argb) {
+          return Cam16.fromIntInViewingConditions(argb, ViewingConditions.DEFAULT);
+        }
+        /**
+         * @param argb ARGB representation of a color.
+         * @param viewingConditions Information about the environment where the color
+         *     was observed.
+         * @return CAM16 color.
+         */
+        static fromIntInViewingConditions(argb, viewingConditions) {
+          const red = (argb & 16711680) >> 16;
+          const green = (argb & 65280) >> 8;
+          const blue = argb & 255;
+          const redL = linearized(red);
+          const greenL = linearized(green);
+          const blueL = linearized(blue);
+          const x2 = 0.41233895 * redL + 0.35762064 * greenL + 0.18051042 * blueL;
+          const y2 = 0.2126 * redL + 0.7152 * greenL + 0.0722 * blueL;
+          const z3 = 0.01932141 * redL + 0.11916382 * greenL + 0.95034478 * blueL;
+          const rC = 0.401288 * x2 + 0.650173 * y2 - 0.051461 * z3;
+          const gC = -0.250268 * x2 + 1.204414 * y2 + 0.045854 * z3;
+          const bC = -2079e-6 * x2 + 0.048952 * y2 + 0.953127 * z3;
+          const rD = viewingConditions.rgbD[0] * rC;
+          const gD = viewingConditions.rgbD[1] * gC;
+          const bD = viewingConditions.rgbD[2] * bC;
+          const rAF = Math.pow(viewingConditions.fl * Math.abs(rD) / 100, 0.42);
+          const gAF = Math.pow(viewingConditions.fl * Math.abs(gD) / 100, 0.42);
+          const bAF = Math.pow(viewingConditions.fl * Math.abs(bD) / 100, 0.42);
+          const rA = signum(rD) * 400 * rAF / (rAF + 27.13);
+          const gA = signum(gD) * 400 * gAF / (gAF + 27.13);
+          const bA = signum(bD) * 400 * bAF / (bAF + 27.13);
+          const a3 = (11 * rA + -12 * gA + bA) / 11;
+          const b3 = (rA + gA - 2 * bA) / 9;
+          const u3 = (20 * rA + 20 * gA + 21 * bA) / 20;
+          const p22 = (40 * rA + 20 * gA + bA) / 20;
+          const atan2 = Math.atan2(b3, a3);
+          const atanDegrees = atan2 * 180 / Math.PI;
+          const hue = atanDegrees < 0 ? atanDegrees + 360 : atanDegrees >= 360 ? atanDegrees - 360 : atanDegrees;
+          const hueRadians = hue * Math.PI / 180;
+          const ac = p22 * viewingConditions.nbb;
+          const j3 = 100 * Math.pow(ac / viewingConditions.aw, viewingConditions.c * viewingConditions.z);
+          const q2 = 4 / viewingConditions.c * Math.sqrt(j3 / 100) * (viewingConditions.aw + 4) * viewingConditions.fLRoot;
+          const huePrime = hue < 20.14 ? hue + 360 : hue;
+          const eHue = 0.25 * (Math.cos(huePrime * Math.PI / 180 + 2) + 3.8);
+          const p1 = 5e4 / 13 * eHue * viewingConditions.nc * viewingConditions.ncb;
+          const t3 = p1 * Math.sqrt(a3 * a3 + b3 * b3) / (u3 + 0.305);
+          const alpha = Math.pow(t3, 0.9) * Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73);
+          const c3 = alpha * Math.sqrt(j3 / 100);
+          const m3 = c3 * viewingConditions.fLRoot;
+          const s3 = 50 * Math.sqrt(alpha * viewingConditions.c / (viewingConditions.aw + 4));
+          const jstar = (1 + 100 * 7e-3) * j3 / (1 + 7e-3 * j3);
+          const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m3);
+          const astar = mstar * Math.cos(hueRadians);
+          const bstar = mstar * Math.sin(hueRadians);
+          return new Cam16(hue, c3, j3, q2, m3, s3, jstar, astar, bstar);
+        }
+        /**
+         * @param j CAM16 lightness
+         * @param c CAM16 chroma
+         * @param h CAM16 hue
+         */
+        static fromJch(j3, c3, h3) {
+          return Cam16.fromJchInViewingConditions(j3, c3, h3, ViewingConditions.DEFAULT);
+        }
+        /**
+         * @param j CAM16 lightness
+         * @param c CAM16 chroma
+         * @param h CAM16 hue
+         * @param viewingConditions Information about the environment where the color
+         *     was observed.
+         */
+        static fromJchInViewingConditions(j3, c3, h3, viewingConditions) {
+          const q2 = 4 / viewingConditions.c * Math.sqrt(j3 / 100) * (viewingConditions.aw + 4) * viewingConditions.fLRoot;
+          const m3 = c3 * viewingConditions.fLRoot;
+          const alpha = c3 / Math.sqrt(j3 / 100);
+          const s3 = 50 * Math.sqrt(alpha * viewingConditions.c / (viewingConditions.aw + 4));
+          const hueRadians = h3 * Math.PI / 180;
+          const jstar = (1 + 100 * 7e-3) * j3 / (1 + 7e-3 * j3);
+          const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m3);
+          const astar = mstar * Math.cos(hueRadians);
+          const bstar = mstar * Math.sin(hueRadians);
+          return new Cam16(h3, c3, j3, q2, m3, s3, jstar, astar, bstar);
+        }
+        /**
+         * @param jstar CAM16-UCS lightness.
+         * @param astar CAM16-UCS a dimension. Like a* in L*a*b*, it is a Cartesian
+         *     coordinate on the Y axis.
+         * @param bstar CAM16-UCS b dimension. Like a* in L*a*b*, it is a Cartesian
+         *     coordinate on the X axis.
+         */
+        static fromUcs(jstar, astar, bstar) {
+          return Cam16.fromUcsInViewingConditions(jstar, astar, bstar, ViewingConditions.DEFAULT);
+        }
+        /**
+         * @param jstar CAM16-UCS lightness.
+         * @param astar CAM16-UCS a dimension. Like a* in L*a*b*, it is a Cartesian
+         *     coordinate on the Y axis.
+         * @param bstar CAM16-UCS b dimension. Like a* in L*a*b*, it is a Cartesian
+         *     coordinate on the X axis.
+         * @param viewingConditions Information about the environment where the color
+         *     was observed.
+         */
+        static fromUcsInViewingConditions(jstar, astar, bstar, viewingConditions) {
+          const a3 = astar;
+          const b3 = bstar;
+          const m3 = Math.sqrt(a3 * a3 + b3 * b3);
+          const M2 = (Math.exp(m3 * 0.0228) - 1) / 0.0228;
+          const c3 = M2 / viewingConditions.fLRoot;
+          let h3 = Math.atan2(b3, a3) * (180 / Math.PI);
+          if (h3 < 0) {
+            h3 += 360;
+          }
+          const j3 = jstar / (1 - (jstar - 100) * 7e-3);
+          return Cam16.fromJchInViewingConditions(j3, c3, h3, viewingConditions);
+        }
+        /**
+         *  @return ARGB representation of color, assuming the color was viewed in
+         *     default viewing conditions, which are near-identical to the default
+         *     viewing conditions for sRGB.
+         */
+        toInt() {
+          return this.viewed(ViewingConditions.DEFAULT);
+        }
+        /**
+         * @param viewingConditions Information about the environment where the color
+         *     will be viewed.
+         * @return ARGB representation of color
+         */
+        viewed(viewingConditions) {
+          const alpha = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100);
+          const t3 = Math.pow(alpha / Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73), 1 / 0.9);
+          const hRad = this.hue * Math.PI / 180;
+          const eHue = 0.25 * (Math.cos(hRad + 2) + 3.8);
+          const ac = viewingConditions.aw * Math.pow(this.j / 100, 1 / viewingConditions.c / viewingConditions.z);
+          const p1 = eHue * (5e4 / 13) * viewingConditions.nc * viewingConditions.ncb;
+          const p22 = ac / viewingConditions.nbb;
+          const hSin = Math.sin(hRad);
+          const hCos = Math.cos(hRad);
+          const gamma = 23 * (p22 + 0.305) * t3 / (23 * p1 + 11 * t3 * hCos + 108 * t3 * hSin);
+          const a3 = gamma * hCos;
+          const b3 = gamma * hSin;
+          const rA = (460 * p22 + 451 * a3 + 288 * b3) / 1403;
+          const gA = (460 * p22 - 891 * a3 - 261 * b3) / 1403;
+          const bA = (460 * p22 - 220 * a3 - 6300 * b3) / 1403;
+          const rCBase = Math.max(0, 27.13 * Math.abs(rA) / (400 - Math.abs(rA)));
+          const rC = signum(rA) * (100 / viewingConditions.fl) * Math.pow(rCBase, 1 / 0.42);
+          const gCBase = Math.max(0, 27.13 * Math.abs(gA) / (400 - Math.abs(gA)));
+          const gC = signum(gA) * (100 / viewingConditions.fl) * Math.pow(gCBase, 1 / 0.42);
+          const bCBase = Math.max(0, 27.13 * Math.abs(bA) / (400 - Math.abs(bA)));
+          const bC = signum(bA) * (100 / viewingConditions.fl) * Math.pow(bCBase, 1 / 0.42);
+          const rF = rC / viewingConditions.rgbD[0];
+          const gF = gC / viewingConditions.rgbD[1];
+          const bF = bC / viewingConditions.rgbD[2];
+          const x2 = 1.86206786 * rF - 1.01125463 * gF + 0.14918677 * bF;
+          const y2 = 0.38752654 * rF + 0.62144744 * gF - 897398e-8 * bF;
+          const z3 = -0.0158415 * rF - 0.03412294 * gF + 1.04996444 * bF;
+          const argb = argbFromXyz(x2, y2, z3);
+          return argb;
+        }
+        /// Given color expressed in XYZ and viewed in [viewingConditions], convert to
+        /// CAM16.
+        static fromXyzInViewingConditions(x2, y2, z3, viewingConditions) {
+          const rC = 0.401288 * x2 + 0.650173 * y2 - 0.051461 * z3;
+          const gC = -0.250268 * x2 + 1.204414 * y2 + 0.045854 * z3;
+          const bC = -2079e-6 * x2 + 0.048952 * y2 + 0.953127 * z3;
+          const rD = viewingConditions.rgbD[0] * rC;
+          const gD = viewingConditions.rgbD[1] * gC;
+          const bD = viewingConditions.rgbD[2] * bC;
+          const rAF = Math.pow(viewingConditions.fl * Math.abs(rD) / 100, 0.42);
+          const gAF = Math.pow(viewingConditions.fl * Math.abs(gD) / 100, 0.42);
+          const bAF = Math.pow(viewingConditions.fl * Math.abs(bD) / 100, 0.42);
+          const rA = signum(rD) * 400 * rAF / (rAF + 27.13);
+          const gA = signum(gD) * 400 * gAF / (gAF + 27.13);
+          const bA = signum(bD) * 400 * bAF / (bAF + 27.13);
+          const a3 = (11 * rA + -12 * gA + bA) / 11;
+          const b3 = (rA + gA - 2 * bA) / 9;
+          const u3 = (20 * rA + 20 * gA + 21 * bA) / 20;
+          const p22 = (40 * rA + 20 * gA + bA) / 20;
+          const atan2 = Math.atan2(b3, a3);
+          const atanDegrees = atan2 * 180 / Math.PI;
+          const hue = atanDegrees < 0 ? atanDegrees + 360 : atanDegrees >= 360 ? atanDegrees - 360 : atanDegrees;
+          const hueRadians = hue * Math.PI / 180;
+          const ac = p22 * viewingConditions.nbb;
+          const J = 100 * Math.pow(ac / viewingConditions.aw, viewingConditions.c * viewingConditions.z);
+          const Q = 4 / viewingConditions.c * Math.sqrt(J / 100) * (viewingConditions.aw + 4) * viewingConditions.fLRoot;
+          const huePrime = hue < 20.14 ? hue + 360 : hue;
+          const eHue = 1 / 4 * (Math.cos(huePrime * Math.PI / 180 + 2) + 3.8);
+          const p1 = 5e4 / 13 * eHue * viewingConditions.nc * viewingConditions.ncb;
+          const t3 = p1 * Math.sqrt(a3 * a3 + b3 * b3) / (u3 + 0.305);
+          const alpha = Math.pow(t3, 0.9) * Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73);
+          const C2 = alpha * Math.sqrt(J / 100);
+          const M2 = C2 * viewingConditions.fLRoot;
+          const s3 = 50 * Math.sqrt(alpha * viewingConditions.c / (viewingConditions.aw + 4));
+          const jstar = (1 + 100 * 7e-3) * J / (1 + 7e-3 * J);
+          const mstar = Math.log(1 + 0.0228 * M2) / 0.0228;
+          const astar = mstar * Math.cos(hueRadians);
+          const bstar = mstar * Math.sin(hueRadians);
+          return new Cam16(hue, C2, J, Q, M2, s3, jstar, astar, bstar);
+        }
+        /// XYZ representation of CAM16 seen in [viewingConditions].
+        xyzInViewingConditions(viewingConditions) {
+          const alpha = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100);
+          const t3 = Math.pow(alpha / Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73), 1 / 0.9);
+          const hRad = this.hue * Math.PI / 180;
+          const eHue = 0.25 * (Math.cos(hRad + 2) + 3.8);
+          const ac = viewingConditions.aw * Math.pow(this.j / 100, 1 / viewingConditions.c / viewingConditions.z);
+          const p1 = eHue * (5e4 / 13) * viewingConditions.nc * viewingConditions.ncb;
+          const p22 = ac / viewingConditions.nbb;
+          const hSin = Math.sin(hRad);
+          const hCos = Math.cos(hRad);
+          const gamma = 23 * (p22 + 0.305) * t3 / (23 * p1 + 11 * t3 * hCos + 108 * t3 * hSin);
+          const a3 = gamma * hCos;
+          const b3 = gamma * hSin;
+          const rA = (460 * p22 + 451 * a3 + 288 * b3) / 1403;
+          const gA = (460 * p22 - 891 * a3 - 261 * b3) / 1403;
+          const bA = (460 * p22 - 220 * a3 - 6300 * b3) / 1403;
+          const rCBase = Math.max(0, 27.13 * Math.abs(rA) / (400 - Math.abs(rA)));
+          const rC = signum(rA) * (100 / viewingConditions.fl) * Math.pow(rCBase, 1 / 0.42);
+          const gCBase = Math.max(0, 27.13 * Math.abs(gA) / (400 - Math.abs(gA)));
+          const gC = signum(gA) * (100 / viewingConditions.fl) * Math.pow(gCBase, 1 / 0.42);
+          const bCBase = Math.max(0, 27.13 * Math.abs(bA) / (400 - Math.abs(bA)));
+          const bC = signum(bA) * (100 / viewingConditions.fl) * Math.pow(bCBase, 1 / 0.42);
+          const rF = rC / viewingConditions.rgbD[0];
+          const gF = gC / viewingConditions.rgbD[1];
+          const bF = bC / viewingConditions.rgbD[2];
+          const x2 = 1.86206786 * rF - 1.01125463 * gF + 0.14918677 * bF;
+          const y2 = 0.38752654 * rF + 0.62144744 * gF - 897398e-8 * bF;
+          const z3 = -0.0158415 * rF - 0.03412294 * gF + 1.04996444 * bF;
+          return [x2, y2, z3];
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/hct/hct_solver.js
+  var HctSolver;
+  var init_hct_solver = __esm({
+    "node_modules/@material/material-color-utilities/hct/hct_solver.js"() {
+      init_color_utils();
+      init_math_utils();
+      init_cam16();
+      init_viewing_conditions();
+      HctSolver = class {
+        /**
+         * Sanitizes a small enough angle in radians.
+         *
+         * @param angle An angle in radians; must not deviate too much
+         * from 0.
+         * @return A coterminal angle between 0 and 2pi.
+         */
+        static sanitizeRadians(angle) {
+          return (angle + Math.PI * 8) % (Math.PI * 2);
+        }
+        /**
+         * Delinearizes an RGB component, returning a floating-point
+         * number.
+         *
+         * @param rgbComponent 0.0 <= rgb_component <= 100.0, represents
+         * linear R/G/B channel
+         * @return 0.0 <= output <= 255.0, color channel converted to
+         * regular RGB space
+         */
+        static trueDelinearized(rgbComponent) {
+          const normalized = rgbComponent / 100;
+          let delinearized2 = 0;
+          if (normalized <= 31308e-7) {
+            delinearized2 = normalized * 12.92;
+          } else {
+            delinearized2 = 1.055 * Math.pow(normalized, 1 / 2.4) - 0.055;
+          }
+          return delinearized2 * 255;
+        }
+        static chromaticAdaptation(component) {
+          const af = Math.pow(Math.abs(component), 0.42);
+          return signum(component) * 400 * af / (af + 27.13);
+        }
+        /**
+         * Returns the hue of a linear RGB color in CAM16.
+         *
+         * @param linrgb The linear RGB coordinates of a color.
+         * @return The hue of the color in CAM16, in radians.
+         */
+        static hueOf(linrgb) {
+          const scaledDiscount = matrixMultiply(linrgb, HctSolver.SCALED_DISCOUNT_FROM_LINRGB);
+          const rA = HctSolver.chromaticAdaptation(scaledDiscount[0]);
+          const gA = HctSolver.chromaticAdaptation(scaledDiscount[1]);
+          const bA = HctSolver.chromaticAdaptation(scaledDiscount[2]);
+          const a3 = (11 * rA + -12 * gA + bA) / 11;
+          const b3 = (rA + gA - 2 * bA) / 9;
+          return Math.atan2(b3, a3);
+        }
+        static areInCyclicOrder(a3, b3, c3) {
+          const deltaAB = HctSolver.sanitizeRadians(b3 - a3);
+          const deltaAC = HctSolver.sanitizeRadians(c3 - a3);
+          return deltaAB < deltaAC;
+        }
+        /**
+         * Solves the lerp equation.
+         *
+         * @param source The starting number.
+         * @param mid The number in the middle.
+         * @param target The ending number.
+         * @return A number t such that lerp(source, target, t) = mid.
+         */
+        static intercept(source, mid, target) {
+          return (mid - source) / (target - source);
+        }
+        static lerpPoint(source, t3, target) {
+          return [
+            source[0] + (target[0] - source[0]) * t3,
+            source[1] + (target[1] - source[1]) * t3,
+            source[2] + (target[2] - source[2]) * t3
+          ];
+        }
+        /**
+         * Intersects a segment with a plane.
+         *
+         * @param source The coordinates of point A.
+         * @param coordinate The R-, G-, or B-coordinate of the plane.
+         * @param target The coordinates of point B.
+         * @param axis The axis the plane is perpendicular with. (0: R, 1:
+         * G, 2: B)
+         * @return The intersection point of the segment AB with the plane
+         * R=coordinate, G=coordinate, or B=coordinate
+         */
+        static setCoordinate(source, coordinate, target, axis) {
+          const t3 = HctSolver.intercept(source[axis], coordinate, target[axis]);
+          return HctSolver.lerpPoint(source, t3, target);
+        }
+        static isBounded(x2) {
+          return 0 <= x2 && x2 <= 100;
+        }
+        /**
+         * Returns the nth possible vertex of the polygonal intersection.
+         *
+         * @param y The Y value of the plane.
+         * @param n The zero-based index of the point. 0 <= n <= 11.
+         * @return The nth possible vertex of the polygonal intersection
+         * of the y plane and the RGB cube, in linear RGB coordinates, if
+         * it exists. If this possible vertex lies outside of the cube,
+         * [-1.0, -1.0, -1.0] is returned.
+         */
+        static nthVertex(y2, n2) {
+          const kR = HctSolver.Y_FROM_LINRGB[0];
+          const kG = HctSolver.Y_FROM_LINRGB[1];
+          const kB = HctSolver.Y_FROM_LINRGB[2];
+          const coordA = n2 % 4 <= 1 ? 0 : 100;
+          const coordB = n2 % 2 === 0 ? 0 : 100;
+          if (n2 < 4) {
+            const g3 = coordA;
+            const b3 = coordB;
+            const r3 = (y2 - g3 * kG - b3 * kB) / kR;
+            if (HctSolver.isBounded(r3)) {
+              return [r3, g3, b3];
+            } else {
+              return [-1, -1, -1];
+            }
+          } else if (n2 < 8) {
+            const b3 = coordA;
+            const r3 = coordB;
+            const g3 = (y2 - r3 * kR - b3 * kB) / kG;
+            if (HctSolver.isBounded(g3)) {
+              return [r3, g3, b3];
+            } else {
+              return [-1, -1, -1];
+            }
+          } else {
+            const r3 = coordA;
+            const g3 = coordB;
+            const b3 = (y2 - r3 * kR - g3 * kG) / kB;
+            if (HctSolver.isBounded(b3)) {
+              return [r3, g3, b3];
+            } else {
+              return [-1, -1, -1];
+            }
+          }
+        }
+        /**
+         * Finds the segment containing the desired color.
+         *
+         * @param y The Y value of the color.
+         * @param targetHue The hue of the color.
+         * @return A list of two sets of linear RGB coordinates, each
+         * corresponding to an endpoint of the segment containing the
+         * desired color.
+         */
+        static bisectToSegment(y2, targetHue) {
+          let left = [-1, -1, -1];
+          let right = left;
+          let leftHue = 0;
+          let rightHue = 0;
+          let initialized = false;
+          let uncut = true;
+          for (let n2 = 0; n2 < 12; n2++) {
+            const mid = HctSolver.nthVertex(y2, n2);
+            if (mid[0] < 0) {
+              continue;
+            }
+            const midHue = HctSolver.hueOf(mid);
+            if (!initialized) {
+              left = mid;
+              right = mid;
+              leftHue = midHue;
+              rightHue = midHue;
+              initialized = true;
+              continue;
+            }
+            if (uncut || HctSolver.areInCyclicOrder(leftHue, midHue, rightHue)) {
+              uncut = false;
+              if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+                right = mid;
+                rightHue = midHue;
+              } else {
+                left = mid;
+                leftHue = midHue;
+              }
+            }
+          }
+          return [left, right];
+        }
+        static midpoint(a3, b3) {
+          return [
+            (a3[0] + b3[0]) / 2,
+            (a3[1] + b3[1]) / 2,
+            (a3[2] + b3[2]) / 2
+          ];
+        }
+        static criticalPlaneBelow(x2) {
+          return Math.floor(x2 - 0.5);
+        }
+        static criticalPlaneAbove(x2) {
+          return Math.ceil(x2 - 0.5);
+        }
+        /**
+         * Finds a color with the given Y and hue on the boundary of the
+         * cube.
+         *
+         * @param y The Y value of the color.
+         * @param targetHue The hue of the color.
+         * @return The desired color, in linear RGB coordinates.
+         */
+        static bisectToLimit(y2, targetHue) {
+          const segment = HctSolver.bisectToSegment(y2, targetHue);
+          let left = segment[0];
+          let leftHue = HctSolver.hueOf(left);
+          let right = segment[1];
+          for (let axis = 0; axis < 3; axis++) {
+            if (left[axis] !== right[axis]) {
+              let lPlane = -1;
+              let rPlane = 255;
+              if (left[axis] < right[axis]) {
+                lPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(left[axis]));
+                rPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(right[axis]));
+              } else {
+                lPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(left[axis]));
+                rPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(right[axis]));
+              }
+              for (let i3 = 0; i3 < 8; i3++) {
+                if (Math.abs(rPlane - lPlane) <= 1) {
+                  break;
+                } else {
+                  const mPlane = Math.floor((lPlane + rPlane) / 2);
+                  const midPlaneCoordinate = HctSolver.CRITICAL_PLANES[mPlane];
+                  const mid = HctSolver.setCoordinate(left, midPlaneCoordinate, right, axis);
+                  const midHue = HctSolver.hueOf(mid);
+                  if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+                    right = mid;
+                    rPlane = mPlane;
+                  } else {
+                    left = mid;
+                    leftHue = midHue;
+                    lPlane = mPlane;
+                  }
+                }
+              }
+            }
+          }
+          return HctSolver.midpoint(left, right);
+        }
+        static inverseChromaticAdaptation(adapted) {
+          const adaptedAbs = Math.abs(adapted);
+          const base = Math.max(0, 27.13 * adaptedAbs / (400 - adaptedAbs));
+          return signum(adapted) * Math.pow(base, 1 / 0.42);
+        }
+        /**
+         * Finds a color with the given hue, chroma, and Y.
+         *
+         * @param hueRadians The desired hue in radians.
+         * @param chroma The desired chroma.
+         * @param y The desired Y.
+         * @return The desired color as a hexadecimal integer, if found; 0
+         * otherwise.
+         */
+        static findResultByJ(hueRadians, chroma, y2) {
+          let j3 = Math.sqrt(y2) * 11;
+          const viewingConditions = ViewingConditions.DEFAULT;
+          const tInnerCoeff = 1 / Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73);
+          const eHue = 0.25 * (Math.cos(hueRadians + 2) + 3.8);
+          const p1 = eHue * (5e4 / 13) * viewingConditions.nc * viewingConditions.ncb;
+          const hSin = Math.sin(hueRadians);
+          const hCos = Math.cos(hueRadians);
+          for (let iterationRound = 0; iterationRound < 5; iterationRound++) {
+            const jNormalized = j3 / 100;
+            const alpha = chroma === 0 || j3 === 0 ? 0 : chroma / Math.sqrt(jNormalized);
+            const t3 = Math.pow(alpha * tInnerCoeff, 1 / 0.9);
+            const ac = viewingConditions.aw * Math.pow(jNormalized, 1 / viewingConditions.c / viewingConditions.z);
+            const p22 = ac / viewingConditions.nbb;
+            const gamma = 23 * (p22 + 0.305) * t3 / (23 * p1 + 11 * t3 * hCos + 108 * t3 * hSin);
+            const a3 = gamma * hCos;
+            const b3 = gamma * hSin;
+            const rA = (460 * p22 + 451 * a3 + 288 * b3) / 1403;
+            const gA = (460 * p22 - 891 * a3 - 261 * b3) / 1403;
+            const bA = (460 * p22 - 220 * a3 - 6300 * b3) / 1403;
+            const rCScaled = HctSolver.inverseChromaticAdaptation(rA);
+            const gCScaled = HctSolver.inverseChromaticAdaptation(gA);
+            const bCScaled = HctSolver.inverseChromaticAdaptation(bA);
+            const linrgb = matrixMultiply([rCScaled, gCScaled, bCScaled], HctSolver.LINRGB_FROM_SCALED_DISCOUNT);
+            if (linrgb[0] < 0 || linrgb[1] < 0 || linrgb[2] < 0) {
+              return 0;
+            }
+            const kR = HctSolver.Y_FROM_LINRGB[0];
+            const kG = HctSolver.Y_FROM_LINRGB[1];
+            const kB = HctSolver.Y_FROM_LINRGB[2];
+            const fnj = kR * linrgb[0] + kG * linrgb[1] + kB * linrgb[2];
+            if (fnj <= 0) {
+              return 0;
+            }
+            if (iterationRound === 4 || Math.abs(fnj - y2) < 2e-3) {
+              if (linrgb[0] > 100.01 || linrgb[1] > 100.01 || linrgb[2] > 100.01) {
+                return 0;
+              }
+              return argbFromLinrgb(linrgb);
+            }
+            j3 = j3 - (fnj - y2) * j3 / (2 * fnj);
+          }
+          return 0;
+        }
+        /**
+         * Finds an sRGB color with the given hue, chroma, and L*, if
+         * possible.
+         *
+         * @param hueDegrees The desired hue, in degrees.
+         * @param chroma The desired chroma.
+         * @param lstar The desired L*.
+         * @return A hexadecimal representing the sRGB color. The color
+         * has sufficiently close hue, chroma, and L* to the desired
+         * values, if possible; otherwise, the hue and L* will be
+         * sufficiently close, and chroma will be maximized.
+         */
+        static solveToInt(hueDegrees, chroma, lstar) {
+          if (chroma < 1e-4 || lstar < 1e-4 || lstar > 99.9999) {
+            return argbFromLstar(lstar);
+          }
+          hueDegrees = sanitizeDegreesDouble(hueDegrees);
+          const hueRadians = hueDegrees / 180 * Math.PI;
+          const y2 = yFromLstar(lstar);
+          const exactAnswer = HctSolver.findResultByJ(hueRadians, chroma, y2);
+          if (exactAnswer !== 0) {
+            return exactAnswer;
+          }
+          const linrgb = HctSolver.bisectToLimit(y2, hueRadians);
+          return argbFromLinrgb(linrgb);
+        }
+        /**
+         * Finds an sRGB color with the given hue, chroma, and L*, if
+         * possible.
+         *
+         * @param hueDegrees The desired hue, in degrees.
+         * @param chroma The desired chroma.
+         * @param lstar The desired L*.
+         * @return An CAM16 object representing the sRGB color. The color
+         * has sufficiently close hue, chroma, and L* to the desired
+         * values, if possible; otherwise, the hue and L* will be
+         * sufficiently close, and chroma will be maximized.
+         */
+        static solveToCam(hueDegrees, chroma, lstar) {
+          return Cam16.fromInt(HctSolver.solveToInt(hueDegrees, chroma, lstar));
+        }
+      };
+      HctSolver.SCALED_DISCOUNT_FROM_LINRGB = [
+        [
+          0.001200833568784504,
+          0.002389694492170889,
+          2795742885861124e-19
+        ],
+        [
+          5891086651375999e-19,
+          0.0029785502573438758,
+          3270666104008398e-19
+        ],
+        [
+          10146692491640572e-20,
+          5364214359186694e-19,
+          0.0032979401770712076
+        ]
+      ];
+      HctSolver.LINRGB_FROM_SCALED_DISCOUNT = [
+        [
+          1373.2198709594231,
+          -1100.4251190754821,
+          -7.278681089101213
+        ],
+        [
+          -271.815969077903,
+          559.6580465940733,
+          -32.46047482791194
+        ],
+        [
+          1.9622899599665666,
+          -57.173814538844006,
+          308.7233197812385
+        ]
+      ];
+      HctSolver.Y_FROM_LINRGB = [0.2126, 0.7152, 0.0722];
+      HctSolver.CRITICAL_PLANES = [
+        0.015176349177441876,
+        0.045529047532325624,
+        0.07588174588720938,
+        0.10623444424209313,
+        0.13658714259697685,
+        0.16693984095186062,
+        0.19729253930674434,
+        0.2276452376616281,
+        0.2579979360165119,
+        0.28835063437139563,
+        0.3188300904430532,
+        0.350925934958123,
+        0.3848314933096426,
+        0.42057480301049466,
+        0.458183274052838,
+        0.4976837250274023,
+        0.5391024159806381,
+        0.5824650784040898,
+        0.6277969426914107,
+        0.6751227633498623,
+        0.7244668422128921,
+        0.775853049866786,
+        0.829304845476233,
+        0.8848452951698498,
+        0.942497089126609,
+        1.0022825574869039,
+        1.0642236851973577,
+        1.1283421258858297,
+        1.1946592148522128,
+        1.2631959812511864,
+        1.3339731595349034,
+        1.407011200216447,
+        1.4823302800086415,
+        1.5599503113873272,
+        1.6398909516233677,
+        1.7221716113234105,
+        1.8068114625156377,
+        1.8938294463134073,
+        1.9832442801866852,
+        2.075074464868551,
+        2.1693382909216234,
+        2.2660538449872063,
+        2.36523901573795,
+        2.4669114995532007,
+        2.5710888059345764,
+        2.6777882626779785,
+        2.7870270208169257,
+        2.898822059350997,
+        3.0131901897720907,
+        3.1301480604002863,
+        3.2497121605402226,
+        3.3718988244681087,
+        3.4967242352587946,
+        3.624204428461639,
+        3.754355295633311,
+        3.887192587735158,
+        4.022731918402185,
+        4.160988767090289,
+        4.301978482107941,
+        4.445716283538092,
+        4.592217266055746,
+        4.741496401646282,
+        4.893568542229298,
+        5.048448422192488,
+        5.20615066083972,
+        5.3666897647573375,
+        5.5300801301023865,
+        5.696336044816294,
+        5.865471690767354,
+        6.037501145825082,
+        6.212438385869475,
+        6.390297286737924,
+        6.571091626112461,
+        6.7548350853498045,
+        6.941541251256611,
+        7.131223617812143,
+        7.323895587840543,
+        7.5195704746346665,
+        7.7182615035334345,
+        7.919981813454504,
+        8.124744458384042,
+        8.332562408825165,
+        8.543448553206703,
+        8.757415699253682,
+        8.974476575321063,
+        9.194643831691977,
+        9.417930041841839,
+        9.644347703669503,
+        9.873909240696694,
+        10.106627003236781,
+        10.342513269534024,
+        10.58158024687427,
+        10.8238400726681,
+        11.069304815507364,
+        11.317986476196008,
+        11.569896988756009,
+        11.825048221409341,
+        12.083451977536606,
+        12.345119996613247,
+        12.610063955123938,
+        12.878295467455942,
+        13.149826086772048,
+        13.42466730586372,
+        13.702830557985108,
+        13.984327217668513,
+        14.269168601521828,
+        14.55736596900856,
+        14.848930523210871,
+        15.143873411576273,
+        15.44220572664832,
+        15.743938506781891,
+        16.04908273684337,
+        16.35764934889634,
+        16.66964922287304,
+        16.985093187232053,
+        17.30399201960269,
+        17.62635644741625,
+        17.95219714852476,
+        18.281524751807332,
+        18.614349837764564,
+        18.95068293910138,
+        19.290534541298456,
+        19.633915083172692,
+        19.98083495742689,
+        20.331304511189067,
+        20.685334046541502,
+        21.042933821039977,
+        21.404114048223256,
+        21.76888489811322,
+        22.137256497705877,
+        22.50923893145328,
+        22.884842241736916,
+        23.264076429332462,
+        23.6469514538663,
+        24.033477234264016,
+        24.42366364919083,
+        24.817520537484558,
+        25.21505769858089,
+        25.61628489293138,
+        26.021211842414342,
+        26.429848230738664,
+        26.842203703840827,
+        27.258287870275353,
+        27.678110301598522,
+        28.10168053274597,
+        28.529008062403893,
+        28.96010235337422,
+        29.39497283293396,
+        29.83362889318845,
+        30.276079891419332,
+        30.722335150426627,
+        31.172403958865512,
+        31.62629557157785,
+        32.08401920991837,
+        32.54558406207592,
+        33.010999283389665,
+        33.4802739966603,
+        33.953417292456834,
+        34.430438229418264,
+        34.911345834551085,
+        35.39614910352207,
+        35.88485700094671,
+        36.37747846067349,
+        36.87402238606382,
+        37.37449765026789,
+        37.87891309649659,
+        38.38727753828926,
+        38.89959975977785,
+        39.41588851594697,
+        39.93615253289054,
+        40.460400508064545,
+        40.98864111053629,
+        41.520882981230194,
+        42.05713473317016,
+        42.597404951718396,
+        43.141702194811224,
+        43.6900349931913,
+        44.24241185063697,
+        44.798841244188324,
+        45.35933162437017,
+        45.92389141541209,
+        46.49252901546552,
+        47.065252796817916,
+        47.64207110610409,
+        48.22299226451468,
+        48.808024568002054,
+        49.3971762874833,
+        49.9904556690408,
+        50.587870934119984,
+        51.189430279724725,
+        51.79514187861014,
+        52.40501387947288,
+        53.0190544071392,
+        53.637271562750364,
+        54.259673423945976,
+        54.88626804504493,
+        55.517063457223934,
+        56.15206766869424,
+        56.79128866487574,
+        57.43473440856916,
+        58.08241284012621,
+        58.734331877617365,
+        59.39049941699807,
+        60.05092333227251,
+        60.715611475655585,
+        61.38457167773311,
+        62.057811747619894,
+        62.7353394731159,
+        63.417162620860914,
+        64.10328893648692,
+        64.79372614476921,
+        65.48848194977529,
+        66.18756403501224,
+        66.89098006357258,
+        67.59873767827808,
+        68.31084450182222,
+        69.02730813691093,
+        69.74813616640164,
+        70.47333615344107,
+        71.20291564160104,
+        71.93688215501312,
+        72.67524319850172,
+        73.41800625771542,
+        74.16517879925733,
+        74.9167682708136,
+        75.67278210128072,
+        76.43322770089146,
+        77.1981124613393,
+        77.96744375590167,
+        78.74122893956174,
+        79.51947534912904,
+        80.30219030335869,
+        81.08938110306934,
+        81.88105503125999,
+        82.67721935322541,
+        83.4778813166706,
+        84.28304815182372,
+        85.09272707154808,
+        85.90692527145302,
+        86.72564993000343,
+        87.54890820862819,
+        88.3767072518277,
+        89.2090541872801,
+        90.04595612594655,
+        90.88742016217518,
+        91.73345337380438,
+        92.58406282226491,
+        93.43925555268066,
+        94.29903859396902,
+        95.16341895893969,
+        96.03240364439274,
+        96.9059996312159,
+        97.78421388448044,
+        98.6670533535366,
+        99.55452497210776
+      ];
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/hct/hct.js
+  var Hct;
+  var init_hct = __esm({
+    "node_modules/@material/material-color-utilities/hct/hct.js"() {
+      init_color_utils();
+      init_cam16();
+      init_hct_solver();
+      init_viewing_conditions();
+      Hct = class {
+        static from(hue, chroma, tone) {
+          return new Hct(HctSolver.solveToInt(hue, chroma, tone));
+        }
+        /**
+         * @param argb ARGB representation of a color.
+         * @return HCT representation of a color in default viewing conditions
+         */
+        static fromInt(argb) {
+          return new Hct(argb);
+        }
+        toInt() {
+          return this.argb;
+        }
+        /**
+         * A number, in degrees, representing ex. red, orange, yellow, etc.
+         * Ranges from 0 <= hue < 360.
+         */
+        get hue() {
+          return this.internalHue;
+        }
+        /**
+         * @param newHue 0 <= newHue < 360; invalid values are corrected.
+         * Chroma may decrease because chroma has a different maximum for any given
+         * hue and tone.
+         */
+        set hue(newHue) {
+          this.setInternalState(HctSolver.solveToInt(newHue, this.internalChroma, this.internalTone));
+        }
+        get chroma() {
+          return this.internalChroma;
+        }
+        /**
+         * @param newChroma 0 <= newChroma < ?
+         * Chroma may decrease because chroma has a different maximum for any given
+         * hue and tone.
+         */
+        set chroma(newChroma) {
+          this.setInternalState(HctSolver.solveToInt(this.internalHue, newChroma, this.internalTone));
+        }
+        /** Lightness. Ranges from 0 to 100. */
+        get tone() {
+          return this.internalTone;
+        }
+        /**
+         * @param newTone 0 <= newTone <= 100; invalid valids are corrected.
+         * Chroma may decrease because chroma has a different maximum for any given
+         * hue and tone.
+         */
+        set tone(newTone) {
+          this.setInternalState(HctSolver.solveToInt(this.internalHue, this.internalChroma, newTone));
+        }
+        constructor(argb) {
+          this.argb = argb;
+          const cam = Cam16.fromInt(argb);
+          this.internalHue = cam.hue;
+          this.internalChroma = cam.chroma;
+          this.internalTone = lstarFromArgb(argb);
+          this.argb = argb;
+        }
+        setInternalState(argb) {
+          const cam = Cam16.fromInt(argb);
+          this.internalHue = cam.hue;
+          this.internalChroma = cam.chroma;
+          this.internalTone = lstarFromArgb(argb);
+          this.argb = argb;
+        }
+        /**
+         * Translates a color into different [ViewingConditions].
+         *
+         * Colors change appearance. They look different with lights on versus off,
+         * the same color, as in hex code, on white looks different when on black.
+         * This is called color relativity, most famously explicated by Josef Albers
+         * in Interaction of Color.
+         *
+         * In color science, color appearance models can account for this and
+         * calculate the appearance of a color in different settings. HCT is based on
+         * CAM16, a color appearance model, and uses it to make these calculations.
+         *
+         * See [ViewingConditions.make] for parameters affecting color appearance.
+         */
+        inViewingConditions(vc) {
+          const cam = Cam16.fromInt(this.toInt());
+          const viewedInVc = cam.xyzInViewingConditions(vc);
+          const recastInVc = Cam16.fromXyzInViewingConditions(viewedInVc[0], viewedInVc[1], viewedInVc[2], ViewingConditions.make());
+          const recastHct = Hct.from(recastInVc.hue, recastInVc.chroma, lstarFromY(viewedInVc[1]));
+          return recastHct;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/blend/blend.js
+  var init_blend = __esm({
+    "node_modules/@material/material-color-utilities/blend/blend.js"() {
+      init_cam16();
+      init_hct();
+      init_color_utils();
+      init_math_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/contrast/contrast.js
+  var Contrast;
+  var init_contrast = __esm({
+    "node_modules/@material/material-color-utilities/contrast/contrast.js"() {
+      init_color_utils();
+      init_math_utils();
+      Contrast = class {
+        /**
+         * Returns a contrast ratio, which ranges from 1 to 21.
+         *
+         * @param toneA Tone between 0 and 100. Values outside will be clamped.
+         * @param toneB Tone between 0 and 100. Values outside will be clamped.
+         */
+        static ratioOfTones(toneA, toneB) {
+          toneA = clampDouble(0, 100, toneA);
+          toneB = clampDouble(0, 100, toneB);
+          return Contrast.ratioOfYs(yFromLstar(toneA), yFromLstar(toneB));
+        }
+        static ratioOfYs(y1, y2) {
+          const lighter = y1 > y2 ? y1 : y2;
+          const darker = lighter === y2 ? y1 : y2;
+          return (lighter + 5) / (darker + 5);
+        }
+        /**
+         * Returns a tone >= tone parameter that ensures ratio parameter.
+         * Return value is between 0 and 100.
+         * Returns -1 if ratio cannot be achieved with tone parameter.
+         *
+         * @param tone Tone return value must contrast with.
+         * Range is 0 to 100. Invalid values will result in -1 being returned.
+         * @param ratio Contrast ratio of return value and tone.
+         * Range is 1 to 21, invalid values have undefined behavior.
+         */
+        static lighter(tone, ratio) {
+          if (tone < 0 || tone > 100) {
+            return -1;
+          }
+          const darkY = yFromLstar(tone);
+          const lightY = ratio * (darkY + 5) - 5;
+          const realContrast = Contrast.ratioOfYs(lightY, darkY);
+          const delta = Math.abs(realContrast - ratio);
+          if (realContrast < ratio && delta > 0.04) {
+            return -1;
+          }
+          const returnValue = lstarFromY(lightY) + 0.4;
+          if (returnValue < 0 || returnValue > 100) {
+            return -1;
+          }
+          return returnValue;
+        }
+        /**
+         * Returns a tone <= tone parameter that ensures ratio parameter.
+         * Return value is between 0 and 100.
+         * Returns -1 if ratio cannot be achieved with tone parameter.
+         *
+         * @param tone Tone return value must contrast with.
+         * Range is 0 to 100. Invalid values will result in -1 being returned.
+         * @param ratio Contrast ratio of return value and tone.
+         * Range is 1 to 21, invalid values have undefined behavior.
+         */
+        static darker(tone, ratio) {
+          if (tone < 0 || tone > 100) {
+            return -1;
+          }
+          const lightY = yFromLstar(tone);
+          const darkY = (lightY + 5) / ratio - 5;
+          const realContrast = Contrast.ratioOfYs(lightY, darkY);
+          const delta = Math.abs(realContrast - ratio);
+          if (realContrast < ratio && delta > 0.04) {
+            return -1;
+          }
+          const returnValue = lstarFromY(darkY) - 0.4;
+          if (returnValue < 0 || returnValue > 100) {
+            return -1;
+          }
+          return returnValue;
+        }
+        /**
+         * Returns a tone >= tone parameter that ensures ratio parameter.
+         * Return value is between 0 and 100.
+         * Returns 100 if ratio cannot be achieved with tone parameter.
+         *
+         * This method is unsafe because the returned value is guaranteed to be in
+         * bounds for tone, i.e. between 0 and 100. However, that value may not reach
+         * the ratio with tone. For example, there is no color lighter than T100.
+         *
+         * @param tone Tone return value must contrast with.
+         * Range is 0 to 100. Invalid values will result in 100 being returned.
+         * @param ratio Desired contrast ratio of return value and tone parameter.
+         * Range is 1 to 21, invalid values have undefined behavior.
+         */
+        static lighterUnsafe(tone, ratio) {
+          const lighterSafe = Contrast.lighter(tone, ratio);
+          return lighterSafe < 0 ? 100 : lighterSafe;
+        }
+        /**
+         * Returns a tone >= tone parameter that ensures ratio parameter.
+         * Return value is between 0 and 100.
+         * Returns 100 if ratio cannot be achieved with tone parameter.
+         *
+         * This method is unsafe because the returned value is guaranteed to be in
+         * bounds for tone, i.e. between 0 and 100. However, that value may not reach
+         * the [ratio with [tone]. For example, there is no color darker than T0.
+         *
+         * @param tone Tone return value must contrast with.
+         * Range is 0 to 100. Invalid values will result in 0 being returned.
+         * @param ratio Desired contrast ratio of return value and tone parameter.
+         * Range is 1 to 21, invalid values have undefined behavior.
+         */
+        static darkerUnsafe(tone, ratio) {
+          const darkerSafe = Contrast.darker(tone, ratio);
+          return darkerSafe < 0 ? 0 : darkerSafe;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js
+  var DislikeAnalyzer;
+  var init_dislike_analyzer = __esm({
+    "node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js"() {
+      init_hct();
+      DislikeAnalyzer = class {
+        /**
+         * Returns true if a color is disliked.
+         *
+         * @param hct A color to be judged.
+         * @return Whether the color is disliked.
+         *
+         * Disliked is defined as a dark yellow-green that is not neutral.
+         */
+        static isDisliked(hct) {
+          const huePasses = Math.round(hct.hue) >= 90 && Math.round(hct.hue) <= 111;
+          const chromaPasses = Math.round(hct.chroma) > 16;
+          const tonePasses = Math.round(hct.tone) < 65;
+          return huePasses && chromaPasses && tonePasses;
+        }
+        /**
+         * If a color is disliked, lighten it to make it likable.
+         *
+         * @param hct A color to be judged.
+         * @return A new color if the original color is disliked, or the original
+         *   color if it is acceptable.
+         */
+        static fixIfDisliked(hct) {
+          if (DislikeAnalyzer.isDisliked(hct)) {
+            return Hct.from(hct.hue, hct.chroma, 70);
+          }
+          return hct;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js
+  var DynamicColor;
+  var init_dynamic_color = __esm({
+    "node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js"() {
+      init_contrast();
+      init_math_utils();
+      DynamicColor = class {
+        /**
+         * Create a DynamicColor defined by a TonalPalette and HCT tone.
+         *
+         * @param args Functions with DynamicScheme as input. Must provide a palette
+         * and tone. May provide a background DynamicColor and ToneDeltaConstraint.
+         */
+        static fromPalette(args) {
+          var _a, _b;
+          return new DynamicColor((_a = args.name) != null ? _a : "", args.palette, args.tone, (_b = args.isBackground) != null ? _b : false, args.background, args.secondBackground, args.contrastCurve, args.toneDeltaPair);
+        }
+        /**
+         * The base constructor for DynamicColor.
+         *
+         * _Strongly_ prefer using one of the convenience constructors. This class is
+         * arguably too flexible to ensure it can support any scenario. Functional
+         * arguments allow  overriding without risks that come with subclasses.
+         *
+         * For example, the default behavior of adjust tone at max contrast
+         * to be at a 7.0 ratio with its background is principled and
+         * matches accessibility guidance. That does not mean it's the desired
+         * approach for _every_ design system, and every color pairing,
+         * always, in every case.
+         *
+         * @param name The name of the dynamic color. Defaults to empty.
+         * @param palette Function that provides a TonalPalette given
+         * DynamicScheme. A TonalPalette is defined by a hue and chroma, so this
+         * replaces the need to specify hue/chroma. By providing a tonal palette, when
+         * contrast adjustments are made, intended chroma can be preserved.
+         * @param tone Function that provides a tone, given a DynamicScheme.
+         * @param isBackground Whether this dynamic color is a background, with
+         * some other color as the foreground. Defaults to false.
+         * @param background The background of the dynamic color (as a function of a
+         *     `DynamicScheme`), if it exists.
+         * @param secondBackground A second background of the dynamic color (as a
+         *     function of a `DynamicScheme`), if it
+         * exists.
+         * @param contrastCurve A `ContrastCurve` object specifying how its contrast
+         * against its background should behave in various contrast levels options.
+         * @param toneDeltaPair A `ToneDeltaPair` object specifying a tone delta
+         * constraint between two colors. One of them must be the color being
+         * constructed.
+         */
+        constructor(name, palette, tone, isBackground, background, secondBackground, contrastCurve, toneDeltaPair) {
+          this.name = name;
+          this.palette = palette;
+          this.tone = tone;
+          this.isBackground = isBackground;
+          this.background = background;
+          this.secondBackground = secondBackground;
+          this.contrastCurve = contrastCurve;
+          this.toneDeltaPair = toneDeltaPair;
+          this.hctCache = /* @__PURE__ */ new Map();
+          if (!background && secondBackground) {
+            throw new Error(`Color ${name} has secondBackgrounddefined, but background is not defined.`);
+          }
+          if (!background && contrastCurve) {
+            throw new Error(`Color ${name} has contrastCurvedefined, but background is not defined.`);
+          }
+          if (background && !contrastCurve) {
+            throw new Error(`Color ${name} has backgrounddefined, but contrastCurve is not defined.`);
+          }
+        }
+        /**
+         * Return a ARGB integer (i.e. a hex code).
+         *
+         * @param scheme Defines the conditions of the user interface, for example,
+         * whether or not it is dark mode or light mode, and what the desired
+         * contrast level is.
+         */
+        getArgb(scheme) {
+          return this.getHct(scheme).toInt();
+        }
+        /**
+         * Return a color, expressed in the HCT color space, that this
+         * DynamicColor is under the conditions in scheme.
+         *
+         * @param scheme Defines the conditions of the user interface, for example,
+         * whether or not it is dark mode or light mode, and what the desired
+         * contrast level is.
+         */
+        getHct(scheme) {
+          const cachedAnswer = this.hctCache.get(scheme);
+          if (cachedAnswer != null) {
+            return cachedAnswer;
+          }
+          const tone = this.getTone(scheme);
+          const answer = this.palette(scheme).getHct(tone);
+          if (this.hctCache.size > 4) {
+            this.hctCache.clear();
+          }
+          this.hctCache.set(scheme, answer);
+          return answer;
+        }
+        /**
+         * Return a tone, T in the HCT color space, that this DynamicColor is under
+         * the conditions in scheme.
+         *
+         * @param scheme Defines the conditions of the user interface, for example,
+         * whether or not it is dark mode or light mode, and what the desired
+         * contrast level is.
+         */
+        getTone(scheme) {
+          const decreasingContrast = scheme.contrastLevel < 0;
+          if (this.toneDeltaPair) {
+            const toneDeltaPair = this.toneDeltaPair(scheme);
+            const roleA = toneDeltaPair.roleA;
+            const roleB = toneDeltaPair.roleB;
+            const delta = toneDeltaPair.delta;
+            const polarity = toneDeltaPair.polarity;
+            const stayTogether = toneDeltaPair.stayTogether;
+            const bg = this.background(scheme);
+            const bgTone = bg.getTone(scheme);
+            const aIsNearer = polarity === "nearer" || polarity === "lighter" && !scheme.isDark || polarity === "darker" && scheme.isDark;
+            const nearer = aIsNearer ? roleA : roleB;
+            const farther = aIsNearer ? roleB : roleA;
+            const amNearer = this.name === nearer.name;
+            const expansionDir = scheme.isDark ? 1 : -1;
+            const nContrast = nearer.contrastCurve.getContrast(scheme.contrastLevel);
+            const fContrast = farther.contrastCurve.getContrast(scheme.contrastLevel);
+            const nInitialTone = nearer.tone(scheme);
+            let nTone = Contrast.ratioOfTones(bgTone, nInitialTone) >= nContrast ? nInitialTone : DynamicColor.foregroundTone(bgTone, nContrast);
+            const fInitialTone = farther.tone(scheme);
+            let fTone = Contrast.ratioOfTones(bgTone, fInitialTone) >= fContrast ? fInitialTone : DynamicColor.foregroundTone(bgTone, fContrast);
+            if (decreasingContrast) {
+              nTone = DynamicColor.foregroundTone(bgTone, nContrast);
+              fTone = DynamicColor.foregroundTone(bgTone, fContrast);
+            }
+            if ((fTone - nTone) * expansionDir >= delta) {
+            } else {
+              fTone = clampDouble(0, 100, nTone + delta * expansionDir);
+              if ((fTone - nTone) * expansionDir >= delta) {
+              } else {
+                nTone = clampDouble(0, 100, fTone - delta * expansionDir);
+              }
+            }
+            if (50 <= nTone && nTone < 60) {
+              if (expansionDir > 0) {
+                nTone = 60;
+                fTone = Math.max(fTone, nTone + delta * expansionDir);
+              } else {
+                nTone = 49;
+                fTone = Math.min(fTone, nTone + delta * expansionDir);
+              }
+            } else if (50 <= fTone && fTone < 60) {
+              if (stayTogether) {
+                if (expansionDir > 0) {
+                  nTone = 60;
+                  fTone = Math.max(fTone, nTone + delta * expansionDir);
+                } else {
+                  nTone = 49;
+                  fTone = Math.min(fTone, nTone + delta * expansionDir);
+                }
+              } else {
+                if (expansionDir > 0) {
+                  fTone = 60;
+                } else {
+                  fTone = 49;
+                }
+              }
+            }
+            return amNearer ? nTone : fTone;
+          } else {
+            let answer = this.tone(scheme);
+            if (this.background == null) {
+              return answer;
+            }
+            const bgTone = this.background(scheme).getTone(scheme);
+            const desiredRatio = this.contrastCurve.getContrast(scheme.contrastLevel);
+            if (Contrast.ratioOfTones(bgTone, answer) >= desiredRatio) {
+            } else {
+              answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+            }
+            if (decreasingContrast) {
+              answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+            }
+            if (this.isBackground && 50 <= answer && answer < 60) {
+              if (Contrast.ratioOfTones(49, bgTone) >= desiredRatio) {
+                answer = 49;
+              } else {
+                answer = 60;
+              }
+            }
+            if (this.secondBackground) {
+              const [bg1, bg2] = [this.background, this.secondBackground];
+              const [bgTone1, bgTone2] = [bg1(scheme).getTone(scheme), bg2(scheme).getTone(scheme)];
+              const [upper, lower] = [Math.max(bgTone1, bgTone2), Math.min(bgTone1, bgTone2)];
+              if (Contrast.ratioOfTones(upper, answer) >= desiredRatio && Contrast.ratioOfTones(lower, answer) >= desiredRatio) {
+                return answer;
+              }
+              const lightOption = Contrast.lighter(upper, desiredRatio);
+              const darkOption = Contrast.darker(lower, desiredRatio);
+              const availables = [];
+              if (lightOption !== -1)
+                availables.push(lightOption);
+              if (darkOption !== -1)
+                availables.push(darkOption);
+              const prefersLight = DynamicColor.tonePrefersLightForeground(bgTone1) || DynamicColor.tonePrefersLightForeground(bgTone2);
+              if (prefersLight) {
+                return lightOption < 0 ? 100 : lightOption;
+              }
+              if (availables.length === 1) {
+                return availables[0];
+              }
+              return darkOption < 0 ? 0 : darkOption;
+            }
+            return answer;
+          }
+        }
+        /**
+         * Given a background tone, find a foreground tone, while ensuring they reach
+         * a contrast ratio that is as close to [ratio] as possible.
+         *
+         * @param bgTone Tone in HCT. Range is 0 to 100, undefined behavior when it
+         *     falls outside that range.
+         * @param ratio The contrast ratio desired between bgTone and the return
+         *     value.
+         */
+        static foregroundTone(bgTone, ratio) {
+          const lighterTone = Contrast.lighterUnsafe(bgTone, ratio);
+          const darkerTone = Contrast.darkerUnsafe(bgTone, ratio);
+          const lighterRatio = Contrast.ratioOfTones(lighterTone, bgTone);
+          const darkerRatio = Contrast.ratioOfTones(darkerTone, bgTone);
+          const preferLighter = DynamicColor.tonePrefersLightForeground(bgTone);
+          if (preferLighter) {
+            const negligibleDifference = Math.abs(lighterRatio - darkerRatio) < 0.1 && lighterRatio < ratio && darkerRatio < ratio;
+            return lighterRatio >= ratio || lighterRatio >= darkerRatio || negligibleDifference ? lighterTone : darkerTone;
+          } else {
+            return darkerRatio >= ratio || darkerRatio >= lighterRatio ? darkerTone : lighterTone;
+          }
+        }
+        /**
+         * Returns whether [tone] prefers a light foreground.
+         *
+         * People prefer white foregrounds on ~T60-70. Observed over time, and also
+         * by Andrew Somers during research for APCA.
+         *
+         * T60 used as to create the smallest discontinuity possible when skipping
+         * down to T49 in order to ensure light foregrounds.
+         * Since `tertiaryContainer` in dark monochrome scheme requires a tone of
+         * 60, it should not be adjusted. Therefore, 60 is excluded here.
+         */
+        static tonePrefersLightForeground(tone) {
+          return Math.round(tone) < 60;
+        }
+        /**
+         * Returns whether [tone] can reach a contrast ratio of 4.5 with a lighter
+         * color.
+         */
+        static toneAllowsLightForeground(tone) {
+          return Math.round(tone) <= 49;
+        }
+        /**
+         * Adjust a tone such that white has 4.5 contrast, if the tone is
+         * reasonably close to supporting it.
+         */
+        static enableLightForeground(tone) {
+          if (DynamicColor.tonePrefersLightForeground(tone) && !DynamicColor.toneAllowsLightForeground(tone)) {
+            return 49;
+          }
+          return tone;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/variant.js
+  var Variant;
+  var init_variant = __esm({
+    "node_modules/@material/material-color-utilities/scheme/variant.js"() {
+      (function(Variant2) {
+        Variant2[Variant2["MONOCHROME"] = 0] = "MONOCHROME";
+        Variant2[Variant2["NEUTRAL"] = 1] = "NEUTRAL";
+        Variant2[Variant2["TONAL_SPOT"] = 2] = "TONAL_SPOT";
+        Variant2[Variant2["VIBRANT"] = 3] = "VIBRANT";
+        Variant2[Variant2["EXPRESSIVE"] = 4] = "EXPRESSIVE";
+        Variant2[Variant2["FIDELITY"] = 5] = "FIDELITY";
+        Variant2[Variant2["CONTENT"] = 6] = "CONTENT";
+        Variant2[Variant2["RAINBOW"] = 7] = "RAINBOW";
+        Variant2[Variant2["FRUIT_SALAD"] = 8] = "FRUIT_SALAD";
+      })(Variant || (Variant = {}));
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/dynamiccolor/contrast_curve.js
+  var ContrastCurve;
+  var init_contrast_curve = __esm({
+    "node_modules/@material/material-color-utilities/dynamiccolor/contrast_curve.js"() {
+      init_math_utils();
+      ContrastCurve = class {
+        /**
+         * Creates a `ContrastCurve` object.
+         *
+         * @param low Contrast requirement for contrast level -1.0
+         * @param normal Contrast requirement for contrast level 0.0
+         * @param medium Contrast requirement for contrast level 0.5
+         * @param high Contrast requirement for contrast level 1.0
+         */
+        constructor(low, normal, medium, high) {
+          this.low = low;
+          this.normal = normal;
+          this.medium = medium;
+          this.high = high;
+        }
+        /**
+         * Returns the contrast ratio at a given contrast level.
+         *
+         * @param contrastLevel The contrast level. 0.0 is the default (normal);
+         * -1.0 is the lowest; 1.0 is the highest.
+         * @return The contrast ratio, a number between 1.0 and 21.0.
+         */
+        getContrast(contrastLevel) {
+          if (contrastLevel <= -1) {
+            return this.low;
+          } else if (contrastLevel < 0) {
+            return lerp(this.low, this.normal, (contrastLevel - -1) / 1);
+          } else if (contrastLevel < 0.5) {
+            return lerp(this.normal, this.medium, (contrastLevel - 0) / 0.5);
+          } else if (contrastLevel < 1) {
+            return lerp(this.medium, this.high, (contrastLevel - 0.5) / 0.5);
+          } else {
+            return this.high;
+          }
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/dynamiccolor/tone_delta_pair.js
+  var ToneDeltaPair;
+  var init_tone_delta_pair = __esm({
+    "node_modules/@material/material-color-utilities/dynamiccolor/tone_delta_pair.js"() {
+      ToneDeltaPair = class {
+        /**
+         * Documents a constraint in tone distance between two DynamicColors.
+         *
+         * The polarity is an adjective that describes "A", compared to "B".
+         *
+         * For instance, ToneDeltaPair(A, B, 15, 'darker', stayTogether) states that
+         * A's tone should be at least 15 darker than B's.
+         *
+         * 'nearer' and 'farther' describes closeness to the surface roles. For
+         * instance, ToneDeltaPair(A, B, 10, 'nearer', stayTogether) states that A
+         * should be 10 lighter than B in light mode, and 10 darker than B in dark
+         * mode.
+         *
+         * @param roleA The first role in a pair.
+         * @param roleB The second role in a pair.
+         * @param delta Required difference between tones. Absolute value, negative
+         * values have undefined behavior.
+         * @param polarity The relative relation between tones of roleA and roleB,
+         * as described above.
+         * @param stayTogether Whether these two roles should stay on the same side of
+         * the "awkward zone" (T50-59). This is necessary for certain cases where
+         * one role has two backgrounds.
+         */
+        constructor(roleA, roleB, delta, polarity, stayTogether) {
+          this.roleA = roleA;
+          this.roleB = roleB;
+          this.delta = delta;
+          this.polarity = polarity;
+          this.stayTogether = stayTogether;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js
+  function isFidelity(scheme) {
+    return scheme.variant === Variant.FIDELITY || scheme.variant === Variant.CONTENT;
+  }
+  function isMonochrome(scheme) {
+    return scheme.variant === Variant.MONOCHROME;
+  }
+  function findDesiredChromaByTone(hue, chroma, tone, byDecreasingTone) {
+    let answer = tone;
+    let closestToChroma = Hct.from(hue, chroma, tone);
+    if (closestToChroma.chroma < chroma) {
+      let chromaPeak = closestToChroma.chroma;
+      while (closestToChroma.chroma < chroma) {
+        answer += byDecreasingTone ? -1 : 1;
+        const potentialSolution = Hct.from(hue, chroma, answer);
+        if (chromaPeak > potentialSolution.chroma) {
+          break;
+        }
+        if (Math.abs(potentialSolution.chroma - chroma) < 0.4) {
+          break;
+        }
+        const potentialDelta = Math.abs(potentialSolution.chroma - chroma);
+        const currentDelta = Math.abs(closestToChroma.chroma - chroma);
+        if (potentialDelta < currentDelta) {
+          closestToChroma = potentialSolution;
+        }
+        chromaPeak = Math.max(chromaPeak, potentialSolution.chroma);
+      }
+    }
+    return answer;
+  }
+  function viewingConditionsForAlbers(scheme) {
+    return ViewingConditions.make(
+      /*whitePoint=*/
+      void 0,
+      /*adaptingLuminance=*/
+      void 0,
+      /*backgroundLstar=*/
+      scheme.isDark ? 30 : 80,
+      /*surround=*/
+      void 0,
+      /*discountingIlluminant=*/
+      void 0
+    );
+  }
+  function performAlbers(prealbers, scheme) {
+    const albersd = prealbers.inViewingConditions(viewingConditionsForAlbers(scheme));
+    if (DynamicColor.tonePrefersLightForeground(prealbers.tone) && !DynamicColor.toneAllowsLightForeground(albersd.tone)) {
+      return DynamicColor.enableLightForeground(prealbers.tone);
+    } else {
+      return DynamicColor.enableLightForeground(albersd.tone);
+    }
+  }
+  var MaterialDynamicColors;
+  var init_material_dynamic_colors = __esm({
+    "node_modules/@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js"() {
+      init_dislike_analyzer();
+      init_hct();
+      init_viewing_conditions();
+      init_variant();
+      init_contrast_curve();
+      init_dynamic_color();
+      init_tone_delta_pair();
+      MaterialDynamicColors = class {
+        static highestSurface(s3) {
+          return s3.isDark ? MaterialDynamicColors.surfaceBright : MaterialDynamicColors.surfaceDim;
+        }
+      };
+      MaterialDynamicColors.contentAccentToneDelta = 15;
+      MaterialDynamicColors.primaryPaletteKeyColor = DynamicColor.fromPalette({
+        name: "primary_palette_key_color",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => s3.primaryPalette.keyColor.tone
+      });
+      MaterialDynamicColors.secondaryPaletteKeyColor = DynamicColor.fromPalette({
+        name: "secondary_palette_key_color",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => s3.secondaryPalette.keyColor.tone
+      });
+      MaterialDynamicColors.tertiaryPaletteKeyColor = DynamicColor.fromPalette({
+        name: "tertiary_palette_key_color",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => s3.tertiaryPalette.keyColor.tone
+      });
+      MaterialDynamicColors.neutralPaletteKeyColor = DynamicColor.fromPalette({
+        name: "neutral_palette_key_color",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.neutralPalette.keyColor.tone
+      });
+      MaterialDynamicColors.neutralVariantPaletteKeyColor = DynamicColor.fromPalette({
+        name: "neutral_variant_palette_key_color",
+        palette: (s3) => s3.neutralVariantPalette,
+        tone: (s3) => s3.neutralVariantPalette.keyColor.tone
+      });
+      MaterialDynamicColors.background = DynamicColor.fromPalette({
+        name: "background",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 6 : 98,
+        isBackground: true
+      });
+      MaterialDynamicColors.onBackground = DynamicColor.fromPalette({
+        name: "on_background",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 90 : 10,
+        background: (s3) => MaterialDynamicColors.background,
+        contrastCurve: new ContrastCurve(3, 3, 4.5, 7)
+      });
+      MaterialDynamicColors.surface = DynamicColor.fromPalette({
+        name: "surface",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 6 : 98,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceDim = DynamicColor.fromPalette({
+        name: "surface_dim",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 6 : 87,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceBright = DynamicColor.fromPalette({
+        name: "surface_bright",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 24 : 98,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceContainerLowest = DynamicColor.fromPalette({
+        name: "surface_container_lowest",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 4 : 100,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceContainerLow = DynamicColor.fromPalette({
+        name: "surface_container_low",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 10 : 96,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceContainer = DynamicColor.fromPalette({
+        name: "surface_container",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 12 : 94,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceContainerHigh = DynamicColor.fromPalette({
+        name: "surface_container_high",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 17 : 92,
+        isBackground: true
+      });
+      MaterialDynamicColors.surfaceContainerHighest = DynamicColor.fromPalette({
+        name: "surface_container_highest",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 22 : 90,
+        isBackground: true
+      });
+      MaterialDynamicColors.onSurface = DynamicColor.fromPalette({
+        name: "on_surface",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 90 : 10,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.surfaceVariant = DynamicColor.fromPalette({
+        name: "surface_variant",
+        palette: (s3) => s3.neutralVariantPalette,
+        tone: (s3) => s3.isDark ? 30 : 90,
+        isBackground: true
+      });
+      MaterialDynamicColors.onSurfaceVariant = DynamicColor.fromPalette({
+        name: "on_surface_variant",
+        palette: (s3) => s3.neutralVariantPalette,
+        tone: (s3) => s3.isDark ? 80 : 30,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11)
+      });
+      MaterialDynamicColors.inverseSurface = DynamicColor.fromPalette({
+        name: "inverse_surface",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 90 : 20
+      });
+      MaterialDynamicColors.inverseOnSurface = DynamicColor.fromPalette({
+        name: "inverse_on_surface",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => s3.isDark ? 20 : 95,
+        background: (s3) => MaterialDynamicColors.inverseSurface,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.outline = DynamicColor.fromPalette({
+        name: "outline",
+        palette: (s3) => s3.neutralVariantPalette,
+        tone: (s3) => s3.isDark ? 60 : 50,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1.5, 3, 4.5, 7)
+      });
+      MaterialDynamicColors.outlineVariant = DynamicColor.fromPalette({
+        name: "outline_variant",
+        palette: (s3) => s3.neutralVariantPalette,
+        tone: (s3) => s3.isDark ? 30 : 80,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7)
+      });
+      MaterialDynamicColors.shadow = DynamicColor.fromPalette({
+        name: "shadow",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => 0
+      });
+      MaterialDynamicColors.scrim = DynamicColor.fromPalette({
+        name: "scrim",
+        palette: (s3) => s3.neutralPalette,
+        tone: (s3) => 0
+      });
+      MaterialDynamicColors.surfaceTint = DynamicColor.fromPalette({
+        name: "surface_tint",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => s3.isDark ? 80 : 40,
+        isBackground: true
+      });
+      MaterialDynamicColors.primary = DynamicColor.fromPalette({
+        name: "primary",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 100 : 0;
+          }
+          return s3.isDark ? 80 : 40;
+        },
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onPrimary = DynamicColor.fromPalette({
+        name: "on_primary",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 10 : 90;
+          }
+          return s3.isDark ? 20 : 100;
+        },
+        background: (s3) => MaterialDynamicColors.primary,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.primaryContainer = DynamicColor.fromPalette({
+        name: "primary_container",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => {
+          if (isFidelity(s3)) {
+            return performAlbers(s3.sourceColorHct, s3);
+          }
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 85 : 25;
+          }
+          return s3.isDark ? 30 : 90;
+        },
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.primaryContainer, MaterialDynamicColors.primary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onPrimaryContainer = DynamicColor.fromPalette({
+        name: "on_primary_container",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => {
+          if (isFidelity(s3)) {
+            return DynamicColor.foregroundTone(MaterialDynamicColors.primaryContainer.tone(s3), 4.5);
+          }
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 0 : 100;
+          }
+          return s3.isDark ? 90 : 10;
+        },
+        background: (s3) => MaterialDynamicColors.primaryContainer,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.inversePrimary = DynamicColor.fromPalette({
+        name: "inverse_primary",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => s3.isDark ? 40 : 80,
+        background: (s3) => MaterialDynamicColors.inverseSurface,
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11)
+      });
+      MaterialDynamicColors.secondary = DynamicColor.fromPalette({
+        name: "secondary",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => s3.isDark ? 80 : 40,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onSecondary = DynamicColor.fromPalette({
+        name: "on_secondary",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 10 : 100;
+          } else {
+            return s3.isDark ? 20 : 100;
+          }
+        },
+        background: (s3) => MaterialDynamicColors.secondary,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.secondaryContainer = DynamicColor.fromPalette({
+        name: "secondary_container",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => {
+          const initialTone = s3.isDark ? 30 : 90;
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 30 : 85;
+          }
+          if (!isFidelity(s3)) {
+            return initialTone;
+          }
+          let answer = findDesiredChromaByTone(s3.secondaryPalette.hue, s3.secondaryPalette.chroma, initialTone, s3.isDark ? false : true);
+          answer = performAlbers(s3.secondaryPalette.getHct(answer), s3);
+          return answer;
+        },
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.secondaryContainer, MaterialDynamicColors.secondary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onSecondaryContainer = DynamicColor.fromPalette({
+        name: "on_secondary_container",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => {
+          if (!isFidelity(s3)) {
+            return s3.isDark ? 90 : 10;
+          }
+          return DynamicColor.foregroundTone(MaterialDynamicColors.secondaryContainer.tone(s3), 4.5);
+        },
+        background: (s3) => MaterialDynamicColors.secondaryContainer,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.tertiary = DynamicColor.fromPalette({
+        name: "tertiary",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 90 : 25;
+          }
+          return s3.isDark ? 80 : 40;
+        },
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onTertiary = DynamicColor.fromPalette({
+        name: "on_tertiary",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 10 : 90;
+          }
+          return s3.isDark ? 20 : 100;
+        },
+        background: (s3) => MaterialDynamicColors.tertiary,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.tertiaryContainer = DynamicColor.fromPalette({
+        name: "tertiary_container",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 60 : 49;
+          }
+          if (!isFidelity(s3)) {
+            return s3.isDark ? 30 : 90;
+          }
+          const albersTone = performAlbers(s3.tertiaryPalette.getHct(s3.sourceColorHct.tone), s3);
+          const proposedHct = s3.tertiaryPalette.getHct(albersTone);
+          return DislikeAnalyzer.fixIfDisliked(proposedHct).tone;
+        },
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.tertiaryContainer, MaterialDynamicColors.tertiary, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onTertiaryContainer = DynamicColor.fromPalette({
+        name: "on_tertiary_container",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => {
+          if (isMonochrome(s3)) {
+            return s3.isDark ? 0 : 100;
+          }
+          if (!isFidelity(s3)) {
+            return s3.isDark ? 90 : 10;
+          }
+          return DynamicColor.foregroundTone(MaterialDynamicColors.tertiaryContainer.tone(s3), 4.5);
+        },
+        background: (s3) => MaterialDynamicColors.tertiaryContainer,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.error = DynamicColor.fromPalette({
+        name: "error",
+        palette: (s3) => s3.errorPalette,
+        tone: (s3) => s3.isDark ? 80 : 40,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onError = DynamicColor.fromPalette({
+        name: "on_error",
+        palette: (s3) => s3.errorPalette,
+        tone: (s3) => s3.isDark ? 20 : 100,
+        background: (s3) => MaterialDynamicColors.error,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.errorContainer = DynamicColor.fromPalette({
+        name: "error_container",
+        palette: (s3) => s3.errorPalette,
+        tone: (s3) => s3.isDark ? 30 : 90,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.errorContainer, MaterialDynamicColors.error, 15, "nearer", false)
+      });
+      MaterialDynamicColors.onErrorContainer = DynamicColor.fromPalette({
+        name: "on_error_container",
+        palette: (s3) => s3.errorPalette,
+        tone: (s3) => s3.isDark ? 90 : 10,
+        background: (s3) => MaterialDynamicColors.errorContainer,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.primaryFixed = DynamicColor.fromPalette({
+        name: "primary_fixed",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 40 : 90,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.primaryFixedDim = DynamicColor.fromPalette({
+        name: "primary_fixed_dim",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 30 : 80,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.primaryFixed, MaterialDynamicColors.primaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.onPrimaryFixed = DynamicColor.fromPalette({
+        name: "on_primary_fixed",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 100 : 10,
+        background: (s3) => MaterialDynamicColors.primaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.primaryFixed,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.onPrimaryFixedVariant = DynamicColor.fromPalette({
+        name: "on_primary_fixed_variant",
+        palette: (s3) => s3.primaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 90 : 30,
+        background: (s3) => MaterialDynamicColors.primaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.primaryFixed,
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11)
+      });
+      MaterialDynamicColors.secondaryFixed = DynamicColor.fromPalette({
+        name: "secondary_fixed",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 80 : 90,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.secondaryFixedDim = DynamicColor.fromPalette({
+        name: "secondary_fixed_dim",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 70 : 80,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.secondaryFixed, MaterialDynamicColors.secondaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.onSecondaryFixed = DynamicColor.fromPalette({
+        name: "on_secondary_fixed",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => 10,
+        background: (s3) => MaterialDynamicColors.secondaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.secondaryFixed,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.onSecondaryFixedVariant = DynamicColor.fromPalette({
+        name: "on_secondary_fixed_variant",
+        palette: (s3) => s3.secondaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 25 : 30,
+        background: (s3) => MaterialDynamicColors.secondaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.secondaryFixed,
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11)
+      });
+      MaterialDynamicColors.tertiaryFixed = DynamicColor.fromPalette({
+        name: "tertiary_fixed",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 40 : 90,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.tertiaryFixedDim = DynamicColor.fromPalette({
+        name: "tertiary_fixed_dim",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 30 : 80,
+        isBackground: true,
+        background: (s3) => MaterialDynamicColors.highestSurface(s3),
+        contrastCurve: new ContrastCurve(1, 1, 3, 7),
+        toneDeltaPair: (s3) => new ToneDeltaPair(MaterialDynamicColors.tertiaryFixed, MaterialDynamicColors.tertiaryFixedDim, 10, "lighter", true)
+      });
+      MaterialDynamicColors.onTertiaryFixed = DynamicColor.fromPalette({
+        name: "on_tertiary_fixed",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 100 : 10,
+        background: (s3) => MaterialDynamicColors.tertiaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.tertiaryFixed,
+        contrastCurve: new ContrastCurve(4.5, 7, 11, 21)
+      });
+      MaterialDynamicColors.onTertiaryFixedVariant = DynamicColor.fromPalette({
+        name: "on_tertiary_fixed_variant",
+        palette: (s3) => s3.tertiaryPalette,
+        tone: (s3) => isMonochrome(s3) ? 90 : 30,
+        background: (s3) => MaterialDynamicColors.tertiaryFixedDim,
+        secondBackground: (s3) => MaterialDynamicColors.tertiaryFixed,
+        contrastCurve: new ContrastCurve(3, 4.5, 7, 11)
+      });
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/palettes/tonal_palette.js
+  var TonalPalette;
+  var init_tonal_palette = __esm({
+    "node_modules/@material/material-color-utilities/palettes/tonal_palette.js"() {
+      init_hct();
+      TonalPalette = class {
+        /**
+         * @param argb ARGB representation of a color
+         * @return Tones matching that color's hue and chroma.
+         */
+        static fromInt(argb) {
+          const hct = Hct.fromInt(argb);
+          return TonalPalette.fromHct(hct);
+        }
+        /**
+         * @param hct Hct
+         * @return Tones matching that color's hue and chroma.
+         */
+        static fromHct(hct) {
+          return new TonalPalette(hct.hue, hct.chroma, hct);
+        }
+        /**
+         * @param hue HCT hue
+         * @param chroma HCT chroma
+         * @return Tones matching hue and chroma.
+         */
+        static fromHueAndChroma(hue, chroma) {
+          return new TonalPalette(hue, chroma, TonalPalette.createKeyColor(hue, chroma));
+        }
+        constructor(hue, chroma, keyColor) {
+          this.hue = hue;
+          this.chroma = chroma;
+          this.keyColor = keyColor;
+          this.cache = /* @__PURE__ */ new Map();
+        }
+        static createKeyColor(hue, chroma) {
+          const startTone = 50;
+          let smallestDeltaHct = Hct.from(hue, chroma, startTone);
+          let smallestDelta = Math.abs(smallestDeltaHct.chroma - chroma);
+          for (let delta = 1; delta < 50; delta += 1) {
+            if (Math.round(chroma) === Math.round(smallestDeltaHct.chroma)) {
+              return smallestDeltaHct;
+            }
+            const hctAdd = Hct.from(hue, chroma, startTone + delta);
+            const hctAddDelta = Math.abs(hctAdd.chroma - chroma);
+            if (hctAddDelta < smallestDelta) {
+              smallestDelta = hctAddDelta;
+              smallestDeltaHct = hctAdd;
+            }
+            const hctSubtract = Hct.from(hue, chroma, startTone - delta);
+            const hctSubtractDelta = Math.abs(hctSubtract.chroma - chroma);
+            if (hctSubtractDelta < smallestDelta) {
+              smallestDelta = hctSubtractDelta;
+              smallestDeltaHct = hctSubtract;
+            }
+          }
+          return smallestDeltaHct;
+        }
+        /**
+         * @param tone HCT tone, measured from 0 to 100.
+         * @return ARGB representation of a color with that tone.
+         */
+        tone(tone) {
+          let argb = this.cache.get(tone);
+          if (argb === void 0) {
+            argb = Hct.from(this.hue, this.chroma, tone).toInt();
+            this.cache.set(tone, argb);
+          }
+          return argb;
+        }
+        /**
+         * @param tone HCT tone.
+         * @return HCT representation of a color with that tone.
+         */
+        getHct(tone) {
+          return Hct.fromInt(this.tone(tone));
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/palettes/core_palette.js
+  var init_core_palette = __esm({
+    "node_modules/@material/material-color-utilities/palettes/core_palette.js"() {
+      init_hct();
+      init_tonal_palette();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/quantize/lab_point_provider.js
+  var init_lab_point_provider = __esm({
+    "node_modules/@material/material-color-utilities/quantize/lab_point_provider.js"() {
+      init_color_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/quantize/quantizer_wsmeans.js
+  var init_quantizer_wsmeans = __esm({
+    "node_modules/@material/material-color-utilities/quantize/quantizer_wsmeans.js"() {
+      init_lab_point_provider();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/quantize/quantizer_map.js
+  var init_quantizer_map = __esm({
+    "node_modules/@material/material-color-utilities/quantize/quantizer_map.js"() {
+      init_color_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/quantize/quantizer_wu.js
+  var init_quantizer_wu = __esm({
+    "node_modules/@material/material-color-utilities/quantize/quantizer_wu.js"() {
+      init_color_utils();
+      init_quantizer_map();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/quantize/quantizer_celebi.js
+  var init_quantizer_celebi = __esm({
+    "node_modules/@material/material-color-utilities/quantize/quantizer_celebi.js"() {
+      init_quantizer_wsmeans();
+      init_quantizer_wu();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js
+  var DynamicScheme;
+  var init_dynamic_scheme = __esm({
+    "node_modules/@material/material-color-utilities/scheme/dynamic_scheme.js"() {
+      init_hct();
+      init_tonal_palette();
+      init_math_utils();
+      DynamicScheme = class {
+        constructor(args) {
+          this.sourceColorArgb = args.sourceColorArgb;
+          this.variant = args.variant;
+          this.contrastLevel = args.contrastLevel;
+          this.isDark = args.isDark;
+          this.sourceColorHct = Hct.fromInt(args.sourceColorArgb);
+          this.primaryPalette = args.primaryPalette;
+          this.secondaryPalette = args.secondaryPalette;
+          this.tertiaryPalette = args.tertiaryPalette;
+          this.neutralPalette = args.neutralPalette;
+          this.neutralVariantPalette = args.neutralVariantPalette;
+          this.errorPalette = TonalPalette.fromHueAndChroma(25, 84);
+        }
+        /**
+         * Support design spec'ing Dynamic Color by schemes that specify hue
+         * rotations that should be applied at certain breakpoints.
+         * @param sourceColor the source color of the theme, in HCT.
+         * @param hues The "breakpoints", i.e. the hues at which a rotation should
+         * be apply.
+         * @param rotations The rotation that should be applied when source color's
+         * hue is >= the same index in hues array, and <= the hue at the next index
+         * in hues array.
+         */
+        static getRotatedHue(sourceColor, hues, rotations) {
+          const sourceHue = sourceColor.hue;
+          if (hues.length !== rotations.length) {
+            throw new Error(`mismatch between hue length ${hues.length} & rotations ${rotations.length}`);
+          }
+          if (rotations.length === 1) {
+            return sanitizeDegreesDouble(sourceColor.hue + rotations[0]);
+          }
+          const size = hues.length;
+          for (let i3 = 0; i3 <= size - 2; i3++) {
+            const thisHue = hues[i3];
+            const nextHue = hues[i3 + 1];
+            if (thisHue < sourceHue && sourceHue < nextHue) {
+              return sanitizeDegreesDouble(sourceHue + rotations[i3]);
+            }
+          }
+          return sourceHue;
+        }
+      };
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme.js
+  var init_scheme = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme.js"() {
+      init_core_palette();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_android.js
+  var init_scheme_android = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_android.js"() {
+      init_core_palette();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/temperature/temperature_cache.js
+  var init_temperature_cache = __esm({
+    "node_modules/@material/material-color-utilities/temperature/temperature_cache.js"() {
+      init_hct();
+      init_color_utils();
+      init_math_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_content.js
+  var init_scheme_content = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_content.js"() {
+      init_dislike_analyzer();
+      init_tonal_palette();
+      init_temperature_cache();
+      init_dynamic_scheme();
+      init_variant();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_expressive.js
+  var SchemeExpressive;
+  var init_scheme_expressive = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_expressive.js"() {
+      init_tonal_palette();
+      init_math_utils();
+      init_dynamic_scheme();
+      init_variant();
+      SchemeExpressive = class extends DynamicScheme {
+        constructor(sourceColorHct, isDark, contrastLevel) {
+          super({
+            sourceColorArgb: sourceColorHct.toInt(),
+            variant: Variant.EXPRESSIVE,
+            contrastLevel,
+            isDark,
+            primaryPalette: TonalPalette.fromHueAndChroma(sanitizeDegreesDouble(sourceColorHct.hue + 240), 40),
+            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.secondaryRotations), 24),
+            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.tertiaryRotations), 32),
+            neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 8),
+            neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 12)
+          });
+        }
+      };
+      SchemeExpressive.hues = [
+        0,
+        21,
+        51,
+        121,
+        151,
+        191,
+        271,
+        321,
+        360
+      ];
+      SchemeExpressive.secondaryRotations = [
+        45,
+        95,
+        45,
+        20,
+        45,
+        90,
+        45,
+        45,
+        45
+      ];
+      SchemeExpressive.tertiaryRotations = [
+        120,
+        120,
+        20,
+        45,
+        20,
+        15,
+        20,
+        120,
+        120
+      ];
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_fidelity.js
+  var init_scheme_fidelity = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_fidelity.js"() {
+      init_dislike_analyzer();
+      init_tonal_palette();
+      init_temperature_cache();
+      init_dynamic_scheme();
+      init_variant();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_monochrome.js
+  var init_scheme_monochrome = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_monochrome.js"() {
+      init_tonal_palette();
+      init_dynamic_scheme();
+      init_variant();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_neutral.js
+  var init_scheme_neutral = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_neutral.js"() {
+      init_tonal_palette();
+      init_dynamic_scheme();
+      init_variant();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_tonal_spot.js
+  var init_scheme_tonal_spot = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_tonal_spot.js"() {
+      init_tonal_palette();
+      init_math_utils();
+      init_dynamic_scheme();
+      init_variant();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/scheme/scheme_vibrant.js
+  var SchemeVibrant;
+  var init_scheme_vibrant = __esm({
+    "node_modules/@material/material-color-utilities/scheme/scheme_vibrant.js"() {
+      init_tonal_palette();
+      init_dynamic_scheme();
+      init_variant();
+      SchemeVibrant = class extends DynamicScheme {
+        constructor(sourceColorHct, isDark, contrastLevel) {
+          super({
+            sourceColorArgb: sourceColorHct.toInt(),
+            variant: Variant.VIBRANT,
+            contrastLevel,
+            isDark,
+            primaryPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 200),
+            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.secondaryRotations), 24),
+            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.tertiaryRotations), 32),
+            neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10),
+            neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12)
+          });
+        }
+      };
+      SchemeVibrant.hues = [
+        0,
+        41,
+        61,
+        101,
+        131,
+        181,
+        251,
+        301,
+        360
+      ];
+      SchemeVibrant.secondaryRotations = [
+        18,
+        15,
+        10,
+        12,
+        15,
+        18,
+        15,
+        12,
+        12
+      ];
+      SchemeVibrant.tertiaryRotations = [
+        35,
+        30,
+        20,
+        25,
+        30,
+        35,
+        30,
+        25,
+        25
+      ];
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/score/score.js
+  function compare(a3, b3) {
+    if (a3.score > b3.score) {
+      return -1;
+    } else if (a3.score < b3.score) {
+      return 1;
+    }
+    return 0;
+  }
+  var SCORE_OPTION_DEFAULTS, Score;
+  var init_score = __esm({
+    "node_modules/@material/material-color-utilities/score/score.js"() {
+      init_hct();
+      init_math_utils();
+      SCORE_OPTION_DEFAULTS = {
+        desired: 4,
+        fallbackColorARGB: 4282549748,
+        filter: true
+        // Avoid unsuitable colors.
+      };
+      Score = class {
+        constructor() {
+        }
+        /**
+         * Given a map with keys of colors and values of how often the color appears,
+         * rank the colors based on suitability for being used for a UI theme.
+         *
+         * @param colorsToPopulation map with keys of colors and values of how often
+         *     the color appears, usually from a source image.
+         * @param {ScoreOptions} options optional parameters.
+         * @return Colors sorted by suitability for a UI theme. The most suitable
+         *     color is the first item, the least suitable is the last. There will
+         *     always be at least one color returned. If all the input colors
+         *     were not suitable for a theme, a default fallback color will be
+         *     provided, Google Blue.
+         */
+        static score(colorsToPopulation, options) {
+          const { desired, fallbackColorARGB, filter } = __spreadValues(__spreadValues({}, SCORE_OPTION_DEFAULTS), options);
+          const colorsHct = [];
+          const huePopulation = new Array(360).fill(0);
+          let populationSum = 0;
+          for (const [argb, population] of colorsToPopulation.entries()) {
+            const hct = Hct.fromInt(argb);
+            colorsHct.push(hct);
+            const hue = Math.floor(hct.hue);
+            huePopulation[hue] += population;
+            populationSum += population;
+          }
+          const hueExcitedProportions = new Array(360).fill(0);
+          for (let hue = 0; hue < 360; hue++) {
+            const proportion = huePopulation[hue] / populationSum;
+            for (let i3 = hue - 14; i3 < hue + 16; i3++) {
+              const neighborHue = sanitizeDegreesInt(i3);
+              hueExcitedProportions[neighborHue] += proportion;
+            }
+          }
+          const scoredHct = new Array();
+          for (const hct of colorsHct) {
+            const hue = sanitizeDegreesInt(Math.round(hct.hue));
+            const proportion = hueExcitedProportions[hue];
+            if (filter && (hct.chroma < Score.CUTOFF_CHROMA || proportion <= Score.CUTOFF_EXCITED_PROPORTION)) {
+              continue;
+            }
+            const proportionScore = proportion * 100 * Score.WEIGHT_PROPORTION;
+            const chromaWeight = hct.chroma < Score.TARGET_CHROMA ? Score.WEIGHT_CHROMA_BELOW : Score.WEIGHT_CHROMA_ABOVE;
+            const chromaScore = (hct.chroma - Score.TARGET_CHROMA) * chromaWeight;
+            const score = proportionScore + chromaScore;
+            scoredHct.push({ hct, score });
+          }
+          scoredHct.sort(compare);
+          const chosenColors = [];
+          for (let differenceDegrees2 = 90; differenceDegrees2 >= 15; differenceDegrees2--) {
+            chosenColors.length = 0;
+            for (const { hct } of scoredHct) {
+              const duplicateHue = chosenColors.find((chosenHct) => {
+                return differenceDegrees(hct.hue, chosenHct.hue) < differenceDegrees2;
+              });
+              if (!duplicateHue) {
+                chosenColors.push(hct);
+              }
+              if (chosenColors.length >= desired)
+                break;
+            }
+            if (chosenColors.length >= desired)
+              break;
+          }
+          const colors = [];
+          if (chosenColors.length === 0) {
+            colors.push(fallbackColorARGB);
+          }
+          for (const chosenHct of chosenColors) {
+            colors.push(chosenHct.toInt());
+          }
+          return colors;
+        }
+      };
+      Score.TARGET_CHROMA = 48;
+      Score.WEIGHT_PROPORTION = 0.7;
+      Score.WEIGHT_CHROMA_ABOVE = 0.3;
+      Score.WEIGHT_CHROMA_BELOW = 0.1;
+      Score.CUTOFF_CHROMA = 5;
+      Score.CUTOFF_EXCITED_PROPORTION = 0.01;
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/utils/string_utils.js
+  function hexFromArgb(argb) {
+    const r3 = redFromArgb(argb);
+    const g3 = greenFromArgb(argb);
+    const b3 = blueFromArgb(argb);
+    const outParts = [r3.toString(16), g3.toString(16), b3.toString(16)];
+    for (const [i3, part] of outParts.entries()) {
+      if (part.length === 1) {
+        outParts[i3] = "0" + part;
+      }
+    }
+    return "#" + outParts.join("");
+  }
+  function argbFromHex(hex) {
+    hex = hex.replace("#", "");
+    const isThree = hex.length === 3;
+    const isSix = hex.length === 6;
+    const isEight = hex.length === 8;
+    if (!isThree && !isSix && !isEight) {
+      throw new Error("unexpected hex " + hex);
+    }
+    let r3 = 0;
+    let g3 = 0;
+    let b3 = 0;
+    if (isThree) {
+      r3 = parseIntHex(hex.slice(0, 1).repeat(2));
+      g3 = parseIntHex(hex.slice(1, 2).repeat(2));
+      b3 = parseIntHex(hex.slice(2, 3).repeat(2));
+    } else if (isSix) {
+      r3 = parseIntHex(hex.slice(0, 2));
+      g3 = parseIntHex(hex.slice(2, 4));
+      b3 = parseIntHex(hex.slice(4, 6));
+    } else if (isEight) {
+      r3 = parseIntHex(hex.slice(2, 4));
+      g3 = parseIntHex(hex.slice(4, 6));
+      b3 = parseIntHex(hex.slice(6, 8));
+    }
+    return (255 << 24 | (r3 & 255) << 16 | (g3 & 255) << 8 | b3 & 255) >>> 0;
+  }
+  function parseIntHex(value2) {
+    return parseInt(value2, 16);
+  }
+  var init_string_utils = __esm({
+    "node_modules/@material/material-color-utilities/utils/string_utils.js"() {
+      init_color_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/utils/image_utils.js
+  var init_image_utils = __esm({
+    "node_modules/@material/material-color-utilities/utils/image_utils.js"() {
+      init_quantizer_celebi();
+      init_score();
+      init_color_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/utils/theme_utils.js
+  var init_theme_utils = __esm({
+    "node_modules/@material/material-color-utilities/utils/theme_utils.js"() {
+      init_blend();
+      init_core_palette();
+      init_scheme();
+      init_image_utils();
+      init_string_utils();
+    }
+  });
+
+  // node_modules/@material/material-color-utilities/index.js
+  var init_material_color_utilities = __esm({
+    "node_modules/@material/material-color-utilities/index.js"() {
+      init_blend();
+      init_contrast();
+      init_dislike_analyzer();
+      init_dynamic_color();
+      init_material_dynamic_colors();
+      init_cam16();
+      init_hct();
+      init_viewing_conditions();
+      init_core_palette();
+      init_tonal_palette();
+      init_quantizer_celebi();
+      init_quantizer_map();
+      init_quantizer_wsmeans();
+      init_quantizer_wu();
+      init_dynamic_scheme();
+      init_scheme();
+      init_scheme_android();
+      init_scheme_content();
+      init_scheme_expressive();
+      init_scheme_fidelity();
+      init_scheme_monochrome();
+      init_scheme_neutral();
+      init_scheme_tonal_spot();
+      init_scheme_vibrant();
+      init_score();
+      init_temperature_cache();
+      init_color_utils();
+      init_math_utils();
+      init_string_utils();
+      init_image_utils();
+      init_theme_utils();
+    }
+  });
+
+  // node_modules/hex-rgb/index.js
+  function hexRgb(hex, options = {}) {
+    if (typeof hex !== "string" || nonHexChars.test(hex) || !validHexSize.test(hex)) {
+      throw new TypeError("Expected a valid hex string");
+    }
+    hex = hex.replace(/^#/, "");
+    let alphaFromHex = 1;
+    if (hex.length === 8) {
+      alphaFromHex = Number.parseInt(hex.slice(6, 8), 16) / 255;
+      hex = hex.slice(0, 6);
+    }
+    if (hex.length === 4) {
+      alphaFromHex = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
+      hex = hex.slice(0, 3);
+    }
+    if (hex.length === 3) {
+      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    const number = Number.parseInt(hex, 16);
+    const red = number >> 16;
+    const green = number >> 8 & 255;
+    const blue = number & 255;
+    const alpha = typeof options.alpha === "number" ? options.alpha : alphaFromHex;
+    if (options.format === "array") {
+      return [red, green, blue, alpha];
+    }
+    if (options.format === "css") {
+      const alphaString = alpha === 1 ? "" : ` / ${Number((alpha * 100).toFixed(2))}%`;
+      return `rgb(${red} ${green} ${blue}${alphaString})`;
+    }
+    return { red, green, blue, alpha };
+  }
+  var hexCharacters, match3or4Hex, match6or8Hex, nonHexChars, validHexSize;
+  var init_hex_rgb = __esm({
+    "node_modules/hex-rgb/index.js"() {
+      hexCharacters = "a-f\\d";
+      match3or4Hex = `#?[${hexCharacters}]{3}[${hexCharacters}]?`;
+      match6or8Hex = `#?[${hexCharacters}]{6}([${hexCharacters}]{2})?`;
+      nonHexChars = new RegExp(`[^#${hexCharacters}]`, "gi");
+      validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, "i");
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/convert-hex-color-to-rgb-color.js
+  function convertHexColorToRgbColor(hexColor) {
+    if (hexColor.length !== 3 && hexColor.length !== 6) {
+      return null;
+    }
+    try {
+      const { red, green, blue } = hexRgb(hexColor);
+      return {
+        b: blue / 255,
+        g: green / 255,
+        r: red / 255
+      };
+    } catch (e3) {
+      return null;
+    }
+  }
+  var init_convert_hex_color_to_rgb_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/convert-hex-color-to-rgb-color.js"() {
+      init_hex_rgb();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js
+  var NAMED_COLORS;
+  var init_named_colors = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js"() {
+      NAMED_COLORS = {
+        aliceblue: "F0F8FF",
+        antiquewhite: "FAEBD7",
+        aqua: "00FFFF",
+        aquamarine: "7FFFD4",
+        azure: "F0FFFF",
+        beige: "F5F5DC",
+        bisque: "FFE4C4",
+        black: "000000",
+        blanchedalmond: "FFEBCD",
+        blue: "0000FF",
+        blueviolet: "8A2BE2",
+        brown: "A52A2A",
+        burlywood: "DEB887",
+        cadetblue: "5F9EA0",
+        chartreuse: "7FFF00",
+        chocolate: "D2691E",
+        coral: "FF7F50",
+        cornflowerblue: "6495ED",
+        cornsilk: "FFF8DC",
+        crimson: "DC143C",
+        cyan: "00FFFF",
+        darkblue: "00008B",
+        darkcyan: "008B8B",
+        darkgoldenrod: "B8860B",
+        darkgray: "A9A9A9",
+        darkgreen: "006400",
+        darkgrey: "A9A9A9",
+        darkkhaki: "BDB76B",
+        darkmagenta: "8B008B",
+        darkolivegreen: "556B2F",
+        darkorange: "FF8C00",
+        darkorchid: "9932CC",
+        darkred: "8B0000",
+        darksalmon: "E9967A",
+        darkseagreen: "8FBC8F",
+        darkslateblue: "483D8B",
+        darkslategray: "2F4F4F",
+        darkslategrey: "2F4F4F",
+        darkturquoise: "00CED1",
+        darkviolet: "9400D3",
+        deeppink: "FF1493",
+        deepskyblue: "00BFFF",
+        dimgray: "696969",
+        dimgrey: "696969",
+        dodgerblue: "1E90FF",
+        firebrick: "B22222",
+        floralwhite: "FFFAF0",
+        forestgreen: "228B22",
+        fuchsia: "FF00FF",
+        gainsboro: "DCDCDC",
+        ghostwhite: "F8F8FF",
+        gold: "FFD700",
+        goldenrod: "DAA520",
+        gray: "808080",
+        green: "008000",
+        greenyellow: "ADFF2F",
+        grey: "808080",
+        honeydew: "F0FFF0",
+        hotpink: "FF69B4",
+        indianred: "CD5C5C",
+        indigo: "4B0082",
+        ivory: "FFFFF0",
+        khaki: "F0E68C",
+        lavender: "E6E6FA",
+        lavenderblush: "FFF0F5",
+        lawngreen: "7CFC00",
+        lemonchiffon: "FFFACD",
+        lightblue: "ADD8E6",
+        lightcoral: "F08080",
+        lightcyan: "E0FFFF",
+        lightgoldenrodyellow: "FAFAD2",
+        lightgray: "D3D3D3",
+        lightgreen: "90EE90",
+        lightgrey: "D3D3D3",
+        lightpink: "FFB6C1",
+        lightsalmon: "FFA07A",
+        lightseagreen: "20B2AA",
+        lightskyblue: "87CEFA",
+        lightslategray: "778899",
+        lightslategrey: "778899",
+        lightsteelblue: "B0C4DE",
+        lightyellow: "FFFFE0",
+        lime: "00FF00",
+        limegreen: "32CD32",
+        linen: "FAF0E6",
+        magenta: "FF00FF",
+        maroon: "800000",
+        mediumaquamarine: "66CDAA",
+        mediumblue: "0000CD",
+        mediumorchid: "BA55D3",
+        mediumpurple: "9370DB",
+        mediumseagreen: "3CB371",
+        mediumslateblue: "7B68EE",
+        mediumspringgreen: "00FA9A",
+        mediumturquoise: "48D1CC",
+        mediumvioletred: "C71585",
+        midnightblue: "191970",
+        mintcream: "F5FFFA",
+        mistyrose: "FFE4E1",
+        moccasin: "FFE4B5",
+        navajowhite: "FFDEAD",
+        navy: "000080",
+        oldlace: "FDF5E6",
+        olive: "808000",
+        olivedrab: "6B8E23",
+        orange: "FFA500",
+        orangered: "FF4500",
+        orchid: "DA70D6",
+        palegoldenrod: "EEE8AA",
+        palegreen: "98FB98",
+        paleturquoise: "AFEEEE",
+        palevioletred: "DB7093",
+        papayawhip: "FFEFD5",
+        peachpuff: "FFDAB9",
+        peru: "CD853F",
+        pink: "FFC0CB",
+        plum: "DDA0DD",
+        powderblue: "B0E0E6",
+        purple: "800080",
+        rebeccapurple: "663399",
+        red: "FF0000",
+        rosybrown: "BC8F8F",
+        royalblue: "4169E1",
+        saddlebrown: "8B4513",
+        salmon: "FA8072",
+        sandybrown: "F4A460",
+        seagreen: "2E8B57",
+        seashell: "FFF5EE",
+        sienna: "A0522D",
+        silver: "C0C0C0",
+        skyblue: "87CEEB",
+        slateblue: "6A5ACD",
+        slategray: "708090",
+        slategrey: "708090",
+        snow: "FFFAFA",
+        springgreen: "00FF7F",
+        steelblue: "4682B4",
+        tan: "D2B48C",
+        teal: "008080",
+        thistle: "D8BFD8",
+        tomato: "FF6347",
+        turquoise: "40E0D0",
+        violet: "EE82EE",
+        wheat: "F5DEB3",
+        white: "FFFFFF",
+        whitesmoke: "F5F5F5",
+        yellow: "FFFF00",
+        yellowgreen: "9ACD32"
+      };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js
+  function convertNamedColorToHexColor(namedColor) {
+    const hexColor = NAMED_COLORS[namedColor.toLowerCase()];
+    if (typeof hexColor === "undefined") {
+      return null;
+    }
+    return hexColor;
+  }
+  var init_convert_named_color_to_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js"() {
+      init_named_colors();
+    }
+  });
+
+  // node_modules/rgb-hex/index.js
+  function rgbHex(red, green, blue, alpha) {
+    const isPercent = (red + (alpha || "")).toString().includes("%");
+    if (typeof red === "string") {
+      [red, green, blue, alpha] = red.match(/(0?\.?\d+)%?\b/g).map((component) => Number(component));
+    } else if (alpha !== void 0) {
+      alpha = Number.parseFloat(alpha);
+    }
+    if (typeof red !== "number" || typeof green !== "number" || typeof blue !== "number" || red > 255 || green > 255 || blue > 255) {
+      throw new TypeError("Expected three numbers below 256");
+    }
+    if (typeof alpha === "number") {
+      if (!isPercent && alpha >= 0 && alpha <= 1) {
+        alpha = Math.round(255 * alpha);
+      } else if (isPercent && alpha >= 0 && alpha <= 100) {
+        alpha = Math.round(255 * alpha / 100);
+      } else {
+        throw new TypeError(`Expected alpha value (${alpha}) as a fraction or percentage`);
+      }
+      alpha = (alpha | 1 << 8).toString(16).slice(1);
+    } else {
+      alpha = "";
+    }
+    return (blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1) + alpha;
+  }
+  var init_rgb_hex = __esm({
+    "node_modules/rgb-hex/index.js"() {
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js
+  function convertRgbColorToHexColor(rgbColor) {
+    const { r: r3, g: g3, b: b3 } = rgbColor;
+    if (r3 < 0 || r3 > 1 || g3 < 0 || g3 > 1 || b3 < 0 || b3 > 1) {
+      return null;
+    }
+    try {
+      return rgbHex(Math.round(r3 * 255), Math.round(g3 * 255), Math.round(b3 * 255)).toUpperCase();
+    } catch (e3) {
+      return null;
+    }
+  }
+  var init_convert_rgb_color_to_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js"() {
+      init_rgb_hex();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js
+  function isValidHexColor(hexColor) {
+    return convertHexColorToRgbColor(hexColor) !== null;
+  }
+  var init_is_valid_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js"() {
+      init_convert_hex_color_to_rgb_color();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/mixed-values.js
+  var MIXED_NUMBER, MIXED_STRING;
+  var init_mixed_values = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/mixed-values.js"() {
+      MIXED_NUMBER = 999999999999999;
+      MIXED_STRING = "999999999999999";
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js
+  var floatOperandRegex, integerOperandRegex, operatorRegex, operatorSuffixRegex, numbersRegex, invalidCharactersRegex;
+  var init_regex = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js"() {
+      floatOperandRegex = /^-?\d*(?:\.\d*)?$/;
+      integerOperandRegex = /^-?\d*$/;
+      operatorRegex = /[+\-*/]/;
+      operatorSuffixRegex = /[+\-*/]$/;
+      numbersRegex = /\d/;
+      invalidCharactersRegex = /[^\d.+\-*/]/;
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js
+  function evaluateNumericExpression(value) {
+    if (value === "" || numbersRegex.test(value) === false || invalidCharactersRegex.test(value) === true) {
+      return null;
+    }
+    if (operatorRegex.test(value) === true) {
+      if (operatorSuffixRegex.test(value) === true) {
+        return eval(value.substring(0, value.length - 1));
+      }
+      return eval(value);
+    }
+    return parseFloat(value);
+  }
+  var init_evaluate_numeric_expression = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js"() {
+      init_regex();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js
+  function isValidNumericInput(value2, options = { integersOnly: false }) {
+    const split = (value2[0] === "-" ? value2.substring(1) : value2).split(operatorRegex);
+    let i3 = -1;
+    while (++i3 < split.length) {
+      const operand = split[i3];
+      if (operand === "" && i3 !== split.length - 1 || (options.integersOnly === true ? integerOperandRegex : floatOperandRegex).test(operand) === false) {
+        return false;
+      }
+    }
+    return true;
+  }
+  var init_is_valid_numeric_input = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js"() {
+      init_regex();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/index.js
+  var init_lib = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
+      init_convert_hex_color_to_rgb_color();
+      init_convert_named_color_to_hex_color();
+      init_convert_rgb_color_to_hex_color();
+      init_is_valid_hex_color();
+      init_mixed_values();
+      init_evaluate_numeric_expression();
+      init_is_valid_numeric_input();
+    }
+  });
+
+  // src/color.ts
+  var Color, color_default;
+  var init_color = __esm({
+    "src/color.ts"() {
+      "use strict";
+      init_material_color_utilities();
+      init_lib();
+      Color = class {
+        constructor(hexColor) {
+          var _a, _b, _c;
+          const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
+          const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
+          const red = (_a = rgbColor == null ? void 0 : rgbColor.r) != null ? _a : 0;
+          const green = (_b = rgbColor == null ? void 0 : rgbColor.g) != null ? _b : 0;
+          const blue = (_c = rgbColor == null ? void 0 : rgbColor.b) != null ? _c : 0;
+          this.figmaSolidColor = {
+            type: "SOLID",
+            color: { r: red, g: green, b: blue }
+          };
+          this.hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
+          this.hue = this.hctColor.hue;
+          this.chroma = this.hctColor.chroma;
+          this.tone = this.hctColor.tone;
+          this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+          this.rgba = rgbaFromArgb(this.argb);
+          this.hex = hexFromArgb(this.argb);
+        }
+        getHue() {
+          return this.hue;
+        }
+        getChroma() {
+          return this.chroma;
+        }
+        getTone() {
+          return this.tone;
+        }
+        getArgb() {
+          return this.argb;
+        }
+        getRgba() {
+          return this.rgba;
+        }
+        getHex() {
+          return this.hex;
+        }
+        getFigmaSolidColor() {
+          return this.figmaSolidColor;
+        }
+        getHctColor() {
+          return this.hctColor;
+        }
+      };
+      color_default = Color;
     }
   });
 
@@ -1292,10 +4679,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/78387915-b2f5-4f8f-bfa6-c31bf10f5d5a/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68729f24-93ba-4ecf-85ff-bb3f702d51bf/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/78387915-b2f5-4f8f-bfa6-c31bf10f5d5a/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68729f24-93ba-4ecf-85ff-bb3f702d51bf/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -1354,10 +4741,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7f12ad-4388-4df7-a6b6-1f05ed6c74f1/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21f4dc58-10e1-4fa0-82de-2f8405eec592/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7f12ad-4388-4df7-a6b6-1f05ed6c74f1/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21f4dc58-10e1-4fa0-82de-2f8405eec592/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -1540,10 +4927,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bcc07c62-3a66-4c24-9c6c-90ac6d3d7376/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f306ff08-e412-438a-9005-fdb91e099d15/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bcc07c62-3a66-4c24-9c6c-90ac6d3d7376/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f306ff08-e412-438a-9005-fdb91e099d15/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1579,10 +4966,184 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a2731b21-75f3-44cf-b52d-6c86bbb996ff/menu.module.js
+  // node_modules/@create-figma-plugin/ui/lib/icons/icon-12/icon-control-checkbox-checked-12.js
+  var IconControlCheckboxChecked12;
+  var init_icon_control_checkbox_checked_12 = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/icons/icon-12/icon-control-checkbox-checked-12.js"() {
+      init_create_icon();
+      IconControlCheckboxChecked12 = createIcon("m3.17647 4.82377 1.88235 1.88236 3.76471-3.76472L10 4.11788l-4.94118 4.9412L2 6.00024l1.17647-1.17647Z", { height: 12, width: 12 });
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/592ec7b5-856f-4604-a8b3-188768045a8d/checkbox.module.js
+  var checkbox_module_default;
+  var init_checkbox_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/592ec7b5-856f-4604-a8b3-188768045a8d/checkbox.module.js"() {
+      if (document.getElementById("e671155e7e") === null) {
+        const element = document.createElement("style");
+        element.id = "e671155e7e";
+        element.textContent = `._checkbox_1a43f_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+
+._input_1a43f_6 {
+  position: absolute;
+  z-index: var(
+    --z-index-1
+  ); /* stack \`.input\` over all other elements within \`.checkbox\` */
+  top: -8px;
+  right: -16px;
+  bottom: -8px;
+  left: -16px;
+  display: block;
+  width: calc(100% + 32px);
+}
+._disabled_1a43f_18 ._input_1a43f_6 {
+  cursor: not-allowed;
+}
+
+._fill_1a43f_22,
+._border_1a43f_23 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--border-radius-2);
+}
+
+._border_1a43f_23 {
+  border: 1px solid var(--figma-color-border-strong);
+}
+._checkbox_1a43f_1:not(._disabled_1a43f_18) ._input_1a43f_6:focus ~ ._border_1a43f_23 {
+  border-color: var(--figma-color-border-brand-strong);
+  box-shadow: 0 0 0 1px var(--figma-color-border-brand-strong);
+}
+._checkbox_1a43f_1:not(._disabled_1a43f_18) ._input_1a43f_6:checked ~ ._border_1a43f_23 {
+  border: 0;
+}
+._checkbox_1a43f_1:not(._disabled_1a43f_18) ._input_1a43f_6:checked:focus ~ ._border_1a43f_23 {
+  box-shadow: 0 0 0 1px var(--figma-color-bg),
+    0 0 0 2px var(--figma-color-border-brand-strong);
+}
+._disabled_1a43f_18 ._input_1a43f_6 ~ ._border_1a43f_23 {
+  border-color: var(--figma-color-border-disabled-strong);
+}
+._disabled_1a43f_18 ._input_1a43f_6:checked ~ ._border_1a43f_23 {
+  border: 0;
+}
+
+._checkbox_1a43f_1:not(._disabled_1a43f_18) ._input_1a43f_6:checked ~ ._fill_1a43f_22 {
+  background-color: var(--figma-color-bg-brand);
+}
+._disabled_1a43f_18 ._input_1a43f_6:checked ~ ._fill_1a43f_22 {
+  background-color: var(--figma-color-bg-disabled);
+}
+
+._checkIcon_1a43f_60 {
+  color: var(--figma-color-icon-onbrand);
+}
+._disabled_1a43f_18 ._checkIcon_1a43f_60 {
+  color: var(--figma-color-icon-ondisabled);
+}
+
+._children_1a43f_67 {
+  min-height: 12px;
+  padding: 2px 0 0 20px;
+  color: var(--figma-color-text);
+}
+._disabled_1a43f_18 ._children_1a43f_67 {
+  opacity: var(--opacity-30);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9jaGVja2JveC9jaGVja2JveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQjs7R0FFQyxFQUFFLDhEQUE4RDtFQUNqRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLFlBQVk7RUFDWixXQUFXO0VBQ1gsY0FBYztFQUNkLHdCQUF3QjtBQUMxQjtBQUNBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBOztFQUVFLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1oscUNBQXFDO0FBQ3ZDOztBQUVBO0VBQ0Usa0RBQWtEO0FBQ3BEO0FBQ0E7RUFDRSxvREFBb0Q7RUFDcEQsNERBQTREO0FBQzlEO0FBQ0E7RUFDRSxTQUFTO0FBQ1g7QUFDQTtFQUNFO29EQUNrRDtBQUNwRDtBQUNBO0VBQ0UsdURBQXVEO0FBQ3pEO0FBQ0E7RUFDRSxTQUFTO0FBQ1g7O0FBRUE7RUFDRSw2Q0FBNkM7QUFDL0M7QUFDQTtFQUNFLGdEQUFnRDtBQUNsRDs7QUFFQTtFQUNFLHNDQUFzQztBQUN4QztBQUNBO0VBQ0UseUNBQXlDO0FBQzNDOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLHFCQUFxQjtFQUNyQiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvY2hlY2tib3gvY2hlY2tib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jaGVja2JveCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0xKTtcbn1cblxuLmlucHV0IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiB2YXIoXG4gICAgLS16LWluZGV4LTFcbiAgKTsgLyogc3RhY2sgYC5pbnB1dGAgb3ZlciBhbGwgb3RoZXIgZWxlbWVudHMgd2l0aGluIGAuY2hlY2tib3hgICovXG4gIHRvcDogLThweDtcbiAgcmlnaHQ6IC0xNnB4O1xuICBib3R0b206IC04cHg7XG4gIGxlZnQ6IC0xNnB4O1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IGNhbGMoMTAwJSArIDMycHgpO1xufVxuLmRpc2FibGVkIC5pbnB1dCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5maWxsLFxuLmJvcmRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMTJweDtcbiAgaGVpZ2h0OiAxMnB4O1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xufVxuXG4uYm9yZGVyIHtcbiAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLXN0cm9uZyk7XG59XG4uY2hlY2tib3g6bm90KC5kaXNhYmxlZCkgLmlucHV0OmZvY3VzIH4gLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDFweCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5jaGVja2JveDpub3QoLmRpc2FibGVkKSAuaW5wdXQ6Y2hlY2tlZCB+IC5ib3JkZXIge1xuICBib3JkZXI6IDA7XG59XG4uY2hlY2tib3g6bm90KC5kaXNhYmxlZCkgLmlucHV0OmNoZWNrZWQ6Zm9jdXMgfiAuYm9yZGVyIHtcbiAgYm94LXNoYWRvdzogMCAwIDAgMXB4IHZhcigtLWZpZ21hLWNvbG9yLWJnKSxcbiAgICAwIDAgMCAycHggdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmlucHV0IH4gLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWRpc2FibGVkLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmlucHV0OmNoZWNrZWQgfiAuYm9yZGVyIHtcbiAgYm9yZGVyOiAwO1xufVxuXG4uY2hlY2tib3g6bm90KC5kaXNhYmxlZCkgLmlucHV0OmNoZWNrZWQgfiAuZmlsbCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWJyYW5kKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Y2hlY2tlZCB+IC5maWxsIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQpO1xufVxuXG4uY2hlY2tJY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tb25icmFuZCk7XG59XG4uZGlzYWJsZWQgLmNoZWNrSWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLW9uZGlzYWJsZWQpO1xufVxuXG4uY2hpbGRyZW4ge1xuICBtaW4taGVpZ2h0OiAxMnB4O1xuICBwYWRkaW5nOiAycHggMCAwIDIwcHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuY2hpbGRyZW4ge1xuICBvcGFjaXR5OiB2YXIoLS1vcGFjaXR5LTMwKTtcbn1cbiJdfQ== */`;
+        document.head.append(element);
+      }
+      checkbox_module_default = { "checkbox": "_checkbox_1a43f_1", "input": "_input_1a43f_6", "disabled": "_disabled_1a43f_18", "fill": "_fill_1a43f_22", "border": "_border_1a43f_23", "checkIcon": "_checkIcon_1a43f_60", "children": "_children_1a43f_67" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/checkbox/checkbox.js
+  function Checkbox(_a) {
+    var _b = _a, { children, disabled = false, name, onChange = function() {
+    }, onValueChange = function() {
+    }, propagateEscapeKeyDown = true, value: value2 = false } = _b, rest = __objRest(_b, ["children", "disabled", "name", "onChange", "onValueChange", "propagateEscapeKeyDown", "value"]);
+    const handleChange = T2(function(event) {
+      const newValue = event.currentTarget.checked;
+      onValueChange(newValue, name);
+      onChange(event);
+    }, [name, onChange, onValueChange]);
+    const handleKeyDown = T2(function(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (propagateEscapeKeyDown === false) {
+        event.stopPropagation();
+      }
+      event.currentTarget.blur();
+    }, [propagateEscapeKeyDown]);
+    return y(
+      "label",
+      { class: createClassName([
+        checkbox_module_default.checkbox,
+        disabled === true ? checkbox_module_default.disabled : null
+      ]) },
+      y("input", __spreadProps(__spreadValues({}, rest), { checked: value2 === true, class: checkbox_module_default.input, disabled: disabled === true, name, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: disabled === true ? -1 : 0, type: "checkbox" })),
+      y("div", { class: checkbox_module_default.fill }, value2 === true ? y(
+        "div",
+        { class: checkbox_module_default.checkIcon },
+        y(IconControlCheckboxChecked12, null)
+      ) : null),
+      y("div", { class: checkbox_module_default.border }),
+      y("div", { class: checkbox_module_default.children }, children)
+    );
+  }
+  var init_checkbox = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/checkbox/checkbox.js"() {
+      init_preact_module();
+      init_hooks_module();
+      init_icon_control_checkbox_checked_12();
+      init_create_class_name();
+      init_checkbox_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/077cf493-241c-46ca-843a-77a362c313ca/divider.module.js
+  var divider_module_default;
+  var init_divider_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/077cf493-241c-46ca-843a-77a362c313ca/divider.module.js"() {
+      if (document.getElementById("3b0eaf9c51") === null) {
+        const element = document.createElement("style");
+        element.id = "3b0eaf9c51";
+        element.textContent = `._divider_m18ta_1 {
+  width: 100%;
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9kaXZpZGVyL2RpdmlkZXIubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0VBQ1gsMkNBQTJDO0FBQzdDIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9kaXZpZGVyL2RpdmlkZXIubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kaXZpZGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      divider_module_default = { "divider": "_divider_m18ta_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/divider/divider.js
+  function Divider(props) {
+    return y("hr", __spreadProps(__spreadValues({}, props), { class: divider_module_default.divider }));
+  }
+  var init_divider = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/divider/divider.js"() {
+      init_preact_module();
+      init_divider_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef6abd08-26dc-4841-870c-9ac4e282d9b7/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a2731b21-75f3-44cf-b52d-6c86bbb996ff/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef6abd08-26dc-4841-870c-9ac4e282d9b7/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -1817,10 +5378,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb9d3d90-cb9c-4344-9fd5-c929de740a89/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/28472d5d-d677-4d9d-bbd1-4f2f588b29f7/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb9d3d90-cb9c-4344-9fd5-c929de740a89/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/28472d5d-d677-4d9d-bbd1-4f2f588b29f7/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -2227,369 +5788,62 @@ video {
     }
   });
 
-  // node_modules/hex-rgb/index.js
-  function hexRgb(hex, options = {}) {
-    if (typeof hex !== "string" || nonHexChars.test(hex) || !validHexSize.test(hex)) {
-      throw new TypeError("Expected a valid hex string");
-    }
-    hex = hex.replace(/^#/, "");
-    let alphaFromHex = 1;
-    if (hex.length === 8) {
-      alphaFromHex = Number.parseInt(hex.slice(6, 8), 16) / 255;
-      hex = hex.slice(0, 6);
-    }
-    if (hex.length === 4) {
-      alphaFromHex = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
-      hex = hex.slice(0, 3);
-    }
-    if (hex.length === 3) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-    }
-    const number = Number.parseInt(hex, 16);
-    const red = number >> 16;
-    const green = number >> 8 & 255;
-    const blue = number & 255;
-    const alpha = typeof options.alpha === "number" ? options.alpha : alphaFromHex;
-    if (options.format === "array") {
-      return [red, green, blue, alpha];
-    }
-    if (options.format === "css") {
-      const alphaString = alpha === 1 ? "" : ` / ${Number((alpha * 100).toFixed(2))}%`;
-      return `rgb(${red} ${green} ${blue}${alphaString})`;
-    }
-    return { red, green, blue, alpha };
-  }
-  var hexCharacters, match3or4Hex, match6or8Hex, nonHexChars, validHexSize;
-  var init_hex_rgb = __esm({
-    "node_modules/hex-rgb/index.js"() {
-      hexCharacters = "a-f\\d";
-      match3or4Hex = `#?[${hexCharacters}]{3}[${hexCharacters}]?`;
-      match6or8Hex = `#?[${hexCharacters}]{6}([${hexCharacters}]{2})?`;
-      nonHexChars = new RegExp(`[^#${hexCharacters}]`, "gi");
-      validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, "i");
-    }
-  });
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a84825c9-b2b5-4d8d-a3bd-04ce3244aac3/text.module.js
+  var text_module_default;
+  var init_text_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a84825c9-b2b5-4d8d-a3bd-04ce3244aac3/text.module.js"() {
+      if (document.getElementById("b5e8426b1e") === null) {
+        const element = document.createElement("style");
+        element.id = "b5e8426b1e";
+        element.textContent = `._text_mh6mm_1 {
+  padding-top: 1px;
+  color: var(--figma-color-text);
+  pointer-events: none;
+  transform: translateY(4px);
+}
+._text_mh6mm_1:before {
+  display: block;
+  height: 0;
+  margin-top: -9px;
+  content: '';
+  pointer-events: none;
+}
 
-  // node_modules/@create-figma-plugin/utilities/lib/color/convert-hex-color-to-rgb-color.js
-  function convertHexColorToRgbColor(hexColor) {
-    if (hexColor.length !== 3 && hexColor.length !== 6) {
-      return null;
-    }
-    try {
-      const { red, green, blue } = hexRgb(hexColor);
-      return {
-        b: blue / 255,
-        g: green / 255,
-        r: red / 255
-      };
-    } catch (e3) {
-      return null;
-    }
-  }
-  var init_convert_hex_color_to_rgb_color = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/color/convert-hex-color-to-rgb-color.js"() {
-      init_hex_rgb();
-    }
-  });
+._numeric_mh6mm_15 {
+  font-variant-numeric: tabular-nums;
+}
 
-  // node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js
-  var NAMED_COLORS;
-  var init_named_colors = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js"() {
-      NAMED_COLORS = {
-        aliceblue: "F0F8FF",
-        antiquewhite: "FAEBD7",
-        aqua: "00FFFF",
-        aquamarine: "7FFFD4",
-        azure: "F0FFFF",
-        beige: "F5F5DC",
-        bisque: "FFE4C4",
-        black: "000000",
-        blanchedalmond: "FFEBCD",
-        blue: "0000FF",
-        blueviolet: "8A2BE2",
-        brown: "A52A2A",
-        burlywood: "DEB887",
-        cadetblue: "5F9EA0",
-        chartreuse: "7FFF00",
-        chocolate: "D2691E",
-        coral: "FF7F50",
-        cornflowerblue: "6495ED",
-        cornsilk: "FFF8DC",
-        crimson: "DC143C",
-        cyan: "00FFFF",
-        darkblue: "00008B",
-        darkcyan: "008B8B",
-        darkgoldenrod: "B8860B",
-        darkgray: "A9A9A9",
-        darkgreen: "006400",
-        darkgrey: "A9A9A9",
-        darkkhaki: "BDB76B",
-        darkmagenta: "8B008B",
-        darkolivegreen: "556B2F",
-        darkorange: "FF8C00",
-        darkorchid: "9932CC",
-        darkred: "8B0000",
-        darksalmon: "E9967A",
-        darkseagreen: "8FBC8F",
-        darkslateblue: "483D8B",
-        darkslategray: "2F4F4F",
-        darkslategrey: "2F4F4F",
-        darkturquoise: "00CED1",
-        darkviolet: "9400D3",
-        deeppink: "FF1493",
-        deepskyblue: "00BFFF",
-        dimgray: "696969",
-        dimgrey: "696969",
-        dodgerblue: "1E90FF",
-        firebrick: "B22222",
-        floralwhite: "FFFAF0",
-        forestgreen: "228B22",
-        fuchsia: "FF00FF",
-        gainsboro: "DCDCDC",
-        ghostwhite: "F8F8FF",
-        gold: "FFD700",
-        goldenrod: "DAA520",
-        gray: "808080",
-        green: "008000",
-        greenyellow: "ADFF2F",
-        grey: "808080",
-        honeydew: "F0FFF0",
-        hotpink: "FF69B4",
-        indianred: "CD5C5C",
-        indigo: "4B0082",
-        ivory: "FFFFF0",
-        khaki: "F0E68C",
-        lavender: "E6E6FA",
-        lavenderblush: "FFF0F5",
-        lawngreen: "7CFC00",
-        lemonchiffon: "FFFACD",
-        lightblue: "ADD8E6",
-        lightcoral: "F08080",
-        lightcyan: "E0FFFF",
-        lightgoldenrodyellow: "FAFAD2",
-        lightgray: "D3D3D3",
-        lightgreen: "90EE90",
-        lightgrey: "D3D3D3",
-        lightpink: "FFB6C1",
-        lightsalmon: "FFA07A",
-        lightseagreen: "20B2AA",
-        lightskyblue: "87CEFA",
-        lightslategray: "778899",
-        lightslategrey: "778899",
-        lightsteelblue: "B0C4DE",
-        lightyellow: "FFFFE0",
-        lime: "00FF00",
-        limegreen: "32CD32",
-        linen: "FAF0E6",
-        magenta: "FF00FF",
-        maroon: "800000",
-        mediumaquamarine: "66CDAA",
-        mediumblue: "0000CD",
-        mediumorchid: "BA55D3",
-        mediumpurple: "9370DB",
-        mediumseagreen: "3CB371",
-        mediumslateblue: "7B68EE",
-        mediumspringgreen: "00FA9A",
-        mediumturquoise: "48D1CC",
-        mediumvioletred: "C71585",
-        midnightblue: "191970",
-        mintcream: "F5FFFA",
-        mistyrose: "FFE4E1",
-        moccasin: "FFE4B5",
-        navajowhite: "FFDEAD",
-        navy: "000080",
-        oldlace: "FDF5E6",
-        olive: "808000",
-        olivedrab: "6B8E23",
-        orange: "FFA500",
-        orangered: "FF4500",
-        orchid: "DA70D6",
-        palegoldenrod: "EEE8AA",
-        palegreen: "98FB98",
-        paleturquoise: "AFEEEE",
-        palevioletred: "DB7093",
-        papayawhip: "FFEFD5",
-        peachpuff: "FFDAB9",
-        peru: "CD853F",
-        pink: "FFC0CB",
-        plum: "DDA0DD",
-        powderblue: "B0E0E6",
-        purple: "800080",
-        rebeccapurple: "663399",
-        red: "FF0000",
-        rosybrown: "BC8F8F",
-        royalblue: "4169E1",
-        saddlebrown: "8B4513",
-        salmon: "FA8072",
-        sandybrown: "F4A460",
-        seagreen: "2E8B57",
-        seashell: "FFF5EE",
-        sienna: "A0522D",
-        silver: "C0C0C0",
-        skyblue: "87CEEB",
-        slateblue: "6A5ACD",
-        slategray: "708090",
-        slategrey: "708090",
-        snow: "FFFAFA",
-        springgreen: "00FF7F",
-        steelblue: "4682B4",
-        tan: "D2B48C",
-        teal: "008080",
-        thistle: "D8BFD8",
-        tomato: "FF6347",
-        turquoise: "40E0D0",
-        violet: "EE82EE",
-        wheat: "F5DEB3",
-        white: "FFFFFF",
-        whitesmoke: "F5F5F5",
-        yellow: "FFFF00",
-        yellowgreen: "9ACD32"
-      };
-    }
-  });
+._left_mh6mm_19 {
+  text-align: left;
+}
+._center_mh6mm_22 {
+  text-align: center;
+}
+._right_mh6mm_25 {
+  text-align: right;
+}
 
-  // node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js
-  function convertNamedColorToHexColor(namedColor) {
-    const hexColor = NAMED_COLORS[namedColor.toLowerCase()];
-    if (typeof hexColor === "undefined") {
-      return null;
-    }
-    return hexColor;
-  }
-  var init_convert_named_color_to_hex_color = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js"() {
-      init_named_colors();
-    }
-  });
-
-  // node_modules/rgb-hex/index.js
-  function rgbHex(red, green, blue, alpha) {
-    const isPercent = (red + (alpha || "")).toString().includes("%");
-    if (typeof red === "string") {
-      [red, green, blue, alpha] = red.match(/(0?\.?\d+)%?\b/g).map((component) => Number(component));
-    } else if (alpha !== void 0) {
-      alpha = Number.parseFloat(alpha);
-    }
-    if (typeof red !== "number" || typeof green !== "number" || typeof blue !== "number" || red > 255 || green > 255 || blue > 255) {
-      throw new TypeError("Expected three numbers below 256");
-    }
-    if (typeof alpha === "number") {
-      if (!isPercent && alpha >= 0 && alpha <= 1) {
-        alpha = Math.round(255 * alpha);
-      } else if (isPercent && alpha >= 0 && alpha <= 100) {
-        alpha = Math.round(255 * alpha / 100);
-      } else {
-        throw new TypeError(`Expected alpha value (${alpha}) as a fraction or percentage`);
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0L3RleHQubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQiw4QkFBOEI7RUFDOUIsb0JBQW9CO0VBQ3BCLDBCQUEwQjtBQUM1QjtBQUNBO0VBQ0UsY0FBYztFQUNkLFNBQVM7RUFDVCxnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0Usa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxpQkFBaUI7QUFDbkIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHQvdGV4dC5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHQge1xuICBwYWRkaW5nLXRvcDogMXB4O1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dCk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoNHB4KTtcbn1cbi50ZXh0OmJlZm9yZSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBoZWlnaHQ6IDA7XG4gIG1hcmdpbi10b3A6IC05cHg7XG4gIGNvbnRlbnQ6ICcnO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuLm51bWVyaWMge1xuICBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zO1xufVxuXG4ubGVmdCB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG59XG4uY2VudGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLnJpZ2h0IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG59XG4iXX0= */`;
+        document.head.append(element);
       }
-      alpha = (alpha | 1 << 8).toString(16).slice(1);
-    } else {
-      alpha = "";
+      text_module_default = { "text": "_text_mh6mm_1", "numeric": "_numeric_mh6mm_15", "left": "_left_mh6mm_19", "center": "_center_mh6mm_22", "right": "_right_mh6mm_25" };
     }
-    return (blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1) + alpha;
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/text/text.js
+  function Text(_a) {
+    var _b = _a, { align = "left", children, numeric = false } = _b, rest = __objRest(_b, ["align", "children", "numeric"]);
+    return y("div", __spreadProps(__spreadValues({}, rest), { class: createClassName([
+      text_module_default.text,
+      text_module_default[align],
+      numeric === true ? text_module_default.numeric : null
+    ]) }), children);
   }
-  var init_rgb_hex = __esm({
-    "node_modules/rgb-hex/index.js"() {
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js
-  function convertRgbColorToHexColor(rgbColor) {
-    const { r: r3, g: g3, b: b3 } = rgbColor;
-    if (r3 < 0 || r3 > 1 || g3 < 0 || g3 > 1 || b3 < 0 || b3 > 1) {
-      return null;
-    }
-    try {
-      return rgbHex(Math.round(r3 * 255), Math.round(g3 * 255), Math.round(b3 * 255)).toUpperCase();
-    } catch (e3) {
-      return null;
-    }
-  }
-  var init_convert_rgb_color_to_hex_color = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js"() {
-      init_rgb_hex();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js
-  function isValidHexColor(hexColor) {
-    return convertHexColorToRgbColor(hexColor) !== null;
-  }
-  var init_is_valid_hex_color = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js"() {
-      init_convert_hex_color_to_rgb_color();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/mixed-values.js
-  var MIXED_NUMBER, MIXED_STRING;
-  var init_mixed_values = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/mixed-values.js"() {
-      MIXED_NUMBER = 999999999999999;
-      MIXED_STRING = "999999999999999";
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js
-  var floatOperandRegex, integerOperandRegex, operatorRegex, operatorSuffixRegex, numbersRegex, invalidCharactersRegex;
-  var init_regex = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js"() {
-      floatOperandRegex = /^-?\d*(?:\.\d*)?$/;
-      integerOperandRegex = /^-?\d*$/;
-      operatorRegex = /[+\-*/]/;
-      operatorSuffixRegex = /[+\-*/]$/;
-      numbersRegex = /\d/;
-      invalidCharactersRegex = /[^\d.+\-*/]/;
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js
-  function evaluateNumericExpression(value) {
-    if (value === "" || numbersRegex.test(value) === false || invalidCharactersRegex.test(value) === true) {
-      return null;
-    }
-    if (operatorRegex.test(value) === true) {
-      if (operatorSuffixRegex.test(value) === true) {
-        return eval(value.substring(0, value.length - 1));
-      }
-      return eval(value);
-    }
-    return parseFloat(value);
-  }
-  var init_evaluate_numeric_expression = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js"() {
-      init_regex();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js
-  function isValidNumericInput(value2, options = { integersOnly: false }) {
-    const split = (value2[0] === "-" ? value2.substring(1) : value2).split(operatorRegex);
-    let i3 = -1;
-    while (++i3 < split.length) {
-      const operand = split[i3];
-      if (operand === "" && i3 !== split.length - 1 || (options.integersOnly === true ? integerOperandRegex : floatOperandRegex).test(operand) === false) {
-        return false;
-      }
-    }
-    return true;
-  }
-  var init_is_valid_numeric_input = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js"() {
-      init_regex();
-    }
-  });
-
-  // node_modules/@create-figma-plugin/utilities/lib/index.js
-  var init_lib = __esm({
-    "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
-      init_convert_hex_color_to_rgb_color();
-      init_convert_named_color_to_hex_color();
-      init_convert_rgb_color_to_hex_color();
-      init_is_valid_hex_color();
-      init_mixed_values();
-      init_evaluate_numeric_expression();
-      init_is_valid_numeric_input();
+  var init_text = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/text/text.js"() {
+      init_preact_module();
+      init_create_class_name();
+      init_text_module();
     }
   });
 
@@ -2695,10 +5949,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd58770b-67bf-4391-9e92-5cf41dd7e8a6/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07fdd76f-0a41-4166-92f0-a4eef8087799/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd58770b-67bf-4391-9e92-5cf41dd7e8a6/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07fdd76f-0a41-4166-92f0-a4eef8087799/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3187,10 +6441,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d1bfce6-8f2e-4ef4-9f30-ae1cedbb1da9/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d32815cc-ab92-474e-854a-6c13d436ae92/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d1bfce6-8f2e-4ef4-9f30-ae1cedbb1da9/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d32815cc-ab92-474e-854a-6c13d436ae92/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3537,10 +6791,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c18c5e47-0517-4962-894f-2839f6a3a7d2/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f040aa6d-3b40-4cc5-88fb-ade962c761be/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c18c5e47-0517-4962-894f-2839f6a3a7d2/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f040aa6d-3b40-4cc5-88fb-ade962c761be/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3723,10 +6977,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d205b82b-cd94-4995-a975-cbc2001771e7/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7bcce6db-c464-4c2f-910a-ee104ddd4605/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d205b82b-cd94-4995-a975-cbc2001771e7/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7bcce6db-c464-4c2f-910a-ee104ddd4605/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -3765,10 +7019,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/888b4d04-9632-4bd4-9f72-811595d91f1c/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e477dc7c-5516-4d89-be3e-fb7fe21d7c9b/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/888b4d04-9632-4bd4-9f72-811595d91f1c/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e477dc7c-5516-4d89-be3e-fb7fe21d7c9b/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -3807,9 +7061,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9488fbd1-dcfe-4427-9349-c61335a5c625/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9fede7c5-33ed-4277-9dc2-5af66092eba6/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9488fbd1-dcfe-4427-9349-c61335a5c625/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9fede7c5-33ed-4277-9dc2-5af66092eba6/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -3941,7 +7195,10 @@ svg {
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
       init_button();
+      init_checkbox();
+      init_divider();
       init_dropdown();
+      init_text();
       init_textbox();
       init_textbox_color();
       init_textbox_multiline();
@@ -3977,16 +7234,13 @@ svg {
       const newHexColor = event.currentTarget.value;
       const toneStops = textAreaValue;
       setHexColor(newHexColor);
-      parent.postMessage(
-        {
-          pluginMessage: {
-            type: "colorChange",
-            newHexColor,
-            toneStops
-          }
-        },
-        "*"
-      );
+      const newColor = new color_default(newHexColor);
+      const newHue = Math.round(newColor.getHue());
+      setHue(newHue);
+      const newChroma = Math.round(newColor.getChroma());
+      setChroma(newChroma);
+      const newTone = Math.round(newColor.getTone());
+      setTone(newTone);
       return newHexColor;
     }
     const getValues = (paletteObject) => {
@@ -3999,20 +7253,6 @@ svg {
     };
     onmessage = (event) => {
       const message = event.data.pluginMessage;
-      if (message.type === "colorChange") {
-        const hct = message.hctColor;
-        const newHue = Math.round(hct.hue);
-        setHue(newHue);
-        const newChroma = Math.round(hct.chroma);
-        setChroma(newChroma);
-        const newTone = Math.round(hct.tone);
-        setTone(newTone);
-        const newHexFromHct = hct.hex;
-        setHexFromHct(newHexFromHct);
-        const palette = message.palettePreview;
-        const newPaletteGradient = getValues(palette);
-        setPaletteGradient(newPaletteGradient);
-      }
       if (message.type === "localCollections") {
         const collections2 = message.collections;
         setCollections(collections2);
@@ -4114,15 +7354,13 @@ svg {
       setOptionId(newOptionId);
       setDropdownValue(newDropdownValue);
     }
-    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(
-      Dropdown,
-      {
-        onChange: handleChange,
-        placeholder: "Choose a collection",
-        options,
-        value: dropdownValue
-      }
-    ), /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y(
+    const [checkboxValue, setCheckboxValue] = h2(true);
+    function handleCheckboxChange(event) {
+      const newCheckboxValue = event.currentTarget.checked;
+      console.log(newCheckboxValue);
+      setCheckboxValue(newCheckboxValue);
+    }
+    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y(
       "div",
       {
         className: "h-8 rounded-sm w-full mt-3",
@@ -4156,13 +7394,23 @@ svg {
         variant: "border",
         placeholder: "All tone stops (0-100)"
       }
-    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("build"), className: "mb-1", fullWidth: true }, "Build Palette"), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true, secondary: true }, "Create Variables")));
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("build"), className: "mb-1", fullWidth: true }, "Build Palette"), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Divider, null), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+      Dropdown,
+      {
+        onChange: handleChange,
+        placeholder: "Choose a collection",
+        options,
+        value: dropdownValue,
+        className: "mb-1"
+      }
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Checkbox, { onChange: handleCheckboxChange, value: checkboxValue }, /* @__PURE__ */ y(Text, null, "Overwrite existing variables")), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true, secondary: true }, "Create Palette Variables")));
   }
   var ui_default;
   var init_ui = __esm({
     "src/ui.tsx"() {
       "use strict";
       init_tailwind();
+      init_color();
       init_lib2();
       init_preact_module();
       init_hooks_module();
@@ -4181,3 +7429,671 @@ svg {
   }
   modules[commandId](rootNode, __SHOW_UI_DATA__);
 })();
+/*! Bundled license information:
+
+@material/material-color-utilities/utils/math_utils.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/utils/color_utils.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/hct/viewing_conditions.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/hct/cam16.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/hct/hct_solver.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/hct/hct.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/blend/blend.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/contrast/contrast.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/dislike/dislike_analyzer.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/dynamiccolor/dynamic_color.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/variant.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/dynamiccolor/contrast_curve.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/dynamiccolor/tone_delta_pair.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/dynamiccolor/material_dynamic_colors.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/palettes/tonal_palette.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/palettes/core_palette.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/quantize/lab_point_provider.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/quantize/quantizer_wsmeans.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/quantize/quantizer_map.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/quantize/quantizer_wu.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/quantize/quantizer_celebi.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/dynamic_scheme.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_android.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/temperature/temperature_cache.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_content.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_expressive.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_fidelity.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_monochrome.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_neutral.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_tonal_spot.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/scheme/scheme_vibrant.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/score/score.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/utils/string_utils.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/utils/image_utils.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/utils/theme_utils.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+
+@material/material-color-utilities/index.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   *)
+*/

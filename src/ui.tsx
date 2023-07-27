@@ -1,16 +1,20 @@
 // Importing the tailwind.css file
 import '!./tailwind.css';
+import Color from './color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
 	Button,
+	Checkbox,
 	Container,
 	render,
 	VerticalSpace,
+	Divider,
 	TextboxMultiline,
 	TextboxColor,
 	Textbox,
 	Dropdown,
+	Text,
 	DropdownOption,
 } from '@create-figma-plugin/ui';
 
@@ -47,16 +51,23 @@ function Plugin() {
 		const newHexColor = event.currentTarget.value;
 		const toneStops = textAreaValue;
 		setHexColor(newHexColor);
-		parent.postMessage(
-			{
-				pluginMessage: {
-					type: 'colorChange',
-					newHexColor: newHexColor,
-					toneStops: toneStops,
-				},
-			},
-			'*'
-		);
+		const newColor = new Color(newHexColor);
+		const newHue = Math.round(newColor.getHue());
+		setHue(newHue);
+		const newChroma = Math.round(newColor.getChroma());
+		setChroma(newChroma);
+		const newTone = Math.round(newColor.getTone());
+		setTone(newTone);
+		// parent.postMessage(
+		// 	{
+		// 		pluginMessage: {
+		// 			type: 'colorChange',
+		// 			newHexColor: newHexColor,
+		// 			toneStops: toneStops,
+		// 		},
+		// 	},
+		// 	'*'
+		// );
 		return newHexColor;
 	}
 
@@ -77,22 +88,6 @@ function Plugin() {
 	// Function to handle changes in the hexColor input field from main.ts
 	onmessage = (event) => {
 		const message = event.data.pluginMessage;
-		if (message.type === 'colorChange') {
-			// hct
-			const hct = message.hctColor;
-			const newHue = Math.round(hct.hue);
-			setHue(newHue);
-			const newChroma = Math.round(hct.chroma);
-			setChroma(newChroma);
-			const newTone = Math.round(hct.tone);
-			setTone(newTone);
-			const newHexFromHct = hct.hex;
-			setHexFromHct(newHexFromHct);
-			// palette
-			const palette = message.palettePreview;
-			const newPaletteGradient = getValues(palette);
-			setPaletteGradient(newPaletteGradient);
-		}
 		if (message.type === 'localCollections') {
 			const collections = message.collections;
 			setCollections(collections);
@@ -183,16 +178,17 @@ function Plugin() {
 		setDropdownValue(newDropdownValue);
 	}
 
+	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
+	function handleCheckboxChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newCheckboxValue = event.currentTarget.checked;
+		console.log(newCheckboxValue);
+		setCheckboxValue(newCheckboxValue);
+	}
+
 	// Rendering the UI
 	return (
 		<div className='h-full py-4'>
 			<Container space='medium'>
-				<Dropdown
-					onChange={handleChange}
-					placeholder='Choose a collection'
-					options={options}
-					value={dropdownValue}
-				/>
 				<p className='text-xs'>Select a color to create a dynamic palette</p>
 				<div
 					className='h-8 rounded-sm w-full mt-3'
@@ -229,8 +225,23 @@ function Plugin() {
 				<Button onClick={() => handleClick('build')} className='mb-1' fullWidth>
 					Build Palette
 				</Button>
+				<VerticalSpace space='small' />
+				<Divider />
+				<VerticalSpace space='small' />
+				<Dropdown
+					onChange={handleChange}
+					placeholder='Choose a collection'
+					options={options}
+					value={dropdownValue}
+					className='mb-1'
+				/>
+				<VerticalSpace space='small' />
+				<Checkbox onChange={handleCheckboxChange} value={checkboxValue}>
+					<Text>Overwrite existing variables</Text>
+				</Checkbox>
+				<VerticalSpace space='large' />
 				<Button onClick={() => handleClick('createVariables')} fullWidth secondary>
-					Create Variables
+					Create Palette Variables
 				</Button>
 			</Container>
 		</div>

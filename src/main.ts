@@ -10,9 +10,10 @@ import {
 	Hct,
 	Rgba,
 } from '@material/material-color-utilities';
+import Color from './color';
 
 export default function () {
-	showUI({ height: 350, width: 280 });
+	showUI({ height: 420, width: 280 });
 }
 
 // Create tones from stops
@@ -28,85 +29,28 @@ const toneStops = (stops?: number[]) => {
 	}
 };
 
-class Color {
-	private argb: number;
-	private rgba: string | Rgba;
-	private hex: string;
-	private hue: number;
-	private chroma: number;
-	private tone: number;
-	private figmaSolidColor: SolidPaint;
+// // Convert hex to Hct and back again
+// const fromHex = (hexColor: string) => {
+// 	const hctColor = Hct.fromInt(argbFromHex(hexColor));
+// 	const hue = hctColor.hue;
+// 	const chroma = hctColor.chroma;
+// 	const tone = hctColor.tone;
+// 	const argb = Hct.from(hue, chroma, tone).toInt();
+// 	const rgba = rgbaFromArgb(argb);
+// 	const hex = hexFromArgb(argb);
 
-	constructor(hexColor: string) {
-		const cleanedHexColor = hexColor.startsWith('#')
-			? hexColor.slice(1)
-			: hexColor;
-
-		const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-		const red = rgbColor?.r ?? 0;
-		const green = rgbColor?.g ?? 0;
-		const blue = rgbColor?.b ?? 0;
-		this.figmaSolidColor = {
-			type: 'SOLID',
-			color: { r: red, g: green, b: blue },
-		};
-
-		const hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
-		this.hue = hctColor.hue;
-		this.chroma = hctColor.chroma;
-		this.tone = hctColor.tone;
-		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
-		this.rgba = rgbaFromArgb(this.argb);
-		this.hex = hexFromArgb(this.argb);
-	}
-
-	getHue() {
-		return this.hue;
-	}
-
-	getChroma() {
-		return this.chroma;
-	}
-
-	getTone() {
-		return this.tone;
-	}
-
-	getArgb() {
-		return this.argb;
-	}
-
-	getRgba() {
-		return this.rgba;
-	}
-
-	getHex() {
-		return this.hex;
-	}
-
-	getFigmaSolidColor() {
-		return this.figmaSolidColor;
-	}
-}
-
-// Convert hex to Hct and back again
-const fromHex = (hexColor: string) => {
-	const hctColor = Hct.fromInt(argbFromHex(hexColor));
-	const hue = hctColor.hue;
-	const chroma = hctColor.chroma;
-	const tone = hctColor.tone;
-	const argb = Hct.from(hue, chroma, tone).toInt();
-	const rgba = rgbaFromArgb(argb);
-	const hex = hexFromArgb(argb);
-
-	return { hue, chroma, tone, argb, rgba, hex };
-};
+// 	return { hue, chroma, tone, argb, rgba, hex };
+// };
 
 // Create palette from hex color and tone stops
 const paletteTones = (hexColor: string, stops?: number[]) => {
 	const paletteToneStops = toneStops(stops);
-	const color = fromHex(hexColor);
-	const paletteColor = TonalPalette.fromHueAndChroma(color.hue, color.chroma);
+	const color = new Color(hexColor);
+	const hctColor = color.getHctColor();
+	const paletteColor = TonalPalette.fromHueAndChroma(
+		hctColor.hue,
+		hctColor.chroma
+	);
 	const palette: { [key: number]: string } = {};
 	for (let tone of paletteToneStops) {
 		const argb: number = paletteColor.tone(tone);
@@ -121,15 +65,6 @@ const paletteSwatch = (colorName: string, hexColor: string, tone: number) => {
 	frame.name = colorName + '-' + tone + ': ' + hexColor + ';';
 	const color = new Color(hexColor);
 	const fill = color.getFigmaSolidColor();
-	// const cleanedHexColor = hexColor.startsWith('#')
-	// 	? hexColor.slice(1)
-	// 	: hexColor;
-
-	// const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-	// const red = rgbColor?.r ?? 0;
-	// const green = rgbColor?.g ?? 0;
-	// const blue = rgbColor?.b ?? 0;
-	// const figmaSolidColor = { r: red, g: green, b: blue };
 	frame.fills = [fill];
 	frame.resize(128, 64);
 	return frame;
@@ -212,7 +147,7 @@ const paletteVariable = (
 	hexColor: string,
 	tone?: number
 ) => {
-	const keyColorName = `color/primitives/${colorName}/${colorName}-key/${colorName}`;
+	const keyColorName = `color/primitives/${colorName}/${colorName} - source color/${colorName}`;
 	const toneColorName = `color/primitives/${colorName}/${colorName}-${tone}`;
 	const name = tone || tone === 0 ? toneColorName : keyColorName;
 	const variableId = variableFromName(name)?.id;
@@ -296,14 +231,5 @@ figma.ui.onmessage = (pluginMessage) => {
 		const collectionId = pluginMessage.collectionId;
 		const palette = paletteTones(hexColor, toneStops);
 		return paletteVariableCollection(collectionId, colorName, hexColor, palette);
-	}
-
-	if (pluginMessage.type === 'colorChange') {
-		const color = pluginMessage.newHexColor;
-		const type = 'colorChange';
-		const hctColor = fromHex(color);
-		const palettePreview = paletteTones(color);
-		const message = { type, hctColor, palettePreview };
-		figma.ui.postMessage(message);
 	}
 };

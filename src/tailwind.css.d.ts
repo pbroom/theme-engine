@@ -9,6 +9,8 @@ declare const styles: {
   readonly "mt-2": string;
   readonly "mt-3": string;
   readonly "mt-4": string;
+  readonly "mb-5": string;
+  readonly "ml-1": string;
   readonly "flex": string;
   readonly "h-1": string;
   readonly "h-2": string;
@@ -48,6 +50,7 @@ declare const styles: {
   readonly "pr-2": string;
   readonly "pr-4": string;
   readonly "pr-8": string;
+  readonly "pl-1": string;
   readonly "text-center": string;
   readonly "text-right": string;
   readonly "font-mono": string;

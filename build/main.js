@@ -3080,31 +3080,13 @@ var init_material_color_utilities = __esm({
   }
 });
 
-// src/main.ts
-var main_exports = {};
-__export(main_exports, {
-  default: () => main_default
-});
-function main_default() {
-  showUI({ height: 350, width: 280 });
-}
-var toneStops, Color, fromHex, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup, paletteVariableCollection;
-var init_main = __esm({
-  "src/main.ts"() {
+// src/color.ts
+var Color, color_default;
+var init_color = __esm({
+  "src/color.ts"() {
     "use strict";
-    init_lib();
     init_material_color_utilities();
-    toneStops = (stops) => {
-      const defaultToneStops = [];
-      if (stops && stops.length > 0) {
-        return stops;
-      } else {
-        for (let stop = 0; stop <= 100; stop++) {
-          defaultToneStops.push(stop);
-        }
-        return defaultToneStops;
-      }
-    };
+    init_lib();
     Color = class {
       constructor(hexColor) {
         var _a, _b, _c;
@@ -3117,10 +3099,10 @@ var init_main = __esm({
           type: "SOLID",
           color: { r: red, g: green, b: blue }
         };
-        const hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
-        this.hue = hctColor.hue;
-        this.chroma = hctColor.chroma;
-        this.tone = hctColor.tone;
+        this.hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
+        this.hue = this.hctColor.hue;
+        this.chroma = this.hctColor.chroma;
+        this.tone = this.hctColor.tone;
         this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
         this.rgba = rgbaFromArgb(this.argb);
         this.hex = hexFromArgb(this.argb);
@@ -3146,21 +3128,48 @@ var init_main = __esm({
       getFigmaSolidColor() {
         return this.figmaSolidColor;
       }
+      getHctColor() {
+        return this.hctColor;
+      }
     };
-    fromHex = (hexColor) => {
-      const hctColor = Hct.fromInt(argbFromHex(hexColor));
-      const hue = hctColor.hue;
-      const chroma = hctColor.chroma;
-      const tone = hctColor.tone;
-      const argb = Hct.from(hue, chroma, tone).toInt();
-      const rgba = rgbaFromArgb(argb);
-      const hex = hexFromArgb(argb);
-      return { hue, chroma, tone, argb, rgba, hex };
+    color_default = Color;
+  }
+});
+
+// src/main.ts
+var main_exports = {};
+__export(main_exports, {
+  default: () => main_default
+});
+function main_default() {
+  showUI({ height: 420, width: 280 });
+}
+var toneStops, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup, paletteVariableCollection;
+var init_main = __esm({
+  "src/main.ts"() {
+    "use strict";
+    init_lib();
+    init_material_color_utilities();
+    init_color();
+    toneStops = (stops) => {
+      const defaultToneStops = [];
+      if (stops && stops.length > 0) {
+        return stops;
+      } else {
+        for (let stop = 0; stop <= 100; stop++) {
+          defaultToneStops.push(stop);
+        }
+        return defaultToneStops;
+      }
     };
     paletteTones = (hexColor, stops) => {
       const paletteToneStops = toneStops(stops);
-      const color = fromHex(hexColor);
-      const paletteColor = TonalPalette.fromHueAndChroma(color.hue, color.chroma);
+      const color = new color_default(hexColor);
+      const hctColor = color.getHctColor();
+      const paletteColor = TonalPalette.fromHueAndChroma(
+        hctColor.hue,
+        hctColor.chroma
+      );
       const palette = {};
       for (let tone of paletteToneStops) {
         const argb = paletteColor.tone(tone);
@@ -3172,7 +3181,7 @@ var init_main = __esm({
     paletteSwatch = (colorName, hexColor, tone) => {
       const frame = figma.createFrame();
       frame.name = colorName + "-" + tone + ": " + hexColor + ";";
-      const color = new Color(hexColor);
+      const color = new color_default(hexColor);
       const fill = color.getFigmaSolidColor();
       frame.fills = [fill];
       frame.resize(128, 64);
@@ -3228,11 +3237,11 @@ var init_main = __esm({
     };
     paletteVariable = (collectionId, colorName = "color", hexColor, tone) => {
       var _a;
-      const keyColorName = `color/primitives/${colorName}/${colorName}-key/${colorName}`;
+      const keyColorName = `color/primitives/${colorName}/${colorName} - source color/${colorName}`;
       const toneColorName = `color/primitives/${colorName}/${colorName}-${tone}`;
       const name = tone || tone === 0 ? toneColorName : keyColorName;
       const variableId = (_a = variableFromName(name)) == null ? void 0 : _a.id;
-      const color = new Color(hexColor);
+      const color = new color_default(hexColor);
       const fill = color.getFigmaSolidColor().color;
       const collection = figma.variables.getVariableCollectionById(collectionId);
       const variable = variableId ? figma.variables.getVariableById(variableId) : figma.variables.createVariable(name, collectionId, "COLOR");
@@ -3291,14 +3300,6 @@ var init_main = __esm({
         const collectionId = pluginMessage.collectionId;
         const palette = paletteTones(hexColor, toneStops2);
         return paletteVariableCollection(collectionId, colorName, hexColor, palette);
-      }
-      if (pluginMessage.type === "colorChange") {
-        const color = pluginMessage.newHexColor;
-        const type = "colorChange";
-        const hctColor = fromHex(color);
-        const palettePreview = paletteTones(color);
-        const message = { type, hctColor, palettePreview };
-        figma.ui.postMessage(message);
       }
     };
   }
