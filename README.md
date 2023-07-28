@@ -25,6 +25,12 @@ To watch for code changes and rebuild the plugin automatically:
 $ npm run watch
 ```
 
+To use Tailwind for styling:
+
+```
+$ npm run tailwind
+```
+
 ### Install the plugin
 
 1. In the Figma desktop app, open a Figma document.
