@@ -8,6 +8,9 @@ import {
 } from '@material/material-color-utilities';
 import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
 
+/**
+ * Represents a solid color with RGB values. Figma requires colors to be in this format.
+ */
 interface SolidColor {
 	type: 'SOLID';
 	color: {
@@ -17,6 +20,9 @@ interface SolidColor {
 	};
 }
 
+/**
+ * Represents a color with various properties such as hue, chroma, and tone.
+ */
 class Color {
 	private argb: number;
 	private rgba: string | Rgba;
@@ -27,6 +33,10 @@ class Color {
 	private figmaSolidColor: SolidColor;
 	private hctColor: Hct;
 
+	/**
+	 * Creates a new Color instance from a hex color string.
+	 * @param hexColor The hex color string to create the color from.
+	 */
 	constructor(hexColor: string) {
 		const cleanedHexColor = hexColor.startsWith('#')
 			? hexColor.slice(1)
@@ -50,34 +60,66 @@ class Color {
 		this.hex = hexFromArgb(this.argb);
 	}
 
+	/**
+	 * Gets the hue value of the color.
+	 * @returns The hue value of the color.
+	 */
 	getHue() {
 		return this.hue;
 	}
 
+	/**
+	 * Gets the chroma value of the color.
+	 * @returns The chroma value of the color.
+	 */
 	getChroma() {
 		return this.chroma;
 	}
 
+	/**
+	 * Gets the tone value of the color.
+	 * @returns The tone value of the color.
+	 */
 	getTone() {
 		return this.tone;
 	}
 
+	/**
+	 * Gets the ARGB value of the color.
+	 * @returns The ARGB value of the color.
+	 */
 	getArgb() {
 		return this.argb;
 	}
 
+	/**
+	 * Gets the RGBA value of the color.
+	 * @returns The RGBA value of the color.
+	 */
 	getRgba() {
 		return this.rgba;
 	}
 
+	/**
+	 * Gets the hex value of the color.
+	 * @returns The hex value of the color.
+	 */
 	getHex() {
 		return this.hex;
 	}
 
+	/**
+	 * Gets the Figma solid color object of the color.
+	 * @returns The Figma solid color object of the color.
+	 */
 	getFigmaSolidColor() {
 		return this.figmaSolidColor;
 	}
 
+	/**
+	 * Gets the Hct color object of the color.
+	 * @returns The Hct color object of the color.
+	 */
 	getHctColor() {
 		return this.hctColor;
 	}
@@ -85,7 +127,11 @@ class Color {
 
 export default Color;
 
-// Create tones from stops
+/**
+ * Creates an array of tone stops.
+ * @param stops An optional array of tone stops.
+ * @returns An array of tone stops.
+ */
 export const toneStops = (stops?: number[]) => {
 	const defaultToneStops: number[] = [];
 	if (stops && stops.length > 0) {
@@ -98,7 +144,12 @@ export const toneStops = (stops?: number[]) => {
 	}
 };
 
-// Create palette from hex color and tone stops
+/**
+ * Creates a palette of colors from a hex color and tone stops.
+ * @param hexColor The hex color string to create the palette from.
+ * @param stops An optional array of tone stops.
+ * @returns An object containing the palette of colors.
+ */
 export const paletteTones = (hexColor: string, stops?: number[]) => {
 	const paletteToneStops = toneStops(stops);
 	const color = new Color(hexColor);
@@ -114,4 +165,37 @@ export const paletteTones = (hexColor: string, stops?: number[]) => {
 		palette[tone] = hex;
 	}
 	return palette;
+};
+
+/**
+ * Defines the type of an object that represents a palette of colors.
+ */
+type PaletteObject = {
+	[key: string]: string;
+};
+
+/**
+ * Gets the hex values of a palette object.
+ * @param paletteObject An object containing the palette of colors.
+ * @returns A string containing the hex values of the palette object.
+ */
+export const getValues = (paletteObject: PaletteObject) => {
+	let hexString = '';
+	for (let key in paletteObject) {
+		hexString += paletteObject[key] + ', ';
+	}
+	// Remove the last comma and space
+	hexString = hexString.slice(0, -2);
+	return hexString;
+};
+
+/**
+ * Creates a tonal gradient from a hex color string.
+ * @param hexColor The hex color string to create the tonal gradient from.
+ * @returns A string containing the hex values of the tonal gradient.
+ */
+export const hctTonalGradient = (hexColor: string) => {
+	const gradientTones = paletteTones(hexColor);
+	const gradientString = getValues(gradientTones);
+	return gradientString;
 };

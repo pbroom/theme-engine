@@ -3088,6 +3088,10 @@ var init_color = __esm({
     init_material_color_utilities();
     init_lib();
     Color = class {
+      /**
+       * Creates a new Color instance from a hex color string.
+       * @param hexColor The hex color string to create the color from.
+       */
       constructor(hexColor) {
         var _a, _b, _c;
         const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
@@ -3107,27 +3111,59 @@ var init_color = __esm({
         this.rgba = rgbaFromArgb(this.argb);
         this.hex = hexFromArgb(this.argb);
       }
+      /**
+       * Gets the hue value of the color.
+       * @returns The hue value of the color.
+       */
       getHue() {
         return this.hue;
       }
+      /**
+       * Gets the chroma value of the color.
+       * @returns The chroma value of the color.
+       */
       getChroma() {
         return this.chroma;
       }
+      /**
+       * Gets the tone value of the color.
+       * @returns The tone value of the color.
+       */
       getTone() {
         return this.tone;
       }
+      /**
+       * Gets the ARGB value of the color.
+       * @returns The ARGB value of the color.
+       */
       getArgb() {
         return this.argb;
       }
+      /**
+       * Gets the RGBA value of the color.
+       * @returns The RGBA value of the color.
+       */
       getRgba() {
         return this.rgba;
       }
+      /**
+       * Gets the hex value of the color.
+       * @returns The hex value of the color.
+       */
       getHex() {
         return this.hex;
       }
+      /**
+       * Gets the Figma solid color object of the color.
+       * @returns The Figma solid color object of the color.
+       */
       getFigmaSolidColor() {
         return this.figmaSolidColor;
       }
+      /**
+       * Gets the Hct color object of the color.
+       * @returns The Hct color object of the color.
+       */
       getHctColor() {
         return this.hctColor;
       }
@@ -3270,6 +3306,16 @@ var init_variable_collection = __esm({
   "src/variable-collection.ts"() {
     "use strict";
     VariableCollection = class {
+      /**
+       * Creates a new instance of VariableCollection.
+       * @param id The ID of the collection.
+       * @param name The name of the collection.
+       * @param variableIds The list of variables contained in this variable collection.
+       * @param defaultModeId The default mode ID for this collection.
+       * @param modes The modes defined for this collection.
+       * @param remote Whether the collection is remote or local.
+       * @param key The key to use with getVariablesInLibraryCollectionAsync.
+       */
       constructor(id, name, variableIds, defaultModeId, modes, remote, key) {
         this.id = id;
         this.name = name;
@@ -3279,6 +3325,10 @@ var init_variable_collection = __esm({
         this.remote = remote;
         this.key = key;
       }
+      /**
+       * Returns a JSON representation of the VariableCollection instance.
+       * @returns A JSON object representing the VariableCollection instance.
+       */
       toJSON() {
         return {
           id: this.id,

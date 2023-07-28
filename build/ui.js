@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6475f86-7264-424c-92fb-68cc123661ef/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740dacbf-c829-49a9-9aea-f67d9c1790c2/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6475f86-7264-424c-92fb-68cc123661ef/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740dacbf-c829-49a9-9aea-f67d9c1790c2/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -600,6 +600,9 @@ video {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+.block {
+  display: block;
 }
 .flex {
   display: flex;
@@ -4169,13 +4172,17 @@ video {
   });
 
   // src/color.ts
-  var Color, color_default, toneStops, paletteTones;
+  var Color, color_default, toneStops, paletteTones, getValues, hctTonalGradient;
   var init_color = __esm({
     "src/color.ts"() {
       "use strict";
       init_material_color_utilities();
       init_lib();
       Color = class {
+        /**
+         * Creates a new Color instance from a hex color string.
+         * @param hexColor The hex color string to create the color from.
+         */
         constructor(hexColor) {
           var _a, _b, _c;
           const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
@@ -4195,27 +4202,59 @@ video {
           this.rgba = rgbaFromArgb(this.argb);
           this.hex = hexFromArgb(this.argb);
         }
+        /**
+         * Gets the hue value of the color.
+         * @returns The hue value of the color.
+         */
         getHue() {
           return this.hue;
         }
+        /**
+         * Gets the chroma value of the color.
+         * @returns The chroma value of the color.
+         */
         getChroma() {
           return this.chroma;
         }
+        /**
+         * Gets the tone value of the color.
+         * @returns The tone value of the color.
+         */
         getTone() {
           return this.tone;
         }
+        /**
+         * Gets the ARGB value of the color.
+         * @returns The ARGB value of the color.
+         */
         getArgb() {
           return this.argb;
         }
+        /**
+         * Gets the RGBA value of the color.
+         * @returns The RGBA value of the color.
+         */
         getRgba() {
           return this.rgba;
         }
+        /**
+         * Gets the hex value of the color.
+         * @returns The hex value of the color.
+         */
         getHex() {
           return this.hex;
         }
+        /**
+         * Gets the Figma solid color object of the color.
+         * @returns The Figma solid color object of the color.
+         */
         getFigmaSolidColor() {
           return this.figmaSolidColor;
         }
+        /**
+         * Gets the Hct color object of the color.
+         * @returns The Hct color object of the color.
+         */
         getHctColor() {
           return this.hctColor;
         }
@@ -4247,6 +4286,19 @@ video {
           palette[tone] = hex;
         }
         return palette;
+      };
+      getValues = (paletteObject) => {
+        let hexString = "";
+        for (let key in paletteObject) {
+          hexString += paletteObject[key] + ", ";
+        }
+        hexString = hexString.slice(0, -2);
+        return hexString;
+      };
+      hctTonalGradient = (hexColor) => {
+        const gradientTones = paletteTones(hexColor);
+        const gradientString = getValues(gradientTones);
+        return gradientString;
       };
     }
   });
@@ -4706,10 +4758,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/327f7391-a800-4d73-a288-fa72cc4884cb/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61824bff-8bb6-46fa-892a-321aa72bcc08/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/327f7391-a800-4d73-a288-fa72cc4884cb/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61824bff-8bb6-46fa-892a-321aa72bcc08/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -4768,10 +4820,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b98d427b-9070-410c-9169-b904f61f1279/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa63c2ff-5af6-4da4-94c8-6905e3a384ae/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b98d427b-9070-410c-9169-b904f61f1279/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa63c2ff-5af6-4da4-94c8-6905e3a384ae/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -4954,10 +5006,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/675ca672-c690-4704-93ff-555feeff721d/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8e33342-3014-40d1-a027-e5b2da3c4130/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/675ca672-c690-4704-93ff-555feeff721d/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8e33342-3014-40d1-a027-e5b2da3c4130/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -5002,10 +5054,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ffd784c-a25c-41d1-b4f8-0074c9ff1676/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fb846616-fc57-4265-8cbc-ccf82f131fa4/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ffd784c-a25c-41d1-b4f8-0074c9ff1676/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fb846616-fc57-4265-8cbc-ccf82f131fa4/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -5136,10 +5188,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/25df6c57-0584-4a18-bebd-a924e3f459e4/divider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68c3bb46-441e-46c7-8c3c-41a7b73d9638/divider.module.js
   var divider_module_default;
   var init_divider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/25df6c57-0584-4a18-bebd-a924e3f459e4/divider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68c3bb46-441e-46c7-8c3c-41a7b73d9638/divider.module.js"() {
       if (document.getElementById("3b0eaf9c51") === null) {
         const element = document.createElement("style");
         element.id = "3b0eaf9c51";
@@ -5167,10 +5219,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c22e744d-2b46-4994-a6eb-c1a4ad895690/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2248c7fe-6d02-4d71-ade8-e67cd1375f04/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c22e744d-2b46-4994-a6eb-c1a4ad895690/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2248c7fe-6d02-4d71-ade8-e67cd1375f04/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -5405,10 +5457,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cfd97b20-a922-43bd-a571-a9ddc0930ab5/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fef30ccc-5a57-4397-a251-46b0de5773f4/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cfd97b20-a922-43bd-a571-a9ddc0930ab5/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fef30ccc-5a57-4397-a251-46b0de5773f4/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -5815,10 +5867,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e9c1cd2-c47a-4c41-aab2-2bd2a39b3877/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d73593fc-61d1-4dd3-aa2d-6386a4a59b6a/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e9c1cd2-c47a-4c41-aab2-2bd2a39b3877/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d73593fc-61d1-4dd3-aa2d-6386a4a59b6a/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -5976,10 +6028,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4fae76cf-3191-46a5-b75d-c65f9878d14c/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/716eb683-08db-477e-a9ad-bc4f6fa2e0c0/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4fae76cf-3191-46a5-b75d-c65f9878d14c/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/716eb683-08db-477e-a9ad-bc4f6fa2e0c0/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6468,10 +6520,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2139223-33c0-49bb-8dff-6aa75080ccb3/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07ec7289-bd2f-4d2f-a565-b68ab6c88aff/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2139223-33c0-49bb-8dff-6aa75080ccb3/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07ec7289-bd2f-4d2f-a565-b68ab6c88aff/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -6818,10 +6870,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05bf4d34-6bb5-45ca-a34a-ca38ac181445/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04f53c62-0487-4301-9adf-0b015fbc590e/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05bf4d34-6bb5-45ca-a34a-ca38ac181445/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04f53c62-0487-4301-9adf-0b015fbc590e/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -7004,10 +7056,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/54602cdf-0778-4143-8c2e-b3ea2432760b/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be3ee2d8-ddd0-4e0a-ba15-2b4c258f386f/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/54602cdf-0778-4143-8c2e-b3ea2432760b/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be3ee2d8-ddd0-4e0a-ba15-2b4c258f386f/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7046,10 +7098,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3bc85062-1e18-4435-a3cc-b5cec0403318/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a737c3c-1838-4eab-882c-96ff93c20c37/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3bc85062-1e18-4435-a3cc-b5cec0403318/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a737c3c-1838-4eab-882c-96ff93c20c37/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7088,9 +7140,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/deb1cb1c-ae5d-45b6-af19-e423f4595464/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69e85bf0-b00f-44a9-b10c-d9b162afbd03/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/deb1cb1c-ae5d-45b6-af19-e423f4595464/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69e85bf0-b00f-44a9-b10c-d9b162afbd03/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -7241,63 +7293,8 @@ svg {
     default: () => ui_default
   });
   function Plugin() {
-    const [value2, setValue] = h2("color");
-    const [collections, setCollections] = h2([]);
-    const [hexColor, setHexColor] = h2("397456");
-    const [opacity, setOpacity] = h2("");
-    const [hue, setHue] = h2(0);
-    const [chroma, setChroma] = h2(0);
-    const [tone, setTone] = h2(0);
-    const [paletteGradient, setPaletteGradient] = h2(
-      "#000000, #397456, #ffffff"
-    );
-    const [optionId, setOptionId] = h2("1");
-    const [checkboxValue, setCheckboxValue] = h2(true);
-    function handleInput(event) {
-      const newValue = event.currentTarget.value;
-      setValue(newValue);
-    }
-    function handleHexColorInput(event) {
-      const newHexColor = event.currentTarget.value;
-      setHexColor(newHexColor);
-      const newColor = new color_default(newHexColor);
-      const palettePreview = paletteTones(newHexColor);
-      const newPaletteGradient = getValues(palettePreview);
-      setPaletteGradient(newPaletteGradient);
-      const newHue = Math.round(newColor.getHue());
-      setHue(newHue);
-      const newChroma = Math.round(newColor.getChroma());
-      setChroma(newChroma);
-      const newTone = Math.round(newColor.getTone());
-      setTone(newTone);
-      return newHexColor;
-    }
-    const getValues = (paletteObject) => {
-      let hexString = "";
-      for (let key in paletteObject) {
-        hexString += paletteObject[key] + ", ";
-      }
-      hexString = hexString.slice(0, -2);
-      return hexString;
-    };
-    onmessage = (event) => {
-      const message = event.data.pluginMessage;
-      if (message.type === "localCollections") {
-        const collections2 = message.collections;
-        setCollections(collections2);
-        const newOptions = [...options];
-        for (let i3 = 0; i3 < collections2.length; i3++) {
-          newOptions.push({ value: collections2[i3].name });
-        }
-        const newDropdownValue = collections2[0].name;
-        setDropdownValue(newDropdownValue);
-        setOptions(newOptions);
-      }
-    };
-    function handleOpacityInput(event) {
-      const newOpacity = event.currentTarget.value;
-      setOpacity(newOpacity);
-    }
+    const startingColor = "397456";
+    const startingGradient = hctTonalGradient(startingColor);
     const defaultPaletteTones = [
       0,
       10,
@@ -7327,9 +7324,47 @@ svg {
       96,
       98
     ];
+    const [paletteGradient, setPaletteGradient] = h2(startingGradient);
+    const [hue, setHue] = h2(0);
+    const [chroma, setChroma] = h2(0);
+    const [tone, setTone] = h2(0);
+    const [textboxValue, setTextboxValue] = h2("color");
+    const [hexColor, setHexColor] = h2(startingColor);
+    const [opacity, setOpacity] = h2("");
     const [textAreaValue, setTextAreaValue] = h2(
       `${defaultPaletteTones}`
     );
+    const [dropdownValue, setDropdownValue] = h2(null);
+    const [collections, setCollections] = h2([]);
+    const [optionId, setOptionId] = h2("1");
+    const [options, setOptions] = h2([
+      {
+        header: "Choose a collection"
+      }
+    ]);
+    const [checkboxValue, setCheckboxValue] = h2(true);
+    function handleTextboxInput(event) {
+      const newTextboxValue = event.currentTarget.value;
+      setTextboxValue(newTextboxValue);
+    }
+    function handleHexColorInput(event) {
+      const newHexColor = event.currentTarget.value;
+      setHexColor(newHexColor);
+      const newColor = new color_default(newHexColor);
+      const newPaletteGradient = hctTonalGradient(startingColor);
+      setPaletteGradient(newPaletteGradient);
+      const newHue = Math.round(newColor.getHue());
+      setHue(newHue);
+      const newChroma = Math.round(newColor.getChroma());
+      setChroma(newChroma);
+      const newTone = Math.round(newColor.getTone());
+      setTone(newTone);
+      return newHexColor;
+    }
+    function handleOpacityInput(event) {
+      const newOpacity = event.currentTarget.value;
+      setOpacity(newOpacity);
+    }
     function handleTextAreaInput(event) {
       const newTextAreaValue = event.currentTarget.value;
       setTextAreaValue(newTextAreaValue);
@@ -7347,7 +7382,7 @@ svg {
     }
     function handleClick(type) {
       const newColor = {
-        colorName: value2,
+        colorName: textboxValue,
         backgroundColor: hexColor
       };
       const name = newColor.colorName;
@@ -7372,24 +7407,30 @@ svg {
         "*"
       );
     }
-    const [dropdownValue, setDropdownValue] = h2(null);
-    const [options, setOptions] = h2([
-      {
-        header: "Choose a collection"
-      }
-    ]);
-    function handleChange(event) {
+    function handleDropdownChange(event) {
       const newDropdownValue = event.currentTarget.value;
       const newOptionId = event.currentTarget.getAttribute("data-dropdown-item-id");
-      console.log(newOptionId);
       setOptionId(newOptionId);
       setDropdownValue(newDropdownValue);
     }
     function handleCheckboxChange(event) {
       const newCheckboxValue = event.currentTarget.checked;
-      console.log(newCheckboxValue);
       setCheckboxValue(newCheckboxValue);
     }
+    onmessage = (event) => {
+      const message = event.data.pluginMessage;
+      if (message.type === "localCollections") {
+        const collections2 = message.collections;
+        setCollections(collections2);
+        const newOptions = [...options];
+        for (let i3 = 0; i3 < collections2.length; i3++) {
+          newOptions.push({ value: collections2[i3].name });
+        }
+        const newDropdownValue = collections2[0].name;
+        setDropdownValue(newDropdownValue);
+        setOptions(newOptions);
+      }
+    };
     return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y(
       "div",
       {
@@ -7401,8 +7442,8 @@ svg {
     ), /* @__PURE__ */ y("p", { className: "p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
       Textbox,
       {
-        onInput: handleInput,
-        value: value2,
+        onInput: handleTextboxInput,
+        value: textboxValue,
         variant: "border",
         placeholder: "Name thy color"
       }
@@ -7436,7 +7477,7 @@ svg {
     ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Divider, null), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
       Dropdown,
       {
-        onChange: handleChange,
+        onChange: handleDropdownChange,
         placeholder: "Choose a collection",
         options,
         value: dropdownValue,

@@ -1,5 +1,12 @@
 import Color from './color';
 
+/**
+ * Creates a Figma frame containing a single color swatch for a given color.
+ * @param colorName - The name of the color.
+ * @param hexColor - The hex value of the color.
+ * @param tone - The tone of the color.
+ * @returns The Figma frame containing the color swatch.
+ */
 export const paletteSwatch = (
 	colorName: string,
 	hexColor: string,
@@ -14,6 +21,13 @@ export const paletteSwatch = (
 	return frame;
 };
 
+/**
+ * Creates a Figma frame containing a group of color swatches for a given color palette.
+ * @param colorName - The name of the color palette.
+ * @param originalColor - The original color of the palette in hex format.
+ * @param palette - An object containing the color values for each tone in the palette.
+ * @returns The Figma frame containing the color swatches.
+ */
 export const paletteGroup = (
 	colorName: string,
 	originalColor: string,

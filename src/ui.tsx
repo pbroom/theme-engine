@@ -1,7 +1,7 @@
 // Importing the tailwind.css file
 import '!./dist/tailwind.css';
 import Color from './color';
-import { paletteTones } from './color';
+import { paletteTones, hctTonalGradient } from './color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
@@ -21,28 +21,42 @@ import {
 
 // Importing preact and preact/hooks libraries
 import { h } from 'preact';
-import { useCallback, useState } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 
 // Defining the Plugin component
 function Plugin() {
-	// Defining state variables
-	const [value, setValue] = useState<string>('color');
-	const [collections, setCollections] = useState<VariableCollection[]>([]);
-	const [hexColor, setHexColor] = useState<string>('397456');
-	const [opacity, setOpacity] = useState<string>('');
+	// Defaults
+	const startingColor = '397456';
+	const startingGradient = hctTonalGradient(startingColor);
+	const defaultPaletteTones = [
+		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
+		25, 35, 87, 92, 94, 96, 98,
+	];
+
+	const [paletteGradient, setPaletteGradient] =
+		useState<string>(startingGradient);
 	const [hue, setHue] = useState<number>(0);
 	const [chroma, setChroma] = useState<number>(0);
 	const [tone, setTone] = useState<number>(0);
-	const [paletteGradient, setPaletteGradient] = useState<string>(
-		'#000000, #397456, #ffffff'
+	const [textboxValue, setTextboxValue] = useState<string>('color');
+	const [hexColor, setHexColor] = useState<string>(startingColor);
+	const [opacity, setOpacity] = useState<string>('');
+	const [textAreaValue, setTextAreaValue] = useState<string>(
+		`${defaultPaletteTones}`
 	);
+	const [dropdownValue, setDropdownValue] = useState<null | string>(null);
+	const [collections, setCollections] = useState<VariableCollection[]>([]);
 	const [optionId, setOptionId] = useState<null | string>('1');
+	const [options, setOptions] = useState<Array<DropdownOption>>([
+		{
+			header: 'Choose a collection',
+		},
+	]);
 	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
 
-	// Function to handle changes in the Textbox component
-	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
-		const newValue = event.currentTarget.value;
-		setValue(newValue);
+	function handleTextboxInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newTextboxValue = event.currentTarget.value;
+		setTextboxValue(newTextboxValue);
 	}
 
 	// Function to handle changes in the hexColor input field
@@ -52,8 +66,7 @@ function Plugin() {
 		const newHexColor = event.currentTarget.value;
 		setHexColor(newHexColor);
 		const newColor = new Color(newHexColor);
-		const palettePreview = paletteTones(newHexColor);
-		const newPaletteGradient = getValues(palettePreview);
+		const newPaletteGradient = hctTonalGradient(startingColor);
 		setPaletteGradient(newPaletteGradient);
 		const newHue = Math.round(newColor.getHue());
 		setHue(newHue);
@@ -65,51 +78,12 @@ function Plugin() {
 		return newHexColor;
 	}
 
-	type PaletteObject = {
-		[key: string]: string;
-	};
-
-	const getValues = (paletteObject: PaletteObject) => {
-		let hexString = '';
-		for (let key in paletteObject) {
-			hexString += paletteObject[key] + ', ';
-		}
-		// Remove the last comma and space
-		hexString = hexString.slice(0, -2);
-		return hexString;
-	};
-
-	// Function to handle changes in the hexColor input field from main.ts
-	onmessage = (event) => {
-		const message = event.data.pluginMessage;
-		if (message.type === 'localCollections') {
-			const collections = message.collections;
-			setCollections(collections);
-			const newOptions = [...options];
-			for (let i = 0; i < collections.length; i++) {
-				newOptions.push({ value: collections[i].name });
-			}
-			const newDropdownValue = collections[0].name;
-			setDropdownValue(newDropdownValue);
-			setOptions(newOptions);
-		}
-	};
-
-	// Function to handle changes in the opacity input field
 	function handleOpacityInput(
 		event: h.JSX.TargetedEvent<HTMLInputElement, Event>
 	) {
 		const newOpacity = event.currentTarget.value;
 		setOpacity(newOpacity);
 	}
-
-	const defaultPaletteTones = [
-		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
-		25, 35, 87, 92, 94, 96, 98,
-	];
-	const [textAreaValue, setTextAreaValue] = useState<string>(
-		`${defaultPaletteTones}`
-	);
 
 	function handleTextAreaInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
 		const newTextAreaValue = event.currentTarget.value;
@@ -134,7 +108,7 @@ function Plugin() {
 	// Function to handle button click
 	function handleClick(type: string) {
 		const newColor = {
-			colorName: value,
+			colorName: textboxValue,
 			backgroundColor: hexColor,
 		};
 		const name = newColor.colorName;
@@ -160,24 +134,31 @@ function Plugin() {
 		);
 	}
 
-	const [dropdownValue, setDropdownValue] = useState<null | string>(null);
-	const [options, setOptions] = useState<Array<DropdownOption>>([
-		{
-			header: 'Choose a collection',
-		},
-	]);
-	function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+	function handleDropdownChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newDropdownValue = event.currentTarget.value;
 		const newOptionId = event.currentTarget.getAttribute('data-dropdown-item-id');
-		console.log(newOptionId);
 		setOptionId(newOptionId);
 		setDropdownValue(newDropdownValue);
 	}
 	function handleCheckboxChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newCheckboxValue = event.currentTarget.checked;
-		console.log(newCheckboxValue);
 		setCheckboxValue(newCheckboxValue);
 	}
+
+	onmessage = (event) => {
+		const message = event.data.pluginMessage;
+		if (message.type === 'localCollections') {
+			const collections = message.collections;
+			setCollections(collections);
+			const newOptions = [...options];
+			for (let i = 0; i < collections.length; i++) {
+				newOptions.push({ value: collections[i].name });
+			}
+			const newDropdownValue = collections[0].name;
+			setDropdownValue(newDropdownValue);
+			setOptions(newOptions);
+		}
+	};
 
 	// Rendering the UI
 	return (
@@ -195,8 +176,8 @@ function Plugin() {
 				</p>
 				<div className='flex flex-row gap-1 py-2'>
 					<Textbox
-						onInput={handleInput}
-						value={value}
+						onInput={handleTextboxInput}
+						value={textboxValue}
 						variant='border'
 						placeholder='Name thy color'
 					/>
@@ -228,7 +209,7 @@ function Plugin() {
 				<Divider />
 				<VerticalSpace space='small' />
 				<Dropdown
-					onChange={handleChange}
+					onChange={handleDropdownChange}
 					placeholder='Choose a collection'
 					options={options}
 					value={dropdownValue}
