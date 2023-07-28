@@ -1,7 +1,7 @@
 // Importing the tailwind.css file
-import '!./tailwind.css';
+import '!./dist/tailwind.css';
 import Color from './color';
-import { toneStops, paletteTones } from './color';
+import { paletteTones } from './color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {

@@ -2,7 +2,6 @@ import {
 	convertHexColorToRgbColor,
 	showUI,
 } from '@create-figma-plugin/utilities';
-import Color from './color';
 import { paletteTones } from './color';
 import { paletteGroup } from './palette-swatches';
 import { paletteVariableCollection } from './palette-variables';

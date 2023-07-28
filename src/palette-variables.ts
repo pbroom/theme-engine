@@ -17,7 +17,6 @@ export const paletteColorVariable = (
 	const name = tone || tone === 0 ? toneColorName : keyColorName;
 	const variableId = variableFromName(name)?.id;
 	if (overwriteVariables === false && variableId) {
-		// figma.notify(`Variable ${name} already exists`, { timeout: 1, error: true });
 		console.log(`Variable ${name} already exists`);
 		return;
 	}
@@ -76,6 +75,5 @@ export const paletteVariableCollection = (
 			error: true,
 		});
 	}
-	// console.log(variables);
 	return variables;
 };
