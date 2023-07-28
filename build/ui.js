@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19824d2a-d1d3-4cc2-8ba4-cf29d6ecb4e5/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb4f41cb-178e-4f33-a500-1c8e1dfee0e5/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19824d2a-d1d3-4cc2-8ba4-cf29d6ecb4e5/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb4f41cb-178e-4f33-a500-1c8e1dfee0e5/tailwind.js"() {
       if (document.getElementById("f8ad1fdc80") === null) {
         const element = document.createElement("style");
         element.id = "f8ad1fdc80";
@@ -4169,7 +4169,7 @@ video {
   });
 
   // src/color.ts
-  var Color, color_default;
+  var Color, color_default, toneStops, paletteTones;
   var init_color = __esm({
     "src/color.ts"() {
       "use strict";
@@ -4221,6 +4221,33 @@ video {
         }
       };
       color_default = Color;
+      toneStops = (stops) => {
+        const defaultToneStops = [];
+        if (stops && stops.length > 0) {
+          return stops;
+        } else {
+          for (let stop = 0; stop <= 100; stop++) {
+            defaultToneStops.push(stop);
+          }
+          return defaultToneStops;
+        }
+      };
+      paletteTones = (hexColor, stops) => {
+        const paletteToneStops = toneStops(stops);
+        const color = new Color(hexColor);
+        const hctColor = color.getHctColor();
+        const paletteColor = TonalPalette.fromHueAndChroma(
+          hctColor.hue,
+          hctColor.chroma
+        );
+        const palette = {};
+        for (let tone of paletteToneStops) {
+          const argb = paletteColor.tone(tone);
+          const hex = hexFromArgb(argb);
+          palette[tone] = hex;
+        }
+        return palette;
+      };
     }
   });
 
@@ -4679,10 +4706,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68729f24-93ba-4ecf-85ff-bb3f702d51bf/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca675e09-b90b-4826-924d-75a52a207db2/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68729f24-93ba-4ecf-85ff-bb3f702d51bf/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca675e09-b90b-4826-924d-75a52a207db2/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -4741,10 +4768,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21f4dc58-10e1-4fa0-82de-2f8405eec592/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eaa1ba7-976b-49d2-9377-6d79de414019/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21f4dc58-10e1-4fa0-82de-2f8405eec592/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eaa1ba7-976b-49d2-9377-6d79de414019/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -4927,10 +4954,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f306ff08-e412-438a-9005-fdb91e099d15/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f7fb9c5-1965-4a4e-adfd-15fab912f4f5/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f306ff08-e412-438a-9005-fdb91e099d15/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f7fb9c5-1965-4a4e-adfd-15fab912f4f5/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -4975,10 +5002,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/592ec7b5-856f-4604-a8b3-188768045a8d/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fefd1fb2-7f10-41be-8262-f48caca932bd/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/592ec7b5-856f-4604-a8b3-188768045a8d/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fefd1fb2-7f10-41be-8262-f48caca932bd/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -5109,10 +5136,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/077cf493-241c-46ca-843a-77a362c313ca/divider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3f7a793-590f-42e0-aee1-b0b2fc12eabc/divider.module.js
   var divider_module_default;
   var init_divider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/077cf493-241c-46ca-843a-77a362c313ca/divider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3f7a793-590f-42e0-aee1-b0b2fc12eabc/divider.module.js"() {
       if (document.getElementById("3b0eaf9c51") === null) {
         const element = document.createElement("style");
         element.id = "3b0eaf9c51";
@@ -5140,10 +5167,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef6abd08-26dc-4841-870c-9ac4e282d9b7/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfc2053f-7b14-4691-890a-253a1042d628/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef6abd08-26dc-4841-870c-9ac4e282d9b7/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfc2053f-7b14-4691-890a-253a1042d628/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -5378,10 +5405,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/28472d5d-d677-4d9d-bbd1-4f2f588b29f7/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c125950c-9b0e-4b12-9804-00d252edb8c8/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/28472d5d-d677-4d9d-bbd1-4f2f588b29f7/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c125950c-9b0e-4b12-9804-00d252edb8c8/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -5788,10 +5815,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a84825c9-b2b5-4d8d-a3bd-04ce3244aac3/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fbedcff6-38b4-453e-a3c6-d78f01b5e314/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a84825c9-b2b5-4d8d-a3bd-04ce3244aac3/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fbedcff6-38b4-453e-a3c6-d78f01b5e314/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -5949,10 +5976,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07fdd76f-0a41-4166-92f0-a4eef8087799/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edaa502b-53db-487a-a10e-0494e9f69236/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07fdd76f-0a41-4166-92f0-a4eef8087799/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edaa502b-53db-487a-a10e-0494e9f69236/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6441,10 +6468,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d32815cc-ab92-474e-854a-6c13d436ae92/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d8f9851-bbd4-46b1-ae05-396583a984f3/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d32815cc-ab92-474e-854a-6c13d436ae92/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d8f9851-bbd4-46b1-ae05-396583a984f3/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -6791,10 +6818,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f040aa6d-3b40-4cc5-88fb-ade962c761be/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f895300a-7a8e-46ad-b7fd-5732bfc78359/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f040aa6d-3b40-4cc5-88fb-ade962c761be/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f895300a-7a8e-46ad-b7fd-5732bfc78359/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -6977,10 +7004,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7bcce6db-c464-4c2f-910a-ee104ddd4605/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67e10f68-f323-4909-9bf7-e13a1195af92/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7bcce6db-c464-4c2f-910a-ee104ddd4605/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67e10f68-f323-4909-9bf7-e13a1195af92/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7019,10 +7046,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e477dc7c-5516-4d89-be3e-fb7fe21d7c9b/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55c9c504-7af7-433e-964a-9af6ae02f31d/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e477dc7c-5516-4d89-be3e-fb7fe21d7c9b/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55c9c504-7af7-433e-964a-9af6ae02f31d/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7061,9 +7088,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9fede7c5-33ed-4277-9dc2-5af66092eba6/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe533631-9bec-46c1-8ac8-1028bbe65063/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9fede7c5-33ed-4277-9dc2-5af66092eba6/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe533631-9bec-46c1-8ac8-1028bbe65063/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -7221,20 +7248,22 @@ svg {
     const [hue, setHue] = h2(0);
     const [chroma, setChroma] = h2(0);
     const [tone, setTone] = h2(0);
-    const [hexFromHct, setHexFromHct] = h2("#397456");
     const [paletteGradient, setPaletteGradient] = h2(
       "#000000, #397456, #ffffff"
     );
     const [optionId, setOptionId] = h2("1");
+    const [checkboxValue, setCheckboxValue] = h2(true);
     function handleInput(event) {
       const newValue = event.currentTarget.value;
       setValue(newValue);
     }
     function handleHexColorInput(event) {
       const newHexColor = event.currentTarget.value;
-      const toneStops = textAreaValue;
       setHexColor(newHexColor);
       const newColor = new color_default(newHexColor);
+      const palettePreview = paletteTones(newHexColor);
+      const newPaletteGradient = getValues(palettePreview);
+      setPaletteGradient(newPaletteGradient);
       const newHue = Math.round(newColor.getHue());
       setHue(newHue);
       const newChroma = Math.round(newColor.getChroma());
@@ -7323,19 +7352,21 @@ svg {
       };
       const name = newColor.colorName;
       const color = newColor.backgroundColor;
-      const toneStops = getStopsFromString(textAreaValue);
+      const toneStops3 = getStopsFromString(textAreaValue);
       if (!optionId) {
         return;
       }
       const collectionId = collections[parseInt(optionId) - 1].id;
+      const overwriteVariables = checkboxValue;
       parent.postMessage(
         {
           pluginMessage: {
             type,
             name,
             color,
-            toneStops,
-            collectionId
+            toneStops: toneStops3,
+            collectionId,
+            overwriteVariables
           }
         },
         "*"
@@ -7354,7 +7385,6 @@ svg {
       setOptionId(newOptionId);
       setDropdownValue(newDropdownValue);
     }
-    const [checkboxValue, setCheckboxValue] = h2(true);
     function handleCheckboxChange(event) {
       const newCheckboxValue = event.currentTarget.checked;
       console.log(newCheckboxValue);
@@ -7394,7 +7424,16 @@ svg {
         variant: "border",
         placeholder: "All tone stops (0-100)"
       }
-    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("build"), className: "mb-1", fullWidth: true }, "Build Palette"), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Divider, null), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(
+      Button,
+      {
+        onClick: () => handleClick("build"),
+        className: "mb-1",
+        fullWidth: true,
+        secondary: true
+      },
+      "Build Swatches"
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Divider, null), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
       Dropdown,
       {
         onChange: handleChange,
@@ -7403,13 +7442,14 @@ svg {
         value: dropdownValue,
         className: "mb-1"
       }
-    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Checkbox, { onChange: handleCheckboxChange, value: checkboxValue }, /* @__PURE__ */ y(Text, null, "Overwrite existing variables")), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true, secondary: true }, "Create Palette Variables")));
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Checkbox, { onChange: handleCheckboxChange, value: checkboxValue }, /* @__PURE__ */ y(Text, null, "Overwrite existing variables if they have the same name")), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true }, "Build Variables")));
   }
   var ui_default;
   var init_ui = __esm({
     "src/ui.tsx"() {
       "use strict";
       init_tailwind();
+      init_color();
       init_color();
       init_lib2();
       init_preact_module();

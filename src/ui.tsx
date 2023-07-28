@@ -1,6 +1,7 @@
 // Importing the tailwind.css file
 import '!./tailwind.css';
 import Color from './color';
+import { toneStops, paletteTones } from './color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
@@ -32,11 +33,11 @@ function Plugin() {
 	const [hue, setHue] = useState<number>(0);
 	const [chroma, setChroma] = useState<number>(0);
 	const [tone, setTone] = useState<number>(0);
-	const [hexFromHct, setHexFromHct] = useState<string>('#397456');
 	const [paletteGradient, setPaletteGradient] = useState<string>(
 		'#000000, #397456, #ffffff'
 	);
 	const [optionId, setOptionId] = useState<null | string>('1');
+	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
 
 	// Function to handle changes in the Textbox component
 	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
@@ -49,25 +50,18 @@ function Plugin() {
 		event: h.JSX.TargetedEvent<HTMLInputElement, Event>
 	) {
 		const newHexColor = event.currentTarget.value;
-		const toneStops = textAreaValue;
 		setHexColor(newHexColor);
 		const newColor = new Color(newHexColor);
+		const palettePreview = paletteTones(newHexColor);
+		const newPaletteGradient = getValues(palettePreview);
+		setPaletteGradient(newPaletteGradient);
 		const newHue = Math.round(newColor.getHue());
 		setHue(newHue);
 		const newChroma = Math.round(newColor.getChroma());
 		setChroma(newChroma);
 		const newTone = Math.round(newColor.getTone());
 		setTone(newTone);
-		// parent.postMessage(
-		// 	{
-		// 		pluginMessage: {
-		// 			type: 'colorChange',
-		// 			newHexColor: newHexColor,
-		// 			toneStops: toneStops,
-		// 		},
-		// 	},
-		// 	'*'
-		// );
+
 		return newHexColor;
 	}
 
@@ -150,6 +144,7 @@ function Plugin() {
 			return;
 		}
 		const collectionId = collections[parseInt(optionId) - 1].id;
+		const overwriteVariables = checkboxValue;
 		parent.postMessage(
 			{
 				pluginMessage: {
@@ -158,6 +153,7 @@ function Plugin() {
 					color: color,
 					toneStops: toneStops,
 					collectionId: collectionId,
+					overwriteVariables: overwriteVariables,
 				},
 			},
 			'*'
@@ -177,8 +173,6 @@ function Plugin() {
 		setOptionId(newOptionId);
 		setDropdownValue(newDropdownValue);
 	}
-
-	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
 	function handleCheckboxChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newCheckboxValue = event.currentTarget.checked;
 		console.log(newCheckboxValue);
@@ -222,8 +216,13 @@ function Plugin() {
 					placeholder='All tone stops (0-100)'
 				/>
 				<VerticalSpace space='large' />
-				<Button onClick={() => handleClick('build')} className='mb-1' fullWidth>
-					Build Palette
+				<Button
+					onClick={() => handleClick('build')}
+					className='mb-1'
+					fullWidth
+					secondary
+				>
+					Build Swatches
 				</Button>
 				<VerticalSpace space='small' />
 				<Divider />
@@ -237,11 +236,11 @@ function Plugin() {
 				/>
 				<VerticalSpace space='small' />
 				<Checkbox onChange={handleCheckboxChange} value={checkboxValue}>
-					<Text>Overwrite existing variables</Text>
+					<Text>Overwrite existing variables if they have the same name</Text>
 				</Checkbox>
 				<VerticalSpace space='large' />
-				<Button onClick={() => handleClick('createVariables')} fullWidth secondary>
-					Create Palette Variables
+				<Button onClick={() => handleClick('createVariables')} fullWidth>
+					Build Variables
 				</Button>
 			</Container>
 		</div>

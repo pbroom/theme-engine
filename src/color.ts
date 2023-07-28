@@ -3,6 +3,7 @@ import {
 	Hct,
 	rgbaFromArgb,
 	hexFromArgb,
+	TonalPalette,
 	Rgba,
 } from '@material/material-color-utilities';
 import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
@@ -83,3 +84,34 @@ class Color {
 }
 
 export default Color;
+
+// Create tones from stops
+export const toneStops = (stops?: number[]) => {
+	const defaultToneStops: number[] = [];
+	if (stops && stops.length > 0) {
+		return stops;
+	} else {
+		for (let stop = 0; stop <= 100; stop++) {
+			defaultToneStops.push(stop);
+		}
+		return defaultToneStops;
+	}
+};
+
+// Create palette from hex color and tone stops
+export const paletteTones = (hexColor: string, stops?: number[]) => {
+	const paletteToneStops = toneStops(stops);
+	const color = new Color(hexColor);
+	const hctColor = color.getHctColor();
+	const paletteColor = TonalPalette.fromHueAndChroma(
+		hctColor.hue,
+		hctColor.chroma
+	);
+	const palette: { [key: number]: string } = {};
+	for (let tone of paletteToneStops) {
+		const argb: number = paletteColor.tone(tone);
+		const hex: string = hexFromArgb(argb);
+		palette[tone] = hex;
+	}
+	return palette;
+};

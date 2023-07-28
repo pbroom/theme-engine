@@ -3081,7 +3081,7 @@ var init_material_color_utilities = __esm({
 });
 
 // src/color.ts
-var Color, color_default;
+var Color, color_default, toneStops, paletteTones;
 var init_color = __esm({
   "src/color.ts"() {
     "use strict";
@@ -3133,24 +3133,6 @@ var init_color = __esm({
       }
     };
     color_default = Color;
-  }
-});
-
-// src/main.ts
-var main_exports = {};
-__export(main_exports, {
-  default: () => main_default
-});
-function main_default() {
-  showUI({ height: 420, width: 280 });
-}
-var toneStops, paletteTones, paletteSwatch, localCollections, VariableCollection, variableFromName, paletteVariable, paletteGroup, paletteVariableCollection;
-var init_main = __esm({
-  "src/main.ts"() {
-    "use strict";
-    init_lib();
-    init_material_color_utilities();
-    init_color();
     toneStops = (stops) => {
       const defaultToneStops = [];
       if (stops && stops.length > 0) {
@@ -3164,7 +3146,7 @@ var init_main = __esm({
     };
     paletteTones = (hexColor, stops) => {
       const paletteToneStops = toneStops(stops);
-      const color = new color_default(hexColor);
+      const color = new Color(hexColor);
       const hctColor = color.getHctColor();
       const paletteColor = TonalPalette.fromHueAndChroma(
         hctColor.hue,
@@ -3178,6 +3160,15 @@ var init_main = __esm({
       }
       return palette;
     };
+  }
+});
+
+// src/palette-swatches.ts
+var paletteSwatch, paletteGroup;
+var init_palette_swatches = __esm({
+  "src/palette-swatches.ts"() {
+    "use strict";
+    init_color();
     paletteSwatch = (colorName, hexColor, tone) => {
       const frame = figma.createFrame();
       frame.name = colorName + "-" + tone + ": " + hexColor + ";";
@@ -3187,7 +3178,97 @@ var init_main = __esm({
       frame.resize(128, 64);
       return frame;
     };
-    localCollections = figma.variables.getLocalVariableCollections();
+    paletteGroup = (colorName, originalColor, palette) => {
+      const frame = figma.createFrame();
+      frame.name = colorName + " - (Source hex: #" + originalColor + ")";
+      frame.layoutMode = "VERTICAL";
+      frame.primaryAxisSizingMode = "AUTO";
+      frame.counterAxisSizingMode = "AUTO";
+      let swatches = Object.entries(palette).map(([tone, color]) => {
+        const hexColor = color;
+        return paletteSwatch(colorName, String(hexColor), Number(tone));
+      });
+      swatches.forEach((swatch) => frame.appendChild(swatch));
+      frame.x = Math.round(figma.viewport.center.x - frame.width / 2);
+      frame.y = Math.round(figma.viewport.center.y - frame.height / 2);
+      return frame;
+    };
+  }
+});
+
+// src/palette-variables.ts
+var variableFromName, paletteColorVariable, paletteVariableCollection;
+var init_palette_variables = __esm({
+  "src/palette-variables.ts"() {
+    "use strict";
+    init_color();
+    variableFromName = (name) => {
+      const variablesToCheck = figma.variables.getLocalVariables("COLOR");
+      return variablesToCheck.find((variable) => variable.name === name);
+    };
+    paletteColorVariable = (collectionId, colorName = "color", hexColor, tone, overwriteVariables) => {
+      var _a;
+      const keyColorName = `${colorName} - source color/${colorName}`;
+      const toneColorName = `${colorName}-${tone}`;
+      const name = tone || tone === 0 ? toneColorName : keyColorName;
+      const variableId = (_a = variableFromName(name)) == null ? void 0 : _a.id;
+      if (overwriteVariables === false && variableId) {
+        console.log(`Variable ${name} already exists`);
+        return;
+      }
+      const color = new color_default(hexColor);
+      const fill = color.getFigmaSolidColor().color;
+      const collection = figma.variables.getVariableCollectionById(collectionId);
+      const variable = variableId ? figma.variables.getVariableById(variableId) : figma.variables.createVariable(name, collectionId, "COLOR");
+      if (!collection) {
+        figma.notify("Collection not found");
+        return;
+      }
+      const lightModeId = collection.modes[0].modeId;
+      const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
+      if (!variable) {
+        figma.notify("Variable not found");
+        return;
+      }
+      variable.setValueForMode(lightModeId, fill);
+      variable.setValueForMode(darkModeId, fill);
+      return variable;
+    };
+    paletteVariableCollection = (collectionId, colorName, originalColor, palette, overwriteVariables) => {
+      const collection = collectionId;
+      const name = colorName;
+      const color = originalColor;
+      if (overwriteVariables === true) {
+        paletteColorVariable(collection, name, color);
+      }
+      let variables = Object.entries(palette).map(([tone, color2]) => {
+        return paletteColorVariable(
+          collection,
+          name,
+          color2,
+          Number(tone),
+          overwriteVariables
+        );
+      });
+      const numVariables = variables.filter(
+        (variable) => variable !== void 0
+      ).length;
+      if (numVariables < Object.keys(palette).length) {
+        figma.notify("Some variables didn\u2019t generate. Check console for details", {
+          timeout: 5e3,
+          error: true
+        });
+      }
+      return variables;
+    };
+  }
+});
+
+// src/variable-collection.ts
+var VariableCollection, variable_collection_default;
+var init_variable_collection = __esm({
+  "src/variable-collection.ts"() {
+    "use strict";
     VariableCollection = class {
       constructor(id, name, variableIds, defaultModeId, modes, remote, key) {
         this.id = id;
@@ -3210,12 +3291,33 @@ var init_main = __esm({
         };
       }
     };
+    variable_collection_default = VariableCollection;
+  }
+});
+
+// src/main.ts
+var main_exports = {};
+__export(main_exports, {
+  default: () => main_default
+});
+function main_default() {
+  showUI({ height: 440, width: 280 });
+}
+var init_main = __esm({
+  "src/main.ts"() {
+    "use strict";
+    init_lib();
+    init_color();
+    init_palette_swatches();
+    init_palette_variables();
+    init_variable_collection();
     figma.on("run", () => {
+      const localCollections = figma.variables.getLocalVariableCollections();
       const type = "localCollections";
       const options = [];
       const collections = [];
       for (let i = 0; i < localCollections.length; i++) {
-        const newCollection = new VariableCollection(
+        const newCollection = new variable_collection_default(
           localCollections[i].id,
           localCollections[i].name,
           localCollections[i].variableIds,
@@ -3231,59 +3333,6 @@ var init_main = __esm({
       const message = { type, options, collections };
       figma.ui.postMessage(message);
     });
-    variableFromName = (name) => {
-      const variablesToCheck = figma.variables.getLocalVariables("COLOR");
-      return variablesToCheck.find((variable) => variable.name === name);
-    };
-    paletteVariable = (collectionId, colorName = "color", hexColor, tone) => {
-      var _a;
-      const keyColorName = `color/primitives/${colorName}/${colorName} - source color/${colorName}`;
-      const toneColorName = `color/primitives/${colorName}/${colorName}-${tone}`;
-      const name = tone || tone === 0 ? toneColorName : keyColorName;
-      const variableId = (_a = variableFromName(name)) == null ? void 0 : _a.id;
-      const color = new color_default(hexColor);
-      const fill = color.getFigmaSolidColor().color;
-      const collection = figma.variables.getVariableCollectionById(collectionId);
-      const variable = variableId ? figma.variables.getVariableById(variableId) : figma.variables.createVariable(name, collectionId, "COLOR");
-      if (!collection) {
-        figma.notify("Collection not found");
-        return;
-      }
-      const lightModeId = collection.modes[0].modeId;
-      const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
-      if (!variable) {
-        figma.notify("Variable not found");
-        return;
-      }
-      variable.setValueForMode(lightModeId, fill);
-      variable.setValueForMode(darkModeId, fill);
-      figma.notify("Success!");
-    };
-    paletteGroup = (colorName, originalColor, palette) => {
-      const frame = figma.createFrame();
-      frame.name = colorName + " - (Source hex: #" + originalColor + ")";
-      frame.layoutMode = "VERTICAL";
-      frame.primaryAxisSizingMode = "AUTO";
-      frame.counterAxisSizingMode = "AUTO";
-      let swatches = Object.entries(palette).map(([tone, color]) => {
-        const hexColor = color;
-        return paletteSwatch(colorName, String(hexColor), Number(tone));
-      });
-      swatches.forEach((swatch) => frame.appendChild(swatch));
-      frame.x = Math.round(figma.viewport.center.x - frame.width / 2);
-      frame.y = Math.round(figma.viewport.center.y - frame.height / 2);
-      return frame;
-    };
-    paletteVariableCollection = (collectionId, colorName, originalColor, palette) => {
-      const collection = collectionId;
-      const name = colorName;
-      const color = originalColor;
-      paletteVariable(collection, name, color);
-      let variables = Object.entries(palette).map(([tone, color2]) => {
-        return paletteVariable(collection, name, color2, Number(tone));
-      });
-      return variables;
-    };
     figma.ui.onmessage = (pluginMessage) => {
       if (pluginMessage.type === "build") {
         const colorName = pluginMessage.name ? pluginMessage.name : "color";
@@ -3298,8 +3347,17 @@ var init_main = __esm({
         const toneStops2 = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
         const collectionId = pluginMessage.collectionId;
+        const Overwrite = pluginMessage.overwriteVariables;
         const palette = paletteTones(hexColor, toneStops2);
-        return paletteVariableCollection(collectionId, colorName, hexColor, palette);
+        const variables = paletteVariableCollection(
+          collectionId,
+          colorName,
+          hexColor,
+          palette,
+          Overwrite
+        );
+        console.log(variables);
+        return variables;
       }
     };
   }
