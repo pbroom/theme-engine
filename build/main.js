@@ -3115,22 +3115,52 @@ var init_color = __esm({
        * Gets the hue value of the color.
        * @returns The hue value of the color.
        */
-      getHue() {
-        return this.hue;
+      getHue(rounded = "") {
+        if (rounded === "rounded") {
+          return Math.round(this.hue);
+        } else {
+          return this.hue;
+        }
+      }
+      /**
+       * Sets the hue value of the color.
+       * @param hue The new hue value to set.
+       */
+      setHue(hue) {
+        this.hue = hue;
+        this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+        this.rgba = rgbaFromArgb(this.argb);
+        this.hex = hexFromArgb(this.argb);
+        this.hctColor = Hct.fromInt(this.argb);
       }
       /**
        * Gets the chroma value of the color.
        * @returns The chroma value of the color.
        */
-      getChroma() {
-        return this.chroma;
+      getChroma(rounded = "") {
+        if (rounded === "rounded") {
+          return Math.round(this.chroma);
+        } else {
+          return this.chroma;
+        }
+      }
+      setChroma(chroma) {
+        this.chroma = chroma;
+        this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+        this.rgba = rgbaFromArgb(this.argb);
+        this.hex = hexFromArgb(this.argb);
+        this.hctColor = Hct.fromInt(this.argb);
       }
       /**
        * Gets the tone value of the color.
        * @returns The tone value of the color.
        */
-      getTone() {
-        return this.tone;
+      getTone(rounded = "") {
+        if (rounded === "rounded") {
+          return Math.round(this.tone);
+        } else {
+          return this.tone;
+        }
       }
       /**
        * Gets the ARGB value of the color.
@@ -3351,7 +3381,7 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: 440, width: 280 });
+  showUI({ height: 550, width: 280 });
 }
 var init_main = __esm({
   "src/main.ts"() {

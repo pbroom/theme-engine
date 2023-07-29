@@ -64,24 +64,56 @@ class Color {
 	 * Gets the hue value of the color.
 	 * @returns The hue value of the color.
 	 */
-	getHue() {
-		return this.hue;
+	getHue(rounded: string | undefined = '') {
+		if (rounded === 'rounded') {
+			return Math.round(this.hue);
+		} else {
+			return this.hue;
+		}
+	}
+
+	/**
+	 * Sets the hue value of the color.
+	 * @param hue The new hue value to set.
+	 */
+	setHue(hue: number) {
+		this.hue = hue;
+		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+		this.rgba = rgbaFromArgb(this.argb);
+		this.hex = hexFromArgb(this.argb);
+		this.hctColor = Hct.fromInt(this.argb);
 	}
 
 	/**
 	 * Gets the chroma value of the color.
 	 * @returns The chroma value of the color.
 	 */
-	getChroma() {
-		return this.chroma;
+	getChroma(rounded: string | undefined = '') {
+		if (rounded === 'rounded') {
+			return Math.round(this.chroma);
+		} else {
+			return this.chroma;
+		}
+	}
+
+	setChroma(chroma: number) {
+		this.chroma = chroma;
+		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+		this.rgba = rgbaFromArgb(this.argb);
+		this.hex = hexFromArgb(this.argb);
+		this.hctColor = Hct.fromInt(this.argb);
 	}
 
 	/**
 	 * Gets the tone value of the color.
 	 * @returns The tone value of the color.
 	 */
-	getTone() {
-		return this.tone;
+	getTone(rounded: string | undefined = '') {
+		if (rounded === 'rounded') {
+			return Math.round(this.tone);
+		} else {
+			return this.tone;
+		}
 	}
 
 	/**
@@ -198,4 +230,64 @@ export const hctTonalGradient = (hexColor: string) => {
 	const gradientTones = paletteTones(hexColor);
 	const gradientString = getValues(gradientTones);
 	return gradientString;
+};
+
+export function findHighestChromaPerHue(): {
+	hue: number;
+	chroma: number;
+	tone: number;
+}[] {
+	const result: { hue: number; chroma: number; tone: number }[] = [];
+
+	// Iterate over each hue value from 0 to 360
+	for (let hue = 0; hue <= 360; hue++) {
+		let highestChroma = 0;
+		let toneAtHighestChroma = 0;
+
+		// Iterate over each tone value from 0 to 100
+		for (let tone = 0; tone <= 100; tone++) {
+			const chroma = Hct.from(hue, 100, tone).chroma;
+
+			// If the chroma value is higher than the current highest chroma value, update the highest chroma value and tone
+			if (chroma > highestChroma) {
+				highestChroma = chroma;
+				toneAtHighestChroma = tone;
+			}
+		}
+
+		// Add the hue, highest chroma, and tone at which it occurs to the result array
+		result.push({ hue, chroma: highestChroma, tone: toneAtHighestChroma });
+	}
+
+	return result;
+}
+
+export const findMinimumChromaPerHue = (): {
+	hue: number;
+	chroma: number;
+	tone: number;
+}[] => {
+	const result: { hue: number; chroma: number; tone: number }[] = [];
+
+	// Iterate over each hue value from 0 to 360
+	for (let hue = 0; hue <= 360; hue++) {
+		let minimumChroma = Infinity;
+		let toneAtMinimumChroma = 0;
+
+		// Iterate over each tone value from 0 to 100
+		for (let tone = 0; tone <= 100; tone++) {
+			const chroma = Hct.from(hue, 100, tone).chroma;
+
+			// If the chroma value is lower than the current minimum chroma value, update the minimum chroma value and tone
+			if (chroma < minimumChroma) {
+				minimumChroma = chroma;
+				toneAtMinimumChroma = tone;
+			}
+		}
+
+		// Add the hue, minimum chroma, and tone at which it occurs to the result array
+		result.push({ hue, chroma: minimumChroma, tone: toneAtMinimumChroma });
+	}
+
+	return result;
 };

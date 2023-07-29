@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740dacbf-c829-49a9-9aea-f67d9c1790c2/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0e46d1-63e0-4aa7-876c-8967847f850c/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740dacbf-c829-49a9-9aea-f67d9c1790c2/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0e46d1-63e0-4aa7-876c-8967847f850c/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -622,6 +622,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-16 {
+  height: 4rem;
+}
 .w-full {
   width: 100%;
 }
@@ -646,6 +649,9 @@ video {
 .gap-4 {
   gap: 1rem;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 .whitespace-pre-wrap {
   white-space: pre-wrap;
 }
@@ -657,6 +663,9 @@ video {
 }
 .rounded-sm {
   border-radius: 0.125rem;
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .border {
   border-width: 1px;
@@ -4206,22 +4215,52 @@ video {
          * Gets the hue value of the color.
          * @returns The hue value of the color.
          */
-        getHue() {
-          return this.hue;
+        getHue(rounded = "") {
+          if (rounded === "rounded") {
+            return Math.round(this.hue);
+          } else {
+            return this.hue;
+          }
+        }
+        /**
+         * Sets the hue value of the color.
+         * @param hue The new hue value to set.
+         */
+        setHue(hue) {
+          this.hue = hue;
+          this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+          this.rgba = rgbaFromArgb(this.argb);
+          this.hex = hexFromArgb(this.argb);
+          this.hctColor = Hct.fromInt(this.argb);
         }
         /**
          * Gets the chroma value of the color.
          * @returns The chroma value of the color.
          */
-        getChroma() {
-          return this.chroma;
+        getChroma(rounded = "") {
+          if (rounded === "rounded") {
+            return Math.round(this.chroma);
+          } else {
+            return this.chroma;
+          }
+        }
+        setChroma(chroma) {
+          this.chroma = chroma;
+          this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
+          this.rgba = rgbaFromArgb(this.argb);
+          this.hex = hexFromArgb(this.argb);
+          this.hctColor = Hct.fromInt(this.argb);
         }
         /**
          * Gets the tone value of the color.
          * @returns The tone value of the color.
          */
-        getTone() {
-          return this.tone;
+        getTone(rounded = "") {
+          if (rounded === "rounded") {
+            return Math.round(this.tone);
+          } else {
+            return this.tone;
+          }
         }
         /**
          * Gets the ARGB value of the color.
@@ -4387,6 +4426,11 @@ video {
       (i3 = t3[o3]) && (i3.__ = n2, l3 = "function" == typeof i3.type ? C(i3, l3, u3) : $(u3, i3, i3, t3, i3.__e, l3));
     return l3;
   }
+  function S(n2, l3) {
+    return l3 = l3 || [], null == n2 || "boolean" == typeof n2 || (v(n2) ? n2.some(function(n3) {
+      S(n3, l3);
+    }) : l3.push(n2)), l3;
+  }
   function $(n2, l3, u3, i3, t3, o3) {
     var r3, f3, e3;
     if (void 0 !== l3.__d)
@@ -4459,7 +4503,7 @@ video {
     return this.l[n2.type + true](l.event ? l.event(n2) : n2);
   }
   function L(n2, u3, i3, t3, o3, r3, f3, e3, c3) {
-    var s3, a3, p3, y2, d3, _2, g3, m3, w3, x2, C2, S, $2, A2, H2, I2 = u3.type;
+    var s3, a3, p3, y2, d3, _2, g3, m3, w3, x2, C2, S2, $2, A2, H2, I2 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
     null != i3.__h && (c3 = i3.__h, e3 = u3.__e = i3.__e, u3.__h = null, r3 = [e3]), (s3 = l.__b) && s3(u3);
@@ -4481,13 +4525,13 @@ video {
               a3.componentDidUpdate(y2, d3, _2);
             });
           }
-          if (a3.context = x2, a3.props = m3, a3.__P = n2, S = l.__r, $2 = 0, "prototype" in I2 && I2.prototype.render) {
-            for (a3.state = a3.__s, a3.__d = false, S && S(u3), s3 = a3.render(a3.props, a3.state, a3.context), A2 = 0; A2 < a3._sb.length; A2++)
+          if (a3.context = x2, a3.props = m3, a3.__P = n2, S2 = l.__r, $2 = 0, "prototype" in I2 && I2.prototype.render) {
+            for (a3.state = a3.__s, a3.__d = false, S2 && S2(u3), s3 = a3.render(a3.props, a3.state, a3.context), A2 = 0; A2 < a3._sb.length; A2++)
               a3.__h.push(a3._sb[A2]);
             a3._sb = [];
           } else
             do {
-              a3.__d = false, S && S(u3), s3 = a3.render(a3.props, a3.state, a3.context), a3.state = a3.__s;
+              a3.__d = false, S2 && S2(u3), s3 = a3.render(a3.props, a3.state, a3.context), a3.state = a3.__s;
             } while (a3.__d && ++$2 < 25);
           a3.state = a3.__s, null != a3.getChildContext && (t3 = h(h({}, t3), a3.getChildContext())), p3 || null == a3.getSnapshotBeforeUpdate || (_2 = a3.getSnapshotBeforeUpdate(y2, d3)), P(n2, v(H2 = null != s3 && s3.type === k && null == s3.key ? s3.props.children : s3) ? H2 : [H2], u3, i3, t3, o3, r3, f3, e3, c3), a3.base = u3.__e, u3.__h = null, a3.__h.length && f3.push(a3), g3 && (a3.__E = a3.__ = null), a3.__e = false;
         } else
@@ -4758,10 +4802,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61824bff-8bb6-46fa-892a-321aa72bcc08/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/720f0de4-829a-4eec-bc39-ae0a8f05e005/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61824bff-8bb6-46fa-892a-321aa72bcc08/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/720f0de4-829a-4eec-bc39-ae0a8f05e005/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -4820,10 +4864,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa63c2ff-5af6-4da4-94c8-6905e3a384ae/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740f4e7c-b418-46cc-bc69-b69753360053/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa63c2ff-5af6-4da4-94c8-6905e3a384ae/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740f4e7c-b418-46cc-bc69-b69753360053/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -5006,10 +5050,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8e33342-3014-40d1-a027-e5b2da3c4130/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd7b34c6-4c74-426d-bf45-c238e672a0bb/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8e33342-3014-40d1-a027-e5b2da3c4130/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd7b34c6-4c74-426d-bf45-c238e672a0bb/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -5054,10 +5098,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fb846616-fc57-4265-8cbc-ccf82f131fa4/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/275c3235-a1fd-43bb-b6b4-66f81726bbee/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fb846616-fc57-4265-8cbc-ccf82f131fa4/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/275c3235-a1fd-43bb-b6b4-66f81726bbee/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -5188,10 +5232,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68c3bb46-441e-46c7-8c3c-41a7b73d9638/divider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddab52ad-7fc1-4060-871e-3034139d5c23/divider.module.js
   var divider_module_default;
   var init_divider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68c3bb46-441e-46c7-8c3c-41a7b73d9638/divider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddab52ad-7fc1-4060-871e-3034139d5c23/divider.module.js"() {
       if (document.getElementById("3b0eaf9c51") === null) {
         const element = document.createElement("style");
         element.id = "3b0eaf9c51";
@@ -5219,10 +5263,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2248c7fe-6d02-4d71-ade8-e67cd1375f04/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb321f45-76c8-4e2a-a998-8c042dc9f2a5/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2248c7fe-6d02-4d71-ade8-e67cd1375f04/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb321f45-76c8-4e2a-a998-8c042dc9f2a5/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -5457,10 +5501,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fef30ccc-5a57-4397-a251-46b0de5773f4/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3ad664c-b0ab-49df-802f-3b6fc5fc044f/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fef30ccc-5a57-4397-a251-46b0de5773f4/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3ad664c-b0ab-49df-802f-3b6fc5fc044f/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -5867,10 +5911,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d73593fc-61d1-4dd3-aa2d-6386a4a59b6a/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d923177b-49aa-44da-b522-9709f4951d21/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d73593fc-61d1-4dd3-aa2d-6386a4a59b6a/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d923177b-49aa-44da-b522-9709f4951d21/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -5923,6 +5967,110 @@ video {
       init_preact_module();
       init_create_class_name();
       init_text_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05dfe453-2910-49a4-a9d6-ce5ef296e813/range-slider.module.js
+  var range_slider_module_default;
+  var init_range_slider_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05dfe453-2910-49a4-a9d6-ce5ef296e813/range-slider.module.js"() {
+      if (document.getElementById("e7dc3a2421") === null) {
+        const element = document.createElement("style");
+        element.id = "e7dc3a2421";
+        element.textContent = `._rangeSlider_s66c9_1 {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0 -2px;
+}
+
+._border_s66c9_8 {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  left: 2px;
+  height: 1px;
+  background-color: var(--figma-color-border-strong);
+}
+._disabled_s66c9_16 ._border_s66c9_8 {
+  background-color: var(--figma-color-border-disabled-strong);
+}
+
+._input_s66c9_20 {
+  position: relative;
+  z-index: var(
+    --z-index-1
+  ); /* stack \`.input\` over all other elements within \`.rangeSlider\` */
+  top: -16px;
+  display: block;
+  width: 100%;
+  height: 33px;
+  background-color: transparent;
+}
+._disabled_s66c9_16 ._input_s66c9_20 {
+  cursor: not-allowed;
+}
+
+._input_s66c9_20::-webkit-slider-thumb {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--figma-color-bg);
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background-color: var(--figma-color-bg-inverse);
+}
+._input_s66c9_20:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--figma-color-border-brand-strong);
+}
+._disabled_s66c9_16 ._input_s66c9_20::-webkit-slider-thumb {
+  background-color: var(--figma-color-bg-disabled-secondary);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFdBQVc7RUFDWCxjQUFjO0FBQ2hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixVQUFVO0VBQ1YsU0FBUztFQUNULFdBQVc7RUFDWCxrREFBa0Q7QUFDcEQ7QUFDQTtFQUNFLDJEQUEyRDtBQUM3RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQjs7R0FFQyxFQUFFLGlFQUFpRTtFQUNwRSxVQUFVO0VBQ1YsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsVUFBVTtFQUNWLFdBQVc7RUFDWCx1Q0FBdUM7RUFDdkMsa0JBQWtCO0VBQ2xCLHdCQUF3QjtFQUN4QiwrQ0FBK0M7QUFDakQ7QUFDQTtFQUNFLDREQUE0RDtBQUM5RDtBQUNBO0VBQ0UsMERBQTBEO0FBQzVEIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucmFuZ2VTbGlkZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDFweDtcbiAgbWFyZ2luOiAwIC0ycHg7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDJweDtcbiAgbGVmdDogMnB4O1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmJvcmRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMVxuICApOyAvKiBzdGFjayBgLmlucHV0YCBvdmVyIGFsbCBvdGhlciBlbGVtZW50cyB3aXRoaW4gYC5yYW5nZVNsaWRlcmAgKi9cbiAgdG9wOiAtMTZweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDMzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuLmRpc2FibGVkIC5pbnB1dCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pbnB1dDo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDlweDtcbiAgaGVpZ2h0OiA5cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJnKTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWludmVyc2UpO1xufVxuLmlucHV0OmZvY3VzOjotd2Via2l0LXNsaWRlci10aHVtYiB7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDJweCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Oi13ZWJraXQtc2xpZGVyLXRodW1iIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbn1cbiJdfQ== */`;
+        document.head.append(element);
+      }
+      range_slider_module_default = { "rangeSlider": "_rangeSlider_s66c9_1", "border": "_border_s66c9_8", "disabled": "_disabled_s66c9_16", "input": "_input_s66c9_20" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js
+  function RangeSlider(_a) {
+    var _b = _a, { disabled = false, increment = 1, maximum, minimum, name, onInput = function() {
+    }, onNumericValueInput = function() {
+    }, onValueInput = function() {
+    }, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["disabled", "increment", "maximum", "minimum", "name", "onInput", "onNumericValueInput", "onValueInput", "propagateEscapeKeyDown", "value"]);
+    const handleInput = T2(function(event) {
+      onInput(event);
+      const value3 = event.currentTarget.value;
+      onValueInput(value3, name);
+      onNumericValueInput(parseFloat(value3), name);
+    }, [name, onInput, onNumericValueInput, onValueInput]);
+    const handleKeyDown = T2(function(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (propagateEscapeKeyDown === false) {
+        event.stopPropagation();
+      }
+      event.currentTarget.blur();
+    }, [propagateEscapeKeyDown]);
+    return y(
+      "label",
+      { class: createClassName([
+        range_slider_module_default.rangeSlider,
+        disabled === true ? range_slider_module_default.disabled : null
+      ]) },
+      y("input", __spreadValues({ class: range_slider_module_default.input, disabled, max: maximum, min: minimum, onInput: handleInput, onKeyDown: handleKeyDown, step: increment, type: "range", value: value2 }, rest)),
+      y("div", { class: range_slider_module_default.border })
+    );
+  }
+  var init_range_slider = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js"() {
+      init_preact_module();
+      init_hooks_module();
+      init_create_class_name();
+      init_range_slider_module();
     }
   });
 
@@ -6028,10 +6176,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/716eb683-08db-477e-a9ad-bc4f6fa2e0c0/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbd47eea-b298-4d66-a15c-4dea05c6f89e/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/716eb683-08db-477e-a9ad-bc4f6fa2e0c0/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbd47eea-b298-4d66-a15c-4dea05c6f89e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6520,10 +6668,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07ec7289-bd2f-4d2f-a565-b68ab6c88aff/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b54e7f-f9c1-4953-880b-b93f98d0b61f/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07ec7289-bd2f-4d2f-a565-b68ab6c88aff/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b54e7f-f9c1-4953-880b-b93f98d0b61f/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -6870,10 +7018,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04f53c62-0487-4301-9adf-0b015fbc590e/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d16a36f2-d036-4c24-8573-bc70151bf216/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04f53c62-0487-4301-9adf-0b015fbc590e/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d16a36f2-d036-4c24-8573-bc70151bf216/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -7056,10 +7204,228 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be3ee2d8-ddd0-4e0a-ba15-2b4c258f386f/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/341d450f-1924-4589-8cc8-84bd61b49e02/textbox.module.js
+  var textbox_module_default2;
+  var init_textbox_module2 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/341d450f-1924-4589-8cc8-84bd61b49e02/textbox.module.js"() {
+      if (document.getElementById("d6f1162d61") === null) {
+        const element = document.createElement("style");
+        element.id = "d6f1162d61";
+        element.textContent = `._textbox_sir3b_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+._textbox_sir3b_1:focus-within {
+  z-index: var(--z-index-2); /* Stack \`.textbox\` over its sibling elements */
+}
+
+._input_sir3b_9 {
+  display: block;
+  width: 100%;
+  height: 28px;
+  padding: 0 var(--space-extra-small);
+  background-color: transparent;
+  color: var(--figma-color-text);
+}
+._disabled_sir3b_17 ._input_sir3b_9 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+._hasIcon_sir3b_21 ._input_sir3b_9 {
+  padding-left: 32px;
+}
+
+._input_sir3b_9::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+
+._icon_sir3b_29 {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: var(--figma-color-icon-secondary);
+  pointer-events: none; /* so that clicking the icon focuses the textbox */
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._icon_sir3b_29 {
+  color: var(--figma-color-icon-brand);
+}
+._disabled_sir3b_17 ._icon_sir3b_29 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._icon_sir3b_29 svg {
+  fill: currentColor;
+}
+
+._border_sir3b_49 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_sir3b_59 ._border_sir3b_49,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._border_sir3b_49 {
+  border-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._border_sir3b_49 {
+  top: -1px;
+  bottom: -1px;
+  border-width: 2px;
+  border-color: var(--figma-color-border-brand-strong);
+}
+
+._underline_sir3b_70 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._underline_sir3b_70,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._underline_sir3b_70 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gvdGV4dGJveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUNBO0VBQ0UseUJBQXlCLEVBQUUsK0NBQStDO0FBQzVFOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUNBQW1DO0VBQ25DLDZCQUE2QjtFQUM3Qiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7QUFDQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxvQkFBb0IsRUFBRSxrREFBa0Q7RUFDeEUsa0JBQWtCO0VBQ2xCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0Usb0NBQW9DO0FBQ3RDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94L3RleHRib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xufVxuLnRleHRib3g6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0yKTsgLyogU3RhY2sgYC50ZXh0Ym94YCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBwYWRkaW5nOiAwIHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uaGFzSWNvbiAuaW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG5cbi5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC10ZXJ0aWFyeSk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lOyAvKiBzbyB0aGF0IGNsaWNraW5nIHRoZSBpY29uIGZvY3VzZXMgdGhlIHRleHRib3ggKi9cbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tYnJhbmQpO1xufVxuLmRpc2FibGVkIC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uaWNvbiBzdmcge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3g6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveDpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_module_default2 = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b4dd292-28c3-412a-b55d-a9004176c26b/textbox-numeric.module.js
+  var textbox_numeric_module_default;
+  var init_textbox_numeric_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b4dd292-28c3-412a-b55d-a9004176c26b/textbox-numeric.module.js"() {
+      if (document.getElementById("07c5d63dfb") === null) {
+        const element = document.createElement("style");
+        element.id = "07c5d63dfb";
+        element.textContent = `._input_1byj7_1::-webkit-inner-spin-button,
+._input_1byj7_1::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbnVtZXJpYy90ZXh0Ym94LW51bWVyaWMubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSx3QkFBd0I7QUFDMUIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHRib3gvdGV4dGJveC1udW1lcmljL3RleHRib3gtbnVtZXJpYy5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uLFxuLmlucHV0Ojotd2Via2l0LW91dGVyLXNwaW4tYnV0dG9uIHtcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      textbox_numeric_module_default = { "input": "_input_1byj7_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js
+  function TextboxNumeric(_a) {
+    var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
+    if (typeof icon === "string" && icon.length !== 1) {
+      throw new Error(`String \`icon\` must be a single character: ${icon}`);
+    }
+    return y(
+      "div",
+      { class: createClassName([
+        textbox_module_default2.textbox,
+        typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default2.hasBorder : null,
+        typeof icon === "undefined" ? null : textbox_module_default2.hasIcon,
+        rest.disabled === true ? textbox_module_default2.disabled : null
+      ]) },
+      y(RawTextboxNumeric, __spreadProps(__spreadValues({}, rest), { class: createClassName([
+        textbox_module_default2.input,
+        textbox_numeric_module_default.input
+      ]) })),
+      typeof icon === "undefined" ? null : y("div", { class: textbox_module_default2.icon }, icon),
+      y("div", { class: textbox_module_default2.border }),
+      variant === "underline" ? y("div", { class: textbox_module_default2.underline }) : null
+    );
+  }
+  var init_textbox_numeric = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js"() {
+      init_preact_module();
+      init_create_class_name();
+      init_textbox_module2();
+      init_raw_textbox_numeric();
+      init_textbox_numeric_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d22a4e56-aade-45ed-b3d2-ac766050aa90/columns.module.js
+  var columns_module_default;
+  var init_columns_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d22a4e56-aade-45ed-b3d2-ac766050aa90/columns.module.js"() {
+      if (document.getElementById("15be75cea7") === null) {
+        const element = document.createElement("style");
+        element.id = "15be75cea7";
+        element.textContent = `._columns_ybv3x_1 {
+  display: flex;
+}
+._extraSmall_ybv3x_4 {
+  margin-left: calc(-1 * var(--space-extra-small));
+}
+._small_ybv3x_7 {
+  margin-left: calc(-1 * var(--space-small));
+}
+._medium_ybv3x_10 {
+  margin-left: calc(-1 * var(--space-medium));
+}
+._large_ybv3x_13 {
+  margin-left: calc(-1 * var(--space-large));
+}
+._extraLarge_ybv3x_16 {
+  margin-left: calc(-1 * var(--space-extra-large));
+}
+
+._child_ybv3x_20 {
+  flex-grow: 1;
+}
+._extraSmall_ybv3x_4 > ._child_ybv3x_20 {
+  padding-left: var(--space-extra-small);
+}
+._small_ybv3x_7 > ._child_ybv3x_20 {
+  padding-left: var(--space-small);
+}
+._medium_ybv3x_10 > ._child_ybv3x_20 {
+  padding-left: var(--space-medium);
+}
+._large_ybv3x_13 > ._child_ybv3x_20 {
+  padding-left: var(--space-large);
+}
+._extraLarge_ybv3x_16 > ._child_ybv3x_20 {
+  padding-left: var(--space-extra-large);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvbGF5b3V0L2NvbHVtbnMvY29sdW1ucy5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSxnREFBZ0Q7QUFDbEQ7QUFDQTtFQUNFLDBDQUEwQztBQUM1QztBQUNBO0VBQ0UsMkNBQTJDO0FBQzdDO0FBQ0E7RUFDRSwwQ0FBMEM7QUFDNUM7QUFDQTtFQUNFLGdEQUFnRDtBQUNsRDs7QUFFQTtFQUNFLFlBQVk7QUFDZDtBQUNBO0VBQ0Usc0NBQXNDO0FBQ3hDO0FBQ0E7RUFDRSxnQ0FBZ0M7QUFDbEM7QUFDQTtFQUNFLGlDQUFpQztBQUNuQztBQUNBO0VBQ0UsZ0NBQWdDO0FBQ2xDO0FBQ0E7RUFDRSxzQ0FBc0M7QUFDeEMiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9sYXlvdXQvY29sdW1ucy9jb2x1bW5zLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29sdW1ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG4uZXh0cmFTbWFsbCB7XG4gIG1hcmdpbi1sZWZ0OiBjYWxjKC0xICogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpKTtcbn1cbi5zbWFsbCB7XG4gIG1hcmdpbi1sZWZ0OiBjYWxjKC0xICogdmFyKC0tc3BhY2Utc21hbGwpKTtcbn1cbi5tZWRpdW0ge1xuICBtYXJnaW4tbGVmdDogY2FsYygtMSAqIHZhcigtLXNwYWNlLW1lZGl1bSkpO1xufVxuLmxhcmdlIHtcbiAgbWFyZ2luLWxlZnQ6IGNhbGMoLTEgKiB2YXIoLS1zcGFjZS1sYXJnZSkpO1xufVxuLmV4dHJhTGFyZ2Uge1xuICBtYXJnaW4tbGVmdDogY2FsYygtMSAqIHZhcigtLXNwYWNlLWV4dHJhLWxhcmdlKSk7XG59XG5cbi5jaGlsZCB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5leHRyYVNtYWxsID4gLmNoaWxkIHtcbiAgcGFkZGluZy1sZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG4uc21hbGwgPiAuY2hpbGQge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLXNtYWxsKTtcbn1cbi5tZWRpdW0gPiAuY2hpbGQge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLW1lZGl1bSk7XG59XG4ubGFyZ2UgPiAuY2hpbGQge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLWxhcmdlKTtcbn1cbi5leHRyYUxhcmdlID4gLmNoaWxkIHtcbiAgcGFkZGluZy1sZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1sYXJnZSk7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      columns_module_default = { "columns": "_columns_ybv3x_1", "extraSmall": "_extraSmall_ybv3x_4", "small": "_small_ybv3x_7", "medium": "_medium_ybv3x_10", "large": "_large_ybv3x_13", "extraLarge": "_extraLarge_ybv3x_16", "child": "_child_ybv3x_20" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/layout/columns/columns.js
+  function Columns(_a) {
+    var _b = _a, { children, space } = _b, rest = __objRest(_b, ["children", "space"]);
+    return y("div", __spreadProps(__spreadValues({}, rest), { class: createClassName([
+      columns_module_default.columns,
+      typeof space === "undefined" ? null : columns_module_default[space]
+    ]) }), S(children).map(function(element, index) {
+      return y("div", { key: index, class: columns_module_default.child }, element);
+    }));
+  }
+  var init_columns = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/layout/columns/columns.js"() {
+      init_preact_module();
+      init_create_class_name();
+      init_columns_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0315fc-db23-44d4-b90d-8d034c997e08/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be3ee2d8-ddd0-4e0a-ba15-2b4c258f386f/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0315fc-db23-44d4-b90d-8d034c997e08/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7098,10 +7464,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a737c3c-1838-4eab-882c-96ff93c20c37/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/368b4f24-981e-4a4b-9b52-0e873dc8b93b/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a737c3c-1838-4eab-882c-96ff93c20c37/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/368b4f24-981e-4a4b-9b52-0e873dc8b93b/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7140,9 +7506,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69e85bf0-b00f-44a9-b10c-d9b162afbd03/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d255b12-511f-419c-9f4e-c463ecf02469/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69e85bf0-b00f-44a9-b10c-d9b162afbd03/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d255b12-511f-419c-9f4e-c463ecf02469/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -7277,10 +7643,13 @@ svg {
       init_checkbox();
       init_divider();
       init_dropdown();
+      init_range_slider();
       init_text();
       init_textbox();
       init_textbox_color();
       init_textbox_multiline();
+      init_textbox_numeric();
+      init_columns();
       init_container();
       init_vertical_space();
       init_render();
@@ -7294,6 +7663,7 @@ svg {
   });
   function Plugin() {
     const startingColor = "397456";
+    const color = new color_default(startingColor);
     const startingGradient = hctTonalGradient(startingColor);
     const defaultPaletteTones = [
       0,
@@ -7325,12 +7695,20 @@ svg {
       98
     ];
     const [paletteGradient, setPaletteGradient] = h2(startingGradient);
-    const [hue, setHue] = h2(0);
-    const [chroma, setChroma] = h2(0);
-    const [tone, setTone] = h2(0);
+    const [augmentedGradient, setAugmentedGradient] = h2(startingGradient);
+    const [hue, setHue] = h2(color.getHue("rounded"));
+    const [chroma, setChroma] = h2(color.getChroma("rounded"));
+    const [tone, setTone] = h2(color.getTone("rounded"));
     const [textboxValue, setTextboxValue] = h2("color");
     const [hexColor, setHexColor] = h2(startingColor);
+    const [augmentedColor, setAugmentedColor] = h2(startingColor);
     const [opacity, setOpacity] = h2("");
+    const [hctHueValue, setHctHueValue] = h2(
+      `${color.getHue("rounded")}`
+    );
+    const [hctChromaValue, setHctChromaValue] = h2(
+      `${color.getChroma("rounded")}`
+    );
     const [textAreaValue, setTextAreaValue] = h2(
       `${defaultPaletteTones}`
     );
@@ -7350,20 +7728,45 @@ svg {
     function handleHexColorInput(event) {
       const newHexColor = event.currentTarget.value;
       setHexColor(newHexColor);
+      setAugmentedColor(newHexColor);
       const newColor = new color_default(newHexColor);
-      const newPaletteGradient = hctTonalGradient(startingColor);
+      const newPaletteGradient = hctTonalGradient(newHexColor);
       setPaletteGradient(newPaletteGradient);
-      const newHue = Math.round(newColor.getHue());
+      setAugmentedGradient(newPaletteGradient);
+      const newHue = newColor.getHue("rounded");
       setHue(newHue);
-      const newChroma = Math.round(newColor.getChroma());
+      setHctHueValue(newHue.toString());
+      const newChroma = newColor.getChroma("rounded");
       setChroma(newChroma);
-      const newTone = Math.round(newColor.getTone());
+      setHctChromaValue(newChroma.toString());
+      const newTone = newColor.getTone("rounded");
       setTone(newTone);
       return newHexColor;
     }
     function handleOpacityInput(event) {
       const newOpacity = event.currentTarget.value;
       setOpacity(newOpacity);
+    }
+    function handleHctHueInput(event) {
+      const newHctHueValue = event.currentTarget.value;
+      const newHctHueNumber = parseInt(newHctHueValue);
+      const currentColor = new color_default(augmentedColor);
+      currentColor.setHue(newHctHueNumber);
+      const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
+      setAugmentedColor(currentColor.getHex());
+      setAugmentedGradient(newAugmentedGradient);
+      setHctHueValue(newHctHueValue);
+    }
+    function handleHctChromaInput(event) {
+      const newHctChromaValue = event.currentTarget.value;
+      const newHctChromaNumber = parseInt(newHctChromaValue);
+      const currentColor = new color_default(augmentedColor);
+      currentColor.setChroma(newHctChromaNumber);
+      currentColor.setHue(parseInt(hctHueValue));
+      const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
+      setAugmentedColor(currentColor.getHex());
+      setAugmentedGradient(newAugmentedGradient);
+      setHctChromaValue(newHctChromaValue);
     }
     function handleTextAreaInput(event) {
       const newTextAreaValue = event.currentTarget.value;
@@ -7383,10 +7786,10 @@ svg {
     function handleClick(type) {
       const newColor = {
         colorName: textboxValue,
-        backgroundColor: hexColor
+        backgroundColor: augmentedColor
       };
       const name = newColor.colorName;
-      const color = newColor.backgroundColor;
+      const color2 = newColor.backgroundColor;
       const toneStops2 = getStopsFromString(textAreaValue);
       if (!optionId) {
         return;
@@ -7398,7 +7801,7 @@ svg {
           pluginMessage: {
             type,
             name,
-            color,
+            color: color2,
             toneStops: toneStops2,
             collectionId,
             overwriteVariables
@@ -7431,15 +7834,7 @@ svg {
         setOptions(newOptions);
       }
     };
-    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y(
-      "div",
-      {
-        className: "h-8 rounded-sm w-full mt-3",
-        style: {
-          background: `linear-gradient(to right, ${paletteGradient})`
-        }
-      }
-    ), /* @__PURE__ */ y("p", { className: "p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
+    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
       Textbox,
       {
         onInput: handleTextboxInput,
@@ -7457,7 +7852,60 @@ svg {
         onOpacityInput: handleOpacityInput,
         opacity
       }
-    )), /* @__PURE__ */ y(
+    )), /* @__PURE__ */ y("p", { className: "p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("div", { className: "h-16 rounded-sm overflow-hidden w-full mt-3" }, /* @__PURE__ */ y(
+      "div",
+      {
+        className: "h-8 w-full",
+        style: {
+          background: `linear-gradient(to right, ${paletteGradient})`
+        }
+      }
+    ), /* @__PURE__ */ y(
+      "div",
+      {
+        className: "h-8 w-full",
+        style: {
+          background: `linear-gradient(to right, ${augmentedGradient})`
+          // background: 'red',
+        }
+      }
+    )), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+      TextboxNumeric,
+      {
+        maximum: 360,
+        minimum: 0,
+        onInput: handleHctHueInput,
+        value: hctHueValue,
+        variant: "border",
+        icon: "H"
+      }
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+      RangeSlider,
+      {
+        maximum: 360,
+        minimum: 0,
+        onInput: handleHctHueInput,
+        value: hctHueValue
+      }
+    )), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+      TextboxNumeric,
+      {
+        maximum: 150,
+        minimum: 0,
+        onInput: handleHctChromaInput,
+        value: hctChromaValue,
+        variant: "border",
+        icon: "C"
+      }
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+      RangeSlider,
+      {
+        maximum: 150,
+        minimum: 0,
+        onInput: handleHctChromaInput,
+        value: hctChromaValue
+      }
+    ))), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(
       TextboxMultiline,
       {
         onInput: handleTextAreaInput,

@@ -1,22 +1,28 @@
 // Importing the tailwind.css file
 import '!./dist/tailwind.css';
 import Color from './color';
-import { paletteTones, hctTonalGradient } from './color';
+import { hctTonalGradient } from './color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
 	Button,
 	Checkbox,
+	Columns,
 	Container,
-	render,
-	VerticalSpace,
 	Divider,
-	TextboxMultiline,
-	TextboxColor,
-	Textbox,
 	Dropdown,
-	Text,
 	DropdownOption,
+	Muted,
+	render,
+	RangeSlider,
+	RangeSliderProps,
+	Text,
+	Textbox,
+	TextboxColor,
+	TextboxMultiline,
+	TextboxNumeric,
+	TextboxNumericProps,
+	VerticalSpace,
 } from '@create-figma-plugin/ui';
 
 // Importing preact and preact/hooks libraries
@@ -27,6 +33,7 @@ import { useState } from 'preact/hooks';
 function Plugin() {
 	// Defaults
 	const startingColor = '397456';
+	const color = new Color(startingColor);
 	const startingGradient = hctTonalGradient(startingColor);
 	const defaultPaletteTones = [
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
@@ -35,12 +42,21 @@ function Plugin() {
 
 	const [paletteGradient, setPaletteGradient] =
 		useState<string>(startingGradient);
-	const [hue, setHue] = useState<number>(0);
-	const [chroma, setChroma] = useState<number>(0);
-	const [tone, setTone] = useState<number>(0);
+	const [augmentedGradient, setAugmentedGradient] =
+		useState<string>(startingGradient);
+	const [hue, setHue] = useState<number>(color.getHue('rounded'));
+	const [chroma, setChroma] = useState<number>(color.getChroma('rounded'));
+	const [tone, setTone] = useState<number>(color.getTone('rounded'));
 	const [textboxValue, setTextboxValue] = useState<string>('color');
 	const [hexColor, setHexColor] = useState<string>(startingColor);
+	const [augmentedColor, setAugmentedColor] = useState<string>(startingColor);
 	const [opacity, setOpacity] = useState<string>('');
+	const [hctHueValue, setHctHueValue] = useState<string>(
+		`${color.getHue('rounded')}`
+	);
+	const [hctChromaValue, setHctChromaValue] = useState<string>(
+		`${color.getChroma('rounded')}`
+	);
 	const [textAreaValue, setTextAreaValue] = useState<string>(
 		`${defaultPaletteTones}`
 	);
@@ -65,14 +81,18 @@ function Plugin() {
 	) {
 		const newHexColor = event.currentTarget.value;
 		setHexColor(newHexColor);
+		setAugmentedColor(newHexColor);
 		const newColor = new Color(newHexColor);
-		const newPaletteGradient = hctTonalGradient(startingColor);
+		const newPaletteGradient = hctTonalGradient(newHexColor);
 		setPaletteGradient(newPaletteGradient);
-		const newHue = Math.round(newColor.getHue());
+		setAugmentedGradient(newPaletteGradient);
+		const newHue = newColor.getHue('rounded');
 		setHue(newHue);
-		const newChroma = Math.round(newColor.getChroma());
+		setHctHueValue(newHue.toString());
+		const newChroma = newColor.getChroma('rounded');
 		setChroma(newChroma);
-		const newTone = Math.round(newColor.getTone());
+		setHctChromaValue(newChroma.toString());
+		const newTone = newColor.getTone('rounded');
 		setTone(newTone);
 
 		return newHexColor;
@@ -83,6 +103,27 @@ function Plugin() {
 	) {
 		const newOpacity = event.currentTarget.value;
 		setOpacity(newOpacity);
+	}
+	function handleHctHueInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newHctHueValue = event.currentTarget.value;
+		const newHctHueNumber = parseInt(newHctHueValue);
+		const currentColor = new Color(augmentedColor);
+		currentColor.setHue(newHctHueNumber);
+		const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
+		setAugmentedColor(currentColor.getHex());
+		setAugmentedGradient(newAugmentedGradient);
+		setHctHueValue(newHctHueValue);
+	}
+	function handleHctChromaInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+		const newHctChromaValue = event.currentTarget.value;
+		const newHctChromaNumber = parseInt(newHctChromaValue);
+		const currentColor = new Color(augmentedColor);
+		currentColor.setChroma(newHctChromaNumber);
+		currentColor.setHue(parseInt(hctHueValue));
+		const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
+		setAugmentedColor(currentColor.getHex());
+		setAugmentedGradient(newAugmentedGradient);
+		setHctChromaValue(newHctChromaValue);
 	}
 
 	function handleTextAreaInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
@@ -109,7 +150,7 @@ function Plugin() {
 	function handleClick(type: string) {
 		const newColor = {
 			colorName: textboxValue,
-			backgroundColor: hexColor,
+			backgroundColor: augmentedColor,
 		};
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
@@ -165,15 +206,6 @@ function Plugin() {
 		<div className='h-full py-4'>
 			<Container space='medium'>
 				<p className='text-xs'>Select a color to create a dynamic palette</p>
-				<div
-					className='h-8 rounded-sm w-full mt-3'
-					style={{
-						background: `linear-gradient(to right, ${paletteGradient})`,
-					}}
-				></div>
-				<p className='p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md'>
-					H: {hue} C: {chroma} T: {tone}
-				</p>
 				<div className='flex flex-row gap-1 py-2'>
 					<Textbox
 						onInput={handleTextboxInput}
@@ -190,6 +222,62 @@ function Plugin() {
 						opacity={opacity}
 					/>
 				</div>
+				<p className='p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md'>
+					H: {hue} C: {chroma} T: {tone}
+				</p>
+				<div className='h-16 rounded-sm overflow-hidden w-full mt-3'>
+					<div
+						className='h-8 w-full'
+						style={{
+							background: `linear-gradient(to right, ${paletteGradient})`,
+						}}
+					></div>
+					<div
+						className='h-8 w-full'
+						style={{
+							background: `linear-gradient(to right, ${augmentedGradient})`,
+							// background: 'red',
+						}}
+					></div>
+				</div>
+				<VerticalSpace space='extraSmall' />
+				<Columns space='extraSmall'>
+					<div>
+						<TextboxNumeric
+							maximum={360}
+							minimum={0}
+							onInput={handleHctHueInput}
+							value={hctHueValue}
+							variant='border'
+							icon='H'
+						/>
+						<VerticalSpace space='small' />
+						<RangeSlider
+							maximum={360}
+							minimum={0}
+							onInput={handleHctHueInput}
+							value={hctHueValue}
+						/>
+					</div>
+					<div>
+						<TextboxNumeric
+							maximum={150}
+							minimum={0}
+							onInput={handleHctChromaInput}
+							value={hctChromaValue}
+							variant='border'
+							icon='C'
+						/>
+						<VerticalSpace space='small' />
+						<RangeSlider
+							maximum={150}
+							minimum={0}
+							onInput={handleHctChromaInput}
+							value={hctChromaValue}
+						/>
+					</div>
+				</Columns>
+				<VerticalSpace space='large' />
 				<TextboxMultiline
 					onInput={handleTextAreaInput}
 					value={textAreaValue}
