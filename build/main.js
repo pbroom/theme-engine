@@ -3381,7 +3381,7 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: 550, width: 280 });
+  showUI({ height: 650, width: 280 });
 }
 var init_main = __esm({
   "src/main.ts"() {

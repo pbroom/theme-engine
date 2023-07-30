@@ -2,6 +2,7 @@
 import '!./dist/tailwind.css';
 import Color from './color';
 import { hctTonalGradient } from './color';
+import { maxChromaAtTonePerHue } from './ref';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
@@ -23,6 +24,7 @@ import {
 	TextboxNumeric,
 	TextboxNumericProps,
 	VerticalSpace,
+	Bold,
 } from '@create-figma-plugin/ui';
 
 // Importing preact and preact/hooks libraries
@@ -39,6 +41,9 @@ function Plugin() {
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
 		25, 35, 87, 92, 94, 96, 98,
 	];
+	const maxChromaAtHue = Math.round(
+		maxChromaAtTonePerHue[color.getHue('rounded')].chroma
+	);
 
 	const [paletteGradient, setPaletteGradient] =
 		useState<string>(startingGradient);
@@ -47,7 +52,7 @@ function Plugin() {
 	const [hue, setHue] = useState<number>(color.getHue('rounded'));
 	const [chroma, setChroma] = useState<number>(color.getChroma('rounded'));
 	const [tone, setTone] = useState<number>(color.getTone('rounded'));
-	const [textboxValue, setTextboxValue] = useState<string>('color');
+	const [textboxValue, setTextboxValue] = useState<string>('');
 	const [hexColor, setHexColor] = useState<string>(startingColor);
 	const [augmentedColor, setAugmentedColor] = useState<string>(startingColor);
 	const [opacity, setOpacity] = useState<string>('');
@@ -57,6 +62,8 @@ function Plugin() {
 	const [hctChromaValue, setHctChromaValue] = useState<string>(
 		`${color.getChroma('rounded')}`
 	);
+	const [maxChromaValueAtHue, setMaxChromaValueAtHue] =
+		useState<number>(maxChromaAtHue);
 	const [textAreaValue, setTextAreaValue] = useState<string>(
 		`${defaultPaletteTones}`
 	);
@@ -113,6 +120,9 @@ function Plugin() {
 		setAugmentedColor(currentColor.getHex());
 		setAugmentedGradient(newAugmentedGradient);
 		setHctHueValue(newHctHueValue);
+		setMaxChromaValueAtHue(
+			Math.round(maxChromaAtTonePerHue[newHctHueNumber].chroma + 1)
+		);
 	}
 	function handleHctChromaInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newHctChromaValue = event.currentTarget.value;
@@ -205,41 +215,45 @@ function Plugin() {
 	return (
 		<div className='h-full py-4'>
 			<Container space='medium'>
-				<p className='text-xs'>Select a color to create a dynamic palette</p>
-				<div className='flex flex-row gap-1 py-2'>
-					<Textbox
-						onInput={handleTextboxInput}
-						value={textboxValue}
-						variant='border'
-						placeholder='Name thy color'
-					/>
-					<TextboxColor
-						id='hexColor1'
-						hexColor={hexColor}
-						hexColorPlaceholder='Color'
-						onHexColorInput={handleHexColorInput}
-						onOpacityInput={handleOpacityInput}
-						opacity={opacity}
-					/>
+				<Text>
+					<Muted>Select a color</Muted>
+				</Text>
+				<VerticalSpace space='extraSmall' />
+				<div className='flex flex-row flex-grow align-middle'>
+					<div>
+						<TextboxColor
+							id='hexColor1'
+							hexColor={hexColor}
+							hexColorPlaceholder='Color'
+							onHexColorInput={handleHexColorInput}
+							onOpacityInput={handleOpacityInput}
+							opacity={opacity}
+							className='w-24'
+						/>
+					</div>
+					<p className='p-1 text-center flex items-center rounded-md'>
+						H: {hue} C: {chroma} T: {tone}
+					</p>
 				</div>
-				<p className='p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md'>
-					H: {hue} C: {chroma} T: {tone}
-				</p>
-				<div className='h-16 rounded-sm overflow-hidden w-full mt-3'>
+				<div className='h-24 rounded-sm overflow-hidden w-full my-2'>
 					<div
-						className='h-8 w-full'
+						className='h-12 w-full'
 						style={{
 							background: `linear-gradient(to right, ${paletteGradient})`,
 						}}
 					></div>
 					<div
-						className='h-8 w-full'
+						className='h-12 w-full'
 						style={{
 							background: `linear-gradient(to right, ${augmentedGradient})`,
 							// background: 'red',
 						}}
 					></div>
 				</div>
+				<VerticalSpace space='small' />
+				<Text>
+					<Muted>Adjust hue and chroma to taste</Muted>
+				</Text>
 				<VerticalSpace space='extraSmall' />
 				<Columns space='extraSmall'>
 					<div>
@@ -261,7 +275,7 @@ function Plugin() {
 					</div>
 					<div>
 						<TextboxNumeric
-							maximum={150}
+							maximum={maxChromaValueAtHue}
 							minimum={0}
 							onInput={handleHctChromaInput}
 							value={hctChromaValue}
@@ -270,7 +284,7 @@ function Plugin() {
 						/>
 						<VerticalSpace space='small' />
 						<RangeSlider
-							maximum={150}
+							maximum={maxChromaValueAtHue}
 							minimum={0}
 							onInput={handleHctChromaInput}
 							value={hctChromaValue}
@@ -278,11 +292,26 @@ function Plugin() {
 					</div>
 				</Columns>
 				<VerticalSpace space='large' />
+				<Text>
+					<Muted>Select tones</Muted>
+				</Text>
+				<VerticalSpace space='extraSmall' />
 				<TextboxMultiline
 					onInput={handleTextAreaInput}
 					value={textAreaValue}
 					variant='border'
 					placeholder='All tone stops (0-100)'
+				/>
+				<VerticalSpace space='large' />
+				<Text>
+					<Muted>Give the palette a pretty name</Muted>
+				</Text>
+				<VerticalSpace space='extraSmall' />
+				<Textbox
+					onInput={handleTextboxInput}
+					value={textboxValue}
+					variant='border'
+					placeholder='color/palette-name'
 				/>
 				<VerticalSpace space='large' />
 				<Button

@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0e46d1-63e0-4aa7-876c-8967847f850c/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aec86612-1ef9-4c35-b5d6-b40e15c35a4e/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0e46d1-63e0-4aa7-876c-8967847f850c/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aec86612-1ef9-4c35-b5d6-b40e15c35a4e/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -566,6 +566,12 @@ video {
     max-width: 1536px;
   }
 }
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -601,6 +607,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
 .block {
   display: block;
 }
@@ -625,11 +634,38 @@ video {
 .h-16 {
   height: 4rem;
 }
+.h-12 {
+  height: 3rem;
+}
+.h-24 {
+  height: 6rem;
+}
 .w-full {
   width: 100%;
 }
+.w-20 {
+  width: 5rem;
+}
+.w-24 {
+  width: 6rem;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.shrink {
+  flex-shrink: 1;
+}
 .flex-grow {
   flex-grow: 1;
+}
+.flex-grow-0 {
+  flex-grow: 0;
 }
 .grow {
   flex-grow: 1;
@@ -639,6 +675,18 @@ video {
 }
 .flex-row {
   flex-direction: row;
+}
+.content-center {
+  align-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-items-center {
+  justify-items: center;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -705,6 +753,9 @@ video {
 .p-4 {
   padding: 1rem;
 }
+.p-1 {
+  padding: 0.25rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -743,11 +794,17 @@ video {
 .pr-8 {
   padding-right: 2rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }
 .text-right {
   text-align: right;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -4342,6 +4399,1821 @@ video {
     }
   });
 
+  // src/ref.ts
+  var maxChromaAtTonePerHue;
+  var init_ref = __esm({
+    "src/ref.ts"() {
+      "use strict";
+      maxChromaAtTonePerHue = [
+        {
+          hue: 0,
+          chroma: 102.29059338702712,
+          tone: 55
+        },
+        {
+          hue: 1,
+          chroma: 102.60908130866443,
+          tone: 55
+        },
+        {
+          hue: 2,
+          chroma: 102.49542053829066,
+          tone: 55
+        },
+        {
+          hue: 3,
+          chroma: 102.08145536873461,
+          tone: 55
+        },
+        {
+          hue: 4,
+          chroma: 102.16913211242463,
+          tone: 54
+        },
+        {
+          hue: 5,
+          chroma: 102.27654497635527,
+          tone: 54
+        },
+        {
+          hue: 6,
+          chroma: 102.43910613233591,
+          tone: 54
+        },
+        {
+          hue: 7,
+          chroma: 102.90135248561594,
+          tone: 54
+        },
+        {
+          hue: 8,
+          chroma: 103.11157064918604,
+          tone: 54
+        },
+        {
+          hue: 9,
+          chroma: 103.62646560864816,
+          tone: 54
+        },
+        {
+          hue: 10,
+          chroma: 103.81816538540784,
+          tone: 54
+        },
+        {
+          hue: 11,
+          chroma: 104.37910991276874,
+          tone: 54
+        },
+        {
+          hue: 12,
+          chroma: 104.67975202037647,
+          tone: 54
+        },
+        {
+          hue: 13,
+          chroma: 104.79125496278046,
+          tone: 54
+        },
+        {
+          hue: 14,
+          chroma: 104.81726491509593,
+          tone: 54
+        },
+        {
+          hue: 15,
+          chroma: 104.86291062587007,
+          tone: 54
+        },
+        {
+          hue: 16,
+          chroma: 105.12617401612707,
+          tone: 53
+        },
+        {
+          hue: 17,
+          chroma: 105.83330416206427,
+          tone: 53
+        },
+        {
+          hue: 18,
+          chroma: 106.37288152030361,
+          tone: 53
+        },
+        {
+          hue: 19,
+          chroma: 106.82101286495468,
+          tone: 53
+        },
+        {
+          hue: 20,
+          chroma: 107.39718347819962,
+          tone: 53
+        },
+        {
+          hue: 21,
+          chroma: 108.2813156649379,
+          tone: 53
+        },
+        {
+          hue: 22,
+          chroma: 108.87200270627048,
+          tone: 53
+        },
+        {
+          hue: 23,
+          chroma: 109.4567110079303,
+          tone: 53
+        },
+        {
+          hue: 24,
+          chroma: 110.13577108164388,
+          tone: 53
+        },
+        {
+          hue: 25,
+          chroma: 110.87202195538732,
+          tone: 53
+        },
+        {
+          hue: 26,
+          chroma: 111.96761442146209,
+          tone: 53
+        },
+        {
+          hue: 27,
+          chroma: 112.75851418586231,
+          tone: 53
+        },
+        {
+          hue: 28,
+          chroma: 110.39041621596458,
+          tone: 53
+        },
+        {
+          hue: 29,
+          chroma: 107.24485236456015,
+          tone: 54
+        },
+        {
+          hue: 30,
+          chroma: 104.89060563676703,
+          tone: 55
+        },
+        {
+          hue: 31,
+          chroma: 100.70883398953252,
+          tone: 55
+        },
+        {
+          hue: 32,
+          chroma: 98.64353473041776,
+          tone: 56
+        },
+        {
+          hue: 33,
+          chroma: 96.84310501500768,
+          tone: 57
+        },
+        {
+          hue: 34,
+          chroma: 93.5440352291353,
+          tone: 57
+        },
+        {
+          hue: 35,
+          chroma: 92.02487731893764,
+          tone: 58
+        },
+        {
+          hue: 36,
+          chroma: 89.46376427519503,
+          tone: 59
+        },
+        {
+          hue: 37,
+          chroma: 87.45559272184552,
+          tone: 59
+        },
+        {
+          hue: 38,
+          chroma: 86.34935583158709,
+          tone: 60
+        },
+        {
+          hue: 39,
+          chroma: 84.15989201695757,
+          tone: 60
+        },
+        {
+          hue: 40,
+          chroma: 83.06802795706868,
+          tone: 61
+        },
+        {
+          hue: 41,
+          chroma: 80.50064097512386,
+          tone: 61
+        },
+        {
+          hue: 42,
+          chroma: 79.83901092777586,
+          tone: 62
+        },
+        {
+          hue: 43,
+          chroma: 77.76516127143402,
+          tone: 62
+        },
+        {
+          hue: 44,
+          chroma: 77.1522237062303,
+          tone: 63
+        },
+        {
+          hue: 45,
+          chroma: 75.55717010295571,
+          tone: 63
+        },
+        {
+          hue: 46,
+          chroma: 74.99444826792882,
+          tone: 64
+        },
+        {
+          hue: 47,
+          chroma: 73.39919052490602,
+          tone: 64
+        },
+        {
+          hue: 48,
+          chroma: 72.92918926544144,
+          tone: 65
+        },
+        {
+          hue: 49,
+          chroma: 71.39199992945922,
+          tone: 65
+        },
+        {
+          hue: 50,
+          chroma: 70.47828504777686,
+          tone: 66
+        },
+        {
+          hue: 51,
+          chroma: 69.50461725115296,
+          tone: 66
+        },
+        {
+          hue: 52,
+          chroma: 68.78627732522996,
+          tone: 66
+        },
+        {
+          hue: 53,
+          chroma: 68.09931602199272,
+          tone: 67
+        },
+        {
+          hue: 54,
+          chroma: 67.07591347120717,
+          tone: 67
+        },
+        {
+          hue: 55,
+          chroma: 66.79228424908683,
+          tone: 68
+        },
+        {
+          hue: 56,
+          chroma: 66.1486048722401,
+          tone: 68
+        },
+        {
+          hue: 57,
+          chroma: 65.62079735089364,
+          tone: 69
+        },
+        {
+          hue: 58,
+          chroma: 64.70604086100727,
+          tone: 69
+        },
+        {
+          hue: 59,
+          chroma: 64.16118228560536,
+          tone: 70
+        },
+        {
+          hue: 60,
+          chroma: 63.97573912510994,
+          tone: 70
+        },
+        {
+          hue: 61,
+          chroma: 63.140124886688106,
+          tone: 70
+        },
+        {
+          hue: 62,
+          chroma: 63.32973391422233,
+          tone: 71
+        },
+        {
+          hue: 63,
+          chroma: 62.54740711153246,
+          tone: 71
+        },
+        {
+          hue: 64,
+          chroma: 62.11522975746191,
+          tone: 72
+        },
+        {
+          hue: 65,
+          chroma: 61.863686893396526,
+          tone: 72
+        },
+        {
+          hue: 66,
+          chroma: 61.34876803629307,
+          tone: 72
+        },
+        {
+          hue: 67,
+          chroma: 61.22773921667122,
+          tone: 73
+        },
+        {
+          hue: 68,
+          chroma: 60.85225254408652,
+          tone: 73
+        },
+        {
+          hue: 69,
+          chroma: 60.93759914191806,
+          tone: 74
+        },
+        {
+          hue: 70,
+          chroma: 60.38811031949195,
+          tone: 74
+        },
+        {
+          hue: 71,
+          chroma: 60.08302703044345,
+          tone: 74
+        },
+        {
+          hue: 72,
+          chroma: 60.242973648133955,
+          tone: 75
+        },
+        {
+          hue: 73,
+          chroma: 59.98041731175445,
+          tone: 75
+        },
+        {
+          hue: 74,
+          chroma: 60.182249836404196,
+          tone: 76
+        },
+        {
+          hue: 75,
+          chroma: 59.79086812274401,
+          tone: 76
+        },
+        {
+          hue: 76,
+          chroma: 59.714122439848445,
+          tone: 77
+        },
+        {
+          hue: 77,
+          chroma: 59.87086592655791,
+          tone: 77
+        },
+        {
+          hue: 78,
+          chroma: 59.57346846336722,
+          tone: 77
+        },
+        {
+          hue: 79,
+          chroma: 59.89606898962922,
+          tone: 78
+        },
+        {
+          hue: 80,
+          chroma: 59.7661552718325,
+          tone: 78
+        },
+        {
+          hue: 81,
+          chroma: 60.14687891631389,
+          tone: 79
+        },
+        {
+          hue: 82,
+          chroma: 59.924179646800305,
+          tone: 79
+        },
+        {
+          hue: 83,
+          chroma: 60.30758024765616,
+          tone: 80
+        },
+        {
+          hue: 84,
+          chroma: 60.19007211099443,
+          tone: 80
+        },
+        {
+          hue: 85,
+          chroma: 60.25199489655309,
+          tone: 81
+        },
+        {
+          hue: 86,
+          chroma: 60.628800986845526,
+          tone: 81
+        },
+        {
+          hue: 87,
+          chroma: 60.604867598712495,
+          tone: 81
+        },
+        {
+          hue: 88,
+          chroma: 61.07594562205954,
+          tone: 82
+        },
+        {
+          hue: 89,
+          chroma: 61.11328622276819,
+          tone: 82
+        },
+        {
+          hue: 90,
+          chroma: 61.76397746151332,
+          tone: 83
+        },
+        {
+          hue: 91,
+          chroma: 61.71112466059479,
+          tone: 83
+        },
+        {
+          hue: 92,
+          chroma: 62.41046157296223,
+          tone: 84
+        },
+        {
+          hue: 93,
+          chroma: 62.39227671214189,
+          tone: 84
+        },
+        {
+          hue: 94,
+          chroma: 63.135782988548144,
+          tone: 85
+        },
+        {
+          hue: 95,
+          chroma: 63.28723523495631,
+          tone: 86
+        },
+        {
+          hue: 96,
+          chroma: 63.955262514770205,
+          tone: 86
+        },
+        {
+          hue: 97,
+          chroma: 64.54723464587967,
+          tone: 87
+        },
+        {
+          hue: 98,
+          chroma: 64.83489545801278,
+          tone: 87
+        },
+        {
+          hue: 99,
+          chroma: 65.72461428999073,
+          tone: 88
+        },
+        {
+          hue: 100,
+          chroma: 65.82745530110579,
+          tone: 88
+        },
+        {
+          hue: 101,
+          chroma: 66.76857545501109,
+          tone: 89
+        },
+        {
+          hue: 102,
+          chroma: 67.47462239728755,
+          tone: 90
+        },
+        {
+          hue: 103,
+          chroma: 67.88906023661976,
+          tone: 90
+        },
+        {
+          hue: 104,
+          chroma: 68.89841099268399,
+          tone: 91
+        },
+        {
+          hue: 105,
+          chroma: 69.64578435810003,
+          tone: 92
+        },
+        {
+          hue: 106,
+          chroma: 70.30989528674206,
+          tone: 93
+        },
+        {
+          hue: 107,
+          chroma: 71.18464958430162,
+          tone: 93
+        },
+        {
+          hue: 108,
+          chroma: 72.07503835407262,
+          tone: 94
+        },
+        {
+          hue: 109,
+          chroma: 73.16592493962365,
+          tone: 95
+        },
+        {
+          hue: 110,
+          chroma: 74.39320979793726,
+          tone: 96
+        },
+        {
+          hue: 111,
+          chroma: 75.5094876234589,
+          tone: 97
+        },
+        {
+          hue: 112,
+          chroma: 75.36615401576177,
+          tone: 96
+        },
+        {
+          hue: 113,
+          chroma: 76.10865278164698,
+          tone: 96
+        },
+        {
+          hue: 114,
+          chroma: 76.87502507561472,
+          tone: 96
+        },
+        {
+          hue: 115,
+          chroma: 77.50892220560529,
+          tone: 96
+        },
+        {
+          hue: 116,
+          chroma: 77.77956106354266,
+          tone: 95
+        },
+        {
+          hue: 117,
+          chroma: 78.26482715891835,
+          tone: 95
+        },
+        {
+          hue: 118,
+          chroma: 79.10482618822675,
+          tone: 95
+        },
+        {
+          hue: 119,
+          chroma: 79.51588168127346,
+          tone: 95
+        },
+        {
+          hue: 120,
+          chroma: 80.48887899604091,
+          tone: 94
+        },
+        {
+          hue: 121,
+          chroma: 81.37768433814313,
+          tone: 94
+        },
+        {
+          hue: 122,
+          chroma: 82.45984346377152,
+          tone: 94
+        },
+        {
+          hue: 123,
+          chroma: 82.51017475152366,
+          tone: 93
+        },
+        {
+          hue: 124,
+          chroma: 83.6182222179724,
+          tone: 93
+        },
+        {
+          hue: 125,
+          chroma: 84.73387847213296,
+          tone: 93
+        },
+        {
+          hue: 126,
+          chroma: 85.75031741409109,
+          tone: 93
+        },
+        {
+          hue: 127,
+          chroma: 86.4914021191396,
+          tone: 92
+        },
+        {
+          hue: 128,
+          chroma: 87.81009434595934,
+          tone: 92
+        },
+        {
+          hue: 129,
+          chroma: 89.12344650906145,
+          tone: 92
+        },
+        {
+          hue: 130,
+          chroma: 89.41394403463258,
+          tone: 91
+        },
+        {
+          hue: 131,
+          chroma: 90.71341984988584,
+          tone: 91
+        },
+        {
+          hue: 132,
+          chroma: 92.18225469009533,
+          tone: 91
+        },
+        {
+          hue: 133,
+          chroma: 93.15355359090579,
+          tone: 90
+        },
+        {
+          hue: 134,
+          chroma: 94.56258533730878,
+          tone: 90
+        },
+        {
+          hue: 135,
+          chroma: 96.27314359969833,
+          tone: 90
+        },
+        {
+          hue: 136,
+          chroma: 97.27208299651996,
+          tone: 89
+        },
+        {
+          hue: 137,
+          chroma: 98.98687083306768,
+          tone: 89
+        },
+        {
+          hue: 138,
+          chroma: 100.73384267947965,
+          tone: 89
+        },
+        {
+          hue: 139,
+          chroma: 101.9440077545218,
+          tone: 88
+        },
+        {
+          hue: 140,
+          chroma: 103.89896334567975,
+          tone: 88
+        },
+        {
+          hue: 141,
+          chroma: 105.98734694526831,
+          tone: 88
+        },
+        {
+          hue: 142,
+          chroma: 107.34464988510916,
+          tone: 87
+        },
+        {
+          hue: 143,
+          chroma: 104.77191200796756,
+          tone: 87
+        },
+        {
+          hue: 144,
+          chroma: 101.64909649501216,
+          tone: 87
+        },
+        {
+          hue: 145,
+          chroma: 98.9065522948837,
+          tone: 87
+        },
+        {
+          hue: 146,
+          chroma: 96.9775891751188,
+          tone: 88
+        },
+        {
+          hue: 147,
+          chroma: 94.39033654042633,
+          tone: 88
+        },
+        {
+          hue: 148,
+          chroma: 91.87973725444252,
+          tone: 88
+        },
+        {
+          hue: 149,
+          chroma: 89.62917230001072,
+          tone: 88
+        },
+        {
+          hue: 150,
+          chroma: 87.90946087006364,
+          tone: 88
+        },
+        {
+          hue: 151,
+          chroma: 85.88195830853766,
+          tone: 88
+        },
+        {
+          hue: 152,
+          chroma: 84.42702442880764,
+          tone: 88
+        },
+        {
+          hue: 153,
+          chroma: 82.3277210447377,
+          tone: 88
+        },
+        {
+          hue: 154,
+          chroma: 80.87783702409875,
+          tone: 88
+        },
+        {
+          hue: 155,
+          chroma: 79.43862821895317,
+          tone: 88
+        },
+        {
+          hue: 156,
+          chroma: 78.29795702251404,
+          tone: 88
+        },
+        {
+          hue: 157,
+          chroma: 76.88916663502451,
+          tone: 88
+        },
+        {
+          hue: 158,
+          chroma: 75.42462687658826,
+          tone: 88
+        },
+        {
+          hue: 159,
+          chroma: 74.4184468916744,
+          tone: 89
+        },
+        {
+          hue: 160,
+          chroma: 73.65626046324942,
+          tone: 89
+        },
+        {
+          hue: 161,
+          chroma: 72.99098362664623,
+          tone: 89
+        },
+        {
+          hue: 162,
+          chroma: 71.96102453955005,
+          tone: 89
+        },
+        {
+          hue: 163,
+          chroma: 70.86238313119111,
+          tone: 89
+        },
+        {
+          hue: 164,
+          chroma: 70.12355159299447,
+          tone: 89
+        },
+        {
+          hue: 165,
+          chroma: 69.40068285991154,
+          tone: 89
+        },
+        {
+          hue: 166,
+          chroma: 68.69463271252172,
+          tone: 89
+        },
+        {
+          hue: 167,
+          chroma: 68.00625302899738,
+          tone: 89
+        },
+        {
+          hue: 168,
+          chroma: 67.01047824970789,
+          tone: 89
+        },
+        {
+          hue: 169,
+          chroma: 66.36415172771942,
+          tone: 89
+        },
+        {
+          hue: 170,
+          chroma: 65.73833778792111,
+          tone: 89
+        },
+        {
+          hue: 171,
+          chroma: 65.33293729372076,
+          tone: 89
+        },
+        {
+          hue: 172,
+          chroma: 64.74316316106923,
+          tone: 89
+        },
+        {
+          hue: 173,
+          chroma: 64.36255220537348,
+          tone: 89
+        },
+        {
+          hue: 174,
+          chroma: 63.512274727676854,
+          tone: 89
+        },
+        {
+          hue: 175,
+          chroma: 63.161932460401545,
+          tone: 89
+        },
+        {
+          hue: 176,
+          chroma: 62.87731474025355,
+          tone: 90
+        },
+        {
+          hue: 177,
+          chroma: 62.71039242351542,
+          tone: 90
+        },
+        {
+          hue: 178,
+          chroma: 62.40371942484275,
+          tone: 90
+        },
+        {
+          hue: 179,
+          chroma: 62.10876864749398,
+          tone: 90
+        },
+        {
+          hue: 180,
+          chroma: 61.559402350453574,
+          tone: 90
+        },
+        {
+          hue: 181,
+          chroma: 61.293501260752656,
+          tone: 90
+        },
+        {
+          hue: 182,
+          chroma: 60.918067399452546,
+          tone: 90
+        },
+        {
+          hue: 183,
+          chroma: 60.68365229981702,
+          tone: 90
+        },
+        {
+          hue: 184,
+          chroma: 60.46213527539749,
+          tone: 90
+        },
+        {
+          hue: 185,
+          chroma: 60.253676453123646,
+          tone: 90
+        },
+        {
+          hue: 186,
+          chroma: 59.82945671274357,
+          tone: 90
+        },
+        {
+          hue: 187,
+          chroma: 59.65353920591639,
+          tone: 90
+        },
+        {
+          hue: 188,
+          chroma: 59.49122428441756,
+          tone: 90
+        },
+        {
+          hue: 189,
+          chroma: 59.34262486386894,
+          tone: 90
+        },
+        {
+          hue: 190,
+          chroma: 59.27350034436179,
+          tone: 90
+        },
+        {
+          hue: 191,
+          chroma: 58.94737198732147,
+          tone: 90
+        },
+        {
+          hue: 192,
+          chroma: 58.840063538189966,
+          tone: 90
+        },
+        {
+          hue: 193,
+          chroma: 58.746863163127585,
+          tone: 90
+        },
+        {
+          hue: 194,
+          chroma: 58.88816911439717,
+          tone: 91
+        },
+        {
+          hue: 195,
+          chroma: 59.02462926066998,
+          tone: 91
+        },
+        {
+          hue: 196,
+          chroma: 58.97431923306657,
+          tone: 91
+        },
+        {
+          hue: 197,
+          chroma: 58.374671585908466,
+          tone: 90
+        },
+        {
+          hue: 198,
+          chroma: 58.35242934142467,
+          tone: 90
+        },
+        {
+          hue: 199,
+          chroma: 57.9199516120261,
+          tone: 89
+        },
+        {
+          hue: 200,
+          chroma: 57.921505543069586,
+          tone: 89
+        },
+        {
+          hue: 201,
+          chroma: 57.380318693693376,
+          tone: 88
+        },
+        {
+          hue: 202,
+          chroma: 57.416949230189445,
+          tone: 88
+        },
+        {
+          hue: 203,
+          chroma: 57.0144125303021,
+          tone: 87
+        },
+        {
+          hue: 204,
+          chroma: 57.074049560091844,
+          tone: 87
+        },
+        {
+          hue: 205,
+          chroma: 56.683205844465036,
+          tone: 86
+        },
+        {
+          hue: 206,
+          chroma: 56.67167507363697,
+          tone: 86
+        },
+        {
+          hue: 207,
+          chroma: 56.297670825457175,
+          tone: 85
+        },
+        {
+          hue: 208,
+          chroma: 56.392924323714894,
+          tone: 85
+        },
+        {
+          hue: 209,
+          chroma: 56.05203766835074,
+          tone: 84
+        },
+        {
+          hue: 210,
+          chroma: 56.125675818941026,
+          tone: 84
+        },
+        {
+          hue: 211,
+          chroma: 55.78448198138266,
+          tone: 83
+        },
+        {
+          hue: 212,
+          chroma: 55.95582281511038,
+          tone: 83
+        },
+        {
+          hue: 213,
+          chroma: 55.629924813449186,
+          tone: 82
+        },
+        {
+          hue: 214,
+          chroma: 55.82562875904896,
+          tone: 82
+        },
+        {
+          hue: 215,
+          chroma: 55.48670981997196,
+          tone: 81
+        },
+        {
+          hue: 216,
+          chroma: 55.714796289595974,
+          tone: 81
+        },
+        {
+          hue: 217,
+          chroma: 55.42716162861507,
+          tone: 80
+        },
+        {
+          hue: 218,
+          chroma: 55.55161294962171,
+          tone: 80
+        },
+        {
+          hue: 219,
+          chroma: 55.27586066607938,
+          tone: 79
+        },
+        {
+          hue: 220,
+          chroma: 55.55261390679999,
+          tone: 79
+        },
+        {
+          hue: 221,
+          chroma: 55.300706259965814,
+          tone: 78
+        },
+        {
+          hue: 222,
+          chroma: 55.601715603617265,
+          tone: 78
+        },
+        {
+          hue: 223,
+          chroma: 55.46398039804439,
+          tone: 78
+        },
+        {
+          hue: 224,
+          chroma: 55.69216350938455,
+          tone: 77
+        },
+        {
+          hue: 225,
+          chroma: 55.78010091889009,
+          tone: 77
+        },
+        {
+          hue: 226,
+          chroma: 55.69836608409741,
+          tone: 76
+        },
+        {
+          hue: 227,
+          chroma: 56.057393694485285,
+          tone: 76
+        },
+        {
+          hue: 228,
+          chroma: 55.87322525323942,
+          tone: 75
+        },
+        {
+          hue: 229,
+          chroma: 56.32744687126684,
+          tone: 75
+        },
+        {
+          hue: 230,
+          chroma: 56.16859886147888,
+          tone: 74
+        },
+        {
+          hue: 231,
+          chroma: 56.57557180806456,
+          tone: 74
+        },
+        {
+          hue: 232,
+          chroma: 56.4356709329321,
+          tone: 73
+        },
+        {
+          hue: 233,
+          chroma: 56.6476418038246,
+          tone: 73
+        },
+        {
+          hue: 234,
+          chroma: 56.62835694282038,
+          tone: 72
+        },
+        {
+          hue: 235,
+          chroma: 57.07450010721276,
+          tone: 72
+        },
+        {
+          hue: 236,
+          chroma: 56.97326344499638,
+          tone: 71
+        },
+        {
+          hue: 237,
+          chroma: 57.43646115801881,
+          tone: 71
+        },
+        {
+          hue: 238,
+          chroma: 57.44382467362261,
+          tone: 71
+        },
+        {
+          hue: 239,
+          chroma: 57.9721470970516,
+          tone: 70
+        },
+        {
+          hue: 240,
+          chroma: 57.91297207368124,
+          tone: 69
+        },
+        {
+          hue: 241,
+          chroma: 58.41171493161684,
+          tone: 69
+        },
+        {
+          hue: 242,
+          chroma: 58.469893763440744,
+          tone: 69
+        },
+        {
+          hue: 243,
+          chroma: 59.04506949275394,
+          tone: 68
+        },
+        {
+          hue: 244,
+          chroma: 59.02511739678505,
+          tone: 67
+        },
+        {
+          hue: 245,
+          chroma: 59.81873184247422,
+          tone: 67
+        },
+        {
+          hue: 246,
+          chroma: 59.81809476446227,
+          tone: 66
+        },
+        {
+          hue: 247,
+          chroma: 60.54388328749216,
+          tone: 66
+        },
+        {
+          hue: 248,
+          chroma: 60.562711104495065,
+          tone: 65
+        },
+        {
+          hue: 249,
+          chroma: 60.99045141960158,
+          tone: 65
+        },
+        {
+          hue: 250,
+          chroma: 61.62880294086075,
+          tone: 64
+        },
+        {
+          hue: 251,
+          chroma: 61.675502067752696,
+          tone: 63
+        },
+        {
+          hue: 252,
+          chroma: 62.529243184693044,
+          tone: 63
+        },
+        {
+          hue: 253,
+          chroma: 62.59022925090998,
+          tone: 62
+        },
+        {
+          hue: 254,
+          chroma: 63.26331829256812,
+          tone: 62
+        },
+        {
+          hue: 255,
+          chroma: 63.746141159990394,
+          tone: 61
+        },
+        {
+          hue: 256,
+          chroma: 64.1210280517239,
+          tone: 60
+        },
+        {
+          hue: 257,
+          chroma: 64.83448023719015,
+          tone: 60
+        },
+        {
+          hue: 258,
+          chroma: 65.32006498036212,
+          tone: 59
+        },
+        {
+          hue: 259,
+          chroma: 65.94810703100538,
+          tone: 58
+        },
+        {
+          hue: 260,
+          chroma: 66.40000753127174,
+          tone: 58
+        },
+        {
+          hue: 261,
+          chroma: 67.47222124200388,
+          tone: 57
+        },
+        {
+          hue: 262,
+          chroma: 67.88382958017982,
+          tone: 56
+        },
+        {
+          hue: 263,
+          chroma: 68.29838362477237,
+          tone: 55
+        },
+        {
+          hue: 264,
+          chroma: 68.96857531931842,
+          tone: 55
+        },
+        {
+          hue: 265,
+          chroma: 69.98682718539115,
+          tone: 54
+        },
+        {
+          hue: 266,
+          chroma: 70.74900359922937,
+          tone: 53
+        },
+        {
+          hue: 267,
+          chroma: 71.71317742298201,
+          tone: 52
+        },
+        {
+          hue: 268,
+          chroma: 72.35494971900033,
+          tone: 51
+        },
+        {
+          hue: 269,
+          chroma: 73.27384870384091,
+          tone: 50
+        },
+        {
+          hue: 270,
+          chroma: 73.9533042036866,
+          tone: 49
+        },
+        {
+          hue: 271,
+          chroma: 74.84393104083992,
+          tone: 48
+        },
+        {
+          hue: 272,
+          chroma: 75.71451042805361,
+          tone: 47
+        },
+        {
+          hue: 273,
+          chroma: 77.04163226762485,
+          tone: 46
+        },
+        {
+          hue: 274,
+          chroma: 77.8259730231015,
+          tone: 45
+        },
+        {
+          hue: 275,
+          chroma: 78.57682910212898,
+          tone: 44
+        },
+        {
+          hue: 276,
+          chroma: 79.60324922246727,
+          tone: 42
+        },
+        {
+          hue: 277,
+          chroma: 80.88789666896237,
+          tone: 41
+        },
+        {
+          hue: 278,
+          chroma: 81.90481632803404,
+          tone: 40
+        },
+        {
+          hue: 279,
+          chroma: 82.7496507668004,
+          tone: 39
+        },
+        {
+          hue: 280,
+          chroma: 84.1831161875188,
+          tone: 37
+        },
+        {
+          hue: 281,
+          chroma: 84.92790329338081,
+          tone: 35
+        },
+        {
+          hue: 282,
+          chroma: 86.23810231597862,
+          tone: 34
+        },
+        {
+          hue: 283,
+          chroma: 86.90394291180358,
+          tone: 33
+        },
+        {
+          hue: 284,
+          chroma: 87.08082861285786,
+          tone: 33
+        },
+        {
+          hue: 285,
+          chroma: 87.24506419043743,
+          tone: 33
+        },
+        {
+          hue: 286,
+          chroma: 86.952684743878,
+          tone: 34
+        },
+        {
+          hue: 287,
+          chroma: 87.18086387818107,
+          tone: 34
+        },
+        {
+          hue: 288,
+          chroma: 87.14447857778784,
+          tone: 34
+        },
+        {
+          hue: 289,
+          chroma: 87.11918107348718,
+          tone: 35
+        },
+        {
+          hue: 290,
+          chroma: 87.43053774908645,
+          tone: 35
+        },
+        {
+          hue: 291,
+          chroma: 87.15634203979539,
+          tone: 35
+        },
+        {
+          hue: 292,
+          chroma: 87.44526977704604,
+          tone: 36
+        },
+        {
+          hue: 293,
+          chroma: 87.79987495142663,
+          tone: 36
+        },
+        {
+          hue: 294,
+          chroma: 87.5130714461638,
+          tone: 37
+        },
+        {
+          hue: 295,
+          chroma: 87.90423869811676,
+          tone: 37
+        },
+        {
+          hue: 296,
+          chroma: 87.98368523822299,
+          tone: 37
+        },
+        {
+          hue: 297,
+          chroma: 88.11409244048949,
+          tone: 38
+        },
+        {
+          hue: 298,
+          chroma: 88.56661997617809,
+          tone: 38
+        },
+        {
+          hue: 299,
+          chroma: 88.29748676991436,
+          tone: 39
+        },
+        {
+          hue: 300,
+          chroma: 88.88320737734239,
+          tone: 39
+        },
+        {
+          hue: 301,
+          chroma: 88.7727810946839,
+          tone: 39
+        },
+        {
+          hue: 302,
+          chroma: 89.21447953385142,
+          tone: 40
+        },
+        {
+          hue: 303,
+          chroma: 89.48070573767065,
+          tone: 40
+        },
+        {
+          hue: 304,
+          chroma: 89.6608824511493,
+          tone: 41
+        },
+        {
+          hue: 305,
+          chroma: 89.99541374058613,
+          tone: 41
+        },
+        {
+          hue: 306,
+          chroma: 90.09450756617315,
+          tone: 42
+        },
+        {
+          hue: 307,
+          chroma: 90.82769298230927,
+          tone: 42
+        },
+        {
+          hue: 308,
+          chroma: 90.72421043246295,
+          tone: 43
+        },
+        {
+          hue: 309,
+          chroma: 91.45942674104516,
+          tone: 43
+        },
+        {
+          hue: 310,
+          chroma: 91.38285503232278,
+          tone: 44
+        },
+        {
+          hue: 311,
+          chroma: 92.08758829120774,
+          tone: 44
+        },
+        {
+          hue: 312,
+          chroma: 92.2609866968918,
+          tone: 45
+        },
+        {
+          hue: 313,
+          chroma: 92.84200860797634,
+          tone: 45
+        },
+        {
+          hue: 314,
+          chroma: 93.15443236769123,
+          tone: 46
+        },
+        {
+          hue: 315,
+          chroma: 93.64807555314712,
+          tone: 46
+        },
+        {
+          hue: 316,
+          chroma: 94.16209871968593,
+          tone: 47
+        },
+        {
+          hue: 317,
+          chroma: 94.48654900082282,
+          tone: 47
+        },
+        {
+          hue: 318,
+          chroma: 95.41312587073348,
+          tone: 48
+        },
+        {
+          hue: 319,
+          chroma: 95.47216850513806,
+          tone: 49
+        },
+        {
+          hue: 320,
+          chroma: 96.21411379664595,
+          tone: 49
+        },
+        {
+          hue: 321,
+          chroma: 96.85764631441657,
+          tone: 50
+        },
+        {
+          hue: 322,
+          chroma: 96.94706115665727,
+          tone: 51
+        },
+        {
+          hue: 323,
+          chroma: 98.06908261497591,
+          tone: 51
+        },
+        {
+          hue: 324,
+          chroma: 98.75204696049269,
+          tone: 52
+        },
+        {
+          hue: 325,
+          chroma: 98.88863214567131,
+          tone: 52
+        },
+        {
+          hue: 326,
+          chroma: 99.78182434342499,
+          tone: 53
+        },
+        {
+          hue: 327,
+          chroma: 100.95278346973463,
+          tone: 54
+        },
+        {
+          hue: 328,
+          chroma: 101.33018156605723,
+          tone: 55
+        },
+        {
+          hue: 329,
+          chroma: 101.7743383038679,
+          tone: 55
+        },
+        {
+          hue: 330,
+          chroma: 102.87717601836594,
+          tone: 56
+        },
+        {
+          hue: 331,
+          chroma: 103.99097603224963,
+          tone: 57
+        },
+        {
+          hue: 332,
+          chroma: 104.9420517158155,
+          tone: 58
+        },
+        {
+          hue: 333,
+          chroma: 105.68670780905971,
+          tone: 59
+        },
+        {
+          hue: 334,
+          chroma: 106.2143672757169,
+          tone: 60
+        },
+        {
+          hue: 335,
+          chroma: 106.97580762842179,
+          tone: 60
+        },
+        {
+          hue: 336,
+          chroma: 106.53263145170487,
+          tone: 60
+        },
+        {
+          hue: 337,
+          chroma: 105.66469785241135,
+          tone: 59
+        },
+        {
+          hue: 338,
+          chroma: 105.55565530633167,
+          tone: 59
+        },
+        {
+          hue: 339,
+          chroma: 105.65533894573977,
+          tone: 59
+        },
+        {
+          hue: 340,
+          chroma: 104.64330725609823,
+          tone: 59
+        },
+        {
+          hue: 341,
+          chroma: 104.26530320060418,
+          tone: 58
+        },
+        {
+          hue: 342,
+          chroma: 104.42370398510621,
+          tone: 58
+        },
+        {
+          hue: 343,
+          chroma: 104.39762917339176,
+          tone: 58
+        },
+        {
+          hue: 344,
+          chroma: 103.66441029926824,
+          tone: 58
+        },
+        {
+          hue: 345,
+          chroma: 103.17935570868941,
+          tone: 57
+        },
+        {
+          hue: 346,
+          chroma: 103.20108117223944,
+          tone: 57
+        },
+        {
+          hue: 347,
+          chroma: 103.24101321493077,
+          tone: 57
+        },
+        {
+          hue: 348,
+          chroma: 103.2995050951176,
+          tone: 57
+        },
+        {
+          hue: 349,
+          chroma: 102.58608840944547,
+          tone: 57
+        },
+        {
+          hue: 350,
+          chroma: 102.23336002907227,
+          tone: 56
+        },
+        {
+          hue: 351,
+          chroma: 102.37550361713498,
+          tone: 56
+        },
+        {
+          hue: 352,
+          chroma: 102.27101316564784,
+          tone: 56
+        },
+        {
+          hue: 353,
+          chroma: 102.41970083380389,
+          tone: 56
+        },
+        {
+          hue: 354,
+          chroma: 102.58971996971019,
+          tone: 56
+        },
+        {
+          hue: 355,
+          chroma: 102.00536806857933,
+          tone: 56
+        },
+        {
+          hue: 356,
+          chroma: 101.7473979431004,
+          tone: 55
+        },
+        {
+          hue: 357,
+          chroma: 101.72945377180396,
+          tone: 55
+        },
+        {
+          hue: 358,
+          chroma: 101.98279067416397,
+          tone: 55
+        },
+        {
+          hue: 359,
+          chroma: 102.2524247595348,
+          tone: 55
+        },
+        {
+          hue: 360,
+          chroma: 102.29059338702712,
+          tone: 55
+        }
+      ];
+    }
+  });
+
   // node_modules/preact/dist/preact.module.js
   function h(n2, l3) {
     for (var u3 in l3)
@@ -4802,10 +6674,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/720f0de4-829a-4eec-bc39-ae0a8f05e005/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec3e03b9-686f-49d5-9576-77806eb0b937/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/720f0de4-829a-4eec-bc39-ae0a8f05e005/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec3e03b9-686f-49d5-9576-77806eb0b937/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -4864,10 +6736,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740f4e7c-b418-46cc-bc69-b69753360053/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c00458d-0c19-4857-a99d-526e130ea219/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/740f4e7c-b418-46cc-bc69-b69753360053/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c00458d-0c19-4857-a99d-526e130ea219/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -5050,10 +6922,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd7b34c6-4c74-426d-bf45-c238e672a0bb/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88cea146-0098-440d-8606-d1681f95ab2e/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd7b34c6-4c74-426d-bf45-c238e672a0bb/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88cea146-0098-440d-8606-d1681f95ab2e/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -5098,10 +6970,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/275c3235-a1fd-43bb-b6b4-66f81726bbee/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecd72a92-b90d-4254-ae07-e4032bcec355/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/275c3235-a1fd-43bb-b6b4-66f81726bbee/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecd72a92-b90d-4254-ae07-e4032bcec355/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -5232,10 +7104,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddab52ad-7fc1-4060-871e-3034139d5c23/divider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e478dca6-4703-49e0-853f-c20aa9d116b1/divider.module.js
   var divider_module_default;
   var init_divider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddab52ad-7fc1-4060-871e-3034139d5c23/divider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e478dca6-4703-49e0-853f-c20aa9d116b1/divider.module.js"() {
       if (document.getElementById("3b0eaf9c51") === null) {
         const element = document.createElement("style");
         element.id = "3b0eaf9c51";
@@ -5263,10 +7135,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb321f45-76c8-4e2a-a998-8c042dc9f2a5/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ad006f7-bfc3-437e-943b-ea116175b789/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb321f45-76c8-4e2a-a998-8c042dc9f2a5/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ad006f7-bfc3-437e-943b-ea116175b789/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -5501,10 +7373,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3ad664c-b0ab-49df-802f-3b6fc5fc044f/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7959887d-05f5-4e0f-91ee-cb0aacf2bd67/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3ad664c-b0ab-49df-802f-3b6fc5fc044f/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7959887d-05f5-4e0f-91ee-cb0aacf2bd67/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -5911,10 +7783,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d923177b-49aa-44da-b522-9709f4951d21/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3b3d6d4-4199-40f5-81b9-d4f149c5e378/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d923177b-49aa-44da-b522-9709f4951d21/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3b3d6d4-4199-40f5-81b9-d4f149c5e378/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -5970,10 +7842,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05dfe453-2910-49a4-a9d6-ce5ef296e813/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef854c49-8387-4e01-aa1c-10394aafeae4/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05dfe453-2910-49a4-a9d6-ce5ef296e813/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef854c49-8387-4e01-aa1c-10394aafeae4/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -6176,10 +8048,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbd47eea-b298-4d66-a15c-4dea05c6f89e/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f90f1e67-f359-482a-9997-06d91e01560d/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbd47eea-b298-4d66-a15c-4dea05c6f89e/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f90f1e67-f359-482a-9997-06d91e01560d/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6668,10 +8540,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b54e7f-f9c1-4953-880b-b93f98d0b61f/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/330b232c-ae3c-4a96-b756-52a1c15f9c22/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b54e7f-f9c1-4953-880b-b93f98d0b61f/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/330b232c-ae3c-4a96-b756-52a1c15f9c22/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -7018,10 +8890,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d16a36f2-d036-4c24-8573-bc70151bf216/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6a53691-5450-4f35-a334-cc80ba55e356/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d16a36f2-d036-4c24-8573-bc70151bf216/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6a53691-5450-4f35-a334-cc80ba55e356/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -7204,10 +9076,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/341d450f-1924-4589-8cc8-84bd61b49e02/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c428bbb7-b733-455a-8f6a-f7428f24835f/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/341d450f-1924-4589-8cc8-84bd61b49e02/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c428bbb7-b733-455a-8f6a-f7428f24835f/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -7300,10 +9172,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b4dd292-28c3-412a-b55d-a9004176c26b/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a744a0c-f68c-4a25-b2e1-5e1119824325/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b4dd292-28c3-412a-b55d-a9004176c26b/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a744a0c-f68c-4a25-b2e1-5e1119824325/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -7352,10 +9224,40 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d22a4e56-aade-45ed-b3d2-ac766050aa90/columns.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2419f0a1-0f42-416e-9830-7fa13e7356d3/muted.module.js
+  var muted_module_default;
+  var init_muted_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2419f0a1-0f42-416e-9830-7fa13e7356d3/muted.module.js"() {
+      if (document.getElementById("0e85596823") === null) {
+        const element = document.createElement("style");
+        element.id = "0e85596823";
+        element.textContent = `._muted_139yx_1 {
+  color: var(--figma-color-text-secondary);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvaW5saW5lLXRleHQvbXV0ZWQvbXV0ZWQubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHdDQUF3QztBQUMxQyIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2lubGluZS10ZXh0L211dGVkL211dGVkLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXV0ZWQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      muted_module_default = { "muted": "_muted_139yx_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js
+  function Muted(_a) {
+    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+    return y("span", __spreadProps(__spreadValues({}, rest), { class: muted_module_default.muted }), children);
+  }
+  var init_muted = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js"() {
+      init_preact_module();
+      init_muted_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f2591db-d8df-4e0b-b343-18828f66f7cb/columns.module.js
   var columns_module_default;
   var init_columns_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d22a4e56-aade-45ed-b3d2-ac766050aa90/columns.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f2591db-d8df-4e0b-b343-18828f66f7cb/columns.module.js"() {
       if (document.getElementById("15be75cea7") === null) {
         const element = document.createElement("style");
         element.id = "15be75cea7";
@@ -7422,10 +9324,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0315fc-db23-44d4-b90d-8d034c997e08/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4a3a07-cb3f-425d-892a-7f4b5b68c1ae/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0315fc-db23-44d4-b90d-8d034c997e08/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4a3a07-cb3f-425d-892a-7f4b5b68c1ae/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7464,10 +9366,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/368b4f24-981e-4a4b-9b52-0e873dc8b93b/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/444db406-ee76-4b78-84eb-e45d517ab312/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/368b4f24-981e-4a4b-9b52-0e873dc8b93b/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/444db406-ee76-4b78-84eb-e45d517ab312/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7506,9 +9408,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d255b12-511f-419c-9f4e-c463ecf02469/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5eaf5f59-f453-4b40-906f-9e795e73c7b5/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d255b12-511f-419c-9f4e-c463ecf02469/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5eaf5f59-f453-4b40-906f-9e795e73c7b5/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -7649,6 +9551,7 @@ svg {
       init_textbox_color();
       init_textbox_multiline();
       init_textbox_numeric();
+      init_muted();
       init_columns();
       init_container();
       init_vertical_space();
@@ -7694,12 +9597,15 @@ svg {
       96,
       98
     ];
+    const maxChromaAtHue = Math.round(
+      maxChromaAtTonePerHue[color.getHue("rounded")].chroma
+    );
     const [paletteGradient, setPaletteGradient] = h2(startingGradient);
     const [augmentedGradient, setAugmentedGradient] = h2(startingGradient);
     const [hue, setHue] = h2(color.getHue("rounded"));
     const [chroma, setChroma] = h2(color.getChroma("rounded"));
     const [tone, setTone] = h2(color.getTone("rounded"));
-    const [textboxValue, setTextboxValue] = h2("color");
+    const [textboxValue, setTextboxValue] = h2("");
     const [hexColor, setHexColor] = h2(startingColor);
     const [augmentedColor, setAugmentedColor] = h2(startingColor);
     const [opacity, setOpacity] = h2("");
@@ -7709,6 +9615,7 @@ svg {
     const [hctChromaValue, setHctChromaValue] = h2(
       `${color.getChroma("rounded")}`
     );
+    const [maxChromaValueAtHue, setMaxChromaValueAtHue] = h2(maxChromaAtHue);
     const [textAreaValue, setTextAreaValue] = h2(
       `${defaultPaletteTones}`
     );
@@ -7756,6 +9663,9 @@ svg {
       setAugmentedColor(currentColor.getHex());
       setAugmentedGradient(newAugmentedGradient);
       setHctHueValue(newHctHueValue);
+      setMaxChromaValueAtHue(
+        Math.round(maxChromaAtTonePerHue[newHctHueNumber].chroma + 1)
+      );
     }
     function handleHctChromaInput(event) {
       const newHctChromaValue = event.currentTarget.value;
@@ -7834,15 +9744,7 @@ svg {
         setOptions(newOptions);
       }
     };
-    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y("p", { className: "text-xs" }, "Select a color to create a dynamic palette"), /* @__PURE__ */ y("div", { className: "flex flex-row gap-1 py-2" }, /* @__PURE__ */ y(
-      Textbox,
-      {
-        onInput: handleTextboxInput,
-        value: textboxValue,
-        variant: "border",
-        placeholder: "Name thy color"
-      }
-    ), /* @__PURE__ */ y(
+    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Select a color")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y("div", { className: "flex flex-row flex-grow align-middle" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
       TextboxColor,
       {
         id: "hexColor1",
@@ -7850,12 +9752,13 @@ svg {
         hexColorPlaceholder: "Color",
         onHexColorInput: handleHexColorInput,
         onOpacityInput: handleOpacityInput,
-        opacity
+        opacity,
+        className: "w-24"
       }
-    )), /* @__PURE__ */ y("p", { className: "p-2 mt-2 text-center ring-neutral-700 ring-1 rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone), /* @__PURE__ */ y("div", { className: "h-16 rounded-sm overflow-hidden w-full mt-3" }, /* @__PURE__ */ y(
+    )), /* @__PURE__ */ y("p", { className: "p-1 text-center flex items-center rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone)), /* @__PURE__ */ y("div", { className: "h-24 rounded-sm overflow-hidden w-full my-2" }, /* @__PURE__ */ y(
       "div",
       {
-        className: "h-8 w-full",
+        className: "h-12 w-full",
         style: {
           background: `linear-gradient(to right, ${paletteGradient})`
         }
@@ -7863,13 +9766,13 @@ svg {
     ), /* @__PURE__ */ y(
       "div",
       {
-        className: "h-8 w-full",
+        className: "h-12 w-full",
         style: {
           background: `linear-gradient(to right, ${augmentedGradient})`
           // background: 'red',
         }
       }
-    )), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+    )), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Adjust hue and chroma to taste")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
       TextboxNumeric,
       {
         maximum: 360,
@@ -7890,7 +9793,7 @@ svg {
     )), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
       TextboxNumeric,
       {
-        maximum: 150,
+        maximum: maxChromaValueAtHue,
         minimum: 0,
         onInput: handleHctChromaInput,
         value: hctChromaValue,
@@ -7900,18 +9803,26 @@ svg {
     ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
       RangeSlider,
       {
-        maximum: 150,
+        maximum: maxChromaValueAtHue,
         minimum: 0,
         onInput: handleHctChromaInput,
         value: hctChromaValue
       }
-    ))), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(
+    ))), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Select tones")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
       TextboxMultiline,
       {
         onInput: handleTextAreaInput,
         value: textAreaValue,
         variant: "border",
         placeholder: "All tone stops (0-100)"
+      }
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Give the palette a pretty name")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
+      Textbox,
+      {
+        onInput: handleTextboxInput,
+        value: textboxValue,
+        variant: "border",
+        placeholder: "color/palette-name"
       }
     ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(
       Button,
@@ -7940,6 +9851,7 @@ svg {
       init_tailwind();
       init_color();
       init_color();
+      init_ref();
       init_lib2();
       init_preact_module();
       init_hooks_module();

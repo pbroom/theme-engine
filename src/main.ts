@@ -2,13 +2,13 @@ import {
 	convertHexColorToRgbColor,
 	showUI,
 } from '@create-figma-plugin/utilities';
-import { paletteTones, findMinimumChromaPerHue } from './color';
+import { paletteTones, findMaxChromasForHue } from './color';
 import { paletteGroup } from './palette-swatches';
 import { paletteVariableCollection } from './palette-variables';
 import VariableCollection from './variable-collection';
 
 export default function () {
-	showUI({ height: 550, width: 280 });
+	showUI({ height: 650, width: 280 });
 }
 
 /**
@@ -35,7 +35,7 @@ figma.on('run', () => {
 	}
 	const message = { type, options, collections };
 	figma.ui.postMessage(message);
-	// console.log(findMinimumChromaPerHue());
+	// console.log(findMaxChromasForHue(163));
 });
 
 /**

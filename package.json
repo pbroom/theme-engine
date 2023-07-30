@@ -3,9 +3,12 @@
 		"@create-figma-plugin/ui": "^2.5.1",
 		"@create-figma-plugin/utilities": "^2.5.1",
 		"@material/material-color-utilities": "^0.2.7",
+		"@nivo/core": "^0.83.0",
+		"@nivo/line": "^0.83.0",
 		"preact": "^10.15.1",
 		"prismjs": "^1.28.0",
-		"react-simple-code-editor": "^0.11.2"
+		"react-simple-code-editor": "^0.11.2",
+		"recharts": "^2.7.2"
 	},
 	"devDependencies": {
 		"@create-figma-plugin/build": "^2.5.1",
