@@ -49,9 +49,9 @@
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aec86612-1ef9-4c35-b5d6-b40e15c35a4e/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b47cdfbc-6993-4946-95e3-3af18cf5b06f/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aec86612-1ef9-4c35-b5d6-b40e15c35a4e/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b47cdfbc-6993-4946-95e3-3af18cf5b06f/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -533,160 +533,53 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}
-.float-right {
-  float: right;
-}
-.float-left {
-  float: left;
-}
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.relative {
+  position: relative;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
-}
-.ml-1 {
-  margin-left: 0.25rem;
-}
-.mt-2 {
-  margin-top: 0.5rem;
-}
-.mt-3 {
-  margin-top: 0.75rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mt-1 {
-  margin-top: 0.25rem;
-}
-.block {
-  display: block;
-}
 .flex {
   display: flex;
-}
-.h-1 {
-  height: 0.25rem;
-}
-.h-2 {
-  height: 0.5rem;
 }
 .h-4 {
   height: 1rem;
 }
-.h-8 {
-  height: 2rem;
-}
-.h-full {
-  height: 100%;
-}
-.h-16 {
-  height: 4rem;
+.h-5 {
+  height: 1.25rem;
 }
 .h-12 {
   height: 3rem;
 }
-.h-24 {
-  height: 6rem;
+.w-24 {
+  width: 6rem;
+}
+.w-28 {
+  width: 7rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.w-60 {
+  width: 15rem;
 }
 .w-full {
   width: 100%;
 }
-.w-20 {
-  width: 5rem;
-}
-.w-24 {
-  width: 6rem;
-}
-.flex-auto {
-  flex: 1 1 auto;
-}
-.flex-1 {
-  flex: 1 1 0%;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-.shrink {
-  flex-shrink: 1;
-}
 .flex-grow {
   flex-grow: 1;
-}
-.flex-grow-0 {
-  flex-grow: 0;
 }
 .grow {
   flex-grow: 1;
 }
-.resize {
-  resize: both;
-}
 .flex-row {
   flex-direction: row;
-}
-.content-center {
-  align-content: center;
 }
 .items-center {
   align-items: center;
 }
-.justify-center {
-  justify-content: center;
-}
-.justify-items-center {
-  justify-items: center;
+.justify-end {
+  justify-content: flex-end;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -694,206 +587,41 @@ video {
 .gap-2 {
   gap: 0.5rem;
 }
-.gap-4 {
-  gap: 1rem;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.whitespace-pre-wrap {
-  white-space: pre-wrap;
-}
-.break-words {
-  overflow-wrap: break-word;
-}
-.rounded-md {
-  border-radius: 0.375rem;
-}
-.rounded-sm {
-  border-radius: 0.125rem;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .border {
   border-width: 1px;
 }
-.border-[#444] {
+.border-neutral-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(68 68 68 / var(--tw-border-opacity));
+  border-color: rgb(115 115 115 / var(--tw-border-opacity));
 }
-.border-[--figma-color-border] {
-  border-color: var(--figma-color-border);
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-.border-white/5 {
-  border-color: rgb(255 255 255 / 0.05);
-}
-.border-white/50 {
-  border-color: rgb(255 255 255 / 0.5);
-}
-.bg-black {
+.bg-green-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-.p-2 {
-  padding: 0.5rem;
-}
-.p-4 {
-  padding: 1rem;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 .p-1 {
   padding: 0.25rem;
-}
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
-}
-.pl-1 {
-  padding-left: 0.25rem;
-}
-.pr-2 {
-  padding-right: 0.5rem;
-}
-.pr-4 {
-  padding-right: 1rem;
-}
-.pr-8 {
-  padding-right: 2rem;
-}
-.text-left {
-  text-align: left;
-}
 .text-center {
   text-align: center;
-}
-.text-right {
-  text-align: right;
 }
 .align-middle {
   vertical-align: middle;
 }
-.font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-.text-red-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
-}
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
 .underline {
   text-decoration-line: underline;
-}
-.outline-1 {
-  outline-width: 1px;
-}
-.outline-red-200 {
-  outline-color: #fecaca;
-}
-.ring-1 {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-.ring-inset {
-  --tw-ring-inset: inset;
-}
-.ring-[#444444] {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(68 68 68 / var(--tw-ring-opacity));
-}
-.ring-[#444] {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(68 68 68 / var(--tw-ring-opacity));
-}
-.ring-gray-600 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-}
-.ring-gray-700 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
-}
-.ring-gray-800 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(31 41 55 / var(--tw-ring-opacity));
-}
-.ring-neutral-500 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(115 115 115 / var(--tw-ring-opacity));
-}
-.ring-neutral-500/50 {
-  --tw-ring-color: rgb(115 115 115 / 0.5);
-}
-.ring-neutral-700 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(64 64 64 / var(--tw-ring-opacity));
-}
-.ring-white {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
-}
-.ring-white/5 {
-  --tw-ring-color: rgb(255 255 255 / 0.05);
-}
-.ring-white/50 {
-  --tw-ring-color: rgb(255 255 255 / 0.5);
-}
-.ring-zinc-700 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(63 63 70 / var(--tw-ring-opacity));
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -4383,17 +4111,24 @@ video {
         }
         return palette;
       };
-      getValues = (paletteObject) => {
+      getValues = (paletteObject, selectedTones) => {
         let hexString = "";
-        for (let key in paletteObject) {
-          hexString += paletteObject[key] + ", ";
+        if (selectedTones) {
+          const stopIncrement = Math.round(100 / selectedTones.length);
+          for (let key of selectedTones) {
+            hexString += `${paletteObject[key]} ${stopIncrement * selectedTones.indexOf(key)}% ${stopIncrement * (selectedTones.indexOf(key) + 1)}%, `;
+          }
+        } else {
+          for (let key in paletteObject) {
+            hexString += paletteObject[key] + ", ";
+          }
         }
         hexString = hexString.slice(0, -2);
         return hexString;
       };
-      hctTonalGradient = (hexColor) => {
+      hctTonalGradient = (hexColor, selectedTones) => {
         const gradientTones = paletteTones(hexColor);
-        const gradientString = getValues(gradientTones);
+        const gradientString = getValues(gradientTones, selectedTones);
         return gradientString;
       };
     }
@@ -6516,17 +6251,6 @@ video {
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/utilities/create-class-name.js
-  function createClassName(classNames) {
-    return classNames.filter(function(className) {
-      return className !== null;
-    }).join(" ");
-  }
-  var init_create_class_name = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/utilities/create-class-name.js"() {
-    }
-  });
-
   // node_modules/preact/hooks/dist/hooks.module.js
   function d2(t3, u3) {
     l.__h && l.__h(r2, t3, o2 || u3), o2 = 0;
@@ -6674,10 +6398,648 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec3e03b9-686f-49d5-9576-77806eb0b937/loading-indicator.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07b0fe28-d447-47f4-b850-7f51388811b5/tailwind.js
+  var init_tailwind2 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07b0fe28-d447-47f4-b850-7f51388811b5/tailwind.js"() {
+      if (document.getElementById("daf6ec3404") === null) {
+        const element = document.createElement("style");
+        element.id = "daf6ec3404";
+        element.textContent = `/*
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured \`sans\` font-family by default.
+5. Use the user's configured \`sans\` font-feature-settings by default.
+6. Use the user's configured \`sans\` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from \`html\` so users can set them as a class directly on the \`html\` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured \`mono\` font family by default.
+2. Correct the odd \`em\` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent \`sub\` and \`sup\` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional \`:invalid\` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to \`inherit\` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements \`display: block\` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add \`vertical-align: middle\` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.relative {
+  position: relative;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.flex {
+  display: flex;
+}
+.h-4 {
+  height: 1rem;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.w-24 {
+  width: 6rem;
+}
+.w-28 {
+  width: 7rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.w-60 {
+  width: 15rem;
+}
+.w-full {
+  width: 100%;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.grow {
+  flex-grow: 1;
+}
+.flex-row {
+  flex-direction: row;
+}
+.items-center {
+  align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.border {
+  border-width: 1px;
+}
+.border-neutral-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(115 115 115 / var(--tw-border-opacity));
+}
+.bg-green-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.underline {
+  text-decoration-line: underline;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.container {
+  height: 164px;
+  overflow: auto;
+}
+
+.editor {
+  min-height: 100%;
+  font-size: var(--font-size-12);
+  font-family: var(--font-family-code);
+}
+`;
+        document.head.append(element);
+      }
+    }
+  });
+
+  // src/gradient-preview.tsx
+  var GradientPreview, gradient_preview_default;
+  var init_gradient_preview = __esm({
+    "src/gradient-preview.tsx"() {
+      "use strict";
+      init_preact_module();
+      init_hooks_module();
+      init_color();
+      init_tailwind2();
+      GradientPreview = ({
+        hexColor,
+        stops,
+        className = "h-12"
+      }) => {
+        const [gradient, setGradient] = h2("");
+        p2(() => {
+          const newGradient = hctTonalGradient(hexColor, stops);
+          setGradient(newGradient);
+        }, [hexColor, stops]);
+        return /* @__PURE__ */ y(k, null, /* @__PURE__ */ y(
+          "div",
+          {
+            className: `w-full ${className}`,
+            style: {
+              background: `linear-gradient(to right, ${gradient})`
+            }
+          }
+        ));
+      };
+      gradient_preview_default = GradientPreview;
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/utilities/create-class-name.js
+  function createClassName(classNames) {
+    return classNames.filter(function(className) {
+      return className !== null;
+    }).join(" ");
+  }
+  var init_create_class_name = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/utilities/create-class-name.js"() {
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa4874f0-776d-447d-baa5-b7514cccf30b/loading-indicator.module.js
   var loading_indicator_module_default;
   var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec3e03b9-686f-49d5-9576-77806eb0b937/loading-indicator.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa4874f0-776d-447d-baa5-b7514cccf30b/loading-indicator.module.js"() {
       if (document.getElementById("c451e2d48b") === null) {
         const element = document.createElement("style");
         element.id = "c451e2d48b";
@@ -6736,10 +7098,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c00458d-0c19-4857-a99d-526e130ea219/button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8a9eebb7-03d4-43d0-b6f2-3931c4502a82/button.module.js
   var button_module_default;
   var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c00458d-0c19-4857-a99d-526e130ea219/button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8a9eebb7-03d4-43d0-b6f2-3931c4502a82/button.module.js"() {
       if (document.getElementById("13442769ce") === null) {
         const element = document.createElement("style");
         element.id = "13442769ce";
@@ -6922,10 +7284,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88cea146-0098-440d-8606-d1681f95ab2e/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a004cc2-65e2-4af1-84bf-9ca39b4b4264/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88cea146-0098-440d-8606-d1681f95ab2e/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a004cc2-65e2-4af1-84bf-9ca39b4b4264/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -6970,10 +7332,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecd72a92-b90d-4254-ae07-e4032bcec355/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c8541368-27b4-4030-a560-af686536eda7/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecd72a92-b90d-4254-ae07-e4032bcec355/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c8541368-27b4-4030-a560-af686536eda7/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -7104,10 +7466,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e478dca6-4703-49e0-853f-c20aa9d116b1/divider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8a34ea84-47be-40eb-b436-d59f047f779d/divider.module.js
   var divider_module_default;
   var init_divider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e478dca6-4703-49e0-853f-c20aa9d116b1/divider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8a34ea84-47be-40eb-b436-d59f047f779d/divider.module.js"() {
       if (document.getElementById("3b0eaf9c51") === null) {
         const element = document.createElement("style");
         element.id = "3b0eaf9c51";
@@ -7135,10 +7497,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ad006f7-bfc3-437e-943b-ea116175b789/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0a09d511-9f30-4e88-a5cd-194a8584bc44/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ad006f7-bfc3-437e-943b-ea116175b789/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0a09d511-9f30-4e88-a5cd-194a8584bc44/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -7373,10 +7735,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7959887d-05f5-4e0f-91ee-cb0aacf2bd67/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a11d384-e2d8-4c27-bf27-d72a22518601/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7959887d-05f5-4e0f-91ee-cb0aacf2bd67/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6a11d384-e2d8-4c27-bf27-d72a22518601/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -7783,10 +8145,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3b3d6d4-4199-40f5-81b9-d4f149c5e378/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a64be5c-9e06-4d62-b7d2-d24a946517d2/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3b3d6d4-4199-40f5-81b9-d4f149c5e378/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a64be5c-9e06-4d62-b7d2-d24a946517d2/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -7842,10 +8204,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef854c49-8387-4e01-aa1c-10394aafeae4/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f45d237-6773-4319-a27e-05c6b71d4453/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef854c49-8387-4e01-aa1c-10394aafeae4/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f45d237-6773-4319-a27e-05c6b71d4453/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -8048,10 +8410,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f90f1e67-f359-482a-9997-06d91e01560d/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/02dd7427-0f40-4102-b03a-359c25197240/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f90f1e67-f359-482a-9997-06d91e01560d/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/02dd7427-0f40-4102-b03a-359c25197240/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -8540,10 +8902,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/330b232c-ae3c-4a96-b756-52a1c15f9c22/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ea21b12d-0259-405e-a810-d83d1717d72b/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/330b232c-ae3c-4a96-b756-52a1c15f9c22/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ea21b12d-0259-405e-a810-d83d1717d72b/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -8890,10 +9252,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6a53691-5450-4f35-a334-cc80ba55e356/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1ed83edd-f6f7-42d9-b0e2-c8648d9248e4/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6a53691-5450-4f35-a334-cc80ba55e356/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1ed83edd-f6f7-42d9-b0e2-c8648d9248e4/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -9076,10 +9438,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c428bbb7-b733-455a-8f6a-f7428f24835f/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1f7bc27d-881d-438c-934b-cec7c2c31b13/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c428bbb7-b733-455a-8f6a-f7428f24835f/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1f7bc27d-881d-438c-934b-cec7c2c31b13/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -9172,10 +9534,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a744a0c-f68c-4a25-b2e1-5e1119824325/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b46eb56-a929-4f6c-9a50-76ded4a8ff52/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a744a0c-f68c-4a25-b2e1-5e1119824325/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b46eb56-a929-4f6c-9a50-76ded4a8ff52/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -9224,10 +9586,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2419f0a1-0f42-416e-9830-7fa13e7356d3/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c7afb47-453f-4b69-aa9b-8ccb2fab7636/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2419f0a1-0f42-416e-9830-7fa13e7356d3/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c7afb47-453f-4b69-aa9b-8ccb2fab7636/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -9254,10 +9616,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f2591db-d8df-4e0b-b343-18828f66f7cb/columns.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ee774095-1133-4659-952e-7c4eb21dc2de/columns.module.js
   var columns_module_default;
   var init_columns_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f2591db-d8df-4e0b-b343-18828f66f7cb/columns.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ee774095-1133-4659-952e-7c4eb21dc2de/columns.module.js"() {
       if (document.getElementById("15be75cea7") === null) {
         const element = document.createElement("style");
         element.id = "15be75cea7";
@@ -9324,10 +9686,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4a3a07-cb3f-425d-892a-7f4b5b68c1ae/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9786efd-7fc4-413c-9218-07f47d86f9d8/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4a3a07-cb3f-425d-892a-7f4b5b68c1ae/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9786efd-7fc4-413c-9218-07f47d86f9d8/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -9366,10 +9728,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/444db406-ee76-4b78-84eb-e45d517ab312/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d59aed9-f1ea-47d9-96bf-c24d8af23710/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/444db406-ee76-4b78-84eb-e45d517ab312/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d59aed9-f1ea-47d9-96bf-c24d8af23710/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -9408,9 +9770,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5eaf5f59-f453-4b40-906f-9e795e73c7b5/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8067d0bd-fd61-4ea4-b5d1-38cd27abe73e/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5eaf5f59-f453-4b40-906f-9e795e73c7b5/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8067d0bd-fd61-4ea4-b5d1-38cd27abe73e/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -9562,12 +9924,12 @@ svg {
   // src/ui.tsx
   var ui_exports = {};
   __export(ui_exports, {
+    Plugin: () => Plugin,
     default: () => ui_default
   });
   function Plugin() {
     const startingColor = "397456";
     const color = new color_default(startingColor);
-    const startingGradient = hctTonalGradient(startingColor);
     const defaultPaletteTones = [
       0,
       10,
@@ -9600,8 +9962,6 @@ svg {
     const maxChromaAtHue = Math.round(
       maxChromaAtTonePerHue[color.getHue("rounded")].chroma
     );
-    const [paletteGradient, setPaletteGradient] = h2(startingGradient);
-    const [augmentedGradient, setAugmentedGradient] = h2(startingGradient);
     const [hue, setHue] = h2(color.getHue("rounded"));
     const [chroma, setChroma] = h2(color.getChroma("rounded"));
     const [tone, setTone] = h2(color.getTone("rounded"));
@@ -9628,6 +9988,7 @@ svg {
       }
     ]);
     const [checkboxValue, setCheckboxValue] = h2(true);
+    const [checkboxBindStyles, setCheckboxBindStyles] = h2(false);
     function handleTextboxInput(event) {
       const newTextboxValue = event.currentTarget.value;
       setTextboxValue(newTextboxValue);
@@ -9637,9 +9998,6 @@ svg {
       setHexColor(newHexColor);
       setAugmentedColor(newHexColor);
       const newColor = new color_default(newHexColor);
-      const newPaletteGradient = hctTonalGradient(newHexColor);
-      setPaletteGradient(newPaletteGradient);
-      setAugmentedGradient(newPaletteGradient);
       const newHue = newColor.getHue("rounded");
       setHue(newHue);
       setHctHueValue(newHue.toString());
@@ -9659,9 +10017,7 @@ svg {
       const newHctHueNumber = parseInt(newHctHueValue);
       const currentColor = new color_default(augmentedColor);
       currentColor.setHue(newHctHueNumber);
-      const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
       setAugmentedColor(currentColor.getHex());
-      setAugmentedGradient(newAugmentedGradient);
       setHctHueValue(newHctHueValue);
       setMaxChromaValueAtHue(
         Math.round(maxChromaAtTonePerHue[newHctHueNumber].chroma + 1)
@@ -9673,9 +10029,7 @@ svg {
       const currentColor = new color_default(augmentedColor);
       currentColor.setChroma(newHctChromaNumber);
       currentColor.setHue(parseInt(hctHueValue));
-      const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
       setAugmentedColor(currentColor.getHex());
-      setAugmentedGradient(newAugmentedGradient);
       setHctChromaValue(newHctChromaValue);
     }
     function handleTextAreaInput(event) {
@@ -9706,6 +10060,7 @@ svg {
       }
       const collectionId = collections[parseInt(optionId) - 1].id;
       const overwriteVariables = checkboxValue;
+      const bindStyles = checkboxBindStyles;
       parent.postMessage(
         {
           pluginMessage: {
@@ -9714,7 +10069,8 @@ svg {
             color: color2,
             toneStops: toneStops2,
             collectionId,
-            overwriteVariables
+            overwriteVariables,
+            bindStyles
           }
         },
         "*"
@@ -9727,8 +10083,17 @@ svg {
       setDropdownValue(newDropdownValue);
     }
     function handleCheckboxChange(event) {
-      const newCheckboxValue = event.currentTarget.checked;
-      setCheckboxValue(newCheckboxValue);
+      const name = event.currentTarget.getAttribute("name");
+      if (name === "overwriteVariables") {
+        const newCheckboxValue = event.currentTarget.checked;
+        setCheckboxValue(newCheckboxValue);
+        console.log(newCheckboxValue);
+      }
+      if (name === "bindStyles") {
+        const newCheckboxBindStyles = event.currentTarget.checked;
+        setCheckboxBindStyles(newCheckboxBindStyles);
+        console.log(newCheckboxBindStyles);
+      }
     }
     onmessage = (event) => {
       const message = event.data.pluginMessage;
@@ -9742,9 +10107,22 @@ svg {
         const newDropdownValue = collections2[0].name;
         setDropdownValue(newDropdownValue);
         setOptions(newOptions);
+        const modes = collections2[0].modes;
       }
     };
-    return /* @__PURE__ */ y("div", { className: "h-full py-4" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Select a color")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y("div", { className: "flex flex-row flex-grow align-middle" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+    function checkOpacityValue(opacityName) {
+      const element = document.querySelector(`.textboxColor.${opacityName}`);
+      if (element) {
+        const opacityInput = element.querySelector(
+          `#opacity-${opacityName}`
+        );
+        if (opacityInput) {
+          return parseFloat(opacityInput.value);
+        }
+      }
+      return void 0;
+    }
+    return /* @__PURE__ */ y("div", { id: "container-wrap", className: "py-4 overflow-y-auto" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Columns, { space: "small" }, /* @__PURE__ */ y("div", { className: "w-60" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Select a color")), /* @__PURE__ */ y("div", { className: "flex flex-row align-middle" }, /* @__PURE__ */ y("div", { className: "w-24" }, /* @__PURE__ */ y(
       TextboxColor,
       {
         id: "hexColor1",
@@ -9753,26 +10131,9 @@ svg {
         onHexColorInput: handleHexColorInput,
         onOpacityInput: handleOpacityInput,
         opacity,
-        className: "w-24"
+        opacityName: "opacityInput"
       }
-    )), /* @__PURE__ */ y("p", { className: "p-1 text-center flex items-center rounded-md" }, "H: ", hue, " C: ", chroma, " T: ", tone)), /* @__PURE__ */ y("div", { className: "h-24 rounded-sm overflow-hidden w-full my-2" }, /* @__PURE__ */ y(
-      "div",
-      {
-        className: "h-12 w-full",
-        style: {
-          background: `linear-gradient(to right, ${paletteGradient})`
-        }
-      }
-    ), /* @__PURE__ */ y(
-      "div",
-      {
-        className: "h-12 w-full",
-        style: {
-          background: `linear-gradient(to right, ${augmentedGradient})`
-          // background: 'red',
-        }
-      }
-    )), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Adjust hue and chroma to taste")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+    )), /* @__PURE__ */ y("div", { className: "p-1 text-center flex flex-row justify-end items-center grow" }, /* @__PURE__ */ y(Text, { align: "right" }, /* @__PURE__ */ y(Muted, null, "H: ", hue, " C: ", chroma, " T: ", tone)))), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Adjust hue and chroma to taste")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
       TextboxNumeric,
       {
         maximum: 360,
@@ -9832,7 +10193,7 @@ svg {
         fullWidth: true,
         secondary: true
       },
-      "Build Swatches"
+      "Create Preview Swatches"
     ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Divider, null), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
       Dropdown,
       {
@@ -9842,7 +10203,23 @@ svg {
         value: dropdownValue,
         className: "mb-1"
       }
-    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(Checkbox, { onChange: handleCheckboxChange, value: checkboxValue }, /* @__PURE__ */ y(Text, null, "Overwrite existing variables if they have the same name")), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true }, "Build Variables")));
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+      Checkbox,
+      {
+        onChange: handleCheckboxChange,
+        value: checkboxValue,
+        name: "overwriteVariables"
+      },
+      /* @__PURE__ */ y(Text, null, "Overwrite existing variables if they have the same name")
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(
+      Checkbox,
+      {
+        onChange: handleCheckboxChange,
+        value: checkboxBindStyles,
+        name: "bindStyles"
+      },
+      /* @__PURE__ */ y(Text, null, "Bind to styles with the same name")
+    ), /* @__PURE__ */ y(VerticalSpace, { space: "large" }), /* @__PURE__ */ y(Button, { onClick: () => handleClick("createVariables"), fullWidth: true }, "Build Variables")), /* @__PURE__ */ y("div", { id: "plugin-column-2", className: "w-60" }, /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(gradient_preview_default, { hexColor }), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(gradient_preview_default, { hexColor: augmentedColor }), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(gradient_preview_default, { hexColor: augmentedColor, stops: defaultPaletteTones })))));
   }
   var ui_default;
   var init_ui = __esm({
@@ -9850,8 +10227,8 @@ svg {
       "use strict";
       init_tailwind();
       init_color();
-      init_color();
       init_ref();
+      init_gradient_preview();
       init_lib2();
       init_preact_module();
       init_hooks_module();

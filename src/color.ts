@@ -211,10 +211,22 @@ type PaletteObject = {
  * @param paletteObject An object containing the palette of colors.
  * @returns A string containing the hex values of the palette object.
  */
-export const getValues = (paletteObject: PaletteObject) => {
+export const getValues = (
+	paletteObject: PaletteObject,
+	selectedTones?: number[]
+) => {
 	let hexString = '';
-	for (let key in paletteObject) {
-		hexString += paletteObject[key] + ', ';
+	if (selectedTones) {
+		const stopIncrement = Math.round(100 / selectedTones.length);
+		for (let key of selectedTones) {
+			hexString += `${paletteObject[key]} ${
+				stopIncrement * selectedTones.indexOf(key)
+			}% ${stopIncrement * (selectedTones.indexOf(key) + 1)}%, `;
+		}
+	} else {
+		for (let key in paletteObject) {
+			hexString += paletteObject[key] + ', ';
+		}
 	}
 	// Remove the last comma and space
 	hexString = hexString.slice(0, -2);
@@ -226,9 +238,12 @@ export const getValues = (paletteObject: PaletteObject) => {
  * @param hexColor The hex color string to create the tonal gradient from.
  * @returns A string containing the hex values of the tonal gradient.
  */
-export const hctTonalGradient = (hexColor: string) => {
+export const hctTonalGradient = (
+	hexColor: string,
+	selectedTones?: number[]
+) => {
 	const gradientTones = paletteTones(hexColor);
-	const gradientString = getValues(gradientTones);
+	const gradientString = getValues(gradientTones, selectedTones);
 	return gradientString;
 };
 

@@ -4,11 +4,17 @@ import {
 } from '@create-figma-plugin/utilities';
 import { paletteTones, findMaxChromasForHue } from './color';
 import { paletteGroup } from './palette-swatches';
-import { paletteVariableCollection } from './palette-variables';
+import {
+	paletteVariableCollection,
+	paletteColorVariable,
+} from './palette-variables';
 import VariableCollection from './variable-collection';
 
+const height = (pixelHeight: number) => {
+	return pixelHeight;
+};
 export default function () {
-	showUI({ height: 650, width: 280 });
+	showUI({ height: height(650), width: 560, title: 'Dynamic Color' });
 }
 
 /**
@@ -19,6 +25,7 @@ figma.on('run', () => {
 	const type = 'localCollections';
 	const options = [];
 	const collections = [];
+	const modes = [];
 	for (let i = 0; i < localCollections.length; i++) {
 		const newCollection = new VariableCollection(
 			localCollections[i].id,
@@ -32,8 +39,9 @@ figma.on('run', () => {
 		const collectionName = newCollection.name;
 		collections.push(newCollection);
 		options.push({ value: collectionName });
+		modes.push(newCollection.modes);
 	}
-	const message = { type, options, collections };
+	const message = { type, options, collections, modes };
 	figma.ui.postMessage(message);
 	// console.log(findMaxChromasForHue(163));
 });
@@ -52,6 +60,12 @@ figma.on('run', () => {
  * @returns {Object} - The swatches or variables generated based on the message type.
  */
 figma.ui.onmessage = (pluginMessage) => {
+	if (pluginMessage.type === 'windowResize') {
+		const windowSize = pluginMessage.windowSize;
+		console.log(windowSize);
+		figma.ui.resize(280, height(windowSize.height));
+	}
+
 	if (pluginMessage.type === 'build') {
 		const colorName = pluginMessage.name ? pluginMessage.name : 'color';
 		const toneStops = pluginMessage.toneStops;
@@ -68,13 +82,15 @@ figma.ui.onmessage = (pluginMessage) => {
 		const hexColor = pluginMessage.color;
 		const collectionId = pluginMessage.collectionId;
 		const Overwrite = pluginMessage.overwriteVariables;
+		const bindStyles = pluginMessage.bindStyles;
 		const palette = paletteTones(hexColor, toneStops);
 		const variables = paletteVariableCollection(
 			collectionId,
 			colorName,
 			hexColor,
 			palette,
-			Overwrite
+			Overwrite,
+			bindStyles
 		);
 		console.log(variables);
 		return variables;

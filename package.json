@@ -5,6 +5,7 @@
 		"@material/material-color-utilities": "^0.2.7",
 		"@nivo/core": "^0.83.0",
 		"@nivo/line": "^0.83.0",
+		"lodash": "^4.17.21",
 		"preact": "^10.15.1",
 		"prismjs": "^1.28.0",
 		"react-simple-code-editor": "^0.11.2",
@@ -13,7 +14,8 @@
 	"devDependencies": {
 		"@create-figma-plugin/build": "^2.5.1",
 		"@create-figma-plugin/tsconfig": "^2.5.1",
-		"@figma/plugin-typings": "1.69.0",
+		"@figma/plugin-typings": "^1.72.0",
+		"@types/lodash": "^4.14.196",
 		"@types/prismjs": "^1.26.0",
 		"@types/react": ">=18",
 		"autoprefixer": "^10.4.14",

@@ -3,6 +3,9 @@ import '!./dist/tailwind.css';
 import Color from './color';
 import { hctTonalGradient } from './color';
 import { maxChromaAtTonePerHue } from './ref';
+import { AliasBuilder } from './alias';
+import GradientPreview from './gradient-preview';
+import { mapValues } from './utility';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
@@ -16,13 +19,11 @@ import {
 	Muted,
 	render,
 	RangeSlider,
-	RangeSliderProps,
 	Text,
 	Textbox,
 	TextboxColor,
 	TextboxMultiline,
 	TextboxNumeric,
-	TextboxNumericProps,
 	VerticalSpace,
 	Bold,
 } from '@create-figma-plugin/ui';
@@ -32,11 +33,10 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 
 // Defining the Plugin component
-function Plugin() {
+export function Plugin() {
 	// Defaults
 	const startingColor = '397456';
 	const color = new Color(startingColor);
-	const startingGradient = hctTonalGradient(startingColor);
 	const defaultPaletteTones = [
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
 		25, 35, 87, 92, 94, 96, 98,
@@ -44,11 +44,6 @@ function Plugin() {
 	const maxChromaAtHue = Math.round(
 		maxChromaAtTonePerHue[color.getHue('rounded')].chroma
 	);
-
-	const [paletteGradient, setPaletteGradient] =
-		useState<string>(startingGradient);
-	const [augmentedGradient, setAugmentedGradient] =
-		useState<string>(startingGradient);
 	const [hue, setHue] = useState<number>(color.getHue('rounded'));
 	const [chroma, setChroma] = useState<number>(color.getChroma('rounded'));
 	const [tone, setTone] = useState<number>(color.getTone('rounded'));
@@ -76,6 +71,7 @@ function Plugin() {
 		},
 	]);
 	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
+	const [checkboxBindStyles, setCheckboxBindStyles] = useState<boolean>(false);
 
 	function handleTextboxInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newTextboxValue = event.currentTarget.value;
@@ -90,9 +86,6 @@ function Plugin() {
 		setHexColor(newHexColor);
 		setAugmentedColor(newHexColor);
 		const newColor = new Color(newHexColor);
-		const newPaletteGradient = hctTonalGradient(newHexColor);
-		setPaletteGradient(newPaletteGradient);
-		setAugmentedGradient(newPaletteGradient);
 		const newHue = newColor.getHue('rounded');
 		setHue(newHue);
 		setHctHueValue(newHue.toString());
@@ -116,9 +109,7 @@ function Plugin() {
 		const newHctHueNumber = parseInt(newHctHueValue);
 		const currentColor = new Color(augmentedColor);
 		currentColor.setHue(newHctHueNumber);
-		const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
 		setAugmentedColor(currentColor.getHex());
-		setAugmentedGradient(newAugmentedGradient);
 		setHctHueValue(newHctHueValue);
 		setMaxChromaValueAtHue(
 			Math.round(maxChromaAtTonePerHue[newHctHueNumber].chroma + 1)
@@ -130,9 +121,7 @@ function Plugin() {
 		const currentColor = new Color(augmentedColor);
 		currentColor.setChroma(newHctChromaNumber);
 		currentColor.setHue(parseInt(hctHueValue));
-		const newAugmentedGradient = hctTonalGradient(currentColor.getHex());
 		setAugmentedColor(currentColor.getHex());
-		setAugmentedGradient(newAugmentedGradient);
 		setHctChromaValue(newHctChromaValue);
 	}
 
@@ -170,6 +159,7 @@ function Plugin() {
 		}
 		const collectionId = collections[parseInt(optionId) - 1].id;
 		const overwriteVariables = checkboxValue;
+		const bindStyles = checkboxBindStyles;
 		parent.postMessage(
 			{
 				pluginMessage: {
@@ -179,6 +169,7 @@ function Plugin() {
 					toneStops: toneStops,
 					collectionId: collectionId,
 					overwriteVariables: overwriteVariables,
+					bindStyles: bindStyles,
 				},
 			},
 			'*'
@@ -192,8 +183,17 @@ function Plugin() {
 		setDropdownValue(newDropdownValue);
 	}
 	function handleCheckboxChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
-		const newCheckboxValue = event.currentTarget.checked;
-		setCheckboxValue(newCheckboxValue);
+		const name = event.currentTarget.getAttribute('name');
+		if (name === 'overwriteVariables') {
+			const newCheckboxValue = event.currentTarget.checked;
+			setCheckboxValue(newCheckboxValue);
+			console.log(newCheckboxValue);
+		}
+		if (name === 'bindStyles') {
+			const newCheckboxBindStyles = event.currentTarget.checked;
+			setCheckboxBindStyles(newCheckboxBindStyles);
+			console.log(newCheckboxBindStyles);
+		}
 	}
 
 	onmessage = (event) => {
@@ -201,145 +201,180 @@ function Plugin() {
 		if (message.type === 'localCollections') {
 			const collections = message.collections;
 			setCollections(collections);
+
 			const newOptions = [...options];
 			for (let i = 0; i < collections.length; i++) {
 				newOptions.push({ value: collections[i].name });
 			}
+
 			const newDropdownValue = collections[0].name;
 			setDropdownValue(newDropdownValue);
 			setOptions(newOptions);
+
+			const modes = collections[0].modes;
 		}
 	};
 
+	function checkOpacityValue(opacityName: string): number | undefined {
+		const element = document.querySelector(`.textboxColor.${opacityName}`);
+		if (element) {
+			const opacityInput = element.querySelector(
+				`#opacity-${opacityName}`
+			) as HTMLInputElement;
+			if (opacityInput) {
+				return parseFloat(opacityInput.value);
+			}
+		}
+		return undefined;
+	}
+
 	// Rendering the UI
 	return (
-		<div className='h-full py-4'>
+		<div id='container-wrap' className='py-4 overflow-y-auto'>
 			<Container space='medium'>
-				<Text>
-					<Muted>Select a color</Muted>
-				</Text>
-				<VerticalSpace space='extraSmall' />
-				<div className='flex flex-row flex-grow align-middle'>
-					<div>
-						<TextboxColor
-							id='hexColor1'
-							hexColor={hexColor}
-							hexColorPlaceholder='Color'
-							onHexColorInput={handleHexColorInput}
-							onOpacityInput={handleOpacityInput}
-							opacity={opacity}
-							className='w-24'
-						/>
-					</div>
-					<p className='p-1 text-center flex items-center rounded-md'>
-						H: {hue} C: {chroma} T: {tone}
-					</p>
-				</div>
-				<div className='h-24 rounded-sm overflow-hidden w-full my-2'>
-					<div
-						className='h-12 w-full'
-						style={{
-							background: `linear-gradient(to right, ${paletteGradient})`,
-						}}
-					></div>
-					<div
-						className='h-12 w-full'
-						style={{
-							background: `linear-gradient(to right, ${augmentedGradient})`,
-							// background: 'red',
-						}}
-					></div>
-				</div>
-				<VerticalSpace space='small' />
-				<Text>
-					<Muted>Adjust hue and chroma to taste</Muted>
-				</Text>
-				<VerticalSpace space='extraSmall' />
-				<Columns space='extraSmall'>
-					<div>
-						<TextboxNumeric
-							maximum={360}
-							minimum={0}
-							onInput={handleHctHueInput}
-							value={hctHueValue}
+				<Columns space='small'>
+					<div className='w-60'>
+						<Text>
+							<Muted>Select a color</Muted>
+						</Text>
+
+						<div className='flex flex-row align-middle'>
+							<div className='w-24'>
+								<TextboxColor
+									id='hexColor1'
+									hexColor={hexColor}
+									hexColorPlaceholder='Color'
+									onHexColorInput={handleHexColorInput}
+									onOpacityInput={handleOpacityInput}
+									opacity={opacity}
+									opacityName='opacityInput'
+								/>
+							</div>
+							<div className='p-1 text-center flex flex-row justify-end items-center grow'>
+								<Text align='right'>
+									<Muted>
+										H: {hue} C: {chroma} T: {tone}
+									</Muted>
+								</Text>
+							</div>
+						</div>
+						<VerticalSpace space='small' />
+						<Text>
+							<Muted>Adjust hue and chroma to taste</Muted>
+						</Text>
+						<VerticalSpace space='extraSmall' />
+						<Columns space='extraSmall'>
+							<div>
+								<TextboxNumeric
+									maximum={360}
+									minimum={0}
+									onInput={handleHctHueInput}
+									value={hctHueValue}
+									variant='border'
+									icon='H'
+								/>
+								<VerticalSpace space='small' />
+								<RangeSlider
+									maximum={360}
+									minimum={0}
+									onInput={handleHctHueInput}
+									value={hctHueValue}
+								/>
+							</div>
+							<div>
+								<TextboxNumeric
+									maximum={maxChromaValueAtHue}
+									minimum={0}
+									onInput={handleHctChromaInput}
+									value={hctChromaValue}
+									variant='border'
+									icon='C'
+								/>
+								<VerticalSpace space='small' />
+								<RangeSlider
+									maximum={maxChromaValueAtHue}
+									minimum={0}
+									onInput={handleHctChromaInput}
+									value={hctChromaValue}
+								/>
+							</div>
+						</Columns>
+						<VerticalSpace space='large' />
+						<Text>
+							<Muted>Select tones</Muted>
+						</Text>
+						<VerticalSpace space='extraSmall' />
+						<TextboxMultiline
+							onInput={handleTextAreaInput}
+							value={textAreaValue}
 							variant='border'
-							icon='H'
+							placeholder='All tone stops (0-100)'
+						/>
+						<VerticalSpace space='large' />
+						<Text>
+							<Muted>Give the palette a pretty name</Muted>
+						</Text>
+						<VerticalSpace space='extraSmall' />
+						<Textbox
+							onInput={handleTextboxInput}
+							value={textboxValue}
+							variant='border'
+							placeholder='color/palette-name'
+						/>
+						<VerticalSpace space='large' />
+						<Button
+							onClick={() => handleClick('build')}
+							className='mb-1'
+							fullWidth
+							secondary
+						>
+							Create Preview Swatches
+						</Button>
+						<VerticalSpace space='small' />
+						<Divider />
+						<VerticalSpace space='small' />
+						<Dropdown
+							onChange={handleDropdownChange}
+							placeholder='Choose a collection'
+							options={options}
+							value={dropdownValue}
+							className='mb-1'
 						/>
 						<VerticalSpace space='small' />
-						<RangeSlider
-							maximum={360}
-							minimum={0}
-							onInput={handleHctHueInput}
-							value={hctHueValue}
-						/>
+						<Checkbox
+							onChange={handleCheckboxChange}
+							value={checkboxValue}
+							name='overwriteVariables'
+						>
+							<Text>Overwrite existing variables if they have the same name</Text>
+						</Checkbox>
+						<VerticalSpace space='large' />
+						<Checkbox
+							onChange={handleCheckboxChange}
+							value={checkboxBindStyles}
+							name='bindStyles'
+						>
+							<Text>Bind to styles with the same name</Text>
+						</Checkbox>
+						<VerticalSpace space='large' />
+						<Button onClick={() => handleClick('createVariables')} fullWidth>
+							Build Variables
+						</Button>
 					</div>
-					<div>
-						<TextboxNumeric
-							maximum={maxChromaValueAtHue}
-							minimum={0}
-							onInput={handleHctChromaInput}
-							value={hctChromaValue}
-							variant='border'
-							icon='C'
-						/>
+					<div id='plugin-column-2' className='w-60'>
 						<VerticalSpace space='small' />
-						<RangeSlider
-							maximum={maxChromaValueAtHue}
-							minimum={0}
-							onInput={handleHctChromaInput}
-							value={hctChromaValue}
-						/>
+						<GradientPreview hexColor={hexColor} />
+						<VerticalSpace space='small' />
+						<GradientPreview hexColor={augmentedColor} />
+						<VerticalSpace space='small' />
+						<GradientPreview hexColor={augmentedColor} stops={defaultPaletteTones} />
+						{/* <AliasBuilder
+							aliasName={'string'}
+							toneOptions={defaultPaletteTones}
+							modeOptions={defaultModes}
+						/> */}
 					</div>
 				</Columns>
-				<VerticalSpace space='large' />
-				<Text>
-					<Muted>Select tones</Muted>
-				</Text>
-				<VerticalSpace space='extraSmall' />
-				<TextboxMultiline
-					onInput={handleTextAreaInput}
-					value={textAreaValue}
-					variant='border'
-					placeholder='All tone stops (0-100)'
-				/>
-				<VerticalSpace space='large' />
-				<Text>
-					<Muted>Give the palette a pretty name</Muted>
-				</Text>
-				<VerticalSpace space='extraSmall' />
-				<Textbox
-					onInput={handleTextboxInput}
-					value={textboxValue}
-					variant='border'
-					placeholder='color/palette-name'
-				/>
-				<VerticalSpace space='large' />
-				<Button
-					onClick={() => handleClick('build')}
-					className='mb-1'
-					fullWidth
-					secondary
-				>
-					Build Swatches
-				</Button>
-				<VerticalSpace space='small' />
-				<Divider />
-				<VerticalSpace space='small' />
-				<Dropdown
-					onChange={handleDropdownChange}
-					placeholder='Choose a collection'
-					options={options}
-					value={dropdownValue}
-					className='mb-1'
-				/>
-				<VerticalSpace space='small' />
-				<Checkbox onChange={handleCheckboxChange} value={checkboxValue}>
-					<Text>Overwrite existing variables if they have the same name</Text>
-				</Checkbox>
-				<VerticalSpace space='large' />
-				<Button onClick={() => handleClick('createVariables')} fullWidth>
-					Build Variables
-				</Button>
 			</Container>
 		</div>
 	);

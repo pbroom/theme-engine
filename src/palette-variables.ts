@@ -1,4 +1,5 @@
 import Color from './color';
+import cloneDeep from 'lodash/cloneDeep';
 
 /**
  * Returns the Figma variable with the given name, if it exists.
@@ -24,10 +25,11 @@ export const paletteColorVariable = (
 	colorName = 'color',
 	hexColor: string,
 	tone?: number,
-	overwriteVariables?: boolean
+	overwriteVariables?: boolean,
+	bindVariables?: boolean
 ) => {
 	const keyColorName = `${colorName} - source color/${colorName}`;
-	const toneColorName = `${colorName}-${tone}`;
+	const toneColorName = `${colorName}${tone}`;
 	const name = tone || tone === 0 ? toneColorName : keyColorName;
 	const variableId = variableFromName(name)?.id;
 	if (overwriteVariables === false && variableId) {
@@ -55,7 +57,39 @@ export const paletteColorVariable = (
 	}
 	variable.setValueForMode(lightModeId, fill);
 	variable.setValueForMode(darkModeId, fill);
+
+	const boundVariable = bindVariables ? variable : undefined;
+	bindVariablesToStyles(boundVariable, toneColorName);
+
+	console.log(bindVariables);
+
 	return variable;
+};
+
+export const bindVariablesToStyles = (
+	variable: Variable | undefined,
+	name: string
+) => {
+	if (!variable) {
+		return;
+	}
+	const styles = figma.getLocalPaintStyles();
+	// check for existing styles with the same name
+	const matchingPaintStyles = styles.filter((style) => {
+		const styleName = style.name;
+		const styleNameSplit = styleName.split('/');
+		const matchingStyles = styleNameSplit[styleNameSplit.length - 1];
+		return matchingStyles === name;
+	});
+	matchingPaintStyles.forEach((style) => {
+		const paintsCopy = cloneDeep(style.paints) as SolidPaint[];
+		paintsCopy[0] = figma.variables.setBoundVariableForPaint(
+			paintsCopy[0],
+			'color',
+			variable
+		);
+		style.paints = paintsCopy;
+	});
 };
 
 /**
@@ -72,7 +106,8 @@ export const paletteVariableCollection = (
 	colorName: string,
 	originalColor: string,
 	palette: { [key: number]: string },
-	overwriteVariables?: boolean
+	overwriteVariables?: boolean,
+	bindVariables?: boolean
 ) => {
 	const collection = collectionId;
 	const name = colorName;
@@ -86,7 +121,8 @@ export const paletteVariableCollection = (
 			name,
 			color,
 			Number(tone),
-			overwriteVariables
+			overwriteVariables,
+			bindVariables
 		);
 	});
 	const numVariables = variables.filter(
@@ -100,3 +136,17 @@ export const paletteVariableCollection = (
 	}
 	return variables;
 };
+
+// Function to bind variables to styles
+// Finds all styles with the same name as the variable
+// - account for all slashes in the name
+// - account for all styles with the same name as long as it's a color style between the slashes
+// If the style has a fill, set the fill to the variable
+
+// TODO: Variable utilities:
+// - Detach variables from styles/selection
+// - Delete variables
+// - Rename variables
+// - Bind variables to styles
+// - Unbind variables from styles
+// - Alias variables
