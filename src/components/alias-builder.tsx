@@ -10,7 +10,7 @@ import {
 	VerticalSpace,
 } from '@create-figma-plugin/ui';
 import { useState } from 'preact/hooks';
-import '!./dist/tailwind.css';
+import '!../dist/tailwind.css';
 
 interface AliasProps {
 	aliasName: string;

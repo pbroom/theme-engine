@@ -1,18 +1,19 @@
 import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { hctTonalGradient } from './color';
-import '!./dist/tailwind.css';
+import { hctTonalGradient } from '../color';
+import { twMerge } from 'tailwind-merge';
+import '!../dist/tailwind.css';
 
 interface GradientPreviewProps {
 	hexColor: string;
 	stops?: number[];
-	className?: string;
+	className?: React.HTMLAttributes<HTMLDivElement>['className'];
 }
 
 const GradientPreview = ({
 	hexColor,
 	stops,
-	className = 'h-12',
+	className,
 }: GradientPreviewProps) => {
 	const [gradient, setGradient] = useState<string>('');
 
@@ -24,7 +25,7 @@ const GradientPreview = ({
 	return (
 		<Fragment>
 			<div
-				className={`w-full ${className}`}
+				className={twMerge('w-full h-12', className)}
 				style={{
 					background: `linear-gradient(to right, ${gradient})`,
 				}}

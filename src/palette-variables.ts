@@ -147,6 +147,5 @@ export const paletteVariableCollection = (
 // - Detach variables from styles/selection
 // - Delete variables
 // - Rename variables
-// - Bind variables to styles
 // - Unbind variables from styles
 // - Alias variables
