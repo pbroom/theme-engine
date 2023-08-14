@@ -1,11 +1,10 @@
 // Importing the tailwind.css file
 import '!./dist/tailwind.css';
 import Color from './color';
-import { hctTonalGradient } from './color';
 import { maxChromaAtTonePerHue } from './ref';
-import { AliasBuilder } from './alias';
-import GradientPreview from './gradient-preview';
-import { mapValues } from './utility';
+import { AliasBuilder } from './components/alias-builder';
+import GradientPreview from './components/gradient-preview';
+import ThemeColor from './theme-color';
 
 // Importing UI components from the create-figma-plugin/ui library
 import {
@@ -36,32 +35,36 @@ import { useState } from 'preact/hooks';
 export function Plugin() {
 	// Defaults
 	const startingColor = '397456';
-	const color = new Color(startingColor);
 	const defaultPaletteTones = [
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
 		25, 35, 87, 92, 94, 96, 98,
 	];
+	const themeColor = new ThemeColor(startingColor);
 	const maxChromaAtHue = Math.round(
-		maxChromaAtTonePerHue[color.getHue('rounded')].chroma
+		maxChromaAtTonePerHue[themeColor.getThemeColor().getHue('rounded')].chroma
 	);
-	const [hue, setHue] = useState<number>(color.getHue('rounded'));
-	const [chroma, setChroma] = useState<number>(color.getChroma('rounded'));
-	const [tone, setTone] = useState<number>(color.getTone('rounded'));
+	const [hue, setHue] = useState<number>(
+		themeColor.getThemeColor().getHue('rounded')
+	);
+	const [chroma, setChroma] = useState<number>(
+		themeColor.getThemeColor().getChroma('rounded')
+	);
+	const [tone, setTone] = useState<number>(
+		themeColor.getThemeColor().getTone('rounded')
+	);
 	const [textboxValue, setTextboxValue] = useState<string>('');
 	const [hexColor, setHexColor] = useState<string>(startingColor);
-	const [augmentedColor, setAugmentedColor] = useState<string>(startingColor);
+
+	const [augmentedColor, setAugmentedColor] = useState<string>(hexColor);
 	const [opacity, setOpacity] = useState<string>('');
-	const [hctHueValue, setHctHueValue] = useState<string>(
-		`${color.getHue('rounded')}`
-	);
-	const [hctChromaValue, setHctChromaValue] = useState<string>(
-		`${color.getChroma('rounded')}`
-	);
+	const [hctHueValue, setHctHueValue] = useState<string>(`${hue}`);
+	const [hctChromaValue, setHctChromaValue] = useState<string>(`${chroma}`);
 	const [maxChromaValueAtHue, setMaxChromaValueAtHue] =
 		useState<number>(maxChromaAtHue);
 	const [textAreaValue, setTextAreaValue] = useState<string>(
 		`${defaultPaletteTones}`
 	);
+	const [toneStops, setToneStops] = useState<number[]>(defaultPaletteTones);
 	const [dropdownValue, setDropdownValue] = useState<null | string>(null);
 	const [collections, setCollections] = useState<VariableCollection[]>([]);
 	const [optionId, setOptionId] = useState<null | string>('1');
@@ -72,6 +75,10 @@ export function Plugin() {
 	]);
 	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
 	const [checkboxBindStyles, setCheckboxBindStyles] = useState<boolean>(false);
+
+	themeColor.setTones(toneStops);
+	themeColor.setName(textboxValue);
+	themeColor.setSourceColor(hexColor);
 
 	function handleTextboxInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newTextboxValue = event.currentTarget.value;
@@ -104,6 +111,7 @@ export function Plugin() {
 		const newOpacity = event.currentTarget.value;
 		setOpacity(newOpacity);
 	}
+
 	function handleHctHueInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newHctHueValue = event.currentTarget.value;
 		const newHctHueNumber = parseInt(newHctHueValue);
@@ -128,6 +136,12 @@ export function Plugin() {
 	function handleTextAreaInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
 		const newTextAreaValue = event.currentTarget.value;
 		setTextAreaValue(newTextAreaValue);
+		const numbers = Array.from({ length: 101 }, (_, i) => i);
+		const newToneStops =
+			getStopsFromString(newTextAreaValue).length > 0
+				? getStopsFromString(newTextAreaValue)
+				: numbers;
+		setToneStops(newToneStops);
 	}
 
 	function getStopsFromString(text: string): number[] {
@@ -153,7 +167,7 @@ export function Plugin() {
 		};
 		const name = newColor.colorName;
 		const color = newColor.backgroundColor;
-		const toneStops = getStopsFromString(textAreaValue);
+		// const toneStops = getStopsFromString(textAreaValue);
 		if (!optionId) {
 			return;
 		}
@@ -323,16 +337,14 @@ export function Plugin() {
 						/>
 						<VerticalSpace space='large' />
 						<Button
-							onClick={() => handleClick('build')}
+							// onClick={() => handleClick('build')}
+							onClick={() => console.log(themeColor)}
 							className='mb-1'
 							fullWidth
 							secondary
 						>
-							Create Preview Swatches
+							Print themeColor
 						</Button>
-						<VerticalSpace space='small' />
-						<Divider />
-						<VerticalSpace space='small' />
 						<Dropdown
 							onChange={handleDropdownChange}
 							placeholder='Choose a collection'
@@ -367,7 +379,7 @@ export function Plugin() {
 						<VerticalSpace space='small' />
 						<GradientPreview hexColor={augmentedColor} />
 						<VerticalSpace space='small' />
-						<GradientPreview hexColor={augmentedColor} stops={defaultPaletteTones} />
+						<GradientPreview hexColor={augmentedColor} stops={toneStops} />
 						{/* <AliasBuilder
 							aliasName={'string'}
 							toneOptions={defaultPaletteTones}
