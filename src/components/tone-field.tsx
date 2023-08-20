@@ -1,30 +1,17 @@
 import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { TextboxMultiline } from '@create-figma-plugin/ui';
+import { getStopsFromString } from '../utility';
 import '!../dist/tailwind.css';
 
 interface ToneFieldProps {
 	tones: number[];
+	setToneStops: (tones: number[]) => void;
 }
 
-const ToneField = ({ tones }: ToneFieldProps) => {
+const ToneField = ({ tones, setToneStops }: ToneFieldProps) => {
 	const [textAreaValue, setTextAreaValue] = useState<string>(`${tones}`);
-	const [toneStops, setToneStops] = useState<number[]>(tones);
-
-	function getStopsFromString(text: string): number[] {
-		// Extract all integers from the text
-		const allIntegers = text.match(/\b\d+\b/g)?.map(Number);
-		// If no integers are found, return an empty array
-		if (!allIntegers) {
-			return [];
-		}
-		// Create a Set to ensure uniqueness, and filter out values outside the 0-100 range
-		const stops: Set<number> = new Set(
-			allIntegers.filter((n) => n >= 0 && n <= 100)
-		);
-		// Convert the Set back to an array
-		return Array.from(stops);
-	}
+	// const [toneStops, setToneStops] = useState<number[]>(tones);
 
 	function handleTextAreaInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
 		const newTextAreaValue = event.currentTarget.value;

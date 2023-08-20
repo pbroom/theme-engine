@@ -1,11 +1,12 @@
 import Color from './color';
-import { getStopsFromString, convertNumberToStringArray } from './utility';
 import Alias from './alias';
+import ThemeColor from './theme-color';
+import { getStopsFromString, convertNumberToStringArray } from './utility';
 import { maxChromaAtTonePerHue } from './ref';
 
-let themeColorCounter = 0;
+let themeCounter = 0;
 
-interface ThemeColorState {
+interface ThemeState {
 	sourceColor: Color;
 	themeColor: Color;
 	tones: number[];
@@ -15,9 +16,9 @@ interface ThemeColorState {
 	aliases: Alias[];
 }
 
-class ThemeColor {
-	private id: number = themeColorCounter++;
-	private state: ThemeColorState;
+class Theme {
+	private id: number = themeCounter++;
+	private state: ThemeState;
 	constructor(color: string) {
 		this.state = {
 			sourceColor: new Color(color),
@@ -46,7 +47,7 @@ class ThemeColor {
 
 	componentDidMount() {}
 
-	componentDidUpdate(prevProps: ThemeColorState) {
+	componentDidUpdate(prevProps: ThemeState) {
 		// When sourceColor changes, update themeColor.
 		if (this.state.sourceColor !== prevProps.sourceColor) {
 			this.setState({
@@ -90,7 +91,7 @@ class ThemeColor {
 		return this.state;
 	}
 
-	setState(state: ThemeColorState) {
+	setState(state: ThemeState) {
 		this.state = state;
 	}
 

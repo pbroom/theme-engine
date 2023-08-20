@@ -1,5 +1,7 @@
 import ThemeColor from './theme-color';
 
+let aliasId = 0;
+
 interface AliasProps {
 	name: string;
 	color: {
@@ -9,15 +11,21 @@ interface AliasProps {
 }
 
 class Alias {
+	private id: number;
 	private name: string;
 	private color: {
 		mode: string;
 		tone: number;
 	}[];
 
-	constructor({ name, color }: AliasProps) {
-		this.name = name;
-		this.color = color;
+	constructor() {
+		this.id = aliasId++;
+		this.name = `Alias ${this.id}`;
+		this.color = [];
+	}
+
+	getId() {
+		return this.id;
 	}
 
 	getName() {
@@ -42,7 +50,7 @@ class Alias {
 		return this.color;
 	}
 
-	setColor(mode: string | number, tone: number) {
+	setColorByMode(mode: string | number, tone: number) {
 		const colorIndex = this.color.findIndex((color) => color.mode === mode);
 
 		if (colorIndex === -1) {

@@ -21,3 +21,7 @@ export function getStopsFromString(text: string): number[] {
 	// Convert the Set back to an array
 	return Array.from(stops);
 }
+
+export function convertNumberToStringArray(numbers: number[]): string[] {
+	return numbers.map((n) => n.toString());
+}
