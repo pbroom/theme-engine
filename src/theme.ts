@@ -2,86 +2,47 @@ import Color from './color';
 import Alias from './alias';
 import ThemeColor from './theme-color';
 import { getStopsFromString, convertNumberToStringArray } from './utility';
-import { maxChromaAtTonePerHue } from './ref';
-
-let themeCounter = 0;
+import { v4 as uuidv4 } from 'uuid';
 
 interface ThemeState {
-	sourceColor: Color;
-	themeColor: Color;
-	tones: number[];
-	hueCalc: string;
-	chromaCalc: string;
+	id: string;
 	name: string;
-	aliases: Alias[];
+	themeColors: ThemeColor[];
 }
 
 class Theme {
-	private id: number = themeCounter++;
 	private state: ThemeState;
-	constructor(color: string) {
+	constructor() {
 		this.state = {
-			sourceColor: new Color(color),
-			themeColor: new Color(color),
-			hueCalc: '',
-			chromaCalc: '',
-			tones: [],
+			id: uuidv4(),
 			name: '',
-			aliases: [],
+			themeColors: [],
 		};
 	}
 
-	// Since sourceColor and themeColor are Color instances, we can use the Color methods to get and set values.
-	// Useful Color methods:
-	//  getHue()
-	//  setHue()
-	//  getChroma()
-	//  setChroma()
-	//  getTone()
-	//  getHex()
-	//  getFigmaSolidColor()
-
+	get id() {
+		return this.state.id;
+	}
 	getId() {
-		return this.id;
+		return this.state.id;
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		console.log(this.state.id);
+	}
 
-	componentDidUpdate(prevProps: ThemeState) {
-		// When sourceColor changes, update themeColor.
-		if (this.state.sourceColor !== prevProps.sourceColor) {
-			this.setState({
-				...prevProps,
-				sourceColor: this.state.sourceColor,
-				themeColor: this.state.sourceColor,
-			});
-			if (this.state.hueCalc !== '') {
-				this.setHue(this.state.sourceColor.getHue());
-			}
-			if (this.state.chromaCalc !== '') {
-				this.setChroma(this.state.sourceColor.getChroma());
-			}
+	componentDidUpdate(prevState: ThemeState) {
+		if (this.state !== prevState) {
+			this.setState({ ...prevState, ...this.state });
 		}
-		if (this.state.tones !== prevProps.tones) {
-			this.setTones(this.state.tones);
+		if (this.state.name !== prevState.name) {
+			this.setState({ ...prevState, name: this.state.name });
 		}
-		if (this.state.themeColor !== prevProps.themeColor) {
-			// Update the state using setState()
-			this.setState({ ...this.state, themeColor: this.state.themeColor });
+		if (this.state.themeColors !== prevState.themeColors) {
+			this.setState({ ...prevState, themeColors: this.state.themeColors });
 		}
-		if (this.state.hueCalc !== prevProps.hueCalc) {
-			this.setState({ ...prevProps, hueCalc: this.state.hueCalc });
-			this.setHue(this.state.themeColor.getHue());
-		}
-		if (this.state.chromaCalc !== prevProps.chromaCalc) {
-			this.setState({ ...prevProps, chromaCalc: this.state.chromaCalc });
-			this.setChroma(this.state.themeColor.getChroma());
-		}
-		if (this.state.name !== prevProps.name) {
-			this.setState({ ...prevProps, name: this.state.name });
-		}
-		if (this.state.aliases !== prevProps.aliases) {
-			this.setState({ ...prevProps, aliases: this.state.aliases });
+		if (this.state.themeColors.length !== prevState.themeColors.length) {
+			this.setState({ ...prevState, themeColors: this.state.themeColors });
 		}
 	}
 
@@ -95,136 +56,48 @@ class Theme {
 		this.state = state;
 	}
 
-	getSourceColor() {
-		return this.state.sourceColor;
+	get name(): string {
+		return this.state.name;
 	}
-
-	setSourceColor(color: string) {
-		this.state.sourceColor = new Color(color);
-		this.state.themeColor = new Color(color);
-	}
-
-	getTones(returnAsString?: string) {
-		let tones: number[] | string[] = this.state.tones;
-		if (returnAsString === 'string' || 'asString') {
-			tones = convertNumberToStringArray(tones);
-			return tones;
-		}
-		return this.state.tones;
-	}
-
-	setTones(tones: number[] | string | ThemeColor) {
-		if (typeof tones === 'string') {
-			this.state.tones = getStopsFromString(tones);
-		} else if (
-			Array.isArray(tones) &&
-			tones.every((tone) => typeof tone === 'number')
-		) {
-			this.state.tones = tones;
-		} else {
-			if ('getTones' in tones) {
-				this.state.tones = tones.getTones() as number[];
-			}
-		}
-	}
-
-	getThemeColor() {
-		return this.state.themeColor;
-	}
-
-	setThemeColor(color: string) {
-		this.state.themeColor = new Color(color);
-	}
-
-	getHueCalc() {
-		return this.state.hueCalc;
-	}
-
-	setHueCalc(hueCalc: string) {
-		this.state.hueCalc = hueCalc;
-	}
-
-	setHue(hue: number) {
-		let themeHue = hue;
-		if (this.state.hueCalc !== '' && this.state.sourceColor) {
-			let sourceHue = this.state.sourceColor.getHue();
-			let hueCalc = this.state.hueCalc.replace(/h/g, sourceHue.toString());
-			themeHue = eval(hueCalc) as number;
-			if (themeHue < 0) {
-				themeHue = 360 + (themeHue % 360);
-			} else if (themeHue > 360) {
-				themeHue = themeHue % 360;
-			}
-			themeHue = Math.round(themeHue);
-		}
-
-		this.state.themeColor.setHue(themeHue);
-	}
-
-	getChromaCalc() {
-		return this.state.chromaCalc;
-	}
-
-	setChromaCalc(chromaCalc: string) {
-		this.state.chromaCalc = chromaCalc;
-	}
-
-	setChroma(chroma: number) {
-		let themeChroma = chroma;
-		if (this.state.chromaCalc !== '' && this.state.sourceColor) {
-			let sourceChroma = this.state.sourceColor.getChroma();
-			let themeColorHue = this.state.themeColor.getHue();
-			let maxChroma = maxChromaAtTonePerHue[themeColorHue].chroma;
-			let chromaCalc = this.state.chromaCalc.replace(
-				/c/g,
-				sourceChroma.toString()
-			);
-			themeChroma = eval(chromaCalc) as number;
-			if (themeChroma < 0) {
-				themeChroma = 0;
-			}
-			if (themeChroma > maxChroma) {
-				themeChroma = maxChroma;
-			}
-			themeChroma = Math.round(themeChroma);
-		}
-
-		this.state.themeColor.setChroma(themeChroma);
-	}
-
-	getName() {
+	getName(): string {
 		return this.state.name;
 	}
 
+	set name(name: string) {
+		this.state.name = name;
+	}
 	setName(name: string) {
 		this.state.name = name;
 	}
 
-	getAliases() {
-		return this.state.aliases;
+	get themeColors(): ThemeColor[] {
+		return this.state.themeColors;
+	}
+	getThemeColors(): ThemeColor[] {
+		return this.state.themeColors;
 	}
 
-	getAliasById(aliasId: number): Alias | undefined {
-		return this.state.aliases.find((alias) => alias.getId() === aliasId);
+	set themeColors(themeColors: ThemeColor[]) {
+		this.state.themeColors = themeColors;
+	}
+	setThemeColors(themeColors: ThemeColor[]) {
+		this.state.themeColors = themeColors;
 	}
 
-	setAliases(aliases: Alias[]) {
-		this.state.aliases = aliases;
+	getThemeColorById(id: number): ThemeColor | undefined {
+		return this.state.themeColors.find((themeColor) => themeColor.getId() === id);
 	}
 
-	addAlias(alias: Alias) {
-		this.state.aliases.push(alias);
+	addThemeColor(themeColor: ThemeColor): void {
+		this.state.themeColors.push(themeColor);
 	}
 
-	removeAlias(alias: Alias) {
-		this.state.aliases = this.state.aliases.filter(
-			(existingAlias) => existingAlias !== alias
-		);
-	}
-
-	setAliasName(alias: Alias, name: string) {
-		alias.setName(name);
+	removeThemeColor(themeColor: ThemeColor): void {
+		const index = this.state.themeColors.indexOf(themeColor);
+		if (index !== -1) {
+			this.state.themeColors.splice(index, 1);
+		}
 	}
 }
 
-export default ThemeColor;
+export default Theme;

@@ -5216,7 +5216,7 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: height(650), width: 560, title: "Dynamic Color" });
+  showUI({ height: height(750), width: 560, title: "Dynamic Color" });
 }
 var height;
 var init_main = __esm({

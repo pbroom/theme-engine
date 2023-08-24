@@ -14,7 +14,7 @@ const height = (pixelHeight: number) => {
 	return pixelHeight;
 };
 export default function () {
-	showUI({ height: height(650), width: 560, title: 'Dynamic Color' });
+	showUI({ height: height(750), width: 560, title: 'Dynamic Color' });
 }
 
 /**

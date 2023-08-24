@@ -38,7 +38,7 @@ export const ToneSelect = ({
 	];
 	const [optionId, setOptionId] = useState<null | string>('1');
 	const [dropdownValue, setDropdownValue] = useState<null | string>(
-		toneOptions[2].value
+		(toneOptions[2] as DropdownOptionValue<string>).value
 	);
 
 	function handleDropdownChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {

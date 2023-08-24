@@ -1,14 +1,9 @@
-// Importing the tailwind.css file
 import '!./dist/tailwind.css';
-import Color from './color';
-import { mapValues } from './utility';
 import { maxChromaAtTonePerHue } from './ref';
 import GradientPreview from './components/gradient-preview';
 import ToneField from './components/tone-field';
 import ThemeColor from './theme-color';
-import { ToneSelect } from './components/tone-select';
-
-// Importing UI components from the create-figma-plugin/ui library
+import { AliasManager } from './components/alias-manager';
 import {
 	Button,
 	Checkbox,
@@ -31,13 +26,9 @@ import {
 	VerticalSpace,
 	Bold,
 } from '@create-figma-plugin/ui';
-
-// Importing preact and preact/hooks libraries
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
-// import { mapValues } from 'lodash';
 
-// Defining the Plugin component
 export function Plugin() {
 	// Defaults
 	const startingColor = '397456';
@@ -77,11 +68,8 @@ export function Plugin() {
 			header: 'Choose a collection',
 		},
 	]);
-	const [modes, setModes] = useState<string[]>(['light']);
 	const [checkboxValue, setCheckboxValue] = useState<boolean>(true);
 	const [checkboxBindStyles, setCheckboxBindStyles] = useState<boolean>(false);
-
-	const selectedColection = collections[dropdownValue as unknown as number];
 
 	themeColor.setTones(toneStops);
 	themeColor.setName(textboxValue);
@@ -203,45 +191,29 @@ export function Plugin() {
 			setDropdownValue(newDropdownValue);
 			setOptions(newOptions);
 
-			const modes = collections[0].modes;
+			// const modes = collections[0].modes;
 		}
 	};
 
-	const tonesForMode = mapValues('value', themeColor.getTones('light'));
-
-	const toneOptions: DropdownOption[] = [
-		{ header: `${collections[0].modes[0].name} mode tone` },
-		{ separator: true },
-		...(tonesForMode as DropdownOptionValue[]),
-	];
-
-	const [toneDropdownValue, setToneDropdownValue] = useState<null | string>(
-		toneOptions[2].value
-	);
-
-	function handleToneDropdownChange(
-		event: h.JSX.TargetedEvent<HTMLInputElement>
-	) {
-		const newToneDropdownValue = event.currentTarget.value;
-		const newOptionId = event.currentTarget.getAttribute('data-dropdown-item-id');
-		setOptionId(newOptionId);
-		setToneDropdownValue(newToneDropdownValue);
+	function getSelectedCollection(
+		collections: VariableCollection[],
+		dropdownValue: string
+	): VariableCollection | undefined {
+		return collections.find((collection) => collection.name === dropdownValue);
 	}
 
-	const [optionId2, setOptionId2] = useState<null | string>(null);
-	const [dropdownValue2, setDropdownValue2] = useState<null | string>(null);
-
-	function handleOptionIdChange(newOptionId2: string) {
-		setOptionId2(newOptionId2);
+	function getCollectionModes(selectedCollection: VariableCollection): string[] {
+		return selectedCollection.modes.map((mode) => mode.name);
 	}
 
-	function handleDropdownValueChange(newDropdownValue2: string) {
-		setDropdownValue2(newDropdownValue2);
+	let collectionModes: string[] = [];
+	if (dropdownValue) {
+		const selectedCollection = getSelectedCollection(collections, dropdownValue);
+		if (selectedCollection) {
+			collectionModes = getCollectionModes(selectedCollection);
+		}
 	}
-
-	const options2: DropdownOption[] = [
-		...(tonesForMode as DropdownOptionValue[]),
-	];
+	console.log(collectionModes);
 
 	// Rendering the UI
 	return (
@@ -369,18 +341,10 @@ export function Plugin() {
 				<VerticalSpace space='large' />
 				<Divider />
 				<VerticalSpace space='large' />
+				<AliasManager themeColor={themeColor} modes={collectionModes} />
+				<VerticalSpace space='large' />
 				<Columns space='extraSmall'>
 					<div className='w-60'>
-						<Text>
-							<Muted>Variable aliases</Muted>
-						</Text>
-						<VerticalSpace space='extraSmall' />
-						<div>
-							<Button onClick={() => handleClick('addAlias')} fullWidth secondary>
-								Add alias
-							</Button>
-						</div>
-						<VerticalSpace space='large' />
 						<Checkbox
 							onChange={handleCheckboxChange}
 							value={checkboxValue}
@@ -411,26 +375,7 @@ export function Plugin() {
 							Print themeColor
 						</Button>
 					</div>
-					<div className='w-60'>
-						<Textbox value={themeColor.getName() || 'color'} />
-						<Dropdown
-							onChange={handleToneDropdownChange}
-							options={toneOptions}
-							value={toneDropdownValue}
-						/>
-						<ToneSelect
-							options={options2}
-							modeName='test'
-							onOptionIdChange={(newOptionId2: string | null) =>
-								handleOptionIdChange(newOptionId2 ?? '')
-							}
-							onDropdownValueChange={(newDropdownValue2: string | number) =>
-								handleDropdownValueChange(String(newDropdownValue2))
-							}
-						/>
-						<p>Selected option ID: {optionId2}</p>
-						<p>Selected dropdown value: {dropdownValue2}</p>
-					</div>
+					<div className='w-60'></div>
 				</Columns>
 
 				{/* <AliasInput /> */}

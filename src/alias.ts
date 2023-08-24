@@ -11,8 +11,8 @@ interface AliasProps {
 }
 
 class Alias {
-	private id: number;
-	private name: string;
+	public id: number;
+	public name: string;
 	private color: {
 		mode: string;
 		tone: number;
@@ -48,6 +48,13 @@ class Alias {
 			}
 		}
 		return this.color;
+	}
+	getTone(mode: string | number) {
+		const color = this.getColor(mode);
+		if (!color) {
+			return undefined;
+		}
+		return 'tone' in color ? color.tone : undefined;
 	}
 
 	setColorByMode(mode: string | number, tone: number) {
