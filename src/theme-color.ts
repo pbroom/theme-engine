@@ -1,12 +1,14 @@
 import Color from './color';
+import { v4 as uuidv4 } from 'uuid';
 import { getStopsFromString, convertNumberToStringArray } from './utility';
 import Alias from './alias';
 import { maxChromaAtTonePerHue } from './ref';
+import { evaluate } from 'mathjs';
 
 let themeColorCounter = 0;
 
 interface ThemeColor extends Color {}
-interface ThemeColorState {
+export interface ThemeColorState {
 	sourceColor: Color;
 	themeColor: Color;
 	tones: number[];
@@ -19,27 +21,24 @@ interface ThemeColorState {
 class ThemeColor {
 	public id: number = themeColorCounter++;
 	public state: ThemeColorState;
-	constructor(color: string) {
+	constructor(
+		color: string,
+		name?: string,
+		tones?: number[],
+		hueCalc?: string,
+		chromaCalc?: string,
+		aliases?: Alias[]
+	) {
 		this.state = {
 			sourceColor: new Color(color),
 			themeColor: new Color(color),
-			hueCalc: '',
-			chromaCalc: '',
-			tones: [],
-			name: '',
-			aliases: [],
+			hueCalc: hueCalc || '',
+			chromaCalc: chromaCalc || '',
+			tones: tones || [],
+			name: name || '',
+			aliases: aliases || [],
 		};
 	}
-
-	// Since sourceColor and themeColor are Color instances, we can use the Color methods to get and set values.
-	// Useful Color methods:
-	//  getHue()
-	//  setHue()
-	//  getChroma()
-	//  setChroma()
-	//  getTone()
-	//  getHex()
-	//  getFigmaSolidColor()
 
 	getId() {
 		return this.id;
@@ -166,6 +165,50 @@ class ThemeColor {
 		this.state.themeColor = new Color(color);
 	}
 
+	getHue(rounded?: string) {
+		let themeHue =
+			rounded === 'rounded'
+				? this.state.themeColor.getHue('rounded')
+				: this.state.themeColor.getHue();
+		if (this.state.hueCalc !== '' && this.state.sourceColor) {
+			let sourceHue = this.state.sourceColor.getHue();
+			let hueCalc = this.state.hueCalc.replace(/h/g, sourceHue.toString());
+			themeHue = evaluate(hueCalc) as number;
+			if (themeHue < 0) {
+				themeHue = 360 + (themeHue % 360);
+			} else if (themeHue > 360) {
+				themeHue = themeHue % 360;
+			}
+			themeHue = Math.round(themeHue);
+		}
+		return themeHue;
+	}
+
+	getChroma(rounded?: string) {
+		let themeChroma =
+			rounded === 'rounded'
+				? this.state.themeColor.getChroma('rounded')
+				: this.state.themeColor.getChroma();
+		if (this.state.chromaCalc !== '' && this.state.sourceColor) {
+			let sourceChroma = this.state.sourceColor.getChroma();
+			let themeColorHue = this.state.themeColor.getHue();
+			let maxChroma = maxChromaAtTonePerHue[themeColorHue].chroma;
+			let chromaCalc = this.state.chromaCalc.replace(
+				/c/g,
+				sourceChroma.toString()
+			);
+			themeChroma = evaluate(chromaCalc) as number;
+			if (themeChroma < 0) {
+				themeChroma = 0;
+			}
+			if (themeChroma > maxChroma) {
+				themeChroma = maxChroma;
+			}
+			themeChroma = Math.round(themeChroma);
+		}
+		return themeChroma;
+	}
+
 	get hueCalc() {
 		return this.state.hueCalc;
 	}
@@ -181,20 +224,7 @@ class ThemeColor {
 	}
 
 	setHue(hue: number) {
-		let themeHue = hue;
-		if (this.state.hueCalc !== '' && this.state.sourceColor) {
-			let sourceHue = this.state.sourceColor.getHue();
-			let hueCalc = this.state.hueCalc.replace(/h/g, sourceHue.toString());
-			themeHue = eval(hueCalc) as number;
-			if (themeHue < 0) {
-				themeHue = 360 + (themeHue % 360);
-			} else if (themeHue > 360) {
-				themeHue = themeHue % 360;
-			}
-			themeHue = Math.round(themeHue);
-		}
-
-		this.state.themeColor.setHue(themeHue);
+		this.state.themeColor.setHue(hue);
 	}
 
 	get chromaCalc() {
@@ -212,26 +242,7 @@ class ThemeColor {
 	}
 
 	setChroma(chroma: number) {
-		let themeChroma = chroma;
-		if (this.state.chromaCalc !== '' && this.state.sourceColor) {
-			let sourceChroma = this.state.sourceColor.getChroma();
-			let themeColorHue = this.state.themeColor.getHue();
-			let maxChroma = maxChromaAtTonePerHue[themeColorHue].chroma;
-			let chromaCalc = this.state.chromaCalc.replace(
-				/c/g,
-				sourceChroma.toString()
-			);
-			themeChroma = eval(chromaCalc) as number;
-			if (themeChroma < 0) {
-				themeChroma = 0;
-			}
-			if (themeChroma > maxChroma) {
-				themeChroma = maxChroma;
-			}
-			themeChroma = Math.round(themeChroma);
-		}
-
-		this.state.themeColor.setChroma(themeChroma);
+		this.state.themeColor.setChroma(chroma);
 	}
 
 	get name() {

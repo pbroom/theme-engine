@@ -9,6 +9,7 @@
 		"@react-stately/color": "^3.4.1",
 		"install": "^0.13.0",
 		"lodash": "^4.17.21",
+		"mathjs": "^11.10.0",
 		"npm": "^9.8.1",
 		"preact": "^10.15.1",
 		"prismjs": "^1.28.0",

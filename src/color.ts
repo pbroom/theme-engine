@@ -136,7 +136,10 @@ class Color {
 	 * Gets the hex value of the color.
 	 * @returns The hex value of the color.
 	 */
-	getHex() {
+	getHex(excludeNumberSign?: boolean) {
+		if (excludeNumberSign) {
+			return this.hex.slice(1);
+		}
 		return this.hex;
 	}
 

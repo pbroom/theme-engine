@@ -13,15 +13,15 @@ interface AliasProps {
 class Alias {
 	public id: number;
 	public name: string;
-	private color: {
+	public color: {
 		mode: string;
 		tone: number;
 	}[];
 
-	constructor() {
+	constructor(name?: string, color?: { mode: string; tone: number }[]) {
 		this.id = aliasId++;
-		this.name = `Alias ${this.id}`;
-		this.color = [];
+		this.name = name || `Alias ${this.id}`;
+		this.color = color || [];
 	}
 
 	getId() {

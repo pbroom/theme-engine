@@ -3193,7 +3193,10 @@ var init_color = __esm({
        * Gets the hex value of the color.
        * @returns The hex value of the color.
        */
-      getHex() {
+      getHex(excludeNumberSign) {
+        if (excludeNumberSign) {
+          return this.hex.slice(1);
+        }
         return this.hex;
       }
       /**

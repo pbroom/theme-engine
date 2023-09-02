@@ -28,7 +28,7 @@ class Theme {
 	}
 
 	componentDidMount() {
-		console.log(this.state.id);
+		// console.log(this.state.id);
 	}
 
 	componentDidUpdate(prevState: ThemeState) {

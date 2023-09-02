@@ -3,12 +3,24 @@
 @tailwind utilities;
 
 .container {
-  height: 164px;
-  overflow: auto;
+	height: 164px;
+	overflow: auto;
 }
 
 .editor {
-  min-height: 100%;
-  font-size: var(--font-size-12);
-  font-family: var(--font-family-code);
+	min-height: 100%;
+	font-size: var(--font-size-12);
+	font-family: var(--font-family-code);
+}
+
+._textboxColor_190p3_1 {
+	max-width: 97px;
+}
+
+._textboxColor_190p3_1 ._divider_190p3_109 {
+	display: none;
+}
+
+._textboxColor_190p3_1 ._opacityInput_190p3_84 {
+	display: none;
 }
