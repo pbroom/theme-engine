@@ -4,29 +4,23 @@ import { TextboxColor } from '@create-figma-plugin/ui';
 
 export interface ColorPickerProps {
 	color?: string;
-	onColorInput: (event: h.JSX.TargetedEvent<HTMLInputElement>) => void;
-}
-
-export interface ColorPickerProps {
-	color?: string;
-	onColorInput: (event: h.JSX.TargetedEvent<HTMLInputElement>) => void;
+	onColorInput: (hexColor: string) => void;
 }
 
 export const ColorPicker = ({ color = '', onColorInput }: ColorPickerProps) => {
 	const [hexColor, setHexColor] = useState<string>(color || '');
 	const [opacity, setOpacity] = useState<string>('100%');
 
-	function handleHexColorInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+	const handleHexColorInput = (event: h.JSX.TargetedEvent<HTMLInputElement>) => {
 		const newHexColor = event.currentTarget.value;
-		console.log(newHexColor);
 		setHexColor(newHexColor);
-	}
+		onColorInput(newHexColor);
+	};
 
-	function handleOpacityInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
+	const handleOpacityInput = (event: h.JSX.TargetedEvent<HTMLInputElement>) => {
 		const newOpacity = event.currentTarget.value;
-		console.log(newOpacity);
 		setOpacity(newOpacity);
-	}
+	};
 
 	return (
 		<TextboxColor
@@ -35,7 +29,7 @@ export const ColorPicker = ({ color = '', onColorInput }: ColorPickerProps) => {
 			onOpacityInput={handleOpacityInput}
 			opacity={opacity}
 			variant='border'
-			onInput={onColorInput}
+			// onInput={onColorInput}
 		/>
 	);
 };

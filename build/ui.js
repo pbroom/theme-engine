@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d7430d2-8976-4dc9-9a16-2629cd663f30/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8f2d6432-1cfd-492a-ab42-388eb95935a1/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d7430d2-8976-4dc9-9a16-2629cd663f30/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8f2d6432-1cfd-492a-ab42-388eb95935a1/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -582,14 +582,14 @@ video {
 .visible {
   visibility: visible;
 }
-.float-right {
-  float: right;
-}
-.float-left {
-  float: left;
+.top-[6px] {
+  top: 6px;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+.box-border {
+  box-sizing: border-box;
 }
 .flex {
   display: flex;
@@ -600,8 +600,8 @@ video {
 .h-20 {
   height: 5rem;
 }
-.h-full {
-  height: 100%;
+.h-3 {
+  height: 0.75rem;
 }
 .w-24 {
   width: 6rem;
@@ -612,8 +612,8 @@ video {
 .w-full {
   width: 100%;
 }
-.w-20 {
-  width: 5rem;
+.flex-up {
+  flex: 1 0 auto;
 }
 .grow {
   flex-grow: 1;
@@ -624,8 +624,8 @@ video {
 .flex-row {
   flex-direction: row;
 }
-.content-center {
-  align-content: center;
+.flex-col {
+  flex-direction: column;
 }
 .items-center {
   align-items: center;
@@ -633,11 +633,14 @@ video {
 .justify-end {
   justify-content: flex-end;
 }
-.justify-center {
-  justify-content: center;
+.justify-between {
+  justify-content: space-between;
 }
-.justify-items-center {
-  justify-items: center;
+.gap-2 {
+  gap: 0.5rem;
+}
+.self-stretch {
+  align-self: stretch;
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -645,8 +648,22 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .border {
   border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 .p-1 {
   padding: 0.25rem;
@@ -663,6 +680,12 @@ video {
 }
 .align-middle {
   vertical-align: middle;
+}
+.outline-[.5px] {
+  outline-width: .5px;
+}
+.outline-black/20 {
+  outline-color: rgb(0 0 0 / 0.2);
 }
 
 .container {
@@ -2887,6 +2910,56 @@ video {
     }
   });
 
+  // node_modules/@react-aria/visually-hidden/dist/import.mjs
+  function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style, isFocusable } = props;
+    let [isFocused, setFocused] = (0, h2)(false);
+    let { focusWithinProps } = (0, $9ab94262bd0047c7$export$420e68273165f4ec)({
+      isDisabled: !isFocusable,
+      onFocusWithinChange: (val) => setFocused(val)
+    });
+    let combinedStyles = (0, F2)(() => {
+      if (isFocused)
+        return style;
+      else if (style)
+        return __spreadValues(__spreadValues({}, $5c3e21d68f1c4674$var$styles), style);
+      else
+        return $5c3e21d68f1c4674$var$styles;
+    }, [
+      isFocused
+    ]);
+    return {
+      visuallyHiddenProps: __spreadProps(__spreadValues({}, focusWithinProps), {
+        style: combinedStyles
+      })
+    };
+  }
+  function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    let _a = props, { children, elementType: Element2 = "div", isFocusable, style } = _a, otherProps = __objRest(_a, ["children", "elementType", "isFocusable", "style"]);
+    let { visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /* @__PURE__ */ (0, Cn).createElement(Element2, (0, $3ef42575df84b30b$export$9d1611c77c2fe928)(otherProps, visuallyHiddenProps), children);
+  }
+  var $5c3e21d68f1c4674$var$styles;
+  var init_import8 = __esm({
+    "node_modules/@react-aria/visually-hidden/dist/import.mjs"() {
+      init_import3();
+      init_compat_module();
+      init_import4();
+      $5c3e21d68f1c4674$var$styles = {
+        border: 0,
+        clip: "rect(0 0 0 0)",
+        clipPath: "inset(50%)",
+        height: "1px",
+        margin: "-1px",
+        overflow: "hidden",
+        padding: 0,
+        position: "absolute",
+        width: "1px",
+        whiteSpace: "nowrap"
+      };
+    }
+  });
+
   // node_modules/@react-aria/label/dist/import.mjs
   function $d191a55c9702f145$export$8467354a121f1b9f(props) {
     let { id, label, "aria-labelledby": ariaLabelledby, "aria-label": ariaLabel, labelElementType = "label" } = props;
@@ -2911,7 +2984,7 @@ video {
       fieldProps
     };
   }
-  var init_import8 = __esm({
+  var init_import9 = __esm({
     "node_modules/@react-aria/label/dist/import.mjs"() {
       init_import3();
     }
@@ -2994,7 +3067,7 @@ video {
     };
   }
   var $9bf71ea28793e738$var$focusableElements, $9bf71ea28793e738$var$FOCUSABLE_ELEMENT_SELECTOR, $9bf71ea28793e738$var$TABBABLE_ELEMENT_SELECTOR, $9bf71ea28793e738$var$Tree, $9bf71ea28793e738$var$TreeNode, $9bf71ea28793e738$export$d06fae2ee68b101e, $e6afbd83fe6ebbd2$var$FocusableContext;
-  var init_import9 = __esm({
+  var init_import10 = __esm({
     "node_modules/@react-aria/focus/dist/import.mjs"() {
       init_compat_module();
       init_import3();
@@ -3396,14 +3469,14 @@ video {
     };
   }
   var $aa519ee6cf463259$export$7a8d2b02c9371cbf;
-  var init_import10 = __esm({
+  var init_import11 = __esm({
     "node_modules/@react-aria/slider/dist/import.mjs"() {
       init_import3();
       init_compat_module();
       init_import4();
-      init_import8();
-      init_import7();
       init_import9();
+      init_import7();
+      init_import10();
       $aa519ee6cf463259$export$7a8d2b02c9371cbf = /* @__PURE__ */ new WeakMap();
     }
   });
@@ -3477,12 +3550,12 @@ video {
     };
   }
   var $3493a52097159720$exports, $eccab2b0118aef08$exports, $bf2b4507594e3d45$exports, $01c08487af7ecd14$exports, $5e997db6ea0d10f6$exports, $fe5998f640a79fd2$exports, $18e4d1d5b500a9ee$exports, $bf90a11a7a42a0f7$exports, $dd0d25f885b5c5f3$exports, $d950967017e3485b$exports, $00a415a3f0ab315a$exports, $d80f30fe86c95741$exports, $6912afb584340a2e$exports, $7b97fcacd84ec90f$exports, $da9b443e89eebc6b$exports, $35f135b45eb4d95b$exports, $760b09448e39c6cd$exports, $fc7b7d43be9703ec$exports, $74918a1664156912$exports, $4e6cde11c2bc9840$exports, $6faa3defebc3eb72$exports, $6ac9b6b1b7e3ca12$exports, $1be8b0ee8841f1e7$exports, $f9507c2d404ed689$exports, $8f872ea59c02d67e$exports, $b03b45b62a7ccae4$exports, $f1107d94c09df9b8$exports, $b61325f242fafc7c$exports, $f44b7cf39ac8f315$exports, $aa8cd83fc8d4982b$exports, $7c4f4e5bb7c06f1e$exports, $8045cf930ef745aa$exports, $ee2044a77f24b118$exports, $4e1dbc65a687dd93$exports, $b0fef28529309aa6$exports;
-  var init_import11 = __esm({
+  var init_import12 = __esm({
     "node_modules/@react-aria/color/dist/import.mjs"() {
       init_import3();
       init_compat_module();
       init_import7();
-      init_import10();
+      init_import11();
       $3493a52097159720$exports = {};
       $eccab2b0118aef08$exports = {};
       $eccab2b0118aef08$exports = {
@@ -3904,7 +3977,7 @@ video {
     };
   }
   var $28f99e3e86e6ec45$var$DEFAULT_MIN_VALUE, $28f99e3e86e6ec45$var$DEFAULT_MAX_VALUE, $28f99e3e86e6ec45$var$DEFAULT_STEP_VALUE;
-  var init_import12 = __esm({
+  var init_import13 = __esm({
     "node_modules/@react-stately/slider/dist/import.mjs"() {
       init_import3();
       init_import();
@@ -3982,13 +4055,13 @@ video {
     });
   }
   var $f98dad178a72c00d$exports, $2d805fd52bb48883$exports, $6c28468dc1df643c$exports, $807554f8230db0ed$exports, $7097f64386f1761c$exports, $bdd847d8beb08799$exports, $a53e00b683950971$exports, $21cdd87e84f28d89$exports, $92fee9698e4d675a$exports, $7ea012e91a5ad3ee$exports, $8460c13bb2d75345$exports, $2a2d5dc14e680587$exports, $9a3f292371bb0589$exports, $4742231a685fa068$exports, $05e247fd2960981e$exports, $a67524a79ccbe190$exports, $a9eefe9d6c8cb7d5$exports, $4a6b836d4f1bfaba$exports, $c950e4b1c482abde$exports, $d10d6b60dc50b438$exports, $371a732b2494f452$exports, $6d042cae6243464b$exports, $d9ab5c2611e0bcd3$exports, $73f77c9902e29ca6$exports, $4f461eb266a95c10$exports, $dc46bea2f2597899$exports, $622bbd6719cc95af$exports, $4da03c1ecd9a9c7d$exports, $edb6b2fe456ed4e8$exports, $264cd81c52b30815$exports, $6f80afde0270dda7$exports, $23a92651c6957668$exports, $0f9b1074d04f4954$exports, $a9cedf75b94e4916$exports, $37cff576474bc8d4$exports, $799cddbef784668f$var$strings, $799cddbef784668f$var$Color, $799cddbef784668f$var$RGBColor, $799cddbef784668f$var$HSB_REGEX, $799cddbef784668f$var$HSBColor, $799cddbef784668f$var$HSL_REGEX, $799cddbef784668f$var$HSLColor, $6e14a98a7f67141d$var$DEFAULT_COLOR, $ee4262c74a467b07$var$DEFAULT_COLOR, $b335ada08155d9c0$var$MIN_COLOR, $b335ada08155d9c0$var$MAX_COLOR, $b335ada08155d9c0$var$MIN_COLOR_INT, $b335ada08155d9c0$var$MAX_COLOR_INT;
-  var init_import13 = __esm({
+  var init_import14 = __esm({
     "node_modules/@react-stately/color/dist/import.mjs"() {
       init_import();
       init_import5();
       init_import6();
       init_compat_module();
-      init_import12();
+      init_import13();
       $f98dad178a72c00d$exports = {};
       $2d805fd52bb48883$exports = {};
       $2d805fd52bb48883$exports = {
@@ -4920,80 +4993,657 @@ video {
     }
   });
 
-  // src/components/colorSlider.tsx
-  var TRACK_THICKNESS, THUMB_SIZE, ColorSlider;
-  var init_colorSlider = __esm({
-    "src/components/colorSlider.tsx"() {
-      "use strict";
-      init_import11();
-      init_import13();
-      init_import7();
-      init_import9();
-      init_preact_module();
-      init_compat_module();
-      TRACK_THICKNESS = 12;
-      THUMB_SIZE = 12;
-      ColorSlider = (props) => {
-        let { locale } = $18f2051aff69b9bf$export$43bb16f9c6d9e3f7();
-        let state = $25a25ac0d1624665$export$57bc203e1c9c6d44(__spreadProps(__spreadValues({}, props), { locale }));
-        let trackRef = _2(null);
-        let inputRef = _2(null);
-        let label = props.label || state.value.getChannelName(props.channel, locale);
-        let { trackProps, thumbProps, inputProps, labelProps, outputProps } = $40af666d6c251e36$export$106b7a4e66508f66(
-          __spreadProps(__spreadValues({}, props), {
-            label,
-            trackRef,
-            inputRef
-          }),
-          state
-        );
-        let { focusProps, isFocusVisible } = $f7dceffc5ad7768b$export$4e328f61c538687f();
-        return /* @__PURE__ */ y(
-          "div",
-          {
-            style: {
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              width: 192
-            }
-          },
-          /* @__PURE__ */ y("div", { style: { display: "flex", alignSelf: "stretch" } }, /* @__PURE__ */ y("label", __spreadValues({}, labelProps), label), /* @__PURE__ */ y(
-            "output",
-            __spreadProps(__spreadValues({}, outputProps), {
-              style: { flex: "1 0 auto", textAlign: "end" }
-            }),
-            state.value.formatChannelValue(props.channel, locale)
-          )),
-          /* @__PURE__ */ y(
-            "div",
-            __spreadProps(__spreadValues({}, trackProps), {
-              ref: trackRef,
-              style: __spreadProps(__spreadValues({}, trackProps.style), {
-                height: TRACK_THICKNESS,
-                width: "100%",
-                borderRadius: TRACK_THICKNESS / 2
-              })
-            }),
-            /* @__PURE__ */ y(
-              "div",
-              __spreadProps(__spreadValues({}, thumbProps), {
-                style: __spreadProps(__spreadValues({}, thumbProps.style), {
-                  top: TRACK_THICKNESS / 2,
-                  border: "2px solid white",
-                  // boxShadow: '0 0 0 1px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.1)',
-                  boxShadow: "0 0 0 .5px rgba(0,0,0,0.2)",
-                  width: isFocusVisible ? TRACK_THICKNESS + 4 : THUMB_SIZE,
-                  height: isFocusVisible ? TRACK_THICKNESS + 4 : THUMB_SIZE,
-                  borderRadius: "50%",
-                  boxSizing: "border-box",
-                  background: state.getDisplayColor().toString("css")
-                })
-              })
-            )
-          )
-        );
-      };
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a1d90ea8-36a1-4bff-839a-861e9281f999/tailwind.js
+  var init_tailwind2 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a1d90ea8-36a1-4bff-839a-861e9281f999/tailwind.js"() {
+      if (document.getElementById("daf6ec3404") === null) {
+        const element = document.createElement("style");
+        element.id = "daf6ec3404";
+        element.textContent = `/*
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured \`sans\` font-family by default.
+5. Use the user's configured \`sans\` font-feature-settings by default.
+6. Use the user's configured \`sans\` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from \`html\` so users can set them as a class directly on the \`html\` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured \`mono\` font family by default.
+2. Correct the odd \`em\` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent \`sub\` and \`sup\` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional \`:invalid\` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to \`inherit\` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements \`display: block\` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add \`vertical-align: middle\` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
+.visible {
+  visibility: visible;
+}
+.top-[6px] {
+  top: 6px;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.box-border {
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.w-24 {
+  width: 6rem;
+}
+.w-60 {
+  width: 15rem;
+}
+.w-full {
+  width: 100%;
+}
+.flex-up {
+  flex: 1 0 auto;
+}
+.grow {
+  flex-grow: 1;
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.border {
+  border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-end {
+  text-align: end;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.outline-[.5px] {
+  outline-width: .5px;
+}
+.outline-black/20 {
+  outline-color: rgb(0 0 0 / 0.2);
+}
+
+.container {
+	height: 164px;
+	overflow: auto;
+}
+
+.editor {
+	min-height: 100%;
+	font-size: var(--font-size-12);
+	font-family: var(--font-family-code);
+}
+
+._textboxColor_190p3_1 {
+	max-width: 97px;
+}
+
+._textboxColor_190p3_1 ._divider_190p3_109 {
+	display: none;
+}
+
+._textboxColor_190p3_1 ._opacityInput_190p3_84 {
+	display: none;
+}
+`;
+        document.head.append(element);
+      }
     }
   });
 
@@ -5020,10 +5670,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/27e7c12b-8eae-4ad4-8969-73aee5fc2832/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/13e843ec-343f-4843-aa8a-e5bd718dab09/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/27e7c12b-8eae-4ad4-8969-73aee5fc2832/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/13e843ec-343f-4843-aa8a-e5bd718dab09/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -5821,10 +6471,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4eac9024-b9ad-4d85-b546-9230af048cb3/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/62a45072-f1b8-47a6-8041-d24c33eaf1f1/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4eac9024-b9ad-4d85-b546-9230af048cb3/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/62a45072-f1b8-47a6-8041-d24c33eaf1f1/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -6171,10 +6821,158 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3addadba-51ae-4ee8-981f-2c4ae5be413d/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ab32e6-df97-4552-82e7-d8fed9b16121/textbox.module.js
+  var textbox_module_default;
+  var init_textbox_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ab32e6-df97-4552-82e7-d8fed9b16121/textbox.module.js"() {
+      if (document.getElementById("d6f1162d61") === null) {
+        const element = document.createElement("style");
+        element.id = "d6f1162d61";
+        element.textContent = `._textbox_sir3b_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+._textbox_sir3b_1:focus-within {
+  z-index: var(--z-index-2); /* Stack \`.textbox\` over its sibling elements */
+}
+
+._input_sir3b_9 {
+  display: block;
+  width: 100%;
+  height: 28px;
+  padding: 0 var(--space-extra-small);
+  background-color: transparent;
+  color: var(--figma-color-text);
+}
+._disabled_sir3b_17 ._input_sir3b_9 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+._hasIcon_sir3b_21 ._input_sir3b_9 {
+  padding-left: 32px;
+}
+
+._input_sir3b_9::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+
+._icon_sir3b_29 {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: var(--figma-color-icon-secondary);
+  pointer-events: none; /* so that clicking the icon focuses the textbox */
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._icon_sir3b_29 {
+  color: var(--figma-color-icon-brand);
+}
+._disabled_sir3b_17 ._icon_sir3b_29 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._icon_sir3b_29 svg {
+  fill: currentColor;
+}
+
+._border_sir3b_49 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_sir3b_59 ._border_sir3b_49,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._border_sir3b_49 {
+  border-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._border_sir3b_49 {
+  top: -1px;
+  bottom: -1px;
+  border-width: 2px;
+  border-color: var(--figma-color-border-brand-strong);
+}
+
+._underline_sir3b_70 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._underline_sir3b_70,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._underline_sir3b_70 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gvdGV4dGJveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUNBO0VBQ0UseUJBQXlCLEVBQUUsK0NBQStDO0FBQzVFOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUNBQW1DO0VBQ25DLDZCQUE2QjtFQUM3Qiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7QUFDQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxvQkFBb0IsRUFBRSxrREFBa0Q7RUFDeEUsa0JBQWtCO0VBQ2xCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0Usb0NBQW9DO0FBQ3RDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94L3RleHRib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xufVxuLnRleHRib3g6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0yKTsgLyogU3RhY2sgYC50ZXh0Ym94YCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBwYWRkaW5nOiAwIHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uaGFzSWNvbiAuaW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG5cbi5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC10ZXJ0aWFyeSk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lOyAvKiBzbyB0aGF0IGNsaWNraW5nIHRoZSBpY29uIGZvY3VzZXMgdGhlIHRleHRib3ggKi9cbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tYnJhbmQpO1xufVxuLmRpc2FibGVkIC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uaWNvbiBzdmcge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3g6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveDpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_module_default = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3c3b44a-476c-43bb-99a7-40353a6fdf6e/textbox-numeric.module.js
+  var textbox_numeric_module_default;
+  var init_textbox_numeric_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3c3b44a-476c-43bb-99a7-40353a6fdf6e/textbox-numeric.module.js"() {
+      if (document.getElementById("07c5d63dfb") === null) {
+        const element = document.createElement("style");
+        element.id = "07c5d63dfb";
+        element.textContent = `._input_1byj7_1::-webkit-inner-spin-button,
+._input_1byj7_1::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbnVtZXJpYy90ZXh0Ym94LW51bWVyaWMubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSx3QkFBd0I7QUFDMUIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHRib3gvdGV4dGJveC1udW1lcmljL3RleHRib3gtbnVtZXJpYy5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uLFxuLmlucHV0Ojotd2Via2l0LW91dGVyLXNwaW4tYnV0dG9uIHtcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      textbox_numeric_module_default = { "input": "_input_1byj7_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js
+  function TextboxNumeric(_a) {
+    var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
+    if (typeof icon === "string" && icon.length !== 1) {
+      throw new Error(`String \`icon\` must be a single character: ${icon}`);
+    }
+    return y(
+      "div",
+      { class: createClassName([
+        textbox_module_default.textbox,
+        typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default.hasBorder : null,
+        typeof icon === "undefined" ? null : textbox_module_default.hasIcon,
+        rest.disabled === true ? textbox_module_default.disabled : null
+      ]) },
+      y(RawTextboxNumeric, __spreadProps(__spreadValues({}, rest), { class: createClassName([
+        textbox_module_default.input,
+        textbox_numeric_module_default.input
+      ]) })),
+      typeof icon === "undefined" ? null : y("div", { class: textbox_module_default.icon }, icon),
+      y("div", { class: textbox_module_default.border }),
+      variant === "underline" ? y("div", { class: textbox_module_default.underline }) : null
+    );
+  }
+  var init_textbox_numeric = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js"() {
+      init_preact_module();
+      init_create_class_name();
+      init_textbox_module();
+      init_raw_textbox_numeric();
+      init_textbox_numeric_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f046489e-e483-4aea-93d8-f5b72d101c03/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3addadba-51ae-4ee8-981f-2c4ae5be413d/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f046489e-e483-4aea-93d8-f5b72d101c03/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -6201,10 +6999,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9be09ce0-0b27-485a-869c-14dde6069022/columns.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4268daa-30ad-4c85-9ebf-21048799eb93/columns.module.js
   var columns_module_default;
   var init_columns_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9be09ce0-0b27-485a-869c-14dde6069022/columns.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4268daa-30ad-4c85-9ebf-21048799eb93/columns.module.js"() {
       if (document.getElementById("15be75cea7") === null) {
         const element = document.createElement("style");
         element.id = "15be75cea7";
@@ -6271,10 +7069,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e894f253-9879-4695-986b-4151f7f2ff84/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5bb3e54c-a782-41cf-a9c5-e37f951ac0bc/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e894f253-9879-4695-986b-4151f7f2ff84/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5bb3e54c-a782-41cf-a9c5-e37f951ac0bc/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -6313,10 +7111,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6028a8e6-466e-4cac-8b33-95ca3479a9df/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3957189b-51d5-487b-83dc-fb3e541e0273/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6028a8e6-466e-4cac-8b33-95ca3479a9df/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3957189b-51d5-487b-83dc-fb3e541e0273/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -6355,9 +7153,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4f25973c-7a31-401a-857c-c189fc155456/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3268555f-3697-4c44-8ab4-ddc5bf64fddf/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4f25973c-7a31-401a-857c-c189fc155456/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3268555f-3697-4c44-8ab4-ddc5bf64fddf/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -6490,11 +7288,82 @@ svg {
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
       init_text();
       init_textbox_color();
+      init_textbox_numeric();
       init_muted();
       init_columns();
       init_container();
       init_vertical_space();
       init_render();
+    }
+  });
+
+  // src/components/colorSlider.tsx
+  var TRACK_THICKNESS, THUMB_SIZE, ColorSlider;
+  var init_colorSlider = __esm({
+    "src/components/colorSlider.tsx"() {
+      "use strict";
+      init_import12();
+      init_import14();
+      init_import8();
+      init_import7();
+      init_import10();
+      init_preact_module();
+      init_compat_module();
+      init_tailwind2();
+      init_lib2();
+      TRACK_THICKNESS = 12;
+      THUMB_SIZE = 12;
+      ColorSlider = (props) => {
+        let { locale } = $18f2051aff69b9bf$export$43bb16f9c6d9e3f7();
+        let state = $25a25ac0d1624665$export$57bc203e1c9c6d44(__spreadProps(__spreadValues({}, props), { locale }));
+        let trackRef = _2(null);
+        let inputRef = _2(null);
+        let label = props.label || state.value.getChannelName(props.channel, locale);
+        let { trackProps, thumbProps, inputProps, labelProps, outputProps } = $40af666d6c251e36$export$106b7a4e66508f66(
+          __spreadProps(__spreadValues({}, props), {
+            label,
+            trackRef,
+            inputRef
+          }),
+          state
+        );
+        let { focusProps, isFocusVisible } = $f7dceffc5ad7768b$export$4e328f61c538687f();
+        const [value2, setValue] = h2("");
+        function handleInput(event) {
+          const newValue = event.currentTarget.value;
+          console.log(newValue);
+          setValue(newValue);
+        }
+        return /* @__PURE__ */ y("div", { className: "flex flex-row gap-2 items-center w-full" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+          TextboxNumeric,
+          {
+            icon: props.colorChannel === "chroma" ? "C" : "H",
+            onInput: handleInput,
+            value: value2
+          }
+        )), /* @__PURE__ */ y(
+          "div",
+          __spreadProps(__spreadValues({}, trackProps), {
+            ref: trackRef,
+            style: __spreadValues({}, trackProps.style),
+            className: "h-3 w-full rounded-full"
+          }),
+          /* @__PURE__ */ y(
+            "div",
+            __spreadProps(__spreadValues({}, thumbProps), {
+              style: __spreadProps(__spreadValues({}, thumbProps.style), {
+                top: TRACK_THICKNESS / 2,
+                boxShadow: "0 0 0 .6px rgba(0,0,0,0.2)",
+                width: isFocusVisible ? TRACK_THICKNESS + 4 : THUMB_SIZE,
+                height: isFocusVisible ? TRACK_THICKNESS + 4 : THUMB_SIZE,
+                background: state.getDisplayColor().toString("css")
+              }),
+              className: "rounded-full border-2 border-white box-border"
+            }),
+            /* @__PURE__ */ y($5c3e21d68f1c4674$export$439d29a4e110a164, null, /* @__PURE__ */ y("input", __spreadValues(__spreadValues({ ref: inputRef }, inputProps), focusProps)))
+          )
+        ));
+      };
     }
   });
 
@@ -6506,19 +7375,18 @@ svg {
       init_preact_module();
       init_hooks_module();
       init_lib2();
-      ColorPicker = ({ color = "" }) => {
+      ColorPicker = ({ color = "", onColorInput }) => {
         const [hexColor, setHexColor] = h2(color || "");
         const [opacity, setOpacity] = h2("100%");
-        function handleHexColorInput(event) {
+        const handleHexColorInput = (event) => {
           const newHexColor = event.currentTarget.value;
-          console.log(newHexColor);
           setHexColor(newHexColor);
-        }
-        function handleOpacityInput(event) {
+          onColorInput(newHexColor);
+        };
+        const handleOpacityInput = (event) => {
           const newOpacity = event.currentTarget.value;
-          console.log(newOpacity);
           setOpacity(newOpacity);
-        }
+        };
         return /* @__PURE__ */ y(
           TextboxColor,
           {
@@ -45775,7 +46643,7 @@ svg {
 
   // node_modules/mathjs/lib/esm/expression/embeddedDocs/core/import.js
   var importDocs;
-  var init_import14 = __esm({
+  var init_import15 = __esm({
     "node_modules/mathjs/lib/esm/expression/embeddedDocs/core/import.js"() {
       importDocs = {
         name: "import",
@@ -48987,7 +49855,7 @@ svg {
       init_string3();
       init_unit2();
       init_config3();
-      init_import14();
+      init_import15();
       init_typed2();
       init_derivative();
       init_leafCount();
@@ -61655,7 +62523,7 @@ svg {
       init_tailwind();
       init_colorSlider();
       init_colorPicker();
-      init_import13();
+      init_import14();
       init_utility();
       init_theme_color();
       init_defaults();
@@ -61677,10 +62545,9 @@ svg {
           $799cddbef784668f$export$6e865ea70d7724f(hexToHSB(themeColor.getSourceColor().getHex()))
         );
         let [hChannel, sChannel, bChannel] = color.getColorChannels();
-        function handleSourceHexInput(event) {
-          const newHexColor = event.currentTarget.value;
+        const handleHexInput = (hexColor) => {
           const newThemeColor2 = new theme_color_default(
-            newHexColor,
+            hexColor,
             themeColor.state.name,
             themeColor.state.tones,
             themeColor.state.hueCalc,
@@ -61688,26 +62555,38 @@ svg {
             themeColor.getAliases()
           );
           setThemeColor(newThemeColor2);
-        }
-        console.log(defaultColor);
-        console.log(themeColor.getSourceColor().getHex(true));
-        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "py-4 overflow-y-auto" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", { className: "w-60" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Color name")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y("div", { className: "w-full flex flex-row content-center align-middle" }, /* @__PURE__ */ y("div", { className: "w-24" }, /* @__PURE__ */ y(
+        };
+        console.log(color);
+        console.log(`${themeColor.sourceColor.getHue("rounded")}`);
+        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "py-4 overflow-y-auto" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", { className: "w-60" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Color name")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y("div", { className: "w-full flex" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
           ColorPicker,
           {
             color: themeColor.getSourceColor().getHex(true),
-            onColorInput: handleSourceHexInput
+            onColorInput: handleHexInput
           }
-        )), /* @__PURE__ */ y("div", { className: "w-full" }, /* @__PURE__ */ y(Text, { align: "center" }, /* @__PURE__ */ y(Muted, null, `H: ${themeColor.sourceColor.getHue(
+        ))), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Source Color")), /* @__PURE__ */ y(Text, null, ` H: ${themeColor.sourceColor.getHue(
           "rounded"
         )} C: ${themeColor.sourceColor.getChroma(
           "rounded"
-        )} T: ${themeColor.sourceColor.getTone("rounded")}`)))), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
+        )} T: ${themeColor.sourceColor.getTone("rounded")}`)), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Theme Color")), /* @__PURE__ */ y(Text, null, ` H: ${themeColor.themeColor.getHue(
+          "rounded"
+        )} C: ${themeColor.themeColor.getChroma(
+          "rounded"
+        )} T: ${themeColor.themeColor.getTone("rounded")}`)), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
           ColorSlider,
           {
             channel: hChannel,
-            "aria-label": "sbh-label-id-2",
             value: color,
             onChange: setColor
+          }
+        ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
+          ColorSlider,
+          {
+            channel: sChannel,
+            value: color,
+            onChange: setColor,
+            input: themeColor.sourceColor.getHue("rounded"),
+            colorChannel: "chroma"
           }
         )), /* @__PURE__ */ y("div", { className: "w-60" }))));
       };

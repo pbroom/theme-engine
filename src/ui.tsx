@@ -45,11 +45,10 @@ export const Plugin = () => {
 	);
 	let [hChannel, sChannel, bChannel] = color.getColorChannels();
 
-	function handleSourceHexInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
-		const newHexColor = event.currentTarget.value;
+	const handleHexInput = (hexColor: string) => {
 		// const color = parseColor(hexToHSB(newHexColor));
 		const newThemeColor = new ThemeColor(
-			newHexColor,
+			hexColor,
 			themeColor.state.name,
 			themeColor.state.tones,
 			themeColor.state.hueCalc,
@@ -58,11 +57,11 @@ export const Plugin = () => {
 		);
 		setThemeColor(newThemeColor);
 		// setColor(color);
-	}
+	};
 
 	// Test!
-	console.log(defaultColor);
-	console.log(themeColor.getSourceColor().getHex(true));
+	console.log(color);
+	console.log(`${themeColor.sourceColor.getHue('rounded')}`);
 
 	// Rendering the UI
 	return (
@@ -74,36 +73,56 @@ export const Plugin = () => {
 							<Muted>Color name</Muted>
 						</Text>
 						<VerticalSpace space='extraSmall' />
-						<div className='w-full flex flex-row content-center align-middle'>
-							<div className='w-24'>
+						<div className='w-full flex'>
+							<div>
 								<ColorPicker
 									color={themeColor.getSourceColor().getHex(true)}
-									onColorInput={handleSourceHexInput}
+									onColorInput={handleHexInput}
 								/>
 							</div>
-							<div className='w-full'>
-								<Text align='center'>
-									<Muted>{`H: ${themeColor.sourceColor.getHue(
-										'rounded'
-									)} C: ${themeColor.sourceColor.getChroma(
-										'rounded'
-									)} T: ${themeColor.sourceColor.getTone('rounded')}`}</Muted>
-								</Text>
-							</div>
 						</div>
-						<VerticalSpace space='extraSmall' />
-						{/* <ColorArea
-							aria-labelledby='sbh-label-id-1'
-							value={color}
-							onChange={setColor}
-							xChannel={sChannel}
-							yChannel={bChannel}
-						/> */}
+						<VerticalSpace space='small' />
+						<div className='flex flex-row justify-between'>
+							<Text>
+								<Muted>Source Color</Muted>
+							</Text>
+							<Text>
+								{` H: ${themeColor.sourceColor.getHue(
+									'rounded'
+								)} C: ${themeColor.sourceColor.getChroma(
+									'rounded'
+								)} T: ${themeColor.sourceColor.getTone('rounded')}`}
+							</Text>
+						</div>
+						<VerticalSpace space='small' />
+						<div className='flex flex-row justify-between'>
+							<Text>
+								<Muted>Theme Color</Muted>
+							</Text>
+							<Text>
+								{` H: ${themeColor.themeColor.getHue(
+									'rounded'
+								)} C: ${themeColor.themeColor.getChroma(
+									'rounded'
+								)} T: ${themeColor.themeColor.getTone('rounded')}`}
+							</Text>
+						</div>
+						<VerticalSpace space='small' />
 						<ColorSlider
 							channel={hChannel}
-							aria-label='sbh-label-id-2'
+							// aria-label='sbh-label-id-2'
+							value={color}
+							// value={`${themeColor.sourceColor.getHue('rounded')}`}
+							onChange={setColor}
+						/>
+						<VerticalSpace space='small' />
+						<ColorSlider
+							channel={sChannel}
 							value={color}
 							onChange={setColor}
+							input={themeColor.sourceColor.getHue('rounded')}
+							colorChannel='chroma'
+							// onNewValue={}
 						/>
 					</div>
 					<div className='w-60'></div>
