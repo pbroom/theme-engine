@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { getStopsFromString, convertNumberToStringArray } from './utility';
 import Alias from './alias';
 import { maxChromaAtTonePerHue } from './ref';
-import { evaluate } from 'mathjs';
+import { e, evaluate } from 'mathjs';
 
 let themeColorCounter = 0;
 
@@ -166,22 +166,43 @@ class ThemeColor {
 	}
 
 	getHue(rounded?: string) {
-		let themeHue =
-			rounded === 'rounded'
-				? this.state.themeColor.getHue('rounded')
-				: this.state.themeColor.getHue();
-		if (this.state.hueCalc !== '' && this.state.sourceColor) {
-			let sourceHue = this.state.sourceColor.getHue();
-			let hueCalc = this.state.hueCalc.replace(/h/g, sourceHue.toString());
-			themeHue = evaluate(hueCalc) as number;
-			if (themeHue < 0) {
-				themeHue = 360 + (themeHue % 360);
-			} else if (themeHue > 360) {
-				themeHue = themeHue % 360;
+		try {
+			// Get source hue
+			const sourceHue = this.state.sourceColor.getHue('rounded');
+			// Get and parse hueCalc
+			const hueCalc = this.state.hueCalc.replace(/h/g, sourceHue.toString());
+			// Evaluate hueCalc
+			const evaluatedHue = evaluate(hueCalc) as number;
+
+			// Hue equals absolute value of evaluatedHue modulo 360
+			const hue = Math.abs(evaluatedHue % 360);
+
+			return rounded === 'rounded' ? Math.round(hue) : hue;
+		} catch (error) {
+			console.error('Invalid expression:', error);
+
+			// Try to evaluate the expression up to the offending character
+			let lastValidHue = NaN;
+			for (let i = this.state.hueCalc.length - 1; i >= 0; i--) {
+				const truncatedExpression = this.state.hueCalc.substring(0, i);
+				try {
+					lastValidHue = evaluate(
+						truncatedExpression.replace(
+							/h/g,
+							this.state.sourceColor.getHue('rounded').toString()
+						)
+					) as number;
+					break; // Stop the loop if we successfully evaluate the expression
+				} catch (e) {
+					// Continue truncating
+				}
 			}
-			themeHue = Math.round(themeHue);
+
+			// Return the last successfully evaluated value, or the default hue if none was successful
+			return !isNaN(lastValidHue)
+				? Math.abs(lastValidHue % 360)
+				: this.state.sourceColor.getHue('rounded');
 		}
-		return themeHue;
 	}
 
 	getChroma(rounded?: string) {
@@ -216,11 +237,53 @@ class ThemeColor {
 		return this.state.hueCalc;
 	}
 
-	set hueCalc(hueCalc: string) {
-		this.state.hueCalc = hueCalc;
+	set hueCalc(hueCalcInput: string) {
+		this.state.hueCalc = hueCalcInput;
 	}
-	setHueCalc(hueCalc: string) {
-		this.state.hueCalc = hueCalc;
+	setHueCalc(hueCalcInput: string) {
+		this.state.hueCalc = hueCalcInput; // Set the hueCalc state
+
+		// Check if hueCalcInput is empty or just whitespace
+		if (!hueCalcInput.trim()) {
+			this.themeColor.hue = this.state.sourceColor.getHue();
+			return;
+		}
+
+		try {
+			// Get source hue
+			const sourceHue = this.state.sourceColor.getHue();
+			// Replace 'h' regardless of its case
+			const parsedHueCalc = hueCalcInput.replace(/h/gi, sourceHue.toString());
+			// Evaluate parsedHueCalc
+			const evaluatedHue = evaluate(parsedHueCalc) as number;
+
+			// Hue equals absolute value of evaluatedHue modulo 360
+			this.themeColor.hue = Math.abs(evaluatedHue % 360);
+		} catch (error) {
+			console.error('Invalid expression:', error);
+
+			// Try to evaluate the expression up to the offending character
+			let lastValidHue = NaN;
+			for (let i = hueCalcInput.length - 1; i >= 0; i--) {
+				const truncatedExpression = hueCalcInput.substring(0, i);
+				try {
+					lastValidHue = evaluate(
+						truncatedExpression.replace(
+							/h/gi,
+							this.state.sourceColor.getHue().toString()
+						)
+					) as number;
+					break; // Stop the loop if we successfully evaluate the expression
+				} catch (e) {
+					// Continue truncating
+				}
+			}
+
+			// Set hue to the last successfully evaluated value, or the default hue if none was successful
+			this.themeColor.hue = !isNaN(lastValidHue)
+				? Math.abs(lastValidHue % 360)
+				: this.state.sourceColor.getHue();
+		}
 	}
 
 	setHue(hue: number) {

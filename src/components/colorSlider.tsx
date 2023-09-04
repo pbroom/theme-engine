@@ -9,7 +9,7 @@ import { useFocusRing } from '@react-aria/focus';
 import { h } from 'preact';
 import { useRef, useState } from 'preact/compat';
 import '!../dist/tailwind.css';
-import { TextboxNumeric } from '@create-figma-plugin/ui';
+import { Textbox } from '@create-figma-plugin/ui';
 
 const TRACK_THICKNESS = 12;
 const THUMB_SIZE = 12;
@@ -17,7 +17,7 @@ const THUMB_SIZE = 12;
 export interface ColorSliderProps extends AriaColorSliderOptions {
 	input: number;
 	colorChannel: 'hue' | 'chroma';
-	onNewValue: (newValue: number) => void;
+	onNewValue: (newValue: string) => void;
 }
 
 export const ColorSlider = (props: ColorSliderProps) => {
@@ -42,34 +42,22 @@ export const ColorSlider = (props: ColorSliderProps) => {
 
 	let { focusProps, isFocusVisible } = useFocusRing();
 
-	const [value, setValue] = useState<string>('');
+	const [value, setValue] = useState<string>(`${props.input}`);
 	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newValue = event.currentTarget.value;
 		console.log(newValue);
 		setValue(newValue);
+		props.onNewValue(newValue);
 	}
 
 	return (
 		<div className='flex flex-row gap-2 items-center w-full'>
-			{/* Flex container for the label and output element. */}
-			{/* <div className='flex self-stretch'>
-				<label {...(labelProps as h.JSX.HTMLAttributes<HTMLLabelElement>)}>
-					{label}
-				</label>
-				<output
-					{...(outputProps as h.JSX.HTMLAttributes<HTMLOutputElement>)}
-					className='flex-up text-end'
-				>
-					{state.value.formatChannelValue(props.channel, locale)}
-				</output>
-			</div> */}
-			{/* Track element holds the visible track line and the thumb. */}
 			<div>
-				<TextboxNumeric
+				<Textbox
 					icon={props.colorChannel === 'chroma' ? 'C' : 'H'}
 					onInput={handleInput}
 					value={value}
-				></TextboxNumeric>
+				></Textbox>
 			</div>
 			<div
 				{...(trackProps as h.JSX.HTMLAttributes<HTMLDivElement>)}

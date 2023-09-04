@@ -27,9 +27,9 @@ class Color {
 	private argb: number;
 	private rgba: string | Rgba;
 	private hex: string;
-	private hue: number;
-	private chroma: number;
-	private tone: number;
+	public hue: number;
+	public chroma: number;
+	public tone: number;
 	private figmaSolidColor: SolidColor;
 	private hctColor: Hct;
 

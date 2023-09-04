@@ -46,7 +46,6 @@ export const Plugin = () => {
 	let [hChannel, sChannel, bChannel] = color.getColorChannels();
 
 	const handleHexInput = (hexColor: string) => {
-		// const color = parseColor(hexToHSB(newHexColor));
 		const newThemeColor = new ThemeColor(
 			hexColor,
 			themeColor.state.name,
@@ -56,7 +55,18 @@ export const Plugin = () => {
 			themeColor.getAliases()
 		);
 		setThemeColor(newThemeColor);
-		// setColor(color);
+	};
+
+	const handleHueInput = (hueInput: string) => {
+		const newThemeColor = new ThemeColor(
+			themeColor.getSourceColor().getHex(),
+			themeColor.state.name,
+			themeColor.state.tones,
+			hueInput,
+			themeColor.state.chromaCalc,
+			themeColor.getAliases()
+		);
+		setThemeColor(newThemeColor);
 	};
 
 	// Test!
@@ -100,9 +110,7 @@ export const Plugin = () => {
 								<Muted>Theme Color</Muted>
 							</Text>
 							<Text>
-								{` H: ${themeColor.themeColor.getHue(
-									'rounded'
-								)} C: ${themeColor.themeColor.getChroma(
+								{` H: ${themeColor.getHue('rounded')} C: ${themeColor.getChroma(
 									'rounded'
 								)} T: ${themeColor.themeColor.getTone('rounded')}`}
 							</Text>
@@ -114,13 +122,16 @@ export const Plugin = () => {
 							value={color}
 							// value={`${themeColor.sourceColor.getHue('rounded')}`}
 							onChange={setColor}
+							input={themeColor.getHue('rounded')}
+							colorChannel='hue'
+							onNewValue={handleHueInput}
 						/>
 						<VerticalSpace space='small' />
 						<ColorSlider
 							channel={sChannel}
 							value={color}
 							onChange={setColor}
-							input={themeColor.sourceColor.getHue('rounded')}
+							input={themeColor.getChroma('rounded')}
 							colorChannel='chroma'
 							// onNewValue={}
 						/>
