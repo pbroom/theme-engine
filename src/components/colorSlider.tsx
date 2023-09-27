@@ -6,16 +6,18 @@ import {
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useLocale } from '@react-aria/i18n';
 import { useFocusRing } from '@react-aria/focus';
-import { h } from 'preact';
+import { h, VNode } from 'preact';
 import { useRef, useState } from 'preact/compat';
 import '!../dist/tailwind.css';
 import { Textbox } from '@create-figma-plugin/ui';
+import type { FocusableElement } from '@react-types/shared';
 
 const TRACK_THICKNESS = 12;
 const THUMB_SIZE = 12;
 
 export interface ColorSliderProps extends AriaColorSliderOptions {
 	input: number;
+	placeholder?: string;
 	colorChannel: 'hue' | 'chroma';
 	onNewValue: (newValue: string) => void;
 }
@@ -39,28 +41,41 @@ export const ColorSlider = (props: ColorSliderProps) => {
 			},
 			state
 		);
-
 	let { focusProps, isFocusVisible } = useFocusRing();
+
+	state.setThumbValue(props.input, props.input);
 
 	const [value, setValue] = useState<string>(`${props.input}`);
 	function handleInput(event: h.JSX.TargetedEvent<HTMLInputElement>) {
 		const newValue = event.currentTarget.value;
-		console.log(newValue);
+		console.log(`Textbox value: ${newValue}`);
 		setValue(newValue);
+		// state.setThumbValue(props.input, Number(newValue));
+		// state.setThumbValue(0, Number(newValue));
 		props.onNewValue(newValue);
 	}
 
 	return (
 		<div className='flex flex-row gap-2 items-center w-full'>
-			<div>
-				<Textbox
-					icon={props.colorChannel === 'chroma' ? 'C' : 'H'}
-					onInput={handleInput}
-					value={value}
-				></Textbox>
+			<Textbox
+				icon={props.colorChannel === 'chroma' ? 'C' : 'H'}
+				onInput={handleInput}
+				value={value}
+				placeholder={`${props.placeholder}` || ''}
+			></Textbox>
+			<div style={{ display: 'flex', alignSelf: 'stretch' }}>
+				<label {...(labelProps as h.JSX.DOMAttributes<FocusableElement>)}>
+					{label}
+				</label>
+				<output
+					{...(outputProps as h.JSX.DOMAttributes<HTMLOutputElement>)}
+					style={{ flex: '1 0 auto', textAlign: 'end' }}
+				>
+					{state.value.formatChannelValue(props.channel, locale)}
+				</output>
 			</div>
 			<div
-				{...(trackProps as h.JSX.HTMLAttributes<HTMLDivElement>)}
+				{...(trackProps as h.JSX.DOMAttributes<HTMLDivElement>)}
 				ref={trackRef}
 				style={{
 					...trackProps.style,
@@ -69,7 +84,7 @@ export const ColorSlider = (props: ColorSliderProps) => {
 				className='h-3 w-full rounded-full'
 			>
 				<div
-					{...(thumbProps as h.JSX.HTMLAttributes<HTMLDivElement>)}
+					{...(thumbProps as h.JSX.DOMAttributes<HTMLDivElement>)}
 					style={{
 						...thumbProps.style,
 						top: TRACK_THICKNESS / 2,

@@ -19,7 +19,7 @@ export interface ThemeColorState {
 }
 
 class ThemeColor {
-	public id: number = themeColorCounter++;
+	public id: string = uuidv4();
 	public state: ThemeColorState;
 	constructor(
 		color: string,
@@ -27,8 +27,10 @@ class ThemeColor {
 		tones?: number[],
 		hueCalc?: string,
 		chromaCalc?: string,
-		aliases?: Alias[]
+		aliases?: Alias[],
+		id?: string
 	) {
+		this.id = id || uuidv4();
 		this.state = {
 			sourceColor: new Color(color),
 			themeColor: new Color(color),
@@ -42,6 +44,9 @@ class ThemeColor {
 
 	getId() {
 		return this.id;
+	}
+	setId(id: string) {
+		this.id = id;
 	}
 
 	componentDidMount() {}
@@ -255,10 +260,10 @@ class ThemeColor {
 			// Replace 'h' regardless of its case
 			const parsedHueCalc = hueCalcInput.replace(/h/gi, sourceHue.toString());
 			// Evaluate parsedHueCalc
-			const evaluatedHue = evaluate(parsedHueCalc) as number;
+			const evaluatedHue = Math.abs((evaluate(parsedHueCalc) as number) % 360);
 
 			// Hue equals absolute value of evaluatedHue modulo 360
-			this.themeColor.hue = Math.abs(evaluatedHue % 360);
+			this.themeColor.setHue(evaluatedHue);
 		} catch (error) {
 			console.error('Invalid expression:', error);
 
@@ -278,11 +283,11 @@ class ThemeColor {
 					// Continue truncating
 				}
 			}
-
 			// Set hue to the last successfully evaluated value, or the default hue if none was successful
-			this.themeColor.hue = !isNaN(lastValidHue)
+			const hue = !isNaN(lastValidHue)
 				? Math.abs(lastValidHue % 360)
 				: this.state.sourceColor.getHue();
+			this.themeColor.setHue(hue);
 		}
 	}
 

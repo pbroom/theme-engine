@@ -40,10 +40,10 @@ export const Plugin = () => {
 	const [themeColor, setThemeColor] = useState<ThemeColor>(newThemeColor);
 	console.log(themeColor);
 
-	let [color, setColor] = useState<Color>(
+	const [color, setColor] = useState<Color>(
 		parseColor(hexToHSB(themeColor.getSourceColor().getHex()))
 	);
-	let [hChannel, sChannel, bChannel] = color.getColorChannels();
+	const [hChannel, sChannel, bChannel] = color.getColorChannels();
 
 	const handleHexInput = (hexColor: string) => {
 		const newThemeColor = new ThemeColor(
@@ -52,7 +52,8 @@ export const Plugin = () => {
 			themeColor.state.tones,
 			themeColor.state.hueCalc,
 			themeColor.state.chromaCalc,
-			themeColor.getAliases()
+			themeColor.getAliases(),
+			themeColor.id
 		);
 		setThemeColor(newThemeColor);
 	};
@@ -62,15 +63,18 @@ export const Plugin = () => {
 			themeColor.getSourceColor().getHex(),
 			themeColor.state.name,
 			themeColor.state.tones,
-			hueInput,
+			themeColor.state.hueCalc,
 			themeColor.state.chromaCalc,
-			themeColor.getAliases()
+			themeColor.getAliases(),
+			themeColor.id
 		);
+		newThemeColor.setHueCalc(hueInput);
 		setThemeColor(newThemeColor);
+		console.log(`themeColor.hue: ${themeColor.themeColor.getHue('rounded')}`);
 	};
 
 	// Test!
-	console.log(color);
+	console.log(color.getChannelValue('hue'));
 	console.log(`${themeColor.sourceColor.getHue('rounded')}`);
 
 	// Rendering the UI
@@ -110,21 +114,30 @@ export const Plugin = () => {
 								<Muted>Theme Color</Muted>
 							</Text>
 							<Text>
-								{` H: ${themeColor.getHue('rounded')} C: ${themeColor.getChroma(
+								{` H: ${themeColor.state.themeColor.getHue(
+									'rounded'
+								)} C: ${themeColor.state.themeColor.getChroma(
 									'rounded'
 								)} T: ${themeColor.themeColor.getTone('rounded')}`}
 							</Text>
 						</div>
 						<VerticalSpace space='small' />
+						{/* 
+						When the sourceColor changes, update the slider value, thumb position, and themeColor
+						When the slider value changes, update the thumb position and themeColor
+						 */}
 						<ColorSlider
 							channel={hChannel}
 							// aria-label='sbh-label-id-2'
 							value={color}
 							// value={`${themeColor.sourceColor.getHue('rounded')}`}
 							onChange={setColor}
-							input={themeColor.getHue('rounded')}
+							input={themeColor.themeColor.getHue('rounded')}
+							placeholder={`${themeColor.sourceColor.getHue('rounded')}`}
 							colorChannel='hue'
 							onNewValue={handleHueInput}
+							trackRef={null as any}
+							inputRef={null as any}
 						/>
 						<VerticalSpace space='small' />
 						<ColorSlider
@@ -134,9 +147,24 @@ export const Plugin = () => {
 							input={themeColor.getChroma('rounded')}
 							colorChannel='chroma'
 							// onNewValue={}
+							trackRef={null as any}
+							inputRef={null as any}
 						/>
 					</div>
-					<div className='w-60'></div>
+					<div className='w-60 pl-3'>
+						<h1>ToDo:</h1>
+						<br />
+						<p className='font-bold pb-1'>Hue input</p>
+						<p>✅ Textbox updates themeColor</p>
+						<p>✅ Textbox updates hueCalc</p>
+						<p>❌ Textbox updates Slider</p>
+						<p>❌ Updates to sourceColor update Textbox</p>
+						<p>❌ Updates to sourceColor update Slider</p>
+						<p>❌ Updates to themeColor update Textbox</p>
+						<p>❌ Updates to themeColor update Slider</p>
+						<p>❌ Slider updates themeColor</p>
+						<p>❌ Slider updates Textbox</p>
+					</div>
 				</Columns>
 			</Container>
 		</div>

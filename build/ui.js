@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ab29b80c-67c1-4060-a261-fafddb42d1dc/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb378e53-8fb0-49d0-9681-700d4bd6ce0a/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ab29b80c-67c1-4060-a261-fafddb42d1dc/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb378e53-8fb0-49d0-9681-700d4bd6ce0a/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -546,45 +546,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}
-.visible {
-  visibility: visible;
-}
-.top-[6px] {
-  top: 6px;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -612,9 +573,6 @@ video {
 .w-full {
   width: 100%;
 }
-.flex-up {
-  flex: 1 0 auto;
-}
 .grow {
   flex-grow: 1;
 }
@@ -623,9 +581,6 @@ video {
 }
 .flex-row {
   flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
 }
 .items-center {
   align-items: center;
@@ -638,9 +593,6 @@ video {
 }
 .gap-2 {
   gap: 0.5rem;
-}
-.self-stretch {
-  align-self: stretch;
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -661,10 +613,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
 .p-1 {
   padding: 0.25rem;
 }
@@ -672,20 +620,23 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
 .text-center {
   text-align: center;
-}
-.text-end {
-  text-align: end;
 }
 .align-middle {
   vertical-align: middle;
 }
-.outline-[.5px] {
-  outline-width: .5px;
-}
-.outline-black/20 {
-  outline-color: rgb(0 0 0 / 0.2);
+.font-bold {
+  font-weight: 700;
 }
 
 .container {
@@ -4993,9 +4944,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4736ed5-0bc6-4882-871a-138959669af6/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5aa2b9a-9753-41a4-83c5-373fb1922648/tailwind.js
   var init_tailwind2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4736ed5-0bc6-4882-871a-138959669af6/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5aa2b9a-9753-41a4-83c5-373fb1922648/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -5477,45 +5428,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}
-.visible {
-  visibility: visible;
-}
-.top-[6px] {
-  top: 6px;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -5543,9 +5455,6 @@ video {
 .w-full {
   width: 100%;
 }
-.flex-up {
-  flex: 1 0 auto;
-}
 .grow {
   flex-grow: 1;
 }
@@ -5554,9 +5463,6 @@ video {
 }
 .flex-row {
   flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
 }
 .items-center {
   align-items: center;
@@ -5569,9 +5475,6 @@ video {
 }
 .gap-2 {
   gap: 0.5rem;
-}
-.self-stretch {
-  align-self: stretch;
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -5592,10 +5495,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
 .p-1 {
   padding: 0.25rem;
 }
@@ -5603,20 +5502,23 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
 .text-center {
   text-align: center;
-}
-.text-end {
-  text-align: end;
 }
 .align-middle {
   vertical-align: middle;
 }
-.outline-[.5px] {
-  outline-width: .5px;
-}
-.outline-black/20 {
-  outline-color: rgb(0 0 0 / 0.2);
+.font-bold {
+  font-weight: 700;
 }
 
 .container {
@@ -5670,10 +5572,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/685fef4b-5667-4e10-a9c5-ef7f0e28fc94/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/789dfbb2-b2ff-4d34-90d2-85b81ca40893/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/685fef4b-5667-4e10-a9c5-ef7f0e28fc94/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/789dfbb2-b2ff-4d34-90d2-85b81ca40893/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -6197,10 +6099,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05ec4dd7-8b29-4c4d-b7f1-07cbcbdfae5e/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/227a6a3a-9d7b-477c-90aa-f3dbe24c490d/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05ec4dd7-8b29-4c4d-b7f1-07cbcbdfae5e/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/227a6a3a-9d7b-477c-90aa-f3dbe24c490d/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6689,10 +6591,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd125d96-e4af-415a-bb4d-a601ac4091e3/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17135c68-9f03-44aa-9c76-27a1af2d7c06/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd125d96-e4af-415a-bb4d-a601ac4091e3/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17135c68-9f03-44aa-9c76-27a1af2d7c06/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -7039,10 +6941,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a02b05c-3448-4f4e-b2ce-fae12fe57e03/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d42be5d-f435-4157-9b4c-cb34ebfe2bd1/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a02b05c-3448-4f4e-b2ce-fae12fe57e03/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d42be5d-f435-4157-9b4c-cb34ebfe2bd1/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -7069,10 +6971,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c15291ae-4096-4505-aa13-f50b41ed43a7/columns.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/095be734-af7a-457f-a6e0-e50e077ee564/columns.module.js
   var columns_module_default;
   var init_columns_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c15291ae-4096-4505-aa13-f50b41ed43a7/columns.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/095be734-af7a-457f-a6e0-e50e077ee564/columns.module.js"() {
       if (document.getElementById("15be75cea7") === null) {
         const element = document.createElement("style");
         element.id = "15be75cea7";
@@ -7139,10 +7041,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0082219-0c80-47ee-af38-35e8b174e51c/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3f6b880-73b8-4153-86d9-3422047fba2d/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0082219-0c80-47ee-af38-35e8b174e51c/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3f6b880-73b8-4153-86d9-3422047fba2d/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7181,10 +7083,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/749fdd5a-50b0-4411-add3-30efab56a34d/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/754b0732-fc60-432c-a44a-4336b025b6cc/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/749fdd5a-50b0-4411-add3-30efab56a34d/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/754b0732-fc60-432c-a44a-4336b025b6cc/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7223,9 +7125,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/234230cc-274d-47cf-bdd7-ee89dd6a5f9a/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9af1d7e-8eeb-4f14-9d4a-61a27c9d6724/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/234230cc-274d-47cf-bdd7-ee89dd6a5f9a/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9af1d7e-8eeb-4f14-9d4a-61a27c9d6724/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -7398,20 +7300,28 @@ svg {
           state
         );
         let { focusProps, isFocusVisible } = $f7dceffc5ad7768b$export$4e328f61c538687f();
+        state.setThumbValue(props.input, props.input);
         const [value2, setValue] = h2(`${props.input}`);
         function handleInput(event) {
           const newValue = event.currentTarget.value;
-          console.log(newValue);
+          console.log(`Textbox value: ${newValue}`);
           setValue(newValue);
           props.onNewValue(newValue);
         }
-        return /* @__PURE__ */ y("div", { className: "flex flex-row gap-2 items-center w-full" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+        return /* @__PURE__ */ y("div", { className: "flex flex-row gap-2 items-center w-full" }, /* @__PURE__ */ y(
           Textbox,
           {
             icon: props.colorChannel === "chroma" ? "C" : "H",
             onInput: handleInput,
-            value: value2
+            value: value2,
+            placeholder: `${props.placeholder}` || ""
           }
+        ), /* @__PURE__ */ y("div", { style: { display: "flex", alignSelf: "stretch" } }, /* @__PURE__ */ y("label", __spreadValues({}, labelProps), label), /* @__PURE__ */ y(
+          "output",
+          __spreadProps(__spreadValues({}, outputProps), {
+            style: { flex: "1 0 auto", textAlign: "end" }
+          }),
+          state.value.formatChannelValue(props.channel, locale)
         )), /* @__PURE__ */ y(
           "div",
           __spreadProps(__spreadValues({}, trackProps), {
@@ -10607,6 +10517,83 @@ svg {
         }
       };
       color_default = Color;
+    }
+  });
+
+  // node_modules/uuid/dist/esm-browser/rng.js
+  function rng() {
+    if (!getRandomValues) {
+      getRandomValues = typeof crypto !== "undefined" && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
+      if (!getRandomValues) {
+        throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
+      }
+    }
+    return getRandomValues(rnds8);
+  }
+  var getRandomValues, rnds8;
+  var init_rng = __esm({
+    "node_modules/uuid/dist/esm-browser/rng.js"() {
+      rnds8 = new Uint8Array(16);
+    }
+  });
+
+  // node_modules/uuid/dist/esm-browser/stringify.js
+  function unsafeStringify(arr, offset = 0) {
+    return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
+  }
+  var byteToHex;
+  var init_stringify = __esm({
+    "node_modules/uuid/dist/esm-browser/stringify.js"() {
+      byteToHex = [];
+      for (let i4 = 0; i4 < 256; ++i4) {
+        byteToHex.push((i4 + 256).toString(16).slice(1));
+      }
+    }
+  });
+
+  // node_modules/uuid/dist/esm-browser/native.js
+  var randomUUID, native_default;
+  var init_native = __esm({
+    "node_modules/uuid/dist/esm-browser/native.js"() {
+      randomUUID = typeof crypto !== "undefined" && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+      native_default = {
+        randomUUID
+      };
+    }
+  });
+
+  // node_modules/uuid/dist/esm-browser/v4.js
+  function v4(options, buf, offset) {
+    if (native_default.randomUUID && !buf && !options) {
+      return native_default.randomUUID();
+    }
+    options = options || {};
+    const rnds = options.random || (options.rng || rng)();
+    rnds[6] = rnds[6] & 15 | 64;
+    rnds[8] = rnds[8] & 63 | 128;
+    if (buf) {
+      offset = offset || 0;
+      for (let i4 = 0; i4 < 16; ++i4) {
+        buf[offset + i4] = rnds[i4];
+      }
+      return buf;
+    }
+    return unsafeStringify(rnds);
+  }
+  var v4_default;
+  var init_v4 = __esm({
+    "node_modules/uuid/dist/esm-browser/v4.js"() {
+      init_native();
+      init_rng();
+      init_stringify();
+      v4_default = v4;
+    }
+  });
+
+  // node_modules/uuid/dist/esm-browser/index.js
+  var init_esm_browser = __esm({
+    "node_modules/uuid/dist/esm-browser/index.js"() {
+      init_v4();
     }
   });
 
@@ -54575,10 +54562,10 @@ svg {
       random3 = seed === null ? singletonRandom : (0, import_seedrandom.default)(String(seed));
     }
     setSeed(randomSeed);
-    function rng() {
+    function rng2() {
       return random3();
     }
-    return rng;
+    return rng2;
   }
   var import_seedrandom, singletonRandom;
   var init_seededRNG = __esm({
@@ -54604,11 +54591,11 @@ svg {
           config: config4,
           on: on2
         } = _ref;
-        var rng = createRng(config4.randomSeed);
+        var rng2 = createRng(config4.randomSeed);
         if (on2) {
           on2("config", function(curr, prev) {
             if (curr.randomSeed !== prev.randomSeed) {
-              rng = createRng(curr.randomSeed);
+              rng2 = createRng(curr.randomSeed);
             }
           });
         }
@@ -54678,9 +54665,9 @@ svg {
           var pick;
           while (result.length < number2) {
             if (typeof weights === "undefined") {
-              pick = possibles[Math.floor(rng() * length)];
+              pick = possibles[Math.floor(rng2() * length)];
             } else {
-              var randKey = rng() * totalWeights;
+              var randKey = rng2() * totalWeights;
               for (var _i = 0, _len = possibles.length; _i < _len; _i++) {
                 randKey -= weights[_i];
                 if (randKey < 0) {
@@ -54733,11 +54720,11 @@ svg {
           config: config4,
           on: on2
         } = _ref;
-        var rng = createRng(config4.randomSeed);
+        var rng2 = createRng(config4.randomSeed);
         if (on2) {
           on2("config", function(curr, prev) {
             if (curr.randomSeed !== prev.randomSeed) {
-              rng = createRng(curr.randomSeed);
+              rng2 = createRng(curr.randomSeed);
             }
           });
         }
@@ -54754,7 +54741,7 @@ svg {
           return isMatrix(size2) ? size2.create(res) : res;
         }
         function _random(min3, max3) {
-          return min3 + rng() * (max3 - min3);
+          return min3 + rng2() * (max3 - min3);
         }
       });
     }
@@ -54776,11 +54763,11 @@ svg {
           config: config4,
           on: on2
         } = _ref;
-        var rng = createRng(config4.randomSeed);
+        var rng2 = createRng(config4.randomSeed);
         if (on2) {
           on2("config", function(curr, prev) {
             if (curr.randomSeed !== prev.randomSeed) {
-              rng = createRng(curr.randomSeed);
+              rng2 = createRng(curr.randomSeed);
             }
           });
         }
@@ -54797,7 +54784,7 @@ svg {
           return isMatrix(size2) ? size2.create(res) : res;
         }
         function _randomInt(min3, max3) {
-          return Math.floor(min3 + rng() * (max3 - min3));
+          return Math.floor(min3 + rng2() * (max3 - min3));
         }
       });
     }
@@ -62071,18 +62058,19 @@ svg {
   });
 
   // src/theme-color.ts
-  var themeColorCounter, ThemeColor, theme_color_default;
+  var ThemeColor, theme_color_default;
   var init_theme_color = __esm({
     "src/theme-color.ts"() {
       "use strict";
       init_color();
+      init_esm_browser();
       init_utility();
       init_ref();
       init_esm();
-      themeColorCounter = 0;
       ThemeColor = class {
-        constructor(color, name307, tones, hueCalc, chromaCalc, aliases) {
-          this.id = themeColorCounter++;
+        constructor(color, name307, tones, hueCalc, chromaCalc, aliases, id) {
+          this.id = v4_default();
+          this.id = id || v4_default();
           this.state = {
             sourceColor: new color_default(color),
             themeColor: new color_default(color),
@@ -62095,6 +62083,9 @@ svg {
         }
         getId() {
           return this.id;
+        }
+        setId(id) {
+          this.id = id;
         }
         componentDidMount() {
         }
@@ -62264,8 +62255,8 @@ svg {
           try {
             const sourceHue = this.state.sourceColor.getHue();
             const parsedHueCalc = hueCalcInput.replace(/h/gi, sourceHue.toString());
-            const evaluatedHue = evaluate(parsedHueCalc);
-            this.themeColor.hue = Math.abs(evaluatedHue % 360);
+            const evaluatedHue = Math.abs(evaluate(parsedHueCalc) % 360);
+            this.themeColor.setHue(evaluatedHue);
           } catch (error) {
             console.error("Invalid expression:", error);
             let lastValidHue = NaN;
@@ -62282,7 +62273,8 @@ svg {
               } catch (e6) {
               }
             }
-            this.themeColor.hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : this.state.sourceColor.getHue();
+            const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : this.state.sourceColor.getHue();
+            this.themeColor.setHue(hue);
           }
         }
         setHue(hue) {
@@ -62650,10 +62642,10 @@ svg {
         );
         const [themeColor, setThemeColor] = h2(newThemeColor);
         console.log(themeColor);
-        let [color, setColor] = h2(
+        const [color, setColor] = h2(
           $799cddbef784668f$export$6e865ea70d7724f(hexToHSB(themeColor.getSourceColor().getHex()))
         );
-        let [hChannel, sChannel, bChannel] = color.getColorChannels();
+        const [hChannel, sChannel, bChannel] = color.getColorChannels();
         const handleHexInput = (hexColor) => {
           const newThemeColor2 = new theme_color_default(
             hexColor,
@@ -62661,7 +62653,8 @@ svg {
             themeColor.state.tones,
             themeColor.state.hueCalc,
             themeColor.state.chromaCalc,
-            themeColor.getAliases()
+            themeColor.getAliases(),
+            themeColor.id
           );
           setThemeColor(newThemeColor2);
         };
@@ -62670,13 +62663,16 @@ svg {
             themeColor.getSourceColor().getHex(),
             themeColor.state.name,
             themeColor.state.tones,
-            hueInput,
+            themeColor.state.hueCalc,
             themeColor.state.chromaCalc,
-            themeColor.getAliases()
+            themeColor.getAliases(),
+            themeColor.id
           );
+          newThemeColor2.setHueCalc(hueInput);
           setThemeColor(newThemeColor2);
+          console.log(`themeColor.hue: ${themeColor.themeColor.getHue("rounded")}`);
         };
-        console.log(color);
+        console.log(color.getChannelValue("hue"));
         console.log(`${themeColor.sourceColor.getHue("rounded")}`);
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "py-4 overflow-y-auto" }, /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(Columns, { space: "extraSmall" }, /* @__PURE__ */ y("div", { className: "w-60" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Color name")), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y("div", { className: "w-full flex" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
           ColorPicker,
@@ -62688,7 +62684,9 @@ svg {
           "rounded"
         )} C: ${themeColor.sourceColor.getChroma(
           "rounded"
-        )} T: ${themeColor.sourceColor.getTone("rounded")}`)), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Theme Color")), /* @__PURE__ */ y(Text, null, ` H: ${themeColor.getHue("rounded")} C: ${themeColor.getChroma(
+        )} T: ${themeColor.sourceColor.getTone("rounded")}`)), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y(Text, null, /* @__PURE__ */ y(Muted, null, "Theme Color")), /* @__PURE__ */ y(Text, null, ` H: ${themeColor.state.themeColor.getHue(
+          "rounded"
+        )} C: ${themeColor.state.themeColor.getChroma(
           "rounded"
         )} T: ${themeColor.themeColor.getTone("rounded")}`)), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
           ColorSlider,
@@ -62696,9 +62694,12 @@ svg {
             channel: hChannel,
             value: color,
             onChange: setColor,
-            input: themeColor.getHue("rounded"),
+            input: themeColor.themeColor.getHue("rounded"),
+            placeholder: `${themeColor.sourceColor.getHue("rounded")}`,
             colorChannel: "hue",
-            onNewValue: handleHueInput
+            onNewValue: handleHueInput,
+            trackRef: null,
+            inputRef: null
           }
         ), /* @__PURE__ */ y(VerticalSpace, { space: "small" }), /* @__PURE__ */ y(
           ColorSlider,
@@ -62707,9 +62708,11 @@ svg {
             value: color,
             onChange: setColor,
             input: themeColor.getChroma("rounded"),
-            colorChannel: "chroma"
+            colorChannel: "chroma",
+            trackRef: null,
+            inputRef: null
           }
-        )), /* @__PURE__ */ y("div", { className: "w-60" }))));
+        )), /* @__PURE__ */ y("div", { className: "w-60 pl-3" }, /* @__PURE__ */ y("h1", null, "ToDo:"), /* @__PURE__ */ y("br", null), /* @__PURE__ */ y("p", { className: "font-bold pb-1" }, "Hue input"), /* @__PURE__ */ y("p", null, "\u2705 Textbox updates themeColor"), /* @__PURE__ */ y("p", null, "\u2705 Textbox updates hueCalc"), /* @__PURE__ */ y("p", null, "\u274C Textbox updates Slider"), /* @__PURE__ */ y("p", null, "\u274C Updates to sourceColor update Textbox"), /* @__PURE__ */ y("p", null, "\u274C Updates to sourceColor update Slider"), /* @__PURE__ */ y("p", null, "\u274C Updates to themeColor update Textbox"), /* @__PURE__ */ y("p", null, "\u274C Updates to themeColor update Slider"), /* @__PURE__ */ y("p", null, "\u274C Slider updates themeColor"), /* @__PURE__ */ y("p", null, "\u274C Slider updates Textbox")))));
       };
       ui_default = render(Plugin);
     }
