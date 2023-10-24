@@ -17,7 +17,8 @@
 		"react-simple-code-editor": "^0.11.2",
 		"react-stately": "^3.25.0",
 		"recharts": "^2.7.2",
-		"uuid": "^9.0.0"
+		"uuid": "^9.0.0",
+		"zustand": "^4.4.4"
 	},
 	"devDependencies": {
 		"@create-figma-plugin/build": "^2.5.1",
