@@ -7,6 +7,7 @@
 		"@nivo/line": "^0.83.0",
 		"@react-aria/color": "^3.0.0-beta.23",
 		"@react-stately/color": "^3.4.1",
+		"immer": "^10.0.3",
 		"install": "^0.13.0",
 		"lodash": "^4.17.21",
 		"mathjs": "^11.10.0",

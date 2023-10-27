@@ -4,7 +4,6 @@ import { getStopsFromString, convertNumberToStringArray } from './utility';
 import Alias from './alias';
 import { maxChromaAtTonePerHue } from './ref';
 import { e, evaluate } from 'mathjs';
-import { create } from 'zustand';
 
 let themeColorCounter = 0;
 
@@ -18,16 +17,6 @@ export interface ThemeColorState {
 	name: string;
 	aliases: Alias[];
 }
-
-const useThemeColorStore = create<ThemeColorState>((set) => ({
-	sourceColor: new Color('#000000'),
-	themeColor: new Color('#000000'),
-	hueCalc: '',
-	chromaCalc: '',
-	tones: [],
-	name: '',
-	aliases: [],
-}));
 
 class ThemeColor {
 	public id: string = uuidv4();
