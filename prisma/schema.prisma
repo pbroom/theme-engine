@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ThemeList {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  themes    Theme[]
+}
+
+model Theme {
+  id          String       @id @default(uuid())
+  name        String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  themeList   ThemeList    @relation(fields: [themeListId], references: [id])
+  themeListId Int
+  colors      ThemeColor[]
+}
+
+model ThemeColor {
+  id            String  @id @default(uuid())
+  name          String
+  sourceColor   Color   @relation("SourceColorRelation", fields: [sourceColorId], references: [id])
+  themeColor    Color   @relation("ThemeColorRelation", fields: [themeColorId], references: [id])
+  sourceColorId Int     @unique
+  themeColorId  Int     @unique
+  hueCalc       String
+  chromaCalc    String
+  tones         Int[]
+  aliases       Alias[]
+  themeId       String
+  theme         Theme   @relation(fields: [themeId], references: [id])
+}
+
+model Color {
+  id              Int         @id @default(autoincrement())
+  figmaSolidColor Json
+  hctColor        Json
+  hue             Float
+  chroma          Float
+  tone            Float
+  argb            Int
+  rgba            Json
+  hex             String
+  sourceColor     ThemeColor? @relation("SourceColorRelation")
+  themeColor      ThemeColor? @relation("ThemeColorRelation")
+}
+
+model Alias {
+  id           Int        @id @default(autoincrement())
+  name         String
+  color        Json // Using Json type to represent the complex object structure
+  themeColorId String
+  themeColor   ThemeColor @relation(fields: [themeColorId], references: [id])
+}
