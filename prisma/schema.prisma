@@ -1,13 +1,14 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+generator client {
+  provider = "prisma-client-js"
 }
 
 model ThemeList {
@@ -26,6 +27,8 @@ model Theme {
   themeList   ThemeList    @relation(fields: [themeListId], references: [id])
   themeListId Int
   colors      ThemeColor[]
+
+  @@index([themeListId])
 }
 
 model ThemeColor {
@@ -37,10 +40,12 @@ model ThemeColor {
   themeColorId  Int     @unique
   hueCalc       String
   chromaCalc    String
-  tones         Int[]
+  tones         Json
   aliases       Alias[]
   themeId       String
   theme         Theme   @relation(fields: [themeId], references: [id])
+
+  @@index([themeId])
 }
 
 model Color {
@@ -63,4 +68,6 @@ model Alias {
   color        Json // Using Json type to represent the complex object structure
   themeColorId String
   themeColor   ThemeColor @relation(fields: [themeColorId], references: [id])
+
+  @@index([themeColorId])
 }

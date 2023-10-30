@@ -56,7 +56,7 @@ export const ColorSlider = (props: ColorSliderProps) => {
 	}
 
 	return (
-		<div className='flex flex-row gap-2 items-center w-full'>
+		<div className="flex flex-row gap-2 items-center w-full">
 			<Textbox
 				icon={props.colorChannel === 'chroma' ? 'C' : 'H'}
 				onInput={handleInput}
@@ -81,7 +81,7 @@ export const ColorSlider = (props: ColorSliderProps) => {
 					...trackProps.style,
 					// background: 'red',
 				}}
-				className='h-3 w-full rounded-full'
+				className="h-3 w-full rounded-full"
 			>
 				<div
 					{...(thumbProps as h.JSX.DOMAttributes<HTMLDivElement>)}
@@ -93,7 +93,7 @@ export const ColorSlider = (props: ColorSliderProps) => {
 						height: isFocusVisible ? TRACK_THICKNESS + 4 : THUMB_SIZE,
 						background: state.getDisplayColor().toString('css'),
 					}}
-					className='rounded-full border-2 border-white box-border'
+					className="rounded-full border-2 border-white box-border"
 				>
 					<VisuallyHidden>
 						<input ref={inputRef} {...inputProps} {...focusProps} />
