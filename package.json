@@ -8,6 +8,7 @@
 		"@prisma/client": "^5.5.2",
 		"@react-aria/color": "^3.0.0-beta.23",
 		"@react-stately/color": "^3.4.1",
+		"@vercel/node": "^3.0.7",
 		"immer": "^10.0.3",
 		"install": "^0.13.0",
 		"lodash": "^4.17.21",
