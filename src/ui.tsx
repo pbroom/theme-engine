@@ -26,6 +26,7 @@ import {
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import { set } from 'lodash';
+import { create } from 'zustand';
 
 export const Plugin = () => {
 	// Initializing the theme color
@@ -79,15 +80,15 @@ export const Plugin = () => {
 
 	// Rendering the UI
 	return (
-		<div id='container-wrap' className='py-4 overflow-y-auto'>
-			<Container space='medium'>
-				<Columns space='extraSmall'>
-					<div className='w-60'>
+		<div id="container-wrap" className="py-4 overflow-y-auto">
+			<Container space="medium">
+				<Columns space="extraSmall">
+					<div className="w-60">
 						<Text>
 							<Muted>Color name</Muted>
 						</Text>
-						<VerticalSpace space='extraSmall' />
-						<div className='w-full flex'>
+						<VerticalSpace space="extraSmall" />
+						<div className="w-full flex">
 							<div>
 								<ColorPicker
 									color={themeColor.getSourceColor().getHex(true)}
@@ -95,8 +96,8 @@ export const Plugin = () => {
 								/>
 							</div>
 						</div>
-						<VerticalSpace space='small' />
-						<div className='flex flex-row justify-between'>
+						<VerticalSpace space="small" />
+						<div className="flex flex-row justify-between">
 							<Text>
 								<Muted>Source Color</Muted>
 							</Text>
@@ -108,8 +109,8 @@ export const Plugin = () => {
 								)} T: ${themeColor.sourceColor.getTone('rounded')}`}
 							</Text>
 						</div>
-						<VerticalSpace space='small' />
-						<div className='flex flex-row justify-between'>
+						<VerticalSpace space="small" />
+						<div className="flex flex-row justify-between">
 							<Text>
 								<Muted>Theme Color</Muted>
 							</Text>
@@ -121,7 +122,7 @@ export const Plugin = () => {
 								)} T: ${themeColor.themeColor.getTone('rounded')}`}
 							</Text>
 						</div>
-						<VerticalSpace space='small' />
+						<VerticalSpace space="small" />
 						{/* 
 						When the sourceColor changes, update the slider value, thumb position, and themeColor
 						When the slider value changes, update the thumb position and themeColor
@@ -134,27 +135,27 @@ export const Plugin = () => {
 							onChange={setColor}
 							input={themeColor.themeColor.getHue('rounded')}
 							placeholder={`${themeColor.sourceColor.getHue('rounded')}`}
-							colorChannel='hue'
+							colorChannel="hue"
 							onNewValue={handleHueInput}
 							trackRef={null as any}
 							inputRef={null as any}
 						/>
-						<VerticalSpace space='small' />
+						<VerticalSpace space="small" />
 						<ColorSlider
 							channel={sChannel}
 							value={color}
 							onChange={setColor}
 							input={themeColor.getChroma('rounded')}
-							colorChannel='chroma'
+							colorChannel="chroma"
 							// onNewValue={}
 							trackRef={null as any}
 							inputRef={null as any}
 						/>
 					</div>
-					<div className='w-60 pl-3'>
+					<div className="w-60 pl-3">
 						<h1>ToDo:</h1>
 						<br />
-						<p className='font-bold pb-1'>Hue input</p>
+						<p className="font-bold pb-1">Hue input</p>
 						<p>✅ Textbox updates themeColor</p>
 						<p>✅ Textbox updates hueCalc</p>
 						<p>❌ Textbox updates Slider</p>
