@@ -18,7 +18,6 @@ import {
 } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
-import { set } from 'lodash';
 import { create } from 'zustand';
 
 export const Plugin = () => {

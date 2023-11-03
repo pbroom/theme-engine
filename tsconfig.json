@@ -4,5 +4,5 @@
 		"typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
 		"forceConsistentCasingInFileNames": true
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx"]
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/.ui-copy.tsx"]
 }

@@ -1,6 +1,7 @@
 import '!./dist/tailwind.css';
+import { ReactNode } from 'react';
 import ThemeColor from './theme-color';
-import { h } from 'preact';
+import { createContext, h } from 'preact';
 import { useState, useContext } from 'preact/hooks';
 
 interface CollectionsContextValue {
@@ -15,14 +16,12 @@ const CollectionsContext = createContext<CollectionsContextValue>({
 
 export const useCollections = () => useContext(CollectionsContext);
 
+export const CollectionsProvider = ({ children }: { children: ReactNode }) => {
+	const [collections, setCollections] = useState<VariableCollection[]>([]);
 
-
-export const CollectionsProvider: <{ children: ReactNode }> = ({ children }) => {
-    const [collections, setCollections] = useState<VariableCollection[]>([]);
-
-    return (
-        <CollectionsContext.Provider value={{ collections, setCollections }}>
-            {children}
-        </CollectionsContext.Provider>
-    );
+	return (
+		<CollectionsContext.Provider value={{ collections, setCollections }}>
+			{children}
+		</CollectionsContext.Provider>
+	);
 };

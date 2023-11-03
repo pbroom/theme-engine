@@ -1,6 +1,5 @@
 import '!./dist/tailwind.css';
 import { ColorArea } from './components/colorArea';
-import { ColorSlider } from './components/colorSlider';
 import { ColorPicker } from './components/colorPicker';
 import { ColorField } from './components/colorField';
 import { Color, parseColor } from '@react-stately/color';
@@ -127,7 +126,7 @@ export const Plugin = () => {
 						When the sourceColor changes, update the slider value, thumb position, and themeColor
 						When the slider value changes, update the thumb position and themeColor
 						 */}
-						<ColorSlider
+						{/* <ColorSlider
 							channel={hChannel}
 							// aria-label='sbh-label-id-2'
 							value={color}
@@ -150,7 +149,7 @@ export const Plugin = () => {
 							// onNewValue={}
 							trackRef={null as any}
 							inputRef={null as any}
-						/>
+						/> */}
 					</div>
 					<div className="w-60 pl-3">
 						<h1>ToDo:</h1>

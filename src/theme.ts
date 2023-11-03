@@ -84,8 +84,10 @@ class Theme {
 		this.state.themeColors = themeColors;
 	}
 
-	getThemeColorById(id: number): ThemeColor | undefined {
-		return this.state.themeColors.find((themeColor) => themeColor.getId() === id);
+	getThemeColorById(id: string): ThemeColor | undefined {
+		return this.state.themeColors.find(
+			(themeColor) => themeColor.getId() === id
+		);
 	}
 
 	addThemeColor(themeColor: ThemeColor): void {
