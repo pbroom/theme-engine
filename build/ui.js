@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb378e53-8fb0-49d0-9681-700d4bd6ce0a/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ee63cb8-3d3c-4d31-aa94-258521d8ac9a/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb378e53-8fb0-49d0-9681-700d4bd6ce0a/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ee63cb8-3d3c-4d31-aa94-258521d8ac9a/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -623,9 +623,6 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pl-2 {
-  padding-left: 0.5rem;
-}
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -728,13 +725,13 @@ video {
     x.__r = 0;
   }
   function P(n3, l3, u3, i4, t3, o3, r4, f3, e6, a3) {
-    var h3, p3, y3, _3, b3, m3, w4, x4 = i4 && i4.__k || s, P5 = x4.length;
+    var h3, p3, y3, _3, b3, m3, w4, x4 = i4 && i4.__k || s, P6 = x4.length;
     for (u3.__k = [], h3 = 0; h3 < l3.length; h3++)
       if (null != (_3 = u3.__k[h3] = null == (_3 = l3[h3]) || "boolean" == typeof _3 || "function" == typeof _3 ? null : "string" == typeof _3 || "number" == typeof _3 || "bigint" == typeof _3 ? d(null, _3, null, null, _3) : v(_3) ? d(k, { children: _3 }, null, null, null) : _3.__b > 0 ? d(_3.type, _3.props, _3.key, _3.ref ? _3.ref : null, _3.__v) : _3)) {
         if (_3.__ = u3, _3.__b = u3.__b + 1, null === (y3 = x4[h3]) || y3 && _3.key == y3.key && _3.type === y3.type)
           x4[h3] = void 0;
         else
-          for (p3 = 0; p3 < P5; p3++) {
+          for (p3 = 0; p3 < P6; p3++) {
             if ((y3 = x4[p3]) && _3.key == y3.key && _3.type === y3.type) {
               x4[p3] = void 0;
               break;
@@ -743,7 +740,7 @@ video {
           }
         L(n3, _3, y3 = y3 || c, t3, o3, r4, f3, e6, a3), b3 = _3.__e, (p3 = _3.ref) && y3.ref != p3 && (w4 || (w4 = []), y3.ref && w4.push(y3.ref, null, _3), w4.push(p3, _3.__c || b3, _3)), null != b3 ? (null == m3 && (m3 = b3), "function" == typeof _3.type && _3.__k === y3.__k ? _3.__d = e6 = C(_3, e6, n3) : e6 = $(n3, _3, y3, x4, b3, e6), "function" == typeof u3.type && (u3.__d = e6)) : e6 && y3.__e == e6 && e6.parentNode != n3 && (e6 = g(y3));
       }
-    for (u3.__e = m3, h3 = P5; h3--; )
+    for (u3.__e = m3, h3 = P6; h3--; )
       null != x4[h3] && ("function" == typeof u3.type && null != x4[h3].__e && x4[h3].__e == u3.__d && (u3.__d = A(i4).nextSibling), q(x4[h3], x4[h3]));
     if (w4)
       for (h3 = 0; h3 < w4.length; h3++)
@@ -1085,6 +1082,14 @@ video {
   function x2(t3, r4) {
     l.useDebugValue && l.useDebugValue(r4 ? r4(t3) : t3);
   }
+  function P2(n3) {
+    var u3 = d2(t2++, 10), i4 = h2();
+    return u3.__ = n3, r2.componentDidCatch || (r2.componentDidCatch = function(n4, t3) {
+      u3.__ && u3.__(n4, t3), i4[1](n4);
+    }), [i4[0], function() {
+      i4[1](void 0);
+    }];
+  }
   function V() {
     var n3 = d2(t2++, 11);
     if (!n3.__) {
@@ -1180,6 +1185,52 @@ video {
   });
 
   // node_modules/preact/compat/dist/compat.module.js
+  var compat_module_exports = {};
+  __export(compat_module_exports, {
+    Children: () => O2,
+    Component: () => b,
+    Fragment: () => k,
+    PureComponent: () => w3,
+    StrictMode: () => mn,
+    Suspense: () => D2,
+    SuspenseList: () => V2,
+    __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: () => ln,
+    cloneElement: () => sn,
+    createContext: () => G,
+    createElement: () => y,
+    createFactory: () => fn,
+    createPortal: () => z3,
+    createRef: () => _,
+    default: () => Cn,
+    findDOMNode: () => vn,
+    flushSync: () => pn,
+    forwardRef: () => k3,
+    hydrate: () => J,
+    isValidElement: () => an,
+    lazy: () => M2,
+    memo: () => x3,
+    render: () => G2,
+    startTransition: () => yn,
+    unmountComponentAtNode: () => hn,
+    unstable_batchedUpdates: () => dn,
+    useCallback: () => T2,
+    useContext: () => q2,
+    useDebugValue: () => x2,
+    useDeferredValue: () => _n,
+    useEffect: () => p2,
+    useErrorBoundary: () => P2,
+    useId: () => V,
+    useImperativeHandle: () => A2,
+    useInsertionEffect: () => Sn,
+    useLayoutEffect: () => y2,
+    useMemo: () => F2,
+    useReducer: () => s2,
+    useRef: () => _2,
+    useState: () => h2,
+    useSyncExternalStore: () => gn,
+    useTransition: () => bn,
+    version: () => cn
+  });
   function g3(n3, t3) {
     for (var e6 in t3)
       n3[e6] = t3[e6];
@@ -1254,7 +1305,7 @@ video {
   function V2() {
     this.u = null, this.o = null;
   }
-  function P2(n3) {
+  function P3(n3) {
     return this.getChildContext = function() {
       return n3.context;
     }, n3.children;
@@ -1269,7 +1320,7 @@ video {
       this.childNodes.push(n4), e6.i.appendChild(n4);
     }, removeChild: function(n4) {
       this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
-    } }), D(y(P2, { context: e6.context }, n3.__v), e6.l)) : e6.l && e6.componentWillUnmount();
+    } }), D(y(P3, { context: e6.context }, n3.__v), e6.l)) : e6.l && e6.componentWillUnmount();
   }
   function z3(n3, e6) {
     var r4 = y(j3, { __v: n3, i: e6 });
@@ -1323,7 +1374,7 @@ video {
       });
     }, [n3]), e6;
   }
-  var R, N2, A3, O2, T3, I2, W, B3, H2, Z, Y, $2, q3, K, tn, en, rn, un, on, ln, dn, pn, mn, Sn, Cn;
+  var R, N2, A3, O2, T3, I2, W, B3, H2, Z, Y, $2, q3, K, tn, en, rn, un, on, ln, cn, dn, pn, mn, Sn, Cn;
   var init_compat_module = __esm({
     "node_modules/preact/compat/dist/compat.module.js"() {
       init_preact_module();
@@ -1478,6 +1529,7 @@ video {
       ln = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
         return tn.__n[n3.__c].props.value;
       } } } };
+      cn = "17.0.2";
       dn = function(n3, t3) {
         return n3(t3);
       };
@@ -4944,9 +4996,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5aa2b9a-9753-41a4-83c5-373fb1922648/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6184bcf5-c0fa-4bf1-9b48-5ab9ecd6a072/tailwind.js
   var init_tailwind2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5aa2b9a-9753-41a4-83c5-373fb1922648/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6184bcf5-c0fa-4bf1-9b48-5ab9ecd6a072/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -5505,9 +5557,6 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pl-2 {
-  padding-left: 0.5rem;
-}
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -5572,10 +5621,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/789dfbb2-b2ff-4d34-90d2-85b81ca40893/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd88f0f0-7a00-4181-879f-5bde0273f0b6/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/789dfbb2-b2ff-4d34-90d2-85b81ca40893/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd88f0f0-7a00-4181-879f-5bde0273f0b6/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -6099,10 +6148,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/227a6a3a-9d7b-477c-90aa-f3dbe24c490d/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/70667bca-02e4-4a75-9dd3-b7438d02cce0/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/227a6a3a-9d7b-477c-90aa-f3dbe24c490d/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/70667bca-02e4-4a75-9dd3-b7438d02cce0/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6591,10 +6640,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17135c68-9f03-44aa-9c76-27a1af2d7c06/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4366b547-a2b6-4897-a788-d6a4377bd4c7/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17135c68-9f03-44aa-9c76-27a1af2d7c06/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4366b547-a2b6-4897-a788-d6a4377bd4c7/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -6941,10 +6990,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d42be5d-f435-4157-9b4c-cb34ebfe2bd1/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/95422de7-06bd-47c7-90a2-012b68b10efb/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d42be5d-f435-4157-9b4c-cb34ebfe2bd1/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/95422de7-06bd-47c7-90a2-012b68b10efb/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -6971,10 +7020,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/095be734-af7a-457f-a6e0-e50e077ee564/columns.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67264169-0e71-491e-ac26-c82867cfe05c/columns.module.js
   var columns_module_default;
   var init_columns_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/095be734-af7a-457f-a6e0-e50e077ee564/columns.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67264169-0e71-491e-ac26-c82867cfe05c/columns.module.js"() {
       if (document.getElementById("15be75cea7") === null) {
         const element = document.createElement("style");
         element.id = "15be75cea7";
@@ -7041,10 +7090,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3f6b880-73b8-4153-86d9-3422047fba2d/container.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b1daf61-e79e-4207-a215-1d98e1ff5045/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d3f6b880-73b8-4153-86d9-3422047fba2d/container.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b1daf61-e79e-4207-a215-1d98e1ff5045/container.module.js"() {
       if (document.getElementById("0cadc72ff5") === null) {
         const element = document.createElement("style");
         element.id = "0cadc72ff5";
@@ -7083,10 +7132,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/754b0732-fc60-432c-a44a-4336b025b6cc/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3f21f46-d7e6-4b91-9cc4-d2850154ab2b/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/754b0732-fc60-432c-a44a-4336b025b6cc/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3f21f46-d7e6-4b91-9cc4-d2850154ab2b/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -7125,9 +7174,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9af1d7e-8eeb-4f14-9d4a-61a27c9d6724/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/16ae32b6-3948-46ef-9d5c-06ad024e2219/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9af1d7e-8eeb-4f14-9d4a-61a27c9d6724/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/16ae32b6-3948-46ef-9d5c-06ad024e2219/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -12833,7 +12882,7 @@ svg {
           return void 0;
         }
         var NOT_TYPED_FUNCTION = "Argument is not a typed-function.";
-        function create() {
+        function create2() {
           function isPlainObject2(x4) {
             return _typeof2(x4) === "object" && x4 !== null && x4.constructor === Object;
           }
@@ -14067,7 +14116,7 @@ svg {
             }
             return createTypedFunction(name307 || "", allSignatures);
           };
-          typed3.create = create;
+          typed3.create = create2;
           typed3.createCount = saveTyped.createCount;
           typed3.onMismatch = _onMismatch;
           typed3.throwMismatchError = _onMismatch;
@@ -14145,7 +14194,7 @@ svg {
           };
           return typed3;
         }
-        var typedFunction2 = create();
+        var typedFunction2 = create2();
         return typedFunction2;
       });
     }
@@ -15226,11 +15275,11 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/factory.js
-  function factory(name307, dependencies307, create, meta) {
+  function factory(name307, dependencies307, create2, meta) {
     function assertAndCreate(scope) {
       var deps = pickShallow(scope, dependencies307.map(stripOptionalNotation));
       assertDependencies(name307, dependencies307, scope);
-      return create(deps);
+      return create2(deps);
     }
     assertAndCreate.isFactory = true;
     assertAndCreate.fn = name307;
@@ -16746,7 +16795,7 @@ svg {
       }
       return isDecimal.test(v3) ? parseDecimal(x4, v3) : parseOther(x4, v3);
     }
-    Decimal2.prototype = P3;
+    Decimal2.prototype = P4;
     Decimal2.ROUND_UP = 0;
     Decimal2.ROUND_DOWN = 1;
     Decimal2.ROUND_CEIL = 2;
@@ -16963,7 +17012,7 @@ svg {
   function trunc(x4) {
     return finalise(x4 = new this(x4), x4.e + 1, 1);
   }
-  var EXP_LIMIT, MAX_DIGITS, NUMERALS, LN10, PI, DEFAULTS, inexact, quadrant, external, decimalError, invalidArgument, precisionLimitExceeded, cryptoUnavailable, tag, mathfloor, mathpow, isBinary, isHex, isOctal, isDecimal, BASE, LOG_BASE, MAX_SAFE_INTEGER, LN10_PRECISION, PI_PRECISION, P3, divide, Decimal, decimal_default;
+  var EXP_LIMIT, MAX_DIGITS, NUMERALS, LN10, PI, DEFAULTS, inexact, quadrant, external, decimalError, invalidArgument, precisionLimitExceeded, cryptoUnavailable, tag, mathfloor, mathpow, isBinary, isHex, isOctal, isDecimal, BASE, LOG_BASE, MAX_SAFE_INTEGER, LN10_PRECISION, PI_PRECISION, P4, divide, Decimal, decimal_default;
   var init_decimal = __esm({
     "node_modules/decimal.js/decimal.mjs"() {
       EXP_LIMIT = 9e15;
@@ -17047,17 +17096,17 @@ svg {
       MAX_SAFE_INTEGER = 9007199254740991;
       LN10_PRECISION = LN10.length - 1;
       PI_PRECISION = PI.length - 1;
-      P3 = { toStringTag: tag };
-      P3.absoluteValue = P3.abs = function() {
+      P4 = { toStringTag: tag };
+      P4.absoluteValue = P4.abs = function() {
         var x4 = new this.constructor(this);
         if (x4.s < 0)
           x4.s = 1;
         return finalise(x4);
       };
-      P3.ceil = function() {
+      P4.ceil = function() {
         return finalise(new this.constructor(this), this.e + 1, 2);
       };
-      P3.clampedTo = P3.clamp = function(min3, max3) {
+      P4.clampedTo = P4.clamp = function(min3, max3) {
         var k4, x4 = this, Ctor = x4.constructor;
         min3 = new Ctor(min3);
         max3 = new Ctor(max3);
@@ -17068,7 +17117,7 @@ svg {
         k4 = x4.cmp(min3);
         return k4 < 0 ? min3 : x4.cmp(max3) > 0 ? max3 : new Ctor(x4);
       };
-      P3.comparedTo = P3.cmp = function(y3) {
+      P4.comparedTo = P4.cmp = function(y3) {
         var i4, j4, xdL, ydL, x4 = this, xd = x4.d, yd = (y3 = new x4.constructor(y3)).d, xs = x4.s, ys = y3.s;
         if (!xd || !yd) {
           return !xs || !ys ? NaN : xs !== ys ? xs : xd === yd ? 0 : !xd ^ xs < 0 ? 1 : -1;
@@ -17087,7 +17136,7 @@ svg {
         }
         return xdL === ydL ? 0 : xdL > ydL ^ xs < 0 ? 1 : -1;
       };
-      P3.cosine = P3.cos = function() {
+      P4.cosine = P4.cos = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (!x4.d)
           return new Ctor(NaN);
@@ -17102,7 +17151,7 @@ svg {
         Ctor.rounding = rm;
         return finalise(quadrant == 2 || quadrant == 3 ? x4.neg() : x4, pr, rm, true);
       };
-      P3.cubeRoot = P3.cbrt = function() {
+      P4.cubeRoot = P4.cbrt = function() {
         var e6, m3, n3, r4, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
@@ -17156,7 +17205,7 @@ svg {
         external = true;
         return finalise(r4, e6, Ctor.rounding, m3);
       };
-      P3.decimalPlaces = P3.dp = function() {
+      P4.decimalPlaces = P4.dp = function() {
         var w4, d3 = this.d, n3 = NaN;
         if (d3) {
           w4 = d3.length - 1;
@@ -17170,27 +17219,27 @@ svg {
         }
         return n3;
       };
-      P3.dividedBy = P3.div = function(y3) {
+      P4.dividedBy = P4.div = function(y3) {
         return divide(this, new this.constructor(y3));
       };
-      P3.dividedToIntegerBy = P3.divToInt = function(y3) {
+      P4.dividedToIntegerBy = P4.divToInt = function(y3) {
         var x4 = this, Ctor = x4.constructor;
         return finalise(divide(x4, new Ctor(y3), 0, 1, 1), Ctor.precision, Ctor.rounding);
       };
-      P3.equals = P3.eq = function(y3) {
+      P4.equals = P4.eq = function(y3) {
         return this.cmp(y3) === 0;
       };
-      P3.floor = function() {
+      P4.floor = function() {
         return finalise(new this.constructor(this), this.e + 1, 3);
       };
-      P3.greaterThan = P3.gt = function(y3) {
+      P4.greaterThan = P4.gt = function(y3) {
         return this.cmp(y3) > 0;
       };
-      P3.greaterThanOrEqualTo = P3.gte = function(y3) {
+      P4.greaterThanOrEqualTo = P4.gte = function(y3) {
         var k4 = this.cmp(y3);
         return k4 == 1 || k4 === 0;
       };
-      P3.hyperbolicCosine = P3.cosh = function() {
+      P4.hyperbolicCosine = P4.cosh = function() {
         var k4, n3, pr, rm, len, x4 = this, Ctor = x4.constructor, one = new Ctor(1);
         if (!x4.isFinite())
           return new Ctor(x4.s ? 1 / 0 : NaN);
@@ -17216,7 +17265,7 @@ svg {
         }
         return finalise(x4, Ctor.precision = pr, Ctor.rounding = rm, true);
       };
-      P3.hyperbolicSine = P3.sinh = function() {
+      P4.hyperbolicSine = P4.sinh = function() {
         var k4, pr, rm, len, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
@@ -17242,7 +17291,7 @@ svg {
         Ctor.rounding = rm;
         return finalise(x4, pr, rm, true);
       };
-      P3.hyperbolicTangent = P3.tanh = function() {
+      P4.hyperbolicTangent = P4.tanh = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite())
           return new Ctor(x4.s);
@@ -17254,7 +17303,7 @@ svg {
         Ctor.rounding = 1;
         return divide(x4.sinh(), x4.cosh(), Ctor.precision = pr, Ctor.rounding = rm);
       };
-      P3.inverseCosine = P3.acos = function() {
+      P4.inverseCosine = P4.acos = function() {
         var halfPi, x4 = this, Ctor = x4.constructor, k4 = x4.abs().cmp(1), pr = Ctor.precision, rm = Ctor.rounding;
         if (k4 !== -1) {
           return k4 === 0 ? x4.isNeg() ? getPi(Ctor, pr, rm) : new Ctor(0) : new Ctor(NaN);
@@ -17269,7 +17318,7 @@ svg {
         Ctor.rounding = rm;
         return halfPi.minus(x4);
       };
-      P3.inverseHyperbolicCosine = P3.acosh = function() {
+      P4.inverseHyperbolicCosine = P4.acosh = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (x4.lte(1))
           return new Ctor(x4.eq(1) ? 0 : NaN);
@@ -17286,7 +17335,7 @@ svg {
         Ctor.rounding = rm;
         return x4.ln();
       };
-      P3.inverseHyperbolicSine = P3.asinh = function() {
+      P4.inverseHyperbolicSine = P4.asinh = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
@@ -17301,7 +17350,7 @@ svg {
         Ctor.rounding = rm;
         return x4.ln();
       };
-      P3.inverseHyperbolicTangent = P3.atanh = function() {
+      P4.inverseHyperbolicTangent = P4.atanh = function() {
         var pr, rm, wpr, xsd, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite())
           return new Ctor(NaN);
@@ -17321,7 +17370,7 @@ svg {
         Ctor.rounding = rm;
         return x4.times(0.5);
       };
-      P3.inverseSine = P3.asin = function() {
+      P4.inverseSine = P4.asin = function() {
         var halfPi, k4, pr, rm, x4 = this, Ctor = x4.constructor;
         if (x4.isZero())
           return new Ctor(x4);
@@ -17343,7 +17392,7 @@ svg {
         Ctor.rounding = rm;
         return x4.times(2);
       };
-      P3.inverseTangent = P3.atan = function() {
+      P4.inverseTangent = P4.atan = function() {
         var i4, j4, k4, n3, px, t3, r4, wpr, x22, x4 = this, Ctor = x4.constructor, pr = Ctor.precision, rm = Ctor.rounding;
         if (!x4.isFinite()) {
           if (!x4.s)
@@ -17385,31 +17434,31 @@ svg {
         external = true;
         return finalise(r4, Ctor.precision = pr, Ctor.rounding = rm, true);
       };
-      P3.isFinite = function() {
+      P4.isFinite = function() {
         return !!this.d;
       };
-      P3.isInteger = P3.isInt = function() {
+      P4.isInteger = P4.isInt = function() {
         return !!this.d && mathfloor(this.e / LOG_BASE) > this.d.length - 2;
       };
-      P3.isNaN = function() {
+      P4.isNaN = function() {
         return !this.s;
       };
-      P3.isNegative = P3.isNeg = function() {
+      P4.isNegative = P4.isNeg = function() {
         return this.s < 0;
       };
-      P3.isPositive = P3.isPos = function() {
+      P4.isPositive = P4.isPos = function() {
         return this.s > 0;
       };
-      P3.isZero = function() {
+      P4.isZero = function() {
         return !!this.d && this.d[0] === 0;
       };
-      P3.lessThan = P3.lt = function(y3) {
+      P4.lessThan = P4.lt = function(y3) {
         return this.cmp(y3) < 0;
       };
-      P3.lessThanOrEqualTo = P3.lte = function(y3) {
+      P4.lessThanOrEqualTo = P4.lte = function(y3) {
         return this.cmp(y3) < 1;
       };
-      P3.logarithm = P3.log = function(base) {
+      P4.logarithm = P4.log = function(base) {
         var isBase10, d3, denominator, k4, inf, num, sd, r4, arg2 = this, Ctor = arg2.constructor, pr = Ctor.precision, rm = Ctor.rounding, guard = 5;
         if (base == null) {
           base = new Ctor(10);
@@ -17456,7 +17505,7 @@ svg {
         external = true;
         return finalise(r4, pr, rm);
       };
-      P3.minus = P3.sub = function(y3) {
+      P4.minus = P4.sub = function(y3) {
         var d3, e6, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
@@ -17551,7 +17600,7 @@ svg {
         y3.e = getBase10Exponent(xd, e6);
         return external ? finalise(y3, pr, rm) : y3;
       };
-      P3.modulo = P3.mod = function(y3) {
+      P4.modulo = P4.mod = function(y3) {
         var q4, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.s || y3.d && !y3.d[0])
@@ -17570,18 +17619,18 @@ svg {
         external = true;
         return x4.minus(q4);
       };
-      P3.naturalExponential = P3.exp = function() {
+      P4.naturalExponential = P4.exp = function() {
         return naturalExponential(this);
       };
-      P3.naturalLogarithm = P3.ln = function() {
+      P4.naturalLogarithm = P4.ln = function() {
         return naturalLogarithm(this);
       };
-      P3.negated = P3.neg = function() {
+      P4.negated = P4.neg = function() {
         var x4 = new this.constructor(this);
         x4.s = -x4.s;
         return finalise(x4);
       };
-      P3.plus = P3.add = function(y3) {
+      P4.plus = P4.add = function(y3) {
         var carry, d3, e6, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
@@ -17651,7 +17700,7 @@ svg {
         y3.e = getBase10Exponent(xd, e6);
         return external ? finalise(y3, pr, rm) : y3;
       };
-      P3.precision = P3.sd = function(z4) {
+      P4.precision = P4.sd = function(z4) {
         var k4, x4 = this;
         if (z4 !== void 0 && z4 !== !!z4 && z4 !== 1 && z4 !== 0)
           throw Error(invalidArgument + z4);
@@ -17664,11 +17713,11 @@ svg {
         }
         return k4;
       };
-      P3.round = function() {
+      P4.round = function() {
         var x4 = this, Ctor = x4.constructor;
         return finalise(new Ctor(x4), x4.e + 1, Ctor.rounding);
       };
-      P3.sine = P3.sin = function() {
+      P4.sine = P4.sin = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite())
           return new Ctor(NaN);
@@ -17683,7 +17732,7 @@ svg {
         Ctor.rounding = rm;
         return finalise(quadrant > 2 ? x4.neg() : x4, pr, rm, true);
       };
-      P3.squareRoot = P3.sqrt = function() {
+      P4.squareRoot = P4.sqrt = function() {
         var m3, n3, sd, r4, rep, t3, x4 = this, d3 = x4.d, e6 = x4.e, s3 = x4.s, Ctor = x4.constructor;
         if (s3 !== 1 || !d3 || !d3[0]) {
           return new Ctor(!s3 || s3 < 0 && (!d3 || d3[0]) ? NaN : d3 ? x4 : 1 / 0);
@@ -17734,7 +17783,7 @@ svg {
         external = true;
         return finalise(r4, e6, Ctor.rounding, m3);
       };
-      P3.tangent = P3.tan = function() {
+      P4.tangent = P4.tan = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite())
           return new Ctor(NaN);
@@ -17751,7 +17800,7 @@ svg {
         Ctor.rounding = rm;
         return finalise(quadrant == 2 || quadrant == 4 ? x4.neg() : x4, pr, rm, true);
       };
-      P3.times = P3.mul = function(y3) {
+      P4.times = P4.mul = function(y3) {
         var carry, e6, i4, k4, r4, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
         y3.s *= x4.s;
         if (!xd || !xd[0] || !yd || !yd[0]) {
@@ -17791,10 +17840,10 @@ svg {
         y3.e = getBase10Exponent(r4, e6);
         return external ? finalise(y3, Ctor.precision, Ctor.rounding) : y3;
       };
-      P3.toBinary = function(sd, rm) {
+      P4.toBinary = function(sd, rm) {
         return toStringBinary(this, 2, sd, rm);
       };
-      P3.toDecimalPlaces = P3.toDP = function(dp, rm) {
+      P4.toDecimalPlaces = P4.toDP = function(dp, rm) {
         var x4 = this, Ctor = x4.constructor;
         x4 = new Ctor(x4);
         if (dp === void 0)
@@ -17806,7 +17855,7 @@ svg {
           checkInt32(rm, 0, 8);
         return finalise(x4, dp + x4.e + 1, rm);
       };
-      P3.toExponential = function(dp, rm) {
+      P4.toExponential = function(dp, rm) {
         var str, x4 = this, Ctor = x4.constructor;
         if (dp === void 0) {
           str = finiteToString(x4, true);
@@ -17821,7 +17870,7 @@ svg {
         }
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
-      P3.toFixed = function(dp, rm) {
+      P4.toFixed = function(dp, rm) {
         var str, y3, x4 = this, Ctor = x4.constructor;
         if (dp === void 0) {
           str = finiteToString(x4);
@@ -17836,7 +17885,7 @@ svg {
         }
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
-      P3.toFraction = function(maxD) {
+      P4.toFraction = function(maxD) {
         var d3, d0, d1, d22, e6, k4, n3, n0, n16, pr, q4, r4, x4 = this, xd = x4.d, Ctor = x4.constructor;
         if (!xd)
           return new Ctor(x4);
@@ -17881,10 +17930,10 @@ svg {
         external = true;
         return r4;
       };
-      P3.toHexadecimal = P3.toHex = function(sd, rm) {
+      P4.toHexadecimal = P4.toHex = function(sd, rm) {
         return toStringBinary(this, 16, sd, rm);
       };
-      P3.toNearest = function(y3, rm) {
+      P4.toNearest = function(y3, rm) {
         var x4 = this, Ctor = x4.constructor;
         x4 = new Ctor(x4);
         if (y3 == null) {
@@ -17918,13 +17967,13 @@ svg {
         }
         return x4;
       };
-      P3.toNumber = function() {
+      P4.toNumber = function() {
         return +this;
       };
-      P3.toOctal = function(sd, rm) {
+      P4.toOctal = function(sd, rm) {
         return toStringBinary(this, 8, sd, rm);
       };
-      P3.toPower = P3.pow = function(y3) {
+      P4.toPower = P4.pow = function(y3) {
         var e6, k4, pr, r4, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
         if (!x4.d || !y3.d || !x4.d[0] || !y3.d[0])
           return new Ctor(mathpow(+x4, yn2));
@@ -17974,7 +18023,7 @@ svg {
         Ctor.rounding = rm;
         return finalise(r4, pr, rm);
       };
-      P3.toPrecision = function(sd, rm) {
+      P4.toPrecision = function(sd, rm) {
         var str, x4 = this, Ctor = x4.constructor;
         if (sd === void 0) {
           str = finiteToString(x4, x4.e <= Ctor.toExpNeg || x4.e >= Ctor.toExpPos);
@@ -17989,7 +18038,7 @@ svg {
         }
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
-      P3.toSignificantDigits = P3.toSD = function(sd, rm) {
+      P4.toSignificantDigits = P4.toSD = function(sd, rm) {
         var x4 = this, Ctor = x4.constructor;
         if (sd === void 0) {
           sd = Ctor.precision;
@@ -18003,14 +18052,14 @@ svg {
         }
         return finalise(new Ctor(x4), sd, rm);
       };
-      P3.toString = function() {
+      P4.toString = function() {
         var x4 = this, Ctor = x4.constructor, str = finiteToString(x4, x4.e <= Ctor.toExpNeg || x4.e >= Ctor.toExpPos);
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
-      P3.truncated = P3.trunc = function() {
+      P4.truncated = P4.trunc = function() {
         return finalise(new this.constructor(this), this.e + 1, 1);
       };
-      P3.valueOf = P3.toJSON = function() {
+      P4.valueOf = P4.toJSON = function() {
         var x4 = this, Ctor = x4.constructor, str = finiteToString(x4, x4.e <= Ctor.toExpNeg || x4.e >= Ctor.toExpPos);
         return x4.isNeg() ? "-" + str : str;
       };
@@ -18185,9 +18234,9 @@ svg {
           return q4;
         };
       }();
-      P3[Symbol.for("nodejs.util.inspect.custom")] = P3.toString;
-      P3[Symbol.toStringTag] = "Decimal";
-      Decimal = P3.constructor = clone3(DEFAULTS);
+      P4[Symbol.for("nodejs.util.inspect.custom")] = P4.toString;
+      P4[Symbol.toStringTag] = "Decimal";
+      Decimal = P4.constructor = clone3(DEFAULTS);
       LN10 = new Decimal(LN10);
       PI = new Decimal(PI);
       decimal_default = Decimal;
@@ -19379,7 +19428,7 @@ svg {
       (function(root) {
         "use strict";
         var MAX_CYCLE_LEN = 2e3;
-        var P5 = {
+        var P6 = {
           "s": 1,
           "n": 0,
           "d": 1
@@ -19554,9 +19603,9 @@ svg {
           if (d3 === 0) {
             throw Fraction3["DivisionByZero"];
           }
-          P5["s"] = s3 < 0 ? -1 : 1;
-          P5["n"] = Math.abs(n3);
-          P5["d"] = Math.abs(d3);
+          P6["s"] = s3 < 0 ? -1 : 1;
+          P6["n"] = Math.abs(n3);
+          P6["d"] = Math.abs(d3);
         };
         function modpow(b3, e6, m3) {
           var r4 = 1;
@@ -19612,12 +19661,12 @@ svg {
         function Fraction3(a3, b3) {
           parse2(a3, b3);
           if (this instanceof Fraction3) {
-            a3 = gcd2(P5["d"], P5["n"]);
-            this["s"] = P5["s"];
-            this["n"] = P5["n"] / a3;
-            this["d"] = P5["d"] / a3;
+            a3 = gcd2(P6["d"], P6["n"]);
+            this["s"] = P6["s"];
+            this["n"] = P6["n"] / a3;
+            this["d"] = P6["d"] / a3;
           } else {
-            return newFraction(P5["s"] * P5["n"], P5["d"]);
+            return newFraction(P6["s"] * P6["n"], P6["d"]);
           }
         }
         Fraction3["DivisionByZero"] = new Error("Division by Zero");
@@ -19651,8 +19700,8 @@ svg {
           "add": function(a3, b3) {
             parse2(a3, b3);
             return newFraction(
-              this["s"] * this["n"] * P5["d"] + P5["s"] * this["d"] * P5["n"],
-              this["d"] * P5["d"]
+              this["s"] * this["n"] * P6["d"] + P6["s"] * this["d"] * P6["n"],
+              this["d"] * P6["d"]
             );
           },
           /**
@@ -19663,8 +19712,8 @@ svg {
           "sub": function(a3, b3) {
             parse2(a3, b3);
             return newFraction(
-              this["s"] * this["n"] * P5["d"] - P5["s"] * this["d"] * P5["n"],
-              this["d"] * P5["d"]
+              this["s"] * this["n"] * P6["d"] - P6["s"] * this["d"] * P6["n"],
+              this["d"] * P6["d"]
             );
           },
           /**
@@ -19675,8 +19724,8 @@ svg {
           "mul": function(a3, b3) {
             parse2(a3, b3);
             return newFraction(
-              this["s"] * P5["s"] * this["n"] * P5["n"],
-              this["d"] * P5["d"]
+              this["s"] * P6["s"] * this["n"] * P6["n"],
+              this["d"] * P6["d"]
             );
           },
           /**
@@ -19687,8 +19736,8 @@ svg {
           "div": function(a3, b3) {
             parse2(a3, b3);
             return newFraction(
-              this["s"] * P5["s"] * this["n"] * P5["d"],
-              this["d"] * P5["n"]
+              this["s"] * P6["s"] * this["n"] * P6["d"],
+              this["d"] * P6["n"]
             );
           },
           /**
@@ -19712,12 +19761,12 @@ svg {
               return newFraction(this["s"] * this["n"] % this["d"], 1);
             }
             parse2(a3, b3);
-            if (0 === P5["n"] && 0 === this["d"]) {
+            if (0 === P6["n"] && 0 === this["d"]) {
               throw Fraction3["DivisionByZero"];
             }
             return newFraction(
-              this["s"] * (P5["d"] * this["n"]) % (P5["n"] * this["d"]),
-              P5["d"] * this["d"]
+              this["s"] * (P6["d"] * this["n"]) % (P6["n"] * this["d"]),
+              P6["d"] * this["d"]
             );
           },
           /**
@@ -19727,7 +19776,7 @@ svg {
            */
           "gcd": function(a3, b3) {
             parse2(a3, b3);
-            return newFraction(gcd2(P5["n"], this["n"]) * gcd2(P5["d"], this["d"]), P5["d"] * this["d"]);
+            return newFraction(gcd2(P6["n"], this["n"]) * gcd2(P6["d"], this["d"]), P6["d"] * this["d"]);
           },
           /**
            * Calculates the fractional lcm of two rational numbers
@@ -19736,10 +19785,10 @@ svg {
            */
           "lcm": function(a3, b3) {
             parse2(a3, b3);
-            if (P5["n"] === 0 && this["n"] === 0) {
+            if (P6["n"] === 0 && this["n"] === 0) {
               return newFraction(0, 1);
             }
-            return newFraction(P5["n"] * this["n"], gcd2(P5["n"], this["n"]) * gcd2(P5["d"], this["d"]));
+            return newFraction(P6["n"] * this["n"], gcd2(P6["n"], this["n"]) * gcd2(P6["d"], this["d"]));
           },
           /**
            * Calculates the ceil of a rational number
@@ -19792,11 +19841,11 @@ svg {
            */
           "pow": function(a3, b3) {
             parse2(a3, b3);
-            if (P5["d"] === 1) {
-              if (P5["s"] < 0) {
-                return newFraction(Math.pow(this["s"] * this["d"], P5["n"]), Math.pow(this["n"], P5["n"]));
+            if (P6["d"] === 1) {
+              if (P6["s"] < 0) {
+                return newFraction(Math.pow(this["s"] * this["d"], P6["n"]), Math.pow(this["n"], P6["n"]));
               } else {
-                return newFraction(Math.pow(this["s"] * this["n"], P5["n"]), Math.pow(this["d"], P5["n"]));
+                return newFraction(Math.pow(this["s"] * this["n"], P6["n"]), Math.pow(this["d"], P6["n"]));
               }
             }
             if (this["s"] < 0)
@@ -19812,9 +19861,9 @@ svg {
                 n3 = 0;
                 break;
               }
-              N3[k4] *= P5["n"];
-              if (N3[k4] % P5["d"] === 0) {
-                N3[k4] /= P5["d"];
+              N3[k4] *= P6["n"];
+              if (N3[k4] % P6["d"] === 0) {
+                N3[k4] /= P6["d"];
               } else
                 return null;
               n3 *= Math.pow(k4, N3[k4]);
@@ -19822,14 +19871,14 @@ svg {
             for (var k4 in D3) {
               if (k4 === "1")
                 continue;
-              D3[k4] *= P5["n"];
-              if (D3[k4] % P5["d"] === 0) {
-                D3[k4] /= P5["d"];
+              D3[k4] *= P6["n"];
+              if (D3[k4] % P6["d"] === 0) {
+                D3[k4] /= P6["d"];
               } else
                 return null;
               d3 *= Math.pow(k4, D3[k4]);
             }
-            if (P5["s"] < 0) {
+            if (P6["s"] < 0) {
               return newFraction(d3, n3);
             }
             return newFraction(n3, d3);
@@ -19841,7 +19890,7 @@ svg {
            **/
           "equals": function(a3, b3) {
             parse2(a3, b3);
-            return this["s"] * this["n"] * P5["d"] === P5["s"] * P5["n"] * this["d"];
+            return this["s"] * this["n"] * P6["d"] === P6["s"] * P6["n"] * this["d"];
           },
           /**
            * Check if two rational numbers are the same
@@ -19850,7 +19899,7 @@ svg {
            **/
           "compare": function(a3, b3) {
             parse2(a3, b3);
-            var t3 = this["s"] * this["n"] * P5["d"] - P5["s"] * P5["n"] * this["d"];
+            var t3 = this["s"] * this["n"] * P6["d"] - P6["s"] * P6["n"] * this["d"];
             return (0 < t3) - (t3 < 0);
           },
           "simplify": function(eps) {
@@ -19878,7 +19927,7 @@ svg {
            */
           "divisible": function(a3, b3) {
             parse2(a3, b3);
-            return !(!(P5["n"] * this["d"]) || this["n"] * P5["d"] % (P5["n"] * this["d"]));
+            return !(!(P6["n"] * this["d"]) || this["n"] * P6["d"] % (P6["n"] * this["d"]));
           },
           /**
            * Returns a decimal representation of the fraction
@@ -29381,7 +29430,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/special/erf.js
-  var name112, dependencies112, createErf, THRESH, SQRPI, P4, Q2, MAX_NUM;
+  var name112, dependencies112, createErf, THRESH, SQRPI, P5, Q2, MAX_NUM;
   var init_erf = __esm({
     "node_modules/mathjs/lib/esm/function/special/erf.js"() {
       init_collection();
@@ -29413,38 +29462,38 @@ svg {
         });
         function erf1(y3) {
           var ysq = y3 * y3;
-          var xnum = P4[0][4] * ysq;
+          var xnum = P5[0][4] * ysq;
           var xden = ysq;
           var i4;
           for (i4 = 0; i4 < 3; i4 += 1) {
-            xnum = (xnum + P4[0][i4]) * ysq;
+            xnum = (xnum + P5[0][i4]) * ysq;
             xden = (xden + Q2[0][i4]) * ysq;
           }
-          return y3 * (xnum + P4[0][3]) / (xden + Q2[0][3]);
+          return y3 * (xnum + P5[0][3]) / (xden + Q2[0][3]);
         }
         function erfc2(y3) {
-          var xnum = P4[1][8] * y3;
+          var xnum = P5[1][8] * y3;
           var xden = y3;
           var i4;
           for (i4 = 0; i4 < 7; i4 += 1) {
-            xnum = (xnum + P4[1][i4]) * y3;
+            xnum = (xnum + P5[1][i4]) * y3;
             xden = (xden + Q2[1][i4]) * y3;
           }
-          var result = (xnum + P4[1][7]) / (xden + Q2[1][7]);
+          var result = (xnum + P5[1][7]) / (xden + Q2[1][7]);
           var ysq = parseInt(y3 * 16) / 16;
           var del = (y3 - ysq) * (y3 + ysq);
           return Math.exp(-ysq * ysq) * Math.exp(-del) * result;
         }
         function erfc3(y3) {
           var ysq = 1 / (y3 * y3);
-          var xnum = P4[2][5] * ysq;
+          var xnum = P5[2][5] * ysq;
           var xden = ysq;
           var i4;
           for (i4 = 0; i4 < 4; i4 += 1) {
-            xnum = (xnum + P4[2][i4]) * ysq;
+            xnum = (xnum + P5[2][i4]) * ysq;
             xden = (xden + Q2[2][i4]) * ysq;
           }
-          var result = ysq * (xnum + P4[2][4]) / (xden + Q2[2][4]);
+          var result = ysq * (xnum + P5[2][4]) / (xden + Q2[2][4]);
           result = (SQRPI - result) / y3;
           ysq = parseInt(y3 * 16) / 16;
           var del = (y3 - ysq) * (y3 + ysq);
@@ -29453,7 +29502,7 @@ svg {
       });
       THRESH = 0.46875;
       SQRPI = 0.5641895835477563;
-      P4 = [[3.1611237438705655, 113.86415415105016, 377.485237685302, 3209.3775891384694, 0.18577770618460315], [0.5641884969886701, 8.883149794388377, 66.11919063714163, 298.6351381974001, 881.952221241769, 1712.0476126340707, 2051.0783778260716, 1230.3393547979972, 21531153547440383e-24], [0.30532663496123236, 0.36034489994980445, 0.12578172611122926, 0.016083785148742275, 6587491615298378e-19, 0.016315387137302097]];
+      P5 = [[3.1611237438705655, 113.86415415105016, 377.485237685302, 3209.3775891384694, 0.18577770618460315], [0.5641884969886701, 8.883149794388377, 66.11919063714163, 298.6351381974001, 881.952221241769, 1712.0476126340707, 2051.0783778260716, 1230.3393547979972, 21531153547440383e-24], [0.30532663496123236, 0.36034489994980445, 0.12578172611122926, 0.016083785148742275, 6587491615298378e-19, 0.016315387137302097]];
       Q2 = [[23.601290952344122, 244.02463793444417, 1282.6165260773723, 2844.236833439171], [15.744926110709835, 117.6939508913125, 537.1811018620099, 1621.3895745666903, 3290.7992357334597, 4362.619090143247, 3439.3676741437216, 1230.3393548037495], [2.568520192289822, 1.8729528499234604, 0.5279051029514285, 0.06051834131244132, 0.0023352049762686918]];
       MAX_NUM = Math.pow(2, 53);
     }
@@ -44945,7 +44994,7 @@ svg {
           var cindex = cm._index;
           var cptr = cm._ptr;
           var cnz = cptr[n3];
-          var P5 = [];
+          var P6 = [];
           var W2 = [];
           var len = 0;
           var nv = n3 + 1;
@@ -44955,7 +45004,7 @@ svg {
           var degree = 5 * (n3 + 1);
           var w4 = 6 * (n3 + 1);
           var hhead = 7 * (n3 + 1);
-          var last = P5;
+          var last = P6;
           var mark = _initializeQuotientGraph(n3, cptr, W2, len, head, last, next, hhead, nv, w4, elen, degree);
           var nel = _initializeDegreeLists(n3, cptr, W2, degree, elen, w4, dense, nv, head, last, next);
           var mindeg = 0;
@@ -45173,11 +45222,11 @@ svg {
           }
           for (k4 = 0, i4 = 0; i4 <= n3; i4++) {
             if (cptr[i4] === -1) {
-              k4 = csTdfs(i4, k4, W2, head, next, P5, w4);
+              k4 = csTdfs(i4, k4, W2, head, next, P6, w4);
             }
           }
-          P5.splice(P5.length - 1, 1);
-          return P5;
+          P6.splice(P6.length - 1, 1);
+          return P6;
         };
         function _createTargetMatrix(order, a3, m3, n3, dense) {
           var at = transpose2(a3);
@@ -58206,8 +58255,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/constants.js
-  function recreateFactory(name307, dependencies307, create) {
-    return factory(name307, dependencies307, create, {
+  function recreateFactory(name307, dependencies307, create2) {
+    return factory(name307, dependencies307, create2, {
       recreateOnConfigChange: true
     });
   }
@@ -62057,8 +62106,324 @@ svg {
     }
   });
 
+  // node_modules/zustand/esm/vanilla.mjs
+  var import_meta, createStoreImpl, createStore;
+  var init_vanilla = __esm({
+    "node_modules/zustand/esm/vanilla.mjs"() {
+      import_meta = {};
+      createStoreImpl = (createState) => {
+        let state;
+        const listeners = /* @__PURE__ */ new Set();
+        const setState = (partial, replace) => {
+          const nextState = typeof partial === "function" ? partial(state) : partial;
+          if (!Object.is(nextState, state)) {
+            const previousState = state;
+            state = (replace != null ? replace : typeof nextState !== "object") ? nextState : Object.assign({}, state, nextState);
+            listeners.forEach((listener) => listener(state, previousState));
+          }
+        };
+        const getState = () => state;
+        const subscribe = (listener) => {
+          listeners.add(listener);
+          return () => listeners.delete(listener);
+        };
+        const destroy = () => {
+          if ((import_meta.env ? import_meta.env.MODE : void 0) !== "production") {
+            console.warn(
+              "[DEPRECATED] The `destroy` method will be unsupported in a future version. Instead use unsubscribe function returned by subscribe. Everything will be garbage-collected if store is garbage-collected."
+            );
+          }
+          listeners.clear();
+        };
+        const api = { setState, getState, subscribe, destroy };
+        state = createState(setState, getState, api);
+        return api;
+      };
+      createStore = (createState) => createState ? createStoreImpl(createState) : createStoreImpl;
+    }
+  });
+
+  // node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+  var require_use_sync_external_store_shim_development = __commonJS({
+    "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+      "use strict";
+      if (true) {
+        (function() {
+          "use strict";
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+          }
+          var React = (init_compat_module(), __toCommonJS(compat_module_exports));
+          var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          function error(format5) {
+            {
+              {
+                for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+                  args[_key2 - 1] = arguments[_key2];
+                }
+                printWarning("error", format5, args);
+              }
+            }
+          }
+          function printWarning(level, format5, args) {
+            {
+              var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+              var stack = ReactDebugCurrentFrame.getStackAddendum();
+              if (stack !== "") {
+                format5 += "%s";
+                args = args.concat([stack]);
+              }
+              var argsWithFormat = args.map(function(item) {
+                return String(item);
+              });
+              argsWithFormat.unshift("Warning: " + format5);
+              Function.prototype.apply.call(console[level], console, argsWithFormat);
+            }
+          }
+          function is(x4, y3) {
+            return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
+          }
+          var objectIs = typeof Object.is === "function" ? Object.is : is;
+          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
+          var didWarnOld18Alpha = false;
+          var didWarnUncachedGetSnapshot = false;
+          function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
+            {
+              if (!didWarnOld18Alpha) {
+                if (React.startTransition !== void 0) {
+                  didWarnOld18Alpha = true;
+                  error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
+                }
+              }
+            }
+            var value2 = getSnapshot();
+            {
+              if (!didWarnUncachedGetSnapshot) {
+                var cachedValue = getSnapshot();
+                if (!objectIs(value2, cachedValue)) {
+                  error("The result of getSnapshot should be cached to avoid an infinite loop");
+                  didWarnUncachedGetSnapshot = true;
+                }
+              }
+            }
+            var _useState = useState({
+              inst: {
+                value: value2,
+                getSnapshot
+              }
+            }), inst = _useState[0].inst, forceUpdate = _useState[1];
+            useLayoutEffect(function() {
+              inst.value = value2;
+              inst.getSnapshot = getSnapshot;
+              if (checkIfSnapshotChanged(inst)) {
+                forceUpdate({
+                  inst
+                });
+              }
+            }, [subscribe, value2, getSnapshot]);
+            useEffect(function() {
+              if (checkIfSnapshotChanged(inst)) {
+                forceUpdate({
+                  inst
+                });
+              }
+              var handleStoreChange = function() {
+                if (checkIfSnapshotChanged(inst)) {
+                  forceUpdate({
+                    inst
+                  });
+                }
+              };
+              return subscribe(handleStoreChange);
+            }, [subscribe]);
+            useDebugValue(value2);
+            return value2;
+          }
+          function checkIfSnapshotChanged(inst) {
+            var latestGetSnapshot = inst.getSnapshot;
+            var prevValue = inst.value;
+            try {
+              var nextValue = latestGetSnapshot();
+              return !objectIs(prevValue, nextValue);
+            } catch (error2) {
+              return true;
+            }
+          }
+          function useSyncExternalStore$1(subscribe, getSnapshot, getServerSnapshot) {
+            return getSnapshot();
+          }
+          var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+          var isServerEnvironment = !canUseDOM;
+          var shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore;
+          var useSyncExternalStore$2 = React.useSyncExternalStore !== void 0 ? React.useSyncExternalStore : shim;
+          exports.useSyncExternalStore = useSyncExternalStore$2;
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+          }
+        })();
+      }
+    }
+  });
+
+  // node_modules/use-sync-external-store/shim/index.js
+  var require_shim = __commonJS({
+    "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_use_sync_external_store_shim_development();
+      }
+    }
+  });
+
+  // node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
+  var require_with_selector_development = __commonJS({
+    "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
+      "use strict";
+      if (true) {
+        (function() {
+          "use strict";
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+          }
+          var React = (init_compat_module(), __toCommonJS(compat_module_exports));
+          var shim = require_shim();
+          function is(x4, y3) {
+            return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
+          }
+          var objectIs = typeof Object.is === "function" ? Object.is : is;
+          var useSyncExternalStore = shim.useSyncExternalStore;
+          var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
+          function useSyncExternalStoreWithSelector2(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
+            var instRef = useRef(null);
+            var inst;
+            if (instRef.current === null) {
+              inst = {
+                hasValue: false,
+                value: null
+              };
+              instRef.current = inst;
+            } else {
+              inst = instRef.current;
+            }
+            var _useMemo = useMemo(function() {
+              var hasMemo = false;
+              var memoizedSnapshot;
+              var memoizedSelection;
+              var memoizedSelector = function(nextSnapshot) {
+                if (!hasMemo) {
+                  hasMemo = true;
+                  memoizedSnapshot = nextSnapshot;
+                  var _nextSelection = selector(nextSnapshot);
+                  if (isEqual !== void 0) {
+                    if (inst.hasValue) {
+                      var currentSelection = inst.value;
+                      if (isEqual(currentSelection, _nextSelection)) {
+                        memoizedSelection = currentSelection;
+                        return currentSelection;
+                      }
+                    }
+                  }
+                  memoizedSelection = _nextSelection;
+                  return _nextSelection;
+                }
+                var prevSnapshot = memoizedSnapshot;
+                var prevSelection = memoizedSelection;
+                if (objectIs(prevSnapshot, nextSnapshot)) {
+                  return prevSelection;
+                }
+                var nextSelection = selector(nextSnapshot);
+                if (isEqual !== void 0 && isEqual(prevSelection, nextSelection)) {
+                  return prevSelection;
+                }
+                memoizedSnapshot = nextSnapshot;
+                memoizedSelection = nextSelection;
+                return nextSelection;
+              };
+              var maybeGetServerSnapshot = getServerSnapshot === void 0 ? null : getServerSnapshot;
+              var getSnapshotWithSelector = function() {
+                return memoizedSelector(getSnapshot());
+              };
+              var getServerSnapshotWithSelector = maybeGetServerSnapshot === null ? void 0 : function() {
+                return memoizedSelector(maybeGetServerSnapshot());
+              };
+              return [getSnapshotWithSelector, getServerSnapshotWithSelector];
+            }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
+            var value2 = useSyncExternalStore(subscribe, getSelection, getServerSelection);
+            useEffect(function() {
+              inst.hasValue = true;
+              inst.value = value2;
+            }, [value2]);
+            useDebugValue(value2);
+            return value2;
+          }
+          exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector2;
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
+            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+          }
+        })();
+      }
+    }
+  });
+
+  // node_modules/use-sync-external-store/shim/with-selector.js
+  var require_with_selector = __commonJS({
+    "node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_with_selector_development();
+      }
+    }
+  });
+
+  // node_modules/zustand/esm/index.mjs
+  function useStore(api, selector = api.getState, equalityFn) {
+    if ((import_meta2.env ? import_meta2.env.MODE : void 0) !== "production" && equalityFn && !didWarnAboutEqualityFn) {
+      console.warn(
+        "[DEPRECATED] Use `createWithEqualityFn` instead of `create` or use `useStoreWithEqualityFn` instead of `useStore`. They can be imported from 'zustand/traditional'. https://github.com/pmndrs/zustand/discussions/1937"
+      );
+      didWarnAboutEqualityFn = true;
+    }
+    const slice = useSyncExternalStoreWithSelector(
+      api.subscribe,
+      api.getState,
+      api.getServerState || api.getState,
+      selector,
+      equalityFn
+    );
+    x2(slice);
+    return slice;
+  }
+  var import_with_selector, import_meta2, useSyncExternalStoreWithSelector, didWarnAboutEqualityFn, createImpl, create;
+  var init_esm2 = __esm({
+    "node_modules/zustand/esm/index.mjs"() {
+      init_vanilla();
+      init_vanilla();
+      init_compat_module();
+      import_with_selector = __toESM(require_with_selector(), 1);
+      import_meta2 = {};
+      ({ useSyncExternalStoreWithSelector } = import_with_selector.default);
+      didWarnAboutEqualityFn = false;
+      createImpl = (createState) => {
+        if ((import_meta2.env ? import_meta2.env.MODE : void 0) !== "production" && typeof createState !== "function") {
+          console.warn(
+            "[DEPRECATED] Passing a vanilla store will be unsupported in a future version. Instead use `import { useStore } from 'zustand'`."
+          );
+        }
+        const api = typeof createState === "function" ? createStore(createState) : createState;
+        const useBoundStore = (selector, equalityFn) => useStore(api, selector, equalityFn);
+        Object.assign(useBoundStore, api);
+        return useBoundStore;
+      };
+      create = (createState) => createState ? createImpl(createState) : createImpl;
+    }
+  });
+
   // src/theme-color.ts
-  var ThemeColor, theme_color_default;
+  var useThemeColorStore, ThemeColor, theme_color_default;
   var init_theme_color = __esm({
     "src/theme-color.ts"() {
       "use strict";
@@ -62067,6 +62432,16 @@ svg {
       init_utility();
       init_ref();
       init_esm();
+      init_esm2();
+      useThemeColorStore = create((set) => ({
+        sourceColor: new color_default("#000000"),
+        themeColor: new color_default("#000000"),
+        hueCalc: "",
+        chromaCalc: "",
+        tones: [],
+        name: "",
+        aliases: []
+      }));
       ThemeColor = class {
         constructor(color, name307, tones, hueCalc, chromaCalc, aliases, id) {
           this.id = v4_default();
@@ -63422,4 +63797,26 @@ fraction.js/fraction.js:
    * Copyright (c) 2021, Robert Eisele (robert@xarg.org)
    * Dual licensed under the MIT or GPL Version 2 licenses.
    **)
+
+use-sync-external-store/cjs/use-sync-external-store-shim.development.js:
+  (**
+   * @license React
+   * use-sync-external-store-shim.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+
+use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js:
+  (**
+   * @license React
+   * use-sync-external-store-shim/with-selector.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
 */
