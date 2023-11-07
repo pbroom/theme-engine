@@ -4,6 +4,15 @@
 
 *This plugin is built with [Create Figma Plugin](https://yuanqing.github.io/create-figma-plugin/).*
 
+### Instalation
+
+Clone the repository to local, then 
+
+```
+$ cd react-figma-plugin
+$ npm i
+```
+
 ### Pre-requisites
 
 - [Node.js](https://nodejs.org) – v18
