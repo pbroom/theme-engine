@@ -10,8 +10,10 @@ import {
 import {
 	Columns,
 	Container,
+	Divider,
 	Muted,
 	render,
+	Tabs,
 	Text,
 	TextboxColor,
 	VerticalSpace,
@@ -23,10 +25,12 @@ import { create } from 'zustand';
 export const Plugin = () => {
 	// Rendering the UI
 	return (
-		<div id="container-wrap" className="py-4 overflow-y-auto">
-			<Container space="medium">
-				<div>Hello</div>
-			</Container>
+		<div id="container-wrap" className="overflow-y-auto">
+			<div className="h-10 w-full">
+				<div className="h-full w-10 bg-slate-800"></div>
+				<Tabs options={options} value={value} />
+			</div>
+			<Divider />
 		</div>
 	);
 };
