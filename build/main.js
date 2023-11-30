@@ -5219,7 +5219,7 @@ __export(main_exports, {
   default: () => main_default
 });
 function main_default() {
-  showUI({ height: height(750), width: 512, title: "Dynamic Color" });
+  showUI({ height: height(640), width: 512, title: "Dynamic Color" });
 }
 var height;
 var init_main = __esm({

@@ -2,7 +2,12 @@
 	"extends": "@create-figma-plugin/tsconfig",
 	"compilerOptions": {
 		"typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"]
+		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/.ui-copy.tsx"]
 }

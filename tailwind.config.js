@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{html, ts, tsx, css}', './src/**/*.tsx'],
-	theme: {
-		extend: {
-			flex: {
-				up: '1 0 auto',
-			},
-		},
-	},
+	darkMode: ['class'],
+	content: [
+		'./pages/**/*.{ts,tsx}',
+		'./components/**/*.{ts,tsx}',
+		'./app/**/*.{ts,tsx}',
+		'./src/**/*.{ts,tsx}',
+		'./src/components/**/*.{ts,tsx}',
+	],
 	theme: {
 		container: {
 			center: true,
@@ -17,7 +17,13 @@ module.exports = {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-conic': 'conic-gradient(from 180deg, white, red, black)',
+			},
 			colors: {
+				fig: {
+					blue: '#18A0FB',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -51,31 +57,28 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
-				flex: {
-					up: '1 0 auto',
-				},
 			},
 			borderRadius: {
-				lg: `var(--radius)`,
-				md: `calc(var(--radius) - 2px)`,
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
-			},
-			fontFamily: {
-				sans: ['var(--font-sans)', ...fontFamily.sans],
 			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: '0' },
+					from: { height: 0 },
 					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
 					from: { height: 'var(--radix-accordion-content-height)' },
-					to: { height: '0' },
+					to: { height: 0 },
 				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+			},
+			flex: {
+				up: '1 0 auto',
 			},
 		},
 	},
