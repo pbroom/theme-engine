@@ -5,7 +5,7 @@ import '!.././dist/tailwind.css';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 
 const TabGroup = () => {
-	const [value, setValue] = useState<string>('Primitives');
+	const [value, setValue] = useState<string>('Aliases');
 	const options: Array<TabsOption> = [
 		{
 			children: (
@@ -57,10 +57,6 @@ const TabGroup = () => {
 		{
 			children: (
 				<div className="absolute top-10 left-0 w-full h-full overflow-y-scroll">
-					<div className="h-10 w-full flex flex-row">
-						<div className="h-full w-10"></div>
-						<div className="border-l border-neutral-700">Alias group</div>
-					</div>
 					<div className="flex flex-row w-full border-t border-neutral-700">
 						<div className="w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2">
 							<div className=" w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue"></div>
