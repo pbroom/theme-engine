@@ -1,11 +1,13 @@
 import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { Tabs, TabsOption, Textbox } from '@create-figma-plugin/ui';
+import { Tabs, TabsOption } from '@create-figma-plugin/ui';
+import TextboxColorName from './primitives-tab/color-name-input';
+import { ColorPicker } from './primitives-tab/color-picker';
 import '!.././dist/tailwind.css';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 
 const TabGroup = () => {
-	const [value, setValue] = useState<string>('Aliases');
+	const [value, setValue] = useState<string>('Primitives');
 	const options: Array<TabsOption> = [
 		{
 			children: (
@@ -25,7 +27,9 @@ const TabGroup = () => {
 					<div className="h-full grow">
 						<div className="h-24 grow flex flex-row">
 							<div className="grow flex flex-row">
-								<div className="grow h-full"></div>
+								<div className="grow h-full">
+									<TextboxColorName />
+								</div>
 								<div className="grow h-full border-l border-neutral-700"></div>
 							</div>
 							<div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>

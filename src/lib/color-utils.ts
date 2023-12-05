@@ -1,173 +1,33 @@
+import { TextboxAutocompleteOption } from '@create-figma-plugin/ui';
+import useColor from '../hooks/useColor';
 import {
-	argbFromHex,
 	Hct,
-	rgbaFromArgb,
-	hexFromArgb,
 	TonalPalette,
-	Rgba,
+	hexFromArgb,
 } from '@material/material-color-utilities';
-import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
 
-/**
- * Represents a solid color with RGB values. Figma requires colors to be in this format.
- */
-type SolidColor = {
-	type: 'SOLID';
-	color: {
-		r: number;
-		g: number;
-		b: number;
-	};
+export type { PaletteObject, HSBColor };
+
+export {
+	toneStops,
+	paletteTones,
+	getValues,
+	hctTonalGradient,
+	findMaxChromasForHue,
+	findMaxChromaForHueAtTone,
+	findHighestChromaPerHue,
+	mapValues,
+	getStopsFromString,
+	convertNumberToStringArray,
+	hexToHSB,
 };
-
-/**
- * Represents a color with various properties such as hue, chroma, and tone.
- */
-class Color {
-	private argb: number;
-	private rgba: string | Rgba;
-	private hex: string;
-	public hue: number;
-	public chroma: number;
-	public tone: number;
-	private figmaSolidColor: SolidColor;
-	private hctColor: Hct;
-
-	/**
-	 * Creates a new Color instance from a hex color string.
-	 * @param hexColor The hex color string to create the color from.
-	 */
-	constructor(hexColor: string) {
-		const cleanedHexColor = hexColor.startsWith('#')
-			? hexColor.slice(1)
-			: hexColor;
-
-		const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
-		const red = rgbColor?.r ?? 0;
-		const green = rgbColor?.g ?? 0;
-		const blue = rgbColor?.b ?? 0;
-		this.figmaSolidColor = {
-			type: 'SOLID',
-			color: { r: red, g: green, b: blue },
-		};
-
-		this.hctColor = Hct.fromInt(argbFromHex(cleanedHexColor));
-		this.hue = this.hctColor.hue;
-		this.chroma = this.hctColor.chroma;
-		this.tone = this.hctColor.tone;
-		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
-		this.rgba = rgbaFromArgb(this.argb);
-		this.hex = hexFromArgb(this.argb);
-	}
-
-	/**
-	 * Gets the hue value of the color.
-	 * @returns The hue value of the color.
-	 */
-	getHue(rounded: string | undefined = '') {
-		if (rounded === 'rounded') {
-			return Math.round(this.hue);
-		} else {
-			return this.hue;
-		}
-	}
-
-	/**
-	 * Sets the hue value of the color.
-	 * @param hue The new hue value to set.
-	 */
-	setHue(hue: number) {
-		this.hue = hue;
-		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
-		this.rgba = rgbaFromArgb(this.argb);
-		this.hex = hexFromArgb(this.argb);
-		this.hctColor = Hct.fromInt(this.argb);
-	}
-
-	/**
-	 * Gets the chroma value of the color.
-	 * @returns The chroma value of the color.
-	 */
-	getChroma(rounded: string | undefined = '') {
-		if (rounded === 'rounded') {
-			return Math.round(this.chroma);
-		} else {
-			return this.chroma;
-		}
-	}
-
-	setChroma(chroma: number) {
-		this.chroma = chroma;
-		this.argb = Hct.from(this.hue, this.chroma, this.tone).toInt();
-		this.rgba = rgbaFromArgb(this.argb);
-		this.hex = hexFromArgb(this.argb);
-		this.hctColor = Hct.fromInt(this.argb);
-	}
-
-	/**
-	 * Gets the tone value of the color.
-	 * @returns The tone value of the color.
-	 */
-	getTone(rounded: string | undefined = '') {
-		if (rounded === 'rounded') {
-			return Math.round(this.tone);
-		} else {
-			return this.tone;
-		}
-	}
-
-	/**
-	 * Gets the ARGB value of the color.
-	 * @returns The ARGB value of the color.
-	 */
-	getArgb() {
-		return this.argb;
-	}
-
-	/**
-	 * Gets the RGBA value of the color.
-	 * @returns The RGBA value of the color.
-	 */
-	getRgba() {
-		return this.rgba;
-	}
-
-	/**
-	 * Gets the hex value of the color.
-	 * @returns The hex value of the color.
-	 */
-	getHex(excludeNumberSign?: boolean) {
-		if (excludeNumberSign) {
-			return this.hex.slice(1);
-		}
-		return this.hex;
-	}
-
-	/**
-	 * Gets the Figma solid color object of the color.
-	 * @returns The Figma solid color object of the color.
-	 */
-	getFigmaSolidColor() {
-		return this.figmaSolidColor;
-	}
-
-	/**
-	 * Gets the Hct color object of the color.
-	 * @returns The Hct color object of the color.
-	 */
-	getHctColor() {
-		return this.hctColor;
-	}
-}
-
-export default Color;
 
 /**
  * Creates an array of tone stops.
  * @param stops An optional array of tone stops.
  * @returns An array of tone stops.
  */
-export const toneStops = (stops?: number[]) => {
+const toneStops = (stops?: number[]) => {
 	const defaultToneStops: number[] = [];
 	if (stops && stops.length > 0) {
 		return stops;
@@ -185,10 +45,10 @@ export const toneStops = (stops?: number[]) => {
  * @param stops An optional array of tone stops.
  * @returns An object containing the palette of colors.
  */
-export const paletteTones = (hexColor: string, stops?: number[]) => {
+const paletteTones = (hexColor: string, stops?: number[]) => {
 	const paletteToneStops = toneStops(stops);
-	const color = new Color(hexColor);
-	const hctColor = color.getHctColor();
+	const color = useColor(hexColor);
+	const hctColor = color.hct;
 	const paletteColor = TonalPalette.fromHueAndChroma(
 		hctColor.hue,
 		hctColor.chroma
@@ -202,9 +62,6 @@ export const paletteTones = (hexColor: string, stops?: number[]) => {
 	return palette;
 };
 
-/**
- * Defines the type of an object that represents a palette of colors.
- */
 type PaletteObject = {
 	[key: string]: string;
 };
@@ -214,10 +71,7 @@ type PaletteObject = {
  * @param paletteObject An object containing the palette of colors.
  * @returns A string containing the hex values of the palette object.
  */
-export const getValues = (
-	paletteObject: PaletteObject,
-	selectedTones?: number[]
-) => {
+const getValues = (paletteObject: PaletteObject, selectedTones?: number[]) => {
 	let hexString = '';
 	if (selectedTones) {
 		const stopIncrement = Math.round(100 / selectedTones.length);
@@ -241,10 +95,7 @@ export const getValues = (
  * @param hexColor The hex color string to create the tonal gradient from.
  * @returns A string containing the hex values of the tonal gradient.
  */
-export const hctTonalGradient = (
-	hexColor: string,
-	selectedTones?: number[]
-) => {
+const hctTonalGradient = (hexColor: string, selectedTones?: number[]) => {
 	const gradientTones = paletteTones(hexColor);
 	const gradientString = getValues(gradientTones, selectedTones);
 	return gradientString;
@@ -255,7 +106,7 @@ export const hctTonalGradient = (
  * @param hue The hue value to find the maximum chroma for.
  * @returns An object containing the maximum chroma value and the tone at which it occurs.
  */
-export const findMaxChromasForHue = (
+const findMaxChromasForHue = (
 	hue: number
 ): { chroma: number; tone: number }[] => {
 	const maxChromas: { chroma: number; tone: number }[] = [];
@@ -275,10 +126,7 @@ export const findMaxChromasForHue = (
  * @param tone The tone value to find the maximum chroma for.
  * @returns The maximum chroma value.
  */
-export const findMaxChromaForHueAtTone = (
-	hue: number,
-	tone: number
-): number => {
+const findMaxChromaForHueAtTone = (hue: number, tone: number): number => {
 	let maximumChroma = 0;
 
 	// Iterate over each chroma value from 0 to 150
@@ -298,7 +146,7 @@ export const findMaxChromaForHueAtTone = (
  * Finds the highest chroma value for each hue value, along with the tone at which it occurs.
  * @returns An array of objects containing the hue, highest chroma, and tone at which it occurs.
  */
-export const findHighestChromaPerHue = (): {
+const findHighestChromaPerHue = (): {
 	hue: number;
 	chroma: number;
 	tone: number;
@@ -327,3 +175,116 @@ export const findHighestChromaPerHue = (): {
 
 	return result;
 };
+
+/**
+ * Maps an array of values to an array of objects with a specified key name.
+ * @param keyName - The name of the key to be used in the resulting objects.
+ * @param values - The array of values to be mapped.
+ * @returns An array of objects with the specified key name and corresponding values.
+ */
+function mapValues(
+	keyName: string,
+	values: (number | string)[]
+): { [key: string]: number | string }[] | TextboxAutocompleteOption[] {
+	return values.map((value) => ({ [keyName]: value }));
+}
+
+/**
+ * Extracts all integers from the given text and returns an array of numbers within the range of 0-100.
+ * @param text - The text to extract integers from.
+ * @returns An array of numbers within the range of 0-100.
+ */
+function getStopsFromString(text: string): number[] {
+	// Extract all integers from the text
+	const allIntegers = text.match(/\b\d+\b/g)?.map(Number);
+	// If no integers are found, return an empty array
+	if (!allIntegers) {
+		return [];
+	}
+	// Create a Set to ensure uniqueness, and filter out values outside the 0-100 range
+	const stops: Set<number> = new Set(
+		allIntegers.filter((n) => n >= 0 && n <= 100)
+	);
+	// Convert the Set back to an array
+	return Array.from(stops);
+}
+
+/**
+ * Converts an array of numbers to an array of strings.
+ * @param numbers - The array of numbers to convert.
+ * @returns The array of strings.
+ */
+function convertNumberToStringArray(numbers: number[]): string[] {
+	return numbers.map((n) => n.toString());
+}
+
+type HSBColor = {
+	hue: number;
+	saturation: number;
+	brightness: number;
+};
+
+/**
+ * Converts a hexadecimal color code to HSB (Hue, Saturation, Brightness) format.
+ *
+ * @param hexInput - The hexadecimal color code to convert.
+ * @returns The color in HSB format as a string.
+ */
+function hexToHSB(hexInput: string | number): string {
+	// Convert the input to a string if it's a number
+	let hex = typeof hexInput === 'number' ? hexInput.toString(16) : hexInput;
+
+	// Ensure the hex string has 6 digits, padding with zeros if needed
+	hex = hex.padStart(6, '0');
+
+	// Remove the '#' from the beginning of the hex string, if present
+	hex = hex.replace('#', '');
+
+	// Convert the hex values to RGB
+	const r = parseInt(hex.substring(0, 2), 16);
+	const g = parseInt(hex.substring(2, 4), 16);
+	const b = parseInt(hex.substring(4, 6), 16);
+
+	// Normalize the RGB values
+	const rPrime = r / 255.0;
+	const gPrime = g / 255.0;
+	const bPrime = b / 255.0;
+
+	// Calculate the brightness
+	let brightness = Math.max(rPrime, gPrime, bPrime);
+
+	// Calculate the saturation
+	const minColor = Math.min(rPrime, gPrime, bPrime);
+	let saturation = 0;
+	if (brightness > 0) {
+		saturation = (brightness - minColor) / brightness;
+	}
+
+	// Calculate the hue
+	let hue = 0;
+	if (saturation > 0) {
+		if (brightness === rPrime) {
+			hue = 60 * ((gPrime - bPrime) / (saturation * brightness));
+		} else if (brightness === gPrime) {
+			hue = 60 * (2 + (bPrime - rPrime) / (saturation * brightness));
+		} else {
+			hue = 60 * (4 + (rPrime - gPrime) / (saturation * brightness));
+		}
+	}
+
+	// Adjust hue to be in the range [0, 360)
+	if (hue < 0) {
+		hue += 360;
+	}
+
+	// Scale saturation and brightness to [0, 100]
+	saturation *= 100;
+	brightness *= 100;
+
+	// Create the HSB string
+	const hsbString = `hsb(${Math.round(hue)}, ${Math.round(
+		saturation
+	)}%, ${Math.round(brightness)}%)`;
+
+	return hsbString;
+}

@@ -4,11 +4,11 @@ import ThemeColor from './theme-color';
 import { getStopsFromString, convertNumberToStringArray } from './utility';
 import { v4 as uuidv4 } from 'uuid';
 
-interface ThemeState {
+type ThemeState = {
 	id: string;
 	name: string;
 	themeColors: ThemeColor[];
-}
+};
 
 class Theme {
 	private state: ThemeState;

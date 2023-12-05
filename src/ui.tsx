@@ -1,5 +1,6 @@
 import * as React from 'react';
 import '!./dist/tailwind.css';
+import useColor from './hooks/useColor';
 import {
 	defaultColor,
 	defaultName,
@@ -26,6 +27,8 @@ import { useState } from 'preact/hooks';
 import { create } from 'zustand';
 
 export const Plugin = () => {
+	const newColor = useColor('ff0000');
+
 	// Rendering the UI
 	return (
 		<div id="container-wrap" className="overflow-y-auto h-full bg-neutral-800">
@@ -37,9 +40,9 @@ export const Plugin = () => {
 			<div className="h-10 w-full flex">
 				<div className="h-full w-10"></div>
 				<div className="grow flex flex-row justify-between">
-					<TabGroup />
+					{/* <TabGroup /> */}
 					<div className="h-full px-4 flex items-center justify-center">
-						<ThemeMenu />
+						{/* <ThemeMenu /> */}
 					</div>
 				</div>
 				<div className="h-full w-32 flex items-center justify-center">

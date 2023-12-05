@@ -1,7 +1,7 @@
 import '!./dist/tailwind.css';
-import { ColorArea } from './components/colorArea';
-import { ColorPicker } from './components/colorPicker';
-import { ColorField } from './components/colorField';
+import { ColorArea } from './components/color-area';
+import { ColorPicker } from './components/primitives-tab/color-picker';
+import { ColorField } from './components/color-field';
 import { Color, parseColor } from '@react-stately/color';
 import { hexToHSB } from './utility';
 import ThemeColor from './theme-color';
