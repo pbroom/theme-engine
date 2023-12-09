@@ -24,12 +24,15 @@ export type Color = {
 	rgba: string | Rgba;
 	hex: string;
 	figmaSolidColor: SolidColor;
+};
+
+type ColorActions = {
 	setHue: (newHue: number) => void;
 	setChroma: (newChroma: number) => void;
 	setTone: (newTone: number) => void;
 };
 
-const useColor = (hexColor: string): Color => {
+const useColor = (hexColor: string): Color & ColorActions => {
 	const [sourceHex, setSourceHex] = useState<string>(hexColor);
 	const [rgba, setRgba] = useState<string | Rgba>('');
 	const [hct, setHct] = useState<Hct>(Hct.fromInt(argbFromHex('000000')));
