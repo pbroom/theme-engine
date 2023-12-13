@@ -1,16 +1,21 @@
 import { e, exp } from 'mathjs';
 import { useState } from 'preact/hooks';
+import z from 'zod';
 
 let aliasId = 0;
 
-export type Alias = {
-	id: number;
-	name: string;
-	color: {
-		mode: string;
-		tone: number;
-	}[];
-};
+export const AliasSchema = z.object({
+	id: z.number(),
+	name: z.string(),
+	color: z.array(
+		z.object({
+			mode: z.string(),
+			tone: z.number(),
+		})
+	),
+});
+
+export type Alias = z.infer<typeof AliasSchema>;
 
 type AliasActions = {
 	setId: (id: number) => void;
@@ -28,7 +33,10 @@ const useAlias = (alias: Alias): Alias & AliasActions => {
 	const [id, setId] = useState<number>(alias.id || aliasId++);
 	const [name, setName] = useState<string>(alias.name || `Alias ${id}`);
 	const [color, setColor] = useState<{ mode: string; tone: number }[]>(
-		alias.color || []
+		alias.color || [
+			{ mode: 'light', tone: 100 },
+			{ mode: 'dark', tone: 0 },
+		]
 	);
 
 	/**

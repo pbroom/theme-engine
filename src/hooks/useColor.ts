@@ -8,35 +8,63 @@ import {
 	Rgba,
 } from '@material/material-color-utilities';
 import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
+import z from 'zod';
+import validator from 'validator';
 
-export type SolidColor = {
-	type: 'SOLID';
-	color: {
-		r: number;
-		g: number;
-		b: number;
-	};
-};
+export const RgbaSchema = z.object({
+	r: z.number().min(0).max(255),
+	g: z.number().min(0).max(255),
+	b: z.number().min(0).max(255),
+	a: z.number().min(0).max(255),
+});
 
-export type Color = {
-	sourceHex: string;
-	hct: Hct;
-	rgba: string | Rgba;
-	hex: string;
-	figmaSolidColor: SolidColor;
-};
+export const HctSchema = z.object({
+	hue: z.number().min(0).max(360),
+	chroma: z.number().min(0).max(150),
+	tone: z.number().min(0).max(100),
+});
 
-type ColorActions = {
-	setHue: (newHue: number) => void;
-	setChroma: (newChroma: number) => void;
-	setTone: (newTone: number) => void;
-};
+export const SolidColorSchema = z.object({
+	type: z.literal('SOLID'),
+	color: z.object({
+		r: z.number().min(0).max(255),
+		g: z.number().min(0).max(255),
+		b: z.number().min(0).max(255),
+	}),
+});
 
-const useColor = (hexColor: string): Color & ColorActions => {
+export type SolidColor = z.infer<typeof SolidColorSchema>;
+
+export const ColorDataSchema = z.object({
+	sourceHex: z.string(),
+	hct: HctSchema,
+	rgba: z.union([z.string(), RgbaSchema]),
+	hex: z.string().refine(validator.isHexColor),
+	figmaSolidColor: SolidColorSchema,
+});
+
+export const ColorActionsSchema = z.object({
+	setHue: z.function().args(z.number(), z.void()),
+	setChroma: z.function().args(z.number(), z.void()),
+	setTone: z.function().args(z.number(), z.void()),
+});
+
+export type ColorActions = z.infer<typeof ColorActionsSchema>;
+
+export const ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
+
+export type Color = z.infer<typeof ColorSchema>;
+
+/**
+ * Custom hook for managing a color.
+ * @param hexColor - The initial hex color string.
+ * @returns An object containing the color properties and setter functions.
+ */
+const useColor = (hexColor: string): Color => {
 	const [sourceHex, setSourceHex] = useState<string>(hexColor);
 	const [rgba, setRgba] = useState<string | Rgba>('');
-	const [hct, setHct] = useState<Hct>(Hct.fromInt(argbFromHex('000000')));
-	const [hex, setHex] = useState<string>('000000');
+	const [hct, setHct] = useState<Hct>(Hct.fromInt(argbFromHex(hexColor)));
+	const [hex, setHex] = useState<string>(hexColor);
 	const [figmaSolidColor, setFigmaSolidColor] = useState<SolidColor>({
 		type: 'SOLID',
 		color: { r: 0, g: 0, b: 0 },
