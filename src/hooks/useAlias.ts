@@ -4,7 +4,7 @@ import z from 'zod';
 
 let aliasId = 0;
 
-export const AliasSchema = z.object({
+export const AliasDataSchema = z.object({
 	id: z.number(),
 	name: z.string(),
 	color: z.array(
@@ -14,22 +14,32 @@ export const AliasSchema = z.object({
 		})
 	),
 });
-
+export type AliasData = z.infer<typeof AliasDataSchema>;
+export const AliasActionsSchema = z.object({
+	setId: z.function().args(z.number(), z.void()),
+	setName: z.function().args(z.string(), z.void()),
+	setColor: z.function().args(
+		z.array(
+			z.object({
+				mode: z.string(),
+				tone: z.number(),
+			})
+		),
+		z.void()
+	),
+	setToneForMode: z
+		.function()
+		.args(z.union([z.string(), z.number()]), z.number(), z.void()),
+});
+export const AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
 export type Alias = z.infer<typeof AliasSchema>;
-
-type AliasActions = {
-	setId: (id: number) => void;
-	setName: (name: string) => void;
-	setColor: (color: { mode: string; tone: number }[]) => void;
-	setToneForMode: (mode: string | number, tone: number) => void;
-};
 
 /**
  * Custom hook for managing an alias.
  * @param alias - The initial alias object.
  * @returns An object containing the alias properties and setter functions.
  */
-const useAlias = (alias: Alias): Alias & AliasActions => {
+const useAlias = (alias: Alias) => {
 	const [id, setId] = useState<number>(alias.id || aliasId++);
 	const [name, setName] = useState<string>(alias.name || `Alias ${id}`);
 	const [color, setColor] = useState<{ mode: string; tone: number }[]>(

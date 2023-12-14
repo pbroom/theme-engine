@@ -1,6 +1,9 @@
 import * as React from 'react';
 import '!./dist/tailwind.css';
 import useColor from './hooks/useColor';
+import useThemeColor from './hooks/useThemeColor';
+import useTheme from './hooks/useTheme';
+import useThemeList from './hooks/useThemeList';
 import {
 	defaultColor,
 	defaultName,
@@ -40,7 +43,7 @@ export const Plugin = () => {
 			<div className="h-10 w-full flex">
 				<div className="h-full w-10"></div>
 				<div className="grow flex flex-row justify-between">
-					{/* <TabGroup /> */}
+					<TabGroup />
 					<div className="h-full px-4 flex items-center justify-center">
 						{/* <ThemeMenu /> */}
 					</div>

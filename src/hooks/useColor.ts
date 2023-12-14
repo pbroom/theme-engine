@@ -10,6 +10,7 @@ import {
 import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
 import z from 'zod';
 import validator from 'validator';
+import { e } from 'mathjs';
 
 export const RgbaSchema = z.object({
 	r: z.number().min(0).max(255),
@@ -32,7 +33,6 @@ export const SolidColorSchema = z.object({
 		b: z.number().min(0).max(255),
 	}),
 });
-
 export type SolidColor = z.infer<typeof SolidColorSchema>;
 
 export const ColorDataSchema = z.object({
@@ -42,17 +42,13 @@ export const ColorDataSchema = z.object({
 	hex: z.string().refine(validator.isHexColor),
 	figmaSolidColor: SolidColorSchema,
 });
-
+export type ColorData = z.infer<typeof ColorDataSchema>;
 export const ColorActionsSchema = z.object({
 	setHue: z.function().args(z.number(), z.void()),
 	setChroma: z.function().args(z.number(), z.void()),
 	setTone: z.function().args(z.number(), z.void()),
 });
-
-export type ColorActions = z.infer<typeof ColorActionsSchema>;
-
 export const ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
-
 export type Color = z.infer<typeof ColorSchema>;
 
 /**

@@ -1,7 +1,4 @@
-import Color from './color';
-import Alias from './alias';
 import ThemeColor from './theme-color';
-import { getStopsFromString, convertNumberToStringArray } from './utility';
 import { v4 as uuidv4 } from 'uuid';
 
 type ThemeState = {
