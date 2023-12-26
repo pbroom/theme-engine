@@ -1,5 +1,7 @@
-import { h, Fragment } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { h } from 'preact';
+import { useState } from 'preact/hooks';
+import useThemeList, { ThemeList } from '../hooks/useThemeList';
+import useTheme from '../hooks/useTheme';
 import {
 	Dropdown,
 	DropdownOption,
@@ -10,8 +12,14 @@ import {
 } from '@create-figma-plugin/ui';
 import '!.././dist/tailwind.css';
 
-const ThemeMenu = () => {
+const ThemeMenu = (themes: ThemeList) => {
 	const [value, setValue] = useState<string>('Theme 2');
+
+	const createNewTheme = () => {
+		// const newThemeName = `Theme ${themeList.themes.length + 1}`;
+		// const newTheme = useTheme(newThemeName);
+	};
+
 	const options: Array<DropdownOption> = [
 		{
 			value: 'New Theme',
@@ -20,22 +28,19 @@ const ThemeMenu = () => {
 			separator: true,
 		},
 		{
-			value: 'Theme 1',
-		},
-		{
-			value: 'Theme 2',
+			value: 'Theme',
 		},
 		{
 			separator: true,
 		},
 		{
-			value: 'Rename Theme 2',
+			value: `Rename ${value}`,
 		},
 		{
-			value: 'Duplicate Theme 2',
+			value: `Duplicate ${value}`,
 		},
 		{
-			value: 'Delete Theme 2',
+			value: `Delete ${value}`,
 		},
 	];
 	function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {

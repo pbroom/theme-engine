@@ -1,6 +1,5 @@
-import { e, exp } from 'mathjs';
-import { useState } from 'preact/hooks';
 import z from 'zod';
+import { create } from 'zustand';
 
 let aliasId = 0;
 
@@ -35,19 +34,56 @@ export const AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
 export type Alias = z.infer<typeof AliasSchema>;
 
 /**
+ * Custom hook for managing alias state.
+ * @returns An object with alias state and setter functions.
+ */
+export const useAliasStore = create<Alias>((set) => ({
+	id: aliasId++,
+	name: `Alias ${aliasId}`,
+	color: [
+		{ mode: 'light', tone: 100 },
+		{ mode: 'dark', tone: 0 },
+	],
+	setId: (id) => set(() => ({ id })),
+	setName: (name) => set(() => ({ name })),
+	setColor: (color) => set(() => ({ color })),
+	setToneForMode: (mode, tone) =>
+		set((state) => {
+			const newColor = [...state.color];
+			const colorIndex = newColor.findIndex(
+				(newColor) => newColor.mode === mode
+			);
+
+			if (colorIndex === -1) {
+				newColor.push({ mode: mode.toString(), tone });
+			} else {
+				newColor[colorIndex].tone = tone;
+			}
+			return { color: newColor };
+		}),
+}));
+
+/**
  * Custom hook for managing an alias.
  * @param alias - The initial alias object.
  * @returns An object containing the alias properties and setter functions.
  */
-const useAlias = (alias: Alias) => {
-	const [id, setId] = useState<number>(alias.id || aliasId++);
-	const [name, setName] = useState<string>(alias.name || `Alias ${id}`);
-	const [color, setColor] = useState<{ mode: string; tone: number }[]>(
-		alias.color || [
-			{ mode: 'light', tone: 100 },
-			{ mode: 'dark', tone: 0 },
-		]
-	);
+const useAlias = (
+	aliasName: string,
+	lightModeTone: number,
+	darkModeTone: number
+): Alias => {
+	const id = useAliasStore((state) => state.id);
+	const setId = useAliasStore((state) => state.setId);
+	const name = useAliasStore((state) => state.name);
+	const setName = useAliasStore((state) => state.setName);
+	const color = useAliasStore((state) => state.color);
+	const setColor = useAliasStore((state) => state.setColor);
+	setName(aliasName);
+	setColor([
+		{ mode: 'light', tone: lightModeTone },
+		{ mode: 'dark', tone: darkModeTone },
+	]);
 
 	/**
 	 * Sets the tone for a given mode.

@@ -1,13 +1,13 @@
 import type { ThemeColor } from './useThemeColor';
 import { ThemeColorSchema } from './useThemeColor';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'preact/hooks';
 import z from 'zod';
+import { create } from 'zustand';
 
 export const ThemeDataSchema = z.object({
 	id: z.string().uuid(),
 	name: z.string(),
-	themeColors: z.array(ThemeColorSchema).nullish(),
+	themeColors: z.array(ThemeColorSchema),
 });
 export type ThemeData = z.infer<typeof ThemeDataSchema>;
 export const ThemeActionsSchema = z.object({
@@ -20,15 +20,43 @@ export const ThemeActionsSchema = z.object({
 export const ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
 export type Theme = z.infer<typeof ThemeSchema>;
 
+export const useThemeStore = create<Theme>((set) => ({
+	id: uuidv4(),
+	name: 'theme',
+	themeColors: [],
+	setId: (id) => set(() => ({ id })),
+	setName: (name) => set(() => ({ name })),
+	setThemeColors: (themeColors) => set(() => ({ themeColors })),
+	addThemeColor: (themeColor) =>
+		set((state) => {
+			const newThemeColors = [...state.themeColors];
+			newThemeColors.push(themeColor);
+			return { themeColors: newThemeColors };
+		}),
+	removeThemeColor: (themeColor) =>
+		set((state) => {
+			const newThemeColors = [...state.themeColors];
+			const index = newThemeColors.indexOf(themeColor);
+			if (index !== -1) {
+				newThemeColors.splice(index, 1);
+			}
+			return { themeColors: newThemeColors };
+		}),
+}));
+
 /**
  * Custom hook for managing a theme.
  * @param themeName - The initial theme name.
  * @returns An object containing the theme properties and setter functions.
  */
 const useTheme = (themeName: string): Theme => {
-	const [id, setId] = useState<string>(uuidv4());
-	const [name, setName] = useState<string>(themeName || 'theme');
-	const [themeColors, setThemeColors] = useState<ThemeColor[]>([]);
+	const id = useThemeStore((state) => state.id);
+	const setId = useThemeStore((state) => state.setId);
+	const name = useThemeStore((state) => state.name);
+	const setName = useThemeStore((state) => state.setName);
+	const themeColors = useThemeStore((state) => state.themeColors);
+	const setThemeColors = useThemeStore((state) => state.setThemeColors);
+	setName(themeName);
 
 	const addThemeColor = (themeColor: ThemeColor) => {
 		setThemeColors([...themeColors, themeColor]);
