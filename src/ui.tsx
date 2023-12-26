@@ -14,7 +14,7 @@ export const Plugin = () => {
 	};
 	const red = () => {
 		newColor.setSourceHex('#FF2A2A');
-		newColor.setHueCalc('216');
+		newColor.setHueCalc('h + 180');
 		// console.log(newColor);
 	};
 
