@@ -109,36 +109,35 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	const color = useColor(hexColor);
 
 	const themeColorStore = useThemeColorStore;
-	const themeColorState = themeColorStore((state) => state);
-	const id = themeColorState.id;
-	const setId = (id: string) => themeColorState.setId(id);
-	const name = themeColorState.name;
-	const setName = (name: string) => themeColorState.setName(name);
-	const sourceHex = themeColorState.sourceHex;
+	const themeColor = themeColorStore((state) => state);
+	const id = themeColor.id;
+	const setId = (id: string) => themeColor.setId(id);
+	const name = themeColor.name;
+	const setName = (name: string) => themeColor.setName(name);
+	const sourceHex = themeColor.sourceHex;
 	const setSourceHex = (sourceHex: string) => {
-		const newColor = themeColorState.sourceColor;
+		const newColor = themeColor.sourceColor;
 		const newSourceColor: Color = { ...newColor, sourceHex: sourceHex };
-		themeColorState.setSourceColor(newSourceColor);
-		themeColorState.setSourceHex(sourceHex);
+		themeColor.setSourceColor(newSourceColor);
+		themeColor.setSourceHex(sourceHex);
 	};
-	const sourceColor = themeColorState.sourceColor;
+	const sourceColor = themeColor.sourceColor;
 	const setSourceColor = (sourceColor: Color) =>
-		themeColorState.setSourceColor(sourceColor);
-	const endColor = themeColorState.endColor;
-	const setEndColor = (endColor: Color) =>
-		themeColorState.setEndColor(endColor);
-	const tones = themeColorState.tones;
-	const setTones = (tones: number[]) => themeColorState.setTones(tones);
-	const hueCalc = themeColorState.hueCalc;
-	const setHueCalc = (hueCalc: string) => themeColorState.setHueCalc(hueCalc);
-	const chromaCalc = themeColorState.chromaCalc;
+		themeColor.setSourceColor(sourceColor);
+	const endColor = themeColor.endColor;
+	const setEndColor = (endColor: Color) => themeColor.setEndColor(endColor);
+	const tones = themeColor.tones;
+	const setTones = (tones: number[]) => themeColor.setTones(tones);
+	const hueCalc = themeColor.hueCalc;
+	const setHueCalc = (hueCalc: string) => themeColor.setHueCalc(hueCalc);
+	const chromaCalc = themeColor.chromaCalc;
 	const setChromaCalc = (chromaCalc: string) =>
-		themeColorState.setChromaCalc(chromaCalc);
-	const aliases = themeColorState.aliases;
-	const setAliases = (aliases: Alias[]) => themeColorState.setAliases(aliases);
+		themeColor.setChromaCalc(chromaCalc);
+	const aliases = themeColor.aliases;
+	const setAliases = (aliases: Alias[]) => themeColor.setAliases(aliases);
 
 	const calculateHue = (hueValue: number, hueCalcValue: string) => {
-		const hueCalc = hueCalcValue || themeColorState.hueCalc;
+		const hueCalc = hueCalcValue || themeColor.hueCalc;
 		// Get source hue
 		const sourceHue = hueValue || sourceColor.hct.hue;
 		// Check if hueCalc is empty or just whitespace
@@ -177,7 +176,7 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 
 	const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
 		let chroma = chromaValue || sourceColor.hct.chroma;
-		const chromaCalc = chromaCalcValue || themeColorState.chromaCalc;
+		const chromaCalc = chromaCalcValue || themeColor.chromaCalc;
 		if (chromaCalc !== '') {
 			let sourceChroma = sourceColor.hct.chroma;
 			let sourceHue = sourceColor.hct.hue;
