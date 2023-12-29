@@ -1,15 +1,142 @@
-import useTheme, { Theme } from '../useTheme';
-import defaultThemeColor from './theme-color';
+import { ThemeColor, useThemeColorStore } from '../useThemeColor';
+import { Theme, useTheme } from '../useTheme';
+import useThemeColor from '../useThemeColor';
+import { Color, useColor } from '../useColor';
+import useAlias, { Alias } from '../useAlias';
 
-const defaultTheme = (name?: string): Theme => {
-	const newTheme = useTheme(name || 'New Theme');
-	newTheme.addThemeColor(defaultThemeColor('primary'));
-	newTheme.addThemeColor(defaultThemeColor('secondary'));
-	newTheme.addThemeColor(defaultThemeColor('tertiary'));
-	newTheme.addThemeColor(defaultThemeColor('error'));
-	newTheme.addThemeColor(defaultThemeColor('neutral'));
-	newTheme.addThemeColor(defaultThemeColor('neutral-variant'));
-	return newTheme;
+const defaultColor = '397456';
+
+// Tones
+const defaultPaletteTones = [
+	0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
+	25, 35, 87, 92, 94, 96, 98,
+];
+
+export const defaultTheme = {
+	name: 'Theme',
+	themeColors: [
+		{
+			name: 'primary',
+			sourceHex: defaultColor,
+			hueCalc: '',
+			chromaCalc: '',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+		{
+			name: 'secondary',
+			sourceHex: defaultColor,
+			hueCalc: '',
+			chromaCalc: 'c / 3',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+		{
+			name: 'tertiary',
+			sourceHex: defaultColor,
+			hueCalc: 'h + 60',
+			chromaCalc: 'c / 2',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+		{
+			name: 'neutral',
+			sourceHex: defaultColor,
+			hueCalc: '',
+			chromaCalc: '4 < (c / 12) ? 4 : (c / 12)',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+		{
+			name: 'neutral-variant',
+			sourceHex: defaultColor,
+			hueCalc: '',
+			chromaCalc: '8 < (c / 6) ? 8 : (c / 6)',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+		{
+			name: 'error',
+			sourceHex: defaultColor,
+			hueCalc: '25',
+			chromaCalc: '84',
+			tones: defaultPaletteTones,
+			aliases: [],
+		},
+	],
+	aliasGroups: [
+		{
+			name: 'color',
+			aliases: [
+				{
+					name: 'color',
+					colors: [
+						{ mode: 'light', tone: 40 },
+						{ mode: 'dark', tone: 80 },
+					],
+				},
+				{
+					name: 'on-color',
+					colors: [
+						{ mode: 'light', tone: 100 },
+						{ mode: 'dark', tone: 20 },
+					],
+				},
+				{
+					name: 'color-container',
+					colors: [
+						{ mode: 'light', tone: 90 },
+						{ mode: 'dark', tone: 30 },
+					],
+				},
+				{
+					name: 'on-color-container',
+					colors: [
+						{ mode: 'light', tone: 10 },
+						{ mode: 'dark', tone: 90 },
+					],
+				},
+				{
+					name: 'color-fixed',
+					colors: [
+						{ mode: 'light', tone: 90 },
+						{ mode: 'dark', tone: 90 },
+					],
+				},
+				{
+					name: 'on-color-fixed',
+					colors: [
+						{ mode: 'light', tone: 10 },
+						{ mode: 'dark', tone: 10 },
+					],
+				},
+			],
+		},
+		{
+			name: 'neutrals',
+			aliases: [
+				{
+					name: 'color-fixed-dim',
+					colors: [
+						{ mode: 'light', tone: 80 },
+						{ mode: 'dark', tone: 80 },
+					],
+				},
+				{
+					name: 'on-color-fixed-variant',
+					colors: [
+						{ mode: 'light', tone: 30 },
+						{ mode: 'dark', tone: 30 },
+					],
+				},
+				{
+					name: 'inverse-color',
+					colors: [
+						{ mode: 'light', tone: 80 },
+						{ mode: 'dark', tone: 40 },
+					],
+				},
+			],
+		},
+	],
 };
-
-export default defaultTheme;

@@ -7,15 +7,43 @@ import { round } from 'mathjs';
 
 export const Plugin = () => {
 	const newColor = useThemeColor('#808080');
-	const blue = () => {
+	let primaryHex = '#2A59FF';
+	const primary = () => {
+		newColor.setName('primary');
 		newColor.setSourceHex('#2A59FF');
 		newColor.setHueCalc('');
-		// console.log(newColor);
+		newColor.setChromaCalc('');
+		primaryHex = `${newColor.endColor.hex}`;
 	};
-	const red = () => {
-		newColor.setSourceHex('#FF2A2A');
-		newColor.setHueCalc('h + 180');
-		// console.log(newColor);
+	const secondary = () => {
+		newColor.setName('secondary');
+		newColor.setSourceHex(primaryHex);
+		newColor.setHueCalc('');
+		newColor.setChromaCalc('c/3');
+	};
+	const tertiary = () => {
+		newColor.setName('tertiary');
+		newColor.setSourceHex(primaryHex);
+		newColor.setHueCalc('h+60');
+		newColor.setChromaCalc('c/2');
+	};
+	const neutral = () => {
+		newColor.setName('neutral');
+		newColor.setSourceHex(primaryHex);
+		newColor.setHueCalc('');
+		newColor.setChromaCalc('4 < (c / 12) ? 4 : (c / 12)');
+	};
+	const neutralVariant = () => {
+		newColor.setName('neutralVariant');
+		newColor.setSourceHex(primaryHex);
+		newColor.setHueCalc('');
+		newColor.setChromaCalc('8 < (c / 6) ? 8 : (c / 6)');
+	};
+	const error = () => {
+		newColor.setName('error');
+		newColor.setSourceHex(primaryHex);
+		newColor.setHueCalc('25');
+		newColor.setChromaCalc('84');
 	};
 
 	// Rendering the UI
@@ -26,6 +54,22 @@ export const Plugin = () => {
 				<div className="absolute h-full w-px bg-neutral-700 left-10"></div>
 				<div className="absolute h-full w-px bg-neutral-700 right-32"></div>
 				<div className="absolute w-full bg-neutral-900 top-20 left-10 p-4 pr-16 z-10">
+					<Button onClick={primary}>primary</Button>
+					<Button secondary onClick={secondary}>
+						secondary
+					</Button>
+					<Button secondary onClick={tertiary}>
+						tertiary
+					</Button>
+					<Button secondary onClick={neutral}>
+						neutral
+					</Button>
+					<Button secondary onClick={neutralVariant}>
+						neutralVariant
+					</Button>
+					<Button secondary onClick={error}>
+						error
+					</Button>
 					<p className="text-lg">ThemeColor</p>
 					<p>
 						<span className="font-bold">Name:</span> {newColor.name}
@@ -44,6 +88,10 @@ export const Plugin = () => {
 					<p className="pl-4">chroma: {round(newColor.endColor.hct.chroma)}</p>
 					<p className="pl-4">tone: {round(newColor.endColor.hct.tone)}</p>
 					<p className="pl-4">hex: {newColor.endColor.hex}</p>
+					<div
+						className="h-6 w-6"
+						style={`background-color: ${newColor.endColor.hex};`}
+					></div>
 					<p>
 						<span className="font-bold">Tones:</span>{' '}
 						{newColor.tones.map((tone) => tone).join(', ')}
@@ -66,10 +114,6 @@ export const Plugin = () => {
 					<TabGroup />
 					<div className="h-full px-4 flex items-center justify-center">
 						{/* <ThemeMenu themes={ThemeList} /> */}
-						<Button onClick={blue}>blue</Button>
-						<Button danger onClick={red}>
-							red
-						</Button>
 						<div className="h-5 w-10 ml-3" style={`background: ${newColor};`}>
 							{newColor}
 						</div>

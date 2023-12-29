@@ -1,5 +1,5 @@
 import { TextboxAutocompleteOption } from '@create-figma-plugin/ui';
-import useColor from '../hooks/useColor';
+import { useColor } from '../hooks/useColor';
 import {
 	Hct,
 	TonalPalette,

@@ -175,25 +175,39 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	};
 
 	const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
-		let chroma = chromaValue || sourceColor.hct.chroma;
 		const chromaCalc = chromaCalcValue || themeColor.chromaCalc;
-		if (chromaCalc !== '') {
-			let sourceChroma = sourceColor.hct.chroma;
-			let sourceHue = sourceColor.hct.hue;
-			let maxChroma = maxChromaAtTonePerHue[round(sourceHue)].chroma;
-			console.log('maxChroma', maxChroma);
-			let parsedChromaCalc = chromaCalc.replace(/c/g, sourceChroma.toString());
-			chroma = evaluate(parsedChromaCalc) as number;
-			if (chroma < 0) {
-				chroma = 0;
-			}
-			if (chroma > maxChroma) {
-				chroma = maxChroma;
-			}
-			chroma = Math.round(chroma);
+		// Get source chroma
+		const sourceChroma = chromaValue || sourceColor.hct.chroma;
+		// Check if chromaCalc is empty or just whitespace
+		if (!chromaCalc.trim() || chromaCalc === '') {
+			return sourceChroma;
 		}
-		console.log('chroma', chroma);
-		return chroma;
+		try {
+			// Replace 'c' regardless of its case
+			const parsedChromaCalc = chromaCalc.replace(
+				/c/gi,
+				sourceChroma.toString()
+			);
+			// Evaluate parsedChromaCalc
+			const chroma = Math.abs(evaluate(parsedChromaCalc) as number);
+			return chroma;
+		} catch (error) {
+			console.error('Invalid expression:', error);
+			// Try to evaluate the expression up to the offending character
+			let lastValidChroma = NaN;
+			for (let i = chromaCalc.length - 1; i >= 0; i--) {
+				const truncatedExpression = chromaCalc.substring(0, i);
+				try {
+					lastValidChroma = evaluate(
+						truncatedExpression.replace(/c/gi, sourceChroma.toString())
+					);
+					break;
+				} catch (error) {
+					continue;
+				}
+			}
+			return lastValidChroma;
+		}
 	};
 
 	const sourceHexRef = useRef(sourceColor.sourceHex);

@@ -1,9 +1,14 @@
 import type { ThemeColor } from './useThemeColor';
-import { ThemeColorSchema } from './useThemeColor';
-import { AliasSchema } from './useAlias';
+import useThemeColor, {
+	ThemeColorSchema,
+	useThemeColorStore,
+} from './useThemeColor';
+import useAlias, { AliasSchema, useAliasStore } from './useAlias';
 import { v4 as uuidv4 } from 'uuid';
 import z from 'zod';
 import { create, StateCreator } from 'zustand';
+import { useColor } from './useColor';
+import { useEffect } from 'preact/hooks';
 
 export {
 	ThemeColorSchema,
@@ -20,11 +25,23 @@ export {
 	useTheme,
 };
 
-const AliasGroupSchema = z.object({
+const AliasGroupDataSchema = z.object({
 	id: z.string().uuid(),
 	name: z.string(),
+	themeColors: z.array(z.string().uuid()),
 	aliases: z.array(AliasSchema),
 });
+type AliasGroupData = z.infer<typeof AliasGroupSchema>;
+const AliasGroupActionsSchema = z.object({
+	setId: z.function().args(z.string(), z.void()),
+	setName: z.function().args(z.string(), z.void()),
+	setThemeColors: z.function().args(z.array(z.string().uuid()), z.void()),
+	removeThemeColor: z.function().args(z.string().uuid(), z.void()),
+	addAlias: z.function().args(AliasSchema, z.void()),
+	removeAlias: z.function().args(AliasSchema, z.void()),
+});
+type AliasGroupActions = z.infer<typeof AliasGroupActionsSchema>;
+const AliasGroupSchema = AliasGroupDataSchema.merge(AliasGroupActionsSchema);
 type AliasGroup = z.infer<typeof AliasGroupSchema>;
 
 const ThemeDataSchema = z.object({
@@ -46,6 +63,44 @@ const ThemeActionsSchema = z.object({
 type ThemeActions = z.infer<typeof ThemeActionsSchema>;
 const ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
 type Theme = z.infer<typeof ThemeSchema>;
+
+const aliasGroupStore: StateCreator<AliasGroup> = (set) => ({
+	id: uuidv4(),
+	name: 'alias group',
+	themeColors: [],
+	aliases: [],
+	setId: (id) => set(() => ({ id: id })),
+	setName: (name) => set(() => ({ name: name })),
+	setThemeColors: (themeColors) => set(() => ({ themeColors })),
+	removeThemeColor: (themeColor) =>
+		set((state) => {
+			const newThemeColors = [...state.themeColors];
+			const index = newThemeColors.indexOf(themeColor);
+			if (index !== -1) {
+				newThemeColors.splice(index, 1);
+			}
+			return { themeColors: newThemeColors };
+		}),
+	addAlias: (alias) =>
+		set((state) => {
+			const newAliases = [...state.aliases];
+			newAliases.push(alias);
+			return { aliases: newAliases };
+		}),
+	removeAlias: (alias) =>
+		set((state) => {
+			const newAliases = [...state.aliases];
+			const index = newAliases.indexOf(alias);
+			if (index !== -1) {
+				newAliases.splice(index, 1);
+			}
+			return { aliases: newAliases };
+		}),
+});
+
+const useAliasGroupStore = create<AliasGroup>()((...a) => ({
+	...aliasGroupStore(...a),
+}));
 
 const themeStore: StateCreator<Theme> = (set) => ({
 	id: uuidv4(),
@@ -101,6 +156,12 @@ const useThemeStore = create<Theme>()((...a) => ({
 const useTheme = (themeName: string): Theme => {
 	const themeStore = useThemeStore;
 	const theme = themeStore((state) => state);
+	const aliasGroupStore = useAliasGroupStore;
+	const aliasGroup = aliasGroupStore((state) => state);
+
+	const themeColor = useThemeColor('397456');
+	const color = useColor('397456');
+	const alias = useAlias('alias', 100, 0);
 
 	const id = theme.id;
 	const setId = (id: string) => theme.setId(id);
@@ -129,6 +190,22 @@ const useTheme = (themeName: string): Theme => {
 			aliasGroups.splice(index, 1);
 		}
 	};
+
+	// Theme actions:
+	// Add ThemeColor
+	//     ThemeColor Actions
+	// Remove ThemeColor
+	// Add AliasGroup
+	//     AliasGroup Actions
+	//         Alias Actions
+	// Remove AliasGroup
+
+	// Instantiate new theme upon creation
+	useEffect(() => {
+		if (name !== themeName) {
+			setName(themeName);
+		}
+	}, []);
 
 	return {
 		id,
