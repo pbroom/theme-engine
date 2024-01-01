@@ -17,6 +17,18 @@ import z from 'zod';
 import { create, StateCreator } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 
+export {
+	ThemeColorSchema,
+	AliasSchema,
+	ThemeColorDataSchema,
+	ThemeColorActionsSchema,
+	type ThemeColorData,
+	type ThemeColorActions,
+	type ThemeColor,
+	useThemeColorStore,
+	useThemeColor,
+};
+
 const AliasSchema = z.object({
 	id: z.string().uuid(),
 	name: z.string(),
@@ -32,8 +44,8 @@ const AddAliasReturnSchema = z.object({
 	alias: AliasSchema,
 });
 
-export type AddAliasReturn = z.infer<typeof AddAliasReturnSchema>;
-export type Alias = z.infer<typeof AliasSchema>;
+type AddAliasReturn = z.infer<typeof AddAliasReturnSchema>;
+type Alias = z.infer<typeof AliasSchema>;
 
 const AliasMethodsSchema = z.object({
 	alias: AliasSchema,
@@ -47,7 +59,7 @@ const AliasFunctionSchema = z
 	.function(z.tuple([z.string()]))
 	.returns(AliasMethodsSchema);
 
-export const ThemeColorDataSchema = z.object({
+const ThemeColorDataSchema = z.object({
 	id: z.string().uuid(),
 	name: z.string(),
 	sourceHex: z.string(),
@@ -58,8 +70,8 @@ export const ThemeColorDataSchema = z.object({
 	chromaCalc: z.string(),
 	aliases: z.array(AliasSchema),
 });
-export type ThemeColorData = z.infer<typeof ThemeColorDataSchema>;
-export const ThemeColorActionsSchema = z.object({
+type ThemeColorData = z.infer<typeof ThemeColorDataSchema>;
+const ThemeColorActionsSchema = z.object({
 	setId: z.function().args(z.string(), z.void()),
 	setName: z.function().args(z.string(), z.void()),
 	setSourceHex: z.function().args(z.string(), z.void()),
@@ -73,14 +85,12 @@ export const ThemeColorActionsSchema = z.object({
 	alias: AliasFunctionSchema,
 });
 type ThemeColorActions = z.infer<typeof ThemeColorActionsSchema>;
-export const ThemeColorSchema = ThemeColorDataSchema.merge(
-	ThemeColorActionsSchema
-);
-export type ThemeColor = z.infer<typeof ThemeColorSchema>;
+const ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
+type ThemeColor = z.infer<typeof ThemeColorSchema>;
 
 const color = useColorStore.getState();
 
-export const themeColorStore: StateCreator<ThemeColor> = (set) => ({
+const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	id: nanoid(12),
 	name: 'color',
 	sourceHex: color.sourceHex,
@@ -178,7 +188,7 @@ export const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	},
 });
 
-export const useThemeColorStore = create<ThemeColor>()((...a) => ({
+const useThemeColorStore = create<ThemeColor>()((...a) => ({
 	...themeColorStore(...a),
 }));
 
@@ -195,7 +205,8 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	const themeColorStore = useThemeColorStore;
 	const themeColor = themeColorStore((state) => state);
 	const id = themeColor.id;
-	const setId = (id: string) => themeColor.setId(id);
+	// const setId = (id: string) => themeColor.setId(id);
+	const setId = (id: string) => themeColorStore.setState({ id: id });
 	const name = themeColor.name;
 	const setName = (name: string) => themeColor.setName(name);
 	const sourceHex = themeColor.sourceHex;
@@ -486,5 +497,3 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 		alias,
 	};
 };
-
-export default useThemeColor;
