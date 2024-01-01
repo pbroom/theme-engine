@@ -10,14 +10,42 @@ import {
 } from './useColor';
 import { ColorSchema } from './useColor';
 import { maxChromaAtTonePerHue } from '../ref';
-import { AliasSchema } from './useAlias';
-import type { Alias } from './useAlias';
 import { e, evaluate, i, round } from 'mathjs';
 import { useEffect, useRef } from 'preact/hooks';
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from 'nanoid';
 import z from 'zod';
 import { create, StateCreator } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
+
+const AliasSchema = z.object({
+	id: z.string().uuid(),
+	name: z.string(),
+	color: z.array(
+		z.object({
+			mode: z.enum(['light', 'dark']),
+			tone: z.number().int().min(0).max(100),
+		})
+	),
+});
+
+const AddAliasReturnSchema = z.object({
+	alias: AliasSchema,
+});
+
+export type AddAliasReturn = z.infer<typeof AddAliasReturnSchema>;
+export type Alias = z.infer<typeof AliasSchema>;
+
+const AliasMethodsSchema = z.object({
+	alias: AliasSchema,
+	setName: z.function(z.tuple([z.string()])),
+	setTone: z.function(z.tuple([z.union([z.string(), z.number()]), z.number()])),
+	setTones: z.function(z.tuple([z.number(), z.number()])),
+	remove: z.function(),
+});
+
+const AliasFunctionSchema = z
+	.function(z.tuple([z.string()]))
+	.returns(AliasMethodsSchema);
 
 export const ThemeColorDataSchema = z.object({
 	id: z.string().uuid(),
@@ -41,8 +69,8 @@ export const ThemeColorActionsSchema = z.object({
 	setHueCalc: z.function().args(z.string(), z.void()),
 	setChromaCalc: z.function().args(z.string(), z.void()),
 	setAliases: z.function().args(z.array(AliasSchema), z.void()),
-	addAlias: z.function().args(AliasSchema, z.void()),
-	removeAlias: z.function().args(AliasSchema, z.void()),
+	addAlias: z.function(z.tuple([]), AddAliasReturnSchema),
+	alias: AliasFunctionSchema,
 });
 type ThemeColorActions = z.infer<typeof ThemeColorActionsSchema>;
 export const ThemeColorSchema = ThemeColorDataSchema.merge(
@@ -53,7 +81,7 @@ export type ThemeColor = z.infer<typeof ThemeColorSchema>;
 const color = useColorStore.getState();
 
 export const themeColorStore: StateCreator<ThemeColor> = (set) => ({
-	id: uuidv4(),
+	id: nanoid(12),
 	name: 'color',
 	sourceHex: color.sourceHex,
 	sourceColor: color,
@@ -78,21 +106,76 @@ export const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	setHueCalc: (hueCalc) => set(() => ({ hueCalc: hueCalc })),
 	setChromaCalc: (chromaCalc) => set(() => ({ chromaCalc: chromaCalc })),
 	setAliases: (aliases) => set(() => ({ aliases: aliases })),
-	addAlias: (alias) =>
-		set((state) => {
+	addAlias: (): AddAliasReturn => {
+		const alias: Alias = {
+			id: nanoid(12),
+			name: 'Alias',
+			color: [
+				{ mode: 'light', tone: 100 },
+				{ mode: 'dark', tone: 0 },
+			],
+		};
+		const state = useThemeColorStore.getState();
+		const newAliases = [...state.aliases];
+		newAliases.push(alias);
+		set(() => ({ aliases: newAliases }));
+		return { alias };
+	},
+	alias: (id: string) => {
+		const state = useThemeColorStore.getState();
+		const requestedAlias: Alias | undefined = state.aliases.find(
+			(alias) => alias.id === id
+		);
+		if (!requestedAlias) {
+			throw new Error('Alias not found');
+		}
+		const alias: Alias = requestedAlias;
+		const setName = (name: string) => {
 			const newAliases = [...state.aliases];
-			newAliases.push(alias);
-			return { aliases: newAliases };
-		}),
-	removeAlias: (alias) =>
-		set((state) => {
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				aliasToUpdate.name = name;
+			}
+			set(() => ({ aliases: newAliases }));
+		};
+		const setTone = (mode: string | number, tone: number) => {
+			const newAliases = [...state.aliases];
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				if (typeof mode === 'string') {
+					const colorToUpdate = aliasToUpdate.color.find(
+						(color) => color.mode === mode
+					);
+					if (colorToUpdate) {
+						colorToUpdate.tone = tone;
+					}
+				} else if (typeof mode === 'number') {
+					if (mode >= 0 && mode < aliasToUpdate.color.length) {
+						aliasToUpdate.color[mode].tone = tone;
+					}
+				}
+			}
+			set(() => ({ aliases: newAliases }));
+		};
+		const setTones = (firstTone: number, secondTone: number) => {
+			const newAliases = [...state.aliases];
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				aliasToUpdate.color[0].tone = firstTone;
+				aliasToUpdate.color[1].tone = secondTone;
+			}
+			set(() => ({ aliases: newAliases }));
+		};
+		const remove = () => {
 			const newAliases = [...state.aliases];
 			const index = newAliases.indexOf(alias);
 			if (index > -1) {
 				newAliases.splice(index, 1);
 			}
-			return { aliases: newAliases };
-		}),
+			set(() => ({ aliases: newAliases }));
+		};
+		return { alias, setName, setTone, setTones, remove };
+	},
 });
 
 export const useThemeColorStore = create<ThemeColor>()((...a) => ({
@@ -107,6 +190,7 @@ export const useThemeColorStore = create<ThemeColor>()((...a) => ({
  */
 const useThemeColor = (hexColor: string): ThemeColor => {
 	const color = useColor(hexColor);
+	let aliasId = 0;
 
 	const themeColorStore = useThemeColorStore;
 	const themeColor = themeColorStore((state) => state);
@@ -136,6 +220,7 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	const aliases = themeColor.aliases;
 	const setAliases = (aliases: Alias[]) => themeColor.setAliases(aliases);
 
+	// TODO: convert to standalone function
 	const calculateHue = (hueValue: number, hueCalcValue: string) => {
 		const hueCalc = hueCalcValue || themeColor.hueCalc;
 		// Get source hue
@@ -174,6 +259,7 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 		}
 	};
 
+	// TODO: convert to standalone function
 	const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
 		const chromaCalc = chromaCalcValue || themeColor.chromaCalc;
 		// Get source chroma
@@ -297,36 +383,77 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 		});
 	}, []);
 
-	const addAlias = (alias: Alias) => {
+	/**
+	 * Adds a new alias to the list of aliases.
+	 */
+	const addAlias = () => {
+		let alias: Alias = {
+			id: nanoid(12),
+			name: 'Alias',
+			color: [
+				{ mode: 'light', tone: 100 },
+				{ mode: 'dark', tone: 0 },
+			],
+		};
 		const newAliases = [...aliases];
 		newAliases.push(alias);
 		setAliases(newAliases);
+		return { alias };
 	};
 
-	// TODO: Add setAlias function
-	const setAlias = (alias: Alias) => {
-		const newAliases = [...aliases];
-		const name = (aliasName: string) => {
-			const newAlias = { ...alias, name: aliasName };
-		};
-		const colorForMode = (mode: string | number, tone: number) => {
-			const newAlias = { ...alias, color: [{ mode: mode, tone: tone }] };
-		};
-		const index = newAliases.findIndex((newAlias) => newAlias.id === alias.id);
-		if (index > -1) {
-			newAliases[index] = alias;
+	const alias = (id: string) => {
+		const requestedAlias: Alias | undefined = aliases.find(
+			(alias) => alias.id === id
+		);
+		if (!requestedAlias) {
+			throw new Error('Alias not found');
 		}
-		setAliases(newAliases);
-		return { name, colorForMode };
-	};
-
-	const removeAlias = (alias: Alias) => {
-		const newAliases = [...aliases];
-		const index = newAliases.indexOf(alias);
-		if (index > -1) {
-			newAliases.splice(index, 1);
-		}
-		setAliases(newAliases);
+		const alias: Alias = requestedAlias;
+		const setName = (name: string) => {
+			const newAliases = [...aliases];
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				aliasToUpdate.name = name;
+			}
+			setAliases(newAliases);
+		};
+		const setTone = (mode: string | number, tone: number) => {
+			const newAliases = [...aliases];
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				if (typeof mode === 'string') {
+					const colorToUpdate = aliasToUpdate.color.find(
+						(color) => color.mode === mode
+					);
+					if (colorToUpdate) {
+						colorToUpdate.tone = tone;
+					}
+				} else if (typeof mode === 'number') {
+					if (mode >= 0 && mode < aliasToUpdate.color.length) {
+						aliasToUpdate.color[mode].tone = tone;
+					}
+				}
+			}
+			setAliases(newAliases);
+		};
+		const setTones = (firstTone: number, secondTone: number) => {
+			const newAliases = [...aliases];
+			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
+			if (aliasToUpdate) {
+				aliasToUpdate.color[0].tone = firstTone;
+				aliasToUpdate.color[1].tone = secondTone;
+			}
+			setAliases(newAliases);
+		};
+		const remove = () => {
+			const newAliases = [...aliases];
+			const index = newAliases.indexOf(alias);
+			if (index > -1) {
+				newAliases.splice(index, 1);
+			}
+			setAliases(newAliases);
+		};
+		return { alias, setName, setTone, setTones, remove };
 	};
 
 	useEffect(() => {
@@ -356,7 +483,7 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 		setChromaCalc,
 		setAliases,
 		addAlias,
-		removeAlias,
+		alias,
 	};
 };
 
