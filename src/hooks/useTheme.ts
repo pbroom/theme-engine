@@ -1,9 +1,9 @@
-import type { ThemeColor } from './useThemeColor';
+import type { Alias, ThemeColor } from './useThemeColor';
 import { useThemeColor, ThemeColorSchema } from './useThemeColor';
 import useAlias, { AliasSchema, useAliasStore } from './useAlias';
 import z from 'zod';
 import { create, StateCreator } from 'zustand';
-import { useColor } from './useColor';
+import { Color, useColor } from './useColor';
 import { nanoid } from 'nanoid';
 
 export {
@@ -24,22 +24,23 @@ export {
 const ThemeColorFunctionSchema = z.function(z.tuple([z.string()])).returns(
 	z.object({
 		themeColor: ThemeColorSchema,
+		setThemeColor: z.function().args(ThemeColorSchema, z.void()),
 		remove: z.function().args(z.void()),
 	})
 );
 
 const AliasGroupDataSchema = z.object({
-	id: z.string().uuid(),
+	id: z.string(),
 	name: z.string(),
-	themeColors: z.array(z.string().uuid()),
+	themeColors: z.array(z.string()),
 	aliases: z.array(AliasSchema),
 });
 type AliasGroupData = z.infer<typeof AliasGroupSchema>;
 // const AliasGroupActionsSchema = z.object({
 // 	setId: z.function().args(z.string(), z.void()),
 // 	setName: z.function().args(z.string(), z.void()),
-// 	setThemeColors: z.function().args(z.array(z.string().uuid()), z.void()),
-// 	removeThemeColor: z.function().args(z.string().uuid(), z.void()),
+// 	setThemeColors: z.function().args(z.array(z.string()), z.void()),
+// 	removeThemeColor: z.function().args(z.string(), z.void()),
 // 	addAlias: z.function().args(AliasSchema, z.void()),
 // 	removeAlias: z.function().args(AliasSchema, z.void()),
 // });
@@ -48,7 +49,7 @@ const AliasGroupSchema = AliasGroupDataSchema;
 type AliasGroup = z.infer<typeof AliasGroupSchema>;
 
 const ThemeDataSchema = z.object({
-	id: z.string().uuid(),
+	id: z.string(),
 	name: z.string(),
 	themeColors: z.array(ThemeColorSchema),
 	aliasGroups: z.array(AliasGroupSchema),
@@ -72,33 +73,6 @@ const aliasGroupStore: StateCreator<AliasGroup> = (set) => ({
 	name: 'Alias group',
 	themeColors: [],
 	aliases: [],
-	// setId: (id) => set(() => ({ id: id })),
-	// setName: (name) => set(() => ({ name: name })),
-	// setThemeColors: (themeColors) => set(() => ({ themeColors })),
-	// removeThemeColor: (themeColor) =>
-	// 	set((state) => {
-	// 		const newThemeColors = [...state.themeColors];
-	// 		const index = newThemeColors.indexOf(themeColor);
-	// 		if (index !== -1) {
-	// 			newThemeColors.splice(index, 1);
-	// 		}
-	// 		return { themeColors: newThemeColors };
-	// 	}),
-	// addAlias: (alias) =>
-	// 	set((state) => {
-	// 		const newAliases = [...state.aliases];
-	// 		newAliases.push(alias);
-	// 		return { aliases: newAliases };
-	// 	}),
-	// removeAlias: (alias) =>
-	// 	set((state) => {
-	// 		const newAliases = [...state.aliases];
-	// 		const index = newAliases.indexOf(alias);
-	// 		if (index !== -1) {
-	// 			newAliases.splice(index, 1);
-	// 		}
-	// 		return { aliases: newAliases };
-	// 	}),
 });
 
 const useAliasGroupStore = create<AliasGroup>()((...a) => ({
@@ -128,13 +102,19 @@ const themeStore: StateCreator<Theme> = (set) => ({
 			throw new Error(`Could not find theme color with id ${themeColorId}`);
 		}
 		const themeColor: ThemeColor = requestedThemeColor;
+		const setThemeColor = (newThemeColor: ThemeColor) => {
+			const index = state.themeColors.indexOf(themeColor);
+			if (index !== -1) {
+				state.themeColors[index] = newThemeColor;
+			}
+		};
 		const remove = () => {
 			const index = state.themeColors.indexOf(themeColor);
 			if (index !== -1) {
 				state.themeColors.splice(index, 1);
 			}
 		};
-		return { themeColor, remove };
+		return { themeColor, setThemeColor, remove };
 	},
 	addAliasGroup: (aliasGroup) => {
 		set((state) => {
@@ -188,24 +168,53 @@ const useTheme = (): Theme => {
 		theme.setThemeColors(themeColors);
 
 	const addThemeColor = () => {
-		setThemeColors([...themeColors, newThemeColor]);
+		const themeColor: ThemeColor = {
+			...newThemeColor,
+			id: nanoid(12),
+			name: 'Theme color',
+		};
+		theme.addThemeColor(themeColor);
 	};
 
-	const themeColor = (themeColorId: string) => {
-		const requestedThemeColor = themeColors.find(
-			(themeColor) => themeColor.id === themeColorId
-		);
-		if (!requestedThemeColor) {
-			throw new Error(`Could not find theme color with id ${themeColorId}`);
+	const themeColor = (themeColorIdOrIndex?: string | number) => {
+		let requestedThemeColor: ThemeColor | undefined;
+		let index: number | undefined;
+
+		if (typeof themeColorIdOrIndex === 'number') {
+			index = themeColorIdOrIndex;
+			requestedThemeColor = themeColors[index];
+		} else if (typeof themeColorIdOrIndex === 'string') {
+			requestedThemeColor = themeColors.find(
+				(themeColor) => themeColor.id === themeColorIdOrIndex
+			);
 		}
+
+		if (!requestedThemeColor) {
+			throw new Error(
+				`Could not find theme color with id or index ${themeColorIdOrIndex}`
+			);
+		}
+
 		const themeColor: ThemeColor = requestedThemeColor;
+
+		const setThemeColor = (newThemeColor: ThemeColor) =>
+			theme.themeColor(themeColor.id).setThemeColor(newThemeColor);
 		const remove = () => {
-			const index = themeColors.indexOf(themeColor);
-			if (index !== -1) {
+			if (index !== undefined) {
 				themeColors.splice(index, 1);
+			} else {
+				const index = themeColors.indexOf(themeColor);
+				if (index !== -1) {
+					themeColors.splice(index, 1);
+				}
 			}
 		};
-		return { themeColor, remove };
+
+		return {
+			themeColor,
+			setThemeColor,
+			remove,
+		};
 	};
 	const aliasGroups = theme.aliasGroups;
 	const addAliasGroup = () => {

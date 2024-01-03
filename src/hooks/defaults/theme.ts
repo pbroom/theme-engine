@@ -1,6 +1,6 @@
 import { ThemeColor, useThemeColorStore } from '../useThemeColor';
 import { Theme, useTheme } from '../useTheme';
-import useThemeColor from '../useThemeColor';
+import { useThemeColor } from '../useThemeColor';
 import { Color, useColor } from '../useColor';
 import useAlias, { Alias } from '../useAlias';
 

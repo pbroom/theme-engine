@@ -22,6 +22,8 @@ export {
 	AliasSchema,
 	ThemeColorDataSchema,
 	ThemeColorActionsSchema,
+	type Alias,
+	type AddAliasReturn,
 	type ThemeColorData,
 	type ThemeColorActions,
 	type ThemeColor,
@@ -30,7 +32,7 @@ export {
 };
 
 const AliasSchema = z.object({
-	id: z.string().uuid(),
+	id: z.string(),
 	name: z.string(),
 	color: z.array(
 		z.object({
@@ -60,7 +62,7 @@ const AliasFunctionSchema = z
 	.returns(AliasMethodsSchema);
 
 const ThemeColorDataSchema = z.object({
-	id: z.string().uuid(),
+	id: z.string(),
 	name: z.string(),
 	sourceHex: z.string(),
 	sourceColor: ColorSchema,

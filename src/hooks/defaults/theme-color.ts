@@ -1,5 +1,5 @@
 import { defaultAliases } from './aliases';
-import useThemeColor from '../useThemeColor';
+import { useThemeColor } from '../useThemeColor';
 import { ThemeColor } from '../useThemeColor';
 // import useColor from '../useColor';
 

@@ -9,7 +9,7 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
-  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __defNormalProp = (obj, key, value2) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value2 }) : obj[key] = value2;
   var __spreadValues = (a3, b3) => {
     for (var prop in b3 || (b3 = {}))
       if (__hasOwnProp.call(b3, prop))
@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6aebd4d5-eb0a-4f27-bf14-81b88b8c68b2/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2140a8d2-7f8a-4867-9299-f5d39b6212f4/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6aebd4d5-eb0a-4f27-bf14-81b88b8c68b2/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2140a8d2-7f8a-4867-9299-f5d39b6212f4/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -655,14 +655,26 @@ video {
 .w-1 {
   width: 0.25rem;
 }
+.w-1/2 {
+  width: 50%;
+}
+.w-1/3 {
+  width: 33.333333%;
+}
 .w-10 {
   width: 2.5rem;
+}
+.w-172 {
+  width: 172px;
 }
 .w-24 {
   width: 6rem;
 }
 .w-32 {
   width: 8rem;
+}
+.w-36 {
+  width: 9rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -673,14 +685,26 @@ video {
 .w-60 {
   width: 15rem;
 }
+.w-7 {
+  width: 1.75rem;
+}
 .w-8 {
   width: 2rem;
+}
+.w-[100px] {
+  width: 100px;
 }
 .w-[124px] {
   width: 124px;
 }
 .w-[1px] {
   width: 1px;
+}
+.w-[200] {
+  width: 200;
+}
+.w-[200px] {
+  width: 200px;
 }
 .w-[400px] {
   width: 400px;
@@ -690,6 +714,9 @@ video {
 }
 .w-px {
   width: 1px;
+}
+.max-w-[172px] {
+  max-width: 172px;
 }
 .grow {
   flex-grow: 1;
@@ -913,8 +940,15 @@ video {
 .p-1 {
   padding: 0.25rem;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .p-4 {
   padding: 1rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -1069,41 +1103,17 @@ video {
 	border-bottom: none !important;
 }
 
-.hover:bg-blue-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+._opacityInput_190p3_84,
+._divider_190p3_109 {
+	display: none !important;
 }
 
-.hover:bg-fig-blue:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 160 251 / var(--tw-bg-opacity));
+._textboxColor_190p3_1 {
+	width: unset !important;
 }
 
-.focus-visible:outline-none:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus-visible:ring-2:focus-visible {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus-visible:ring-ring:focus-visible {
-  --tw-ring-color: hsl(var(--ring));
-}
-
-.focus-visible:ring-offset-2:focus-visible {
-  --tw-ring-offset-width: 2px;
-}
-
-.disabled:pointer-events-none:disabled {
-  pointer-events: none;
-}
-
-.disabled:opacity-50:disabled {
-  opacity: 0.5;
+._hexColorInput_190p3_80 {
+	flex-basis: 100% !important;
 }
 
 .data-[state=active]:bg-background[data-state=active] {
@@ -1118,6 +1128,80 @@ video {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover:bg-blue-400:where([data-rac])[data-hovered] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.hover:bg-fig-blue:where([data-rac])[data-hovered] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 160 251 / var(--tw-bg-opacity));
+}
+
+.hover:bg-blue-400:where(:not([data-rac])):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.hover:bg-fig-blue:where(:not([data-rac])):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 160 251 / var(--tw-bg-opacity));
+}
+
+.focus-visible:outline-none:where([data-rac])[data-focus-visible] {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible:ring-2:where([data-rac])[data-focus-visible] {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible:ring-ring:where([data-rac])[data-focus-visible] {
+  --tw-ring-color: hsl(var(--ring));
+}
+
+.focus-visible:ring-offset-2:where([data-rac])[data-focus-visible] {
+  --tw-ring-offset-width: 2px;
+}
+
+.focus-visible:outline-none:where(:not([data-rac])):focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible:ring-2:where(:not([data-rac])):focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible:ring-ring:where(:not([data-rac])):focus-visible {
+  --tw-ring-color: hsl(var(--ring));
+}
+
+.focus-visible:ring-offset-2:where(:not([data-rac])):focus-visible {
+  --tw-ring-offset-width: 2px;
+}
+
+.disabled:pointer-events-none:where([data-rac])[data-disabled] {
+  pointer-events: none;
+}
+
+.disabled:opacity-50:where([data-rac])[data-disabled] {
+  opacity: 0.5;
+}
+
+.disabled:pointer-events-none:where(:not([data-rac])):disabled {
+  pointer-events: none;
+}
+
+.disabled:opacity-50:where(:not([data-rac])):disabled {
+  opacity: 0.5;
 }
 `;
         document.head.append(element);
@@ -1647,258 +1731,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de752813-97cd-468b-8f83-35c1fb551af1/loading-indicator.module.js
-  var loading_indicator_module_default;
-  var init_loading_indicator_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de752813-97cd-468b-8f83-35c1fb551af1/loading-indicator.module.js"() {
-      if (document.getElementById("c451e2d48b") === null) {
-        const element = document.createElement("style");
-        element.id = "c451e2d48b";
-        element.textContent = `._loadingIndicator_pl5c3_1 {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  margin: 0 auto;
-}
-
-._svg_pl5c3_8 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  animation: _rotating_pl5c3_1 0.5s linear infinite;
-  fill: currentColor;
-}
-
-@keyframes _rotating_pl5c3_1 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9sb2FkaW5nLWluZGljYXRvci9sb2FkaW5nLWluZGljYXRvci5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osY0FBYztBQUNoQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1osaURBQXdDO0VBQ3hDLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFO0lBQ0UsdUJBQXVCO0VBQ3pCO0VBQ0E7SUFDRSx5QkFBeUI7RUFDM0I7QUFDRiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvbG9hZGluZy1pbmRpY2F0b3IvbG9hZGluZy1pbmRpY2F0b3IubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb2FkaW5nSW5kaWNhdG9yIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTZweDtcbiAgaGVpZ2h0OiAxNnB4O1xuICBtYXJnaW46IDAgYXV0bztcbn1cblxuLnN2ZyB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMTZweDtcbiAgaGVpZ2h0OiAxNnB4O1xuICBhbmltYXRpb246IHJvdGF0aW5nIDAuNXMgbGluZWFyIGluZmluaXRlO1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbkBrZXlmcmFtZXMgcm90YXRpbmcge1xuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxuICB0byB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTtcbiAgfVxufVxuIl19 */`;
-        document.head.append(element);
-      }
-      loading_indicator_module_default = { "loadingIndicator": "_loadingIndicator_pl5c3_1", "svg": "_svg_pl5c3_8", "rotating": "_rotating_pl5c3_1" };
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/components/loading-indicator/loading-indicator.js
-  function LoadingIndicator(_a) {
-    var _b = _a, { color: color2 } = _b, rest = __objRest(_b, ["color"]);
-    return y(
-      "div",
-      __spreadProps(__spreadValues({}, rest), { class: loading_indicator_module_default.loadingIndicator }),
-      y(
-        "svg",
-        { class: loading_indicator_module_default.svg, style: typeof color2 === "undefined" ? void 0 : {
-          fill: `var(--figma-color-icon-${color2})`
-        } },
-        y("path", { d: "M8 15C11.866 15 15 11.866 15 8C15 6.7865 14.6912 5.64511 14.1479 4.65013L15.0263 4.17174C15.6471 5.30882 16 6.6132 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 5.54138 1.10909 3.34181 2.85426 1.8743L3.47761 2.65678C1.96204 3.94081 1 5.85806 1 8C1 11.866 4.13401 15 8 15Z" })
-      )
-    );
-  }
-  var init_loading_indicator = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/loading-indicator/loading-indicator.js"() {
-      init_preact_module();
-      init_loading_indicator_module();
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b7f2a552-46bc-43ed-9d68-7178113bc37c/button.module.js
-  var button_module_default;
-  var init_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b7f2a552-46bc-43ed-9d68-7178113bc37c/button.module.js"() {
-      if (document.getElementById("13442769ce") === null) {
-        const element = document.createElement("style");
-        element.id = "13442769ce";
-        element.textContent = `._button_5fxgc_1 {
-  position: relative;
-  z-index: var(--z-index-1);
-  display: inline-block;
-}
-
-._fullWidth_5fxgc_7 {
-  display: block;
-}
-
-._button_5fxgc_1 button {
-  display: inline-block;
-  height: 32px;
-  border-radius: var(--border-radius-6);
-}
-
-._disabled_5fxgc_17 button {
-  cursor: not-allowed;
-}
-
-._fullWidth_5fxgc_7 button {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-._default_5fxgc_29 button {
-  padding: 0 14px;
-  border: 2px solid transparent;
-  background-color: var(--figma-color-bg-brand);
-  color: var(--figma-color-text-onbrand);
-  line-height: 28px;
-}
-._default_5fxgc_29:not(._disabled_5fxgc_17) button:focus {
-  border-color: var(--figma-color-border-brand-strong);
-}
-._default_5fxgc_29._disabled_5fxgc_17 button {
-  background-color: var(--figma-color-bg-disabled);
-  color: var(--figma-color-text-ondisabled);
-}
-
-._default_5fxgc_29._danger_5fxgc_44 button {
-  background-color: var(--figma-color-bg-danger);
-  color: var(--figma-color-text-ondanger);
-}
-._default_5fxgc_29._danger_5fxgc_44:not(._disabled_5fxgc_17) button:focus {
-  border-color: var(--figma-color-border-danger-strong);
-}
-._default_5fxgc_29._danger_5fxgc_44._disabled_5fxgc_17 button {
-  background-color: var(--figma-color-bg-disabled);
-  color: var(--figma-color-text-ondisabled);
-}
-
-._secondary_5fxgc_56 button {
-  padding: 0 15px;
-  border: 1px solid var(--figma-color-border-strong);
-  background-color: transparent;
-  color: var(--figma-color-text);
-  line-height: 30px;
-}
-._secondary_5fxgc_56:not(._disabled_5fxgc_17) button:focus {
-  padding: 0 14px;
-  border-width: 2px;
-  border-color: var(--figma-color-border-brand-strong);
-  line-height: 28px;
-}
-._secondary_5fxgc_56._disabled_5fxgc_17 button {
-  border-color: var(--figma-color-border-disabled-strong);
-  color: var(--figma-color-text-disabled);
-}
-
-._secondary_5fxgc_56._danger_5fxgc_44 button {
-  border-color: var(--figma-color-border-danger-strong);
-  color: var(--figma-color-text-danger);
-}
-._secondary_5fxgc_56._danger_5fxgc_44:not(._disabled_5fxgc_17) button:focus {
-  border-color: var(--figma-color-border-danger-strong);
-}
-._secondary_5fxgc_56._danger_5fxgc_44._disabled_5fxgc_17 button {
-  border-color: var(--figma-color-border-disabled-strong);
-  color: var(--figma-color-text-disabled);
-}
-
-._loadingIndicator_5fxgc_86 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-}
-
-._default_5fxgc_29 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-icon-onbrand);
-}
-._default_5fxgc_29._disabled_5fxgc_17 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-icon-ondisabled);
-}
-
-._default_5fxgc_29._danger_5fxgc_44 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-icon-ondanger);
-}
-._default_5fxgc_29._danger_5fxgc_44._disabled_5fxgc_17 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-icon-ondisabled);
-}
-
-._secondary_5fxgc_56 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-text);
-}
-._secondary_5fxgc_56._disabled_5fxgc_17 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-text-disabled);
-}
-
-._secondary_5fxgc_56._danger_5fxgc_44 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-text-danger);
-}
-._secondary_5fxgc_56._danger_5fxgc_44._disabled_5fxgc_17 ._loadingIndicator_5fxgc_86 {
-  color: var(--figma-color-text-disabled);
-}
-
-._children_5fxgc_122 {
-  display: inline;
-}
-._loading_5fxgc_86 ._children_5fxgc_122 {
-  visibility: hidden;
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9idXR0b24vYnV0dG9uLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsWUFBWTtFQUNaLHFDQUFxQztBQUN2Qzs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsNkJBQTZCO0VBQzdCLDZDQUE2QztFQUM3QyxzQ0FBc0M7RUFDdEMsaUJBQWlCO0FBQ25CO0FBQ0E7RUFDRSxvREFBb0Q7QUFDdEQ7QUFDQTtFQUNFLGdEQUFnRDtFQUNoRCx5Q0FBeUM7QUFDM0M7O0FBRUE7RUFDRSw4Q0FBOEM7RUFDOUMsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxxREFBcUQ7QUFDdkQ7QUFDQTtFQUNFLGdEQUFnRDtFQUNoRCx5Q0FBeUM7QUFDM0M7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysa0RBQWtEO0VBQ2xELDZCQUE2QjtFQUM3Qiw4QkFBOEI7RUFDOUIsaUJBQWlCO0FBQ25CO0FBQ0E7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLG9EQUFvRDtFQUNwRCxpQkFBaUI7QUFDbkI7QUFDQTtFQUNFLHVEQUF1RDtFQUN2RCx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxxREFBcUQ7RUFDckQscUNBQXFDO0FBQ3ZDO0FBQ0E7RUFDRSxxREFBcUQ7QUFDdkQ7QUFDQTtFQUNFLHVEQUF1RDtFQUN2RCx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCxvQkFBb0I7RUFDcEIsZ0NBQWdDO0FBQ2xDOztBQUVBO0VBQ0Usc0NBQXNDO0FBQ3hDO0FBQ0E7RUFDRSx5Q0FBeUM7QUFDM0M7O0FBRUE7RUFDRSx1Q0FBdUM7QUFDekM7QUFDQTtFQUNFLHlDQUF5QztBQUMzQzs7QUFFQTtFQUNFLDhCQUE4QjtBQUNoQztBQUNBO0VBQ0UsdUNBQXVDO0FBQ3pDOztBQUVBO0VBQ0UscUNBQXFDO0FBQ3ZDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCO0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL2J1dHRvbi9idXR0b24ubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idXR0b24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMSk7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cblxuLmZ1bGxXaWR0aCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4uYnV0dG9uIGJ1dHRvbiB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAzMnB4O1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTYpO1xufVxuXG4uZGlzYWJsZWQgYnV0dG9uIHtcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbn1cblxuLmZ1bGxXaWR0aCBidXR0b24ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgd2lkdGg6IDEwMCU7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuXG4uZGVmYXVsdCBidXR0b24ge1xuICBwYWRkaW5nOiAwIDE0cHg7XG4gIGJvcmRlcjogMnB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1iZy1icmFuZCk7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LW9uYnJhbmQpO1xuICBsaW5lLWhlaWdodDogMjhweDtcbn1cbi5kZWZhdWx0Om5vdCguZGlzYWJsZWQpIGJ1dHRvbjpmb2N1cyB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG4uZGVmYXVsdC5kaXNhYmxlZCBidXR0b24ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1iZy1kaXNhYmxlZCk7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LW9uZGlzYWJsZWQpO1xufVxuXG4uZGVmYXVsdC5kYW5nZXIgYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGFuZ2VyKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtb25kYW5nZXIpO1xufVxuLmRlZmF1bHQuZGFuZ2VyOm5vdCguZGlzYWJsZWQpIGJ1dHRvbjpmb2N1cyB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWRhbmdlci1zdHJvbmcpO1xufVxuLmRlZmF1bHQuZGFuZ2VyLmRpc2FibGVkIGJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWRpc2FibGVkKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtb25kaXNhYmxlZCk7XG59XG5cbi5zZWNvbmRhcnkgYnV0dG9uIHtcbiAgcGFkZGluZzogMCAxNXB4O1xuICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItc3Ryb25nKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbiAgbGluZS1oZWlnaHQ6IDMwcHg7XG59XG4uc2Vjb25kYXJ5Om5vdCguZGlzYWJsZWQpIGJ1dHRvbjpmb2N1cyB7XG4gIHBhZGRpbmc6IDAgMTRweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG4gIGxpbmUtaGVpZ2h0OiAyOHB4O1xufVxuLnNlY29uZGFyeS5kaXNhYmxlZCBidXR0b24ge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG59XG5cbi5zZWNvbmRhcnkuZGFuZ2VyIGJ1dHRvbiB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWRhbmdlci1zdHJvbmcpO1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kYW5nZXIpO1xufVxuLnNlY29uZGFyeS5kYW5nZXI6bm90KC5kaXNhYmxlZCkgYnV0dG9uOmZvY3VzIHtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItZGFuZ2VyLXN0cm9uZyk7XG59XG4uc2Vjb25kYXJ5LmRhbmdlci5kaXNhYmxlZCBidXR0b24ge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG59XG5cbi5sb2FkaW5nSW5kaWNhdG9yIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG59XG5cbi5kZWZhdWx0IC5sb2FkaW5nSW5kaWNhdG9yIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tb25icmFuZCk7XG59XG4uZGVmYXVsdC5kaXNhYmxlZCAubG9hZGluZ0luZGljYXRvciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLW9uZGlzYWJsZWQpO1xufVxuXG4uZGVmYXVsdC5kYW5nZXIgLmxvYWRpbmdJbmRpY2F0b3Ige1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbi1vbmRhbmdlcik7XG59XG4uZGVmYXVsdC5kYW5nZXIuZGlzYWJsZWQgLmxvYWRpbmdJbmRpY2F0b3Ige1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbi1vbmRpc2FibGVkKTtcbn1cblxuLnNlY29uZGFyeSAubG9hZGluZ0luZGljYXRvciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5zZWNvbmRhcnkuZGlzYWJsZWQgLmxvYWRpbmdJbmRpY2F0b3Ige1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG59XG5cbi5zZWNvbmRhcnkuZGFuZ2VyIC5sb2FkaW5nSW5kaWNhdG9yIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtZGFuZ2VyKTtcbn1cbi5zZWNvbmRhcnkuZGFuZ2VyLmRpc2FibGVkIC5sb2FkaW5nSW5kaWNhdG9yIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xufVxuXG4uY2hpbGRyZW4ge1xuICBkaXNwbGF5OiBpbmxpbmU7XG59XG4ubG9hZGluZyAuY2hpbGRyZW4ge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4iXX0= */`;
-        document.head.append(element);
-      }
-      button_module_default = { "button": "_button_5fxgc_1", "fullWidth": "_fullWidth_5fxgc_7", "disabled": "_disabled_5fxgc_17", "default": "_default_5fxgc_29", "danger": "_danger_5fxgc_44", "secondary": "_secondary_5fxgc_56", "loadingIndicator": "_loadingIndicator_5fxgc_86", "children": "_children_5fxgc_122", "loading": "_loading_5fxgc_86" };
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/components/button/button.js
-  function Button(_a) {
-    var _b = _a, { children, danger = false, disabled = false, fullWidth = false, loading = false, onClick, propagateEscapeKeyDown = true, secondary = false } = _b, rest = __objRest(_b, ["children", "danger", "disabled", "fullWidth", "loading", "onClick", "propagateEscapeKeyDown", "secondary"]);
-    const handleKeyDown = T2(function(event) {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (propagateEscapeKeyDown === false) {
-        event.stopPropagation();
-      }
-      event.currentTarget.blur();
-    }, [propagateEscapeKeyDown]);
-    return y(
-      "div",
-      { class: createClassName([
-        button_module_default.button,
-        secondary === true ? button_module_default.secondary : button_module_default.default,
-        danger === true ? button_module_default.danger : null,
-        fullWidth === true ? button_module_default.fullWidth : null,
-        disabled === true ? button_module_default.disabled : null,
-        loading === true ? button_module_default.loading : null
-      ]) },
-      loading === true ? y(
-        "div",
-        { class: button_module_default.loadingIndicator },
-        y(LoadingIndicator, null)
-      ) : null,
-      y(
-        "button",
-        __spreadProps(__spreadValues({}, rest), { disabled: disabled === true, onClick: disabled === true || loading === true ? void 0 : onClick, onKeyDown: disabled === true || loading === true ? void 0 : handleKeyDown, tabIndex: disabled === true ? -1 : 0 }),
-        y("div", { class: button_module_default.children }, children)
-      )
-    );
-  }
-  var init_button = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/button/button.js"() {
-      init_preact_module();
-      init_hooks_module();
-      init_create_class_name();
-      init_loading_indicator();
-      init_button_module();
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63242a96-7384-4c78-8335-3e3478c95853/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d8aa8d8-5fa1-48df-9b5a-03d4ec453567/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/63242a96-7384-4c78-8335-3e3478c95853/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d8aa8d8-5fa1-48df-9b5a-03d4ec453567/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1946,10 +1782,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c2241de-1e63-462b-a6a5-e58d6397b1f7/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b25045c-8cd7-4f15-a8c8-6eb8f408b882/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4c2241de-1e63-462b-a6a5-e58d6397b1f7/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b25045c-8cd7-4f15-a8c8-6eb8f408b882/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -1995,7 +1831,7 @@ video {
   function Tabs(_a) {
     var _b = _a, { name: name307, onChange = function() {
     }, onValueChange = function() {
-    }, options, propagateEscapeKeyDown = true, value } = _b, rest = __objRest(_b, ["name", "onChange", "onValueChange", "options", "propagateEscapeKeyDown", "value"]);
+    }, options, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["name", "onChange", "onValueChange", "options", "propagateEscapeKeyDown", "value"]);
     const handleChange = T2(function(event) {
       const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
       const newValue = options[parseInt(id, 10)].value;
@@ -2012,7 +1848,7 @@ video {
       event.currentTarget.blur();
     }, [propagateEscapeKeyDown]);
     const activeOption = options.find(function(option) {
-      return option.value === value;
+      return option.value === value2;
     });
     return y(
       g,
@@ -2021,7 +1857,7 @@ video {
         return y(
           "label",
           { key: index2, class: tabs_module_default.label },
-          y("input", __spreadProps(__spreadValues({}, rest), { checked: value === option.value, class: tabs_module_default.input, name: name307, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: 0, type: "radio", value: option.value, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index2}` })),
+          y("input", __spreadProps(__spreadValues({}, rest), { checked: value2 === option.value, class: tabs_module_default.input, name: name307, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: 0, type: "radio", value: option.value, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index2}` })),
           y("div", { class: tabs_module_default.value }, option.value)
         );
       })),
@@ -2103,11 +1939,291 @@ video {
     }
   });
 
+  // node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js
+  var NAMED_COLORS;
+  var init_named_colors = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/private/named-colors.js"() {
+      NAMED_COLORS = {
+        aliceblue: "F0F8FF",
+        antiquewhite: "FAEBD7",
+        aqua: "00FFFF",
+        aquamarine: "7FFFD4",
+        azure: "F0FFFF",
+        beige: "F5F5DC",
+        bisque: "FFE4C4",
+        black: "000000",
+        blanchedalmond: "FFEBCD",
+        blue: "0000FF",
+        blueviolet: "8A2BE2",
+        brown: "A52A2A",
+        burlywood: "DEB887",
+        cadetblue: "5F9EA0",
+        chartreuse: "7FFF00",
+        chocolate: "D2691E",
+        coral: "FF7F50",
+        cornflowerblue: "6495ED",
+        cornsilk: "FFF8DC",
+        crimson: "DC143C",
+        cyan: "00FFFF",
+        darkblue: "00008B",
+        darkcyan: "008B8B",
+        darkgoldenrod: "B8860B",
+        darkgray: "A9A9A9",
+        darkgreen: "006400",
+        darkgrey: "A9A9A9",
+        darkkhaki: "BDB76B",
+        darkmagenta: "8B008B",
+        darkolivegreen: "556B2F",
+        darkorange: "FF8C00",
+        darkorchid: "9932CC",
+        darkred: "8B0000",
+        darksalmon: "E9967A",
+        darkseagreen: "8FBC8F",
+        darkslateblue: "483D8B",
+        darkslategray: "2F4F4F",
+        darkslategrey: "2F4F4F",
+        darkturquoise: "00CED1",
+        darkviolet: "9400D3",
+        deeppink: "FF1493",
+        deepskyblue: "00BFFF",
+        dimgray: "696969",
+        dimgrey: "696969",
+        dodgerblue: "1E90FF",
+        firebrick: "B22222",
+        floralwhite: "FFFAF0",
+        forestgreen: "228B22",
+        fuchsia: "FF00FF",
+        gainsboro: "DCDCDC",
+        ghostwhite: "F8F8FF",
+        gold: "FFD700",
+        goldenrod: "DAA520",
+        gray: "808080",
+        green: "008000",
+        greenyellow: "ADFF2F",
+        grey: "808080",
+        honeydew: "F0FFF0",
+        hotpink: "FF69B4",
+        indianred: "CD5C5C",
+        indigo: "4B0082",
+        ivory: "FFFFF0",
+        khaki: "F0E68C",
+        lavender: "E6E6FA",
+        lavenderblush: "FFF0F5",
+        lawngreen: "7CFC00",
+        lemonchiffon: "FFFACD",
+        lightblue: "ADD8E6",
+        lightcoral: "F08080",
+        lightcyan: "E0FFFF",
+        lightgoldenrodyellow: "FAFAD2",
+        lightgray: "D3D3D3",
+        lightgreen: "90EE90",
+        lightgrey: "D3D3D3",
+        lightpink: "FFB6C1",
+        lightsalmon: "FFA07A",
+        lightseagreen: "20B2AA",
+        lightskyblue: "87CEFA",
+        lightslategray: "778899",
+        lightslategrey: "778899",
+        lightsteelblue: "B0C4DE",
+        lightyellow: "FFFFE0",
+        lime: "00FF00",
+        limegreen: "32CD32",
+        linen: "FAF0E6",
+        magenta: "FF00FF",
+        maroon: "800000",
+        mediumaquamarine: "66CDAA",
+        mediumblue: "0000CD",
+        mediumorchid: "BA55D3",
+        mediumpurple: "9370DB",
+        mediumseagreen: "3CB371",
+        mediumslateblue: "7B68EE",
+        mediumspringgreen: "00FA9A",
+        mediumturquoise: "48D1CC",
+        mediumvioletred: "C71585",
+        midnightblue: "191970",
+        mintcream: "F5FFFA",
+        mistyrose: "FFE4E1",
+        moccasin: "FFE4B5",
+        navajowhite: "FFDEAD",
+        navy: "000080",
+        oldlace: "FDF5E6",
+        olive: "808000",
+        olivedrab: "6B8E23",
+        orange: "FFA500",
+        orangered: "FF4500",
+        orchid: "DA70D6",
+        palegoldenrod: "EEE8AA",
+        palegreen: "98FB98",
+        paleturquoise: "AFEEEE",
+        palevioletred: "DB7093",
+        papayawhip: "FFEFD5",
+        peachpuff: "FFDAB9",
+        peru: "CD853F",
+        pink: "FFC0CB",
+        plum: "DDA0DD",
+        powderblue: "B0E0E6",
+        purple: "800080",
+        rebeccapurple: "663399",
+        red: "FF0000",
+        rosybrown: "BC8F8F",
+        royalblue: "4169E1",
+        saddlebrown: "8B4513",
+        salmon: "FA8072",
+        sandybrown: "F4A460",
+        seagreen: "2E8B57",
+        seashell: "FFF5EE",
+        sienna: "A0522D",
+        silver: "C0C0C0",
+        skyblue: "87CEEB",
+        slateblue: "6A5ACD",
+        slategray: "708090",
+        slategrey: "708090",
+        snow: "FFFAFA",
+        springgreen: "00FF7F",
+        steelblue: "4682B4",
+        tan: "D2B48C",
+        teal: "008080",
+        thistle: "D8BFD8",
+        tomato: "FF6347",
+        turquoise: "40E0D0",
+        violet: "EE82EE",
+        wheat: "F5DEB3",
+        white: "FFFFFF",
+        whitesmoke: "F5F5F5",
+        yellow: "FFFF00",
+        yellowgreen: "9ACD32"
+      };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js
+  function convertNamedColorToHexColor(namedColor) {
+    const hexColor = NAMED_COLORS[namedColor.toLowerCase()];
+    if (typeof hexColor === "undefined") {
+      return null;
+    }
+    return hexColor;
+  }
+  var init_convert_named_color_to_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js"() {
+      init_named_colors();
+    }
+  });
+
+  // node_modules/rgb-hex/index.js
+  function rgbHex(red, green, blue, alpha) {
+    const isPercent = (red + (alpha || "")).toString().includes("%");
+    if (typeof red === "string") {
+      [red, green, blue, alpha] = red.match(/(0?\.?\d+)%?\b/g).map((component) => Number(component));
+    } else if (alpha !== void 0) {
+      alpha = Number.parseFloat(alpha);
+    }
+    if (typeof red !== "number" || typeof green !== "number" || typeof blue !== "number" || red > 255 || green > 255 || blue > 255) {
+      throw new TypeError("Expected three numbers below 256");
+    }
+    if (typeof alpha === "number") {
+      if (!isPercent && alpha >= 0 && alpha <= 1) {
+        alpha = Math.round(255 * alpha);
+      } else if (isPercent && alpha >= 0 && alpha <= 100) {
+        alpha = Math.round(255 * alpha / 100);
+      } else {
+        throw new TypeError(`Expected alpha value (${alpha}) as a fraction or percentage`);
+      }
+      alpha = (alpha | 1 << 8).toString(16).slice(1);
+    } else {
+      alpha = "";
+    }
+    return (blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1) + alpha;
+  }
+  var init_rgb_hex = __esm({
+    "node_modules/rgb-hex/index.js"() {
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js
+  function convertRgbColorToHexColor(rgbColor) {
+    const { r: r3, g: g4, b: b3 } = rgbColor;
+    if (r3 < 0 || r3 > 1 || g4 < 0 || g4 > 1 || b3 < 0 || b3 > 1) {
+      return null;
+    }
+    try {
+      return rgbHex(Math.round(r3 * 255), Math.round(g4 * 255), Math.round(b3 * 255)).toUpperCase();
+    } catch (e6) {
+      return null;
+    }
+  }
+  var init_convert_rgb_color_to_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/convert-rgb-color-to-hex-color.js"() {
+      init_rgb_hex();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js
+  function isValidHexColor(hexColor) {
+    return convertHexColorToRgbColor(hexColor) !== null;
+  }
+  var init_is_valid_hex_color = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js"() {
+      init_convert_hex_color_to_rgb_color();
+    }
+  });
+
   // node_modules/@create-figma-plugin/utilities/lib/mixed-values.js
-  var MIXED_STRING;
+  var MIXED_NUMBER, MIXED_STRING;
   var init_mixed_values = __esm({
     "node_modules/@create-figma-plugin/utilities/lib/mixed-values.js"() {
+      MIXED_NUMBER = 999999999999999;
       MIXED_STRING = "999999999999999";
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js
+  var floatOperandRegex, integerOperandRegex, operatorRegex, operatorSuffixRegex, numbersRegex, invalidCharactersRegex;
+  var init_regex = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/private/regex.js"() {
+      floatOperandRegex = /^-?\d*(?:\.\d*)?$/;
+      integerOperandRegex = /^-?\d*$/;
+      operatorRegex = /[+\-*/]/;
+      operatorSuffixRegex = /[+\-*/]$/;
+      numbersRegex = /\d/;
+      invalidCharactersRegex = /[^\d.+\-*/]/;
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js
+  function evaluateNumericExpression(value) {
+    if (value === "" || numbersRegex.test(value) === false || invalidCharactersRegex.test(value) === true) {
+      return null;
+    }
+    if (operatorRegex.test(value) === true) {
+      if (operatorSuffixRegex.test(value) === true) {
+        return eval(value.substring(0, value.length - 1));
+      }
+      return eval(value);
+    }
+    return parseFloat(value);
+  }
+  var init_evaluate_numeric_expression = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/evaluate-numeric-expression.js"() {
+      init_regex();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js
+  function isValidNumericInput(value2, options = { integersOnly: false }) {
+    const split = (value2[0] === "-" ? value2.substring(1) : value2).split(operatorRegex);
+    let i5 = -1;
+    while (++i5 < split.length) {
+      const operand = split[i5];
+      if (operand === "" && i5 !== split.length - 1 || (options.integersOnly === true ? integerOperandRegex : floatOperandRegex).test(operand) === false) {
+        return false;
+      }
+    }
+    return true;
+  }
+  var init_is_valid_numeric_input = __esm({
+    "node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js"() {
+      init_regex();
     }
   });
 
@@ -2115,7 +2231,12 @@ video {
   var init_lib = __esm({
     "node_modules/@create-figma-plugin/utilities/lib/index.js"() {
       init_convert_hex_color_to_rgb_color();
+      init_convert_named_color_to_hex_color();
+      init_convert_rgb_color_to_hex_color();
+      init_is_valid_hex_color();
       init_mixed_values();
+      init_evaluate_numeric_expression();
+      init_is_valid_numeric_input();
     }
   });
 
@@ -2132,13 +2253,13 @@ video {
   function RawTextbox(_a) {
     var _b = _a, { disabled = false, name: name307, onInput = function() {
     }, onValueInput = function() {
-    }, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value } = _b, rest = __objRest(_b, ["disabled", "name", "onInput", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
+    }, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "name", "onInput", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
     const inputElementRef = _2(null);
     const revertOnEscapeKeyDownRef = _2(false);
     const [originalValue, setOriginalValue] = h2(EMPTY_STRING);
-    const setInputElementValue = T2(function(value2) {
+    const setInputElementValue = T2(function(value3) {
       const inputElement = getCurrentFromRef(inputElementRef);
-      inputElement.value = value2;
+      inputElement.value = value3;
       const inputEvent = document.createEvent("Event");
       inputEvent.initEvent("input", true, true);
       inputElement.dispatchEvent(inputEvent);
@@ -2149,14 +2270,14 @@ video {
         return;
       }
       if (typeof validateOnBlur !== "undefined") {
-        const result = validateOnBlur(value);
+        const result = validateOnBlur(value2);
         if (typeof result === "string") {
           setInputElementValue(result);
           setOriginalValue(EMPTY_STRING);
           return;
         }
         if (result === false) {
-          if (value !== originalValue) {
+          if (value2 !== originalValue) {
             setInputElementValue(originalValue);
           }
           setOriginalValue(EMPTY_STRING);
@@ -2164,11 +2285,11 @@ video {
         }
       }
       setOriginalValue(EMPTY_STRING);
-    }, [originalValue, setInputElementValue, validateOnBlur, value]);
+    }, [originalValue, setInputElementValue, validateOnBlur, value2]);
     const handleFocus = T2(function(event) {
-      setOriginalValue(value);
+      setOriginalValue(value2);
       event.currentTarget.select();
-    }, [value]);
+    }, [value2]);
     const handleInput = T2(function(event) {
       onValueInput(event.currentTarget.value, name307);
       onInput(event);
@@ -2191,7 +2312,7 @@ video {
         event.currentTarget.blur();
         return;
       }
-      if (value === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
+      if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
         event.preventDefault();
         event.currentTarget.select();
       }
@@ -2200,14 +2321,14 @@ video {
       propagateEscapeKeyDown,
       revertOnEscapeKeyDown,
       setInputElementValue,
-      value
+      value2
     ]);
     const handleMouseUp = T2(function(event) {
-      if (value === MIXED_STRING) {
+      if (value2 === MIXED_STRING) {
         event.preventDefault();
       }
-    }, [value]);
-    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, type: password === true ? "password" : "text", value: value === MIXED_STRING ? "Mixed" : value }));
+    }, [value2]);
+    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, type: password === true ? "password" : "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
   }
   var EMPTY_STRING;
   var init_raw_textbox = __esm({
@@ -2221,10 +2342,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3cfbae0d-7d43-49d9-bbef-e6c9eb7c3453/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29c62dee-8cc1-4969-bb4e-53905bbc8bda/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3cfbae0d-7d43-49d9-bbef-e6c9eb7c3453/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29c62dee-8cc1-4969-bb4e-53905bbc8bda/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2346,6 +2467,909 @@ video {
     }
   });
 
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/private/compute-next-value.js
+  function computeNextValue(inputElement, insertedString) {
+    const value2 = inputElement.value;
+    const selectionStart = inputElement.selectionStart;
+    const selectionEnd = inputElement.selectionEnd;
+    return `${value2.substring(0, selectionStart === null ? 0 : selectionStart)}${insertedString}${value2.substring(selectionEnd === null ? 0 : selectionEnd)}`;
+  }
+  var init_compute_next_value = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/private/compute-next-value.js"() {
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/format-evaluated-value.js
+  function formatEvaluatedValue(evaluatedValue, value2, suffix) {
+    if (evaluatedValue === null) {
+      return EMPTY_STRING2;
+    }
+    const significantFiguresCount = countSignificantFigures(nonDigitRegex.test(value2) === true ? `${evaluatedValue}` : value2);
+    return appendSuffix(formatSignificantFigures(evaluatedValue, significantFiguresCount), suffix);
+  }
+  function countSignificantFigures(value2) {
+    const result = fractionalPartRegex.exec(value2);
+    if (result === null) {
+      return 0;
+    }
+    return result[1].length;
+  }
+  function formatSignificantFigures(value2, significantFiguresCount) {
+    if (significantFiguresCount === 0) {
+      return `${value2}`;
+    }
+    const result = fractionalPartRegex.exec(`${value2}`);
+    if (result === null) {
+      return `${value2}.${"0".repeat(significantFiguresCount)}`;
+    }
+    const fractionalPart = result[1];
+    const count2 = significantFiguresCount - fractionalPart.length;
+    return `${value2}${"0".repeat(count2)}`;
+  }
+  function appendSuffix(string2, suffix) {
+    if (typeof suffix === "undefined") {
+      return string2;
+    }
+    if (string2 === EMPTY_STRING2) {
+      return EMPTY_STRING2;
+    }
+    return `${string2}${suffix}`;
+  }
+  var EMPTY_STRING2, fractionalPartRegex, nonDigitRegex;
+  var init_format_evaluated_value = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/format-evaluated-value.js"() {
+      EMPTY_STRING2 = "";
+      fractionalPartRegex = /\.([^.]+)/;
+      nonDigitRegex = /[^\d.]/;
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/raw-textbox-numeric.js
+  function RawTextboxNumeric(_a) {
+    var _b = _a, { disabled = false, incrementBig = 10, incrementSmall = 1, integer = false, maximum, minimum, name: name307, onInput = function() {
+    }, onNumericValueInput = function() {
+    }, onValueInput = function() {
+    }, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, suffix, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "incrementBig", "incrementSmall", "integer", "maximum", "minimum", "name", "onInput", "onNumericValueInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "suffix", "validateOnBlur", "value"]);
+    if (typeof minimum !== "undefined" && typeof maximum !== "undefined" && minimum >= maximum) {
+      throw new Error("`minimum` must be less than `maximum`");
+    }
+    const inputElementRef = _2(null);
+    const revertOnEscapeKeyDownRef = _2(false);
+    const [originalValue, setOriginalValue] = h2(EMPTY_STRING3);
+    const setInputElementValue = T2(function(value3) {
+      const inputElement = getCurrentFromRef(inputElementRef);
+      inputElement.value = value3;
+      const inputEvent = document.createEvent("Event");
+      inputEvent.initEvent("input", true, true);
+      inputElement.dispatchEvent(inputEvent);
+    }, []);
+    const handleBlur = T2(function() {
+      if (revertOnEscapeKeyDownRef.current === true) {
+        revertOnEscapeKeyDownRef.current = false;
+        return;
+      }
+      if (typeof validateOnBlur !== "undefined") {
+        const evaluatedValue = evaluateValue(value2, suffix);
+        const result = validateOnBlur(evaluatedValue);
+        if (typeof result === "number") {
+          setInputElementValue(formatEvaluatedValue(result, value2, suffix));
+          setOriginalValue(EMPTY_STRING3);
+          return;
+        }
+        if (result === null) {
+          setInputElementValue(EMPTY_STRING3);
+          setOriginalValue(EMPTY_STRING3);
+          return;
+        }
+        if (result === false) {
+          if (value2 !== originalValue) {
+            setInputElementValue(originalValue);
+          }
+          setOriginalValue(EMPTY_STRING3);
+          return;
+        }
+      }
+      if (typeof suffix !== "undefined" && value2 === suffix) {
+        setInputElementValue(EMPTY_STRING3);
+        setOriginalValue(EMPTY_STRING3);
+        return;
+      }
+      if (value2 !== EMPTY_STRING3 && value2 !== MIXED_STRING) {
+        const evaluatedValue = evaluateValue(value2, suffix);
+        const formattedValue = formatEvaluatedValue(evaluatedValue, value2, suffix);
+        if (value2 !== formattedValue) {
+          setInputElementValue(formattedValue);
+        }
+      }
+      setOriginalValue(EMPTY_STRING3);
+    }, [originalValue, setInputElementValue, suffix, validateOnBlur, value2]);
+    const handleFocus = T2(function(event) {
+      setOriginalValue(value2);
+      event.currentTarget.select();
+    }, [value2]);
+    const handleInput = T2(function(event) {
+      onInput(event);
+      const value3 = event.currentTarget.value;
+      onValueInput(value3, name307);
+      const evaluatedValue = evaluateValue(value3, suffix);
+      onNumericValueInput(evaluatedValue, name307);
+    }, [name307, onInput, onNumericValueInput, onValueInput, suffix]);
+    const handleKeyDown = T2(function(event) {
+      const key = event.key;
+      if (key === "Escape") {
+        if (propagateEscapeKeyDown === false) {
+          event.stopPropagation();
+        }
+        if (revertOnEscapeKeyDown === true) {
+          revertOnEscapeKeyDownRef.current = true;
+          setInputElementValue(originalValue);
+          setOriginalValue(EMPTY_STRING3);
+        }
+        event.currentTarget.blur();
+        return;
+      }
+      if (key === "Enter") {
+        event.currentTarget.blur();
+        return;
+      }
+      const element = event.currentTarget;
+      if (key === "ArrowDown" || key === "ArrowUp") {
+        const delta = event.shiftKey === true ? incrementBig : incrementSmall;
+        if (value2 === EMPTY_STRING3 || value2 === MIXED_STRING) {
+          event.preventDefault();
+          const startingValue = function() {
+            if (typeof minimum !== "undefined" && minimum > 0) {
+              return minimum;
+            }
+            if (typeof maximum !== "undefined" && maximum < 0) {
+              return maximum;
+            }
+            return 0;
+          }();
+          const newValue2 = restrictValue(evaluateValueWithDelta(startingValue, key === "ArrowDown" ? -1 * delta : delta), minimum, maximum);
+          const formattedValue2 = formatEvaluatedValue(newValue2, value2, suffix);
+          element.value = formattedValue2;
+          element.select();
+          handleInput(event);
+          return;
+        }
+        const evaluatedValue = evaluateValue(value2, suffix);
+        if (evaluatedValue === null) {
+          throw new Error("Invariant violation");
+        }
+        event.preventDefault();
+        const newValue = restrictValue(evaluateValueWithDelta(evaluatedValue, key === "ArrowDown" ? -1 * delta : delta), minimum, maximum);
+        const formattedValue = formatEvaluatedValue(newValue, value2, suffix);
+        if (formattedValue === value2) {
+          return;
+        }
+        element.value = formattedValue;
+        element.select();
+        handleInput(event);
+        return;
+      }
+      if (event.ctrlKey === true || event.metaKey === true) {
+        return;
+      }
+      if (isKeyCodeCharacterGenerating(event.keyCode) === true) {
+        const nextValue = trimSuffix(value2 === MIXED_STRING ? event.key : computeNextValue(element, event.key), suffix);
+        if (isValidNumericInput(nextValue, { integersOnly: integer }) === false) {
+          event.preventDefault();
+          return;
+        }
+        if (typeof minimum === "undefined" && typeof maximum === "undefined") {
+          return;
+        }
+        const evaluatedValue = evaluateNumericExpression(nextValue);
+        if (evaluatedValue === null) {
+          return;
+        }
+        if (typeof minimum !== "undefined" && evaluatedValue < minimum || typeof maximum !== "undefined" && evaluatedValue > maximum) {
+          event.preventDefault();
+        }
+      }
+    }, [
+      handleInput,
+      incrementBig,
+      incrementSmall,
+      integer,
+      maximum,
+      minimum,
+      originalValue,
+      propagateEscapeKeyDown,
+      revertOnEscapeKeyDown,
+      setInputElementValue,
+      suffix,
+      value2
+    ]);
+    const handleMouseUp = T2(function(event) {
+      if (value2 !== MIXED_STRING) {
+        return;
+      }
+      event.preventDefault();
+    }, [value2]);
+    const handlePaste = T2(function(event) {
+      if (event.clipboardData === null) {
+        throw new Error("`event.clipboardData` is `null`");
+      }
+      const nextValue = trimSuffix(computeNextValue(event.currentTarget, event.clipboardData.getData("Text")), suffix);
+      if (isValidNumericInput(nextValue, {
+        integersOnly: integer
+      }) === false) {
+        event.preventDefault();
+      }
+    }, [integer, suffix]);
+    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, onPaste: handlePaste, placeholder, spellcheck: false, tabIndex: disabled === true ? -1 : 0, type: "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
+  }
+  function restrictValue(value2, minimum, maximum) {
+    if (typeof minimum !== "undefined") {
+      if (typeof maximum !== "undefined") {
+        return Math.min(Math.max(value2, minimum), maximum);
+      }
+      return Math.max(value2, minimum);
+    }
+    if (typeof maximum !== "undefined") {
+      return Math.min(value2, maximum);
+    }
+    return value2;
+  }
+  function evaluateValue(value2, suffix) {
+    if (value2 === MIXED_STRING) {
+      return MIXED_NUMBER;
+    }
+    if (value2 === EMPTY_STRING3) {
+      return null;
+    }
+    return evaluateNumericExpression(trimSuffix(value2, suffix));
+  }
+  function evaluateValueWithDelta(value2, delta) {
+    return parseFloat((value2 + delta).toFixed(FRACTION_DIGITS));
+  }
+  function trimSuffix(string2, suffix) {
+    if (typeof suffix === "undefined") {
+      return string2;
+    }
+    return string2.replace(new RegExp(`${suffix}$`), EMPTY_STRING3);
+  }
+  var FRACTION_DIGITS, EMPTY_STRING3;
+  var init_raw_textbox_numeric = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/raw-textbox-numeric.js"() {
+      init_lib();
+      init_preact_module();
+      init_hooks_module();
+      init_get_current_from_ref();
+      init_compute_next_value();
+      init_is_keycode_character_generating();
+      init_format_evaluated_value();
+      FRACTION_DIGITS = 3;
+      EMPTY_STRING3 = "";
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/create-rgba-color.js
+  function createRgbaColor(hexColor, opacity) {
+    if (hexColor === "" || hexColor === MIXED_STRING || opacity === "" || opacity === MIXED_STRING) {
+      return null;
+    }
+    const rgb = convertHexColorToRgbColor(hexColor);
+    if (rgb === null) {
+      return null;
+    }
+    return __spreadProps(__spreadValues({}, rgb), {
+      a: parseInt(opacity, 10) / 100
+    });
+  }
+  var init_create_rgba_color = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/create-rgba-color.js"() {
+      init_lib();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/normalize-hex-color.js
+  function normalizeUserInputColor(string2) {
+    const parsedNamedColor = convertNamedColorToHexColor(string2);
+    if (parsedNamedColor !== null) {
+      return parsedNamedColor;
+    }
+    const hexColor = createHexColor(string2).toUpperCase();
+    if (isValidHexColor(hexColor) === false) {
+      return null;
+    }
+    return hexColor;
+  }
+  function createHexColor(string2) {
+    switch (string2.length) {
+      case 0: {
+        return "";
+      }
+      case 1: {
+        return Array(6).fill(string2).join("");
+      }
+      case 2: {
+        return Array(3).fill(string2).join("");
+      }
+      case 3:
+      case 4:
+      case 5: {
+        return `${string2[0]}${string2[0]}${string2[1]}${string2[1]}${string2[2]}${string2[2]}`;
+      }
+      case 6: {
+        return string2;
+      }
+      default: {
+        return string2.slice(0, 6);
+      }
+    }
+  }
+  var init_normalize_hex_color = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/normalize-hex-color.js"() {
+      init_lib();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/update-hex-color.js
+  function updateHexColor(hexColor, delta) {
+    const rgbColor = convertHexColorToRgbColor(hexColor);
+    if (rgbColor === null) {
+      throw new Error("Invalid `hexColor`");
+    }
+    const { r: r3, g: g4, b: b3 } = rgbColor;
+    const result = convertRgbColorToHexColor({
+      b: updateValue(b3, delta),
+      g: updateValue(g4, delta),
+      r: updateValue(r3, delta)
+    });
+    if (result === null) {
+      throw new Error("Invalid `rgbColor`");
+    }
+    return result;
+  }
+  function updateValue(value2, delta) {
+    const newValue = value2 * 255 + delta;
+    return Math.min(Math.max(newValue, 0), 255) / 255;
+  }
+  var init_update_hex_color = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/update-hex-color.js"() {
+      init_lib();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d590262e-653c-4fe2-93ba-424527034048/textbox-color.module.js
+  var textbox_color_module_default;
+  var init_textbox_color_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d590262e-653c-4fe2-93ba-424527034048/textbox-color.module.js"() {
+      if (document.getElementById("05ec761a3f") === null) {
+        const element = document.createElement("style");
+        element.id = "05ec761a3f";
+        element.textContent = `._textboxColor_190p3_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+  display: flex;
+  width: 144px;
+}
+._textboxColor_190p3_1:focus-within {
+  z-index: var(
+    --z-index-2
+  ); /* stack \`.textboxColor\` over its sibling elements */
+}
+
+._color_190p3_13 {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  display: flex;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  border-radius: 1px;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200H3V3H0V0Z%22%20fill%3D%22%23E1E1E1%22/%3E%3Cpath%20d%3D%22M3%200H6V3H3V0Z%22%20fill%3D%22white%22/%3E%3Cpath%20d%3D%22M3%203H6V6H3V3Z%22%20fill%3D%22%23E1E1E1%22/%3E%3Cpath%20d%3D%22M0%203H3V6H0V3Z%22%20fill%3D%22white%22/%3E%3C/svg%3E%0A');
+}
+._disabled_190p3_24 ._color_190p3_13 {
+  opacity: var(--opacity-30);
+}
+
+._colorFill_190p3_28 {
+  flex-grow: 1;
+  background: none;
+}
+
+._colorBorder_190p3_33 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* FIXME */
+  border-radius: 2px;
+  background: none;
+  pointer-events: none;
+}
+.figma-dark ._colorBorder_190p3_33 {
+  border-color: rgba(255, 255, 255, 0.15); /* FIXME */
+}
+
+._hexColorSelector_190p3_48 {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 24px;
+  height: 36px;
+  opacity: 0;
+}
+
+._input_190p3_57 {
+  display: block;
+  width: 100%;
+  height: 28px;
+  background-color: transparent;
+  color: var(--figma-color-text);
+}
+
+._disabled_190p3_24 ._input_190p3_57,
+._disabled_190p3_24 ._hexColorSelector_190p3_48 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+
+._input_190p3_57::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+
+._input_190p3_57::-webkit-inner-spin-button,
+._input_190p3_57::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+._hexColorInput_190p3_80 {
+  flex: 0 0 97px;
+  padding-left: 32px;
+}
+._opacityInput_190p3_84 {
+  padding-left: var(--space-extra-small);
+}
+
+._border_190p3_88 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_190p3_98 ._border_190p3_88,
+._textboxColor_190p3_1:not(._disabled_190p3_24):hover ._border_190p3_88 {
+  border-color: var(--figma-color-border);
+}
+._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._border_190p3_88,
+._textboxColor_190p3_1:not(._disabled_190p3_24) ._hexColorSelector_190p3_48:focus ~ ._border_190p3_88 {
+  top: -1px;
+  bottom: -1px;
+  border: 2px solid var(--figma-color-border-brand-strong);
+}
+
+._divider_190p3_109 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 96px;
+  width: 1px;
+  pointer-events: none;
+}
+._hasBorder_190p3_98 ._divider_190p3_109,
+._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:hover ~ ._divider_190p3_109,
+._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._divider_190p3_109 {
+  background-color: var(--figma-color-border);
+}
+
+._underline_190p3_123 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._underline_190p3_123,
+._textboxColor_190p3_1:not(._disabled_190p3_24):hover ._underline_190p3_123 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtY29sb3IvdGV4dGJveC1jb2xvci5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsWUFBWTtBQUNkO0FBQ0E7RUFDRTs7R0FFQyxFQUFFLG9EQUFvRDtBQUN6RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUNULGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIscWNBQXFjO0FBQ3ZjO0FBQ0E7RUFDRSwwQkFBMEI7QUFDNUI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCxvQ0FBb0MsRUFBRSxVQUFVO0VBQ2hELGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0JBQW9CO0FBQ3RCO0FBQ0E7RUFDRSx1Q0FBdUMsRUFBRSxVQUFVO0FBQ3JEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxPQUFPO0VBQ1AsV0FBVztFQUNYLFlBQVk7RUFDWixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLFlBQVk7RUFDWiw2QkFBNkI7RUFDN0IsOEJBQThCO0FBQ2hDOztBQUVBOztFQUVFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7O0VBRUUsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0Usc0NBQXNDO0FBQ3hDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCw2QkFBNkI7RUFDN0IscUNBQXFDO0VBQ3JDLG9CQUFvQjtBQUN0QjtBQUNBOztFQUVFLHVDQUF1QztBQUN6QztBQUNBOztFQUVFLFNBQVM7RUFDVCxZQUFZO0VBQ1osd0RBQXdEO0FBQzFEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFVBQVU7RUFDVixvQkFBb0I7QUFDdEI7QUFDQTs7O0VBR0UsMkNBQTJDO0FBQzdDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLCtCQUErQjtFQUMvQixTQUFTO0VBQ1QsOEJBQThCO0VBQzlCLFdBQVc7RUFDWCwyQ0FBMkM7QUFDN0M7QUFDQTs7RUFFRSw2QkFBNkI7QUFDL0IiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHRib3gvdGV4dGJveC1jb2xvci90ZXh0Ym94LWNvbG9yLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dGJveENvbG9yIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xuICBkaXNwbGF5OiBmbGV4O1xuICB3aWR0aDogMTQ0cHg7XG59XG4udGV4dGJveENvbG9yOmZvY3VzLXdpdGhpbiB7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMlxuICApOyAvKiBzdGFjayBgLnRleHRib3hDb2xvcmAgb3ZlciBpdHMgc2libGluZyBlbGVtZW50cyAqL1xufVxuXG4uY29sb3Ige1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNnB4O1xuICBsZWZ0OiA4cHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxNnB4O1xuICBoZWlnaHQ6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDFweDtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCdkYXRhOmltYWdlL3N2Zyt4bWw7dXRmOCwlM0NzdmclMjB3aWR0aCUzRCUyMjYlMjIlMjBoZWlnaHQlM0QlMjI2JTIyJTIwdmlld0JveCUzRCUyMjAlMjAwJTIwNiUyMDYlMjIlMjBmaWxsJTNEJTIybm9uZSUyMiUyMHhtbG5zJTNEJTIyaHR0cCUzQS8vd3d3LnczLm9yZy8yMDAwL3N2ZyUyMiUzRSUzQ3BhdGglMjBkJTNEJTIyTTAlMjAwSDNWM0gwVjBaJTIyJTIwZmlsbCUzRCUyMiUyM0UxRTFFMSUyMi8lM0UlM0NwYXRoJTIwZCUzRCUyMk0zJTIwMEg2VjNIM1YwWiUyMiUyMGZpbGwlM0QlMjJ3aGl0ZSUyMi8lM0UlM0NwYXRoJTIwZCUzRCUyMk0zJTIwM0g2VjZIM1YzWiUyMiUyMGZpbGwlM0QlMjIlMjNFMUUxRTElMjIvJTNFJTNDcGF0aCUyMGQlM0QlMjJNMCUyMDNIM1Y2SDBWM1olMjIlMjBmaWxsJTNEJTIyd2hpdGUlMjIvJTNFJTNDL3N2ZyUzRSUwQScpO1xufVxuLmRpc2FibGVkIC5jb2xvciB7XG4gIG9wYWNpdHk6IHZhcigtLW9wYWNpdHktMzApO1xufVxuXG4uY29sb3JGaWxsIHtcbiAgZmxleC1ncm93OiAxO1xuICBiYWNrZ3JvdW5kOiBub25lO1xufVxuXG4uY29sb3JCb3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEpOyAvKiBGSVhNRSAqL1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuOmdsb2JhbCguZmlnbWEtZGFyaykgLmNvbG9yQm9yZGVyIHtcbiAgYm9yZGVyLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMTUpOyAvKiBGSVhNRSAqL1xufVxuXG4uaGV4Q29sb3JTZWxlY3RvciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtNHB4O1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMjRweDtcbiAgaGVpZ2h0OiAzNnB4O1xuICBvcGFjaXR5OiAwO1xufVxuXG4uaW5wdXQge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMjhweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cblxuLmRpc2FibGVkIC5pbnB1dCxcbi5kaXNhYmxlZCAuaGV4Q29sb3JTZWxlY3RvciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbn1cblxuLmlucHV0OjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LXRlcnRpYXJ5KTtcbn1cblxuLmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uLFxuLmlucHV0Ojotd2Via2l0LW91dGVyLXNwaW4tYnV0dG9uIHtcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xufVxuXG4uaGV4Q29sb3JJbnB1dCB7XG4gIGZsZXg6IDAgMCA5N3B4O1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG4ub3BhY2l0eUlucHV0IHtcbiAgcGFkZGluZy1sZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKTpob3ZlciAuYm9yZGVyIHtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6Zm9jdXMgfiAuYm9yZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaGV4Q29sb3JTZWxlY3Rvcjpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyOiAycHggc29saWQgdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi5kaXZpZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogOTZweDtcbiAgd2lkdGg6IDFweDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4uaGFzQm9yZGVyIC5kaXZpZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6aG92ZXIgfiAuZGl2aWRlcixcbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCkgLmlucHV0OmZvY3VzIH4gLmRpdmlkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuXG4udW5kZXJsaW5lIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgaGVpZ2h0OiAxcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpOmhvdmVyIC51bmRlcmxpbmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbiJdfQ== */`;
+        document.head.append(element);
+      }
+      textbox_color_module_default = { "textboxColor": "_textboxColor_190p3_1", "color": "_color_190p3_13", "disabled": "_disabled_190p3_24", "colorFill": "_colorFill_190p3_28", "colorBorder": "_colorBorder_190p3_33", "hexColorSelector": "_hexColorSelector_190p3_48", "input": "_input_190p3_57", "hexColorInput": "_hexColorInput_190p3_80", "opacityInput": "_opacityInput_190p3_84", "border": "_border_190p3_88", "hasBorder": "_hasBorder_190p3_98", "divider": "_divider_190p3_109", "underline": "_underline_190p3_123" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js
+  function TextboxColor(_a) {
+    var _b = _a, { disabled = false, hexColor, hexColorName, hexColorPlaceholder, name: name307, onHexColorInput = function() {
+    }, onHexColorValueInput = function() {
+    }, onOpacityInput = function() {
+    }, onOpacityNumericValueInput = function() {
+    }, onOpacityValueInput = function() {
+    }, onRgbaColorValueInput = function() {
+    }, opacity, opacityName, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorName", "hexColorPlaceholder", "name", "onHexColorInput", "onHexColorValueInput", "onOpacityInput", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityName", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
+    const hexColorInputElementRef = _2(null);
+    const revertOnEscapeKeyDownRef = _2(false);
+    const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING4);
+    const setHexColorInputElementValue = T2(function(value2) {
+      const inputElement = getCurrentFromRef(hexColorInputElementRef);
+      inputElement.value = value2;
+      const inputEvent = document.createEvent("Event");
+      inputEvent.initEvent("input", true, true);
+      inputElement.dispatchEvent(inputEvent);
+    }, []);
+    const handleHexColorSelectorFocus = T2(function(event) {
+      const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
+      setOriginalHexColor(hexColor2);
+    }, []);
+    const handleHexColorSelectorInput = T2(function(event) {
+      const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
+      setHexColorInputElementValue(hexColor2);
+    }, [setHexColorInputElementValue]);
+    const handleHexColorSelectorKeyDown = T2(function(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (propagateEscapeKeyDown === false) {
+        event.stopPropagation();
+      }
+      if (revertOnEscapeKeyDown === true) {
+        setHexColorInputElementValue(originalHexColor);
+        setOriginalHexColor(EMPTY_STRING4);
+      }
+      event.currentTarget.blur();
+    }, [
+      originalHexColor,
+      propagateEscapeKeyDown,
+      revertOnEscapeKeyDown,
+      setHexColorInputElementValue
+    ]);
+    const handleHexColorBlur = T2(function() {
+      if (revertOnEscapeKeyDownRef.current === true) {
+        revertOnEscapeKeyDownRef.current = false;
+        return;
+      }
+      if (hexColor === EMPTY_STRING4) {
+        if (originalHexColor !== EMPTY_STRING4) {
+          setHexColorInputElementValue(originalHexColor);
+        }
+        setOriginalHexColor(EMPTY_STRING4);
+        return;
+      }
+      if (hexColor !== MIXED_STRING) {
+        const normalizedHexColor2 = normalizeUserInputColor(hexColor);
+        const newHexColor = normalizedHexColor2 === null ? originalHexColor : normalizedHexColor2;
+        if (newHexColor !== hexColor) {
+          setHexColorInputElementValue(newHexColor);
+        }
+      }
+      setOriginalHexColor(EMPTY_STRING4);
+    }, [hexColor, originalHexColor, setHexColorInputElementValue]);
+    const handleHexColorFocus = T2(function(event) {
+      setOriginalHexColor(hexColor);
+      event.currentTarget.select();
+    }, [hexColor]);
+    const handleHexColorInput = T2(function(event) {
+      onHexColorInput(event);
+      const newHexColor = event.currentTarget.value;
+      onHexColorValueInput(newHexColor, hexColorName);
+      if (newHexColor === EMPTY_STRING4) {
+        onRgbaColorValueInput(null, name307);
+        return;
+      }
+      const normalizedHexColor2 = normalizeUserInputColor(newHexColor);
+      if (normalizedHexColor2 === null) {
+        onRgbaColorValueInput(null, name307);
+        return;
+      }
+      const rgba = createRgbaColor(normalizedHexColor2, opacity);
+      onRgbaColorValueInput(rgba, name307);
+    }, [
+      hexColorName,
+      onHexColorInput,
+      onHexColorValueInput,
+      onRgbaColorValueInput,
+      name307,
+      opacity
+    ]);
+    const handleHexColorKeyDown = T2(function(event) {
+      const key = event.key;
+      if (key === "Escape") {
+        if (propagateEscapeKeyDown === false) {
+          event.stopPropagation();
+        }
+        if (revertOnEscapeKeyDown === true) {
+          revertOnEscapeKeyDownRef.current = true;
+          setHexColorInputElementValue(originalHexColor);
+          setOriginalHexColor(EMPTY_STRING4);
+        }
+        event.currentTarget.blur();
+        return;
+      }
+      if (key === "Enter") {
+        event.currentTarget.blur();
+        return;
+      }
+      const element = event.currentTarget;
+      if (key === "ArrowDown" || key === "ArrowUp") {
+        event.preventDefault();
+        const delta = event.shiftKey === true ? 10 : 1;
+        const startingHexColor = hexColor === EMPTY_STRING4 || hexColor === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor;
+        const newHexColor = updateHexColor(startingHexColor, key === "ArrowDown" ? -1 * delta : delta);
+        setHexColorInputElementValue(newHexColor);
+        element.select();
+        return;
+      }
+      if (event.ctrlKey === true || event.metaKey === true) {
+        return;
+      }
+    }, [
+      hexColor,
+      originalHexColor,
+      propagateEscapeKeyDown,
+      revertOnEscapeKeyDown,
+      setHexColorInputElementValue
+    ]);
+    const handleHexColorMouseUp = T2(function(event) {
+      if (hexColor !== MIXED_STRING) {
+        return;
+      }
+      event.preventDefault();
+    }, [hexColor]);
+    const handleOpacityInput = T2(function(event) {
+      onOpacityInput(event);
+      const newOpacity = event.currentTarget.value;
+      const rgba = createRgbaColor(hexColor, newOpacity);
+      onRgbaColorValueInput(rgba, name307);
+    }, [hexColor, onOpacityInput, onRgbaColorValueInput, name307]);
+    const handleOpacityNumericValueInput = T2(function(opacity2) {
+      onOpacityNumericValueInput(opacity2 === null || opacity2 === MIXED_NUMBER ? opacity2 : opacity2 / 100);
+    }, [onOpacityNumericValueInput]);
+    const validateOpacityOnBlur = T2(function(opacity2) {
+      return opacity2 !== null;
+    }, []);
+    const parsedOpacity = parseOpacity(opacity);
+    const isHexColorValid = hexColor !== EMPTY_STRING4 && hexColor !== MIXED_STRING;
+    const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor) : "FFFFFF";
+    const renderedHexColor = normalizedHexColor === null ? originalHexColor : normalizedHexColor;
+    return y(
+      "div",
+      { class: createClassName([
+        textbox_color_module_default.textboxColor,
+        typeof variant === "undefined" ? null : variant === "border" ? textbox_color_module_default.hasBorder : null,
+        disabled === true ? textbox_color_module_default.disabled : null
+      ]) },
+      y(
+        "div",
+        { class: textbox_color_module_default.color },
+        y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? { backgroundColor: `#${renderedHexColor}` } : {} }),
+        parsedOpacity === 1 ? null : y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? {
+          backgroundColor: `#${renderedHexColor}`,
+          opacity: parsedOpacity
+        } : {} }),
+        y("div", { class: textbox_color_module_default.colorBorder })
+      ),
+      y("input", { class: textbox_color_module_default.hexColorSelector, disabled: disabled === true, onFocus: handleHexColorSelectorFocus, onInput: handleHexColorSelectorInput, onKeyDown: handleHexColorSelectorKeyDown, tabIndex: -1, type: "color", value: `#${renderedHexColor}` }),
+      y("input", __spreadProps(__spreadValues({}, rest), { ref: hexColorInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.hexColorInput]), disabled: disabled === true, name: hexColorName, onBlur: handleHexColorBlur, onFocus: handleHexColorFocus, onInput: handleHexColorInput, onKeyDown: handleHexColorKeyDown, onMouseUp: handleHexColorMouseUp, placeholder: hexColorPlaceholder, spellcheck: false, tabIndex: disabled === true ? -1 : 0, type: "text", value: hexColor === MIXED_STRING ? "Mixed" : hexColor })),
+      y(RawTextboxNumeric, { class: createClassName([textbox_color_module_default.input, textbox_color_module_default.opacityInput]), disabled: disabled === true, maximum: 100, minimum: 0, name: opacityName, onInput: handleOpacityInput, onNumericValueInput: handleOpacityNumericValueInput, onValueInput: onOpacityValueInput, placeholder: opacityPlaceholder, propagateEscapeKeyDown, revertOnEscapeKeyDown, suffix: "%", validateOnBlur: validateOpacityOnBlur, value: opacity }),
+      y("div", { class: textbox_color_module_default.divider }),
+      y("div", { class: textbox_color_module_default.border }),
+      variant === "underline" ? y("div", { class: textbox_color_module_default.underline }) : null
+    );
+  }
+  function parseOpacity(opacity) {
+    if (opacity === MIXED_STRING || opacity === EMPTY_STRING4) {
+      return 1;
+    }
+    return parseInt(opacity, 10) / 100;
+  }
+  var EMPTY_STRING4;
+  var init_textbox_color = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js"() {
+      init_lib();
+      init_preact_module();
+      init_hooks_module();
+      init_create_class_name();
+      init_get_current_from_ref();
+      init_raw_textbox_numeric();
+      init_create_rgba_color();
+      init_normalize_hex_color();
+      init_update_hex_color();
+      init_textbox_color_module();
+      EMPTY_STRING4 = "";
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbc30791-c53c-4a0f-9c3e-3a9027f2502b/textbox-multiline.module.js
+  var textbox_multiline_module_default;
+  var init_textbox_multiline_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbc30791-c53c-4a0f-9c3e-3a9027f2502b/textbox-multiline.module.js"() {
+      if (document.getElementById("593e330747") === null) {
+        const element = document.createElement("style");
+        element.id = "593e330747";
+        element.textContent = `._textboxMultiline_1rfqs_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+
+._grow_1rfqs_6 {
+  display: grid;
+}
+
+._ghost_1rfqs_10,
+._grow_1rfqs_6 ._textarea_1rfqs_11 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+._ghost_1rfqs_10 {
+  padding: 6px 0 6px var(--space-extra-small);
+  visibility: hidden;
+  white-space: pre-wrap;
+}
+
+._textarea_1rfqs_11 {
+  display: block;
+  width: 100%;
+  padding: 6px var(--space-extra-small) 6px var(--space-extra-small);
+  border-radius: var(--border-radius-2);
+  background-color: transparent;
+  color: var(--figma-color-text);
+  resize: none;
+}
+._textarea_1rfqs_11::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+._disabled_1rfqs_33 ._textarea_1rfqs_11 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+
+._border_1rfqs_38 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_1rfqs_48 ._border_1rfqs_38,
+._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33):hover ._border_1rfqs_38 {
+  border-color: var(--figma-color-border);
+}
+._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33) ._textarea_1rfqs_11:focus ~ ._border_1rfqs_38 {
+  top: -1px;
+  bottom: -1px;
+  border: 2px solid var(--figma-color-border-brand-strong);
+}
+
+._underline_1rfqs_58 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33) ._textarea_1rfqs_11:focus ~ ._underline_1rfqs_58,
+._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33):hover ._underline_1rfqs_58 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbXVsdGlsaW5lL3RleHRib3gtbXVsdGlsaW5lLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBOztFQUVFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLDJDQUEyQztFQUMzQyxrQkFBa0I7RUFDbEIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxrRUFBa0U7RUFDbEUscUNBQXFDO0VBQ3JDLDZCQUE2QjtFQUM3Qiw4QkFBOEI7RUFDOUIsWUFBWTtBQUNkO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLHdEQUF3RDtBQUMxRDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiwrQkFBK0I7RUFDL0IsU0FBUztFQUNULDhCQUE4QjtFQUM5QixXQUFXO0VBQ1gsMkNBQTJDO0FBQzdDO0FBQ0E7O0VBRUUsNkJBQTZCO0FBQy9CIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbXVsdGlsaW5lL3RleHRib3gtbXVsdGlsaW5lLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dGJveE11bHRpbGluZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0xKTtcbn1cblxuLmdyb3cge1xuICBkaXNwbGF5OiBncmlkO1xufVxuXG4uZ2hvc3QsXG4uZ3JvdyAudGV4dGFyZWEge1xuICBncmlkLWFyZWE6IDEgLyAxIC8gMiAvIDI7XG59XG5cbi5naG9zdCB7XG4gIHBhZGRpbmc6IDZweCAwIDZweCB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xufVxuXG4udGV4dGFyZWEge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDZweCB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCkgNnB4IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cy0yKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbiAgcmVzaXplOiBub25lO1xufVxuLnRleHRhcmVhOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LXRlcnRpYXJ5KTtcbn1cbi5kaXNhYmxlZCAudGV4dGFyZWEge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3hNdWx0aWxpbmU6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94TXVsdGlsaW5lOm5vdCguZGlzYWJsZWQpIC50ZXh0YXJlYTpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyOiAycHggc29saWQgdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94TXVsdGlsaW5lOm5vdCguZGlzYWJsZWQpIC50ZXh0YXJlYTpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveE11bHRpbGluZTpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_multiline_module_default = { "textboxMultiline": "_textboxMultiline_1rfqs_1", "grow": "_grow_1rfqs_6", "ghost": "_ghost_1rfqs_10", "textarea": "_textarea_1rfqs_11", "disabled": "_disabled_1rfqs_33", "border": "_border_1rfqs_38", "hasBorder": "_hasBorder_1rfqs_48", "underline": "_underline_1rfqs_58" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js
+  function TextboxMultiline(_a) {
+    var _b = _a, { grow = false, disabled = false, name: name307, onInput = function() {
+    }, onValueInput = function() {
+    }, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, rows = 3, spellCheck = false, validateOnBlur, variant, value: value2 } = _b, rest = __objRest(_b, ["grow", "disabled", "name", "onInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "rows", "spellCheck", "validateOnBlur", "variant", "value"]);
+    const textAreaElementRef = _2(null);
+    const revertOnEscapeKeyDownRef = _2(false);
+    const [originalValue, setOriginalValue] = h2(EMPTY_STRING5);
+    const setTextAreaElementValue = T2(function(value3) {
+      const textAreaElement = getCurrentFromRef(textAreaElementRef);
+      textAreaElement.value = value3;
+      const inputEvent = document.createEvent("Event");
+      inputEvent.initEvent("input", true, true);
+      textAreaElement.dispatchEvent(inputEvent);
+    }, []);
+    const handleBlur = T2(function() {
+      if (revertOnEscapeKeyDownRef.current === true) {
+        revertOnEscapeKeyDownRef.current = false;
+        return;
+      }
+      if (typeof validateOnBlur !== "undefined") {
+        const result = validateOnBlur(value2);
+        if (typeof result === "string") {
+          setTextAreaElementValue(result);
+          setOriginalValue(EMPTY_STRING5);
+          return;
+        }
+        if (result === false) {
+          if (value2 !== originalValue) {
+            setTextAreaElementValue(originalValue);
+          }
+          setOriginalValue(EMPTY_STRING5);
+          return;
+        }
+      }
+      setOriginalValue(EMPTY_STRING5);
+    }, [originalValue, setTextAreaElementValue, validateOnBlur, value2]);
+    const handleFocus = T2(function(event) {
+      setOriginalValue(value2);
+      event.currentTarget.select();
+    }, [value2]);
+    const handleInput = T2(function(event) {
+      onValueInput(event.currentTarget.value, name307);
+      onInput(event);
+    }, [name307, onInput, onValueInput]);
+    const handleKeyDown = T2(function(event) {
+      if (event.key === "Escape") {
+        if (propagateEscapeKeyDown === false) {
+          event.stopPropagation();
+        }
+        if (revertOnEscapeKeyDown === true) {
+          revertOnEscapeKeyDownRef.current = true;
+          setTextAreaElementValue(originalValue);
+          setOriginalValue(EMPTY_STRING5);
+        }
+        event.currentTarget.blur();
+        return;
+      }
+      if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
+        event.preventDefault();
+        event.currentTarget.select();
+      }
+    }, [
+      originalValue,
+      propagateEscapeKeyDown,
+      revertOnEscapeKeyDown,
+      setTextAreaElementValue,
+      value2
+    ]);
+    const handleMouseUp = T2(function(event) {
+      if (value2 === MIXED_STRING) {
+        event.preventDefault();
+      }
+    }, [value2]);
+    return y(
+      "div",
+      { class: createClassName([
+        textbox_multiline_module_default.textboxMultiline,
+        typeof variant === "undefined" ? null : variant === "border" ? textbox_multiline_module_default.hasBorder : null,
+        grow === true ? textbox_multiline_module_default.grow : null,
+        disabled === true ? textbox_multiline_module_default.disabled : null
+      ]) },
+      grow === true ? y("div", { class: textbox_multiline_module_default.ghost }, value2 === MIXED_STRING ? "Mixed" : `${value2} `) : null,
+      y("textarea", __spreadProps(__spreadValues({}, rest), { ref: textAreaElementRef, class: textbox_multiline_module_default.textarea, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, rows, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, value: value2 === MIXED_STRING ? "Mixed" : value2 })),
+      y("div", { class: textbox_multiline_module_default.border }),
+      variant === "underline" ? y("div", { class: textbox_multiline_module_default.underline }) : null
+    );
+  }
+  var EMPTY_STRING5;
+  var init_textbox_multiline = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js"() {
+      init_lib();
+      init_preact_module();
+      init_hooks_module();
+      init_create_class_name();
+      init_get_current_from_ref();
+      init_is_keycode_character_generating();
+      init_textbox_multiline_module();
+      EMPTY_STRING5 = "";
+    }
+  });
+
   // node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-chevron-down-16.js
   var IconChevronDown16;
   var init_icon_chevron_down_16 = __esm({
@@ -2364,9 +3388,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96a06095-e3bf-4984-926c-3f785f8ae1c0/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48e0a7e6-b352-4100-9a95-38d3ae38d63b/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96a06095-e3bf-4984-926c-3f785f8ae1c0/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48e0a7e6-b352-4100-9a95-38d3ae38d63b/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -2497,1129 +3521,13 @@ svg {
   // node_modules/@create-figma-plugin/ui/lib/index.js
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
-      init_button();
       init_tabs();
       init_textbox();
+      init_textbox_color();
+      init_textbox_multiline();
       init_icon_chevron_down_16();
       init_icon_plus_32();
       init_render();
-    }
-  });
-
-  // src/components/primitives-tab/color-name-input.tsx
-  var TextboxColorName, color_name_input_default;
-  var init_color_name_input = __esm({
-    "src/components/primitives-tab/color-name-input.tsx"() {
-      "use strict";
-      init_preact_module();
-      init_hooks_module();
-      init_lib2();
-      TextboxColorName = () => {
-        const [value, setValue] = h2("color");
-        function handleInput(event) {
-          const newValue = event.currentTarget.value;
-          console.log(newValue);
-          setValue(newValue);
-        }
-        return /* @__PURE__ */ y(Textbox, { onInput: handleInput, value, variant: "underline" });
-      };
-      color_name_input_default = TextboxColorName;
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9dc6fa2e-d16f-4541-a295-c43b0ff211a7/tailwind.js
-  var init_tailwind2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9dc6fa2e-d16f-4541-a295-c43b0ff211a7/tailwind.js"() {
-      if (document.getElementById("daf6ec3404") === null) {
-        const element = document.createElement("style");
-        element.id = "daf6ec3404";
-        element.textContent = `/*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
-*//*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
-
-*,
-::before,
-::after {
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
-  border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured \`sans\` font-family by default.
-5. Use the user's configured \`sans\` font-feature-settings by default.
-6. Use the user's configured \`sans\` font-variation-settings by default.
-*/
-
-html {
-  line-height: 1.5; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -moz-tab-size: 4; /* 3 */
-  -o-tab-size: 4;
-     tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
-  font-feature-settings: normal; /* 5 */
-  font-variation-settings: normal; /* 6 */
-}
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from \`html\` so users can set them as a class directly on the \`html\` element.
-*/
-
-body {
-  margin: 0; /* 1 */
-  line-height: inherit; /* 2 */
-}
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
-  border-top-width: 1px; /* 3 */
-}
-
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-1. Use the user's configured \`mono\` font family by default.
-2. Correct the odd \`em\` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent \`sub\` and \`sup\` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border-collapse: collapse; /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  font-weight: inherit; /* 1 */
-  line-height: inherit; /* 1 */
-  color: inherit; /* 1 */
-  margin: 0; /* 2 */
-  padding: 0; /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button; /* 1 */
-  background-color: transparent; /* 2 */
-  background-image: none; /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional \`:invalid\` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to \`inherit\` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-:disabled {
-  cursor: default;
-}
-
-/*
-1. Make replaced elements \`display: block\` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add \`vertical-align: middle\` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
-}
-
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make elements with the HTML hidden attribute stay hidden by default */
-[hidden] {
-  display: none;
-}
-
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-@media (min-width: 1400px) {
-
-  .container {
-    max-width: 1400px;
-  }
-}
-.pointer-events-none {
-  pointer-events: none;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.inset-0 {
-  inset: 0px;
-}
-.left-0 {
-  left: 0px;
-}
-.left-10 {
-  left: 2.5rem;
-}
-.left-8 {
-  left: 2rem;
-}
-.right-0 {
-  right: 0px;
-}
-.right-24 {
-  right: 6rem;
-}
-.right-32 {
-  right: 8rem;
-}
-.top-10 {
-  top: 2.5rem;
-}
-.top-20 {
-  top: 5rem;
-}
-.z-10 {
-  z-index: 10;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.ml-3 {
-  margin-left: 0.75rem;
-}
-.mt-2 {
-  margin-top: 0.5rem;
-}
-.block {
-  display: block;
-}
-.flex {
-  display: flex;
-}
-.inline-flex {
-  display: inline-flex;
-}
-.grid {
-  display: grid;
-}
-.h-1 {
-  height: 0.25rem;
-}
-.h-10 {
-  height: 2.5rem;
-}
-.h-11 {
-  height: 2.75rem;
-}
-.h-20 {
-  height: 5rem;
-}
-.h-24 {
-  height: 6rem;
-}
-.h-5 {
-  height: 1.25rem;
-}
-.h-6 {
-  height: 1.5rem;
-}
-.h-8 {
-  height: 2rem;
-}
-.h-9 {
-  height: 2.25rem;
-}
-.h-full {
-  height: 100%;
-}
-.h-px {
-  height: 1px;
-}
-.w-1 {
-  width: 0.25rem;
-}
-.w-10 {
-  width: 2.5rem;
-}
-.w-24 {
-  width: 6rem;
-}
-.w-32 {
-  width: 8rem;
-}
-.w-5 {
-  width: 1.25rem;
-}
-.w-6 {
-  width: 1.5rem;
-}
-.w-60 {
-  width: 15rem;
-}
-.w-8 {
-  width: 2rem;
-}
-.w-[124px] {
-  width: 124px;
-}
-.w-[1px] {
-  width: 1px;
-}
-.w-[400px] {
-  width: 400px;
-}
-.w-full {
-  width: 100%;
-}
-.w-px {
-  width: 1px;
-}
-.grow {
-  flex-grow: 1;
-}
-.border-spacing-2 {
-  --tw-border-spacing-x: 0.5rem;
-  --tw-border-spacing-y: 0.5rem;
-  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
-}
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.resize {
-  resize: both;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
-}
-.place-items-center {
-  place-items: center;
-}
-.content-center {
-  align-content: center;
-}
-.items-center {
-  align-items: center;
-}
-.justify-end {
-  justify-content: flex-end;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-between {
-  justify-content: space-between;
-}
-.justify-items-center {
-  justify-items: center;
-}
-.gap-1 {
-  gap: 0.25rem;
-}
-.gap-2 {
-  gap: 0.5rem;
-}
-.place-self-end {
-  place-self: end;
-}
-.overflow-y-auto {
-  overflow-y: auto;
-}
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.rounded-full {
-  border-radius: 9999px;
-}
-.rounded-lg {
-  border-radius: var(--radius);
-}
-.rounded-md {
-  border-radius: calc(var(--radius) - 2px);
-}
-.border {
-  border-width: 1px;
-}
-.border-2 {
-  border-width: 2px;
-}
-.border-b {
-  border-bottom-width: 1px;
-}
-.border-l {
-  border-left-width: 1px;
-}
-.border-r {
-  border-right-width: 1px;
-}
-.border-t {
-  border-top-width: 1px;
-}
-.border-neutral-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(82 82 82 / var(--tw-border-opacity));
-}
-.border-neutral-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(64 64 64 / var(--tw-border-opacity));
-}
-.border-neutral-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(38 38 38 / var(--tw-border-opacity));
-}
-.border-slate-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(100 116 139 / var(--tw-border-opacity));
-}
-.bg-background {
-  background-color: hsl(var(--background));
-}
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-.bg-fig-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 160 251 / var(--tw-bg-opacity));
-}
-.bg-muted {
-  background-color: hsl(var(--muted));
-}
-.bg-neutral-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(115 115 115 / var(--tw-bg-opacity));
-}
-.bg-neutral-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(82 82 82 / var(--tw-bg-opacity));
-}
-.bg-neutral-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
-}
-.bg-neutral-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-}
-.bg-neutral-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-}
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-.bg-slate-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-.bg-gradient-conic {
-  background-image: conic-gradient(from 180deg, white, red, black);
-}
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-.from-indigo-500 {
-  --tw-gradient-from: #6366f1 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(99 102 241 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-white {
-  --tw-gradient-from: #fff var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.via-indigo-500 {
-  --tw-gradient-to: rgb(99 102 241 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #6366f1 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.via-pink-500 {
-  --tw-gradient-to: rgb(236 72 153 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #ec4899 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.via-purple-500 {
-  --tw-gradient-to: rgb(168 85 247 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #a855f7 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.via-10% {
-  --tw-gradient-via-position: 10%;
-}
-.via-30% {
-  --tw-gradient-via-position: 30%;
-}
-.to-black {
-  --tw-gradient-to: #000 var(--tw-gradient-to-position);
-}
-.to-pink-500 {
-  --tw-gradient-to: #ec4899 var(--tw-gradient-to-position);
-}
-.p-1 {
-  padding: 0.25rem;
-}
-.p-4 {
-  padding: 1rem;
-}
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.pl-2 {
-  padding-left: 0.5rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pr-16 {
-  padding-right: 4rem;
-}
-.pr-20 {
-  padding-right: 5rem;
-}
-.pr-8 {
-  padding-right: 2rem;
-}
-.pt-1 {
-  padding-top: 0.25rem;
-}
-.pt-2 {
-  padding-top: 0.5rem;
-}
-.pt-4 {
-  padding-top: 1rem;
-}
-.text-center {
-  text-align: center;
-}
-.align-middle {
-  vertical-align: middle;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.font-bold {
-  font-weight: 700;
-}
-.font-medium {
-  font-weight: 500;
-}
-.text-foreground {
-  color: hsl(var(--foreground));
-}
-.text-muted-foreground {
-  color: hsl(var(--muted-foreground));
-}
-.underline {
-  text-decoration-line: underline;
-}
-.opacity-20 {
-  opacity: 0.2;
-}
-.opacity-50 {
-  opacity: 0.5;
-}
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.outline {
-  outline-style: solid;
-}
-.outline-dashed {
-  outline-style: dashed;
-}
-.outline-2 {
-  outline-width: 2px;
-}
-.outline-offset-1 {
-  outline-offset: 1px;
-}
-.outline-offset-2 {
-  outline-offset: 2px;
-}
-.outline-offset-['-2px'] {
-  outline-offset: '-2px';
-}
-.outline-offset-[-2px] {
-  outline-offset: -2px;
-}
-.outline-offset-[-8px] {
-  outline-offset: -8px;
-}
-.outline-offset-[8px] {
-  outline-offset: 8px;
-}
-.outline-blue-500 {
-  outline-color: #3b82f6;
-}
-.outline-fig-blue {
-  outline-color: #18A0FB;
-}
-.outline-neutral-500 {
-  outline-color: #737373;
-}
-.outline-slate-500 {
-  outline-color: #64748b;
-}
-.ring-offset-background {
-  --tw-ring-offset-color: hsl(var(--background));
-}
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-@keyframes enter {
-
-  from {
-    opacity: var(--tw-enter-opacity, 1);
-    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
-  }
-}
-@keyframes exit {
-
-  to {
-    opacity: var(--tw-exit-opacity, 1);
-    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
-  }
-}
-
-._tabs_61qsz_1 {
-	border-bottom: none !important;
-}
-
-.hover:bg-blue-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
-.hover:bg-fig-blue:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 160 251 / var(--tw-bg-opacity));
-}
-
-.focus-visible:outline-none:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus-visible:ring-2:focus-visible {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus-visible:ring-ring:focus-visible {
-  --tw-ring-color: hsl(var(--ring));
-}
-
-.focus-visible:ring-offset-2:focus-visible {
-  --tw-ring-offset-width: 2px;
-}
-
-.disabled:pointer-events-none:disabled {
-  pointer-events: none;
-}
-
-.disabled:opacity-50:disabled {
-  opacity: 0.5;
-}
-
-.data-[state=active]:bg-background[data-state=active] {
-  background-color: hsl(var(--background));
-}
-
-.data-[state=active]:text-foreground[data-state=active] {
-  color: hsl(var(--foreground));
-}
-
-.data-[state=active]:shadow[data-state=active] {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-`;
-        document.head.append(element);
-      }
-    }
-  });
-
-  // src/components/tabs.tsx
-  var TabGroup, tabs_default;
-  var init_tabs2 = __esm({
-    "src/components/tabs.tsx"() {
-      "use strict";
-      init_preact_module();
-      init_hooks_module();
-      init_lib2();
-      init_color_name_input();
-      init_tailwind2();
-      init_lib2();
-      TabGroup = () => {
-        const [value, setValue] = h2("Primitives");
-        const options = [
-          {
-            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y(color_name_input_default, null)), /* @__PURE__ */ y("div", { className: "grow h-full border-l border-neutral-700" })), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full border-t border-neutral-700" }), /* @__PURE__ */ y("div", { className: "grow h-full border-t border-l border-neutral-700" })), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow h-full" })), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full" })), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
-            value: "Primitives"
-          },
-          {
-            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
-            value: "Aliases"
-          }
-        ];
-        function handleValueChange(newValue) {
-          console.log(newValue);
-          setValue(newValue);
-        }
-        return /* @__PURE__ */ y(Tabs, { onValueChange: handleValueChange, options, value });
-      };
-      tabs_default = TabGroup;
     }
   });
 
@@ -6513,8 +6421,8 @@ video {
     }
     return (255 << 24 | (r3 & 255) << 16 | (g4 & 255) << 8 | b3 & 255) >>> 0;
   }
-  function parseIntHex(value) {
-    return parseInt(value, 16);
+  function parseIntHex(value2) {
+    return parseInt(value2, 16);
   }
   var init_string_utils = __esm({
     "node_modules/@material/material-color-utilities/utils/string_utils.js"() {
@@ -6758,11 +6666,11 @@ video {
           return array.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
         }
         util2.joinValues = joinValues;
-        util2.jsonStringifyReplacer = (_3, value) => {
-          if (typeof value === "bigint") {
-            return value.toString();
+        util2.jsonStringifyReplacer = (_3, value2) => {
+          if (typeof value2 === "bigint") {
+            return value2.toString();
           }
-          return value;
+          return value2;
         };
       })(util || (util = {}));
       (function(objectUtil2) {
@@ -7095,17 +7003,17 @@ video {
         static mergeObjectSync(status, pairs) {
           const finalObject = {};
           for (const pair of pairs) {
-            const { key, value } = pair;
+            const { key, value: value2 } = pair;
             if (key.status === "aborted")
               return INVALID;
-            if (value.status === "aborted")
+            if (value2.status === "aborted")
               return INVALID;
             if (key.status === "dirty")
               status.dirty();
-            if (value.status === "dirty")
+            if (value2.status === "dirty")
               status.dirty();
-            if (key.value !== "__proto__" && (typeof value.value !== "undefined" || pair.alwaysSet)) {
-              finalObject[key.value] = value.value;
+            if (key.value !== "__proto__" && (typeof value2.value !== "undefined" || pair.alwaysSet)) {
+              finalObject[key.value] = value2.value;
             }
           }
           return { status: status.value, value: finalObject };
@@ -7114,8 +7022,8 @@ video {
       INVALID = Object.freeze({
         status: "aborted"
       });
-      DIRTY = (value) => ({ status: "dirty", value });
-      OK = (value) => ({ status: "valid", value });
+      DIRTY = (value2) => ({ status: "dirty", value: value2 });
+      OK = (value2) => ({ status: "valid", value: value2 });
       isAborted = (x4) => x4.status === "aborted";
       isDirty = (x4) => x4.status === "dirty";
       isValid = (x4) => x4.status === "valid";
@@ -7125,10 +7033,10 @@ video {
         errorUtil2.toString = (message) => typeof message === "string" ? message : message === null || message === void 0 ? void 0 : message.message;
       })(errorUtil || (errorUtil = {}));
       ParseInputLazyPath = class {
-        constructor(parent, value, path, key) {
+        constructor(parent, value2, path, key) {
           this._cachedPath = [];
           this.parent = parent;
-          this.data = value;
+          this.data = value2;
           this._path = path;
           this._key = key;
         }
@@ -7709,23 +7617,23 @@ video {
             regex
           }, errorUtil.errToObj(message)));
         }
-        includes(value, options) {
+        includes(value2, options) {
           return this._addCheck(__spreadValues({
             kind: "includes",
-            value,
+            value: value2,
             position: options === null || options === void 0 ? void 0 : options.position
           }, errorUtil.errToObj(options === null || options === void 0 ? void 0 : options.message)));
         }
-        startsWith(value, message) {
+        startsWith(value2, message) {
           return this._addCheck(__spreadValues({
             kind: "startsWith",
-            value
+            value: value2
           }, errorUtil.errToObj(message)));
         }
-        endsWith(value, message) {
+        endsWith(value2, message) {
           return this._addCheck(__spreadValues({
             kind: "endsWith",
-            value
+            value: value2
           }, errorUtil.errToObj(message)));
         }
         min(minLength, message) {
@@ -7912,25 +7820,25 @@ video {
           }
           return { status: status.value, value: input.data };
         }
-        gte(value, message) {
-          return this.setLimit("min", value, true, errorUtil.toString(message));
+        gte(value2, message) {
+          return this.setLimit("min", value2, true, errorUtil.toString(message));
         }
-        gt(value, message) {
-          return this.setLimit("min", value, false, errorUtil.toString(message));
+        gt(value2, message) {
+          return this.setLimit("min", value2, false, errorUtil.toString(message));
         }
-        lte(value, message) {
-          return this.setLimit("max", value, true, errorUtil.toString(message));
+        lte(value2, message) {
+          return this.setLimit("max", value2, true, errorUtil.toString(message));
         }
-        lt(value, message) {
-          return this.setLimit("max", value, false, errorUtil.toString(message));
+        lt(value2, message) {
+          return this.setLimit("max", value2, false, errorUtil.toString(message));
         }
-        setLimit(kind, value, inclusive, message) {
+        setLimit(kind, value2, inclusive, message) {
           return new ZodNumber(__spreadProps(__spreadValues({}, this._def), {
             checks: [
               ...this._def.checks,
               {
                 kind,
-                value,
+                value: value2,
                 inclusive,
                 message: errorUtil.toString(message)
               }
@@ -7980,10 +7888,10 @@ video {
             message: errorUtil.toString(message)
           });
         }
-        multipleOf(value, message) {
+        multipleOf(value2, message) {
           return this._addCheck({
             kind: "multipleOf",
-            value,
+            value: value2,
             message: errorUtil.toString(message)
           });
         }
@@ -8117,25 +8025,25 @@ video {
           }
           return { status: status.value, value: input.data };
         }
-        gte(value, message) {
-          return this.setLimit("min", value, true, errorUtil.toString(message));
+        gte(value2, message) {
+          return this.setLimit("min", value2, true, errorUtil.toString(message));
         }
-        gt(value, message) {
-          return this.setLimit("min", value, false, errorUtil.toString(message));
+        gt(value2, message) {
+          return this.setLimit("min", value2, false, errorUtil.toString(message));
         }
-        lte(value, message) {
-          return this.setLimit("max", value, true, errorUtil.toString(message));
+        lte(value2, message) {
+          return this.setLimit("max", value2, true, errorUtil.toString(message));
         }
-        lt(value, message) {
-          return this.setLimit("max", value, false, errorUtil.toString(message));
+        lt(value2, message) {
+          return this.setLimit("max", value2, false, errorUtil.toString(message));
         }
-        setLimit(kind, value, inclusive, message) {
+        setLimit(kind, value2, inclusive, message) {
           return new ZodBigInt(__spreadProps(__spreadValues({}, this._def), {
             checks: [
               ...this._def.checks,
               {
                 kind,
-                value,
+                value: value2,
                 inclusive,
                 message: errorUtil.toString(message)
               }
@@ -8179,10 +8087,10 @@ video {
             message: errorUtil.toString(message)
           });
         }
-        multipleOf(value, message) {
+        multipleOf(value2, message) {
           return this._addCheck({
             kind: "multipleOf",
-            value,
+            value: value2,
             message: errorUtil.toString(message)
           });
         }
@@ -8605,10 +8513,10 @@ video {
           const pairs = [];
           for (const key of shapeKeys) {
             const keyValidator = shape[key];
-            const value = ctx.data[key];
+            const value2 = ctx.data[key];
             pairs.push({
               key: { status: "valid", value: key },
-              value: keyValidator._parse(new ParseInputLazyPath(ctx, value, ctx.path, key)),
+              value: keyValidator._parse(new ParseInputLazyPath(ctx, value2, ctx.path, key)),
               alwaysSet: key in ctx.data
             });
           }
@@ -8637,11 +8545,11 @@ video {
           } else {
             const catchall = this._def.catchall;
             for (const key of extraKeys) {
-              const value = ctx.data[key];
+              const value2 = ctx.data[key];
               pairs.push({
                 key: { status: "valid", value: key },
                 value: catchall._parse(
-                  new ParseInputLazyPath(ctx, value, ctx.path, key)
+                  new ParseInputLazyPath(ctx, value2, ctx.path, key)
                   //, ctx.child(key), value, getParsedType(value)
                 ),
                 alwaysSet: key in ctx.data
@@ -9053,11 +8961,11 @@ video {
             if (!discriminatorValues) {
               throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
             }
-            for (const value of discriminatorValues) {
-              if (optionsMap.has(value)) {
-                throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`);
+            for (const value2 of discriminatorValues) {
+              if (optionsMap.has(value2)) {
+                throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value2)}`);
               }
-              optionsMap.set(value, type);
+              optionsMap.set(value2, type);
             }
           }
           return new ZodDiscriminatedUnion(__spreadValues({
@@ -9254,10 +9162,10 @@ video {
           }
           const keyType = this._def.keyType;
           const valueType = this._def.valueType;
-          const pairs = [...ctx.data.entries()].map(([key, value], index2) => {
+          const pairs = [...ctx.data.entries()].map(([key, value2], index2) => {
             return {
               key: keyType._parse(new ParseInputLazyPath(ctx, key, ctx.path, [index2, "key"])),
-              value: valueType._parse(new ParseInputLazyPath(ctx, value, ctx.path, [index2, "value"]))
+              value: valueType._parse(new ParseInputLazyPath(ctx, value2, ctx.path, [index2, "value"]))
             };
           });
           if (ctx.common.async) {
@@ -9265,14 +9173,14 @@ video {
             return Promise.resolve().then(async () => {
               for (const pair of pairs) {
                 const key = await pair.key;
-                const value = await pair.value;
-                if (key.status === "aborted" || value.status === "aborted") {
+                const value2 = await pair.value;
+                if (key.status === "aborted" || value2.status === "aborted") {
                   return INVALID;
                 }
-                if (key.status === "dirty" || value.status === "dirty") {
+                if (key.status === "dirty" || value2.status === "dirty") {
                   status.dirty();
                 }
-                finalMap.set(key.value, value.value);
+                finalMap.set(key.value, value2.value);
               }
               return { status: status.value, value: finalMap };
             });
@@ -9280,14 +9188,14 @@ video {
             const finalMap = /* @__PURE__ */ new Map();
             for (const pair of pairs) {
               const key = pair.key;
-              const value = pair.value;
-              if (key.status === "aborted" || value.status === "aborted") {
+              const value2 = pair.value;
+              if (key.status === "aborted" || value2.status === "aborted") {
                 return INVALID;
               }
-              if (key.status === "dirty" || value.status === "dirty") {
+              if (key.status === "dirty" || value2.status === "dirty") {
                 status.dirty();
               }
-              finalMap.set(key.value, value.value);
+              finalMap.set(key.value, value2.value);
             }
             return { status: status.value, value: finalMap };
           }
@@ -9527,9 +9435,9 @@ video {
           return this._def.value;
         }
       };
-      ZodLiteral.create = (value, params) => {
+      ZodLiteral.create = (value2, params) => {
         return new ZodLiteral(__spreadValues({
-          value,
+          value: value2,
           typeName: ZodFirstPartyTypeKind.ZodLiteral
         }, processCreateParams(params)));
       };
@@ -10446,8 +10354,8 @@ video {
         if (str === "" || str === "." || str === "," || str === "-" || str === "+") {
           return false;
         }
-        var value = parseFloat(str.replace(",", "."));
-        return float.test(str) && (!options.hasOwnProperty("min") || value >= options.min) && (!options.hasOwnProperty("max") || value <= options.max) && (!options.hasOwnProperty("lt") || value < options.lt) && (!options.hasOwnProperty("gt") || value > options.gt);
+        var value2 = parseFloat(str.replace(",", "."));
+        return float.test(str) && (!options.hasOwnProperty("min") || value2 >= options.min) && (!options.hasOwnProperty("max") || value2 <= options.max) && (!options.hasOwnProperty("lt") || value2 < options.lt) && (!options.hasOwnProperty("gt") || value2 > options.gt);
       }
       var locales = Object.keys(_alpha.decimal);
       exports.locales = locales;
@@ -12460,8 +12368,8 @@ video {
         var alphaCapsReplacedWithDigits = rearranged.replace(/[A-Z]/g, function(char) {
           return char.charCodeAt(0) - 55;
         });
-        var remainder = alphaCapsReplacedWithDigits.match(/\d{1,7}/g).reduce(function(acc, value) {
-          return Number(acc + value) % 97;
+        var remainder = alphaCapsReplacedWithDigits.match(/\d{1,7}/g).reduce(function(acc, value2) {
+          return Number(acc + value2) % 97;
         }, "");
         return remainder === 1;
       }
@@ -13491,9 +13399,9 @@ video {
         var sum3 = 0;
         for (var i5 = str.length - 2; i5 >= 0; i5--) {
           if (str[i5] >= "A" && str[i5] <= "Z") {
-            var value = str[i5].charCodeAt(0) - 55;
-            var lo = value % 10;
-            var hi = Math.trunc(value / 10);
+            var value2 = str[i5].charCodeAt(0) - 55;
+            var lo = value2 % 10;
+            var hi = Math.trunc(value2 / 10);
             for (var _i = 0, _arr = [lo, hi]; _i < _arr.length; _i++) {
               var digit = _arr[_i];
               if (double) {
@@ -15605,13 +15513,13 @@ video {
         try {
           for (_iterator.s(); !(_step = _iterator.n()).done; ) {
             var q4 = _step.value;
-            var _q$split = q4.split("="), _q$split2 = _slicedToArray(_q$split, 2), key = _q$split2[0], value = _q$split2[1];
+            var _q$split = q4.split("="), _q$split2 = _slicedToArray(_q$split, 2), key = _q$split2[0], value2 = _q$split2[1];
             if (key && !allowedParams.has(key)) {
               isParseFailed = true;
               break;
             }
-            if (value && (key === "cc" || key === "bcc")) {
-              query[key] = value;
+            if (value2 && (key === "cc" || key === "bcc")) {
+              query[key] = value2;
             }
             if (key) {
               allowedParams.delete(key);
@@ -17303,7 +17211,7 @@ video {
             return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
-          var useState = React.useState, useEffect3 = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
+          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
           var didWarnOld18Alpha = false;
           var didWarnUncachedGetSnapshot = false;
           function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
@@ -17315,11 +17223,11 @@ video {
                 }
               }
             }
-            var value = getSnapshot();
+            var value2 = getSnapshot();
             {
               if (!didWarnUncachedGetSnapshot) {
                 var cachedValue = getSnapshot();
-                if (!objectIs(value, cachedValue)) {
+                if (!objectIs(value2, cachedValue)) {
                   error("The result of getSnapshot should be cached to avoid an infinite loop");
                   didWarnUncachedGetSnapshot = true;
                 }
@@ -17327,20 +17235,20 @@ video {
             }
             var _useState = useState({
               inst: {
-                value,
+                value: value2,
                 getSnapshot
               }
             }), inst = _useState[0].inst, forceUpdate = _useState[1];
             useLayoutEffect(function() {
-              inst.value = value;
+              inst.value = value2;
               inst.getSnapshot = getSnapshot;
               if (checkIfSnapshotChanged(inst)) {
                 forceUpdate({
                   inst
                 });
               }
-            }, [subscribe, value, getSnapshot]);
-            useEffect3(function() {
+            }, [subscribe, value2, getSnapshot]);
+            useEffect(function() {
               if (checkIfSnapshotChanged(inst)) {
                 forceUpdate({
                   inst
@@ -17355,8 +17263,8 @@ video {
               };
               return subscribe(handleStoreChange);
             }, [subscribe]);
-            useDebugValue(value);
-            return value;
+            useDebugValue(value2);
+            return value2;
           }
           function checkIfSnapshotChanged(inst) {
             var latestGetSnapshot = inst.getSnapshot;
@@ -17413,7 +17321,7 @@ video {
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var useSyncExternalStore = shim.useSyncExternalStore;
-          var useRef = React.useRef, useEffect3 = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
+          var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
           function useSyncExternalStoreWithSelector2(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
             var instRef = useRef(null);
             var inst;
@@ -17469,13 +17377,13 @@ video {
               };
               return [getSnapshotWithSelector, getServerSnapshotWithSelector];
             }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
-            var value = useSyncExternalStore(subscribe, getSelection, getServerSelection);
-            useEffect3(function() {
+            var value2 = useSyncExternalStore(subscribe, getSelection, getServerSelection);
+            useEffect(function() {
               inst.hasValue = true;
-              inst.value = value;
-            }, [value]);
-            useDebugValue(value);
-            return value;
+              inst.value = value2;
+            }, [value2]);
+            useDebugValue(value2);
+            return value2;
           }
           exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector2;
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
@@ -17920,8 +17828,8 @@ video {
       return x4.clone();
     }
     if (Array.isArray(x4)) {
-      return x4.map(function(value) {
-        return clone(value);
+      return x4.map(function(value2) {
+        return clone(value2);
       });
     }
     if (x4 instanceof Date)
@@ -17996,8 +17904,8 @@ video {
         }
         return _value;
       },
-      set: function set(value) {
-        _value = value;
+      set: function set(value2) {
+        _value = value2;
         _uninitialized = false;
       },
       configurable: true,
@@ -18011,9 +17919,9 @@ video {
     var copy = {};
     for (var i5 = 0; i5 < properties2.length; i5++) {
       var key = properties2[i5];
-      var value = object[key];
-      if (value !== void 0) {
-        copy[key] = value;
+      var value2 = object[key];
+      if (value2 !== void 0) {
+        copy[key] = value2;
       }
     }
     return copy;
@@ -18275,10 +18183,10 @@ video {
             }
             nConversions = 0;
           }
-          function findTypeNames(value) {
+          function findTypeNames(value2) {
             var matches = typeList.filter(function(name307) {
               var type = typeMap.get(name307);
-              return !type.isAny && type.test(value);
+              return !type.isAny && type.test(value2);
             });
             if (matches.length) {
               return matches;
@@ -18367,10 +18275,10 @@ video {
           function find(fn2, signature, options) {
             return findSignature(fn2, signature, options).implementation;
           }
-          function convert(value, typeName) {
+          function convert(value2, typeName) {
             var type = findType(typeName);
-            if (type.test(value)) {
-              return value;
+            if (type.test(value2)) {
+              return value2;
             }
             var conversions = type.conversionsTo;
             if (conversions.length === 0) {
@@ -18378,11 +18286,11 @@ video {
             }
             for (var i5 = 0; i5 < conversions.length; i5++) {
               var fromType = findType(conversions[i5].from);
-              if (fromType.test(value)) {
-                return conversions[i5].convert(value);
+              if (fromType.test(value2)) {
+                return conversions[i5].convert(value2);
               }
             }
-            throw new Error("Cannot convert " + value + " to " + typeName);
+            throw new Error("Cannot convert " + value2 + " to " + typeName);
           }
           function stringifyParams(params) {
             var separator = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : ",";
@@ -19457,11 +19365,11 @@ video {
   });
 
   // node_modules/mathjs/lib/esm/utils/number.js
-  function isInteger(value) {
-    if (typeof value === "boolean") {
+  function isInteger(value2) {
+    if (typeof value2 === "boolean") {
       return true;
     }
-    return isFinite(value) ? value === Math.round(value) : false;
+    return isFinite(value2) ? value2 === Math.round(value2) : false;
   }
   function formatNumberToBase(n3, base, size2) {
     var prefixes = {
@@ -19496,15 +19404,15 @@ video {
     }
     return "".concat(sign4).concat(prefix).concat(n3.toString(base)).concat(suffix);
   }
-  function format(value, options) {
+  function format(value2, options) {
     if (typeof options === "function") {
-      return options(value);
+      return options(value2);
     }
-    if (value === Infinity) {
+    if (value2 === Infinity) {
       return "Infinity";
-    } else if (value === -Infinity) {
+    } else if (value2 === -Infinity) {
       return "-Infinity";
-    } else if (isNaN(value)) {
+    } else if (isNaN(value2)) {
       return "NaN";
     }
     var notation = "auto";
@@ -19528,19 +19436,19 @@ video {
     }
     switch (notation) {
       case "fixed":
-        return toFixed(value, precision);
+        return toFixed(value2, precision);
       case "exponential":
-        return toExponential(value, precision);
+        return toExponential(value2, precision);
       case "engineering":
-        return toEngineering(value, precision);
+        return toEngineering(value2, precision);
       case "bin":
-        return formatNumberToBase(value, 2, wordSize);
+        return formatNumberToBase(value2, 2, wordSize);
       case "oct":
-        return formatNumberToBase(value, 8, wordSize);
+        return formatNumberToBase(value2, 8, wordSize);
       case "hex":
-        return formatNumberToBase(value, 16, wordSize);
+        return formatNumberToBase(value2, 16, wordSize);
       case "auto":
-        return toPrecision(value, precision, options && options).replace(/((\.\d*?)(0+))($|e)/, function() {
+        return toPrecision(value2, precision, options && options).replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
           var e6 = arguments[4];
           return digits2 !== "." ? digits2 + e6 : e6;
@@ -19549,10 +19457,10 @@ video {
         throw new Error('Unknown notation "' + notation + '". Choose "auto", "exponential", "fixed", "bin", "oct", or "hex.');
     }
   }
-  function splitNumber(value) {
-    var match = String(value).toLowerCase().match(/^(-?)(\d+\.?\d*)(e([+-]?\d+))?$/);
+  function splitNumber(value2) {
+    var match = String(value2).toLowerCase().match(/^(-?)(\d+\.?\d*)(e([+-]?\d+))?$/);
     if (!match) {
-      throw new SyntaxError("Invalid number " + value);
+      throw new SyntaxError("Invalid number " + value2);
     }
     var sign4 = match[1];
     var digits2 = match[2];
@@ -19575,11 +19483,11 @@ video {
       exponent
     };
   }
-  function toEngineering(value, precision) {
-    if (isNaN(value) || !isFinite(value)) {
-      return String(value);
+  function toEngineering(value2, precision) {
+    if (isNaN(value2) || !isFinite(value2)) {
+      return String(value2);
     }
-    var split = splitNumber(value);
+    var split = splitNumber(value2);
     var rounded = roundDigits(split, precision);
     var e6 = rounded.exponent;
     var c3 = rounded.coefficients;
@@ -19605,11 +19513,11 @@ video {
     var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
     return rounded.sign + str;
   }
-  function toFixed(value, precision) {
-    if (isNaN(value) || !isFinite(value)) {
-      return String(value);
+  function toFixed(value2, precision) {
+    if (isNaN(value2) || !isFinite(value2)) {
+      return String(value2);
     }
-    var splitValue = splitNumber(value);
+    var splitValue = splitNumber(value2);
     var rounded = typeof precision === "number" ? roundDigits(splitValue, splitValue.exponent + 1 + precision) : splitValue;
     var c3 = rounded.coefficients;
     var p3 = rounded.exponent + 1;
@@ -19626,11 +19534,11 @@ video {
     }
     return rounded.sign + c3.join("");
   }
-  function toExponential(value, precision) {
-    if (isNaN(value) || !isFinite(value)) {
-      return String(value);
+  function toExponential(value2, precision) {
+    if (isNaN(value2) || !isFinite(value2)) {
+      return String(value2);
     }
-    var split = splitNumber(value);
+    var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     var c3 = rounded.coefficients;
     var e6 = rounded.exponent;
@@ -19640,16 +19548,16 @@ video {
     var first = c3.shift();
     return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e6 >= 0 ? "+" : "") + e6;
   }
-  function toPrecision(value, precision, options) {
-    if (isNaN(value) || !isFinite(value)) {
-      return String(value);
+  function toPrecision(value2, precision, options) {
+    if (isNaN(value2) || !isFinite(value2)) {
+      return String(value2);
     }
     var lowerExp = options && options.lowerExp !== void 0 ? options.lowerExp : -3;
     var upperExp = options && options.upperExp !== void 0 ? options.upperExp : 5;
-    var split = splitNumber(value);
+    var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     if (rounded.exponent < lowerExp || rounded.exponent >= upperExp) {
-      return toExponential(value, precision);
+      return toExponential(value2, precision);
     } else {
       var c3 = rounded.coefficients;
       var e6 = rounded.exponent;
@@ -19703,8 +19611,8 @@ video {
     }
     return arr;
   }
-  function digits(value) {
-    return value.toExponential().replace(/e.*$/, "").replace(/^0\.?0*|\./, "").length;
+  function digits(value2) {
+    return value2.toExponential().replace(/e.*$/, "").replace(/^0\.?0*|\./, "").length;
   }
   function nearlyEqual(x4, y3, epsilon) {
     if (epsilon === null || epsilon === void 0) {
@@ -19830,12 +19738,12 @@ video {
         throw new Error("Base ".concat(base, " not supported "));
     }
   }
-  function format2(value, options) {
+  function format2(value2, options) {
     if (typeof options === "function") {
-      return options(value);
+      return options(value2);
     }
-    if (!value.isFinite()) {
-      return value.isNaN() ? "NaN" : value.gt(0) ? "Infinity" : "-Infinity";
+    if (!value2.isFinite()) {
+      return value2.isNaN() ? "NaN" : value2.gt(0) ? "Infinity" : "-Infinity";
     }
     var notation = "auto";
     var precision;
@@ -19858,29 +19766,29 @@ video {
     }
     switch (notation) {
       case "fixed":
-        return toFixed2(value, precision);
+        return toFixed2(value2, precision);
       case "exponential":
-        return toExponential2(value, precision);
+        return toExponential2(value2, precision);
       case "engineering":
-        return toEngineering2(value, precision);
+        return toEngineering2(value2, precision);
       case "bin":
-        return formatBigNumberToBase(value, 2, wordSize);
+        return formatBigNumberToBase(value2, 2, wordSize);
       case "oct":
-        return formatBigNumberToBase(value, 8, wordSize);
+        return formatBigNumberToBase(value2, 8, wordSize);
       case "hex":
-        return formatBigNumberToBase(value, 16, wordSize);
+        return formatBigNumberToBase(value2, 16, wordSize);
       case "auto": {
         var lowerExp = options && options.lowerExp !== void 0 ? options.lowerExp : -3;
         var upperExp = options && options.upperExp !== void 0 ? options.upperExp : 5;
-        if (value.isZero())
+        if (value2.isZero())
           return "0";
         var str;
-        var rounded = value.toSignificantDigits(precision);
+        var rounded = value2.toSignificantDigits(precision);
         var exp3 = rounded.e;
         if (exp3 >= lowerExp && exp3 < upperExp) {
           str = rounded.toFixed();
         } else {
-          str = toExponential2(value, precision);
+          str = toExponential2(value2, precision);
         }
         return str.replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
@@ -19892,26 +19800,26 @@ video {
         throw new Error('Unknown notation "' + notation + '". Choose "auto", "exponential", "fixed", "bin", "oct", or "hex.');
     }
   }
-  function toEngineering2(value, precision) {
-    var e6 = value.e;
+  function toEngineering2(value2, precision) {
+    var e6 = value2.e;
     var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
-    var valueWithoutExp = value.mul(Math.pow(10, -newExp));
+    var valueWithoutExp = value2.mul(Math.pow(10, -newExp));
     var valueStr = valueWithoutExp.toPrecision(precision);
     if (valueStr.indexOf("e") !== -1) {
-      var BigNumber2 = value.constructor;
+      var BigNumber2 = value2.constructor;
       valueStr = new BigNumber2(valueStr).toFixed();
     }
     return valueStr + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
   }
-  function toExponential2(value, precision) {
+  function toExponential2(value2, precision) {
     if (precision !== void 0) {
-      return value.toExponential(precision - 1);
+      return value2.toExponential(precision - 1);
     } else {
-      return value.toExponential();
+      return value2.toExponential();
     }
   }
-  function toFixed2(value, precision) {
-    return value.toFixed(precision);
+  function toFixed2(value2, precision) {
+    return value2.toFixed(precision);
   }
   var init_formatter = __esm({
     "node_modules/mathjs/lib/esm/utils/bignumber/formatter.js"() {
@@ -19925,52 +19833,52 @@ video {
     var end = text.length;
     return text.substring(start, end) === search;
   }
-  function format3(value, options) {
-    var result = _format(value, options);
+  function format3(value2, options) {
+    var result = _format(value2, options);
     if (options && typeof options === "object" && "truncate" in options && result.length > options.truncate) {
       return result.substring(0, options.truncate - 3) + "...";
     }
     return result;
   }
-  function _format(value, options) {
-    if (typeof value === "number") {
-      return format(value, options);
+  function _format(value2, options) {
+    if (typeof value2 === "number") {
+      return format(value2, options);
     }
-    if (isBigNumber(value)) {
-      return format2(value, options);
+    if (isBigNumber(value2)) {
+      return format2(value2, options);
     }
-    if (looksLikeFraction(value)) {
+    if (looksLikeFraction(value2)) {
       if (!options || options.fraction !== "decimal") {
-        return value.s * value.n + "/" + value.d;
+        return value2.s * value2.n + "/" + value2.d;
       } else {
-        return value.toString();
+        return value2.toString();
       }
     }
-    if (Array.isArray(value)) {
-      return formatArray(value, options);
+    if (Array.isArray(value2)) {
+      return formatArray(value2, options);
     }
-    if (isString(value)) {
-      return '"' + value + '"';
+    if (isString(value2)) {
+      return '"' + value2 + '"';
     }
-    if (typeof value === "function") {
-      return value.syntax ? String(value.syntax) : "function";
+    if (typeof value2 === "function") {
+      return value2.syntax ? String(value2.syntax) : "function";
     }
-    if (value && typeof value === "object") {
-      if (typeof value.format === "function") {
-        return value.format(options);
-      } else if (value && value.toString(options) !== {}.toString()) {
-        return value.toString(options);
+    if (value2 && typeof value2 === "object") {
+      if (typeof value2.format === "function") {
+        return value2.format(options);
+      } else if (value2 && value2.toString(options) !== {}.toString()) {
+        return value2.toString(options);
       } else {
-        var entries = Object.keys(value).map((key) => {
-          return '"' + key + '": ' + format3(value[key], options);
+        var entries = Object.keys(value2).map((key) => {
+          return '"' + key + '": ' + format3(value2[key], options);
         });
         return "{" + entries.join(", ") + "}";
       }
     }
-    return String(value);
+    return String(value2);
   }
-  function stringify(value) {
-    var text = String(value);
+  function stringify(value2) {
+    var text = String(value2);
     var escaped = "";
     var i5 = 0;
     while (i5 < text.length) {
@@ -19992,8 +19900,8 @@ video {
     }
     return '"' + escaped + '"';
   }
-  function escape(value) {
-    var text = String(value);
+  function escape(value2) {
+    var text = String(value2);
     text = text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     return text;
   }
@@ -20013,8 +19921,8 @@ video {
       return format3(array, options);
     }
   }
-  function looksLikeFraction(value) {
-    return value && typeof value === "object" && typeof value.s === "number" && typeof value.n === "number" && typeof value.d === "number" || false;
+  function looksLikeFraction(value2) {
+    return value2 && typeof value2 === "object" && typeof value2.s === "number" && typeof value2.n === "number" && typeof value2.d === "number" || false;
   }
   function compareText(x4, y3) {
     if (!isString(x4)) {
@@ -20126,8 +20034,8 @@ video {
       _validate(array, size2, 0);
     }
   }
-  function validateIndexSourceSize(value, index2) {
-    var valueSize = value.isMatrix ? value._size : arraySize(value);
+  function validateIndexSourceSize(value2, index2) {
+    var valueSize = value2.isMatrix ? value2._size : arraySize(value2);
     var sourceSize = index2._sourceSize;
     sourceSize.forEach((sourceDim, i5) => {
       if (sourceDim !== null && sourceDim !== valueSize[i5]) {
@@ -20171,8 +20079,8 @@ video {
     if (size2.length === 0) {
       throw new Error("Resizing to scalar is not supported");
     }
-    size2.forEach(function(value) {
-      if (!isNumber(value) || !isInteger(value) || value < 0) {
+    size2.forEach(function(value2) {
+      if (!isNumber(value2) || !isInteger(value2) || value2 < 0) {
         throw new TypeError("Invalid size, must contain positive integers (size: " + format3(size2) + ")");
       }
     });
@@ -20339,11 +20247,11 @@ video {
       return array;
     }
     var flat = [];
-    array.forEach(function callback(value) {
-      if (Array.isArray(value)) {
-        value.forEach(callback);
+    array.forEach(function callback(value2) {
+      if (Array.isArray(value2)) {
+        value2.forEach(callback);
       } else {
-        flat.push(value);
+        flat.push(value2);
       }
     });
     return flat;
@@ -20574,10 +20482,10 @@ video {
     }
     throw new Error('No access to property "' + prop + '"');
   }
-  function setSafeProperty(object, prop, value) {
+  function setSafeProperty(object, prop, value2) {
     if (isPlainObject(object) && isSafeProperty(object, prop)) {
-      object[prop] = value;
-      return value;
+      object[prop] = value2;
+      return value2;
     }
     throw new Error('No access to property "' + prop + '"');
   }
@@ -20664,8 +20572,8 @@ video {
     }
     var object = {};
     for (var key of map3.keys()) {
-      var value = map3.get(key);
-      setSafeProperty(object, key, value);
+      var value2 = map3.get(key);
+      setSafeProperty(object, key, value2);
     }
     return object;
   }
@@ -20710,8 +20618,8 @@ video {
         get(key) {
           return getSafeProperty(this.wrappedObject, key);
         }
-        set(key, value) {
-          setSafeProperty(this.wrappedObject, key, value);
+        set(key, value2) {
+          setSafeProperty(this.wrappedObject, key, value2);
           return this;
         }
         has(key) {
@@ -25489,15 +25397,15 @@ video {
         };
         Range2.prototype.map = function(callback) {
           var array = [];
-          this.forEach(function(value, index2, obj) {
-            array[index2[0]] = callback(value, index2, obj);
+          this.forEach(function(value2, index2, obj) {
+            array[index2[0]] = callback(value2, index2, obj);
           });
           return array;
         };
         Range2.prototype.toArray = function() {
           var array = [];
-          this.forEach(function(value, index2) {
-            array[index2[0]] = value;
+          this.forEach(function(value2, index2) {
+            array[index2[0]] = value2;
           });
           return array;
         };
@@ -25563,7 +25471,7 @@ video {
         Matrix2.prototype.get = function(index2) {
           throw new Error("Cannot invoke get on a Matrix interface");
         };
-        Matrix2.prototype.set = function(index2, value, defaultValue) {
+        Matrix2.prototype.set = function(index2, value2, defaultValue) {
           throw new Error("Cannot invoke set on a Matrix interface");
         };
         Matrix2.prototype.resize = function(size2, defaultValue) {
@@ -25812,7 +25720,7 @@ video {
           }
           return data;
         };
-        DenseMatrix2.prototype.set = function(index2, value, defaultValue) {
+        DenseMatrix2.prototype.set = function(index2, value2, defaultValue) {
           if (!isArray(index2)) {
             throw new TypeError("Array expected");
           }
@@ -25832,7 +25740,7 @@ video {
           }
           indexI = index2[index2.length - 1];
           validateIndex(indexI, data.length);
-          data[indexI] = value;
+          data[indexI] = value2;
           return this;
         };
         function _get(matrix2, index2) {
@@ -25949,8 +25857,8 @@ video {
           if (!isCollection(size2)) {
             throw new TypeError("Array or Matrix expected");
           }
-          var sizeArray = size2.valueOf().map((value) => {
-            return Array.isArray(value) && value.length === 1 ? value[0] : value;
+          var sizeArray = size2.valueOf().map((value2) => {
+            return Array.isArray(value2) && value2.length === 1 ? value2[0] : value2;
           });
           var m3 = copy ? this.clone() : this;
           return _resize2(m3, sizeArray, defaultValue);
@@ -26005,18 +25913,18 @@ video {
         DenseMatrix2.prototype.map = function(callback) {
           var me = this;
           var args = maxArgumentCount(callback);
-          var recurse = function recurse2(value, index2) {
-            if (isArray(value)) {
-              return value.map(function(child, i5) {
+          var recurse = function recurse2(value2, index2) {
+            if (isArray(value2)) {
+              return value2.map(function(child, i5) {
                 return recurse2(child, index2.concat(i5));
               });
             } else {
               if (args === 1) {
-                return callback(value);
+                return callback(value2);
               } else if (args === 2) {
-                return callback(value, index2);
+                return callback(value2, index2);
               } else {
-                return callback(value, index2, me);
+                return callback(value2, index2, me);
               }
             }
           };
@@ -26026,26 +25934,26 @@ video {
         };
         DenseMatrix2.prototype.forEach = function(callback) {
           var me = this;
-          var recurse = function recurse2(value, index2) {
-            if (isArray(value)) {
-              value.forEach(function(child, i5) {
+          var recurse = function recurse2(value2, index2) {
+            if (isArray(value2)) {
+              value2.forEach(function(child, i5) {
                 recurse2(child, index2.concat(i5));
               });
             } else {
-              callback(value, index2, me);
+              callback(value2, index2, me);
             }
           };
           recurse(this._data, []);
         };
         DenseMatrix2.prototype[Symbol.iterator] = function* () {
-          var recurse = function* recurse2(value, index2) {
-            if (isArray(value)) {
-              for (var i5 = 0; i5 < value.length; i5++) {
-                yield* recurse2(value[i5], index2.concat(i5));
+          var recurse = function* recurse2(value2, index2) {
+            if (isArray(value2)) {
+              for (var i5 = 0; i5 < value2.length; i5++) {
+                yield* recurse2(value2[i5], index2.concat(i5));
               }
             } else {
               yield {
-                value,
+                value: value2,
                 index: index2
               };
             }
@@ -26127,7 +26035,7 @@ video {
             datatype: this._datatype
           });
         };
-        DenseMatrix2.diagonal = function(size2, value, k4, defaultValue) {
+        DenseMatrix2.diagonal = function(size2, value2, k4, defaultValue) {
           if (!isArray(size2)) {
             throw new TypeError("Array expected, size parameter");
           }
@@ -26159,24 +26067,24 @@ video {
           var columns = size2[1];
           var n3 = Math.min(rows - kSub, columns - kSuper);
           var _value;
-          if (isArray(value)) {
-            if (value.length !== n3) {
+          if (isArray(value2)) {
+            if (value2.length !== n3) {
               throw new Error("Invalid value array length");
             }
             _value = function _value2(i5) {
-              return value[i5];
+              return value2[i5];
             };
-          } else if (isMatrix(value)) {
-            var ms = value.size();
+          } else if (isMatrix(value2)) {
+            var ms = value2.size();
             if (ms.length !== 1 || ms[0] !== n3) {
               throw new Error("Invalid matrix length");
             }
             _value = function _value2(i5) {
-              return value.get([i5]);
+              return value2.get([i5]);
             };
           } else {
             _value = function _value2() {
-              return value;
+              return value2;
             };
           }
           if (!defaultValue) {
@@ -26283,11 +26191,11 @@ video {
       array = array.valueOf();
     }
     for (var i5 = 0, ii = array.length; i5 < ii; i5++) {
-      var value = array[i5];
-      if (Array.isArray(value)) {
-        deepForEach(value, callback);
+      var value2 = array[i5];
+      if (Array.isArray(value2)) {
+        deepForEach(value2, callback);
       } else {
-        callback(value);
+        callback(value2);
       }
     }
   }
@@ -26336,7 +26244,7 @@ video {
       return ret;
     }
   }
-  function scatter(a3, j4, w4, x4, u3, mark, cindex, f3, inverse, update, value) {
+  function scatter(a3, j4, w4, x4, u3, mark, cindex, f3, inverse, update, value2) {
     var avalues = a3._values;
     var aindex = a3._index;
     var aptr = a3._ptr;
@@ -26348,7 +26256,7 @@ video {
           w4[i5] = mark;
           cindex.push(i5);
           if (update) {
-            x4[i5] = inverse ? f3(avalues[k4], value) : f3(value, avalues[k4]);
+            x4[i5] = inverse ? f3(avalues[k4], value2) : f3(value2, avalues[k4]);
             u3[i5] = mark;
           } else {
             x4[i5] = avalues[k4];
@@ -26561,12 +26469,12 @@ video {
     }
     return Math.pow(x4, y3);
   }
-  function roundNumber(value) {
+  function roundNumber(value2) {
     var decimals = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
     if (!isInteger(decimals) || decimals < 0 || decimals > 15) {
       throw new Error("Number of decimals in function round must be an integer from 0 to 15 inclusive");
     }
-    return parseFloat(toFixed(value, decimals));
+    return parseFloat(toFixed(value2, decimals));
   }
   function normNumber(x4) {
     return Math.abs(x4);
@@ -27627,14 +27535,14 @@ video {
           if (!isCollection(size2)) {
             throw new TypeError("Array or Matrix expected");
           }
-          var sizeArray = size2.valueOf().map((value) => {
-            return Array.isArray(value) && value.length === 1 ? value[0] : value;
+          var sizeArray = size2.valueOf().map((value2) => {
+            return Array.isArray(value2) && value2.length === 1 ? value2[0] : value2;
           });
           if (sizeArray.length !== 2) {
             throw new Error("Only two dimensions matrix are supported");
           }
-          sizeArray.forEach(function(value) {
-            if (!isNumber(value) || !isInteger(value) || value < 0) {
+          sizeArray.forEach(function(value2) {
+            if (!isNumber(value2) || !isInteger(value2) || value2 < 0) {
               throw new TypeError("Invalid size, must contain positive integers (size: " + format3(sizeArray) + ")");
             }
           });
@@ -27642,15 +27550,15 @@ video {
           return _resize2(m3, sizeArray[0], sizeArray[1], defaultValue);
         };
         function _resize2(matrix2, rows, columns, defaultValue) {
-          var value = defaultValue || 0;
+          var value2 = defaultValue || 0;
           var eq = equalScalar2;
           var zero = 0;
           if (isString(matrix2._datatype)) {
             eq = typed3.find(equalScalar2, [matrix2._datatype, matrix2._datatype]) || equalScalar2;
             zero = typed3.convert(0, matrix2._datatype);
-            value = typed3.convert(value, matrix2._datatype);
+            value2 = typed3.convert(value2, matrix2._datatype);
           }
-          var ins = !eq(value, zero);
+          var ins = !eq(value2, zero);
           var r3 = matrix2._size[0];
           var c3 = matrix2._size[1];
           var i5, j4, k4;
@@ -27659,7 +27567,7 @@ video {
               matrix2._ptr[j4] = matrix2._values.length;
               if (ins) {
                 for (i5 = 0; i5 < r3; i5++) {
-                  matrix2._values.push(value);
+                  matrix2._values.push(value2);
                   matrix2._index.push(i5);
                 }
               }
@@ -27679,7 +27587,7 @@ video {
                 k4 = matrix2._ptr[j4 + 1] + n3;
                 var p3 = 0;
                 for (i5 = r3; i5 < rows; i5++, p3++) {
-                  matrix2._values.splice(k4 + p3, 0, value);
+                  matrix2._values.splice(k4 + p3, 0, value2);
                   matrix2._index.splice(k4 + p3, 0, i5);
                   n3++;
                 }
@@ -27714,8 +27622,8 @@ video {
           if (sizes.length !== 2) {
             throw new Error("Sparse matrices can only be reshaped in two dimensions");
           }
-          sizes.forEach(function(value) {
-            if (!isNumber(value) || !isInteger(value) || value <= -2 || value === 0) {
+          sizes.forEach(function(value2) {
+            if (!isNumber(value2) || !isInteger(value2) || value2 <= -2 || value2 === 0) {
               throw new TypeError("Invalid size, must contain positive integers or -1 (size: " + format3(sizes) + ")");
             }
           });
@@ -27825,8 +27733,8 @@ video {
                 _values[_i4] = matrix2._values[_k];
               }
               for (var _i5 = minRow; _i5 <= maxRow; _i5++) {
-                var value = _i5 in _values ? _values[_i5] : 0;
-                invoke(value, _i5 - minRow, j4 - minColumn);
+                var value2 = _i5 in _values ? _values[_i5] : 0;
+                invoke(value2, _i5 - minRow, j4 - minColumn);
               }
             }
           }
@@ -27860,8 +27768,8 @@ video {
                 values[_i6] = this._values[_k2];
               }
               for (var _i7 = 0; _i7 < rows; _i7++) {
-                var value = _i7 in values ? values[_i7] : 0;
-                callback(value, [_i7, j4], me);
+                var value2 = _i7 in values ? values[_i7] : 0;
+                callback(value2, [_i7, j4], me);
               }
             }
           }
@@ -27981,7 +27889,7 @@ video {
         SparseMatrix2.fromJSON = function(json) {
           return new SparseMatrix2(json);
         };
-        SparseMatrix2.diagonal = function(size2, value, k4, defaultValue, datatype) {
+        SparseMatrix2.diagonal = function(size2, value2, k4, defaultValue, datatype) {
           if (!isArray(size2)) {
             throw new TypeError("Array expected, size parameter");
           }
@@ -28019,24 +27927,24 @@ video {
           var columns = size2[1];
           var n3 = Math.min(rows - kSub, columns - kSuper);
           var _value;
-          if (isArray(value)) {
-            if (value.length !== n3) {
+          if (isArray(value2)) {
+            if (value2.length !== n3) {
               throw new Error("Invalid value array length");
             }
             _value = function _value2(i6) {
-              return value[i6];
+              return value2[i6];
             };
-          } else if (isMatrix(value)) {
-            var ms = value.size();
+          } else if (isMatrix(value2)) {
+            var ms = value2.size();
             if (ms.length !== 1 || ms[0] !== n3) {
               throw new Error("Invalid matrix length");
             }
             _value = function _value2(i6) {
-              return value.get([i6]);
+              return value2.get([i6]);
             };
           } else {
             _value = function _value2() {
-              return value;
+              return value2;
             };
           }
           var values = [];
@@ -32658,18 +32566,18 @@ video {
         } = _ref;
         return typed3(name84, {
           "Matrix, number": _column,
-          "Array, number": function ArrayNumber(value, column2) {
-            return _column(matrix2(clone(value)), column2).valueOf();
+          "Array, number": function ArrayNumber(value2, column2) {
+            return _column(matrix2(clone(value2)), column2).valueOf();
           }
         });
-        function _column(value, column2) {
-          if (value.size().length !== 2) {
+        function _column(value2, column2) {
+          if (value2.size().length !== 2) {
             throw new Error("Only two dimensional matrix is supported");
           }
-          validateIndex(column2, value.size()[1]);
-          var rowRange = range2(0, value.size()[0]);
+          validateIndex(column2, value2.size()[1]);
+          var rowRange = range2(0, value2.size()[0]);
           var index2 = new Index2(rowRange, column2);
-          var result = value.subset(index2);
+          var result = value2.subset(index2);
           return isMatrix(result) ? result : matrix2([[result]]);
         }
       });
@@ -32849,26 +32757,26 @@ video {
   });
 
   // node_modules/mathjs/lib/esm/utils/applyCallback.js
-  function applyCallback(callback, value, index2, array, mappingFnName) {
+  function applyCallback(callback, value2, index2, array, mappingFnName) {
     if (import_typed_function2.default.isTypedFunction(callback)) {
-      var args3 = [value, index2, array];
+      var args3 = [value2, index2, array];
       var signature3 = import_typed_function2.default.resolve(callback, args3);
       if (signature3) {
         return tryWithArgs(signature3.implementation, args3);
       }
-      var args2 = [value, index2];
+      var args2 = [value2, index2];
       var signature2 = import_typed_function2.default.resolve(callback, args2);
       if (signature2) {
         return tryWithArgs(signature2.implementation, args2);
       }
-      var args1 = [value];
+      var args1 = [value2];
       var signature1 = import_typed_function2.default.resolve(callback, args1);
       if (signature1) {
         return tryWithArgs(signature1.implementation, args1);
       }
       return tryWithArgs(callback, args3);
     } else {
-      return callback(value, index2, array);
+      return callback(value2, index2, array);
     }
     function tryWithArgs(signature, args) {
       try {
@@ -32877,7 +32785,7 @@ video {
         var _err$data;
         if (err instanceof TypeError && ((_err$data = err.data) === null || _err$data === void 0 ? void 0 : _err$data.category) === "wrongType") {
           var argsDesc = [];
-          argsDesc.push("value: ".concat(typeOf(value)));
+          argsDesc.push("value: ".concat(typeOf(value2)));
           if (args.length >= 2) {
             argsDesc.push("index: ".concat(typeOf(index2)));
           }
@@ -32901,8 +32809,8 @@ video {
 
   // node_modules/mathjs/lib/esm/function/matrix/filter.js
   function _filterCallback(x4, callback) {
-    return filter(x4, function(value, index2, array) {
-      return applyCallback(callback, value, [index2], array, "filter");
+    return filter(x4, function(value2, index2, array) {
+      return applyCallback(callback, value2, [index2], array, "filter");
     });
   }
   var name88, dependencies88, createFilter;
@@ -32959,13 +32867,13 @@ video {
 
   // node_modules/mathjs/lib/esm/function/matrix/forEach.js
   function _forEach(array, callback) {
-    var recurse = function recurse2(value, index2) {
-      if (Array.isArray(value)) {
-        forEach(value, function(child, i5) {
+    var recurse = function recurse2(value2, index2) {
+      if (Array.isArray(value2)) {
+        forEach(value2, function(child, i5) {
           recurse2(child, index2.concat(i5));
         });
       } else {
-        return applyCallback(callback, value, index2, array, "forEach");
+        return applyCallback(callback, value2, index2, array, "forEach");
       }
     };
     recurse(array, []);
@@ -33171,13 +33079,13 @@ video {
 
   // node_modules/mathjs/lib/esm/function/matrix/map.js
   function _map(array, callback) {
-    var recurse = function recurse2(value, index2) {
-      if (Array.isArray(value)) {
-        return value.map(function(child, i5) {
+    var recurse = function recurse2(value2, index2) {
+      if (Array.isArray(value2)) {
+        return value2.map(function(child, i5) {
           return recurse2(child, index2.concat(i5));
         });
       } else {
-        return applyCallback(callback, value, index2, array, "map");
+        return applyCallback(callback, value2, index2, array, "map");
       }
     };
     return recurse(array, []);
@@ -33359,17 +33267,17 @@ video {
         }
         function _normalize(size2) {
           var hasBigNumbers = false;
-          size2.forEach(function(value, index2, arr) {
-            if (isBigNumber(value)) {
+          size2.forEach(function(value2, index2, arr) {
+            if (isBigNumber(value2)) {
               hasBigNumbers = true;
-              arr[index2] = value.toNumber();
+              arr[index2] = value2.toNumber();
             }
           });
           return hasBigNumbers;
         }
         function _validate2(size2) {
-          size2.forEach(function(value) {
-            if (typeof value !== "number" || !isInteger(value) || value < 0) {
+          size2.forEach(function(value2) {
+            if (typeof value2 !== "number" || !isInteger(value2) || value2 < 0) {
               throw new Error("Parameters in function ones must be positive integers");
             }
           });
@@ -33571,8 +33479,8 @@ video {
             size2 = size2.valueOf();
           }
           if (isBigNumber(size2[0])) {
-            size2 = size2.map(function(value) {
-              return !isBigNumber(value) ? value : value.toNumber();
+            size2 = size2.map(function(value2) {
+              return !isBigNumber(value2) ? value2 : value2.toNumber();
             });
           }
           if (isMatrix(x4)) {
@@ -33811,18 +33719,18 @@ video {
         } = _ref;
         return typed3(name102, {
           "Matrix, number": _row,
-          "Array, number": function ArrayNumber(value, row2) {
-            return _row(matrix2(clone(value)), row2).valueOf();
+          "Array, number": function ArrayNumber(value2, row2) {
+            return _row(matrix2(clone(value2)), row2).valueOf();
           }
         });
-        function _row(value, row2) {
-          if (value.size().length !== 2) {
+        function _row(value2, row2) {
+          if (value2.size().length !== 2) {
             throw new Error("Only two dimensional matrix is supported");
           }
-          validateIndex(row2, value.size()[0]);
-          var columnRange = range2(0, value.size()[1]);
+          validateIndex(row2, value2.size()[0]);
+          var columnRange = range2(0, value2.size()[1]);
           var index2 = new Index2(row2, columnRange);
-          var result = value.subset(index2);
+          var result = value2.subset(index2);
           return isMatrix(result) ? result : matrix2([[result]]);
         }
       });
@@ -34002,43 +33910,43 @@ video {
         } = _ref;
         return typed3(name105, {
           // get subset
-          "Matrix, Index": function MatrixIndex(value, index2) {
+          "Matrix, Index": function MatrixIndex(value2, index2) {
             if (isEmptyIndex(index2)) {
               return matrix2();
             }
-            validateIndexSourceSize(value, index2);
-            return value.subset(index2);
+            validateIndexSourceSize(value2, index2);
+            return value2.subset(index2);
           },
           "Array, Index": typed3.referTo("Matrix, Index", function(subsetRef) {
-            return function(value, index2) {
-              var subsetResult = subsetRef(matrix2(value), index2);
+            return function(value2, index2) {
+              var subsetResult = subsetRef(matrix2(value2), index2);
               return index2.isScalar() ? subsetResult : subsetResult.valueOf();
             };
           }),
           "Object, Index": _getObjectProperty,
           "string, Index": _getSubstring,
           // set subset
-          "Matrix, Index, any, any": function MatrixIndexAnyAny(value, index2, replacement, defaultValue) {
+          "Matrix, Index, any, any": function MatrixIndexAnyAny(value2, index2, replacement, defaultValue) {
             if (isEmptyIndex(index2)) {
-              return value;
+              return value2;
             }
-            validateIndexSourceSize(value, index2);
-            return value.clone().subset(index2, _broadcastReplacement(replacement, index2), defaultValue);
+            validateIndexSourceSize(value2, index2);
+            return value2.clone().subset(index2, _broadcastReplacement(replacement, index2), defaultValue);
           },
           "Array, Index, any, any": typed3.referTo("Matrix, Index, any, any", function(subsetRef) {
-            return function(value, index2, replacement, defaultValue) {
-              var subsetResult = subsetRef(matrix2(value), index2, replacement, defaultValue);
+            return function(value2, index2, replacement, defaultValue) {
+              var subsetResult = subsetRef(matrix2(value2), index2, replacement, defaultValue);
               return subsetResult.isMatrix ? subsetResult.valueOf() : subsetResult;
             };
           }),
           "Array, Index, any": typed3.referTo("Matrix, Index, any, any", function(subsetRef) {
-            return function(value, index2, replacement) {
-              return subsetRef(matrix2(value), index2, replacement, void 0).valueOf();
+            return function(value2, index2, replacement) {
+              return subsetRef(matrix2(value2), index2, replacement, void 0).valueOf();
             };
           }),
           "Matrix, Index, any": typed3.referTo("Matrix, Index, any, any", function(subsetRef) {
-            return function(value, index2, replacement) {
-              return subsetRef(value, index2, replacement, void 0);
+            return function(value2, index2, replacement) {
+              return subsetRef(value2, index2, replacement, void 0);
             };
           }),
           "string, Index, string": _setSubstring,
@@ -34260,17 +34168,17 @@ video {
         }
         function _normalize(size2) {
           var hasBigNumbers = false;
-          size2.forEach(function(value, index2, arr) {
-            if (isBigNumber(value)) {
+          size2.forEach(function(value2, index2, arr) {
+            if (isBigNumber(value2)) {
               hasBigNumbers = true;
-              arr[index2] = value.toNumber();
+              arr[index2] = value2.toNumber();
             }
           });
           return hasBigNumbers;
         }
         function _validate2(size2) {
-          size2.forEach(function(value) {
-            if (typeof value !== "number" || !isInteger(value) || value < 0) {
+          size2.forEach(function(value2) {
+            if (typeof value2 !== "number" || !isInteger(value2) || value2 < 0) {
               throw new Error("Parameters in function zeros must be positive integers");
             }
           });
@@ -34440,17 +34348,17 @@ video {
   });
 
   // node_modules/@babel/runtime/helpers/esm/defineProperty.js
-  function _defineProperty(obj, key, value) {
+  function _defineProperty(obj, key, value2) {
     key = _toPropertyKey(key);
     if (key in obj) {
       Object.defineProperty(obj, key, {
-        value,
+        value: value2,
         enumerable: true,
         configurable: true,
         writable: true
       });
     } else {
-      obj[key] = value;
+      obj[key] = value2;
     }
     return obj;
   }
@@ -34791,8 +34699,8 @@ video {
           pi: pi3
         } = _ref;
         return typed3(name113, {
-          number: (s3) => zetaNumeric(s3, (value) => value, () => 20),
-          BigNumber: (s3) => zetaNumeric(s3, (value) => new _BigNumber(value), () => {
+          number: (s3) => zetaNumeric(s3, (value2) => value2, () => 20),
+          BigNumber: (s3) => zetaNumeric(s3, (value2) => new _BigNumber(value2), () => {
             return Math.abs(Math.log10(config4.epsilon));
           }),
           Complex: zetaComplex
@@ -34822,7 +34730,7 @@ video {
           if (s3.im === Infinity || s3.re === -Infinity) {
             return new Complex3(NaN, NaN);
           }
-          return zeta2(s3, (value) => value, (s4) => Math.round(1.3 * 15 + 0.9 * Math.abs(s4.im)), (s4) => s4.re);
+          return zeta2(s3, (value2) => value2, (s4) => Math.round(1.3 * 15 + 0.9 * Math.abs(s4.im)), (s4) => s4.re);
         }
         function zeta2(s3, createValue, determineDigits, getRe) {
           var n3 = determineDigits(s3);
@@ -34885,19 +34793,19 @@ video {
           var mode2 = [];
           var max3 = 0;
           for (var i5 = 0; i5 < values.length; i5++) {
-            var value = values[i5];
-            if (isNumeric2(value) && isNaN3(value)) {
+            var value2 = values[i5];
+            if (isNumeric2(value2) && isNaN3(value2)) {
               throw new Error("Cannot calculate mode of an array containing NaN values");
             }
-            if (!(value in count2)) {
-              count2[value] = 0;
+            if (!(value2 in count2)) {
+              count2[value2] = 0;
             }
-            count2[value]++;
-            if (count2[value] === max3) {
-              mode2.push(value);
-            } else if (count2[value] > max3) {
-              max3 = count2[value];
-              mode2 = [value];
+            count2[value2]++;
+            if (count2[value2] === max3) {
+              mode2.push(value2);
+            } else if (count2[value2] > max3) {
+              max3 = count2[value2];
+              mode2 = [value2];
             }
           }
           return mode2;
@@ -34907,14 +34815,14 @@ video {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/utils/improveErrorMessage.js
-  function improveErrorMessage(err, fnName, value) {
+  function improveErrorMessage(err, fnName, value2) {
     var details;
     if (String(err).indexOf("Unexpected type") !== -1) {
-      details = arguments.length > 2 ? " (type: " + typeOf(value) + ", value: " + JSON.stringify(value) + ")" : " (type: " + err.data.actual + ")";
+      details = arguments.length > 2 ? " (type: " + typeOf(value2) + ", value: " + JSON.stringify(value2) + ")" : " (type: " + err.data.actual + ")";
       return new TypeError("Cannot calculate " + fnName + ", unexpected type of argument" + details);
     }
     if (String(err).indexOf("complex numbers") !== -1) {
-      details = arguments.length > 2 ? " (type: " + typeOf(value) + ", value: " + JSON.stringify(value) + ")" : "";
+      details = arguments.length > 2 ? " (type: " + typeOf(value2) + ", value: " + JSON.stringify(value2) + ")" : "";
       return new TypeError("Cannot calculate " + fnName + ", no ordering relation is defined for complex numbers" + details);
     }
     return err;
@@ -34955,11 +34863,11 @@ video {
         });
         function _prod(array) {
           var prod2;
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              prod2 = prod2 === void 0 ? value : multiplyScalar2(prod2, value);
+              prod2 = prod2 === void 0 ? value2 : multiplyScalar2(prod2, value2);
             } catch (err) {
-              throw improveErrorMessage(err, "prod", value);
+              throw improveErrorMessage(err, "prod", value2);
             }
           });
           if (typeof prod2 === "string") {
@@ -35085,16 +34993,16 @@ video {
   function _print(template, values, options) {
     return template.replace(/\$([\w.]+)/g, function(original, key) {
       var keys = key.split(".");
-      var value = values[keys.shift()];
-      while (keys.length && value !== void 0) {
+      var value2 = values[keys.shift()];
+      while (keys.length && value2 !== void 0) {
         var k4 = keys.shift();
-        value = k4 ? value[k4] : value + ".";
+        value2 = k4 ? value2[k4] : value2 + ".";
       }
-      if (value !== void 0) {
-        if (!isString(value)) {
-          return format3(value, options);
+      if (value2 !== void 0) {
+        if (!isString(value2)) {
+          return format3(value2, options);
         } else {
-          return value;
+          return value2;
         }
       }
       return original;
@@ -35274,23 +35182,23 @@ video {
           BigNumber: bignumber2 ? (x4) => bignumber2(x4) : noBignumber,
           Fraction: fraction2 ? (x4) => fraction2(x4) : noFraction
         };
-        return function numeric3(value) {
+        return function numeric3(value2) {
           var outputType = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "number";
           var check = arguments.length > 2 ? arguments[2] : void 0;
           if (check !== void 0) {
             throw new SyntaxError("numeric() takes one or two arguments");
           }
-          var inputType = typeOf(value);
+          var inputType = typeOf(value2);
           if (!(inputType in validInputTypes)) {
-            throw new TypeError("Cannot convert " + value + ' of type "' + inputType + '"; valid input types are ' + Object.keys(validInputTypes).join(", "));
+            throw new TypeError("Cannot convert " + value2 + ' of type "' + inputType + '"; valid input types are ' + Object.keys(validInputTypes).join(", "));
           }
           if (!(outputType in validOutputTypes)) {
-            throw new TypeError("Cannot convert " + value + ' to type "' + outputType + '"; valid output types are ' + Object.keys(validOutputTypes).join(", "));
+            throw new TypeError("Cannot convert " + value2 + ' to type "' + outputType + '"; valid output types are ' + Object.keys(validOutputTypes).join(", "));
           }
           if (outputType === inputType) {
-            return value;
+            return value2;
           } else {
-            return validOutputTypes[outputType](value);
+            return validOutputTypes[outputType](value2);
           }
         };
       });
@@ -37897,15 +37805,15 @@ video {
         }
         function _max(array) {
           var res;
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              if (isNaN(value) && typeof value === "number") {
+              if (isNaN(value2) && typeof value2 === "number") {
                 res = NaN;
-              } else if (res === void 0 || larger2(value, res)) {
-                res = value;
+              } else if (res === void 0 || larger2(value2, res)) {
+                res = value2;
               }
             } catch (err) {
-              throw improveErrorMessage(err, "max", value);
+              throw improveErrorMessage(err, "max", value2);
             }
           });
           if (res === void 0) {
@@ -37960,15 +37868,15 @@ video {
         }
         function _min(array) {
           var min3;
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              if (isNaN(value) && typeof value === "number") {
+              if (isNaN(value2) && typeof value2 === "number") {
                 min3 = NaN;
-              } else if (min3 === void 0 || smaller2(value, min3)) {
-                min3 = value;
+              } else if (min3 === void 0 || smaller2(value2, min3)) {
+                min3 = value2;
               }
             } catch (err) {
-              throw improveErrorMessage(err, "min", value);
+              throw improveErrorMessage(err, "min", value2);
             }
           });
           if (min3 === void 0) {
@@ -38298,10 +38206,10 @@ video {
         }
         FibonacciHeap2.prototype.type = "FibonacciHeap";
         FibonacciHeap2.prototype.isFibonacciHeap = true;
-        FibonacciHeap2.prototype.insert = function(key, value) {
+        FibonacciHeap2.prototype.insert = function(key, value2) {
           var node = {
             key,
-            value,
+            value: value2,
             degree: 0
           };
           if (this._minimum) {
@@ -38673,11 +38581,11 @@ video {
           Fraction: _Fraction
         } = _ref;
         var toNumber = _number;
-        function Unit2(value, valuelessUnit) {
+        function Unit2(value2, valuelessUnit) {
           if (!(this instanceof Unit2)) {
             throw new Error("Constructor must be called with the new operator");
           }
-          if (!(value === null || value === void 0 || isNumeric2(value) || isComplex(value))) {
+          if (!(value2 === null || value2 === void 0 || isNumeric2(value2) || isComplex(value2))) {
             throw new TypeError("First parameter in Unit constructor must be number, BigNumber, Fraction, Complex, or undefined");
           }
           this.fixPrefix = false;
@@ -38697,7 +38605,7 @@ video {
           } else {
             throw new TypeError("Second parameter in Unit constructor must be a string or valueless Unit");
           }
-          this.value = this._normalize(value);
+          this.value = this._normalize(value2);
         }
         Object.defineProperty(Unit2, "name", {
           value: "Unit"
@@ -38816,18 +38724,18 @@ video {
           next();
           skipWhitespace();
           var valueStr = parseNumber();
-          var value = null;
+          var value2 = null;
           if (valueStr) {
             if (config4.number === "BigNumber") {
-              value = new _BigNumber(valueStr);
+              value2 = new _BigNumber(valueStr);
             } else if (config4.number === "Fraction") {
               try {
-                value = new _Fraction(valueStr);
+                value2 = new _Fraction(valueStr);
               } catch (err) {
-                value = parseFloat(valueStr);
+                value2 = parseFloat(valueStr);
               }
             } else {
-              value = parseFloat(valueStr);
+              value2 = parseFloat(valueStr);
             }
             skipWhitespace();
             if (parseCharacter("*")) {
@@ -38921,7 +38829,7 @@ video {
           if (unit3.units.length === 0 && !options.allowNoUnits) {
             throw new SyntaxError('"' + str + '" contains no units');
           }
-          unit3.value = value !== void 0 ? unit3._normalize(value) : null;
+          unit3.value = value2 !== void 0 ? unit3._normalize(value2) : null;
           return unit3;
         };
         Unit2.prototype.clone = function() {
@@ -38950,12 +38858,12 @@ video {
           }
           return this.units.length > 1 || Math.abs(this.units[0].power - 1) > 1e-15;
         };
-        Unit2.prototype._normalize = function(value) {
-          if (value === null || value === void 0 || this.units.length === 0) {
-            return value;
+        Unit2.prototype._normalize = function(value2) {
+          if (value2 === null || value2 === void 0 || this.units.length === 0) {
+            return value2;
           }
-          var res = value;
-          var convert = Unit2._getNumberConverter(typeOf(value));
+          var res = value2;
+          var convert = Unit2._getNumberConverter(typeOf(value2));
           for (var i5 = 0; i5 < this.units.length; i5++) {
             var unitValue = convert(this.units[i5].unit.value);
             var unitPrefixValue = convert(this.units[i5].prefix.value);
@@ -38964,12 +38872,12 @@ video {
           }
           return res;
         };
-        Unit2.prototype._denormalize = function(value, prefixValue) {
-          if (value === null || value === void 0 || this.units.length === 0) {
-            return value;
+        Unit2.prototype._denormalize = function(value2, prefixValue) {
+          if (value2 === null || value2 === void 0 || this.units.length === 0) {
+            return value2;
           }
-          var res = value;
-          var convert = Unit2._getNumberConverter(typeOf(value));
+          var res = value2;
+          var convert = Unit2._getNumberConverter(typeOf(value2));
           for (var i5 = 0; i5 < this.units.length; i5++) {
             var unitValue = convert(this.units[i5].unit.value);
             var unitPrefixValue = convert(this.units[i5].prefix.value);
@@ -39129,7 +39037,7 @@ video {
           return ret;
         };
         Unit2.prototype.to = function(valuelessUnit) {
-          var value = this.value === null ? this._normalize(1) : this.value;
+          var value2 = this.value === null ? this._normalize(1) : this.value;
           var other;
           if (typeof valuelessUnit === "string") {
             other = Unit2.parse(valuelessUnit);
@@ -39145,16 +39053,16 @@ video {
             throw new Error("Cannot convert to a unit with a value");
           }
           if (this.value === null || this._isDerived() || this.units[0].unit.offset === other.units[0].unit.offset) {
-            other.value = clone(value);
+            other.value = clone(value2);
           } else {
-            var convert = Unit2._getNumberConverter(typeOf(value));
+            var convert = Unit2._getNumberConverter(typeOf(value2));
             var thisUnitValue = this.units[0].unit.value;
             var thisNominalOffset = this.units[0].unit.offset;
             var thisUnitOffset = multiplyScalar2(thisUnitValue, thisNominalOffset);
             var otherUnitValue = other.units[0].unit.value;
             var otherNominalOffset = other.units[0].unit.offset;
             var otherUnitOffset = multiplyScalar2(otherUnitValue, otherNominalOffset);
-            other.value = addScalar2(value, convert(subtract2(thisUnitOffset, otherUnitOffset)));
+            other.value = addScalar2(value2, convert(subtract2(thisUnitOffset, otherUnitOffset)));
           }
           other.fixPrefix = true;
           other.skipAutomaticSimplification = true;
@@ -39333,8 +39241,8 @@ video {
               simp.units[0].prefix = simp._bestPrefix();
             }
           }
-          var value = simp._denormalize(simp.value);
-          var str = simp.value !== null ? format5(value, options || {}) : "";
+          var value2 = simp._denormalize(simp.value);
+          var str = simp.value !== null ? format5(value2, options || {}) : "";
           var unitStr = simp.formatUnits();
           if (simp.value && isComplex(simp.value)) {
             str = "(" + str + ")";
@@ -41943,11 +41851,11 @@ video {
               allowNoUnits: true
             });
           },
-          "number | BigNumber | Fraction | Complex, string | Unit": function numberBigNumberFractionComplexStringUnit(value, unit2) {
-            return new Unit2(value, unit2);
+          "number | BigNumber | Fraction | Complex, string | Unit": function numberBigNumberFractionComplexStringUnit(value2, unit2) {
+            return new Unit2(value2, unit2);
           },
-          "number | BigNumber | Fraction": function numberBigNumberFraction(value) {
-            return new Unit2(value);
+          "number | BigNumber | Fraction": function numberBigNumberFraction(value2) {
+            return new Unit2(value2);
           },
           "Array | Matrix": typed3.referToSelf((self2) => (x4) => deepMap(x4, self2))
         });
@@ -43266,13 +43174,13 @@ video {
             if (isComplex(args[i5])) {
               throw new TypeError("Unexpected type of argument to hypot");
             }
-            var value = abs3(args[i5]);
-            if (smaller2(largest, value)) {
-              result = multiplyScalar2(result, multiplyScalar2(divideScalar2(largest, value), divideScalar2(largest, value)));
+            var value2 = abs3(args[i5]);
+            if (smaller2(largest, value2)) {
+              result = multiplyScalar2(result, multiplyScalar2(divideScalar2(largest, value2), divideScalar2(largest, value2)));
               result = addScalar2(result, 1);
-              largest = value;
+              largest = value2;
             } else {
-              result = addScalar2(result, isPositive2(value) ? multiplyScalar2(divideScalar2(value, largest), divideScalar2(value, largest)) : value);
+              result = addScalar2(result, isPositive2(value2) ? multiplyScalar2(divideScalar2(value2, largest), divideScalar2(value2, largest)) : value2);
             }
           }
           return multiplyScalar2(largest, sqrt3(result));
@@ -43330,8 +43238,8 @@ video {
         });
         function _vectorNormPlusInfinity(x4) {
           var pinf = 0;
-          x4.forEach(function(value) {
-            var v3 = abs3(value);
+          x4.forEach(function(value2) {
+            var v3 = abs3(value2);
             if (larger2(v3, pinf)) {
               pinf = v3;
             }
@@ -43340,8 +43248,8 @@ video {
         }
         function _vectorNormMinusInfinity(x4) {
           var ninf;
-          x4.forEach(function(value) {
-            var v3 = abs3(value);
+          x4.forEach(function(value2) {
+            var v3 = abs3(value2);
             if (!ninf || smaller2(v3, ninf)) {
               ninf = v3;
             }
@@ -43361,8 +43269,8 @@ video {
           if (typeof p3 === "number" && !isNaN(p3)) {
             if (!equalScalar2(p3, 0)) {
               var n3 = 0;
-              x4.forEach(function(value) {
-                n3 = add3(pow3(abs3(value), p3), n3);
+              x4.forEach(function(value2) {
+                n3 = add3(pow3(abs3(value2), p3), n3);
               }, true);
               return pow3(n3, 1 / p3);
             }
@@ -43372,17 +43280,17 @@ video {
         }
         function _matrixNormFrobenius(x4) {
           var fro = 0;
-          x4.forEach(function(value, index2) {
-            fro = add3(fro, multiply2(value, conj2(value)));
+          x4.forEach(function(value2, index2) {
+            fro = add3(fro, multiply2(value2, conj2(value2)));
           });
           return abs3(sqrt3(fro));
         }
         function _matrixNormOne(x4) {
           var c3 = [];
           var maxc = 0;
-          x4.forEach(function(value, index2) {
+          x4.forEach(function(value2, index2) {
             var j4 = index2[1];
-            var cj = add3(c3[j4] || 0, abs3(value));
+            var cj = add3(c3[j4] || 0, abs3(value2));
             if (larger2(cj, maxc)) {
               maxc = cj;
             }
@@ -43404,9 +43312,9 @@ video {
         function _matrixNormInfinity(x4) {
           var r3 = [];
           var maxr = 0;
-          x4.forEach(function(value, index2) {
+          x4.forEach(function(value2, index2) {
             var i5 = index2[0];
-            var ri = add3(r3[i5] || 0, abs3(value));
+            var ri = add3(r3[i5] || 0, abs3(value2));
             if (larger2(ri, maxr)) {
               maxr = ri;
             }
@@ -44430,23 +44338,23 @@ video {
       subset: subset2,
       matrix: matrix2
     } = _ref;
-    return function assign2(object, index2, value) {
+    return function assign2(object, index2, value2) {
       try {
         if (Array.isArray(object)) {
-          var result = matrix2(object).subset(index2, value).valueOf();
+          var result = matrix2(object).subset(index2, value2).valueOf();
           result.forEach((item, index3) => {
             object[index3] = item;
           });
           return object;
         } else if (object && typeof object.subset === "function") {
-          return object.subset(index2, value);
+          return object.subset(index2, value2);
         } else if (typeof object === "string") {
-          return subset2(object, index2, value);
+          return subset2(object, index2, value2);
         } else if (typeof object === "object") {
           if (!index2.isObjectProperty()) {
             throw TypeError("Cannot apply a numeric index as object property");
           }
-          setSafeProperty(object, index2.getObjectProperty(), value);
+          setSafeProperty(object, index2.getObjectProperty(), value2);
           return object;
         } else {
           throw new TypeError("Cannot apply index: unsupported type of object");
@@ -44839,11 +44747,11 @@ video {
            * @param {Node} value
            *     The value to be assigned
            */
-          constructor(object, index2, value) {
+          constructor(object, index2, value2) {
             super();
             this.object = object;
-            this.index = value ? index2 : null;
-            this.value = value || index2;
+            this.index = value2 ? index2 : null;
+            this.value = value2 || index2;
             if (!isSymbolNode(object) && !isAccessorNode(object)) {
               throw new TypeError('SymbolNode or AccessorNode expected as "object"');
             }
@@ -44895,25 +44803,25 @@ video {
                 throw new TypeError("SymbolNode expected as object");
               }
               return function evalAssignmentNode(scope, args, context) {
-                var value = evalValue(scope, args, context);
-                scope.set(name307, value);
-                return value;
+                var value2 = evalValue(scope, args, context);
+                scope.set(name307, value2);
+                return value2;
               };
             } else if (this.index.isObjectProperty()) {
               var prop = this.index.getObjectProperty();
               return function evalAssignmentNode(scope, args, context) {
                 var object = evalObject(scope, args, context);
-                var value = evalValue(scope, args, context);
-                setSafeProperty(object, prop, value);
-                return value;
+                var value2 = evalValue(scope, args, context);
+                setSafeProperty(object, prop, value2);
+                return value2;
               };
             } else if (isSymbolNode(this.object)) {
               return function evalAssignmentNode(scope, args, context) {
                 var childObject = evalObject(scope, args, context);
-                var value = evalValue(scope, args, context);
+                var value2 = evalValue(scope, args, context);
                 var index2 = evalIndex(scope, args, childObject);
-                scope.set(name307, assign2(childObject, index2, value));
-                return value;
+                scope.set(name307, assign2(childObject, index2, value2));
+                return value2;
               };
             } else {
               var evalParentObject = this.object.object._compile(math2, argNames);
@@ -44923,9 +44831,9 @@ video {
                   var parent = evalParentObject(scope, args, context);
                   var childObject = getSafeProperty(parent, parentProp);
                   var index2 = evalIndex(scope, args, childObject);
-                  var value = evalValue(scope, args, context);
-                  setSafeProperty(parent, parentProp, assign2(childObject, index2, value));
-                  return value;
+                  var value2 = evalValue(scope, args, context);
+                  setSafeProperty(parent, parentProp, assign2(childObject, index2, value2));
+                  return value2;
                 };
               } else {
                 var evalParentIndex = this.object.index._compile(math2, argNames);
@@ -44934,9 +44842,9 @@ video {
                   var parentIndex = evalParentIndex(scope, args, parent);
                   var childObject = access(parent, parentIndex);
                   var index2 = evalIndex(scope, args, childObject);
-                  var value = evalValue(scope, args, context);
-                  assign2(parent, parentIndex, assign2(childObject, index2, value));
-                  return value;
+                  var value2 = evalValue(scope, args, context);
+                  assign2(parent, parentIndex, assign2(childObject, index2, value2));
+                  return value2;
                 };
               }
             }
@@ -44961,8 +44869,8 @@ video {
           map(callback) {
             var object = this._ifNode(callback(this.object, "object", this));
             var index2 = this.index ? this._ifNode(callback(this.index, "index", this)) : null;
-            var value = this._ifNode(callback(this.value, "value", this));
-            return new AssignmentNode2(object, index2, value);
+            var value2 = this._ifNode(callback(this.value, "value", this));
+            return new AssignmentNode2(object, index2, value2);
           }
           /**
            * Create a clone of this node, a shallow copy
@@ -44979,11 +44887,11 @@ video {
           _toString(options) {
             var object = this.object.toString(options);
             var index2 = this.index ? this.index.toString(options) : "";
-            var value = this.value.toString(options);
+            var value2 = this.value.toString(options);
             if (needParenthesis(this, options && options.parenthesis, options && options.implicit)) {
-              value = "(" + value + ")";
+              value2 = "(" + value2 + ")";
             }
-            return object + index2 + " = " + value;
+            return object + index2 + " = " + value2;
           }
           /**
            * Get a JSON representation of the node
@@ -45016,11 +44924,11 @@ video {
           toHTML(options) {
             var object = this.object.toHTML(options);
             var index2 = this.index ? this.index.toHTML(options) : "";
-            var value = this.value.toHTML(options);
+            var value2 = this.value.toHTML(options);
             if (needParenthesis(this, options && options.parenthesis, options && options.implicit)) {
-              value = '<span class="math-paranthesis math-round-parenthesis">(</span>' + value + '<span class="math-paranthesis math-round-parenthesis">)</span>';
+              value2 = '<span class="math-paranthesis math-round-parenthesis">(</span>' + value2 + '<span class="math-paranthesis math-round-parenthesis">)</span>';
             }
-            return object + index2 + '<span class="math-operator math-assignment-operator math-variable-assignment-operator math-binary-operator">=</span>' + value;
+            return object + index2 + '<span class="math-operator math-assignment-operator math-variable-assignment-operator math-binary-operator">=</span>' + value2;
           }
           /**
            * Get LaTeX representation
@@ -45030,11 +44938,11 @@ video {
           _toTex(options) {
             var object = this.object.toTex(options);
             var index2 = this.index ? this.index.toTex(options) : "";
-            var value = this.value.toTex(options);
+            var value2 = this.value.toTex(options);
             if (needParenthesis(this, options && options.parenthesis, options && options.implicit)) {
-              value = "\\left(".concat(value, "\\right)");
+              value2 = "\\left(".concat(value2, "\\right)");
             }
-            return object + index2 + ":=" + value;
+            return object + index2 + ":=" + value2;
           }
         }
         _defineProperty(AssignmentNode2, "name", name208);
@@ -46021,9 +45929,9 @@ video {
            * @constructor ConstantNode
            * @extends {Node}
            */
-          constructor(value) {
+          constructor(value2) {
             super();
-            this.value = value;
+            this.value = value2;
           }
           get type() {
             return name211;
@@ -46045,9 +45953,9 @@ video {
            *                        evalNode(scope: Object, args: Object, context: *)
            */
           _compile(math2, argNames) {
-            var value = this.value;
+            var value2 = this.value;
             return function evalConstantNode() {
-              return value;
+              return value2;
             };
           }
           /**
@@ -46086,22 +45994,22 @@ video {
            * @return {string} str
            */
           toHTML(options) {
-            var value = this._toString(options);
+            var value2 = this._toString(options);
             switch (typeOf(this.value)) {
               case "number":
               case "BigNumber":
               case "Fraction":
-                return '<span class="math-number">' + value + "</span>";
+                return '<span class="math-number">' + value2 + "</span>";
               case "string":
-                return '<span class="math-string">' + value + "</span>";
+                return '<span class="math-string">' + value2 + "</span>";
               case "boolean":
-                return '<span class="math-boolean">' + value + "</span>";
+                return '<span class="math-boolean">' + value2 + "</span>";
               case "null":
-                return '<span class="math-null-symbol">' + value + "</span>";
+                return '<span class="math-null-symbol">' + value2 + "</span>";
               case "undefined":
-                return '<span class="math-undefined">' + value + "</span>";
+                return '<span class="math-undefined">' + value2 + "</span>";
               default:
-                return '<span class="math-symbol">' + value + "</span>";
+                return '<span class="math-symbol">' + value2 + "</span>";
             }
           }
           /**
@@ -46130,26 +46038,26 @@ video {
            * @return {string} str
            */
           _toTex(options) {
-            var value = this._toString(options);
+            var value2 = this._toString(options);
             switch (typeOf(this.value)) {
               case "string":
-                return "\\mathtt{" + escapeLatex(value) + "}";
+                return "\\mathtt{" + escapeLatex(value2) + "}";
               case "number":
               case "BigNumber":
                 {
                   if (!isFinite(this.value)) {
                     return this.value.valueOf() < 0 ? "-\\infty" : "\\infty";
                   }
-                  var index2 = value.toLowerCase().indexOf("e");
+                  var index2 = value2.toLowerCase().indexOf("e");
                   if (index2 !== -1) {
-                    return value.substring(0, index2) + "\\cdot10^{" + value.substring(index2 + 1) + "}";
+                    return value2.substring(0, index2) + "\\cdot10^{" + value2.substring(index2 + 1) + "}";
                   }
                 }
-                return value;
+                return value2;
               case "Fraction":
                 return this.value.toLatex();
               default:
-                return value;
+                return value2;
             }
           }
         }
@@ -48200,18 +48108,18 @@ video {
                 var fn2 = _name in math3 ? getSafeProperty(math3, _name) : void 0;
                 var isRaw = typeof fn2 === "function" && fn2.rawArgs === true;
                 var resolveFn = (scope) => {
-                  var value;
+                  var value2;
                   if (scope.has(_name)) {
-                    value = scope.get(_name);
+                    value2 = scope.get(_name);
                   } else if (_name in math3) {
-                    value = getSafeProperty(math3, _name);
+                    value2 = getSafeProperty(math3, _name);
                   } else {
                     return FunctionNode2.onUndefinedFunction(_name);
                   }
-                  if (typeof value === "function") {
-                    return value;
+                  if (typeof value2 === "function") {
+                    return value2;
                   }
-                  throw new TypeError("'".concat(_name, "' is not a function; its value is:\n  ").concat(strin(value)));
+                  throw new TypeError("'".concat(_name, "' is not a function; its value is:\n  ").concat(strin(value2)));
                 };
                 if (isRaw) {
                   var rawArgs = this.args;
@@ -48867,18 +48775,18 @@ video {
           }
         }
         function parseAssignment(state) {
-          var name307, args, value, valid;
+          var name307, args, value2, valid;
           var node = parseConditional(state);
           if (state.token === "=") {
             if (isSymbolNode(node)) {
               name307 = node.name;
               getTokenSkipNewline(state);
-              value = parseAssignment(state);
-              return new AssignmentNode2(new SymbolNode2(name307), value);
+              value2 = parseAssignment(state);
+              return new AssignmentNode2(new SymbolNode2(name307), value2);
             } else if (isAccessorNode(node)) {
               getTokenSkipNewline(state);
-              value = parseAssignment(state);
-              return new AssignmentNode2(node.object, node.index, value);
+              value2 = parseAssignment(state);
+              return new AssignmentNode2(node.object, node.index, value2);
             } else if (isFunctionNode(node) && isSymbolNode(node.fn)) {
               valid = true;
               args = [];
@@ -48892,8 +48800,8 @@ video {
               });
               if (valid) {
                 getTokenSkipNewline(state);
-                value = parseAssignment(state);
-                return new FunctionAssignmentNode2(name307, args, value);
+                value2 = parseAssignment(state);
+                return new FunctionAssignmentNode2(name307, args, value2);
               }
             }
             throw createSyntaxError(state, "Invalid left hand side of assignment operator =");
@@ -49619,9 +49527,9 @@ video {
         Parser2.prototype.getAllAsMap = function() {
           return this.scope;
         };
-        Parser2.prototype.set = function(name307, value) {
-          this.scope.set(name307, value);
-          return value;
+        Parser2.prototype.set = function(name307, value2) {
+          this.scope.set(name307, value2);
+          return value2;
         };
         Parser2.prototype.remove = function(name307) {
           this.scope.delete(name307);
@@ -51452,14 +51360,14 @@ video {
           math: math2,
           typed: typed3
         } = _ref;
-        function Chain2(value) {
+        function Chain2(value2) {
           if (!(this instanceof Chain2)) {
             throw new SyntaxError("Constructor must be called with the new operator");
           }
-          if (isChain(value)) {
-            this.value = value.value;
+          if (isChain(value2)) {
+            this.value = value2.value;
           } else {
-            this.value = value;
+            this.value = value2;
           }
         }
         Chain2.prototype.type = "Chain";
@@ -55962,8 +55870,8 @@ video {
           "": function _3() {
             return new Chain2();
           },
-          any: function any(value) {
-            return new Chain2(value);
+          any: function any(value2) {
+            return new Chain2(value2);
           }
         });
       });
@@ -56132,13 +56040,13 @@ video {
           }
         });
         function _inv(mat, rows, cols) {
-          var r3, s3, f3, value, temp;
+          var r3, s3, f3, value2, temp;
           if (rows === 1) {
-            value = mat[0][0];
-            if (value === 0) {
+            value2 = mat[0][0];
+            if (value2 === 0) {
               throw Error("Cannot calculate inverse, determinant is zero");
             }
-            return [[divideScalar2(1, value)]];
+            return [[divideScalar2(1, value2)]];
           } else if (rows === 2) {
             var d3 = det2(mat);
             if (d3 === 0) {
@@ -56992,10 +56900,10 @@ video {
         vectors
       };
     }
-    function createArray(size2, value) {
+    function createArray(size2, value2) {
       var array = new Array(size2);
       for (var i5 = 0; i5 < size2; i5++) {
-        array[i5] = value;
+        array[i5] = value2;
       }
       return array;
     }
@@ -58077,11 +57985,11 @@ video {
         });
         function _sum(array) {
           var sum3;
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              sum3 = sum3 === void 0 ? value : add3(sum3, value);
+              sum3 = sum3 === void 0 ? value2 : add3(sum3, value2);
             } catch (err) {
-              throw improveErrorMessage(err, "sum", value);
+              throw improveErrorMessage(err, "sum", value2);
             }
           });
           if (sum3 === void 0) {
@@ -58236,12 +58144,12 @@ video {
         function _mean(array) {
           var sum3;
           var num = 0;
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              sum3 = sum3 === void 0 ? value : add3(sum3, value);
+              sum3 = sum3 === void 0 ? value2 : add3(sum3, value2);
               num++;
             } catch (err) {
-              throw improveErrorMessage(err, "mean", value);
+              throw improveErrorMessage(err, "mean", value2);
             }
           });
           if (num === 0) {
@@ -58297,8 +58205,8 @@ video {
           }
         }
         var middle = typed3({
-          "number | BigNumber | Complex | Unit": function numberBigNumberComplexUnit(value) {
-            return value;
+          "number | BigNumber | Complex | Unit": function numberBigNumberComplexUnit(value2) {
+            return value2;
           }
         });
         var middle2 = typed3({
@@ -58357,8 +58265,8 @@ video {
           }
           try {
             var med = median2(array);
-            return median2(map3(array, function(value) {
-              return abs3(subtract2(value, med));
+            return median2(map3(array, function(value2) {
+              return abs3(subtract2(value2, med));
             }));
           } catch (err) {
             if (err instanceof TypeError && err.message.indexOf("median") !== -1) {
@@ -58417,20 +58325,20 @@ video {
           if (array.length === 0) {
             throw new SyntaxError("Function variance requires one or more parameters (0 provided)");
           }
-          deepForEach(array, function(value) {
+          deepForEach(array, function(value2) {
             try {
-              sum3 = sum3 === void 0 ? value : add3(sum3, value);
+              sum3 = sum3 === void 0 ? value2 : add3(sum3, value2);
               num++;
             } catch (err) {
-              throw improveErrorMessage(err, "variance", value);
+              throw improveErrorMessage(err, "variance", value2);
             }
           });
           if (num === 0)
             throw new Error("Cannot calculate variance of an empty array");
           var mean2 = divide3(sum3, num);
           sum3 = void 0;
-          deepForEach(array, function(value) {
-            var diff2 = subtract2(value, mean2);
+          deepForEach(array, function(value2) {
+            var diff2 = subtract2(value2, mean2);
             sum3 = sum3 === void 0 ? multiply2(diff2, diff2) : add3(sum3, multiply2(diff2, diff2));
           });
           if (isNaN3(sum3)) {
@@ -58590,9 +58498,9 @@ video {
             var _index = prob * (len - 1);
             var _fracPart = _index % 1;
             if (_fracPart === 0) {
-              var value = sorted ? flat[_index] : partitionSelect2(flat, _index);
-              validate2(value);
-              return value;
+              var value2 = sorted ? flat[_index] : partitionSelect2(flat, _index);
+              validate2(value2);
+              return value2;
             }
             var _integerPart = Math.floor(_index);
             var _left;
@@ -62207,15 +62115,15 @@ video {
               var variables = Array.from(within).join(", ");
               throw new ReferenceError("recursive loop of variable definitions among {".concat(variables, "}"));
             }
-            var value = scope.get(node.name);
-            if (isNode(value)) {
+            var value2 = scope.get(node.name);
+            if (isNode(value2)) {
               var nextWithin = new Set(within);
               nextWithin.add(node.name);
-              return _resolve(value, scope, nextWithin);
-            } else if (typeof value === "number") {
-              return parse2(String(value));
-            } else if (value !== void 0) {
-              return new ConstantNode2(value);
+              return _resolve(value2, scope, nextWithin);
+            } else if (typeof value2 === "number") {
+              return parse2(String(value2));
+            } else if (value2 !== void 0) {
+              return new ConstantNode2(value2);
             } else {
               return node;
             }
@@ -62669,8 +62577,8 @@ video {
           node.compile().evaluate();
           throw new Error("Expected TypeError, but none found");
         }
-        function createConstantNode2(value, valueType) {
-          return new ConstantNode2(numeric3(value, valueType || config4.number));
+        function createConstantNode2(value2, valueType) {
+          return new ConstantNode2(numeric3(value2, valueType || config4.number));
         }
         return derivative2;
       });
@@ -63470,12 +63378,12 @@ video {
         var {
           classes: classes2
         } = _ref;
-        return function reviver2(key, value) {
-          var constructor = classes2[value && value.mathjs];
+        return function reviver2(key, value2) {
+          var constructor = classes2[value2 && value2.mathjs];
           if (constructor && typeof constructor.fromJSON === "function") {
-            return constructor.fromJSON(value);
+            return constructor.fromJSON(value2);
           }
-          return value;
+          return value2;
         };
       });
     }
@@ -63489,14 +63397,14 @@ video {
       name287 = "replacer";
       dependencies287 = [];
       createReplacer = /* @__PURE__ */ factory(name287, dependencies287, () => {
-        return function replacer2(key, value) {
-          if (typeof value === "number" && (!isFinite(value) || isNaN(value))) {
+        return function replacer2(key, value2) {
+          if (typeof value2 === "number" && (!isFinite(value2) || isNaN(value2))) {
             return {
               mathjs: "number",
-              value: String(value)
+              value: String(value2)
             };
           }
-          return value;
+          return value2;
         };
       });
     }
@@ -63634,20 +63542,20 @@ video {
         Unit: Unit2,
         BigNumber: BigNumber2
       } = _ref;
-      var value = config4.number === "BigNumber" ? new BigNumber2(valueStr) : parseFloat(valueStr);
-      var unit2 = new Unit2(value, unitStr);
+      var value2 = config4.number === "BigNumber" ? new BigNumber2(valueStr) : parseFloat(valueStr);
+      var unit2 = new Unit2(value2, unitStr);
       unit2.fixPrefix = true;
       return unit2;
     });
   }
-  function numberFactory(name307, value) {
+  function numberFactory(name307, value2) {
     var dependencies307 = ["config", "BigNumber"];
     return factory(name307, dependencies307, (_ref2) => {
       var {
         config: config4,
         BigNumber: BigNumber2
       } = _ref2;
-      return config4.number === "BigNumber" ? new BigNumber2(value) : value;
+      return config4.number === "BigNumber" ? new BigNumber2(value2) : value2;
     });
   }
   var createSpeedOfLight, createGravitationConstant, createPlanckConstant, createReducedPlanckConstant, createMagneticConstant, createElectricConstant, createVacuumImpedance, createCoulomb, createElementaryCharge, createBohrMagneton, createConductanceQuantum, createInverseConductanceQuantum, createMagneticFluxQuantum, createNuclearMagneton, createKlitzing, createBohrRadius, createClassicalElectronRadius, createElectronMass, createFermiCoupling, createFineStructure, createHartreeEnergy, createProtonMass, createDeuteronMass, createNeutronMass, createQuantumOfCirculation, createRydberg, createThomsonCrossSection, createWeakMixingAngle, createEfimovFactor, createAtomicMass, createAvogadro, createBoltzmann, createFaraday, createFirstRadiation, createLoschmidt, createGasConstant, createMolarPlanckConstant, createMolarVolume, createSackurTetrode, createSecondRadiation, createStefanBoltzmann, createWienDisplacement, createMolarMass, createMolarMassC12, createGravity, createPlanckLength, createPlanckMass, createPlanckTime, createPlanckCharge, createPlanckTemperature;
@@ -63815,8 +63723,8 @@ video {
 
   // node_modules/mathjs/lib/esm/expression/transform/filter.transform.js
   function _filter(x4, callback) {
-    return filter(x4, function(value, index2, array) {
-      return applyCallback(callback, value, [index2 + 1], array, "filter");
+    return filter(x4, function(value2, index2, array) {
+      return applyCallback(callback, value2, [index2 + 1], array, "filter");
     });
   }
   var name290, dependencies290, createFilterTransform;
@@ -63897,13 +63805,13 @@ video {
         forEachTransform.rawArgs = true;
         var _forEach2 = typed3("forEach", {
           "Array | Matrix, function": function ArrayMatrixFunction(array, callback) {
-            var recurse = function recurse2(value, index2) {
-              if (Array.isArray(value)) {
-                forEach(value, function(child, i5) {
+            var recurse = function recurse2(value2, index2) {
+              if (Array.isArray(value2)) {
+                forEach(value2, function(child, i5) {
                   recurse2(child, index2.concat(i5 + 1));
                 });
               } else {
-                return applyCallback(callback, value, index2, array, "forEach");
+                return applyCallback(callback, value2, index2, array, "forEach");
               }
             };
             recurse(array.valueOf(), []);
@@ -63968,13 +63876,13 @@ video {
 
   // node_modules/mathjs/lib/esm/expression/transform/map.transform.js
   function _map2(array, callback, orig) {
-    function recurse(value, index2) {
-      if (Array.isArray(value)) {
-        return map(value, function(child, i5) {
+    function recurse(value2, index2) {
+      if (Array.isArray(value2)) {
+        return map(value2, function(child, i5) {
           return recurse(child, index2.concat(i5 + 1));
         });
       } else {
-        return applyCallback(callback, value, index2, orig, "map");
+        return applyCallback(callback, value2, index2, orig, "map");
       }
     }
     return recurse(array, []);
@@ -67396,7 +67304,7 @@ video {
       init_esm();
       init_material_color_utilities();
       AliasSchema = z3.object({
-        id: z3.string().uuid(),
+        id: z3.string(),
         name: z3.string(),
         color: z3.array(
           z3.object({
@@ -67417,7 +67325,7 @@ video {
       });
       AliasFunctionSchema = z3.function(z3.tuple([z3.string()])).returns(AliasMethodsSchema);
       ThemeColorDataSchema = z3.object({
-        id: z3.string().uuid(),
+        id: z3.string(),
         name: z3.string(),
         sourceHex: z3.string(),
         sourceColor: ColorSchema,
@@ -67828,6 +67736,101 @@ video {
     }
   });
 
+  // src/lib/color-utils.ts
+  function getStopsFromString(text) {
+    var _a;
+    const allIntegers = (_a = text.match(/\b\d+\b/g)) == null ? void 0 : _a.map(Number);
+    if (!allIntegers) {
+      return [];
+    }
+    const stops = new Set(
+      allIntegers.filter((n3) => n3 >= 0 && n3 <= 100)
+    );
+    return Array.from(stops);
+  }
+  var init_color_utils2 = __esm({
+    "src/lib/color-utils.ts"() {
+      "use strict";
+      init_useColor();
+      init_material_color_utilities();
+    }
+  });
+
+  // src/components/tabs.tsx
+  var TabGroup, tabs_default;
+  var init_tabs2 = __esm({
+    "src/components/tabs.tsx"() {
+      "use strict";
+      init_preact_module();
+      init_hooks_module();
+      init_lib2();
+      init_lib2();
+      init_useThemeColor();
+      init_esm2();
+      init_color_utils2();
+      TabGroup = (theme) => {
+        const [tabValue, setTabValue] = h2("Primitives");
+        const themeColor = useThemeColor("397456");
+        const [tones, setTones] = h2(themeColor.tones.join(", "));
+        p2(() => {
+          themeColor.setTones(getStopsFromString(tones));
+        }, [tones]);
+        const nameTheNameless = () => {
+          if (!themeColor.name) {
+            themeColor.setName("Color");
+          }
+        };
+        const options = [
+          {
+            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 p-1" }, /* @__PURE__ */ y(
+              Textbox,
+              {
+                value: themeColor.name,
+                onChange: (e6) => themeColor.setName(e6.currentTarget.value),
+                onBlur: () => nameTheNameless(),
+                onfocusout: () => nameTheNameless(),
+                placeholder: "Color name"
+              }
+            ), /* @__PURE__ */ y("p", { className: "p-2" }, themeColor.name)), /* @__PURE__ */ y("div", { className: "grow h-full w-172 p-1 border-l border-neutral-700" }, /* @__PURE__ */ y(
+              TextboxColor,
+              {
+                hexColor: themeColor.sourceColor.sourceHex,
+                onHexColorInput: (e6) => themeColor.setSourceHex(e6.currentTarget.value),
+                onOpacityInput: (e6) => "100%",
+                opacity: "100%"
+              }
+            ), /* @__PURE__ */ y("p", { className: "p-2" }, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone)))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-neutral-700" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Hue")), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Chroma"))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
+              TextboxMultiline,
+              {
+                value: tones,
+                onInput: (e6) => setTones(e6.currentTarget.value),
+                placeholder: "Return tones 0-100"
+              }
+            ))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Aliases"))), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
+            value: "Primitives"
+          },
+          {
+            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
+            value: "Aliases"
+          }
+        ];
+        function handleValueChange(newValue) {
+          console.log(newValue);
+          setTabValue(newValue);
+        }
+        return /* @__PURE__ */ y(
+          Tabs,
+          {
+            onValueChange: handleValueChange,
+            options,
+            value: tabValue
+          }
+        );
+      };
+      tabs_default = TabGroup;
+    }
+  });
+
   // src/hooks/useAlias.ts
   var aliasId, AliasDataSchema, AliasActionsSchema, AliasSchema2, useAliasStore;
   var init_useAlias = __esm({
@@ -67900,18 +67903,19 @@ video {
       ThemeColorFunctionSchema = z3.function(z3.tuple([z3.string()])).returns(
         z3.object({
           themeColor: ThemeColorSchema,
+          setThemeColor: z3.function().args(ThemeColorSchema, z3.void()),
           remove: z3.function().args(z3.void())
         })
       );
       AliasGroupDataSchema = z3.object({
-        id: z3.string().uuid(),
+        id: z3.string(),
         name: z3.string(),
-        themeColors: z3.array(z3.string().uuid()),
+        themeColors: z3.array(z3.string()),
         aliases: z3.array(AliasSchema2)
       });
       AliasGroupSchema = AliasGroupDataSchema;
       ThemeDataSchema = z3.object({
-        id: z3.string().uuid(),
+        id: z3.string(),
         name: z3.string(),
         themeColors: z3.array(ThemeColorSchema),
         aliasGroups: z3.array(AliasGroupSchema)
@@ -67931,33 +67935,6 @@ video {
         name: "Alias group",
         themeColors: [],
         aliases: []
-        // setId: (id) => set(() => ({ id: id })),
-        // setName: (name) => set(() => ({ name: name })),
-        // setThemeColors: (themeColors) => set(() => ({ themeColors })),
-        // removeThemeColor: (themeColor) =>
-        // 	set((state) => {
-        // 		const newThemeColors = [...state.themeColors];
-        // 		const index = newThemeColors.indexOf(themeColor);
-        // 		if (index !== -1) {
-        // 			newThemeColors.splice(index, 1);
-        // 		}
-        // 		return { themeColors: newThemeColors };
-        // 	}),
-        // addAlias: (alias) =>
-        // 	set((state) => {
-        // 		const newAliases = [...state.aliases];
-        // 		newAliases.push(alias);
-        // 		return { aliases: newAliases };
-        // 	}),
-        // removeAlias: (alias) =>
-        // 	set((state) => {
-        // 		const newAliases = [...state.aliases];
-        // 		const index = newAliases.indexOf(alias);
-        // 		if (index !== -1) {
-        // 			newAliases.splice(index, 1);
-        // 		}
-        // 		return { aliases: newAliases };
-        // 	}),
       });
       useAliasGroupStore = create()((...a3) => __spreadValues({}, aliasGroupStore(...a3)));
       themeStore = (set) => ({
@@ -67982,13 +67959,19 @@ video {
             throw new Error(`Could not find theme color with id ${themeColorId}`);
           }
           const themeColor = requestedThemeColor;
+          const setThemeColor = (newThemeColor) => {
+            const index2 = state.themeColors.indexOf(themeColor);
+            if (index2 !== -1) {
+              state.themeColors[index2] = newThemeColor;
+            }
+          };
           const remove = () => {
             const index2 = state.themeColors.indexOf(themeColor);
             if (index2 !== -1) {
               state.themeColors.splice(index2, 1);
             }
           };
-          return { themeColor, remove };
+          return { themeColor, setThemeColor, remove };
         },
         addAliasGroup: (aliasGroup) => {
           set((state) => {
@@ -68029,23 +68012,45 @@ video {
         const themeColors = theme.themeColors;
         const setThemeColors = (themeColors2) => theme.setThemeColors(themeColors2);
         const addThemeColor = () => {
-          setThemeColors([...themeColors, newThemeColor]);
+          const themeColor2 = __spreadProps(__spreadValues({}, newThemeColor), {
+            id: nanoid(12),
+            name: "Theme color"
+          });
+          theme.addThemeColor(themeColor2);
         };
-        const themeColor = (themeColorId) => {
-          const requestedThemeColor = themeColors.find(
-            (themeColor3) => themeColor3.id === themeColorId
-          );
+        const themeColor = (themeColorIdOrIndex) => {
+          let requestedThemeColor;
+          let index2;
+          if (typeof themeColorIdOrIndex === "number") {
+            index2 = themeColorIdOrIndex;
+            requestedThemeColor = themeColors[index2];
+          } else if (typeof themeColorIdOrIndex === "string") {
+            requestedThemeColor = themeColors.find(
+              (themeColor3) => themeColor3.id === themeColorIdOrIndex
+            );
+          }
           if (!requestedThemeColor) {
-            throw new Error(`Could not find theme color with id ${themeColorId}`);
+            throw new Error(
+              `Could not find theme color with id or index ${themeColorIdOrIndex}`
+            );
           }
           const themeColor2 = requestedThemeColor;
+          const setThemeColor = (newThemeColor2) => theme.themeColor(themeColor2.id).setThemeColor(newThemeColor2);
           const remove = () => {
-            const index2 = themeColors.indexOf(themeColor2);
-            if (index2 !== -1) {
+            if (index2 !== void 0) {
               themeColors.splice(index2, 1);
+            } else {
+              const index3 = themeColors.indexOf(themeColor2);
+              if (index3 !== -1) {
+                themeColors.splice(index3, 1);
+              }
             }
           };
-          return { themeColor: themeColor2, remove };
+          return {
+            themeColor: themeColor2,
+            setThemeColor,
+            remove
+          };
         };
         const aliasGroups = theme.aliasGroups;
         const addAliasGroup = () => {
@@ -68124,12 +68129,26 @@ video {
           console.log(theme);
         }, []);
         const log4 = () => {
-          theme.themeColors.forEach((themeColor2) => {
-            themeColor2.setId(nanoid(6));
-          });
+          theme.setId(nanoid(6));
+          theme.addThemeColor(primary);
           console.log(theme);
+          console.log(nanoid(6));
         };
-        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "overflow-y-auto h-full bg-neutral-800" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute w-full h-px bg-neutral-700 top-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 left-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 right-32" })), /* @__PURE__ */ y("div", { className: "h-10 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "grow flex flex-row justify-between" }, /* @__PURE__ */ y(tabs_default, null), /* @__PURE__ */ y("div", { className: "h-full px-4 flex items-center justify-center" }, /* @__PURE__ */ y(Button, { onClick: log4 }, "log"))), /* @__PURE__ */ y("div", { className: "h-full w-32 flex items-center justify-center" }, "Build")));
+        const nameTheNameless = () => {
+          if (!theme.name) {
+            theme.setName("Theme");
+          }
+        };
+        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "overflow-y-auto h-full bg-neutral-800" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute w-full h-px bg-neutral-700 top-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 left-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 right-32" })), /* @__PURE__ */ y("div", { className: "h-10 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "grow flex flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "h-full px-2 flex items-center justify-center" }, /* @__PURE__ */ y(
+          Textbox,
+          {
+            value: theme.name,
+            onChange: (e6) => theme.setName(e6.currentTarget.value),
+            onBlur: () => nameTheNameless(),
+            onfocusout: () => nameTheNameless(),
+            placeholder: "Theme name"
+          }
+        )), /* @__PURE__ */ y(tabs_default, __spreadValues({}, theme))), /* @__PURE__ */ y("div", { className: "h-full w-32 flex items-center justify-center" }, "Build ", theme.name)));
       };
       ui_default = render(Plugin);
     }

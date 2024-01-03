@@ -5,3 +5,16 @@
 ._tabs_61qsz_1 {
 	border-bottom: none !important;
 }
+
+._opacityInput_190p3_84,
+._divider_190p3_109 {
+	display: none !important;
+}
+
+._textboxColor_190p3_1 {
+	width: unset !important;
+}
+
+._hexColorInput_190p3_80 {
+	flex-basis: 100% !important;
+}

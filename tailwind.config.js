@@ -20,6 +20,10 @@ module.exports = {
 			backgroundImage: {
 				'gradient-conic': 'conic-gradient(from 180deg, white, red, black)',
 			},
+			spacing: {
+				172: '172px',
+				344: '344px',
+			},
 			colors: {
 				fig: {
 					blue: '#18A0FB',
@@ -82,5 +86,8 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [
+		require('tailwindcss-animate'),
+		require('tailwindcss-react-aria-components'),
+	],
 };
