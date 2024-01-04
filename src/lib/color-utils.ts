@@ -5,6 +5,7 @@ import {
 	TonalPalette,
 	hexFromArgb,
 } from '@material/material-color-utilities';
+import { evaluate } from 'mathjs';
 
 export type { PaletteObject, HSBColor };
 
@@ -20,6 +21,8 @@ export {
 	getStopsFromString,
 	convertNumberToStringArray,
 	hexToHSB,
+	calculateHue,
+	calculateChroma,
 };
 
 /**
@@ -288,3 +291,75 @@ function hexToHSB(hexInput: string | number): string {
 
 	return hsbString;
 }
+
+const calculateHue = (originalHueValue: number, hueCalcValue: string) => {
+	const hueCalc = hueCalcValue;
+	// Get source hue
+	const sourceHue = originalHueValue;
+	// Check if hueCalc is empty or just whitespace
+	if (!hueCalc.trim() || hueCalc === '') {
+		return sourceHue;
+	}
+	try {
+		// Replace 'h' regardless of its case
+		const parsedHueCalc = hueCalc.replace(/h/gi, sourceHue.toString());
+		// Evaluate parsedHueCalc
+		// Hue equals absolute value of hue modulo 360
+		const hue = Math.abs((evaluate(parsedHueCalc) as number) % 360);
+		return hue;
+	} catch (error) {
+		console.error('Invalid expression:', error);
+		// Try to evaluate the expression up to the offending character
+		let lastValidHue = NaN;
+		for (let i = hueCalc.length - 1; i >= 0; i--) {
+			const truncatedExpression = hueCalc.substring(0, i);
+			try {
+				lastValidHue = evaluate(
+					truncatedExpression.replace(/h/gi, sourceHue.toString())
+				) as number;
+				break; // Stop the loop if we successfully evaluate the expression
+			} catch (e) {
+				// Continue truncating
+			}
+		}
+		// Set hue to the last successfully evaluated value, or the default hue if none was successful
+		const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
+		return hue;
+	}
+};
+
+const calculateChroma = (
+	originalChromaValue: number,
+	chromaCalcValue: string
+) => {
+	const chromaCalc = chromaCalcValue;
+	// Get source chroma
+	const sourceChroma = originalChromaValue;
+	// Check if chromaCalc is empty or just whitespace
+	if (!chromaCalc.trim() || chromaCalc === '') {
+		return sourceChroma;
+	}
+	try {
+		// Replace 'c' regardless of its case
+		const parsedChromaCalc = chromaCalc.replace(/c/gi, sourceChroma.toString());
+		// Evaluate parsedChromaCalc
+		const chroma = Math.abs(evaluate(parsedChromaCalc) as number);
+		return chroma;
+	} catch (error) {
+		console.error('Invalid expression:', error);
+		// Try to evaluate the expression up to the offending character
+		let lastValidChroma = NaN;
+		for (let i = chromaCalc.length - 1; i >= 0; i--) {
+			const truncatedExpression = chromaCalc.substring(0, i);
+			try {
+				lastValidChroma = evaluate(
+					truncatedExpression.replace(/c/gi, sourceChroma.toString())
+				);
+				break;
+			} catch (error) {
+				continue;
+			}
+		}
+		return lastValidChroma;
+	}
+};

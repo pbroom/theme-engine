@@ -1,36 +1,100 @@
 import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import {
+	Muted,
+	RangeSlider,
 	Tabs,
 	TabsOption,
 	Textbox,
 	TextboxColor,
 	TextboxMultiline,
+	Text,
 } from '@create-figma-plugin/ui';
-import TextboxColorName from './primitives-tab/color-name-input';
-import { ColorPicker } from './primitives-tab/color-picker';
-// import '!.././dist/tailwind.css';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 import { Theme, useTheme } from '../hooks/useTheme';
-import { useThemeColor } from '../hooks/useThemeColor';
+import { ThemeColor, useThemeColor } from '../hooks/useThemeColor';
 import { round } from 'mathjs';
-import { getStopsFromString } from '../lib/color-utils';
-import { create } from 'zustand';
-import { useRef } from 'react';
+import {
+	getStopsFromString,
+	calculateHue,
+	calculateChroma,
+	hctTonalGradient,
+} from '../lib/color-utils';
+import { nanoid } from 'nanoid';
+import { set } from 'lodash';
 
 const TabGroup = (theme: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
-	const themeColor = useThemeColor('397456');
+	const themeColor: ThemeColor = useThemeColor('397456');
+
+	const hue = () => {
+		const sourceHue: number = themeColor.sourceColor.hct.hue;
+		const hueCalcInput: string = themeColor.hueCalc;
+		const hue: number = calculateHue(sourceHue, hueCalcInput);
+		return hue;
+	};
+	const chroma = () => {
+		const sourceChroma: number = themeColor.sourceColor.hct.chroma;
+		const chromaCalcInput: string = themeColor.chromaCalc;
+		const chroma: number = calculateChroma(sourceChroma, chromaCalcInput);
+		return chroma;
+	};
 
 	const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
+	const [hueSlider, setHueSlider] = useState<number>(hue);
+	const [hueCalcInput, setHueCalcInput] = useState<string>(
+		themeColor.hueCalc.toString()
+	);
+	const [chromaSlider, setChromaSlider] = useState<number>(chroma);
+	const [chromaCalcInput, setChromaCalcInput] = useState<string>(
+		themeColor.chromaCalc.toString()
+	);
+
 	useEffect(() => {
 		themeColor.setTones(getStopsFromString(tones));
-	}, [tones]);
+		themeColor.setHueCalc(hueCalcInput);
+		themeColor.setChromaCalc(chromaCalcInput);
+	}, [tones, hueCalcInput, chromaCalcInput]);
 
 	const nameTheNameless = () => {
 		if (!themeColor.name) {
 			themeColor.setName('Color');
 		}
+	};
+	const onHueSliderInput = (e: any) => {
+		const newHueCalcInput: number = e.currentTarget.value;
+		themeColor.setHueCalc(newHueCalcInput.toString());
+		setHueSlider(newHueCalcInput);
+		setHueCalcInput(newHueCalcInput.toString());
+		console.log(
+			calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString())
+		);
+	};
+	const onHueCalcInput = (e: any) => {
+		const newHueCalcInput: string = e.currentTarget.value;
+		const calculatedHue: number = calculateHue(
+			themeColor.sourceColor.hct.hue,
+			newHueCalcInput
+		);
+		themeColor.setHueCalc(newHueCalcInput);
+		setHueCalcInput(newHueCalcInput);
+		setHueSlider(calculatedHue);
+	};
+	const onChromaSliderInput = (e: any) => {
+		const newChromaCalcInput: number = e.currentTarget.value;
+		themeColor.setChromaCalc(newChromaCalcInput.toString());
+		setChromaCalcInput(newChromaCalcInput.toString());
+		setChromaSlider(newChromaCalcInput);
+	};
+	const onChromaCalcInput = (e: any) => {
+		const newChromaCalcInput: string = e.currentTarget.value;
+		const calculatedChroma: number = calculateChroma(
+			themeColor.sourceColor.hct.chroma,
+			newChromaCalcInput
+		);
+		themeColor.setChromaCalc(newChromaCalcInput);
+		setChromaCalcInput(newChromaCalcInput);
+		setChromaSlider(calculatedChroma);
 	};
 	const options: Array<TabsOption> = [
 		{
@@ -52,7 +116,7 @@ const TabGroup = (theme: Theme) => {
 						<div className="h-24 grow flex flex-row">
 							<div className="grow flex flex-row">
 								{/* Section 1A */}
-								<div className="h-full w-172 p-1">
+								<div className="h-full w-172 pt-1">
 									<Textbox
 										value={themeColor.name}
 										onChange={(e) => themeColor.setName(e.currentTarget.value)}
@@ -63,7 +127,7 @@ const TabGroup = (theme: Theme) => {
 									<p className="p-2">{themeColor.name}</p>
 								</div>
 								{/* Section 1B */}
-								<div className="grow h-full w-172 p-1 border-l border-neutral-700">
+								<div className="grow h-full w-172 pt-1 border-l border-neutral-700">
 									<TextboxColor
 										hexColor={themeColor.sourceColor.sourceHex}
 										onHexColorInput={(e) =>
@@ -72,27 +136,90 @@ const TabGroup = (theme: Theme) => {
 										onOpacityInput={(e) => '100%'}
 										opacity={'100%'}
 									/>
-									<p className="p-2">
-										H: {round(themeColor.sourceColor.hct.hue)} C:{' '}
-										{round(themeColor.sourceColor.hct.chroma)} T:{' '}
-										{round(themeColor.sourceColor.hct.tone)}
-									</p>
+									<div className="px-2 opacity-60">
+										<Muted>
+											H: {round(themeColor.sourceColor.hct.hue)} C:{' '}
+											{round(themeColor.sourceColor.hct.chroma)} T:{' '}
+											{round(themeColor.sourceColor.hct.tone)}
+										</Muted>
+									</div>
 								</div>
 							</div>
-							<div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+							<div
+								className="h-full w-32"
+								style={{
+									background: `linear-gradient(to right, ${hctTonalGradient(
+										themeColor.sourceColor.hex
+									)})`,
+								}}
+							></div>
 						</div>
 						<div className="h-24 grow flex flex-row">
 							<div className="grow flex flex-row">
 								{/* Section 2A */}
 								<div className="grow h-full w-172 border-t border-neutral-700">
-									<p className="p-2">Hue</p>
+									<div className="flex flex-row justify-between">
+										<span className="p-2">Hue</span>
+										<span className="p-2">
+											{round(themeColor.endColor.hct.hue)}
+										</span>
+									</div>
+									<div className="hue-slider px-2 pb-1">
+										<RangeSlider
+											maximum={360}
+											minimum={0}
+											onInput={(e) => onHueSliderInput(e)}
+											value={themeColor.hueCalc}
+										/>
+									</div>
+									<Textbox
+										value={hueCalcInput}
+										onInput={(e) => onHueCalcInput(e)}
+										placeholder="Hue value or expression"
+									/>
+									<div className="px-2 py-1 opacity-60">
+										<Muted>
+											Source Hue (h) = {round(themeColor.sourceColor.hct.hue)}
+										</Muted>
+									</div>
 								</div>
 								{/* Section 2B */}
 								<div className="grow h-full w-172 border-t border-l border-neutral-700">
-									<p className="p-2">Chroma</p>
+									<div className="flex flex-row justify-between">
+										<span className="p-2">Chroma</span>
+										<span className="p-2">
+											{round(themeColor.endColor.hct.chroma)}
+										</span>
+									</div>
+									<div className="chroma-slider px-2 pb-1">
+										<RangeSlider
+											maximum={150}
+											minimum={0}
+											onInput={(e) => onChromaSliderInput(e)}
+											value={themeColor.chromaCalc}
+										/>
+									</div>
+									<Textbox
+										value={chromaCalcInput}
+										onInput={(e) => onChromaCalcInput(e)}
+										placeholder="Chroma value or expression"
+									/>
+									<div className="px-2 py-1 opacity-60">
+										<Muted>
+											Source Chroma (c) ={' '}
+											{round(themeColor.sourceColor.hct.chroma)}
+										</Muted>
+									</div>
 								</div>
 							</div>
-							<div className="h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black"></div>
+							<div
+								className="h-full w-32"
+								style={{
+									background: `linear-gradient(to right, ${hctTonalGradient(
+										themeColor.endColor.hex
+									)})`,
+								}}
+							></div>
 						</div>
 						<div className="h-24 grow flex flex-row">
 							<div className="grow flex flex-row border-t border-neutral-700">
@@ -106,7 +233,15 @@ const TabGroup = (theme: Theme) => {
 									/>
 								</div>
 							</div>
-							<div className="h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black"></div>
+							<div
+								className="h-full w-32"
+								style={{
+									background: `linear-gradient(to right, ${hctTonalGradient(
+										themeColor.endColor.hex,
+										themeColor.tones
+									)})`,
+								}}
+							></div>
 						</div>
 						<div className="h-24 grow flex flex-row border-t border-neutral-700">
 							<div className="grow flex flex-row">

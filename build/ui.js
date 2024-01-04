@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2140a8d2-7f8a-4867-9299-f5d39b6212f4/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecaea21b-62c3-43eb-ab4a-b9405695eac0/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2140a8d2-7f8a-4867-9299-f5d39b6212f4/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecaea21b-62c3-43eb-ab4a-b9405695eac0/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -970,6 +970,12 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1028,6 +1034,9 @@ video {
 }
 .opacity-50 {
   opacity: 0.5;
+}
+.opacity-60 {
+  opacity: 0.6;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -1115,91 +1124,91 @@ video {
 ._hexColorInput_190p3_80 {
 	flex-basis: 100% !important;
 }
+._border_s66c9_8 {
+	background-color: unset !important;
+}
 
+.hue-slider ._border_s66c9_8 {
+	background: linear-gradient(
+		to right,
+		#f00,
+		#ff0,
+		#0f0,
+		#0ff,
+		#00f,
+		#f0f,
+		#f00
+	) !important;
+}
+.chroma-slider ._border_s66c9_8 {
+	background: linear-gradient(to right, #777, #12ab5c) !important;
+}
 .data-[state=active]:bg-background[data-state=active] {
   background-color: hsl(var(--background));
 }
-
 .data-[state=active]:text-foreground[data-state=active] {
   color: hsl(var(--foreground));
 }
-
 .data-[state=active]:shadow[data-state=active] {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 .hover:bg-blue-400:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-
 .hover:bg-fig-blue:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
-
 .hover:bg-blue-400:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-
 .hover:bg-fig-blue:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
-
 .focus-visible:outline-none:where([data-rac])[data-focus-visible] {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 .focus-visible:ring-2:where([data-rac])[data-focus-visible] {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
 .focus-visible:ring-ring:where([data-rac])[data-focus-visible] {
   --tw-ring-color: hsl(var(--ring));
 }
-
 .focus-visible:ring-offset-2:where([data-rac])[data-focus-visible] {
   --tw-ring-offset-width: 2px;
 }
-
 .focus-visible:outline-none:where(:not([data-rac])):focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 .focus-visible:ring-2:where(:not([data-rac])):focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-
 .focus-visible:ring-ring:where(:not([data-rac])):focus-visible {
   --tw-ring-color: hsl(var(--ring));
 }
-
 .focus-visible:ring-offset-2:where(:not([data-rac])):focus-visible {
   --tw-ring-offset-width: 2px;
 }
-
 .disabled:pointer-events-none:where([data-rac])[data-disabled] {
   pointer-events: none;
 }
-
 .disabled:opacity-50:where([data-rac])[data-disabled] {
   opacity: 0.5;
 }
-
 .disabled:pointer-events-none:where(:not([data-rac])):disabled {
   pointer-events: none;
 }
-
 .disabled:opacity-50:where(:not([data-rac])):disabled {
   opacity: 0.5;
 }
@@ -1731,10 +1740,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d8aa8d8-5fa1-48df-9b5a-03d4ec453567/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be108fde-a2dd-4ade-8b3d-46b77cc0911a/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d8aa8d8-5fa1-48df-9b5a-03d4ec453567/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be108fde-a2dd-4ade-8b3d-46b77cc0911a/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1782,10 +1791,114 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b25045c-8cd7-4f15-a8c8-6eb8f408b882/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b607855a-c1e2-4e33-8817-885321e39697/range-slider.module.js
+  var range_slider_module_default;
+  var init_range_slider_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b607855a-c1e2-4e33-8817-885321e39697/range-slider.module.js"() {
+      if (document.getElementById("e7dc3a2421") === null) {
+        const element = document.createElement("style");
+        element.id = "e7dc3a2421";
+        element.textContent = `._rangeSlider_s66c9_1 {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0 -2px;
+}
+
+._border_s66c9_8 {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  left: 2px;
+  height: 1px;
+  background-color: var(--figma-color-border-strong);
+}
+._disabled_s66c9_16 ._border_s66c9_8 {
+  background-color: var(--figma-color-border-disabled-strong);
+}
+
+._input_s66c9_20 {
+  position: relative;
+  z-index: var(
+    --z-index-1
+  ); /* stack \`.input\` over all other elements within \`.rangeSlider\` */
+  top: -16px;
+  display: block;
+  width: 100%;
+  height: 33px;
+  background-color: transparent;
+}
+._disabled_s66c9_16 ._input_s66c9_20 {
+  cursor: not-allowed;
+}
+
+._input_s66c9_20::-webkit-slider-thumb {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--figma-color-bg);
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background-color: var(--figma-color-bg-inverse);
+}
+._input_s66c9_20:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--figma-color-border-brand-strong);
+}
+._disabled_s66c9_16 ._input_s66c9_20::-webkit-slider-thumb {
+  background-color: var(--figma-color-bg-disabled-secondary);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFdBQVc7RUFDWCxjQUFjO0FBQ2hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixVQUFVO0VBQ1YsU0FBUztFQUNULFdBQVc7RUFDWCxrREFBa0Q7QUFDcEQ7QUFDQTtFQUNFLDJEQUEyRDtBQUM3RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQjs7R0FFQyxFQUFFLGlFQUFpRTtFQUNwRSxVQUFVO0VBQ1YsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsVUFBVTtFQUNWLFdBQVc7RUFDWCx1Q0FBdUM7RUFDdkMsa0JBQWtCO0VBQ2xCLHdCQUF3QjtFQUN4QiwrQ0FBK0M7QUFDakQ7QUFDQTtFQUNFLDREQUE0RDtBQUM5RDtBQUNBO0VBQ0UsMERBQTBEO0FBQzVEIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucmFuZ2VTbGlkZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDFweDtcbiAgbWFyZ2luOiAwIC0ycHg7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDJweDtcbiAgbGVmdDogMnB4O1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmJvcmRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMVxuICApOyAvKiBzdGFjayBgLmlucHV0YCBvdmVyIGFsbCBvdGhlciBlbGVtZW50cyB3aXRoaW4gYC5yYW5nZVNsaWRlcmAgKi9cbiAgdG9wOiAtMTZweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDMzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuLmRpc2FibGVkIC5pbnB1dCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pbnB1dDo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDlweDtcbiAgaGVpZ2h0OiA5cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJnKTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWludmVyc2UpO1xufVxuLmlucHV0OmZvY3VzOjotd2Via2l0LXNsaWRlci10aHVtYiB7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDJweCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Oi13ZWJraXQtc2xpZGVyLXRodW1iIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbn1cbiJdfQ== */`;
+        document.head.append(element);
+      }
+      range_slider_module_default = { "rangeSlider": "_rangeSlider_s66c9_1", "border": "_border_s66c9_8", "disabled": "_disabled_s66c9_16", "input": "_input_s66c9_20" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js
+  function RangeSlider(_a) {
+    var _b = _a, { disabled = false, increment = 1, maximum, minimum, name: name307, onInput = function() {
+    }, onNumericValueInput = function() {
+    }, onValueInput = function() {
+    }, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["disabled", "increment", "maximum", "minimum", "name", "onInput", "onNumericValueInput", "onValueInput", "propagateEscapeKeyDown", "value"]);
+    const handleInput = T2(function(event) {
+      onInput(event);
+      const value3 = event.currentTarget.value;
+      onValueInput(value3, name307);
+      onNumericValueInput(parseFloat(value3), name307);
+    }, [name307, onInput, onNumericValueInput, onValueInput]);
+    const handleKeyDown = T2(function(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (propagateEscapeKeyDown === false) {
+        event.stopPropagation();
+      }
+      event.currentTarget.blur();
+    }, [propagateEscapeKeyDown]);
+    return y(
+      "label",
+      { class: createClassName([
+        range_slider_module_default.rangeSlider,
+        disabled === true ? range_slider_module_default.disabled : null
+      ]) },
+      y("input", __spreadValues({ class: range_slider_module_default.input, disabled, max: maximum, min: minimum, onInput: handleInput, onKeyDown: handleKeyDown, step: increment, type: "range", value: value2 }, rest)),
+      y("div", { class: range_slider_module_default.border })
+    );
+  }
+  var init_range_slider = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js"() {
+      init_preact_module();
+      init_hooks_module();
+      init_create_class_name();
+      init_range_slider_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/766c386a-84d7-45f9-8d9a-1a16b8ea4346/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b25045c-8cd7-4f15-a8c8-6eb8f408b882/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/766c386a-84d7-45f9-8d9a-1a16b8ea4346/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2342,10 +2455,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29c62dee-8cc1-4969-bb4e-53905bbc8bda/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d639d95-2316-4c1f-b1af-892fea140f90/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29c62dee-8cc1-4969-bb4e-53905bbc8bda/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d639d95-2316-4c1f-b1af-892fea140f90/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2834,10 +2947,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d590262e-653c-4fe2-93ba-424527034048/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cf07ed7b-42cb-4ff9-a04b-d56159809c35/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d590262e-653c-4fe2-93ba-424527034048/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cf07ed7b-42cb-4ff9-a04b-d56159809c35/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3184,10 +3297,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbc30791-c53c-4a0f-9c3e-3a9027f2502b/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b304ff2d-7352-4d32-a5d3-edc0b4dddb84/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbc30791-c53c-4a0f-9c3e-3a9027f2502b/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b304ff2d-7352-4d32-a5d3-edc0b4dddb84/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3388,9 +3501,39 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48e0a7e6-b352-4100-9a95-38d3ae38d63b/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dff98f45-0dd8-4d43-88b2-4ca61caa9bab/muted.module.js
+  var muted_module_default;
+  var init_muted_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dff98f45-0dd8-4d43-88b2-4ca61caa9bab/muted.module.js"() {
+      if (document.getElementById("0e85596823") === null) {
+        const element = document.createElement("style");
+        element.id = "0e85596823";
+        element.textContent = `._muted_139yx_1 {
+  color: var(--figma-color-text-secondary);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvaW5saW5lLXRleHQvbXV0ZWQvbXV0ZWQubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHdDQUF3QztBQUMxQyIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2lubGluZS10ZXh0L211dGVkL211dGVkLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXV0ZWQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      muted_module_default = { "muted": "_muted_139yx_1" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js
+  function Muted(_a) {
+    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+    return y("span", __spreadProps(__spreadValues({}, rest), { class: muted_module_default.muted }), children);
+  }
+  var init_muted = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js"() {
+      init_preact_module();
+      init_muted_module();
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da8eef9e-026e-4fba-9d67-87801da2b051/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48e0a7e6-b352-4100-9a95-38d3ae38d63b/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da8eef9e-026e-4fba-9d67-87801da2b051/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -3521,12 +3664,14 @@ svg {
   // node_modules/@create-figma-plugin/ui/lib/index.js
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
+      init_range_slider();
       init_tabs();
       init_textbox();
       init_textbox_color();
       init_textbox_multiline();
       init_icon_chevron_down_16();
       init_icon_plus_32();
+      init_muted();
       init_render();
     }
   });
@@ -67500,7 +67645,7 @@ svg {
         const setChromaCalc = (chromaCalc2) => themeColor.setChromaCalc(chromaCalc2);
         const aliases = themeColor.aliases;
         const setAliases = (aliases2) => themeColor.setAliases(aliases2);
-        const calculateHue = (hueValue, hueCalcValue) => {
+        const calculateHue2 = (hueValue, hueCalcValue) => {
           const hueCalc2 = hueCalcValue || themeColor.hueCalc;
           const sourceHue = hueValue || sourceColor.hct.hue;
           if (!hueCalc2.trim() || hueCalc2 === "") {
@@ -67527,7 +67672,7 @@ svg {
             return hue;
           }
         };
-        const calculateChroma = (chromaValue, chromaCalcValue) => {
+        const calculateChroma2 = (chromaValue, chromaCalcValue) => {
           const chromaCalc2 = chromaCalcValue || themeColor.chromaCalc;
           const sourceChroma = chromaValue || sourceColor.hct.chroma;
           if (!chromaCalc2.trim() || chromaCalc2 === "") {
@@ -67580,8 +67725,8 @@ svg {
               setSourceColor(newSourceColor);
               setSourceHex;
               const endHct = Hct.from(
-                calculateHue(newSourceColor.hct.hue, hueCalc2),
-                calculateChroma(newSourceColor.hct.chroma, chromaCalc2),
+                calculateHue2(newSourceColor.hct.hue, hueCalc2),
+                calculateChroma2(newSourceColor.hct.chroma, chromaCalc2),
                 newSourceColor.hct.tone
               );
               const newEndColor = __spreadProps(__spreadValues({}, newSourceColor), {
@@ -67600,8 +67745,8 @@ svg {
               const chromaCalc2 = state.chromaCalc;
               const newColor = state.sourceColor;
               const endHct = Hct.from(
-                calculateHue(newColor.hct.hue, hueCalc2),
-                calculateChroma(newColor.hct.chroma, chromaCalc2),
+                calculateHue2(newColor.hct.hue, hueCalc2),
+                calculateChroma2(newColor.hct.chroma, chromaCalc2),
                 newColor.hct.tone
               );
               const newEndColor = __spreadProps(__spreadValues({}, newColor), {
@@ -67620,8 +67765,8 @@ svg {
               const hueCalc2 = state.hueCalc;
               const chromaCalc2 = state.chromaCalc;
               const endHct = Hct.from(
-                calculateHue(newColor.hct.hue, hueCalc2),
-                calculateChroma(newColor.hct.chroma, chromaCalc2),
+                calculateHue2(newColor.hct.hue, hueCalc2),
+                calculateChroma2(newColor.hct.chroma, chromaCalc2),
                 newColor.hct.tone
               );
               const newEndColor = __spreadProps(__spreadValues({}, newColor), {
@@ -67748,11 +67893,114 @@ svg {
     );
     return Array.from(stops);
   }
+  var toneStops, paletteTones, getValues, hctTonalGradient, calculateHue, calculateChroma;
   var init_color_utils2 = __esm({
     "src/lib/color-utils.ts"() {
       "use strict";
       init_useColor();
       init_material_color_utilities();
+      init_esm2();
+      toneStops = (stops) => {
+        const defaultToneStops = [];
+        if (stops && stops.length > 0) {
+          return stops;
+        } else {
+          for (let stop = 0; stop <= 100; stop++) {
+            defaultToneStops.push(stop);
+          }
+          return defaultToneStops;
+        }
+      };
+      paletteTones = (hexColor, stops) => {
+        const paletteToneStops = toneStops(stops);
+        const color2 = useColor(hexColor);
+        const hctColor = color2.hct;
+        const paletteColor = TonalPalette.fromHueAndChroma(
+          hctColor.hue,
+          hctColor.chroma
+        );
+        const palette = {};
+        for (let tone of paletteToneStops) {
+          const argb = paletteColor.tone(tone);
+          const hex2 = hexFromArgb(argb);
+          palette[tone] = hex2;
+        }
+        return palette;
+      };
+      getValues = (paletteObject, selectedTones) => {
+        let hexString = "";
+        if (selectedTones) {
+          const stopIncrement = Math.round(100 / selectedTones.length);
+          for (let key of selectedTones) {
+            hexString += `${paletteObject[key]} ${stopIncrement * selectedTones.indexOf(key)}% ${stopIncrement * (selectedTones.indexOf(key) + 1)}%, `;
+          }
+        } else {
+          for (let key in paletteObject) {
+            hexString += paletteObject[key] + ", ";
+          }
+        }
+        hexString = hexString.slice(0, -2);
+        return hexString;
+      };
+      hctTonalGradient = (hexColor, selectedTones) => {
+        const gradientTones = paletteTones(hexColor);
+        const gradientString = getValues(gradientTones, selectedTones);
+        return gradientString;
+      };
+      calculateHue = (originalHueValue, hueCalcValue) => {
+        const hueCalc = hueCalcValue;
+        const sourceHue = originalHueValue;
+        if (!hueCalc.trim() || hueCalc === "") {
+          return sourceHue;
+        }
+        try {
+          const parsedHueCalc = hueCalc.replace(/h/gi, sourceHue.toString());
+          const hue = Math.abs(evaluate(parsedHueCalc) % 360);
+          return hue;
+        } catch (error) {
+          console.error("Invalid expression:", error);
+          let lastValidHue = NaN;
+          for (let i5 = hueCalc.length - 1; i5 >= 0; i5--) {
+            const truncatedExpression = hueCalc.substring(0, i5);
+            try {
+              lastValidHue = evaluate(
+                truncatedExpression.replace(/h/gi, sourceHue.toString())
+              );
+              break;
+            } catch (e6) {
+            }
+          }
+          const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
+          return hue;
+        }
+      };
+      calculateChroma = (originalChromaValue, chromaCalcValue) => {
+        const chromaCalc = chromaCalcValue;
+        const sourceChroma = originalChromaValue;
+        if (!chromaCalc.trim() || chromaCalc === "") {
+          return sourceChroma;
+        }
+        try {
+          const parsedChromaCalc = chromaCalc.replace(/c/gi, sourceChroma.toString());
+          const chroma = Math.abs(evaluate(parsedChromaCalc));
+          return chroma;
+        } catch (error) {
+          console.error("Invalid expression:", error);
+          let lastValidChroma = NaN;
+          for (let i5 = chromaCalc.length - 1; i5 >= 0; i5--) {
+            const truncatedExpression = chromaCalc.substring(0, i5);
+            try {
+              lastValidChroma = evaluate(
+                truncatedExpression.replace(/c/gi, sourceChroma.toString())
+              );
+              break;
+            } catch (error2) {
+              continue;
+            }
+          }
+          return lastValidChroma;
+        }
+      };
     }
   });
 
@@ -67771,18 +68019,75 @@ svg {
       TabGroup = (theme) => {
         const [tabValue, setTabValue] = h2("Primitives");
         const themeColor = useThemeColor("397456");
+        const hue = () => {
+          const sourceHue = themeColor.sourceColor.hct.hue;
+          const hueCalcInput2 = themeColor.hueCalc;
+          const hue2 = calculateHue(sourceHue, hueCalcInput2);
+          return hue2;
+        };
+        const chroma = () => {
+          const sourceChroma = themeColor.sourceColor.hct.chroma;
+          const chromaCalcInput2 = themeColor.chromaCalc;
+          const chroma2 = calculateChroma(sourceChroma, chromaCalcInput2);
+          return chroma2;
+        };
         const [tones, setTones] = h2(themeColor.tones.join(", "));
+        const [hueSlider, setHueSlider] = h2(hue);
+        const [hueCalcInput, setHueCalcInput] = h2(
+          themeColor.hueCalc.toString()
+        );
+        const [chromaSlider, setChromaSlider] = h2(chroma);
+        const [chromaCalcInput, setChromaCalcInput] = h2(
+          themeColor.chromaCalc.toString()
+        );
         p2(() => {
           themeColor.setTones(getStopsFromString(tones));
-        }, [tones]);
+          themeColor.setHueCalc(hueCalcInput);
+          themeColor.setChromaCalc(chromaCalcInput);
+        }, [tones, hueCalcInput, chromaCalcInput]);
         const nameTheNameless = () => {
           if (!themeColor.name) {
             themeColor.setName("Color");
           }
         };
+        const onHueSliderInput = (e6) => {
+          const newHueCalcInput = e6.currentTarget.value;
+          themeColor.setHueCalc(newHueCalcInput.toString());
+          setHueSlider(newHueCalcInput);
+          setHueCalcInput(newHueCalcInput.toString());
+          console.log(
+            calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString())
+          );
+        };
+        const onHueCalcInput = (e6) => {
+          const newHueCalcInput = e6.currentTarget.value;
+          const calculatedHue = calculateHue(
+            themeColor.sourceColor.hct.hue,
+            newHueCalcInput
+          );
+          themeColor.setHueCalc(newHueCalcInput);
+          setHueCalcInput(newHueCalcInput);
+          setHueSlider(calculatedHue);
+        };
+        const onChromaSliderInput = (e6) => {
+          const newChromaCalcInput = e6.currentTarget.value;
+          themeColor.setChromaCalc(newChromaCalcInput.toString());
+          setChromaCalcInput(newChromaCalcInput.toString());
+          setChromaSlider(newChromaCalcInput);
+        };
+        const onChromaCalcInput = (e6) => {
+          const newChromaCalcInput = e6.currentTarget.value;
+          const calculatedChroma = calculateChroma(
+            themeColor.sourceColor.hct.chroma,
+            newChromaCalcInput
+          );
+          themeColor.setChromaCalc(newChromaCalcInput);
+          setChromaCalcInput(newChromaCalcInput);
+          setChromaSlider(calculatedChroma);
+        };
         const options = [
           {
-            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 p-1" }, /* @__PURE__ */ y(
+            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 value: themeColor.name,
@@ -67791,7 +68096,7 @@ svg {
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
               }
-            ), /* @__PURE__ */ y("p", { className: "p-2" }, themeColor.name)), /* @__PURE__ */ y("div", { className: "grow h-full w-172 p-1 border-l border-neutral-700" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("p", { className: "p-2" }, themeColor.name)), /* @__PURE__ */ y("div", { className: "grow h-full w-172 pt-1 border-l border-neutral-700" }, /* @__PURE__ */ y(
               TextboxColor,
               {
                 hexColor: themeColor.sourceColor.sourceHex,
@@ -67799,14 +68104,75 @@ svg {
                 onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
-            ), /* @__PURE__ */ y("p", { className: "p-2" }, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone)))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-neutral-700" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Hue")), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Chroma"))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone))))), /* @__PURE__ */ y(
+              "div",
+              {
+                className: "h-full w-32",
+                style: {
+                  background: `linear-gradient(to right, ${hctTonalGradient(
+                    themeColor.sourceColor.hex
+                  )})`
+                }
+              }
+            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.hue))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
+              RangeSlider,
+              {
+                maximum: 360,
+                minimum: 0,
+                onInput: (e6) => onHueSliderInput(e6),
+                value: themeColor.hueCalc
+              }
+            )), /* @__PURE__ */ y(
+              Textbox,
+              {
+                value: hueCalcInput,
+                onInput: (e6) => onHueCalcInput(e6),
+                placeholder: "Hue value or expression"
+              }
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
+              RangeSlider,
+              {
+                maximum: 150,
+                minimum: 0,
+                onInput: (e6) => onChromaSliderInput(e6),
+                value: themeColor.chromaCalc
+              }
+            )), /* @__PURE__ */ y(
+              Textbox,
+              {
+                value: chromaCalcInput,
+                onInput: (e6) => onChromaCalcInput(e6),
+                placeholder: "Chroma value or expression"
+              }
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(themeColor.sourceColor.hct.chroma))))), /* @__PURE__ */ y(
+              "div",
+              {
+                className: "h-full w-32",
+                style: {
+                  background: `linear-gradient(to right, ${hctTonalGradient(
+                    themeColor.endColor.hex
+                  )})`
+                }
+              }
+            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
               TextboxMultiline,
               {
                 value: tones,
                 onInput: (e6) => setTones(e6.currentTarget.value),
                 placeholder: "Return tones 0-100"
               }
-            ))), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-pink-500 via-30% to-black" })), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Aliases"))), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
+            ))), /* @__PURE__ */ y(
+              "div",
+              {
+                className: "h-full w-32",
+                style: {
+                  background: `linear-gradient(to right, ${hctTonalGradient(
+                    themeColor.endColor.hex,
+                    themeColor.tones
+                  )})`
+                }
+              }
+            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Aliases"))), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
             value: "Primitives"
           },
           {

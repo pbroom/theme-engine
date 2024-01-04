@@ -18,3 +18,22 @@
 ._hexColorInput_190p3_80 {
 	flex-basis: 100% !important;
 }
+._border_s66c9_8 {
+	background-color: unset !important;
+}
+
+.hue-slider ._border_s66c9_8 {
+	background: linear-gradient(
+		to right,
+		#f00,
+		#ff0,
+		#0f0,
+		#0ff,
+		#00f,
+		#f0f,
+		#f00
+	) !important;
+}
+.chroma-slider ._border_s66c9_8 {
+	background: linear-gradient(to right, #777, #12ab5c) !important;
+}
