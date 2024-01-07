@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecaea21b-62c3-43eb-ab4a-b9405695eac0/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ef42a8-6a1e-4956-8fa9-4608ec87ef45/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ecaea21b-62c3-43eb-ab4a-b9405695eac0/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ef42a8-6a1e-4956-8fa9-4608ec87ef45/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1740,10 +1740,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be108fde-a2dd-4ade-8b3d-46b77cc0911a/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cedfe05-55e6-49bb-8979-00e7d833ad98/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be108fde-a2dd-4ade-8b3d-46b77cc0911a/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cedfe05-55e6-49bb-8979-00e7d833ad98/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1791,10 +1791,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b607855a-c1e2-4e33-8817-885321e39697/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58268f8-c464-4cd3-91ab-3a3665329f81/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b607855a-c1e2-4e33-8817-885321e39697/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58268f8-c464-4cd3-91ab-3a3665329f81/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -1895,10 +1895,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/766c386a-84d7-45f9-8d9a-1a16b8ea4346/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2ff69075-5802-4e65-a4b5-85002841ca10/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/766c386a-84d7-45f9-8d9a-1a16b8ea4346/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2ff69075-5802-4e65-a4b5-85002841ca10/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2455,10 +2455,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d639d95-2316-4c1f-b1af-892fea140f90/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bda0809a-7c36-4cd5-9ecf-3b7571108b51/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d639d95-2316-4c1f-b1af-892fea140f90/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bda0809a-7c36-4cd5-9ecf-3b7571108b51/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2947,10 +2947,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cf07ed7b-42cb-4ff9-a04b-d56159809c35/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/555c22b7-53e3-479d-bf72-4ef6a72c77c8/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cf07ed7b-42cb-4ff9-a04b-d56159809c35/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/555c22b7-53e3-479d-bf72-4ef6a72c77c8/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3297,10 +3297,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b304ff2d-7352-4d32-a5d3-edc0b4dddb84/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3b66685b-a100-4072-bb95-88a25058c7b0/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b304ff2d-7352-4d32-a5d3-edc0b4dddb84/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3b66685b-a100-4072-bb95-88a25058c7b0/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3501,10 +3501,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dff98f45-0dd8-4d43-88b2-4ca61caa9bab/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a01cc5b4-6be6-419f-933c-e809b799f6ad/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dff98f45-0dd8-4d43-88b2-4ca61caa9bab/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a01cc5b4-6be6-419f-933c-e809b799f6ad/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3531,9 +3531,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da8eef9e-026e-4fba-9d67-87801da2b051/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9297c6ba-0bda-4b80-baec-fcff808f7065/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da8eef9e-026e-4fba-9d67-87801da2b051/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9297c6ba-0bda-4b80-baec-fcff808f7065/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -67436,7 +67436,7 @@ svg {
   });
 
   // src/hooks/useThemeColor.ts
-  var AliasSchema, AddAliasReturnSchema, AliasMethodsSchema, AliasFunctionSchema, ThemeColorDataSchema, ThemeColorActionsSchema, ThemeColorSchema, color, themeColorStore, useThemeColorStore, useThemeColor;
+  var AliasSchema, AddAliasReturnSchema, AliasMethodsSchema, AliasFunctionSchema, ThemeColorDataSchema, ThemeColorActionsSchema, ThemeColorSchema, baseColor, color, themeColorStore, useThemeColorStore, useThemeColor;
   var init_useThemeColor = __esm({
     "src/hooks/useThemeColor.ts"() {
       "use strict";
@@ -67494,7 +67494,13 @@ svg {
         alias: AliasFunctionSchema
       });
       ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
-      color = useColorStore.getState();
+      baseColor = useColorStore.getState();
+      color = __spreadProps(__spreadValues({}, baseColor), {
+        sourceHex: "397456",
+        hct: Hct.from(163, 33, 44),
+        rgba: rgbaFromHct(Hct.from(145, 40, 50)),
+        hex: hexFromHct(Hct.from(145, 40, 50))
+      });
       themeColorStore = (set) => ({
         id: nanoid(12),
         name: "color",
@@ -67530,8 +67536,8 @@ svg {
           96,
           98
         ],
-        hueCalc: "",
-        chromaCalc: "",
+        hueCalc: "163",
+        chromaCalc: "33",
         aliases: [],
         setId: (id) => set(() => ({ id })),
         setName: (name307) => set(() => ({ name: name307 })),
@@ -67893,7 +67899,7 @@ svg {
     );
     return Array.from(stops);
   }
-  var toneStops, paletteTones, getValues, hctTonalGradient, calculateHue, calculateChroma;
+  var toneStops, paletteTones, getValues, hctTonalGradient, findMaxChromaForHueAtTone, calculateHue, calculateChroma;
   var init_color_utils2 = __esm({
     "src/lib/color-utils.ts"() {
       "use strict";
@@ -67946,6 +67952,16 @@ svg {
         const gradientTones = paletteTones(hexColor);
         const gradientString = getValues(gradientTones, selectedTones);
         return gradientString;
+      };
+      findMaxChromaForHueAtTone = (hue, tone) => {
+        let maximumChroma = 0;
+        for (let chroma = 0; chroma <= 150; chroma++) {
+          const currentChroma = Hct.from(hue, chroma, tone).chroma;
+          if (currentChroma > maximumChroma) {
+            maximumChroma = currentChroma;
+          }
+        }
+        return maximumChroma;
       };
       calculateHue = (originalHueValue, hueCalcValue) => {
         const hueCalc = hueCalcValue;
@@ -68132,7 +68148,10 @@ svg {
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
-                maximum: 150,
+                maximum: findMaxChromaForHueAtTone(
+                  themeColor.endColor.hct.hue,
+                  themeColor.endColor.hct.tone
+                ),
                 minimum: 0,
                 onInput: (e6) => onChromaSliderInput(e6),
                 value: themeColor.chromaCalc

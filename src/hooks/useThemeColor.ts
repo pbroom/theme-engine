@@ -90,7 +90,14 @@ type ThemeColorActions = z.infer<typeof ThemeColorActionsSchema>;
 const ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
 type ThemeColor = z.infer<typeof ThemeColorSchema>;
 
-const color = useColorStore.getState();
+const baseColor: Color = useColorStore.getState();
+const color: Color = {
+	...baseColor,
+	sourceHex: '397456',
+	hct: Hct.from(163, 33, 44),
+	rgba: rgbaFromHct(Hct.from(145, 40, 50)),
+	hex: hexFromHct(Hct.from(145, 40, 50)),
+};
 
 const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	id: nanoid(12),
@@ -102,8 +109,8 @@ const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 		0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
 		25, 35, 87, 92, 94, 96, 98,
 	],
-	hueCalc: '',
-	chromaCalc: '',
+	hueCalc: '163',
+	chromaCalc: '33',
 	aliases: [],
 	setId: (id) => set(() => ({ id: id })),
 	setName: (name) => set(() => ({ name: name })),

@@ -19,9 +19,12 @@ import {
 	calculateHue,
 	calculateChroma,
 	hctTonalGradient,
+	findMaxChromasForHue,
+	findMaxChromaForHueAtTone,
 } from '../lib/color-utils';
 import { nanoid } from 'nanoid';
 import { set } from 'lodash';
+import { maxChromaAtTonePerHue } from '../ref';
 
 const TabGroup = (theme: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
@@ -193,7 +196,10 @@ const TabGroup = (theme: Theme) => {
 									</div>
 									<div className="chroma-slider px-2 pb-1">
 										<RangeSlider
-											maximum={150}
+											maximum={findMaxChromaForHueAtTone(
+												themeColor.endColor.hct.hue,
+												themeColor.endColor.hct.tone
+											)}
 											minimum={0}
 											onInput={(e) => onChromaSliderInput(e)}
 											value={themeColor.chromaCalc}
