@@ -384,14 +384,20 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 				const newColor = state.sourceColor;
 				const hueCalc = state.hueCalc;
 				const chromaCalc = state.chromaCalc;
+				const chroma = calculateChroma(newColor.hct.chroma, chromaCalc);
 				const endHct = Hct.from(
 					calculateHue(newColor.hct.hue, hueCalc),
-					calculateChroma(newColor.hct.chroma, chromaCalc),
+					chroma,
 					newColor.hct.tone
 				);
 				const newEndColor: Color = {
 					...newColor,
-					hct: endHct,
+					hct: {
+						...endHct,
+						hue: endColor.hct.hue,
+						chroma: chroma,
+						tone: newColor.hct.tone,
+					},
 					rgba: rgbaFromHct(endHct),
 					hex: hexFromHct(endHct),
 					figmaSolidColor: SolidColorFromRgbColor(

@@ -145,9 +145,8 @@ const TabGroup = (theme: Theme) => {
 	};
 	const onChromaCalcInput = (e: any) => {
 		const newChromaCalcInput: string = e.currentTarget.value;
-		const calculatedChroma: number = calculateChroma(
-			themeColor.sourceColor.hct.chroma,
-			newChromaCalcInput
+		const calculatedChroma: number = round(
+			calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput)
 		);
 		themeColor.setChromaCalc(newChromaCalcInput);
 		setChromaCalcInput(newChromaCalcInput);
@@ -181,10 +180,6 @@ const TabGroup = (theme: Theme) => {
 										onfocusout={() => nameTheNameless()}
 										placeholder="Color name"
 									/>
-									<p className="p-2">{themeColor.name}</p>
-								</div>
-								{/* Section 1B */}
-								<div className="grow h-full w-172 pt-1 border-l border-neutral-700">
 									<TextboxColor
 										hexColor={hexColorInput}
 										onHexColorInput={(e) => onHexColorInput(e)}
@@ -196,6 +191,17 @@ const TabGroup = (theme: Theme) => {
 											H: {round(themeColor.sourceColor.hct.hue)} C:{' '}
 											{round(themeColor.sourceColor.hct.chroma)} T:{' '}
 											{round(themeColor.sourceColor.hct.tone)}
+										</Muted>
+									</div>
+								</div>
+								{/* Section 1B */}
+								<div className="grow h-full w-172 pt-1 border-l border-neutral-700">
+									<p className="p-2">{themeColor.name}</p>
+									<div className="px-2 opacity-60">
+										<Muted>
+											H: {round(themeColor.endColor.hct.hue)} C:{' '}
+											{round(themeColor.endColor.hct.chroma)} T:{' '}
+											{round(themeColor.endColor.hct.tone)}
 										</Muted>
 									</div>
 								</div>

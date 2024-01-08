@@ -145,7 +145,7 @@ const SolidColorFromRgbColor = (rgbColor: RGB): SolidColor => {
 	return { type: 'SOLID', color: rgbColor };
 };
 
-const colorStore: StateCreator<Color> = (set, get) => ({
+const colorStore: StateCreator<Color> = (set) => ({
 	sourceHex: '397456',
 	hct: { hue: 0, chroma: 0, tone: 0 },
 	rgba: { r: 0, g: 0, b: 0, a: 0 },
