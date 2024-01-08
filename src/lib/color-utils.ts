@@ -48,14 +48,9 @@ const toneStops = (stops?: number[]) => {
  * @param stops An optional array of tone stops.
  * @returns An object containing the palette of colors.
  */
-const paletteTones = (hexColor: string, stops?: number[]) => {
+const paletteTones = (hue: number, chroma: number, stops?: number[]) => {
 	const paletteToneStops = toneStops(stops);
-	const color = useColor(hexColor);
-	const hctColor = color.hct;
-	const paletteColor = TonalPalette.fromHueAndChroma(
-		hctColor.hue,
-		hctColor.chroma
-	);
+	const paletteColor = TonalPalette.fromHueAndChroma(hue, chroma);
 	const palette: { [key: number]: string } = {};
 	for (let tone of paletteToneStops) {
 		const argb: number = paletteColor.tone(tone);
@@ -98,8 +93,12 @@ const getValues = (paletteObject: PaletteObject, selectedTones?: number[]) => {
  * @param hexColor The hex color string to create the tonal gradient from.
  * @returns A string containing the hex values of the tonal gradient.
  */
-const hctTonalGradient = (hexColor: string, selectedTones?: number[]) => {
-	const gradientTones = paletteTones(hexColor);
+const hctTonalGradient = (
+	hue: number,
+	chroma: number,
+	selectedTones?: number[]
+) => {
+	const gradientTones = paletteTones(hue, chroma);
 	const gradientString = getValues(gradientTones, selectedTones);
 	return gradientString;
 };

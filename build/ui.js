@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ef42a8-6a1e-4956-8fa9-4608ec87ef45/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f4a4542a-06de-4e6b-a1fb-c4fce3c7be44/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ef42a8-6a1e-4956-8fa9-4608ec87ef45/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f4a4542a-06de-4e6b-a1fb-c4fce3c7be44/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1038,6 +1038,9 @@ video {
 .opacity-60 {
   opacity: 0.6;
 }
+.opacity-40 {
+  opacity: 0.4;
+}
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1740,10 +1743,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cedfe05-55e6-49bb-8979-00e7d833ad98/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96b36c6d-508d-485b-afd4-6c2f5506df94/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cedfe05-55e6-49bb-8979-00e7d833ad98/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96b36c6d-508d-485b-afd4-6c2f5506df94/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1791,10 +1794,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58268f8-c464-4cd3-91ab-3a3665329f81/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/25ae2b66-f380-4dc5-b220-7de90a617c49/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58268f8-c464-4cd3-91ab-3a3665329f81/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/25ae2b66-f380-4dc5-b220-7de90a617c49/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -1895,10 +1898,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2ff69075-5802-4e65-a4b5-85002841ca10/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6dfb8a38-c110-4319-800b-6909ddcd7746/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2ff69075-5802-4e65-a4b5-85002841ca10/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6dfb8a38-c110-4319-800b-6909ddcd7746/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2455,10 +2458,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bda0809a-7c36-4cd5-9ecf-3b7571108b51/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8e522c1-80c6-493c-89d1-6ef55ab46711/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bda0809a-7c36-4cd5-9ecf-3b7571108b51/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8e522c1-80c6-493c-89d1-6ef55ab46711/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2947,10 +2950,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/555c22b7-53e3-479d-bf72-4ef6a72c77c8/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12a1dfcc-8892-41ef-839d-8aa61150d547/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/555c22b7-53e3-479d-bf72-4ef6a72c77c8/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12a1dfcc-8892-41ef-839d-8aa61150d547/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3297,10 +3300,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3b66685b-a100-4072-bb95-88a25058c7b0/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17606253-4337-4a3f-9d90-59412651501f/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3b66685b-a100-4072-bb95-88a25058c7b0/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17606253-4337-4a3f-9d90-59412651501f/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3501,10 +3504,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a01cc5b4-6be6-419f-933c-e809b799f6ad/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67b720e7-32bc-4df3-8502-1711b61a09cd/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a01cc5b4-6be6-419f-933c-e809b799f6ad/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67b720e7-32bc-4df3-8502-1711b61a09cd/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3531,9 +3534,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9297c6ba-0bda-4b80-baec-fcff808f7065/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/70d7e665-155c-40d9-b302-eb330cbd17f3/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9297c6ba-0bda-4b80-baec-fcff808f7065/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/70d7e665-155c-40d9-b302-eb330cbd17f3/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -67903,7 +67906,6 @@ svg {
   var init_color_utils2 = __esm({
     "src/lib/color-utils.ts"() {
       "use strict";
-      init_useColor();
       init_material_color_utilities();
       init_esm2();
       toneStops = (stops) => {
@@ -67917,14 +67919,9 @@ svg {
           return defaultToneStops;
         }
       };
-      paletteTones = (hexColor, stops) => {
+      paletteTones = (hue, chroma, stops) => {
         const paletteToneStops = toneStops(stops);
-        const color2 = useColor(hexColor);
-        const hctColor = color2.hct;
-        const paletteColor = TonalPalette.fromHueAndChroma(
-          hctColor.hue,
-          hctColor.chroma
-        );
+        const paletteColor = TonalPalette.fromHueAndChroma(hue, chroma);
         const palette = {};
         for (let tone of paletteToneStops) {
           const argb = paletteColor.tone(tone);
@@ -67948,8 +67945,8 @@ svg {
         hexString = hexString.slice(0, -2);
         return hexString;
       };
-      hctTonalGradient = (hexColor, selectedTones) => {
-        const gradientTones = paletteTones(hexColor);
+      hctTonalGradient = (hue, chroma, selectedTones) => {
+        const gradientTones = paletteTones(hue, chroma);
         const gradientString = getValues(gradientTones, selectedTones);
         return gradientString;
       };
@@ -68047,6 +68044,9 @@ svg {
           const chroma2 = calculateChroma(sourceChroma, chromaCalcInput2);
           return chroma2;
         };
+        const [hexColorInput, setHexColorInput] = h2(
+          themeColor.sourceColor.sourceHex
+        );
         const [tones, setTones] = h2(themeColor.tones.join(", "));
         const [hueSlider, setHueSlider] = h2(hue);
         const [hueCalcInput, setHueCalcInput] = h2(
@@ -68060,10 +68060,53 @@ svg {
           themeColor.setTones(getStopsFromString(tones));
           themeColor.setHueCalc(hueCalcInput);
           themeColor.setChromaCalc(chromaCalcInput);
-        }, [tones, hueCalcInput, chromaCalcInput]);
+        }, [tones, hueCalcInput]);
+        p2(() => {
+          themeColor.setChromaCalc(chromaCalcInput);
+        }, [chromaCalcInput]);
+        p2(() => {
+          const calculatedHue = round2(
+            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+          );
+          setHueSlider(calculatedHue);
+          if (!themeColor.hueCalc.toLowerCase().includes("h")) {
+            themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+            setHueCalcInput(calculatedHue.toString());
+          }
+          const calculatedChroma = round2(
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+          );
+          setChromaSlider(calculatedChroma);
+          if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
+            themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            setChromaCalcInput(calculatedChroma.toString());
+          }
+        }, [hexColorInput]);
         const nameTheNameless = () => {
           if (!themeColor.name) {
             themeColor.setName("Color");
+          }
+        };
+        const onHexColorInput = (e6) => {
+          const newHexColorInput = e6.currentTarget.value;
+          setHexColorInput(newHexColorInput);
+          themeColor.setSourceHex(newHexColorInput);
+          themeColor.sourceColor.setSourceHex(newHexColorInput);
+          const calculatedHue = round2(
+            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+          );
+          setHueSlider(calculatedHue);
+          if (!themeColor.hueCalc.toLowerCase().includes("h")) {
+            themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+            setHueCalcInput(calculatedHue.toString());
+          }
+          const calculatedChroma = round2(
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+          );
+          setChromaSlider(calculatedChroma);
+          if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
+            themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            setChromaCalcInput(calculatedChroma.toString());
           }
         };
         const onHueSliderInput = (e6) => {
@@ -68115,8 +68158,8 @@ svg {
             ), /* @__PURE__ */ y("p", { className: "p-2" }, themeColor.name)), /* @__PURE__ */ y("div", { className: "grow h-full w-172 pt-1 border-l border-neutral-700" }, /* @__PURE__ */ y(
               TextboxColor,
               {
-                hexColor: themeColor.sourceColor.sourceHex,
-                onHexColorInput: (e6) => themeColor.setSourceHex(e6.currentTarget.value),
+                hexColor: hexColorInput,
+                onHexColorInput: (e6) => onHexColorInput(e6),
                 onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
@@ -68126,7 +68169,8 @@ svg {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    themeColor.sourceColor.hex
+                    themeColor.sourceColor.hct.hue,
+                    themeColor.sourceColor.hct.chroma
                   )})`
                 }
               }
@@ -68145,12 +68189,19 @@ svg {
                 onInput: (e6) => onHueCalcInput(e6),
                 placeholder: "Hue value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(
+              findMaxChromaForHueAtTone(
+                themeColor.endColor.hct.hue,
+                themeColor.endColor.hct.tone
+              )
+            )))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
-                maximum: findMaxChromaForHueAtTone(
-                  themeColor.endColor.hct.hue,
-                  themeColor.endColor.hct.tone
+                maximum: round2(
+                  findMaxChromaForHueAtTone(
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.tone
+                  )
                 ),
                 minimum: 0,
                 onInput: (e6) => onChromaSliderInput(e6),
@@ -68169,7 +68220,8 @@ svg {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    themeColor.endColor.hex
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.chroma
                   )})`
                 }
               }
@@ -68186,7 +68238,8 @@ svg {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    themeColor.endColor.hex,
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.chroma,
                     themeColor.tones
                   )})`
                 }

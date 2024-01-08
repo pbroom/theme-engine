@@ -25,6 +25,7 @@ import {
 import { nanoid } from 'nanoid';
 import { set } from 'lodash';
 import { maxChromaAtTonePerHue } from '../ref';
+import { on } from '@create-figma-plugin/utilities';
 
 const TabGroup = (theme: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
@@ -43,6 +44,9 @@ const TabGroup = (theme: Theme) => {
 		return chroma;
 	};
 
+	const [hexColorInput, setHexColorInput] = useState<string>(
+		themeColor.sourceColor.sourceHex
+	);
 	const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
 	const [hueSlider, setHueSlider] = useState<number>(hue);
 	const [hueCalcInput, setHueCalcInput] = useState<string>(
@@ -57,11 +61,60 @@ const TabGroup = (theme: Theme) => {
 		themeColor.setTones(getStopsFromString(tones));
 		themeColor.setHueCalc(hueCalcInput);
 		themeColor.setChromaCalc(chromaCalcInput);
-	}, [tones, hueCalcInput, chromaCalcInput]);
+	}, [tones, hueCalcInput]);
+
+	useEffect(() => {
+		themeColor.setChromaCalc(chromaCalcInput);
+	}, [chromaCalcInput]);
+
+	useEffect(() => {
+		const calculatedHue: number = round(
+			calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+		);
+		setHueSlider(calculatedHue);
+		if (!themeColor.hueCalc.toLowerCase().includes('h')) {
+			themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+			setHueCalcInput(calculatedHue.toString());
+		}
+
+		const calculatedChroma: number = round(
+			calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+		);
+		setChromaSlider(calculatedChroma);
+		if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
+			themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+			setChromaCalcInput(calculatedChroma.toString());
+		}
+	}, [hexColorInput]);
 
 	const nameTheNameless = () => {
 		if (!themeColor.name) {
 			themeColor.setName('Color');
+		}
+	};
+	const onHexColorInput = (e: any) => {
+		const newHexColorInput: string = e.currentTarget.value;
+		setHexColorInput(newHexColorInput);
+		themeColor.setSourceHex(newHexColorInput);
+		themeColor.sourceColor.setSourceHex(newHexColorInput);
+
+		const calculatedHue: number = round(
+			calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+		);
+		setHueSlider(calculatedHue);
+		// if the hueCalcInput is an expression, don't update it
+		if (!themeColor.hueCalc.toLowerCase().includes('h')) {
+			themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+			setHueCalcInput(calculatedHue.toString());
+		}
+
+		const calculatedChroma: number = round(
+			calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+		);
+		setChromaSlider(calculatedChroma);
+		if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
+			themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+			setChromaCalcInput(calculatedChroma.toString());
 		}
 	};
 	const onHueSliderInput = (e: any) => {
@@ -84,6 +137,7 @@ const TabGroup = (theme: Theme) => {
 		setHueSlider(calculatedHue);
 	};
 	const onChromaSliderInput = (e: any) => {
+		// TODO: Fix low chroma values triggering hue changes
 		const newChromaCalcInput: number = e.currentTarget.value;
 		themeColor.setChromaCalc(newChromaCalcInput.toString());
 		setChromaCalcInput(newChromaCalcInput.toString());
@@ -132,10 +186,8 @@ const TabGroup = (theme: Theme) => {
 								{/* Section 1B */}
 								<div className="grow h-full w-172 pt-1 border-l border-neutral-700">
 									<TextboxColor
-										hexColor={themeColor.sourceColor.sourceHex}
-										onHexColorInput={(e) =>
-											themeColor.setSourceHex(e.currentTarget.value)
-										}
+										hexColor={hexColorInput}
+										onHexColorInput={(e) => onHexColorInput(e)}
 										onOpacityInput={(e) => '100%'}
 										opacity={'100%'}
 									/>
@@ -152,7 +204,8 @@ const TabGroup = (theme: Theme) => {
 								className="h-full w-32"
 								style={{
 									background: `linear-gradient(to right, ${hctTonalGradient(
-										themeColor.sourceColor.hex
+										themeColor.sourceColor.hct.hue,
+										themeColor.sourceColor.hct.chroma
 									)})`,
 								}}
 							></div>
@@ -191,14 +244,25 @@ const TabGroup = (theme: Theme) => {
 									<div className="flex flex-row justify-between">
 										<span className="p-2">Chroma</span>
 										<span className="p-2">
-											{round(themeColor.endColor.hct.chroma)}
+											{round(themeColor.endColor.hct.chroma)}{' '}
+											<span className="opacity-40">
+												/{' '}
+												{round(
+													findMaxChromaForHueAtTone(
+														themeColor.endColor.hct.hue,
+														themeColor.endColor.hct.tone
+													)
+												)}
+											</span>
 										</span>
 									</div>
 									<div className="chroma-slider px-2 pb-1">
 										<RangeSlider
-											maximum={findMaxChromaForHueAtTone(
-												themeColor.endColor.hct.hue,
-												themeColor.endColor.hct.tone
+											maximum={round(
+												findMaxChromaForHueAtTone(
+													themeColor.endColor.hct.hue,
+													themeColor.endColor.hct.tone
+												)
 											)}
 											minimum={0}
 											onInput={(e) => onChromaSliderInput(e)}
@@ -222,7 +286,8 @@ const TabGroup = (theme: Theme) => {
 								className="h-full w-32"
 								style={{
 									background: `linear-gradient(to right, ${hctTonalGradient(
-										themeColor.endColor.hex
+										themeColor.endColor.hct.hue,
+										themeColor.endColor.hct.chroma
 									)})`,
 								}}
 							></div>
@@ -243,7 +308,8 @@ const TabGroup = (theme: Theme) => {
 								className="h-full w-32"
 								style={{
 									background: `linear-gradient(to right, ${hctTonalGradient(
-										themeColor.endColor.hex,
+										themeColor.endColor.hct.hue,
+										themeColor.endColor.hct.chroma,
 										themeColor.tones
 									)})`,
 								}}
