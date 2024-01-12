@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 import { h } from 'preact';
 import {
 	Textbox,
@@ -6,11 +6,9 @@ import {
 	TextboxNumeric,
 	IconMinus32,
 } from '@create-figma-plugin/ui';
-import { Alias } from '@/src/hooks/useThemeColor';
-import useAlias from '@/src/hooks/useAlias';
+import { Alias } from '@/src/hooks/useAlias';
 
 export const AliasInput = (alias: Alias) => {
-	const newAlias = useAlias;
 	const [aliasName, setAliasName] = useState<string>('aliasname');
 	const [lightModeTone, setLightModeTone] = useState<string>(
 		alias.color[0].toString()

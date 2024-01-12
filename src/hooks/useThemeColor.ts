@@ -197,7 +197,6 @@ const useThemeColorStore = create<ThemeColor>()((...a) => ({
  */
 const useThemeColor = (hexColor: string): ThemeColor => {
 	const color = useColor(hexColor);
-	let aliasId = 0;
 
 	const themeColorStore = useThemeColorStore;
 	const themeColor = themeColorStore((state) => state);

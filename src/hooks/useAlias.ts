@@ -1,13 +1,15 @@
 import z from 'zod';
-import { create } from 'zustand';
+import { StateCreator, create } from 'zustand';
 import { nanoid } from 'nanoid';
 
 export {
+	AliasSchema,
 	AliasDataSchema,
 	AliasActionsSchema,
 	type AliasData,
 	type AliasActions,
 	type Alias,
+	useAliasActionsStore,
 	useAliasStore,
 	useAlias,
 };
@@ -42,9 +44,39 @@ const AliasActionsSchema = z.object({
 	}),
 });
 type AliasActions = z.infer<typeof AliasActionsSchema>;
-// const AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
+const AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
 // type Alias = z.infer<typeof AliasSchema>;
 type Alias = AliasData & AliasActions;
+
+const aliasActionsStore: StateCreator<AliasActions> = (set) => ({
+	set: {
+		id: (id) => set((state) => ({ ...state, id })),
+		name: (name) => set((state) => ({ ...state, name })),
+		color: (color) =>
+			set((state) => ({
+				...state,
+				color: color as { mode: 'light' | 'dark'; tone: number }[],
+			})),
+		toneForMode: (mode, tone) =>
+			set((state: Alias) => {
+				const newColor = [...state.color];
+				const colorIndex = newColor.findIndex(
+					(newColorItem) => newColorItem.mode === mode
+				);
+
+				if (colorIndex === -1) {
+					newColor.push({ mode: mode.toString() as 'light' | 'dark', tone });
+				} else {
+					newColor[colorIndex].tone = tone;
+				}
+				return { ...state, color: newColor };
+			}),
+	},
+});
+
+const useAliasActionsStore = create<AliasActions>((...a) => ({
+	...aliasActionsStore(...a),
+}));
 
 /**
  * Custom hook for managing alias state.

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 // import { AliasInput, AliasList } from './primitives-tab/alias';
@@ -29,9 +30,14 @@ import {
 	findMaxChromaForHueAtTone,
 } from '../lib/color-utils';
 import { hexFromHct } from '../hooks/useColor';
-import { AliasActions, AliasData, useAlias } from '../hooks/useAlias';
+import {
+	AliasActions,
+	AliasData,
+	useAlias,
+	useAliasActionsStore,
+} from '../hooks/useAlias';
 
-const TabGroup = (theme: Theme) => {
+const TabGroup = (theme?: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
 	const themeColor: ThemeColor = useThemeColor('397456');
 	const [hexColorInput, setHexColorInput] = useState<string>(
@@ -185,23 +191,25 @@ const TabGroup = (theme: Theme) => {
 	const onRemoveAlias = (id: string) => {
 		themeColor.alias(id).remove();
 	};
-	const { id, name, color, ...set } = useAlias();
-	const AliasThing: AliasData & AliasActions = useAlias();
-	const aliasStore = AliasThing;
+	const aliasActionsStore: AliasActions = useAliasActionsStore.getState();
+
 	const AliasList = (aliases: AliasData[]) => {
 		const aliasList = aliases.map((alias: AliasData) => {
-			const mutableAlias: AliasData & AliasActions = { ...alias, ...set };
+			const newAlias: AliasData & AliasActions = {
+				...alias,
+				...aliasActionsStore,
+			};
 			return (
 				<div id={alias.id} className="flex flex-row items-center">
 					<Textbox
 						value={alias.name}
-						onChange={(e) => mutableAlias.set.name(e.currentTarget.value)}
+						onChange={(e) => newAlias.set.name(e.currentTarget.value)}
 						placeholder="aliasname"
 					/>
 					<TextboxNumeric
 						value={alias.color[0].tone.toString()}
 						onInput={(e) =>
-							mutableAlias.set.color([
+							newAlias.set.color([
 								{ tone: 0, mode: e.currentTarget.value as string },
 							])
 						}
@@ -210,7 +218,7 @@ const TabGroup = (theme: Theme) => {
 					<TextboxNumeric
 						value={alias.color[1].tone.toString()}
 						onInput={(e) =>
-							mutableAlias.set.color([
+							newAlias.set.color([
 								{ tone: 1, mode: e.currentTarget.value as string },
 							])
 						}

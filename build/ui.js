@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/277e7334-6e09-4bc2-85ec-5be4edc2e2f9/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93b730b3-297d-43b8-90d0-f3d4f51bedea/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/277e7334-6e09-4bc2-85ec-5be4edc2e2f9/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93b730b3-297d-43b8-90d0-f3d4f51bedea/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1746,10 +1746,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06b7b286-289a-4209-b852-e872dc7204a2/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcad65d4-42a8-4259-b210-fc5e62c139a3/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06b7b286-289a-4209-b852-e872dc7204a2/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcad65d4-42a8-4259-b210-fc5e62c139a3/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1797,10 +1797,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2c9014ce-dfe7-470c-af6f-cc70b6324701/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbc4e99b-9e75-4a51-885d-b59fb23e74ab/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2c9014ce-dfe7-470c-af6f-cc70b6324701/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbc4e99b-9e75-4a51-885d-b59fb23e74ab/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -1867,10 +1867,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d8a68c1-de99-4a68-8ce3-652b4769f5bd/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bff238b8-ccfd-4508-8cc3-95dca9209aee/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d8a68c1-de99-4a68-8ce3-652b4769f5bd/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bff238b8-ccfd-4508-8cc3-95dca9209aee/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -1971,10 +1971,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ce743b7-808f-42c1-88d3-7928393f5eff/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/331a7465-95c7-4f99-8778-e8ad5b687cf9/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ce743b7-808f-42c1-88d3-7928393f5eff/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/331a7465-95c7-4f99-8778-e8ad5b687cf9/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2531,10 +2531,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/643426ae-2468-4114-a965-83ab4e86132d/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7928624b-c7c3-4d86-b106-da096889e9c2/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/643426ae-2468-4114-a965-83ab4e86132d/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7928624b-c7c3-4d86-b106-da096889e9c2/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3023,10 +3023,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca9736ad-3f58-47ac-a901-b9d19853b005/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1c6fe44-7366-403e-a832-3e297b008b3c/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca9736ad-3f58-47ac-a901-b9d19853b005/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1c6fe44-7366-403e-a832-3e297b008b3c/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3373,10 +3373,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8cffc37-1097-431b-841f-02b7de53ecf8/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcbbf9d7-841e-4c64-8c82-fb14335ca19f/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8cffc37-1097-431b-841f-02b7de53ecf8/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcbbf9d7-841e-4c64-8c82-fb14335ca19f/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3559,10 +3559,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e2b1120-a46d-4fa9-96e8-c135c8d194b3/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/335c3dd8-aa4a-4423-b2c2-a29766484db6/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e2b1120-a46d-4fa9-96e8-c135c8d194b3/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/335c3dd8-aa4a-4423-b2c2-a29766484db6/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3655,10 +3655,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34f7445a-1094-415f-ae97-5bf46f86ef1b/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8df9a16-8fef-41a7-bdfa-c256a2445a95/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34f7445a-1094-415f-ae97-5bf46f86ef1b/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8df9a16-8fef-41a7-bdfa-c256a2445a95/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -3737,10 +3737,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0ee6e9fd-58d2-49c3-86ae-1117f41d29c1/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1dcc55b3-1895-4388-8bfe-0671e1a870fb/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0ee6e9fd-58d2-49c3-86ae-1117f41d29c1/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1dcc55b3-1895-4388-8bfe-0671e1a870fb/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3767,9 +3767,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34fb97f6-09e7-4d6d-a4b3-e67e769fb46c/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d7aabac-b4eb-4fe6-9f60-7ce6aeab330b/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34fb97f6-09e7-4d6d-a4b3-e67e769fb46c/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d7aabac-b4eb-4fe6-9f60-7ce6aeab330b/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -18030,7 +18030,7 @@ svg {
   });
 
   // src/hooks/useAlias.ts
-  var AliasDataSchema, AliasActionsSchema, useAliasStore, useAlias;
+  var AliasDataSchema, AliasActionsSchema, AliasSchema, aliasActionsStore, useAliasActionsStore, useAliasStore;
   var init_useAlias = __esm({
     "src/hooks/useAlias.ts"() {
       "use strict";
@@ -18063,6 +18063,29 @@ svg {
           toneForMode: z3.function().args(z3.union([z3.string(), z3.number()]), z3.number(), z3.void())
         })
       });
+      AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
+      aliasActionsStore = (set) => ({
+        set: {
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name307) => set((state) => __spreadProps(__spreadValues({}, state), { name: name307 })),
+          color: (color2) => set((state) => __spreadProps(__spreadValues({}, state), {
+            color: color2
+          })),
+          toneForMode: (mode2, tone) => set((state) => {
+            const newColor = [...state.color];
+            const colorIndex = newColor.findIndex(
+              (newColorItem) => newColorItem.mode === mode2
+            );
+            if (colorIndex === -1) {
+              newColor.push({ mode: mode2.toString(), tone });
+            } else {
+              newColor[colorIndex].tone = tone;
+            }
+            return __spreadProps(__spreadValues({}, state), { color: newColor });
+          })
+        }
+      });
+      useAliasActionsStore = create((...a3) => __spreadValues({}, aliasActionsStore(...a3)));
       useAliasStore = create((set) => ({
         id: nanoid(12),
         name: `Alias`,
@@ -18090,40 +18113,6 @@ svg {
           })
         }
       }));
-      useAlias = () => {
-        const id = useAliasStore((state) => state.id);
-        const setId = useAliasStore((state) => state.set.id);
-        const name307 = useAliasStore((state) => state.name);
-        const setName = useAliasStore((state) => state.set.name);
-        const color2 = useAliasStore((state) => state.color);
-        const setColor = useAliasStore((state) => state.set.color);
-        setName("Alias");
-        setColor([
-          { mode: "light", tone: 80 },
-          { mode: "dark", tone: 20 }
-        ]);
-        const setToneForMode = (mode2, tone) => {
-          const newColor = [...color2];
-          const colorIndex = newColor.findIndex((newColor2) => newColor2.mode === mode2);
-          if (colorIndex === -1) {
-            newColor.push({ mode: mode2.toString(), tone });
-          } else {
-            newColor[colorIndex].tone = tone;
-          }
-          setColor(newColor);
-        };
-        return {
-          id,
-          name: name307,
-          color: color2,
-          set: {
-            id: setId,
-            name: setName,
-            color: setColor,
-            toneForMode: setToneForMode
-          }
-        };
-      };
     }
   });
 
@@ -67953,7 +67942,6 @@ svg {
       useThemeColorStore = create()((...a3) => __spreadValues({}, themeColorStore(...a3)));
       useThemeColor = (hexColor) => {
         const color2 = useColor(hexColor);
-        let aliasId = 0;
         const themeColorStore2 = useThemeColorStore;
         const themeColor = themeColorStore2((state) => state);
         const id = themeColor.id;
@@ -68385,9 +68373,9 @@ svg {
           themeColor.chromaCalc.toString()
         );
         const startColor = () => {
-          const color3 = themeColor;
-          color3.setChromaCalc("0");
-          return color3.endColor.hex;
+          const color2 = themeColor;
+          color2.setChromaCalc("0");
+          return color2.endColor.hex;
         };
         const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
         const chromaHex = hexFromHct(newHct);
@@ -68491,27 +68479,25 @@ svg {
           themeColor.addAlias();
           console.log(themeColor.aliases);
         };
-        const onRemoveAlias = (id2) => {
-          themeColor.alias(id2).remove();
+        const onRemoveAlias = (id) => {
+          themeColor.alias(id).remove();
         };
-        const _a = useAlias(), { id, name: name307, color: color2 } = _a, set = __objRest(_a, ["id", "name", "color"]);
-        const AliasThing = useAlias();
-        const aliasStore = AliasThing;
+        const aliasActionsStore2 = useAliasActionsStore.getState();
         const AliasList = (aliases) => {
           const aliasList = aliases.map((alias) => {
-            const mutableAlias = __spreadValues(__spreadValues({}, alias), set);
+            const newAlias = __spreadValues(__spreadValues({}, alias), aliasActionsStore2);
             return /* @__PURE__ */ y("div", { id: alias.id, className: "flex flex-row items-center" }, /* @__PURE__ */ y(
               Textbox,
               {
                 value: alias.name,
-                onChange: (e6) => mutableAlias.set.name(e6.currentTarget.value),
+                onChange: (e6) => newAlias.set.name(e6.currentTarget.value),
                 placeholder: "aliasname"
               }
             ), /* @__PURE__ */ y(
               TextboxNumeric,
               {
                 value: alias.color[0].tone.toString(),
-                onInput: (e6) => mutableAlias.set.color([
+                onInput: (e6) => newAlias.set.color([
                   { tone: 0, mode: e6.currentTarget.value }
                 ]),
                 placeholder: "80"
@@ -68520,7 +68506,7 @@ svg {
               TextboxNumeric,
               {
                 value: alias.color[1].tone.toString(),
-                onInput: (e6) => mutableAlias.set.color([
+                onInput: (e6) => newAlias.set.color([
                   { tone: 1, mode: e6.currentTarget.value }
                 ]),
                 placeholder: "20"

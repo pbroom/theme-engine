@@ -1,6 +1,6 @@
-import type { Alias, ThemeColor } from './useThemeColor';
+import type { ThemeColor } from './useThemeColor';
 import { useThemeColor, ThemeColorSchema } from './useThemeColor';
-import useAlias, { AliasSchema, useAliasStore } from './useAlias';
+import { AliasSchema, useAlias, useAliasStore } from './useAlias';
 import z from 'zod';
 import { create, StateCreator } from 'zustand';
 import { Color, useColor } from './useColor';
@@ -8,7 +8,6 @@ import { nanoid } from 'nanoid';
 
 export {
 	ThemeColorSchema,
-	AliasSchema,
 	AliasGroupSchema,
 	ThemeDataSchema,
 	ThemeActionsSchema,

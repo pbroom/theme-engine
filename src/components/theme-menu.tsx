@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import useThemeList, { ThemeList } from '../hooks/useThemeList';
-import useTheme from '../hooks/useTheme';
+import { useTheme } from '../hooks/useTheme';
 import {
 	Dropdown,
 	DropdownOption,

@@ -25,10 +25,10 @@ export const useThemeListStore = create<ThemeList>((set) => ({
 	themes: [],
 	setId: (id) => set(() => ({ id })),
 	setThemes: (themes) => set(() => ({ themes })),
-	addTheme: (themeName) =>
+	addTheme: () =>
 		set((state) => {
 			const newThemes = [...state.themes];
-			newThemes.push(useTheme(themeName));
+			newThemes.push(useTheme());
 			return { themes: newThemes };
 		}),
 	removeTheme: (theme) =>
@@ -53,8 +53,8 @@ const useThemeList = (themeList?: Theme[]): ThemeList => {
 	 *
 	 * @param {string} themeName - The name of the theme to add.
 	 */
-	const addTheme = (themeName: string) => {
-		const newTheme = useTheme(themeName);
+	const addTheme = () => {
+		const newTheme = useTheme();
 		setThemes([...themes, newTheme]);
 	};
 
