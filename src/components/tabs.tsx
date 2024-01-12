@@ -36,6 +36,8 @@ import {
 	useAlias,
 	useAliasActionsStore,
 } from '../hooks/useAlias';
+import { AliasPreviewList, AliasList } from './primitives-tab/alias';
+import { set } from 'lodash';
 
 const TabGroup = (theme?: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
@@ -80,6 +82,7 @@ const TabGroup = (theme?: Theme) => {
 	// };
 
 	const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
+
 	const chromaHex = hexFromHct(newHct);
 	useEffect(() => {
 		themeColor.setTones(getStopsFromString(tones));
@@ -188,72 +191,38 @@ const TabGroup = (theme?: Theme) => {
 		themeColor.addAlias();
 		console.log(themeColor.aliases);
 	};
-	const onRemoveAlias = (id: string) => {
-		themeColor.alias(id).remove();
+	const onSetAliases = (aliases: AliasData[]) => {
+		themeColor.setAliases(aliases);
 	};
-	const aliasActionsStore: AliasActions = useAliasActionsStore.getState();
 
-	const AliasList = (
-		aliases: AliasData[],
-		onSetName: (id: string, name: string) => void,
-		onSetLightTone: (id: string, tone: number) => void,
-		onSetDarkTone: (id: string, tone: number) => void,
-		onRemoveAlias: (id: string) => void
-	) => {
-		const aliasItems = aliases.map((alias: AliasData) => {
-			const newAlias: AliasData & AliasActions = {
-				...alias,
-				...aliasActionsStore,
-			};
-			return (
-				<div id={alias.id} className="flex flex-row items-center">
-					<div className="flex-grow">
-						<Textbox
-							value={alias.name}
-							onChange={(e) => newAlias.set.name(e.currentTarget.value)}
-							placeholder="aliasname"
-						/>
-					</div>
-					<div className="w-12">
-						<TextboxNumeric
-							value={alias.color[0].tone.toString()}
-							onInput={(e) =>
-								newAlias.set.color([
-									{ tone: 0, mode: e.currentTarget.value as string },
-								])
-							}
-							placeholder="80"
-						/>
-					</div>
-					<div className="w-12">
-						<TextboxNumeric
-							value={alias.color[1].tone.toString()}
-							onInput={(e) =>
-								newAlias.set.color([
-									{ tone: 1, mode: e.currentTarget.value as string },
-								])
-							}
-							placeholder="20"
-						/>
-					</div>
-					<IconButton
-						title="Remove alias"
-						onClick={() => onRemoveAlias(alias.id)}
-					>
-						<IconMinus32 />
-					</IconButton>
-				</div>
-			);
-		});
-		return <div className="flex flex-col">{aliasItems}</div>;
+	const quickHexFromHct = (hue: number, chroma: number, tone: number) => {
+		const hct = Hct.from(hue, chroma, tone);
+		return hexFromHct(hct);
 	};
 
 	const options: Array<TabsOption> = [
 		{
 			children: (
-				<div className="absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row">
+				<div className="tab-content absolute top-10 left-0 w-full overflow-y-scroll flex flex-row">
 					<div className="w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2">
-						<div className=" w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue"></div>
+						<div
+							className="w-6 h-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue"
+							style={{
+								background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
+									themeColor.endColor.hct.hue,
+									themeColor.endColor.hct.chroma,
+									75
+								)}, ${quickHexFromHct(
+									themeColor.endColor.hct.hue,
+									themeColor.endColor.hct.chroma,
+									50
+								)}, ${quickHexFromHct(
+									themeColor.endColor.hct.hue,
+									themeColor.endColor.hct.chroma,
+									25
+								)}, black)`,
+							}}
+						></div>
 						<div className=" w-6 h-6 bg-gradient-conic rounded-full"></div>
 						<div className=" w-6 h-6 bg-gradient-conic rounded-full"></div>
 						<div className=" w-6 h-6 bg-gradient-conic rounded-full"></div>
@@ -419,7 +388,7 @@ const TabGroup = (theme?: Theme) => {
 								}}
 							></div>
 						</div>
-						<div className="h-24 grow flex flex-row border-t border-neutral-700">
+						<div className="grow flex flex-row border-t border-neutral-700">
 							<div className="grow flex-col">
 								<div className="grow flex justify-between">
 									<span className="p-2">Aliases</span>
@@ -427,13 +396,21 @@ const TabGroup = (theme?: Theme) => {
 										<IconPlus32 />
 									</IconButton>
 								</div>
-								{AliasList(themeColor.aliases)}
+								<AliasList
+									aliases={themeColor.aliases}
+									onSetAliases={onSetAliases}
+								/>
 							</div>
-							<div className="h-full w-32 flex">
+							<div className="h-full w-32 flex flex-col">
 								<div className="h-8 w-32 flex justify-around items-center">
 									<span>Light</span>
 									<span>Dark</span>
 								</div>
+								<AliasPreviewList
+									hue={themeColor.endColor.hct.hue}
+									chroma={themeColor.endColor.hct.chroma}
+									aliases={themeColor.aliases}
+								/>
 							</div>
 						</div>
 					</div>

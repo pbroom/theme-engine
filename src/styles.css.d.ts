@@ -6,6 +6,7 @@ declare const styles: {
   readonly "_hexColorInput_190p3_80": string;
   readonly "_border_s66c9_8": string;
   readonly "hue-slider": string;
+  readonly "tab-content": string;
 };
 export = styles;
 

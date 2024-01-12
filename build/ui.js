@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f9c23603-42af-4f37-9df7-b846ad820a9b/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfb891ad-17d3-4e70-b74c-d461d9517272/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f9c23603-42af-4f37-9df7-b846ad820a9b/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfb891ad-17d3-4e70-b74c-d461d9517272/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -640,6 +640,9 @@ video {
 .h-6 {
   height: 1.5rem;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .h-8 {
   height: 2rem;
 }
@@ -663,6 +666,9 @@ video {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-12 {
+  width: 3rem;
 }
 .w-172 {
   width: 172px;
@@ -714,9 +720,6 @@ video {
 }
 .w-px {
   width: 1px;
-}
-.w-12 {
-  width: 3rem;
 }
 .max-w-[172px] {
   max-width: 172px;
@@ -777,8 +780,17 @@ video {
 .place-self-end {
   place-self: end;
 }
+.overflow-clip {
+  overflow: clip;
+}
 .overflow-y-auto {
   overflow-y: auto;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.overflow-y-clip {
+  overflow-y: clip;
 }
 .overflow-y-scroll {
   overflow-y: scroll;
@@ -1064,6 +1076,9 @@ video {
 .outline-2 {
   outline-width: 2px;
 }
+.outline-1 {
+  outline-width: 1px;
+}
 .outline-offset-1 {
   outline-offset: 1px;
 }
@@ -1081,6 +1096,9 @@ video {
 }
 .outline-offset-[8px] {
   outline-offset: 8px;
+}
+.outline-offset-4 {
+  outline-offset: 4px;
 }
 .outline-blue-500 {
   outline-color: #3b82f6;
@@ -1152,9 +1170,9 @@ video {
 		#f00
 	) !important;
 }
-/* .chroma-slider ._border_s66c9_8 {
-	background: linear-gradient(to right, #777, #12ab5c) !important;
-} */
+.tab-content {
+	height: 600px;
+}
 .data-[state=active]:bg-background[data-state=active] {
   background-color: hsl(var(--background));
 }
@@ -1752,10 +1770,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88eab6f8-7661-4065-b135-83fb167131dc/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/607f8b41-6c6a-4f2d-9af9-aac07148d950/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/88eab6f8-7661-4065-b135-83fb167131dc/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/607f8b41-6c6a-4f2d-9af9-aac07148d950/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1803,10 +1821,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8cba2e8-2862-481c-9af8-d9dec5511b97/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad5cf6b-6d76-49e8-acc0-12490aee5736/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8cba2e8-2862-481c-9af8-d9dec5511b97/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad5cf6b-6d76-49e8-acc0-12490aee5736/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -1873,10 +1891,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2231e2fe-37df-4c52-a1a6-7e19c315b6a6/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7282ac19-114d-42b0-96bc-559b94feaca0/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2231e2fe-37df-4c52-a1a6-7e19c315b6a6/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7282ac19-114d-42b0-96bc-559b94feaca0/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -1977,10 +1995,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07e89545-c627-488b-a6b0-cad4a3fa40bb/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e7512d-8be7-4df6-98a7-b051944fd434/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/07e89545-c627-488b-a6b0-cad4a3fa40bb/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e7512d-8be7-4df6-98a7-b051944fd434/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2537,10 +2555,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ed3e88ed-bbf4-407c-80b9-ba785e05ca86/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/33a9c8e3-5b4c-4276-9757-051cb996e893/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ed3e88ed-bbf4-407c-80b9-ba785e05ca86/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/33a9c8e3-5b4c-4276-9757-051cb996e893/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3029,10 +3047,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6cb1e8d8-8d78-4840-8794-1309c42fa082/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b052e481-06db-4d8e-887b-a60644602b33/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6cb1e8d8-8d78-4840-8794-1309c42fa082/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b052e481-06db-4d8e-887b-a60644602b33/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3379,10 +3397,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9058a70d-635f-436a-9ccb-ed3ae5d66f3f/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/adaf1d8c-ab3c-415f-ad3d-306a590058fe/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9058a70d-635f-436a-9ccb-ed3ae5d66f3f/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/adaf1d8c-ab3c-415f-ad3d-306a590058fe/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3565,10 +3583,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/df635378-38ce-4b92-bdf4-1abda36b05e1/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de239290-725a-4d38-ba54-d501b1be07ef/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/df635378-38ce-4b92-bdf4-1abda36b05e1/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de239290-725a-4d38-ba54-d501b1be07ef/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3661,10 +3679,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9be39ebb-f707-4d64-a511-36391dc6f0e7/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a051a667-de66-42e8-a1d7-116b543306cb/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9be39ebb-f707-4d64-a511-36391dc6f0e7/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a051a667-de66-42e8-a1d7-116b543306cb/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -3743,10 +3761,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e582d2b0-dbd7-4b5f-95c4-149f86276897/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6928ec8e-79a4-4d93-846c-f233c24fa975/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e582d2b0-dbd7-4b5f-95c4-149f86276897/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6928ec8e-79a4-4d93-846c-f233c24fa975/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3773,9 +3791,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6dbcf1f-cec6-4f63-8933-24e74e0e9f96/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c3b0b5ae-73f1-4eb3-b711-fc42def571de/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6dbcf1f-cec6-4f63-8933-24e74e0e9f96/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c3b0b5ae-73f1-4eb3-b711-fc42def571de/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -68336,6 +68354,151 @@ svg {
     }
   });
 
+  // src/components/primitives-tab/alias.tsx
+  var AliasItem, AliasList, AliasTonePreview, AliasPreviewList;
+  var init_alias = __esm({
+    "src/components/primitives-tab/alias.tsx"() {
+      "use strict";
+      init_hooks_module();
+      init_preact_module();
+      init_lib2();
+      init_compat_module();
+      init_useColor();
+      init_material_color_utilities();
+      AliasItem = ({
+        alias,
+        onSetName,
+        onSetLightTone,
+        onSetDarkTone,
+        onRemoveAlias
+      }) => {
+        const [aliasName, setAliasName] = h2(alias.name);
+        const [aliasColor, setAliasColor] = h2([
+          alias.color[0].tone,
+          alias.color[1].tone
+        ]);
+        const onSetAliasName = (id, name307) => {
+          setAliasName(name307);
+          onSetName(id, name307);
+        };
+        const onSetAliasLightTone = (id, tone) => {
+          setAliasColor([tone, alias.color[1].tone]);
+          onSetLightTone(id, tone);
+        };
+        const onSetAliasDarkTone = (id, tone) => {
+          setAliasColor([alias.color[0].tone, tone]);
+          onSetDarkTone(id, tone);
+        };
+        return /* @__PURE__ */ y(
+          "div",
+          {
+            key: alias.id,
+            id: alias.id,
+            className: "h-8 flex flex-row items-center"
+          },
+          /* @__PURE__ */ y("div", { className: "flex-grow" }, /* @__PURE__ */ y(
+            Textbox,
+            {
+              value: aliasName,
+              onChange: (e6) => onSetAliasName(alias.id, e6.currentTarget.value),
+              placeholder: "Alias name"
+            }
+          )),
+          /* @__PURE__ */ y("div", { className: "w-12" }, /* @__PURE__ */ y(
+            TextboxNumeric,
+            {
+              value: aliasColor[0].toString(),
+              onInput: (e6) => onSetAliasLightTone(alias.id, parseInt(e6.currentTarget.value)),
+              placeholder: "light"
+            }
+          )),
+          /* @__PURE__ */ y("div", { className: "w-12" }, /* @__PURE__ */ y(
+            TextboxNumeric,
+            {
+              value: aliasColor[1].toString(),
+              onInput: (e6) => onSetAliasDarkTone(alias.id, parseInt(e6.currentTarget.value)),
+              placeholder: "dark"
+            }
+          )),
+          /* @__PURE__ */ y(IconButton, { title: "Remove alias", onClick: () => onRemoveAlias(alias.id) }, /* @__PURE__ */ y(IconMinus32, null))
+        );
+      };
+      AliasList = ({ aliases, onSetAliases }) => {
+        const [aliasItems, setAliasItems] = h2(aliases);
+        const onSetName = (id, name307) => {
+          const alias = aliases.find((alias2) => alias2.id === id);
+          if (alias) {
+            alias.name = name307;
+            setAliasItems([...aliases]);
+            onSetAliases([...aliases]);
+          }
+        };
+        const onSetLightTone = (id, tone) => {
+          const alias = aliases.find((alias2) => alias2.id === id);
+          if (alias) {
+            alias.color[0].tone = tone;
+            setAliasItems([...aliases]);
+            onSetAliases([...aliases]);
+          }
+        };
+        const onSetDarkTone = (id, tone) => {
+          const alias = aliases.find((alias2) => alias2.id === id);
+          if (alias) {
+            alias.color[1].tone = tone;
+            setAliasItems([...aliases]);
+            onSetAliases([...aliases]);
+          }
+        };
+        const onRemoveAlias = (id) => {
+          const newAliasItems = aliasItems.filter((alias) => alias.id !== id);
+          setAliasItems(newAliasItems);
+          onSetAliases(newAliasItems);
+          console.log(newAliasItems, id);
+        };
+        p2(() => {
+          setAliasItems([...aliases]);
+        }, [aliases]);
+        const aliasList = aliasItems.map((alias) => {
+          return /* @__PURE__ */ y(
+            AliasItem,
+            {
+              key: alias.id,
+              alias,
+              onSetName,
+              onSetLightTone,
+              onSetDarkTone,
+              onRemoveAlias
+            }
+          );
+        });
+        return /* @__PURE__ */ y(g, null, aliasList);
+      };
+      AliasTonePreview = ({
+        hue,
+        chroma,
+        lightModeTone,
+        darkModeTone
+      }) => {
+        const lightHct = Hct.from(hue, chroma, lightModeTone);
+        const darkHct = Hct.from(hue, chroma, darkModeTone);
+        const lightHex = hexFromHct(lightHct);
+        const darkHex = hexFromHct(darkHct);
+        return /* @__PURE__ */ y("div", { className: "h-8 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full flex-grow", style: `background: ${lightHex}` }), /* @__PURE__ */ y("div", { className: "h-full flex-grow", style: `background: ${darkHex}` }));
+      };
+      AliasPreviewList = ({ hue, chroma, aliases }) => {
+        return /* @__PURE__ */ y("div", { className: "w-full h-8" }, aliases.map((alias) => /* @__PURE__ */ y(
+          AliasTonePreview,
+          {
+            hue,
+            chroma,
+            lightModeTone: alias.color[0].tone,
+            darkModeTone: alias.color[1].tone
+          }
+        )));
+      };
+    }
+  });
+
   // src/components/tabs.tsx
   var TabGroup, tabs_default;
   var init_tabs2 = __esm({
@@ -68350,7 +68513,7 @@ svg {
       init_esm2();
       init_color_utils2();
       init_useColor();
-      init_useAlias();
+      init_alias();
       TabGroup = (theme) => {
         const [tabValue, setTabValue] = h2("Primitives");
         const themeColor = useThemeColor("397456");
@@ -68485,52 +68648,36 @@ svg {
           themeColor.addAlias();
           console.log(themeColor.aliases);
         };
-        const onRemoveAlias = (id) => {
-          themeColor.alias(id).remove();
+        const onSetAliases = (aliases) => {
+          themeColor.setAliases(aliases);
         };
-        const aliasActionsStore2 = useAliasActionsStore.getState();
-        const AliasList = (aliases, onSetName, onSetLightTone, onSetDarkTone, onRemoveAlias2) => {
-          const aliasItems = aliases.map((alias) => {
-            const newAlias = __spreadValues(__spreadValues({}, alias), aliasActionsStore2);
-            return /* @__PURE__ */ y("div", { id: alias.id, className: "flex flex-row items-center" }, /* @__PURE__ */ y("div", { className: "flex-grow" }, /* @__PURE__ */ y(
-              Textbox,
-              {
-                value: alias.name,
-                onChange: (e6) => newAlias.set.name(e6.currentTarget.value),
-                placeholder: "aliasname"
-              }
-            )), /* @__PURE__ */ y("div", { className: "w-12" }, /* @__PURE__ */ y(
-              TextboxNumeric,
-              {
-                value: alias.color[0].tone.toString(),
-                onInput: (e6) => newAlias.set.color([
-                  { tone: 0, mode: e6.currentTarget.value }
-                ]),
-                placeholder: "80"
-              }
-            )), /* @__PURE__ */ y("div", { className: "w-12" }, /* @__PURE__ */ y(
-              TextboxNumeric,
-              {
-                value: alias.color[1].tone.toString(),
-                onInput: (e6) => newAlias.set.color([
-                  { tone: 1, mode: e6.currentTarget.value }
-                ]),
-                placeholder: "20"
-              }
-            )), /* @__PURE__ */ y(
-              IconButton,
-              {
-                title: "Remove alias",
-                onClick: () => onRemoveAlias2(alias.id)
-              },
-              /* @__PURE__ */ y(IconMinus32, null)
-            ));
-          });
-          return /* @__PURE__ */ y("div", { className: "flex flex-col" }, aliasItems);
+        const quickHexFromHct = (hue2, chroma2, tone) => {
+          const hct = Hct.from(hue2, chroma2, tone);
+          return hexFromHct(hct);
         };
         const options = [
           {
-            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
+            children: /* @__PURE__ */ y("div", { className: "tab-content absolute top-10 left-0 w-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y(
+              "div",
+              {
+                className: "w-6 h-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue",
+                style: {
+                  background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.chroma,
+                    75
+                  )}, ${quickHexFromHct(
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.chroma,
+                    50
+                  )}, ${quickHexFromHct(
+                    themeColor.endColor.hct.hue,
+                    themeColor.endColor.hct.chroma,
+                    25
+                  )}, black)`
+                }
+              }
+            ), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 value: themeColor.name,
@@ -68634,7 +68781,20 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex-col" }, /* @__PURE__ */ y("div", { className: "grow flex justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), AliasList(themeColor.aliases)), /* @__PURE__ */ y("div", { className: "h-full w-32 flex" }, /* @__PURE__ */ y("div", { className: "h-8 w-32 flex justify-around items-center" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark")))))),
+            )), /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex-col" }, /* @__PURE__ */ y("div", { className: "grow flex justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y(
+              AliasList,
+              {
+                aliases: themeColor.aliases,
+                onSetAliases
+              }
+            )), /* @__PURE__ */ y("div", { className: "h-full w-32 flex flex-col" }, /* @__PURE__ */ y("div", { className: "h-8 w-32 flex justify-around items-center" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark")), /* @__PURE__ */ y(
+              AliasPreviewList,
+              {
+                hue: themeColor.endColor.hct.hue,
+                chroma: themeColor.endColor.hct.chroma,
+                aliases: themeColor.aliases
+              }
+            ))))),
             value: "Primitives"
           },
           {
