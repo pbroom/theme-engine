@@ -1,5 +1,5 @@
 import type { Theme } from './useTheme';
-import useTheme, { ThemeSchema } from './useTheme';
+import { useTheme, ThemeSchema } from './useTheme';
 import { v4 as uuidv4 } from 'uuid';
 import z from 'zod';
 import { create } from 'zustand';

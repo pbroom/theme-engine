@@ -1,6 +1,9 @@
-import { h, Fragment } from 'preact';
+import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
+// import { AliasInput, AliasList } from './primitives-tab/alias';
+import { Hct } from '@material/material-color-utilities';
 import {
+	IconButton,
 	Muted,
 	RangeSlider,
 	Tabs,
@@ -8,10 +11,14 @@ import {
 	Textbox,
 	TextboxColor,
 	TextboxMultiline,
-	Text,
+	TextboxNumeric,
 } from '@create-figma-plugin/ui';
-import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
-import { Theme, useTheme } from '../hooks/useTheme';
+import {
+	IconPlus32,
+	IconMinus32,
+	IconChevronDown16,
+} from '@create-figma-plugin/ui';
+import { Theme } from '../hooks/useTheme';
 import { ThemeColor, useThemeColor } from '../hooks/useThemeColor';
 import { round } from 'mathjs';
 import {
@@ -19,18 +26,18 @@ import {
 	calculateHue,
 	calculateChroma,
 	hctTonalGradient,
-	findMaxChromasForHue,
 	findMaxChromaForHueAtTone,
 } from '../lib/color-utils';
-import { nanoid } from 'nanoid';
-import { set } from 'lodash';
-import { maxChromaAtTonePerHue } from '../ref';
-import { on } from '@create-figma-plugin/utilities';
+import { hexFromHct } from '../hooks/useColor';
+import { AliasActions, AliasData, useAlias } from '../hooks/useAlias';
 
 const TabGroup = (theme: Theme) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
 	const themeColor: ThemeColor = useThemeColor('397456');
-
+	const [hexColorInput, setHexColorInput] = useState<string>(
+		themeColor.sourceColor.sourceHex
+	);
+	const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
 	const hue = () => {
 		const sourceHue: number = themeColor.sourceColor.hct.hue;
 		const hueCalcInput: string = themeColor.hueCalc;
@@ -43,11 +50,6 @@ const TabGroup = (theme: Theme) => {
 		const chroma: number = calculateChroma(sourceChroma, chromaCalcInput);
 		return chroma;
 	};
-
-	const [hexColorInput, setHexColorInput] = useState<string>(
-		themeColor.sourceColor.sourceHex
-	);
-	const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
 	const [hueSlider, setHueSlider] = useState<number>(hue);
 	const [hueCalcInput, setHueCalcInput] = useState<string>(
 		themeColor.hueCalc.toString()
@@ -57,6 +59,22 @@ const TabGroup = (theme: Theme) => {
 		themeColor.chromaCalc.toString()
 	);
 
+	const startColor = () => {
+		const color = themeColor;
+		color.setChromaCalc('0');
+		return color.endColor.hex;
+	};
+	// const gradientEndColor = () => {
+	// 	const color = themeColor;
+	// 	color.setChromaCalc(
+	// 		findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone).toString()
+	// 	);
+	// 	// TODO: fix this
+	// 	// return `background: linear-gradient(to right, #777, ${color.endColor.hex}); width: 156px;`;
+	// };
+
+	const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
+	const chromaHex = hexFromHct(newHct);
 	useEffect(() => {
 		themeColor.setTones(getStopsFromString(tones));
 		themeColor.setHueCalc(hueCalcInput);
@@ -135,13 +153,17 @@ const TabGroup = (theme: Theme) => {
 		themeColor.setHueCalc(newHueCalcInput);
 		setHueCalcInput(newHueCalcInput);
 		setHueSlider(calculatedHue);
+		if (newHueCalcInput === '') {
+			themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+			setHueSlider(themeColor.sourceColor.hct.hue);
+		}
 	};
 	const onChromaSliderInput = (e: any) => {
-		// TODO: Fix low chroma values triggering hue changes
 		const newChromaCalcInput: number = e.currentTarget.value;
 		themeColor.setChromaCalc(newChromaCalcInput.toString());
 		setChromaCalcInput(newChromaCalcInput.toString());
 		setChromaSlider(newChromaCalcInput);
+		console.log(themeColor.endColor.hct);
 	};
 	const onChromaCalcInput = (e: any) => {
 		const newChromaCalcInput: string = e.currentTarget.value;
@@ -149,9 +171,63 @@ const TabGroup = (theme: Theme) => {
 			calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput)
 		);
 		themeColor.setChromaCalc(newChromaCalcInput);
-		setChromaCalcInput(newChromaCalcInput);
 		setChromaSlider(calculatedChroma);
+		setChromaCalcInput(newChromaCalcInput);
+		if (newChromaCalcInput === '') {
+			themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+			setChromaSlider(themeColor.sourceColor.hct.chroma);
+		}
 	};
+	const onAddAlias = () => {
+		themeColor.addAlias();
+		console.log(themeColor.aliases);
+	};
+	const onRemoveAlias = (id: string) => {
+		themeColor.alias(id).remove();
+	};
+	const { id, name, color, ...set } = useAlias();
+	const AliasThing: AliasData & AliasActions = useAlias();
+	const aliasStore = AliasThing;
+	const AliasList = (aliases: AliasData[]) => {
+		const aliasList = aliases.map((alias: AliasData) => {
+			const mutableAlias: AliasData & AliasActions = { ...alias, ...set };
+			return (
+				<div id={alias.id} className="flex flex-row items-center">
+					<Textbox
+						value={alias.name}
+						onChange={(e) => mutableAlias.set.name(e.currentTarget.value)}
+						placeholder="aliasname"
+					/>
+					<TextboxNumeric
+						value={alias.color[0].tone.toString()}
+						onInput={(e) =>
+							mutableAlias.set.color([
+								{ tone: 0, mode: e.currentTarget.value as string },
+							])
+						}
+						placeholder="80"
+					/>
+					<TextboxNumeric
+						value={alias.color[1].tone.toString()}
+						onInput={(e) =>
+							mutableAlias.set.color([
+								{ tone: 1, mode: e.currentTarget.value as string },
+							])
+						}
+						placeholder="20"
+					/>
+					<IconButton
+						title="Remove alias"
+						onClick={() => onRemoveAlias(alias.id)}
+					>
+						<IconMinus32 />
+					</IconButton>
+				</div>
+			);
+		});
+		return <div className="flex flex-col">{aliasList}</div>;
+	};
+
 	const options: Array<TabsOption> = [
 		{
 			children: (
@@ -222,9 +298,7 @@ const TabGroup = (theme: Theme) => {
 								<div className="grow h-full w-172 border-t border-neutral-700">
 									<div className="flex flex-row justify-between">
 										<span className="p-2">Hue</span>
-										<span className="p-2">
-											{round(themeColor.endColor.hct.hue)}
-										</span>
+										<span className="p-2">{round(hue())}</span>
 									</div>
 									<div className="hue-slider px-2 pb-1">
 										<RangeSlider
@@ -255,7 +329,7 @@ const TabGroup = (theme: Theme) => {
 												/{' '}
 												{round(
 													findMaxChromaForHueAtTone(
-														themeColor.endColor.hct.hue,
+														hue(),
 														themeColor.endColor.hct.tone
 													)
 												)}
@@ -266,7 +340,7 @@ const TabGroup = (theme: Theme) => {
 										<RangeSlider
 											maximum={round(
 												findMaxChromaForHueAtTone(
-													themeColor.endColor.hct.hue,
+													hue(),
 													themeColor.endColor.hct.tone
 												)
 											)}
@@ -274,6 +348,10 @@ const TabGroup = (theme: Theme) => {
 											onInput={(e) => onChromaSliderInput(e)}
 											value={themeColor.chromaCalc}
 										/>
+										<div
+											className="absolute h-px chroma-slider-bar"
+											style={`width: 150px; transform: translate(-1px, -1px); background: linear-gradient(to right, #777, ${chromaHex}`}
+										></div>
 									</div>
 									<Textbox
 										value={chromaCalcInput}
@@ -322,12 +400,21 @@ const TabGroup = (theme: Theme) => {
 							></div>
 						</div>
 						<div className="h-24 grow flex flex-row border-t border-neutral-700">
-							<div className="grow flex flex-row">
-								<div className="grow h-full">
-									<p className="p-2">Aliases</p>
+							<div className="grow flex-col">
+								<div className="grow flex justify-between">
+									<span className="p-2">Aliases</span>
+									<IconButton onClick={onAddAlias}>
+										<IconPlus32 />
+									</IconButton>
+								</div>
+								{AliasList(themeColor.aliases)}
+							</div>
+							<div className="h-full w-32 flex">
+								<div className="h-8 w-32 flex justify-around items-center">
+									<span>Light</span>
+									<span>Dark</span>
 								</div>
 							</div>
-							<div className="h-full w-32"></div>
 						</div>
 					</div>
 				</div>

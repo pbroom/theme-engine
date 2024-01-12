@@ -9,7 +9,7 @@ import {
 	useColorStore,
 } from './useColor';
 import { ColorSchema } from './useColor';
-import { maxChromaAtTonePerHue } from '../ref';
+import { AliasDataSchema } from './useAlias';
 import { e, evaluate, i, round } from 'mathjs';
 import { useEffect, useRef } from 'preact/hooks';
 import { nanoid } from 'nanoid';
@@ -19,10 +19,9 @@ import { Hct } from '@material/material-color-utilities';
 
 export {
 	ThemeColorSchema,
-	AliasSchema,
 	ThemeColorDataSchema,
 	ThemeColorActionsSchema,
-	type Alias,
+	type AliasData,
 	type AddAliasReturn,
 	type ThemeColorData,
 	type ThemeColorActions,
@@ -31,26 +30,15 @@ export {
 	useThemeColor,
 };
 
-const AliasSchema = z.object({
-	id: z.string(),
-	name: z.string(),
-	color: z.array(
-		z.object({
-			mode: z.enum(['light', 'dark']),
-			tone: z.number().int().min(0).max(100),
-		})
-	),
-});
-
 const AddAliasReturnSchema = z.object({
-	alias: AliasSchema,
+	alias: AliasDataSchema,
 });
 
 type AddAliasReturn = z.infer<typeof AddAliasReturnSchema>;
-type Alias = z.infer<typeof AliasSchema>;
+type AliasData = z.infer<typeof AliasDataSchema>;
 
 const AliasMethodsSchema = z.object({
-	alias: AliasSchema,
+	alias: AliasDataSchema,
 	setName: z.function(z.tuple([z.string()])),
 	setTone: z.function(z.tuple([z.union([z.string(), z.number()]), z.number()])),
 	setTones: z.function(z.tuple([z.number(), z.number()])),
@@ -70,7 +58,7 @@ const ThemeColorDataSchema = z.object({
 	tones: z.array(z.number()),
 	hueCalc: z.string(),
 	chromaCalc: z.string(),
-	aliases: z.array(AliasSchema),
+	aliases: z.array(AliasDataSchema),
 });
 type ThemeColorData = z.infer<typeof ThemeColorDataSchema>;
 const ThemeColorActionsSchema = z.object({
@@ -82,7 +70,7 @@ const ThemeColorActionsSchema = z.object({
 	setTones: z.function().args(z.array(z.number()), z.void()),
 	setHueCalc: z.function().args(z.string(), z.void()),
 	setChromaCalc: z.function().args(z.string(), z.void()),
-	setAliases: z.function().args(z.array(AliasSchema), z.void()),
+	setAliases: z.function().args(z.array(AliasDataSchema), z.void()),
 	addAlias: z.function(z.tuple([]), AddAliasReturnSchema),
 	alias: AliasFunctionSchema,
 });
@@ -126,7 +114,7 @@ const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	setChromaCalc: (chromaCalc) => set(() => ({ chromaCalc: chromaCalc })),
 	setAliases: (aliases) => set(() => ({ aliases: aliases })),
 	addAlias: (): AddAliasReturn => {
-		const alias: Alias = {
+		const alias: AliasData = {
 			id: nanoid(12),
 			name: 'Alias',
 			color: [
@@ -142,13 +130,13 @@ const themeColorStore: StateCreator<ThemeColor> = (set) => ({
 	},
 	alias: (id: string) => {
 		const state = useThemeColorStore.getState();
-		const requestedAlias: Alias | undefined = state.aliases.find(
+		const requestedAlias: AliasData | undefined = state.aliases.find(
 			(alias) => alias.id === id
 		);
 		if (!requestedAlias) {
 			throw new Error('Alias not found');
 		}
-		const alias: Alias = requestedAlias;
+		const alias: AliasData = requestedAlias;
 		const setName = (name: string) => {
 			const newAliases = [...state.aliases];
 			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
@@ -238,7 +226,7 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	const setChromaCalc = (chromaCalc: string) =>
 		themeColor.setChromaCalc(chromaCalc);
 	const aliases = themeColor.aliases;
-	const setAliases = (aliases: Alias[]) => themeColor.setAliases(aliases);
+	const setAliases = (aliases: AliasData[]) => themeColor.setAliases(aliases);
 
 	// TODO: convert to standalone function
 	const calculateHue = (hueValue: number, hueCalcValue: string) => {
@@ -384,20 +372,14 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 				const newColor = state.sourceColor;
 				const hueCalc = state.hueCalc;
 				const chromaCalc = state.chromaCalc;
-				const chroma = calculateChroma(newColor.hct.chroma, chromaCalc);
 				const endHct = Hct.from(
 					calculateHue(newColor.hct.hue, hueCalc),
-					chroma,
+					calculateChroma(newColor.hct.chroma, chromaCalc),
 					newColor.hct.tone
 				);
 				const newEndColor: Color = {
 					...newColor,
-					hct: {
-						...endHct,
-						hue: endColor.hct.hue,
-						chroma: chroma,
-						tone: newColor.hct.tone,
-					},
+					hct: endHct,
 					rgba: rgbaFromHct(endHct),
 					hex: hexFromHct(endHct),
 					figmaSolidColor: SolidColorFromRgbColor(
@@ -413,12 +395,12 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	 * Adds a new alias to the list of aliases.
 	 */
 	const addAlias = () => {
-		let alias: Alias = {
+		const alias: AliasData = {
 			id: nanoid(12),
 			name: 'Alias',
 			color: [
-				{ mode: 'light', tone: 100 },
-				{ mode: 'dark', tone: 0 },
+				{ mode: 'light', tone: 80 },
+				{ mode: 'dark', tone: 20 },
 			],
 		};
 		const newAliases = [...aliases];
@@ -428,13 +410,13 @@ const useThemeColor = (hexColor: string): ThemeColor => {
 	};
 
 	const alias = (id: string) => {
-		const requestedAlias: Alias | undefined = aliases.find(
+		const requestedAlias: AliasData | undefined = aliases.find(
 			(alias) => alias.id === id
 		);
 		if (!requestedAlias) {
 			throw new Error('Alias not found');
 		}
-		const alias: Alias = requestedAlias;
+		const alias: AliasData = requestedAlias;
 		const setName = (name: string) => {
 			const newAliases = [...aliases];
 			const aliasToUpdate = newAliases.find((alias) => alias.id === id);
