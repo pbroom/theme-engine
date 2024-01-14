@@ -2,7 +2,11 @@ import '!./dist/tailwind.css';
 import { Button, Textbox, render } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
-import { useThemeColor, ThemeColor } from './hooks/useThemeColor';
+import {
+	useThemeColor,
+	ThemeColor,
+	ThemeColorData,
+} from './hooks/useThemeColor';
 import { nanoid } from 'nanoid';
 import { Theme, useTheme } from './hooks/useTheme';
 import { useEffect } from 'react';
@@ -27,24 +31,24 @@ export const Plugin = () => {
 	];
 	useEffect(() => {
 		if (theme.themeColors.length === 0) {
-			theme.setThemeColors(themeColors);
+			theme.set.themeColors(themeColors);
 		}
 		console.log(theme);
 	}, []);
 
 	const log = () => {
-		theme.setId(nanoid(6));
-		theme.addThemeColor(primary);
+		theme.set.id(nanoid(6));
+		theme.set.addThemeColor(primary);
 		console.log(theme);
 		console.log(nanoid(6));
 	};
 	const nameTheNameless = () => {
 		if (!theme.name) {
-			theme.setName('Theme');
+			theme.set.name('Theme');
 		}
 	};
-	const onSetThemeColors = (themeColors: ThemeColor[]) => {
-		theme.setThemeColors(themeColors);
+	const onSetThemeColors = (themeColors: ThemeColorData[]) => {
+		theme.set.themeColors(themeColors);
 	};
 	// Rendering the UI
 	return (
@@ -61,7 +65,7 @@ export const Plugin = () => {
 						{/* <ThemeMenu themes={ThemeList} /> */}
 						<Textbox
 							value={theme.name}
-							onChange={(e) => theme.setName(e.currentTarget.value)}
+							onChange={(e) => theme.set.name(e.currentTarget.value)}
 							onBlur={() => nameTheNameless()}
 							onfocusout={() => nameTheNameless()}
 							placeholder="Theme name"

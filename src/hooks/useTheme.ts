@@ -62,7 +62,7 @@ const ThemeActionsSchema = z.object({
 });
 type ThemeActions = z.infer<typeof ThemeActionsSchema>;
 const ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
-type Theme = z.infer<typeof ThemeSchema>;
+type Theme = ThemeData & ThemeActions;
 
 const aliasGroupStore: StateCreator<AliasGroup> = (set) => ({
 	id: nanoid(12),
@@ -234,13 +234,6 @@ const useTheme = (): Theme => {
 		};
 		return { aliasGroup, remove };
 	};
-
-	// Instantiate new theme upon creation
-	// useEffect(() => {
-	// 	if (name !== themeName) {
-	// 		setName(themeName);
-	// 	}
-	// }, []);
 
 	return {
 		id,

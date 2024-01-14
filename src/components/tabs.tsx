@@ -20,7 +20,11 @@ import {
 	IconChevronDown16,
 } from '@create-figma-plugin/ui';
 import { Theme } from '../hooks/useTheme';
-import { ThemeColor, useThemeColor } from '../hooks/useThemeColor';
+import {
+	ThemeColor,
+	ThemeColorData,
+	useThemeColor,
+} from '../hooks/useThemeColor';
 import { round } from 'mathjs';
 import {
 	getStopsFromString,
@@ -39,15 +43,15 @@ import {
 import { AliasPreviewList, AliasList } from './primitives-tab/alias';
 
 type TabGroupProps = {
-	themeColors: ThemeColor[];
-	onSetThemeColors: (themeColors: ThemeColor[]) => void;
+	themeColors: ThemeColorData[];
+	onSetThemeColors: (themeColors: ThemeColorData[]) => void;
 };
 
 const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
 	const [tabValue, setTabValue] = useState<string>('Primitives');
 	const [themeColorList, setThemeColorList] =
-		useState<ThemeColor[]>(themeColors);
-	const [currentThemeColor, setCurrentThemeColor] = useState<ThemeColor>(
+		useState<ThemeColorData[]>(themeColors);
+	const [currentThemeColor, setCurrentThemeColor] = useState<ThemeColorData>(
 		themeColors[0]
 	);
 	const themeColor: ThemeColor = useThemeColor('397456');
