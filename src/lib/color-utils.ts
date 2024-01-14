@@ -1,5 +1,5 @@
 import { TextboxAutocompleteOption } from '@create-figma-plugin/ui';
-import { useColor } from '../hooks/useColor';
+import { hexFromHct, useColor } from '../hooks/useColor';
 import {
 	Hct,
 	TonalPalette,
@@ -10,6 +10,7 @@ import { evaluate } from 'mathjs';
 export type { PaletteObject, HSBColor };
 
 export {
+	quickHexFromHct,
 	toneStops,
 	paletteTones,
 	getValues,
@@ -23,6 +24,20 @@ export {
 	hexToHSB,
 	calculateHue,
 	calculateChroma,
+};
+
+/**
+ * Converts the given hue, chroma, and tone values to a hexadecimal color code.
+ * quickHexFromHct(163, 33, 44) // '#397456'
+ *
+ * @param hue - The hue value.
+ * @param chroma - The chroma value.
+ * @param tone - The tone value.
+ * @returns The hexadecimal color code.
+ */
+const quickHexFromHct = (hue: number, chroma: number, tone: number) => {
+	const hct = Hct.from(hue, chroma, tone);
+	return hexFromHct(hct);
 };
 
 /**

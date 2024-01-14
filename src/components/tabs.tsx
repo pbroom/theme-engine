@@ -32,6 +32,7 @@ import {
 	calculateChroma,
 	hctTonalGradient,
 	findMaxChromaForHueAtTone,
+	quickHexFromHct,
 } from '../lib/color-utils';
 import { hexFromHct } from '../hooks/useColor';
 import {
@@ -202,11 +203,6 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
 	};
 	const onSetAliases = (aliases: AliasData[]) => {
 		themeColor.set.aliases(aliases);
-	};
-
-	const quickHexFromHct = (hue: number, chroma: number, tone: number) => {
-		const hct = Hct.from(hue, chroma, tone);
-		return hexFromHct(hct);
 	};
 
 	const options: Array<TabsOption> = [

@@ -1,5 +1,5 @@
 import '!./dist/tailwind.css';
-import { Button, Textbox, render } from '@create-figma-plugin/ui';
+import { LoadingIndicator, Textbox, render } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
 import {
