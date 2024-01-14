@@ -62,14 +62,14 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfb891ad-17d3-4e70-b74c-d461d9517272/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e724117a-4d12-452e-9f03-2bdcd3c70c66/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dfb891ad-17d3-4e70-b74c-d461d9517272/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e724117a-4d12-452e-9f03-2bdcd3c70c66/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
         element.textContent = `/*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -96,17 +96,20 @@
 4. Use the user's configured \`sans\` font-family by default.
 5. Use the user's configured \`sans\` font-feature-settings by default.
 6. Use the user's configured \`sans\` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
 }
 
 /*
@@ -173,8 +176,10 @@ strong {
 }
 
 /*
-1. Use the user's configured \`mono\` font family by default.
-2. Correct the odd \`em\` font sizing in all browsers.
+1. Use the user's configured \`mono\` font-family by default.
+2. Use the user's configured \`mono\` font-feature-settings by default.
+3. Use the user's configured \`mono\` font-variation-settings by default.
+4. Correct the odd \`em\` font sizing in all browsers.
 */
 
 code,
@@ -182,7 +187,9 @@ kbd,
 samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
 }
 
 /*
@@ -237,6 +244,8 @@ optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
   font-size: 100%; /* 1 */
   font-weight: inherit; /* 1 */
   line-height: inherit; /* 1 */
@@ -371,6 +380,13 @@ ul,
 menu {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
   padding: 0;
 }
 
@@ -598,6 +614,9 @@ video {
 .z-10 {
   z-index: 10;
 }
+.z-50 {
+  z-index: 50;
+}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -735,6 +754,10 @@ video {
   --tw-border-spacing-y: 0.5rem;
   border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
 }
+.translate-x-8 {
+  --tw-translate-x: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -855,6 +878,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
+.bg-green-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
 .bg-muted {
   background-color: hsl(var(--muted));
 }
@@ -878,6 +905,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
+.bg-neutral-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity));
+}
 .bg-red-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
@@ -889,6 +920,10 @@ video {
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .bg-slate-300 {
   --tw-bg-opacity: 1;
@@ -1073,17 +1108,20 @@ video {
 .outline-dashed {
   outline-style: dashed;
 }
-.outline-2 {
-  outline-width: 2px;
-}
 .outline-1 {
   outline-width: 1px;
+}
+.outline-2 {
+  outline-width: 2px;
 }
 .outline-offset-1 {
   outline-offset: 1px;
 }
 .outline-offset-2 {
   outline-offset: 2px;
+}
+.outline-offset-4 {
+  outline-offset: 4px;
 }
 .outline-offset-['-2px'] {
   outline-offset: '-2px';
@@ -1096,9 +1134,6 @@ video {
 }
 .outline-offset-[8px] {
   outline-offset: 8px;
-}
-.outline-offset-4 {
-  outline-offset: 4px;
 }
 .outline-blue-500 {
   outline-color: #3b82f6;
@@ -1137,27 +1172,22 @@ video {
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
 }
-
 ._tabs_61qsz_1 {
 	border-bottom: none !important;
 }
-
 ._opacityInput_190p3_84,
 ._divider_190p3_109 {
 	display: none !important;
 }
-
 ._textboxColor_190p3_1 {
 	width: unset !important;
 }
-
 ._hexColorInput_190p3_80 {
 	flex-basis: 100% !important;
 }
 ._border_s66c9_8 {
 	background-color: unset !important;
 }
-
 .hue-slider ._border_s66c9_8 {
 	background: linear-gradient(
 		to right,
@@ -1173,6 +1203,20 @@ video {
 .tab-content {
 	height: 600px;
 }
+.build-button:hover {
+		background-color: #222;
+	}
+.build-button:active {
+		background-color: #000;
+	}
+.active:bg-neutral-700:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+}
+.active:bg-red-700:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
 .data-[state=active]:bg-background[data-state=active] {
   background-color: hsl(var(--background));
 }
@@ -1184,6 +1228,10 @@ video {
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.hover:translate-x-8:where([data-rac])[data-hovered] {
+  --tw-translate-x: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover:bg-blue-400:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -1192,6 +1240,18 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
+.hover:bg-green-600:where([data-rac])[data-hovered] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+.hover:bg-neutral-700:where([data-rac])[data-hovered] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+}
+.hover:translate-x-8:where(:not([data-rac])):hover {
+  --tw-translate-x: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover:bg-blue-400:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -1199,6 +1259,14 @@ video {
 .hover:bg-fig-blue:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
+}
+.hover:bg-green-600:where(:not([data-rac])):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+.hover:bg-neutral-700:where(:not([data-rac])):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
 .focus-visible:outline-none:where([data-rac])[data-focus-visible] {
   outline: 2px solid transparent;
@@ -1770,10 +1838,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/607f8b41-6c6a-4f2d-9af9-aac07148d950/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55918103-065f-4e97-8dfc-6eedec9f8323/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/607f8b41-6c6a-4f2d-9af9-aac07148d950/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55918103-065f-4e97-8dfc-6eedec9f8323/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1821,10 +1889,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad5cf6b-6d76-49e8-acc0-12490aee5736/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9401ed0a-2a75-46d4-a40f-4152b782fbdf/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad5cf6b-6d76-49e8-acc0-12490aee5736/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9401ed0a-2a75-46d4-a40f-4152b782fbdf/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -1891,10 +1959,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7282ac19-114d-42b0-96bc-559b94feaca0/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08efe648-98c4-43fb-ba68-942d534adc29/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7282ac19-114d-42b0-96bc-559b94feaca0/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08efe648-98c4-43fb-ba68-942d534adc29/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -1995,10 +2063,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e7512d-8be7-4df6-98a7-b051944fd434/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a7439f7-dd1c-4b70-8a40-3211aac69838/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e7512d-8be7-4df6-98a7-b051944fd434/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a7439f7-dd1c-4b70-8a40-3211aac69838/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2555,10 +2623,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/33a9c8e3-5b4c-4276-9757-051cb996e893/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2d015900-bbc3-4336-a065-0db1789b3220/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/33a9c8e3-5b4c-4276-9757-051cb996e893/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2d015900-bbc3-4336-a065-0db1789b3220/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3047,10 +3115,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b052e481-06db-4d8e-887b-a60644602b33/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4583eeb8-a0f1-4281-b6c7-4641513e96a5/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b052e481-06db-4d8e-887b-a60644602b33/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4583eeb8-a0f1-4281-b6c7-4641513e96a5/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3397,10 +3465,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/adaf1d8c-ab3c-415f-ad3d-306a590058fe/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a813d443-b3da-4789-b78b-88241cca48cb/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/adaf1d8c-ab3c-415f-ad3d-306a590058fe/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a813d443-b3da-4789-b78b-88241cca48cb/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3583,10 +3651,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de239290-725a-4d38-ba54-d501b1be07ef/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73441bc-4e11-4120-9284-d1658bfc8799/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/de239290-725a-4d38-ba54-d501b1be07ef/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73441bc-4e11-4120-9284-d1658bfc8799/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3679,10 +3747,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a051a667-de66-42e8-a1d7-116b543306cb/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/112573b7-7661-4a03-a37c-7530f3548916/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a051a667-de66-42e8-a1d7-116b543306cb/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/112573b7-7661-4a03-a37c-7530f3548916/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -3761,10 +3829,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6928ec8e-79a4-4d93-846c-f233c24fa975/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40621eba-6d4e-4d31-86aa-a04f8308cf47/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6928ec8e-79a4-4d93-846c-f233c24fa975/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40621eba-6d4e-4d31-86aa-a04f8308cf47/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3791,9 +3859,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c3b0b5ae-73f1-4eb3-b711-fc42def571de/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c27286f1-32b0-4054-8a9f-828a69362974/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c3b0b5ae-73f1-4eb3-b711-fc42def571de/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c27286f1-32b0-4054-8a9f-828a69362974/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -18140,7 +18208,7 @@ svg {
     }
   });
 
-  // node_modules/@babel/runtime/helpers/esm/extends.js
+  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
       for (var i5 = 1; i5 < arguments.length; i5++) {
@@ -18156,7 +18224,7 @@ svg {
     return _extends.apply(this, arguments);
   }
   var init_extends = __esm({
-    "node_modules/@babel/runtime/helpers/esm/extends.js"() {
+    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/extends.js"() {
     }
   });
 
@@ -34817,7 +34885,7 @@ svg {
     }
   });
 
-  // node_modules/@babel/runtime/helpers/esm/typeof.js
+  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js
   function _typeof(obj) {
     "@babel/helpers - typeof";
     return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
@@ -34827,11 +34895,11 @@ svg {
     }, _typeof(obj);
   }
   var init_typeof = __esm({
-    "node_modules/@babel/runtime/helpers/esm/typeof.js"() {
+    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js"() {
     }
   });
 
-  // node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
   function _toPrimitive(input, hint) {
     if (_typeof(input) !== "object" || input === null)
       return input;
@@ -34845,24 +34913,24 @@ svg {
     return (hint === "string" ? String : Number)(input);
   }
   var init_toPrimitive = __esm({
-    "node_modules/@babel/runtime/helpers/esm/toPrimitive.js"() {
+    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js"() {
       init_typeof();
     }
   });
 
-  // node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
   function _toPropertyKey(arg2) {
     var key = _toPrimitive(arg2, "string");
     return _typeof(key) === "symbol" ? key : String(key);
   }
   var init_toPropertyKey = __esm({
-    "node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
+    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
       init_typeof();
       init_toPrimitive();
     }
   });
 
-  // node_modules/@babel/runtime/helpers/esm/defineProperty.js
+  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/defineProperty.js
   function _defineProperty(obj, key, value2) {
     key = _toPropertyKey(key);
     if (key in obj) {
@@ -34878,7 +34946,7 @@ svg {
     return obj;
   }
   var init_defineProperty = __esm({
-    "node_modules/@babel/runtime/helpers/esm/defineProperty.js"() {
+    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/defineProperty.js"() {
       init_toPropertyKey();
     }
   });
@@ -67786,7 +67854,7 @@ svg {
   });
 
   // src/hooks/useThemeColor.ts
-  var AddAliasReturnSchema, AliasMethodsSchema, AliasFunctionSchema, ThemeColorDataSchema, ThemeColorActionsSchema, ThemeColorSchema, baseColor, color, themeColorStore, useThemeColorStore, useThemeColor;
+  var AddAliasReturnSchema, AliasMethodsSchema, AliasFunctionSchema, ThemeColorDataSchema, baseColor, color, themeColorDataStore, useThemeColorDataStore, ThemeColorActionsSchema, themeColorActionsStore, useThemeColorActionsStore, ThemeColorSchema, themeColorStore, useThemeColorStore, useThemeColor;
   var init_useThemeColor = __esm({
     "src/hooks/useThemeColor.ts"() {
       "use strict";
@@ -67821,20 +67889,6 @@ svg {
         chromaCalc: z3.string(),
         aliases: z3.array(AliasDataSchema)
       });
-      ThemeColorActionsSchema = z3.object({
-        setId: z3.function().args(z3.string(), z3.void()),
-        setName: z3.function().args(z3.string(), z3.void()),
-        setSourceHex: z3.function().args(z3.string(), z3.void()),
-        setSourceColor: z3.function().args(ColorSchema, z3.void()),
-        setEndColor: z3.function().args(ColorSchema, z3.void()),
-        setTones: z3.function().args(z3.array(z3.number()), z3.void()),
-        setHueCalc: z3.function().args(z3.string(), z3.void()),
-        setChromaCalc: z3.function().args(z3.string(), z3.void()),
-        setAliases: z3.function().args(z3.array(AliasDataSchema), z3.void()),
-        addAlias: z3.function(z3.tuple([]), AddAliasReturnSchema),
-        alias: AliasFunctionSchema
-      });
-      ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
       baseColor = useColorStore.getState();
       color = __spreadProps(__spreadValues({}, baseColor), {
         sourceHex: "397456",
@@ -67842,6 +67896,149 @@ svg {
         rgba: rgbaFromHct(Hct.from(145, 40, 50)),
         hex: hexFromHct(Hct.from(145, 40, 50))
       });
+      themeColorDataStore = () => ({
+        id: nanoid(12),
+        name: "color",
+        sourceHex: "397456",
+        sourceColor: color,
+        endColor: color,
+        tones: [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          95,
+          99,
+          100,
+          4,
+          5,
+          6,
+          12,
+          17,
+          22,
+          24,
+          25,
+          35,
+          87,
+          92,
+          94,
+          96,
+          98
+        ],
+        hueCalc: "163",
+        chromaCalc: "33",
+        aliases: []
+      });
+      useThemeColorDataStore = create((...a3) => __spreadValues({}, themeColorDataStore(...a3)));
+      ThemeColorActionsSchema = z3.object({
+        set: z3.object({
+          id: z3.function().args(z3.string(), z3.void()),
+          name: z3.function().args(z3.string(), z3.void()),
+          sourceHex: z3.function().args(z3.string(), z3.void()),
+          sourceColor: z3.function().args(ColorSchema, z3.void()),
+          endColor: z3.function().args(ColorSchema, z3.void()),
+          tones: z3.function().args(z3.array(z3.number()), z3.void()),
+          hueCalc: z3.function().args(z3.string(), z3.void()),
+          chromaCalc: z3.function().args(z3.string(), z3.void()),
+          aliases: z3.function().args(z3.array(AliasDataSchema), z3.void()),
+          addAlias: z3.function(z3.tuple([]), AddAliasReturnSchema),
+          alias: AliasFunctionSchema
+        })
+      });
+      themeColorActionsStore = (set) => ({
+        set: {
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name307) => set((state) => __spreadProps(__spreadValues({}, state), { name: name307 })),
+          sourceHex: (sourceHex) => set((state) => __spreadProps(__spreadValues({}, state), {
+            sourceHex,
+            sourceColor: __spreadProps(__spreadValues({}, state), { sourceHex })
+          })),
+          sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), { sourceColor })),
+          endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), { endColor })),
+          tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), { tones })),
+          hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), { hueCalc })),
+          chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), { chromaCalc })),
+          aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), { aliases })),
+          addAlias: () => {
+            const alias = {
+              id: nanoid(12),
+              name: "Alias",
+              color: [
+                { mode: "light", tone: 100 },
+                { mode: "dark", tone: 0 }
+              ]
+            };
+            const state = useThemeColorStore.getState();
+            const newAliases = [...state.aliases];
+            newAliases.push(alias);
+            set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
+            return { alias };
+          },
+          alias: (id) => {
+            const state = useThemeColorStore.getState();
+            const requestedAlias = state.aliases.find(
+              (alias2) => alias2.id === id
+            );
+            if (!requestedAlias) {
+              throw new Error("Alias not found");
+            }
+            const alias = requestedAlias;
+            const setName = (name307) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                aliasToUpdate.name = name307;
+              }
+              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
+            };
+            const setTone2 = (mode2, tone) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                if (typeof mode2 === "string") {
+                  const colorToUpdate = aliasToUpdate.color.find(
+                    (color2) => color2.mode === mode2
+                  );
+                  if (colorToUpdate) {
+                    colorToUpdate.tone = tone;
+                  }
+                } else if (typeof mode2 === "number") {
+                  if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
+                    aliasToUpdate.color[mode2].tone = tone;
+                  }
+                }
+              }
+              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
+            };
+            const setTones = (firstTone, secondTone) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                aliasToUpdate.color[0].tone = firstTone;
+                aliasToUpdate.color[1].tone = secondTone;
+              }
+              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
+            };
+            const remove = () => {
+              const newAliases = [...state.aliases];
+              const index2 = newAliases.indexOf(alias);
+              if (index2 > -1) {
+                newAliases.splice(index2, 1);
+              }
+              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
+            };
+            return { alias, setName, setTone: setTone2, setTones, remove };
+          }
+        }
+      });
+      useThemeColorActionsStore = create((...a3) => __spreadValues({}, themeColorActionsStore(...a3)));
+      ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
       themeColorStore = (set) => ({
         id: nanoid(12),
         name: "color",
@@ -67880,87 +68077,89 @@ svg {
         hueCalc: "163",
         chromaCalc: "33",
         aliases: [],
-        setId: (id) => set(() => ({ id })),
-        setName: (name307) => set(() => ({ name: name307 })),
-        setSourceHex: (sourceHex) => set((state) => ({
-          sourceHex,
-          sourceColor: __spreadProps(__spreadValues({}, state.sourceColor), { sourceHex })
-        })),
-        setSourceColor: (sourceColor) => set(() => ({ sourceColor })),
-        setEndColor: (endColor) => set(() => ({ endColor })),
-        setTones: (tones) => set(() => ({ tones })),
-        setHueCalc: (hueCalc) => set(() => ({ hueCalc })),
-        setChromaCalc: (chromaCalc) => set(() => ({ chromaCalc })),
-        setAliases: (aliases) => set(() => ({ aliases })),
-        addAlias: () => {
-          const alias = {
-            id: nanoid(12),
-            name: "Alias",
-            color: [
-              { mode: "light", tone: 100 },
-              { mode: "dark", tone: 0 }
-            ]
-          };
-          const state = useThemeColorStore.getState();
-          const newAliases = [...state.aliases];
-          newAliases.push(alias);
-          set(() => ({ aliases: newAliases }));
-          return { alias };
-        },
-        alias: (id) => {
-          const state = useThemeColorStore.getState();
-          const requestedAlias = state.aliases.find(
-            (alias2) => alias2.id === id
-          );
-          if (!requestedAlias) {
-            throw new Error("Alias not found");
-          }
-          const alias = requestedAlias;
-          const setName = (name307) => {
+        set: {
+          id: (id) => set(() => ({ id })),
+          name: (name307) => set(() => ({ name: name307 })),
+          sourceHex: (sourceHex) => set((state) => ({
+            sourceHex,
+            sourceColor: __spreadProps(__spreadValues({}, state.sourceColor), { sourceHex })
+          })),
+          sourceColor: (sourceColor) => set(() => ({ sourceColor })),
+          endColor: (endColor) => set(() => ({ endColor })),
+          tones: (tones) => set(() => ({ tones })),
+          hueCalc: (hueCalc) => set(() => ({ hueCalc })),
+          chromaCalc: (chromaCalc) => set(() => ({ chromaCalc })),
+          aliases: (aliases) => set(() => ({ aliases })),
+          addAlias: () => {
+            const alias = {
+              id: nanoid(12),
+              name: "Alias",
+              color: [
+                { mode: "light", tone: 100 },
+                { mode: "dark", tone: 0 }
+              ]
+            };
+            const state = useThemeColorStore.getState();
             const newAliases = [...state.aliases];
-            const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
-            if (aliasToUpdate) {
-              aliasToUpdate.name = name307;
-            }
+            newAliases.push(alias);
             set(() => ({ aliases: newAliases }));
-          };
-          const setTone2 = (mode2, tone) => {
-            const newAliases = [...state.aliases];
-            const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
-            if (aliasToUpdate) {
-              if (typeof mode2 === "string") {
-                const colorToUpdate = aliasToUpdate.color.find(
-                  (color2) => color2.mode === mode2
-                );
-                if (colorToUpdate) {
-                  colorToUpdate.tone = tone;
-                }
-              } else if (typeof mode2 === "number") {
-                if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
-                  aliasToUpdate.color[mode2].tone = tone;
+            return { alias };
+          },
+          alias: (id) => {
+            const state = useThemeColorStore.getState();
+            const requestedAlias = state.aliases.find(
+              (alias2) => alias2.id === id
+            );
+            if (!requestedAlias) {
+              throw new Error("Alias not found");
+            }
+            const alias = requestedAlias;
+            const setName = (name307) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                aliasToUpdate.name = name307;
+              }
+              set(() => ({ aliases: newAliases }));
+            };
+            const setTone2 = (mode2, tone) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                if (typeof mode2 === "string") {
+                  const colorToUpdate = aliasToUpdate.color.find(
+                    (color2) => color2.mode === mode2
+                  );
+                  if (colorToUpdate) {
+                    colorToUpdate.tone = tone;
+                  }
+                } else if (typeof mode2 === "number") {
+                  if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
+                    aliasToUpdate.color[mode2].tone = tone;
+                  }
                 }
               }
-            }
-            set(() => ({ aliases: newAliases }));
-          };
-          const setTones = (firstTone, secondTone) => {
-            const newAliases = [...state.aliases];
-            const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
-            if (aliasToUpdate) {
-              aliasToUpdate.color[0].tone = firstTone;
-              aliasToUpdate.color[1].tone = secondTone;
-            }
-            set(() => ({ aliases: newAliases }));
-          };
-          const remove = () => {
-            const newAliases = [...state.aliases];
-            const index2 = newAliases.indexOf(alias);
-            if (index2 > -1) {
-              newAliases.splice(index2, 1);
-            }
-            set(() => ({ aliases: newAliases }));
-          };
-          return { alias, setName, setTone: setTone2, setTones, remove };
+              set(() => ({ aliases: newAliases }));
+            };
+            const setTones = (firstTone, secondTone) => {
+              const newAliases = [...state.aliases];
+              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              if (aliasToUpdate) {
+                aliasToUpdate.color[0].tone = firstTone;
+                aliasToUpdate.color[1].tone = secondTone;
+              }
+              set(() => ({ aliases: newAliases }));
+            };
+            const remove = () => {
+              const newAliases = [...state.aliases];
+              const index2 = newAliases.indexOf(alias);
+              if (index2 > -1) {
+                newAliases.splice(index2, 1);
+              }
+              set(() => ({ aliases: newAliases }));
+            };
+            return { alias, setName, setTone: setTone2, setTones, remove };
+          }
         }
       });
       useThemeColorStore = create()((...a3) => __spreadValues({}, themeColorStore(...a3)));
@@ -67971,26 +68170,26 @@ svg {
         const id = themeColor.id;
         const setId = (id2) => themeColorStore2.setState({ id: id2 });
         const name307 = themeColor.name;
-        const setName = (name308) => themeColor.setName(name308);
+        const setName = (name308) => themeColor.set.name(name308);
         const sourceHex = themeColor.sourceHex;
         const setSourceHex = (sourceHex2) => {
           const newColor = themeColor.sourceColor;
           const newSourceColor = __spreadProps(__spreadValues({}, newColor), { sourceHex: sourceHex2 });
-          themeColor.setSourceColor(newSourceColor);
-          themeColor.setSourceHex(sourceHex2);
+          themeColor.set.sourceColor(newSourceColor);
+          themeColor.set.sourceHex(sourceHex2);
         };
         const sourceColor = themeColor.sourceColor;
-        const setSourceColor = (sourceColor2) => themeColor.setSourceColor(sourceColor2);
+        const setSourceColor = (sourceColor2) => themeColor.set.sourceColor(sourceColor2);
         const endColor = themeColor.endColor;
-        const setEndColor = (endColor2) => themeColor.setEndColor(endColor2);
+        const setEndColor = (endColor2) => themeColor.set.endColor(endColor2);
         const tones = themeColor.tones;
-        const setTones = (tones2) => themeColor.setTones(tones2);
+        const setTones = (tones2) => themeColor.set.tones(tones2);
         const hueCalc = themeColor.hueCalc;
-        const setHueCalc = (hueCalc2) => themeColor.setHueCalc(hueCalc2);
+        const setHueCalc = (hueCalc2) => themeColor.set.hueCalc(hueCalc2);
         const chromaCalc = themeColor.chromaCalc;
-        const setChromaCalc = (chromaCalc2) => themeColor.setChromaCalc(chromaCalc2);
+        const setChromaCalc = (chromaCalc2) => themeColor.set.chromaCalc(chromaCalc2);
         const aliases = themeColor.aliases;
-        const setAliases = (aliases2) => themeColor.setAliases(aliases2);
+        const setAliases = (aliases2) => themeColor.set.aliases(aliases2);
         const calculateHue2 = (hueValue, hueCalcValue) => {
           const hueCalc2 = hueCalcValue || themeColor.hueCalc;
           const sourceHue = hueValue || sourceColor.hct.hue;
@@ -68211,17 +68410,19 @@ svg {
           hueCalc,
           chromaCalc,
           aliases,
-          setId,
-          setName,
-          setSourceHex,
-          setSourceColor,
-          setEndColor,
-          setTones,
-          setHueCalc,
-          setChromaCalc,
-          setAliases,
-          addAlias,
-          alias
+          set: {
+            id: setId,
+            name: setName,
+            sourceHex: setSourceHex,
+            sourceColor: setSourceColor,
+            endColor: setEndColor,
+            tones: setTones,
+            hueCalc: setHueCalc,
+            chromaCalc: setChromaCalc,
+            aliases: setAliases,
+            addAlias,
+            alias
+          }
         };
       };
     }
@@ -68514,9 +68715,21 @@ svg {
       init_color_utils2();
       init_useColor();
       init_alias();
-      TabGroup = (theme) => {
+      TabGroup = ({ themeColors, onSetThemeColors }) => {
         const [tabValue, setTabValue] = h2("Primitives");
+        const [themeColorList, setThemeColorList] = h2(themeColors);
+        const [currentThemeColor, setCurrentThemeColor] = h2(
+          themeColors[0]
+        );
         const themeColor = useThemeColor("397456");
+        p2(() => {
+          if (themeColors.length === 0) {
+            const newThemeColor = themeColor;
+            setThemeColorList([newThemeColor]);
+          }
+          setThemeColorList(themeColors);
+          console.log(themeColors);
+        }, [themeColors]);
         const [hexColorInput, setHexColorInput] = h2(
           themeColor.sourceColor.sourceHex
         );
@@ -68541,20 +68754,15 @@ svg {
         const [chromaCalcInput, setChromaCalcInput] = h2(
           themeColor.chromaCalc.toString()
         );
-        const startColor = () => {
-          const color2 = themeColor;
-          color2.setChromaCalc("0");
-          return color2.endColor.hex;
-        };
         const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
         const chromaHex = hexFromHct(newHct);
         p2(() => {
-          themeColor.setTones(getStopsFromString(tones));
-          themeColor.setHueCalc(hueCalcInput);
-          themeColor.setChromaCalc(chromaCalcInput);
+          themeColor.set.tones(getStopsFromString(tones));
+          themeColor.set.hueCalc(hueCalcInput);
+          themeColor.set.chromaCalc(chromaCalcInput);
         }, [tones, hueCalcInput]);
         p2(() => {
-          themeColor.setChromaCalc(chromaCalcInput);
+          themeColor.set.chromaCalc(chromaCalcInput);
         }, [chromaCalcInput]);
         p2(() => {
           const calculatedHue = round2(
@@ -68562,7 +68770,7 @@ svg {
           );
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
-            themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+            themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
@@ -68570,26 +68778,26 @@ svg {
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
           }
         }, [hexColorInput]);
         const nameTheNameless = () => {
           if (!themeColor.name) {
-            themeColor.setName("Color");
+            themeColor.set.name("Color");
           }
         };
         const onHexColorInput = (e6) => {
           const newHexColorInput = e6.currentTarget.value;
           setHexColorInput(newHexColorInput);
-          themeColor.setSourceHex(newHexColorInput);
+          themeColor.set.sourceHex(newHexColorInput);
           themeColor.sourceColor.setSourceHex(newHexColorInput);
           const calculatedHue = round2(
             calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
           );
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
-            themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+            themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
@@ -68597,13 +68805,13 @@ svg {
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
           }
         };
         const onHueSliderInput = (e6) => {
           const newHueCalcInput = e6.currentTarget.value;
-          themeColor.setHueCalc(newHueCalcInput.toString());
+          themeColor.set.hueCalc(newHueCalcInput.toString());
           setHueSlider(newHueCalcInput);
           setHueCalcInput(newHueCalcInput.toString());
           console.log(
@@ -68616,17 +68824,17 @@ svg {
             themeColor.sourceColor.hct.hue,
             newHueCalcInput
           );
-          themeColor.setHueCalc(newHueCalcInput);
+          themeColor.set.hueCalc(newHueCalcInput);
           setHueCalcInput(newHueCalcInput);
           setHueSlider(calculatedHue);
           if (newHueCalcInput === "") {
-            themeColor.setHueCalc(themeColor.sourceColor.hct.hue.toString());
+            themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueSlider(themeColor.sourceColor.hct.hue);
           }
         };
         const onChromaSliderInput = (e6) => {
           const newChromaCalcInput = e6.currentTarget.value;
-          themeColor.setChromaCalc(newChromaCalcInput.toString());
+          themeColor.set.chromaCalc(newChromaCalcInput.toString());
           setChromaCalcInput(newChromaCalcInput.toString());
           setChromaSlider(newChromaCalcInput);
           console.log(themeColor.endColor.hct);
@@ -68636,20 +68844,20 @@ svg {
           const calculatedChroma = round2(
             calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput)
           );
-          themeColor.setChromaCalc(newChromaCalcInput);
+          themeColor.set.chromaCalc(newChromaCalcInput);
           setChromaSlider(calculatedChroma);
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
-            themeColor.setChromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaSlider(themeColor.sourceColor.hct.chroma);
           }
         };
         const onAddAlias = () => {
-          themeColor.addAlias();
+          themeColor.set.addAlias();
           console.log(themeColor.aliases);
         };
         const onSetAliases = (aliases) => {
-          themeColor.setAliases(aliases);
+          themeColor.set.aliases(aliases);
         };
         const quickHexFromHct = (hue2, chroma2, tone) => {
           const hct = Hct.from(hue2, chroma2, tone);
@@ -68681,7 +68889,7 @@ svg {
               Textbox,
               {
                 value: themeColor.name,
-                onChange: (e6) => themeColor.setName(e6.currentTarget.value),
+                onChange: (e6) => themeColor.set.name(e6.currentTarget.value),
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
@@ -69054,7 +69262,9 @@ svg {
           error
         ];
         p2(() => {
-          theme.setThemeColors(themeColors);
+          if (theme.themeColors.length === 0) {
+            theme.setThemeColors(themeColors);
+          }
           console.log(theme);
         }, []);
         const log4 = () => {
@@ -69068,6 +69278,9 @@ svg {
             theme.setName("Theme");
           }
         };
+        const onSetThemeColors = (themeColors2) => {
+          theme.setThemeColors(themeColors2);
+        };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "overflow-y-auto h-full bg-neutral-800" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute w-full h-px bg-neutral-700 top-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 left-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 right-32" })), /* @__PURE__ */ y("div", { className: "h-10 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "grow flex flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "h-full px-2 flex items-center justify-center" }, /* @__PURE__ */ y(
           Textbox,
           {
@@ -69077,7 +69290,21 @@ svg {
             onfocusout: () => nameTheNameless(),
             placeholder: "Theme name"
           }
-        )), /* @__PURE__ */ y(tabs_default, __spreadValues({}, theme))), /* @__PURE__ */ y("div", { className: "h-full w-32 flex items-center justify-center" }, "Build ", theme.name)));
+        )), /* @__PURE__ */ y(
+          tabs_default,
+          {
+            themeColors: theme.themeColors,
+            onSetThemeColors
+          }
+        )), /* @__PURE__ */ y(
+          "button",
+          {
+            className: "build-button h-full z-50 w-32 flex items-center justify-center bg-neutral-900 hover:bg-green-600 active:bg-red-700",
+            onClick: (e6) => console.log(theme.themeColors)
+          },
+          "Build ",
+          theme.name
+        )));
       };
       ui_default = render(Plugin);
     }

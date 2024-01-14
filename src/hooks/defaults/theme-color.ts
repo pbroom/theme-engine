@@ -1,4 +1,4 @@
-import { defaultAliases } from './aliases';
+// import { defaultAliases } from './aliases';
 import { useThemeColor } from '../useThemeColor';
 import { ThemeColor } from '../useThemeColor';
 // import useColor from '../useColor';
@@ -57,7 +57,7 @@ const useDefaultThemeColor = (
 	newThemeColor.setTones(defaultTones);
 	newThemeColor.setHueCalc(defaultHueCalc(role));
 	newThemeColor.setChromaCalc(defaultChromaCalc(role));
-	newThemeColor.setAliases(defaultAliases(role));
+	// newThemeColor.setAliases(defaultAliases(role));
 	return newThemeColor;
 };
 

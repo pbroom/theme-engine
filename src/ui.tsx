@@ -4,8 +4,9 @@ import { h } from 'preact';
 import TabGroup from './components/tabs';
 import { useThemeColor, ThemeColor } from './hooks/useThemeColor';
 import { nanoid } from 'nanoid';
-import { useTheme } from './hooks/useTheme';
+import { Theme, useTheme } from './hooks/useTheme';
 import { useEffect } from 'react';
+import { useState } from 'preact/hooks';
 
 export const Plugin = () => {
 	const theme = useTheme();
@@ -25,7 +26,9 @@ export const Plugin = () => {
 		error,
 	];
 	useEffect(() => {
-		theme.setThemeColors(themeColors);
+		if (theme.themeColors.length === 0) {
+			theme.setThemeColors(themeColors);
+		}
 		console.log(theme);
 	}, []);
 
@@ -39,6 +42,9 @@ export const Plugin = () => {
 		if (!theme.name) {
 			theme.setName('Theme');
 		}
+	};
+	const onSetThemeColors = (themeColors: ThemeColor[]) => {
+		theme.setThemeColors(themeColors);
 	};
 	// Rendering the UI
 	return (
@@ -61,11 +67,17 @@ export const Plugin = () => {
 							placeholder="Theme name"
 						/>
 					</div>
-					<TabGroup {...theme} />
+					<TabGroup
+						themeColors={theme.themeColors}
+						onSetThemeColors={onSetThemeColors}
+					/>
 				</div>
-				<div className="h-full w-32 flex items-center justify-center">
+				<button
+					className="build-button h-full z-50 w-32 flex items-center justify-center bg-neutral-900 hover:bg-green-600 active:bg-red-700"
+					onClick={(e) => console.log(theme.themeColors)}
+				>
 					Build {theme.name}
-				</div>
+				</button>
 			</div>
 		</div>
 	);

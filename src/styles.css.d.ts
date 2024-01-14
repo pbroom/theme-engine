@@ -7,6 +7,7 @@ declare const styles: {
   readonly "_border_s66c9_8": string;
   readonly "hue-slider": string;
   readonly "tab-content": string;
+  readonly "build-button": string;
 };
 export = styles;
 

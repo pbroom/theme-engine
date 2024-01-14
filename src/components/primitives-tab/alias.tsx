@@ -25,6 +25,12 @@ type AliasItemProps = {
 	onRemoveAlias: (id: string) => void;
 };
 
+/**
+ * Renders an alias item component.
+ *
+ * @param {AliasItemProps} props - The props for the AliasItem component.
+ * @returns {JSX.Element} The rendered AliasItem component.
+ */
 const AliasItem = ({
 	alias,
 	onSetName,
@@ -92,6 +98,13 @@ type AliasListProps = {
 	onSetAliases: (aliases: AliasData[]) => void;
 };
 
+/**
+ * Renders a list of aliases with editable name and color tones.
+ *
+ * @param {Object[]} aliases - The list of aliases.
+ * @param {Function} onSetAliases - The callback function to update the list of aliases.
+ * @returns {JSX.Element} The rendered list of aliases.
+ */
 const AliasList = ({ aliases, onSetAliases }: AliasListProps) => {
 	const [aliasItems, setAliasItems] = useState(aliases);
 	const onSetName = (id: string, name: string) => {
@@ -151,6 +164,15 @@ type AliasTonePreviewProps = {
 	darkModeTone: number;
 };
 
+/**
+ * Renders a preview of an alias tone.
+ * @param {AliasTonePreviewProps} props - The component props.
+ * @param {number} props.hue - The hue value.
+ * @param {number} props.chroma - The chroma value.
+ * @param {number} props.lightModeTone - The light mode tone value.
+ * @param {number} props.darkModeTone - The dark mode tone value.
+ * @returns {JSX.Element} The rendered component.
+ */
 const AliasTonePreview = ({
 	hue,
 	chroma,
@@ -175,6 +197,15 @@ type AliasPreviewListProps = {
 	aliases: AliasData[];
 };
 
+/**
+ * Renders a list of alias previews.
+ *
+ * @param {AliasPreviewListProps} props - The component props.
+ * @param {number} props.hue - The hue value.
+ * @param {number} props.chroma - The chroma value.
+ * @param {Alias[]} props.aliases - The list of aliases.
+ * @returns {JSX.Element} The rendered component.
+ */
 const AliasPreviewList = ({ hue, chroma, aliases }: AliasPreviewListProps) => {
 	return (
 		<div className="w-full h-8">

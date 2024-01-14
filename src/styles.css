@@ -37,3 +37,12 @@
 .tab-content {
 	height: 600px;
 }
+
+.build-button {
+	&:hover {
+		background-color: #222;
+	}
+	&:active {
+		background-color: #000;
+	}
+}
