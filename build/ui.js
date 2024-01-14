@@ -62,9 +62,9 @@
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e724117a-4d12-452e-9f03-2bdcd3c70c66/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57a1ce56-18b7-44fc-a564-340cabe47035/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e724117a-4d12-452e-9f03-2bdcd3c70c66/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57a1ce56-18b7-44fc-a564-340cabe47035/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1838,10 +1838,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55918103-065f-4e97-8dfc-6eedec9f8323/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb7513cc-7f9b-4360-8230-71ce24e96a41/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55918103-065f-4e97-8dfc-6eedec9f8323/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb7513cc-7f9b-4360-8230-71ce24e96a41/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1889,10 +1889,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9401ed0a-2a75-46d4-a40f-4152b782fbdf/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e5a49b3b-e326-4a1c-96b4-f24b372f4f98/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9401ed0a-2a75-46d4-a40f-4152b782fbdf/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e5a49b3b-e326-4a1c-96b4-f24b372f4f98/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -1959,10 +1959,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08efe648-98c4-43fb-ba68-942d534adc29/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7247549-0c21-4e98-9783-fa3c6507a10e/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08efe648-98c4-43fb-ba68-942d534adc29/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7247549-0c21-4e98-9783-fa3c6507a10e/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -2063,10 +2063,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a7439f7-dd1c-4b70-8a40-3211aac69838/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1fd35832-d74e-4974-a4bf-6e4fcb903bb3/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a7439f7-dd1c-4b70-8a40-3211aac69838/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1fd35832-d74e-4974-a4bf-6e4fcb903bb3/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2623,10 +2623,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2d015900-bbc3-4336-a065-0db1789b3220/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2512636e-1efb-4e66-8922-33fbd50f5c22/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2d015900-bbc3-4336-a065-0db1789b3220/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2512636e-1efb-4e66-8922-33fbd50f5c22/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3115,10 +3115,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4583eeb8-a0f1-4281-b6c7-4641513e96a5/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a38e9916-62d4-4cdd-8aeb-534087e094be/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4583eeb8-a0f1-4281-b6c7-4641513e96a5/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a38e9916-62d4-4cdd-8aeb-534087e094be/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -3465,10 +3465,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a813d443-b3da-4789-b78b-88241cca48cb/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/423a4135-4608-42ca-9efa-224833f428a9/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a813d443-b3da-4789-b78b-88241cca48cb/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/423a4135-4608-42ca-9efa-224833f428a9/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -3651,10 +3651,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73441bc-4e11-4120-9284-d1658bfc8799/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcbd5ea1-291f-4921-9b7b-03e26f1d6971/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73441bc-4e11-4120-9284-d1658bfc8799/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dcbd5ea1-291f-4921-9b7b-03e26f1d6971/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3747,10 +3747,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/112573b7-7661-4a03-a37c-7530f3548916/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad84fd6b-b78e-41a5-8978-28558c08aed4/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/112573b7-7661-4a03-a37c-7530f3548916/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad84fd6b-b78e-41a5-8978-28558c08aed4/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -3829,10 +3829,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40621eba-6d4e-4d31-86aa-a04f8308cf47/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cd52931-b2c0-41ae-8679-b1a49054d544/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40621eba-6d4e-4d31-86aa-a04f8308cf47/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1cd52931-b2c0-41ae-8679-b1a49054d544/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3859,9 +3859,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c27286f1-32b0-4054-8a9f-828a69362974/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9c9a87c8-bc08-4ab0-b31e-dfb47fe91b02/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c27286f1-32b0-4054-8a9f-828a69362974/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9c9a87c8-bc08-4ab0-b31e-dfb47fe91b02/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -69039,8 +69039,8 @@ svg {
       init_index_browser();
       ThemeColorFunctionSchema = z3.function(z3.tuple([z3.string()])).returns(
         z3.object({
-          themeColor: ThemeColorSchema,
-          setThemeColor: z3.function().args(ThemeColorSchema, z3.void()),
+          themeColor: ThemeColorDataSchema,
+          setThemeColor: z3.function().args(ThemeColorDataSchema, z3.void()),
           remove: z3.function().args(z3.void())
         })
       );
@@ -69054,17 +69054,19 @@ svg {
       ThemeDataSchema = z3.object({
         id: z3.string(),
         name: z3.string(),
-        themeColors: z3.array(ThemeColorSchema),
+        themeColors: z3.array(ThemeColorDataSchema),
         aliasGroups: z3.array(AliasGroupSchema)
       });
       ThemeActionsSchema = z3.object({
-        setId: z3.function().args(z3.string(), z3.void()),
-        setName: z3.function().args(z3.string(), z3.void()),
-        setThemeColors: z3.function().args(z3.array(ThemeColorSchema), z3.void()),
-        addThemeColor: z3.function().args(ThemeColorSchema, z3.void()),
-        themeColor: ThemeColorFunctionSchema,
-        addAliasGroup: z3.function().args(AliasGroupSchema, z3.void()),
-        aliasGroup: z3.function().args(z3.string(), z3.void())
+        set: z3.object({
+          id: z3.function().args(z3.string(), z3.void()),
+          name: z3.function().args(z3.string(), z3.void()),
+          themeColors: z3.function().args(z3.array(ThemeColorDataSchema), z3.void()),
+          addThemeColor: z3.function().args(ThemeColorDataSchema, z3.void()),
+          themeColor: ThemeColorFunctionSchema,
+          addAliasGroup: z3.function().args(AliasGroupSchema, z3.void()),
+          aliasGroup: z3.function().args(z3.string(), z3.void())
+        })
       });
       ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
       aliasGroupStore = (set) => ({
@@ -69079,60 +69081,62 @@ svg {
         name: "theme",
         themeColors: [],
         aliasGroups: [],
-        setId: (id) => set(() => ({ id })),
-        setName: (name307) => set(() => ({ name: name307 })),
-        setThemeColors: (themeColors) => set(() => ({ themeColors })),
-        addThemeColor: (themeColor) => set((state) => {
-          const newThemeColors = [...state.themeColors];
-          newThemeColors.push(themeColor);
-          return { themeColors: newThemeColors };
-        }),
-        themeColor: (themeColorId) => {
-          const state = useThemeStore.getState();
-          const requestedThemeColor = state.themeColors.find(
-            (themeColor2) => themeColor2.id === themeColorId
-          );
-          if (!requestedThemeColor) {
-            throw new Error(`Could not find theme color with id ${themeColorId}`);
+        set: {
+          id: (id) => set(() => ({ id })),
+          name: (name307) => set(() => ({ name: name307 })),
+          themeColors: (themeColors) => set(() => ({ themeColors })),
+          addThemeColor: (themeColor) => set((state) => {
+            const newThemeColors = [...state.themeColors];
+            newThemeColors.push(themeColor);
+            return { themeColors: newThemeColors };
+          }),
+          themeColor: (themeColorId) => {
+            const state = useThemeStore.getState();
+            const requestedThemeColor = state.themeColors.find(
+              (themeColor2) => themeColor2.id === themeColorId
+            );
+            if (!requestedThemeColor) {
+              throw new Error(`Could not find theme color with id ${themeColorId}`);
+            }
+            const themeColor = requestedThemeColor;
+            const setThemeColor = (newThemeColor) => {
+              const index2 = state.themeColors.indexOf(themeColor);
+              if (index2 !== -1) {
+                state.themeColors[index2] = newThemeColor;
+              }
+            };
+            const remove = () => {
+              const index2 = state.themeColors.indexOf(themeColor);
+              if (index2 !== -1) {
+                state.themeColors.splice(index2, 1);
+              }
+            };
+            return { themeColor, setThemeColor, remove };
+          },
+          addAliasGroup: (aliasGroup) => {
+            set((state) => {
+              const newAliasGroups = [...state.aliasGroups];
+              newAliasGroups.push(aliasGroup);
+              return { aliasGroups: newAliasGroups };
+            });
+          },
+          aliasGroup(aliasGroupId) {
+            const state = useThemeStore.getState();
+            const requestedAliasGroup = state.aliasGroups.find(
+              (aliasGroup2) => aliasGroup2.id === aliasGroupId
+            );
+            if (!requestedAliasGroup) {
+              throw new Error(`Could not find alias group with id ${aliasGroupId}`);
+            }
+            const aliasGroup = requestedAliasGroup;
+            const remove = () => {
+              const index2 = state.aliasGroups.indexOf(aliasGroup);
+              if (index2 !== -1) {
+                state.aliasGroups.splice(index2, 1);
+              }
+            };
+            return { aliasGroup, remove };
           }
-          const themeColor = requestedThemeColor;
-          const setThemeColor = (newThemeColor) => {
-            const index2 = state.themeColors.indexOf(themeColor);
-            if (index2 !== -1) {
-              state.themeColors[index2] = newThemeColor;
-            }
-          };
-          const remove = () => {
-            const index2 = state.themeColors.indexOf(themeColor);
-            if (index2 !== -1) {
-              state.themeColors.splice(index2, 1);
-            }
-          };
-          return { themeColor, setThemeColor, remove };
-        },
-        addAliasGroup: (aliasGroup) => {
-          set((state) => {
-            const newAliasGroups = [...state.aliasGroups];
-            newAliasGroups.push(aliasGroup);
-            return { aliasGroups: newAliasGroups };
-          });
-        },
-        aliasGroup(aliasGroupId) {
-          const state = useThemeStore.getState();
-          const requestedAliasGroup = state.aliasGroups.find(
-            (aliasGroup2) => aliasGroup2.id === aliasGroupId
-          );
-          if (!requestedAliasGroup) {
-            throw new Error(`Could not find alias group with id ${aliasGroupId}`);
-          }
-          const aliasGroup = requestedAliasGroup;
-          const remove = () => {
-            const index2 = state.aliasGroups.indexOf(aliasGroup);
-            if (index2 !== -1) {
-              state.aliasGroups.splice(index2, 1);
-            }
-          };
-          return { aliasGroup, remove };
         }
       });
       useThemeStore = create()((...a3) => __spreadValues({}, themeStore(...a3)));
@@ -69143,17 +69147,17 @@ svg {
         const newAliasGroup = aliasGroupStore2((state) => state);
         const newThemeColor = useThemeColor("397456");
         const id = theme.id;
-        const setId = (id2) => theme.setId(id2);
+        const setId = (id2) => theme.set.id(id2);
         const name307 = theme.name;
-        const setName = (name308) => theme.setName(name308);
+        const setName = (name308) => theme.set.name(name308);
         const themeColors = theme.themeColors;
-        const setThemeColors = (themeColors2) => theme.setThemeColors(themeColors2);
+        const setThemeColors = (themeColors2) => theme.set.themeColors(themeColors2);
         const addThemeColor = () => {
           const themeColor2 = __spreadProps(__spreadValues({}, newThemeColor), {
             id: nanoid(12),
             name: "Theme color"
           });
-          theme.addThemeColor(themeColor2);
+          theme.set.addThemeColor(themeColor2);
         };
         const themeColor = (themeColorIdOrIndex) => {
           let requestedThemeColor;
@@ -69172,7 +69176,7 @@ svg {
             );
           }
           const themeColor2 = requestedThemeColor;
-          const setThemeColor = (newThemeColor2) => theme.themeColor(themeColor2.id).setThemeColor(newThemeColor2);
+          const setThemeColor = (newThemeColor2) => theme.set.themeColor(themeColor2.id).setThemeColor(newThemeColor2);
           const remove = () => {
             if (index2 !== void 0) {
               themeColors.splice(index2, 1);
@@ -69191,7 +69195,7 @@ svg {
         };
         const aliasGroups = theme.aliasGroups;
         const addAliasGroup = () => {
-          theme.addAliasGroup(newAliasGroup);
+          theme.set.addAliasGroup(newAliasGroup);
         };
         const aliasGroup = (aliasGroupId) => {
           const requestedAliasGroup = aliasGroups.find(
@@ -69214,13 +69218,15 @@ svg {
           name: name307,
           themeColors,
           aliasGroups,
-          setId,
-          setName,
-          setThemeColors,
-          addThemeColor,
-          themeColor,
-          addAliasGroup,
-          aliasGroup
+          set: {
+            id: setId,
+            name: setName,
+            themeColors: setThemeColors,
+            addThemeColor,
+            themeColor,
+            addAliasGroup,
+            aliasGroup
+          }
         };
       };
     }
