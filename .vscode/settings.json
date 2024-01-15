@@ -1,10 +1,12 @@
 {
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "package.json"
-      ],
-      "url": "https://yuanqing.github.io/create-figma-plugin/figma-plugin.json"
-    }
-  ]
+    "json.schemas": [
+        {
+            "fileMatch": ["package.json"],
+            "url": "https://yuanqing.github.io/create-figma-plugin/figma-plugin.json"
+        }
+    ],
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.useTabs": true
 }

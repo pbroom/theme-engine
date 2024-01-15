@@ -48,6 +48,10 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 // node_modules/hex-rgb/index.js
 function hexRgb(hex, options = {}) {
@@ -330,7 +334,7 @@ var init_viewing_conditions = __esm({
   "node_modules/@material/material-color-utilities/hct/viewing_conditions.js"() {
     init_color_utils();
     init_math_utils();
-    ViewingConditions = class {
+    ViewingConditions = class _ViewingConditions {
       /**
        * Create ViewingConditions from a simple, physically relevant, set of
        * parameters.
@@ -387,7 +391,7 @@ var init_viewing_conditions = __esm({
           400 * rgbAFactors[2] / (rgbAFactors[2] + 27.13)
         ];
         const aw = (2 * rgbA[0] + rgbA[1] + 0.05 * rgbA[2]) * nbb;
-        return new ViewingConditions(n, aw, nbb, ncb, c, nc, rgbD, fl, Math.pow(fl, 0.25), z);
+        return new _ViewingConditions(n, aw, nbb, ncb, c, nc, rgbD, fl, Math.pow(fl, 0.25), z);
       }
       /**
        * Parameters are intermediate values of the CAM16 conversion process. Their
@@ -420,7 +424,7 @@ var init_cam16 = __esm({
     init_color_utils();
     init_math_utils();
     init_viewing_conditions();
-    Cam16 = class {
+    Cam16 = class _Cam16 {
       /**
        * All of the CAM16 dimensions can be calculated from 3 of the dimensions, in
        * the following combinations:
@@ -471,7 +475,7 @@ var init_cam16 = __esm({
        *     conditions.
        */
       static fromInt(argb) {
-        return Cam16.fromIntInViewingConditions(argb, ViewingConditions.DEFAULT);
+        return _Cam16.fromIntInViewingConditions(argb, ViewingConditions.DEFAULT);
       }
       /**
        * @param argb ARGB representation of a color.
@@ -524,7 +528,7 @@ var init_cam16 = __esm({
         const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m);
         const astar = mstar * Math.cos(hueRadians);
         const bstar = mstar * Math.sin(hueRadians);
-        return new Cam16(hue, c, j, q, m, s, jstar, astar, bstar);
+        return new _Cam16(hue, c, j, q, m, s, jstar, astar, bstar);
       }
       /**
        * @param j CAM16 lightness
@@ -532,7 +536,7 @@ var init_cam16 = __esm({
        * @param h CAM16 hue
        */
       static fromJch(j, c, h) {
-        return Cam16.fromJchInViewingConditions(j, c, h, ViewingConditions.DEFAULT);
+        return _Cam16.fromJchInViewingConditions(j, c, h, ViewingConditions.DEFAULT);
       }
       /**
        * @param j CAM16 lightness
@@ -551,7 +555,7 @@ var init_cam16 = __esm({
         const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m);
         const astar = mstar * Math.cos(hueRadians);
         const bstar = mstar * Math.sin(hueRadians);
-        return new Cam16(h, c, j, q, m, s, jstar, astar, bstar);
+        return new _Cam16(h, c, j, q, m, s, jstar, astar, bstar);
       }
       /**
        * @param jstar CAM16-UCS lightness.
@@ -561,7 +565,7 @@ var init_cam16 = __esm({
        *     coordinate on the X axis.
        */
       static fromUcs(jstar, astar, bstar) {
-        return Cam16.fromUcsInViewingConditions(jstar, astar, bstar, ViewingConditions.DEFAULT);
+        return _Cam16.fromUcsInViewingConditions(jstar, astar, bstar, ViewingConditions.DEFAULT);
       }
       /**
        * @param jstar CAM16-UCS lightness.
@@ -583,7 +587,7 @@ var init_cam16 = __esm({
           h += 360;
         }
         const j = jstar / (1 - (jstar - 100) * 7e-3);
-        return Cam16.fromJchInViewingConditions(j, c, h, viewingConditions);
+        return _Cam16.fromJchInViewingConditions(j, c, h, viewingConditions);
       }
       /**
        *  @return ARGB representation of color, assuming the color was viewed in
@@ -667,7 +671,7 @@ var init_cam16 = __esm({
         const mstar = Math.log(1 + 0.0228 * M) / 0.0228;
         const astar = mstar * Math.cos(hueRadians);
         const bstar = mstar * Math.sin(hueRadians);
-        return new Cam16(hue, C, J, Q, M, s, jstar, astar, bstar);
+        return new _Cam16(hue, C, J, Q, M, s, jstar, astar, bstar);
       }
       /// XYZ representation of CAM16 seen in [viewingConditions].
       xyzInViewingConditions(viewingConditions) {
@@ -712,7 +716,7 @@ var init_hct_solver = __esm({
     init_math_utils();
     init_cam16();
     init_viewing_conditions();
-    HctSolver = class {
+    HctSolver = class _HctSolver {
       /**
        * Sanitizes a small enough angle in radians.
        *
@@ -753,17 +757,17 @@ var init_hct_solver = __esm({
        * @return The hue of the color in CAM16, in radians.
        */
       static hueOf(linrgb) {
-        const scaledDiscount = matrixMultiply(linrgb, HctSolver.SCALED_DISCOUNT_FROM_LINRGB);
-        const rA = HctSolver.chromaticAdaptation(scaledDiscount[0]);
-        const gA = HctSolver.chromaticAdaptation(scaledDiscount[1]);
-        const bA = HctSolver.chromaticAdaptation(scaledDiscount[2]);
+        const scaledDiscount = matrixMultiply(linrgb, _HctSolver.SCALED_DISCOUNT_FROM_LINRGB);
+        const rA = _HctSolver.chromaticAdaptation(scaledDiscount[0]);
+        const gA = _HctSolver.chromaticAdaptation(scaledDiscount[1]);
+        const bA = _HctSolver.chromaticAdaptation(scaledDiscount[2]);
         const a = (11 * rA + -12 * gA + bA) / 11;
         const b = (rA + gA - 2 * bA) / 9;
         return Math.atan2(b, a);
       }
       static areInCyclicOrder(a, b, c) {
-        const deltaAB = HctSolver.sanitizeRadians(b - a);
-        const deltaAC = HctSolver.sanitizeRadians(c - a);
+        const deltaAB = _HctSolver.sanitizeRadians(b - a);
+        const deltaAC = _HctSolver.sanitizeRadians(c - a);
         return deltaAB < deltaAC;
       }
       /**
@@ -796,8 +800,8 @@ var init_hct_solver = __esm({
        * R=coordinate, G=coordinate, or B=coordinate
        */
       static setCoordinate(source, coordinate, target, axis) {
-        const t = HctSolver.intercept(source[axis], coordinate, target[axis]);
-        return HctSolver.lerpPoint(source, t, target);
+        const t = _HctSolver.intercept(source[axis], coordinate, target[axis]);
+        return _HctSolver.lerpPoint(source, t, target);
       }
       static isBounded(x) {
         return 0 <= x && x <= 100;
@@ -813,16 +817,16 @@ var init_hct_solver = __esm({
        * [-1.0, -1.0, -1.0] is returned.
        */
       static nthVertex(y, n) {
-        const kR = HctSolver.Y_FROM_LINRGB[0];
-        const kG = HctSolver.Y_FROM_LINRGB[1];
-        const kB = HctSolver.Y_FROM_LINRGB[2];
+        const kR = _HctSolver.Y_FROM_LINRGB[0];
+        const kG = _HctSolver.Y_FROM_LINRGB[1];
+        const kB = _HctSolver.Y_FROM_LINRGB[2];
         const coordA = n % 4 <= 1 ? 0 : 100;
         const coordB = n % 2 === 0 ? 0 : 100;
         if (n < 4) {
           const g = coordA;
           const b = coordB;
           const r = (y - g * kG - b * kB) / kR;
-          if (HctSolver.isBounded(r)) {
+          if (_HctSolver.isBounded(r)) {
             return [r, g, b];
           } else {
             return [-1, -1, -1];
@@ -831,7 +835,7 @@ var init_hct_solver = __esm({
           const b = coordA;
           const r = coordB;
           const g = (y - r * kR - b * kB) / kG;
-          if (HctSolver.isBounded(g)) {
+          if (_HctSolver.isBounded(g)) {
             return [r, g, b];
           } else {
             return [-1, -1, -1];
@@ -840,7 +844,7 @@ var init_hct_solver = __esm({
           const r = coordA;
           const g = coordB;
           const b = (y - r * kR - g * kG) / kB;
-          if (HctSolver.isBounded(b)) {
+          if (_HctSolver.isBounded(b)) {
             return [r, g, b];
           } else {
             return [-1, -1, -1];
@@ -864,11 +868,11 @@ var init_hct_solver = __esm({
         let initialized = false;
         let uncut = true;
         for (let n = 0; n < 12; n++) {
-          const mid = HctSolver.nthVertex(y, n);
+          const mid = _HctSolver.nthVertex(y, n);
           if (mid[0] < 0) {
             continue;
           }
-          const midHue = HctSolver.hueOf(mid);
+          const midHue = _HctSolver.hueOf(mid);
           if (!initialized) {
             left = mid;
             right = mid;
@@ -877,9 +881,9 @@ var init_hct_solver = __esm({
             initialized = true;
             continue;
           }
-          if (uncut || HctSolver.areInCyclicOrder(leftHue, midHue, rightHue)) {
+          if (uncut || _HctSolver.areInCyclicOrder(leftHue, midHue, rightHue)) {
             uncut = false;
-            if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+            if (_HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
               right = mid;
               rightHue = midHue;
             } else {
@@ -912,30 +916,30 @@ var init_hct_solver = __esm({
        * @return The desired color, in linear RGB coordinates.
        */
       static bisectToLimit(y, targetHue) {
-        const segment = HctSolver.bisectToSegment(y, targetHue);
+        const segment = _HctSolver.bisectToSegment(y, targetHue);
         let left = segment[0];
-        let leftHue = HctSolver.hueOf(left);
+        let leftHue = _HctSolver.hueOf(left);
         let right = segment[1];
         for (let axis = 0; axis < 3; axis++) {
           if (left[axis] !== right[axis]) {
             let lPlane = -1;
             let rPlane = 255;
             if (left[axis] < right[axis]) {
-              lPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(left[axis]));
-              rPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(right[axis]));
+              lPlane = _HctSolver.criticalPlaneBelow(_HctSolver.trueDelinearized(left[axis]));
+              rPlane = _HctSolver.criticalPlaneAbove(_HctSolver.trueDelinearized(right[axis]));
             } else {
-              lPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(left[axis]));
-              rPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(right[axis]));
+              lPlane = _HctSolver.criticalPlaneAbove(_HctSolver.trueDelinearized(left[axis]));
+              rPlane = _HctSolver.criticalPlaneBelow(_HctSolver.trueDelinearized(right[axis]));
             }
             for (let i = 0; i < 8; i++) {
               if (Math.abs(rPlane - lPlane) <= 1) {
                 break;
               } else {
                 const mPlane = Math.floor((lPlane + rPlane) / 2);
-                const midPlaneCoordinate = HctSolver.CRITICAL_PLANES[mPlane];
-                const mid = HctSolver.setCoordinate(left, midPlaneCoordinate, right, axis);
-                const midHue = HctSolver.hueOf(mid);
-                if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+                const midPlaneCoordinate = _HctSolver.CRITICAL_PLANES[mPlane];
+                const mid = _HctSolver.setCoordinate(left, midPlaneCoordinate, right, axis);
+                const midHue = _HctSolver.hueOf(mid);
+                if (_HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
                   right = mid;
                   rPlane = mPlane;
                 } else {
@@ -947,7 +951,7 @@ var init_hct_solver = __esm({
             }
           }
         }
-        return HctSolver.midpoint(left, right);
+        return _HctSolver.midpoint(left, right);
       }
       static inverseChromaticAdaptation(adapted) {
         const adaptedAbs = Math.abs(adapted);
@@ -983,16 +987,16 @@ var init_hct_solver = __esm({
           const rA = (460 * p2 + 451 * a + 288 * b) / 1403;
           const gA = (460 * p2 - 891 * a - 261 * b) / 1403;
           const bA = (460 * p2 - 220 * a - 6300 * b) / 1403;
-          const rCScaled = HctSolver.inverseChromaticAdaptation(rA);
-          const gCScaled = HctSolver.inverseChromaticAdaptation(gA);
-          const bCScaled = HctSolver.inverseChromaticAdaptation(bA);
-          const linrgb = matrixMultiply([rCScaled, gCScaled, bCScaled], HctSolver.LINRGB_FROM_SCALED_DISCOUNT);
+          const rCScaled = _HctSolver.inverseChromaticAdaptation(rA);
+          const gCScaled = _HctSolver.inverseChromaticAdaptation(gA);
+          const bCScaled = _HctSolver.inverseChromaticAdaptation(bA);
+          const linrgb = matrixMultiply([rCScaled, gCScaled, bCScaled], _HctSolver.LINRGB_FROM_SCALED_DISCOUNT);
           if (linrgb[0] < 0 || linrgb[1] < 0 || linrgb[2] < 0) {
             return 0;
           }
-          const kR = HctSolver.Y_FROM_LINRGB[0];
-          const kG = HctSolver.Y_FROM_LINRGB[1];
-          const kB = HctSolver.Y_FROM_LINRGB[2];
+          const kR = _HctSolver.Y_FROM_LINRGB[0];
+          const kG = _HctSolver.Y_FROM_LINRGB[1];
+          const kB = _HctSolver.Y_FROM_LINRGB[2];
           const fnj = kR * linrgb[0] + kG * linrgb[1] + kB * linrgb[2];
           if (fnj <= 0) {
             return 0;
@@ -1026,11 +1030,11 @@ var init_hct_solver = __esm({
         hueDegrees = sanitizeDegreesDouble(hueDegrees);
         const hueRadians = hueDegrees / 180 * Math.PI;
         const y = yFromLstar(lstar);
-        const exactAnswer = HctSolver.findResultByJ(hueRadians, chroma, y);
+        const exactAnswer = _HctSolver.findResultByJ(hueRadians, chroma, y);
         if (exactAnswer !== 0) {
           return exactAnswer;
         }
-        const linrgb = HctSolver.bisectToLimit(y, hueRadians);
+        const linrgb = _HctSolver.bisectToLimit(y, hueRadians);
         return argbFromLinrgb(linrgb);
       }
       /**
@@ -1046,7 +1050,7 @@ var init_hct_solver = __esm({
        * sufficiently close, and chroma will be maximized.
        */
       static solveToCam(hueDegrees, chroma, lstar) {
-        return Cam16.fromInt(HctSolver.solveToInt(hueDegrees, chroma, lstar));
+        return Cam16.fromInt(_HctSolver.solveToInt(hueDegrees, chroma, lstar));
       }
     };
     HctSolver.SCALED_DISCOUNT_FROM_LINRGB = [
@@ -1352,16 +1356,16 @@ var init_hct = __esm({
     init_cam16();
     init_hct_solver();
     init_viewing_conditions();
-    Hct = class {
+    Hct = class _Hct {
       static from(hue, chroma, tone) {
-        return new Hct(HctSolver.solveToInt(hue, chroma, tone));
+        return new _Hct(HctSolver.solveToInt(hue, chroma, tone));
       }
       /**
        * @param argb ARGB representation of a color.
        * @return HCT representation of a color in default viewing conditions
        */
       static fromInt(argb) {
-        return new Hct(argb);
+        return new _Hct(argb);
       }
       toInt() {
         return this.argb;
@@ -1437,7 +1441,7 @@ var init_hct = __esm({
         const cam = Cam16.fromInt(this.toInt());
         const viewedInVc = cam.xyzInViewingConditions(vc);
         const recastInVc = Cam16.fromXyzInViewingConditions(viewedInVc[0], viewedInVc[1], viewedInVc[2], ViewingConditions.make());
-        const recastHct = Hct.from(recastInVc.hue, recastInVc.chroma, lstarFromY(viewedInVc[1]));
+        const recastHct = _Hct.from(recastInVc.hue, recastInVc.chroma, lstarFromY(viewedInVc[1]));
         return recastHct;
       }
     };
@@ -1460,7 +1464,7 @@ var init_contrast = __esm({
   "node_modules/@material/material-color-utilities/contrast/contrast.js"() {
     init_color_utils();
     init_math_utils();
-    Contrast = class {
+    Contrast = class _Contrast {
       /**
        * Returns a contrast ratio, which ranges from 1 to 21.
        *
@@ -1470,7 +1474,7 @@ var init_contrast = __esm({
       static ratioOfTones(toneA, toneB) {
         toneA = clampDouble(0, 100, toneA);
         toneB = clampDouble(0, 100, toneB);
-        return Contrast.ratioOfYs(yFromLstar(toneA), yFromLstar(toneB));
+        return _Contrast.ratioOfYs(yFromLstar(toneA), yFromLstar(toneB));
       }
       static ratioOfYs(y1, y2) {
         const lighter = y1 > y2 ? y1 : y2;
@@ -1493,7 +1497,7 @@ var init_contrast = __esm({
         }
         const darkY = yFromLstar(tone);
         const lightY = ratio * (darkY + 5) - 5;
-        const realContrast = Contrast.ratioOfYs(lightY, darkY);
+        const realContrast = _Contrast.ratioOfYs(lightY, darkY);
         const delta = Math.abs(realContrast - ratio);
         if (realContrast < ratio && delta > 0.04) {
           return -1;
@@ -1520,7 +1524,7 @@ var init_contrast = __esm({
         }
         const lightY = yFromLstar(tone);
         const darkY = (lightY + 5) / ratio - 5;
-        const realContrast = Contrast.ratioOfYs(lightY, darkY);
+        const realContrast = _Contrast.ratioOfYs(lightY, darkY);
         const delta = Math.abs(realContrast - ratio);
         if (realContrast < ratio && delta > 0.04) {
           return -1;
@@ -1546,7 +1550,7 @@ var init_contrast = __esm({
        * Range is 1 to 21, invalid values have undefined behavior.
        */
       static lighterUnsafe(tone, ratio) {
-        const lighterSafe = Contrast.lighter(tone, ratio);
+        const lighterSafe = _Contrast.lighter(tone, ratio);
         return lighterSafe < 0 ? 100 : lighterSafe;
       }
       /**
@@ -1564,7 +1568,7 @@ var init_contrast = __esm({
        * Range is 1 to 21, invalid values have undefined behavior.
        */
       static darkerUnsafe(tone, ratio) {
-        const darkerSafe = Contrast.darker(tone, ratio);
+        const darkerSafe = _Contrast.darker(tone, ratio);
         return darkerSafe < 0 ? 0 : darkerSafe;
       }
     };
@@ -1576,7 +1580,7 @@ var DislikeAnalyzer;
 var init_dislike_analyzer = __esm({
   "node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js"() {
     init_hct();
-    DislikeAnalyzer = class {
+    DislikeAnalyzer = class _DislikeAnalyzer {
       /**
        * Returns true if a color is disliked.
        *
@@ -1599,7 +1603,7 @@ var init_dislike_analyzer = __esm({
        *   color if it is acceptable.
        */
       static fixIfDisliked(hct) {
-        if (DislikeAnalyzer.isDisliked(hct)) {
+        if (_DislikeAnalyzer.isDisliked(hct)) {
           return Hct.from(hct.hue, hct.chroma, 70);
         }
         return hct;
@@ -1614,7 +1618,7 @@ var init_dynamic_color = __esm({
   "node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js"() {
     init_contrast();
     init_math_utils();
-    DynamicColor = class {
+    DynamicColor = class _DynamicColor {
       /**
        * Create a DynamicColor defined by a TonalPalette and HCT tone.
        *
@@ -1623,7 +1627,7 @@ var init_dynamic_color = __esm({
        */
       static fromPalette(args) {
         var _a, _b;
-        return new DynamicColor((_a = args.name) != null ? _a : "", args.palette, args.tone, (_b = args.isBackground) != null ? _b : false, args.background, args.secondBackground, args.contrastCurve, args.toneDeltaPair);
+        return new _DynamicColor((_a = args.name) != null ? _a : "", args.palette, args.tone, (_b = args.isBackground) != null ? _b : false, args.background, args.secondBackground, args.contrastCurve, args.toneDeltaPair);
       }
       /**
        * The base constructor for DynamicColor.
@@ -1735,12 +1739,12 @@ var init_dynamic_color = __esm({
           const nContrast = nearer.contrastCurve.getContrast(scheme.contrastLevel);
           const fContrast = farther.contrastCurve.getContrast(scheme.contrastLevel);
           const nInitialTone = nearer.tone(scheme);
-          let nTone = Contrast.ratioOfTones(bgTone, nInitialTone) >= nContrast ? nInitialTone : DynamicColor.foregroundTone(bgTone, nContrast);
+          let nTone = Contrast.ratioOfTones(bgTone, nInitialTone) >= nContrast ? nInitialTone : _DynamicColor.foregroundTone(bgTone, nContrast);
           const fInitialTone = farther.tone(scheme);
-          let fTone = Contrast.ratioOfTones(bgTone, fInitialTone) >= fContrast ? fInitialTone : DynamicColor.foregroundTone(bgTone, fContrast);
+          let fTone = Contrast.ratioOfTones(bgTone, fInitialTone) >= fContrast ? fInitialTone : _DynamicColor.foregroundTone(bgTone, fContrast);
           if (decreasingContrast) {
-            nTone = DynamicColor.foregroundTone(bgTone, nContrast);
-            fTone = DynamicColor.foregroundTone(bgTone, fContrast);
+            nTone = _DynamicColor.foregroundTone(bgTone, nContrast);
+            fTone = _DynamicColor.foregroundTone(bgTone, fContrast);
           }
           if ((fTone - nTone) * expansionDir >= delta) {
           } else {
@@ -1785,10 +1789,10 @@ var init_dynamic_color = __esm({
           const desiredRatio = this.contrastCurve.getContrast(scheme.contrastLevel);
           if (Contrast.ratioOfTones(bgTone, answer) >= desiredRatio) {
           } else {
-            answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+            answer = _DynamicColor.foregroundTone(bgTone, desiredRatio);
           }
           if (decreasingContrast) {
-            answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+            answer = _DynamicColor.foregroundTone(bgTone, desiredRatio);
           }
           if (this.isBackground && 50 <= answer && answer < 60) {
             if (Contrast.ratioOfTones(49, bgTone) >= desiredRatio) {
@@ -1811,7 +1815,7 @@ var init_dynamic_color = __esm({
               availables.push(lightOption);
             if (darkOption !== -1)
               availables.push(darkOption);
-            const prefersLight = DynamicColor.tonePrefersLightForeground(bgTone1) || DynamicColor.tonePrefersLightForeground(bgTone2);
+            const prefersLight = _DynamicColor.tonePrefersLightForeground(bgTone1) || _DynamicColor.tonePrefersLightForeground(bgTone2);
             if (prefersLight) {
               return lightOption < 0 ? 100 : lightOption;
             }
@@ -1837,7 +1841,7 @@ var init_dynamic_color = __esm({
         const darkerTone = Contrast.darkerUnsafe(bgTone, ratio);
         const lighterRatio = Contrast.ratioOfTones(lighterTone, bgTone);
         const darkerRatio = Contrast.ratioOfTones(darkerTone, bgTone);
-        const preferLighter = DynamicColor.tonePrefersLightForeground(bgTone);
+        const preferLighter = _DynamicColor.tonePrefersLightForeground(bgTone);
         if (preferLighter) {
           const negligibleDifference = Math.abs(lighterRatio - darkerRatio) < 0.1 && lighterRatio < ratio && darkerRatio < ratio;
           return lighterRatio >= ratio || lighterRatio >= darkerRatio || negligibleDifference ? lighterTone : darkerTone;
@@ -1871,7 +1875,7 @@ var init_dynamic_color = __esm({
        * reasonably close to supporting it.
        */
       static enableLightForeground(tone) {
-        if (DynamicColor.tonePrefersLightForeground(tone) && !DynamicColor.toneAllowsLightForeground(tone)) {
+        if (_DynamicColor.tonePrefersLightForeground(tone) && !_DynamicColor.toneAllowsLightForeground(tone)) {
           return 49;
         }
         return tone;
@@ -2044,9 +2048,9 @@ var init_material_dynamic_colors = __esm({
     init_contrast_curve();
     init_dynamic_color();
     init_tone_delta_pair();
-    MaterialDynamicColors = class {
+    MaterialDynamicColors = class _MaterialDynamicColors {
       static highestSurface(s) {
-        return s.isDark ? MaterialDynamicColors.surfaceBright : MaterialDynamicColors.surfaceDim;
+        return s.isDark ? _MaterialDynamicColors.surfaceBright : _MaterialDynamicColors.surfaceDim;
       }
     };
     MaterialDynamicColors.contentAccentToneDelta = 15;
@@ -2519,21 +2523,21 @@ var TonalPalette;
 var init_tonal_palette = __esm({
   "node_modules/@material/material-color-utilities/palettes/tonal_palette.js"() {
     init_hct();
-    TonalPalette = class {
+    TonalPalette = class _TonalPalette {
       /**
        * @param argb ARGB representation of a color
        * @return Tones matching that color's hue and chroma.
        */
       static fromInt(argb) {
         const hct = Hct.fromInt(argb);
-        return TonalPalette.fromHct(hct);
+        return _TonalPalette.fromHct(hct);
       }
       /**
        * @param hct Hct
        * @return Tones matching that color's hue and chroma.
        */
       static fromHct(hct) {
-        return new TonalPalette(hct.hue, hct.chroma, hct);
+        return new _TonalPalette(hct.hue, hct.chroma, hct);
       }
       /**
        * @param hue HCT hue
@@ -2541,7 +2545,7 @@ var init_tonal_palette = __esm({
        * @return Tones matching hue and chroma.
        */
       static fromHueAndChroma(hue, chroma) {
-        return new TonalPalette(hue, chroma, TonalPalette.createKeyColor(hue, chroma));
+        return new _TonalPalette(hue, chroma, _TonalPalette.createKeyColor(hue, chroma));
       }
       constructor(hue, chroma, keyColor) {
         this.hue = hue;
@@ -2735,7 +2739,7 @@ var init_scheme_expressive = __esm({
     init_math_utils();
     init_dynamic_scheme();
     init_variant();
-    SchemeExpressive = class extends DynamicScheme {
+    SchemeExpressive = class _SchemeExpressive extends DynamicScheme {
       constructor(sourceColorHct, isDark, contrastLevel) {
         super({
           sourceColorArgb: sourceColorHct.toInt(),
@@ -2743,8 +2747,8 @@ var init_scheme_expressive = __esm({
           contrastLevel,
           isDark,
           primaryPalette: TonalPalette.fromHueAndChroma(sanitizeDegreesDouble(sourceColorHct.hue + 240), 40),
-          secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.secondaryRotations), 24),
-          tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.tertiaryRotations), 32),
+          secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeExpressive.hues, _SchemeExpressive.secondaryRotations), 24),
+          tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeExpressive.hues, _SchemeExpressive.tertiaryRotations), 32),
           neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 8),
           neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 12)
         });
@@ -2832,7 +2836,7 @@ var init_scheme_vibrant = __esm({
     init_tonal_palette();
     init_dynamic_scheme();
     init_variant();
-    SchemeVibrant = class extends DynamicScheme {
+    SchemeVibrant = class _SchemeVibrant extends DynamicScheme {
       constructor(sourceColorHct, isDark, contrastLevel) {
         super({
           sourceColorArgb: sourceColorHct.toInt(),
@@ -2840,8 +2844,8 @@ var init_scheme_vibrant = __esm({
           contrastLevel,
           isDark,
           primaryPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 200),
-          secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.secondaryRotations), 24),
-          tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.tertiaryRotations), 32),
+          secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeVibrant.hues, _SchemeVibrant.secondaryRotations), 24),
+          tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeVibrant.hues, _SchemeVibrant.tertiaryRotations), 32),
           neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10),
           neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12)
         });
@@ -2903,7 +2907,7 @@ var init_score = __esm({
       filter: true
       // Avoid unsuitable colors.
     };
-    Score = class {
+    Score = class _Score {
       constructor() {
       }
       /**
@@ -2943,12 +2947,12 @@ var init_score = __esm({
         for (const hct of colorsHct) {
           const hue = sanitizeDegreesInt(Math.round(hct.hue));
           const proportion = hueExcitedProportions[hue];
-          if (filter && (hct.chroma < Score.CUTOFF_CHROMA || proportion <= Score.CUTOFF_EXCITED_PROPORTION)) {
+          if (filter && (hct.chroma < _Score.CUTOFF_CHROMA || proportion <= _Score.CUTOFF_EXCITED_PROPORTION)) {
             continue;
           }
-          const proportionScore = proportion * 100 * Score.WEIGHT_PROPORTION;
-          const chromaWeight = hct.chroma < Score.TARGET_CHROMA ? Score.WEIGHT_CHROMA_BELOW : Score.WEIGHT_CHROMA_ABOVE;
-          const chromaScore = (hct.chroma - Score.TARGET_CHROMA) * chromaWeight;
+          const proportionScore = proportion * 100 * _Score.WEIGHT_PROPORTION;
+          const chromaWeight = hct.chroma < _Score.TARGET_CHROMA ? _Score.WEIGHT_CHROMA_BELOW : _Score.WEIGHT_CHROMA_ABOVE;
+          const chromaScore = (hct.chroma - _Score.TARGET_CHROMA) * chromaWeight;
           const score = proportionScore + chromaScore;
           scoredHct.push({ hct, score });
         }
@@ -3106,6 +3110,14 @@ var init_color = __esm({
        * @param hexColor The hex color string to create the color from.
        */
       constructor(hexColor) {
+        __publicField(this, "argb");
+        __publicField(this, "rgba");
+        __publicField(this, "hex");
+        __publicField(this, "hue");
+        __publicField(this, "chroma");
+        __publicField(this, "tone");
+        __publicField(this, "figmaSolidColor");
+        __publicField(this, "hctColor");
         var _a, _b, _c;
         const cleanedHexColor = hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
         const rgbColor = convertHexColorToRgbColor(cleanedHexColor);
@@ -4084,7 +4096,7 @@ var require_isArguments = __commonJS({
     var objectProto = Object.prototype;
     var hasOwnProperty = objectProto.hasOwnProperty;
     var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-    var isArguments = baseIsArguments(function() {
+    var isArguments = baseIsArguments(/* @__PURE__ */ function() {
       return arguments;
     }()) ? baseIsArguments : function(value) {
       return isObjectLike(value) && hasOwnProperty.call(value, "callee") && !propertyIsEnumerable.call(value, "callee");
@@ -4857,7 +4869,7 @@ var require_baseCreate = __commonJS({
   "node_modules/lodash/_baseCreate.js"(exports, module) {
     var isObject = require_isObject();
     var objectCreate = Object.create;
-    var baseCreate = function() {
+    var baseCreate = /* @__PURE__ */ function() {
       function object() {
       }
       return function(proto) {
@@ -5185,6 +5197,13 @@ var init_variable_collection = __esm({
        * @param key The key to use with getVariablesInLibraryCollectionAsync.
        */
       constructor(id, name, variableIds, defaultModeId, modes, remote, key) {
+        __publicField(this, "id");
+        __publicField(this, "name");
+        __publicField(this, "variableIds");
+        __publicField(this, "defaultModeId");
+        __publicField(this, "modes");
+        __publicField(this, "remote");
+        __publicField(this, "key");
         this.id = id;
         this.name = name;
         this.variableIds = variableIds;

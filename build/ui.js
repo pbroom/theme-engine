@@ -9,6 +9,9 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __knownSymbol = (name310, symbol) => {
+    return (symbol = Symbol[name310]) ? symbol : Symbol.for("Symbol." + name310);
+  };
   var __defNormalProp = (obj, key, value2) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value2 }) : obj[key] = value2;
   var __spreadValues = (a3, b3) => {
     for (var prop in b3 || (b3 = {}))
@@ -41,8 +44,8 @@
     return mod3 || (0, cb[__getOwnPropNames(cb)[0]])((mod3 = { exports: {} }).exports, mod3), mod3.exports;
   };
   var __export = (target, all) => {
-    for (var name307 in all)
-      __defProp(target, name307, { get: all[name307], enumerable: true });
+    for (var name310 in all)
+      __defProp(target, name310, { get: all[name310], enumerable: true });
   };
   var __copyProps = (to2, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
@@ -61,14 +64,51 @@
     mod3
   ));
   var __toCommonJS = (mod3) => __copyProps(__defProp({}, "__esModule", { value: true }), mod3);
+  var __await = function(promise, isYieldStar) {
+    this[0] = promise;
+    this[1] = isYieldStar;
+  };
+  var __yieldStar = (value2) => {
+    var obj = value2[__knownSymbol("asyncIterator")];
+    var isAwait = false;
+    var method;
+    var it = {};
+    if (obj == null) {
+      obj = value2[__knownSymbol("iterator")]();
+      method = (k4) => it[k4] = (x4) => obj[k4](x4);
+    } else {
+      obj = obj.call(value2);
+      method = (k4) => it[k4] = (v3) => {
+        if (isAwait) {
+          isAwait = false;
+          if (k4 === "throw")
+            throw v3;
+          return v3;
+        }
+        isAwait = true;
+        return {
+          done: false,
+          value: new __await(new Promise((resolve2) => {
+            var x4 = obj[k4](v3);
+            if (!(x4 instanceof Object))
+              throw TypeError("Object expected");
+            resolve2(x4);
+          }), 1)
+        };
+      };
+    }
+    return it[__knownSymbol("iterator")] = () => it, method("next"), "throw" in obj ? method("throw") : it.throw = (x4) => {
+      throw x4;
+    }, "return" in obj && method("return"), it;
+  };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fff391be-f50f-447c-bfb8-540aa773567f/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a9832d29-8416-4182-817b-2f285dbc9608/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fff391be-f50f-447c-bfb8-540aa773567f/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a9832d29-8416-4182-817b-2f285dbc9608/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
-        element.textContent = `/*
+        element.innerHTML = `/*
 ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -851,6 +891,9 @@ video {
 .border-t {
   border-top-width: 1px;
 }
+.border-gridlines {
+  border-color: hsl(0, 0%, 50%, 0.25);
+}
 .border-neutral-600 {
   --tw-border-opacity: 1;
   border-color: rgb(82 82 82 / var(--tw-border-opacity));
@@ -882,12 +925,18 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
+.bg-gridlines {
+  background-color: hsl(0, 0%, 50%, 0.25);
+}
 .bg-muted {
   background-color: hsl(var(--muted));
 }
 .bg-neutral-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(115 115 115 / var(--tw-bg-opacity));
+}
+.bg-neutral-500/50 {
+  background-color: rgb(115 115 115 / 0.5);
 }
 .bg-neutral-600 {
   --tw-bg-opacity: 1;
@@ -1181,141 +1230,176 @@ video {
   }
 }
 ._tabs_61qsz_1 {
-	border-bottom: none !important;
+    border-bottom: none !important;
 }
-._opacityInput_190p3_84,
-._divider_190p3_109 {
-	display: none !important;
+._opacityInput_69uub_84,
+._divider_69uub_109 {
+    display: none !important;
 }
-._textboxColor_190p3_1 {
-	width: unset !important;
+._textboxColor_69uub_1 {
+    width: unset !important;
 }
-._hexColorInput_190p3_80 {
-	flex-basis: 100% !important;
+._hexColorInput_69uub_80 {
+    flex-basis: 100% !important;
 }
 ._border_s66c9_8 {
-	background-color: unset !important;
+    background-color: unset !important;
 }
-.hue-slider ._border_s66c9_8 {
-	background: linear-gradient(
-		to right,
-		#f00,
-		#ff0,
-		#0f0,
-		#0ff,
-		#00f,
-		#f0f,
-		#f00
-	) !important;
+.hue-slider-bar {
+    background: linear-gradient(
+        to right,
+        #f00,
+        #ff0,
+        #0f0,
+        #0ff,
+        #00f,
+        #f0f,
+        #f00
+    );
 }
 .tab-content {
-	height: 600px;
+    height: 600px;
 }
 .build-button:hover {
-		background-color: #222;
-	}
+        background-color: rgb(128, 128, 128, 0.08);
+    }
 .build-button:active {
-		background-color: #000;
-	}
-.active:bg-neutral-700:active {
+        background: linear-gradient(
+            60deg,
+            #f00,
+            #ff0,
+            #0f0,
+            #0ff,
+            #00f,
+            #f0f,
+            #f00
+        );
+        background-size: 800% auto;
+        animation: gradientMove 45s linear infinite;
+    }
+@keyframes gradientMove {
+        0% {
+            background-position: 800% 0%;
+        }
+        100% {
+            background-position: -800% 0%;
+        }
+    }
+.active\\:bg-neutral-700:active {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
-.active:bg-red-700:active {
+.active\\:bg-red-700:active {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
-.data-[state=active]:bg-background[data-state=active] {
+.data-[state=active]\\:bg-background[data-state=active] {
   background-color: hsl(var(--background));
 }
-.data-[state=active]:text-foreground[data-state=active] {
+.data-[state=active]\\:text-foreground[data-state=active] {
   color: hsl(var(--foreground));
 }
-.data-[state=active]:shadow[data-state=active] {
+.data-[state=active]\\:shadow[data-state=active] {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.hover:translate-x-8:where([data-rac])[data-hovered] {
+.focus-within\\:bg-red-500:where([data-rac])[data-focus-within] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.focus-within\\:bg-red-500:where(:not([data-rac])):focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.hover\\:translate-x-8:where([data-rac])[data-hovered] {
   --tw-translate-x: 2rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.hover:bg-blue-400:where([data-rac])[data-hovered] {
+.hover\\:bg-blue-400:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-.hover:bg-fig-blue:where([data-rac])[data-hovered] {
+.hover\\:bg-fig-blue:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
-.hover:bg-green-600:where([data-rac])[data-hovered] {
+.hover\\:bg-green-600:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
-.hover:bg-neutral-700:where([data-rac])[data-hovered] {
+.hover\\:bg-neutral-700:where([data-rac])[data-hovered] {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
-.hover:translate-x-8:where(:not([data-rac])):hover {
+.hover\\:translate-x-8:where(:not([data-rac])):hover {
   --tw-translate-x: 2rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.hover:bg-blue-400:where(:not([data-rac])):hover {
+.hover\\:bg-blue-400:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
-.hover:bg-fig-blue:where(:not([data-rac])):hover {
+.hover\\:bg-fig-blue:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(24 160 251 / var(--tw-bg-opacity));
 }
-.hover:bg-green-600:where(:not([data-rac])):hover {
+.hover\\:bg-green-600:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
-.hover:bg-neutral-700:where(:not([data-rac])):hover {
+.hover\\:bg-neutral-700:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
-.focus-visible:outline-none:where([data-rac])[data-focus-visible] {
+.focus\\:bg-red-500:where([data-rac])[data-focused] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.focus\\:bg-red-500:where(:not([data-rac])):focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.focus-visible\\:outline-none:where([data-rac])[data-focus-visible] {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-.focus-visible:ring-2:where([data-rac])[data-focus-visible] {
+.focus-visible\\:ring-2:where([data-rac])[data-focus-visible] {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-.focus-visible:ring-ring:where([data-rac])[data-focus-visible] {
+.focus-visible\\:ring-ring:where([data-rac])[data-focus-visible] {
   --tw-ring-color: hsl(var(--ring));
 }
-.focus-visible:ring-offset-2:where([data-rac])[data-focus-visible] {
+.focus-visible\\:ring-offset-2:where([data-rac])[data-focus-visible] {
   --tw-ring-offset-width: 2px;
 }
-.focus-visible:outline-none:where(:not([data-rac])):focus-visible {
+.focus-visible\\:outline-none:where(:not([data-rac])):focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-.focus-visible:ring-2:where(:not([data-rac])):focus-visible {
+.focus-visible\\:ring-2:where(:not([data-rac])):focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-.focus-visible:ring-ring:where(:not([data-rac])):focus-visible {
+.focus-visible\\:ring-ring:where(:not([data-rac])):focus-visible {
   --tw-ring-color: hsl(var(--ring));
 }
-.focus-visible:ring-offset-2:where(:not([data-rac])):focus-visible {
+.focus-visible\\:ring-offset-2:where(:not([data-rac])):focus-visible {
   --tw-ring-offset-width: 2px;
 }
-.disabled:pointer-events-none:where([data-rac])[data-disabled] {
+.disabled\\:pointer-events-none:where([data-rac])[data-disabled] {
   pointer-events: none;
 }
-.disabled:opacity-50:where([data-rac])[data-disabled] {
+.disabled\\:opacity-50:where([data-rac])[data-disabled] {
   opacity: 0.5;
 }
-.disabled:pointer-events-none:where(:not([data-rac])):disabled {
+.disabled\\:pointer-events-none:where(:not([data-rac])):disabled {
   pointer-events: none;
 }
-.disabled:opacity-50:where(:not([data-rac])):disabled {
+.disabled\\:opacity-50:where(:not([data-rac])):disabled {
   opacity: 0.5;
 }
 `;
@@ -1393,7 +1477,7 @@ video {
   function P(n3, l3, u3) {
     var t3, i5, o3, r3, f3, e6 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
     for (n3.__k = [], t3 = 0; t3 < e6; t3++)
-      null != (i5 = n3.__k[t3] = null == (i5 = l3[t3]) || "boolean" == typeof i5 || "function" == typeof i5 ? null : "string" == typeof i5 || "number" == typeof i5 || "bigint" == typeof i5 || i5.constructor == String ? d(null, i5, null, null, i5) : h(i5) ? d(g, { children: i5 }, null, null, null) : i5.__b > 0 ? d(i5.type, i5.props, i5.key, i5.ref ? i5.ref : null, i5.__v) : i5) ? (i5.__ = n3, i5.__b = n3.__b + 1, f3 = H(i5, u3, r3 = t3 + a3, s3), i5.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i5.type && (i5.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e6 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i5.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
+      null != (i5 = n3.__k[t3] = null == (i5 = l3[t3]) || "boolean" == typeof i5 || "function" == typeof i5 ? null : "string" == typeof i5 || "number" == typeof i5 || "bigint" == typeof i5 || i5.constructor == String ? d(null, i5, null, null, i5) : h(i5) ? d(g, { children: i5 }, null, null, null) : void 0 === i5.constructor && i5.__b > 0 ? d(i5.type, i5.props, i5.key, i5.ref ? i5.ref : null, i5.__v) : i5) ? (i5.__ = n3, i5.__b = n3.__b + 1, f3 = H(i5, u3, r3 = t3 + a3, s3), i5.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i5.type && (i5.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e6 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i5.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
     if (s3)
       for (t3 = 0; t3 < c3; t3++)
         null != (o3 = u3[t3]) && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3));
@@ -1846,10 +1930,398 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41054b57-e24f-4358-a222-73e5b437466e/icon.module.js
+  // node_modules/preact/compat/dist/compat.module.js
+  var compat_module_exports = {};
+  __export(compat_module_exports, {
+    Children: () => A3,
+    Component: () => b,
+    Fragment: () => g,
+    PureComponent: () => E2,
+    StrictMode: () => mn,
+    Suspense: () => L2,
+    SuspenseList: () => M2,
+    __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: () => on,
+    cloneElement: () => sn,
+    createContext: () => F,
+    createElement: () => y,
+    createFactory: () => cn,
+    createPortal: () => j3,
+    createRef: () => _,
+    default: () => wn,
+    findDOMNode: () => vn,
+    flushSync: () => pn,
+    forwardRef: () => N2,
+    hydrate: () => G,
+    isElement: () => gn,
+    isFragment: () => an,
+    isValidElement: () => fn,
+    lazy: () => D2,
+    memo: () => w3,
+    render: () => q3,
+    startTransition: () => yn,
+    unmountComponentAtNode: () => hn,
+    unstable_batchedUpdates: () => dn,
+    useCallback: () => T2,
+    useContext: () => q2,
+    useDebugValue: () => x2,
+    useDeferredValue: () => _n,
+    useEffect: () => p2,
+    useErrorBoundary: () => P2,
+    useId: () => V,
+    useImperativeHandle: () => A2,
+    useInsertionEffect: () => Sn,
+    useLayoutEffect: () => y2,
+    useMemo: () => F2,
+    useReducer: () => s2,
+    useRef: () => _2,
+    useState: () => h2,
+    useSyncExternalStore: () => Cn,
+    useTransition: () => bn,
+    version: () => ln
+  });
+  function g3(n3, t3) {
+    for (var e6 in t3)
+      n3[e6] = t3[e6];
+    return n3;
+  }
+  function C2(n3, t3) {
+    for (var e6 in n3)
+      if ("__source" !== e6 && !(e6 in t3))
+        return true;
+    for (var r3 in t3)
+      if ("__source" !== r3 && n3[r3] !== t3[r3])
+        return true;
+    return false;
+  }
+  function E2(n3) {
+    this.props = n3;
+  }
+  function w3(n3, e6) {
+    function r3(n4) {
+      var t3 = this.props.ref, r4 = t3 == n4.ref;
+      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e6 ? !e6(this.props, n4) || !r4 : C2(this.props, n4);
+    }
+    function u3(e7) {
+      return this.shouldComponentUpdate = r3, y(n3, e7);
+    }
+    return u3.displayName = "Memo(" + (n3.displayName || n3.name) + ")", u3.prototype.isReactComponent = true, u3.__f = true, u3;
+  }
+  function N2(n3) {
+    function t3(t4) {
+      var e6 = g3({}, t4);
+      return delete e6.ref, n3(e6, t4.ref || null);
+    }
+    return t3.$$typeof = R, t3.render = t3, t3.prototype.isReactComponent = t3.__f = true, t3.displayName = "ForwardRef(" + (n3.displayName || n3.name) + ")", t3;
+  }
+  function F3(n3, t3, e6) {
+    return n3 && (n3.__c && n3.__c.__H && (n3.__c.__H.__.forEach(function(n4) {
+      "function" == typeof n4.__c && n4.__c();
+    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e6 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return F3(n4, t3, e6);
+    })), n3;
+  }
+  function I2(n3, t3, e6) {
+    return n3 && e6 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return I2(n4, t3, e6);
+    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e6.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e6)), n3;
+  }
+  function L2() {
+    this.__u = 0, this.t = null, this.__b = null;
+  }
+  function U(n3) {
+    var t3 = n3.__.__c;
+    return t3 && t3.__a && t3.__a(n3);
+  }
+  function D2(n3) {
+    var e6, r3, u3;
+    function o3(o4) {
+      if (e6 || (e6 = n3()).then(function(n4) {
+        r3 = n4.default || n4;
+      }, function(n4) {
+        u3 = n4;
+      }), u3)
+        throw u3;
+      if (!r3)
+        throw e6;
+      return y(r3, o4);
+    }
+    return o3.displayName = "Lazy", o3.__f = true, o3;
+  }
+  function M2() {
+    this.u = null, this.o = null;
+  }
+  function W(n3) {
+    return this.getChildContext = function() {
+      return n3.context;
+    }, n3.children;
+  }
+  function P3(n3) {
+    var e6 = this, r3 = n3.i;
+    e6.componentWillUnmount = function() {
+      q(null, e6.l), e6.l = null, e6.i = null;
+    }, e6.i && e6.i !== r3 && e6.componentWillUnmount(), e6.l || (e6.i = r3, e6.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
+      this.childNodes.push(n4), e6.i.appendChild(n4);
+    }, insertBefore: function(n4, t3) {
+      this.childNodes.push(n4), e6.i.appendChild(n4);
+    }, removeChild: function(n4) {
+      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
+    } }), q(y(W, { context: e6.context }, n3.__v), e6.l);
+  }
+  function j3(n3, e6) {
+    var r3 = y(P3, { __v: n3, i: e6 });
+    return r3.containerInfo = e6, r3;
+  }
+  function q3(n3, t3, e6) {
+    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  }
+  function G(n3, t3, e6) {
+    return B(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  }
+  function K() {
+  }
+  function Q() {
+    return this.cancelBubble;
+  }
+  function X() {
+    return this.defaultPrevented;
+  }
+  function cn(n3) {
+    return y.bind(null, n3);
+  }
+  function fn(n3) {
+    return !!n3 && n3.$$typeof === z3;
+  }
+  function an(n3) {
+    return fn(n3) && n3.type === g;
+  }
+  function sn(n3) {
+    return fn(n3) ? E.apply(null, arguments) : n3;
+  }
+  function hn(n3) {
+    return !!n3.__k && (q(null, n3), true);
+  }
+  function vn(n3) {
+    return n3 && (n3.base || 1 === n3.nodeType && n3) || null;
+  }
+  function yn(n3) {
+    n3();
+  }
+  function _n(n3) {
+    return n3;
+  }
+  function bn() {
+    return [false, yn];
+  }
+  function Cn(n3, t3) {
+    var e6 = t3(), r3 = h2({ h: { __: e6, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
+    return y2(function() {
+      u3.__ = e6, u3.v = t3, En(u3) && o3({ h: u3 });
+    }, [n3, e6, t3]), p2(function() {
+      return En(u3) && o3({ h: u3 }), n3(function() {
+        En(u3) && o3({ h: u3 });
+      });
+    }, [n3]), e6;
+  }
+  function En(n3) {
+    var t3, e6, r3 = n3.v, u3 = n3.__;
+    try {
+      var o3 = r3();
+      return !((t3 = u3) === (e6 = o3) && (0 !== t3 || 1 / t3 == 1 / e6) || t3 != t3 && e6 != e6);
+    } catch (n4) {
+      return true;
+    }
+  }
+  var x3, R, k3, A3, O2, T3, V2, z3, B3, H2, Z, Y, $2, J, nn, tn, en, rn, un, on, ln, dn, pn, mn, Sn, gn, wn;
+  var init_compat_module = __esm({
+    "node_modules/preact/compat/dist/compat.module.js"() {
+      init_preact_module();
+      init_preact_module();
+      init_hooks_module();
+      init_hooks_module();
+      (E2.prototype = new b()).isPureReactComponent = true, E2.prototype.shouldComponentUpdate = function(n3, t3) {
+        return C2(this.props, n3) || C2(this.state, t3);
+      };
+      x3 = l.__b;
+      l.__b = function(n3) {
+        n3.type && n3.type.__f && n3.ref && (n3.props.ref = n3.ref, n3.ref = null), x3 && x3(n3);
+      };
+      R = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.forward_ref") || 3911;
+      k3 = function(n3, t3) {
+        return null == n3 ? null : $($(n3).map(t3));
+      };
+      A3 = { map: k3, forEach: k3, count: function(n3) {
+        return n3 ? $(n3).length : 0;
+      }, only: function(n3) {
+        var t3 = $(n3);
+        if (1 !== t3.length)
+          throw "Children.only";
+        return t3[0];
+      }, toArray: $ };
+      O2 = l.__e;
+      l.__e = function(n3, t3, e6, r3) {
+        if (n3.then) {
+          for (var u3, o3 = t3; o3 = o3.__; )
+            if ((u3 = o3.__c) && u3.__c)
+              return null == t3.__e && (t3.__e = e6.__e, t3.__k = e6.__k), u3.__c(n3, t3);
+        }
+        O2(n3, t3, e6, r3);
+      };
+      T3 = l.unmount;
+      l.unmount = function(n3) {
+        var t3 = n3.__c;
+        t3 && t3.__R && t3.__R(), t3 && 32 & n3.__u && (n3.type = null), T3 && T3(n3);
+      }, (L2.prototype = new b()).__c = function(n3, t3) {
+        var e6 = t3.__c, r3 = this;
+        null == r3.t && (r3.t = []), r3.t.push(e6);
+        var u3 = U(r3.__v), o3 = false, i5 = function() {
+          o3 || (o3 = true, e6.__R = null, u3 ? u3(l3) : l3());
+        };
+        e6.__R = i5;
+        var l3 = function() {
+          if (!--r3.__u) {
+            if (r3.state.__a) {
+              var n4 = r3.state.__a;
+              r3.__v.__k[0] = I2(n4, n4.__c.__P, n4.__c.__O);
+            }
+            var t4;
+            for (r3.setState({ __a: r3.__b = null }); t4 = r3.t.pop(); )
+              t4.forceUpdate();
+          }
+        };
+        r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i5, i5);
+      }, L2.prototype.componentWillUnmount = function() {
+        this.t = [];
+      }, L2.prototype.render = function(n3, e6) {
+        if (this.__b) {
+          if (this.__v.__k) {
+            var r3 = document.createElement("div"), o3 = this.__v.__k[0].__c;
+            this.__v.__k[0] = F3(this.__b, r3, o3.__O = o3.__P);
+          }
+          this.__b = null;
+        }
+        var i5 = e6.__a && y(g, null, n3.fallback);
+        return i5 && (i5.__u &= -33), [y(g, null, e6.__a ? null : n3.children), i5];
+      };
+      V2 = function(n3, t3, e6) {
+        if (++e6[1] === e6[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
+          for (e6 = n3.u; e6; ) {
+            for (; e6.length > 3; )
+              e6.pop()();
+            if (e6[1] < e6[0])
+              break;
+            n3.u = e6 = e6[2];
+          }
+      };
+      (M2.prototype = new b()).__a = function(n3) {
+        var t3 = this, e6 = U(t3.__v), r3 = t3.o.get(n3);
+        return r3[0]++, function(u3) {
+          var o3 = function() {
+            t3.props.revealOrder ? (r3.push(u3), V2(t3, n3, r3)) : u3();
+          };
+          e6 ? e6(o3) : o3();
+        };
+      }, M2.prototype.render = function(n3) {
+        this.u = null, this.o = /* @__PURE__ */ new Map();
+        var t3 = $(n3.children);
+        n3.revealOrder && "b" === n3.revealOrder[0] && t3.reverse();
+        for (var e6 = t3.length; e6--; )
+          this.o.set(t3[e6], this.u = [1, 0, this.u]);
+        return n3.children;
+      }, M2.prototype.componentDidUpdate = M2.prototype.componentDidMount = function() {
+        var n3 = this;
+        this.o.forEach(function(t3, e6) {
+          V2(n3, e6, t3);
+        });
+      };
+      z3 = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103;
+      B3 = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|image(!S)|letter|lighting|marker(?!H|W|U)|overline|paint|pointer|shape|stop|strikethrough|stroke|text(?!L)|transform|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/;
+      H2 = /^on(Ani|Tra|Tou|BeforeInp|Compo)/;
+      Z = /[A-Z0-9]/g;
+      Y = "undefined" != typeof document;
+      $2 = function(n3) {
+        return ("undefined" != typeof Symbol && "symbol" == typeof Symbol() ? /fil|che|rad/ : /fil|che|ra/).test(n3);
+      };
+      b.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function(t3) {
+        Object.defineProperty(b.prototype, t3, { configurable: true, get: function() {
+          return this["UNSAFE_" + t3];
+        }, set: function(n3) {
+          Object.defineProperty(this, t3, { configurable: true, writable: true, value: n3 });
+        } });
+      });
+      J = l.event;
+      l.event = function(n3) {
+        return J && (n3 = J(n3)), n3.persist = K, n3.isPropagationStopped = Q, n3.isDefaultPrevented = X, n3.nativeEvent = n3;
+      };
+      tn = { enumerable: false, configurable: true, get: function() {
+        return this.class;
+      } };
+      en = l.vnode;
+      l.vnode = function(n3) {
+        "string" == typeof n3.type && function(n4) {
+          var t3 = n4.props, e6 = n4.type, u3 = {};
+          for (var o3 in t3) {
+            var i5 = t3[o3];
+            if (!("value" === o3 && "defaultValue" in t3 && null == i5 || Y && "children" === o3 && "noscript" === e6 || "class" === o3 || "className" === o3)) {
+              var l3 = o3.toLowerCase();
+              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i5 ? i5 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e6 && "textarea" !== e6 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e6.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i5 && (i5 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i5;
+            }
+          }
+          "select" == e6 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
+            n5.props.selected = -1 != u3.value.indexOf(n5.props.value);
+          })), "select" == e6 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
+            n5.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n5.props.value) : u3.defaultValue == n5.props.value;
+          })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", tn)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n4.props = u3;
+        }(n3), n3.$$typeof = z3, en && en(n3);
+      };
+      rn = l.__r;
+      l.__r = function(n3) {
+        rn && rn(n3), nn = n3.__c;
+      };
+      un = l.diffed;
+      l.diffed = function(n3) {
+        un && un(n3);
+        var t3 = n3.props, e6 = n3.__e;
+        null != e6 && "textarea" === n3.type && "value" in t3 && t3.value !== e6.value && (e6.value = null == t3.value ? "" : t3.value), nn = null;
+      };
+      on = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
+        return nn.__n[n3.__c].props.value;
+      } } } };
+      ln = "17.0.2";
+      dn = function(n3, t3) {
+        return n3(t3);
+      };
+      pn = function(n3, t3) {
+        return n3(t3);
+      };
+      mn = g;
+      Sn = y2;
+      gn = fn;
+      wn = { useState: h2, useId: V, useReducer: s2, useEffect: p2, useLayoutEffect: y2, useInsertionEffect: Sn, useTransition: bn, useDeferredValue: _n, useSyncExternalStore: Cn, startTransition: yn, useRef: _2, useImperativeHandle: A2, useMemo: F2, useCallback: T2, useContext: q2, useDebugValue: x2, version: "17.0.2", Children: A3, render: q3, hydrate: G, unmountComponentAtNode: hn, createPortal: j3, createElement: y, createContext: F, createFactory: cn, cloneElement: sn, createRef: _, Fragment: g, isValidElement: fn, isElement: gn, isFragment: an, findDOMNode: vn, Component: b, PureComponent: E2, memo: w3, forwardRef: N2, flushSync: pn, unstable_batchedUpdates: dn, StrictMode: mn, Suspense: L2, SuspenseList: M2, lazy: D2, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: on };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/utilities/create-component.js
+  function createComponent(fn2) {
+    return N2(fn2);
+  }
+  var init_create_component = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/utilities/create-component.js"() {
+      init_compat_module();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/utilities/no-op.js
+  function noop() {
+  }
+  var init_no_op = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/utilities/no-op.js"() {
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0bda1e4-0723-4a86-bb7d-092281b42f20/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41054b57-e24f-4358-a222-73e5b437466e/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0bda1e4-0723-4a86-bb7d-092281b42f20/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -1867,20 +2339,21 @@ video {
   // node_modules/@create-figma-plugin/ui/lib/icons/create-icon.js
   function createIcon(path, options) {
     const { width, height } = options;
-    return function Icon(_a) {
+    return createComponent(function(_a) {
       var _b = _a, { color: color2 } = _b, rest = __objRest(_b, ["color"]);
       return y(
         "svg",
-        __spreadProps(__spreadValues({}, rest), { class: icon_module_default.icon, height, style: typeof color2 === "undefined" ? void 0 : {
-          fill: `var(--figma-color-icon-${color2})`
+        __spreadProps(__spreadValues({}, rest), { class: icon_module_default.icon, height, style: {
+          fill: typeof color2 === "undefined" ? "currentColor" : `var(--figma-color-icon-${color2})`
         }, width, xmlns: "http://www.w3.org/2000/svg" }),
         y("path", { "clip-rule": "evenodd", d: path, "fill-rule": "evenodd" })
       );
-    };
+    });
   }
   var init_create_icon = __esm({
     "node_modules/@create-figma-plugin/ui/lib/icons/create-icon.js"() {
       init_preact_module();
+      init_create_component();
       init_icon_module();
     }
   });
@@ -1897,10 +2370,18 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/307d32b4-74e2-481f-b8c3-00185a17bdf6/icon-button.module.js
+  // node_modules/@create-figma-plugin/ui/lib/utilities/private/constants.js
+  var ITEM_ID_DATA_ATTRIBUTE_NAME;
+  var init_constants = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/utilities/private/constants.js"() {
+      ITEM_ID_DATA_ATTRIBUTE_NAME = "data-item-id";
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77ef0a98-f43a-4aca-9053-d45e03c9fa56/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/307d32b4-74e2-481f-b8c3-00185a17bdf6/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77ef0a98-f43a-4aca-9053-d45e03c9fa56/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -1942,73 +2423,76 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/icon-button/icon-button.js
-  function IconButton(_a) {
-    var _b = _a, { children, disabled = false, onClick, propagateEscapeKeyDown = true } = _b, rest = __objRest(_b, ["children", "disabled", "onClick", "propagateEscapeKeyDown"]);
-    const handleKeyDown = T2(function(event) {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (propagateEscapeKeyDown === false) {
-        event.stopPropagation();
-      }
-      event.currentTarget.blur();
-    }, [propagateEscapeKeyDown]);
-    return y(
-      "button",
-      __spreadProps(__spreadValues({}, rest), { class: icon_button_module_default.iconButton, disabled: disabled === true, onClick: disabled === true ? void 0 : onClick, onKeyDown: disabled === true ? void 0 : handleKeyDown, tabIndex: disabled === true ? -1 : 0 }),
-      y("div", { class: icon_button_module_default.icon }, children)
-    );
-  }
+  var IconButton;
   var init_icon_button = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/icon-button/icon-button.js"() {
       init_preact_module();
       init_hooks_module();
+      init_create_component();
+      init_no_op();
       init_icon_button_module();
+      IconButton = createComponent(function(_a, ref) {
+        var _b = _a, { children, disabled = false, onClick, onKeyDown = noop, propagateEscapeKeyDown = true } = _b, rest = __objRest(_b, ["children", "disabled", "onClick", "onKeyDown", "propagateEscapeKeyDown"]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          if (event.key === "Escape") {
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+          }
+        }, [onKeyDown, propagateEscapeKeyDown]);
+        return y(
+          "button",
+          __spreadProps(__spreadValues({}, rest), { ref, class: icon_button_module_default.iconButton, disabled: disabled === true, onClick, onKeyDown: handleKeyDown, tabIndex: 0 }),
+          y("div", { class: icon_button_module_default.icon }, children)
+        );
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dac185bc-83a6-4dce-811c-9f1cc9ab80cc/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb506926-2403-4304-b285-b183154a2cdf/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dac185bc-83a6-4dce-811c-9f1cc9ab80cc/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb506926-2403-4304-b285-b183154a2cdf/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
-        element.textContent = `._rangeSlider_s66c9_1 {
+        element.textContent = `._rangeSlider_1dywl_1 {
   position: relative;
   width: 100%;
   height: 1px;
-  margin: 0 -2px;
 }
 
-._border_s66c9_8 {
+._border_1dywl_7 {
   position: absolute;
   top: 0;
-  right: 2px;
-  left: 2px;
+  right: 0;
+  left: 0;
   height: 1px;
   background-color: var(--figma-color-border-strong);
 }
-._disabled_s66c9_16 ._border_s66c9_8 {
+._disabled_1dywl_15 ._border_1dywl_7 {
   background-color: var(--figma-color-border-disabled-strong);
 }
 
-._input_s66c9_20 {
-  position: relative;
+._input_1dywl_19 {
+  position: absolute;
   z-index: var(
     --z-index-1
   ); /* stack \`.input\` over all other elements within \`.rangeSlider\` */
   top: -16px;
+  right: -2px;
+  left: -2px;
   display: block;
-  width: 100%;
   height: 33px;
   background-color: transparent;
 }
-._disabled_s66c9_16 ._input_s66c9_20 {
+._disabled_1dywl_15 ._input_1dywl_19 {
   cursor: not-allowed;
 }
 
-._input_s66c9_20::-webkit-slider-thumb {
+._input_1dywl_19::-webkit-slider-thumb {
   display: block;
   width: 9px;
   height: 9px;
@@ -2017,64 +2501,67 @@ video {
   -webkit-appearance: none;
   background-color: var(--figma-color-bg-inverse);
 }
-._input_s66c9_20:focus::-webkit-slider-thumb {
+._input_1dywl_19:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 2px var(--figma-color-border-brand-strong);
 }
-._disabled_s66c9_16 ._input_s66c9_20::-webkit-slider-thumb {
+._disabled_1dywl_15 ._input_1dywl_19::-webkit-slider-thumb {
   background-color: var(--figma-color-bg-disabled-secondary);
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFdBQVc7RUFDWCxjQUFjO0FBQ2hCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixVQUFVO0VBQ1YsU0FBUztFQUNULFdBQVc7RUFDWCxrREFBa0Q7QUFDcEQ7QUFDQTtFQUNFLDJEQUEyRDtBQUM3RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQjs7R0FFQyxFQUFFLGlFQUFpRTtFQUNwRSxVQUFVO0VBQ1YsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsVUFBVTtFQUNWLFdBQVc7RUFDWCx1Q0FBdUM7RUFDdkMsa0JBQWtCO0VBQ2xCLHdCQUF3QjtFQUN4QiwrQ0FBK0M7QUFDakQ7QUFDQTtFQUNFLDREQUE0RDtBQUM5RDtBQUNBO0VBQ0UsMERBQTBEO0FBQzVEIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucmFuZ2VTbGlkZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDFweDtcbiAgbWFyZ2luOiAwIC0ycHg7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDJweDtcbiAgbGVmdDogMnB4O1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmJvcmRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMVxuICApOyAvKiBzdGFjayBgLmlucHV0YCBvdmVyIGFsbCBvdGhlciBlbGVtZW50cyB3aXRoaW4gYC5yYW5nZVNsaWRlcmAgKi9cbiAgdG9wOiAtMTZweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDMzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuLmRpc2FibGVkIC5pbnB1dCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pbnB1dDo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDlweDtcbiAgaGVpZ2h0OiA5cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJnKTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWludmVyc2UpO1xufVxuLmlucHV0OmZvY3VzOjotd2Via2l0LXNsaWRlci10aHVtYiB7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDJweCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Oi13ZWJraXQtc2xpZGVyLXRodW1iIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbn1cbiJdfQ== */`;
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9yYW5nZS1zbGlkZXIvcmFuZ2Utc2xpZGVyLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sUUFBUTtFQUNSLE9BQU87RUFDUCxXQUFXO0VBQ1gsa0RBQWtEO0FBQ3BEO0FBQ0E7RUFDRSwyREFBMkQ7QUFDN0Q7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEI7O0dBRUMsRUFBRSxpRUFBaUU7RUFDcEUsVUFBVTtFQUNWLFdBQVc7RUFDWCxVQUFVO0VBQ1YsY0FBYztFQUNkLFlBQVk7RUFDWiw2QkFBNkI7QUFDL0I7QUFDQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxVQUFVO0VBQ1YsV0FBVztFQUNYLHVDQUF1QztFQUN2QyxrQkFBa0I7RUFDbEIsd0JBQXdCO0VBQ3hCLCtDQUErQztBQUNqRDtBQUNBO0VBQ0UsNERBQTREO0FBQzlEO0FBQ0E7RUFDRSwwREFBMEQ7QUFDNUQiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3JhbmdlLXNsaWRlci9yYW5nZS1zbGlkZXIubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yYW5nZVNsaWRlciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMXB4O1xufVxuXG4uYm9yZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBsZWZ0OiAwO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmJvcmRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1kaXNhYmxlZC1zdHJvbmcpO1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMVxuICApOyAvKiBzdGFjayBgLmlucHV0YCBvdmVyIGFsbCBvdGhlciBlbGVtZW50cyB3aXRoaW4gYC5yYW5nZVNsaWRlcmAgKi9cbiAgdG9wOiAtMTZweDtcbiAgcmlnaHQ6IC0ycHg7XG4gIGxlZnQ6IC0ycHg7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBoZWlnaHQ6IDMzcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuLmRpc2FibGVkIC5pbnB1dCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pbnB1dDo6LXdlYmtpdC1zbGlkZXItdGh1bWIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDlweDtcbiAgaGVpZ2h0OiA5cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJnKTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWludmVyc2UpO1xufVxuLmlucHV0OmZvY3VzOjotd2Via2l0LXNsaWRlci10aHVtYiB7XG4gIGJveC1zaGFkb3c6IDAgMCAwIDJweCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Oi13ZWJraXQtc2xpZGVyLXRodW1iIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbn1cbiJdfQ== */`;
         document.head.append(element);
       }
-      range_slider_module_default = { "rangeSlider": "_rangeSlider_s66c9_1", "border": "_border_s66c9_8", "disabled": "_disabled_s66c9_16", "input": "_input_s66c9_20" };
+      range_slider_module_default = { "rangeSlider": "_rangeSlider_1dywl_1", "border": "_border_1dywl_7", "disabled": "_disabled_1dywl_15", "input": "_input_1dywl_19" };
     }
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js
-  function RangeSlider(_a) {
-    var _b = _a, { disabled = false, increment = 1, maximum, minimum, name: name307, onInput = function() {
-    }, onNumericValueInput = function() {
-    }, onValueInput = function() {
-    }, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["disabled", "increment", "maximum", "minimum", "name", "onInput", "onNumericValueInput", "onValueInput", "propagateEscapeKeyDown", "value"]);
-    const handleInput = T2(function(event) {
-      onInput(event);
-      const value3 = event.currentTarget.value;
-      onValueInput(value3, name307);
-      onNumericValueInput(parseFloat(value3), name307);
-    }, [name307, onInput, onNumericValueInput, onValueInput]);
-    const handleKeyDown = T2(function(event) {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (propagateEscapeKeyDown === false) {
-        event.stopPropagation();
-      }
-      event.currentTarget.blur();
-    }, [propagateEscapeKeyDown]);
-    return y(
-      "label",
-      { class: createClassName([
-        range_slider_module_default.rangeSlider,
-        disabled === true ? range_slider_module_default.disabled : null
-      ]) },
-      y("input", __spreadValues({ class: range_slider_module_default.input, disabled, max: maximum, min: minimum, onInput: handleInput, onKeyDown: handleKeyDown, step: increment, type: "range", value: value2 }, rest)),
-      y("div", { class: range_slider_module_default.border })
-    );
-  }
+  var RangeSlider;
   var init_range_slider = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/range-slider/range-slider.js"() {
       init_preact_module();
       init_hooks_module();
       init_create_class_name();
+      init_create_component();
+      init_no_op();
       init_range_slider_module();
+      RangeSlider = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, increment = 1, maximum, minimum, onInput = noop, onKeyDown = noop, onNumericValueInput = noop, onValueInput = noop, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["disabled", "increment", "maximum", "minimum", "onInput", "onKeyDown", "onNumericValueInput", "onValueInput", "propagateEscapeKeyDown", "value"]);
+        if (minimum >= maximum) {
+          throw new Error("`minimum` must be less than `maximum`");
+        }
+        const handleInput = T2(function(event) {
+          onInput(event);
+          const value3 = event.currentTarget.value;
+          onValueInput(value3);
+          onNumericValueInput(parseFloat(value3));
+        }, [onInput, onNumericValueInput, onValueInput]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          if (event.key === "Escape") {
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+          }
+        }, [onKeyDown, propagateEscapeKeyDown]);
+        return y(
+          "label",
+          { class: createClassName([
+            range_slider_module_default.rangeSlider,
+            disabled === true ? range_slider_module_default.disabled : null
+          ]) },
+          y("input", __spreadProps(__spreadValues({}, rest), { ref, class: range_slider_module_default.input, disabled, max: maximum, min: minimum, onInput: handleInput, onKeyDown: handleKeyDown, step: increment, type: "range", value: value2 })),
+          y("div", { class: range_slider_module_default.border })
+        );
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f638a0e-b0a2-4d6c-9047-24863106feb4/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/505de95d-69e4-49bc-8171-c02f8ad50b9c/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f638a0e-b0a2-4d6c-9047-24863106feb4/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/505de95d-69e4-49bc-8171-c02f8ad50b9c/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -2117,49 +2604,52 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/tabs/tabs.js
-  function Tabs(_a) {
-    var _b = _a, { name: name307, onChange = function() {
-    }, onValueChange = function() {
-    }, options, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["name", "onChange", "onValueChange", "options", "propagateEscapeKeyDown", "value"]);
-    const handleChange = T2(function(event) {
-      const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
-      const newValue = options[parseInt(id, 10)].value;
-      onValueChange(newValue, name307);
-      onChange(event);
-    }, [name307, onChange, onValueChange, options]);
-    const handleKeyDown = T2(function(event) {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (propagateEscapeKeyDown === false) {
-        event.stopPropagation();
-      }
-      event.currentTarget.blur();
-    }, [propagateEscapeKeyDown]);
-    const activeOption = options.find(function(option) {
-      return option.value === value2;
-    });
-    return y(
-      g,
-      null,
-      y("div", { class: tabs_module_default.tabs }, options.map(function(option, index2) {
-        return y(
-          "label",
-          { key: index2, class: tabs_module_default.label },
-          y("input", __spreadProps(__spreadValues({}, rest), { checked: value2 === option.value, class: tabs_module_default.input, name: name307, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: 0, type: "radio", value: option.value, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index2}` })),
-          y("div", { class: tabs_module_default.value }, option.value)
-        );
-      })),
-      typeof activeOption === "undefined" ? null : y("div", { class: tabs_module_default.children }, activeOption.children)
-    );
-  }
-  var ITEM_ID_DATA_ATTRIBUTE_NAME;
+  var Tabs;
   var init_tabs = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/tabs/tabs.js"() {
       init_preact_module();
       init_hooks_module();
+      init_create_component();
+      init_no_op();
+      init_constants();
       init_tabs_module();
-      ITEM_ID_DATA_ATTRIBUTE_NAME = "data-tabs-item-id";
+      Tabs = createComponent(function(_a, ref) {
+        var _b = _a, { onChange = noop, onKeyDown = noop, onValueChange = noop, options, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["onChange", "onKeyDown", "onValueChange", "options", "propagateEscapeKeyDown", "value"]);
+        const handleChange = T2(function(event) {
+          onChange(event);
+          const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
+          if (id === null) {
+            throw new Error("`id` is `null`");
+          }
+          const newValue = options[parseInt(id, 10)].value;
+          onValueChange(newValue);
+        }, [onChange, onValueChange, options]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          if (event.key === "Escape") {
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+          }
+        }, [onKeyDown, propagateEscapeKeyDown]);
+        const activeOption = options.find(function(option) {
+          return option.value === value2;
+        });
+        return y(
+          g,
+          null,
+          y("div", { ref, class: tabs_module_default.tabs }, options.map(function(option, index2) {
+            return y(
+              "label",
+              { key: index2, class: tabs_module_default.label },
+              y("input", __spreadProps(__spreadValues({}, rest), { checked: value2 === option.value, class: tabs_module_default.input, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: 0, type: "radio", value: option.value, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index2}` })),
+              y("div", { class: tabs_module_default.value }, option.value)
+            );
+          })),
+          typeof activeOption === "undefined" ? null : y("div", { class: tabs_module_default.children }, activeOption.children)
+        );
+      });
     }
   });
 
@@ -2401,9 +2891,14 @@ video {
 
   // node_modules/rgb-hex/index.js
   function rgbHex(red, green, blue, alpha) {
-    const isPercent = (red + (alpha || "")).toString().includes("%");
-    if (typeof red === "string") {
-      [red, green, blue, alpha] = red.match(/(0?\.?\d+)%?\b/g).map((component) => Number(component));
+    let isPercent = (red + (alpha || "")).toString().includes("%");
+    if (typeof red === "string" && !green) {
+      const parsed = parseCssRgbString(red);
+      if (!parsed) {
+        throw new TypeError("Invalid or unsupported color format.");
+      }
+      isPercent = false;
+      [red, green, blue, alpha] = parsed;
     } else if (alpha !== void 0) {
       alpha = Number.parseFloat(alpha);
     }
@@ -2422,10 +2917,33 @@ video {
     } else {
       alpha = "";
     }
-    return (blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1) + alpha;
+    return toHex(red, green, blue, alpha);
   }
+  var toHex, parseCssRgbString;
   var init_rgb_hex = __esm({
     "node_modules/rgb-hex/index.js"() {
+      toHex = (red, green, blue, alpha) => (blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1) + alpha;
+      parseCssRgbString = (input) => {
+        const parts = input.replace(/rgba?\(([^)]+)\)/, "$1").split(/[,\s/]+/).filter(Boolean);
+        if (parts.length < 3) {
+          return;
+        }
+        const parseValue = (value2, max3) => {
+          value2 = value2.trim();
+          if (value2.endsWith("%")) {
+            return Math.min(Number.parseFloat(value2) * max3 / 100, max3);
+          }
+          return Math.min(Number.parseFloat(value2), max3);
+        };
+        const red = parseValue(parts[0], 255);
+        const green = parseValue(parts[1], 255);
+        const blue = parseValue(parts[2], 255);
+        let alpha;
+        if (parts.length === 4) {
+          alpha = parseValue(parts[3], 1);
+        }
+        return [red, green, blue, alpha];
+      };
     }
   });
 
@@ -2539,102 +3057,111 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/private/raw-textbox.js
-  function RawTextbox(_a) {
-    var _b = _a, { disabled = false, name: name307, onInput = function() {
-    }, onValueInput = function() {
-    }, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "name", "onInput", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
-    const inputElementRef = _2(null);
-    const revertOnEscapeKeyDownRef = _2(false);
-    const [originalValue, setOriginalValue] = h2(EMPTY_STRING);
-    const setInputElementValue = T2(function(value3) {
-      const inputElement = getCurrentFromRef(inputElementRef);
-      inputElement.value = value3;
-      const inputEvent = document.createEvent("Event");
-      inputEvent.initEvent("input", true, true);
-      inputElement.dispatchEvent(inputEvent);
-    }, []);
-    const handleBlur = T2(function() {
-      if (revertOnEscapeKeyDownRef.current === true) {
-        revertOnEscapeKeyDownRef.current = false;
-        return;
-      }
-      if (typeof validateOnBlur !== "undefined") {
-        const result = validateOnBlur(value2);
-        if (typeof result === "string") {
-          setInputElementValue(result);
-          setOriginalValue(EMPTY_STRING);
-          return;
-        }
-        if (result === false) {
-          if (value2 !== originalValue) {
-            setInputElementValue(originalValue);
-          }
-          setOriginalValue(EMPTY_STRING);
-          return;
-        }
-      }
-      setOriginalValue(EMPTY_STRING);
-    }, [originalValue, setInputElementValue, validateOnBlur, value2]);
-    const handleFocus = T2(function(event) {
-      setOriginalValue(value2);
-      event.currentTarget.select();
-    }, [value2]);
-    const handleInput = T2(function(event) {
-      onValueInput(event.currentTarget.value, name307);
-      onInput(event);
-    }, [name307, onInput, onValueInput]);
-    const handleKeyDown = T2(function(event) {
-      const key = event.key;
-      if (key === "Escape") {
-        if (propagateEscapeKeyDown === false) {
-          event.stopPropagation();
-        }
-        if (revertOnEscapeKeyDown === true) {
-          revertOnEscapeKeyDownRef.current = true;
-          setInputElementValue(originalValue);
-          setOriginalValue(EMPTY_STRING);
-        }
-        event.currentTarget.blur();
-        return;
-      }
-      if (key === "Enter") {
-        event.currentTarget.blur();
-        return;
-      }
-      if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
-        event.preventDefault();
-        event.currentTarget.select();
-      }
-    }, [
-      originalValue,
-      propagateEscapeKeyDown,
-      revertOnEscapeKeyDown,
-      setInputElementValue,
-      value2
-    ]);
-    const handleMouseUp = T2(function(event) {
-      if (value2 === MIXED_STRING) {
-        event.preventDefault();
-      }
-    }, [value2]);
-    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, type: password === true ? "password" : "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
-  }
-  var EMPTY_STRING;
+  var EMPTY_STRING, RawTextbox;
   var init_raw_textbox = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/private/raw-textbox.js"() {
       init_lib();
       init_preact_module();
       init_hooks_module();
+      init_create_component();
       init_get_current_from_ref();
+      init_no_op();
       init_is_keycode_character_generating();
       EMPTY_STRING = "";
+      RawTextbox = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, onBlur = noop, onFocus = noop, onInput = noop, onKeyDown = noop, onMouseDown = noop, onValueInput = noop, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "onBlur", "onFocus", "onInput", "onKeyDown", "onMouseDown", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
+        const inputElementRef = _2(null);
+        const [originalValue, setOriginalValue] = h2(EMPTY_STRING);
+        const setTextboxValue = T2(function(value3) {
+          const inputElement = getCurrentFromRef(inputElementRef);
+          inputElement.value = value3;
+          const inputEvent = new window.Event("input", {
+            bubbles: true,
+            cancelable: true
+          });
+          inputElement.dispatchEvent(inputEvent);
+        }, []);
+        const handleBlur = T2(function(event) {
+          onBlur(event);
+          if (typeof validateOnBlur !== "undefined") {
+            const result = validateOnBlur(value2);
+            if (typeof result === "string") {
+              setTextboxValue(result);
+              setOriginalValue(EMPTY_STRING);
+              return;
+            }
+            if (result === false) {
+              if (value2 !== originalValue) {
+                setTextboxValue(originalValue);
+              }
+              setOriginalValue(EMPTY_STRING);
+              return;
+            }
+          }
+          setOriginalValue(EMPTY_STRING);
+        }, [onBlur, originalValue, setTextboxValue, validateOnBlur, value2]);
+        const handleFocus = T2(function(event) {
+          onFocus(event);
+          setOriginalValue(value2);
+          event.currentTarget.select();
+        }, [onFocus, value2]);
+        const handleInput = T2(function(event) {
+          onInput(event);
+          const newValue = event.currentTarget.value;
+          onValueInput(newValue);
+        }, [onInput, onValueInput]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          if (event.key === "Escape") {
+            if (revertOnEscapeKeyDown === true) {
+              setTextboxValue(originalValue);
+              setOriginalValue(EMPTY_STRING);
+            }
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+            return;
+          }
+          if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
+            event.preventDefault();
+            event.currentTarget.select();
+          }
+        }, [
+          onKeyDown,
+          originalValue,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          setTextboxValue,
+          value2
+        ]);
+        const handleMouseDown = T2(function(event) {
+          onMouseDown(event);
+          if (value2 === MIXED_STRING) {
+            event.preventDefault();
+            event.currentTarget.select();
+          }
+        }, [onMouseDown, value2]);
+        const refCallback = T2(function(inputElement) {
+          inputElementRef.current = inputElement;
+          if (ref === null) {
+            return;
+          }
+          if (typeof ref === "function") {
+            ref(inputElement);
+            return;
+          }
+          ref.current = inputElement;
+        }, [ref]);
+        return y("input", __spreadProps(__spreadValues({}, rest), { ref: refCallback, disabled: disabled === true, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseDown: handleMouseDown, placeholder, spellcheck: spellCheck, tabIndex: 0, type: password === true ? "password" : "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb8b1555-0b1e-4f2d-a27f-bc24648e1107/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c1c66b6-b709-4286-ad4b-f7917c220f47/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb8b1555-0b1e-4f2d-a27f-bc24648e1107/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c1c66b6-b709-4286-ad4b-f7917c220f47/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -2728,31 +3255,33 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/textbox.js
-  function Textbox(_a) {
-    var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
-    if (typeof icon === "string" && icon.length !== 1) {
-      throw new Error(`String \`icon\` must be a single character: ${icon}`);
-    }
-    return y(
-      "div",
-      { class: createClassName([
-        textbox_module_default.textbox,
-        typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default.hasBorder : null,
-        typeof icon === "undefined" ? null : textbox_module_default.hasIcon,
-        rest.disabled === true ? textbox_module_default.disabled : null
-      ]) },
-      y(RawTextbox, __spreadProps(__spreadValues({}, rest), { class: textbox_module_default.input })),
-      typeof icon === "undefined" ? null : y("div", { class: textbox_module_default.icon }, icon),
-      y("div", { class: textbox_module_default.border }),
-      variant === "underline" ? y("div", { class: textbox_module_default.underline }) : null
-    );
-  }
+  var Textbox;
   var init_textbox = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox/textbox.js"() {
       init_preact_module();
       init_create_class_name();
+      init_create_component();
       init_raw_textbox();
       init_textbox_module();
+      Textbox = createComponent(function(_a, ref) {
+        var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
+        if (typeof icon === "string" && icon.length !== 1) {
+          throw new Error(`String \`icon\` must be a single character: ${icon}`);
+        }
+        return y(
+          "div",
+          { class: createClassName([
+            textbox_module_default.textbox,
+            variant === "border" ? textbox_module_default.hasBorder : null,
+            typeof icon === "undefined" ? null : textbox_module_default.hasIcon,
+            rest.disabled === true ? textbox_module_default.disabled : null
+          ]) },
+          y(RawTextbox, __spreadProps(__spreadValues({}, rest), { ref, class: textbox_module_default.input })),
+          typeof icon === "undefined" ? null : y("div", { class: textbox_module_default.icon }, icon),
+          y("div", { class: textbox_module_default.border }),
+          variant === "underline" ? y("div", { class: textbox_module_default.underline }) : null
+        );
+      });
     }
   });
 
@@ -2814,182 +3343,6 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/raw-textbox-numeric.js
-  function RawTextboxNumeric(_a) {
-    var _b = _a, { disabled = false, incrementBig = 10, incrementSmall = 1, integer = false, maximum, minimum, name: name307, onInput = function() {
-    }, onNumericValueInput = function() {
-    }, onValueInput = function() {
-    }, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, suffix, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "incrementBig", "incrementSmall", "integer", "maximum", "minimum", "name", "onInput", "onNumericValueInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "suffix", "validateOnBlur", "value"]);
-    if (typeof minimum !== "undefined" && typeof maximum !== "undefined" && minimum >= maximum) {
-      throw new Error("`minimum` must be less than `maximum`");
-    }
-    const inputElementRef = _2(null);
-    const revertOnEscapeKeyDownRef = _2(false);
-    const [originalValue, setOriginalValue] = h2(EMPTY_STRING3);
-    const setInputElementValue = T2(function(value3) {
-      const inputElement = getCurrentFromRef(inputElementRef);
-      inputElement.value = value3;
-      const inputEvent = document.createEvent("Event");
-      inputEvent.initEvent("input", true, true);
-      inputElement.dispatchEvent(inputEvent);
-    }, []);
-    const handleBlur = T2(function() {
-      if (revertOnEscapeKeyDownRef.current === true) {
-        revertOnEscapeKeyDownRef.current = false;
-        return;
-      }
-      if (typeof validateOnBlur !== "undefined") {
-        const evaluatedValue = evaluateValue(value2, suffix);
-        const result = validateOnBlur(evaluatedValue);
-        if (typeof result === "number") {
-          setInputElementValue(formatEvaluatedValue(result, value2, suffix));
-          setOriginalValue(EMPTY_STRING3);
-          return;
-        }
-        if (result === null) {
-          setInputElementValue(EMPTY_STRING3);
-          setOriginalValue(EMPTY_STRING3);
-          return;
-        }
-        if (result === false) {
-          if (value2 !== originalValue) {
-            setInputElementValue(originalValue);
-          }
-          setOriginalValue(EMPTY_STRING3);
-          return;
-        }
-      }
-      if (typeof suffix !== "undefined" && value2 === suffix) {
-        setInputElementValue(EMPTY_STRING3);
-        setOriginalValue(EMPTY_STRING3);
-        return;
-      }
-      if (value2 !== EMPTY_STRING3 && value2 !== MIXED_STRING) {
-        const evaluatedValue = evaluateValue(value2, suffix);
-        const formattedValue = formatEvaluatedValue(evaluatedValue, value2, suffix);
-        if (value2 !== formattedValue) {
-          setInputElementValue(formattedValue);
-        }
-      }
-      setOriginalValue(EMPTY_STRING3);
-    }, [originalValue, setInputElementValue, suffix, validateOnBlur, value2]);
-    const handleFocus = T2(function(event) {
-      setOriginalValue(value2);
-      event.currentTarget.select();
-    }, [value2]);
-    const handleInput = T2(function(event) {
-      onInput(event);
-      const value3 = event.currentTarget.value;
-      onValueInput(value3, name307);
-      const evaluatedValue = evaluateValue(value3, suffix);
-      onNumericValueInput(evaluatedValue, name307);
-    }, [name307, onInput, onNumericValueInput, onValueInput, suffix]);
-    const handleKeyDown = T2(function(event) {
-      const key = event.key;
-      if (key === "Escape") {
-        if (propagateEscapeKeyDown === false) {
-          event.stopPropagation();
-        }
-        if (revertOnEscapeKeyDown === true) {
-          revertOnEscapeKeyDownRef.current = true;
-          setInputElementValue(originalValue);
-          setOriginalValue(EMPTY_STRING3);
-        }
-        event.currentTarget.blur();
-        return;
-      }
-      if (key === "Enter") {
-        event.currentTarget.blur();
-        return;
-      }
-      const element = event.currentTarget;
-      if (key === "ArrowDown" || key === "ArrowUp") {
-        const delta = event.shiftKey === true ? incrementBig : incrementSmall;
-        if (value2 === EMPTY_STRING3 || value2 === MIXED_STRING) {
-          event.preventDefault();
-          const startingValue = function() {
-            if (typeof minimum !== "undefined" && minimum > 0) {
-              return minimum;
-            }
-            if (typeof maximum !== "undefined" && maximum < 0) {
-              return maximum;
-            }
-            return 0;
-          }();
-          const newValue2 = restrictValue(evaluateValueWithDelta(startingValue, key === "ArrowDown" ? -1 * delta : delta), minimum, maximum);
-          const formattedValue2 = formatEvaluatedValue(newValue2, value2, suffix);
-          element.value = formattedValue2;
-          element.select();
-          handleInput(event);
-          return;
-        }
-        const evaluatedValue = evaluateValue(value2, suffix);
-        if (evaluatedValue === null) {
-          throw new Error("Invariant violation");
-        }
-        event.preventDefault();
-        const newValue = restrictValue(evaluateValueWithDelta(evaluatedValue, key === "ArrowDown" ? -1 * delta : delta), minimum, maximum);
-        const formattedValue = formatEvaluatedValue(newValue, value2, suffix);
-        if (formattedValue === value2) {
-          return;
-        }
-        element.value = formattedValue;
-        element.select();
-        handleInput(event);
-        return;
-      }
-      if (event.ctrlKey === true || event.metaKey === true) {
-        return;
-      }
-      if (isKeyCodeCharacterGenerating(event.keyCode) === true) {
-        const nextValue = trimSuffix(value2 === MIXED_STRING ? event.key : computeNextValue(element, event.key), suffix);
-        if (isValidNumericInput(nextValue, { integersOnly: integer }) === false) {
-          event.preventDefault();
-          return;
-        }
-        if (typeof minimum === "undefined" && typeof maximum === "undefined") {
-          return;
-        }
-        const evaluatedValue = evaluateNumericExpression(nextValue);
-        if (evaluatedValue === null) {
-          return;
-        }
-        if (typeof minimum !== "undefined" && evaluatedValue < minimum || typeof maximum !== "undefined" && evaluatedValue > maximum) {
-          event.preventDefault();
-        }
-      }
-    }, [
-      handleInput,
-      incrementBig,
-      incrementSmall,
-      integer,
-      maximum,
-      minimum,
-      originalValue,
-      propagateEscapeKeyDown,
-      revertOnEscapeKeyDown,
-      setInputElementValue,
-      suffix,
-      value2
-    ]);
-    const handleMouseUp = T2(function(event) {
-      if (value2 !== MIXED_STRING) {
-        return;
-      }
-      event.preventDefault();
-    }, [value2]);
-    const handlePaste = T2(function(event) {
-      if (event.clipboardData === null) {
-        throw new Error("`event.clipboardData` is `null`");
-      }
-      const nextValue = trimSuffix(computeNextValue(event.currentTarget, event.clipboardData.getData("Text")), suffix);
-      if (isValidNumericInput(nextValue, {
-        integersOnly: integer
-      }) === false) {
-        event.preventDefault();
-      }
-    }, [integer, suffix]);
-    return y("input", __spreadProps(__spreadValues({}, rest), { ref: inputElementRef, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, onPaste: handlePaste, placeholder, spellcheck: false, tabIndex: disabled === true ? -1 : 0, type: "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
-  }
   function restrictValue(value2, minimum, maximum) {
     if (typeof minimum !== "undefined") {
       if (typeof maximum !== "undefined") {
@@ -3020,18 +3373,208 @@ video {
     }
     return string2.replace(new RegExp(`${suffix}$`), EMPTY_STRING3);
   }
-  var FRACTION_DIGITS, EMPTY_STRING3;
+  var FRACTION_DIGITS, EMPTY_STRING3, RawTextboxNumeric;
   var init_raw_textbox_numeric = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/raw-textbox-numeric.js"() {
       init_lib();
       init_preact_module();
       init_hooks_module();
+      init_create_component();
       init_get_current_from_ref();
+      init_no_op();
       init_compute_next_value();
       init_is_keycode_character_generating();
       init_format_evaluated_value();
       FRACTION_DIGITS = 3;
       EMPTY_STRING3 = "";
+      RawTextboxNumeric = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, incrementBig = 10, incrementSmall = 1, integer = false, maximum, minimum, onBlur = noop, onFocus = noop, onInput = noop, onMouseDown = noop, onKeyDown = noop, onNumericValueInput = noop, onValueInput = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, suffix, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "incrementBig", "incrementSmall", "integer", "maximum", "minimum", "onBlur", "onFocus", "onInput", "onMouseDown", "onKeyDown", "onNumericValueInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "suffix", "validateOnBlur", "value"]);
+        if (typeof minimum !== "undefined" && typeof maximum !== "undefined" && minimum >= maximum) {
+          throw new Error("`minimum` must be less than `maximum`");
+        }
+        const inputElementRef = _2(null);
+        const revertOnEscapeKeyDownRef = _2(false);
+        const [originalValue, setOriginalValue] = h2(EMPTY_STRING3);
+        const setInputElementValue = T2(function(value3) {
+          const inputElement = getCurrentFromRef(inputElementRef);
+          inputElement.value = value3;
+          const inputEvent = new window.Event("input", {
+            bubbles: true,
+            cancelable: true
+          });
+          inputElement.dispatchEvent(inputEvent);
+        }, []);
+        const handleBlur = T2(function(event) {
+          onBlur(event);
+          if (revertOnEscapeKeyDownRef.current === true) {
+            revertOnEscapeKeyDownRef.current = false;
+            return;
+          }
+          if (typeof validateOnBlur !== "undefined") {
+            const evaluatedValue = evaluateValue(value2, suffix);
+            const result = validateOnBlur(evaluatedValue);
+            if (typeof result === "number") {
+              setInputElementValue(formatEvaluatedValue(result, value2, suffix));
+              setOriginalValue(EMPTY_STRING3);
+              return;
+            }
+            if (result === null) {
+              setInputElementValue(EMPTY_STRING3);
+              setOriginalValue(EMPTY_STRING3);
+              return;
+            }
+            if (result === false) {
+              if (value2 !== originalValue) {
+                setInputElementValue(originalValue);
+              }
+              setOriginalValue(EMPTY_STRING3);
+              return;
+            }
+          }
+          if (typeof suffix !== "undefined" && value2 === suffix) {
+            setInputElementValue(EMPTY_STRING3);
+            setOriginalValue(EMPTY_STRING3);
+            return;
+          }
+          if (value2 !== EMPTY_STRING3 && value2 !== MIXED_STRING) {
+            const evaluatedValue = evaluateValue(value2, suffix);
+            const formattedValue = formatEvaluatedValue(evaluatedValue, value2, suffix);
+            if (value2 !== formattedValue) {
+              setInputElementValue(formattedValue);
+            }
+          }
+          setOriginalValue(EMPTY_STRING3);
+        }, [onBlur, originalValue, setInputElementValue, suffix, validateOnBlur, value2]);
+        const handleFocus = T2(function(event) {
+          onFocus(event);
+          setOriginalValue(value2);
+          event.currentTarget.select();
+        }, [onFocus, value2]);
+        const handleInput = T2(function(event) {
+          onInput(event);
+          const newValue = event.currentTarget.value;
+          onValueInput(newValue);
+          const evaluatedValue = evaluateValue(newValue, suffix);
+          onNumericValueInput(evaluatedValue);
+        }, [onInput, onNumericValueInput, onValueInput, suffix]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          const key = event.key;
+          if (key === "Escape") {
+            if (revertOnEscapeKeyDown === true) {
+              revertOnEscapeKeyDownRef.current = true;
+              setInputElementValue(originalValue);
+              setOriginalValue(EMPTY_STRING3);
+            }
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+            return;
+          }
+          const inputElement = event.currentTarget;
+          if (key === "ArrowDown" || key === "ArrowUp") {
+            const delta = event.shiftKey === true ? incrementBig : incrementSmall;
+            event.preventDefault();
+            if (value2 === EMPTY_STRING3 || value2 === MIXED_STRING) {
+              const startingValue = function() {
+                if (typeof minimum !== "undefined" && minimum > 0) {
+                  return minimum;
+                }
+                if (typeof maximum !== "undefined" && maximum < 0) {
+                  return maximum;
+                }
+                return 0;
+              }();
+              const evaluatedValue2 = evaluateValueWithDelta(startingValue, key === "ArrowDown" ? -1 * delta : delta);
+              const newValue2 = restrictValue(evaluatedValue2, minimum, maximum);
+              const formattedValue2 = formatEvaluatedValue(newValue2, value2, suffix);
+              inputElement.value = formattedValue2;
+              inputElement.select();
+              handleInput(event);
+              return;
+            }
+            const number2 = evaluateValue(value2, suffix);
+            if (number2 === null) {
+              throw new Error("`number` is `null`");
+            }
+            const evaluatedValue = evaluateValueWithDelta(number2, key === "ArrowDown" ? -1 * delta : delta);
+            const newValue = restrictValue(evaluatedValue, minimum, maximum);
+            const formattedValue = formatEvaluatedValue(newValue, value2, suffix);
+            if (formattedValue === value2) {
+              return;
+            }
+            inputElement.value = formattedValue;
+            inputElement.select();
+            handleInput(event);
+            return;
+          }
+          if (event.ctrlKey === true || event.metaKey === true) {
+            return;
+          }
+          if (isKeyCodeCharacterGenerating(event.keyCode) === true) {
+            const newValue = trimSuffix(value2 === MIXED_STRING ? event.key : computeNextValue(inputElement, event.key), suffix);
+            if (isValidNumericInput(newValue, { integersOnly: integer }) === false) {
+              event.preventDefault();
+              return;
+            }
+            if (typeof minimum === "undefined" && typeof maximum === "undefined") {
+              return;
+            }
+            const evaluatedValue = evaluateNumericExpression(newValue);
+            if (evaluatedValue === null) {
+              return;
+            }
+            if (typeof minimum !== "undefined" && evaluatedValue < minimum || typeof maximum !== "undefined" && evaluatedValue > maximum) {
+              event.preventDefault();
+            }
+          }
+        }, [
+          handleInput,
+          incrementBig,
+          incrementSmall,
+          integer,
+          maximum,
+          minimum,
+          onKeyDown,
+          originalValue,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          setInputElementValue,
+          suffix,
+          value2
+        ]);
+        const handleMouseDown = T2(function(event) {
+          onMouseDown(event);
+          if (value2 === MIXED_STRING) {
+            event.preventDefault();
+            event.currentTarget.select();
+          }
+        }, [onMouseDown, value2]);
+        const handlePaste = T2(function(event) {
+          if (event.clipboardData === null) {
+            throw new Error("`event.clipboardData` is `null`");
+          }
+          const nextValue = trimSuffix(computeNextValue(event.currentTarget, event.clipboardData.getData("Text")), suffix);
+          if (isValidNumericInput(nextValue, {
+            integersOnly: integer
+          }) === false) {
+            event.preventDefault();
+          }
+        }, [integer, suffix]);
+        const refCallback = T2(function(inputElement) {
+          inputElementRef.current = inputElement;
+          if (ref === null) {
+            return;
+          }
+          if (typeof ref === "function") {
+            ref(inputElement);
+            return;
+          }
+          ref.current = inputElement;
+        }, [ref]);
+        return y("input", __spreadProps(__spreadValues({}, rest), { ref: refCallback, disabled: disabled === true, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseDown: handleMouseDown, onPaste: handlePaste, placeholder, spellcheck: false, tabIndex: 0, type: "text", value: value2 === MIXED_STRING ? "Mixed" : value2 }));
+      });
     }
   });
 
@@ -3123,26 +3666,26 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c18f6067-2a4b-4243-9457-906e046276da/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/efdc9fef-5256-4ff0-a041-252e8435e14d/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c18f6067-2a4b-4243-9457-906e046276da/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/efdc9fef-5256-4ff0-a041-252e8435e14d/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
-        element.textContent = `._textboxColor_190p3_1 {
+        element.textContent = `._textboxColor_69uub_1 {
   position: relative;
   z-index: var(--z-index-1);
   display: flex;
   width: 144px;
 }
-._textboxColor_190p3_1:focus-within {
+._textboxColor_69uub_1:focus-within {
   z-index: var(
     --z-index-2
   ); /* stack \`.textboxColor\` over its sibling elements */
 }
 
-._color_190p3_13 {
+._color_69uub_13 {
   position: absolute;
   top: 6px;
   left: 8px;
@@ -3153,16 +3696,16 @@ video {
   border-radius: 1px;
   background-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200H3V3H0V0Z%22%20fill%3D%22%23E1E1E1%22/%3E%3Cpath%20d%3D%22M3%200H6V3H3V0Z%22%20fill%3D%22white%22/%3E%3Cpath%20d%3D%22M3%203H6V6H3V3Z%22%20fill%3D%22%23E1E1E1%22/%3E%3Cpath%20d%3D%22M0%203H3V6H0V3Z%22%20fill%3D%22white%22/%3E%3C/svg%3E%0A');
 }
-._disabled_190p3_24 ._color_190p3_13 {
+._disabled_69uub_24 ._color_69uub_13 {
   opacity: var(--opacity-30);
 }
 
-._colorFill_190p3_28 {
+._colorFill_69uub_28 {
   flex-grow: 1;
   background: none;
 }
 
-._colorBorder_190p3_33 {
+._colorBorder_69uub_33 {
   position: absolute;
   top: 0;
   right: 0;
@@ -3173,11 +3716,11 @@ video {
   background: none;
   pointer-events: none;
 }
-.figma-dark ._colorBorder_190p3_33 {
+.figma-dark ._colorBorder_69uub_33 {
   border-color: rgba(255, 255, 255, 0.15); /* FIXME */
 }
 
-._hexColorSelector_190p3_48 {
+._hexColorSelector_69uub_48 {
   position: absolute;
   top: -4px;
   left: 0;
@@ -3186,7 +3729,7 @@ video {
   opacity: 0;
 }
 
-._input_190p3_57 {
+._input_69uub_57 {
   display: block;
   width: 100%;
   height: 28px;
@@ -3194,30 +3737,30 @@ video {
   color: var(--figma-color-text);
 }
 
-._disabled_190p3_24 ._input_190p3_57,
-._disabled_190p3_24 ._hexColorSelector_190p3_48 {
+._disabled_69uub_24 ._input_69uub_57,
+._disabled_69uub_24 ._hexColorSelector_69uub_48 {
   color: var(--figma-color-text-disabled);
   cursor: not-allowed;
 }
 
-._input_190p3_57::placeholder {
+._input_69uub_57::placeholder {
   color: var(--figma-color-text-tertiary);
 }
 
-._input_190p3_57::-webkit-inner-spin-button,
-._input_190p3_57::-webkit-outer-spin-button {
+._input_69uub_57::-webkit-inner-spin-button,
+._input_69uub_57::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-._hexColorInput_190p3_80 {
+._hexColorInput_69uub_80 {
   flex: 0 0 97px;
   padding-left: 32px;
 }
-._opacityInput_190p3_84 {
+._opacityInput_69uub_84 {
   padding-left: var(--space-extra-small);
 }
 
-._border_190p3_88 {
+._border_69uub_88 {
   position: absolute;
   top: 0;
   right: 0;
@@ -3227,18 +3770,18 @@ video {
   border-radius: var(--border-radius-2);
   pointer-events: none;
 }
-._hasBorder_190p3_98 ._border_190p3_88,
-._textboxColor_190p3_1:not(._disabled_190p3_24):hover ._border_190p3_88 {
+._hasBorder_69uub_98 ._border_69uub_88,
+._textboxColor_69uub_1:not(._disabled_69uub_24):hover ._border_69uub_88 {
   border-color: var(--figma-color-border);
 }
-._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._border_190p3_88,
-._textboxColor_190p3_1:not(._disabled_190p3_24) ._hexColorSelector_190p3_48:focus ~ ._border_190p3_88 {
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._input_69uub_57:focus ~ ._border_69uub_88,
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._hexColorSelector_69uub_48:focus ~ ._border_69uub_88 {
   top: -1px;
   bottom: -1px;
   border: 2px solid var(--figma-color-border-brand-strong);
 }
 
-._divider_190p3_109 {
+._divider_69uub_109 {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3246,13 +3789,15 @@ video {
   width: 1px;
   pointer-events: none;
 }
-._hasBorder_190p3_98 ._divider_190p3_109,
-._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:hover ~ ._divider_190p3_109,
-._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._divider_190p3_109 {
+._hasBorder_69uub_98 ._divider_69uub_109,
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._input_69uub_57:hover ~ ._divider_69uub_109,
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._input_69uub_57:focus ~ ._divider_69uub_109,
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._hexColorSelector_69uub_48:hover ~ ._divider_69uub_109,
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._hexColorSelector_69uub_48:focus ~ ._divider_69uub_109 {
   background-color: var(--figma-color-border);
 }
 
-._underline_190p3_123 {
+._underline_69uub_125 {
   position: absolute;
   right: var(--space-extra-small);
   bottom: 0;
@@ -3260,264 +3805,257 @@ video {
   height: 1px;
   background-color: var(--figma-color-border);
 }
-._textboxColor_190p3_1:not(._disabled_190p3_24) ._input_190p3_57:focus ~ ._underline_190p3_123,
-._textboxColor_190p3_1:not(._disabled_190p3_24):hover ._underline_190p3_123 {
+._textboxColor_69uub_1:not(._disabled_69uub_24) ._input_69uub_57:focus ~ ._underline_69uub_125,
+._textboxColor_69uub_1:not(._disabled_69uub_24):hover ._underline_69uub_125 {
   background-color: transparent;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtY29sb3IvdGV4dGJveC1jb2xvci5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsWUFBWTtBQUNkO0FBQ0E7RUFDRTs7R0FFQyxFQUFFLG9EQUFvRDtBQUN6RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUNULGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIscWNBQXFjO0FBQ3ZjO0FBQ0E7RUFDRSwwQkFBMEI7QUFDNUI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCxvQ0FBb0MsRUFBRSxVQUFVO0VBQ2hELGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0JBQW9CO0FBQ3RCO0FBQ0E7RUFDRSx1Q0FBdUMsRUFBRSxVQUFVO0FBQ3JEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxPQUFPO0VBQ1AsV0FBVztFQUNYLFlBQVk7RUFDWixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLFlBQVk7RUFDWiw2QkFBNkI7RUFDN0IsOEJBQThCO0FBQ2hDOztBQUVBOztFQUVFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7O0VBRUUsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0Usc0NBQXNDO0FBQ3hDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCw2QkFBNkI7RUFDN0IscUNBQXFDO0VBQ3JDLG9CQUFvQjtBQUN0QjtBQUNBOztFQUVFLHVDQUF1QztBQUN6QztBQUNBOztFQUVFLFNBQVM7RUFDVCxZQUFZO0VBQ1osd0RBQXdEO0FBQzFEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFVBQVU7RUFDVixvQkFBb0I7QUFDdEI7QUFDQTs7O0VBR0UsMkNBQTJDO0FBQzdDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLCtCQUErQjtFQUMvQixTQUFTO0VBQ1QsOEJBQThCO0VBQzlCLFdBQVc7RUFDWCwyQ0FBMkM7QUFDN0M7QUFDQTs7RUFFRSw2QkFBNkI7QUFDL0IiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHRib3gvdGV4dGJveC1jb2xvci90ZXh0Ym94LWNvbG9yLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dGJveENvbG9yIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xuICBkaXNwbGF5OiBmbGV4O1xuICB3aWR0aDogMTQ0cHg7XG59XG4udGV4dGJveENvbG9yOmZvY3VzLXdpdGhpbiB7XG4gIHotaW5kZXg6IHZhcihcbiAgICAtLXotaW5kZXgtMlxuICApOyAvKiBzdGFjayBgLnRleHRib3hDb2xvcmAgb3ZlciBpdHMgc2libGluZyBlbGVtZW50cyAqL1xufVxuXG4uY29sb3Ige1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNnB4O1xuICBsZWZ0OiA4cHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxNnB4O1xuICBoZWlnaHQ6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDFweDtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCdkYXRhOmltYWdlL3N2Zyt4bWw7dXRmOCwlM0NzdmclMjB3aWR0aCUzRCUyMjYlMjIlMjBoZWlnaHQlM0QlMjI2JTIyJTIwdmlld0JveCUzRCUyMjAlMjAwJTIwNiUyMDYlMjIlMjBmaWxsJTNEJTIybm9uZSUyMiUyMHhtbG5zJTNEJTIyaHR0cCUzQS8vd3d3LnczLm9yZy8yMDAwL3N2ZyUyMiUzRSUzQ3BhdGglMjBkJTNEJTIyTTAlMjAwSDNWM0gwVjBaJTIyJTIwZmlsbCUzRCUyMiUyM0UxRTFFMSUyMi8lM0UlM0NwYXRoJTIwZCUzRCUyMk0zJTIwMEg2VjNIM1YwWiUyMiUyMGZpbGwlM0QlMjJ3aGl0ZSUyMi8lM0UlM0NwYXRoJTIwZCUzRCUyMk0zJTIwM0g2VjZIM1YzWiUyMiUyMGZpbGwlM0QlMjIlMjNFMUUxRTElMjIvJTNFJTNDcGF0aCUyMGQlM0QlMjJNMCUyMDNIM1Y2SDBWM1olMjIlMjBmaWxsJTNEJTIyd2hpdGUlMjIvJTNFJTNDL3N2ZyUzRSUwQScpO1xufVxuLmRpc2FibGVkIC5jb2xvciB7XG4gIG9wYWNpdHk6IHZhcigtLW9wYWNpdHktMzApO1xufVxuXG4uY29sb3JGaWxsIHtcbiAgZmxleC1ncm93OiAxO1xuICBiYWNrZ3JvdW5kOiBub25lO1xufVxuXG4uY29sb3JCb3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEpOyAvKiBGSVhNRSAqL1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuOmdsb2JhbCguZmlnbWEtZGFyaykgLmNvbG9yQm9yZGVyIHtcbiAgYm9yZGVyLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMTUpOyAvKiBGSVhNRSAqL1xufVxuXG4uaGV4Q29sb3JTZWxlY3RvciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtNHB4O1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMjRweDtcbiAgaGVpZ2h0OiAzNnB4O1xuICBvcGFjaXR5OiAwO1xufVxuXG4uaW5wdXQge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMjhweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cblxuLmRpc2FibGVkIC5pbnB1dCxcbi5kaXNhYmxlZCAuaGV4Q29sb3JTZWxlY3RvciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbn1cblxuLmlucHV0OjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LXRlcnRpYXJ5KTtcbn1cblxuLmlucHV0Ojotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uLFxuLmlucHV0Ojotd2Via2l0LW91dGVyLXNwaW4tYnV0dG9uIHtcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xufVxuXG4uaGV4Q29sb3JJbnB1dCB7XG4gIGZsZXg6IDAgMCA5N3B4O1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG4ub3BhY2l0eUlucHV0IHtcbiAgcGFkZGluZy1sZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKTpob3ZlciAuYm9yZGVyIHtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6Zm9jdXMgfiAuYm9yZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaGV4Q29sb3JTZWxlY3Rvcjpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyOiAycHggc29saWQgdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi5kaXZpZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogOTZweDtcbiAgd2lkdGg6IDFweDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4uaGFzQm9yZGVyIC5kaXZpZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6aG92ZXIgfiAuZGl2aWRlcixcbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCkgLmlucHV0OmZvY3VzIH4gLmRpdmlkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuXG4udW5kZXJsaW5lIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgaGVpZ2h0OiAxcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpOmhvdmVyIC51bmRlcmxpbmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cbiJdfQ== */`;
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtY29sb3IvdGV4dGJveC1jb2xvci5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsWUFBWTtBQUNkO0FBQ0E7RUFDRTs7R0FFQyxFQUFFLG9EQUFvRDtBQUN6RDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUNULGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIscWNBQXFjO0FBQ3ZjO0FBQ0E7RUFDRSwwQkFBMEI7QUFDNUI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCxvQ0FBb0MsRUFBRSxVQUFVO0VBQ2hELGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0JBQW9CO0FBQ3RCO0FBQ0E7RUFDRSx1Q0FBdUMsRUFBRSxVQUFVO0FBQ3JEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxPQUFPO0VBQ1AsV0FBVztFQUNYLFlBQVk7RUFDWixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLFlBQVk7RUFDWiw2QkFBNkI7RUFDN0IsOEJBQThCO0FBQ2hDOztBQUVBOztFQUVFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7O0VBRUUsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0Usc0NBQXNDO0FBQ3hDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCw2QkFBNkI7RUFDN0IscUNBQXFDO0VBQ3JDLG9CQUFvQjtBQUN0QjtBQUNBOztFQUVFLHVDQUF1QztBQUN6QztBQUNBOztFQUVFLFNBQVM7RUFDVCxZQUFZO0VBQ1osd0RBQXdEO0FBQzFEOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFVBQVU7RUFDVixvQkFBb0I7QUFDdEI7QUFDQTs7Ozs7RUFLRSwyQ0FBMkM7QUFDN0M7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94LWNvbG9yL3RleHRib3gtY29sb3IubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94Q29sb3Ige1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMSk7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHdpZHRoOiAxNDRweDtcbn1cbi50ZXh0Ym94Q29sb3I6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKFxuICAgIC0tei1pbmRleC0yXG4gICk7IC8qIHN0YWNrIGAudGV4dGJveENvbG9yYCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5jb2xvciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA2cHg7XG4gIGxlZnQ6IDhweDtcbiAgZGlzcGxheTogZmxleDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgd2lkdGg6IDE2cHg7XG4gIGhlaWdodDogMTZweDtcbiAgYm9yZGVyLXJhZGl1czogMXB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJ2RhdGE6aW1hZ2Uvc3ZnK3htbDt1dGY4LCUzQ3N2ZyUyMHdpZHRoJTNEJTIyNiUyMiUyMGhlaWdodCUzRCUyMjYlMjIlMjB2aWV3Qm94JTNEJTIyMCUyMDAlMjA2JTIwNiUyMiUyMGZpbGwlM0QlMjJub25lJTIyJTIweG1sbnMlM0QlMjJodHRwJTNBLy93d3cudzMub3JnLzIwMDAvc3ZnJTIyJTNFJTNDcGF0aCUyMGQlM0QlMjJNMCUyMDBIM1YzSDBWMFolMjIlMjBmaWxsJTNEJTIyJTIzRTFFMUUxJTIyLyUzRSUzQ3BhdGglMjBkJTNEJTIyTTMlMjAwSDZWM0gzVjBaJTIyJTIwZmlsbCUzRCUyMndoaXRlJTIyLyUzRSUzQ3BhdGglMjBkJTNEJTIyTTMlMjAzSDZWNkgzVjNaJTIyJTIwZmlsbCUzRCUyMiUyM0UxRTFFMSUyMi8lM0UlM0NwYXRoJTIwZCUzRCUyMk0wJTIwM0gzVjZIMFYzWiUyMiUyMGZpbGwlM0QlMjJ3aGl0ZSUyMi8lM0UlM0Mvc3ZnJTNFJTBBJyk7XG59XG4uZGlzYWJsZWQgLmNvbG9yIHtcbiAgb3BhY2l0eTogdmFyKC0tb3BhY2l0eS0zMCk7XG59XG5cbi5jb2xvckZpbGwge1xuICBmbGV4LWdyb3c6IDE7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG59XG5cbi5jb2xvckJvcmRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMSk7IC8qIEZJWE1FICovXG4gIGJvcmRlci1yYWRpdXM6IDJweDtcbiAgYmFja2dyb3VuZDogbm9uZTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG46Z2xvYmFsKC5maWdtYS1kYXJrKSAuY29sb3JCb3JkZXIge1xuICBib3JkZXItY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4xNSk7IC8qIEZJWE1FICovXG59XG5cbi5oZXhDb2xvclNlbGVjdG9yIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IC00cHg7XG4gIGxlZnQ6IDA7XG4gIHdpZHRoOiAyNHB4O1xuICBoZWlnaHQ6IDM2cHg7XG4gIG9wYWNpdHk6IDA7XG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQpO1xufVxuXG4uZGlzYWJsZWQgLmlucHV0LFxuLmRpc2FibGVkIC5oZXhDb2xvclNlbGVjdG9yIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xufVxuXG4uaW5wdXQ6OnBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtdGVydGlhcnkpO1xufVxuXG4uaW5wdXQ6Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24sXG4uaW5wdXQ6Oi13ZWJraXQtb3V0ZXItc3Bpbi1idXR0b24ge1xuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG59XG5cbi5oZXhDb2xvcklucHV0IHtcbiAgZmxleDogMCAwIDk3cHg7XG4gIHBhZGRpbmctbGVmdDogMzJweDtcbn1cbi5vcGFjaXR5SW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbn1cblxuLmJvcmRlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICBib3JkZXI6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcbiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cy0yKTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4uaGFzQm9yZGVyIC5ib3JkZXIsXG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpOmhvdmVyIC5ib3JkZXIge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIsXG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpIC5oZXhDb2xvclNlbGVjdG9yOmZvY3VzIH4gLmJvcmRlciB7XG4gIHRvcDogLTFweDtcbiAgYm90dG9tOiAtMXB4O1xuICBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cblxuLmRpdmlkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiA5NnB4O1xuICB3aWR0aDogMXB4O1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cbi5oYXNCb3JkZXIgLmRpdmlkZXIsXG4udGV4dGJveENvbG9yOm5vdCguZGlzYWJsZWQpIC5pbnB1dDpob3ZlciB+IC5kaXZpZGVyLFxuLnRleHRib3hDb2xvcjpub3QoLmRpc2FibGVkKSAuaW5wdXQ6Zm9jdXMgfiAuZGl2aWRlcixcbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCkgLmhleENvbG9yU2VsZWN0b3I6aG92ZXIgfiAuZGl2aWRlcixcbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCkgLmhleENvbG9yU2VsZWN0b3I6Zm9jdXMgfiAuZGl2aWRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCkgLmlucHV0OmZvY3VzIH4gLnVuZGVybGluZSxcbi50ZXh0Ym94Q29sb3I6bm90KC5kaXNhYmxlZCk6aG92ZXIgLnVuZGVybGluZSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuIl19 */`;
         document.head.append(element);
       }
-      textbox_color_module_default = { "textboxColor": "_textboxColor_190p3_1", "color": "_color_190p3_13", "disabled": "_disabled_190p3_24", "colorFill": "_colorFill_190p3_28", "colorBorder": "_colorBorder_190p3_33", "hexColorSelector": "_hexColorSelector_190p3_48", "input": "_input_190p3_57", "hexColorInput": "_hexColorInput_190p3_80", "opacityInput": "_opacityInput_190p3_84", "border": "_border_190p3_88", "hasBorder": "_hasBorder_190p3_98", "divider": "_divider_190p3_109", "underline": "_underline_190p3_123" };
+      textbox_color_module_default = { "textboxColor": "_textboxColor_69uub_1", "color": "_color_69uub_13", "disabled": "_disabled_69uub_24", "colorFill": "_colorFill_69uub_28", "colorBorder": "_colorBorder_69uub_33", "hexColorSelector": "_hexColorSelector_69uub_48", "input": "_input_69uub_57", "hexColorInput": "_hexColorInput_69uub_80", "opacityInput": "_opacityInput_69uub_84", "border": "_border_69uub_88", "hasBorder": "_hasBorder_69uub_98", "divider": "_divider_69uub_109", "underline": "_underline_69uub_125" };
     }
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js
-  function TextboxColor(_a) {
-    var _b = _a, { disabled = false, hexColor, hexColorName, hexColorPlaceholder, name: name307, onHexColorInput = function() {
-    }, onHexColorValueInput = function() {
-    }, onOpacityInput = function() {
-    }, onOpacityNumericValueInput = function() {
-    }, onOpacityValueInput = function() {
-    }, onRgbaColorValueInput = function() {
-    }, opacity, opacityName, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorName", "hexColorPlaceholder", "name", "onHexColorInput", "onHexColorValueInput", "onOpacityInput", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityName", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
-    const hexColorInputElementRef = _2(null);
-    const revertOnEscapeKeyDownRef = _2(false);
-    const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING4);
-    const setHexColorInputElementValue = T2(function(value2) {
-      const inputElement = getCurrentFromRef(hexColorInputElementRef);
-      inputElement.value = value2;
-      const inputEvent = document.createEvent("Event");
-      inputEvent.initEvent("input", true, true);
-      inputElement.dispatchEvent(inputEvent);
-    }, []);
-    const handleHexColorSelectorFocus = T2(function(event) {
-      const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
-      setOriginalHexColor(hexColor2);
-    }, []);
-    const handleHexColorSelectorInput = T2(function(event) {
-      const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
-      setHexColorInputElementValue(hexColor2);
-    }, [setHexColorInputElementValue]);
-    const handleHexColorSelectorKeyDown = T2(function(event) {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (propagateEscapeKeyDown === false) {
-        event.stopPropagation();
-      }
-      if (revertOnEscapeKeyDown === true) {
-        setHexColorInputElementValue(originalHexColor);
-        setOriginalHexColor(EMPTY_STRING4);
-      }
-      event.currentTarget.blur();
-    }, [
-      originalHexColor,
-      propagateEscapeKeyDown,
-      revertOnEscapeKeyDown,
-      setHexColorInputElementValue
-    ]);
-    const handleHexColorBlur = T2(function() {
-      if (revertOnEscapeKeyDownRef.current === true) {
-        revertOnEscapeKeyDownRef.current = false;
-        return;
-      }
-      if (hexColor === EMPTY_STRING4) {
-        if (originalHexColor !== EMPTY_STRING4) {
-          setHexColorInputElementValue(originalHexColor);
-        }
-        setOriginalHexColor(EMPTY_STRING4);
-        return;
-      }
-      if (hexColor !== MIXED_STRING) {
-        const normalizedHexColor2 = normalizeUserInputColor(hexColor);
-        const newHexColor = normalizedHexColor2 === null ? originalHexColor : normalizedHexColor2;
-        if (newHexColor !== hexColor) {
-          setHexColorInputElementValue(newHexColor);
-        }
-      }
-      setOriginalHexColor(EMPTY_STRING4);
-    }, [hexColor, originalHexColor, setHexColorInputElementValue]);
-    const handleHexColorFocus = T2(function(event) {
-      setOriginalHexColor(hexColor);
-      event.currentTarget.select();
-    }, [hexColor]);
-    const handleHexColorInput = T2(function(event) {
-      onHexColorInput(event);
-      const newHexColor = event.currentTarget.value;
-      onHexColorValueInput(newHexColor, hexColorName);
-      if (newHexColor === EMPTY_STRING4) {
-        onRgbaColorValueInput(null, name307);
-        return;
-      }
-      const normalizedHexColor2 = normalizeUserInputColor(newHexColor);
-      if (normalizedHexColor2 === null) {
-        onRgbaColorValueInput(null, name307);
-        return;
-      }
-      const rgba = createRgbaColor(normalizedHexColor2, opacity);
-      onRgbaColorValueInput(rgba, name307);
-    }, [
-      hexColorName,
-      onHexColorInput,
-      onHexColorValueInput,
-      onRgbaColorValueInput,
-      name307,
-      opacity
-    ]);
-    const handleHexColorKeyDown = T2(function(event) {
-      const key = event.key;
-      if (key === "Escape") {
-        if (propagateEscapeKeyDown === false) {
-          event.stopPropagation();
-        }
-        if (revertOnEscapeKeyDown === true) {
-          revertOnEscapeKeyDownRef.current = true;
-          setHexColorInputElementValue(originalHexColor);
-          setOriginalHexColor(EMPTY_STRING4);
-        }
-        event.currentTarget.blur();
-        return;
-      }
-      if (key === "Enter") {
-        event.currentTarget.blur();
-        return;
-      }
-      const element = event.currentTarget;
-      if (key === "ArrowDown" || key === "ArrowUp") {
-        event.preventDefault();
-        const delta = event.shiftKey === true ? 10 : 1;
-        const startingHexColor = hexColor === EMPTY_STRING4 || hexColor === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor;
-        const newHexColor = updateHexColor(startingHexColor, key === "ArrowDown" ? -1 * delta : delta);
-        setHexColorInputElementValue(newHexColor);
-        element.select();
-        return;
-      }
-      if (event.ctrlKey === true || event.metaKey === true) {
-        return;
-      }
-    }, [
-      hexColor,
-      originalHexColor,
-      propagateEscapeKeyDown,
-      revertOnEscapeKeyDown,
-      setHexColorInputElementValue
-    ]);
-    const handleHexColorMouseUp = T2(function(event) {
-      if (hexColor !== MIXED_STRING) {
-        return;
-      }
-      event.preventDefault();
-    }, [hexColor]);
-    const handleOpacityInput = T2(function(event) {
-      onOpacityInput(event);
-      const newOpacity = event.currentTarget.value;
-      const rgba = createRgbaColor(hexColor, newOpacity);
-      onRgbaColorValueInput(rgba, name307);
-    }, [hexColor, onOpacityInput, onRgbaColorValueInput, name307]);
-    const handleOpacityNumericValueInput = T2(function(opacity2) {
-      onOpacityNumericValueInput(opacity2 === null || opacity2 === MIXED_NUMBER ? opacity2 : opacity2 / 100);
-    }, [onOpacityNumericValueInput]);
-    const validateOpacityOnBlur = T2(function(opacity2) {
-      return opacity2 !== null;
-    }, []);
-    const parsedOpacity = parseOpacity(opacity);
-    const isHexColorValid = hexColor !== EMPTY_STRING4 && hexColor !== MIXED_STRING;
-    const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor) : "FFFFFF";
-    const renderedHexColor = normalizedHexColor === null ? originalHexColor : normalizedHexColor;
-    return y(
-      "div",
-      { class: createClassName([
-        textbox_color_module_default.textboxColor,
-        typeof variant === "undefined" ? null : variant === "border" ? textbox_color_module_default.hasBorder : null,
-        disabled === true ? textbox_color_module_default.disabled : null
-      ]) },
-      y(
-        "div",
-        { class: textbox_color_module_default.color },
-        y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? { backgroundColor: `#${renderedHexColor}` } : {} }),
-        parsedOpacity === 1 ? null : y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? {
-          backgroundColor: `#${renderedHexColor}`,
-          opacity: parsedOpacity
-        } : {} }),
-        y("div", { class: textbox_color_module_default.colorBorder })
-      ),
-      y("input", { class: textbox_color_module_default.hexColorSelector, disabled: disabled === true, onFocus: handleHexColorSelectorFocus, onInput: handleHexColorSelectorInput, onKeyDown: handleHexColorSelectorKeyDown, tabIndex: -1, type: "color", value: `#${renderedHexColor}` }),
-      y("input", __spreadProps(__spreadValues({}, rest), { ref: hexColorInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.hexColorInput]), disabled: disabled === true, name: hexColorName, onBlur: handleHexColorBlur, onFocus: handleHexColorFocus, onInput: handleHexColorInput, onKeyDown: handleHexColorKeyDown, onMouseUp: handleHexColorMouseUp, placeholder: hexColorPlaceholder, spellcheck: false, tabIndex: disabled === true ? -1 : 0, type: "text", value: hexColor === MIXED_STRING ? "Mixed" : hexColor })),
-      y(RawTextboxNumeric, { class: createClassName([textbox_color_module_default.input, textbox_color_module_default.opacityInput]), disabled: disabled === true, maximum: 100, minimum: 0, name: opacityName, onInput: handleOpacityInput, onNumericValueInput: handleOpacityNumericValueInput, onValueInput: onOpacityValueInput, placeholder: opacityPlaceholder, propagateEscapeKeyDown, revertOnEscapeKeyDown, suffix: "%", validateOnBlur: validateOpacityOnBlur, value: opacity }),
-      y("div", { class: textbox_color_module_default.divider }),
-      y("div", { class: textbox_color_module_default.border }),
-      variant === "underline" ? y("div", { class: textbox_color_module_default.underline }) : null
-    );
-  }
   function parseOpacity(opacity) {
     if (opacity === MIXED_STRING || opacity === EMPTY_STRING4) {
       return 1;
     }
     return parseInt(opacity, 10) / 100;
   }
-  var EMPTY_STRING4;
+  var EMPTY_STRING4, TextboxColor;
   var init_textbox_color = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js"() {
       init_lib();
       init_preact_module();
       init_hooks_module();
       init_create_class_name();
+      init_create_component();
       init_get_current_from_ref();
+      init_no_op();
       init_raw_textbox_numeric();
       init_create_rgba_color();
       init_normalize_hex_color();
       init_update_hex_color();
       init_textbox_color_module();
       EMPTY_STRING4 = "";
+      TextboxColor = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, hexColor, hexColorPlaceholder, onHexColorInput = noop, onHexColorKeyDown = noop, onHexColorValueInput = noop, onOpacityInput = noop, onOpacityKeyDown = noop, onOpacityNumericValueInput = noop, onOpacityValueInput = noop, onRgbaColorValueInput = noop, opacity, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorPlaceholder", "onHexColorInput", "onHexColorKeyDown", "onHexColorValueInput", "onOpacityInput", "onOpacityKeyDown", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
+        const hexColorInputElementRef = _2(null);
+        const opacityInputElementRef = _2(null);
+        const revertOnEscapeKeyDownRef = _2(false);
+        const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING4);
+        const setHexColorInputElementValue = T2(function(value2) {
+          const inputElement = getCurrentFromRef(hexColorInputElementRef);
+          inputElement.value = value2;
+          const inputEvent = new window.Event("input", {
+            bubbles: true,
+            cancelable: true
+          });
+          inputElement.dispatchEvent(inputEvent);
+        }, []);
+        const handleHexColorSelectorFocus = T2(function(event) {
+          const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
+          setOriginalHexColor(hexColor2);
+        }, []);
+        const handleHexColorSelectorInput = T2(function(event) {
+          const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
+          setHexColorInputElementValue(hexColor2);
+        }, [setHexColorInputElementValue]);
+        const handleHexColorSelectorKeyDown = T2(function(event) {
+          if (event.key !== "Escape") {
+            return;
+          }
+          if (revertOnEscapeKeyDown === true) {
+            revertOnEscapeKeyDownRef.current = true;
+            setHexColorInputElementValue(originalHexColor);
+            setOriginalHexColor(EMPTY_STRING4);
+          }
+          if (propagateEscapeKeyDown === false) {
+            event.stopPropagation();
+          }
+          event.currentTarget.blur();
+        }, [
+          originalHexColor,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          setHexColorInputElementValue
+        ]);
+        const handleHexColorBlur = T2(function() {
+          if (revertOnEscapeKeyDownRef.current === true) {
+            revertOnEscapeKeyDownRef.current = false;
+            return;
+          }
+          if (hexColor === EMPTY_STRING4) {
+            if (originalHexColor !== EMPTY_STRING4) {
+              setHexColorInputElementValue(originalHexColor);
+            }
+            setOriginalHexColor(EMPTY_STRING4);
+            return;
+          }
+          if (hexColor !== MIXED_STRING) {
+            const normalizedHexColor2 = normalizeUserInputColor(hexColor);
+            const newHexColor = normalizedHexColor2 === null ? originalHexColor : normalizedHexColor2;
+            if (newHexColor !== hexColor) {
+              setHexColorInputElementValue(newHexColor);
+            }
+          }
+          setOriginalHexColor(EMPTY_STRING4);
+        }, [hexColor, originalHexColor, setHexColorInputElementValue]);
+        const handleHexColorFocus = T2(function(event) {
+          setOriginalHexColor(hexColor);
+          event.currentTarget.select();
+        }, [hexColor]);
+        const handleHexColorInput = T2(function(event) {
+          onHexColorInput(event);
+          const newHexColor = event.currentTarget.value;
+          onHexColorValueInput(newHexColor);
+          if (newHexColor === EMPTY_STRING4) {
+            onRgbaColorValueInput(null);
+            return;
+          }
+          const normalizedHexColor2 = normalizeUserInputColor(newHexColor);
+          if (normalizedHexColor2 === null) {
+            onRgbaColorValueInput(null);
+            return;
+          }
+          const rgba = createRgbaColor(normalizedHexColor2, opacity);
+          onRgbaColorValueInput(rgba);
+        }, [onHexColorInput, onHexColorValueInput, onRgbaColorValueInput, opacity]);
+        const handleHexColorKeyDown = T2(function(event) {
+          onHexColorKeyDown(event);
+          const key = event.key;
+          if (key === "Escape") {
+            if (revertOnEscapeKeyDown === true) {
+              revertOnEscapeKeyDownRef.current = true;
+              setHexColorInputElementValue(originalHexColor);
+              setOriginalHexColor(EMPTY_STRING4);
+            }
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+            return;
+          }
+          const element = event.currentTarget;
+          if (key === "ArrowDown" || key === "ArrowUp") {
+            event.preventDefault();
+            const delta = event.shiftKey === true ? 10 : 1;
+            const startingHexColor = hexColor === EMPTY_STRING4 || hexColor === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor;
+            const newHexColor = updateHexColor(startingHexColor, key === "ArrowDown" ? -1 * delta : delta);
+            setHexColorInputElementValue(newHexColor);
+            element.select();
+            return;
+          }
+          if (event.ctrlKey === true || event.metaKey === true) {
+            return;
+          }
+        }, [
+          hexColor,
+          onHexColorKeyDown,
+          originalHexColor,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          setHexColorInputElementValue
+        ]);
+        const handleHexColorMouseUp = T2(function(event) {
+          if (hexColor !== MIXED_STRING) {
+            return;
+          }
+          event.preventDefault();
+        }, [hexColor]);
+        const handleOpacityInput = T2(function(event) {
+          onOpacityInput(event);
+          const newOpacity = event.currentTarget.value;
+          const rgba = createRgbaColor(hexColor, newOpacity);
+          onRgbaColorValueInput(rgba);
+        }, [hexColor, onOpacityInput, onRgbaColorValueInput]);
+        const handleOpacityNumericValueInput = T2(function(opacity2) {
+          onOpacityNumericValueInput(opacity2 === null || opacity2 === MIXED_NUMBER ? opacity2 : opacity2 / 100);
+        }, [onOpacityNumericValueInput]);
+        const validateOpacityOnBlur = T2(function(opacity2) {
+          return opacity2 !== null;
+        }, []);
+        const parsedOpacity = parseOpacity(opacity);
+        const isHexColorValid = hexColor !== EMPTY_STRING4 && hexColor !== MIXED_STRING;
+        const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor) : "FFFFFF";
+        const renderedHexColor = normalizedHexColor === null ? originalHexColor : normalizedHexColor;
+        return y(
+          "div",
+          { ref, class: createClassName([
+            textbox_color_module_default.textboxColor,
+            typeof variant === "undefined" ? null : variant === "border" ? textbox_color_module_default.hasBorder : null,
+            disabled === true ? textbox_color_module_default.disabled : null
+          ]) },
+          y(
+            "div",
+            { class: textbox_color_module_default.color },
+            y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? { backgroundColor: `#${renderedHexColor}` } : {} }),
+            parsedOpacity === 1 ? null : y("div", { class: textbox_color_module_default.colorFill, style: isHexColorValid === true ? {
+              backgroundColor: `#${renderedHexColor}`,
+              opacity: parsedOpacity
+            } : {} }),
+            y("div", { class: textbox_color_module_default.colorBorder })
+          ),
+          y("input", { class: textbox_color_module_default.hexColorSelector, disabled: disabled === true, onFocus: handleHexColorSelectorFocus, onInput: handleHexColorSelectorInput, onKeyDown: handleHexColorSelectorKeyDown, tabIndex: -1, type: "color", value: `#${renderedHexColor}` }),
+          y("input", __spreadProps(__spreadValues({}, rest), { ref: hexColorInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.hexColorInput]), disabled: disabled === true, onBlur: handleHexColorBlur, onFocus: handleHexColorFocus, onInput: handleHexColorInput, onKeyDown: handleHexColorKeyDown, onMouseUp: handleHexColorMouseUp, placeholder: hexColorPlaceholder, spellcheck: false, tabIndex: 0, type: "text", value: hexColor === MIXED_STRING ? "Mixed" : hexColor })),
+          y(RawTextboxNumeric, { ref: opacityInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.opacityInput]), disabled: disabled === true, maximum: 100, minimum: 0, onInput: handleOpacityInput, onKeyDown: onOpacityKeyDown, onNumericValueInput: handleOpacityNumericValueInput, onValueInput: onOpacityValueInput, placeholder: opacityPlaceholder, propagateEscapeKeyDown, revertOnEscapeKeyDown, suffix: "%", validateOnBlur: validateOpacityOnBlur, value: opacity }),
+          y("div", { class: textbox_color_module_default.divider }),
+          y("div", { class: textbox_color_module_default.border }),
+          variant === "underline" ? y("div", { class: textbox_color_module_default.underline }) : null
+        );
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/72f03a1d-cd08-4c4a-95c5-69e4f59f7d96/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c81b094-932d-4abf-a835-79662505c5e7/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/72f03a1d-cd08-4c4a-95c5-69e4f59f7d96/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c81b094-932d-4abf-a835-79662505c5e7/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
-        element.textContent = `._textboxMultiline_1rfqs_1 {
+        element.textContent = `._textboxMultiline_1b7l0_1 {
   position: relative;
   z-index: var(--z-index-1);
 }
 
-._grow_1rfqs_6 {
+._grow_1b7l0_6 {
   display: grid;
 }
 
-._ghost_1rfqs_10,
-._grow_1rfqs_6 ._textarea_1rfqs_11 {
+._ghost_1b7l0_10,
+._grow_1b7l0_6 ._textarea_1b7l0_11 {
   grid-area: 1 / 1 / 2 / 2;
 }
 
-._ghost_1rfqs_10 {
-  padding: 6px 0 6px var(--space-extra-small);
-  visibility: hidden;
+._ghost_1b7l0_10 {
+  padding: 6px var(--space-extra-small);
   white-space: pre-wrap;
 }
 
-._textarea_1rfqs_11 {
+._textarea_1b7l0_11 {
   display: block;
   width: 100%;
-  padding: 6px var(--space-extra-small) 6px var(--space-extra-small);
+  padding: 6px var(--space-extra-small);
   border-radius: var(--border-radius-2);
   background-color: transparent;
   color: var(--figma-color-text);
   resize: none;
 }
-._textarea_1rfqs_11::placeholder {
+._textarea_1b7l0_11::placeholder {
   color: var(--figma-color-text-tertiary);
 }
-._disabled_1rfqs_33 ._textarea_1rfqs_11 {
+._disabled_1b7l0_32 ._textarea_1b7l0_11 {
   color: var(--figma-color-text-disabled);
   cursor: not-allowed;
 }
+._grow_1b7l0_6 ._textarea_1b7l0_11 {
+  overflow: hidden;
+}
 
-._border_1rfqs_38 {
+._border_1b7l0_40 {
   position: absolute;
   top: 0;
   right: 0;
@@ -3527,17 +4065,17 @@ video {
   border-radius: var(--border-radius-2);
   pointer-events: none;
 }
-._hasBorder_1rfqs_48 ._border_1rfqs_38,
-._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33):hover ._border_1rfqs_38 {
+._hasBorder_1b7l0_50 ._border_1b7l0_40,
+._textboxMultiline_1b7l0_1:not(._disabled_1b7l0_32):hover ._border_1b7l0_40 {
   border-color: var(--figma-color-border);
 }
-._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33) ._textarea_1rfqs_11:focus ~ ._border_1rfqs_38 {
+._textboxMultiline_1b7l0_1:not(._disabled_1b7l0_32) ._textarea_1b7l0_11:focus ~ ._border_1b7l0_40 {
   top: -1px;
   bottom: -1px;
   border: 2px solid var(--figma-color-border-brand-strong);
 }
 
-._underline_1rfqs_58 {
+._underline_1b7l0_60 {
   position: absolute;
   right: var(--space-extra-small);
   bottom: 0;
@@ -3545,124 +4083,138 @@ video {
   height: 1px;
   background-color: var(--figma-color-border);
 }
-._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33) ._textarea_1rfqs_11:focus ~ ._underline_1rfqs_58,
-._textboxMultiline_1rfqs_1:not(._disabled_1rfqs_33):hover ._underline_1rfqs_58 {
+._textboxMultiline_1b7l0_1:not(._disabled_1b7l0_32) ._textarea_1b7l0_11:focus ~ ._underline_1b7l0_60,
+._textboxMultiline_1b7l0_1:not(._disabled_1b7l0_32):hover ._underline_1b7l0_60 {
   background-color: transparent;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbXVsdGlsaW5lL3RleHRib3gtbXVsdGlsaW5lLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBOztFQUVFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLDJDQUEyQztFQUMzQyxrQkFBa0I7RUFDbEIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxrRUFBa0U7RUFDbEUscUNBQXFDO0VBQ3JDLDZCQUE2QjtFQUM3Qiw4QkFBOEI7RUFDOUIsWUFBWTtBQUNkO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLHdEQUF3RDtBQUMxRDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiwrQkFBK0I7RUFDL0IsU0FBUztFQUNULDhCQUE4QjtFQUM5QixXQUFXO0VBQ1gsMkNBQTJDO0FBQzdDO0FBQ0E7O0VBRUUsNkJBQTZCO0FBQy9CIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbXVsdGlsaW5lL3RleHRib3gtbXVsdGlsaW5lLm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dGJveE11bHRpbGluZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0xKTtcbn1cblxuLmdyb3cge1xuICBkaXNwbGF5OiBncmlkO1xufVxuXG4uZ2hvc3QsXG4uZ3JvdyAudGV4dGFyZWEge1xuICBncmlkLWFyZWE6IDEgLyAxIC8gMiAvIDI7XG59XG5cbi5naG9zdCB7XG4gIHBhZGRpbmc6IDZweCAwIDZweCB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xufVxuXG4udGV4dGFyZWEge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDZweCB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCkgNnB4IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cy0yKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbiAgcmVzaXplOiBub25lO1xufVxuLnRleHRhcmVhOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LXRlcnRpYXJ5KTtcbn1cbi5kaXNhYmxlZCAudGV4dGFyZWEge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3hNdWx0aWxpbmU6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94TXVsdGlsaW5lOm5vdCguZGlzYWJsZWQpIC50ZXh0YXJlYTpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyOiAycHggc29saWQgdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94TXVsdGlsaW5lOm5vdCguZGlzYWJsZWQpIC50ZXh0YXJlYTpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveE11bHRpbGluZTpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtbXVsdGlsaW5lL3RleHRib3gtbXVsdGlsaW5lLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBOztFQUVFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLHFDQUFxQztFQUNyQyxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLHFDQUFxQztFQUNyQyxxQ0FBcUM7RUFDckMsNkJBQTZCO0VBQzdCLDhCQUE4QjtFQUM5QixZQUFZO0FBQ2Q7QUFDQTtFQUNFLHVDQUF1QztBQUN6QztBQUNBO0VBQ0UsdUNBQXVDO0VBQ3ZDLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCw2QkFBNkI7RUFDN0IscUNBQXFDO0VBQ3JDLG9CQUFvQjtBQUN0QjtBQUNBOztFQUVFLHVDQUF1QztBQUN6QztBQUNBO0VBQ0UsU0FBUztFQUNULFlBQVk7RUFDWix3REFBd0Q7QUFDMUQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94LW11bHRpbGluZS90ZXh0Ym94LW11bHRpbGluZS5tb2R1bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHRib3hNdWx0aWxpbmUge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMSk7XG59XG5cbi5ncm93IHtcbiAgZGlzcGxheTogZ3JpZDtcbn1cblxuLmdob3N0LFxuLmdyb3cgLnRleHRhcmVhIHtcbiAgZ3JpZC1hcmVhOiAxIC8gMSAvIDIgLyAyO1xufVxuXG4uZ2hvc3Qge1xuICBwYWRkaW5nOiA2cHggdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XG59XG5cbi50ZXh0YXJlYSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogNnB4IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cy0yKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbiAgcmVzaXplOiBub25lO1xufVxuLnRleHRhcmVhOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0LXRlcnRpYXJ5KTtcbn1cbi5kaXNhYmxlZCAudGV4dGFyZWEge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uZ3JvdyAudGV4dGFyZWEge1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uYm9yZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cbi5oYXNCb3JkZXIgLmJvcmRlcixcbi50ZXh0Ym94TXVsdGlsaW5lOm5vdCguZGlzYWJsZWQpOmhvdmVyIC5ib3JkZXIge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4udGV4dGJveE11bHRpbGluZTpub3QoLmRpc2FibGVkKSAudGV4dGFyZWE6Zm9jdXMgfiAuYm9yZGVyIHtcbiAgdG9wOiAtMXB4O1xuICBib3R0b206IC0xcHg7XG4gIGJvcmRlcjogMnB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1icmFuZC1zdHJvbmcpO1xufVxuXG4udW5kZXJsaW5lIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgaGVpZ2h0OiAxcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4udGV4dGJveE11bHRpbGluZTpub3QoLmRpc2FibGVkKSAudGV4dGFyZWE6Zm9jdXMgfiAudW5kZXJsaW5lLFxuLnRleHRib3hNdWx0aWxpbmU6bm90KC5kaXNhYmxlZCk6aG92ZXIgLnVuZGVybGluZSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuIl19 */`;
         document.head.append(element);
       }
-      textbox_multiline_module_default = { "textboxMultiline": "_textboxMultiline_1rfqs_1", "grow": "_grow_1rfqs_6", "ghost": "_ghost_1rfqs_10", "textarea": "_textarea_1rfqs_11", "disabled": "_disabled_1rfqs_33", "border": "_border_1rfqs_38", "hasBorder": "_hasBorder_1rfqs_48", "underline": "_underline_1rfqs_58" };
+      textbox_multiline_module_default = { "textboxMultiline": "_textboxMultiline_1b7l0_1", "grow": "_grow_1b7l0_6", "ghost": "_ghost_1b7l0_10", "textarea": "_textarea_1b7l0_11", "disabled": "_disabled_1b7l0_32", "border": "_border_1b7l0_40", "hasBorder": "_hasBorder_1b7l0_50", "underline": "_underline_1b7l0_60" };
     }
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js
-  function TextboxMultiline(_a) {
-    var _b = _a, { grow = false, disabled = false, name: name307, onInput = function() {
-    }, onValueInput = function() {
-    }, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, rows = 3, spellCheck = false, validateOnBlur, variant, value: value2 } = _b, rest = __objRest(_b, ["grow", "disabled", "name", "onInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "rows", "spellCheck", "validateOnBlur", "variant", "value"]);
-    const textAreaElementRef = _2(null);
-    const revertOnEscapeKeyDownRef = _2(false);
-    const [originalValue, setOriginalValue] = h2(EMPTY_STRING5);
-    const setTextAreaElementValue = T2(function(value3) {
-      const textAreaElement = getCurrentFromRef(textAreaElementRef);
-      textAreaElement.value = value3;
-      const inputEvent = document.createEvent("Event");
-      inputEvent.initEvent("input", true, true);
-      textAreaElement.dispatchEvent(inputEvent);
-    }, []);
-    const handleBlur = T2(function() {
-      if (revertOnEscapeKeyDownRef.current === true) {
-        revertOnEscapeKeyDownRef.current = false;
-        return;
-      }
-      if (typeof validateOnBlur !== "undefined") {
-        const result = validateOnBlur(value2);
-        if (typeof result === "string") {
-          setTextAreaElementValue(result);
-          setOriginalValue(EMPTY_STRING5);
-          return;
-        }
-        if (result === false) {
-          if (value2 !== originalValue) {
-            setTextAreaElementValue(originalValue);
-          }
-          setOriginalValue(EMPTY_STRING5);
-          return;
-        }
-      }
-      setOriginalValue(EMPTY_STRING5);
-    }, [originalValue, setTextAreaElementValue, validateOnBlur, value2]);
-    const handleFocus = T2(function(event) {
-      setOriginalValue(value2);
-      event.currentTarget.select();
-    }, [value2]);
-    const handleInput = T2(function(event) {
-      onValueInput(event.currentTarget.value, name307);
-      onInput(event);
-    }, [name307, onInput, onValueInput]);
-    const handleKeyDown = T2(function(event) {
-      if (event.key === "Escape") {
-        if (propagateEscapeKeyDown === false) {
-          event.stopPropagation();
-        }
-        if (revertOnEscapeKeyDown === true) {
-          revertOnEscapeKeyDownRef.current = true;
-          setTextAreaElementValue(originalValue);
-          setOriginalValue(EMPTY_STRING5);
-        }
-        event.currentTarget.blur();
-        return;
-      }
-      if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
-        event.preventDefault();
-        event.currentTarget.select();
-      }
-    }, [
-      originalValue,
-      propagateEscapeKeyDown,
-      revertOnEscapeKeyDown,
-      setTextAreaElementValue,
-      value2
-    ]);
-    const handleMouseUp = T2(function(event) {
-      if (value2 === MIXED_STRING) {
-        event.preventDefault();
-      }
-    }, [value2]);
-    return y(
-      "div",
-      { class: createClassName([
-        textbox_multiline_module_default.textboxMultiline,
-        typeof variant === "undefined" ? null : variant === "border" ? textbox_multiline_module_default.hasBorder : null,
-        grow === true ? textbox_multiline_module_default.grow : null,
-        disabled === true ? textbox_multiline_module_default.disabled : null
-      ]) },
-      grow === true ? y("div", { class: textbox_multiline_module_default.ghost }, value2 === MIXED_STRING ? "Mixed" : `${value2} `) : null,
-      y("textarea", __spreadProps(__spreadValues({}, rest), { ref: textAreaElementRef, class: textbox_multiline_module_default.textarea, disabled: disabled === true, name: name307, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseUp: handleMouseUp, placeholder, rows, spellcheck: spellCheck, tabIndex: disabled === true ? -1 : 0, value: value2 === MIXED_STRING ? "Mixed" : value2 })),
-      y("div", { class: textbox_multiline_module_default.border }),
-      variant === "underline" ? y("div", { class: textbox_multiline_module_default.underline }) : null
-    );
-  }
-  var EMPTY_STRING5;
+  var EMPTY_STRING5, TextboxMultiline;
   var init_textbox_multiline = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js"() {
       init_lib();
       init_preact_module();
       init_hooks_module();
       init_create_class_name();
+      init_create_component();
       init_get_current_from_ref();
+      init_no_op();
       init_is_keycode_character_generating();
       init_textbox_multiline_module();
       EMPTY_STRING5 = "";
+      TextboxMultiline = createComponent(function(_a, ref) {
+        var _b = _a, { grow = false, disabled = false, onBlur = noop, onFocus = noop, onInput = noop, onKeyDown = noop, onValueInput = noop, onMouseDown = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, rows = 3, spellCheck = false, validateOnBlur, variant, value: value2 } = _b, rest = __objRest(_b, ["grow", "disabled", "onBlur", "onFocus", "onInput", "onKeyDown", "onValueInput", "onMouseDown", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "rows", "spellCheck", "validateOnBlur", "variant", "value"]);
+        const textAreaElementRef = _2(null);
+        const [originalValue, setOriginalValue] = h2(EMPTY_STRING5);
+        const setTextAreaElementValue = T2(function(value3) {
+          const textAreaElement = getCurrentFromRef(textAreaElementRef);
+          textAreaElement.value = value3;
+          const inputEvent = new window.Event("input", {
+            bubbles: true,
+            cancelable: true
+          });
+          textAreaElement.dispatchEvent(inputEvent);
+        }, []);
+        const handleBlur = T2(function(event) {
+          onBlur(event);
+          if (typeof validateOnBlur !== "undefined") {
+            const result = validateOnBlur(value2);
+            if (typeof result === "string") {
+              setTextAreaElementValue(result);
+              setOriginalValue(EMPTY_STRING5);
+              return;
+            }
+            if (result === false) {
+              if (value2 !== originalValue) {
+                setTextAreaElementValue(originalValue);
+              }
+              setOriginalValue(EMPTY_STRING5);
+              return;
+            }
+          }
+          setOriginalValue(EMPTY_STRING5);
+        }, [onBlur, originalValue, setTextAreaElementValue, validateOnBlur, value2]);
+        const handleFocus = T2(function(event) {
+          onFocus(event);
+          setOriginalValue(value2);
+          event.currentTarget.select();
+        }, [onFocus, value2]);
+        const handleInput = T2(function(event) {
+          onInput(event);
+          const newValue = event.currentTarget.value;
+          onValueInput(newValue);
+        }, [onInput, onValueInput]);
+        const handleKeyDown = T2(function(event) {
+          onKeyDown(event);
+          if (event.key === "Escape") {
+            if (revertOnEscapeKeyDown === true) {
+              setTextAreaElementValue(originalValue);
+              setOriginalValue(EMPTY_STRING5);
+            }
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            event.currentTarget.blur();
+            return;
+          }
+          if (value2 === MIXED_STRING && isKeyCodeCharacterGenerating(event.keyCode) === false) {
+            event.preventDefault();
+            event.currentTarget.select();
+          }
+        }, [
+          onKeyDown,
+          originalValue,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          setTextAreaElementValue,
+          value2
+        ]);
+        const handleMouseDown = T2(function(event) {
+          onMouseDown(event);
+          if (value2 === MIXED_STRING) {
+            event.preventDefault();
+            event.currentTarget.select();
+          }
+        }, [onMouseDown, value2]);
+        const refCallback = T2(function(textAreaElement) {
+          textAreaElementRef.current = textAreaElement;
+          if (ref === null) {
+            return;
+          }
+          if (typeof ref === "function") {
+            ref(textAreaElement);
+            return;
+          }
+          ref.current = textAreaElement;
+        }, [ref]);
+        return y(
+          "div",
+          { class: createClassName([
+            textbox_multiline_module_default.textboxMultiline,
+            typeof variant === "undefined" ? null : variant === "border" ? textbox_multiline_module_default.hasBorder : null,
+            grow === true ? textbox_multiline_module_default.grow : null,
+            disabled === true ? textbox_multiline_module_default.disabled : null
+          ]) },
+          grow === true ? y("div", { class: textbox_multiline_module_default.ghost }, value2 === MIXED_STRING ? "Mixed" : `${value2} `) : null,
+          y("textarea", __spreadProps(__spreadValues({}, rest), { ref: refCallback, class: textbox_multiline_module_default.textarea, disabled: disabled === true, onBlur: handleBlur, onFocus: handleFocus, onInput: handleInput, onKeyDown: handleKeyDown, onMouseDown: handleMouseDown, placeholder, rows, spellcheck: spellCheck, tabIndex: 0, value: value2 === MIXED_STRING ? "Mixed" : value2 })),
+          y("div", { class: textbox_multiline_module_default.border }),
+          variant === "underline" ? y("div", { class: textbox_multiline_module_default.underline }) : null
+        );
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e88f9939-7109-4b2c-a355-509254e583cf/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb73234a-ff0b-400a-a935-fe293b8689cf/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e88f9939-7109-4b2c-a355-509254e583cf/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb73234a-ff0b-400a-a935-fe293b8689cf/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3755,10 +4307,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/97f2178b-d0f8-45d7-92cd-abd8c6647317/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eecef1d-5295-4966-a956-a49fc6a308e4/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/97f2178b-d0f8-45d7-92cd-abd8c6647317/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eecef1d-5295-4966-a956-a49fc6a308e4/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -3775,35 +4327,37 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js
-  function TextboxNumeric(_a) {
-    var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
-    if (typeof icon === "string" && icon.length !== 1) {
-      throw new Error(`String \`icon\` must be a single character: ${icon}`);
-    }
-    return y(
-      "div",
-      { class: createClassName([
-        textbox_module_default2.textbox,
-        typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default2.hasBorder : null,
-        typeof icon === "undefined" ? null : textbox_module_default2.hasIcon,
-        rest.disabled === true ? textbox_module_default2.disabled : null
-      ]) },
-      y(RawTextboxNumeric, __spreadProps(__spreadValues({}, rest), { class: createClassName([
-        textbox_module_default2.input,
-        textbox_numeric_module_default.input
-      ]) })),
-      typeof icon === "undefined" ? null : y("div", { class: textbox_module_default2.icon }, icon),
-      y("div", { class: textbox_module_default2.border }),
-      variant === "underline" ? y("div", { class: textbox_module_default2.underline }) : null
-    );
-  }
+  var TextboxNumeric;
   var init_textbox_numeric = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/textbox-numeric.js"() {
       init_preact_module();
       init_create_class_name();
+      init_create_component();
       init_textbox_module2();
       init_raw_textbox_numeric();
       init_textbox_numeric_module();
+      TextboxNumeric = createComponent(function(_a, ref) {
+        var _b = _a, { icon, variant } = _b, rest = __objRest(_b, ["icon", "variant"]);
+        if (typeof icon === "string" && icon.length !== 1) {
+          throw new Error(`String \`icon\` must be a single character: ${icon}`);
+        }
+        return y(
+          "div",
+          { class: createClassName([
+            textbox_module_default2.textbox,
+            typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default2.hasBorder : null,
+            typeof icon === "undefined" ? null : textbox_module_default2.hasIcon,
+            rest.disabled === true ? textbox_module_default2.disabled : null
+          ]) },
+          y(RawTextboxNumeric, __spreadProps(__spreadValues({}, rest), { ref, class: createClassName([
+            textbox_module_default2.input,
+            textbox_numeric_module_default.input
+          ]) })),
+          typeof icon === "undefined" ? null : y("div", { class: textbox_module_default2.icon }, icon),
+          y("div", { class: textbox_module_default2.border }),
+          variant === "underline" ? y("div", { class: textbox_module_default2.underline }) : null
+        );
+      });
     }
   });
 
@@ -3812,7 +4366,7 @@ video {
   var init_icon_chevron_down_16 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-chevron-down-16.js"() {
       init_create_icon();
-      IconChevronDown16 = createIcon("m7.646 9.708-3-3L5.354 6 8 8.647 10.646 6l.708.708-3 3-.354.353-.354-.353Z", { height: 16, width: 16 });
+      IconChevronDown16 = createIcon("m7.646 9.708-3-3L5.354 6 8 8.647 10.646 6l.708.708-3 3-.354.353z", { height: 16, width: 16 });
     }
   });
 
@@ -3821,7 +4375,7 @@ video {
   var init_icon_minus_32 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-minus-32.js"() {
       init_create_icon();
-      IconMinus32 = createIcon("M21.5 16.5h-11v-1h11v1Z", {
+      IconMinus32 = createIcon("M21.5 16.5h-11v-1h11z", {
         height: 32,
         width: 32
       });
@@ -3833,14 +4387,14 @@ video {
   var init_icon_plus_32 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-plus-32.js"() {
       init_create_icon();
-      IconPlus32 = createIcon("M15.5 15.5v-5h1v5h5v1h-5v5h-1v-5h-5v-1h5Z", { height: 32, width: 32 });
+      IconPlus32 = createIcon("M15.5 15.5v-5h1v5h5v1h-5v5h-1v-5h-5v-1z", { height: 32, width: 32 });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/241c3530-f988-49ad-aaab-ed9db4849c18/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f14b161-0731-4070-b51e-c478fd8a95ca/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/241c3530-f988-49ad-aaab-ed9db4849c18/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f14b161-0731-4070-b51e-c478fd8a95ca/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -3856,37 +4410,34 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js
-  function Muted(_a) {
-    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return y("span", __spreadProps(__spreadValues({}, rest), { class: muted_module_default.muted }), children);
-  }
+  var Muted;
   var init_muted = __esm({
     "node_modules/@create-figma-plugin/ui/lib/inline-text/muted/muted.js"() {
       init_preact_module();
+      init_create_component();
       init_muted_module();
+      Muted = createComponent(function(_a, ref) {
+        var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+        return y("span", __spreadProps(__spreadValues({}, rest), { ref, class: muted_module_default.muted }), children);
+      });
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/73bba7ca-3476-4bd7-99ea-33a9cc3440a2/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05559556-6c91-40ec-91e5-aa7127d20d9a/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/73bba7ca-3476-4bd7-99ea-33a9cc3440a2/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05559556-6c91-40ec-91e5-aa7127d20d9a/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
-        element.textContent = `@import url('https://fonts.googleapis.com/css?family=Inter:400,600&display=swap');
-
-:root {
-  /* border-radius */
+        element.innerHTML = `:root {
   --border-radius-2: 2px;
   --border-radius-6: 6px;
-  /* box-shadow */
   --box-shadow: var(--box-shadow-menu);
   --box-shadow-menu: 0 5px 17px rgba(0, 0, 0, 0.2),
     0 2px 7px rgba(0, 0, 0, 0.15), inset 0 0 0 0.5px #000000,
     0 0 0 0.5px rgba(0, 0, 0, 0.1);
   --box-shadow-modal: 0 2px 14px rgba(0, 0, 0, 0.15),
     0 0 0 0.5px rgba(0, 0, 0, 0.2);
-  /* font */
   --font-family: 'Inter', 'Helvetica', sans-serif;
   --font-family-code: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
@@ -3895,15 +4446,12 @@ video {
   --font-weight-regular: 400;
   --font-weight-bold: 600;
   --line-height-16: 16px;
-  /* opacity */
   --opacity-30: 0.3;
-  /* space */
   --space-extra-small: 8px;
   --space-small: 12px;
   --space-medium: 16px;
   --space-large: 20px;
   --space-extra-large: 24px;
-  /* z-index */
   --z-index-1: 1;
   --z-index-2: 2;
 }
@@ -4208,7 +4756,7 @@ svg {
     "node_modules/@material/material-color-utilities/hct/viewing_conditions.js"() {
       init_color_utils();
       init_math_utils();
-      ViewingConditions = class {
+      ViewingConditions = class _ViewingConditions {
         /**
          * Create ViewingConditions from a simple, physically relevant, set of
          * parameters.
@@ -4265,7 +4813,7 @@ svg {
             400 * rgbAFactors[2] / (rgbAFactors[2] + 27.13)
           ];
           const aw = (2 * rgbA[0] + rgbA[1] + 0.05 * rgbA[2]) * nbb;
-          return new ViewingConditions(n3, aw, nbb, ncb, c3, nc, rgbD, fl, Math.pow(fl, 0.25), z5);
+          return new _ViewingConditions(n3, aw, nbb, ncb, c3, nc, rgbD, fl, Math.pow(fl, 0.25), z5);
         }
         /**
          * Parameters are intermediate values of the CAM16 conversion process. Their
@@ -4298,7 +4846,7 @@ svg {
       init_color_utils();
       init_math_utils();
       init_viewing_conditions();
-      Cam16 = class {
+      Cam16 = class _Cam16 {
         /**
          * All of the CAM16 dimensions can be calculated from 3 of the dimensions, in
          * the following combinations:
@@ -4349,7 +4897,7 @@ svg {
          *     conditions.
          */
         static fromInt(argb) {
-          return Cam16.fromIntInViewingConditions(argb, ViewingConditions.DEFAULT);
+          return _Cam16.fromIntInViewingConditions(argb, ViewingConditions.DEFAULT);
         }
         /**
          * @param argb ARGB representation of a color.
@@ -4402,7 +4950,7 @@ svg {
           const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m3);
           const astar = mstar * Math.cos(hueRadians);
           const bstar = mstar * Math.sin(hueRadians);
-          return new Cam16(hue, c3, j4, q4, m3, s3, jstar, astar, bstar);
+          return new _Cam16(hue, c3, j4, q4, m3, s3, jstar, astar, bstar);
         }
         /**
          * @param j CAM16 lightness
@@ -4410,7 +4958,7 @@ svg {
          * @param h CAM16 hue
          */
         static fromJch(j4, c3, h3) {
-          return Cam16.fromJchInViewingConditions(j4, c3, h3, ViewingConditions.DEFAULT);
+          return _Cam16.fromJchInViewingConditions(j4, c3, h3, ViewingConditions.DEFAULT);
         }
         /**
          * @param j CAM16 lightness
@@ -4429,7 +4977,7 @@ svg {
           const mstar = 1 / 0.0228 * Math.log(1 + 0.0228 * m3);
           const astar = mstar * Math.cos(hueRadians);
           const bstar = mstar * Math.sin(hueRadians);
-          return new Cam16(h3, c3, j4, q4, m3, s3, jstar, astar, bstar);
+          return new _Cam16(h3, c3, j4, q4, m3, s3, jstar, astar, bstar);
         }
         /**
          * @param jstar CAM16-UCS lightness.
@@ -4439,7 +4987,7 @@ svg {
          *     coordinate on the X axis.
          */
         static fromUcs(jstar, astar, bstar) {
-          return Cam16.fromUcsInViewingConditions(jstar, astar, bstar, ViewingConditions.DEFAULT);
+          return _Cam16.fromUcsInViewingConditions(jstar, astar, bstar, ViewingConditions.DEFAULT);
         }
         /**
          * @param jstar CAM16-UCS lightness.
@@ -4461,7 +5009,7 @@ svg {
             h3 += 360;
           }
           const j4 = jstar / (1 - (jstar - 100) * 7e-3);
-          return Cam16.fromJchInViewingConditions(j4, c3, h3, viewingConditions);
+          return _Cam16.fromJchInViewingConditions(j4, c3, h3, viewingConditions);
         }
         /**
          *  @return ARGB representation of color, assuming the color was viewed in
@@ -4545,7 +5093,7 @@ svg {
           const mstar = Math.log(1 + 0.0228 * M3) / 0.0228;
           const astar = mstar * Math.cos(hueRadians);
           const bstar = mstar * Math.sin(hueRadians);
-          return new Cam16(hue, C3, J2, Q3, M3, s3, jstar, astar, bstar);
+          return new _Cam16(hue, C3, J2, Q3, M3, s3, jstar, astar, bstar);
         }
         /// XYZ representation of CAM16 seen in [viewingConditions].
         xyzInViewingConditions(viewingConditions) {
@@ -4590,7 +5138,7 @@ svg {
       init_math_utils();
       init_cam16();
       init_viewing_conditions();
-      HctSolver = class {
+      HctSolver = class _HctSolver {
         /**
          * Sanitizes a small enough angle in radians.
          *
@@ -4631,17 +5179,17 @@ svg {
          * @return The hue of the color in CAM16, in radians.
          */
         static hueOf(linrgb) {
-          const scaledDiscount = matrixMultiply(linrgb, HctSolver.SCALED_DISCOUNT_FROM_LINRGB);
-          const rA = HctSolver.chromaticAdaptation(scaledDiscount[0]);
-          const gA = HctSolver.chromaticAdaptation(scaledDiscount[1]);
-          const bA = HctSolver.chromaticAdaptation(scaledDiscount[2]);
+          const scaledDiscount = matrixMultiply(linrgb, _HctSolver.SCALED_DISCOUNT_FROM_LINRGB);
+          const rA = _HctSolver.chromaticAdaptation(scaledDiscount[0]);
+          const gA = _HctSolver.chromaticAdaptation(scaledDiscount[1]);
+          const bA = _HctSolver.chromaticAdaptation(scaledDiscount[2]);
           const a3 = (11 * rA + -12 * gA + bA) / 11;
           const b3 = (rA + gA - 2 * bA) / 9;
           return Math.atan2(b3, a3);
         }
         static areInCyclicOrder(a3, b3, c3) {
-          const deltaAB = HctSolver.sanitizeRadians(b3 - a3);
-          const deltaAC = HctSolver.sanitizeRadians(c3 - a3);
+          const deltaAB = _HctSolver.sanitizeRadians(b3 - a3);
+          const deltaAC = _HctSolver.sanitizeRadians(c3 - a3);
           return deltaAB < deltaAC;
         }
         /**
@@ -4674,8 +5222,8 @@ svg {
          * R=coordinate, G=coordinate, or B=coordinate
          */
         static setCoordinate(source, coordinate, target, axis) {
-          const t3 = HctSolver.intercept(source[axis], coordinate, target[axis]);
-          return HctSolver.lerpPoint(source, t3, target);
+          const t3 = _HctSolver.intercept(source[axis], coordinate, target[axis]);
+          return _HctSolver.lerpPoint(source, t3, target);
         }
         static isBounded(x4) {
           return 0 <= x4 && x4 <= 100;
@@ -4691,16 +5239,16 @@ svg {
          * [-1.0, -1.0, -1.0] is returned.
          */
         static nthVertex(y3, n3) {
-          const kR = HctSolver.Y_FROM_LINRGB[0];
-          const kG = HctSolver.Y_FROM_LINRGB[1];
-          const kB = HctSolver.Y_FROM_LINRGB[2];
+          const kR = _HctSolver.Y_FROM_LINRGB[0];
+          const kG = _HctSolver.Y_FROM_LINRGB[1];
+          const kB = _HctSolver.Y_FROM_LINRGB[2];
           const coordA = n3 % 4 <= 1 ? 0 : 100;
           const coordB = n3 % 2 === 0 ? 0 : 100;
           if (n3 < 4) {
             const g4 = coordA;
             const b3 = coordB;
             const r3 = (y3 - g4 * kG - b3 * kB) / kR;
-            if (HctSolver.isBounded(r3)) {
+            if (_HctSolver.isBounded(r3)) {
               return [r3, g4, b3];
             } else {
               return [-1, -1, -1];
@@ -4709,7 +5257,7 @@ svg {
             const b3 = coordA;
             const r3 = coordB;
             const g4 = (y3 - r3 * kR - b3 * kB) / kG;
-            if (HctSolver.isBounded(g4)) {
+            if (_HctSolver.isBounded(g4)) {
               return [r3, g4, b3];
             } else {
               return [-1, -1, -1];
@@ -4718,7 +5266,7 @@ svg {
             const r3 = coordA;
             const g4 = coordB;
             const b3 = (y3 - r3 * kR - g4 * kG) / kB;
-            if (HctSolver.isBounded(b3)) {
+            if (_HctSolver.isBounded(b3)) {
               return [r3, g4, b3];
             } else {
               return [-1, -1, -1];
@@ -4742,11 +5290,11 @@ svg {
           let initialized = false;
           let uncut = true;
           for (let n3 = 0; n3 < 12; n3++) {
-            const mid = HctSolver.nthVertex(y3, n3);
+            const mid = _HctSolver.nthVertex(y3, n3);
             if (mid[0] < 0) {
               continue;
             }
-            const midHue = HctSolver.hueOf(mid);
+            const midHue = _HctSolver.hueOf(mid);
             if (!initialized) {
               left = mid;
               right = mid;
@@ -4755,9 +5303,9 @@ svg {
               initialized = true;
               continue;
             }
-            if (uncut || HctSolver.areInCyclicOrder(leftHue, midHue, rightHue)) {
+            if (uncut || _HctSolver.areInCyclicOrder(leftHue, midHue, rightHue)) {
               uncut = false;
-              if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+              if (_HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
                 right = mid;
                 rightHue = midHue;
               } else {
@@ -4790,30 +5338,30 @@ svg {
          * @return The desired color, in linear RGB coordinates.
          */
         static bisectToLimit(y3, targetHue) {
-          const segment = HctSolver.bisectToSegment(y3, targetHue);
+          const segment = _HctSolver.bisectToSegment(y3, targetHue);
           let left = segment[0];
-          let leftHue = HctSolver.hueOf(left);
+          let leftHue = _HctSolver.hueOf(left);
           let right = segment[1];
           for (let axis = 0; axis < 3; axis++) {
             if (left[axis] !== right[axis]) {
               let lPlane = -1;
               let rPlane = 255;
               if (left[axis] < right[axis]) {
-                lPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(left[axis]));
-                rPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(right[axis]));
+                lPlane = _HctSolver.criticalPlaneBelow(_HctSolver.trueDelinearized(left[axis]));
+                rPlane = _HctSolver.criticalPlaneAbove(_HctSolver.trueDelinearized(right[axis]));
               } else {
-                lPlane = HctSolver.criticalPlaneAbove(HctSolver.trueDelinearized(left[axis]));
-                rPlane = HctSolver.criticalPlaneBelow(HctSolver.trueDelinearized(right[axis]));
+                lPlane = _HctSolver.criticalPlaneAbove(_HctSolver.trueDelinearized(left[axis]));
+                rPlane = _HctSolver.criticalPlaneBelow(_HctSolver.trueDelinearized(right[axis]));
               }
               for (let i5 = 0; i5 < 8; i5++) {
                 if (Math.abs(rPlane - lPlane) <= 1) {
                   break;
                 } else {
                   const mPlane = Math.floor((lPlane + rPlane) / 2);
-                  const midPlaneCoordinate = HctSolver.CRITICAL_PLANES[mPlane];
-                  const mid = HctSolver.setCoordinate(left, midPlaneCoordinate, right, axis);
-                  const midHue = HctSolver.hueOf(mid);
-                  if (HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
+                  const midPlaneCoordinate = _HctSolver.CRITICAL_PLANES[mPlane];
+                  const mid = _HctSolver.setCoordinate(left, midPlaneCoordinate, right, axis);
+                  const midHue = _HctSolver.hueOf(mid);
+                  if (_HctSolver.areInCyclicOrder(leftHue, targetHue, midHue)) {
                     right = mid;
                     rPlane = mPlane;
                   } else {
@@ -4825,7 +5373,7 @@ svg {
               }
             }
           }
-          return HctSolver.midpoint(left, right);
+          return _HctSolver.midpoint(left, right);
         }
         static inverseChromaticAdaptation(adapted) {
           const adaptedAbs = Math.abs(adapted);
@@ -4861,16 +5409,16 @@ svg {
             const rA = (460 * p22 + 451 * a3 + 288 * b3) / 1403;
             const gA = (460 * p22 - 891 * a3 - 261 * b3) / 1403;
             const bA = (460 * p22 - 220 * a3 - 6300 * b3) / 1403;
-            const rCScaled = HctSolver.inverseChromaticAdaptation(rA);
-            const gCScaled = HctSolver.inverseChromaticAdaptation(gA);
-            const bCScaled = HctSolver.inverseChromaticAdaptation(bA);
-            const linrgb = matrixMultiply([rCScaled, gCScaled, bCScaled], HctSolver.LINRGB_FROM_SCALED_DISCOUNT);
+            const rCScaled = _HctSolver.inverseChromaticAdaptation(rA);
+            const gCScaled = _HctSolver.inverseChromaticAdaptation(gA);
+            const bCScaled = _HctSolver.inverseChromaticAdaptation(bA);
+            const linrgb = matrixMultiply([rCScaled, gCScaled, bCScaled], _HctSolver.LINRGB_FROM_SCALED_DISCOUNT);
             if (linrgb[0] < 0 || linrgb[1] < 0 || linrgb[2] < 0) {
               return 0;
             }
-            const kR = HctSolver.Y_FROM_LINRGB[0];
-            const kG = HctSolver.Y_FROM_LINRGB[1];
-            const kB = HctSolver.Y_FROM_LINRGB[2];
+            const kR = _HctSolver.Y_FROM_LINRGB[0];
+            const kG = _HctSolver.Y_FROM_LINRGB[1];
+            const kB = _HctSolver.Y_FROM_LINRGB[2];
             const fnj = kR * linrgb[0] + kG * linrgb[1] + kB * linrgb[2];
             if (fnj <= 0) {
               return 0;
@@ -4904,11 +5452,11 @@ svg {
           hueDegrees = sanitizeDegreesDouble(hueDegrees);
           const hueRadians = hueDegrees / 180 * Math.PI;
           const y3 = yFromLstar(lstar);
-          const exactAnswer = HctSolver.findResultByJ(hueRadians, chroma, y3);
+          const exactAnswer = _HctSolver.findResultByJ(hueRadians, chroma, y3);
           if (exactAnswer !== 0) {
             return exactAnswer;
           }
-          const linrgb = HctSolver.bisectToLimit(y3, hueRadians);
+          const linrgb = _HctSolver.bisectToLimit(y3, hueRadians);
           return argbFromLinrgb(linrgb);
         }
         /**
@@ -4924,7 +5472,7 @@ svg {
          * sufficiently close, and chroma will be maximized.
          */
         static solveToCam(hueDegrees, chroma, lstar) {
-          return Cam16.fromInt(HctSolver.solveToInt(hueDegrees, chroma, lstar));
+          return Cam16.fromInt(_HctSolver.solveToInt(hueDegrees, chroma, lstar));
         }
       };
       HctSolver.SCALED_DISCOUNT_FROM_LINRGB = [
@@ -5230,16 +5778,16 @@ svg {
       init_cam16();
       init_hct_solver();
       init_viewing_conditions();
-      Hct = class {
+      Hct = class _Hct {
         static from(hue, chroma, tone) {
-          return new Hct(HctSolver.solveToInt(hue, chroma, tone));
+          return new _Hct(HctSolver.solveToInt(hue, chroma, tone));
         }
         /**
          * @param argb ARGB representation of a color.
          * @return HCT representation of a color in default viewing conditions
          */
         static fromInt(argb) {
-          return new Hct(argb);
+          return new _Hct(argb);
         }
         toInt() {
           return this.argb;
@@ -5315,7 +5863,7 @@ svg {
           const cam = Cam16.fromInt(this.toInt());
           const viewedInVc = cam.xyzInViewingConditions(vc);
           const recastInVc = Cam16.fromXyzInViewingConditions(viewedInVc[0], viewedInVc[1], viewedInVc[2], ViewingConditions.make());
-          const recastHct = Hct.from(recastInVc.hue, recastInVc.chroma, lstarFromY(viewedInVc[1]));
+          const recastHct = _Hct.from(recastInVc.hue, recastInVc.chroma, lstarFromY(viewedInVc[1]));
           return recastHct;
         }
       };
@@ -5338,7 +5886,7 @@ svg {
     "node_modules/@material/material-color-utilities/contrast/contrast.js"() {
       init_color_utils();
       init_math_utils();
-      Contrast = class {
+      Contrast = class _Contrast {
         /**
          * Returns a contrast ratio, which ranges from 1 to 21.
          *
@@ -5348,7 +5896,7 @@ svg {
         static ratioOfTones(toneA, toneB) {
           toneA = clampDouble(0, 100, toneA);
           toneB = clampDouble(0, 100, toneB);
-          return Contrast.ratioOfYs(yFromLstar(toneA), yFromLstar(toneB));
+          return _Contrast.ratioOfYs(yFromLstar(toneA), yFromLstar(toneB));
         }
         static ratioOfYs(y1, y22) {
           const lighter = y1 > y22 ? y1 : y22;
@@ -5371,7 +5919,7 @@ svg {
           }
           const darkY = yFromLstar(tone);
           const lightY = ratio * (darkY + 5) - 5;
-          const realContrast = Contrast.ratioOfYs(lightY, darkY);
+          const realContrast = _Contrast.ratioOfYs(lightY, darkY);
           const delta = Math.abs(realContrast - ratio);
           if (realContrast < ratio && delta > 0.04) {
             return -1;
@@ -5398,7 +5946,7 @@ svg {
           }
           const lightY = yFromLstar(tone);
           const darkY = (lightY + 5) / ratio - 5;
-          const realContrast = Contrast.ratioOfYs(lightY, darkY);
+          const realContrast = _Contrast.ratioOfYs(lightY, darkY);
           const delta = Math.abs(realContrast - ratio);
           if (realContrast < ratio && delta > 0.04) {
             return -1;
@@ -5424,7 +5972,7 @@ svg {
          * Range is 1 to 21, invalid values have undefined behavior.
          */
         static lighterUnsafe(tone, ratio) {
-          const lighterSafe = Contrast.lighter(tone, ratio);
+          const lighterSafe = _Contrast.lighter(tone, ratio);
           return lighterSafe < 0 ? 100 : lighterSafe;
         }
         /**
@@ -5442,7 +5990,7 @@ svg {
          * Range is 1 to 21, invalid values have undefined behavior.
          */
         static darkerUnsafe(tone, ratio) {
-          const darkerSafe = Contrast.darker(tone, ratio);
+          const darkerSafe = _Contrast.darker(tone, ratio);
           return darkerSafe < 0 ? 0 : darkerSafe;
         }
       };
@@ -5454,7 +6002,7 @@ svg {
   var init_dislike_analyzer = __esm({
     "node_modules/@material/material-color-utilities/dislike/dislike_analyzer.js"() {
       init_hct();
-      DislikeAnalyzer = class {
+      DislikeAnalyzer = class _DislikeAnalyzer {
         /**
          * Returns true if a color is disliked.
          *
@@ -5477,7 +6025,7 @@ svg {
          *   color if it is acceptable.
          */
         static fixIfDisliked(hct) {
-          if (DislikeAnalyzer.isDisliked(hct)) {
+          if (_DislikeAnalyzer.isDisliked(hct)) {
             return Hct.from(hct.hue, hct.chroma, 70);
           }
           return hct;
@@ -5492,7 +6040,7 @@ svg {
     "node_modules/@material/material-color-utilities/dynamiccolor/dynamic_color.js"() {
       init_contrast();
       init_math_utils();
-      DynamicColor = class {
+      DynamicColor = class _DynamicColor {
         /**
          * Create a DynamicColor defined by a TonalPalette and HCT tone.
          *
@@ -5501,7 +6049,7 @@ svg {
          */
         static fromPalette(args) {
           var _a, _b;
-          return new DynamicColor((_a = args.name) != null ? _a : "", args.palette, args.tone, (_b = args.isBackground) != null ? _b : false, args.background, args.secondBackground, args.contrastCurve, args.toneDeltaPair);
+          return new _DynamicColor((_a = args.name) != null ? _a : "", args.palette, args.tone, (_b = args.isBackground) != null ? _b : false, args.background, args.secondBackground, args.contrastCurve, args.toneDeltaPair);
         }
         /**
          * The base constructor for DynamicColor.
@@ -5535,8 +6083,8 @@ svg {
          * constraint between two colors. One of them must be the color being
          * constructed.
          */
-        constructor(name307, palette, tone, isBackground, background, secondBackground, contrastCurve, toneDeltaPair) {
-          this.name = name307;
+        constructor(name310, palette, tone, isBackground, background, secondBackground, contrastCurve, toneDeltaPair) {
+          this.name = name310;
           this.palette = palette;
           this.tone = tone;
           this.isBackground = isBackground;
@@ -5546,13 +6094,13 @@ svg {
           this.toneDeltaPair = toneDeltaPair;
           this.hctCache = /* @__PURE__ */ new Map();
           if (!background && secondBackground) {
-            throw new Error(`Color ${name307} has secondBackgrounddefined, but background is not defined.`);
+            throw new Error(`Color ${name310} has secondBackgrounddefined, but background is not defined.`);
           }
           if (!background && contrastCurve) {
-            throw new Error(`Color ${name307} has contrastCurvedefined, but background is not defined.`);
+            throw new Error(`Color ${name310} has contrastCurvedefined, but background is not defined.`);
           }
           if (background && !contrastCurve) {
-            throw new Error(`Color ${name307} has backgrounddefined, but contrastCurve is not defined.`);
+            throw new Error(`Color ${name310} has backgrounddefined, but contrastCurve is not defined.`);
           }
         }
         /**
@@ -5613,12 +6161,12 @@ svg {
             const nContrast = nearer.contrastCurve.getContrast(scheme.contrastLevel);
             const fContrast = farther.contrastCurve.getContrast(scheme.contrastLevel);
             const nInitialTone = nearer.tone(scheme);
-            let nTone = Contrast.ratioOfTones(bgTone, nInitialTone) >= nContrast ? nInitialTone : DynamicColor.foregroundTone(bgTone, nContrast);
+            let nTone = Contrast.ratioOfTones(bgTone, nInitialTone) >= nContrast ? nInitialTone : _DynamicColor.foregroundTone(bgTone, nContrast);
             const fInitialTone = farther.tone(scheme);
-            let fTone = Contrast.ratioOfTones(bgTone, fInitialTone) >= fContrast ? fInitialTone : DynamicColor.foregroundTone(bgTone, fContrast);
+            let fTone = Contrast.ratioOfTones(bgTone, fInitialTone) >= fContrast ? fInitialTone : _DynamicColor.foregroundTone(bgTone, fContrast);
             if (decreasingContrast) {
-              nTone = DynamicColor.foregroundTone(bgTone, nContrast);
-              fTone = DynamicColor.foregroundTone(bgTone, fContrast);
+              nTone = _DynamicColor.foregroundTone(bgTone, nContrast);
+              fTone = _DynamicColor.foregroundTone(bgTone, fContrast);
             }
             if ((fTone - nTone) * expansionDir >= delta) {
             } else {
@@ -5663,10 +6211,10 @@ svg {
             const desiredRatio = this.contrastCurve.getContrast(scheme.contrastLevel);
             if (Contrast.ratioOfTones(bgTone, answer) >= desiredRatio) {
             } else {
-              answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+              answer = _DynamicColor.foregroundTone(bgTone, desiredRatio);
             }
             if (decreasingContrast) {
-              answer = DynamicColor.foregroundTone(bgTone, desiredRatio);
+              answer = _DynamicColor.foregroundTone(bgTone, desiredRatio);
             }
             if (this.isBackground && 50 <= answer && answer < 60) {
               if (Contrast.ratioOfTones(49, bgTone) >= desiredRatio) {
@@ -5689,7 +6237,7 @@ svg {
                 availables.push(lightOption);
               if (darkOption !== -1)
                 availables.push(darkOption);
-              const prefersLight = DynamicColor.tonePrefersLightForeground(bgTone1) || DynamicColor.tonePrefersLightForeground(bgTone2);
+              const prefersLight = _DynamicColor.tonePrefersLightForeground(bgTone1) || _DynamicColor.tonePrefersLightForeground(bgTone2);
               if (prefersLight) {
                 return lightOption < 0 ? 100 : lightOption;
               }
@@ -5715,7 +6263,7 @@ svg {
           const darkerTone = Contrast.darkerUnsafe(bgTone, ratio);
           const lighterRatio = Contrast.ratioOfTones(lighterTone, bgTone);
           const darkerRatio = Contrast.ratioOfTones(darkerTone, bgTone);
-          const preferLighter = DynamicColor.tonePrefersLightForeground(bgTone);
+          const preferLighter = _DynamicColor.tonePrefersLightForeground(bgTone);
           if (preferLighter) {
             const negligibleDifference = Math.abs(lighterRatio - darkerRatio) < 0.1 && lighterRatio < ratio && darkerRatio < ratio;
             return lighterRatio >= ratio || lighterRatio >= darkerRatio || negligibleDifference ? lighterTone : darkerTone;
@@ -5749,7 +6297,7 @@ svg {
          * reasonably close to supporting it.
          */
         static enableLightForeground(tone) {
-          if (DynamicColor.tonePrefersLightForeground(tone) && !DynamicColor.toneAllowsLightForeground(tone)) {
+          if (_DynamicColor.tonePrefersLightForeground(tone) && !_DynamicColor.toneAllowsLightForeground(tone)) {
             return 49;
           }
           return tone;
@@ -5922,9 +6470,9 @@ svg {
       init_contrast_curve();
       init_dynamic_color();
       init_tone_delta_pair();
-      MaterialDynamicColors = class {
+      MaterialDynamicColors = class _MaterialDynamicColors {
         static highestSurface(s3) {
-          return s3.isDark ? MaterialDynamicColors.surfaceBright : MaterialDynamicColors.surfaceDim;
+          return s3.isDark ? _MaterialDynamicColors.surfaceBright : _MaterialDynamicColors.surfaceDim;
         }
       };
       MaterialDynamicColors.contentAccentToneDelta = 15;
@@ -6397,21 +6945,21 @@ svg {
   var init_tonal_palette = __esm({
     "node_modules/@material/material-color-utilities/palettes/tonal_palette.js"() {
       init_hct();
-      TonalPalette = class {
+      TonalPalette = class _TonalPalette {
         /**
          * @param argb ARGB representation of a color
          * @return Tones matching that color's hue and chroma.
          */
         static fromInt(argb) {
           const hct = Hct.fromInt(argb);
-          return TonalPalette.fromHct(hct);
+          return _TonalPalette.fromHct(hct);
         }
         /**
          * @param hct Hct
          * @return Tones matching that color's hue and chroma.
          */
         static fromHct(hct) {
-          return new TonalPalette(hct.hue, hct.chroma, hct);
+          return new _TonalPalette(hct.hue, hct.chroma, hct);
         }
         /**
          * @param hue HCT hue
@@ -6419,7 +6967,7 @@ svg {
          * @return Tones matching hue and chroma.
          */
         static fromHueAndChroma(hue, chroma) {
-          return new TonalPalette(hue, chroma, TonalPalette.createKeyColor(hue, chroma));
+          return new _TonalPalette(hue, chroma, _TonalPalette.createKeyColor(hue, chroma));
         }
         constructor(hue, chroma, keyColor) {
           this.hue = hue;
@@ -6613,7 +7161,7 @@ svg {
       init_math_utils();
       init_dynamic_scheme();
       init_variant();
-      SchemeExpressive = class extends DynamicScheme {
+      SchemeExpressive = class _SchemeExpressive extends DynamicScheme {
         constructor(sourceColorHct, isDark, contrastLevel) {
           super({
             sourceColorArgb: sourceColorHct.toInt(),
@@ -6621,8 +7169,8 @@ svg {
             contrastLevel,
             isDark,
             primaryPalette: TonalPalette.fromHueAndChroma(sanitizeDegreesDouble(sourceColorHct.hue + 240), 40),
-            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.secondaryRotations), 24),
-            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeExpressive.hues, SchemeExpressive.tertiaryRotations), 32),
+            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeExpressive.hues, _SchemeExpressive.secondaryRotations), 24),
+            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeExpressive.hues, _SchemeExpressive.tertiaryRotations), 32),
             neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 8),
             neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue + 15, 12)
           });
@@ -6710,7 +7258,7 @@ svg {
       init_tonal_palette();
       init_dynamic_scheme();
       init_variant();
-      SchemeVibrant = class extends DynamicScheme {
+      SchemeVibrant = class _SchemeVibrant extends DynamicScheme {
         constructor(sourceColorHct, isDark, contrastLevel) {
           super({
             sourceColorArgb: sourceColorHct.toInt(),
@@ -6718,8 +7266,8 @@ svg {
             contrastLevel,
             isDark,
             primaryPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 200),
-            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.secondaryRotations), 24),
-            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, SchemeVibrant.hues, SchemeVibrant.tertiaryRotations), 32),
+            secondaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeVibrant.hues, _SchemeVibrant.secondaryRotations), 24),
+            tertiaryPalette: TonalPalette.fromHueAndChroma(DynamicScheme.getRotatedHue(sourceColorHct, _SchemeVibrant.hues, _SchemeVibrant.tertiaryRotations), 32),
             neutralPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 10),
             neutralVariantPalette: TonalPalette.fromHueAndChroma(sourceColorHct.hue, 12)
           });
@@ -6781,7 +7329,7 @@ svg {
         filter: true
         // Avoid unsuitable colors.
       };
-      Score = class {
+      Score = class _Score {
         constructor() {
         }
         /**
@@ -6821,12 +7369,12 @@ svg {
           for (const hct of colorsHct) {
             const hue = sanitizeDegreesInt(Math.round(hct.hue));
             const proportion = hueExcitedProportions[hue];
-            if (filter3 && (hct.chroma < Score.CUTOFF_CHROMA || proportion <= Score.CUTOFF_EXCITED_PROPORTION)) {
+            if (filter3 && (hct.chroma < _Score.CUTOFF_CHROMA || proportion <= _Score.CUTOFF_EXCITED_PROPORTION)) {
               continue;
             }
-            const proportionScore = proportion * 100 * Score.WEIGHT_PROPORTION;
-            const chromaWeight = hct.chroma < Score.TARGET_CHROMA ? Score.WEIGHT_CHROMA_BELOW : Score.WEIGHT_CHROMA_ABOVE;
-            const chromaScore = (hct.chroma - Score.TARGET_CHROMA) * chromaWeight;
+            const proportionScore = proportion * 100 * _Score.WEIGHT_PROPORTION;
+            const chromaWeight = hct.chroma < _Score.TARGET_CHROMA ? _Score.WEIGHT_CHROMA_BELOW : _Score.WEIGHT_CHROMA_ABOVE;
+            const chromaScore = (hct.chroma - _Score.TARGET_CHROMA) * chromaWeight;
             const score = proportionScore + chromaScore;
             scoredHct.push({ hct, score });
           }
@@ -7097,7 +7645,7 @@ svg {
       typeName: ZodFirstPartyTypeKind.ZodEnum
     }, processCreateParams(params)));
   }
-  var util, objectUtil, ZodParsedType, getParsedType, ZodIssueCode, quotelessJson, ZodError, errorMap, overrideErrorMap, makeIssue, EMPTY_PATH, ParseStatus, INVALID, DIRTY, OK, isAborted, isDirty, isValid, isAsync, errorUtil, ParseInputLazyPath, handleResult, ZodType, cuidRegex, cuid2Regex, ulidRegex, uuidRegex, emailRegex, _emojiRegex, emojiRegex, ipv4Regex, ipv6Regex, datetimeRegex, ZodString, ZodNumber, ZodBigInt, ZodBoolean, ZodDate, ZodSymbol, ZodUndefined, ZodNull, ZodAny, ZodUnknown, ZodNever, ZodVoid, ZodArray, ZodObject, ZodUnion, getDiscriminator, ZodDiscriminatedUnion, ZodIntersection, ZodTuple, ZodRecord, ZodMap, ZodSet, ZodFunction, ZodLazy, ZodLiteral, ZodEnum, ZodNativeEnum, ZodPromise, ZodEffects, ZodOptional, ZodNullable, ZodDefault, ZodCatch, ZodNaN, BRAND, ZodBranded, ZodPipeline, ZodReadonly, custom, late, ZodFirstPartyTypeKind, instanceOfType, stringType, numberType, nanType, bigIntType, booleanType, dateType, symbolType, undefinedType, nullType, anyType, unknownType, neverType, voidType, arrayType, objectType, strictObjectType, unionType, discriminatedUnionType, intersectionType, tupleType, recordType, mapType, setType, functionType, lazyType, literalType, enumType, nativeEnumType, promiseType, effectsType, optionalType, nullableType, preprocessType, pipelineType, ostring, onumber, oboolean, coerce, NEVER, z3;
+  var util, objectUtil, ZodParsedType, getParsedType, ZodIssueCode, quotelessJson, ZodError, errorMap, overrideErrorMap, makeIssue, EMPTY_PATH, ParseStatus, INVALID, DIRTY, OK, isAborted, isDirty, isValid, isAsync, errorUtil, ParseInputLazyPath, handleResult, ZodType, cuidRegex, cuid2Regex, ulidRegex, uuidRegex, emailRegex, _emojiRegex, emojiRegex, ipv4Regex, ipv6Regex, datetimeRegex, ZodString, ZodNumber, ZodBigInt, ZodBoolean, ZodDate, ZodSymbol, ZodUndefined, ZodNull, ZodAny, ZodUnknown, ZodNever, ZodVoid, ZodArray, ZodObject, ZodUnion, getDiscriminator, ZodDiscriminatedUnion, ZodIntersection, ZodTuple, ZodRecord, ZodMap, ZodSet, ZodFunction, ZodLazy, ZodLiteral, ZodEnum, ZodNativeEnum, ZodPromise, ZodEffects, ZodOptional, ZodNullable, ZodDefault, ZodCatch, ZodNaN, BRAND, ZodBranded, ZodPipeline, ZodReadonly, custom, late, ZodFirstPartyTypeKind, instanceOfType, stringType, numberType, nanType, bigIntType, booleanType, dateType, symbolType, undefinedType, nullType, anyType, unknownType, neverType, voidType, arrayType, objectType, strictObjectType, unionType, discriminatedUnionType, intersectionType, tupleType, recordType, mapType, setType, functionType, lazyType, literalType, enumType, nativeEnumType, promiseType, effectsType, optionalType, nullableType, preprocessType, pipelineType, ostring, onumber, oboolean, coerce, NEVER, z4;
   var init_lib3 = __esm({
     "node_modules/zod/lib/index.mjs"() {
       (function(util2) {
@@ -7451,7 +7999,7 @@ svg {
         });
       };
       EMPTY_PATH = [];
-      ParseStatus = class {
+      ParseStatus = class _ParseStatus {
         constructor() {
           this.value = "valid";
         }
@@ -7482,7 +8030,7 @@ svg {
               value: await pair.value
             });
           }
-          return ParseStatus.mergeObjectSync(status, syncPairs);
+          return _ParseStatus.mergeObjectSync(status, syncPairs);
         }
         static mergeObjectSync(status, pairs) {
           const finalObject = {};
@@ -7820,7 +8368,7 @@ svg {
           }
         }
       };
-      ZodString = class extends ZodType {
+      ZodString = class _ZodString extends ZodType {
         _parse(input) {
           if (this._def.coerce) {
             input.data = String(input.data);
@@ -8051,7 +8599,7 @@ svg {
           }, errorUtil.errToObj(message)));
         }
         _addCheck(check) {
-          return new ZodString(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodString(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, check]
           }));
         }
@@ -8146,17 +8694,17 @@ svg {
           return this.min(1, errorUtil.errToObj(message));
         }
         trim() {
-          return new ZodString(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodString(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, { kind: "trim" }]
           }));
         }
         toLowerCase() {
-          return new ZodString(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodString(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, { kind: "toLowerCase" }]
           }));
         }
         toUpperCase() {
-          return new ZodString(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodString(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, { kind: "toUpperCase" }]
           }));
         }
@@ -8216,7 +8764,7 @@ svg {
           coerce: (_a = params === null || params === void 0 ? void 0 : params.coerce) !== null && _a !== void 0 ? _a : false
         }, processCreateParams(params)));
       };
-      ZodNumber = class extends ZodType {
+      ZodNumber = class _ZodNumber extends ZodType {
         constructor() {
           super(...arguments);
           this.min = this.gte;
@@ -8317,7 +8865,7 @@ svg {
           return this.setLimit("max", value2, false, errorUtil.toString(message));
         }
         setLimit(kind, value2, inclusive, message) {
-          return new ZodNumber(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodNumber(__spreadProps(__spreadValues({}, this._def), {
             checks: [
               ...this._def.checks,
               {
@@ -8330,7 +8878,7 @@ svg {
           }));
         }
         _addCheck(check) {
-          return new ZodNumber(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodNumber(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, check]
           }));
         }
@@ -8444,7 +8992,7 @@ svg {
           coerce: (params === null || params === void 0 ? void 0 : params.coerce) || false
         }, processCreateParams(params)));
       };
-      ZodBigInt = class extends ZodType {
+      ZodBigInt = class _ZodBigInt extends ZodType {
         constructor() {
           super(...arguments);
           this.min = this.gte;
@@ -8522,7 +9070,7 @@ svg {
           return this.setLimit("max", value2, false, errorUtil.toString(message));
         }
         setLimit(kind, value2, inclusive, message) {
-          return new ZodBigInt(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodBigInt(__spreadProps(__spreadValues({}, this._def), {
             checks: [
               ...this._def.checks,
               {
@@ -8535,7 +9083,7 @@ svg {
           }));
         }
         _addCheck(check) {
-          return new ZodBigInt(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodBigInt(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, check]
           }));
         }
@@ -8631,7 +9179,7 @@ svg {
           coerce: (params === null || params === void 0 ? void 0 : params.coerce) || false
         }, processCreateParams(params)));
       };
-      ZodDate = class extends ZodType {
+      ZodDate = class _ZodDate extends ZodType {
         _parse(input) {
           if (this._def.coerce) {
             input.data = new Date(input.data);
@@ -8692,7 +9240,7 @@ svg {
           };
         }
         _addCheck(check) {
-          return new ZodDate(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodDate(__spreadProps(__spreadValues({}, this._def), {
             checks: [...this._def.checks, check]
           }));
         }
@@ -8862,7 +9410,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodVoid
         }, processCreateParams(params)));
       };
-      ZodArray = class extends ZodType {
+      ZodArray = class _ZodArray extends ZodType {
         _parse(input) {
           const { ctx, status } = this._processInputParams(input);
           const def = this._def;
@@ -8932,17 +9480,17 @@ svg {
           return this._def.type;
         }
         min(minLength, message) {
-          return new ZodArray(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodArray(__spreadProps(__spreadValues({}, this._def), {
             minLength: { value: minLength, message: errorUtil.toString(message) }
           }));
         }
         max(maxLength, message) {
-          return new ZodArray(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodArray(__spreadProps(__spreadValues({}, this._def), {
             maxLength: { value: maxLength, message: errorUtil.toString(message) }
           }));
         }
         length(len, message) {
-          return new ZodArray(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodArray(__spreadProps(__spreadValues({}, this._def), {
             exactLength: { value: len, message: errorUtil.toString(message) }
           }));
         }
@@ -8959,7 +9507,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodArray
         }, processCreateParams(params)));
       };
-      ZodObject = class extends ZodType {
+      ZodObject = class _ZodObject extends ZodType {
         constructor() {
           super(...arguments);
           this._cached = null;
@@ -9064,7 +9612,7 @@ svg {
         }
         strict(message) {
           errorUtil.errToObj;
-          return new ZodObject(__spreadValues(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadValues(__spreadProps(__spreadValues({}, this._def), {
             unknownKeys: "strict"
           }), message !== void 0 ? {
             errorMap: (issue, ctx) => {
@@ -9081,12 +9629,12 @@ svg {
           } : {}));
         }
         strip() {
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             unknownKeys: "strip"
           }));
         }
         passthrough() {
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             unknownKeys: "passthrough"
           }));
         }
@@ -9108,7 +9656,7 @@ svg {
         //     }) as any;
         //   };
         extend(augmentation) {
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             shape: () => __spreadValues(__spreadValues({}, this._def.shape()), augmentation)
           }));
         }
@@ -9118,7 +9666,7 @@ svg {
          * upgrade if you are experiencing issues.
          */
         merge(merging) {
-          const merged = new ZodObject({
+          const merged = new _ZodObject({
             unknownKeys: merging._def.unknownKeys,
             catchall: merging._def.catchall,
             shape: () => __spreadValues(__spreadValues({}, this._def.shape()), merging._def.shape()),
@@ -9186,7 +9734,7 @@ svg {
         //   return merged;
         // }
         catchall(index2) {
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             catchall: index2
           }));
         }
@@ -9197,7 +9745,7 @@ svg {
               shape[key] = this.shape[key];
             }
           });
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             shape: () => shape
           }));
         }
@@ -9208,7 +9756,7 @@ svg {
               shape[key] = this.shape[key];
             }
           });
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             shape: () => shape
           }));
         }
@@ -9228,7 +9776,7 @@ svg {
               newShape[key] = fieldSchema.optional();
             }
           });
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             shape: () => newShape
           }));
         }
@@ -9246,7 +9794,7 @@ svg {
               newShape[key] = newField;
             }
           });
-          return new ZodObject(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodObject(__spreadProps(__spreadValues({}, this._def), {
             shape: () => newShape
           }));
         }
@@ -9385,7 +9933,7 @@ svg {
           return null;
         }
       };
-      ZodDiscriminatedUnion = class extends ZodType {
+      ZodDiscriminatedUnion = class _ZodDiscriminatedUnion extends ZodType {
         _parse(input) {
           const { ctx } = this._processInputParams(input);
           if (ctx.parsedType !== ZodParsedType.object) {
@@ -9452,7 +10000,7 @@ svg {
               optionsMap.set(value2, type);
             }
           }
-          return new ZodDiscriminatedUnion(__spreadValues({
+          return new _ZodDiscriminatedUnion(__spreadValues({
             typeName: ZodFirstPartyTypeKind.ZodDiscriminatedUnion,
             discriminator,
             options,
@@ -9512,7 +10060,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodIntersection
         }, processCreateParams(params)));
       };
-      ZodTuple = class extends ZodType {
+      ZodTuple = class _ZodTuple extends ZodType {
         _parse(input) {
           const { status, ctx } = this._processInputParams(input);
           if (ctx.parsedType !== ZodParsedType.array) {
@@ -9562,7 +10110,7 @@ svg {
           return this._def.items;
         }
         rest(rest) {
-          return new ZodTuple(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodTuple(__spreadProps(__spreadValues({}, this._def), {
             rest
           }));
         }
@@ -9577,7 +10125,7 @@ svg {
           rest: null
         }, processCreateParams(params)));
       };
-      ZodRecord = class extends ZodType {
+      ZodRecord = class _ZodRecord extends ZodType {
         get keySchema() {
           return this._def.keyType;
         }
@@ -9614,13 +10162,13 @@ svg {
         }
         static create(first, second, third) {
           if (second instanceof ZodType) {
-            return new ZodRecord(__spreadValues({
+            return new _ZodRecord(__spreadValues({
               keyType: first,
               valueType: second,
               typeName: ZodFirstPartyTypeKind.ZodRecord
             }, processCreateParams(third)));
           }
-          return new ZodRecord(__spreadValues({
+          return new _ZodRecord(__spreadValues({
             keyType: ZodString.create(),
             valueType: first,
             typeName: ZodFirstPartyTypeKind.ZodRecord
@@ -9692,7 +10240,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodMap
         }, processCreateParams(params)));
       };
-      ZodSet = class extends ZodType {
+      ZodSet = class _ZodSet extends ZodType {
         _parse(input) {
           const { status, ctx } = this._processInputParams(input);
           if (ctx.parsedType !== ZodParsedType.set) {
@@ -9750,12 +10298,12 @@ svg {
           }
         }
         min(minSize, message) {
-          return new ZodSet(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodSet(__spreadProps(__spreadValues({}, this._def), {
             minSize: { value: minSize, message: errorUtil.toString(message) }
           }));
         }
         max(maxSize, message) {
-          return new ZodSet(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodSet(__spreadProps(__spreadValues({}, this._def), {
             maxSize: { value: maxSize, message: errorUtil.toString(message) }
           }));
         }
@@ -9774,7 +10322,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodSet
         }, processCreateParams(params)));
       };
-      ZodFunction = class extends ZodType {
+      ZodFunction = class _ZodFunction extends ZodType {
         constructor() {
           super(...arguments);
           this.validate = this.implement;
@@ -9861,12 +10409,12 @@ svg {
           return this._def.returns;
         }
         args(...items) {
-          return new ZodFunction(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodFunction(__spreadProps(__spreadValues({}, this._def), {
             args: ZodTuple.create(items).rest(ZodUnknown.create())
           }));
         }
         returns(returnType) {
-          return new ZodFunction(__spreadProps(__spreadValues({}, this._def), {
+          return new _ZodFunction(__spreadProps(__spreadValues({}, this._def), {
             returns: returnType
           }));
         }
@@ -9879,7 +10427,7 @@ svg {
           return validatedFunc;
         }
         static create(args, returns, params) {
-          return new ZodFunction(__spreadValues({
+          return new _ZodFunction(__spreadValues({
             args: args ? args : ZodTuple.create([]).rest(ZodUnknown.create()),
             returns: returns || ZodUnknown.create(),
             typeName: ZodFirstPartyTypeKind.ZodFunction
@@ -9925,7 +10473,7 @@ svg {
           typeName: ZodFirstPartyTypeKind.ZodLiteral
         }, processCreateParams(params)));
       };
-      ZodEnum = class extends ZodType {
+      ZodEnum = class _ZodEnum extends ZodType {
         _parse(input) {
           if (typeof input.data !== "string") {
             const ctx = this._getOrReturnCtx(input);
@@ -9974,10 +10522,10 @@ svg {
           return enumValues;
         }
         extract(values) {
-          return ZodEnum.create(values);
+          return _ZodEnum.create(values);
         }
         exclude(values) {
-          return ZodEnum.create(this.options.filter((opt) => !values.includes(opt)));
+          return _ZodEnum.create(this.options.filter((opt) => !values.includes(opt)));
         }
       };
       ZodEnum.create = createZodEnum;
@@ -10309,7 +10857,7 @@ svg {
           return this._def.type;
         }
       };
-      ZodPipeline = class extends ZodType {
+      ZodPipeline = class _ZodPipeline extends ZodType {
         _parse(input) {
           const { status, ctx } = this._processInputParams(input);
           if (ctx.common.async) {
@@ -10357,7 +10905,7 @@ svg {
           }
         }
         static create(a3, b3) {
-          return new ZodPipeline({
+          return new _ZodPipeline({
             in: a3,
             out: b3,
             typeName: ZodFirstPartyTypeKind.ZodPipeline
@@ -10483,7 +11031,7 @@ svg {
         date: (arg2) => ZodDate.create(__spreadProps(__spreadValues({}, arg2), { coerce: true }))
       };
       NEVER = INVALID;
-      z3 = /* @__PURE__ */ Object.freeze({
+      z4 = /* @__PURE__ */ Object.freeze({
         __proto__: null,
         defaultErrorMap: errorMap,
         setErrorMap,
@@ -14581,22 +15129,22 @@ svg {
         }
         return checksum % 11 === digits2[9];
       }
-      function itItNameCheck(name307) {
+      function itItNameCheck(name310) {
         var vowelflag = false;
         var xflag = false;
         for (var i5 = 0; i5 < 3; i5++) {
-          if (!vowelflag && /[AEIOU]/.test(name307[i5])) {
+          if (!vowelflag && /[AEIOU]/.test(name310[i5])) {
             vowelflag = true;
-          } else if (!xflag && vowelflag && name307[i5] === "X") {
+          } else if (!xflag && vowelflag && name310[i5] === "X") {
             xflag = true;
           } else if (i5 > 0) {
             if (vowelflag && !xflag) {
-              if (!/[AEIOU]/.test(name307[i5])) {
+              if (!/[AEIOU]/.test(name310[i5])) {
                 return false;
               }
             }
             if (xflag) {
-              if (!/X/.test(name307[i5])) {
+              if (!/X/.test(name310[i5])) {
                 return false;
               }
             }
@@ -17259,7 +17807,7 @@ svg {
           const nextState = typeof partial === "function" ? partial(state) : partial;
           if (!Object.is(nextState, state)) {
             const previousState = state;
-            state = (replace != null ? replace : typeof nextState !== "object") ? nextState : Object.assign({}, state, nextState);
+            state = (replace != null ? replace : typeof nextState !== "object" || nextState === null) ? nextState : Object.assign({}, state, nextState);
             listeners.forEach((listener) => listener(state, previousState));
           }
         };
@@ -17281,376 +17829,6 @@ svg {
         return api;
       };
       createStore = (createState) => createState ? createStoreImpl(createState) : createStoreImpl;
-    }
-  });
-
-  // node_modules/preact/compat/dist/compat.module.js
-  var compat_module_exports = {};
-  __export(compat_module_exports, {
-    Children: () => A3,
-    Component: () => b,
-    Fragment: () => g,
-    PureComponent: () => E2,
-    StrictMode: () => mn,
-    Suspense: () => L2,
-    SuspenseList: () => M2,
-    __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: () => on,
-    cloneElement: () => sn,
-    createContext: () => F,
-    createElement: () => y,
-    createFactory: () => cn,
-    createPortal: () => j3,
-    createRef: () => _,
-    default: () => wn,
-    findDOMNode: () => vn,
-    flushSync: () => pn,
-    forwardRef: () => N2,
-    hydrate: () => G,
-    isElement: () => gn,
-    isFragment: () => an,
-    isValidElement: () => fn,
-    lazy: () => D2,
-    memo: () => w3,
-    render: () => q3,
-    startTransition: () => yn,
-    unmountComponentAtNode: () => hn,
-    unstable_batchedUpdates: () => dn,
-    useCallback: () => T2,
-    useContext: () => q2,
-    useDebugValue: () => x2,
-    useDeferredValue: () => _n,
-    useEffect: () => p2,
-    useErrorBoundary: () => P2,
-    useId: () => V,
-    useImperativeHandle: () => A2,
-    useInsertionEffect: () => Sn,
-    useLayoutEffect: () => y2,
-    useMemo: () => F2,
-    useReducer: () => s2,
-    useRef: () => _2,
-    useState: () => h2,
-    useSyncExternalStore: () => Cn,
-    useTransition: () => bn,
-    version: () => ln
-  });
-  function g3(n3, t3) {
-    for (var e6 in t3)
-      n3[e6] = t3[e6];
-    return n3;
-  }
-  function C2(n3, t3) {
-    for (var e6 in n3)
-      if ("__source" !== e6 && !(e6 in t3))
-        return true;
-    for (var r3 in t3)
-      if ("__source" !== r3 && n3[r3] !== t3[r3])
-        return true;
-    return false;
-  }
-  function E2(n3) {
-    this.props = n3;
-  }
-  function w3(n3, e6) {
-    function r3(n4) {
-      var t3 = this.props.ref, r4 = t3 == n4.ref;
-      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e6 ? !e6(this.props, n4) || !r4 : C2(this.props, n4);
-    }
-    function u3(e7) {
-      return this.shouldComponentUpdate = r3, y(n3, e7);
-    }
-    return u3.displayName = "Memo(" + (n3.displayName || n3.name) + ")", u3.prototype.isReactComponent = true, u3.__f = true, u3;
-  }
-  function N2(n3) {
-    function t3(t4) {
-      var e6 = g3({}, t4);
-      return delete e6.ref, n3(e6, t4.ref || null);
-    }
-    return t3.$$typeof = R, t3.render = t3, t3.prototype.isReactComponent = t3.__f = true, t3.displayName = "ForwardRef(" + (n3.displayName || n3.name) + ")", t3;
-  }
-  function F3(n3, t3, e6) {
-    return n3 && (n3.__c && n3.__c.__H && (n3.__c.__H.__.forEach(function(n4) {
-      "function" == typeof n4.__c && n4.__c();
-    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e6 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return F3(n4, t3, e6);
-    })), n3;
-  }
-  function I2(n3, t3, e6) {
-    return n3 && e6 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return I2(n4, t3, e6);
-    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e6.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e6)), n3;
-  }
-  function L2() {
-    this.__u = 0, this.t = null, this.__b = null;
-  }
-  function U(n3) {
-    var t3 = n3.__.__c;
-    return t3 && t3.__a && t3.__a(n3);
-  }
-  function D2(n3) {
-    var e6, r3, u3;
-    function o3(o4) {
-      if (e6 || (e6 = n3()).then(function(n4) {
-        r3 = n4.default || n4;
-      }, function(n4) {
-        u3 = n4;
-      }), u3)
-        throw u3;
-      if (!r3)
-        throw e6;
-      return y(r3, o4);
-    }
-    return o3.displayName = "Lazy", o3.__f = true, o3;
-  }
-  function M2() {
-    this.u = null, this.o = null;
-  }
-  function W(n3) {
-    return this.getChildContext = function() {
-      return n3.context;
-    }, n3.children;
-  }
-  function P3(n3) {
-    var e6 = this, r3 = n3.i;
-    e6.componentWillUnmount = function() {
-      q(null, e6.l), e6.l = null, e6.i = null;
-    }, e6.i && e6.i !== r3 && e6.componentWillUnmount(), e6.l || (e6.i = r3, e6.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
-    }, insertBefore: function(n4, t3) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
-    }, removeChild: function(n4) {
-      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
-    } }), q(y(W, { context: e6.context }, n3.__v), e6.l);
-  }
-  function j3(n3, e6) {
-    var r3 = y(P3, { __v: n3, i: e6 });
-    return r3.containerInfo = e6, r3;
-  }
-  function q3(n3, t3, e6) {
-    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
-  }
-  function G(n3, t3, e6) {
-    return B(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
-  }
-  function K() {
-  }
-  function Q() {
-    return this.cancelBubble;
-  }
-  function X() {
-    return this.defaultPrevented;
-  }
-  function cn(n3) {
-    return y.bind(null, n3);
-  }
-  function fn(n3) {
-    return !!n3 && n3.$$typeof === z4;
-  }
-  function an(n3) {
-    return fn(n3) && n3.type === g;
-  }
-  function sn(n3) {
-    return fn(n3) ? E.apply(null, arguments) : n3;
-  }
-  function hn(n3) {
-    return !!n3.__k && (q(null, n3), true);
-  }
-  function vn(n3) {
-    return n3 && (n3.base || 1 === n3.nodeType && n3) || null;
-  }
-  function yn(n3) {
-    n3();
-  }
-  function _n(n3) {
-    return n3;
-  }
-  function bn() {
-    return [false, yn];
-  }
-  function Cn(n3, t3) {
-    var e6 = t3(), r3 = h2({ h: { __: e6, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
-    return y2(function() {
-      u3.__ = e6, u3.v = t3, En(u3) && o3({ h: u3 });
-    }, [n3, e6, t3]), p2(function() {
-      return En(u3) && o3({ h: u3 }), n3(function() {
-        En(u3) && o3({ h: u3 });
-      });
-    }, [n3]), e6;
-  }
-  function En(n3) {
-    var t3, e6, r3 = n3.v, u3 = n3.__;
-    try {
-      var o3 = r3();
-      return !((t3 = u3) === (e6 = o3) && (0 !== t3 || 1 / t3 == 1 / e6) || t3 != t3 && e6 != e6);
-    } catch (n4) {
-      return true;
-    }
-  }
-  var x3, R, k3, A3, O2, T3, V2, z4, B3, H2, Z, Y, $2, J, nn, tn, en, rn, un, on, ln, dn, pn, mn, Sn, gn, wn;
-  var init_compat_module = __esm({
-    "node_modules/preact/compat/dist/compat.module.js"() {
-      init_preact_module();
-      init_preact_module();
-      init_hooks_module();
-      init_hooks_module();
-      (E2.prototype = new b()).isPureReactComponent = true, E2.prototype.shouldComponentUpdate = function(n3, t3) {
-        return C2(this.props, n3) || C2(this.state, t3);
-      };
-      x3 = l.__b;
-      l.__b = function(n3) {
-        n3.type && n3.type.__f && n3.ref && (n3.props.ref = n3.ref, n3.ref = null), x3 && x3(n3);
-      };
-      R = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.forward_ref") || 3911;
-      k3 = function(n3, t3) {
-        return null == n3 ? null : $($(n3).map(t3));
-      };
-      A3 = { map: k3, forEach: k3, count: function(n3) {
-        return n3 ? $(n3).length : 0;
-      }, only: function(n3) {
-        var t3 = $(n3);
-        if (1 !== t3.length)
-          throw "Children.only";
-        return t3[0];
-      }, toArray: $ };
-      O2 = l.__e;
-      l.__e = function(n3, t3, e6, r3) {
-        if (n3.then) {
-          for (var u3, o3 = t3; o3 = o3.__; )
-            if ((u3 = o3.__c) && u3.__c)
-              return null == t3.__e && (t3.__e = e6.__e, t3.__k = e6.__k), u3.__c(n3, t3);
-        }
-        O2(n3, t3, e6, r3);
-      };
-      T3 = l.unmount;
-      l.unmount = function(n3) {
-        var t3 = n3.__c;
-        t3 && t3.__R && t3.__R(), t3 && 32 & n3.__u && (n3.type = null), T3 && T3(n3);
-      }, (L2.prototype = new b()).__c = function(n3, t3) {
-        var e6 = t3.__c, r3 = this;
-        null == r3.t && (r3.t = []), r3.t.push(e6);
-        var u3 = U(r3.__v), o3 = false, i5 = function() {
-          o3 || (o3 = true, e6.__R = null, u3 ? u3(l3) : l3());
-        };
-        e6.__R = i5;
-        var l3 = function() {
-          if (!--r3.__u) {
-            if (r3.state.__a) {
-              var n4 = r3.state.__a;
-              r3.__v.__k[0] = I2(n4, n4.__c.__P, n4.__c.__O);
-            }
-            var t4;
-            for (r3.setState({ __a: r3.__b = null }); t4 = r3.t.pop(); )
-              t4.forceUpdate();
-          }
-        };
-        r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i5, i5);
-      }, L2.prototype.componentWillUnmount = function() {
-        this.t = [];
-      }, L2.prototype.render = function(n3, e6) {
-        if (this.__b) {
-          if (this.__v.__k) {
-            var r3 = document.createElement("div"), o3 = this.__v.__k[0].__c;
-            this.__v.__k[0] = F3(this.__b, r3, o3.__O = o3.__P);
-          }
-          this.__b = null;
-        }
-        var i5 = e6.__a && y(g, null, n3.fallback);
-        return i5 && (i5.__u &= -33), [y(g, null, e6.__a ? null : n3.children), i5];
-      };
-      V2 = function(n3, t3, e6) {
-        if (++e6[1] === e6[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
-          for (e6 = n3.u; e6; ) {
-            for (; e6.length > 3; )
-              e6.pop()();
-            if (e6[1] < e6[0])
-              break;
-            n3.u = e6 = e6[2];
-          }
-      };
-      (M2.prototype = new b()).__a = function(n3) {
-        var t3 = this, e6 = U(t3.__v), r3 = t3.o.get(n3);
-        return r3[0]++, function(u3) {
-          var o3 = function() {
-            t3.props.revealOrder ? (r3.push(u3), V2(t3, n3, r3)) : u3();
-          };
-          e6 ? e6(o3) : o3();
-        };
-      }, M2.prototype.render = function(n3) {
-        this.u = null, this.o = /* @__PURE__ */ new Map();
-        var t3 = $(n3.children);
-        n3.revealOrder && "b" === n3.revealOrder[0] && t3.reverse();
-        for (var e6 = t3.length; e6--; )
-          this.o.set(t3[e6], this.u = [1, 0, this.u]);
-        return n3.children;
-      }, M2.prototype.componentDidUpdate = M2.prototype.componentDidMount = function() {
-        var n3 = this;
-        this.o.forEach(function(t3, e6) {
-          V2(n3, e6, t3);
-        });
-      };
-      z4 = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103;
-      B3 = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|image(!S)|letter|lighting|marker(?!H|W|U)|overline|paint|pointer|shape|stop|strikethrough|stroke|text(?!L)|transform|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/;
-      H2 = /^on(Ani|Tra|Tou|BeforeInp|Compo)/;
-      Z = /[A-Z0-9]/g;
-      Y = "undefined" != typeof document;
-      $2 = function(n3) {
-        return ("undefined" != typeof Symbol && "symbol" == typeof Symbol() ? /fil|che|rad/ : /fil|che|ra/).test(n3);
-      };
-      b.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function(t3) {
-        Object.defineProperty(b.prototype, t3, { configurable: true, get: function() {
-          return this["UNSAFE_" + t3];
-        }, set: function(n3) {
-          Object.defineProperty(this, t3, { configurable: true, writable: true, value: n3 });
-        } });
-      });
-      J = l.event;
-      l.event = function(n3) {
-        return J && (n3 = J(n3)), n3.persist = K, n3.isPropagationStopped = Q, n3.isDefaultPrevented = X, n3.nativeEvent = n3;
-      };
-      tn = { enumerable: false, configurable: true, get: function() {
-        return this.class;
-      } };
-      en = l.vnode;
-      l.vnode = function(n3) {
-        "string" == typeof n3.type && function(n4) {
-          var t3 = n4.props, e6 = n4.type, u3 = {};
-          for (var o3 in t3) {
-            var i5 = t3[o3];
-            if (!("value" === o3 && "defaultValue" in t3 && null == i5 || Y && "children" === o3 && "noscript" === e6 || "class" === o3 || "className" === o3)) {
-              var l3 = o3.toLowerCase();
-              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i5 ? i5 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e6 && "textarea" !== e6 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e6.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i5 && (i5 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i5;
-            }
-          }
-          "select" == e6 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
-            n5.props.selected = -1 != u3.value.indexOf(n5.props.value);
-          })), "select" == e6 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
-            n5.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n5.props.value) : u3.defaultValue == n5.props.value;
-          })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", tn)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n4.props = u3;
-        }(n3), n3.$$typeof = z4, en && en(n3);
-      };
-      rn = l.__r;
-      l.__r = function(n3) {
-        rn && rn(n3), nn = n3.__c;
-      };
-      un = l.diffed;
-      l.diffed = function(n3) {
-        un && un(n3);
-        var t3 = n3.props, e6 = n3.__e;
-        null != e6 && "textarea" === n3.type && "value" in t3 && t3.value !== e6.value && (e6.value = null == t3.value ? "" : t3.value), nn = null;
-      };
-      on = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
-        return nn.__n[n3.__c].props.value;
-      } } } };
-      ln = "17.0.2";
-      dn = function(n3, t3) {
-        return n3(t3);
-      };
-      pn = function(n3, t3) {
-        return n3(t3);
-      };
-      mn = g;
-      Sn = y2;
-      gn = fn;
-      wn = { useState: h2, useId: V, useReducer: s2, useEffect: p2, useLayoutEffect: y2, useInsertionEffect: Sn, useTransition: bn, useDeferredValue: _n, useSyncExternalStore: Cn, startTransition: yn, useRef: _2, useImperativeHandle: A2, useMemo: F2, useCallback: T2, useContext: q2, useDebugValue: x2, version: "17.0.2", Children: A3, render: q3, hydrate: G, unmountComponentAtNode: hn, createPortal: j3, createElement: y, createContext: F, createFactory: cn, cloneElement: sn, createRef: _, Fragment: g, isValidElement: fn, isElement: gn, isFragment: an, findDOMNode: vn, Component: b, PureComponent: E2, memo: w3, forwardRef: N2, flushSync: pn, unstable_batchedUpdates: dn, StrictMode: mn, Suspense: L2, SuspenseList: M2, lazy: D2, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: on };
     }
   });
 
@@ -17695,7 +17873,7 @@ svg {
             return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
-          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
+          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue2 = React.useDebugValue;
           var didWarnOld18Alpha = false;
           var didWarnUncachedGetSnapshot = false;
           function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
@@ -17747,7 +17925,7 @@ svg {
               };
               return subscribe(handleStoreChange);
             }, [subscribe]);
-            useDebugValue(value2);
+            useDebugValue2(value2);
             return value2;
           }
           function checkIfSnapshotChanged(inst) {
@@ -17805,7 +17983,7 @@ svg {
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var useSyncExternalStore = shim.useSyncExternalStore;
-          var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
+          var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue2 = React.useDebugValue;
           function useSyncExternalStoreWithSelector2(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
             var instRef = useRef(null);
             var inst;
@@ -17866,7 +18044,7 @@ svg {
               inst.hasValue = true;
               inst.value = value2;
             }, [value2]);
-            useDebugValue(value2);
+            useDebugValue2(value2);
             return value2;
           }
           exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector2;
@@ -17905,10 +18083,10 @@ svg {
       selector,
       equalityFn
     );
-    x2(slice);
+    useDebugValue(slice);
     return slice;
   }
-  var import_with_selector, import_meta2, useSyncExternalStoreWithSelector, didWarnAboutEqualityFn, createImpl, create;
+  var import_with_selector, import_meta2, useDebugValue, useSyncExternalStoreWithSelector, didWarnAboutEqualityFn, createImpl, create;
   var init_esm = __esm({
     "node_modules/zustand/esm/index.mjs"() {
       init_vanilla();
@@ -17916,6 +18094,7 @@ svg {
       init_compat_module();
       import_with_selector = __toESM(require_with_selector(), 1);
       import_meta2 = {};
+      ({ useDebugValue } = wn);
       ({ useSyncExternalStoreWithSelector } = import_with_selector.default);
       didWarnAboutEqualityFn = false;
       createImpl = (createState) => {
@@ -17944,41 +18123,41 @@ svg {
       init_lib3();
       import_validator = __toESM(require_validator());
       init_esm();
-      RgbaSchema = z3.object({
-        r: z3.number().min(0).max(255),
-        g: z3.number().min(0).max(255),
-        b: z3.number().min(0).max(255),
-        a: z3.number().min(0).max(255)
+      RgbaSchema = z4.object({
+        r: z4.number().min(0).max(255),
+        g: z4.number().min(0).max(255),
+        b: z4.number().min(0).max(255),
+        a: z4.number().min(0).max(255)
       });
-      HctSchema = z3.object({
-        hue: z3.number().min(0).max(360),
-        chroma: z3.number().min(0).max(150),
-        tone: z3.number().min(0).max(100)
+      HctSchema = z4.object({
+        hue: z4.number().min(0).max(360),
+        chroma: z4.number().min(0).max(150),
+        tone: z4.number().min(0).max(100)
       });
-      SolidColorSchema = z3.object({
-        type: z3.literal("SOLID"),
-        color: z3.object({
-          r: z3.number().min(0).max(255),
-          g: z3.number().min(0).max(255),
-          b: z3.number().min(0).max(255)
+      SolidColorSchema = z4.object({
+        type: z4.literal("SOLID"),
+        color: z4.object({
+          r: z4.number().min(0).max(255),
+          g: z4.number().min(0).max(255),
+          b: z4.number().min(0).max(255)
         })
       });
-      ColorDataSchema = z3.object({
-        sourceHex: z3.string(),
+      ColorDataSchema = z4.object({
+        sourceHex: z4.string(),
         hct: HctSchema,
-        rgba: z3.union([z3.string(), RgbaSchema]),
-        hex: z3.string().refine(import_validator.default.isHexColor),
+        rgba: z4.union([z4.string(), RgbaSchema]),
+        hex: z4.string().refine(import_validator.default.isHexColor),
         figmaSolidColor: SolidColorSchema
       });
-      ColorActionsSchema = z3.object({
-        setSourceHex: z3.function().args(z3.string(), z3.void()),
-        setHct: z3.function().args(HctSchema, z3.void()),
-        setRgba: z3.function().args(z3.union([z3.string(), RgbaSchema]), z3.void()),
-        setHex: z3.function().args(z3.string(), z3.void()),
-        setFigmaSolidColor: z3.function().args(SolidColorSchema, z3.void()),
-        setHue: z3.function().args(z3.number(), z3.void()),
-        setChroma: z3.function().args(z3.number(), z3.void()),
-        setTone: z3.function().args(z3.number(), z3.void())
+      ColorActionsSchema = z4.object({
+        setSourceHex: z4.function().args(z4.string(), z4.void()),
+        setHct: z4.function().args(HctSchema, z4.void()),
+        setRgba: z4.function().args(z4.union([z4.string(), RgbaSchema]), z4.void()),
+        setHex: z4.function().args(z4.string(), z4.void()),
+        setFigmaSolidColor: z4.function().args(SolidColorSchema, z4.void()),
+        setHue: z4.function().args(z4.number(), z4.void()),
+        setChroma: z4.function().args(z4.number(), z4.void()),
+        setTone: z4.function().args(z4.number(), z4.void())
       });
       ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
       cleanedHexColor = (hexColor) => {
@@ -18137,37 +18316,37 @@ svg {
       init_lib3();
       init_esm();
       init_index_browser();
-      AliasDataSchema = z3.object({
-        id: z3.string(),
-        name: z3.string(),
-        color: z3.array(
-          z3.object({
-            mode: z3.enum(["light", "dark"]),
-            tone: z3.number().int().min(0).max(100)
+      AliasDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        color: z4.array(
+          z4.object({
+            mode: z4.enum(["light", "dark"]),
+            tone: z4.number().int().min(0).max(100)
           })
         )
       });
-      AliasActionsSchema = z3.object({
-        set: z3.object({
-          id: z3.function().args(z3.string(), z3.void()),
-          name: z3.function().args(z3.string(), z3.void()),
-          color: z3.function().args(
-            z3.array(
-              z3.object({
-                mode: z3.string(),
-                tone: z3.number()
+      AliasActionsSchema = z4.object({
+        set: z4.object({
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          color: z4.function().args(
+            z4.array(
+              z4.object({
+                mode: z4.string(),
+                tone: z4.number()
               })
             ),
-            z3.void()
+            z4.void()
           ),
-          toneForMode: z3.function().args(z3.union([z3.string(), z3.number()]), z3.number(), z3.void())
+          toneForMode: z4.function().args(z4.union([z4.string(), z4.number()]), z4.number(), z4.void())
         })
       });
       AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
       aliasActionsStore = (set) => ({
         set: {
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name307) => set((state) => __spreadProps(__spreadValues({}, state), { name: name307 })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
           color: (color2) => set((state) => __spreadProps(__spreadValues({}, state), {
             color: color2
           })),
@@ -18195,7 +18374,7 @@ svg {
         ],
         set: {
           id: (id) => set(() => ({ id })),
-          name: (name307) => set(() => ({ name: name307 })),
+          name: (name310) => set(() => ({ name: name310 })),
           color: (color2) => set(() => ({
             color: color2
           })),
@@ -18427,14 +18606,15 @@ svg {
       return new Date(x4.valueOf());
     if (isBigNumber(x4))
       return x4;
-    if (x4 instanceof RegExp)
-      throw new TypeError("Cannot clone " + x4);
-    return mapObject(x4, clone);
+    if (isObject(x4)) {
+      return mapObject(x4, clone);
+    }
+    throw new TypeError("Cannot clone: unknown type of value (value: ".concat(x4, ")"));
   }
   function mapObject(object, callback) {
     var clone5 = {};
     for (var key in object) {
-      if (hasOwnProperty2(object, key)) {
+      if (hasOwnProperty(object, key)) {
         clone5[key] = callback(object[key]);
       }
     }
@@ -18442,7 +18622,7 @@ svg {
   }
   function extend(a3, b3) {
     for (var prop in b3) {
-      if (hasOwnProperty2(b3, prop)) {
+      if (hasOwnProperty(b3, prop)) {
         a3[prop] = b3[prop];
       }
     }
@@ -18503,7 +18683,7 @@ svg {
       enumerable: true
     });
   }
-  function hasOwnProperty2(object, property) {
+  function hasOwnProperty(object, property) {
     return object && Object.hasOwnProperty.call(object, property);
   }
   function pickShallow(object, properties2) {
@@ -18556,77 +18736,9 @@ svg {
   var require_typed_function = __commonJS({
     "node_modules/typed-function/lib/umd/typed-function.js"(exports, module) {
       (function(global, factory2) {
-        typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory2() : typeof define === "function" && define.amd ? define(factory2) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.typed = factory2());
+        typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory2() : typeof define === "function" && define.amd ? define(factory2) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global["'typed'"] = factory2());
       })(exports, function() {
         "use strict";
-        function _createForOfIteratorHelper(o3, allowArrayLike) {
-          var it = typeof Symbol !== "undefined" && o3[Symbol.iterator] || o3["@@iterator"];
-          if (!it) {
-            if (Array.isArray(o3) || (it = _unsupportedIterableToArray(o3)) || allowArrayLike && o3 && typeof o3.length === "number") {
-              if (it)
-                o3 = it;
-              var i5 = 0;
-              var F4 = function F5() {
-              };
-              return { s: F4, n: function n3() {
-                if (i5 >= o3.length)
-                  return { done: true };
-                return { done: false, value: o3[i5++] };
-              }, e: function e6(_e) {
-                throw _e;
-              }, f: F4 };
-            }
-            throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-          }
-          var normalCompletion = true, didErr = false, err;
-          return { s: function s3() {
-            it = it.call(o3);
-          }, n: function n3() {
-            var step = it.next();
-            normalCompletion = step.done;
-            return step;
-          }, e: function e6(_e2) {
-            didErr = true;
-            err = _e2;
-          }, f: function f3() {
-            try {
-              if (!normalCompletion && it.return != null)
-                it.return();
-            } finally {
-              if (didErr)
-                throw err;
-            }
-          } };
-        }
-        function _unsupportedIterableToArray(o3, minLen) {
-          if (!o3)
-            return;
-          if (typeof o3 === "string")
-            return _arrayLikeToArray(o3, minLen);
-          var n3 = Object.prototype.toString.call(o3).slice(8, -1);
-          if (n3 === "Object" && o3.constructor)
-            n3 = o3.constructor.name;
-          if (n3 === "Map" || n3 === "Set")
-            return Array.from(o3);
-          if (n3 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n3))
-            return _arrayLikeToArray(o3, minLen);
-        }
-        function _arrayLikeToArray(arr, len) {
-          if (len == null || len > arr.length)
-            len = arr.length;
-          for (var i5 = 0, arr2 = new Array(len); i5 < len; i5++) {
-            arr2[i5] = arr[i5];
-          }
-          return arr2;
-        }
-        function _typeof2(obj) {
-          "@babel/helpers - typeof";
-          return _typeof2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-            return typeof obj2;
-          } : function(obj2) {
-            return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-          }, _typeof2(obj);
-        }
         function ok() {
           return true;
         }
@@ -18636,29 +18748,29 @@ svg {
         function undef() {
           return void 0;
         }
-        var NOT_TYPED_FUNCTION = "Argument is not a typed-function.";
+        const NOT_TYPED_FUNCTION = "Argument is not a typed-function.";
         function create2() {
           function isPlainObject2(x4) {
-            return _typeof2(x4) === "object" && x4 !== null && x4.constructor === Object;
+            return typeof x4 === "object" && x4 !== null && x4.constructor === Object;
           }
-          var _types = [{
+          const _types = [{
             name: "number",
-            test: function test(x4) {
+            test: function(x4) {
               return typeof x4 === "number";
             }
           }, {
             name: "string",
-            test: function test(x4) {
+            test: function(x4) {
               return typeof x4 === "string";
             }
           }, {
             name: "boolean",
-            test: function test(x4) {
+            test: function(x4) {
               return typeof x4 === "boolean";
             }
           }, {
             name: "Function",
-            test: function test(x4) {
+            test: function(x4) {
               return typeof x4 === "function";
             }
           }, {
@@ -18666,12 +18778,12 @@ svg {
             test: Array.isArray
           }, {
             name: "Date",
-            test: function test(x4) {
+            test: function(x4) {
               return x4 instanceof Date;
             }
           }, {
             name: "RegExp",
-            test: function test(x4) {
+            test: function(x4) {
               return x4 instanceof RegExp;
             }
           }, {
@@ -18679,59 +18791,51 @@ svg {
             test: isPlainObject2
           }, {
             name: "null",
-            test: function test(x4) {
+            test: function(x4) {
               return x4 === null;
             }
           }, {
             name: "undefined",
-            test: function test(x4) {
+            test: function(x4) {
               return x4 === void 0;
             }
           }];
-          var anyType2 = {
+          const anyType2 = {
             name: "any",
             test: ok,
             isAny: true
           };
-          var typeMap;
-          var typeList;
-          var nConversions = 0;
-          var typed3 = {
+          let typeMap;
+          let typeList;
+          let nConversions = 0;
+          let typed3 = {
             createCount: 0
           };
           function findType(typeName) {
-            var type = typeMap.get(typeName);
+            const type = typeMap.get(typeName);
             if (type) {
               return type;
             }
-            var message = 'Unknown type "' + typeName + '"';
-            var name307 = typeName.toLowerCase();
-            var otherName;
-            var _iterator = _createForOfIteratorHelper(typeList), _step;
-            try {
-              for (_iterator.s(); !(_step = _iterator.n()).done; ) {
-                otherName = _step.value;
-                if (otherName.toLowerCase() === name307) {
-                  message += '. Did you mean "' + otherName + '" ?';
-                  break;
-                }
+            let message = 'Unknown type "' + typeName + '"';
+            const name310 = typeName.toLowerCase();
+            let otherName;
+            for (otherName of typeList) {
+              if (otherName.toLowerCase() === name310) {
+                message += '. Did you mean "' + otherName + '" ?';
+                break;
               }
-            } catch (err) {
-              _iterator.e(err);
-            } finally {
-              _iterator.f();
             }
             throw new TypeError(message);
           }
           function addTypes(types) {
-            var beforeSpec = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "any";
-            var beforeIndex = beforeSpec ? findType(beforeSpec).index : typeList.length;
-            var newTypes = [];
-            for (var i5 = 0; i5 < types.length; ++i5) {
+            let beforeSpec = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "any";
+            const beforeIndex = beforeSpec ? findType(beforeSpec).index : typeList.length;
+            const newTypes = [];
+            for (let i5 = 0; i5 < types.length; ++i5) {
               if (!types[i5] || typeof types[i5].name !== "string" || typeof types[i5].test !== "function") {
                 throw new TypeError("Object with properties {name: string, test: function} expected");
               }
-              var typeName = types[i5].name;
+              const typeName = types[i5].name;
               if (typeMap.has(typeName)) {
                 throw new TypeError('Duplicate type name "' + typeName + '"');
               }
@@ -18745,10 +18849,10 @@ svg {
                 // Newly added type can't have any conversions to it
               });
             }
-            var affectedTypes = typeList.slice(beforeIndex);
+            const affectedTypes = typeList.slice(beforeIndex);
             typeList = typeList.slice(0, beforeIndex).concat(newTypes).concat(affectedTypes);
-            for (var _i = beforeIndex + newTypes.length; _i < typeList.length; ++_i) {
-              typeMap.get(typeList[_i]).index = _i;
+            for (let i5 = beforeIndex + newTypes.length; i5 < typeList.length; ++i5) {
+              typeMap.get(typeList[i5]).index = i5;
             }
           }
           function clear() {
@@ -18760,23 +18864,15 @@ svg {
           clear();
           addTypes(_types);
           function clearConversions() {
-            var typeName;
-            var _iterator2 = _createForOfIteratorHelper(typeList), _step2;
-            try {
-              for (_iterator2.s(); !(_step2 = _iterator2.n()).done; ) {
-                typeName = _step2.value;
-                typeMap.get(typeName).conversionsTo = [];
-              }
-            } catch (err) {
-              _iterator2.e(err);
-            } finally {
-              _iterator2.f();
+            let typeName;
+            for (typeName of typeList) {
+              typeMap.get(typeName).conversionsTo = [];
             }
             nConversions = 0;
           }
           function findTypeNames(value2) {
-            var matches = typeList.filter(function(name307) {
-              var type = typeMap.get(name307);
+            const matches = typeList.filter((name310) => {
+              const type = typeMap.get(name310);
               return !type.isAny && type.test(value2);
             });
             if (matches.length) {
@@ -18791,75 +18887,53 @@ svg {
             if (!isTypedFunction(fn2)) {
               throw new TypeError(NOT_TYPED_FUNCTION);
             }
-            var exact = options && options.exact;
-            var stringSignature = Array.isArray(signature) ? signature.join(",") : signature;
-            var params = parseSignature(stringSignature);
-            var canonicalSignature = stringifyParams(params);
+            const exact = options && options.exact;
+            const stringSignature = Array.isArray(signature) ? signature.join(",") : signature;
+            const params = parseSignature(stringSignature);
+            const canonicalSignature = stringifyParams(params);
             if (!exact || canonicalSignature in fn2.signatures) {
-              var match = fn2._typedFunctionData.signatureMap.get(canonicalSignature);
+              const match = fn2._typedFunctionData.signatureMap.get(canonicalSignature);
               if (match) {
                 return match;
               }
             }
-            var nParams = params.length;
-            var remainingSignatures;
+            const nParams = params.length;
+            let remainingSignatures;
             if (exact) {
               remainingSignatures = [];
-              var name307;
-              for (name307 in fn2.signatures) {
-                remainingSignatures.push(fn2._typedFunctionData.signatureMap.get(name307));
+              let name310;
+              for (name310 in fn2.signatures) {
+                remainingSignatures.push(fn2._typedFunctionData.signatureMap.get(name310));
               }
             } else {
               remainingSignatures = fn2._typedFunctionData.signatures;
             }
-            for (var i5 = 0; i5 < nParams; ++i5) {
-              var want = params[i5];
-              var filteredSignatures = [];
-              var possibility = void 0;
-              var _iterator3 = _createForOfIteratorHelper(remainingSignatures), _step3;
-              try {
-                for (_iterator3.s(); !(_step3 = _iterator3.n()).done; ) {
-                  possibility = _step3.value;
-                  var have = getParamAtIndex(possibility.params, i5);
-                  if (!have || want.restParam && !have.restParam) {
+            for (let i5 = 0; i5 < nParams; ++i5) {
+              const want = params[i5];
+              const filteredSignatures = [];
+              let possibility;
+              for (possibility of remainingSignatures) {
+                const have = getParamAtIndex(possibility.params, i5);
+                if (!have || want.restParam && !have.restParam) {
+                  continue;
+                }
+                if (!have.hasAny) {
+                  const haveTypes = paramTypeSet(have);
+                  if (want.types.some((wtype) => !haveTypes.has(wtype.name))) {
                     continue;
                   }
-                  if (!have.hasAny) {
-                    var _ret = function() {
-                      var haveTypes = paramTypeSet(have);
-                      if (want.types.some(function(wtype) {
-                        return !haveTypes.has(wtype.name);
-                      })) {
-                        return "continue";
-                      }
-                    }();
-                    if (_ret === "continue")
-                      continue;
-                  }
-                  filteredSignatures.push(possibility);
                 }
-              } catch (err) {
-                _iterator3.e(err);
-              } finally {
-                _iterator3.f();
+                filteredSignatures.push(possibility);
               }
               remainingSignatures = filteredSignatures;
               if (remainingSignatures.length === 0)
                 break;
             }
-            var candidate;
-            var _iterator4 = _createForOfIteratorHelper(remainingSignatures), _step4;
-            try {
-              for (_iterator4.s(); !(_step4 = _iterator4.n()).done; ) {
-                candidate = _step4.value;
-                if (candidate.params.length <= nParams) {
-                  return candidate;
-                }
+            let candidate;
+            for (candidate of remainingSignatures) {
+              if (candidate.params.length <= nParams) {
+                return candidate;
               }
-            } catch (err) {
-              _iterator4.e(err);
-            } finally {
-              _iterator4.f();
             }
             throw new TypeError("Signature not found (signature: " + (fn2.name || "unnamed") + "(" + stringifyParams(params, ", ") + "))");
           }
@@ -18867,16 +18941,16 @@ svg {
             return findSignature(fn2, signature, options).implementation;
           }
           function convert(value2, typeName) {
-            var type = findType(typeName);
+            const type = findType(typeName);
             if (type.test(value2)) {
               return value2;
             }
-            var conversions = type.conversionsTo;
+            const conversions = type.conversionsTo;
             if (conversions.length === 0) {
               throw new Error("There are no conversions to " + typeName + " defined.");
             }
-            for (var i5 = 0; i5 < conversions.length; i5++) {
-              var fromType = findType(conversions[i5].from);
+            for (let i5 = 0; i5 < conversions.length; i5++) {
+              const fromType = findType(conversions[i5].from);
               if (fromType.test(value2)) {
                 return conversions[i5].convert(value2);
               }
@@ -18884,20 +18958,16 @@ svg {
             throw new Error("Cannot convert " + value2 + " to " + typeName);
           }
           function stringifyParams(params) {
-            var separator = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : ",";
-            return params.map(function(p3) {
-              return p3.name;
-            }).join(separator);
+            let separator = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : ",";
+            return params.map((p3) => p3.name).join(separator);
           }
           function parseParam(param) {
-            var restParam = param.indexOf("...") === 0;
-            var types = !restParam ? param : param.length > 3 ? param.slice(3) : "any";
-            var typeDefs = types.split("|").map(function(s3) {
-              return findType(s3.trim());
-            });
-            var hasAny = false;
-            var paramName = restParam ? "..." : "";
-            var exactTypes = typeDefs.map(function(type) {
+            const restParam = param.indexOf("...") === 0;
+            const types = !restParam ? param : param.length > 3 ? param.slice(3) : "any";
+            const typeDefs = types.split("|").map((s3) => findType(s3.trim()));
+            let hasAny = false;
+            let paramName = restParam ? "..." : "";
+            const exactTypes = typeDefs.map(function(type) {
               hasAny = type.isAny || hasAny;
               paramName += type.name + "|";
               return {
@@ -18919,14 +18989,12 @@ svg {
             };
           }
           function expandParam(param) {
-            var typeNames = param.types.map(function(t3) {
-              return t3.name;
-            });
-            var matchingConversions = availableConversions(typeNames);
-            var hasAny = param.hasAny;
-            var newName = param.name;
-            var convertibleTypes = matchingConversions.map(function(conversion) {
-              var type = findType(conversion.from);
+            const typeNames = param.types.map((t3) => t3.name);
+            const matchingConversions = availableConversions(typeNames);
+            let hasAny = param.hasAny;
+            let newName = param.name;
+            const convertibleTypes = matchingConversions.map(function(conversion) {
+              const type = findType(conversion.from);
               hasAny = type.isAny || hasAny;
               newName += "|" + conversion.from;
               return {
@@ -18949,24 +19017,22 @@ svg {
           function paramTypeSet(param) {
             if (!param.typeSet) {
               param.typeSet = /* @__PURE__ */ new Set();
-              param.types.forEach(function(type) {
-                return param.typeSet.add(type.name);
-              });
+              param.types.forEach((type) => param.typeSet.add(type.name));
             }
             return param.typeSet;
           }
           function parseSignature(rawSignature) {
-            var params = [];
+            const params = [];
             if (typeof rawSignature !== "string") {
               throw new TypeError("Signatures must be strings");
             }
-            var signature = rawSignature.trim();
+            const signature = rawSignature.trim();
             if (signature === "") {
               return params;
             }
-            var rawParams = signature.split(",");
-            for (var i5 = 0; i5 < rawParams.length; ++i5) {
-              var parsedParam = parseParam(rawParams[i5].trim());
+            const rawParams = signature.split(",");
+            for (let i5 = 0; i5 < rawParams.length; ++i5) {
+              const parsedParam = parseParam(rawParams[i5].trim());
               if (parsedParam.restParam && i5 !== rawParams.length - 1) {
                 throw new SyntaxError('Unexpected rest parameter "' + rawParams[i5] + '": only allowed for the last parameter');
               }
@@ -18978,7 +19044,7 @@ svg {
             return params;
           }
           function hasRestParam(params) {
-            var param = last(params);
+            const param = last(params);
             return param ? param.restParam : false;
           }
           function compileTest(param) {
@@ -18987,17 +19053,17 @@ svg {
             } else if (param.types.length === 1) {
               return findType(param.types[0].name).test;
             } else if (param.types.length === 2) {
-              var test0 = findType(param.types[0].name).test;
-              var test1 = findType(param.types[1].name).test;
+              const test0 = findType(param.types[0].name).test;
+              const test1 = findType(param.types[1].name).test;
               return function or2(x4) {
                 return test0(x4) || test1(x4);
               };
             } else {
-              var tests = param.types.map(function(type) {
+              const tests = param.types.map(function(type) {
                 return findType(type.name).test;
               });
               return function or2(x4) {
-                for (var i5 = 0; i5 < tests.length; i5++) {
+                for (let i5 = 0; i5 < tests.length; i5++) {
                   if (tests[i5](x4)) {
                     return true;
                   }
@@ -19007,13 +19073,13 @@ svg {
             }
           }
           function compileTests(params) {
-            var tests, test0, test1;
+            let tests, test0, test1;
             if (hasRestParam(params)) {
               tests = initial(params).map(compileTest);
-              var varIndex = tests.length;
-              var lastTest = compileTest(last(params));
-              var testRestParam = function testRestParam2(args) {
-                for (var i5 = varIndex; i5 < args.length; i5++) {
+              const varIndex = tests.length;
+              const lastTest = compileTest(last(params));
+              const testRestParam = function(args) {
+                for (let i5 = varIndex; i5 < args.length; i5++) {
                   if (!lastTest(args[i5])) {
                     return false;
                   }
@@ -19021,7 +19087,7 @@ svg {
                 return true;
               };
               return function testArgs(args) {
-                for (var i5 = 0; i5 < tests.length; i5++) {
+                for (let i5 = 0; i5 < tests.length; i5++) {
                   if (!tests[i5](args[i5])) {
                     return false;
                   }
@@ -19047,7 +19113,7 @@ svg {
               } else {
                 tests = params.map(compileTest);
                 return function testArgs(args) {
-                  for (var i5 = 0; i5 < tests.length; i5++) {
+                  for (let i5 = 0; i5 < tests.length; i5++) {
                     if (!tests[i5](args[i5])) {
                       return false;
                     }
@@ -19061,7 +19127,7 @@ svg {
             return index2 < params.length ? params[index2] : hasRestParam(params) ? last(params) : null;
           }
           function getTypeSetAtIndex(params, index2) {
-            var param = getParamAtIndex(params, index2);
+            const param = getParamAtIndex(params, index2);
             if (!param) {
               return /* @__PURE__ */ new Set();
             }
@@ -19071,34 +19137,26 @@ svg {
             return type.conversion === null || type.conversion === void 0;
           }
           function mergeExpectedParams(signatures, index2) {
-            var typeSet = /* @__PURE__ */ new Set();
-            signatures.forEach(function(signature) {
-              var paramSet = getTypeSetAtIndex(signature.params, index2);
-              var name307;
-              var _iterator5 = _createForOfIteratorHelper(paramSet), _step5;
-              try {
-                for (_iterator5.s(); !(_step5 = _iterator5.n()).done; ) {
-                  name307 = _step5.value;
-                  typeSet.add(name307);
-                }
-              } catch (err) {
-                _iterator5.e(err);
-              } finally {
-                _iterator5.f();
+            const typeSet = /* @__PURE__ */ new Set();
+            signatures.forEach((signature) => {
+              const paramSet = getTypeSetAtIndex(signature.params, index2);
+              let name310;
+              for (name310 of paramSet) {
+                typeSet.add(name310);
               }
             });
             return typeSet.has("any") ? ["any"] : Array.from(typeSet);
           }
-          function createError(name307, args, signatures) {
-            var err, expected;
-            var _name = name307 || "unnamed";
-            var matchingSignatures = signatures;
-            var index2;
-            var _loop = function _loop2() {
-              var nextMatchingDefs = [];
-              matchingSignatures.forEach(function(signature) {
-                var param = getParamAtIndex(signature.params, index2);
-                var test = compileTest(param);
+          function createError(name310, args, signatures) {
+            let err, expected;
+            const _name = name310 || "unnamed";
+            let matchingSignatures = signatures;
+            let index2;
+            for (index2 = 0; index2 < args.length; index2++) {
+              const nextMatchingDefs = [];
+              matchingSignatures.forEach((signature) => {
+                const param = getParamAtIndex(signature.params, index2);
+                const test = compileTest(param);
                 if ((index2 < signature.params.length || hasRestParam(signature.params)) && test(args[index2])) {
                   nextMatchingDefs.push(signature);
                 }
@@ -19106,7 +19164,7 @@ svg {
               if (nextMatchingDefs.length === 0) {
                 expected = mergeExpectedParams(matchingSignatures, index2);
                 if (expected.length > 0) {
-                  var actualTypes = findTypeNames(args[index2]);
+                  const actualTypes = findTypeNames(args[index2]);
                   err = new TypeError("Unexpected type of argument in function " + _name + " (expected: " + expected.join(" or ") + ", actual: " + actualTypes.join(" | ") + ", index: " + index2 + ")");
                   err.data = {
                     category: "wrongType",
@@ -19115,20 +19173,13 @@ svg {
                     actual: actualTypes,
                     expected
                   };
-                  return {
-                    v: err
-                  };
+                  return err;
                 }
               } else {
                 matchingSignatures = nextMatchingDefs;
               }
-            };
-            for (index2 = 0; index2 < args.length; index2++) {
-              var _ret2 = _loop();
-              if (_typeof2(_ret2) === "object")
-                return _ret2.v;
             }
-            var lengths = matchingSignatures.map(function(signature) {
+            const lengths = matchingSignatures.map(function(signature) {
               return hasRestParam(signature.params) ? Infinity : signature.params.length;
             });
             if (args.length < Math.min.apply(null, lengths)) {
@@ -19142,7 +19193,7 @@ svg {
               };
               return err;
             }
-            var maxLength = Math.max.apply(null, lengths);
+            const maxLength = Math.max.apply(null, lengths);
             if (args.length > maxLength) {
               err = new TypeError("Too many arguments in function " + _name + " (expected: " + maxLength + ", actual: " + args.length + ")");
               err.data = {
@@ -19153,8 +19204,8 @@ svg {
               };
               return err;
             }
-            var argTypes = [];
-            for (var i5 = 0; i5 < args.length; ++i5) {
+            const argTypes = [];
+            for (let i5 = 0; i5 < args.length; ++i5) {
               argTypes.push(findTypeNames(args[i5]).join("|"));
             }
             err = new TypeError('Arguments of type "' + argTypes.join(", ") + '" do not match any of the defined signatures of function ' + _name + ".");
@@ -19165,8 +19216,8 @@ svg {
             return err;
           }
           function getLowestTypeIndex(param) {
-            var min3 = typeList.length + 1;
-            for (var i5 = 0; i5 < param.types.length; i5++) {
+            let min3 = typeList.length + 1;
+            for (let i5 = 0; i5 < param.types.length; i5++) {
               if (isExactType(param.types[i5])) {
                 min3 = Math.min(min3, param.types[i5].typeIndex);
               }
@@ -19174,8 +19225,8 @@ svg {
             return min3;
           }
           function getLowestConversionIndex(param) {
-            var min3 = nConversions + 1;
-            for (var i5 = 0; i5 < param.types.length; i5++) {
+            let min3 = nConversions + 1;
+            for (let i5 = 0; i5 < param.types.length; i5++) {
               if (!isExactType(param.types[i5])) {
                 min3 = Math.min(min3, param.types[i5].conversionIndex);
               }
@@ -19204,14 +19255,14 @@ svg {
             } else if (param2.hasConversion) {
               return -1;
             }
-            var typeDiff = getLowestTypeIndex(param1) - getLowestTypeIndex(param2);
+            const typeDiff = getLowestTypeIndex(param1) - getLowestTypeIndex(param2);
             if (typeDiff < 0) {
               return -1;
             }
             if (typeDiff > 0) {
               return 1;
             }
-            var convDiff = getLowestConversionIndex(param1) - getLowestConversionIndex(param2);
+            const convDiff = getLowestConversionIndex(param1) - getLowestConversionIndex(param2);
             if (convDiff < 0) {
               return -1;
             }
@@ -19221,12 +19272,12 @@ svg {
             return 0;
           }
           function compareSignatures(signature1, signature2) {
-            var pars1 = signature1.params;
-            var pars2 = signature2.params;
-            var last1 = last(pars1);
-            var last2 = last(pars2);
-            var hasRest1 = hasRestParam(pars1);
-            var hasRest2 = hasRestParam(pars2);
+            const pars1 = signature1.params;
+            const pars2 = signature2.params;
+            const last1 = last(pars1);
+            const last2 = last(pars2);
+            const hasRest1 = hasRestParam(pars1);
+            const hasRest2 = hasRestParam(pars2);
             if (hasRest1 && last1.hasAny) {
               if (!hasRest2 || !last2.hasAny) {
                 return 1;
@@ -19234,38 +19285,22 @@ svg {
             } else if (hasRest2 && last2.hasAny) {
               return -1;
             }
-            var any1 = 0;
-            var conv1 = 0;
-            var par;
-            var _iterator6 = _createForOfIteratorHelper(pars1), _step6;
-            try {
-              for (_iterator6.s(); !(_step6 = _iterator6.n()).done; ) {
-                par = _step6.value;
-                if (par.hasAny)
-                  ++any1;
-                if (par.hasConversion)
-                  ++conv1;
-              }
-            } catch (err) {
-              _iterator6.e(err);
-            } finally {
-              _iterator6.f();
+            let any1 = 0;
+            let conv1 = 0;
+            let par;
+            for (par of pars1) {
+              if (par.hasAny)
+                ++any1;
+              if (par.hasConversion)
+                ++conv1;
             }
-            var any2 = 0;
-            var conv2 = 0;
-            var _iterator7 = _createForOfIteratorHelper(pars2), _step7;
-            try {
-              for (_iterator7.s(); !(_step7 = _iterator7.n()).done; ) {
-                par = _step7.value;
-                if (par.hasAny)
-                  ++any2;
-                if (par.hasConversion)
-                  ++conv2;
-              }
-            } catch (err) {
-              _iterator7.e(err);
-            } finally {
-              _iterator7.f();
+            let any2 = 0;
+            let conv2 = 0;
+            for (par of pars2) {
+              if (par.hasAny)
+                ++any2;
+              if (par.hasConversion)
+                ++conv2;
             }
             if (any1 !== any2) {
               return any1 - any2;
@@ -19287,23 +19322,22 @@ svg {
             } else if (hasRest2) {
               return -1;
             }
-            var lengthCriterion = (pars1.length - pars2.length) * (hasRest1 ? -1 : 1);
+            const lengthCriterion = (pars1.length - pars2.length) * (hasRest1 ? -1 : 1);
             if (lengthCriterion !== 0) {
               return lengthCriterion;
             }
-            var comparisons = [];
-            var tc = 0;
-            for (var i5 = 0; i5 < pars1.length; ++i5) {
-              var thisComparison = compareParams(pars1[i5], pars2[i5]);
+            const comparisons = [];
+            let tc = 0;
+            for (let i5 = 0; i5 < pars1.length; ++i5) {
+              const thisComparison = compareParams(pars1[i5], pars2[i5]);
               comparisons.push(thisComparison);
               tc += thisComparison;
             }
             if (tc !== 0) {
               return tc;
             }
-            var c3;
-            for (var _i2 = 0, _comparisons = comparisons; _i2 < _comparisons.length; _i2++) {
-              c3 = _comparisons[_i2];
+            let c3;
+            for (c3 of comparisons) {
               if (c3 !== 0) {
                 return c3;
               }
@@ -19314,48 +19348,36 @@ svg {
             if (typeNames.length === 0) {
               return [];
             }
-            var types = typeNames.map(findType);
+            const types = typeNames.map(findType);
             if (typeNames.length > 1) {
-              types.sort(function(t1, t22) {
-                return t1.index - t22.index;
-              });
+              types.sort((t1, t22) => t1.index - t22.index);
             }
-            var matches = types[0].conversionsTo;
+            let matches = types[0].conversionsTo;
             if (typeNames.length === 1) {
               return matches;
             }
             matches = matches.concat([]);
-            var knownTypes = new Set(typeNames);
-            for (var i5 = 1; i5 < types.length; ++i5) {
-              var newMatch = void 0;
-              var _iterator8 = _createForOfIteratorHelper(types[i5].conversionsTo), _step8;
-              try {
-                for (_iterator8.s(); !(_step8 = _iterator8.n()).done; ) {
-                  newMatch = _step8.value;
-                  if (!knownTypes.has(newMatch.from)) {
-                    matches.push(newMatch);
-                    knownTypes.add(newMatch.from);
-                  }
+            const knownTypes = new Set(typeNames);
+            for (let i5 = 1; i5 < types.length; ++i5) {
+              let newMatch;
+              for (newMatch of types[i5].conversionsTo) {
+                if (!knownTypes.has(newMatch.from)) {
+                  matches.push(newMatch);
+                  knownTypes.add(newMatch.from);
                 }
-              } catch (err) {
-                _iterator8.e(err);
-              } finally {
-                _iterator8.f();
               }
             }
             return matches;
           }
           function compileArgsPreprocessing(params, fn2) {
-            var fnConvert = fn2;
-            if (params.some(function(p3) {
-              return p3.hasConversion;
-            })) {
-              var restParam = hasRestParam(params);
-              var compiledConversions = params.map(compileArgConversion);
+            let fnConvert = fn2;
+            if (params.some((p3) => p3.hasConversion)) {
+              const restParam = hasRestParam(params);
+              const compiledConversions = params.map(compileArgConversion);
               fnConvert = function convertArgs() {
-                var args = [];
-                var last2 = restParam ? arguments.length - 1 : arguments.length;
-                for (var i5 = 0; i5 < last2; i5++) {
+                const args = [];
+                const last2 = restParam ? arguments.length - 1 : arguments.length;
+                for (let i5 = 0; i5 < last2; i5++) {
                   args[i5] = compiledConversions[i5](arguments[i5]);
                 }
                 if (restParam) {
@@ -19364,9 +19386,9 @@ svg {
                 return fn2.apply(this, args);
               };
             }
-            var fnPreprocess = fnConvert;
+            let fnPreprocess = fnConvert;
             if (hasRestParam(params)) {
-              var offset = params.length - 1;
+              const offset = params.length - 1;
               fnPreprocess = function preprocessRestParams() {
                 return fnConvert.apply(this, slice(arguments, 0, offset).concat([slice(arguments, offset)]));
               };
@@ -19374,9 +19396,9 @@ svg {
             return fnPreprocess;
           }
           function compileArgConversion(param) {
-            var test0, test1, conversion0, conversion1;
-            var tests = [];
-            var conversions = [];
+            let test0, test1, conversion0, conversion1;
+            const tests = [];
+            const conversions = [];
             param.types.forEach(function(type) {
               if (type.conversion) {
                 tests.push(findType(type.conversion.from).test);
@@ -19413,7 +19435,7 @@ svg {
                 };
               default:
                 return function convertArg(arg2) {
-                  for (var i5 = 0; i5 < conversions.length; i5++) {
+                  for (let i5 = 0; i5 < conversions.length; i5++) {
                     if (tests[i5](arg2)) {
                       return conversions[i5](arg2);
                     }
@@ -19425,19 +19447,15 @@ svg {
           function splitParams(params) {
             function _splitParams(params2, index2, paramsSoFar) {
               if (index2 < params2.length) {
-                var param = params2[index2];
-                var resultingParams = [];
+                const param = params2[index2];
+                let resultingParams = [];
                 if (param.restParam) {
-                  var exactTypes = param.types.filter(isExactType);
+                  const exactTypes = param.types.filter(isExactType);
                   if (exactTypes.length < param.types.length) {
                     resultingParams.push({
                       types: exactTypes,
-                      name: "..." + exactTypes.map(function(t3) {
-                        return t3.name;
-                      }).join("|"),
-                      hasAny: exactTypes.some(function(t3) {
-                        return t3.isAny;
-                      }),
+                      name: "..." + exactTypes.map((t3) => t3.name).join("|"),
+                      hasAny: exactTypes.some((t3) => t3.isAny),
                       hasConversion: false,
                       restParam: true
                     });
@@ -19464,38 +19482,30 @@ svg {
             return _splitParams(params, 0, []);
           }
           function conflicting(params1, params2) {
-            var ii = Math.max(params1.length, params2.length);
-            for (var i5 = 0; i5 < ii; i5++) {
-              var typeSet1 = getTypeSetAtIndex(params1, i5);
-              var typeSet2 = getTypeSetAtIndex(params2, i5);
-              var overlap = false;
-              var name307 = void 0;
-              var _iterator9 = _createForOfIteratorHelper(typeSet2), _step9;
-              try {
-                for (_iterator9.s(); !(_step9 = _iterator9.n()).done; ) {
-                  name307 = _step9.value;
-                  if (typeSet1.has(name307)) {
-                    overlap = true;
-                    break;
-                  }
+            const ii = Math.max(params1.length, params2.length);
+            for (let i5 = 0; i5 < ii; i5++) {
+              const typeSet1 = getTypeSetAtIndex(params1, i5);
+              const typeSet2 = getTypeSetAtIndex(params2, i5);
+              let overlap = false;
+              let name310;
+              for (name310 of typeSet2) {
+                if (typeSet1.has(name310)) {
+                  overlap = true;
+                  break;
                 }
-              } catch (err) {
-                _iterator9.e(err);
-              } finally {
-                _iterator9.f();
               }
               if (!overlap) {
                 return false;
               }
             }
-            var len1 = params1.length;
-            var len2 = params2.length;
-            var restParam1 = hasRestParam(params1);
-            var restParam2 = hasRestParam(params2);
+            const len1 = params1.length;
+            const len2 = params2.length;
+            const restParam1 = hasRestParam(params1);
+            const restParam2 = hasRestParam(params2);
             return restParam1 ? restParam2 ? len1 === len2 : len2 >= len1 : restParam2 ? len1 >= len2 : len1 === len2;
           }
           function clearResolutions(functionList) {
-            return functionList.map(function(fn2) {
+            return functionList.map((fn2) => {
               if (isReferToSelf(fn2)) {
                 return referToSelf(fn2.referToSelf.callback);
               }
@@ -19506,47 +19516,39 @@ svg {
             });
           }
           function collectResolutions(references, functionList, signatureMap) {
-            var resolvedReferences = [];
-            var reference;
-            var _iterator10 = _createForOfIteratorHelper(references), _step10;
-            try {
-              for (_iterator10.s(); !(_step10 = _iterator10.n()).done; ) {
-                reference = _step10.value;
-                var resolution = signatureMap[reference];
-                if (typeof resolution !== "number") {
-                  throw new TypeError('No definition for referenced signature "' + reference + '"');
-                }
-                resolution = functionList[resolution];
-                if (typeof resolution !== "function") {
-                  return false;
-                }
-                resolvedReferences.push(resolution);
+            const resolvedReferences = [];
+            let reference;
+            for (reference of references) {
+              let resolution = signatureMap[reference];
+              if (typeof resolution !== "number") {
+                throw new TypeError('No definition for referenced signature "' + reference + '"');
               }
-            } catch (err) {
-              _iterator10.e(err);
-            } finally {
-              _iterator10.f();
+              resolution = functionList[resolution];
+              if (typeof resolution !== "function") {
+                return false;
+              }
+              resolvedReferences.push(resolution);
             }
             return resolvedReferences;
           }
           function resolveReferences(functionList, signatureMap, self2) {
-            var resolvedFunctions = clearResolutions(functionList);
-            var isResolved = new Array(resolvedFunctions.length).fill(false);
-            var leftUnresolved = true;
+            const resolvedFunctions = clearResolutions(functionList);
+            const isResolved = new Array(resolvedFunctions.length).fill(false);
+            let leftUnresolved = true;
             while (leftUnresolved) {
               leftUnresolved = false;
-              var nothingResolved = true;
-              for (var i5 = 0; i5 < resolvedFunctions.length; ++i5) {
+              let nothingResolved = true;
+              for (let i5 = 0; i5 < resolvedFunctions.length; ++i5) {
                 if (isResolved[i5])
                   continue;
-                var fn2 = resolvedFunctions[i5];
+                const fn2 = resolvedFunctions[i5];
                 if (isReferToSelf(fn2)) {
                   resolvedFunctions[i5] = fn2.referToSelf.callback(self2);
                   resolvedFunctions[i5].referToSelf = fn2.referToSelf;
                   isResolved[i5] = true;
                   nothingResolved = false;
                 } else if (isReferTo(fn2)) {
-                  var resolvedReferences = collectResolutions(fn2.referTo.references, resolvedFunctions, signatureMap);
+                  const resolvedReferences = collectResolutions(fn2.referTo.references, resolvedFunctions, signatureMap);
                   if (resolvedReferences) {
                     resolvedFunctions[i5] = fn2.referTo.callback.apply(this, resolvedReferences);
                     resolvedFunctions[i5].referTo = fn2.referTo;
@@ -19564,15 +19566,15 @@ svg {
             return resolvedFunctions;
           }
           function validateDeprecatedThis(signaturesMap) {
-            var deprecatedThisRegex = /\bthis(\(|\.signatures\b)/;
-            Object.keys(signaturesMap).forEach(function(signature) {
-              var fn2 = signaturesMap[signature];
+            const deprecatedThisRegex = /\bthis(\(|\.signatures\b)/;
+            Object.keys(signaturesMap).forEach((signature) => {
+              const fn2 = signaturesMap[signature];
               if (deprecatedThisRegex.test(fn2.toString())) {
                 throw new SyntaxError("Using `this` to self-reference a function is deprecated since typed-function@3. Use typed.referTo and typed.referToSelf instead.");
               }
             });
           }
-          function createTypedFunction(name307, rawSignaturesMap) {
+          function createTypedFunction(name310, rawSignaturesMap) {
             typed3.createCount++;
             if (Object.keys(rawSignaturesMap).length === 0) {
               throw new SyntaxError("No signatures provided");
@@ -19580,125 +19582,105 @@ svg {
             if (typed3.warnAgainstDeprecatedThis) {
               validateDeprecatedThis(rawSignaturesMap);
             }
-            var parsedParams = [];
-            var originalFunctions = [];
-            var signaturesMap = {};
-            var preliminarySignatures = [];
-            var signature;
-            var _loop2 = function _loop22() {
+            const parsedParams = [];
+            const originalFunctions = [];
+            const signaturesMap = {};
+            const preliminarySignatures = [];
+            let signature;
+            for (signature in rawSignaturesMap) {
               if (!Object.prototype.hasOwnProperty.call(rawSignaturesMap, signature)) {
-                return "continue";
+                continue;
               }
-              var params = parseSignature(signature);
+              const params = parseSignature(signature);
               if (!params)
-                return "continue";
+                continue;
               parsedParams.forEach(function(pp) {
                 if (conflicting(pp, params)) {
                   throw new TypeError('Conflicting signatures "' + stringifyParams(pp) + '" and "' + stringifyParams(params) + '".');
                 }
               });
               parsedParams.push(params);
-              var functionIndex = originalFunctions.length;
+              const functionIndex = originalFunctions.length;
               originalFunctions.push(rawSignaturesMap[signature]);
-              var conversionParams = params.map(expandParam);
-              var sp = void 0;
-              var _iterator11 = _createForOfIteratorHelper(splitParams(conversionParams)), _step11;
-              try {
-                for (_iterator11.s(); !(_step11 = _iterator11.n()).done; ) {
-                  sp = _step11.value;
-                  var spName = stringifyParams(sp);
-                  preliminarySignatures.push({
-                    params: sp,
-                    name: spName,
-                    fn: functionIndex
-                  });
-                  if (sp.every(function(p3) {
-                    return !p3.hasConversion;
-                  })) {
-                    signaturesMap[spName] = functionIndex;
-                  }
+              const conversionParams = params.map(expandParam);
+              let sp;
+              for (sp of splitParams(conversionParams)) {
+                const spName = stringifyParams(sp);
+                preliminarySignatures.push({
+                  params: sp,
+                  name: spName,
+                  fn: functionIndex
+                });
+                if (sp.every((p3) => !p3.hasConversion)) {
+                  signaturesMap[spName] = functionIndex;
                 }
-              } catch (err) {
-                _iterator11.e(err);
-              } finally {
-                _iterator11.f();
               }
-            };
-            for (signature in rawSignaturesMap) {
-              var _ret3 = _loop2();
-              if (_ret3 === "continue")
-                continue;
             }
             preliminarySignatures.sort(compareSignatures);
-            var resolvedFunctions = resolveReferences(originalFunctions, signaturesMap, theTypedFn);
-            var s3;
+            const resolvedFunctions = resolveReferences(originalFunctions, signaturesMap, theTypedFn);
+            let s3;
             for (s3 in signaturesMap) {
               if (Object.prototype.hasOwnProperty.call(signaturesMap, s3)) {
                 signaturesMap[s3] = resolvedFunctions[signaturesMap[s3]];
               }
             }
-            var signatures = [];
-            var internalSignatureMap = /* @__PURE__ */ new Map();
-            for (var _i3 = 0, _preliminarySignature = preliminarySignatures; _i3 < _preliminarySignature.length; _i3++) {
-              s3 = _preliminarySignature[_i3];
+            const signatures = [];
+            const internalSignatureMap = /* @__PURE__ */ new Map();
+            for (s3 of preliminarySignatures) {
               if (!internalSignatureMap.has(s3.name)) {
                 s3.fn = resolvedFunctions[s3.fn];
                 signatures.push(s3);
                 internalSignatureMap.set(s3.name, s3);
               }
             }
-            var ok0 = signatures[0] && signatures[0].params.length <= 2 && !hasRestParam(signatures[0].params);
-            var ok1 = signatures[1] && signatures[1].params.length <= 2 && !hasRestParam(signatures[1].params);
-            var ok2 = signatures[2] && signatures[2].params.length <= 2 && !hasRestParam(signatures[2].params);
-            var ok3 = signatures[3] && signatures[3].params.length <= 2 && !hasRestParam(signatures[3].params);
-            var ok4 = signatures[4] && signatures[4].params.length <= 2 && !hasRestParam(signatures[4].params);
-            var ok5 = signatures[5] && signatures[5].params.length <= 2 && !hasRestParam(signatures[5].params);
-            var allOk = ok0 && ok1 && ok2 && ok3 && ok4 && ok5;
-            for (var i5 = 0; i5 < signatures.length; ++i5) {
+            const ok0 = signatures[0] && signatures[0].params.length <= 2 && !hasRestParam(signatures[0].params);
+            const ok1 = signatures[1] && signatures[1].params.length <= 2 && !hasRestParam(signatures[1].params);
+            const ok2 = signatures[2] && signatures[2].params.length <= 2 && !hasRestParam(signatures[2].params);
+            const ok3 = signatures[3] && signatures[3].params.length <= 2 && !hasRestParam(signatures[3].params);
+            const ok4 = signatures[4] && signatures[4].params.length <= 2 && !hasRestParam(signatures[4].params);
+            const ok5 = signatures[5] && signatures[5].params.length <= 2 && !hasRestParam(signatures[5].params);
+            const allOk = ok0 && ok1 && ok2 && ok3 && ok4 && ok5;
+            for (let i5 = 0; i5 < signatures.length; ++i5) {
               signatures[i5].test = compileTests(signatures[i5].params);
             }
-            var test00 = ok0 ? compileTest(signatures[0].params[0]) : notOk;
-            var test10 = ok1 ? compileTest(signatures[1].params[0]) : notOk;
-            var test20 = ok2 ? compileTest(signatures[2].params[0]) : notOk;
-            var test30 = ok3 ? compileTest(signatures[3].params[0]) : notOk;
-            var test40 = ok4 ? compileTest(signatures[4].params[0]) : notOk;
-            var test50 = ok5 ? compileTest(signatures[5].params[0]) : notOk;
-            var test01 = ok0 ? compileTest(signatures[0].params[1]) : notOk;
-            var test11 = ok1 ? compileTest(signatures[1].params[1]) : notOk;
-            var test21 = ok2 ? compileTest(signatures[2].params[1]) : notOk;
-            var test31 = ok3 ? compileTest(signatures[3].params[1]) : notOk;
-            var test41 = ok4 ? compileTest(signatures[4].params[1]) : notOk;
-            var test51 = ok5 ? compileTest(signatures[5].params[1]) : notOk;
-            for (var _i4 = 0; _i4 < signatures.length; ++_i4) {
-              signatures[_i4].implementation = compileArgsPreprocessing(signatures[_i4].params, signatures[_i4].fn);
+            const test00 = ok0 ? compileTest(signatures[0].params[0]) : notOk;
+            const test10 = ok1 ? compileTest(signatures[1].params[0]) : notOk;
+            const test20 = ok2 ? compileTest(signatures[2].params[0]) : notOk;
+            const test30 = ok3 ? compileTest(signatures[3].params[0]) : notOk;
+            const test40 = ok4 ? compileTest(signatures[4].params[0]) : notOk;
+            const test50 = ok5 ? compileTest(signatures[5].params[0]) : notOk;
+            const test01 = ok0 ? compileTest(signatures[0].params[1]) : notOk;
+            const test11 = ok1 ? compileTest(signatures[1].params[1]) : notOk;
+            const test21 = ok2 ? compileTest(signatures[2].params[1]) : notOk;
+            const test31 = ok3 ? compileTest(signatures[3].params[1]) : notOk;
+            const test41 = ok4 ? compileTest(signatures[4].params[1]) : notOk;
+            const test51 = ok5 ? compileTest(signatures[5].params[1]) : notOk;
+            for (let i5 = 0; i5 < signatures.length; ++i5) {
+              signatures[i5].implementation = compileArgsPreprocessing(signatures[i5].params, signatures[i5].fn);
             }
-            var fn0 = ok0 ? signatures[0].implementation : undef;
-            var fn1 = ok1 ? signatures[1].implementation : undef;
-            var fn2 = ok2 ? signatures[2].implementation : undef;
-            var fn3 = ok3 ? signatures[3].implementation : undef;
-            var fn4 = ok4 ? signatures[4].implementation : undef;
-            var fn5 = ok5 ? signatures[5].implementation : undef;
-            var len0 = ok0 ? signatures[0].params.length : -1;
-            var len1 = ok1 ? signatures[1].params.length : -1;
-            var len2 = ok2 ? signatures[2].params.length : -1;
-            var len3 = ok3 ? signatures[3].params.length : -1;
-            var len4 = ok4 ? signatures[4].params.length : -1;
-            var len5 = ok5 ? signatures[5].params.length : -1;
-            var iStart = allOk ? 6 : 0;
-            var iEnd = signatures.length;
-            var tests = signatures.map(function(s4) {
-              return s4.test;
-            });
-            var fns = signatures.map(function(s4) {
-              return s4.implementation;
-            });
-            var generic = function generic2() {
-              for (var _i5 = iStart; _i5 < iEnd; _i5++) {
-                if (tests[_i5](arguments)) {
-                  return fns[_i5].apply(this, arguments);
+            const fn0 = ok0 ? signatures[0].implementation : undef;
+            const fn1 = ok1 ? signatures[1].implementation : undef;
+            const fn2 = ok2 ? signatures[2].implementation : undef;
+            const fn3 = ok3 ? signatures[3].implementation : undef;
+            const fn4 = ok4 ? signatures[4].implementation : undef;
+            const fn5 = ok5 ? signatures[5].implementation : undef;
+            const len0 = ok0 ? signatures[0].params.length : -1;
+            const len1 = ok1 ? signatures[1].params.length : -1;
+            const len2 = ok2 ? signatures[2].params.length : -1;
+            const len3 = ok3 ? signatures[3].params.length : -1;
+            const len4 = ok4 ? signatures[4].params.length : -1;
+            const len5 = ok5 ? signatures[5].params.length : -1;
+            const iStart = allOk ? 6 : 0;
+            const iEnd = signatures.length;
+            const tests = signatures.map((s4) => s4.test);
+            const fns = signatures.map((s4) => s4.implementation);
+            const generic = function generic2() {
+              for (let i5 = iStart; i5 < iEnd; i5++) {
+                if (tests[i5](arguments)) {
+                  return fns[i5].apply(this, arguments);
                 }
               }
-              return typed3.onMismatch(name307, arguments, signatures);
+              return typed3.onMismatch(name310, arguments, signatures);
             };
             function theTypedFn(arg0, arg1) {
               if (arguments.length === len0 && test00(arg0) && test01(arg1)) {
@@ -19723,7 +19705,7 @@ svg {
             }
             try {
               Object.defineProperty(theTypedFn, "name", {
-                value: name307
+                value: name310
               });
             } catch (err) {
             }
@@ -19734,8 +19716,8 @@ svg {
             };
             return theTypedFn;
           }
-          function _onMismatch(name307, args, signatures) {
-            throw createError(name307, args, signatures);
+          function _onMismatch(name310, args, signatures) {
+            throw createError(name310, args, signatures);
           }
           function initial(arr) {
             return slice(arr, 0, arr.length - 1);
@@ -19747,7 +19729,7 @@ svg {
             return Array.prototype.slice.call(arr, start, end);
           }
           function findInArray(arr, test) {
-            for (var i5 = 0; i5 < arr.length; i5++) {
+            for (let i5 = 0; i5 < arr.length; i5++) {
               if (test(arr[i5])) {
                 return arr[i5];
               }
@@ -19758,10 +19740,8 @@ svg {
             return Array.prototype.concat.apply([], arr.map(callback));
           }
           function referTo() {
-            var references = initial(arguments).map(function(s3) {
-              return stringifyParams(parseSignature(s3));
-            });
-            var callback = last(arguments);
+            const references = initial(arguments).map((s3) => stringifyParams(parseSignature(s3)));
+            const callback = last(arguments);
             if (typeof callback !== "function") {
               throw new TypeError("Callback function expected as last argument");
             }
@@ -19786,17 +19766,17 @@ svg {
             };
           }
           function isReferTo(objectOrFn) {
-            return objectOrFn && _typeof2(objectOrFn.referTo) === "object" && Array.isArray(objectOrFn.referTo.references) && typeof objectOrFn.referTo.callback === "function";
+            return objectOrFn && typeof objectOrFn.referTo === "object" && Array.isArray(objectOrFn.referTo.references) && typeof objectOrFn.referTo.callback === "function";
           }
           function isReferToSelf(objectOrFn) {
-            return objectOrFn && _typeof2(objectOrFn.referToSelf) === "object" && typeof objectOrFn.referToSelf.callback === "function";
+            return objectOrFn && typeof objectOrFn.referToSelf === "object" && typeof objectOrFn.referToSelf.callback === "function";
           }
           function checkName(nameSoFar, newName) {
             if (!nameSoFar) {
               return newName;
             }
             if (newName && newName !== nameSoFar) {
-              var err = new Error("Function names do not match (expected: " + nameSoFar + ", actual: " + newName + ")");
+              const err = new Error("Function names do not match (expected: " + nameSoFar + ", actual: " + newName + ")");
               err.data = {
                 actual: newName,
                 expected: nameSoFar
@@ -19806,21 +19786,21 @@ svg {
             return nameSoFar;
           }
           function getObjectName(obj) {
-            var name307;
-            for (var key in obj) {
+            let name310;
+            for (const key in obj) {
               if (Object.prototype.hasOwnProperty.call(obj, key) && (isTypedFunction(obj[key]) || typeof obj[key].signature === "string")) {
-                name307 = checkName(name307, obj[key].name);
+                name310 = checkName(name310, obj[key].name);
               }
             }
-            return name307;
+            return name310;
           }
           function mergeSignatures(dest, source) {
-            var key;
+            let key;
             for (key in source) {
               if (Object.prototype.hasOwnProperty.call(source, key)) {
                 if (key in dest) {
                   if (source[key] !== dest[key]) {
-                    var err = new Error('Signature "' + key + '" is defined twice');
+                    const err = new Error('Signature "' + key + '" is defined twice');
                     err.data = {
                       signature: key,
                       sourceFunction: source[key],
@@ -19833,16 +19813,16 @@ svg {
               }
             }
           }
-          var saveTyped = typed3;
-          typed3 = function typed4(maybeName) {
-            var named = typeof maybeName === "string";
-            var start = named ? 1 : 0;
-            var name307 = named ? maybeName : "";
-            var allSignatures = {};
-            for (var i5 = start; i5 < arguments.length; ++i5) {
-              var item = arguments[i5];
-              var theseSignatures = {};
-              var thisName = void 0;
+          const saveTyped = typed3;
+          typed3 = function(maybeName) {
+            const named = typeof maybeName === "string";
+            const start = named ? 1 : 0;
+            let name310 = named ? maybeName : "";
+            const allSignatures = {};
+            for (let i5 = start; i5 < arguments.length; ++i5) {
+              const item = arguments[i5];
+              let theseSignatures = {};
+              let thisName;
               if (typeof item === "function") {
                 thisName = item.name;
                 if (typeof item.signature === "string") {
@@ -19857,7 +19837,7 @@ svg {
                 }
               }
               if (Object.keys(theseSignatures).length === 0) {
-                var err = new TypeError("Argument to 'typed' at index " + i5 + " is not a (typed) function, nor an object with signatures as keys and functions as values.");
+                const err = new TypeError("Argument to 'typed' at index " + i5 + " is not a (typed) function, nor an object with signatures as keys and functions as values.");
                 err.data = {
                   index: i5,
                   argument: item
@@ -19865,11 +19845,11 @@ svg {
                 throw err;
               }
               if (!named) {
-                name307 = checkName(name307, thisName);
+                name310 = checkName(name310, thisName);
               }
               mergeSignatures(allSignatures, theseSignatures);
             }
-            return createTypedFunction(name307 || "", allSignatures);
+            return createTypedFunction(name310 || "", allSignatures);
           };
           typed3.create = create2;
           typed3.createCount = saveTyped.createCount;
@@ -19888,7 +19868,7 @@ svg {
           typed3.isTypedFunction = isTypedFunction;
           typed3.warnAgainstDeprecatedThis = true;
           typed3.addType = function(type, beforeObjectTest) {
-            var before = "any";
+            let before = "any";
             if (beforeObjectTest !== false && typeMap.has("Object")) {
               before = "Object";
             }
@@ -19904,7 +19884,7 @@ svg {
           }
           typed3.addConversion = function(conversion) {
             _validateConversion(conversion);
-            var to2 = findType(conversion.to);
+            const to2 = findType(conversion.to);
             if (to2.conversionsTo.every(function(other) {
               return other.from !== conversion.from;
             })) {
@@ -19922,25 +19902,23 @@ svg {
           };
           typed3.removeConversion = function(conversion) {
             _validateConversion(conversion);
-            var to2 = findType(conversion.to);
-            var existingConversion = findInArray(to2.conversionsTo, function(c3) {
-              return c3.from === conversion.from;
-            });
+            const to2 = findType(conversion.to);
+            const existingConversion = findInArray(to2.conversionsTo, (c3) => c3.from === conversion.from);
             if (!existingConversion) {
               throw new Error("Attempt to remove nonexistent conversion from " + conversion.from + " to " + conversion.to);
             }
             if (existingConversion.convert !== conversion.convert) {
               throw new Error("Conversion to remove does not match existing conversion");
             }
-            var index2 = to2.conversionsTo.indexOf(existingConversion);
+            const index2 = to2.conversionsTo.indexOf(existingConversion);
             to2.conversionsTo.splice(index2, 1);
           };
           typed3.resolve = function(tf, argList) {
             if (!isTypedFunction(tf)) {
               throw new TypeError(NOT_TYPED_FUNCTION);
             }
-            var sigs = tf._typedFunctionData.signatures;
-            for (var i5 = 0; i5 < sigs.length; ++i5) {
+            const sigs = tf._typedFunctionData.signatures;
+            for (let i5 = 0; i5 < sigs.length; ++i5) {
               if (sigs[i5].test(argList)) {
                 return sigs[i5];
               }
@@ -20449,7 +20427,7 @@ svg {
       return formatArray(value2, options);
     }
     if (isString(value2)) {
-      return '"' + value2 + '"';
+      return stringify(value2);
     }
     if (typeof value2 === "function") {
       return value2.syntax ? String(value2.syntax) : "function";
@@ -20461,7 +20439,7 @@ svg {
         return value2.toString(options);
       } else {
         var entries = Object.keys(value2).map((key) => {
-          return '"' + key + '": ' + format3(value2[key], options);
+          return stringify(key) + ": " + format3(value2[key], options);
         });
         return "{" + entries.join(", ") + "}";
       }
@@ -20474,19 +20452,7 @@ svg {
     var i5 = 0;
     while (i5 < text.length) {
       var c3 = text.charAt(i5);
-      if (c3 === "\\") {
-        escaped += c3;
-        i5++;
-        c3 = text.charAt(i5);
-        if (c3 === "" || '"\\/bfnrtu'.indexOf(c3) === -1) {
-          escaped += "\\";
-        }
-        escaped += c3;
-      } else if (c3 === '"') {
-        escaped += '\\"';
-      } else {
-        escaped += c3;
-      }
+      escaped += c3 in controlCharacters ? controlCharacters[c3] : c3;
       i5++;
     }
     return '"' + escaped + '"';
@@ -20524,11 +20490,21 @@ svg {
     }
     return x4 === y3 ? 0 : x4 > y3 ? 1 : -1;
   }
+  var controlCharacters;
   var init_string = __esm({
     "node_modules/mathjs/lib/esm/utils/string.js"() {
       init_is();
       init_number();
       init_formatter();
+      controlCharacters = {
+        '"': '\\"',
+        "\\": "\\\\",
+        "\b": "\\b",
+        "\f": "\\f",
+        "\n": "\\n",
+        "\r": "\\r",
+        "	": "\\t"
+      };
     }
   });
 
@@ -21030,25 +21006,25 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/factory.js
-  function factory(name307, dependencies307, create2, meta) {
+  function factory(name310, dependencies310, create2, meta) {
     function assertAndCreate(scope) {
-      var deps = pickShallow(scope, dependencies307.map(stripOptionalNotation));
-      assertDependencies(name307, dependencies307, scope);
+      var deps = pickShallow(scope, dependencies310.map(stripOptionalNotation));
+      assertDependencies(name310, dependencies310, scope);
       return create2(deps);
     }
     assertAndCreate.isFactory = true;
-    assertAndCreate.fn = name307;
-    assertAndCreate.dependencies = dependencies307.slice().sort();
+    assertAndCreate.fn = name310;
+    assertAndCreate.dependencies = dependencies310.slice().sort();
     if (meta) {
       assertAndCreate.meta = meta;
     }
     return assertAndCreate;
   }
-  function assertDependencies(name307, dependencies307, scope) {
-    var allDefined = dependencies307.filter((dependency) => !isOptionalDependency(dependency)).every((dependency) => scope[dependency] !== void 0);
+  function assertDependencies(name310, dependencies310, scope) {
+    var allDefined = dependencies310.filter((dependency) => !isOptionalDependency(dependency)).every((dependency) => scope[dependency] !== void 0);
     if (!allDefined) {
-      var missingDependencies = dependencies307.filter((dependency) => scope[dependency] === void 0);
-      throw new Error('Cannot create function "'.concat(name307, '", ') + "some dependencies are missing: ".concat(missingDependencies.map((d3) => '"'.concat(d3, '"')).join(", "), "."));
+      var missingDependencies = dependencies310.filter((dependency) => scope[dependency] === void 0);
+      throw new Error('Cannot create function "'.concat(name310, '", ') + "some dependencies are missing: ".concat(missingDependencies.map((d3) => '"'.concat(d3, '"')).join(", "), "."));
     }
   }
   function isOptionalDependency(dependency) {
@@ -21087,7 +21063,7 @@ svg {
     if (!object || typeof object !== "object") {
       return false;
     }
-    if (hasOwnProperty2(safeNativeProperties, prop)) {
+    if (hasOwnProperty(safeNativeProperties, prop)) {
       return true;
     }
     if (prop in Object.prototype) {
@@ -21108,10 +21084,10 @@ svg {
     if (object === null || object === void 0 || typeof object[method] !== "function") {
       return false;
     }
-    if (hasOwnProperty2(object, method) && Object.getPrototypeOf && method in Object.getPrototypeOf(object)) {
+    if (hasOwnProperty(object, method) && Object.getPrototypeOf && method in Object.getPrototypeOf(object)) {
       return false;
     }
-    if (hasOwnProperty2(safeNativeMethods, method)) {
+    if (hasOwnProperty(safeNativeMethods, method)) {
       return true;
     }
     if (method in Object.prototype) {
@@ -21582,21 +21558,21 @@ svg {
             return matrix2.valueOf();
           }
         }]);
-        typed3.onMismatch = (name307, args, signatures) => {
-          var usualError = typed3.createError(name307, args, signatures);
+        typed3.onMismatch = (name310, args, signatures) => {
+          var usualError = typed3.createError(name310, args, signatures);
           if (["wrongType", "mismatch"].includes(usualError.data.category) && args.length === 1 && isCollection(args[0]) && // check if the function can be unary:
           signatures.some((sig) => !sig.params.includes(","))) {
-            var err = new TypeError("Function '".concat(name307, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name307, ")'."));
+            var err = new TypeError("Function '".concat(name310, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name310, ")'."));
             err.data = usualError.data;
             throw err;
           }
           throw usualError;
         };
-        typed3.onMismatch = (name307, args, signatures) => {
-          var usualError = typed3.createError(name307, args, signatures);
+        typed3.onMismatch = (name310, args, signatures) => {
+          var usualError = typed3.createError(name310, args, signatures);
           if (["wrongType", "mismatch"].includes(usualError.data.category) && args.length === 1 && isCollection(args[0]) && // check if the function can be unary:
           signatures.some((sig) => !sig.params.includes(","))) {
-            var err = new TypeError("Function '".concat(name307, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name307, ")'."));
+            var err = new TypeError("Function '".concat(name310, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name310, ")'."));
             err.data = usualError.data;
             throw err;
           }
@@ -23818,7 +23794,7 @@ svg {
         var x4 = this, Ctor = x4.constructor, str = finiteToString(x4, x4.e <= Ctor.toExpNeg || x4.e >= Ctor.toExpPos);
         return x4.isNeg() ? "-" + str : str;
       };
-      divide = function() {
+      divide = /* @__PURE__ */ function() {
         function multiplyInteger(x4, k4, base) {
           var temp, carry = 0, i5 = x4.length;
           for (x4 = x4.slice(); i5--; ) {
@@ -25177,9 +25153,9 @@ svg {
     }
   });
 
-  // node_modules/fraction.js/fraction.js
+  // node_modules/mathjs/node_modules/fraction.js/fraction.js
   var require_fraction = __commonJS({
-    "node_modules/fraction.js/fraction.js"(exports, module) {
+    "node_modules/mathjs/node_modules/fraction.js/fraction.js"(exports, module) {
       (function(root) {
         "use strict";
         var MAX_CYCLE_LEN = 2e3;
@@ -25190,13 +25166,13 @@ svg {
         };
         function assign2(n3, s3) {
           if (isNaN(n3 = parseInt(n3, 10))) {
-            throw Fraction3["InvalidParameter"];
+            throw InvalidParameter();
           }
           return n3 * s3;
         }
         function newFraction(n3, d3) {
           if (d3 === 0) {
-            throw Fraction3["DivisionByZero"];
+            throw DivisionByZero();
           }
           var f3 = Object.create(Fraction3.prototype);
           f3["s"] = n3 < 0 ? -1 : 1;
@@ -25239,7 +25215,7 @@ svg {
             d3 = p22;
             s3 = n3 * d3;
             if (n3 % 1 !== 0 || d3 % 1 !== 0) {
-              throw Fraction3["NonIntegerParameter"];
+              throw NonIntegerParameter();
             }
           } else
             switch (typeof p1) {
@@ -25254,7 +25230,7 @@ svg {
                   if (1 in p1)
                     d3 = p1[1];
                 } else {
-                  throw Fraction3["InvalidParameter"];
+                  throw InvalidParameter();
                 }
                 s3 = n3 * d3;
                 break;
@@ -25311,7 +25287,7 @@ svg {
               case "string": {
                 B4 = p1.match(/\d+|./g);
                 if (B4 === null)
-                  throw Fraction3["InvalidParameter"];
+                  throw InvalidParameter();
                 if (B4[A4] === "-") {
                   s3 = -1;
                   A4++;
@@ -25353,10 +25329,10 @@ svg {
                 }
               }
               default:
-                throw Fraction3["InvalidParameter"];
+                throw InvalidParameter();
             }
           if (d3 === 0) {
-            throw Fraction3["DivisionByZero"];
+            throw DivisionByZero();
           }
           P6["s"] = s3 < 0 ? -1 : 1;
           P6["n"] = Math.abs(n3);
@@ -25424,9 +25400,15 @@ svg {
             return newFraction(P6["s"] * P6["n"], P6["d"]);
           }
         }
-        Fraction3["DivisionByZero"] = new Error("Division by Zero");
-        Fraction3["InvalidParameter"] = new Error("Invalid argument");
-        Fraction3["NonIntegerParameter"] = new Error("Parameters must be integer");
+        var DivisionByZero = function() {
+          return new Error("Division by Zero");
+        };
+        var InvalidParameter = function() {
+          return new Error("Invalid argument");
+        };
+        var NonIntegerParameter = function() {
+          return new Error("Parameters must be integer");
+        };
         Fraction3.prototype = {
           "s": 1,
           "n": 0,
@@ -25517,7 +25499,7 @@ svg {
             }
             parse2(a3, b3);
             if (0 === P6["n"] && 0 === this["d"]) {
-              throw Fraction3["DivisionByZero"];
+              throw DivisionByZero();
             }
             return newFraction(
               this["s"] * (P6["d"] * this["n"]) % (P6["n"] * this["d"]),
@@ -25669,7 +25651,7 @@ svg {
               for (var k4 = i5 - 2; k4 >= 0; k4--) {
                 s3 = s3["inverse"]()["add"](cont[k4]);
               }
-              if (s3["sub"](thisABS)["abs"]().valueOf() < eps) {
+              if (Math.abs(s3["sub"](thisABS).valueOf()) < eps) {
                 return s3["mul"](this["s"]);
               }
             }
@@ -25809,11 +25791,7 @@ svg {
             return str;
           }
         };
-        if (typeof define === "function" && define["amd"]) {
-          define([], function() {
-            return Fraction3;
-          });
-        } else if (typeof exports === "object") {
+        if (typeof exports === "object") {
           Object.defineProperty(Fraction3, "__esModule", { "value": true });
           Fraction3["default"] = Fraction3;
           Fraction3["Fraction"] = Fraction3;
@@ -26126,8 +26104,8 @@ svg {
         base = 1;
         return;
       }
-      while (!hasOwnProperty.call(queue, ++base))
-        continue;
+      while (!Object.prototype.hasOwnProperty.call(queue, ++base)) {
+      }
     };
     limit = Math.abs(limit);
     return {
@@ -26147,8 +26125,8 @@ svg {
         delete queue[oldIndex];
         if (base !== oldIndex)
           return void 0;
-        while (!hasOwnProperty.call(queue, ++base))
-          continue;
+        while (!Object.prototype.hasOwnProperty.call(queue, ++base)) {
+        }
         return void 0;
       },
       delete: del,
@@ -26540,7 +26518,7 @@ svg {
           var recurse = function* recurse2(value2, index2) {
             if (isArray(value2)) {
               for (var i5 = 0; i5 < value2.length; i5++) {
-                yield* recurse2(value2[i5], index2.concat(i5));
+                yield* __yieldStar(recurse2(value2[i5], index2.concat(i5)));
               }
             } else {
               yield {
@@ -26549,7 +26527,7 @@ svg {
               };
             }
           };
-          yield* recurse(this._data, []);
+          yield* __yieldStar(recurse(this._data, []));
         };
         DenseMatrix2.prototype.rows = function() {
           var result = [];
@@ -26984,13 +26962,7 @@ svg {
     return log1p(x4);
   }
   function modNumber(x4, y3) {
-    if (y3 > 0) {
-      return x4 - y3 * Math.floor(x4 / y3);
-    } else if (y3 === 0) {
-      return x4;
-    } else {
-      throw new Error("Cannot calculate mod for a negative divisor");
-    }
+    return y3 === 0 ? x4 : x4 - y3 * Math.floor(x4 / y3);
   }
   function nthRootNumber(a3) {
     var root = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 2;
@@ -27215,7 +27187,7 @@ svg {
 
   // node_modules/mathjs/lib/esm/plain/number/constants.js
   var pi, tau, e3, phi;
-  var init_constants = __esm({
+  var init_constants2 = __esm({
     "node_modules/mathjs/lib/esm/plain/number/constants.js"() {
       pi = Math.PI;
       tau = 2 * Math.PI;
@@ -27475,7 +27447,7 @@ svg {
       init_arithmetic();
       init_bitwise();
       init_combinations();
-      init_constants();
+      init_constants2();
       init_logical();
       init_relational();
       init_probability();
@@ -29417,16 +29389,58 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/function/arithmetic/subtractScalar.js
+  var name35, dependencies36, createSubtractScalar;
+  var init_subtractScalar = __esm({
+    "node_modules/mathjs/lib/esm/function/arithmetic/subtractScalar.js"() {
+      init_factory();
+      init_number2();
+      name35 = "subtractScalar";
+      dependencies36 = ["typed"];
+      createSubtractScalar = /* @__PURE__ */ factory(name35, dependencies36, (_ref) => {
+        var {
+          typed: typed3
+        } = _ref;
+        return typed3(name35, {
+          "number, number": subtractNumber,
+          "Complex, Complex": function ComplexComplex(x4, y3) {
+            return x4.sub(y3);
+          },
+          "BigNumber, BigNumber": function BigNumberBigNumber(x4, y3) {
+            return x4.minus(y3);
+          },
+          "Fraction, Fraction": function FractionFraction(x4, y3) {
+            return x4.sub(y3);
+          },
+          "Unit, Unit": typed3.referToSelf((self2) => (x4, y3) => {
+            if (x4.value === null || x4.value === void 0) {
+              throw new Error("Parameter x contains a unit with undefined value");
+            }
+            if (y3.value === null || y3.value === void 0) {
+              throw new Error("Parameter y contains a unit with undefined value");
+            }
+            if (!x4.equalBase(y3))
+              throw new Error("Units do not match");
+            var res = x4.clone();
+            res.value = typed3.find(self2, [res.valueType(), y3.valueType()])(res.value, y3.value);
+            res.fixPrefix = false;
+            return res;
+          })
+        });
+      });
+    }
+  });
+
   // node_modules/mathjs/lib/esm/function/arithmetic/cbrt.js
-  var name35, dependencies36, createCbrt;
+  var name36, dependencies37, createCbrt;
   var init_cbrt = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/cbrt.js"() {
       init_factory();
       init_is();
       init_number2();
-      name35 = "cbrt";
-      dependencies36 = ["config", "typed", "isNegative", "unaryMinus", "matrix", "Complex", "BigNumber", "Fraction"];
-      createCbrt = /* @__PURE__ */ factory(name35, dependencies36, (_ref) => {
+      name36 = "cbrt";
+      dependencies37 = ["config", "typed", "isNegative", "unaryMinus", "matrix", "Complex", "BigNumber", "Fraction"];
+      createCbrt = /* @__PURE__ */ factory(name36, dependencies37, (_ref) => {
         var {
           config: config4,
           typed: typed3,
@@ -29437,7 +29451,7 @@ svg {
           BigNumber: BigNumber2,
           Fraction: Fraction3
         } = _ref;
-        return typed3(name35, {
+        return typed3(name36, {
           number: cbrtNumber,
           // note: signature 'number, boolean' is also supported,
           //       created by typed as it knows how to convert number to Complex
@@ -29491,13 +29505,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo11xS0s.js
-  var name36, dependencies37, createMatAlgo11xS0s;
+  var name37, dependencies38, createMatAlgo11xS0s;
   var init_matAlgo11xS0s = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo11xS0s.js"() {
       init_factory();
-      name36 = "matAlgo11xS0s";
-      dependencies37 = ["typed", "equalScalar"];
-      createMatAlgo11xS0s = /* @__PURE__ */ factory(name36, dependencies37, (_ref) => {
+      name37 = "matAlgo11xS0s";
+      dependencies38 = ["typed", "equalScalar"];
+      createMatAlgo11xS0s = /* @__PURE__ */ factory(name37, dependencies38, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
@@ -29552,13 +29566,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo12xSfs.js
-  var name37, dependencies38, createMatAlgo12xSfs;
+  var name38, dependencies39, createMatAlgo12xSfs;
   var init_matAlgo12xSfs = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo12xSfs.js"() {
       init_factory();
-      name37 = "matAlgo12xSfs";
-      dependencies38 = ["typed", "DenseMatrix"];
-      createMatAlgo12xSfs = /* @__PURE__ */ factory(name37, dependencies38, (_ref) => {
+      name38 = "matAlgo12xSfs";
+      dependencies39 = ["typed", "DenseMatrix"];
+      createMatAlgo12xSfs = /* @__PURE__ */ factory(name38, dependencies39, (_ref) => {
         var {
           typed: typed3,
           DenseMatrix: DenseMatrix2
@@ -29613,14 +29627,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo14xDs.js
-  var name38, dependencies39, createMatAlgo14xDs;
+  var name39, dependencies40, createMatAlgo14xDs;
   var init_matAlgo14xDs = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo14xDs.js"() {
       init_factory();
       init_object();
-      name38 = "matAlgo14xDs";
-      dependencies39 = ["typed"];
-      createMatAlgo14xDs = /* @__PURE__ */ factory(name38, dependencies39, (_ref) => {
+      name39 = "matAlgo14xDs";
+      dependencies40 = ["typed"];
+      createMatAlgo14xDs = /* @__PURE__ */ factory(name39, dependencies40, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -29660,7 +29674,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/ceil.js
-  var name39, dependencies40, createCeilNumber, createCeil;
+  var name40, dependencies41, createCeilNumber, createCeil;
   var init_ceil = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/ceil.js"() {
       init_decimal();
@@ -29671,15 +29685,15 @@ svg {
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matAlgo14xDs();
-      name39 = "ceil";
-      dependencies40 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "DenseMatrix"];
-      createCeilNumber = /* @__PURE__ */ factory(name39, ["typed", "config", "round"], (_ref) => {
+      name40 = "ceil";
+      dependencies41 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "DenseMatrix"];
+      createCeilNumber = /* @__PURE__ */ factory(name40, ["typed", "config", "round"], (_ref) => {
         var {
           typed: typed3,
           config: config4,
           round: round4
         } = _ref;
-        return typed3(name39, {
+        return typed3(name40, {
           number: function number2(x4) {
             if (nearlyEqual(x4, round4(x4), config4.epsilon)) {
               return round4(x4);
@@ -29699,7 +29713,7 @@ svg {
           }
         });
       });
-      createCeil = /* @__PURE__ */ factory(name39, dependencies40, (_ref2) => {
+      createCeil = /* @__PURE__ */ factory(name40, dependencies41, (_ref2) => {
         var {
           typed: typed3,
           config: config4,
@@ -29789,18 +29803,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/cube.js
-  var name40, dependencies41, createCube;
+  var name41, dependencies42, createCube;
   var init_cube = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/cube.js"() {
       init_factory();
       init_number2();
-      name40 = "cube";
-      dependencies41 = ["typed"];
-      createCube = /* @__PURE__ */ factory(name40, dependencies41, (_ref) => {
+      name41 = "cube";
+      dependencies42 = ["typed"];
+      createCube = /* @__PURE__ */ factory(name41, dependencies42, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name40, {
+        return typed3(name41, {
           number: cubeNumber,
           Complex: function Complex3(x4) {
             return x4.mul(x4).mul(x4);
@@ -29820,18 +29834,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/exp.js
-  var name41, dependencies42, createExp;
+  var name42, dependencies43, createExp;
   var init_exp = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/exp.js"() {
       init_factory();
       init_number2();
-      name41 = "exp";
-      dependencies42 = ["typed"];
-      createExp = /* @__PURE__ */ factory(name41, dependencies42, (_ref) => {
+      name42 = "exp";
+      dependencies43 = ["typed"];
+      createExp = /* @__PURE__ */ factory(name42, dependencies43, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name41, {
+        return typed3(name42, {
           number: expNumber,
           Complex: function Complex3(x4) {
             return x4.exp();
@@ -29845,19 +29859,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/expm1.js
-  var name42, dependencies43, createExpm1;
+  var name43, dependencies44, createExpm1;
   var init_expm1 = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/expm1.js"() {
       init_factory();
       init_number2();
-      name42 = "expm1";
-      dependencies43 = ["typed", "Complex"];
-      createExpm1 = /* @__PURE__ */ factory(name42, dependencies43, (_ref) => {
+      name43 = "expm1";
+      dependencies44 = ["typed", "Complex"];
+      createExpm1 = /* @__PURE__ */ factory(name43, dependencies44, (_ref) => {
         var {
           typed: typed3,
           Complex: _Complex
         } = _ref;
-        return typed3(name42, {
+        return typed3(name43, {
           number: expm1Number,
           Complex: function Complex3(x4) {
             var r3 = Math.exp(x4.re);
@@ -29872,22 +29886,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/fix.js
-  var name43, dependencies44, createFixNumber, createFix;
+  var name44, dependencies45, createFixNumber, createFix;
   var init_fix = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/fix.js"() {
       init_factory();
       init_collection();
       init_matAlgo12xSfs();
       init_matAlgo14xDs();
-      name43 = "fix";
-      dependencies44 = ["typed", "Complex", "matrix", "ceil", "floor", "equalScalar", "zeros", "DenseMatrix"];
-      createFixNumber = /* @__PURE__ */ factory(name43, ["typed", "ceil", "floor"], (_ref) => {
+      name44 = "fix";
+      dependencies45 = ["typed", "Complex", "matrix", "ceil", "floor", "equalScalar", "zeros", "DenseMatrix"];
+      createFixNumber = /* @__PURE__ */ factory(name44, ["typed", "ceil", "floor"], (_ref) => {
         var {
           typed: typed3,
           ceil: ceil3,
           floor: floor3
         } = _ref;
-        return typed3(name43, {
+        return typed3(name44, {
           number: function number2(x4) {
             return x4 > 0 ? floor3(x4) : ceil3(x4);
           },
@@ -29896,7 +29910,7 @@ svg {
           }
         });
       });
-      createFix = /* @__PURE__ */ factory(name43, dependencies44, (_ref2) => {
+      createFix = /* @__PURE__ */ factory(name44, dependencies45, (_ref2) => {
         var {
           typed: typed3,
           Complex: _Complex,
@@ -29967,7 +29981,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/floor.js
-  var name44, dependencies45, createFloorNumber, createFloor;
+  var name45, dependencies46, createFloorNumber, createFloor;
   var init_floor = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/floor.js"() {
       init_decimal();
@@ -29978,15 +29992,15 @@ svg {
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matAlgo14xDs();
-      name44 = "floor";
-      dependencies45 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "DenseMatrix"];
-      createFloorNumber = /* @__PURE__ */ factory(name44, ["typed", "config", "round"], (_ref) => {
+      name45 = "floor";
+      dependencies46 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "DenseMatrix"];
+      createFloorNumber = /* @__PURE__ */ factory(name45, ["typed", "config", "round"], (_ref) => {
         var {
           typed: typed3,
           config: config4,
           round: round4
         } = _ref;
-        return typed3(name44, {
+        return typed3(name45, {
           number: function number2(x4) {
             if (nearlyEqual(x4, round4(x4), config4.epsilon)) {
               return round4(x4);
@@ -30006,7 +30020,7 @@ svg {
           }
         });
       });
-      createFloor = /* @__PURE__ */ factory(name44, dependencies45, (_ref2) => {
+      createFloor = /* @__PURE__ */ factory(name45, dependencies46, (_ref2) => {
         var {
           typed: typed3,
           config: config4,
@@ -30095,19 +30109,20 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js
-  var name45, dependencies46, createMatAlgo01xDSid;
-  var init_matAlgo01xDSid = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js"() {
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo02xDS0.js
+  var name46, dependencies47, createMatAlgo02xDS0;
+  var init_matAlgo02xDS0 = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo02xDS0.js"() {
       init_factory();
       init_DimensionError();
-      name45 = "matAlgo01xDSid";
-      dependencies46 = ["typed"];
-      createMatAlgo01xDSid = /* @__PURE__ */ factory(name45, dependencies46, (_ref) => {
+      name46 = "matAlgo02xDS0";
+      dependencies47 = ["typed", "equalScalar"];
+      createMatAlgo02xDS0 = /* @__PURE__ */ factory(name46, dependencies47, (_ref) => {
         var {
-          typed: typed3
+          typed: typed3,
+          equalScalar: equalScalar2
         } = _ref;
-        return function algorithm1(denseMatrix, sparseMatrix, callback, inverse) {
+        return function matAlgo02xDS0(denseMatrix, sparseMatrix, callback, inverse) {
           var adata = denseMatrix._data;
           var asize = denseMatrix._size;
           var adt = denseMatrix._datatype;
@@ -30127,27 +30142,101 @@ svg {
           }
           var rows = asize[0];
           var columns = asize[1];
-          var dt = typeof adt === "string" && adt === bdt ? adt : void 0;
-          var cf = dt ? typed3.find(callback, [dt, dt]) : callback;
-          var i5, j4;
+          var dt;
+          var eq = equalScalar2;
+          var zero = 0;
+          var cf = callback;
+          if (typeof adt === "string" && adt === bdt) {
+            dt = adt;
+            eq = typed3.find(equalScalar2, [dt, dt]);
+            zero = typed3.convert(0, dt);
+            cf = typed3.find(callback, [dt, dt]);
+          }
+          var cvalues = [];
+          var cindex = [];
+          var cptr = [];
+          for (var j4 = 0; j4 < columns; j4++) {
+            cptr[j4] = cindex.length;
+            for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+              var i5 = bindex[k4];
+              var cij = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
+              if (!eq(cij, zero)) {
+                cindex.push(i5);
+                cvalues.push(cij);
+              }
+            }
+          }
+          cptr[columns] = cindex.length;
+          return sparseMatrix.createSparseMatrix({
+            values: cvalues,
+            index: cindex,
+            ptr: cptr,
+            size: [rows, columns],
+            datatype: dt
+          });
+        };
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js
+  var name47, dependencies48, createMatAlgo03xDSf;
+  var init_matAlgo03xDSf = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js"() {
+      init_factory();
+      init_DimensionError();
+      name47 = "matAlgo03xDSf";
+      dependencies48 = ["typed"];
+      createMatAlgo03xDSf = /* @__PURE__ */ factory(name47, dependencies48, (_ref) => {
+        var {
+          typed: typed3
+        } = _ref;
+        return function matAlgo03xDSf(denseMatrix, sparseMatrix, callback, inverse) {
+          var adata = denseMatrix._data;
+          var asize = denseMatrix._size;
+          var adt = denseMatrix._datatype;
+          var bvalues = sparseMatrix._values;
+          var bindex = sparseMatrix._index;
+          var bptr = sparseMatrix._ptr;
+          var bsize = sparseMatrix._size;
+          var bdt = sparseMatrix._datatype;
+          if (asize.length !== bsize.length) {
+            throw new DimensionError(asize.length, bsize.length);
+          }
+          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
+            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
+          }
+          if (!bvalues) {
+            throw new Error("Cannot perform operation on Dense Matrix and Pattern Sparse Matrix");
+          }
+          var rows = asize[0];
+          var columns = asize[1];
+          var dt;
+          var zero = 0;
+          var cf = callback;
+          if (typeof adt === "string" && adt === bdt) {
+            dt = adt;
+            zero = typed3.convert(0, dt);
+            cf = typed3.find(callback, [dt, dt]);
+          }
           var cdata = [];
-          for (i5 = 0; i5 < rows; i5++) {
-            cdata[i5] = [];
+          for (var z5 = 0; z5 < rows; z5++) {
+            cdata[z5] = [];
           }
           var x4 = [];
           var w4 = [];
-          for (j4 = 0; j4 < columns; j4++) {
+          for (var j4 = 0; j4 < columns; j4++) {
             var mark = j4 + 1;
             for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = bindex[k4];
+              var i5 = bindex[k4];
               x4[i5] = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
               w4[i5] = mark;
             }
-            for (i5 = 0; i5 < rows; i5++) {
-              if (w4[i5] === mark) {
-                cdata[i5][j4] = x4[i5];
+            for (var y3 = 0; y3 < rows; y3++) {
+              if (w4[y3] === mark) {
+                cdata[y3][j4] = x4[y3];
               } else {
-                cdata[i5][j4] = adata[i5][j4];
+                cdata[y3][j4] = inverse ? cf(zero, adata[y3][j4]) : cf(adata[y3][j4], zero);
               }
             }
           }
@@ -30161,20 +30250,20 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js
-  var name46, dependencies47, createMatAlgo04xSidSid;
-  var init_matAlgo04xSidSid = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js"() {
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js
+  var name48, dependencies49, createMatAlgo05xSfSf;
+  var init_matAlgo05xSfSf = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js"() {
       init_factory();
       init_DimensionError();
-      name46 = "matAlgo04xSidSid";
-      dependencies47 = ["typed", "equalScalar"];
-      createMatAlgo04xSidSid = /* @__PURE__ */ factory(name46, dependencies47, (_ref) => {
+      name48 = "matAlgo05xSfSf";
+      dependencies49 = ["typed", "equalScalar"];
+      createMatAlgo05xSfSf = /* @__PURE__ */ factory(name48, dependencies49, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
         } = _ref;
-        return function matAlgo04xSidSid(a3, b3, callback) {
+        return function matAlgo05xSfSf(a3, b3, callback) {
           var avalues = a3._values;
           var aindex = a3._index;
           var aptr = a3._ptr;
@@ -30206,15 +30295,15 @@ svg {
           var cvalues = avalues && bvalues ? [] : void 0;
           var cindex = [];
           var cptr = [];
-          var xa = avalues && bvalues ? [] : void 0;
-          var xb = avalues && bvalues ? [] : void 0;
+          var xa = cvalues ? [] : void 0;
+          var xb = cvalues ? [] : void 0;
           var wa = [];
           var wb = [];
-          var i5, j4, k4, k0, k1;
+          var i5, j4, k4, k1;
           for (j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             var mark = j4 + 1;
-            for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+            for (k4 = aptr[j4], k1 = aptr[j4 + 1]; k4 < k1; k4++) {
               i5 = aindex[k4];
               cindex.push(i5);
               wa[i5] = mark;
@@ -30222,37 +30311,32 @@ svg {
                 xa[i5] = avalues[k4];
               }
             }
-            for (k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+            for (k4 = bptr[j4], k1 = bptr[j4 + 1]; k4 < k1; k4++) {
               i5 = bindex[k4];
-              if (wa[i5] === mark) {
-                if (xa) {
-                  var v3 = cf(xa[i5], bvalues[k4]);
-                  if (!eq(v3, zero)) {
-                    xa[i5] = v3;
-                  } else {
-                    wa[i5] = null;
-                  }
-                }
-              } else {
+              if (wa[i5] !== mark) {
                 cindex.push(i5);
-                wb[i5] = mark;
-                if (xb) {
-                  xb[i5] = bvalues[k4];
-                }
+              }
+              wb[i5] = mark;
+              if (xb) {
+                xb[i5] = bvalues[k4];
               }
             }
-            if (xa && xb) {
+            if (cvalues) {
               k4 = cptr[j4];
               while (k4 < cindex.length) {
                 i5 = cindex[k4];
-                if (wa[i5] === mark) {
-                  cvalues[k4] = xa[i5];
-                  k4++;
-                } else if (wb[i5] === mark) {
-                  cvalues[k4] = xb[i5];
-                  k4++;
-                } else {
-                  cindex.splice(k4, 1);
+                var wai = wa[i5];
+                var wbi = wb[i5];
+                if (wai === mark || wbi === mark) {
+                  var va = wai === mark ? xa[i5] : zero;
+                  var vb = wbi === mark ? xb[i5] : zero;
+                  var vc = cf(va, vb);
+                  if (!eq(vc, zero)) {
+                    cvalues.push(vc);
+                    k4++;
+                  } else {
+                    cindex.splice(k4, 1);
+                  }
                 }
               }
             }
@@ -30270,76 +30354,15 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js
-  var name47, dependencies48, createMatAlgo10xSids;
-  var init_matAlgo10xSids = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js"() {
-      init_factory();
-      name47 = "matAlgo10xSids";
-      dependencies48 = ["typed", "DenseMatrix"];
-      createMatAlgo10xSids = /* @__PURE__ */ factory(name47, dependencies48, (_ref) => {
-        var {
-          typed: typed3,
-          DenseMatrix: DenseMatrix2
-        } = _ref;
-        return function matAlgo10xSids(s3, b3, callback, inverse) {
-          var avalues = s3._values;
-          var aindex = s3._index;
-          var aptr = s3._ptr;
-          var asize = s3._size;
-          var adt = s3._datatype;
-          if (!avalues) {
-            throw new Error("Cannot perform operation on Pattern Sparse Matrix and Scalar value");
-          }
-          var rows = asize[0];
-          var columns = asize[1];
-          var dt;
-          var cf = callback;
-          if (typeof adt === "string") {
-            dt = adt;
-            b3 = typed3.convert(b3, dt);
-            cf = typed3.find(callback, [dt, dt]);
-          }
-          var cdata = [];
-          var x4 = [];
-          var w4 = [];
-          for (var j4 = 0; j4 < columns; j4++) {
-            var mark = j4 + 1;
-            for (var k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var r3 = aindex[k4];
-              x4[r3] = avalues[k4];
-              w4[r3] = mark;
-            }
-            for (var i5 = 0; i5 < rows; i5++) {
-              if (j4 === 0) {
-                cdata[i5] = [];
-              }
-              if (w4[i5] === mark) {
-                cdata[i5][j4] = inverse ? cf(b3, x4[i5]) : cf(x4[i5], b3);
-              } else {
-                cdata[i5][j4] = b3;
-              }
-            }
-          }
-          return new DenseMatrix2({
-            data: cdata,
-            size: [rows, columns],
-            datatype: dt
-          });
-        };
-      });
-    }
-  });
-
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo13xDD.js
-  var name48, dependencies49, createMatAlgo13xDD;
+  var name49, dependencies50, createMatAlgo13xDD;
   var init_matAlgo13xDD = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo13xDD.js"() {
       init_factory();
       init_DimensionError();
-      name48 = "matAlgo13xDD";
-      dependencies49 = ["typed"];
-      createMatAlgo13xDD = /* @__PURE__ */ factory(name48, dependencies49, (_ref) => {
+      name49 = "matAlgo13xDD";
+      dependencies50 = ["typed"];
+      createMatAlgo13xDD = /* @__PURE__ */ factory(name49, dependencies50, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -30391,14 +30414,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/broadcast.js
-  var name49, dependancies, createBroadcast;
+  var name50, dependancies, createBroadcast;
   var init_broadcast = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/broadcast.js"() {
       init_array();
       init_factory();
-      name49 = "broadcast";
+      name50 = "broadcast";
       dependancies = ["concat"];
-      createBroadcast = /* @__PURE__ */ factory(name49, dependancies, (_ref) => {
+      createBroadcast = /* @__PURE__ */ factory(name50, dependancies, (_ref) => {
         var {
           concat: concat3
         } = _ref;
@@ -30445,7 +30468,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matrixAlgorithmSuite.js
-  var name50, dependencies50, createMatrixAlgorithmSuite;
+  var name51, dependencies51, createMatrixAlgorithmSuite;
   var init_matrixAlgorithmSuite = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matrixAlgorithmSuite.js"() {
       init_factory();
@@ -30453,9 +30476,9 @@ svg {
       init_matAlgo13xDD();
       init_matAlgo14xDs();
       init_broadcast();
-      name50 = "matrixAlgorithmSuite";
-      dependencies50 = ["typed", "matrix", "concat"];
-      createMatrixAlgorithmSuite = /* @__PURE__ */ factory(name50, dependencies50, (_ref) => {
+      name51 = "matrixAlgorithmSuite";
+      dependencies51 = ["typed", "matrix", "concat"];
+      createMatrixAlgorithmSuite = /* @__PURE__ */ factory(name51, dependencies51, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -30581,6 +30604,328 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/function/arithmetic/mod.js
+  var name52, dependencies52, createMod;
+  var init_mod = __esm({
+    "node_modules/mathjs/lib/esm/function/arithmetic/mod.js"() {
+      init_factory();
+      init_floor();
+      init_matAlgo02xDS0();
+      init_matAlgo03xDSf();
+      init_matAlgo05xSfSf();
+      init_matAlgo11xS0s();
+      init_matAlgo12xSfs();
+      init_matrixAlgorithmSuite();
+      name52 = "mod";
+      dependencies52 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "DenseMatrix", "concat"];
+      createMod = /* @__PURE__ */ factory(name52, dependencies52, (_ref) => {
+        var {
+          typed: typed3,
+          config: config4,
+          round: round4,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        } = _ref;
+        var floor3 = createFloor({
+          typed: typed3,
+          config: config4,
+          round: round4,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          DenseMatrix: DenseMatrix2
+        });
+        var matAlgo02xDS0 = createMatAlgo02xDS0({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo03xDSf = createMatAlgo03xDSf({
+          typed: typed3
+        });
+        var matAlgo05xSfSf = createMatAlgo05xSfSf({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo11xS0s = createMatAlgo11xS0s({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo12xSfs = createMatAlgo12xSfs({
+          typed: typed3,
+          DenseMatrix: DenseMatrix2
+        });
+        var matrixAlgorithmSuite = createMatrixAlgorithmSuite({
+          typed: typed3,
+          matrix: matrix2,
+          concat: concat3
+        });
+        return typed3(name52, {
+          "number, number": _modNumber,
+          "BigNumber, BigNumber": function BigNumberBigNumber(x4, y3) {
+            if (y3.isNeg()) {
+              throw new Error("Cannot calculate mod for a negative divisor");
+            }
+            return y3.isZero() ? x4 : x4.mod(y3);
+          },
+          "Fraction, Fraction": function FractionFraction(x4, y3) {
+            if (y3.compare(0) < 0) {
+              throw new Error("Cannot calculate mod for a negative divisor");
+            }
+            return x4.compare(0) >= 0 ? x4.mod(y3) : x4.mod(y3).add(y3).mod(y3);
+          }
+        }, matrixAlgorithmSuite({
+          SS: matAlgo05xSfSf,
+          DS: matAlgo03xDSf,
+          SD: matAlgo02xDS0,
+          Ss: matAlgo11xS0s,
+          sS: matAlgo12xSfs
+        }));
+        function _modNumber(x4, y3) {
+          return y3 === 0 ? x4 : x4 - y3 * floor3(x4 / y3);
+        }
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js
+  var name53, dependencies53, createMatAlgo01xDSid;
+  var init_matAlgo01xDSid = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js"() {
+      init_factory();
+      init_DimensionError();
+      name53 = "matAlgo01xDSid";
+      dependencies53 = ["typed"];
+      createMatAlgo01xDSid = /* @__PURE__ */ factory(name53, dependencies53, (_ref) => {
+        var {
+          typed: typed3
+        } = _ref;
+        return function algorithm1(denseMatrix, sparseMatrix, callback, inverse) {
+          var adata = denseMatrix._data;
+          var asize = denseMatrix._size;
+          var adt = denseMatrix._datatype;
+          var bvalues = sparseMatrix._values;
+          var bindex = sparseMatrix._index;
+          var bptr = sparseMatrix._ptr;
+          var bsize = sparseMatrix._size;
+          var bdt = sparseMatrix._datatype;
+          if (asize.length !== bsize.length) {
+            throw new DimensionError(asize.length, bsize.length);
+          }
+          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
+            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
+          }
+          if (!bvalues) {
+            throw new Error("Cannot perform operation on Dense Matrix and Pattern Sparse Matrix");
+          }
+          var rows = asize[0];
+          var columns = asize[1];
+          var dt = typeof adt === "string" && adt === bdt ? adt : void 0;
+          var cf = dt ? typed3.find(callback, [dt, dt]) : callback;
+          var i5, j4;
+          var cdata = [];
+          for (i5 = 0; i5 < rows; i5++) {
+            cdata[i5] = [];
+          }
+          var x4 = [];
+          var w4 = [];
+          for (j4 = 0; j4 < columns; j4++) {
+            var mark = j4 + 1;
+            for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+              i5 = bindex[k4];
+              x4[i5] = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
+              w4[i5] = mark;
+            }
+            for (i5 = 0; i5 < rows; i5++) {
+              if (w4[i5] === mark) {
+                cdata[i5][j4] = x4[i5];
+              } else {
+                cdata[i5][j4] = adata[i5][j4];
+              }
+            }
+          }
+          return denseMatrix.createDenseMatrix({
+            data: cdata,
+            size: [rows, columns],
+            datatype: dt
+          });
+        };
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js
+  var name54, dependencies54, createMatAlgo04xSidSid;
+  var init_matAlgo04xSidSid = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js"() {
+      init_factory();
+      init_DimensionError();
+      name54 = "matAlgo04xSidSid";
+      dependencies54 = ["typed", "equalScalar"];
+      createMatAlgo04xSidSid = /* @__PURE__ */ factory(name54, dependencies54, (_ref) => {
+        var {
+          typed: typed3,
+          equalScalar: equalScalar2
+        } = _ref;
+        return function matAlgo04xSidSid(a3, b3, callback) {
+          var avalues = a3._values;
+          var aindex = a3._index;
+          var aptr = a3._ptr;
+          var asize = a3._size;
+          var adt = a3._datatype;
+          var bvalues = b3._values;
+          var bindex = b3._index;
+          var bptr = b3._ptr;
+          var bsize = b3._size;
+          var bdt = b3._datatype;
+          if (asize.length !== bsize.length) {
+            throw new DimensionError(asize.length, bsize.length);
+          }
+          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
+            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
+          }
+          var rows = asize[0];
+          var columns = asize[1];
+          var dt;
+          var eq = equalScalar2;
+          var zero = 0;
+          var cf = callback;
+          if (typeof adt === "string" && adt === bdt) {
+            dt = adt;
+            eq = typed3.find(equalScalar2, [dt, dt]);
+            zero = typed3.convert(0, dt);
+            cf = typed3.find(callback, [dt, dt]);
+          }
+          var cvalues = avalues && bvalues ? [] : void 0;
+          var cindex = [];
+          var cptr = [];
+          var xa = avalues && bvalues ? [] : void 0;
+          var xb = avalues && bvalues ? [] : void 0;
+          var wa = [];
+          var wb = [];
+          var i5, j4, k4, k0, k1;
+          for (j4 = 0; j4 < columns; j4++) {
+            cptr[j4] = cindex.length;
+            var mark = j4 + 1;
+            for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+              i5 = aindex[k4];
+              cindex.push(i5);
+              wa[i5] = mark;
+              if (xa) {
+                xa[i5] = avalues[k4];
+              }
+            }
+            for (k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+              i5 = bindex[k4];
+              if (wa[i5] === mark) {
+                if (xa) {
+                  var v3 = cf(xa[i5], bvalues[k4]);
+                  if (!eq(v3, zero)) {
+                    xa[i5] = v3;
+                  } else {
+                    wa[i5] = null;
+                  }
+                }
+              } else {
+                cindex.push(i5);
+                wb[i5] = mark;
+                if (xb) {
+                  xb[i5] = bvalues[k4];
+                }
+              }
+            }
+            if (xa && xb) {
+              k4 = cptr[j4];
+              while (k4 < cindex.length) {
+                i5 = cindex[k4];
+                if (wa[i5] === mark) {
+                  cvalues[k4] = xa[i5];
+                  k4++;
+                } else if (wb[i5] === mark) {
+                  cvalues[k4] = xb[i5];
+                  k4++;
+                } else {
+                  cindex.splice(k4, 1);
+                }
+              }
+            }
+          }
+          cptr[columns] = cindex.length;
+          return a3.createSparseMatrix({
+            values: cvalues,
+            index: cindex,
+            ptr: cptr,
+            size: [rows, columns],
+            datatype: dt
+          });
+        };
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js
+  var name55, dependencies55, createMatAlgo10xSids;
+  var init_matAlgo10xSids = __esm({
+    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js"() {
+      init_factory();
+      name55 = "matAlgo10xSids";
+      dependencies55 = ["typed", "DenseMatrix"];
+      createMatAlgo10xSids = /* @__PURE__ */ factory(name55, dependencies55, (_ref) => {
+        var {
+          typed: typed3,
+          DenseMatrix: DenseMatrix2
+        } = _ref;
+        return function matAlgo10xSids(s3, b3, callback, inverse) {
+          var avalues = s3._values;
+          var aindex = s3._index;
+          var aptr = s3._ptr;
+          var asize = s3._size;
+          var adt = s3._datatype;
+          if (!avalues) {
+            throw new Error("Cannot perform operation on Pattern Sparse Matrix and Scalar value");
+          }
+          var rows = asize[0];
+          var columns = asize[1];
+          var dt;
+          var cf = callback;
+          if (typeof adt === "string") {
+            dt = adt;
+            b3 = typed3.convert(b3, dt);
+            cf = typed3.find(callback, [dt, dt]);
+          }
+          var cdata = [];
+          var x4 = [];
+          var w4 = [];
+          for (var j4 = 0; j4 < columns; j4++) {
+            var mark = j4 + 1;
+            for (var k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
+              var r3 = aindex[k4];
+              x4[r3] = avalues[k4];
+              w4[r3] = mark;
+            }
+            for (var i5 = 0; i5 < rows; i5++) {
+              if (j4 === 0) {
+                cdata[i5] = [];
+              }
+              if (w4[i5] === mark) {
+                cdata[i5][j4] = inverse ? cf(b3, x4[i5]) : cf(x4[i5], b3);
+              } else {
+                cdata[i5][j4] = b3;
+              }
+            }
+          }
+          return new DenseMatrix2({
+            data: cdata,
+            size: [rows, columns],
+            datatype: dt
+          });
+        };
+      });
+    }
+  });
+
   // node_modules/mathjs/lib/esm/error/ArgumentsError.js
   function ArgumentsError(fn2, count2, min3, max3) {
     if (!(this instanceof ArgumentsError)) {
@@ -30606,29 +30951,43 @@ svg {
   function is1d(array) {
     return !array.some((element) => Array.isArray(element));
   }
-  var name51, dependencies51, gcdTypes, gcdManyTypesSignature, createGcd;
+  var name56, dependencies56, gcdTypes, gcdManyTypesSignature, createGcd;
   var init_gcd = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/gcd.js"() {
+      init_number();
       init_factory();
+      init_mod();
       init_matAlgo01xDSid();
       init_matAlgo04xSidSid();
       init_matAlgo10xSids();
       init_matrixAlgorithmSuite();
-      init_number2();
       init_ArgumentsError();
-      name51 = "gcd";
-      dependencies51 = ["typed", "matrix", "equalScalar", "BigNumber", "DenseMatrix", "concat"];
+      name56 = "gcd";
+      dependencies56 = ["typed", "config", "round", "matrix", "equalScalar", "zeros", "BigNumber", "DenseMatrix", "concat"];
       gcdTypes = "number | BigNumber | Fraction | Matrix | Array";
       gcdManyTypesSignature = "".concat(gcdTypes, ", ").concat(gcdTypes, ", ...").concat(gcdTypes);
-      createGcd = /* @__PURE__ */ factory(name51, dependencies51, (_ref) => {
+      createGcd = /* @__PURE__ */ factory(name56, dependencies56, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
+          config: config4,
+          round: round4,
           equalScalar: equalScalar2,
+          zeros: zeros3,
           BigNumber: BigNumber2,
           DenseMatrix: DenseMatrix2,
           concat: concat3
         } = _ref;
+        var mod3 = createMod({
+          typed: typed3,
+          config: config4,
+          round: round4,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        });
         var matAlgo01xDSid = createMatAlgo01xDSid({
           typed: typed3
         });
@@ -30645,8 +31004,8 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name51, {
-          "number, number": gcdNumber,
+        return typed3(name56, {
+          "number, number": _gcdNumber,
           "BigNumber, BigNumber": _gcdBigNumber,
           "Fraction, Fraction": (x4, y3) => x4.gcd(y3)
         }, matrixAlgorithmSuite({
@@ -30674,13 +31033,25 @@ svg {
             return self2(matrix3.toArray());
           })
         });
+        function _gcdNumber(a3, b3) {
+          if (!isInteger(a3) || !isInteger(b3)) {
+            throw new Error("Parameters in function gcd must be integer numbers");
+          }
+          var r3;
+          while (b3 !== 0) {
+            r3 = mod3(a3, b3);
+            a3 = b3;
+            b3 = r3;
+          }
+          return a3 < 0 ? -a3 : a3;
+        }
         function _gcdBigNumber(a3, b3) {
           if (!a3.isInt() || !b3.isInt()) {
             throw new Error("Parameters in function gcd must be integer numbers");
           }
           var zero = new BigNumber2(0);
           while (!b3.isZero()) {
-            var r3 = a3.mod(b3);
+            var r3 = mod3(a3, b3);
             a3 = b3;
             b3 = r3;
           }
@@ -30690,86 +31061,16 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo02xDS0.js
-  var name52, dependencies52, createMatAlgo02xDS0;
-  var init_matAlgo02xDS0 = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo02xDS0.js"() {
-      init_factory();
-      init_DimensionError();
-      name52 = "matAlgo02xDS0";
-      dependencies52 = ["typed", "equalScalar"];
-      createMatAlgo02xDS0 = /* @__PURE__ */ factory(name52, dependencies52, (_ref) => {
-        var {
-          typed: typed3,
-          equalScalar: equalScalar2
-        } = _ref;
-        return function matAlgo02xDS0(denseMatrix, sparseMatrix, callback, inverse) {
-          var adata = denseMatrix._data;
-          var asize = denseMatrix._size;
-          var adt = denseMatrix._datatype;
-          var bvalues = sparseMatrix._values;
-          var bindex = sparseMatrix._index;
-          var bptr = sparseMatrix._ptr;
-          var bsize = sparseMatrix._size;
-          var bdt = sparseMatrix._datatype;
-          if (asize.length !== bsize.length) {
-            throw new DimensionError(asize.length, bsize.length);
-          }
-          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
-            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
-          }
-          if (!bvalues) {
-            throw new Error("Cannot perform operation on Dense Matrix and Pattern Sparse Matrix");
-          }
-          var rows = asize[0];
-          var columns = asize[1];
-          var dt;
-          var eq = equalScalar2;
-          var zero = 0;
-          var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
-            dt = adt;
-            eq = typed3.find(equalScalar2, [dt, dt]);
-            zero = typed3.convert(0, dt);
-            cf = typed3.find(callback, [dt, dt]);
-          }
-          var cvalues = [];
-          var cindex = [];
-          var cptr = [];
-          for (var j4 = 0; j4 < columns; j4++) {
-            cptr[j4] = cindex.length;
-            for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var i5 = bindex[k4];
-              var cij = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
-              if (!eq(cij, zero)) {
-                cindex.push(i5);
-                cvalues.push(cij);
-              }
-            }
-          }
-          cptr[columns] = cindex.length;
-          return sparseMatrix.createSparseMatrix({
-            values: cvalues,
-            index: cindex,
-            ptr: cptr,
-            size: [rows, columns],
-            datatype: dt
-          });
-        };
-      });
-    }
-  });
-
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo06xS0S0.js
-  var name53, dependencies53, createMatAlgo06xS0S0;
+  var name57, dependencies57, createMatAlgo06xS0S0;
   var init_matAlgo06xS0S0 = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo06xS0S0.js"() {
       init_factory();
       init_DimensionError();
       init_collection();
-      name53 = "matAlgo06xS0S0";
-      dependencies53 = ["typed", "equalScalar"];
-      createMatAlgo06xS0S0 = /* @__PURE__ */ factory(name53, dependencies53, (_ref) => {
+      name57 = "matAlgo06xS0S0";
+      dependencies57 = ["typed", "equalScalar"];
+      createMatAlgo06xS0S0 = /* @__PURE__ */ factory(name57, dependencies57, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
@@ -30852,7 +31153,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/lcm.js
-  var name54, dependencies54, createLcm;
+  var name58, dependencies58, createLcm;
   var init_lcm = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/lcm.js"() {
       init_factory();
@@ -30861,9 +31162,9 @@ svg {
       init_matAlgo11xS0s();
       init_matrixAlgorithmSuite();
       init_number2();
-      name54 = "lcm";
-      dependencies54 = ["typed", "matrix", "equalScalar", "concat"];
-      createLcm = /* @__PURE__ */ factory(name54, dependencies54, (_ref) => {
+      name58 = "lcm";
+      dependencies58 = ["typed", "matrix", "equalScalar", "concat"];
+      createLcm = /* @__PURE__ */ factory(name58, dependencies58, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -30896,7 +31197,7 @@ svg {
           }
           return res;
         });
-        return typed3(name54, {
+        return typed3(name58, {
           "number, number": lcmNumber,
           "BigNumber, BigNumber": _lcmBigNumber,
           "Fraction, Fraction": (x4, y3) => x4.lcm(y3)
@@ -30928,21 +31229,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/log10.js
-  var name55, dependencies55, createLog10;
+  var name59, dependencies59, createLog10;
   var init_log10 = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/log10.js"() {
       init_factory();
       init_collection();
       init_number2();
-      name55 = "log10";
-      dependencies55 = ["typed", "config", "Complex"];
-      createLog10 = /* @__PURE__ */ factory(name55, dependencies55, (_ref) => {
+      name59 = "log10";
+      dependencies59 = ["typed", "config", "Complex"];
+      createLog10 = /* @__PURE__ */ factory(name59, dependencies59, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: _Complex
         } = _ref;
-        return typed3(name55, {
+        return typed3(name59, {
           number: function number2(x4) {
             if (x4 >= 0 || config4.predictable) {
               return log10Number(x4);
@@ -30967,21 +31268,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/log2.js
-  var name56, dependencies56, createLog2;
+  var name60, dependencies60, createLog2;
   var init_log2 = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/log2.js"() {
       init_factory();
       init_collection();
       init_number2();
-      name56 = "log2";
-      dependencies56 = ["typed", "config", "Complex"];
-      createLog2 = /* @__PURE__ */ factory(name56, dependencies56, (_ref) => {
+      name60 = "log2";
+      dependencies60 = ["typed", "config", "Complex"];
+      createLog2 = /* @__PURE__ */ factory(name60, dependencies60, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3
         } = _ref;
-        return typed3(name56, {
+        return typed3(name60, {
           number: function number2(x4) {
             if (x4 >= 0 || config4.predictable) {
               return log2Number(x4);
@@ -31007,261 +31308,15 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js
-  var name57, dependencies57, createMatAlgo03xDSf;
-  var init_matAlgo03xDSf = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js"() {
-      init_factory();
-      init_DimensionError();
-      name57 = "matAlgo03xDSf";
-      dependencies57 = ["typed"];
-      createMatAlgo03xDSf = /* @__PURE__ */ factory(name57, dependencies57, (_ref) => {
-        var {
-          typed: typed3
-        } = _ref;
-        return function matAlgo03xDSf(denseMatrix, sparseMatrix, callback, inverse) {
-          var adata = denseMatrix._data;
-          var asize = denseMatrix._size;
-          var adt = denseMatrix._datatype;
-          var bvalues = sparseMatrix._values;
-          var bindex = sparseMatrix._index;
-          var bptr = sparseMatrix._ptr;
-          var bsize = sparseMatrix._size;
-          var bdt = sparseMatrix._datatype;
-          if (asize.length !== bsize.length) {
-            throw new DimensionError(asize.length, bsize.length);
-          }
-          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
-            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
-          }
-          if (!bvalues) {
-            throw new Error("Cannot perform operation on Dense Matrix and Pattern Sparse Matrix");
-          }
-          var rows = asize[0];
-          var columns = asize[1];
-          var dt;
-          var zero = 0;
-          var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
-            dt = adt;
-            zero = typed3.convert(0, dt);
-            cf = typed3.find(callback, [dt, dt]);
-          }
-          var cdata = [];
-          for (var z5 = 0; z5 < rows; z5++) {
-            cdata[z5] = [];
-          }
-          var x4 = [];
-          var w4 = [];
-          for (var j4 = 0; j4 < columns; j4++) {
-            var mark = j4 + 1;
-            for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var i5 = bindex[k4];
-              x4[i5] = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
-              w4[i5] = mark;
-            }
-            for (var y3 = 0; y3 < rows; y3++) {
-              if (w4[y3] === mark) {
-                cdata[y3][j4] = x4[y3];
-              } else {
-                cdata[y3][j4] = inverse ? cf(zero, adata[y3][j4]) : cf(adata[y3][j4], zero);
-              }
-            }
-          }
-          return denseMatrix.createDenseMatrix({
-            data: cdata,
-            size: [rows, columns],
-            datatype: dt
-          });
-        };
-      });
-    }
-  });
-
-  // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js
-  var name58, dependencies58, createMatAlgo05xSfSf;
-  var init_matAlgo05xSfSf = __esm({
-    "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js"() {
-      init_factory();
-      init_DimensionError();
-      name58 = "matAlgo05xSfSf";
-      dependencies58 = ["typed", "equalScalar"];
-      createMatAlgo05xSfSf = /* @__PURE__ */ factory(name58, dependencies58, (_ref) => {
-        var {
-          typed: typed3,
-          equalScalar: equalScalar2
-        } = _ref;
-        return function matAlgo05xSfSf(a3, b3, callback) {
-          var avalues = a3._values;
-          var aindex = a3._index;
-          var aptr = a3._ptr;
-          var asize = a3._size;
-          var adt = a3._datatype;
-          var bvalues = b3._values;
-          var bindex = b3._index;
-          var bptr = b3._ptr;
-          var bsize = b3._size;
-          var bdt = b3._datatype;
-          if (asize.length !== bsize.length) {
-            throw new DimensionError(asize.length, bsize.length);
-          }
-          if (asize[0] !== bsize[0] || asize[1] !== bsize[1]) {
-            throw new RangeError("Dimension mismatch. Matrix A (" + asize + ") must match Matrix B (" + bsize + ")");
-          }
-          var rows = asize[0];
-          var columns = asize[1];
-          var dt;
-          var eq = equalScalar2;
-          var zero = 0;
-          var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
-            dt = adt;
-            eq = typed3.find(equalScalar2, [dt, dt]);
-            zero = typed3.convert(0, dt);
-            cf = typed3.find(callback, [dt, dt]);
-          }
-          var cvalues = avalues && bvalues ? [] : void 0;
-          var cindex = [];
-          var cptr = [];
-          var xa = cvalues ? [] : void 0;
-          var xb = cvalues ? [] : void 0;
-          var wa = [];
-          var wb = [];
-          var i5, j4, k4, k1;
-          for (j4 = 0; j4 < columns; j4++) {
-            cptr[j4] = cindex.length;
-            var mark = j4 + 1;
-            for (k4 = aptr[j4], k1 = aptr[j4 + 1]; k4 < k1; k4++) {
-              i5 = aindex[k4];
-              cindex.push(i5);
-              wa[i5] = mark;
-              if (xa) {
-                xa[i5] = avalues[k4];
-              }
-            }
-            for (k4 = bptr[j4], k1 = bptr[j4 + 1]; k4 < k1; k4++) {
-              i5 = bindex[k4];
-              if (wa[i5] !== mark) {
-                cindex.push(i5);
-              }
-              wb[i5] = mark;
-              if (xb) {
-                xb[i5] = bvalues[k4];
-              }
-            }
-            if (cvalues) {
-              k4 = cptr[j4];
-              while (k4 < cindex.length) {
-                i5 = cindex[k4];
-                var wai = wa[i5];
-                var wbi = wb[i5];
-                if (wai === mark || wbi === mark) {
-                  var va = wai === mark ? xa[i5] : zero;
-                  var vb = wbi === mark ? xb[i5] : zero;
-                  var vc = cf(va, vb);
-                  if (!eq(vc, zero)) {
-                    cvalues.push(vc);
-                    k4++;
-                  } else {
-                    cindex.splice(k4, 1);
-                  }
-                }
-              }
-            }
-          }
-          cptr[columns] = cindex.length;
-          return a3.createSparseMatrix({
-            values: cvalues,
-            index: cindex,
-            ptr: cptr,
-            size: [rows, columns],
-            datatype: dt
-          });
-        };
-      });
-    }
-  });
-
-  // node_modules/mathjs/lib/esm/function/arithmetic/mod.js
-  var name59, dependencies59, createMod;
-  var init_mod = __esm({
-    "node_modules/mathjs/lib/esm/function/arithmetic/mod.js"() {
-      init_factory();
-      init_matAlgo02xDS0();
-      init_matAlgo03xDSf();
-      init_matAlgo05xSfSf();
-      init_matAlgo11xS0s();
-      init_matAlgo12xSfs();
-      init_number2();
-      init_matrixAlgorithmSuite();
-      name59 = "mod";
-      dependencies59 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
-      createMod = /* @__PURE__ */ factory(name59, dependencies59, (_ref) => {
-        var {
-          typed: typed3,
-          matrix: matrix2,
-          equalScalar: equalScalar2,
-          DenseMatrix: DenseMatrix2,
-          concat: concat3
-        } = _ref;
-        var matAlgo02xDS0 = createMatAlgo02xDS0({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo03xDSf = createMatAlgo03xDSf({
-          typed: typed3
-        });
-        var matAlgo05xSfSf = createMatAlgo05xSfSf({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo11xS0s = createMatAlgo11xS0s({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo12xSfs = createMatAlgo12xSfs({
-          typed: typed3,
-          DenseMatrix: DenseMatrix2
-        });
-        var matrixAlgorithmSuite = createMatrixAlgorithmSuite({
-          typed: typed3,
-          matrix: matrix2,
-          concat: concat3
-        });
-        return typed3(name59, {
-          "number, number": modNumber,
-          "BigNumber, BigNumber": function BigNumberBigNumber(x4, y3) {
-            if (y3.isNeg()) {
-              throw new Error("Cannot calculate mod for a negative divisor");
-            }
-            return y3.isZero() ? x4 : x4.mod(y3);
-          },
-          "Fraction, Fraction": function FractionFraction(x4, y3) {
-            if (y3.compare(0) < 0) {
-              throw new Error("Cannot calculate mod for a negative divisor");
-            }
-            return x4.compare(0) >= 0 ? x4.mod(y3) : x4.mod(y3).add(y3).mod(y3);
-          }
-        }, matrixAlgorithmSuite({
-          SS: matAlgo05xSfSf,
-          DS: matAlgo03xDSf,
-          SD: matAlgo02xDS0,
-          Ss: matAlgo11xS0s,
-          sS: matAlgo12xSfs
-        }));
-      });
-    }
-  });
-
   // node_modules/mathjs/lib/esm/function/arithmetic/multiplyScalar.js
-  var name60, dependencies60, createMultiplyScalar;
+  var name61, dependencies61, createMultiplyScalar;
   var init_multiplyScalar = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/multiplyScalar.js"() {
       init_factory();
       init_number2();
-      name60 = "multiplyScalar";
-      dependencies60 = ["typed"];
-      createMultiplyScalar = /* @__PURE__ */ factory(name60, dependencies60, (_ref) => {
+      name61 = "multiplyScalar";
+      dependencies61 = ["typed"];
+      createMultiplyScalar = /* @__PURE__ */ factory(name61, dependencies61, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -31284,7 +31339,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/multiply.js
-  var name61, dependencies61, createMultiply;
+  var name62, dependencies62, createMultiply;
   var init_multiply = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/multiply.js"() {
       init_factory();
@@ -31292,9 +31347,9 @@ svg {
       init_array();
       init_matAlgo11xS0s();
       init_matAlgo14xDs();
-      name61 = "multiply";
-      dependencies61 = ["typed", "matrix", "addScalar", "multiplyScalar", "equalScalar", "dot"];
-      createMultiply = /* @__PURE__ */ factory(name61, dependencies61, (_ref) => {
+      name62 = "multiply";
+      dependencies62 = ["typed", "matrix", "addScalar", "multiplyScalar", "equalScalar", "dot"];
+      createMultiply = /* @__PURE__ */ factory(name62, dependencies62, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -31722,7 +31777,7 @@ svg {
           cptr[bcolumns] = cindex.length;
           return c3;
         }
-        return typed3(name61, multiplyScalar2, {
+        return typed3(name62, multiplyScalar2, {
           // we extend the signatures of multiplyScalar with signatures dealing with matrices
           "Array, Array": typed3.referTo("Matrix, Matrix", (selfMM) => (x4, y3) => {
             _validateMatrixDimensions(arraySize(x4), arraySize(y3));
@@ -31780,7 +31835,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/nthRoot.js
-  var name62, dependencies62, createNthRoot;
+  var name63, dependencies63, createNthRoot;
   var init_nthRoot = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/nthRoot.js"() {
       init_factory();
@@ -31790,9 +31845,9 @@ svg {
       init_matAlgo11xS0s();
       init_matrixAlgorithmSuite();
       init_number2();
-      name62 = "nthRoot";
-      dependencies62 = ["typed", "matrix", "equalScalar", "BigNumber", "concat"];
-      createNthRoot = /* @__PURE__ */ factory(name62, dependencies62, (_ref) => {
+      name63 = "nthRoot";
+      dependencies63 = ["typed", "matrix", "equalScalar", "BigNumber", "concat"];
+      createNthRoot = /* @__PURE__ */ factory(name63, dependencies63, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -31823,7 +31878,7 @@ svg {
         function complexErr() {
           throw new Error("Complex number not supported in function nthRoot. Use nthRoots instead.");
         }
-        return typed3(name62, {
+        return typed3(name63, {
           number: nthRootNumber,
           "number, number": nthRootNumber,
           BigNumber: (x4) => _bigNthRoot(x4, new _BigNumber(2)),
@@ -31893,22 +31948,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/sign.js
-  var name63, dependencies63, createSign;
+  var name64, dependencies64, createSign;
   var init_sign = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/sign.js"() {
       init_factory();
       init_collection();
       init_number2();
-      name63 = "sign";
-      dependencies63 = ["typed", "BigNumber", "Fraction", "complex"];
-      createSign = /* @__PURE__ */ factory(name63, dependencies63, (_ref) => {
+      name64 = "sign";
+      dependencies64 = ["typed", "BigNumber", "Fraction", "complex"];
+      createSign = /* @__PURE__ */ factory(name64, dependencies64, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber,
           complex: complex2,
           Fraction: _Fraction
         } = _ref;
-        return typed3(name63, {
+        return typed3(name64, {
           number: signNumber,
           Complex: function Complex3(x4) {
             return x4.im === 0 ? complex2(signNumber(x4.re)) : x4.sign();
@@ -31933,13 +31988,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/sqrt.js
-  var name64, dependencies64, createSqrt;
+  var name65, dependencies65, createSqrt;
   var init_sqrt = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/sqrt.js"() {
       init_factory();
-      name64 = "sqrt";
-      dependencies64 = ["config", "typed", "Complex"];
-      createSqrt = /* @__PURE__ */ factory(name64, dependencies64, (_ref) => {
+      name65 = "sqrt";
+      dependencies65 = ["config", "typed", "Complex"];
+      createSqrt = /* @__PURE__ */ factory(name65, dependencies65, (_ref) => {
         var {
           config: config4,
           typed: typed3,
@@ -31975,18 +32030,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/square.js
-  var name65, dependencies65, createSquare;
+  var name66, dependencies66, createSquare;
   var init_square = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/square.js"() {
       init_factory();
       init_number2();
-      name65 = "square";
-      dependencies65 = ["typed"];
-      createSquare = /* @__PURE__ */ factory(name65, dependencies65, (_ref) => {
+      name66 = "square";
+      dependencies66 = ["typed"];
+      createSquare = /* @__PURE__ */ factory(name66, dependencies66, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name65, {
+        return typed3(name66, {
           number: squareNumber,
           Complex: function Complex3(x4) {
             return x4.mul(x4);
@@ -32006,7 +32061,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/subtract.js
-  var name66, dependencies66, createSubtract;
+  var name67, dependencies67, createSubtract;
   var init_subtract = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/subtract.js"() {
       init_factory();
@@ -32016,14 +32071,14 @@ svg {
       init_matAlgo10xSids();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name66 = "subtract";
-      dependencies66 = ["typed", "matrix", "equalScalar", "addScalar", "unaryMinus", "DenseMatrix", "concat"];
-      createSubtract = /* @__PURE__ */ factory(name66, dependencies66, (_ref) => {
+      name67 = "subtract";
+      dependencies67 = ["typed", "matrix", "equalScalar", "subtractScalar", "unaryMinus", "DenseMatrix", "concat"];
+      createSubtract = /* @__PURE__ */ factory(name67, dependencies67, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           equalScalar: equalScalar2,
-          addScalar: addScalar2,
+          subtractScalar: subtractScalar2,
           unaryMinus: unaryMinus2,
           DenseMatrix: DenseMatrix2,
           concat: concat3
@@ -32051,27 +32106,10 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name66, {
-          "number, number": (x4, y3) => x4 - y3,
-          "Complex, Complex": (x4, y3) => x4.sub(y3),
-          "BigNumber, BigNumber": (x4, y3) => x4.minus(y3),
-          "Fraction, Fraction": (x4, y3) => x4.sub(y3),
-          "Unit, Unit": typed3.referToSelf((self2) => (x4, y3) => {
-            if (x4.value === null) {
-              throw new Error("Parameter x contains a unit with undefined value");
-            }
-            if (y3.value === null) {
-              throw new Error("Parameter y contains a unit with undefined value");
-            }
-            if (!x4.equalBase(y3)) {
-              throw new Error("Units do not match");
-            }
-            var res = x4.clone();
-            res.value = typed3.find(self2, [res.valueType(), y3.valueType()])(res.value, y3.value);
-            res.fixPrefix = false;
-            return res;
-          })
+        return typed3(name67, {
+          "any, any": subtractScalar2
         }, matrixAlgorithmSuite({
+          elop: subtractScalar2,
           SS: matAlgo05xSfSf,
           DS: matAlgo01xDSid,
           SD: matAlgo03xDSf,
@@ -32083,21 +32121,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/xgcd.js
-  var name67, dependencies67, createXgcd;
+  var name68, dependencies68, createXgcd;
   var init_xgcd = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/xgcd.js"() {
       init_factory();
       init_number2();
-      name67 = "xgcd";
-      dependencies67 = ["typed", "config", "matrix", "BigNumber"];
-      createXgcd = /* @__PURE__ */ factory(name67, dependencies67, (_ref) => {
+      name68 = "xgcd";
+      dependencies68 = ["typed", "config", "matrix", "BigNumber"];
+      createXgcd = /* @__PURE__ */ factory(name68, dependencies68, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           matrix: matrix2,
           BigNumber: BigNumber2
         } = _ref;
-        return typed3(name67, {
+        return typed3(name68, {
           "number, number": function numberNumber(a3, b3) {
             var res = xgcdNumber(a3, b3);
             return config4.matrix === "Array" ? res : matrix2(res);
@@ -32143,13 +32181,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/invmod.js
-  var name68, dependencies68, createInvmod;
+  var name69, dependencies69, createInvmod;
   var init_invmod = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/invmod.js"() {
       init_factory();
-      name68 = "invmod";
-      dependencies68 = ["typed", "config", "BigNumber", "xgcd", "equal", "smaller", "mod", "add", "isInteger"];
-      createInvmod = /* @__PURE__ */ factory(name68, dependencies68, (_ref) => {
+      name69 = "invmod";
+      dependencies69 = ["typed", "config", "BigNumber", "xgcd", "equal", "smaller", "mod", "add", "isInteger"];
+      createInvmod = /* @__PURE__ */ factory(name69, dependencies69, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -32161,7 +32199,7 @@ svg {
           add: add3,
           isInteger: isInteger3
         } = _ref;
-        return typed3(name68, {
+        return typed3(name69, {
           "number, number": invmod2,
           "BigNumber, BigNumber": invmod2
         });
@@ -32186,14 +32224,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo09xS0Sf.js
-  var name69, dependencies69, createMatAlgo09xS0Sf;
+  var name70, dependencies70, createMatAlgo09xS0Sf;
   var init_matAlgo09xS0Sf = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo09xS0Sf.js"() {
       init_factory();
       init_DimensionError();
-      name69 = "matAlgo09xS0Sf";
-      dependencies69 = ["typed", "equalScalar"];
-      createMatAlgo09xS0Sf = /* @__PURE__ */ factory(name69, dependencies69, (_ref) => {
+      name70 = "matAlgo09xS0Sf";
+      dependencies70 = ["typed", "equalScalar"];
+      createMatAlgo09xS0Sf = /* @__PURE__ */ factory(name70, dependencies70, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
@@ -32271,7 +32309,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/dotMultiply.js
-  var name70, dependencies70, createDotMultiply;
+  var name71, dependencies71, createDotMultiply;
   var init_dotMultiply = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/dotMultiply.js"() {
       init_factory();
@@ -32279,9 +32317,9 @@ svg {
       init_matAlgo09xS0Sf();
       init_matAlgo11xS0s();
       init_matrixAlgorithmSuite();
-      name70 = "dotMultiply";
-      dependencies70 = ["typed", "matrix", "equalScalar", "multiplyScalar", "concat"];
-      createDotMultiply = /* @__PURE__ */ factory(name70, dependencies70, (_ref) => {
+      name71 = "dotMultiply";
+      dependencies71 = ["typed", "matrix", "equalScalar", "multiplyScalar", "concat"];
+      createDotMultiply = /* @__PURE__ */ factory(name71, dependencies71, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -32306,7 +32344,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name70, matrixAlgorithmSuite({
+        return typed3(name71, matrixAlgorithmSuite({
           elop: multiplyScalar2,
           SS: matAlgo09xS0Sf,
           DS: matAlgo02xDS0,
@@ -32596,7 +32634,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/bitwise/bitAnd.js
-  var name71, dependencies71, createBitAnd;
+  var name72, dependencies72, createBitAnd;
   var init_bitAnd = __esm({
     "node_modules/mathjs/lib/esm/function/bitwise/bitAnd.js"() {
       init_bitwise2();
@@ -32606,9 +32644,9 @@ svg {
       init_factory();
       init_matrixAlgorithmSuite();
       init_number2();
-      name71 = "bitAnd";
-      dependencies71 = ["typed", "matrix", "equalScalar", "concat"];
-      createBitAnd = /* @__PURE__ */ factory(name71, dependencies71, (_ref) => {
+      name72 = "bitAnd";
+      dependencies72 = ["typed", "matrix", "equalScalar", "concat"];
+      createBitAnd = /* @__PURE__ */ factory(name72, dependencies72, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -32632,7 +32670,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name71, {
+        return typed3(name72, {
           "number, number": bitAndNumber,
           "BigNumber, BigNumber": bitAndBigNumber
         }, matrixAlgorithmSuite({
@@ -32645,20 +32683,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/bitwise/bitNot.js
-  var name72, dependencies72, createBitNot;
+  var name73, dependencies73, createBitNot;
   var init_bitNot = __esm({
     "node_modules/mathjs/lib/esm/function/bitwise/bitNot.js"() {
       init_bitwise2();
       init_collection();
       init_factory();
       init_number2();
-      name72 = "bitNot";
-      dependencies72 = ["typed"];
-      createBitNot = /* @__PURE__ */ factory(name72, dependencies72, (_ref) => {
+      name73 = "bitNot";
+      dependencies73 = ["typed"];
+      createBitNot = /* @__PURE__ */ factory(name73, dependencies73, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name72, {
+        return typed3(name73, {
           number: bitNotNumber,
           BigNumber: bitNotBigNumber,
           "Array | Matrix": typed3.referToSelf((self2) => (x4) => deepMap(x4, self2))
@@ -32668,7 +32706,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/bitwise/bitOr.js
-  var name73, dependencies73, createBitOr;
+  var name74, dependencies74, createBitOr;
   var init_bitOr = __esm({
     "node_modules/mathjs/lib/esm/function/bitwise/bitOr.js"() {
       init_bitwise2();
@@ -32678,9 +32716,9 @@ svg {
       init_matAlgo01xDSid();
       init_matrixAlgorithmSuite();
       init_number2();
-      name73 = "bitOr";
-      dependencies73 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
-      createBitOr = /* @__PURE__ */ factory(name73, dependencies73, (_ref) => {
+      name74 = "bitOr";
+      dependencies74 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
+      createBitOr = /* @__PURE__ */ factory(name74, dependencies74, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -32704,7 +32742,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name73, {
+        return typed3(name74, {
           "number, number": bitOrNumber,
           "BigNumber, BigNumber": bitOrBigNumber
         }, matrixAlgorithmSuite({
@@ -32717,14 +32755,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo07xSSf.js
-  var name74, dependencies74, createMatAlgo07xSSf;
+  var name75, dependencies75, createMatAlgo07xSSf;
   var init_matAlgo07xSSf = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo07xSSf.js"() {
       init_factory();
       init_DimensionError();
-      name74 = "matAlgo07xSSf";
-      dependencies74 = ["typed", "DenseMatrix"];
-      createMatAlgo07xSSf = /* @__PURE__ */ factory(name74, dependencies74, (_ref) => {
+      name75 = "matAlgo07xSSf";
+      dependencies75 = ["typed", "DenseMatrix"];
+      createMatAlgo07xSSf = /* @__PURE__ */ factory(name75, dependencies75, (_ref) => {
         var {
           typed: typed3,
           DenseMatrix: DenseMatrix2
@@ -32790,7 +32828,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/bitwise/bitXor.js
-  var name75, dependencies75, createBitXor;
+  var name76, dependencies76, createBitXor;
   var init_bitXor = __esm({
     "node_modules/mathjs/lib/esm/function/bitwise/bitXor.js"() {
       init_bitwise2();
@@ -32800,9 +32838,9 @@ svg {
       init_factory();
       init_matrixAlgorithmSuite();
       init_number2();
-      name75 = "bitXor";
-      dependencies75 = ["typed", "matrix", "DenseMatrix", "concat"];
-      createBitXor = /* @__PURE__ */ factory(name75, dependencies75, (_ref) => {
+      name76 = "bitXor";
+      dependencies76 = ["typed", "matrix", "DenseMatrix", "concat"];
+      createBitXor = /* @__PURE__ */ factory(name76, dependencies76, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -32825,7 +32863,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name75, {
+        return typed3(name76, {
           "number, number": bitXorNumber,
           "BigNumber, BigNumber": bitXor
         }, matrixAlgorithmSuite({
@@ -32838,18 +32876,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/complex/arg.js
-  var name76, dependencies76, createArg;
+  var name77, dependencies77, createArg;
   var init_arg = __esm({
     "node_modules/mathjs/lib/esm/function/complex/arg.js"() {
       init_factory();
       init_collection();
-      name76 = "arg";
-      dependencies76 = ["typed"];
-      createArg = /* @__PURE__ */ factory(name76, dependencies76, (_ref) => {
+      name77 = "arg";
+      dependencies77 = ["typed"];
+      createArg = /* @__PURE__ */ factory(name77, dependencies77, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name76, {
+        return typed3(name77, {
           number: function number2(x4) {
             return Math.atan2(0, x4);
           },
@@ -32867,18 +32905,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/complex/conj.js
-  var name77, dependencies77, createConj;
+  var name78, dependencies78, createConj;
   var init_conj = __esm({
     "node_modules/mathjs/lib/esm/function/complex/conj.js"() {
       init_factory();
       init_collection();
-      name77 = "conj";
-      dependencies77 = ["typed"];
-      createConj = /* @__PURE__ */ factory(name77, dependencies77, (_ref) => {
+      name78 = "conj";
+      dependencies78 = ["typed"];
+      createConj = /* @__PURE__ */ factory(name78, dependencies78, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name77, {
+        return typed3(name78, {
           "number | BigNumber | Fraction": (x4) => x4,
           Complex: (x4) => x4.conjugate(),
           "Array | Matrix": typed3.referToSelf((self2) => (x4) => deepMap(x4, self2))
@@ -32888,18 +32926,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/complex/im.js
-  var name78, dependencies78, createIm;
+  var name79, dependencies79, createIm;
   var init_im = __esm({
     "node_modules/mathjs/lib/esm/function/complex/im.js"() {
       init_factory();
       init_collection();
-      name78 = "im";
-      dependencies78 = ["typed"];
-      createIm = /* @__PURE__ */ factory(name78, dependencies78, (_ref) => {
+      name79 = "im";
+      dependencies79 = ["typed"];
+      createIm = /* @__PURE__ */ factory(name79, dependencies79, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name78, {
+        return typed3(name79, {
           number: () => 0,
           "BigNumber | Fraction": (x4) => x4.mul(0),
           Complex: (x4) => x4.im,
@@ -32910,18 +32948,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/complex/re.js
-  var name79, dependencies79, createRe;
+  var name80, dependencies80, createRe;
   var init_re = __esm({
     "node_modules/mathjs/lib/esm/function/complex/re.js"() {
       init_factory();
       init_collection();
-      name79 = "re";
-      dependencies79 = ["typed"];
-      createRe = /* @__PURE__ */ factory(name79, dependencies79, (_ref) => {
+      name80 = "re";
+      dependencies80 = ["typed"];
+      createRe = /* @__PURE__ */ factory(name80, dependencies80, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name79, {
+        return typed3(name80, {
           "number | BigNumber | Fraction": (x4) => x4,
           Complex: (x4) => x4.re,
           "Array | Matrix": typed3.referToSelf((self2) => (x4) => deepMap(x4, self2))
@@ -32931,19 +32969,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/logical/not.js
-  var name80, dependencies80, createNot;
+  var name81, dependencies81, createNot;
   var init_not = __esm({
     "node_modules/mathjs/lib/esm/function/logical/not.js"() {
       init_collection();
       init_factory();
       init_number2();
-      name80 = "not";
-      dependencies80 = ["typed"];
-      createNot = /* @__PURE__ */ factory(name80, dependencies80, (_ref) => {
+      name81 = "not";
+      dependencies81 = ["typed"];
+      createNot = /* @__PURE__ */ factory(name81, dependencies81, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name80, {
+        return typed3(name81, {
           "null | undefined": () => true,
           number: notNumber,
           Complex: function Complex3(x4) {
@@ -32960,7 +32998,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/logical/or.js
-  var name81, dependencies81, createOr;
+  var name82, dependencies82, createOr;
   var init_or = __esm({
     "node_modules/mathjs/lib/esm/function/logical/or.js"() {
       init_matAlgo03xDSf();
@@ -32969,9 +33007,9 @@ svg {
       init_factory();
       init_matrixAlgorithmSuite();
       init_number2();
-      name81 = "or";
-      dependencies81 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
-      createOr = /* @__PURE__ */ factory(name81, dependencies81, (_ref) => {
+      name82 = "or";
+      dependencies82 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
+      createOr = /* @__PURE__ */ factory(name82, dependencies82, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -32995,7 +33033,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name81, {
+        return typed3(name82, {
           "number, number": orNumber,
           "Complex, Complex": function ComplexComplex(x4, y3) {
             return x4.re !== 0 || x4.im !== 0 || y3.re !== 0 || y3.im !== 0;
@@ -33014,7 +33052,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/logical/xor.js
-  var name82, dependencies82, createXor;
+  var name83, dependencies83, createXor;
   var init_xor = __esm({
     "node_modules/mathjs/lib/esm/function/logical/xor.js"() {
       init_matAlgo03xDSf();
@@ -33023,9 +33061,9 @@ svg {
       init_factory();
       init_matrixAlgorithmSuite();
       init_number2();
-      name82 = "xor";
-      dependencies82 = ["typed", "matrix", "DenseMatrix", "concat"];
-      createXor = /* @__PURE__ */ factory(name82, dependencies82, (_ref) => {
+      name83 = "xor";
+      dependencies83 = ["typed", "matrix", "DenseMatrix", "concat"];
+      createXor = /* @__PURE__ */ factory(name83, dependencies83, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -33048,7 +33086,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name82, {
+        return typed3(name83, {
           "number, number": xorNumber,
           "Complex, Complex": function ComplexComplex(x4, y3) {
             return (x4.re !== 0 || x4.im !== 0) !== (y3.re !== 0 || y3.im !== 0);
@@ -33067,7 +33105,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/concat.js
-  var name83, dependencies83, createConcat;
+  var name84, dependencies84, createConcat;
   var init_concat = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/concat.js"() {
       init_is();
@@ -33076,15 +33114,15 @@ svg {
       init_IndexError();
       init_DimensionError();
       init_factory();
-      name83 = "concat";
-      dependencies83 = ["typed", "matrix", "isInteger"];
-      createConcat = /* @__PURE__ */ factory(name83, dependencies83, (_ref) => {
+      name84 = "concat";
+      dependencies84 = ["typed", "matrix", "isInteger"];
+      createConcat = /* @__PURE__ */ factory(name84, dependencies84, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           isInteger: isInteger3
         } = _ref;
-        return typed3(name83, {
+        return typed3(name84, {
           // TODO: change signature to '...Array | Matrix, dim?' when supported
           "...Array | Matrix | number | BigNumber": function ArrayMatrixNumberBigNumber(args) {
             var i5;
@@ -33139,23 +33177,23 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/column.js
-  var name84, dependencies84, createColumn;
+  var name85, dependencies85, createColumn;
   var init_column = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/column.js"() {
       init_factory();
       init_is();
       init_object();
       init_array();
-      name84 = "column";
-      dependencies84 = ["typed", "Index", "matrix", "range"];
-      createColumn = /* @__PURE__ */ factory(name84, dependencies84, (_ref) => {
+      name85 = "column";
+      dependencies85 = ["typed", "Index", "matrix", "range"];
+      createColumn = /* @__PURE__ */ factory(name85, dependencies85, (_ref) => {
         var {
           typed: typed3,
           Index: Index2,
           matrix: matrix2,
           range: range2
         } = _ref;
-        return typed3(name84, {
+        return typed3(name85, {
           "Matrix, number": _column,
           "Array, number": function ArrayNumber(value2, column2) {
             return _column(matrix2(clone(value2)), column2).valueOf();
@@ -33176,19 +33214,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/count.js
-  var name85, dependencies85, createCount;
+  var name86, dependencies86, createCount;
   var init_count = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/count.js"() {
       init_factory();
-      name85 = "count";
-      dependencies85 = ["typed", "size", "prod"];
-      createCount = /* @__PURE__ */ factory(name85, dependencies85, (_ref) => {
+      name86 = "count";
+      dependencies86 = ["typed", "size", "prod"];
+      createCount = /* @__PURE__ */ factory(name86, dependencies86, (_ref) => {
         var {
           typed: typed3,
           size: size2,
           prod: prod2
         } = _ref;
-        return typed3(name85, {
+        return typed3(name86, {
           string: function string2(x4) {
             return x4.length;
           },
@@ -33201,21 +33239,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/cross.js
-  var name86, dependencies86, createCross;
+  var name87, dependencies87, createCross;
   var init_cross = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/cross.js"() {
       init_array();
       init_factory();
-      name86 = "cross";
-      dependencies86 = ["typed", "matrix", "subtract", "multiply"];
-      createCross = /* @__PURE__ */ factory(name86, dependencies86, (_ref) => {
+      name87 = "cross";
+      dependencies87 = ["typed", "matrix", "subtract", "multiply"];
+      createCross = /* @__PURE__ */ factory(name87, dependencies87, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           subtract: subtract2,
           multiply: multiply2
         } = _ref;
-        return typed3(name86, {
+        return typed3(name87, {
           "Matrix, Matrix": function MatrixMatrix(x4, y3) {
             return matrix2(_cross(x4.toArray(), y3.toArray()));
           },
@@ -33248,23 +33286,23 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/diag.js
-  var name87, dependencies87, createDiag;
+  var name88, dependencies88, createDiag;
   var init_diag = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/diag.js"() {
       init_is();
       init_array();
       init_number();
       init_factory();
-      name87 = "diag";
-      dependencies87 = ["typed", "matrix", "DenseMatrix", "SparseMatrix"];
-      createDiag = /* @__PURE__ */ factory(name87, dependencies87, (_ref) => {
+      name88 = "diag";
+      dependencies88 = ["typed", "matrix", "DenseMatrix", "SparseMatrix"];
+      createDiag = /* @__PURE__ */ factory(name88, dependencies88, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           DenseMatrix: DenseMatrix2,
           SparseMatrix: SparseMatrix2
         } = _ref;
-        return typed3(name87, {
+        return typed3(name88, {
           // FIXME: simplify this huge amount of signatures as soon as typed-function supports optional arguments
           Array: function Array2(x4) {
             return _diag(x4, 0, arraySize(x4), null);
@@ -33404,15 +33442,15 @@ svg {
       return applyCallback(callback, value2, [index2], array, "filter");
     });
   }
-  var name88, dependencies88, createFilter;
+  var name89, dependencies89, createFilter;
   var init_filter = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/filter.js"() {
       init_applyCallback();
       init_array();
       init_factory();
-      name88 = "filter";
-      dependencies88 = ["typed"];
-      createFilter = /* @__PURE__ */ factory(name88, dependencies88, (_ref) => {
+      name89 = "filter";
+      dependencies89 = ["typed"];
+      createFilter = /* @__PURE__ */ factory(name89, dependencies89, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -33431,19 +33469,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/flatten.js
-  var name89, dependencies89, createFlatten;
+  var name90, dependencies90, createFlatten;
   var init_flatten = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/flatten.js"() {
       init_array();
       init_factory();
-      name89 = "flatten";
-      dependencies89 = ["typed", "matrix"];
-      createFlatten = /* @__PURE__ */ factory(name89, dependencies89, (_ref) => {
+      name90 = "flatten";
+      dependencies90 = ["typed", "matrix"];
+      createFlatten = /* @__PURE__ */ factory(name90, dependencies90, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2
         } = _ref;
-        return typed3(name89, {
+        return typed3(name90, {
           Array: function Array2(x4) {
             return flatten(x4);
           },
@@ -33469,19 +33507,19 @@ svg {
     };
     recurse(array, []);
   }
-  var name90, dependencies90, createForEach;
+  var name91, dependencies91, createForEach;
   var init_forEach = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/forEach.js"() {
       init_applyCallback();
       init_array();
       init_factory();
-      name90 = "forEach";
-      dependencies90 = ["typed"];
-      createForEach = /* @__PURE__ */ factory(name90, dependencies90, (_ref) => {
+      name91 = "forEach";
+      dependencies91 = ["typed"];
+      createForEach = /* @__PURE__ */ factory(name91, dependencies91, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name90, {
+        return typed3(name91, {
           "Array, function": _forEach,
           "Matrix, function": function MatrixFunction(x4, callback) {
             x4.forEach(callback);
@@ -33492,19 +33530,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/getMatrixDataType.js
-  var name91, dependencies91, createGetMatrixDataType;
+  var name92, dependencies92, createGetMatrixDataType;
   var init_getMatrixDataType = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/getMatrixDataType.js"() {
       init_factory();
       init_array();
       init_is();
-      name91 = "getMatrixDataType";
-      dependencies91 = ["typed"];
-      createGetMatrixDataType = /* @__PURE__ */ factory(name91, dependencies91, (_ref) => {
+      name92 = "getMatrixDataType";
+      dependencies92 = ["typed"];
+      createGetMatrixDataType = /* @__PURE__ */ factory(name92, dependencies92, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name91, {
+        return typed3(name92, {
           Array: function Array2(x4) {
             return getArrayDataType(x4, typeOf);
           },
@@ -33517,16 +33555,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/identity.js
-  var name92, dependencies92, createIdentity;
+  var name93, dependencies93, createIdentity;
   var init_identity = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/identity.js"() {
       init_is();
       init_array();
       init_number();
       init_factory();
-      name92 = "identity";
-      dependencies92 = ["typed", "config", "matrix", "BigNumber", "DenseMatrix", "SparseMatrix"];
-      createIdentity = /* @__PURE__ */ factory(name92, dependencies92, (_ref) => {
+      name93 = "identity";
+      dependencies93 = ["typed", "config", "matrix", "BigNumber", "DenseMatrix", "SparseMatrix"];
+      createIdentity = /* @__PURE__ */ factory(name93, dependencies93, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -33535,7 +33573,7 @@ svg {
           DenseMatrix: DenseMatrix2,
           SparseMatrix: SparseMatrix2
         } = _ref;
-        return typed3(name92, {
+        return typed3(name93, {
           "": function _3() {
             return config4.matrix === "Matrix" ? matrix2([]) : [];
           },
@@ -33615,20 +33653,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/kron.js
-  var name93, dependencies93, createKron;
+  var name94, dependencies94, createKron;
   var init_kron = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/kron.js"() {
       init_array();
       init_factory();
-      name93 = "kron";
-      dependencies93 = ["typed", "matrix", "multiplyScalar"];
-      createKron = /* @__PURE__ */ factory(name93, dependencies93, (_ref) => {
+      name94 = "kron";
+      dependencies94 = ["typed", "matrix", "multiplyScalar"];
+      createKron = /* @__PURE__ */ factory(name94, dependencies94, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           multiplyScalar: multiplyScalar2
         } = _ref;
-        return typed3(name93, {
+        return typed3(name94, {
           "Matrix, Matrix": function MatrixMatrix(x4, y3) {
             return matrix2(_kron(x4.toArray(), y3.toArray()));
           },
@@ -33681,18 +33719,18 @@ svg {
     };
     return recurse(array, []);
   }
-  var name94, dependencies94, createMap2;
+  var name95, dependencies95, createMap2;
   var init_map2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/map.js"() {
       init_applyCallback();
       init_factory();
-      name94 = "map";
-      dependencies94 = ["typed"];
-      createMap2 = /* @__PURE__ */ factory(name94, dependencies94, (_ref) => {
+      name95 = "map";
+      dependencies95 = ["typed"];
+      createMap2 = /* @__PURE__ */ factory(name95, dependencies95, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name94, {
+        return typed3(name95, {
           "Array, function": _map,
           "Matrix, function": function MatrixFunction(x4, callback) {
             return x4.map(callback);
@@ -33703,22 +33741,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/diff.js
-  var name95, dependencies95, createDiff;
+  var name96, dependencies96, createDiff;
   var init_diff = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/diff.js"() {
       init_factory();
       init_number();
       init_is();
-      name95 = "diff";
-      dependencies95 = ["typed", "matrix", "subtract", "number"];
-      createDiff = /* @__PURE__ */ factory(name95, dependencies95, (_ref) => {
+      name96 = "diff";
+      dependencies96 = ["typed", "matrix", "subtract", "number"];
+      createDiff = /* @__PURE__ */ factory(name96, dependencies96, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           subtract: subtract2,
           number: number2
         } = _ref;
-        return typed3(name95, {
+        return typed3(name96, {
           "Array | Matrix": function ArrayMatrix(arr) {
             if (isMatrix(arr)) {
               return matrix2(_diff(arr.toArray()));
@@ -33796,16 +33834,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/ones.js
-  var name96, dependencies96, createOnes;
+  var name97, dependencies97, createOnes;
   var init_ones = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/ones.js"() {
       init_is();
       init_number();
       init_array();
       init_factory();
-      name96 = "ones";
-      dependencies96 = ["typed", "config", "matrix", "BigNumber"];
-      createOnes = /* @__PURE__ */ factory(name96, dependencies96, (_ref) => {
+      name97 = "ones";
+      dependencies97 = ["typed", "config", "matrix", "BigNumber"];
+      createOnes = /* @__PURE__ */ factory(name97, dependencies97, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -33893,14 +33931,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/range.js
-  var name97, dependencies97, createRange;
+  var name98, dependencies98, createRange;
   var init_range = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/range.js"() {
       init_factory();
       init_noop();
-      name97 = "range";
-      dependencies97 = ["typed", "config", "?matrix", "?bignumber", "smaller", "smallerEq", "larger", "largerEq", "add", "isPositive"];
-      createRange = /* @__PURE__ */ factory(name97, dependencies97, (_ref) => {
+      name98 = "range";
+      dependencies98 = ["typed", "config", "?matrix", "?bignumber", "smaller", "smallerEq", "larger", "largerEq", "add", "isPositive"];
+      createRange = /* @__PURE__ */ factory(name98, dependencies98, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -33913,7 +33951,7 @@ svg {
           add: add3,
           isPositive: isPositive2
         } = _ref;
-        return typed3(name97, {
+        return typed3(name98, {
           // TODO: simplify signatures when typed-function supports default values and optional arguments
           // TODO: a number or boolean should not be converted to string here
           string: _strRange,
@@ -34014,19 +34052,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/reshape.js
-  var name98, dependencies98, createReshape;
+  var name99, dependencies99, createReshape;
   var init_reshape = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/reshape.js"() {
       init_array();
       init_factory();
-      name98 = "reshape";
-      dependencies98 = ["typed", "isInteger", "matrix"];
-      createReshape = /* @__PURE__ */ factory(name98, dependencies98, (_ref) => {
+      name99 = "reshape";
+      dependencies99 = ["typed", "isInteger", "matrix"];
+      createReshape = /* @__PURE__ */ factory(name99, dependencies99, (_ref) => {
         var {
           typed: typed3,
           isInteger: isInteger3
         } = _ref;
-        return typed3(name98, {
+        return typed3(name99, {
           "Matrix, Array": function MatrixArray(x4, sizes) {
             return x4.reshape(sizes, true);
           },
@@ -34044,7 +34082,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/resize.js
-  var name99, dependencies99, createResize;
+  var name100, dependencies100, createResize;
   var init_resize = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/resize.js"() {
       init_is();
@@ -34055,9 +34093,9 @@ svg {
       init_object();
       init_array();
       init_factory();
-      name99 = "resize";
-      dependencies99 = ["config", "matrix"];
-      createResize = /* @__PURE__ */ factory(name99, dependencies99, (_ref) => {
+      name100 = "resize";
+      dependencies100 = ["config", "matrix"];
+      createResize = /* @__PURE__ */ factory(name100, dependencies100, (_ref) => {
         var {
           config: config4,
           matrix: matrix2
@@ -34127,20 +34165,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/rotate.js
-  var name100, dependencies100, createRotate;
+  var name101, dependencies101, createRotate;
   var init_rotate = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/rotate.js"() {
       init_factory();
       init_array();
-      name100 = "rotate";
-      dependencies100 = ["typed", "multiply", "rotationMatrix"];
-      createRotate = /* @__PURE__ */ factory(name100, dependencies100, (_ref) => {
+      name101 = "rotate";
+      dependencies101 = ["typed", "multiply", "rotationMatrix"];
+      createRotate = /* @__PURE__ */ factory(name101, dependencies101, (_ref) => {
         var {
           typed: typed3,
           multiply: multiply2,
           rotationMatrix: rotationMatrix2
         } = _ref;
-        return typed3(name100, {
+        return typed3(name101, {
           "Array , number | BigNumber | Complex | Unit": function ArrayNumberBigNumberComplexUnit(w4, theta) {
             _validateSize(w4, 2);
             var matrixRes = multiply2(rotationMatrix2(theta), w4);
@@ -34177,14 +34215,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/rotationMatrix.js
-  var name101, dependencies101, createRotationMatrix;
+  var name102, dependencies102, createRotationMatrix;
   var init_rotationMatrix = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/rotationMatrix.js"() {
       init_is();
       init_factory();
-      name101 = "rotationMatrix";
-      dependencies101 = ["typed", "config", "multiplyScalar", "addScalar", "unaryMinus", "norm", "matrix", "BigNumber", "DenseMatrix", "SparseMatrix", "cos", "sin"];
-      createRotationMatrix = /* @__PURE__ */ factory(name101, dependencies101, (_ref) => {
+      name102 = "rotationMatrix";
+      dependencies102 = ["typed", "config", "multiplyScalar", "addScalar", "unaryMinus", "norm", "matrix", "BigNumber", "DenseMatrix", "SparseMatrix", "cos", "sin"];
+      createRotationMatrix = /* @__PURE__ */ factory(name102, dependencies102, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -34199,7 +34237,7 @@ svg {
           cos: cos3,
           sin: sin3
         } = _ref;
-        return typed3(name101, {
+        return typed3(name102, {
           "": function _3() {
             return config4.matrix === "Matrix" ? matrix2([]) : [];
           },
@@ -34292,23 +34330,23 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/row.js
-  var name102, dependencies102, createRow;
+  var name103, dependencies103, createRow;
   var init_row = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/row.js"() {
       init_factory();
       init_is();
       init_object();
       init_array();
-      name102 = "row";
-      dependencies102 = ["typed", "Index", "matrix", "range"];
-      createRow = /* @__PURE__ */ factory(name102, dependencies102, (_ref) => {
+      name103 = "row";
+      dependencies103 = ["typed", "Index", "matrix", "range"];
+      createRow = /* @__PURE__ */ factory(name103, dependencies103, (_ref) => {
         var {
           typed: typed3,
           Index: Index2,
           matrix: matrix2,
           range: range2
         } = _ref;
-        return typed3(name102, {
+        return typed3(name103, {
           "Matrix, number": _row,
           "Array, number": function ArrayNumber(value2, row2) {
             return _row(matrix2(clone(value2)), row2).valueOf();
@@ -34329,21 +34367,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/size.js
-  var name103, dependencies103, createSize;
+  var name104, dependencies104, createSize;
   var init_size = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/size.js"() {
       init_array();
       init_factory();
       init_noop();
-      name103 = "size";
-      dependencies103 = ["typed", "config", "?matrix"];
-      createSize = /* @__PURE__ */ factory(name103, dependencies103, (_ref) => {
+      name104 = "size";
+      dependencies104 = ["typed", "config", "?matrix"];
+      createSize = /* @__PURE__ */ factory(name104, dependencies104, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           matrix: matrix2
         } = _ref;
-        return typed3(name103, {
+        return typed3(name104, {
           Matrix: function Matrix2(x4) {
             return x4.create(x4.size());
           },
@@ -34360,20 +34398,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/squeeze.js
-  var name104, dependencies104, createSqueeze;
+  var name105, dependencies105, createSqueeze;
   var init_squeeze = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/squeeze.js"() {
       init_object();
       init_array();
       init_factory();
-      name104 = "squeeze";
-      dependencies104 = ["typed", "matrix"];
-      createSqueeze = /* @__PURE__ */ factory(name104, dependencies104, (_ref) => {
+      name105 = "squeeze";
+      dependencies105 = ["typed", "matrix"];
+      createSqueeze = /* @__PURE__ */ factory(name105, dependencies105, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2
         } = _ref;
-        return typed3(name104, {
+        return typed3(name105, {
           Array: function Array2(x4) {
             return squeeze(clone(x4));
           },
@@ -34481,7 +34519,7 @@ svg {
     setSafeProperty(updated, key, replacement);
     return updated;
   }
-  var name105, dependencies105, createSubset;
+  var name106, dependencies106, createSubset;
   var init_subset = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/subset.js"() {
       init_is();
@@ -34490,16 +34528,16 @@ svg {
       init_customs();
       init_DimensionError();
       init_factory();
-      name105 = "subset";
-      dependencies105 = ["typed", "matrix", "zeros", "add"];
-      createSubset = /* @__PURE__ */ factory(name105, dependencies105, (_ref) => {
+      name106 = "subset";
+      dependencies106 = ["typed", "matrix", "zeros", "add"];
+      createSubset = /* @__PURE__ */ factory(name106, dependencies106, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           zeros: zeros3,
           add: add3
         } = _ref;
-        return typed3(name105, {
+        return typed3(name106, {
           // get subset
           "Matrix, Index": function MatrixIndex(value2, index2) {
             if (isEmptyIndex(index2)) {
@@ -34567,20 +34605,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/transpose.js
-  var name106, dependencies106, createTranspose;
+  var name107, dependencies107, createTranspose;
   var init_transpose = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/transpose.js"() {
       init_object();
       init_string();
       init_factory();
-      name106 = "transpose";
-      dependencies106 = ["typed", "matrix"];
-      createTranspose = /* @__PURE__ */ factory(name106, dependencies106, (_ref) => {
+      name107 = "transpose";
+      dependencies107 = ["typed", "matrix"];
+      createTranspose = /* @__PURE__ */ factory(name107, dependencies107, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2
         } = _ref;
-        return typed3(name106, {
+        return typed3(name107, {
           Array: (x4) => transposeMatrix(matrix2(x4)).valueOf(),
           Matrix: transposeMatrix,
           any: clone
@@ -34675,19 +34713,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/ctranspose.js
-  var name107, dependencies107, createCtranspose;
+  var name108, dependencies108, createCtranspose;
   var init_ctranspose = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/ctranspose.js"() {
       init_factory();
-      name107 = "ctranspose";
-      dependencies107 = ["typed", "transpose", "conj"];
-      createCtranspose = /* @__PURE__ */ factory(name107, dependencies107, (_ref) => {
+      name108 = "ctranspose";
+      dependencies108 = ["typed", "transpose", "conj"];
+      createCtranspose = /* @__PURE__ */ factory(name108, dependencies108, (_ref) => {
         var {
           typed: typed3,
           transpose: transpose2,
           conj: conj2
         } = _ref;
-        return typed3(name107, {
+        return typed3(name108, {
           any: function any(x4) {
             return conj2(transpose2(x4));
           }
@@ -34697,23 +34735,23 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/zeros.js
-  var name108, dependencies108, createZeros;
+  var name109, dependencies109, createZeros;
   var init_zeros = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/zeros.js"() {
       init_is();
       init_number();
       init_array();
       init_factory();
-      name108 = "zeros";
-      dependencies108 = ["typed", "config", "matrix", "BigNumber"];
-      createZeros = /* @__PURE__ */ factory(name108, dependencies108, (_ref) => {
+      name109 = "zeros";
+      dependencies109 = ["typed", "config", "matrix", "BigNumber"];
+      createZeros = /* @__PURE__ */ factory(name109, dependencies109, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           matrix: matrix2,
           BigNumber: BigNumber2
         } = _ref;
-        return typed3(name108, {
+        return typed3(name109, {
           "": function _3() {
             return config4.matrix === "Array" ? _zeros([]) : _zeros([], "default");
           },
@@ -34779,14 +34817,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/fft.js
-  var name109, dependencies109, createFft;
+  var name110, dependencies110, createFft;
   var init_fft = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/fft.js"() {
       init_array();
       init_factory();
-      name109 = "fft";
-      dependencies109 = ["typed", "matrix", "addScalar", "multiplyScalar", "divideScalar", "exp", "tau", "i", "dotDivide", "conj", "pow", "ceil", "log2"];
-      createFft = /* @__PURE__ */ factory(name109, dependencies109, (_ref) => {
+      name110 = "fft";
+      dependencies110 = ["typed", "matrix", "addScalar", "multiplyScalar", "divideScalar", "exp", "tau", "i", "dotDivide", "conj", "pow", "ceil", "log2"];
+      createFft = /* @__PURE__ */ factory(name110, dependencies110, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -34802,7 +34840,7 @@ svg {
           ceil: ceil3,
           log2: log25
         } = _ref;
-        return typed3(name109, {
+        return typed3(name110, {
           Array: _ndFft,
           Matrix: function Matrix2(matrix3) {
             return matrix3.create(_ndFft(matrix3.toArray()));
@@ -34868,22 +34906,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/ifft.js
-  var name110, dependencies110, createIfft;
+  var name111, dependencies111, createIfft;
   var init_ifft = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/ifft.js"() {
       init_array();
       init_factory();
       init_is();
-      name110 = "ifft";
-      dependencies110 = ["typed", "fft", "dotDivide", "conj"];
-      createIfft = /* @__PURE__ */ factory(name110, dependencies110, (_ref) => {
+      name111 = "ifft";
+      dependencies111 = ["typed", "fft", "dotDivide", "conj"];
+      createIfft = /* @__PURE__ */ factory(name111, dependencies111, (_ref) => {
         var {
           typed: typed3,
           fft: fft2,
           dotDivide: dotDivide2,
           conj: conj2
         } = _ref;
-        return typed3(name110, {
+        return typed3(name111, {
           "Array | Matrix": function ArrayMatrix(arr) {
             var size2 = isMatrix(arr) ? arr.size() : arraySize(arr);
             return dotDivide2(conj2(fft2(conj2(arr))), size2.reduce((acc, curr) => acc * curr, 1));
@@ -34894,13 +34932,13 @@ svg {
   });
 
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js
-  function _typeof(obj) {
+  function _typeof(o3) {
     "@babel/helpers - typeof";
-    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-      return typeof obj2;
-    } : function(obj2) {
-      return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-    }, _typeof(obj);
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o4) {
+      return typeof o4;
+    } : function(o4) {
+      return o4 && "function" == typeof Symbol && o4.constructor === Symbol && o4 !== Symbol.prototype ? "symbol" : typeof o4;
+    }, _typeof(o3);
   }
   var init_typeof = __esm({
     "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js"() {
@@ -34908,17 +34946,17 @@ svg {
   });
 
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
-  function _toPrimitive(input, hint) {
-    if (_typeof(input) !== "object" || input === null)
-      return input;
-    var prim = input[Symbol.toPrimitive];
-    if (prim !== void 0) {
-      var res = prim.call(input, hint || "default");
-      if (_typeof(res) !== "object")
-        return res;
+  function toPrimitive(t3, r3) {
+    if ("object" != _typeof(t3) || !t3)
+      return t3;
+    var e6 = t3[Symbol.toPrimitive];
+    if (void 0 !== e6) {
+      var i5 = e6.call(t3, r3 || "default");
+      if ("object" != _typeof(i5))
+        return i5;
       throw new TypeError("@@toPrimitive must return a primitive value.");
     }
-    return (hint === "string" ? String : Number)(input);
+    return ("string" === r3 ? String : Number)(t3);
   }
   var init_toPrimitive = __esm({
     "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js"() {
@@ -34927,9 +34965,9 @@ svg {
   });
 
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
-  function _toPropertyKey(arg2) {
-    var key = _toPrimitive(arg2, "string");
-    return _typeof(key) === "symbol" ? key : String(key);
+  function toPropertyKey(t3) {
+    var i5 = toPrimitive(t3, "string");
+    return "symbol" == _typeof(i5) ? i5 : String(i5);
   }
   var init_toPropertyKey = __esm({
     "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
@@ -34940,7 +34978,7 @@ svg {
 
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/defineProperty.js
   function _defineProperty(obj, key, value2) {
-    key = _toPropertyKey(key);
+    key = toPropertyKey(key);
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value2,
@@ -34960,36 +34998,36 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/numeric/solveODE.js
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+  function ownKeys(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      enumerableOnly && (symbols = symbols.filter(function(sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      })), keys.push.apply(keys, symbols);
+      var o3 = Object.getOwnPropertySymbols(e6);
+      r3 && (o3 = o3.filter(function(r4) {
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+      })), t3.push.apply(t3, o3);
     }
-    return keys;
+    return t3;
   }
-  function _objectSpread(target) {
-    for (var i5 = 1; i5 < arguments.length; i5++) {
-      var source = null != arguments[i5] ? arguments[i5] : {};
-      i5 % 2 ? ownKeys(Object(source), true).forEach(function(key) {
-        _defineProperty(target, key, source[key]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+  function _objectSpread(e6) {
+    for (var r3 = 1; r3 < arguments.length; r3++) {
+      var t3 = null != arguments[r3] ? arguments[r3] : {};
+      r3 % 2 ? ownKeys(Object(t3), true).forEach(function(r4) {
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return target;
+    return e6;
   }
-  var name111, dependencies111, createSolveODE;
+  var name112, dependencies112, createSolveODE;
   var init_solveODE = __esm({
     "node_modules/mathjs/lib/esm/function/numeric/solveODE.js"() {
       init_defineProperty();
       init_is();
       init_factory();
-      name111 = "solveODE";
-      dependencies111 = ["typed", "add", "subtract", "multiply", "divide", "max", "map", "abs", "isPositive", "isNegative", "larger", "smaller", "matrix", "bignumber", "unaryMinus"];
-      createSolveODE = /* @__PURE__ */ factory(name111, dependencies111, (_ref) => {
+      name112 = "solveODE";
+      dependencies112 = ["typed", "add", "subtract", "multiply", "divide", "max", "map", "abs", "isPositive", "isNegative", "larger", "smaller", "matrix", "bignumber", "unaryMinus"];
+      createSolveODE = /* @__PURE__ */ factory(name112, dependencies112, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -35185,15 +35223,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/special/erf.js
-  var name112, dependencies112, createErf, THRESH, SQRPI, P5, Q2, MAX_NUM;
+  var name113, dependencies113, createErf, THRESH, SQRPI, P5, Q2, MAX_NUM;
   var init_erf = __esm({
     "node_modules/mathjs/lib/esm/function/special/erf.js"() {
       init_collection();
       init_number();
       init_factory();
-      name112 = "erf";
-      dependencies112 = ["typed"];
-      createErf = /* @__PURE__ */ factory(name112, dependencies112, (_ref) => {
+      name113 = "erf";
+      dependencies113 = ["typed"];
+      createErf = /* @__PURE__ */ factory(name113, dependencies113, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -35264,13 +35302,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/special/zeta.js
-  var name113, dependencies113, createZeta;
+  var name114, dependencies114, createZeta;
   var init_zeta = __esm({
     "node_modules/mathjs/lib/esm/function/special/zeta.js"() {
       init_factory();
-      name113 = "zeta";
-      dependencies113 = ["typed", "config", "multiply", "pow", "divide", "factorial", "equal", "smallerEq", "isNegative", "gamma", "sin", "subtract", "add", "?Complex", "?BigNumber", "pi"];
-      createZeta = /* @__PURE__ */ factory(name113, dependencies113, (_ref) => {
+      name114 = "zeta";
+      dependencies114 = ["typed", "config", "multiply", "pow", "divide", "factorial", "equal", "smallerEq", "isNegative", "gamma", "sin", "subtract", "add", "?Complex", "?BigNumber", "pi"];
+      createZeta = /* @__PURE__ */ factory(name114, dependencies114, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -35289,7 +35327,7 @@ svg {
           BigNumber: _BigNumber,
           pi: pi3
         } = _ref;
-        return typed3(name113, {
+        return typed3(name114, {
           number: (s3) => zetaNumeric(s3, (value2) => value2, () => 20),
           BigNumber: (s3) => zetaNumeric(s3, (value2) => new _BigNumber(value2), () => {
             return Math.abs(Math.log10(config4.epsilon));
@@ -35355,20 +35393,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/mode.js
-  var name114, dependencies114, createMode;
+  var name115, dependencies115, createMode;
   var init_mode = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/mode.js"() {
       init_array();
       init_factory();
-      name114 = "mode";
-      dependencies114 = ["typed", "isNaN", "isNumeric"];
-      createMode = /* @__PURE__ */ factory(name114, dependencies114, (_ref) => {
+      name115 = "mode";
+      dependencies115 = ["typed", "isNaN", "isNumeric"];
+      createMode = /* @__PURE__ */ factory(name115, dependencies115, (_ref) => {
         var {
           typed: typed3,
           isNaN: isNaN3,
           isNumeric: isNumeric2
         } = _ref;
-        return typed3(name114, {
+        return typed3(name115, {
           "Array | Matrix": _mode,
           "...": function _3(args) {
             return _mode(args);
@@ -35425,22 +35463,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/prod.js
-  var name115, dependencies115, createProd;
+  var name116, dependencies116, createProd;
   var init_prod = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/prod.js"() {
       init_collection();
       init_factory();
       init_improveErrorMessage();
-      name115 = "prod";
-      dependencies115 = ["typed", "config", "multiplyScalar", "numeric"];
-      createProd = /* @__PURE__ */ factory(name115, dependencies115, (_ref) => {
+      name116 = "prod";
+      dependencies116 = ["typed", "config", "multiplyScalar", "numeric"];
+      createProd = /* @__PURE__ */ factory(name116, dependencies116, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           multiplyScalar: multiplyScalar2,
           numeric: numeric3
         } = _ref;
-        return typed3(name115, {
+        return typed3(name116, {
           // prod([a, b, c, d, ...])
           "Array | Matrix": _prod,
           // prod([a, b, c, d, ...], dim)
@@ -35474,18 +35512,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/string/format.js
-  var name116, dependencies116, createFormat;
+  var name117, dependencies117, createFormat;
   var init_format = __esm({
     "node_modules/mathjs/lib/esm/function/string/format.js"() {
       init_string();
       init_factory();
-      name116 = "format";
-      dependencies116 = ["typed"];
-      createFormat = /* @__PURE__ */ factory(name116, dependencies116, (_ref) => {
+      name117 = "format";
+      dependencies117 = ["typed"];
+      createFormat = /* @__PURE__ */ factory(name117, dependencies117, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name116, {
+        return typed3(name117, {
           any: format3,
           "any, Object | function | number": format3
         });
@@ -35494,18 +35532,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/string/bin.js
-  var name117, dependencies117, createBin;
+  var name118, dependencies118, createBin;
   var init_bin = __esm({
     "node_modules/mathjs/lib/esm/function/string/bin.js"() {
       init_factory();
-      name117 = "bin";
-      dependencies117 = ["typed", "format"];
-      createBin = factory(name117, dependencies117, (_ref) => {
+      name118 = "bin";
+      dependencies118 = ["typed", "format"];
+      createBin = factory(name118, dependencies118, (_ref) => {
         var {
           typed: typed3,
           format: format5
         } = _ref;
-        return typed3(name117, {
+        return typed3(name118, {
           "number | BigNumber": function numberBigNumber(n3) {
             return format5(n3, {
               notation: "bin"
@@ -35523,18 +35561,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/string/oct.js
-  var name118, dependencies118, createOct;
+  var name119, dependencies119, createOct;
   var init_oct = __esm({
     "node_modules/mathjs/lib/esm/function/string/oct.js"() {
       init_factory();
-      name118 = "oct";
-      dependencies118 = ["typed", "format"];
-      createOct = factory(name118, dependencies118, (_ref) => {
+      name119 = "oct";
+      dependencies119 = ["typed", "format"];
+      createOct = factory(name119, dependencies119, (_ref) => {
         var {
           typed: typed3,
           format: format5
         } = _ref;
-        return typed3(name118, {
+        return typed3(name119, {
           "number | BigNumber": function numberBigNumber(n3) {
             return format5(n3, {
               notation: "oct"
@@ -35552,18 +35590,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/string/hex.js
-  var name119, dependencies119, createHex;
+  var name120, dependencies120, createHex;
   var init_hex = __esm({
     "node_modules/mathjs/lib/esm/function/string/hex.js"() {
       init_factory();
-      name119 = "hex";
-      dependencies119 = ["typed", "format"];
-      createHex = factory(name119, dependencies119, (_ref) => {
+      name120 = "hex";
+      dependencies120 = ["typed", "format"];
+      createHex = factory(name120, dependencies120, (_ref) => {
         var {
           typed: typed3,
           format: format5
         } = _ref;
-        return typed3(name119, {
+        return typed3(name120, {
           "number | BigNumber": function numberBigNumber(n3) {
             return format5(n3, {
               notation: "hex"
@@ -35580,11 +35618,22 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/utils/print.js
+  var printTemplate;
+  var init_print = __esm({
+    "node_modules/mathjs/lib/esm/utils/print.js"() {
+      printTemplate = /\$([\w.]+)/g;
+    }
+  });
+
   // node_modules/mathjs/lib/esm/function/string/print.js
   function _print(template, values, options) {
-    return template.replace(/\$([\w.]+)/g, function(original, key) {
+    return template.replace(printTemplate, function(original, key) {
       var keys = key.split(".");
       var value2 = values[keys.shift()];
+      if (value2 !== void 0 && value2.isMatrix) {
+        value2 = value2.toArray();
+      }
       while (keys.length && value2 !== void 0) {
         var k4 = keys.shift();
         value2 = k4 ? value2[k4] : value2 + ".";
@@ -35599,19 +35648,20 @@ svg {
       return original;
     });
   }
-  var name120, dependencies120, createPrint;
-  var init_print = __esm({
+  var name121, dependencies121, createPrint;
+  var init_print2 = __esm({
     "node_modules/mathjs/lib/esm/function/string/print.js"() {
       init_string();
       init_is();
       init_factory();
-      name120 = "print";
-      dependencies120 = ["typed"];
-      createPrint = /* @__PURE__ */ factory(name120, dependencies120, (_ref) => {
+      init_print();
+      name121 = "print";
+      dependencies121 = ["typed"];
+      createPrint = /* @__PURE__ */ factory(name121, dependencies121, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name120, {
+        return typed3(name121, {
           // note: Matrix will be converted automatically to an Array
           "string, Object | Array": _print,
           "string, Object | Array, number | Object": _print
@@ -35621,14 +35671,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/unit/to.js
-  var name121, dependencies121, createTo;
+  var name122, dependencies122, createTo;
   var init_to = __esm({
     "node_modules/mathjs/lib/esm/function/unit/to.js"() {
       init_factory();
       init_matrixAlgorithmSuite();
-      name121 = "to";
-      dependencies121 = ["typed", "matrix", "concat"];
-      createTo = /* @__PURE__ */ factory(name121, dependencies121, (_ref) => {
+      name122 = "to";
+      dependencies122 = ["typed", "matrix", "concat"];
+      createTo = /* @__PURE__ */ factory(name122, dependencies122, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -35639,7 +35689,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name121, {
+        return typed3(name122, {
           "Unit, Unit | string": (x4, unit2) => x4.to(unit2)
         }, matrixAlgorithmSuite({
           Ds: true
@@ -35649,18 +35699,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/utils/isPrime.js
-  var name122, dependencies122, createIsPrime;
+  var name123, dependencies123, createIsPrime;
   var init_isPrime = __esm({
     "node_modules/mathjs/lib/esm/function/utils/isPrime.js"() {
       init_collection();
       init_factory();
-      name122 = "isPrime";
-      dependencies122 = ["typed"];
-      createIsPrime = /* @__PURE__ */ factory(name122, dependencies122, (_ref) => {
+      name123 = "isPrime";
+      dependencies123 = ["typed"];
+      createIsPrime = /* @__PURE__ */ factory(name123, dependencies123, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name122, {
+        return typed3(name123, {
           number: function number2(x4) {
             if (x4 * 0 !== 0) {
               return false;
@@ -35748,15 +35798,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/utils/numeric.js
-  var name123, dependencies123, createNumeric;
+  var name124, dependencies124, createNumeric;
   var init_numeric = __esm({
     "node_modules/mathjs/lib/esm/function/utils/numeric.js"() {
       init_is();
       init_factory();
       init_noop();
-      name123 = "numeric";
-      dependencies123 = ["number", "?bignumber", "?fraction"];
-      createNumeric = /* @__PURE__ */ factory(name123, dependencies123, (_ref) => {
+      name124 = "numeric";
+      dependencies124 = ["number", "?bignumber", "?fraction"];
+      createNumeric = /* @__PURE__ */ factory(name124, dependencies124, (_ref) => {
         var {
           number: _number,
           bignumber: bignumber2,
@@ -35797,18 +35847,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/divideScalar.js
-  var name124, dependencies124, createDivideScalar;
+  var name125, dependencies125, createDivideScalar;
   var init_divideScalar = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/divideScalar.js"() {
       init_factory();
-      name124 = "divideScalar";
-      dependencies124 = ["typed", "numeric"];
-      createDivideScalar = /* @__PURE__ */ factory(name124, dependencies124, (_ref) => {
+      name125 = "divideScalar";
+      dependencies125 = ["typed", "numeric"];
+      createDivideScalar = /* @__PURE__ */ factory(name125, dependencies125, (_ref) => {
         var {
           typed: typed3,
           numeric: numeric3
         } = _ref;
-        return typed3(name124, {
+        return typed3(name125, {
           "number, number": function numberNumber(x4, y3) {
             return x4 / y3;
           },
@@ -35829,16 +35879,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/pow.js
-  var name125, dependencies125, createPow;
+  var name126, dependencies126, createPow;
   var init_pow = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/pow.js"() {
       init_factory();
       init_number();
       init_array();
       init_number2();
-      name125 = "pow";
-      dependencies125 = ["typed", "config", "identity", "multiply", "matrix", "inv", "fraction", "number", "Complex"];
-      createPow = /* @__PURE__ */ factory(name125, dependencies125, (_ref) => {
+      name126 = "pow";
+      dependencies126 = ["typed", "config", "identity", "multiply", "matrix", "inv", "fraction", "number", "Complex"];
+      createPow = /* @__PURE__ */ factory(name126, dependencies126, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -35850,7 +35900,7 @@ svg {
           fraction: fraction2,
           Complex: Complex3
         } = _ref;
-        return typed3(name125, {
+        return typed3(name126, {
           "number, number": _pow,
           "Complex, Complex": function ComplexComplex(x4, y3) {
             return x4.pow(y3);
@@ -35950,7 +36000,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/round.js
-  var NO_INT, name126, dependencies126, createRound;
+  var NO_INT, name127, dependencies127, createRound;
   var init_round = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/round.js"() {
       init_factory();
@@ -35960,9 +36010,9 @@ svg {
       init_matAlgo14xDs();
       init_number2();
       NO_INT = "Number of decimals in function round must be an integer";
-      name126 = "round";
-      dependencies126 = ["typed", "matrix", "equalScalar", "zeros", "BigNumber", "DenseMatrix"];
-      createRound = /* @__PURE__ */ factory(name126, dependencies126, (_ref) => {
+      name127 = "round";
+      dependencies127 = ["typed", "matrix", "equalScalar", "zeros", "BigNumber", "DenseMatrix"];
+      createRound = /* @__PURE__ */ factory(name127, dependencies127, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -35982,7 +36032,7 @@ svg {
         var matAlgo14xDs = createMatAlgo14xDs({
           typed: typed3
         });
-        return typed3(name126, {
+        return typed3(name127, {
           number: roundNumber,
           "number, number": roundNumber,
           "number, BigNumber": function numberBigNumber(x4, n3) {
@@ -36063,21 +36113,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/log.js
-  var name127, dependencies127, createLog;
+  var name128, dependencies128, createLog;
   var init_log = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/log.js"() {
       init_factory();
       init_number2();
-      name127 = "log";
-      dependencies127 = ["config", "typed", "divideScalar", "Complex"];
-      createLog = /* @__PURE__ */ factory(name127, dependencies127, (_ref) => {
+      name128 = "log";
+      dependencies128 = ["config", "typed", "divideScalar", "Complex"];
+      createLog = /* @__PURE__ */ factory(name128, dependencies128, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           divideScalar: divideScalar2,
           Complex: Complex3
         } = _ref;
-        return typed3(name127, {
+        return typed3(name128, {
           number: function number2(x4) {
             if (x4 >= 0 || config4.predictable) {
               return logNumber(x4);
@@ -36104,15 +36154,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/log1p.js
-  var name128, dependencies128, createLog1p;
+  var name129, dependencies129, createLog1p;
   var init_log1p = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/log1p.js"() {
       init_factory();
       init_collection();
       init_number();
-      name128 = "log1p";
-      dependencies128 = ["typed", "config", "divideScalar", "log", "Complex"];
-      createLog1p = /* @__PURE__ */ factory(name128, dependencies128, (_ref) => {
+      name129 = "log1p";
+      dependencies129 = ["typed", "config", "divideScalar", "log", "Complex"];
+      createLog1p = /* @__PURE__ */ factory(name129, dependencies129, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -36120,7 +36170,7 @@ svg {
           log: log4,
           Complex: Complex3
         } = _ref;
-        return typed3(name128, {
+        return typed3(name129, {
           number: function number2(x4) {
             if (x4 >= -1 || config4.predictable) {
               return log1p(x4);
@@ -36151,13 +36201,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/nthRoots.js
-  var name129, dependencies129, createNthRoots;
+  var name130, dependencies130, createNthRoots;
   var init_nthRoots = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/nthRoots.js"() {
       init_factory();
-      name129 = "nthRoots";
-      dependencies129 = ["config", "typed", "divideScalar", "Complex"];
-      createNthRoots = /* @__PURE__ */ factory(name129, dependencies129, (_ref) => {
+      name130 = "nthRoots";
+      dependencies130 = ["config", "typed", "divideScalar", "Complex"];
+      createNthRoots = /* @__PURE__ */ factory(name130, dependencies130, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -36210,7 +36260,7 @@ svg {
           }
           return roots;
         }
-        return typed3(name129, {
+        return typed3(name130, {
           Complex: function Complex4(x4) {
             return _nthComplexRoots(x4, 2);
           },
@@ -36221,7 +36271,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/dotPow.js
-  var name130, dependencies130, createDotPow;
+  var name131, dependencies131, createDotPow;
   var init_dotPow = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/dotPow.js"() {
       init_factory();
@@ -36230,9 +36280,9 @@ svg {
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name130 = "dotPow";
-      dependencies130 = ["typed", "equalScalar", "matrix", "pow", "DenseMatrix", "concat"];
-      createDotPow = /* @__PURE__ */ factory(name130, dependencies130, (_ref) => {
+      name131 = "dotPow";
+      dependencies131 = ["typed", "equalScalar", "matrix", "pow", "DenseMatrix", "concat"];
+      createDotPow = /* @__PURE__ */ factory(name131, dependencies131, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2,
@@ -36270,7 +36320,7 @@ svg {
           }
         }
         var powScalar = typed3(powScalarSignatures);
-        return typed3(name130, matrixAlgorithmSuite({
+        return typed3(name131, matrixAlgorithmSuite({
           elop: powScalar,
           SS: matAlgo07xSSf,
           DS: matAlgo03xDSf,
@@ -36282,7 +36332,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/dotDivide.js
-  var name131, dependencies131, createDotDivide;
+  var name132, dependencies132, createDotDivide;
   var init_dotDivide = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/dotDivide.js"() {
       init_factory();
@@ -36292,9 +36342,9 @@ svg {
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name131 = "dotDivide";
-      dependencies131 = ["typed", "matrix", "equalScalar", "divideScalar", "DenseMatrix", "concat"];
-      createDotDivide = /* @__PURE__ */ factory(name131, dependencies131, (_ref) => {
+      name132 = "dotDivide";
+      dependencies132 = ["typed", "matrix", "equalScalar", "divideScalar", "DenseMatrix", "concat"];
+      createDotDivide = /* @__PURE__ */ factory(name132, dependencies132, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -36327,7 +36377,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name131, matrixAlgorithmSuite({
+        return typed3(name132, matrixAlgorithmSuite({
           elop: divideScalar2,
           SS: matAlgo07xSSf,
           DS: matAlgo03xDSf,
@@ -36448,27 +36498,27 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/solver/lsolve.js
-  var name132, dependencies132, createLsolve;
+  var name133, dependencies133, createLsolve;
   var init_lsolve = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/solver/lsolve.js"() {
       init_factory();
       init_solveValidation();
-      name132 = "lsolve";
-      dependencies132 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtract", "equalScalar", "DenseMatrix"];
-      createLsolve = /* @__PURE__ */ factory(name132, dependencies132, (_ref) => {
+      name133 = "lsolve";
+      dependencies133 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtractScalar", "equalScalar", "DenseMatrix"];
+      createLsolve = /* @__PURE__ */ factory(name133, dependencies133, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           equalScalar: equalScalar2,
           DenseMatrix: DenseMatrix2
         } = _ref;
         var solveValidation = createSolveValidation({
           DenseMatrix: DenseMatrix2
         });
-        return typed3(name132, {
+        return typed3(name133, {
           "SparseMatrix, Array | Matrix": function SparseMatrixArrayMatrix(m3, b3) {
             return _sparseForwardSubstitution(m3, b3);
           },
@@ -36498,7 +36548,7 @@ svg {
               }
               xj = divideScalar2(bj, vjj);
               for (var i5 = j4 + 1; i5 < rows; i5++) {
-                bdata[i5] = [subtract2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
+                bdata[i5] = [subtractScalar2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
               }
             } else {
               xj = 0;
@@ -36542,7 +36592,7 @@ svg {
               var xj = divideScalar2(bj, vjj);
               for (var _k = 0, l3 = jIndices.length; _k < l3; _k++) {
                 var _i = jIndices[_k];
-                bdata[_i] = [subtract2(bdata[_i][0] || 0, multiplyScalar2(xj, jValues[_k]))];
+                bdata[_i] = [subtractScalar2(bdata[_i][0] || 0, multiplyScalar2(xj, jValues[_k]))];
               }
               x4[j4] = [xj];
             } else {
@@ -36559,27 +36609,27 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/solver/usolve.js
-  var name133, dependencies133, createUsolve;
+  var name134, dependencies134, createUsolve;
   var init_usolve = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/solver/usolve.js"() {
       init_factory();
       init_solveValidation();
-      name133 = "usolve";
-      dependencies133 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtract", "equalScalar", "DenseMatrix"];
-      createUsolve = /* @__PURE__ */ factory(name133, dependencies133, (_ref) => {
+      name134 = "usolve";
+      dependencies134 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtractScalar", "equalScalar", "DenseMatrix"];
+      createUsolve = /* @__PURE__ */ factory(name134, dependencies134, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           equalScalar: equalScalar2,
           DenseMatrix: DenseMatrix2
         } = _ref;
         var solveValidation = createSolveValidation({
           DenseMatrix: DenseMatrix2
         });
-        return typed3(name133, {
+        return typed3(name134, {
           "SparseMatrix, Array | Matrix": function SparseMatrixArrayMatrix(m3, b3) {
             return _sparseBackwardSubstitution(m3, b3);
           },
@@ -36609,7 +36659,7 @@ svg {
               }
               xj = divideScalar2(bj, vjj);
               for (var i5 = j4 - 1; i5 >= 0; i5--) {
-                bdata[i5] = [subtract2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
+                bdata[i5] = [subtractScalar2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
               }
             } else {
               xj = 0;
@@ -36653,7 +36703,7 @@ svg {
               var xj = divideScalar2(bj, vjj);
               for (var _k = 0, _lastIndex = jIndices.length; _k < _lastIndex; _k++) {
                 var _i = jIndices[_k];
-                bdata[_i] = [subtract2(bdata[_i][0], multiplyScalar2(xj, jValues[_k]))];
+                bdata[_i] = [subtractScalar2(bdata[_i][0], multiplyScalar2(xj, jValues[_k]))];
               }
               x4[j4] = [xj];
             } else {
@@ -36670,27 +36720,27 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/solver/lsolveAll.js
-  var name134, dependencies134, createLsolveAll;
+  var name135, dependencies135, createLsolveAll;
   var init_lsolveAll = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/solver/lsolveAll.js"() {
       init_factory();
       init_solveValidation();
-      name134 = "lsolveAll";
-      dependencies134 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtract", "equalScalar", "DenseMatrix"];
-      createLsolveAll = /* @__PURE__ */ factory(name134, dependencies134, (_ref) => {
+      name135 = "lsolveAll";
+      dependencies135 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtractScalar", "equalScalar", "DenseMatrix"];
+      createLsolveAll = /* @__PURE__ */ factory(name135, dependencies135, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           equalScalar: equalScalar2,
           DenseMatrix: DenseMatrix2
         } = _ref;
         var solveValidation = createSolveValidation({
           DenseMatrix: DenseMatrix2
         });
-        return typed3(name134, {
+        return typed3(name135, {
           "SparseMatrix, Array | Matrix": function SparseMatrixArrayMatrix(m3, b3) {
             return _sparseForwardSubstitution(m3, b3);
           },
@@ -36715,7 +36765,7 @@ svg {
               if (!equalScalar2(M3[i5][i5], 0)) {
                 b3[i5] = divideScalar2(b3[i5], M3[i5][i5]);
                 for (var j4 = i5 + 1; j4 < columns; j4++) {
-                  b3[j4] = subtract2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
+                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
                 }
               } else if (!equalScalar2(b3[i5], 0)) {
                 if (k4 === 0) {
@@ -36729,7 +36779,7 @@ svg {
                 var bNew = [...b3];
                 bNew[i5] = 1;
                 for (var _j = i5 + 1; _j < columns; _j++) {
-                  bNew[_j] = subtract2(bNew[_j], M3[_j][i5]);
+                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i5]);
                 }
                 B4.push(bNew);
               }
@@ -36769,7 +36819,7 @@ svg {
                 b3[i5] = divideScalar2(b3[i5], Mii);
                 for (var _j2 = 0, _lastIndex = iIndices.length; _j2 < _lastIndex; _j2++) {
                   var _J = iIndices[_j2];
-                  b3[_J] = subtract2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
+                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
                 }
               } else if (!equalScalar2(b3[i5], 0)) {
                 if (k4 === 0) {
@@ -36784,7 +36834,7 @@ svg {
                 bNew[i5] = 1;
                 for (var _j3 = 0, _lastIndex2 = iIndices.length; _j3 < _lastIndex2; _j3++) {
                   var _J2 = iIndices[_j3];
-                  bNew[_J2] = subtract2(bNew[_J2], iValues[_j3]);
+                  bNew[_J2] = subtractScalar2(bNew[_J2], iValues[_j3]);
                 }
                 B4.push(bNew);
               }
@@ -36800,27 +36850,27 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/solver/usolveAll.js
-  var name135, dependencies135, createUsolveAll;
+  var name136, dependencies136, createUsolveAll;
   var init_usolveAll = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/solver/usolveAll.js"() {
       init_factory();
       init_solveValidation();
-      name135 = "usolveAll";
-      dependencies135 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtract", "equalScalar", "DenseMatrix"];
-      createUsolveAll = /* @__PURE__ */ factory(name135, dependencies135, (_ref) => {
+      name136 = "usolveAll";
+      dependencies136 = ["typed", "matrix", "divideScalar", "multiplyScalar", "subtractScalar", "equalScalar", "DenseMatrix"];
+      createUsolveAll = /* @__PURE__ */ factory(name136, dependencies136, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           equalScalar: equalScalar2,
           DenseMatrix: DenseMatrix2
         } = _ref;
         var solveValidation = createSolveValidation({
           DenseMatrix: DenseMatrix2
         });
-        return typed3(name135, {
+        return typed3(name136, {
           "SparseMatrix, Array | Matrix": function SparseMatrixArrayMatrix(m3, b3) {
             return _sparseBackwardSubstitution(m3, b3);
           },
@@ -36845,7 +36895,7 @@ svg {
               if (!equalScalar2(M3[i5][i5], 0)) {
                 b3[i5] = divideScalar2(b3[i5], M3[i5][i5]);
                 for (var j4 = i5 - 1; j4 >= 0; j4--) {
-                  b3[j4] = subtract2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
+                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
                 }
               } else if (!equalScalar2(b3[i5], 0)) {
                 if (k4 === 0) {
@@ -36859,7 +36909,7 @@ svg {
                 var bNew = [...b3];
                 bNew[i5] = 1;
                 for (var _j = i5 - 1; _j >= 0; _j--) {
-                  bNew[_j] = subtract2(bNew[_j], M3[_j][i5]);
+                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i5]);
                 }
                 B4.push(bNew);
               }
@@ -36899,7 +36949,7 @@ svg {
                 b3[i5] = divideScalar2(b3[i5], Mii);
                 for (var _j2 = 0, _lastIndex = iIndices.length; _j2 < _lastIndex; _j2++) {
                   var _J = iIndices[_j2];
-                  b3[_J] = subtract2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
+                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
                 }
               } else if (!equalScalar2(b3[i5], 0)) {
                 if (k4 === 0) {
@@ -36914,7 +36964,7 @@ svg {
                 bNew[i5] = 1;
                 for (var _j3 = 0, _lastIndex2 = iIndices.length; _j3 < _lastIndex2; _j3++) {
                   var _J2 = iIndices[_j3];
-                  bNew[_J2] = subtract2(bNew[_J2], iValues[_j3]);
+                  bNew[_J2] = subtractScalar2(bNew[_J2], iValues[_j3]);
                 }
                 B4.push(bNew);
               }
@@ -36930,14 +36980,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo08xS0Sid.js
-  var name136, dependencies136, createMatAlgo08xS0Sid;
+  var name137, dependencies137, createMatAlgo08xS0Sid;
   var init_matAlgo08xS0Sid = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo08xS0Sid.js"() {
       init_factory();
       init_DimensionError();
-      name136 = "matAlgo08xS0Sid";
-      dependencies136 = ["typed", "equalScalar"];
-      createMatAlgo08xS0Sid = /* @__PURE__ */ factory(name136, dependencies136, (_ref) => {
+      name137 = "matAlgo08xS0Sid";
+      dependencies137 = ["typed", "equalScalar"];
+      createMatAlgo08xS0Sid = /* @__PURE__ */ factory(name137, dependencies137, (_ref) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
@@ -37041,7 +37091,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/bitwise/leftShift.js
-  var name137, dependencies137, createLeftShift;
+  var name138, dependencies138, createLeftShift;
   var init_leftShift = __esm({
     "node_modules/mathjs/lib/esm/function/bitwise/leftShift.js"() {
       init_matAlgo02xDS0();
@@ -37055,102 +37105,9 @@ svg {
       init_useMatrixForArrayScalar();
       init_number2();
       init_bitwise2();
-      name137 = "leftShift";
-      dependencies137 = ["typed", "matrix", "equalScalar", "zeros", "DenseMatrix", "concat"];
-      createLeftShift = /* @__PURE__ */ factory(name137, dependencies137, (_ref) => {
-        var {
-          typed: typed3,
-          matrix: matrix2,
-          equalScalar: equalScalar2,
-          zeros: zeros3,
-          DenseMatrix: DenseMatrix2,
-          concat: concat3
-        } = _ref;
-        var matAlgo01xDSid = createMatAlgo01xDSid({
-          typed: typed3
-        });
-        var matAlgo02xDS0 = createMatAlgo02xDS0({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo08xS0Sid = createMatAlgo08xS0Sid({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo10xSids = createMatAlgo10xSids({
-          typed: typed3,
-          DenseMatrix: DenseMatrix2
-        });
-        var matAlgo11xS0s = createMatAlgo11xS0s({
-          typed: typed3,
-          equalScalar: equalScalar2
-        });
-        var matAlgo14xDs = createMatAlgo14xDs({
-          typed: typed3
-        });
-        var matrixAlgorithmSuite = createMatrixAlgorithmSuite({
-          typed: typed3,
-          matrix: matrix2,
-          concat: concat3
-        });
-        var useMatrixForArrayScalar = createUseMatrixForArrayScalar({
-          typed: typed3,
-          matrix: matrix2
-        });
-        return typed3(name137, {
-          "number, number": leftShiftNumber,
-          "BigNumber, BigNumber": leftShiftBigNumber,
-          "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
-            if (equalScalar2(y3, 0)) {
-              return x4.clone();
-            }
-            return matAlgo11xS0s(x4, y3, self2, false);
-          }),
-          "DenseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
-            if (equalScalar2(y3, 0)) {
-              return x4.clone();
-            }
-            return matAlgo14xDs(x4, y3, self2, false);
-          }),
-          "number | BigNumber, SparseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
-            if (equalScalar2(x4, 0)) {
-              return zeros3(y3.size(), y3.storage());
-            }
-            return matAlgo10xSids(y3, x4, self2, true);
-          }),
-          "number | BigNumber, DenseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
-            if (equalScalar2(x4, 0)) {
-              return zeros3(y3.size(), y3.storage());
-            }
-            return matAlgo14xDs(y3, x4, self2, true);
-          })
-        }, useMatrixForArrayScalar, matrixAlgorithmSuite({
-          SS: matAlgo08xS0Sid,
-          DS: matAlgo01xDSid,
-          SD: matAlgo02xDS0
-        }));
-      });
-    }
-  });
-
-  // node_modules/mathjs/lib/esm/function/bitwise/rightArithShift.js
-  var name138, dependencies138, createRightArithShift;
-  var init_rightArithShift = __esm({
-    "node_modules/mathjs/lib/esm/function/bitwise/rightArithShift.js"() {
-      init_bitwise2();
-      init_matAlgo02xDS0();
-      init_matAlgo11xS0s();
-      init_matAlgo14xDs();
-      init_matAlgo01xDSid();
-      init_matAlgo10xSids();
-      init_matAlgo08xS0Sid();
-      init_factory();
-      init_matrixAlgorithmSuite();
-      init_useMatrixForArrayScalar();
-      init_number2();
-      name138 = "rightArithShift";
+      name138 = "leftShift";
       dependencies138 = ["typed", "matrix", "equalScalar", "zeros", "DenseMatrix", "concat"];
-      createRightArithShift = /* @__PURE__ */ factory(name138, dependencies138, (_ref) => {
+      createLeftShift = /* @__PURE__ */ factory(name138, dependencies138, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -37191,8 +37148,8 @@ svg {
           matrix: matrix2
         });
         return typed3(name138, {
-          "number, number": rightArithShiftNumber,
-          "BigNumber, BigNumber": rightArithShiftBigNumber,
+          "number, number": leftShiftNumber,
+          "BigNumber, BigNumber": leftShiftBigNumber,
           "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
             if (equalScalar2(y3, 0)) {
               return x4.clone();
@@ -37226,10 +37183,11 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/function/bitwise/rightLogShift.js
-  var name139, dependencies139, createRightLogShift;
-  var init_rightLogShift = __esm({
-    "node_modules/mathjs/lib/esm/function/bitwise/rightLogShift.js"() {
+  // node_modules/mathjs/lib/esm/function/bitwise/rightArithShift.js
+  var name139, dependencies139, createRightArithShift;
+  var init_rightArithShift = __esm({
+    "node_modules/mathjs/lib/esm/function/bitwise/rightArithShift.js"() {
+      init_bitwise2();
       init_matAlgo02xDS0();
       init_matAlgo11xS0s();
       init_matAlgo14xDs();
@@ -37238,11 +37196,11 @@ svg {
       init_matAlgo08xS0Sid();
       init_factory();
       init_matrixAlgorithmSuite();
-      init_number2();
       init_useMatrixForArrayScalar();
-      name139 = "rightLogShift";
+      init_number2();
+      name139 = "rightArithShift";
       dependencies139 = ["typed", "matrix", "equalScalar", "zeros", "DenseMatrix", "concat"];
-      createRightLogShift = /* @__PURE__ */ factory(name139, dependencies139, (_ref) => {
+      createRightArithShift = /* @__PURE__ */ factory(name139, dependencies139, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -37283,6 +37241,98 @@ svg {
           matrix: matrix2
         });
         return typed3(name139, {
+          "number, number": rightArithShiftNumber,
+          "BigNumber, BigNumber": rightArithShiftBigNumber,
+          "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
+            if (equalScalar2(y3, 0)) {
+              return x4.clone();
+            }
+            return matAlgo11xS0s(x4, y3, self2, false);
+          }),
+          "DenseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
+            if (equalScalar2(y3, 0)) {
+              return x4.clone();
+            }
+            return matAlgo14xDs(x4, y3, self2, false);
+          }),
+          "number | BigNumber, SparseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
+            if (equalScalar2(x4, 0)) {
+              return zeros3(y3.size(), y3.storage());
+            }
+            return matAlgo10xSids(y3, x4, self2, true);
+          }),
+          "number | BigNumber, DenseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
+            if (equalScalar2(x4, 0)) {
+              return zeros3(y3.size(), y3.storage());
+            }
+            return matAlgo14xDs(y3, x4, self2, true);
+          })
+        }, useMatrixForArrayScalar, matrixAlgorithmSuite({
+          SS: matAlgo08xS0Sid,
+          DS: matAlgo01xDSid,
+          SD: matAlgo02xDS0
+        }));
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/function/bitwise/rightLogShift.js
+  var name140, dependencies140, createRightLogShift;
+  var init_rightLogShift = __esm({
+    "node_modules/mathjs/lib/esm/function/bitwise/rightLogShift.js"() {
+      init_matAlgo02xDS0();
+      init_matAlgo11xS0s();
+      init_matAlgo14xDs();
+      init_matAlgo01xDSid();
+      init_matAlgo10xSids();
+      init_matAlgo08xS0Sid();
+      init_factory();
+      init_matrixAlgorithmSuite();
+      init_number2();
+      init_useMatrixForArrayScalar();
+      name140 = "rightLogShift";
+      dependencies140 = ["typed", "matrix", "equalScalar", "zeros", "DenseMatrix", "concat"];
+      createRightLogShift = /* @__PURE__ */ factory(name140, dependencies140, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        } = _ref;
+        var matAlgo01xDSid = createMatAlgo01xDSid({
+          typed: typed3
+        });
+        var matAlgo02xDS0 = createMatAlgo02xDS0({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo08xS0Sid = createMatAlgo08xS0Sid({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo10xSids = createMatAlgo10xSids({
+          typed: typed3,
+          DenseMatrix: DenseMatrix2
+        });
+        var matAlgo11xS0s = createMatAlgo11xS0s({
+          typed: typed3,
+          equalScalar: equalScalar2
+        });
+        var matAlgo14xDs = createMatAlgo14xDs({
+          typed: typed3
+        });
+        var matrixAlgorithmSuite = createMatrixAlgorithmSuite({
+          typed: typed3,
+          matrix: matrix2,
+          concat: concat3
+        });
+        var useMatrixForArrayScalar = createUseMatrixForArrayScalar({
+          typed: typed3,
+          matrix: matrix2
+        });
+        return typed3(name140, {
           "number, number": rightLogShiftNumber,
           // 'BigNumber, BigNumber': ..., // TODO: implement BigNumber support for rightLogShift
           "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
@@ -37319,7 +37369,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/logical/and.js
-  var name140, dependencies140, createAnd;
+  var name141, dependencies141, createAnd;
   var init_and = __esm({
     "node_modules/mathjs/lib/esm/function/logical/and.js"() {
       init_matAlgo02xDS0();
@@ -37329,9 +37379,9 @@ svg {
       init_factory();
       init_matrixAlgorithmSuite();
       init_number2();
-      name140 = "and";
-      dependencies140 = ["typed", "matrix", "equalScalar", "zeros", "not", "concat"];
-      createAnd = /* @__PURE__ */ factory(name140, dependencies140, (_ref) => {
+      name141 = "and";
+      dependencies141 = ["typed", "matrix", "equalScalar", "zeros", "not", "concat"];
+      createAnd = /* @__PURE__ */ factory(name141, dependencies141, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -37360,7 +37410,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name140, {
+        return typed3(name141, {
           "number, number": andNumber,
           "Complex, Complex": function ComplexComplex(x4, y3) {
             return (x4.re !== 0 || x4.im !== 0) && (y3.re !== 0 || y3.im !== 0);
@@ -37408,7 +37458,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/compare.js
-  var name141, dependencies141, createCompare, createCompareNumber;
+  var name142, dependencies142, createCompare, createCompareNumber;
   var init_compare = __esm({
     "node_modules/mathjs/lib/esm/function/relational/compare.js"() {
       init_nearlyEqual();
@@ -37419,9 +37469,9 @@ svg {
       init_matAlgo05xSfSf();
       init_matrixAlgorithmSuite();
       init_compareUnits();
-      name141 = "compare";
-      dependencies141 = ["typed", "config", "matrix", "equalScalar", "BigNumber", "Fraction", "DenseMatrix", "concat"];
-      createCompare = /* @__PURE__ */ factory(name141, dependencies141, (_ref) => {
+      name142 = "compare";
+      dependencies142 = ["typed", "config", "matrix", "equalScalar", "BigNumber", "Fraction", "DenseMatrix", "concat"];
+      createCompare = /* @__PURE__ */ factory(name142, dependencies142, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -37451,7 +37501,7 @@ svg {
         var compareUnits = createCompareUnits({
           typed: typed3
         });
-        return typed3(name141, createCompareNumber({
+        return typed3(name142, createCompareNumber({
           typed: typed3,
           config: config4
         }), {
@@ -37473,12 +37523,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createCompareNumber = /* @__PURE__ */ factory(name141, ["typed", "config"], (_ref2) => {
+      createCompareNumber = /* @__PURE__ */ factory(name142, ["typed", "config"], (_ref2) => {
         var {
           typed: typed3,
           config: config4
         } = _ref2;
-        return typed3(name141, {
+        return typed3(name142, {
           "number, number": function numberNumber(x4, y3) {
             return nearlyEqual(x4, y3, config4.epsilon) ? 0 : x4 > y3 ? 1 : -1;
           }
@@ -37539,21 +37589,21 @@ svg {
     }
     return 0;
   }
-  var import_javascript_natural_sort, name142, dependencies142, createCompareNatural;
+  var import_javascript_natural_sort, name143, dependencies143, createCompareNatural;
   var init_compareNatural = __esm({
     "node_modules/mathjs/lib/esm/function/relational/compareNatural.js"() {
       import_javascript_natural_sort = __toESM(require_naturalSort(), 1);
       init_is();
       init_factory();
-      name142 = "compareNatural";
-      dependencies142 = ["typed", "compare"];
-      createCompareNatural = /* @__PURE__ */ factory(name142, dependencies142, (_ref) => {
+      name143 = "compareNatural";
+      dependencies143 = ["typed", "compare"];
+      createCompareNatural = /* @__PURE__ */ factory(name143, dependencies143, (_ref) => {
         var {
           typed: typed3,
           compare: compare3
         } = _ref;
         var compareBooleans = compare3.signatures["boolean,boolean"];
-        return typed3(name142, {
+        return typed3(name143, {
           "any, any": _compareNatural
         });
         function _compareNatural(x4, y3) {
@@ -37667,16 +37717,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/compareText.js
-  var name143, dependencies143, createCompareText;
+  var name144, dependencies144, createCompareText;
   var init_compareText = __esm({
     "node_modules/mathjs/lib/esm/function/relational/compareText.js"() {
       init_string();
       init_factory();
       init_matrixAlgorithmSuite();
-      name143 = "compareText";
-      dependencies143 = ["typed", "matrix", "concat"];
+      name144 = "compareText";
+      dependencies144 = ["typed", "matrix", "concat"];
       compareText.signature = "any, any";
-      createCompareText = /* @__PURE__ */ factory(name143, dependencies143, (_ref) => {
+      createCompareText = /* @__PURE__ */ factory(name144, dependencies144, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -37687,7 +37737,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name143, compareText, matrixAlgorithmSuite({
+        return typed3(name144, compareText, matrixAlgorithmSuite({
           elop: compareText,
           Ds: true
         }));
@@ -37696,7 +37746,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/equal.js
-  var name144, dependencies144, createEqual, createEqualNumber;
+  var name145, dependencies145, createEqual, createEqualNumber;
   var init_equal = __esm({
     "node_modules/mathjs/lib/esm/function/relational/equal.js"() {
       init_factory();
@@ -37704,9 +37754,9 @@ svg {
       init_matAlgo07xSSf();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name144 = "equal";
-      dependencies144 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
-      createEqual = /* @__PURE__ */ factory(name144, dependencies144, (_ref) => {
+      name145 = "equal";
+      dependencies145 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
+      createEqual = /* @__PURE__ */ factory(name145, dependencies145, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -37730,7 +37780,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name144, createEqualNumber({
+        return typed3(name145, createEqualNumber({
           typed: typed3,
           equalScalar: equalScalar2
         }), matrixAlgorithmSuite({
@@ -37740,12 +37790,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createEqualNumber = factory(name144, ["typed", "equalScalar"], (_ref2) => {
+      createEqualNumber = factory(name145, ["typed", "equalScalar"], (_ref2) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
         } = _ref2;
-        return typed3(name144, {
+        return typed3(name145, {
           "any, any": function anyAny(x4, y3) {
             if (x4 === null) {
               return y3 === null;
@@ -37767,19 +37817,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/equalText.js
-  var name145, dependencies145, createEqualText;
+  var name146, dependencies146, createEqualText;
   var init_equalText = __esm({
     "node_modules/mathjs/lib/esm/function/relational/equalText.js"() {
       init_factory();
-      name145 = "equalText";
-      dependencies145 = ["typed", "compareText", "isZero"];
-      createEqualText = /* @__PURE__ */ factory(name145, dependencies145, (_ref) => {
+      name146 = "equalText";
+      dependencies146 = ["typed", "compareText", "isZero"];
+      createEqualText = /* @__PURE__ */ factory(name146, dependencies146, (_ref) => {
         var {
           typed: typed3,
           compareText: compareText3,
           isZero: isZero2
         } = _ref;
-        return typed3(name145, {
+        return typed3(name146, {
           "any, any": function anyAny(x4, y3) {
             return isZero2(compareText3(x4, y3));
           }
@@ -37789,7 +37839,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/smaller.js
-  var name146, dependencies146, createSmaller, createSmallerNumber;
+  var name147, dependencies147, createSmaller, createSmallerNumber;
   var init_smaller = __esm({
     "node_modules/mathjs/lib/esm/function/relational/smaller.js"() {
       init_nearlyEqual();
@@ -37800,9 +37850,9 @@ svg {
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
       init_compareUnits();
-      name146 = "smaller";
-      dependencies146 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
-      createSmaller = /* @__PURE__ */ factory(name146, dependencies146, (_ref) => {
+      name147 = "smaller";
+      dependencies147 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
+      createSmaller = /* @__PURE__ */ factory(name147, dependencies147, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -37829,7 +37879,7 @@ svg {
         var compareUnits = createCompareUnits({
           typed: typed3
         });
-        return typed3(name146, createSmallerNumber({
+        return typed3(name147, createSmallerNumber({
           typed: typed3,
           config: config4
         }), {
@@ -37847,12 +37897,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createSmallerNumber = /* @__PURE__ */ factory(name146, ["typed", "config"], (_ref2) => {
+      createSmallerNumber = /* @__PURE__ */ factory(name147, ["typed", "config"], (_ref2) => {
         var {
           typed: typed3,
           config: config4
         } = _ref2;
-        return typed3(name146, {
+        return typed3(name147, {
           "number, number": function numberNumber(x4, y3) {
             return x4 < y3 && !nearlyEqual(x4, y3, config4.epsilon);
           }
@@ -37862,7 +37912,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/smallerEq.js
-  var name147, dependencies147, createSmallerEq, createSmallerEqNumber;
+  var name148, dependencies148, createSmallerEq, createSmallerEqNumber;
   var init_smallerEq = __esm({
     "node_modules/mathjs/lib/esm/function/relational/smallerEq.js"() {
       init_nearlyEqual();
@@ -37873,9 +37923,9 @@ svg {
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
       init_compareUnits();
-      name147 = "smallerEq";
-      dependencies147 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
-      createSmallerEq = /* @__PURE__ */ factory(name147, dependencies147, (_ref) => {
+      name148 = "smallerEq";
+      dependencies148 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
+      createSmallerEq = /* @__PURE__ */ factory(name148, dependencies148, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -37902,7 +37952,7 @@ svg {
         var compareUnits = createCompareUnits({
           typed: typed3
         });
-        return typed3(name147, createSmallerEqNumber({
+        return typed3(name148, createSmallerEqNumber({
           typed: typed3,
           config: config4
         }), {
@@ -37920,12 +37970,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createSmallerEqNumber = /* @__PURE__ */ factory(name147, ["typed", "config"], (_ref2) => {
+      createSmallerEqNumber = /* @__PURE__ */ factory(name148, ["typed", "config"], (_ref2) => {
         var {
           typed: typed3,
           config: config4
         } = _ref2;
-        return typed3(name147, {
+        return typed3(name148, {
           "number, number": function numberNumber(x4, y3) {
             return x4 <= y3 || nearlyEqual(x4, y3, config4.epsilon);
           }
@@ -37935,7 +37985,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/larger.js
-  var name148, dependencies148, createLarger, createLargerNumber;
+  var name149, dependencies149, createLarger, createLargerNumber;
   var init_larger = __esm({
     "node_modules/mathjs/lib/esm/function/relational/larger.js"() {
       init_nearlyEqual();
@@ -37946,9 +37996,9 @@ svg {
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
       init_compareUnits();
-      name148 = "larger";
-      dependencies148 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
-      createLarger = /* @__PURE__ */ factory(name148, dependencies148, (_ref) => {
+      name149 = "larger";
+      dependencies149 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
+      createLarger = /* @__PURE__ */ factory(name149, dependencies149, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -37975,7 +38025,7 @@ svg {
         var compareUnits = createCompareUnits({
           typed: typed3
         });
-        return typed3(name148, createLargerNumber({
+        return typed3(name149, createLargerNumber({
           typed: typed3,
           config: config4
         }), {
@@ -37993,12 +38043,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createLargerNumber = /* @__PURE__ */ factory(name148, ["typed", "config"], (_ref2) => {
+      createLargerNumber = /* @__PURE__ */ factory(name149, ["typed", "config"], (_ref2) => {
         var {
           typed: typed3,
           config: config4
         } = _ref2;
-        return typed3(name148, {
+        return typed3(name149, {
           "number, number": function numberNumber(x4, y3) {
             return x4 > y3 && !nearlyEqual(x4, y3, config4.epsilon);
           }
@@ -38008,7 +38058,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/largerEq.js
-  var name149, dependencies149, createLargerEq, createLargerEqNumber;
+  var name150, dependencies150, createLargerEq, createLargerEqNumber;
   var init_largerEq = __esm({
     "node_modules/mathjs/lib/esm/function/relational/largerEq.js"() {
       init_nearlyEqual();
@@ -38019,9 +38069,9 @@ svg {
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
       init_compareUnits();
-      name149 = "largerEq";
-      dependencies149 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
-      createLargerEq = /* @__PURE__ */ factory(name149, dependencies149, (_ref) => {
+      name150 = "largerEq";
+      dependencies150 = ["typed", "config", "matrix", "DenseMatrix", "concat"];
+      createLargerEq = /* @__PURE__ */ factory(name150, dependencies150, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -38048,7 +38098,7 @@ svg {
         var compareUnits = createCompareUnits({
           typed: typed3
         });
-        return typed3(name149, createLargerEqNumber({
+        return typed3(name150, createLargerEqNumber({
           typed: typed3,
           config: config4
         }), {
@@ -38066,12 +38116,12 @@ svg {
           Ss: matAlgo12xSfs
         }));
       });
-      createLargerEqNumber = /* @__PURE__ */ factory(name149, ["typed", "config"], (_ref2) => {
+      createLargerEqNumber = /* @__PURE__ */ factory(name150, ["typed", "config"], (_ref2) => {
         var {
           typed: typed3,
           config: config4
         } = _ref2;
-        return typed3(name149, {
+        return typed3(name150, {
           "number, number": function numberNumber(x4, y3) {
             return x4 >= y3 || nearlyEqual(x4, y3, config4.epsilon);
           }
@@ -38081,18 +38131,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/deepEqual.js
-  var name150, dependencies150, createDeepEqual;
+  var name151, dependencies151, createDeepEqual;
   var init_deepEqual = __esm({
     "node_modules/mathjs/lib/esm/function/relational/deepEqual.js"() {
       init_factory();
-      name150 = "deepEqual";
-      dependencies150 = ["typed", "equal"];
-      createDeepEqual = /* @__PURE__ */ factory(name150, dependencies150, (_ref) => {
+      name151 = "deepEqual";
+      dependencies151 = ["typed", "equal"];
+      createDeepEqual = /* @__PURE__ */ factory(name151, dependencies151, (_ref) => {
         var {
           typed: typed3,
           equal: equal2
         } = _ref;
-        return typed3(name150, {
+        return typed3(name151, {
           "any, any": function anyAny(x4, y3) {
             return _deepEqual(x4.valueOf(), y3.valueOf());
           }
@@ -38126,7 +38176,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/relational/unequal.js
-  var name151, dependencies151, createUnequal, createUnequalNumber;
+  var name152, dependencies152, createUnequal, createUnequalNumber;
   var init_unequal = __esm({
     "node_modules/mathjs/lib/esm/function/relational/unequal.js"() {
       init_factory();
@@ -38134,9 +38184,9 @@ svg {
       init_matAlgo07xSSf();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name151 = "unequal";
-      dependencies151 = ["typed", "config", "equalScalar", "matrix", "DenseMatrix", "concat"];
-      createUnequal = /* @__PURE__ */ factory(name151, dependencies151, (_ref) => {
+      name152 = "unequal";
+      dependencies152 = ["typed", "config", "equalScalar", "matrix", "DenseMatrix", "concat"];
+      createUnequal = /* @__PURE__ */ factory(name152, dependencies152, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -38161,7 +38211,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name151, createUnequalNumber({
+        return typed3(name152, createUnequalNumber({
           typed: typed3,
           equalScalar: equalScalar2
         }), matrixAlgorithmSuite({
@@ -38174,12 +38224,12 @@ svg {
           return !equalScalar2(x4, y3);
         }
       });
-      createUnequalNumber = factory(name151, ["typed", "equalScalar"], (_ref2) => {
+      createUnequalNumber = factory(name152, ["typed", "equalScalar"], (_ref2) => {
         var {
           typed: typed3,
           equalScalar: equalScalar2
         } = _ref2;
-        return typed3(name151, {
+        return typed3(name152, {
           "any, any": function anyAny(x4, y3) {
             if (x4 === null) {
               return y3 !== null;
@@ -38201,15 +38251,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/partitionSelect.js
-  var name152, dependencies152, createPartitionSelect;
+  var name153, dependencies153, createPartitionSelect;
   var init_partitionSelect = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/partitionSelect.js"() {
       init_is();
       init_number();
       init_factory();
-      name152 = "partitionSelect";
-      dependencies152 = ["typed", "isNumeric", "isNaN", "compare"];
-      createPartitionSelect = /* @__PURE__ */ factory(name152, dependencies152, (_ref) => {
+      name153 = "partitionSelect";
+      dependencies153 = ["typed", "isNumeric", "isNaN", "compare"];
+      createPartitionSelect = /* @__PURE__ */ factory(name153, dependencies153, (_ref) => {
         var {
           typed: typed3,
           isNumeric: isNumeric2,
@@ -38218,7 +38268,7 @@ svg {
         } = _ref;
         var asc = compare3;
         var desc = (a3, b3) => -compare3(a3, b3);
-        return typed3(name152, {
+        return typed3(name153, {
           "Array | Matrix, number": function ArrayMatrixNumber(x4, k4) {
             return _partitionSelect(x4, k4, asc);
           },
@@ -38289,14 +38339,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/sort.js
-  var name153, dependencies153, createSort;
+  var name154, dependencies154, createSort;
   var init_sort = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/sort.js"() {
       init_array();
       init_factory();
-      name153 = "sort";
-      dependencies153 = ["typed", "matrix", "compare", "compareNatural"];
-      createSort = /* @__PURE__ */ factory(name153, dependencies153, (_ref) => {
+      name154 = "sort";
+      dependencies154 = ["typed", "matrix", "compare", "compareNatural"];
+      createSort = /* @__PURE__ */ factory(name154, dependencies154, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -38305,7 +38355,7 @@ svg {
         } = _ref;
         var compareAsc = compare3;
         var compareDesc = (a3, b3) => -compare3(a3, b3);
-        return typed3(name153, {
+        return typed3(name154, {
           Array: function Array2(x4) {
             _arrayIsVector(x4);
             return x4.sort(compareAsc);
@@ -38357,22 +38407,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/max.js
-  var name154, dependencies154, createMax;
+  var name155, dependencies155, createMax;
   var init_max = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/max.js"() {
       init_collection();
       init_factory();
       init_improveErrorMessage();
-      name154 = "max";
-      dependencies154 = ["typed", "config", "numeric", "larger"];
-      createMax = /* @__PURE__ */ factory(name154, dependencies154, (_ref) => {
+      name155 = "max";
+      dependencies155 = ["typed", "config", "numeric", "larger"];
+      createMax = /* @__PURE__ */ factory(name155, dependencies155, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           numeric: numeric3,
           larger: larger2
         } = _ref;
-        return typed3(name154, {
+        return typed3(name155, {
           // max([a, b, c, d, ...])
           "Array | Matrix": _max,
           // max([a, b, c, d, ...], dim)
@@ -38420,22 +38470,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/min.js
-  var name155, dependencies155, createMin;
+  var name156, dependencies156, createMin;
   var init_min = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/min.js"() {
       init_collection();
       init_factory();
       init_improveErrorMessage();
-      name155 = "min";
-      dependencies155 = ["typed", "config", "numeric", "smaller"];
-      createMin = /* @__PURE__ */ factory(name155, dependencies155, (_ref) => {
+      name156 = "min";
+      dependencies156 = ["typed", "config", "numeric", "smaller"];
+      createMin = /* @__PURE__ */ factory(name156, dependencies156, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           numeric: numeric3,
           smaller: smaller2
         } = _ref;
-        return typed3(name155, {
+        return typed3(name156, {
           // min([a, b, c, d, ...])
           "Array | Matrix": _min,
           // min([a, b, c, d, ...], dim)
@@ -38483,15 +38533,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/ImmutableDenseMatrix.js
-  var name156, dependencies156, createImmutableDenseMatrixClass;
+  var name157, dependencies157, createImmutableDenseMatrixClass;
   var init_ImmutableDenseMatrix = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/ImmutableDenseMatrix.js"() {
       init_is();
       init_object();
       init_factory();
-      name156 = "ImmutableDenseMatrix";
-      dependencies156 = ["smaller", "DenseMatrix"];
-      createImmutableDenseMatrixClass = /* @__PURE__ */ factory(name156, dependencies156, (_ref) => {
+      name157 = "ImmutableDenseMatrix";
+      dependencies157 = ["smaller", "DenseMatrix"];
+      createImmutableDenseMatrixClass = /* @__PURE__ */ factory(name157, dependencies157, (_ref) => {
         var {
           smaller: smaller2,
           DenseMatrix: DenseMatrix2
@@ -38620,16 +38670,16 @@ svg {
     });
     return indexOfNumbers;
   }
-  var name157, dependencies157, createIndexClass;
+  var name158, dependencies158, createIndexClass;
   var init_MatrixIndex = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/MatrixIndex.js"() {
       init_is();
       init_object();
       init_number();
       init_factory();
-      name157 = "Index";
-      dependencies157 = ["ImmutableDenseMatrix", "getMatrixDataType"];
-      createIndexClass = /* @__PURE__ */ factory(name157, dependencies157, (_ref) => {
+      name158 = "Index";
+      dependencies158 = ["ImmutableDenseMatrix", "getMatrixDataType"];
+      createIndexClass = /* @__PURE__ */ factory(name158, dependencies158, (_ref) => {
         var {
           ImmutableDenseMatrix: ImmutableDenseMatrix2,
           getMatrixDataType: getMatrixDataType2
@@ -38776,13 +38826,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/FibonacciHeap.js
-  var name158, dependencies158, createFibonacciHeapClass;
+  var name159, dependencies159, createFibonacciHeapClass;
   var init_FibonacciHeap = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/FibonacciHeap.js"() {
       init_factory();
-      name158 = "FibonacciHeap";
-      dependencies158 = ["smaller", "larger"];
-      createFibonacciHeapClass = /* @__PURE__ */ factory(name158, dependencies158, (_ref) => {
+      name159 = "FibonacciHeap";
+      dependencies159 = ["smaller", "larger"];
+      createFibonacciHeapClass = /* @__PURE__ */ factory(name159, dependencies159, (_ref) => {
         var {
           smaller: smaller2,
           larger: larger2
@@ -38989,13 +39039,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/Spa.js
-  var name159, dependencies159, createSpaClass;
+  var name160, dependencies160, createSpaClass;
   var init_Spa = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/Spa.js"() {
       init_factory();
-      name159 = "Spa";
-      dependencies159 = ["addScalar", "equalScalar", "FibonacciHeap"];
-      createSpaClass = /* @__PURE__ */ factory(name159, dependencies159, (_ref) => {
+      name160 = "Spa";
+      dependencies160 = ["addScalar", "equalScalar", "FibonacciHeap"];
+      createSpaClass = /* @__PURE__ */ factory(name160, dependencies160, (_ref) => {
         var {
           addScalar: addScalar2,
           equalScalar: equalScalar2,
@@ -39090,7 +39140,7 @@ svg {
     return args[0].precision;
   }
   var createBigNumberE, createBigNumberPhi, createBigNumberPi, createBigNumberTau;
-  var init_constants2 = __esm({
+  var init_constants3 = __esm({
     "node_modules/mathjs/lib/esm/utils/bignumber/constants.js"() {
       init_function();
       createBigNumberE = memoize(function(BigNumber2) {
@@ -39117,28 +39167,28 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/Unit.js
-  function ownKeys2(object, enumerableOnly) {
-    var keys = Object.keys(object);
+  function ownKeys2(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      enumerableOnly && (symbols = symbols.filter(function(sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      })), keys.push.apply(keys, symbols);
+      var o3 = Object.getOwnPropertySymbols(e6);
+      r3 && (o3 = o3.filter(function(r4) {
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+      })), t3.push.apply(t3, o3);
     }
-    return keys;
+    return t3;
   }
-  function _objectSpread2(target) {
-    for (var i5 = 1; i5 < arguments.length; i5++) {
-      var source = null != arguments[i5] ? arguments[i5] : {};
-      i5 % 2 ? ownKeys2(Object(source), true).forEach(function(key) {
-        _defineProperty(target, key, source[key]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys2(Object(source)).forEach(function(key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+  function _objectSpread2(e6) {
+    for (var r3 = 1; r3 < arguments.length; r3++) {
+      var t3 = null != arguments[r3] ? arguments[r3] : {};
+      r3 % 2 ? ownKeys2(Object(t3), true).forEach(function(r4) {
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return target;
+    return e6;
   }
-  var name160, dependencies160, createUnitClass;
+  var name161, dependencies161, createUnitClass;
   var init_Unit = __esm({
     "node_modules/mathjs/lib/esm/type/unit/Unit.js"() {
       init_defineProperty();
@@ -39148,15 +39198,15 @@ svg {
       init_function();
       init_string();
       init_object();
-      init_constants2();
-      name160 = "Unit";
-      dependencies160 = ["?on", "config", "addScalar", "subtract", "multiplyScalar", "divideScalar", "pow", "abs", "fix", "round", "equal", "isNumeric", "format", "number", "Complex", "BigNumber", "Fraction"];
-      createUnitClass = /* @__PURE__ */ factory(name160, dependencies160, (_ref) => {
+      init_constants3();
+      name161 = "Unit";
+      dependencies161 = ["?on", "config", "addScalar", "subtractScalar", "multiplyScalar", "divideScalar", "pow", "abs", "fix", "round", "equal", "isNumeric", "format", "number", "Complex", "BigNumber", "Fraction"];
+      createUnitClass = /* @__PURE__ */ factory(name161, dependencies161, (_ref) => {
         var {
           on: on2,
           config: config4,
           addScalar: addScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           multiplyScalar: multiplyScalar2,
           divideScalar: divideScalar2,
           pow: pow3,
@@ -39433,7 +39483,7 @@ svg {
           for (var i5 = 0; i5 < this.units.length; i5++) {
             unit3.units[i5] = {};
             for (var p3 in this.units[i5]) {
-              if (hasOwnProperty2(this.units[i5], p3)) {
+              if (hasOwnProperty(this.units[i5], p3)) {
                 unit3.units[i5][p3] = this.units[i5][p3];
               }
             }
@@ -39478,7 +39528,7 @@ svg {
           return res;
         };
         var _findUnit = memoize((str) => {
-          if (hasOwnProperty2(UNITS, str)) {
+          if (hasOwnProperty(UNITS, str)) {
             var unit3 = UNITS[str];
             var prefix = unit3.prefixes[""];
             return {
@@ -39487,12 +39537,12 @@ svg {
             };
           }
           for (var _name in UNITS) {
-            if (hasOwnProperty2(UNITS, _name)) {
+            if (hasOwnProperty(UNITS, _name)) {
               if (endsWith(str, _name)) {
                 var _unit = UNITS[_name];
                 var prefixLen = str.length - _name.length;
                 var prefixName = str.substring(0, prefixLen);
-                var _prefix = hasOwnProperty2(_unit.prefixes, prefixName) ? _unit.prefixes[prefixName] : void 0;
+                var _prefix = hasOwnProperty(_unit.prefixes, prefixName) ? _unit.prefixes[prefixName] : void 0;
                 if (_prefix !== void 0) {
                   return {
                     unit: _unit,
@@ -39507,8 +39557,8 @@ svg {
           hasher: (args) => args[0],
           limit: 100
         });
-        Unit2.isValuelessUnit = function(name307) {
-          return _findUnit(name307) !== null;
+        Unit2.isValuelessUnit = function(name310) {
+          return _findUnit(name310) !== null;
         };
         Unit2.prototype.hasBase = function(base) {
           if (typeof base === "string") {
@@ -39617,7 +39667,7 @@ svg {
               var unitValue = convert(ret.units[0].unit.value);
               var nominalOffset = convert(ret.units[0].unit.offset);
               var unitOffset = multiplyScalar2(unitValue, nominalOffset);
-              ret.value = subtract2(abs3(addScalar2(ret.value, unitOffset)), unitOffset);
+              ret.value = subtractScalar2(abs3(addScalar2(ret.value, unitOffset)), unitOffset);
             }
           }
           for (var i5 in ret.units) {
@@ -39653,7 +39703,7 @@ svg {
             var otherUnitValue = other.units[0].unit.value;
             var otherNominalOffset = other.units[0].unit.offset;
             var otherUnitOffset = multiplyScalar2(otherUnitValue, otherNominalOffset);
-            other.value = addScalar2(value2, convert(subtract2(thisUnitOffset, otherUnitOffset)));
+            other.value = addScalar2(value2, convert(subtractScalar2(thisUnitOffset, otherUnitOffset)));
           }
           other.fixPrefix = true;
           other.skipAutomaticSimplification = true;
@@ -39697,7 +39747,7 @@ svg {
           var proposedUnitList = [];
           var matchingBase;
           for (var key2 in currentUnitSystem) {
-            if (hasOwnProperty2(currentUnitSystem, key2)) {
+            if (hasOwnProperty(currentUnitSystem, key2)) {
               if (ret.hasBase(BASE_UNITS[key2])) {
                 matchingBase = key2;
                 break;
@@ -39709,7 +39759,7 @@ svg {
           } else {
             var matchingUnit;
             if (matchingBase) {
-              if (hasOwnProperty2(currentUnitSystem, matchingBase)) {
+              if (hasOwnProperty(currentUnitSystem, matchingBase)) {
                 matchingUnit = currentUnitSystem[matchingBase];
               }
             }
@@ -39724,7 +39774,7 @@ svg {
               for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
                 var baseDim = BASE_DIMENSIONS[i5];
                 if (Math.abs(ret.dimensions[i5] || 0) > 1e-12) {
-                  if (hasOwnProperty2(currentUnitSystem, baseDim)) {
+                  if (hasOwnProperty(currentUnitSystem, baseDim)) {
                     proposedUnitList.push({
                       unit: currentUnitSystem[baseDim].unit,
                       prefix: currentUnitSystem[baseDim].prefix,
@@ -39748,7 +39798,7 @@ svg {
           for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
             var baseDim = BASE_DIMENSIONS[i5];
             if (Math.abs(ret.dimensions[i5] || 0) > 1e-12) {
-              if (hasOwnProperty2(UNIT_SYSTEMS.si, baseDim)) {
+              if (hasOwnProperty(UNIT_SYSTEMS.si, baseDim)) {
                 proposedUnitList.push({
                   unit: UNIT_SYSTEMS.si[baseDim].unit,
                   prefix: UNIT_SYSTEMS.si[baseDim].prefix,
@@ -39817,7 +39867,7 @@ svg {
             isImaginary = Math.abs(simp.value.re) < 1e-14;
           }
           for (var i5 in simp.units) {
-            if (hasOwnProperty2(simp.units, i5)) {
+            if (hasOwnProperty(simp.units, i5)) {
               if (simp.units[i5].unit) {
                 if (simp.units[i5].unit.name === "VA" && isImaginary) {
                   simp.units[i5].unit = UNITS.VAR;
@@ -39864,7 +39914,7 @@ svg {
           bestDiff = Math.abs(bestDiff);
           var prefixes = this.units[0].unit.prefixes;
           for (var p3 in prefixes) {
-            if (hasOwnProperty2(prefixes, p3)) {
+            if (hasOwnProperty(prefixes, p3)) {
               var prefix = prefixes[p3];
               if (prefix.scientific) {
                 var diff2 = Math.abs(Math.log(absValue / Math.pow(prefix.value * absUnitValue, power)) / Math.LN10 - 1.2);
@@ -39895,7 +39945,7 @@ svg {
             }
             var y3 = new Unit2(xFixed, parts[i5].toString());
             ret.push(y3);
-            x4 = subtract2(x4, y3);
+            x4 = subtractScalar2(x4, y3);
           }
           var testSum = 0;
           for (var _i5 = 0; _i5 < ret.length; _i5++) {
@@ -40626,7 +40676,7 @@ svg {
           }
         };
         for (var key in BASE_UNITS) {
-          if (hasOwnProperty2(BASE_UNITS, key)) {
+          if (hasOwnProperty(BASE_UNITS, key)) {
             BASE_UNITS[key].key = key;
           }
         }
@@ -41599,14 +41649,15 @@ svg {
           joule: {
             name: "joule",
             base: BASE_UNITS.ENERGY,
-            prefixes: PREFIXES.SHORT,
+            prefixes: PREFIXES.LONG,
             value: 1,
             offset: 0
           },
           erg: {
             name: "erg",
             base: BASE_UNITS.ENERGY,
-            prefixes: PREFIXES.NONE,
+            prefixes: PREFIXES.SHORTLONG,
+            // Both kiloerg and kerg are acceptable
             value: 1e-7,
             offset: 0
           },
@@ -42151,16 +42202,16 @@ svg {
         };
         UNIT_SYSTEMS.auto = JSON.parse(JSON.stringify(UNIT_SYSTEMS.si));
         var currentUnitSystem = UNIT_SYSTEMS.auto;
-        Unit2.setUnitSystem = function(name307) {
-          if (hasOwnProperty2(UNIT_SYSTEMS, name307)) {
-            currentUnitSystem = UNIT_SYSTEMS[name307];
+        Unit2.setUnitSystem = function(name310) {
+          if (hasOwnProperty(UNIT_SYSTEMS, name310)) {
+            currentUnitSystem = UNIT_SYSTEMS[name310];
           } else {
-            throw new Error("Unit system " + name307 + " does not exist. Choices are: " + Object.keys(UNIT_SYSTEMS).join(", "));
+            throw new Error("Unit system " + name310 + " does not exist. Choices are: " + Object.keys(UNIT_SYSTEMS).join(", "));
           }
         };
         Unit2.getUnitSystem = function() {
           for (var _key in UNIT_SYSTEMS) {
-            if (hasOwnProperty2(UNIT_SYSTEMS, _key)) {
+            if (hasOwnProperty(UNIT_SYSTEMS, _key)) {
               if (UNIT_SYSTEMS[_key] === currentUnitSystem) {
                 return _key;
               }
@@ -42199,17 +42250,17 @@ svg {
           return Unit2.typeConverters[type];
         };
         for (var _key2 in UNITS) {
-          if (hasOwnProperty2(UNITS, _key2)) {
+          if (hasOwnProperty(UNITS, _key2)) {
             var unit2 = UNITS[_key2];
             unit2.dimensions = unit2.base.dimensions;
           }
         }
         for (var _name2 in ALIASES) {
-          if (hasOwnProperty2(ALIASES, _name2)) {
+          if (hasOwnProperty(ALIASES, _name2)) {
             var _unit2 = UNITS[ALIASES[_name2]];
             var alias = {};
             for (var _key3 in _unit2) {
-              if (hasOwnProperty2(_unit2, _key3)) {
+              if (hasOwnProperty(_unit2, _key3)) {
                 alias[_key3] = _unit2[_key3];
               }
             }
@@ -42220,14 +42271,14 @@ svg {
         Unit2.isValidAlpha = function isValidAlpha(c4) {
           return /^[a-zA-Z]$/.test(c4);
         };
-        function assertUnitNameIsValid(name307) {
-          for (var i5 = 0; i5 < name307.length; i5++) {
-            c3 = name307.charAt(i5);
+        function assertUnitNameIsValid(name310) {
+          for (var i5 = 0; i5 < name310.length; i5++) {
+            c3 = name310.charAt(i5);
             if (i5 === 0 && !Unit2.isValidAlpha(c3)) {
-              throw new Error('Invalid unit name (must begin with alpha character): "' + name307 + '"');
+              throw new Error('Invalid unit name (must begin with alpha character): "' + name310 + '"');
             }
             if (i5 > 0 && !(Unit2.isValidAlpha(c3) || isDigit(c3))) {
-              throw new Error('Invalid unit name (only alphanumeric characters are allowed): "' + name307 + '"');
+              throw new Error('Invalid unit name (only alphanumeric characters are allowed): "' + name310 + '"');
             }
           }
         }
@@ -42237,7 +42288,7 @@ svg {
           }
           if (options && options.override) {
             for (var _key4 in obj) {
-              if (hasOwnProperty2(obj, _key4)) {
+              if (hasOwnProperty(obj, _key4)) {
                 Unit2.deleteUnit(_key4);
               }
               if (obj[_key4].aliases) {
@@ -42249,23 +42300,23 @@ svg {
           }
           var lastUnit;
           for (var _key5 in obj) {
-            if (hasOwnProperty2(obj, _key5)) {
+            if (hasOwnProperty(obj, _key5)) {
               lastUnit = Unit2.createUnitSingle(_key5, obj[_key5]);
             }
           }
           return lastUnit;
         };
-        Unit2.createUnitSingle = function(name307, obj) {
+        Unit2.createUnitSingle = function(name310, obj) {
           if (typeof obj === "undefined" || obj === null) {
             obj = {};
           }
-          if (typeof name307 !== "string") {
+          if (typeof name310 !== "string") {
             throw new TypeError("createUnitSingle expects first parameter to be of type 'string'");
           }
-          if (hasOwnProperty2(UNITS, name307)) {
-            throw new Error('Cannot create unit "' + name307 + '": a unit with that name already exists');
+          if (hasOwnProperty(UNITS, name310)) {
+            throw new Error('Cannot create unit "' + name310 + '": a unit with that name already exists');
           }
-          assertUnitNameIsValid(name307);
+          assertUnitNameIsValid(name310);
           var defUnit = null;
           var aliases = [];
           var offset = 0;
@@ -42287,11 +42338,11 @@ svg {
               aliases = obj.aliases.valueOf();
             }
           } else {
-            throw new TypeError('Cannot create unit "' + name307 + '" from "' + obj.toString() + '": expecting "string" or "Unit" or "Object"');
+            throw new TypeError('Cannot create unit "' + name310 + '" from "' + obj.toString() + '": expecting "string" or "Unit" or "Object"');
           }
           if (aliases) {
             for (var i5 = 0; i5 < aliases.length; i5++) {
-              if (hasOwnProperty2(UNITS, aliases[i5])) {
+              if (hasOwnProperty(UNITS, aliases[i5])) {
                 throw new Error('Cannot create alias "' + aliases[i5] + '": a unit with that name already exists');
               }
             }
@@ -42302,7 +42353,7 @@ svg {
                 allowNoUnits: true
               });
             } catch (ex) {
-              ex.message = 'Could not create unit "' + name307 + '" from "' + definition + '": ' + ex.message;
+              ex.message = 'Could not create unit "' + name310 + '" from "' + definition + '": ' + ex.message;
               throw ex;
             }
           } else if (definition && definition.type === "Unit") {
@@ -42317,13 +42368,13 @@ svg {
           }
           var newUnit = {};
           if (!defUnit) {
-            baseName = baseName || name307 + "_STUFF";
+            baseName = baseName || name310 + "_STUFF";
             if (BASE_DIMENSIONS.indexOf(baseName) >= 0) {
-              throw new Error('Cannot create new base unit "' + name307 + '": a base unit with that name already exists (and cannot be overridden)');
+              throw new Error('Cannot create new base unit "' + name310 + '": a base unit with that name already exists (and cannot be overridden)');
             }
             BASE_DIMENSIONS.push(baseName);
             for (var b3 in BASE_UNITS) {
-              if (hasOwnProperty2(BASE_UNITS, b3)) {
+              if (hasOwnProperty(BASE_UNITS, b3)) {
                 BASE_UNITS[b3].dimensions[BASE_DIMENSIONS.length - 1] = 0;
               }
             }
@@ -42337,7 +42388,7 @@ svg {
             newBaseUnit.key = baseName;
             BASE_UNITS[baseName] = newBaseUnit;
             newUnit = {
-              name: name307,
+              name: name310,
               value: 1,
               dimensions: BASE_UNITS[baseName].dimensions.slice(0),
               prefixes,
@@ -42350,7 +42401,7 @@ svg {
             };
           } else {
             newUnit = {
-              name: name307,
+              name: name310,
               value: defUnit.value,
               dimensions: defUnit.dimensions.slice(0),
               prefixes,
@@ -42358,7 +42409,7 @@ svg {
             };
             var anyMatch = false;
             for (var _i7 in BASE_UNITS) {
-              if (hasOwnProperty2(BASE_UNITS, _i7)) {
+              if (hasOwnProperty(BASE_UNITS, _i7)) {
                 var match = true;
                 for (var j4 = 0; j4 < BASE_DIMENSIONS.length; j4++) {
                   if (Math.abs((newUnit.dimensions[j4] || 0) - (BASE_UNITS[_i7].dimensions[j4] || 0)) > 1e-12) {
@@ -42374,7 +42425,7 @@ svg {
               }
             }
             if (!anyMatch) {
-              baseName = baseName || name307 + "_STUFF";
+              baseName = baseName || name310 + "_STUFF";
               var _newBaseUnit = {
                 dimensions: defUnit.dimensions.slice(0)
               };
@@ -42387,12 +42438,12 @@ svg {
               newUnit.base = BASE_UNITS[baseName];
             }
           }
-          Unit2.UNITS[name307] = newUnit;
+          Unit2.UNITS[name310] = newUnit;
           for (var _i8 = 0; _i8 < aliases.length; _i8++) {
             var aliasName = aliases[_i8];
             var _alias = {};
             for (var _key6 in newUnit) {
-              if (hasOwnProperty2(newUnit, _key6)) {
+              if (hasOwnProperty(newUnit, _key6)) {
                 _alias[_key6] = newUnit[_key6];
               }
             }
@@ -42400,10 +42451,10 @@ svg {
             Unit2.UNITS[aliasName] = _alias;
           }
           delete _findUnit.cache;
-          return new Unit2(null, name307);
+          return new Unit2(null, name310);
         };
-        Unit2.deleteUnit = function(name307) {
-          delete Unit2.UNITS[name307];
+        Unit2.deleteUnit = function(name310) {
+          delete Unit2.UNITS[name310];
         };
         Unit2.PREFIXES = PREFIXES;
         Unit2.BASE_DIMENSIONS = BASE_DIMENSIONS;
@@ -42418,19 +42469,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/function/unit.js
-  var name161, dependencies161, createUnitFunction;
+  var name162, dependencies162, createUnitFunction;
   var init_unit = __esm({
     "node_modules/mathjs/lib/esm/type/unit/function/unit.js"() {
       init_factory();
       init_collection();
-      name161 = "unit";
-      dependencies161 = ["typed", "Unit"];
-      createUnitFunction = /* @__PURE__ */ factory(name161, dependencies161, (_ref) => {
+      name162 = "unit";
+      dependencies162 = ["typed", "Unit"];
+      createUnitFunction = /* @__PURE__ */ factory(name162, dependencies162, (_ref) => {
         var {
           typed: typed3,
           Unit: Unit2
         } = _ref;
-        return typed3(name161, {
+        return typed3(name162, {
           Unit: function Unit3(x4) {
             return x4.clone();
           },
@@ -42455,18 +42506,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/function/sparse.js
-  var name162, dependencies162, createSparse;
+  var name163, dependencies163, createSparse;
   var init_sparse = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/function/sparse.js"() {
       init_factory();
-      name162 = "sparse";
-      dependencies162 = ["typed", "SparseMatrix"];
-      createSparse = /* @__PURE__ */ factory(name162, dependencies162, (_ref) => {
+      name163 = "sparse";
+      dependencies163 = ["typed", "SparseMatrix"];
+      createSparse = /* @__PURE__ */ factory(name163, dependencies163, (_ref) => {
         var {
           typed: typed3,
           SparseMatrix: SparseMatrix2
         } = _ref;
-        return typed3(name162, {
+        return typed3(name163, {
           "": function _3() {
             return new SparseMatrix2([]);
           },
@@ -42485,18 +42536,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/function/createUnit.js
-  var name163, dependencies163, createCreateUnit;
+  var name164, dependencies164, createCreateUnit;
   var init_createUnit = __esm({
     "node_modules/mathjs/lib/esm/type/unit/function/createUnit.js"() {
       init_factory();
-      name163 = "createUnit";
-      dependencies163 = ["typed", "Unit"];
-      createCreateUnit = /* @__PURE__ */ factory(name163, dependencies163, (_ref) => {
+      name164 = "createUnit";
+      dependencies164 = ["typed", "Unit"];
+      createCreateUnit = /* @__PURE__ */ factory(name164, dependencies164, (_ref) => {
         var {
           typed: typed3,
           Unit: Unit2
         } = _ref;
-        return typed3(name163, {
+        return typed3(name164, {
           // General function signature. First parameter is an object where each property is the definition of a new unit. The object keys are the unit names and the values are the definitions. The values can be objects, strings, or Units. If a property is an empty object or an empty string, a new base unit is created. The second parameter is the options.
           "Object, Object": function ObjectObject(obj, options) {
             return Unit2.createUnit(obj, options);
@@ -42506,21 +42557,21 @@ svg {
             return Unit2.createUnit(obj, {});
           },
           // Shortcut method for creating one unit.
-          "string, Unit | string | Object, Object": function stringUnitStringObjectObject(name307, def, options) {
+          "string, Unit | string | Object, Object": function stringUnitStringObjectObject(name310, def, options) {
             var obj = {};
-            obj[name307] = def;
+            obj[name310] = def;
             return Unit2.createUnit(obj, options);
           },
           // Same as above but without the options.
-          "string, Unit | string | Object": function stringUnitStringObject(name307, def) {
+          "string, Unit | string | Object": function stringUnitStringObject(name310, def) {
             var obj = {};
-            obj[name307] = def;
+            obj[name310] = def;
             return Unit2.createUnit(obj, {});
           },
           // Without a definition, creates a base unit.
-          string: function string2(name307) {
+          string: function string2(name310) {
             var obj = {};
-            obj[name307] = {};
+            obj[name310] = {};
             return Unit2.createUnit(obj, {});
           }
         });
@@ -42529,19 +42580,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acos.js
-  var name164, dependencies164, createAcos;
+  var name165, dependencies165, createAcos;
   var init_acos = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acos.js"() {
       init_factory();
-      name164 = "acos";
-      dependencies164 = ["typed", "config", "Complex"];
-      createAcos = /* @__PURE__ */ factory(name164, dependencies164, (_ref) => {
+      name165 = "acos";
+      dependencies165 = ["typed", "config", "Complex"];
+      createAcos = /* @__PURE__ */ factory(name165, dependencies165, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3
         } = _ref;
-        return typed3(name164, {
+        return typed3(name165, {
           number: function number2(x4) {
             if (x4 >= -1 && x4 <= 1 || config4.predictable) {
               return Math.acos(x4);
@@ -42561,20 +42612,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acosh.js
-  var name165, dependencies165, createAcosh;
+  var name166, dependencies166, createAcosh;
   var init_acosh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acosh.js"() {
       init_factory();
       init_number2();
-      name165 = "acosh";
-      dependencies165 = ["typed", "config", "Complex"];
-      createAcosh = /* @__PURE__ */ factory(name165, dependencies165, (_ref) => {
+      name166 = "acosh";
+      dependencies166 = ["typed", "config", "Complex"];
+      createAcosh = /* @__PURE__ */ factory(name166, dependencies166, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3
         } = _ref;
-        return typed3(name165, {
+        return typed3(name166, {
           number: function number2(x4) {
             if (x4 >= 1 || config4.predictable) {
               return acoshNumber(x4);
@@ -42596,19 +42647,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acot.js
-  var name166, dependencies166, createAcot;
+  var name167, dependencies167, createAcot;
   var init_acot = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acot.js"() {
       init_factory();
       init_number2();
-      name166 = "acot";
-      dependencies166 = ["typed", "BigNumber"];
-      createAcot = /* @__PURE__ */ factory(name166, dependencies166, (_ref) => {
+      name167 = "acot";
+      dependencies167 = ["typed", "BigNumber"];
+      createAcot = /* @__PURE__ */ factory(name167, dependencies167, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name166, {
+        return typed3(name167, {
           number: acotNumber,
           Complex: function Complex3(x4) {
             return x4.acot();
@@ -42622,21 +42673,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acoth.js
-  var name167, dependencies167, createAcoth;
+  var name168, dependencies168, createAcoth;
   var init_acoth = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acoth.js"() {
       init_factory();
       init_number2();
-      name167 = "acoth";
-      dependencies167 = ["typed", "config", "Complex", "BigNumber"];
-      createAcoth = /* @__PURE__ */ factory(name167, dependencies167, (_ref) => {
+      name168 = "acoth";
+      dependencies168 = ["typed", "config", "Complex", "BigNumber"];
+      createAcoth = /* @__PURE__ */ factory(name168, dependencies168, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name167, {
+        return typed3(name168, {
           number: function number2(x4) {
             if (x4 >= 1 || x4 <= -1 || config4.predictable) {
               return acothNumber(x4);
@@ -42655,21 +42706,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acsc.js
-  var name168, dependencies168, createAcsc;
+  var name169, dependencies169, createAcsc;
   var init_acsc = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acsc.js"() {
       init_factory();
       init_number2();
-      name168 = "acsc";
-      dependencies168 = ["typed", "config", "Complex", "BigNumber"];
-      createAcsc = /* @__PURE__ */ factory(name168, dependencies168, (_ref) => {
+      name169 = "acsc";
+      dependencies169 = ["typed", "config", "Complex", "BigNumber"];
+      createAcsc = /* @__PURE__ */ factory(name169, dependencies169, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name168, {
+        return typed3(name169, {
           number: function number2(x4) {
             if (x4 <= -1 || x4 >= 1 || config4.predictable) {
               return acscNumber(x4);
@@ -42688,19 +42739,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/acsch.js
-  var name169, dependencies169, createAcsch;
+  var name170, dependencies170, createAcsch;
   var init_acsch = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/acsch.js"() {
       init_factory();
       init_number2();
-      name169 = "acsch";
-      dependencies169 = ["typed", "BigNumber"];
-      createAcsch = /* @__PURE__ */ factory(name169, dependencies169, (_ref) => {
+      name170 = "acsch";
+      dependencies170 = ["typed", "BigNumber"];
+      createAcsch = /* @__PURE__ */ factory(name170, dependencies170, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name169, {
+        return typed3(name170, {
           number: acschNumber,
           Complex: function Complex3(x4) {
             return x4.acsch();
@@ -42714,21 +42765,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/asec.js
-  var name170, dependencies170, createAsec;
+  var name171, dependencies171, createAsec;
   var init_asec = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/asec.js"() {
       init_factory();
       init_number2();
-      name170 = "asec";
-      dependencies170 = ["typed", "config", "Complex", "BigNumber"];
-      createAsec = /* @__PURE__ */ factory(name170, dependencies170, (_ref) => {
+      name171 = "asec";
+      dependencies171 = ["typed", "config", "Complex", "BigNumber"];
+      createAsec = /* @__PURE__ */ factory(name171, dependencies171, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name170, {
+        return typed3(name171, {
           number: function number2(x4) {
             if (x4 <= -1 || x4 >= 1 || config4.predictable) {
               return asecNumber(x4);
@@ -42747,21 +42798,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/asech.js
-  var name171, dependencies171, createAsech;
+  var name172, dependencies172, createAsech;
   var init_asech = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/asech.js"() {
       init_factory();
       init_number2();
-      name171 = "asech";
-      dependencies171 = ["typed", "config", "Complex", "BigNumber"];
-      createAsech = /* @__PURE__ */ factory(name171, dependencies171, (_ref) => {
+      name172 = "asech";
+      dependencies172 = ["typed", "config", "Complex", "BigNumber"];
+      createAsech = /* @__PURE__ */ factory(name172, dependencies172, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name171, {
+        return typed3(name172, {
           number: function number2(x4) {
             if (x4 <= 1 && x4 >= -1 || config4.predictable) {
               var xInv = 1 / x4;
@@ -42785,19 +42836,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/asin.js
-  var name172, dependencies172, createAsin;
+  var name173, dependencies173, createAsin;
   var init_asin = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/asin.js"() {
       init_factory();
-      name172 = "asin";
-      dependencies172 = ["typed", "config", "Complex"];
-      createAsin = /* @__PURE__ */ factory(name172, dependencies172, (_ref) => {
+      name173 = "asin";
+      dependencies173 = ["typed", "config", "Complex"];
+      createAsin = /* @__PURE__ */ factory(name173, dependencies173, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3
         } = _ref;
-        return typed3(name172, {
+        return typed3(name173, {
           number: function number2(x4) {
             if (x4 >= -1 && x4 <= 1 || config4.predictable) {
               return Math.asin(x4);
@@ -42817,14 +42868,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/asinh.js
-  var name173, dependencies173, createAsinh;
+  var name174, dependencies174, createAsinh;
   var init_asinh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/asinh.js"() {
       init_factory();
       init_number2();
-      name173 = "asinh";
-      dependencies173 = ["typed"];
-      createAsinh = /* @__PURE__ */ factory(name173, dependencies173, (_ref) => {
+      name174 = "asinh";
+      dependencies174 = ["typed"];
+      createAsinh = /* @__PURE__ */ factory(name174, dependencies174, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -42842,13 +42893,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/atan.js
-  var name174, dependencies174, createAtan;
+  var name175, dependencies175, createAtan;
   var init_atan = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/atan.js"() {
       init_factory();
-      name174 = "atan";
-      dependencies174 = ["typed"];
-      createAtan = /* @__PURE__ */ factory(name174, dependencies174, (_ref) => {
+      name175 = "atan";
+      dependencies175 = ["typed"];
+      createAtan = /* @__PURE__ */ factory(name175, dependencies175, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -42868,7 +42919,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/atan2.js
-  var name175, dependencies175, createAtan2;
+  var name176, dependencies176, createAtan2;
   var init_atan2 = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/atan2.js"() {
       init_factory();
@@ -42878,9 +42929,9 @@ svg {
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matrixAlgorithmSuite();
-      name175 = "atan2";
-      dependencies175 = ["typed", "matrix", "equalScalar", "BigNumber", "DenseMatrix", "concat"];
-      createAtan2 = /* @__PURE__ */ factory(name175, dependencies175, (_ref) => {
+      name176 = "atan2";
+      dependencies176 = ["typed", "matrix", "equalScalar", "BigNumber", "DenseMatrix", "concat"];
+      createAtan2 = /* @__PURE__ */ factory(name176, dependencies176, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -42913,7 +42964,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name175, {
+        return typed3(name176, {
           "number, number": Math.atan2,
           // Complex numbers doesn't seem to have a reasonable implementation of
           // atan2(). Even Matlab removed the support, after they only calculated
@@ -42933,20 +42984,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/atanh.js
-  var name176, dependencies176, createAtanh;
+  var name177, dependencies177, createAtanh;
   var init_atanh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/atanh.js"() {
       init_factory();
       init_number2();
-      name176 = "atanh";
-      dependencies176 = ["typed", "config", "Complex"];
-      createAtanh = /* @__PURE__ */ factory(name176, dependencies176, (_ref) => {
+      name177 = "atanh";
+      dependencies177 = ["typed", "config", "Complex"];
+      createAtanh = /* @__PURE__ */ factory(name177, dependencies177, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           Complex: Complex3
         } = _ref;
-        return typed3(name176, {
+        return typed3(name177, {
           number: function number2(x4) {
             if (x4 <= 1 && x4 >= -1 || config4.predictable) {
               return atanhNumber(x4);
@@ -42986,21 +43037,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/cos.js
-  var name177, dependencies177, createCos;
+  var name178, dependencies178, createCos;
   var init_cos = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/cos.js"() {
       init_factory();
       init_trigUnit();
-      name177 = "cos";
-      dependencies177 = ["typed"];
-      createCos = /* @__PURE__ */ factory(name177, dependencies177, (_ref) => {
+      name178 = "cos";
+      dependencies178 = ["typed"];
+      createCos = /* @__PURE__ */ factory(name178, dependencies178, (_ref) => {
         var {
           typed: typed3
         } = _ref;
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name177, {
+        return typed3(name178, {
           number: Math.cos,
           "Complex | BigNumber": (x4) => x4.cos()
         }, trigUnit);
@@ -43009,18 +43060,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/cosh.js
-  var name178, dependencies178, createCosh;
+  var name179, dependencies179, createCosh;
   var init_cosh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/cosh.js"() {
       init_factory();
       init_number();
-      name178 = "cosh";
-      dependencies178 = ["typed"];
-      createCosh = /* @__PURE__ */ factory(name178, dependencies178, (_ref) => {
+      name179 = "cosh";
+      dependencies179 = ["typed"];
+      createCosh = /* @__PURE__ */ factory(name179, dependencies179, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name178, {
+        return typed3(name179, {
           number: cosh,
           "Complex | BigNumber": (x4) => x4.cosh()
         });
@@ -43029,15 +43080,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/cot.js
-  var name179, dependencies179, createCot;
+  var name180, dependencies180, createCot;
   var init_cot = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/cot.js"() {
       init_factory();
       init_number2();
       init_trigUnit();
-      name179 = "cot";
-      dependencies179 = ["typed", "BigNumber"];
-      createCot = /* @__PURE__ */ factory(name179, dependencies179, (_ref) => {
+      name180 = "cot";
+      dependencies180 = ["typed", "BigNumber"];
+      createCot = /* @__PURE__ */ factory(name180, dependencies180, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
@@ -43045,7 +43096,7 @@ svg {
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name179, {
+        return typed3(name180, {
           number: cotNumber,
           Complex: (x4) => x4.cot(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.tan())
@@ -43055,19 +43106,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/coth.js
-  var name180, dependencies180, createCoth;
+  var name181, dependencies181, createCoth;
   var init_coth = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/coth.js"() {
       init_factory();
       init_number2();
-      name180 = "coth";
-      dependencies180 = ["typed", "BigNumber"];
-      createCoth = /* @__PURE__ */ factory(name180, dependencies180, (_ref) => {
+      name181 = "coth";
+      dependencies181 = ["typed", "BigNumber"];
+      createCoth = /* @__PURE__ */ factory(name181, dependencies181, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name180, {
+        return typed3(name181, {
           number: cothNumber,
           Complex: (x4) => x4.coth(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.tanh())
@@ -43077,15 +43128,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/csc.js
-  var name181, dependencies181, createCsc;
+  var name182, dependencies182, createCsc;
   var init_csc = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/csc.js"() {
       init_factory();
       init_number2();
       init_trigUnit();
-      name181 = "csc";
-      dependencies181 = ["typed", "BigNumber"];
-      createCsc = /* @__PURE__ */ factory(name181, dependencies181, (_ref) => {
+      name182 = "csc";
+      dependencies182 = ["typed", "BigNumber"];
+      createCsc = /* @__PURE__ */ factory(name182, dependencies182, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
@@ -43093,7 +43144,7 @@ svg {
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name181, {
+        return typed3(name182, {
           number: cscNumber,
           Complex: (x4) => x4.csc(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.sin())
@@ -43103,19 +43154,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/csch.js
-  var name182, dependencies182, createCsch;
+  var name183, dependencies183, createCsch;
   var init_csch = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/csch.js"() {
       init_factory();
       init_number2();
-      name182 = "csch";
-      dependencies182 = ["typed", "BigNumber"];
-      createCsch = /* @__PURE__ */ factory(name182, dependencies182, (_ref) => {
+      name183 = "csch";
+      dependencies183 = ["typed", "BigNumber"];
+      createCsch = /* @__PURE__ */ factory(name183, dependencies183, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name182, {
+        return typed3(name183, {
           number: cschNumber,
           Complex: (x4) => x4.csch(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.sinh())
@@ -43125,15 +43176,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/sec.js
-  var name183, dependencies183, createSec;
+  var name184, dependencies184, createSec;
   var init_sec = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/sec.js"() {
       init_factory();
       init_number2();
       init_trigUnit();
-      name183 = "sec";
-      dependencies183 = ["typed", "BigNumber"];
-      createSec = /* @__PURE__ */ factory(name183, dependencies183, (_ref) => {
+      name184 = "sec";
+      dependencies184 = ["typed", "BigNumber"];
+      createSec = /* @__PURE__ */ factory(name184, dependencies184, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
@@ -43141,7 +43192,7 @@ svg {
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name183, {
+        return typed3(name184, {
           number: secNumber,
           Complex: (x4) => x4.sec(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.cos())
@@ -43151,19 +43202,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/sech.js
-  var name184, dependencies184, createSech;
+  var name185, dependencies185, createSech;
   var init_sech = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/sech.js"() {
       init_factory();
       init_number2();
-      name184 = "sech";
-      dependencies184 = ["typed", "BigNumber"];
-      createSech = /* @__PURE__ */ factory(name184, dependencies184, (_ref) => {
+      name185 = "sech";
+      dependencies185 = ["typed", "BigNumber"];
+      createSech = /* @__PURE__ */ factory(name185, dependencies185, (_ref) => {
         var {
           typed: typed3,
           BigNumber: _BigNumber
         } = _ref;
-        return typed3(name184, {
+        return typed3(name185, {
           number: sechNumber,
           Complex: (x4) => x4.sech(),
           BigNumber: (x4) => new _BigNumber(1).div(x4.cosh())
@@ -43173,21 +43224,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/sin.js
-  var name185, dependencies185, createSin;
+  var name186, dependencies186, createSin;
   var init_sin = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/sin.js"() {
       init_factory();
       init_trigUnit();
-      name185 = "sin";
-      dependencies185 = ["typed"];
-      createSin = /* @__PURE__ */ factory(name185, dependencies185, (_ref) => {
+      name186 = "sin";
+      dependencies186 = ["typed"];
+      createSin = /* @__PURE__ */ factory(name186, dependencies186, (_ref) => {
         var {
           typed: typed3
         } = _ref;
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name185, {
+        return typed3(name186, {
           number: Math.sin,
           "Complex | BigNumber": (x4) => x4.sin()
         }, trigUnit);
@@ -43196,18 +43247,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/sinh.js
-  var name186, dependencies186, createSinh;
+  var name187, dependencies187, createSinh;
   var init_sinh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/sinh.js"() {
       init_factory();
       init_number2();
-      name186 = "sinh";
-      dependencies186 = ["typed"];
-      createSinh = /* @__PURE__ */ factory(name186, dependencies186, (_ref) => {
+      name187 = "sinh";
+      dependencies187 = ["typed"];
+      createSinh = /* @__PURE__ */ factory(name187, dependencies187, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name186, {
+        return typed3(name187, {
           number: sinhNumber,
           "Complex | BigNumber": (x4) => x4.sinh()
         });
@@ -43216,21 +43267,21 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/tan.js
-  var name187, dependencies187, createTan;
+  var name188, dependencies188, createTan;
   var init_tan = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/tan.js"() {
       init_factory();
       init_trigUnit();
-      name187 = "tan";
-      dependencies187 = ["typed"];
-      createTan = /* @__PURE__ */ factory(name187, dependencies187, (_ref) => {
+      name188 = "tan";
+      dependencies188 = ["typed"];
+      createTan = /* @__PURE__ */ factory(name188, dependencies188, (_ref) => {
         var {
           typed: typed3
         } = _ref;
         var trigUnit = createTrigUnit({
           typed: typed3
         });
-        return typed3(name187, {
+        return typed3(name188, {
           number: Math.tan,
           "Complex | BigNumber": (x4) => x4.tan()
         }, trigUnit);
@@ -43239,14 +43290,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/trigonometry/tanh.js
-  var name188, dependencies188, createTanh;
+  var name189, dependencies189, createTanh;
   var init_tanh = __esm({
     "node_modules/mathjs/lib/esm/function/trigonometry/tanh.js"() {
       init_factory();
       init_number();
-      name188 = "tanh";
-      dependencies188 = ["typed"];
-      createTanh = /* @__PURE__ */ factory(name188, dependencies188, (_ref) => {
+      name189 = "tanh";
+      dependencies189 = ["typed"];
+      createTanh = /* @__PURE__ */ factory(name189, dependencies189, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -43259,14 +43310,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setCartesian.js
-  var name189, dependencies189, createSetCartesian;
+  var name190, dependencies190, createSetCartesian;
   var init_setCartesian = __esm({
     "node_modules/mathjs/lib/esm/function/set/setCartesian.js"() {
       init_array();
       init_factory();
-      name189 = "setCartesian";
-      dependencies189 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
-      createSetCartesian = /* @__PURE__ */ factory(name189, dependencies189, (_ref) => {
+      name190 = "setCartesian";
+      dependencies190 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
+      createSetCartesian = /* @__PURE__ */ factory(name190, dependencies190, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43275,7 +43326,7 @@ svg {
           Index: Index2,
           DenseMatrix: DenseMatrix2
         } = _ref;
-        return typed3(name189, {
+        return typed3(name190, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             var result = [];
             if (subset2(size2(a1), new Index2(0)) !== 0 && subset2(size2(a22), new Index2(0)) !== 0) {
@@ -43299,14 +43350,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setDifference.js
-  var name190, dependencies190, createSetDifference;
+  var name191, dependencies191, createSetDifference;
   var init_setDifference = __esm({
     "node_modules/mathjs/lib/esm/function/set/setDifference.js"() {
       init_array();
       init_factory();
-      name190 = "setDifference";
-      dependencies190 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
-      createSetDifference = /* @__PURE__ */ factory(name190, dependencies190, (_ref) => {
+      name191 = "setDifference";
+      dependencies191 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
+      createSetDifference = /* @__PURE__ */ factory(name191, dependencies191, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43315,7 +43366,7 @@ svg {
           Index: Index2,
           DenseMatrix: DenseMatrix2
         } = _ref;
-        return typed3(name190, {
+        return typed3(name191, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             var result;
             if (subset2(size2(a1), new Index2(0)) === 0) {
@@ -43351,14 +43402,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setDistinct.js
-  var name191, dependencies191, createSetDistinct;
+  var name192, dependencies192, createSetDistinct;
   var init_setDistinct = __esm({
     "node_modules/mathjs/lib/esm/function/set/setDistinct.js"() {
       init_array();
       init_factory();
-      name191 = "setDistinct";
-      dependencies191 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
-      createSetDistinct = /* @__PURE__ */ factory(name191, dependencies191, (_ref) => {
+      name192 = "setDistinct";
+      dependencies192 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
+      createSetDistinct = /* @__PURE__ */ factory(name192, dependencies192, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43367,7 +43418,7 @@ svg {
           Index: Index2,
           DenseMatrix: DenseMatrix2
         } = _ref;
-        return typed3(name191, {
+        return typed3(name192, {
           "Array | Matrix": function ArrayMatrix(a3) {
             var result;
             if (subset2(size2(a3), new Index2(0)) === 0) {
@@ -43393,14 +43444,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setIntersect.js
-  var name192, dependencies192, createSetIntersect;
+  var name193, dependencies193, createSetIntersect;
   var init_setIntersect = __esm({
     "node_modules/mathjs/lib/esm/function/set/setIntersect.js"() {
       init_array();
       init_factory();
-      name192 = "setIntersect";
-      dependencies192 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
-      createSetIntersect = /* @__PURE__ */ factory(name192, dependencies192, (_ref) => {
+      name193 = "setIntersect";
+      dependencies193 = ["typed", "size", "subset", "compareNatural", "Index", "DenseMatrix"];
+      createSetIntersect = /* @__PURE__ */ factory(name193, dependencies193, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43409,7 +43460,7 @@ svg {
           Index: Index2,
           DenseMatrix: DenseMatrix2
         } = _ref;
-        return typed3(name192, {
+        return typed3(name193, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             var result;
             if (subset2(size2(a1), new Index2(0)) === 0 || subset2(size2(a22), new Index2(0)) === 0) {
@@ -43438,14 +43489,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setIsSubset.js
-  var name193, dependencies193, createSetIsSubset;
+  var name194, dependencies194, createSetIsSubset;
   var init_setIsSubset = __esm({
     "node_modules/mathjs/lib/esm/function/set/setIsSubset.js"() {
       init_array();
       init_factory();
-      name193 = "setIsSubset";
-      dependencies193 = ["typed", "size", "subset", "compareNatural", "Index"];
-      createSetIsSubset = /* @__PURE__ */ factory(name193, dependencies193, (_ref) => {
+      name194 = "setIsSubset";
+      dependencies194 = ["typed", "size", "subset", "compareNatural", "Index"];
+      createSetIsSubset = /* @__PURE__ */ factory(name194, dependencies194, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43453,7 +43504,7 @@ svg {
           compareNatural: compareNatural2,
           Index: Index2
         } = _ref;
-        return typed3(name193, {
+        return typed3(name194, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             if (subset2(size2(a1), new Index2(0)) === 0) {
               return true;
@@ -43483,14 +43534,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setMultiplicity.js
-  var name194, dependencies194, createSetMultiplicity;
+  var name195, dependencies195, createSetMultiplicity;
   var init_setMultiplicity = __esm({
     "node_modules/mathjs/lib/esm/function/set/setMultiplicity.js"() {
       init_array();
       init_factory();
-      name194 = "setMultiplicity";
-      dependencies194 = ["typed", "size", "subset", "compareNatural", "Index"];
-      createSetMultiplicity = /* @__PURE__ */ factory(name194, dependencies194, (_ref) => {
+      name195 = "setMultiplicity";
+      dependencies195 = ["typed", "size", "subset", "compareNatural", "Index"];
+      createSetMultiplicity = /* @__PURE__ */ factory(name195, dependencies195, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43498,7 +43549,7 @@ svg {
           compareNatural: compareNatural2,
           Index: Index2
         } = _ref;
-        return typed3(name194, {
+        return typed3(name195, {
           "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e6, a3) {
             if (subset2(size2(a3), new Index2(0)) === 0) {
               return 0;
@@ -43518,14 +43569,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setPowerset.js
-  var name195, dependencies195, createSetPowerset;
+  var name196, dependencies196, createSetPowerset;
   var init_setPowerset = __esm({
     "node_modules/mathjs/lib/esm/function/set/setPowerset.js"() {
       init_array();
       init_factory();
-      name195 = "setPowerset";
-      dependencies195 = ["typed", "size", "subset", "compareNatural", "Index"];
-      createSetPowerset = /* @__PURE__ */ factory(name195, dependencies195, (_ref) => {
+      name196 = "setPowerset";
+      dependencies196 = ["typed", "size", "subset", "compareNatural", "Index"];
+      createSetPowerset = /* @__PURE__ */ factory(name196, dependencies196, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43533,7 +43584,7 @@ svg {
           compareNatural: compareNatural2,
           Index: Index2
         } = _ref;
-        return typed3(name195, {
+        return typed3(name196, {
           "Array | Matrix": function ArrayMatrix(a3) {
             if (subset2(size2(a3), new Index2(0)) === 0) {
               return [];
@@ -43575,19 +43626,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setSize.js
-  var name196, dependencies196, createSetSize;
+  var name197, dependencies197, createSetSize;
   var init_setSize = __esm({
     "node_modules/mathjs/lib/esm/function/set/setSize.js"() {
       init_array();
       init_factory();
-      name196 = "setSize";
-      dependencies196 = ["typed", "compareNatural"];
-      createSetSize = /* @__PURE__ */ factory(name196, dependencies196, (_ref) => {
+      name197 = "setSize";
+      dependencies197 = ["typed", "compareNatural"];
+      createSetSize = /* @__PURE__ */ factory(name197, dependencies197, (_ref) => {
         var {
           typed: typed3,
           compareNatural: compareNatural2
         } = _ref;
-        return typed3(name196, {
+        return typed3(name197, {
           "Array | Matrix": function ArrayMatrix(a3) {
             return Array.isArray(a3) ? flatten(a3).length : flatten(a3.toArray()).length;
           },
@@ -43611,14 +43662,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setSymDifference.js
-  var name197, dependencies197, createSetSymDifference;
+  var name198, dependencies198, createSetSymDifference;
   var init_setSymDifference = __esm({
     "node_modules/mathjs/lib/esm/function/set/setSymDifference.js"() {
       init_array();
       init_factory();
-      name197 = "setSymDifference";
-      dependencies197 = ["typed", "size", "concat", "subset", "setDifference", "Index"];
-      createSetSymDifference = /* @__PURE__ */ factory(name197, dependencies197, (_ref) => {
+      name198 = "setSymDifference";
+      dependencies198 = ["typed", "size", "concat", "subset", "setDifference", "Index"];
+      createSetSymDifference = /* @__PURE__ */ factory(name198, dependencies198, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43627,7 +43678,7 @@ svg {
           setDifference: setDifference2,
           Index: Index2
         } = _ref;
-        return typed3(name197, {
+        return typed3(name198, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             if (subset2(size2(a1), new Index2(0)) === 0) {
               return flatten(a22);
@@ -43644,14 +43695,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/set/setUnion.js
-  var name198, dependencies198, createSetUnion;
+  var name199, dependencies199, createSetUnion;
   var init_setUnion = __esm({
     "node_modules/mathjs/lib/esm/function/set/setUnion.js"() {
       init_array();
       init_factory();
-      name198 = "setUnion";
-      dependencies198 = ["typed", "size", "concat", "subset", "setIntersect", "setSymDifference", "Index"];
-      createSetUnion = /* @__PURE__ */ factory(name198, dependencies198, (_ref) => {
+      name199 = "setUnion";
+      dependencies199 = ["typed", "size", "concat", "subset", "setIntersect", "setSymDifference", "Index"];
+      createSetUnion = /* @__PURE__ */ factory(name199, dependencies199, (_ref) => {
         var {
           typed: typed3,
           size: size2,
@@ -43661,7 +43712,7 @@ svg {
           setSymDifference: setSymDifference2,
           Index: Index2
         } = _ref;
-        return typed3(name198, {
+        return typed3(name199, {
           "Array | Matrix, Array | Matrix": function ArrayMatrixArrayMatrix(a1, a22) {
             if (subset2(size2(a1), new Index2(0)) === 0) {
               return flatten(a22);
@@ -43678,7 +43729,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/add.js
-  var name199, dependencies199, createAdd;
+  var name200, dependencies200, createAdd;
   var init_add = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/add.js"() {
       init_factory();
@@ -43686,9 +43737,9 @@ svg {
       init_matAlgo04xSidSid();
       init_matAlgo10xSids();
       init_matrixAlgorithmSuite();
-      name199 = "add";
-      dependencies199 = ["typed", "matrix", "addScalar", "equalScalar", "DenseMatrix", "SparseMatrix", "concat"];
-      createAdd = /* @__PURE__ */ factory(name199, dependencies199, (_ref) => {
+      name200 = "add";
+      dependencies200 = ["typed", "matrix", "addScalar", "equalScalar", "DenseMatrix", "SparseMatrix", "concat"];
+      createAdd = /* @__PURE__ */ factory(name200, dependencies200, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -43714,7 +43765,7 @@ svg {
           matrix: matrix2,
           concat: concat3
         });
-        return typed3(name199, {
+        return typed3(name200, {
           "any, any": addScalar2,
           "any, any, ...any": typed3.referToSelf((self2) => (x4, y3, rest) => {
             var result = self2(x4, y3);
@@ -43734,15 +43785,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/hypot.js
-  var name200, dependencies200, createHypot;
+  var name201, dependencies201, createHypot;
   var init_hypot = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/hypot.js"() {
       init_factory();
       init_array();
       init_is();
-      name200 = "hypot";
-      dependencies200 = ["typed", "abs", "addScalar", "divideScalar", "multiplyScalar", "sqrt", "smaller", "isPositive"];
-      createHypot = /* @__PURE__ */ factory(name200, dependencies200, (_ref) => {
+      name201 = "hypot";
+      dependencies201 = ["typed", "abs", "addScalar", "divideScalar", "multiplyScalar", "sqrt", "smaller", "isPositive"];
+      createHypot = /* @__PURE__ */ factory(name201, dependencies201, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -43753,7 +43804,7 @@ svg {
           smaller: smaller2,
           isPositive: isPositive2
         } = _ref;
-        return typed3(name200, {
+        return typed3(name201, {
           "... number | BigNumber": _hypot,
           Array: _hypot,
           Matrix: (M3) => _hypot(flatten(M3.toArray()))
@@ -43781,13 +43832,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/norm.js
-  var name201, dependencies201, createNorm;
+  var name202, dependencies202, createNorm;
   var init_norm = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/norm.js"() {
       init_factory();
-      name201 = "norm";
-      dependencies201 = ["typed", "abs", "add", "pow", "conj", "sqrt", "multiply", "equalScalar", "larger", "smaller", "matrix", "ctranspose", "eigs"];
-      createNorm = /* @__PURE__ */ factory(name201, dependencies201, (_ref) => {
+      name202 = "norm";
+      dependencies202 = ["typed", "abs", "add", "pow", "conj", "sqrt", "multiply", "equalScalar", "larger", "smaller", "matrix", "ctranspose", "eigs"];
+      createNorm = /* @__PURE__ */ factory(name202, dependencies202, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -43803,7 +43854,7 @@ svg {
           ctranspose: ctranspose2,
           eigs: eigs2
         } = _ref;
-        return typed3(name201, {
+        return typed3(name202, {
           number: Math.abs,
           Complex: function Complex3(x4) {
             return x4.abs();
@@ -43946,14 +43997,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/dot.js
-  var name202, dependencies202, createDot;
+  var name203, dependencies203, createDot;
   var init_dot = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/dot.js"() {
       init_factory();
       init_is();
-      name202 = "dot";
-      dependencies202 = ["typed", "addScalar", "multiplyScalar", "conj", "size"];
-      createDot = /* @__PURE__ */ factory(name202, dependencies202, (_ref) => {
+      name203 = "dot";
+      dependencies203 = ["typed", "addScalar", "multiplyScalar", "conj", "size"];
+      createDot = /* @__PURE__ */ factory(name203, dependencies203, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
@@ -43961,7 +44012,7 @@ svg {
           conj: conj2,
           size: size2
         } = _ref;
-        return typed3(name202, {
+        return typed3(name203, {
           "Array | DenseMatrix, Array | DenseMatrix": _denseDot,
           "SparseMatrix, SparseMatrix": _sparseDot
         });
@@ -44071,15 +44122,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/trace.js
-  var name203, dependencies203, createTrace;
+  var name204, dependencies204, createTrace;
   var init_trace = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/trace.js"() {
       init_object();
       init_string();
       init_factory();
-      name203 = "trace";
-      dependencies203 = ["typed", "matrix", "add"];
-      createTrace = /* @__PURE__ */ factory(name203, dependencies203, (_ref) => {
+      name204 = "trace";
+      dependencies204 = ["typed", "matrix", "add"];
+      createTrace = /* @__PURE__ */ factory(name204, dependencies204, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -44153,19 +44204,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/matrix/function/index.js
-  var name204, dependencies204, createIndex;
+  var name205, dependencies205, createIndex;
   var init_function2 = __esm({
     "node_modules/mathjs/lib/esm/type/matrix/function/index.js"() {
       init_is();
       init_factory();
-      name204 = "index";
-      dependencies204 = ["typed", "Index"];
-      createIndex = /* @__PURE__ */ factory(name204, dependencies204, (_ref) => {
+      name205 = "index";
+      dependencies205 = ["typed", "Index"];
+      createIndex = /* @__PURE__ */ factory(name205, dependencies205, (_ref) => {
         var {
           typed: typed3,
           Index: Index2
         } = _ref;
-        return typed3(name204, {
+        return typed3(name205, {
           "...number | string | BigNumber | Range | Array | Matrix": function numberStringBigNumberRangeArrayMatrix(args) {
             var ranges = args.map(function(arg2) {
               if (isBigNumber(arg2)) {
@@ -44196,7 +44247,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/Node.js
-  var name205, dependencies205, createNode;
+  var name206, dependencies206, createNode;
   var init_Node = __esm({
     "node_modules/mathjs/lib/esm/expression/node/Node.js"() {
       init_is();
@@ -44204,9 +44255,9 @@ svg {
       init_object();
       init_factory();
       init_map();
-      name205 = "Node";
-      dependencies205 = ["mathWithTransform"];
-      createNode = /* @__PURE__ */ factory(name205, dependencies205, (_ref) => {
+      name206 = "Node";
+      dependencies206 = ["mathWithTransform"];
+      createNode = /* @__PURE__ */ factory(name206, dependencies206, (_ref) => {
         var {
           mathWithTransform: mathWithTransform2
         } = _ref;
@@ -44574,7 +44625,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/AccessorNode.js
-  var name206, dependencies206, createAccessorNode;
+  var name207, dependencies207, createAccessorNode;
   var init_AccessorNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/AccessorNode.js"() {
       init_defineProperty();
@@ -44582,9 +44633,9 @@ svg {
       init_customs();
       init_factory();
       init_access();
-      name206 = "AccessorNode";
-      dependencies206 = ["subset", "Node"];
-      createAccessorNode = /* @__PURE__ */ factory(name206, dependencies206, (_ref) => {
+      name207 = "AccessorNode";
+      dependencies207 = ["subset", "Node"];
+      createAccessorNode = /* @__PURE__ */ factory(name207, dependencies207, (_ref) => {
         var {
           subset: subset2,
           Node: Node2
@@ -44625,7 +44676,7 @@ svg {
             }
           }
           get type() {
-            return name206;
+            return name207;
           }
           get isAccessorNode() {
             return true;
@@ -44725,7 +44776,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name206,
+              mathjs: name207,
               object: this.object,
               index: this.index
             };
@@ -44742,7 +44793,7 @@ svg {
             return new AccessorNode2(json.object, json.index);
           }
         }
-        _defineProperty(AccessorNode2, "name", name206);
+        _defineProperty(AccessorNode2, "name", name207);
         return AccessorNode2;
       }, {
         isClass: true,
@@ -44752,16 +44803,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/ArrayNode.js
-  var name207, dependencies207, createArrayNode;
+  var name208, dependencies208, createArrayNode;
   var init_ArrayNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/ArrayNode.js"() {
       init_defineProperty();
       init_is();
       init_array();
       init_factory();
-      name207 = "ArrayNode";
-      dependencies207 = ["Node"];
-      createArrayNode = /* @__PURE__ */ factory(name207, dependencies207, (_ref) => {
+      name208 = "ArrayNode";
+      dependencies208 = ["Node"];
+      createArrayNode = /* @__PURE__ */ factory(name208, dependencies208, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -44780,7 +44831,7 @@ svg {
             }
           }
           get type() {
-            return name207;
+            return name208;
           }
           get isArrayNode() {
             return true;
@@ -44866,7 +44917,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name207,
+              mathjs: name208,
               items: this.items
             };
           }
@@ -44914,7 +44965,7 @@ svg {
             return itemsToTex(this.items, false);
           }
         }
-        _defineProperty(ArrayNode2, "name", name207);
+        _defineProperty(ArrayNode2, "name", name208);
         return ArrayNode2;
       }, {
         isClass: true,
@@ -45003,7 +45054,7 @@ svg {
       return null;
     }
     var property = properties[index2][identifier];
-    if (hasOwnProperty2(property, "associativity")) {
+    if (hasOwnProperty(property, "associativity")) {
       if (property.associativity === "left") {
         return "left";
       }
@@ -45024,7 +45075,7 @@ svg {
       return null;
     }
     var property = properties[index2][identifierA];
-    if (hasOwnProperty2(property, "associativeWith") && property.associativeWith instanceof Array) {
+    if (hasOwnProperty(property, "associativeWith") && property.associativeWith instanceof Array) {
       for (var i5 = 0; i5 < property.associativeWith.length; i5++) {
         if (property.associativeWith[i5] === identifierB) {
           return true;
@@ -45268,7 +45319,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/AssignmentNode.js
-  var name208, dependencies208, createAssignmentNode;
+  var name209, dependencies209, createAssignmentNode;
   var init_AssignmentNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/AssignmentNode.js"() {
       init_defineProperty();
@@ -45278,14 +45329,14 @@ svg {
       init_access();
       init_assign();
       init_operators();
-      name208 = "AssignmentNode";
-      dependencies208 = [
+      name209 = "AssignmentNode";
+      dependencies209 = [
         "subset",
         "?matrix",
         // FIXME: should not be needed at all, should be handled by subset
         "Node"
       ];
-      createAssignmentNode = /* @__PURE__ */ factory(name208, dependencies208, (_ref) => {
+      createAssignmentNode = /* @__PURE__ */ factory(name209, dependencies209, (_ref) => {
         var {
           subset: subset2,
           matrix: matrix2,
@@ -45366,7 +45417,7 @@ svg {
             }
           }
           get type() {
-            return name208;
+            return name209;
           }
           get isAssignmentNode() {
             return true;
@@ -45388,14 +45439,14 @@ svg {
             var evalObject = this.object._compile(math2, argNames);
             var evalIndex = this.index ? this.index._compile(math2, argNames) : null;
             var evalValue = this.value._compile(math2, argNames);
-            var name307 = this.object.name;
+            var name310 = this.object.name;
             if (!this.index) {
               if (!isSymbolNode(this.object)) {
                 throw new TypeError("SymbolNode expected as object");
               }
               return function evalAssignmentNode(scope, args, context) {
                 var value2 = evalValue(scope, args, context);
-                scope.set(name307, value2);
+                scope.set(name310, value2);
                 return value2;
               };
             } else if (this.index.isObjectProperty()) {
@@ -45411,7 +45462,7 @@ svg {
                 var childObject = evalObject(scope, args, context);
                 var value2 = evalValue(scope, args, context);
                 var index2 = evalIndex(scope, args, childObject);
-                scope.set(name307, assign2(childObject, index2, value2));
+                scope.set(name310, assign2(childObject, index2, value2));
                 return value2;
               };
             } else {
@@ -45490,7 +45541,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name208,
+              mathjs: name209,
               object: this.object,
               index: this.index,
               value: this.value
@@ -45536,7 +45587,7 @@ svg {
             return object + index2 + ":=" + value2;
           }
         }
-        _defineProperty(AssignmentNode2, "name", name208);
+        _defineProperty(AssignmentNode2, "name", name209);
         return AssignmentNode2;
       }, {
         isClass: true,
@@ -45546,16 +45597,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/BlockNode.js
-  var name209, dependencies209, createBlockNode;
+  var name210, dependencies210, createBlockNode;
   var init_BlockNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/BlockNode.js"() {
       init_defineProperty();
       init_is();
       init_array();
       init_factory();
-      name209 = "BlockNode";
-      dependencies209 = ["ResultSet", "Node"];
-      createBlockNode = /* @__PURE__ */ factory(name209, dependencies209, (_ref) => {
+      name210 = "BlockNode";
+      dependencies210 = ["ResultSet", "Node"];
+      createBlockNode = /* @__PURE__ */ factory(name210, dependencies210, (_ref) => {
         var {
           ResultSet: ResultSet2,
           Node: Node2
@@ -45590,7 +45641,7 @@ svg {
             });
           }
           get type() {
-            return name209;
+            return name210;
           }
           get isBlockNode() {
             return true;
@@ -45683,7 +45734,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name209,
+              mathjs: name210,
               blocks: this.blocks
             };
           }
@@ -45720,7 +45771,7 @@ svg {
             }).join("\\;\\;\n");
           }
         }
-        _defineProperty(BlockNode2, "name", name209);
+        _defineProperty(BlockNode2, "name", name210);
         return BlockNode2;
       }, {
         isClass: true,
@@ -45730,16 +45781,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/ConditionalNode.js
-  var name210, dependencies210, createConditionalNode;
+  var name211, dependencies211, createConditionalNode;
   var init_ConditionalNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/ConditionalNode.js"() {
       init_defineProperty();
       init_is();
       init_factory();
       init_operators();
-      name210 = "ConditionalNode";
-      dependencies210 = ["Node"];
-      createConditionalNode = /* @__PURE__ */ factory(name210, dependencies210, (_ref) => {
+      name211 = "ConditionalNode";
+      dependencies211 = ["Node"];
+      createConditionalNode = /* @__PURE__ */ factory(name211, dependencies211, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -45790,7 +45841,7 @@ svg {
             this.falseExpr = falseExpr;
           }
           get type() {
-            return name210;
+            return name211;
           }
           get isConditionalNode() {
             return true;
@@ -45872,7 +45923,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name210,
+              mathjs: name211,
               condition: this.condition,
               trueExpr: this.trueExpr,
               falseExpr: this.falseExpr
@@ -45928,7 +45979,7 @@ svg {
             return "\\begin{cases} {" + this.trueExpr.toTex(options) + "}, &\\quad{\\text{if }\\;" + this.condition.toTex(options) + "}\\\\{" + this.falseExpr.toTex(options) + "}, &\\quad{\\text{otherwise}}\\end{cases}";
           }
         }
-        _defineProperty(ConditionalNode2, "name", name210);
+        _defineProperty(ConditionalNode2, "name", name211);
         return ConditionalNode2;
       }, {
         isClass: true,
@@ -46012,18 +46063,18 @@ svg {
       preserveFormatting: true
     });
   }
-  function toSymbol(name307, isUnit2) {
+  function toSymbol(name310, isUnit2) {
     isUnit2 = typeof isUnit2 === "undefined" ? false : isUnit2;
     if (isUnit2) {
-      if (hasOwnProperty2(latexUnits, name307)) {
-        return latexUnits[name307];
+      if (hasOwnProperty(latexUnits, name310)) {
+        return latexUnits[name310];
       }
-      return "\\mathrm{" + escapeLatex(name307) + "}";
+      return "\\mathrm{" + escapeLatex(name310) + "}";
     }
-    if (hasOwnProperty2(latexSymbols, name307)) {
-      return latexSymbols[name307];
+    if (hasOwnProperty(latexSymbols, name310)) {
+      return latexSymbols[name310];
     }
-    return escapeLatex(name307);
+    return escapeLatex(name310);
   }
   var import_escape_latex, latexSymbols, latexOperators, latexFunctions, defaultTemplate, latexUnits;
   var init_latex = __esm({
@@ -46493,7 +46544,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/ConstantNode.js
-  var name211, dependencies211, createConstantNode;
+  var name212, dependencies212, createConstantNode;
   var init_ConstantNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/ConstantNode.js"() {
       init_defineProperty();
@@ -46501,9 +46552,9 @@ svg {
       init_is();
       init_latex();
       init_factory();
-      name211 = "ConstantNode";
-      dependencies211 = ["Node"];
-      createConstantNode = /* @__PURE__ */ factory(name211, dependencies211, (_ref) => {
+      name212 = "ConstantNode";
+      dependencies212 = ["Node"];
+      createConstantNode = /* @__PURE__ */ factory(name212, dependencies212, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -46525,7 +46576,7 @@ svg {
             this.value = value2;
           }
           get type() {
-            return name211;
+            return name212;
           }
           get isConstantNode() {
             return true;
@@ -46609,7 +46660,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name211,
+              mathjs: name212,
               value: this.value
             };
           }
@@ -46652,7 +46703,7 @@ svg {
             }
           }
         }
-        _defineProperty(ConstantNode2, "name", name211);
+        _defineProperty(ConstantNode2, "name", name212);
         return ConstantNode2;
       }, {
         isClass: true,
@@ -46662,7 +46713,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/FunctionAssignmentNode.js
-  var name212, dependencies212, createFunctionAssignmentNode;
+  var name213, dependencies213, createFunctionAssignmentNode;
   var init_FunctionAssignmentNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/FunctionAssignmentNode.js"() {
       init_defineProperty();
@@ -46673,9 +46724,9 @@ svg {
       init_latex();
       init_operators();
       init_factory();
-      name212 = "FunctionAssignmentNode";
-      dependencies212 = ["typed", "Node"];
-      createFunctionAssignmentNode = /* @__PURE__ */ factory(name212, dependencies212, (_ref) => {
+      name213 = "FunctionAssignmentNode";
+      dependencies213 = ["typed", "Node"];
+      createFunctionAssignmentNode = /* @__PURE__ */ factory(name213, dependencies213, (_ref) => {
         var {
           typed: typed3,
           Node: Node2
@@ -46698,9 +46749,9 @@ svg {
            *                                and type of the parameter
            * @param {Node} expr             The function expression
            */
-          constructor(name307, params, expr) {
+          constructor(name310, params, expr) {
             super();
-            if (typeof name307 !== "string") {
+            if (typeof name310 !== "string") {
               throw new TypeError('String expected for parameter "name"');
             }
             if (!Array.isArray(params)) {
@@ -46709,8 +46760,8 @@ svg {
             if (!isNode(expr)) {
               throw new TypeError('Node expected for parameter "expr"');
             }
-            if (keywords.has(name307)) {
-              throw new Error('Illegal function name, "' + name307 + '" is a reserved keyword');
+            if (keywords.has(name310)) {
+              throw new Error('Illegal function name, "' + name310 + '" is a reserved keyword');
             }
             var paramNames = /* @__PURE__ */ new Set();
             for (var param of params) {
@@ -46721,7 +46772,7 @@ svg {
                 paramNames.add(_name);
               }
             }
-            this.name = name307;
+            this.name = name310;
             this.params = params.map(function(param2) {
               return param2 && param2.name || param2;
             });
@@ -46731,7 +46782,7 @@ svg {
             this.expr = expr;
           }
           get type() {
-            return name212;
+            return name213;
           }
           get isFunctionAssignmentNode() {
             return true;
@@ -46755,10 +46806,10 @@ svg {
               childArgNames[param] = true;
             });
             var evalExpr = this.expr._compile(math2, childArgNames);
-            var name307 = this.name;
+            var name310 = this.name;
             var params = this.params;
             var signature = join(this.types, ",");
-            var syntax = name307 + "(" + join(this.params, ", ") + ")";
+            var syntax = name310 + "(" + join(this.params, ", ") + ")";
             return function evalFunctionAssignmentNode(scope, args, context) {
               var signatures = {};
               signatures[signature] = function() {
@@ -46768,9 +46819,9 @@ svg {
                 }
                 return evalExpr(scope, childArgs, context);
               };
-              var fn2 = typed3(name307, signatures);
+              var fn2 = typed3(name310, signatures);
               fn2.syntax = syntax;
-              scope.set(name307, fn2);
+              scope.set(name310, fn2);
               return fn2;
             };
           }
@@ -46819,7 +46870,7 @@ svg {
           toJSON() {
             var types = this.types;
             return {
-              mathjs: name212,
+              mathjs: name213,
               name: this.name,
               params: this.params.map(function(param, index2) {
                 return {
@@ -46875,7 +46926,7 @@ svg {
             return "\\mathrm{" + this.name + "}\\left(" + this.params.map(toSymbol).join(",") + "\\right):=" + expr;
           }
         }
-        _defineProperty(FunctionAssignmentNode2, "name", name212);
+        _defineProperty(FunctionAssignmentNode2, "name", name213);
         return FunctionAssignmentNode2;
       }, {
         isClass: true,
@@ -46885,7 +46936,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/IndexNode.js
-  var name213, dependencies213, createIndexNode;
+  var name214, dependencies214, createIndexNode;
   var init_IndexNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/IndexNode.js"() {
       init_defineProperty();
@@ -46894,9 +46945,9 @@ svg {
       init_factory();
       init_is();
       init_string();
-      name213 = "IndexNode";
-      dependencies213 = ["Node", "size"];
-      createIndexNode = /* @__PURE__ */ factory(name213, dependencies213, (_ref) => {
+      name214 = "IndexNode";
+      dependencies214 = ["Node", "size"];
+      createIndexNode = /* @__PURE__ */ factory(name214, dependencies214, (_ref) => {
         var {
           Node: Node2,
           size: size2
@@ -46928,7 +46979,7 @@ svg {
             }
           }
           get type() {
-            return name213;
+            return name214;
           }
           get isIndexNode() {
             return true;
@@ -47032,7 +47083,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name213,
+              mathjs: name214,
               dimensions: this.dimensions,
               dotNotation: this.dotNotation
             };
@@ -47076,7 +47127,7 @@ svg {
             return this.dotNotation ? "." + this.getObjectProperty() : "_{" + dimensions.join(",") + "}";
           }
         }
-        _defineProperty(IndexNode2, "name", name213);
+        _defineProperty(IndexNode2, "name", name214);
         return IndexNode2;
       }, {
         isClass: true,
@@ -47086,7 +47137,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/ObjectNode.js
-  var name214, dependencies214, createObjectNode;
+  var name215, dependencies215, createObjectNode;
   var init_ObjectNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/ObjectNode.js"() {
       init_defineProperty();
@@ -47095,9 +47146,9 @@ svg {
       init_is();
       init_object();
       init_string();
-      name214 = "ObjectNode";
-      dependencies214 = ["Node"];
-      createObjectNode = /* @__PURE__ */ factory(name214, dependencies214, (_ref) => {
+      name215 = "ObjectNode";
+      dependencies215 = ["Node"];
+      createObjectNode = /* @__PURE__ */ factory(name215, dependencies215, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -47120,7 +47171,7 @@ svg {
             }
           }
           get type() {
-            return name214;
+            return name215;
           }
           get isObjectNode() {
             return true;
@@ -47141,7 +47192,7 @@ svg {
           _compile(math2, argNames) {
             var evalEntries = {};
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 var stringifiedKey = stringify(key);
                 var parsedKey = JSON.parse(stringifiedKey);
                 var prop = getSafeProperty(this.properties, key);
@@ -47151,7 +47202,7 @@ svg {
             return function evalObjectNode(scope, args, context) {
               var obj = {};
               for (var _key in evalEntries) {
-                if (hasOwnProperty2(evalEntries, _key)) {
+                if (hasOwnProperty(evalEntries, _key)) {
                   obj[_key] = evalEntries[_key](scope, args, context);
                 }
               }
@@ -47164,7 +47215,7 @@ svg {
            */
           forEach(callback) {
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 callback(this.properties[key], "properties[" + stringify(key) + "]", this);
               }
             }
@@ -47178,7 +47229,7 @@ svg {
           map(callback) {
             var properties2 = {};
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 properties2[key] = this._ifNode(callback(this.properties[key], "properties[" + stringify(key) + "]", this));
               }
             }
@@ -47191,7 +47242,7 @@ svg {
           clone() {
             var properties2 = {};
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 properties2[key] = this.properties[key];
               }
             }
@@ -47206,7 +47257,7 @@ svg {
           _toString(options) {
             var entries = [];
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 entries.push(stringify(key) + ": " + this.properties[key].toString(options));
               }
             }
@@ -47218,7 +47269,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name214,
+              mathjs: name215,
               properties: this.properties
             };
           }
@@ -47241,7 +47292,7 @@ svg {
           toHTML(options) {
             var entries = [];
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 entries.push('<span class="math-symbol math-property">' + escape(key) + '</span><span class="math-operator math-assignment-operator math-property-assignment-operator math-binary-operator">:</span>' + this.properties[key].toHTML(options));
               }
             }
@@ -47255,7 +47306,7 @@ svg {
           _toTex(options) {
             var entries = [];
             for (var key in this.properties) {
-              if (hasOwnProperty2(this.properties, key)) {
+              if (hasOwnProperty(this.properties, key)) {
                 entries.push("\\mathbf{" + key + ":} & " + this.properties[key].toTex(options) + "\\\\");
               }
             }
@@ -47263,7 +47314,7 @@ svg {
             return tex;
           }
         }
-        _defineProperty(ObjectNode2, "name", name214);
+        _defineProperty(ObjectNode2, "name", name215);
         return ObjectNode2;
       }, {
         isClass: true,
@@ -47273,7 +47324,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/OperatorNode.js
-  var name215, dependencies215, createOperatorNode;
+  var name216, dependencies216, createOperatorNode;
   var init_OperatorNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/OperatorNode.js"() {
       init_defineProperty();
@@ -47284,9 +47335,9 @@ svg {
       init_operators();
       init_latex();
       init_factory();
-      name215 = "OperatorNode";
-      dependencies215 = ["Node"];
-      createOperatorNode = /* @__PURE__ */ factory(name215, dependencies215, (_ref) => {
+      name216 = "OperatorNode";
+      dependencies216 = ["Node"];
+      createOperatorNode = /* @__PURE__ */ factory(name216, dependencies216, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -47473,7 +47524,7 @@ svg {
             this.args = args || [];
           }
           get type() {
-            return name215;
+            return name216;
           }
           get isOperatorNode() {
             return true;
@@ -47627,7 +47678,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name215,
+              mathjs: name216,
               op: this.op,
               fn: this.fn,
               args: this.args,
@@ -47788,7 +47839,7 @@ svg {
             return this.type + ":" + this.fn;
           }
         }
-        _defineProperty(OperatorNode2, "name", name215);
+        _defineProperty(OperatorNode2, "name", name216);
         return OperatorNode2;
       }, {
         isClass: true,
@@ -47798,15 +47849,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/ParenthesisNode.js
-  var name216, dependencies216, createParenthesisNode;
+  var name217, dependencies217, createParenthesisNode;
   var init_ParenthesisNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/ParenthesisNode.js"() {
       init_defineProperty();
       init_is();
       init_factory();
-      name216 = "ParenthesisNode";
-      dependencies216 = ["Node"];
-      createParenthesisNode = /* @__PURE__ */ factory(name216, dependencies216, (_ref) => {
+      name217 = "ParenthesisNode";
+      dependencies217 = ["Node"];
+      createParenthesisNode = /* @__PURE__ */ factory(name217, dependencies217, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -47826,7 +47877,7 @@ svg {
             this.content = content;
           }
           get type() {
-            return name216;
+            return name217;
           }
           get isParenthesisNode() {
             return true;
@@ -47897,7 +47948,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name216,
+              mathjs: name217,
               content: this.content
             };
           }
@@ -47936,7 +47987,7 @@ svg {
             return this.content.toTex(options);
           }
         }
-        _defineProperty(ParenthesisNode2, "name", name216);
+        _defineProperty(ParenthesisNode2, "name", name217);
         return ParenthesisNode2;
       }, {
         isClass: true,
@@ -47946,16 +47997,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/RangeNode.js
-  var name217, dependencies217, createRangeNode;
+  var name218, dependencies218, createRangeNode;
   var init_RangeNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/RangeNode.js"() {
       init_defineProperty();
       init_is();
       init_factory();
       init_operators();
-      name217 = "RangeNode";
-      dependencies217 = ["Node"];
-      createRangeNode = /* @__PURE__ */ factory(name217, dependencies217, (_ref) => {
+      name218 = "RangeNode";
+      dependencies218 = ["Node"];
+      createRangeNode = /* @__PURE__ */ factory(name218, dependencies218, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -47996,7 +48047,7 @@ svg {
             this.step = step || null;
           }
           get type() {
-            return name217;
+            return name218;
           }
           get isRangeNode() {
             return true;
@@ -48101,7 +48152,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name217,
+              mathjs: name218,
               start: this.start,
               end: this.end,
               step: this.step
@@ -48173,7 +48224,7 @@ svg {
             return str;
           }
         }
-        _defineProperty(RangeNode2, "name", name217);
+        _defineProperty(RangeNode2, "name", name218);
         return RangeNode2;
       }, {
         isClass: true,
@@ -48183,7 +48234,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/RelationalNode.js
-  var name218, dependencies218, createRelationalNode;
+  var name219, dependencies219, createRelationalNode;
   var init_RelationalNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/RelationalNode.js"() {
       init_defineProperty();
@@ -48192,9 +48243,9 @@ svg {
       init_customs();
       init_latex();
       init_factory();
-      name218 = "RelationalNode";
-      dependencies218 = ["Node"];
-      createRelationalNode = /* @__PURE__ */ factory(name218, dependencies218, (_ref) => {
+      name219 = "RelationalNode";
+      dependencies219 = ["Node"];
+      createRelationalNode = /* @__PURE__ */ factory(name219, dependencies219, (_ref) => {
         var {
           Node: Node2
         } = _ref;
@@ -48233,7 +48284,7 @@ svg {
             this.params = params;
           }
           get type() {
-            return name218;
+            return name219;
           }
           get isRelationalNode() {
             return true;
@@ -48316,7 +48367,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name218,
+              mathjs: name219,
               conditionals: this.conditionals,
               params: this.params
             };
@@ -48369,7 +48420,7 @@ svg {
             return ret;
           }
         }
-        _defineProperty(RelationalNode2, "name", name218);
+        _defineProperty(RelationalNode2, "name", name219);
         return RelationalNode2;
       }, {
         isClass: true,
@@ -48379,23 +48430,23 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/SymbolNode.js
-  var name219, dependencies219, createSymbolNode;
+  var name220, dependencies220, createSymbolNode;
   var init_SymbolNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/SymbolNode.js"() {
       init_string();
       init_customs();
       init_factory();
       init_latex();
-      name219 = "SymbolNode";
-      dependencies219 = ["math", "?Unit", "Node"];
-      createSymbolNode = /* @__PURE__ */ factory(name219, dependencies219, (_ref) => {
+      name220 = "SymbolNode";
+      dependencies220 = ["math", "?Unit", "Node"];
+      createSymbolNode = /* @__PURE__ */ factory(name220, dependencies220, (_ref) => {
         var {
           math: math2,
           Unit: Unit2,
           Node: Node2
         } = _ref;
-        function isValuelessUnit(name307) {
-          return Unit2 ? Unit2.isValuelessUnit(name307) : false;
+        function isValuelessUnit(name310) {
+          return Unit2 ? Unit2.isValuelessUnit(name310) : false;
         }
         class SymbolNode2 extends Node2 {
           /**
@@ -48405,12 +48456,12 @@ svg {
            * @param {string} name
            * @extends {Node}
            */
-          constructor(name307) {
+          constructor(name310) {
             super();
-            if (typeof name307 !== "string") {
+            if (typeof name310 !== "string") {
               throw new TypeError('String expected for parameter "name"');
             }
-            this.name = name307;
+            this.name = name310;
           }
           get type() {
             return "SymbolNode";
@@ -48432,19 +48483,19 @@ svg {
            *                        evalNode(scope: Object, args: Object, context: *)
            */
           _compile(math3, argNames) {
-            var name307 = this.name;
-            if (argNames[name307] === true) {
+            var name310 = this.name;
+            if (argNames[name310] === true) {
               return function(scope, args, context) {
-                return getSafeProperty(args, name307);
+                return getSafeProperty(args, name310);
               };
-            } else if (name307 in math3) {
+            } else if (name310 in math3) {
               return function(scope, args, context) {
-                return scope.has(name307) ? scope.get(name307) : getSafeProperty(math3, name307);
+                return scope.has(name310) ? scope.get(name310) : getSafeProperty(math3, name310);
               };
             } else {
-              var isUnit2 = isValuelessUnit(name307);
+              var isUnit2 = isValuelessUnit(name310);
               return function(scope, args, context) {
-                return scope.has(name307) ? scope.get(name307) : isUnit2 ? new Unit2(null, name307) : SymbolNode2.onUndefinedSymbol(name307);
+                return scope.has(name310) ? scope.get(name310) : isUnit2 ? new Unit2(null, name310) : SymbolNode2.onUndefinedSymbol(name310);
               };
             }
           }
@@ -48467,8 +48518,8 @@ svg {
            * Throws an error 'Undefined symbol {name}'
            * @param {string} name
            */
-          static onUndefinedSymbol(name307) {
-            throw new Error("Undefined symbol " + name307);
+          static onUndefinedSymbol(name310) {
+            throw new Error("Undefined symbol " + name310);
           }
           /**
            * Create a clone of this node, a shallow copy
@@ -48493,21 +48544,21 @@ svg {
            * @override
            */
           toHTML(options) {
-            var name307 = escape(this.name);
-            if (name307 === "true" || name307 === "false") {
-              return '<span class="math-symbol math-boolean">' + name307 + "</span>";
-            } else if (name307 === "i") {
-              return '<span class="math-symbol math-imaginary-symbol">' + name307 + "</span>";
-            } else if (name307 === "Infinity") {
-              return '<span class="math-symbol math-infinity-symbol">' + name307 + "</span>";
-            } else if (name307 === "NaN") {
-              return '<span class="math-symbol math-nan-symbol">' + name307 + "</span>";
-            } else if (name307 === "null") {
-              return '<span class="math-symbol math-null-symbol">' + name307 + "</span>";
-            } else if (name307 === "undefined") {
-              return '<span class="math-symbol math-undefined-symbol">' + name307 + "</span>";
+            var name310 = escape(this.name);
+            if (name310 === "true" || name310 === "false") {
+              return '<span class="math-symbol math-boolean">' + name310 + "</span>";
+            } else if (name310 === "i") {
+              return '<span class="math-symbol math-imaginary-symbol">' + name310 + "</span>";
+            } else if (name310 === "Infinity") {
+              return '<span class="math-symbol math-infinity-symbol">' + name310 + "</span>";
+            } else if (name310 === "NaN") {
+              return '<span class="math-symbol math-nan-symbol">' + name310 + "</span>";
+            } else if (name310 === "null") {
+              return '<span class="math-symbol math-null-symbol">' + name310 + "</span>";
+            } else if (name310 === "undefined") {
+              return '<span class="math-symbol math-undefined-symbol">' + name310 + "</span>";
             }
-            return '<span class="math-symbol">' + name307 + "</span>";
+            return '<span class="math-symbol">' + name310 + "</span>";
           }
           /**
            * Get a JSON representation of the node
@@ -48572,7 +48623,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/node/FunctionNode.js
-  var name220, dependencies220, createFunctionNode;
+  var name221, dependencies221, createFunctionNode;
   var init_FunctionNode = __esm({
     "node_modules/mathjs/lib/esm/expression/node/FunctionNode.js"() {
       init_defineProperty();
@@ -48583,9 +48634,10 @@ svg {
       init_scope();
       init_factory();
       init_latex();
-      name220 = "FunctionNode";
-      dependencies220 = ["math", "Node", "SymbolNode"];
-      createFunctionNode = /* @__PURE__ */ factory(name220, dependencies220, (_ref) => {
+      name221 = "FunctionNode";
+      dependencies221 = ["math", "Node", "SymbolNode"];
+      createFunctionNode = /* @__PURE__ */ factory(name221, dependencies221, (_ref) => {
+        var _class;
         var {
           math: math2,
           Node: Node2,
@@ -48673,7 +48725,7 @@ svg {
             return this.fn.name || "";
           }
           get type() {
-            return name220;
+            return name221;
           }
           get isFunctionNode() {
             return true;
@@ -48842,9 +48894,9 @@ svg {
            */
           toString(options) {
             var customString;
-            var name307 = this.fn.toString(options);
-            if (options && typeof options.handler === "object" && hasOwnProperty2(options.handler, name307)) {
-              customString = options.handler[name307](this, options);
+            var name310 = this.fn.toString(options);
+            if (options && typeof options.handler === "object" && hasOwnProperty(options.handler, name310)) {
+              customString = options.handler[name310](this, options);
             }
             if (typeof customString !== "undefined") {
               return customString;
@@ -48869,7 +48921,7 @@ svg {
            */
           toJSON() {
             return {
-              mathjs: name220,
+              mathjs: name221,
               fn: this.fn,
               args: this.args
             };
@@ -48905,7 +48957,7 @@ svg {
            */
           toTex(options) {
             var customTex;
-            if (options && typeof options.handler === "object" && hasOwnProperty2(options.handler, this.name)) {
+            if (options && typeof options.handler === "object" && hasOwnProperty(options.handler, this.name)) {
               customTex = options.handler[this.name](this, options);
             }
             if (typeof customTex !== "undefined") {
@@ -48960,12 +49012,13 @@ svg {
             return this.type + ":" + this.name;
           }
         }
-        _defineProperty(FunctionNode2, "name", name220);
-        _defineProperty(FunctionNode2, "onUndefinedFunction", function(name307) {
-          throw new Error("Undefined function " + name307);
+        _class = FunctionNode2;
+        _defineProperty(FunctionNode2, "name", name221);
+        _defineProperty(FunctionNode2, "onUndefinedFunction", function(name310) {
+          throw new Error("Undefined function " + name310);
         });
         _defineProperty(FunctionNode2, "fromJSON", function(json) {
-          return new FunctionNode2(json.fn, json.args);
+          return new _class(json.fn, json.args);
         });
         return FunctionNode2;
       }, {
@@ -48976,7 +49029,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/parse.js
-  var name221, dependencies221, createParse;
+  var name222, dependencies222, createParse;
   var init_parse = __esm({
     "node_modules/mathjs/lib/esm/expression/parse.js"() {
       init_extends();
@@ -48984,9 +49037,9 @@ svg {
       init_is();
       init_collection();
       init_object();
-      name221 = "parse";
-      dependencies221 = ["typed", "numeric", "config", "AccessorNode", "ArrayNode", "AssignmentNode", "BlockNode", "ConditionalNode", "ConstantNode", "FunctionAssignmentNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "RangeNode", "RelationalNode", "SymbolNode"];
-      createParse = /* @__PURE__ */ factory(name221, dependencies221, (_ref) => {
+      name222 = "parse";
+      dependencies222 = ["typed", "numeric", "config", "AccessorNode", "ArrayNode", "AssignmentNode", "BlockNode", "ConditionalNode", "ConstantNode", "FunctionAssignmentNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "RangeNode", "RelationalNode", "SymbolNode"];
+      createParse = /* @__PURE__ */ factory(name222, dependencies222, (_ref) => {
         var {
           typed: typed3,
           numeric: numeric3,
@@ -49007,7 +49060,7 @@ svg {
           RelationalNode: RelationalNode2,
           SymbolNode: SymbolNode2
         } = _ref;
-        var parse2 = typed3(name221, {
+        var parse2 = typed3(name222, {
           string: function string2(expression) {
             return parseStart(expression, {});
           },
@@ -49090,6 +49143,18 @@ svg {
           undefined: void 0
         };
         var NUMERIC_CONSTANTS = ["NaN", "Infinity"];
+        var ESCAPE_CHARACTERS = {
+          '"': '"',
+          "'": "'",
+          "\\": "\\",
+          "/": "/",
+          b: "\b",
+          f: "\f",
+          n: "\n",
+          r: "\r",
+          t: "	"
+          // note that \u is handled separately in parseStringToken()
+        };
         function initialState() {
           return {
             extraNodes: {},
@@ -49256,7 +49321,7 @@ svg {
               state.token += currentCharacter(state);
               next(state);
             }
-            if (hasOwnProperty2(NAMED_DELIMITERS, state.token)) {
+            if (hasOwnProperty(NAMED_DELIMITERS, state.token)) {
               state.tokenType = TOKENTYPE.DELIMITER;
             } else {
               state.tokenType = TOKENTYPE.SYMBOL;
@@ -49366,14 +49431,14 @@ svg {
           }
         }
         function parseAssignment(state) {
-          var name307, args, value2, valid;
+          var name310, args, value2, valid;
           var node = parseConditional(state);
           if (state.token === "=") {
             if (isSymbolNode(node)) {
-              name307 = node.name;
+              name310 = node.name;
               getTokenSkipNewline(state);
               value2 = parseAssignment(state);
-              return new AssignmentNode2(new SymbolNode2(name307), value2);
+              return new AssignmentNode2(new SymbolNode2(name310), value2);
             } else if (isAccessorNode(node)) {
               getTokenSkipNewline(state);
               value2 = parseAssignment(state);
@@ -49381,7 +49446,7 @@ svg {
             } else if (isFunctionNode(node) && isSymbolNode(node.fn)) {
               valid = true;
               args = [];
-              name307 = node.name;
+              name310 = node.name;
               node.args.forEach(function(arg2, index2) {
                 if (isSymbolNode(arg2)) {
                   args[index2] = arg2.name;
@@ -49392,7 +49457,7 @@ svg {
               if (valid) {
                 getTokenSkipNewline(state);
                 value2 = parseAssignment(state);
-                return new FunctionAssignmentNode2(name307, args, value2);
+                return new FunctionAssignmentNode2(name310, args, value2);
               }
             }
             throw createSyntaxError(state, "Invalid left hand side of assignment operator =");
@@ -49476,7 +49541,7 @@ svg {
             "<=": "smallerEq",
             ">=": "largerEq"
           };
-          while (hasOwnProperty2(operators, state.token)) {
+          while (hasOwnProperty(operators, state.token)) {
             var cond = {
               name: state.token,
               fn: operators[state.token]
@@ -49494,39 +49559,39 @@ svg {
           }
         }
         function parseShift(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseConversion(state);
           var operators = {
             "<<": "leftShift",
             ">>": "rightArithShift",
             ">>>": "rightLogShift"
           };
-          while (hasOwnProperty2(operators, state.token)) {
-            name307 = state.token;
-            fn2 = operators[name307];
+          while (hasOwnProperty(operators, state.token)) {
+            name310 = state.token;
+            fn2 = operators[name310];
             getTokenSkipNewline(state);
             params = [node, parseConversion(state)];
-            node = new OperatorNode2(name307, fn2, params);
+            node = new OperatorNode2(name310, fn2, params);
           }
           return node;
         }
         function parseConversion(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseRange(state);
           var operators = {
             to: "to",
             in: "to"
             // alias of 'to'
           };
-          while (hasOwnProperty2(operators, state.token)) {
-            name307 = state.token;
-            fn2 = operators[name307];
+          while (hasOwnProperty(operators, state.token)) {
+            name310 = state.token;
+            fn2 = operators[name310];
             getTokenSkipNewline(state);
-            if (name307 === "in" && state.token === "") {
+            if (name310 === "in" && state.token === "") {
               node = new OperatorNode2("*", "multiply", [node, new SymbolNode2("in")], true);
             } else {
               params = [node, parseRange(state)];
-              node = new OperatorNode2(name307, fn2, params);
+              node = new OperatorNode2(name310, fn2, params);
             }
           }
           return node;
@@ -49558,15 +49623,15 @@ svg {
           return node;
         }
         function parseAddSubtract(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseMultiplyDivide(state);
           var operators = {
             "+": "add",
             "-": "subtract"
           };
-          while (hasOwnProperty2(operators, state.token)) {
-            name307 = state.token;
-            fn2 = operators[name307];
+          while (hasOwnProperty(operators, state.token)) {
+            name310 = state.token;
+            fn2 = operators[name310];
             getTokenSkipNewline(state);
             var rightNode = parseMultiplyDivide(state);
             if (rightNode.isPercentage) {
@@ -49574,12 +49639,12 @@ svg {
             } else {
               params = [node, rightNode];
             }
-            node = new OperatorNode2(name307, fn2, params);
+            node = new OperatorNode2(name310, fn2, params);
           }
           return node;
         }
         function parseMultiplyDivide(state) {
-          var node, last, name307, fn2;
+          var node, last, name310, fn2;
           node = parseImplicitMultiplication(state);
           last = node;
           var operators = {
@@ -49589,12 +49654,12 @@ svg {
             "./": "dotDivide"
           };
           while (true) {
-            if (hasOwnProperty2(operators, state.token)) {
-              name307 = state.token;
-              fn2 = operators[name307];
+            if (hasOwnProperty(operators, state.token)) {
+              name310 = state.token;
+              fn2 = operators[name310];
               getTokenSkipNewline(state);
               last = parseImplicitMultiplication(state);
-              node = new OperatorNode2(name307, fn2, [node, last]);
+              node = new OperatorNode2(name310, fn2, [node, last]);
             } else {
               break;
             }
@@ -49653,74 +49718,74 @@ svg {
           return node;
         }
         function parsePercentage(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseUnary(state);
           var operators = {
             "%": "mod",
             mod: "mod"
           };
-          while (hasOwnProperty2(operators, state.token)) {
-            name307 = state.token;
-            fn2 = operators[name307];
+          while (hasOwnProperty(operators, state.token)) {
+            name310 = state.token;
+            fn2 = operators[name310];
             getTokenSkipNewline(state);
-            if (name307 === "%" && state.tokenType === TOKENTYPE.DELIMITER && state.token !== "(") {
+            if (name310 === "%" && state.tokenType === TOKENTYPE.DELIMITER && state.token !== "(") {
               node = new OperatorNode2("/", "divide", [node, new ConstantNode2(100)], false, true);
             } else {
               params = [node, parseUnary(state)];
-              node = new OperatorNode2(name307, fn2, params);
+              node = new OperatorNode2(name310, fn2, params);
             }
           }
           return node;
         }
         function parseUnary(state) {
-          var name307, params, fn2;
+          var name310, params, fn2;
           var operators = {
             "-": "unaryMinus",
             "+": "unaryPlus",
             "~": "bitNot",
             not: "not"
           };
-          if (hasOwnProperty2(operators, state.token)) {
+          if (hasOwnProperty(operators, state.token)) {
             fn2 = operators[state.token];
-            name307 = state.token;
+            name310 = state.token;
             getTokenSkipNewline(state);
             params = [parseUnary(state)];
-            return new OperatorNode2(name307, fn2, params);
+            return new OperatorNode2(name310, fn2, params);
           }
           return parsePow(state);
         }
         function parsePow(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseLeftHandOperators(state);
           if (state.token === "^" || state.token === ".^") {
-            name307 = state.token;
-            fn2 = name307 === "^" ? "pow" : "dotPow";
+            name310 = state.token;
+            fn2 = name310 === "^" ? "pow" : "dotPow";
             getTokenSkipNewline(state);
             params = [node, parseUnary(state)];
-            node = new OperatorNode2(name307, fn2, params);
+            node = new OperatorNode2(name310, fn2, params);
           }
           return node;
         }
         function parseLeftHandOperators(state) {
-          var node, name307, fn2, params;
+          var node, name310, fn2, params;
           node = parseCustomNodes(state);
           var operators = {
             "!": "factorial",
             "'": "ctranspose"
           };
-          while (hasOwnProperty2(operators, state.token)) {
-            name307 = state.token;
-            fn2 = operators[name307];
+          while (hasOwnProperty(operators, state.token)) {
+            name310 = state.token;
+            fn2 = operators[name310];
             getToken(state);
             params = [node];
-            node = new OperatorNode2(name307, fn2, params);
+            node = new OperatorNode2(name310, fn2, params);
             node = parseAccessors(state, node);
           }
           return node;
         }
         function parseCustomNodes(state) {
           var params = [];
-          if (state.tokenType === TOKENTYPE.SYMBOL && hasOwnProperty2(state.extraNodes, state.token)) {
+          if (state.tokenType === TOKENTYPE.SYMBOL && hasOwnProperty(state.extraNodes, state.token)) {
             var CustomNode = state.extraNodes[state.token];
             getToken(state);
             if (state.token === "(") {
@@ -49745,21 +49810,21 @@ svg {
           return parseSymbol(state);
         }
         function parseSymbol(state) {
-          var node, name307;
+          var node, name310;
           if (state.tokenType === TOKENTYPE.SYMBOL || state.tokenType === TOKENTYPE.DELIMITER && state.token in NAMED_DELIMITERS) {
-            name307 = state.token;
+            name310 = state.token;
             getToken(state);
-            if (hasOwnProperty2(CONSTANTS, name307)) {
-              node = new ConstantNode2(CONSTANTS[name307]);
-            } else if (NUMERIC_CONSTANTS.indexOf(name307) !== -1) {
-              node = new ConstantNode2(numeric3(name307, "number"));
+            if (hasOwnProperty(CONSTANTS, name310)) {
+              node = new ConstantNode2(CONSTANTS[name310]);
+            } else if (NUMERIC_CONSTANTS.indexOf(name310) !== -1) {
+              node = new ConstantNode2(numeric3(name310, "number"));
             } else {
-              node = new SymbolNode2(name307);
+              node = new SymbolNode2(name310);
             }
             node = parseAccessors(state, node);
             return node;
           }
-          return parseDoubleQuotesString(state);
+          return parseString(state);
         }
         function parseAccessors(state, node, types) {
           var params;
@@ -49803,7 +49868,8 @@ svg {
               node = new AccessorNode2(node, new IndexNode2(params));
             } else {
               getToken(state);
-              if (state.tokenType !== TOKENTYPE.SYMBOL) {
+              var isPropertyName = state.tokenType === TOKENTYPE.SYMBOL || state.tokenType === TOKENTYPE.DELIMITER && state.token in NAMED_DELIMITERS;
+              if (!isPropertyName) {
                 throw createSyntaxError(state, "Property name expected after dot");
               }
               params.push(new ConstantNode2(state.token));
@@ -49814,59 +49880,48 @@ svg {
           }
           return node;
         }
-        function parseDoubleQuotesString(state) {
+        function parseString(state) {
           var node, str;
-          if (state.token === '"') {
-            str = parseDoubleQuotesStringToken(state);
-            node = new ConstantNode2(str);
-            node = parseAccessors(state, node);
-            return node;
-          }
-          return parseSingleQuotesString(state);
-        }
-        function parseDoubleQuotesStringToken(state) {
-          var str = "";
-          while (currentCharacter(state) !== "" && currentCharacter(state) !== '"') {
-            if (currentCharacter(state) === "\\") {
-              str += currentCharacter(state);
-              next(state);
-            }
-            str += currentCharacter(state);
-            next(state);
-          }
-          getToken(state);
-          if (state.token !== '"') {
-            throw createSyntaxError(state, 'End of string " expected');
-          }
-          getToken(state);
-          return JSON.parse('"' + str + '"');
-        }
-        function parseSingleQuotesString(state) {
-          var node, str;
-          if (state.token === "'") {
-            str = parseSingleQuotesStringToken(state);
+          if (state.token === '"' || state.token === "'") {
+            str = parseStringToken(state, state.token);
             node = new ConstantNode2(str);
             node = parseAccessors(state, node);
             return node;
           }
           return parseMatrix(state);
         }
-        function parseSingleQuotesStringToken(state) {
+        function parseStringToken(state, quote) {
           var str = "";
-          while (currentCharacter(state) !== "" && currentCharacter(state) !== "'") {
+          while (currentCharacter(state) !== "" && currentCharacter(state) !== quote) {
             if (currentCharacter(state) === "\\") {
+              next(state);
+              var char = currentCharacter(state);
+              var escapeChar = ESCAPE_CHARACTERS[char];
+              if (escapeChar !== void 0) {
+                str += escapeChar;
+                state.index += 1;
+              } else if (char === "u") {
+                var unicode = state.expression.slice(state.index + 1, state.index + 5);
+                if (/^[0-9A-Fa-f]{4}$/.test(unicode)) {
+                  str += String.fromCharCode(parseInt(unicode, 16));
+                  state.index += 5;
+                } else {
+                  throw createSyntaxError(state, "Invalid unicode character \\u".concat(unicode));
+                }
+              } else {
+                throw createSyntaxError(state, "Bad escape character \\".concat(char));
+              }
+            } else {
               str += currentCharacter(state);
               next(state);
             }
-            str += currentCharacter(state);
-            next(state);
           }
           getToken(state);
-          if (state.token !== "'") {
-            throw createSyntaxError(state, "End of string ' expected");
+          if (state.token !== quote) {
+            throw createSyntaxError(state, "End of string ".concat(quote, " expected"));
           }
           getToken(state);
-          return JSON.parse('"' + str + '"');
+          return str;
         }
         function parseMatrix(state) {
           var array, params, rows, cols;
@@ -49930,10 +49985,8 @@ svg {
             do {
               getToken(state);
               if (state.token !== "}") {
-                if (state.token === '"') {
-                  key = parseDoubleQuotesStringToken(state);
-                } else if (state.token === "'") {
-                  key = parseSingleQuotesStringToken(state);
+                if (state.token === '"' || state.token === "'") {
+                  key = parseStringToken(state, state.token);
                 } else if (state.tokenType === TOKENTYPE.SYMBOL || state.tokenType === TOKENTYPE.DELIMITER && state.token in NAMED_DELIMITERS) {
                   key = state.token;
                   getToken(state);
@@ -50017,19 +50070,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/function/compile.js
-  var name222, dependencies222, createCompile;
+  var name223, dependencies223, createCompile;
   var init_compile = __esm({
     "node_modules/mathjs/lib/esm/expression/function/compile.js"() {
       init_collection();
       init_factory();
-      name222 = "compile";
-      dependencies222 = ["typed", "parse"];
-      createCompile = /* @__PURE__ */ factory(name222, dependencies222, (_ref) => {
+      name223 = "compile";
+      dependencies223 = ["typed", "parse"];
+      createCompile = /* @__PURE__ */ factory(name223, dependencies223, (_ref) => {
         var {
           typed: typed3,
           parse: parse2
         } = _ref;
-        return typed3(name222, {
+        return typed3(name223, {
           string: function string2(expr) {
             return parse2(expr).compile();
           },
@@ -50044,20 +50097,20 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/function/evaluate.js
-  var name223, dependencies223, createEvaluate;
+  var name224, dependencies224, createEvaluate;
   var init_evaluate = __esm({
     "node_modules/mathjs/lib/esm/expression/function/evaluate.js"() {
       init_collection();
       init_factory();
       init_map();
-      name223 = "evaluate";
-      dependencies223 = ["typed", "parse"];
-      createEvaluate = /* @__PURE__ */ factory(name223, dependencies223, (_ref) => {
+      name224 = "evaluate";
+      dependencies224 = ["typed", "parse"];
+      createEvaluate = /* @__PURE__ */ factory(name224, dependencies224, (_ref) => {
         var {
           typed: typed3,
           parse: parse2
         } = _ref;
-        return typed3(name223, {
+        return typed3(name224, {
           string: function string2(expr) {
             var scope = createEmptyMap();
             return parse2(expr).compile().evaluate(scope);
@@ -50082,14 +50135,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/Parser.js
-  var name224, dependencies224, createParserClass;
+  var name225, dependencies225, createParserClass;
   var init_Parser = __esm({
     "node_modules/mathjs/lib/esm/expression/Parser.js"() {
       init_factory();
       init_map();
-      name224 = "Parser";
-      dependencies224 = ["evaluate"];
-      createParserClass = /* @__PURE__ */ factory(name224, dependencies224, (_ref) => {
+      name225 = "Parser";
+      dependencies225 = ["evaluate"];
+      createParserClass = /* @__PURE__ */ factory(name225, dependencies225, (_ref) => {
         var {
           evaluate: evaluate2
         } = _ref;
@@ -50107,9 +50160,9 @@ svg {
         Parser2.prototype.evaluate = function(expr) {
           return evaluate2(expr, this.scope);
         };
-        Parser2.prototype.get = function(name307) {
-          if (this.scope.has(name307)) {
-            return this.scope.get(name307);
+        Parser2.prototype.get = function(name310) {
+          if (this.scope.has(name310)) {
+            return this.scope.get(name310);
           }
         };
         Parser2.prototype.getAll = function() {
@@ -50118,12 +50171,12 @@ svg {
         Parser2.prototype.getAllAsMap = function() {
           return this.scope;
         };
-        Parser2.prototype.set = function(name307, value2) {
-          this.scope.set(name307, value2);
+        Parser2.prototype.set = function(name310, value2) {
+          this.scope.set(name310, value2);
           return value2;
         };
-        Parser2.prototype.remove = function(name307) {
-          this.scope.delete(name307);
+        Parser2.prototype.remove = function(name310) {
+          this.scope.delete(name310);
         };
         Parser2.prototype.clear = function() {
           this.scope.clear();
@@ -50136,18 +50189,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/function/parser.js
-  var name225, dependencies225, createParser;
+  var name226, dependencies226, createParser;
   var init_parser = __esm({
     "node_modules/mathjs/lib/esm/expression/function/parser.js"() {
       init_factory();
-      name225 = "parser";
-      dependencies225 = ["typed", "Parser"];
-      createParser = /* @__PURE__ */ factory(name225, dependencies225, (_ref) => {
+      name226 = "parser";
+      dependencies226 = ["typed", "Parser"];
+      createParser = /* @__PURE__ */ factory(name226, dependencies226, (_ref) => {
         var {
           typed: typed3,
           Parser: Parser2
         } = _ref;
-        return typed3(name225, {
+        return typed3(name226, {
           "": function _3() {
             return new Parser2();
           }
@@ -50157,14 +50210,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/decomposition/lup.js
-  var name226, dependencies226, createLup;
+  var name227, dependencies227, createLup;
   var init_lup = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/decomposition/lup.js"() {
       init_object();
       init_factory();
-      name226 = "lup";
-      dependencies226 = ["typed", "matrix", "abs", "addScalar", "divideScalar", "multiplyScalar", "subtract", "larger", "equalScalar", "unaryMinus", "DenseMatrix", "SparseMatrix", "Spa"];
-      createLup = /* @__PURE__ */ factory(name226, dependencies226, (_ref) => {
+      name227 = "lup";
+      dependencies227 = ["typed", "matrix", "abs", "addScalar", "divideScalar", "multiplyScalar", "subtractScalar", "larger", "equalScalar", "unaryMinus", "DenseMatrix", "SparseMatrix", "Spa"];
+      createLup = /* @__PURE__ */ factory(name227, dependencies227, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -50172,7 +50225,7 @@ svg {
           addScalar: addScalar2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           larger: larger2,
           equalScalar: equalScalar2,
           unaryMinus: unaryMinus2,
@@ -50180,7 +50233,7 @@ svg {
           SparseMatrix: SparseMatrix2,
           Spa: Spa2
         } = _ref;
-        return typed3(name226, {
+        return typed3(name227, {
           DenseMatrix: function DenseMatrix3(m3) {
             return _denseLUP(m3);
           },
@@ -50219,7 +50272,7 @@ svg {
                 for (k4 = 0; k4 < min3; k4++) {
                   s3 = addScalar2(s3, multiplyScalar2(data[i5][k4], data[k4][j4]));
                 }
-                data[i5][j4] = subtract2(data[i5][j4], s3);
+                data[i5][j4] = subtractScalar2(data[i5][j4], s3);
               }
             }
             var pi3 = j4;
@@ -50414,14 +50467,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/decomposition/qr.js
-  var name227, dependencies227, createQr;
+  var name228, dependencies228, createQr;
   var init_qr = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/decomposition/qr.js"() {
       init_extends();
       init_factory();
-      name227 = "qr";
-      dependencies227 = ["typed", "matrix", "zeros", "identity", "isZero", "equal", "sign", "sqrt", "conj", "unaryMinus", "addScalar", "divideScalar", "multiplyScalar", "subtract", "complex"];
-      createQr = /* @__PURE__ */ factory(name227, dependencies227, (_ref) => {
+      name228 = "qr";
+      dependencies228 = ["typed", "matrix", "zeros", "identity", "isZero", "equal", "sign", "sqrt", "conj", "unaryMinus", "addScalar", "divideScalar", "multiplyScalar", "subtractScalar", "complex"];
+      createQr = /* @__PURE__ */ factory(name228, dependencies228, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -50436,10 +50489,10 @@ svg {
           addScalar: addScalar2,
           divideScalar: divideScalar2,
           multiplyScalar: multiplyScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           complex: complex2
         } = _ref;
-        return _extends(typed3(name227, {
+        return _extends(typed3(name228, {
           DenseMatrix: function DenseMatrix2(m3) {
             return _denseQR(m3);
           },
@@ -50476,7 +50529,7 @@ svg {
             }
             var alpha = multiplyScalar2(sgn, sqrt3(alphaSquared));
             if (!isZero2(alpha)) {
-              var u1 = subtract2(pivot, alpha);
+              var u1 = subtractScalar2(pivot, alpha);
               w4[k4] = 1;
               for (i5 = k4 + 1; i5 < rows; i5++) {
                 w4[i5] = divideScalar2(Rdata[i5][k4], u1);
@@ -50490,7 +50543,7 @@ svg {
                 }
                 s3 = multiplyScalar2(s3, tau3);
                 for (i5 = k4; i5 < rows; i5++) {
-                  Rdata[i5][j4] = multiplyScalar2(subtract2(Rdata[i5][j4], multiplyScalar2(w4[i5], s3)), conjSgn);
+                  Rdata[i5][j4] = multiplyScalar2(subtractScalar2(Rdata[i5][j4], multiplyScalar2(w4[i5], s3)), conjSgn);
                 }
               }
               for (i5 = 0; i5 < rows; i5++) {
@@ -50500,7 +50553,7 @@ svg {
                 }
                 s3 = multiplyScalar2(s3, tau3);
                 for (j4 = k4; j4 < rows; ++j4) {
-                  Qdata[i5][j4] = divideScalar2(subtract2(Qdata[i5][j4], multiplyScalar2(s3, conj2(w4[j4]))), conjSgn);
+                  Qdata[i5][j4] = divideScalar2(subtractScalar2(Qdata[i5][j4], multiplyScalar2(s3, conj2(w4[j4]))), conjSgn);
                 }
               }
             }
@@ -50719,16 +50772,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csAmd.js
-  var name228, dependencies228, createCsAmd;
+  var name229, dependencies229, createCsAmd;
   var init_csAmd = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csAmd.js"() {
       init_factory();
       init_csFkeep();
       init_csFlip();
       init_csTdfs();
-      name228 = "csAmd";
-      dependencies228 = ["add", "multiply", "transpose"];
-      createCsAmd = /* @__PURE__ */ factory(name228, dependencies228, (_ref) => {
+      name229 = "csAmd";
+      dependencies229 = ["add", "multiply", "transpose"];
+      createCsAmd = /* @__PURE__ */ factory(name229, dependencies229, (_ref) => {
         var {
           add: add3,
           multiply: multiply2,
@@ -51107,14 +51160,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csCounts.js
-  var name229, dependencies229, createCsCounts;
+  var name230, dependencies230, createCsCounts;
   var init_csCounts = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csCounts.js"() {
       init_factory();
       init_csLeaf();
-      name229 = "csCounts";
-      dependencies229 = ["transpose"];
-      createCsCounts = /* @__PURE__ */ factory(name229, dependencies229, (_ref) => {
+      name230 = "csCounts";
+      dependencies230 = ["transpose"];
+      createCsCounts = /* @__PURE__ */ factory(name230, dependencies230, (_ref) => {
         var {
           transpose: transpose2
         } = _ref;
@@ -51196,7 +51249,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csSqr.js
-  var name230, dependencies230, createCsSqr;
+  var name231, dependencies231, createCsSqr;
   var init_csSqr = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csSqr.js"() {
       init_csPermute();
@@ -51205,9 +51258,9 @@ svg {
       init_csAmd();
       init_csCounts();
       init_factory();
-      name230 = "csSqr";
-      dependencies230 = ["add", "multiply", "transpose"];
-      createCsSqr = /* @__PURE__ */ factory(name230, dependencies230, (_ref) => {
+      name231 = "csSqr";
+      dependencies231 = ["add", "multiply", "transpose"];
+      createCsSqr = /* @__PURE__ */ factory(name231, dependencies231, (_ref) => {
         var {
           add: add3,
           multiply: multiply2,
@@ -51423,14 +51476,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csSpsolve.js
-  var name231, dependencies231, createCsSpsolve;
+  var name232, dependencies232, createCsSpsolve;
   var init_csSpsolve = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csSpsolve.js"() {
       init_csReach();
       init_factory();
-      name231 = "csSpsolve";
-      dependencies231 = ["divideScalar", "multiply", "subtract"];
-      createCsSpsolve = /* @__PURE__ */ factory(name231, dependencies231, (_ref) => {
+      name232 = "csSpsolve";
+      dependencies232 = ["divideScalar", "multiply", "subtract"];
+      createCsSpsolve = /* @__PURE__ */ factory(name232, dependencies232, (_ref) => {
         var {
           divideScalar: divideScalar2,
           multiply: multiply2,
@@ -51476,14 +51529,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csLu.js
-  var name232, dependencies232, createCsLu;
+  var name233, dependencies233, createCsLu;
   var init_csLu = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csLu.js"() {
       init_factory();
       init_csSpsolve();
-      name232 = "csLu";
-      dependencies232 = ["abs", "divideScalar", "multiply", "subtract", "larger", "largerEq", "SparseMatrix"];
-      createCsLu = /* @__PURE__ */ factory(name232, dependencies232, (_ref) => {
+      name233 = "csLu";
+      dependencies233 = ["abs", "divideScalar", "multiply", "subtract", "larger", "largerEq", "SparseMatrix"];
+      createCsLu = /* @__PURE__ */ factory(name233, dependencies233, (_ref) => {
         var {
           abs: abs3,
           divideScalar: divideScalar2,
@@ -51602,16 +51655,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/decomposition/slu.js
-  var name233, dependencies233, createSlu;
+  var name234, dependencies234, createSlu;
   var init_slu = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/decomposition/slu.js"() {
       init_number();
       init_factory();
       init_csSqr();
       init_csLu();
-      name233 = "slu";
-      dependencies233 = ["typed", "abs", "add", "multiply", "transpose", "divideScalar", "subtract", "larger", "largerEq", "SparseMatrix"];
-      createSlu = /* @__PURE__ */ factory(name233, dependencies233, (_ref) => {
+      name234 = "slu";
+      dependencies234 = ["typed", "abs", "add", "multiply", "transpose", "divideScalar", "subtract", "larger", "largerEq", "SparseMatrix"];
+      createSlu = /* @__PURE__ */ factory(name234, dependencies234, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -51638,7 +51691,7 @@ svg {
           largerEq: largerEq2,
           SparseMatrix: SparseMatrix2
         });
-        return typed3(name233, {
+        return typed3(name234, {
           "SparseMatrix, number, number": function SparseMatrixNumberNumber(a3, order, threshold) {
             if (!isInteger(order) || order < 0 || order > 3) {
               throw new Error("Symbolic Ordering and Analysis order must be an integer number in the interval [0, 3]");
@@ -51685,16 +51738,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/solver/lusolve.js
-  var name234, dependencies234, createLusolve;
+  var name235, dependencies235, createLusolve;
   var init_lusolve = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/solver/lusolve.js"() {
       init_is();
       init_factory();
       init_solveValidation();
       init_csIpvec();
-      name234 = "lusolve";
-      dependencies234 = ["typed", "matrix", "lup", "slu", "usolve", "lsolve", "DenseMatrix"];
-      createLusolve = /* @__PURE__ */ factory(name234, dependencies234, (_ref) => {
+      name235 = "lusolve";
+      dependencies235 = ["typed", "matrix", "lup", "slu", "usolve", "lsolve", "DenseMatrix"];
+      createLusolve = /* @__PURE__ */ factory(name235, dependencies235, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -51707,7 +51760,7 @@ svg {
         var solveValidation = createSolveValidation({
           DenseMatrix: DenseMatrix2
         });
-        return typed3(name234, {
+        return typed3(name235, {
           "Array, Array | Matrix": function ArrayArrayMatrix(a3, b3) {
             a3 = matrix2(a3);
             var d3 = lup2(a3);
@@ -51758,13 +51811,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/polynomialRoot.js
-  var name235, dependencies235, createPolynomialRoot;
+  var name236, dependencies236, createPolynomialRoot;
   var init_polynomialRoot = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/polynomialRoot.js"() {
       init_factory();
-      name235 = "polynomialRoot";
-      dependencies235 = ["typed", "isZero", "equalScalar", "add", "subtract", "multiply", "divide", "sqrt", "unaryMinus", "cbrt", "typeOf", "im", "re"];
-      createPolynomialRoot = /* @__PURE__ */ factory(name235, dependencies235, (_ref) => {
+      name236 = "polynomialRoot";
+      dependencies236 = ["typed", "isZero", "equalScalar", "add", "subtract", "multiply", "divide", "sqrt", "unaryMinus", "cbrt", "typeOf", "im", "re"];
+      createPolynomialRoot = /* @__PURE__ */ factory(name236, dependencies236, (_ref) => {
         var {
           typed: typed3,
           isZero: isZero2,
@@ -51780,7 +51833,7 @@ svg {
           im: im2,
           re: re2
         } = _ref;
-        return typed3(name235, {
+        return typed3(name236, {
           "number|Complex, ...number|Complex": (constant, restCoeffs) => {
             var coeffs = [constant, ...restCoeffs];
             while (coeffs.length > 0 && isZero2(coeffs[coeffs.length - 1])) {
@@ -51849,16 +51902,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/Help.js
-  var name236, dependencies236, createHelpClass;
+  var name237, dependencies237, createHelpClass;
   var init_Help = __esm({
     "node_modules/mathjs/lib/esm/expression/Help.js"() {
       init_is();
       init_object();
       init_string();
       init_factory();
-      name236 = "Help";
-      dependencies236 = ["parse"];
-      createHelpClass = /* @__PURE__ */ factory(name236, dependencies236, (_ref) => {
+      name237 = "Help";
+      dependencies237 = ["parse"];
+      createHelpClass = /* @__PURE__ */ factory(name237, dependencies237, (_ref) => {
         var {
           parse: parse2
         } = _ref;
@@ -51936,16 +51989,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/chain/Chain.js
-  var name237, dependencies237, createChainClass;
+  var name238, dependencies238, createChainClass;
   var init_Chain = __esm({
     "node_modules/mathjs/lib/esm/type/chain/Chain.js"() {
       init_is();
       init_string();
       init_object();
       init_factory();
-      name237 = "Chain";
-      dependencies237 = ["?on", "math", "typed"];
-      createChainClass = /* @__PURE__ */ factory(name237, dependencies237, (_ref) => {
+      name238 = "Chain";
+      dependencies238 = ["?on", "math", "typed"];
+      createChainClass = /* @__PURE__ */ factory(name238, dependencies238, (_ref) => {
         var {
           on: on2,
           math: math2,
@@ -51981,13 +52034,13 @@ svg {
         Chain2.fromJSON = function(json) {
           return new Chain2(json.value);
         };
-        function createProxy(name307, fn2) {
+        function createProxy(name310, fn2) {
           if (typeof fn2 === "function") {
-            Chain2.prototype[name307] = chainify(fn2);
+            Chain2.prototype[name310] = chainify(fn2);
           }
         }
-        function createLazyProxy(name307, resolver) {
-          lazy(Chain2.prototype, name307, function outerResolver() {
+        function createLazyProxy(name310, resolver) {
+          lazy(Chain2.prototype, name310, function outerResolver() {
             var fn2 = resolver();
             if (typeof fn2 === "function") {
               return chainify(fn2);
@@ -52019,7 +52072,7 @@ svg {
             createProxy(arg0, arg1);
           } else {
             var _loop = function _loop2(_name2) {
-              if (hasOwnProperty2(arg0, _name2) && excludedNames[_name2] === void 0) {
+              if (hasOwnProperty(arg0, _name2) && excludedNames[_name2] === void 0) {
                 createLazyProxy(_name2, () => arg0[_name2]);
               }
             };
@@ -52040,9 +52093,9 @@ svg {
         };
         Chain2.createProxy(math2);
         if (on2) {
-          on2("import", function(name307, resolver, path) {
+          on2("import", function(name310, resolver, path) {
             if (!path) {
-              createLazyProxy(name307, resolver);
+              createLazyProxy(name310, resolver);
             }
           });
         }
@@ -55038,6 +55091,21 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/expression/embeddedDocs/function/statistics/corr.js
+  var corrDocs;
+  var init_corr = __esm({
+    "node_modules/mathjs/lib/esm/expression/embeddedDocs/function/statistics/corr.js"() {
+      corrDocs = {
+        name: "corr",
+        category: "Statistics",
+        syntax: ["corr(A,B)"],
+        description: "Compute the correlation coefficient of a two list with values, For matrices, the matrix correlation coefficient is calculated.",
+        examples: ["corr([2, 4, 6, 8],[1, 2, 3, 6])", "corr(matrix([[1, 2.2, 3, 4.8, 5], [1, 2, 3, 4, 5]]), matrix([[4, 5.3, 6.6, 7, 8], [1, 2, 3, 4, 5]]))"],
+        seealso: ["max", "mean", "min", "median", "min", "prod", "std", "sum"]
+      };
+    }
+  });
+
   // node_modules/mathjs/lib/esm/expression/embeddedDocs/function/trigonometry/acos.js
   var acosDocs;
   var init_acos2 = __esm({
@@ -55640,14 +55708,14 @@ svg {
 
   // node_modules/mathjs/lib/esm/expression/embeddedDocs/function/utils/print.js
   var printDocs;
-  var init_print2 = __esm({
+  var init_print3 = __esm({
     "node_modules/mathjs/lib/esm/expression/embeddedDocs/function/utils/print.js"() {
       printDocs = {
         name: "print",
         category: "Utils",
         syntax: ["print(template, values)", "print(template, values, precision)"],
         description: "Interpolate values into a string template.",
-        examples: ['print("Lucy is $age years old", {age: 5})', 'print("The value of pi is $pi", {pi: pi}, 3)', 'print("Hello, $user.name!", {user: {name: "John"}})', 'print("Values: $0, $1, $2", [6, 9, 4])'],
+        examples: ['print("Lucy is $age years old", {age: 5})', 'print("The value of pi is $pi", {pi: pi}, 3)', 'print("Hello, $user.name!", {user: {name: "John"}})', 'print("Values: $1, $2, $3", [6, 9, 4])'],
         seealso: ["format"]
       };
     }
@@ -55886,6 +55954,7 @@ svg {
       init_cumsum();
       init_sum();
       init_variance();
+      init_corr();
       init_acos2();
       init_acosh2();
       init_acot2();
@@ -55926,7 +55995,7 @@ svg {
       init_isZero2();
       init_numeric2();
       init_oct2();
-      init_print2();
+      init_print3();
       init_typeOf2();
       init_solveODE2();
       embeddedDocs = {
@@ -56356,6 +56425,7 @@ svg {
         std: stdDocs,
         sum: sumDocs,
         variance: varianceDocs,
+        corr: corrDocs,
         // functions - trigonometry
         acos: acosDocs,
         acosh: acoshDocs,
@@ -56406,28 +56476,28 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/function/help.js
-  var name238, dependencies238, createHelp;
+  var name239, dependencies239, createHelp;
   var init_help2 = __esm({
     "node_modules/mathjs/lib/esm/expression/function/help.js"() {
       init_factory();
       init_customs();
       init_embeddedDocs();
       init_object();
-      name238 = "help";
-      dependencies238 = ["typed", "mathWithTransform", "Help"];
-      createHelp = /* @__PURE__ */ factory(name238, dependencies238, (_ref) => {
+      name239 = "help";
+      dependencies239 = ["typed", "mathWithTransform", "Help"];
+      createHelp = /* @__PURE__ */ factory(name239, dependencies239, (_ref) => {
         var {
           typed: typed3,
           mathWithTransform: mathWithTransform2,
           Help: Help2
         } = _ref;
-        return typed3(name238, {
+        return typed3(name239, {
           any: function any(search) {
             var prop;
             var searchName = search;
             if (typeof search !== "string") {
               for (prop in mathWithTransform2) {
-                if (hasOwnProperty2(mathWithTransform2, prop) && search === mathWithTransform2[prop]) {
+                if (hasOwnProperty(mathWithTransform2, prop) && search === mathWithTransform2[prop]) {
                   searchName = prop;
                   break;
                 }
@@ -56446,18 +56516,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/chain/function/chain.js
-  var name239, dependencies239, createChain;
+  var name240, dependencies240, createChain;
   var init_chain = __esm({
     "node_modules/mathjs/lib/esm/type/chain/function/chain.js"() {
       init_factory();
-      name239 = "chain";
-      dependencies239 = ["typed", "Chain"];
-      createChain = /* @__PURE__ */ factory(name239, dependencies239, (_ref) => {
+      name240 = "chain";
+      dependencies240 = ["typed", "Chain"];
+      createChain = /* @__PURE__ */ factory(name240, dependencies240, (_ref) => {
         var {
           typed: typed3,
           Chain: Chain2
         } = _ref;
-        return typed3(name239, {
+        return typed3(name240, {
           "": function _3() {
             return new Chain2();
           },
@@ -56470,26 +56540,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/det.js
-  var name240, dependencies240, createDet;
+  var name241, dependencies241, createDet;
   var init_det2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/det.js"() {
       init_is();
       init_object();
       init_string();
       init_factory();
-      name240 = "det";
-      dependencies240 = ["typed", "matrix", "subtract", "multiply", "divideScalar", "isZero", "unaryMinus"];
-      createDet = /* @__PURE__ */ factory(name240, dependencies240, (_ref) => {
+      name241 = "det";
+      dependencies241 = ["typed", "matrix", "subtractScalar", "multiply", "divideScalar", "isZero", "unaryMinus"];
+      createDet = /* @__PURE__ */ factory(name241, dependencies241, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           multiply: multiply2,
           divideScalar: divideScalar2,
           isZero: isZero2,
           unaryMinus: unaryMinus2
         } = _ref;
-        return typed3(name240, {
+        return typed3(name241, {
           any: function any(x4) {
             return clone(x4);
           },
@@ -56536,7 +56606,7 @@ svg {
           if (rows === 1) {
             return clone(matrix3[0][0]);
           } else if (rows === 2) {
-            return subtract2(multiply2(matrix3[0][0], matrix3[1][1]), multiply2(matrix3[1][0], matrix3[0][1]));
+            return subtractScalar2(multiply2(matrix3[0][0], matrix3[1][1]), multiply2(matrix3[1][0], matrix3[0][1]));
           } else {
             var negated = false;
             var rowIndices = new Array(rows).fill(0).map((_3, i6) => i6);
@@ -56561,7 +56631,7 @@ svg {
               for (var i5 = k4 + 1; i5 < rows; i5++) {
                 var i_ = rowIndices[i5];
                 for (var j4 = k4 + 1; j4 < rows; j4++) {
-                  matrix3[i_][j4] = divideScalar2(subtract2(multiply2(matrix3[i_][j4], piv), multiply2(matrix3[i_][k4], matrix3[k_][j4])), piv_);
+                  matrix3[i_][j4] = divideScalar2(subtractScalar2(multiply2(matrix3[i_][j4], piv), multiply2(matrix3[i_][k4], matrix3[k_][j4])), piv_);
                 }
               }
             }
@@ -56574,16 +56644,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/inv.js
-  var name241, dependencies241, createInv;
+  var name242, dependencies242, createInv;
   var init_inv2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/inv.js"() {
       init_is();
       init_array();
       init_factory();
       init_string();
-      name241 = "inv";
-      dependencies241 = ["typed", "matrix", "divideScalar", "addScalar", "multiply", "unaryMinus", "det", "identity", "abs"];
-      createInv = /* @__PURE__ */ factory(name241, dependencies241, (_ref) => {
+      name242 = "inv";
+      dependencies242 = ["typed", "matrix", "divideScalar", "addScalar", "multiply", "unaryMinus", "det", "identity", "abs"];
+      createInv = /* @__PURE__ */ factory(name242, dependencies242, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -56595,7 +56665,7 @@ svg {
           identity: identity2,
           abs: abs3
         } = _ref;
-        return typed3(name241, {
+        return typed3(name242, {
           "Array | Matrix": function ArrayMatrix(x4) {
             var size2 = isMatrix(x4) ? x4.size() : arraySize(x4);
             switch (size2.length) {
@@ -56707,7 +56777,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/pinv.js
-  var name242, dependencies242, createPinv;
+  var name243, dependencies243, createPinv;
   var init_pinv2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/pinv.js"() {
       init_is();
@@ -56715,9 +56785,9 @@ svg {
       init_factory();
       init_string();
       init_object();
-      name242 = "pinv";
-      dependencies242 = ["typed", "matrix", "inv", "deepEqual", "equal", "dotDivide", "dot", "ctranspose", "divideScalar", "multiply", "add", "Complex"];
-      createPinv = /* @__PURE__ */ factory(name242, dependencies242, (_ref) => {
+      name243 = "pinv";
+      dependencies243 = ["typed", "matrix", "inv", "deepEqual", "equal", "dotDivide", "dot", "ctranspose", "divideScalar", "multiply", "add", "Complex"];
+      createPinv = /* @__PURE__ */ factory(name243, dependencies243, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -56732,7 +56802,7 @@ svg {
           add: add3,
           Complex: Complex3
         } = _ref;
-        return typed3(name242, {
+        return typed3(name243, {
           "Array | Matrix": function ArrayMatrix(x4) {
             var size2 = isMatrix(x4) ? x4.size() : arraySize(x4);
             switch (size2.length) {
@@ -57507,7 +57577,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/eigs.js
-  var name243, dependencies243, createEigs;
+  var name244, dependencies244, createEigs;
   var init_eigs2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/eigs.js"() {
       init_factory();
@@ -57515,9 +57585,9 @@ svg {
       init_complexEigs();
       init_realSymetric();
       init_is();
-      name243 = "eigs";
-      dependencies243 = ["config", "typed", "matrix", "addScalar", "equal", "subtract", "abs", "atan", "cos", "sin", "multiplyScalar", "divideScalar", "inv", "bignumber", "multiply", "add", "larger", "column", "flatten", "number", "complex", "sqrt", "diag", "qr", "usolve", "usolveAll", "im", "re", "smaller", "matrixFromColumns", "dot"];
-      createEigs = /* @__PURE__ */ factory(name243, dependencies243, (_ref) => {
+      name244 = "eigs";
+      dependencies244 = ["config", "typed", "matrix", "addScalar", "equal", "subtract", "abs", "atan", "cos", "sin", "multiplyScalar", "divideScalar", "inv", "bignumber", "multiply", "add", "larger", "column", "flatten", "number", "complex", "sqrt", "diag", "qr", "usolve", "usolveAll", "im", "re", "smaller", "matrixFromColumns", "dot"];
+      createEigs = /* @__PURE__ */ factory(name244, dependencies244, (_ref) => {
         var {
           config: config4,
           typed: typed3,
@@ -57726,15 +57796,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/expm.js
-  var name244, dependencies244, createExpm;
+  var name245, dependencies245, createExpm;
   var init_expm2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/expm.js"() {
       init_is();
       init_string();
       init_factory();
-      name244 = "expm";
-      dependencies244 = ["typed", "abs", "add", "identity", "inv", "multiply"];
-      createExpm = /* @__PURE__ */ factory(name244, dependencies244, (_ref) => {
+      name245 = "expm";
+      dependencies245 = ["typed", "abs", "add", "identity", "inv", "multiply"];
+      createExpm = /* @__PURE__ */ factory(name245, dependencies245, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -57743,7 +57813,7 @@ svg {
           inv: inv2,
           multiply: multiply2
         } = _ref;
-        return typed3(name244, {
+        return typed3(name245, {
           Matrix: function Matrix2(A4) {
             var size2 = A4.size();
             if (size2.length !== 2 || size2[0] !== size2[1]) {
@@ -57821,16 +57891,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/matrix/sqrtm.js
-  var name245, dependencies245, createSqrtm;
+  var name246, dependencies246, createSqrtm;
   var init_sqrtm2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/sqrtm.js"() {
       init_is();
       init_string();
       init_array();
       init_factory();
-      name245 = "sqrtm";
-      dependencies245 = ["typed", "abs", "add", "multiply", "map", "sqrt", "subtract", "inv", "size", "max", "identity"];
-      createSqrtm = /* @__PURE__ */ factory(name245, dependencies245, (_ref) => {
+      name246 = "sqrtm";
+      dependencies246 = ["typed", "abs", "add", "multiply", "map", "sqrt", "subtract", "inv", "size", "max", "identity"];
+      createSqrtm = /* @__PURE__ */ factory(name246, dependencies246, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -57862,7 +57932,7 @@ svg {
           } while (error > _tolerance);
           return Y2;
         }
-        return typed3(name245, {
+        return typed3(name246, {
           "Array | Matrix": function ArrayMatrix(A4) {
             var size3 = isMatrix(A4) ? A4.size() : arraySize(A4);
             switch (size3.length) {
@@ -57891,13 +57961,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sylvester.js
-  var name246, dependencies246, createSylvester;
+  var name247, dependencies247, createSylvester;
   var init_sylvester2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sylvester.js"() {
       init_factory();
-      name246 = "sylvester";
-      dependencies246 = ["typed", "schur", "matrixFromColumns", "matrix", "multiply", "range", "concat", "transpose", "index", "subset", "add", "subtract", "identity", "lusolve", "abs"];
-      createSylvester = /* @__PURE__ */ factory(name246, dependencies246, (_ref) => {
+      name247 = "sylvester";
+      dependencies247 = ["typed", "schur", "matrixFromColumns", "matrix", "multiply", "range", "concat", "transpose", "index", "subset", "add", "subtract", "identity", "lusolve", "abs"];
+      createSylvester = /* @__PURE__ */ factory(name247, dependencies247, (_ref) => {
         var {
           typed: typed3,
           schur: schur2,
@@ -57915,7 +57985,7 @@ svg {
           lusolve: lusolve2,
           abs: abs3
         } = _ref;
-        return typed3(name246, {
+        return typed3(name247, {
           "Matrix, Matrix, Matrix": _sylvester,
           "Array, Matrix, Matrix": function ArrayMatrixMatrix(A4, B4, C3) {
             return _sylvester(matrix2(A4), B4, C3);
@@ -57987,13 +58057,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/decomposition/schur.js
-  var name247, dependencies247, createSchur;
+  var name248, dependencies248, createSchur;
   var init_schur2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/decomposition/schur.js"() {
       init_factory();
-      name247 = "schur";
-      dependencies247 = ["typed", "matrix", "identity", "multiply", "qr", "norm", "subtract"];
-      createSchur = /* @__PURE__ */ factory(name247, dependencies247, (_ref) => {
+      name248 = "schur";
+      dependencies248 = ["typed", "matrix", "identity", "multiply", "qr", "norm", "subtract"];
+      createSchur = /* @__PURE__ */ factory(name248, dependencies248, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -58003,7 +58073,7 @@ svg {
           norm: norm2,
           subtract: subtract2
         } = _ref;
-        return typed3(name247, {
+        return typed3(name248, {
           Array: function Array2(X2) {
             var r3 = _schur(matrix2(X2));
             return {
@@ -58042,13 +58112,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/lyap.js
-  var name248, dependencies248, createLyap;
+  var name249, dependencies249, createLyap;
   var init_lyap2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/lyap.js"() {
       init_factory();
-      name248 = "lyap";
-      dependencies248 = ["typed", "matrix", "sylvester", "multiply", "transpose"];
-      createLyap = /* @__PURE__ */ factory(name248, dependencies248, (_ref) => {
+      name249 = "lyap";
+      dependencies249 = ["typed", "matrix", "sylvester", "multiply", "transpose"];
+      createLyap = /* @__PURE__ */ factory(name249, dependencies249, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -58056,7 +58126,7 @@ svg {
           multiply: multiply2,
           transpose: transpose2
         } = _ref;
-        return typed3(name248, {
+        return typed3(name249, {
           "Matrix, Matrix": function MatrixMatrix(A4, Q3) {
             return sylvester2(A4, transpose2(A4), multiply2(-1, Q3));
           },
@@ -58075,16 +58145,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/arithmetic/divide.js
-  var name249, dependencies249, createDivide;
+  var name250, dependencies250, createDivide;
   var init_divide2 = __esm({
     "node_modules/mathjs/lib/esm/function/arithmetic/divide.js"() {
       init_factory();
       init_object();
       init_matAlgo11xS0s();
       init_matAlgo14xDs();
-      name249 = "divide";
-      dependencies249 = ["typed", "matrix", "multiply", "equalScalar", "divideScalar", "inv"];
-      createDivide = /* @__PURE__ */ factory(name249, dependencies249, (_ref) => {
+      name250 = "divide";
+      dependencies250 = ["typed", "matrix", "multiply", "equalScalar", "divideScalar", "inv"];
+      createDivide = /* @__PURE__ */ factory(name250, dependencies250, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -58123,25 +58193,25 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/geometry/distance.js
-  var name250, dependencies250, createDistance;
+  var name251, dependencies251, createDistance;
   var init_distance2 = __esm({
     "node_modules/mathjs/lib/esm/function/geometry/distance.js"() {
       init_is();
       init_factory();
-      name250 = "distance";
-      dependencies250 = ["typed", "addScalar", "subtract", "divideScalar", "multiplyScalar", "deepEqual", "sqrt", "abs"];
-      createDistance = /* @__PURE__ */ factory(name250, dependencies250, (_ref) => {
+      name251 = "distance";
+      dependencies251 = ["typed", "addScalar", "subtractScalar", "divideScalar", "multiplyScalar", "deepEqual", "sqrt", "abs"];
+      createDistance = /* @__PURE__ */ factory(name251, dependencies251, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           multiplyScalar: multiplyScalar2,
           divideScalar: divideScalar2,
           deepEqual: deepEqual2,
           sqrt: sqrt3,
           abs: abs3
         } = _ref;
-        return typed3(name250, {
+        return typed3(name251, {
           "Array, Array, Array": function ArrayArrayArray(x4, y3, z5) {
             if (x4.length === 2 && y3.length === 2 && z5.length === 2) {
               if (!_2d(x4)) {
@@ -58156,9 +58226,9 @@ svg {
               if (deepEqual2(y3, z5)) {
                 throw new TypeError("LinePoint1 should not be same with LinePoint2");
               }
-              var xCoeff = subtract2(z5[1], y3[1]);
-              var yCoeff = subtract2(y3[0], z5[0]);
-              var constant = subtract2(multiplyScalar2(z5[0], y3[1]), multiplyScalar2(y3[0], z5[1]));
+              var xCoeff = subtractScalar2(z5[1], y3[1]);
+              var yCoeff = subtractScalar2(y3[0], z5[0]);
+              var constant = subtractScalar2(multiplyScalar2(z5[0], y3[1]), multiplyScalar2(y3[0], z5[1]));
               return _distancePointLine2D(x4[0], x4[1], xCoeff, yCoeff, constant);
             } else {
               throw new TypeError("Invalid Arguments: Try again");
@@ -58179,9 +58249,9 @@ svg {
                 throw new TypeError("LinePoint1 should not be same with LinePoint2");
               }
               if ("pointX" in x4 && "pointY" in x4 && "lineOnePtX" in y3 && "lineOnePtY" in y3 && "lineTwoPtX" in z5 && "lineTwoPtY" in z5) {
-                var xCoeff = subtract2(z5.lineTwoPtY, y3.lineOnePtY);
-                var yCoeff = subtract2(y3.lineOnePtX, z5.lineTwoPtX);
-                var constant = subtract2(multiplyScalar2(z5.lineTwoPtX, y3.lineOnePtY), multiplyScalar2(y3.lineOnePtX, z5.lineTwoPtY));
+                var xCoeff = subtractScalar2(z5.lineTwoPtY, y3.lineOnePtY);
+                var yCoeff = subtractScalar2(y3.lineOnePtX, z5.lineTwoPtX);
+                var constant = subtractScalar2(multiplyScalar2(z5.lineTwoPtX, y3.lineOnePtY), multiplyScalar2(y3.lineOnePtX, z5.lineTwoPtY));
                 return _distancePointLine2D(x4.pointX, x4.pointY, xCoeff, yCoeff, constant);
               } else {
                 throw new TypeError("Key names do not match");
@@ -58334,7 +58404,7 @@ svg {
           return divideScalar2(num, den);
         }
         function _distancePointLine3D(x4, y3, z5, x0, y0, z0, a3, b3, c3) {
-          var num = [subtract2(multiplyScalar2(subtract2(y0, y3), c3), multiplyScalar2(subtract2(z0, z5), b3)), subtract2(multiplyScalar2(subtract2(z0, z5), a3), multiplyScalar2(subtract2(x0, x4), c3)), subtract2(multiplyScalar2(subtract2(x0, x4), b3), multiplyScalar2(subtract2(y0, y3), a3))];
+          var num = [subtractScalar2(multiplyScalar2(subtractScalar2(y0, y3), c3), multiplyScalar2(subtractScalar2(z0, z5), b3)), subtractScalar2(multiplyScalar2(subtractScalar2(z0, z5), a3), multiplyScalar2(subtractScalar2(x0, x4), c3)), subtractScalar2(multiplyScalar2(subtractScalar2(x0, x4), b3), multiplyScalar2(subtractScalar2(y0, y3), a3))];
           num = sqrt3(addScalar2(addScalar2(multiplyScalar2(num[0], num[0]), multiplyScalar2(num[1], num[1])), multiplyScalar2(num[2], num[2])));
           var den = sqrt3(addScalar2(addScalar2(multiplyScalar2(a3, a3), multiplyScalar2(b3, b3)), multiplyScalar2(c3, c3)));
           return divideScalar2(num, den);
@@ -58344,7 +58414,7 @@ svg {
           var result = 0;
           var diff2 = 0;
           for (var i5 = 0; i5 < vectorSize; i5++) {
-            diff2 = subtract2(x4[i5], y3[i5]);
+            diff2 = subtractScalar2(x4[i5], y3[i5]);
             result = addScalar2(multiplyScalar2(diff2, diff2), result);
           }
           return sqrt3(result);
@@ -58372,13 +58442,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/geometry/intersect.js
-  var name251, dependencies251, createIntersect;
+  var name252, dependencies252, createIntersect;
   var init_intersect2 = __esm({
     "node_modules/mathjs/lib/esm/function/geometry/intersect.js"() {
       init_factory();
-      name251 = "intersect";
-      dependencies251 = ["typed", "config", "abs", "add", "addScalar", "matrix", "multiply", "multiplyScalar", "divideScalar", "subtract", "smaller", "equalScalar", "flatten", "isZero", "isNumeric"];
-      createIntersect = /* @__PURE__ */ factory(name251, dependencies251, (_ref) => {
+      name252 = "intersect";
+      dependencies252 = ["typed", "config", "abs", "add", "addScalar", "matrix", "multiply", "multiplyScalar", "divideScalar", "subtract", "smaller", "equalScalar", "flatten", "isZero", "isNumeric"];
+      createIntersect = /* @__PURE__ */ factory(name252, dependencies252, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -58546,22 +58616,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/sum.js
-  var name252, dependencies252, createSum;
+  var name253, dependencies253, createSum;
   var init_sum2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/sum.js"() {
       init_collection();
       init_factory();
       init_improveErrorMessage();
-      name252 = "sum";
-      dependencies252 = ["typed", "config", "add", "numeric"];
-      createSum = /* @__PURE__ */ factory(name252, dependencies252, (_ref) => {
+      name253 = "sum";
+      dependencies253 = ["typed", "config", "add", "numeric"];
+      createSum = /* @__PURE__ */ factory(name253, dependencies253, (_ref) => {
         var {
           typed: typed3,
           config: config4,
           add: add3,
           numeric: numeric3
         } = _ref;
-        return typed3(name252, {
+        return typed3(name253, {
           // sum([a, b, c, d, ...])
           "Array | Matrix": _sum,
           // sum([a, b, c, d, ...], dim)
@@ -58604,7 +58674,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/cumsum.js
-  var name253, dependencies253, createCumSum;
+  var name254, dependencies254, createCumSum;
   var init_cumsum2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/cumsum.js"() {
       init_collection();
@@ -58613,15 +58683,15 @@ svg {
       init_improveErrorMessage();
       init_array();
       init_IndexError();
-      name253 = "cumsum";
-      dependencies253 = ["typed", "add", "unaryPlus"];
-      createCumSum = /* @__PURE__ */ factory(name253, dependencies253, (_ref) => {
+      name254 = "cumsum";
+      dependencies254 = ["typed", "add", "unaryPlus"];
+      createCumSum = /* @__PURE__ */ factory(name254, dependencies254, (_ref) => {
         var {
           typed: typed3,
           add: add3,
           unaryPlus: unaryPlus2
         } = _ref;
-        return typed3(name253, {
+        return typed3(name254, {
           // sum([a, b, c, d, ...])
           Array: _cumsum,
           Matrix: function Matrix2(matrix2) {
@@ -58644,7 +58714,7 @@ svg {
           try {
             return _cumsummap(array);
           } catch (err) {
-            throw improveErrorMessage(err, name253);
+            throw improveErrorMessage(err, name254);
           }
         }
         function _cumsummap(array) {
@@ -58665,7 +58735,7 @@ svg {
           try {
             return _cumsumDimensional(array, dim);
           } catch (err) {
-            throw improveErrorMessage(err, name253);
+            throw improveErrorMessage(err, name254);
           }
         }
         function _cumsumDimensional(mat, dim) {
@@ -58695,22 +58765,22 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/mean.js
-  var name254, dependencies254, createMean;
+  var name255, dependencies255, createMean;
   var init_mean2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/mean.js"() {
       init_collection();
       init_array();
       init_factory();
       init_improveErrorMessage();
-      name254 = "mean";
-      dependencies254 = ["typed", "add", "divide"];
-      createMean = /* @__PURE__ */ factory(name254, dependencies254, (_ref) => {
+      name255 = "mean";
+      dependencies255 = ["typed", "add", "divide"];
+      createMean = /* @__PURE__ */ factory(name255, dependencies255, (_ref) => {
         var {
           typed: typed3,
           add: add3,
           divide: divide3
         } = _ref;
-        return typed3(name254, {
+        return typed3(name255, {
           // mean([a, b, c, d, ...])
           "Array | Matrix": _mean,
           // mean([a, b, c, d, ...], dim)
@@ -58753,16 +58823,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/median.js
-  var name255, dependencies255, createMedian;
+  var name256, dependencies256, createMedian;
   var init_median2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/median.js"() {
       init_collection();
       init_array();
       init_factory();
       init_improveErrorMessage();
-      name255 = "median";
-      dependencies255 = ["typed", "add", "divide", "compare", "partitionSelect"];
-      createMedian = /* @__PURE__ */ factory(name255, dependencies255, (_ref) => {
+      name256 = "median";
+      dependencies256 = ["typed", "add", "divide", "compare", "partitionSelect"];
+      createMedian = /* @__PURE__ */ factory(name256, dependencies256, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -58805,7 +58875,7 @@ svg {
             return divide3(add3(left, right), 2);
           }
         });
-        return typed3(name255, {
+        return typed3(name256, {
           // median([a, b, c, d, ...])
           "Array | Matrix": _median,
           // median([a, b, c, d, ...], dim)
@@ -58825,15 +58895,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/mad.js
-  var name256, dependencies256, createMad;
+  var name257, dependencies257, createMad;
   var init_mad2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/mad.js"() {
       init_array();
       init_factory();
       init_improveErrorMessage();
-      name256 = "mad";
-      dependencies256 = ["typed", "abs", "map", "median", "subtract"];
-      createMad = /* @__PURE__ */ factory(name256, dependencies256, (_ref) => {
+      name257 = "mad";
+      dependencies257 = ["typed", "abs", "map", "median", "subtract"];
+      createMad = /* @__PURE__ */ factory(name257, dependencies257, (_ref) => {
         var {
           typed: typed3,
           abs: abs3,
@@ -58841,7 +58911,7 @@ svg {
           median: median2,
           subtract: subtract2
         } = _ref;
-        return typed3(name256, {
+        return typed3(name257, {
           // mad([a, b, c, d, ...])
           "Array | Matrix": _mad,
           // mad(a, b, c, d, ...)
@@ -58872,7 +58942,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/variance.js
-  var DEFAULT_NORMALIZATION, name257, dependencies257, createVariance;
+  var DEFAULT_NORMALIZATION, name258, dependencies258, createVariance;
   var init_variance2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/variance.js"() {
       init_collection();
@@ -58880,9 +58950,9 @@ svg {
       init_factory();
       init_improveErrorMessage();
       DEFAULT_NORMALIZATION = "unbiased";
-      name257 = "variance";
-      dependencies257 = ["typed", "add", "subtract", "multiply", "divide", "apply", "isNaN"];
-      createVariance = /* @__PURE__ */ factory(name257, dependencies257, (_ref) => {
+      name258 = "variance";
+      dependencies258 = ["typed", "add", "subtract", "multiply", "divide", "apply", "isNaN"];
+      createVariance = /* @__PURE__ */ factory(name258, dependencies258, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -58892,7 +58962,7 @@ svg {
           apply: apply2,
           isNaN: isNaN3
         } = _ref;
-        return typed3(name257, {
+        return typed3(name258, {
           // variance([a, b, c, d, ...])
           "Array | Matrix": function ArrayMatrix(array) {
             return _var(array, DEFAULT_NORMALIZATION);
@@ -58963,121 +59033,80 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/quantileSeq.js
-  var name258, dependencies258, createQuantileSeq;
+  var name259, dependencies259, createQuantileSeq;
   var init_quantileSeq2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/quantileSeq.js"() {
       init_is();
       init_array();
       init_factory();
       init_apply();
-      name258 = "quantileSeq";
-      dependencies258 = ["typed", "add", "multiply", "partitionSelect", "compare", "isInteger"];
-      createQuantileSeq = /* @__PURE__ */ factory(name258, dependencies258, (_ref) => {
+      name259 = "quantileSeq";
+      dependencies259 = ["typed", "?bignumber", "add", "subtract", "divide", "multiply", "partitionSelect", "compare", "isInteger", "smaller", "smallerEq", "larger"];
+      createQuantileSeq = /* @__PURE__ */ factory(name259, dependencies259, (_ref) => {
         var {
           typed: typed3,
+          bignumber: bignumber2,
           add: add3,
+          subtract: subtract2,
+          divide: divide3,
           multiply: multiply2,
           partitionSelect: partitionSelect2,
           compare: compare3,
-          isInteger: isInteger3
+          isInteger: isInteger3,
+          smaller: smaller2,
+          smallerEq: smallerEq2,
+          larger: larger2
         } = _ref;
         var apply2 = createApply({
           typed: typed3,
           isInteger: isInteger3
         });
-        var validate2 = typed3({
-          "number | BigNumber | Unit": function numberBigNumberUnit(x4) {
-            return x4;
-          }
+        return typed3(name259, {
+          "Array | Matrix, number | BigNumber": (data, p3) => _quantileSeqProbNumber(data, p3, false),
+          "Array | Matrix, number | BigNumber, number": (data, prob, dim) => _quantileSeqDim(data, prob, false, dim, _quantileSeqProbNumber),
+          "Array | Matrix, number | BigNumber, boolean": _quantileSeqProbNumber,
+          "Array | Matrix, number | BigNumber, boolean, number": (data, prob, sorted, dim) => _quantileSeqDim(data, prob, sorted, dim, _quantileSeqProbNumber),
+          "Array | Matrix, Array | Matrix": (data, p3) => _quantileSeqProbCollection(data, p3, false),
+          "Array | Matrix, Array | Matrix, number": (data, prob, dim) => _quantileSeqDim(data, prob, false, dim, _quantileSeqProbCollection),
+          "Array | Matrix, Array | Matrix, boolean": _quantileSeqProbCollection,
+          "Array | Matrix, Array | Matrix, boolean, number": (data, prob, sorted, dim) => _quantileSeqDim(data, prob, sorted, dim, _quantileSeqProbCollection)
         });
-        return typed3(name258, {
-          "Array|Matrix, number|BigNumber|Array": (data, prob) => quantileSeq2(data, prob, false),
-          "Array|Matrix, number|BigNumber|Array, boolean": quantileSeq2,
-          "Array|Matrix, number|BigNumber|Array, number": (data, prob, dim) => _quantileSeqDim(data, prob, false, dim),
-          "Array|Matrix, number|BigNumber|Array, boolean, number": (data, prob, sorted, dim) => _quantileSeqDim(data, prob, sorted, dim)
-        });
-        function _quantileSeqDim(data, prob, sorted, dim) {
-          return apply2(data, dim, (x4) => quantileSeq2(x4, prob, sorted));
+        function _quantileSeqDim(data, prob, sorted, dim, fn2) {
+          return apply2(data, dim, (x4) => fn2(x4, prob, sorted));
         }
-        function quantileSeq2(data, probOrN, sorted) {
-          var probArr, dataArr, one;
-          if (arguments.length < 2 || arguments.length > 3) {
-            throw new SyntaxError("Function quantileSeq requires two or three parameters");
+        function _quantileSeqProbNumber(data, probOrN, sorted) {
+          var probArr;
+          var dataArr = data.valueOf();
+          if (smaller2(probOrN, 0)) {
+            throw new Error("N/prob must be non-negative");
           }
-          if (isCollection(data)) {
-            sorted = sorted || false;
-            if (typeof sorted === "boolean") {
-              dataArr = data.valueOf();
-              if (isNumber(probOrN)) {
-                if (probOrN < 0) {
-                  throw new Error("N/prob must be non-negative");
-                }
-                if (probOrN <= 1) {
-                  return _quantileSeq(dataArr, probOrN, sorted);
-                }
-                if (probOrN > 1) {
-                  if (!isInteger3(probOrN)) {
-                    throw new Error("N must be a positive integer");
-                  }
-                  var nPlusOne = probOrN + 1;
-                  probArr = new Array(probOrN);
-                  for (var i5 = 0; i5 < probOrN; ) {
-                    probArr[i5] = _quantileSeq(dataArr, ++i5 / nPlusOne, sorted);
-                  }
-                  return probArr;
-                }
-              }
-              if (isBigNumber(probOrN)) {
-                var BigNumber2 = probOrN.constructor;
-                if (probOrN.isNegative()) {
-                  throw new Error("N/prob must be non-negative");
-                }
-                one = new BigNumber2(1);
-                if (probOrN.lte(one)) {
-                  return new BigNumber2(_quantileSeq(dataArr, probOrN, sorted));
-                }
-                if (probOrN.gt(one)) {
-                  if (!probOrN.isInteger()) {
-                    throw new Error("N must be a positive integer");
-                  }
-                  var intN = probOrN.toNumber();
-                  if (intN > 4294967295) {
-                    throw new Error("N must be less than or equal to 2^32-1, as that is the maximum length of an Array");
-                  }
-                  var _nPlusOne = new BigNumber2(intN + 1);
-                  probArr = new Array(intN);
-                  for (var _i = 0; _i < intN; ) {
-                    probArr[_i] = new BigNumber2(_quantileSeq(dataArr, new BigNumber2(++_i).div(_nPlusOne), sorted));
-                  }
-                  return probArr;
-                }
-              }
-              if (isCollection(probOrN)) {
-                var probOrNArr = probOrN.valueOf();
-                probArr = new Array(probOrNArr.length);
-                for (var _i2 = 0; _i2 < probArr.length; ++_i2) {
-                  var currProb = probOrNArr[_i2];
-                  if (isNumber(currProb)) {
-                    if (currProb < 0 || currProb > 1) {
-                      throw new Error("Probability must be between 0 and 1, inclusive");
-                    }
-                  } else if (isBigNumber(currProb)) {
-                    one = new currProb.constructor(1);
-                    if (currProb.isNegative() || currProb.gt(one)) {
-                      throw new Error("Probability must be between 0 and 1, inclusive");
-                    }
-                  } else {
-                    throw new TypeError("Unexpected type of argument in function quantileSeq");
-                  }
-                  probArr[_i2] = _quantileSeq(dataArr, currProb, sorted);
-                }
-                return probArr;
-              }
-              throw new TypeError("Unexpected type of argument in function quantileSeq");
+          if (smallerEq2(probOrN, 1)) {
+            return isNumber(probOrN) ? _quantileSeq(dataArr, probOrN, sorted) : bignumber2(_quantileSeq(dataArr, probOrN, sorted));
+          }
+          if (larger2(probOrN, 1)) {
+            if (!isInteger3(probOrN)) {
+              throw new Error("N must be a positive integer");
             }
-            throw new TypeError("Unexpected type of argument in function quantileSeq");
+            if (larger2(probOrN, 4294967295)) {
+              throw new Error("N must be less than or equal to 2^32-1, as that is the maximum length of an Array");
+            }
+            var nPlusOne = add3(probOrN, 1);
+            probArr = [];
+            for (var i5 = 0; smaller2(i5, probOrN); i5++) {
+              var prob = divide3(i5 + 1, nPlusOne);
+              probArr.push(_quantileSeq(dataArr, prob, sorted));
+            }
+            return isNumber(probOrN) ? probArr : bignumber2(probArr);
           }
-          throw new TypeError("Unexpected type of argument in function quantileSeq");
+        }
+        function _quantileSeqProbCollection(data, probOrN, sorted) {
+          var dataArr = data.valueOf();
+          var probOrNArr = probOrN.valueOf();
+          var probArr = [];
+          for (var i5 = 0; i5 < probOrNArr.length; ++i5) {
+            probArr.push(_quantileSeq(dataArr, probOrNArr[i5], sorted));
+          }
+          return probArr;
         }
         function _quantileSeq(array, prob, sorted) {
           var flat = flatten(array);
@@ -59085,82 +59114,48 @@ svg {
           if (len === 0) {
             throw new Error("Cannot calculate quantile of an empty sequence");
           }
-          if (isNumber(prob)) {
-            var _index = prob * (len - 1);
-            var _fracPart = _index % 1;
-            if (_fracPart === 0) {
-              var value2 = sorted ? flat[_index] : partitionSelect2(flat, _index);
-              validate2(value2);
-              return value2;
-            }
-            var _integerPart = Math.floor(_index);
-            var _left;
-            var _right;
-            if (sorted) {
-              _left = flat[_integerPart];
-              _right = flat[_integerPart + 1];
-            } else {
-              _right = partitionSelect2(flat, _integerPart + 1);
-              _left = flat[_integerPart];
-              for (var i5 = 0; i5 < _integerPart; ++i5) {
-                if (compare3(flat[i5], _left) > 0) {
-                  _left = flat[i5];
-                }
-              }
-            }
-            validate2(_left);
-            validate2(_right);
-            return add3(multiply2(_left, 1 - _fracPart), multiply2(_right, _fracPart));
+          var index2 = isNumber(prob) ? prob * (len - 1) : prob.times(len - 1);
+          var integerPart = isNumber(prob) ? Math.floor(index2) : index2.floor().toNumber();
+          var fracPart = isNumber(prob) ? index2 % 1 : index2.minus(integerPart);
+          if (isInteger3(index2)) {
+            return sorted ? flat[index2] : partitionSelect2(flat, isNumber(prob) ? index2 : index2.valueOf());
           }
-          var index2 = prob.times(len - 1);
-          if (index2.isInteger()) {
-            index2 = index2.toNumber();
-            var _value = sorted ? flat[index2] : partitionSelect2(flat, index2);
-            validate2(_value);
-            return _value;
-          }
-          var integerPart = index2.floor();
-          var fracPart = index2.minus(integerPart);
-          var integerPartNumber = integerPart.toNumber();
           var left;
           var right;
           if (sorted) {
-            left = flat[integerPartNumber];
-            right = flat[integerPartNumber + 1];
+            left = flat[integerPart];
+            right = flat[integerPart + 1];
           } else {
-            right = partitionSelect2(flat, integerPartNumber + 1);
-            left = flat[integerPartNumber];
-            for (var _i3 = 0; _i3 < integerPartNumber; ++_i3) {
-              if (compare3(flat[_i3], left) > 0) {
-                left = flat[_i3];
+            right = partitionSelect2(flat, integerPart + 1);
+            left = flat[integerPart];
+            for (var i5 = 0; i5 < integerPart; ++i5) {
+              if (compare3(flat[i5], left) > 0) {
+                left = flat[i5];
               }
             }
           }
-          validate2(left);
-          validate2(right);
-          var one = new fracPart.constructor(1);
-          return add3(multiply2(left, one.minus(fracPart)), multiply2(right, fracPart));
+          return add3(multiply2(left, subtract2(1, fracPart)), multiply2(right, fracPart));
         }
       });
     }
   });
 
   // node_modules/mathjs/lib/esm/function/statistics/std.js
-  var name259, dependencies259, createStd;
+  var name260, dependencies260, createStd;
   var init_std2 = __esm({
     "node_modules/mathjs/lib/esm/function/statistics/std.js"() {
       init_factory();
       init_is();
-      name259 = "std";
-      dependencies259 = ["typed", "map", "sqrt", "variance"];
-      createStd = /* @__PURE__ */ factory(name259, dependencies259, (_ref) => {
+      name260 = "std";
+      dependencies260 = ["typed", "map", "sqrt", "variance"];
+      createStd = /* @__PURE__ */ factory(name260, dependencies260, (_ref) => {
         var {
           typed: typed3,
           map: map3,
           sqrt: sqrt3,
           variance: variance2
         } = _ref;
-        return typed3(name259, {
+        return typed3(name260, {
           // std([a, b, c, d, ...])
           "Array | Matrix": _std,
           // std([a, b, c, d, ...], normalization)
@@ -59197,22 +59192,85 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/function/statistics/corr.js
+  var name261, dependencies261, createCorr;
+  var init_corr2 = __esm({
+    "node_modules/mathjs/lib/esm/function/statistics/corr.js"() {
+      init_factory();
+      name261 = "corr";
+      dependencies261 = ["typed", "matrix", "mean", "sqrt", "sum", "add", "subtract", "multiply", "pow", "divide"];
+      createCorr = /* @__PURE__ */ factory(name261, dependencies261, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          sqrt: sqrt3,
+          sum: sum3,
+          add: add3,
+          subtract: subtract2,
+          multiply: multiply2,
+          pow: pow3,
+          divide: divide3
+        } = _ref;
+        return typed3(name261, {
+          "Array, Array": function ArrayArray(A4, B4) {
+            return _corr(A4, B4);
+          },
+          "Matrix, Matrix": function MatrixMatrix(A4, B4) {
+            var res = _corr(A4.toArray(), B4.toArray());
+            return Array.isArray(res) ? matrix2(res) : res;
+          }
+        });
+        function _corr(A4, B4) {
+          var correlations = [];
+          if (Array.isArray(A4[0]) && Array.isArray(B4[0])) {
+            if (A4.length !== B4.length) {
+              throw new SyntaxError("Dimension mismatch. Array A and B must have the same length.");
+            }
+            for (var i5 = 0; i5 < A4.length; i5++) {
+              if (A4[i5].length !== B4[i5].length) {
+                throw new SyntaxError("Dimension mismatch. Array A and B must have the same number of elements.");
+              }
+              correlations.push(correlation(A4[i5], B4[i5]));
+            }
+            return correlations;
+          } else {
+            if (A4.length !== B4.length) {
+              throw new SyntaxError("Dimension mismatch. Array A and B must have the same number of elements.");
+            }
+            return correlation(A4, B4);
+          }
+        }
+        function correlation(A4, B4) {
+          var n3 = A4.length;
+          var sumX = sum3(A4);
+          var sumY = sum3(B4);
+          var sumXY = A4.reduce((acc, x4, index2) => add3(acc, multiply2(x4, B4[index2])), 0);
+          var sumXSquare = sum3(A4.map((x4) => pow3(x4, 2)));
+          var sumYSquare = sum3(B4.map((y3) => pow3(y3, 2)));
+          var numerator = subtract2(multiply2(n3, sumXY), multiply2(sumX, sumY));
+          var denominator = sqrt3(multiply2(subtract2(multiply2(n3, sumXSquare), pow3(sumX, 2)), subtract2(multiply2(n3, sumYSquare), pow3(sumY, 2))));
+          return divide3(numerator, denominator);
+        }
+      });
+    }
+  });
+
   // node_modules/mathjs/lib/esm/function/probability/combinations.js
   function isPositiveInteger(n3) {
     return n3.isInteger() && n3.gte(0);
   }
-  var name260, dependencies260, createCombinations;
+  var name262, dependencies262, createCombinations;
   var init_combinations3 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/combinations.js"() {
       init_factory();
       init_combinations();
-      name260 = "combinations";
-      dependencies260 = ["typed"];
-      createCombinations = /* @__PURE__ */ factory(name260, dependencies260, (_ref) => {
+      name262 = "combinations";
+      dependencies262 = ["typed"];
+      createCombinations = /* @__PURE__ */ factory(name262, dependencies262, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name260, {
+        return typed3(name262, {
           "number, number": combinationsNumber,
           "BigNumber, BigNumber": function BigNumberBigNumber(n3, k4) {
             var BigNumber2 = n3.constructor;
@@ -59247,19 +59305,19 @@ svg {
   function isPositiveInteger2(n3) {
     return n3.isInteger() && n3.gte(0);
   }
-  var name261, dependencies261, createCombinationsWithRep;
+  var name263, dependencies263, createCombinationsWithRep;
   var init_combinationsWithRep2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/combinationsWithRep.js"() {
       init_factory();
       init_number();
       init_product();
-      name261 = "combinationsWithRep";
-      dependencies261 = ["typed"];
-      createCombinationsWithRep = /* @__PURE__ */ factory(name261, dependencies261, (_ref) => {
+      name263 = "combinationsWithRep";
+      dependencies263 = ["typed"];
+      createCombinationsWithRep = /* @__PURE__ */ factory(name263, dependencies263, (_ref) => {
         var {
           typed: typed3
         } = _ref;
-        return typed3(name261, {
+        return typed3(name263, {
           "number, number": function numberNumber(n3, k4) {
             if (!isInteger(n3) || n3 < 0) {
               throw new TypeError("Positive integer value expected in function combinationsWithRep");
@@ -59306,14 +59364,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/gamma.js
-  var name262, dependencies262, createGamma;
+  var name264, dependencies264, createGamma;
   var init_gamma2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/gamma.js"() {
       init_factory();
       init_number2();
-      name262 = "gamma";
-      dependencies262 = ["typed", "config", "multiplyScalar", "pow", "BigNumber", "Complex"];
-      createGamma = /* @__PURE__ */ factory(name262, dependencies262, (_ref) => {
+      name264 = "gamma";
+      dependencies264 = ["typed", "config", "multiplyScalar", "pow", "BigNumber", "Complex"];
+      createGamma = /* @__PURE__ */ factory(name264, dependencies264, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -59343,7 +59401,7 @@ svg {
           var expt = t3.neg().exp();
           return x4.mul(twoPiSqrt).mul(tpow).mul(expt);
         }
-        return typed3(name262, {
+        return typed3(name264, {
           number: gammaNumber,
           Complex: gammaComplex,
           BigNumber: function BigNumber2(n3) {
@@ -59382,15 +59440,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/lgamma.js
-  var name263, dependencies263, createLgamma;
+  var name265, dependencies265, createLgamma;
   var init_lgamma2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/lgamma.js"() {
       init_number2();
       init_factory();
       init_number();
-      name263 = "lgamma";
-      dependencies263 = ["Complex", "typed"];
-      createLgamma = /* @__PURE__ */ factory(name263, dependencies263, (_ref) => {
+      name265 = "lgamma";
+      dependencies265 = ["Complex", "typed"];
+      createLgamma = /* @__PURE__ */ factory(name265, dependencies265, (_ref) => {
         var {
           Complex: Complex3,
           typed: typed3
@@ -59398,7 +59456,7 @@ svg {
         var SMALL_RE = 7;
         var SMALL_IM = 7;
         var coeffs = [-0.029550653594771242, 0.00641025641025641, -0.0019175269175269176, 8417508417508417e-19, -5952380952380953e-19, 7936507936507937e-19, -0.002777777777777778, 0.08333333333333333];
-        return typed3(name263, {
+        return typed3(name265, {
           number: lgammaNumber,
           Complex: lgammaComplex,
           BigNumber: function BigNumber2() {
@@ -59462,19 +59520,19 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/factorial.js
-  var name264, dependencies264, createFactorial;
+  var name266, dependencies266, createFactorial;
   var init_factorial2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/factorial.js"() {
       init_collection();
       init_factory();
-      name264 = "factorial";
-      dependencies264 = ["typed", "gamma"];
-      createFactorial = /* @__PURE__ */ factory(name264, dependencies264, (_ref) => {
+      name266 = "factorial";
+      dependencies266 = ["typed", "gamma"];
+      createFactorial = /* @__PURE__ */ factory(name266, dependencies266, (_ref) => {
         var {
           typed: typed3,
           gamma: gamma2
         } = _ref;
-        return typed3(name264, {
+        return typed3(name266, {
           number: function number2(n3) {
             if (n3 < 0) {
               throw new Error("Value must be non-negative");
@@ -59494,13 +59552,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/kldivergence.js
-  var name265, dependencies265, createKldivergence;
+  var name267, dependencies267, createKldivergence;
   var init_kldivergence2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/kldivergence.js"() {
       init_factory();
-      name265 = "kldivergence";
-      dependencies265 = ["typed", "matrix", "divide", "sum", "multiply", "map", "dotDivide", "log", "isNumeric"];
-      createKldivergence = /* @__PURE__ */ factory(name265, dependencies265, (_ref) => {
+      name267 = "kldivergence";
+      dependencies267 = ["typed", "matrix", "divide", "sum", "multiply", "map", "dotDivide", "log", "isNumeric"];
+      createKldivergence = /* @__PURE__ */ factory(name267, dependencies267, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -59512,7 +59570,7 @@ svg {
           log: log4,
           isNumeric: isNumeric2
         } = _ref;
-        return typed3(name265, {
+        return typed3(name267, {
           "Array, Array": function ArrayArray(q4, p3) {
             return _kldiv(matrix2(q4), matrix2(p3));
           },
@@ -59560,14 +59618,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/multinomial.js
-  var name266, dependencies266, createMultinomial;
+  var name268, dependencies268, createMultinomial;
   var init_multinomial2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/multinomial.js"() {
       init_collection();
       init_factory();
-      name266 = "multinomial";
-      dependencies266 = ["typed", "add", "divide", "multiply", "factorial", "isInteger", "isPositive"];
-      createMultinomial = /* @__PURE__ */ factory(name266, dependencies266, (_ref) => {
+      name268 = "multinomial";
+      dependencies268 = ["typed", "add", "divide", "multiply", "factorial", "isInteger", "isPositive"];
+      createMultinomial = /* @__PURE__ */ factory(name268, dependencies268, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -59577,7 +59635,7 @@ svg {
           isInteger: isInteger3,
           isPositive: isPositive2
         } = _ref;
-        return typed3(name266, {
+        return typed3(name268, {
           "Array | Matrix": function ArrayMatrix(a3) {
             var sum3 = 0;
             var denom = 1;
@@ -59599,20 +59657,20 @@ svg {
   function isPositiveInteger3(n3) {
     return n3.isInteger() && n3.gte(0);
   }
-  var name267, dependencies267, createPermutations;
+  var name269, dependencies269, createPermutations;
   var init_permutations2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/permutations.js"() {
       init_number();
       init_product();
       init_factory();
-      name267 = "permutations";
-      dependencies267 = ["typed", "factorial"];
-      createPermutations = /* @__PURE__ */ factory(name267, dependencies267, (_ref) => {
+      name269 = "permutations";
+      dependencies269 = ["typed", "factorial"];
+      createPermutations = /* @__PURE__ */ factory(name269, dependencies269, (_ref) => {
         var {
           typed: typed3,
           factorial: factorial2
         } = _ref;
-        return typed3(name267, {
+        return typed3(name269, {
           "number | BigNumber": factorial2,
           "number, number": function numberNumber(n3, k4) {
             if (!isInteger(n3) || n3 < 0) {
@@ -60380,16 +60438,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/pickRandom.js
-  var name268, dependencies268, createPickRandom;
+  var name270, dependencies270, createPickRandom;
   var init_pickRandom2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/pickRandom.js"() {
       init_array();
       init_factory();
       init_is();
       init_seededRNG();
-      name268 = "pickRandom";
-      dependencies268 = ["typed", "config", "?on"];
-      createPickRandom = /* @__PURE__ */ factory(name268, dependencies268, (_ref) => {
+      name270 = "pickRandom";
+      dependencies270 = ["typed", "config", "?on"];
+      createPickRandom = /* @__PURE__ */ factory(name270, dependencies270, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -60403,7 +60461,7 @@ svg {
             }
           });
         }
-        return typed3(name268, {
+        return typed3(name270, {
           "Array | Matrix": function ArrayMatrix(possibles) {
             return _pickRandom(possibles, {});
           },
@@ -60509,16 +60567,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/random.js
-  var name269, dependencies269, createRandom;
+  var name271, dependencies271, createRandom;
   var init_random2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/random.js"() {
       init_factory();
       init_is();
       init_seededRNG();
       init_randomMatrix();
-      name269 = "random";
-      dependencies269 = ["typed", "config", "?on"];
-      createRandom = /* @__PURE__ */ factory(name269, dependencies269, (_ref) => {
+      name271 = "random";
+      dependencies271 = ["typed", "config", "?on"];
+      createRandom = /* @__PURE__ */ factory(name271, dependencies271, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -60532,7 +60590,7 @@ svg {
             }
           });
         }
-        return typed3(name269, {
+        return typed3(name271, {
           "": () => _random(0, 1),
           number: (max3) => _random(0, max3),
           "number, number": (min3, max3) => _random(min3, max3),
@@ -60552,16 +60610,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/probability/randomInt.js
-  var name270, dependencies270, createRandomInt;
+  var name272, dependencies272, createRandomInt;
   var init_randomInt2 = __esm({
     "node_modules/mathjs/lib/esm/function/probability/randomInt.js"() {
       init_factory();
       init_randomMatrix();
       init_seededRNG();
       init_is();
-      name270 = "randomInt";
-      dependencies270 = ["typed", "config", "?on"];
-      createRandomInt = /* @__PURE__ */ factory(name270, dependencies270, (_ref) => {
+      name272 = "randomInt";
+      dependencies272 = ["typed", "config", "?on"];
+      createRandomInt = /* @__PURE__ */ factory(name272, dependencies272, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -60575,7 +60633,7 @@ svg {
             }
           });
         }
-        return typed3(name270, {
+        return typed3(name272, {
           "": () => _randomInt(0, 1),
           number: (max3) => _randomInt(0, max3),
           "number, number": (min3, max3) => _randomInt(min3, max3),
@@ -60595,18 +60653,18 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/combinatorics/stirlingS2.js
-  var name271, dependencies271, createStirlingS2;
+  var name273, dependencies273, createStirlingS2;
   var init_stirlingS22 = __esm({
     "node_modules/mathjs/lib/esm/function/combinatorics/stirlingS2.js"() {
       init_factory();
       init_is();
-      name271 = "stirlingS2";
-      dependencies271 = ["typed", "addScalar", "subtract", "multiplyScalar", "divideScalar", "pow", "factorial", "combinations", "isNegative", "isInteger", "number", "?bignumber", "larger"];
-      createStirlingS2 = /* @__PURE__ */ factory(name271, dependencies271, (_ref) => {
+      name273 = "stirlingS2";
+      dependencies273 = ["typed", "addScalar", "subtractScalar", "multiplyScalar", "divideScalar", "pow", "factorial", "combinations", "isNegative", "isInteger", "number", "?bignumber", "larger"];
+      createStirlingS2 = /* @__PURE__ */ factory(name273, dependencies273, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
-          subtract: subtract2,
+          subtractScalar: subtractScalar2,
           multiplyScalar: multiplyScalar2,
           divideScalar: divideScalar2,
           pow: pow3,
@@ -60620,7 +60678,7 @@ svg {
         } = _ref;
         var smallCache = [];
         var bigCache = [];
-        return typed3(name271, {
+        return typed3(name273, {
           "number | BigNumber, number | BigNumber": function numberBigNumberNumberBigNumber(n3, k4) {
             if (!isInteger3(n3) || isNegative2(n3) || !isInteger3(k4) || isNegative2(k4)) {
               throw new TypeError("Non-negative integer value expected in function stirlingS2");
@@ -60659,13 +60717,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/combinatorics/bellNumbers.js
-  var name272, dependencies272, createBellNumbers;
+  var name274, dependencies274, createBellNumbers;
   var init_bellNumbers2 = __esm({
     "node_modules/mathjs/lib/esm/function/combinatorics/bellNumbers.js"() {
       init_factory();
-      name272 = "bellNumbers";
-      dependencies272 = ["typed", "addScalar", "isNegative", "isInteger", "stirlingS2"];
-      createBellNumbers = /* @__PURE__ */ factory(name272, dependencies272, (_ref) => {
+      name274 = "bellNumbers";
+      dependencies274 = ["typed", "addScalar", "isNegative", "isInteger", "stirlingS2"];
+      createBellNumbers = /* @__PURE__ */ factory(name274, dependencies274, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
@@ -60673,7 +60731,7 @@ svg {
           isInteger: isInteger3,
           stirlingS2: stirlingS22
         } = _ref;
-        return typed3(name272, {
+        return typed3(name274, {
           "number | BigNumber": function numberBigNumber(n3) {
             if (!isInteger3(n3) || isNegative2(n3)) {
               throw new TypeError("Non-negative integer value expected in function bellNumbers");
@@ -60690,13 +60748,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/combinatorics/catalan.js
-  var name273, dependencies273, createCatalan;
+  var name275, dependencies275, createCatalan;
   var init_catalan2 = __esm({
     "node_modules/mathjs/lib/esm/function/combinatorics/catalan.js"() {
       init_factory();
-      name273 = "catalan";
-      dependencies273 = ["typed", "addScalar", "divideScalar", "multiplyScalar", "combinations", "isNegative", "isInteger"];
-      createCatalan = /* @__PURE__ */ factory(name273, dependencies273, (_ref) => {
+      name275 = "catalan";
+      dependencies275 = ["typed", "addScalar", "divideScalar", "multiplyScalar", "combinations", "isNegative", "isInteger"];
+      createCatalan = /* @__PURE__ */ factory(name275, dependencies275, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
@@ -60706,7 +60764,7 @@ svg {
           isNegative: isNegative2,
           isInteger: isInteger3
         } = _ref;
-        return typed3(name273, {
+        return typed3(name275, {
           "number | BigNumber": function numberBigNumber(n3) {
             if (!isInteger3(n3) || isNegative2(n3)) {
               throw new TypeError("Non-negative integer value expected in function catalan");
@@ -60719,13 +60777,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/combinatorics/composition.js
-  var name274, dependencies274, createComposition;
+  var name276, dependencies276, createComposition;
   var init_composition2 = __esm({
     "node_modules/mathjs/lib/esm/function/combinatorics/composition.js"() {
       init_factory();
-      name274 = "composition";
-      dependencies274 = ["typed", "addScalar", "combinations", "isNegative", "isPositive", "isInteger", "larger"];
-      createComposition = /* @__PURE__ */ factory(name274, dependencies274, (_ref) => {
+      name276 = "composition";
+      dependencies276 = ["typed", "addScalar", "combinations", "isNegative", "isPositive", "isInteger", "larger"];
+      createComposition = /* @__PURE__ */ factory(name276, dependencies276, (_ref) => {
         var {
           typed: typed3,
           addScalar: addScalar2,
@@ -60735,7 +60793,7 @@ svg {
           isInteger: isInteger3,
           larger: larger2
         } = _ref;
-        return typed3(name274, {
+        return typed3(name276, {
           "number | BigNumber, number | BigNumber": function numberBigNumberNumberBigNumber(n3, k4) {
             if (!isInteger3(n3) || !isPositive2(n3) || !isInteger3(k4) || !isPositive2(k4)) {
               throw new TypeError("Positive integer value expected in function composition");
@@ -60750,13 +60808,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/leafCount.js
-  var name275, dependencies275, createLeafCount;
+  var name277, dependencies277, createLeafCount;
   var init_leafCount2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/leafCount.js"() {
       init_factory();
-      name275 = "leafCount";
-      dependencies275 = ["parse", "typed"];
-      createLeafCount = /* @__PURE__ */ factory(name275, dependencies275, (_ref) => {
+      name277 = "leafCount";
+      dependencies277 = ["parse", "typed"];
+      createLeafCount = /* @__PURE__ */ factory(name277, dependencies277, (_ref) => {
         var {
           parse: parse2,
           typed: typed3
@@ -60768,7 +60826,7 @@ svg {
           });
           return count2 || 1;
         }
-        return typed3(name275, {
+        return typed3(name277, {
           Node: function Node2(expr) {
             return countLeaves(expr);
           }
@@ -60801,37 +60859,37 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplify/util.js
-  function ownKeys3(object, enumerableOnly) {
-    var keys = Object.keys(object);
+  function ownKeys3(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      enumerableOnly && (symbols = symbols.filter(function(sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      })), keys.push.apply(keys, symbols);
+      var o3 = Object.getOwnPropertySymbols(e6);
+      r3 && (o3 = o3.filter(function(r4) {
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+      })), t3.push.apply(t3, o3);
     }
-    return keys;
+    return t3;
   }
-  function _objectSpread3(target) {
-    for (var i5 = 1; i5 < arguments.length; i5++) {
-      var source = null != arguments[i5] ? arguments[i5] : {};
-      i5 % 2 ? ownKeys3(Object(source), true).forEach(function(key) {
-        _defineProperty(target, key, source[key]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys3(Object(source)).forEach(function(key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+  function _objectSpread3(e6) {
+    for (var r3 = 1; r3 < arguments.length; r3++) {
+      var t3 = null != arguments[r3] ? arguments[r3] : {};
+      r3 % 2 ? ownKeys3(Object(t3), true).forEach(function(r4) {
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return target;
+    return e6;
   }
-  var name276, dependencies276, createUtil;
+  var name278, dependencies278, createUtil;
   var init_util = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/simplify/util.js"() {
       init_defineProperty();
       init_is();
       init_factory();
       init_object();
-      name276 = "simplifyUtil";
-      dependencies276 = ["FunctionNode", "OperatorNode", "SymbolNode"];
-      createUtil = /* @__PURE__ */ factory(name276, dependencies276, (_ref) => {
+      name278 = "simplifyUtil";
+      dependencies278 = ["FunctionNode", "OperatorNode", "SymbolNode"];
+      createUtil = /* @__PURE__ */ factory(name278, dependencies278, (_ref) => {
         var {
           FunctionNode: FunctionNode2,
           OperatorNode: OperatorNode2,
@@ -60912,35 +60970,35 @@ svg {
         };
         function hasProperty(nodeOrName, property) {
           var context = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : defaultContext;
-          var name307 = defaultName;
+          var name310 = defaultName;
           if (typeof nodeOrName === "string") {
-            name307 = nodeOrName;
+            name310 = nodeOrName;
           } else if (isOperatorNode(nodeOrName)) {
-            name307 = nodeOrName.fn.toString();
+            name310 = nodeOrName.fn.toString();
           } else if (isFunctionNode(nodeOrName)) {
-            name307 = nodeOrName.name;
+            name310 = nodeOrName.name;
           } else if (isParenthesisNode(nodeOrName)) {
-            name307 = "paren";
+            name310 = "paren";
           }
-          if (hasOwnProperty2(context, name307)) {
-            var properties2 = context[name307];
-            if (hasOwnProperty2(properties2, property)) {
+          if (hasOwnProperty(context, name310)) {
+            var properties2 = context[name310];
+            if (hasOwnProperty(properties2, property)) {
               return properties2[property];
             }
-            if (hasOwnProperty2(defaultContext, name307)) {
-              return defaultContext[name307][property];
+            if (hasOwnProperty(defaultContext, name310)) {
+              return defaultContext[name310][property];
             }
           }
-          if (hasOwnProperty2(context, defaultName)) {
+          if (hasOwnProperty(context, defaultName)) {
             var _properties = context[defaultName];
-            if (hasOwnProperty2(_properties, property)) {
+            if (hasOwnProperty(_properties, property)) {
               return _properties[property];
             }
             return defaultContext[defaultName][property];
           }
-          if (hasOwnProperty2(defaultContext, name307)) {
-            var _properties2 = defaultContext[name307];
-            if (hasOwnProperty2(_properties2, property)) {
+          if (hasOwnProperty(defaultContext, name310)) {
+            var _properties2 = defaultContext[name310];
+            if (hasOwnProperty(_properties2, property)) {
               return _properties2[property];
             }
           }
@@ -60957,7 +61015,7 @@ svg {
         function mergeContext(primary, secondary) {
           var merged = _objectSpread3({}, primary);
           for (var prop in secondary) {
-            if (hasOwnProperty2(primary, prop)) {
+            if (hasOwnProperty(primary, prop)) {
               merged[prop] = _objectSpread3(_objectSpread3({}, secondary[prop]), primary[prop]);
             } else {
               merged[prop] = secondary[prop];
@@ -61064,7 +61122,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplify.js
-  var name277, dependencies277, createSimplify;
+  var name279, dependencies279, createSimplify;
   var init_simplify2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/simplify.js"() {
       init_is();
@@ -61073,9 +61131,9 @@ svg {
       init_util();
       init_object();
       init_map();
-      name277 = "simplify";
-      dependencies277 = ["config", "typed", "parse", "add", "subtract", "multiply", "divide", "pow", "isZero", "equal", "resolve", "simplifyConstant", "simplifyCore", "?fraction", "?bignumber", "mathWithTransform", "matrix", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
-      createSimplify = /* @__PURE__ */ factory(name277, dependencies277, (_ref) => {
+      name279 = "simplify";
+      dependencies279 = ["config", "typed", "parse", "add", "subtract", "multiply", "divide", "pow", "isZero", "equal", "resolve", "simplifyConstant", "simplifyCore", "?fraction", "?bignumber", "mathWithTransform", "matrix", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
+      createSimplify = /* @__PURE__ */ factory(name279, dependencies279, (_ref) => {
         var {
           config: config4,
           typed: typed3,
@@ -61806,7 +61864,7 @@ svg {
               res.implicit = true;
             }
             res = res.transform(function(node2) {
-              if (node2.isSymbolNode && hasOwnProperty2(matches.placeholders, node2.name)) {
+              if (node2.isSymbolNode && hasOwnProperty(matches.placeholders, node2.name)) {
                 return matches.placeholders[node2.name].clone();
               } else {
                 return node2;
@@ -61854,9 +61912,9 @@ svg {
             return match1;
           }
           for (var key in match1.placeholders) {
-            if (hasOwnProperty2(match1.placeholders, key)) {
+            if (hasOwnProperty(match1.placeholders, key)) {
               res.placeholders[key] = match1.placeholders[key];
-              if (hasOwnProperty2(match2.placeholders, key)) {
+              if (hasOwnProperty(match2.placeholders, key)) {
                 if (!_exactMatch(match1.placeholders[key], match2.placeholders[key])) {
                   return null;
                 }
@@ -61864,7 +61922,7 @@ svg {
             }
           }
           for (var _key in match2.placeholders) {
-            if (hasOwnProperty2(match2.placeholders, _key)) {
+            if (hasOwnProperty(match2.placeholders, _key)) {
               res.placeholders[_key] = match2.placeholders[_key];
             }
           }
@@ -62072,16 +62130,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplifyConstant.js
-  var name278, dependencies278, createSimplifyConstant;
+  var name280, dependencies280, createSimplifyConstant;
   var init_simplifyConstant2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/simplifyConstant.js"() {
       init_is();
       init_factory();
       init_util();
       init_noop();
-      name278 = "simplifyConstant";
-      dependencies278 = ["typed", "config", "mathWithTransform", "matrix", "?fraction", "?bignumber", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "SymbolNode"];
-      createSimplifyConstant = /* @__PURE__ */ factory(name278, dependencies278, (_ref) => {
+      name280 = "simplifyConstant";
+      dependencies280 = ["typed", "config", "mathWithTransform", "matrix", "?fraction", "?bignumber", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "SymbolNode"];
+      createSimplifyConstant = /* @__PURE__ */ factory(name280, dependencies280, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -62437,16 +62495,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplifyCore.js
-  var name279, dependencies279, createSimplifyCore;
+  var name281, dependencies281, createSimplifyCore;
   var init_simplifyCore2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/simplifyCore.js"() {
       init_is();
       init_operators();
       init_util();
       init_factory();
-      name279 = "simplifyCore";
-      dependencies279 = ["typed", "parse", "equal", "isZero", "add", "subtract", "multiply", "divide", "pow", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
-      createSimplifyCore = /* @__PURE__ */ factory(name279, dependencies279, (_ref) => {
+      name281 = "simplifyCore";
+      dependencies281 = ["typed", "parse", "equal", "isZero", "add", "subtract", "multiply", "divide", "pow", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
+      createSimplifyCore = /* @__PURE__ */ factory(name281, dependencies281, (_ref) => {
         var {
           typed: typed3,
           parse: parse2,
@@ -62670,7 +62728,7 @@ svg {
           }
           return node;
         }
-        return typed3(name279, {
+        return typed3(name281, {
           Node: _simplifyCore,
           "Node,Object": _simplifyCore
         });
@@ -62679,15 +62737,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/resolve.js
-  var name280, dependencies280, createResolve;
+  var name282, dependencies282, createResolve;
   var init_resolve2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/resolve.js"() {
       init_map();
       init_is();
       init_factory();
-      name280 = "resolve";
-      dependencies280 = ["typed", "parse", "ConstantNode", "FunctionNode", "OperatorNode", "ParenthesisNode"];
-      createResolve = /* @__PURE__ */ factory(name280, dependencies280, (_ref) => {
+      name282 = "resolve";
+      dependencies282 = ["typed", "parse", "ConstantNode", "FunctionNode", "OperatorNode", "ParenthesisNode"];
+      createResolve = /* @__PURE__ */ factory(name282, dependencies282, (_ref) => {
         var {
           typed: typed3,
           parse: parse2,
@@ -62751,14 +62809,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/symbolicEqual.js
-  var name281, dependencies281, createSymbolicEqual;
+  var name283, dependencies283, createSymbolicEqual;
   var init_symbolicEqual2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/symbolicEqual.js"() {
       init_is();
       init_factory();
-      name281 = "symbolicEqual";
-      dependencies281 = ["parse", "simplify", "typed", "OperatorNode"];
-      createSymbolicEqual = /* @__PURE__ */ factory(name281, dependencies281, (_ref) => {
+      name283 = "symbolicEqual";
+      dependencies283 = ["parse", "simplify", "typed", "OperatorNode"];
+      createSymbolicEqual = /* @__PURE__ */ factory(name283, dependencies283, (_ref) => {
         var {
           parse: parse2,
           simplify: simplify2,
@@ -62771,7 +62829,7 @@ svg {
           var simplified = simplify2(diff2, {}, options);
           return isConstantNode(simplified) && !simplified.value;
         }
-        return typed3(name281, {
+        return typed3(name283, {
           "Node, Node": _symbolicEqual,
           "Node, Node, Object": _symbolicEqual
         });
@@ -62780,14 +62838,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/derivative.js
-  var name282, dependencies282, createDerivative;
+  var name284, dependencies284, createDerivative;
   var init_derivative2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/derivative.js"() {
       init_is();
       init_factory();
-      name282 = "derivative";
-      dependencies282 = ["typed", "config", "parse", "simplify", "equal", "isZero", "numeric", "ConstantNode", "FunctionNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
-      createDerivative = /* @__PURE__ */ factory(name282, dependencies282, (_ref) => {
+      name284 = "derivative";
+      dependencies284 = ["typed", "config", "parse", "simplify", "equal", "isZero", "numeric", "ConstantNode", "FunctionNode", "OperatorNode", "ParenthesisNode", "SymbolNode"];
+      createDerivative = /* @__PURE__ */ factory(name284, dependencies284, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -62816,7 +62874,7 @@ svg {
           to: "SymbolNode",
           convert: parse2
         });
-        var derivative2 = typed3(name282, {
+        var derivative2 = typed3(name284, {
           "Node, SymbolNode": plainDerivative,
           "Node, SymbolNode, Object": plainDerivative
           /* TODO: implement and test syntax with order of derivatives -> implement as an option {order: number}
@@ -63166,7 +63224,7 @@ svg {
             node.args[i5] = createConstantNode2(0);
           }
           node.compile().evaluate();
-          throw new Error("Expected TypeError, but none found");
+          throw new Error('Function "' + node.name + '" is not supported by derivative, or a wrong number of arguments is passed');
         }
         function createConstantNode2(value2, valueType) {
           return new ConstantNode2(numeric3(value2, valueType || config4.number));
@@ -63177,14 +63235,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/rationalize.js
-  var name283, dependencies283, createRationalize;
+  var name285, dependencies285, createRationalize;
   var init_rationalize2 = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/rationalize.js"() {
       init_number();
       init_factory();
-      name283 = "rationalize";
-      dependencies283 = ["config", "typed", "equal", "isZero", "add", "subtract", "multiply", "divide", "pow", "parse", "simplifyConstant", "simplifyCore", "simplify", "?bignumber", "?fraction", "mathWithTransform", "matrix", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "SymbolNode", "ParenthesisNode"];
-      createRationalize = /* @__PURE__ */ factory(name283, dependencies283, (_ref) => {
+      name285 = "rationalize";
+      dependencies285 = ["config", "typed", "equal", "isZero", "add", "subtract", "multiply", "divide", "pow", "parse", "simplifyConstant", "simplifyCore", "simplify", "?bignumber", "?fraction", "mathWithTransform", "matrix", "AccessorNode", "ArrayNode", "ConstantNode", "FunctionNode", "IndexNode", "ObjectNode", "OperatorNode", "SymbolNode", "ParenthesisNode"];
+      createRationalize = /* @__PURE__ */ factory(name285, dependencies285, (_ref) => {
         var {
           config: config4,
           typed: typed3,
@@ -63277,7 +63335,7 @@ svg {
           retRationalize.expression = expr;
           return retRationalize;
         }
-        return typed3(name283, {
+        return typed3(name285, {
           Node: _rationalize,
           "Node, boolean": (expr, detailed) => _rationalize(expr, {}, detailed),
           "Node, Object": _rationalize,
@@ -63788,13 +63846,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/signal/zpk2tf.js
-  var name284, dependencies284, createZpk2tf;
+  var name286, dependencies286, createZpk2tf;
   var init_zpk2tf2 = __esm({
     "node_modules/mathjs/lib/esm/function/signal/zpk2tf.js"() {
       init_factory();
-      name284 = "zpk2tf";
-      dependencies284 = ["typed", "add", "multiply", "Complex", "number"];
-      createZpk2tf = /* @__PURE__ */ factory(name284, dependencies284, (_ref) => {
+      name286 = "zpk2tf";
+      dependencies286 = ["typed", "add", "multiply", "Complex", "number"];
+      createZpk2tf = /* @__PURE__ */ factory(name286, dependencies286, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -63802,7 +63860,7 @@ svg {
           Complex: Complex3,
           number: number2
         } = _ref;
-        return typed3(name284, {
+        return typed3(name286, {
           "Array,Array,number": function ArrayArrayNumber(z5, p3, k4) {
             return _zpk2tf(z5, p3, k4);
           },
@@ -63859,13 +63917,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/signal/freqz.js
-  var name285, dependencies285, createFreqz;
+  var name287, dependencies287, createFreqz;
   var init_freqz2 = __esm({
     "node_modules/mathjs/lib/esm/function/signal/freqz.js"() {
       init_factory();
-      name285 = "freqz";
-      dependencies285 = ["typed", "add", "multiply", "Complex", "divide", "matrix"];
-      createFreqz = /* @__PURE__ */ factory(name285, dependencies285, (_ref) => {
+      name287 = "freqz";
+      dependencies287 = ["typed", "add", "multiply", "Complex", "divide", "matrix"];
+      createFreqz = /* @__PURE__ */ factory(name287, dependencies287, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -63874,7 +63932,7 @@ svg {
           divide: divide3,
           matrix: matrix2
         } = _ref;
-        return typed3(name285, {
+        return typed3(name287, {
           "Array, Array": function ArrayArray(b3, a3) {
             var w4 = createBins(512);
             return _freqz(b3, a3, w4);
@@ -63959,13 +64017,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/json/reviver.js
-  var name286, dependencies286, createReviver;
+  var name288, dependencies288, createReviver;
   var init_reviver = __esm({
     "node_modules/mathjs/lib/esm/json/reviver.js"() {
       init_factory();
-      name286 = "reviver";
-      dependencies286 = ["classes"];
-      createReviver = /* @__PURE__ */ factory(name286, dependencies286, (_ref) => {
+      name288 = "reviver";
+      dependencies288 = ["classes"];
+      createReviver = /* @__PURE__ */ factory(name288, dependencies288, (_ref) => {
         var {
           classes: classes2
         } = _ref;
@@ -63981,13 +64039,13 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/json/replacer.js
-  var name287, dependencies287, createReplacer;
+  var name289, dependencies289, createReplacer;
   var init_replacer = __esm({
     "node_modules/mathjs/lib/esm/json/replacer.js"() {
       init_factory();
-      name287 = "replacer";
-      dependencies287 = [];
-      createReplacer = /* @__PURE__ */ factory(name287, dependencies287, () => {
+      name289 = "replacer";
+      dependencies289 = [];
+      createReplacer = /* @__PURE__ */ factory(name289, dependencies289, () => {
         return function replacer2(key, value2) {
           if (typeof value2 === "number" && (!isFinite(value2) || isNaN(value2))) {
             return {
@@ -64005,22 +64063,22 @@ svg {
   var version;
   var init_version2 = __esm({
     "node_modules/mathjs/lib/esm/version.js"() {
-      version = "11.10.0";
+      version = "11.12.0";
     }
   });
 
   // node_modules/mathjs/lib/esm/constants.js
-  function recreateFactory(name307, dependencies307, create2) {
-    return factory(name307, dependencies307, create2, {
+  function recreateFactory(name310, dependencies310, create2) {
+    return factory(name310, dependencies310, create2, {
       recreateOnConfigChange: true
     });
   }
   var createTrue, createFalse, createNull, createInfinity, createNaN, createPi, createTau, createE, createPhi, createLN2, createLN10, createLOG2E, createLOG10E, createSQRT1_2, createSQRT2, createI, createVersion;
-  var init_constants3 = __esm({
+  var init_constants4 = __esm({
     "node_modules/mathjs/lib/esm/constants.js"() {
       init_factory();
       init_version2();
-      init_constants2();
+      init_constants3();
       init_number2();
       createTrue = /* @__PURE__ */ factory("true", [], () => true);
       createFalse = /* @__PURE__ */ factory("false", [], () => false);
@@ -64125,9 +64183,9 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/physicalConstants.js
-  function unitFactory(name307, valueStr, unitStr) {
-    var dependencies307 = ["config", "Unit", "BigNumber"];
-    return factory(name307, dependencies307, (_ref) => {
+  function unitFactory(name310, valueStr, unitStr) {
+    var dependencies310 = ["config", "Unit", "BigNumber"];
+    return factory(name310, dependencies310, (_ref) => {
       var {
         config: config4,
         Unit: Unit2,
@@ -64139,9 +64197,9 @@ svg {
       return unit2;
     });
   }
-  function numberFactory(name307, value2) {
-    var dependencies307 = ["config", "BigNumber"];
-    return factory(name307, dependencies307, (_ref2) => {
+  function numberFactory(name310, value2) {
+    var dependencies310 = ["config", "BigNumber"];
+    return factory(name310, dependencies310, (_ref2) => {
       var {
         config: config4,
         BigNumber: BigNumber2
@@ -64207,16 +64265,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/apply.transform.js
-  var name288, dependencies288, createApplyTransform;
+  var name290, dependencies290, createApplyTransform;
   var init_apply_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/apply.transform.js"() {
       init_errorTransform();
       init_factory();
       init_apply();
       init_is();
-      name288 = "apply";
-      dependencies288 = ["typed", "isInteger"];
-      createApplyTransform = /* @__PURE__ */ factory(name288, dependencies288, (_ref) => {
+      name290 = "apply";
+      dependencies290 = ["typed", "isInteger"];
+      createApplyTransform = /* @__PURE__ */ factory(name290, dependencies290, (_ref) => {
         var {
           typed: typed3,
           isInteger: isInteger3
@@ -64247,16 +64305,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/column.transform.js
-  var name289, dependencies289, createColumnTransform;
+  var name291, dependencies291, createColumnTransform;
   var init_column_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/column.transform.js"() {
       init_errorTransform();
       init_factory();
       init_column();
       init_is();
-      name289 = "column";
-      dependencies289 = ["typed", "Index", "matrix", "range"];
-      createColumnTransform = /* @__PURE__ */ factory(name289, dependencies289, (_ref) => {
+      name291 = "column";
+      dependencies291 = ["typed", "Index", "matrix", "range"];
+      createColumnTransform = /* @__PURE__ */ factory(name291, dependencies291, (_ref) => {
         var {
           typed: typed3,
           Index: Index2,
@@ -64297,11 +64355,11 @@ svg {
     if (!symbol) {
       throw new Error('No undefined variable found in inline expression "' + expression + '"');
     }
-    var name307 = symbol.name;
+    var name310 = symbol.name;
     var subScope = createSubScope(scope);
     var eq = expression.compile();
     return function inlineExpression(x4) {
-      subScope.set(name307, x4);
+      subScope.set(name310, x4);
       return eq.evaluate(subScope);
     };
   }
@@ -64318,7 +64376,7 @@ svg {
       return applyCallback(callback, value2, [index2 + 1], array, "filter");
     });
   }
-  var name290, dependencies290, createFilterTransform;
+  var name292, dependencies292, createFilterTransform;
   var init_filter_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/filter.transform.js"() {
       init_applyCallback();
@@ -64326,9 +64384,9 @@ svg {
       init_factory();
       init_is();
       init_compileInlineExpression();
-      name290 = "filter";
-      dependencies290 = ["typed"];
-      createFilterTransform = /* @__PURE__ */ factory(name290, dependencies290, (_ref) => {
+      name292 = "filter";
+      dependencies292 = ["typed"];
+      createFilterTransform = /* @__PURE__ */ factory(name292, dependencies292, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -64365,7 +64423,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/forEach.transform.js
-  var name291, dependencies291, createForEachTransform;
+  var name293, dependencies293, createForEachTransform;
   var init_forEach_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/forEach.transform.js"() {
       init_applyCallback();
@@ -64373,9 +64431,9 @@ svg {
       init_factory();
       init_is();
       init_compileInlineExpression();
-      name291 = "forEach";
-      dependencies291 = ["typed"];
-      createForEachTransform = /* @__PURE__ */ factory(name291, dependencies291, (_ref) => {
+      name293 = "forEach";
+      dependencies293 = ["typed"];
+      createForEachTransform = /* @__PURE__ */ factory(name293, dependencies293, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -64416,14 +64474,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/index.transform.js
-  var name292, dependencies292, createIndexTransform;
+  var name294, dependencies294, createIndexTransform;
   var init_index_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/index.transform.js"() {
       init_is();
       init_factory();
-      name292 = "index";
-      dependencies292 = ["Index", "getMatrixDataType"];
-      createIndexTransform = /* @__PURE__ */ factory(name292, dependencies292, (_ref) => {
+      name294 = "index";
+      dependencies294 = ["Index", "getMatrixDataType"];
+      createIndexTransform = /* @__PURE__ */ factory(name294, dependencies294, (_ref) => {
         var {
           Index: Index2,
           getMatrixDataType: getMatrixDataType2
@@ -64478,7 +64536,7 @@ svg {
     }
     return recurse(array, []);
   }
-  var name293, dependencies293, createMapTransform;
+  var name295, dependencies295, createMapTransform;
   var init_map_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/map.transform.js"() {
       init_applyCallback();
@@ -64486,9 +64544,9 @@ svg {
       init_factory();
       init_is();
       init_compileInlineExpression();
-      name293 = "map";
-      dependencies293 = ["typed"];
-      createMapTransform = /* @__PURE__ */ factory(name293, dependencies293, (_ref) => {
+      name295 = "map";
+      dependencies295 = ["typed"];
+      createMapTransform = /* @__PURE__ */ factory(name295, dependencies295, (_ref) => {
         var {
           typed: typed3
         } = _ref;
@@ -64542,16 +64600,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/max.transform.js
-  var name294, dependencies294, createMaxTransform;
+  var name296, dependencies296, createMaxTransform;
   var init_max_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/max.transform.js"() {
       init_factory();
       init_errorTransform();
       init_max();
       init_lastDimToZeroBase();
-      name294 = "max";
-      dependencies294 = ["typed", "config", "numeric", "larger"];
-      createMaxTransform = /* @__PURE__ */ factory(name294, dependencies294, (_ref) => {
+      name296 = "max";
+      dependencies296 = ["typed", "config", "numeric", "larger"];
+      createMaxTransform = /* @__PURE__ */ factory(name296, dependencies296, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -64581,16 +64639,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/mean.transform.js
-  var name295, dependencies295, createMeanTransform;
+  var name297, dependencies297, createMeanTransform;
   var init_mean_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/mean.transform.js"() {
       init_factory();
       init_errorTransform();
       init_mean2();
       init_lastDimToZeroBase();
-      name295 = "mean";
-      dependencies295 = ["typed", "add", "divide"];
-      createMeanTransform = /* @__PURE__ */ factory(name295, dependencies295, (_ref) => {
+      name297 = "mean";
+      dependencies297 = ["typed", "add", "divide"];
+      createMeanTransform = /* @__PURE__ */ factory(name297, dependencies297, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -64618,16 +64676,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/min.transform.js
-  var name296, dependencies296, createMinTransform;
+  var name298, dependencies298, createMinTransform;
   var init_min_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/min.transform.js"() {
       init_factory();
       init_errorTransform();
       init_min();
       init_lastDimToZeroBase();
-      name296 = "min";
-      dependencies296 = ["typed", "config", "numeric", "smaller"];
-      createMinTransform = /* @__PURE__ */ factory(name296, dependencies296, (_ref) => {
+      name298 = "min";
+      dependencies298 = ["typed", "config", "numeric", "smaller"];
+      createMinTransform = /* @__PURE__ */ factory(name298, dependencies298, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -64657,14 +64715,14 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/range.transform.js
-  var name297, dependencies297, createRangeTransform;
+  var name299, dependencies299, createRangeTransform;
   var init_range_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/range.transform.js"() {
       init_factory();
       init_range();
-      name297 = "range";
-      dependencies297 = ["typed", "config", "?matrix", "?bignumber", "smaller", "smallerEq", "larger", "largerEq", "add", "isPositive"];
-      createRangeTransform = /* @__PURE__ */ factory(name297, dependencies297, (_ref) => {
+      name299 = "range";
+      dependencies299 = ["typed", "config", "?matrix", "?bignumber", "smaller", "smallerEq", "larger", "largerEq", "add", "isPositive"];
+      createRangeTransform = /* @__PURE__ */ factory(name299, dependencies299, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -64706,16 +64764,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/row.transform.js
-  var name298, dependencies298, createRowTransform;
+  var name300, dependencies300, createRowTransform;
   var init_row_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/row.transform.js"() {
       init_factory();
       init_row();
       init_errorTransform();
       init_is();
-      name298 = "row";
-      dependencies298 = ["typed", "Index", "matrix", "range"];
-      createRowTransform = /* @__PURE__ */ factory(name298, dependencies298, (_ref) => {
+      name300 = "row";
+      dependencies300 = ["typed", "Index", "matrix", "range"];
+      createRowTransform = /* @__PURE__ */ factory(name300, dependencies300, (_ref) => {
         var {
           typed: typed3,
           Index: Index2,
@@ -64749,15 +64807,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/subset.transform.js
-  var name299, dependencies299, createSubsetTransform;
+  var name301, dependencies301, createSubsetTransform;
   var init_subset_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/subset.transform.js"() {
       init_factory();
       init_errorTransform();
       init_subset();
-      name299 = "subset";
-      dependencies299 = ["typed", "matrix", "zeros", "add"];
-      createSubsetTransform = /* @__PURE__ */ factory(name299, dependencies299, (_ref) => {
+      name301 = "subset";
+      dependencies301 = ["typed", "matrix", "zeros", "add"];
+      createSubsetTransform = /* @__PURE__ */ factory(name301, dependencies301, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -64786,16 +64844,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/concat.transform.js
-  var name300, dependencies300, createConcatTransform;
+  var name302, dependencies302, createConcatTransform;
   var init_concat_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/concat.transform.js"() {
       init_is();
       init_errorTransform();
       init_factory();
       init_concat();
-      name300 = "concat";
-      dependencies300 = ["typed", "matrix", "isInteger"];
-      createConcatTransform = /* @__PURE__ */ factory(name300, dependencies300, (_ref) => {
+      name302 = "concat";
+      dependencies302 = ["typed", "matrix", "isInteger"];
+      createConcatTransform = /* @__PURE__ */ factory(name302, dependencies302, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -64829,16 +64887,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/diff.transform.js
-  var name301, dependencies301, createDiffTransform;
+  var name303, dependencies303, createDiffTransform;
   var init_diff_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/diff.transform.js"() {
       init_factory();
       init_errorTransform();
       init_diff();
       init_lastDimToZeroBase();
-      name301 = "diff";
-      dependencies301 = ["typed", "matrix", "subtract", "number", "bignumber"];
-      createDiffTransform = /* @__PURE__ */ factory(name301, dependencies301, (_ref) => {
+      name303 = "diff";
+      dependencies303 = ["typed", "matrix", "subtract", "number", "bignumber"];
+      createDiffTransform = /* @__PURE__ */ factory(name303, dependencies303, (_ref) => {
         var {
           typed: typed3,
           matrix: matrix2,
@@ -64853,7 +64911,7 @@ svg {
           number: number2,
           bignumber: bignumber2
         });
-        return typed3(name301, {
+        return typed3(name303, {
           "...any": function any(args) {
             args = lastDimToZeroBase(args);
             try {
@@ -64870,16 +64928,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/std.transform.js
-  var name302, dependencies302, createStdTransform;
+  var name304, dependencies304, createStdTransform;
   var init_std_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/std.transform.js"() {
       init_factory();
       init_std2();
       init_errorTransform();
       init_lastDimToZeroBase();
-      name302 = "std";
-      dependencies302 = ["typed", "map", "sqrt", "variance"];
-      createStdTransform = /* @__PURE__ */ factory(name302, dependencies302, (_ref) => {
+      name304 = "std";
+      dependencies304 = ["typed", "map", "sqrt", "variance"];
+      createStdTransform = /* @__PURE__ */ factory(name304, dependencies304, (_ref) => {
         var {
           typed: typed3,
           map: map3,
@@ -64909,16 +64967,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/sum.transform.js
-  var name303, dependencies303, createSumTransform;
+  var name305, dependencies305, createSumTransform;
   var init_sum_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/sum.transform.js"() {
       init_factory();
       init_errorTransform();
       init_sum2();
       init_lastDimToZeroBase();
-      name303 = "sum";
-      dependencies303 = ["typed", "config", "add", "numeric"];
-      createSumTransform = /* @__PURE__ */ factory(name303, dependencies303, (_ref) => {
+      name305 = "sum";
+      dependencies305 = ["typed", "config", "add", "numeric"];
+      createSumTransform = /* @__PURE__ */ factory(name305, dependencies305, (_ref) => {
         var {
           typed: typed3,
           config: config4,
@@ -64931,7 +64989,7 @@ svg {
           add: add3,
           numeric: numeric3
         });
-        return typed3(name303, {
+        return typed3(name305, {
           "...any": function any(args) {
             args = lastDimToZeroBase(args);
             try {
@@ -64948,34 +65006,52 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/quantileSeq.transform.js
-  var name304, dependencies304, createQuantileSeqTransform;
+  var name306, dependencies306, createQuantileSeqTransform;
   var init_quantileSeq_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/quantileSeq.transform.js"() {
       init_factory();
       init_quantileSeq2();
       init_lastDimToZeroBase();
-      name304 = "quantileSeq";
-      dependencies304 = ["typed", "add", "multiply", "partitionSelect", "compare", "isInteger"];
-      createQuantileSeqTransform = /* @__PURE__ */ factory(name304, dependencies304, (_ref) => {
+      name306 = "quantileSeq";
+      dependencies306 = ["typed", "bignumber", "add", "subtract", "divide", "multiply", "partitionSelect", "compare", "isInteger", "smaller", "smallerEq", "larger"];
+      createQuantileSeqTransform = /* @__PURE__ */ factory(name306, dependencies306, (_ref) => {
         var {
           typed: typed3,
+          bignumber: bignumber2,
           add: add3,
+          subtract: subtract2,
+          divide: divide3,
           multiply: multiply2,
           partitionSelect: partitionSelect2,
           compare: compare3,
-          isInteger: isInteger3
+          isInteger: isInteger3,
+          smaller: smaller2,
+          smallerEq: smallerEq2,
+          larger: larger2
         } = _ref;
         var quantileSeq2 = createQuantileSeq({
           typed: typed3,
+          bignumber: bignumber2,
           add: add3,
+          subtract: subtract2,
+          divide: divide3,
           multiply: multiply2,
           partitionSelect: partitionSelect2,
           compare: compare3,
-          isInteger: isInteger3
+          isInteger: isInteger3,
+          smaller: smaller2,
+          smallerEq: smallerEq2,
+          larger: larger2
         });
         return typed3("quantileSeq", {
-          "Array|Matrix, number|BigNumber|Array, number": (arr, prob, dim) => quantileSeq2(arr, prob, dimToZeroBase(dim)),
-          "Array|Matrix, number|BigNumber|Array, boolean, number": (arr, prob, sorted, dim) => quantileSeq2(arr, prob, sorted, dimToZeroBase(dim))
+          "Array | Matrix, number | BigNumber": quantileSeq2,
+          "Array | Matrix, number | BigNumber, number": (arr, prob, dim) => quantileSeq2(arr, prob, dimToZeroBase(dim)),
+          "Array | Matrix, number | BigNumber, boolean": quantileSeq2,
+          "Array | Matrix, number | BigNumber, boolean, number": (arr, prob, sorted, dim) => quantileSeq2(arr, prob, sorted, dimToZeroBase(dim)),
+          "Array | Matrix, Array | Matrix": quantileSeq2,
+          "Array | Matrix, Array | Matrix, number": (data, prob, dim) => quantileSeq2(data, prob, dimToZeroBase(dim)),
+          "Array | Matrix, Array | Matrix, boolean": quantileSeq2,
+          "Array | Matrix, Array | Matrix, boolean, number": (data, prob, sorted, dim) => quantileSeq2(data, prob, sorted, dimToZeroBase(dim))
         });
         function dimToZeroBase(dim) {
           return lastDimToZeroBase([[], dim])[1];
@@ -64987,16 +65063,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/cumsum.transform.js
-  var name305, dependencies305, createCumSumTransform;
+  var name307, dependencies307, createCumSumTransform;
   var init_cumsum_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/cumsum.transform.js"() {
       init_is();
       init_factory();
       init_errorTransform();
       init_cumsum2();
-      name305 = "cumsum";
-      dependencies305 = ["typed", "add", "unaryPlus"];
-      createCumSumTransform = /* @__PURE__ */ factory(name305, dependencies305, (_ref) => {
+      name307 = "cumsum";
+      dependencies307 = ["typed", "add", "unaryPlus"];
+      createCumSumTransform = /* @__PURE__ */ factory(name307, dependencies307, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -65007,7 +65083,7 @@ svg {
           add: add3,
           unaryPlus: unaryPlus2
         });
-        return typed3(name305, {
+        return typed3(name307, {
           "...any": function any(args) {
             if (args.length === 2 && isCollection(args[0])) {
               var dim = args[1];
@@ -65031,16 +65107,16 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/expression/transform/variance.transform.js
-  var name306, dependencies306, createVarianceTransform;
+  var name308, dependencies308, createVarianceTransform;
   var init_variance_transform = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/variance.transform.js"() {
       init_factory();
       init_errorTransform();
       init_variance2();
       init_lastDimToZeroBase();
-      name306 = "variance";
-      dependencies306 = ["typed", "add", "subtract", "multiply", "divide", "apply", "isNaN"];
-      createVarianceTransform = /* @__PURE__ */ factory(name306, dependencies306, (_ref) => {
+      name308 = "variance";
+      dependencies308 = ["typed", "add", "subtract", "multiply", "divide", "apply", "isNaN"];
+      createVarianceTransform = /* @__PURE__ */ factory(name308, dependencies308, (_ref) => {
         var {
           typed: typed3,
           add: add3,
@@ -65059,7 +65135,7 @@ svg {
           apply: apply2,
           isNaN: isNaN3
         });
-        return typed3(name306, {
+        return typed3(name308, {
           "...any": function any(args) {
             args = lastDimToZeroBase(args);
             try {
@@ -65069,6 +65145,55 @@ svg {
             }
           }
         });
+      }, {
+        isTransformFunction: true
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/expression/transform/print.transform.js
+  var name309, dependencies309, createPrintTransform;
+  var init_print_transform = __esm({
+    "node_modules/mathjs/lib/esm/expression/transform/print.transform.js"() {
+      init_print2();
+      init_factory();
+      init_print();
+      name309 = "print";
+      dependencies309 = ["typed", "matrix", "zeros", "add"];
+      createPrintTransform = /* @__PURE__ */ factory(name309, dependencies309, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          zeros: zeros3,
+          add: add3
+        } = _ref;
+        var print2 = createPrint({
+          typed: typed3,
+          matrix: matrix2,
+          zeros: zeros3,
+          add: add3
+        });
+        return typed3(name309, {
+          "string, Object | Array": function stringObjectArray(template, values) {
+            return print2(_convertTemplateToZeroBasedIndex(template), values);
+          },
+          "string, Object | Array, number | Object": function stringObjectArrayNumberObject(template, values, options) {
+            return print2(_convertTemplateToZeroBasedIndex(template), values, options);
+          }
+        });
+        function _convertTemplateToZeroBasedIndex(template) {
+          return template.replace(printTemplate, (x4) => {
+            var parts = x4.slice(1).split(".");
+            var result = parts.map(function(part) {
+              if (!isNaN(part) && part.length > 0) {
+                return parseInt(part) - 1;
+              } else {
+                return part;
+              }
+            });
+            return "$" + result.join(".");
+          });
+        }
       }, {
         isTransformFunction: true
       });
@@ -65113,6 +65238,7 @@ svg {
       init_abs();
       init_apply();
       init_addScalar();
+      init_subtractScalar();
       init_cbrt();
       init_ceil();
       init_cube();
@@ -65183,7 +65309,7 @@ svg {
       init_bin();
       init_oct();
       init_hex();
-      init_print();
+      init_print2();
       init_to();
       init_isPrime();
       init_numeric();
@@ -65317,6 +65443,7 @@ svg {
       init_variance2();
       init_quantileSeq2();
       init_std2();
+      init_corr2();
       init_combinations3();
       init_combinationsWithRep2();
       init_gamma2();
@@ -65344,7 +65471,7 @@ svg {
       init_freqz2();
       init_reviver();
       init_replacer();
-      init_constants3();
+      init_constants4();
       init_physicalConstants();
       init_apply_transform();
       init_column_transform();
@@ -65365,11 +65492,12 @@ svg {
       init_quantileSeq_transform();
       init_cumsum_transform();
       init_variance_transform();
+      init_print_transform();
     }
   });
 
   // node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js
-  var BigNumber, Complex2, e4, _false, fineStructure, Fraction2, i3, _Infinity, LN102, LOG10E, Matrix, _NaN, _null, phi2, Range, ResultSet, SQRT1_2, sackurTetrode, tau2, _true, version2, DenseMatrix, efimovFactor, LN2, pi2, replacer, SQRT2, typed2, unaryPlus, weakMixingAngle, abs2, acos2, acot, acsc, addScalar, arg, asech, asinh3, atan3, atanh3, bignumber, bitNot, boolean, clone4, combinations, complex, conj, cosh3, coth, csc, cube, equalScalar, erf, exp2, expm13, filter2, forEach2, format4, getMatrixDataType, hex, im, isInteger2, isNegative, isPositive, isZero, LOG2E, lgamma, log104, log24, map2, multiplyScalar, not, number, oct, pickRandom, print, random2, re, sec, sign3, sin2, SparseMatrix, splitUnit, square, string, tan2, typeOf2, acosh3, acsch, apply, asec, bin, combinationsWithRep, cos2, csch, isNaN2, isPrime, randomInt, sech, sinh3, sparse, sqrt2, tanh3, unaryMinus, acoth, cot, fraction, isNumeric, matrix, matrixFromFunction, mode, numeric2, prod, reshape2, size, squeeze2, transpose, xgcd, zeros2, asin2, cbrt4, concat2, count, ctranspose, diag, divideScalar, dotDivide, equal, flatten2, gcd, hasNumericValue, identity, kron, largerEq, leftShift, matrixFromColumns, mod2, nthRoot, ones, resize2, rightArithShift, round2, smaller, subtract, to, unequal, usolve, xor, add2, atan22, bitAnd, bitXor2, catalan, compare2, compareText2, cumsum, deepEqual, diff, distance, dot, equalText, floor2, hypot2, ImmutableDenseMatrix, Index, invmod, larger, log3, lsolve, matrixFromRows, min2, multiply, nthRoots, or, partitionSelect, qr, rightLogShift, slu, subset, sum2, trace, usolveAll, zpk2tf, bitOr, ceil2, compareNatural, composition, cross, det, dotMultiply, FibonacciHeap, fix, index, intersect, lcm, log1p2, lsolveAll, max2, quantileSeq, setCartesian, setDistinct, setIsSubset, setPowerset, smallerEq, sort, and, range, row, setDifference, setMultiplicity, setSymDifference, Spa, column, inv, lup, pinv, pow2, setIntersect, setUnion, sqrtm, Unit, vacuumImpedance, wienDisplacement, atomicMass, bohrMagneton, boltzmann, conductanceQuantum, createUnit, deuteronMass, dotPow, electricConstant, elementaryCharge, expm, faraday, fft, gamma, gravitationConstant, hartreeEnergy, ifft, klitzing, loschmidt, magneticConstant, molarMass, molarPlanckConstant, neutronMass, nuclearMagneton, planckCharge, planckLength, planckTemperature, protonMass, reducedPlanckConstant, rydberg, secondRadiation, speedOfLight, stefanBoltzmann, thomsonCrossSection, avogadro, bohrRadius, coulomb, divide2, electronMass, factorial, firstRadiation, gravity, inverseConductanceQuantum, lusolve, magneticFluxQuantum, molarMassC12, multinomial, permutations, planckMass, polynomialRoot, setSize, solveODE, stirlingS2, unit, bellNumbers, eigs, fermiCoupling, gasConstant, mean, molarVolume, planckConstant, quantumOfCirculation, variance, classicalElectronRadius, median, kldivergence, mad, std, zeta, freqz, norm, rotationMatrix, planckTime, schur, rotate, sylvester, lyap;
+  var BigNumber, Complex2, e4, _false, fineStructure, Fraction2, i3, _Infinity, LN102, LOG10E, Matrix, _NaN, _null, phi2, Range, ResultSet, SQRT1_2, sackurTetrode, tau2, _true, version2, DenseMatrix, efimovFactor, LN2, pi2, replacer, SQRT2, typed2, unaryPlus, weakMixingAngle, abs2, acos2, acot, acsc, addScalar, arg, asech, asinh3, atan3, atanh3, bignumber, bitNot, boolean, clone4, combinations, complex, conj, cos2, cot, csc, cube, equalScalar, erf, exp2, expm13, filter2, forEach2, format4, getMatrixDataType, hex, im, isInteger2, isNegative, isPositive, isZero, LOG2E, lgamma, log104, log24, map2, multiplyScalar, not, number, oct, pickRandom, print, random2, re, sec, sign3, sin2, SparseMatrix, splitUnit, square, string, subtractScalar, tan2, typeOf2, acosh3, acsch, apply, asec, bin, combinationsWithRep, cosh3, csch, isNaN2, isPrime, randomInt, sech, sinh3, sparse, sqrt2, tanh3, unaryMinus, acoth, coth, fraction, isNumeric, matrix, matrixFromFunction, mode, numeric2, prod, reshape2, size, squeeze2, transpose, xgcd, zeros2, asin2, cbrt4, concat2, count, ctranspose, diag, divideScalar, dotDivide, equal, flatten2, hasNumericValue, identity, kron, largerEq, leftShift, lsolve, matrixFromColumns, nthRoot, ones, qr, resize2, rightArithShift, round2, smaller, subtract, to, unequal, usolve, xor, add2, atan22, bitAnd, bitXor2, catalan, compare2, compareText2, cumsum, deepEqual, diff, distance, dot, equalText, floor2, gcd, hypot2, ImmutableDenseMatrix, Index, larger, log3, lsolveAll, matrixFromRows, min2, mod2, multiply, nthRoots, or, partitionSelect, rightLogShift, slu, subset, sum2, trace, usolveAll, zpk2tf, bitOr, ceil2, compareNatural, composition, cross, det, dotMultiply, FibonacciHeap, fix, index, intersect, invmod, lcm, log1p2, max2, setCartesian, setDistinct, setIsSubset, setPowerset, smallerEq, sort, and, range, row, setDifference, setMultiplicity, setSymDifference, Spa, column, inv, lup, pinv, pow2, setIntersect, setUnion, sqrtm, Unit, vacuumImpedance, wienDisplacement, atomicMass, bohrMagneton, boltzmann, conductanceQuantum, coulomb, deuteronMass, dotPow, electricConstant, elementaryCharge, expm, faraday, fft, gamma, gravitationConstant, hartreeEnergy, ifft, klitzing, loschmidt, magneticConstant, molarMass, molarPlanckConstant, neutronMass, nuclearMagneton, planckCharge, planckLength, planckTemperature, protonMass, quantumOfCirculation, reducedPlanckConstant, rydberg, secondRadiation, speedOfLight, stefanBoltzmann, thomsonCrossSection, avogadro, bohrRadius, createUnit, divide2, electronMass, factorial, firstRadiation, gravity, inverseConductanceQuantum, lusolve, magneticFluxQuantum, molarMassC12, multinomial, permutations, planckMass, polynomialRoot, setSize, solveODE, stirlingS2, unit, bellNumbers, eigs, fermiCoupling, gasConstant, mean, molarVolume, planckConstant, quantileSeq, variance, classicalElectronRadius, median, corr, freqz, mad, std, zeta, norm, rotationMatrix, kldivergence, planckTime, schur, rotate, sylvester, lyap;
   var init_pureFunctionsAny_generated = __esm({
     "node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js"() {
       init_configReadonly();
@@ -65528,10 +65656,10 @@ svg {
       conj = /* @__PURE__ */ createConj({
         typed: typed2
       });
-      cosh3 = /* @__PURE__ */ createCosh({
+      cos2 = /* @__PURE__ */ createCos({
         typed: typed2
       });
-      coth = /* @__PURE__ */ createCoth({
+      cot = /* @__PURE__ */ createCot({
         BigNumber,
         typed: typed2
       });
@@ -65662,6 +65790,9 @@ svg {
       string = /* @__PURE__ */ createString({
         typed: typed2
       });
+      subtractScalar = /* @__PURE__ */ createSubtractScalar({
+        typed: typed2
+      });
       tan2 = /* @__PURE__ */ createTan({
         typed: typed2
       });
@@ -65694,7 +65825,7 @@ svg {
       combinationsWithRep = /* @__PURE__ */ createCombinationsWithRep({
         typed: typed2
       });
-      cos2 = /* @__PURE__ */ createCos({
+      cosh3 = /* @__PURE__ */ createCosh({
         typed: typed2
       });
       csch = /* @__PURE__ */ createCsch({
@@ -65739,7 +65870,7 @@ svg {
         config,
         typed: typed2
       });
-      cot = /* @__PURE__ */ createCot({
+      coth = /* @__PURE__ */ createCoth({
         BigNumber,
         typed: typed2
       });
@@ -65866,14 +65997,6 @@ svg {
         matrix,
         typed: typed2
       });
-      gcd = /* @__PURE__ */ createGcd({
-        BigNumber,
-        DenseMatrix,
-        concat: concat2,
-        equalScalar,
-        matrix,
-        typed: typed2
-      });
       hasNumericValue = /* @__PURE__ */ createHasNumericValue({
         isNumeric,
         typed: typed2
@@ -65906,17 +66029,19 @@ svg {
         typed: typed2,
         zeros: zeros2
       });
+      lsolve = /* @__PURE__ */ createLsolve({
+        DenseMatrix,
+        divideScalar,
+        equalScalar,
+        matrix,
+        multiplyScalar,
+        subtractScalar,
+        typed: typed2
+      });
       matrixFromColumns = /* @__PURE__ */ createMatrixFromColumns({
         flatten: flatten2,
         matrix,
         size,
-        typed: typed2
-      });
-      mod2 = /* @__PURE__ */ createMod({
-        DenseMatrix,
-        concat: concat2,
-        equalScalar,
-        matrix,
         typed: typed2
       });
       nthRoot = /* @__PURE__ */ createNthRoot({
@@ -65931,6 +66056,23 @@ svg {
         config,
         matrix,
         typed: typed2
+      });
+      qr = /* @__PURE__ */ createQr({
+        addScalar,
+        complex,
+        conj,
+        divideScalar,
+        equal,
+        identity,
+        isZero,
+        matrix,
+        multiplyScalar,
+        sign: sign3,
+        sqrt: sqrt2,
+        subtractScalar,
+        typed: typed2,
+        unaryMinus,
+        zeros: zeros2
       });
       resize2 = /* @__PURE__ */ createResize({
         config,
@@ -65961,10 +66103,10 @@ svg {
       });
       subtract = /* @__PURE__ */ createSubtract({
         DenseMatrix,
-        addScalar,
         concat: concat2,
         equalScalar,
         matrix,
+        subtractScalar,
         typed: typed2,
         unaryMinus
       });
@@ -65987,7 +66129,7 @@ svg {
         equalScalar,
         matrix,
         multiplyScalar,
-        subtract,
+        subtractScalar,
         typed: typed2
       });
       xor = /* @__PURE__ */ createXor({
@@ -66071,7 +66213,7 @@ svg {
         divideScalar,
         multiplyScalar,
         sqrt: sqrt2,
-        subtract,
+        subtractScalar,
         typed: typed2
       });
       dot = /* @__PURE__ */ createDot({
@@ -66088,6 +66230,17 @@ svg {
       });
       floor2 = /* @__PURE__ */ createFloor({
         DenseMatrix,
+        config,
+        equalScalar,
+        matrix,
+        round: round2,
+        typed: typed2,
+        zeros: zeros2
+      });
+      gcd = /* @__PURE__ */ createGcd({
+        BigNumber,
+        DenseMatrix,
+        concat: concat2,
         config,
         equalScalar,
         matrix,
@@ -66113,17 +66266,6 @@ svg {
         ImmutableDenseMatrix,
         getMatrixDataType
       });
-      invmod = /* @__PURE__ */ createInvmod({
-        BigNumber,
-        add: add2,
-        config,
-        equal,
-        isInteger: isInteger2,
-        mod: mod2,
-        smaller,
-        typed: typed2,
-        xgcd
-      });
       larger = /* @__PURE__ */ createLarger({
         DenseMatrix,
         concat: concat2,
@@ -66137,13 +66279,13 @@ svg {
         divideScalar,
         typed: typed2
       });
-      lsolve = /* @__PURE__ */ createLsolve({
+      lsolveAll = /* @__PURE__ */ createLsolveAll({
         DenseMatrix,
         divideScalar,
         equalScalar,
         matrix,
         multiplyScalar,
-        subtract,
+        subtractScalar,
         typed: typed2
       });
       matrixFromRows = /* @__PURE__ */ createMatrixFromRows({
@@ -66157,6 +66299,16 @@ svg {
         numeric: numeric2,
         smaller,
         typed: typed2
+      });
+      mod2 = /* @__PURE__ */ createMod({
+        DenseMatrix,
+        concat: concat2,
+        config,
+        equalScalar,
+        matrix,
+        round: round2,
+        typed: typed2,
+        zeros: zeros2
       });
       multiply = /* @__PURE__ */ createMultiply({
         addScalar,
@@ -66184,23 +66336,6 @@ svg {
         isNaN: isNaN2,
         isNumeric,
         typed: typed2
-      });
-      qr = /* @__PURE__ */ createQr({
-        addScalar,
-        complex,
-        conj,
-        divideScalar,
-        equal,
-        identity,
-        isZero,
-        matrix,
-        multiplyScalar,
-        sign: sign3,
-        sqrt: sqrt2,
-        subtract,
-        typed: typed2,
-        unaryMinus,
-        zeros: zeros2
       });
       rightLogShift = /* @__PURE__ */ createRightLogShift({
         DenseMatrix,
@@ -66245,7 +66380,7 @@ svg {
         equalScalar,
         matrix,
         multiplyScalar,
-        subtract,
+        subtractScalar,
         typed: typed2
       });
       zpk2tf = /* @__PURE__ */ createZpk2tf({
@@ -66295,7 +66430,7 @@ svg {
         isZero,
         matrix,
         multiply,
-        subtract,
+        subtractScalar,
         typed: typed2,
         unaryMinus
       });
@@ -66341,6 +66476,17 @@ svg {
         subtract,
         typed: typed2
       });
+      invmod = /* @__PURE__ */ createInvmod({
+        BigNumber,
+        add: add2,
+        config,
+        equal,
+        isInteger: isInteger2,
+        mod: mod2,
+        smaller,
+        typed: typed2,
+        xgcd
+      });
       lcm = /* @__PURE__ */ createLcm({
         concat: concat2,
         equalScalar,
@@ -66354,27 +66500,10 @@ svg {
         log: log3,
         typed: typed2
       });
-      lsolveAll = /* @__PURE__ */ createLsolveAll({
-        DenseMatrix,
-        divideScalar,
-        equalScalar,
-        matrix,
-        multiplyScalar,
-        subtract,
-        typed: typed2
-      });
       max2 = /* @__PURE__ */ createMax({
         config,
         larger,
         numeric: numeric2,
-        typed: typed2
-      });
-      quantileSeq = /* @__PURE__ */ createQuantileSeq({
-        add: add2,
-        compare: compare2,
-        isInteger: isInteger2,
-        multiply,
-        partitionSelect,
         typed: typed2
       });
       setCartesian = /* @__PURE__ */ createSetCartesian({
@@ -66502,7 +66631,7 @@ svg {
         larger,
         matrix,
         multiplyScalar,
-        subtract,
+        subtractScalar,
         typed: typed2,
         unaryMinus
       });
@@ -66577,7 +66706,7 @@ svg {
         number,
         pow: pow2,
         round: round2,
-        subtract
+        subtractScalar
       });
       vacuumImpedance = /* @__PURE__ */ createVacuumImpedance({
         BigNumber,
@@ -66609,9 +66738,10 @@ svg {
         Unit,
         config
       });
-      createUnit = /* @__PURE__ */ createCreateUnit({
+      coulomb = /* @__PURE__ */ createCoulomb({
+        BigNumber,
         Unit,
-        typed: typed2
+        config
       });
       deuteronMass = /* @__PURE__ */ createDeuteronMass({
         BigNumber,
@@ -66743,6 +66873,11 @@ svg {
         Unit,
         config
       });
+      quantumOfCirculation = /* @__PURE__ */ createQuantumOfCirculation({
+        BigNumber,
+        Unit,
+        config
+      });
       reducedPlanckConstant = /* @__PURE__ */ createReducedPlanckConstant({
         BigNumber,
         Unit,
@@ -66783,10 +66918,9 @@ svg {
         Unit,
         config
       });
-      coulomb = /* @__PURE__ */ createCoulomb({
-        BigNumber,
+      createUnit = /* @__PURE__ */ createCreateUnit({
         Unit,
-        config
+        typed: typed2
       });
       divide2 = /* @__PURE__ */ createDivide({
         divideScalar,
@@ -66905,7 +67039,7 @@ svg {
         multiplyScalar,
         number,
         pow: pow2,
-        subtract,
+        subtractScalar,
         typed: typed2
       });
       unit = /* @__PURE__ */ createUnitFunction({
@@ -66977,10 +67111,19 @@ svg {
         Unit,
         config
       });
-      quantumOfCirculation = /* @__PURE__ */ createQuantumOfCirculation({
-        BigNumber,
-        Unit,
-        config
+      quantileSeq = /* @__PURE__ */ createQuantileSeq({
+        bignumber,
+        add: add2,
+        compare: compare2,
+        divide: divide2,
+        isInteger: isInteger2,
+        larger,
+        multiply,
+        partitionSelect,
+        smaller,
+        smallerEq,
+        subtract,
+        typed: typed2
       });
       variance = /* @__PURE__ */ createVariance({
         add: add2,
@@ -67003,15 +67146,24 @@ svg {
         partitionSelect,
         typed: typed2
       });
-      kldivergence = /* @__PURE__ */ createKldivergence({
+      corr = /* @__PURE__ */ createCorr({
+        add: add2,
         divide: divide2,
-        dotDivide,
-        isNumeric,
-        log: log3,
-        map: map2,
+        matrix,
+        mean,
+        multiply,
+        pow: pow2,
+        sqrt: sqrt2,
+        subtract,
+        sum: sum2,
+        typed: typed2
+      });
+      freqz = /* @__PURE__ */ createFreqz({
+        Complex: Complex2,
+        add: add2,
+        divide: divide2,
         matrix,
         multiply,
-        sum: sum2,
         typed: typed2
       });
       mad = /* @__PURE__ */ createMad({
@@ -67045,14 +67197,6 @@ svg {
         subtract,
         typed: typed2
       });
-      freqz = /* @__PURE__ */ createFreqz({
-        Complex: Complex2,
-        add: add2,
-        divide: divide2,
-        matrix,
-        multiply,
-        typed: typed2
-      });
       norm = /* @__PURE__ */ createNorm({
         abs: abs2,
         add: add2,
@@ -67081,6 +67225,17 @@ svg {
         sin: sin2,
         typed: typed2,
         unaryMinus
+      });
+      kldivergence = /* @__PURE__ */ createKldivergence({
+        divide: divide2,
+        dotDivide,
+        isNumeric,
+        log: log3,
+        map: map2,
+        matrix,
+        multiply,
+        sum: sum2,
+        typed: typed2
       });
       planckTime = /* @__PURE__ */ createPlanckTime({
         BigNumber,
@@ -67129,7 +67284,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/entry/impureFunctionsAny.generated.js
-  var math, mathWithTransform, classes, Node, ObjectNode, OperatorNode, ParenthesisNode, RelationalNode, ArrayNode, BlockNode, ConditionalNode, ConstantNode, RangeNode, reviver, Chain, FunctionAssignmentNode, chain, IndexNode, AccessorNode, AssignmentNode, SymbolNode, FunctionNode, parse, resolve, simplifyConstant, compile, Help, leafCount, simplifyCore, evaluate, help, Parser, simplify, symbolicEqual, derivative, parser, rationalize;
+  var math, mathWithTransform, classes, Node, ObjectNode, OperatorNode, ParenthesisNode, RelationalNode, ArrayNode, BlockNode, ConditionalNode, ConstantNode, RangeNode, reviver, Chain, FunctionAssignmentNode, chain, IndexNode, AccessorNode, AssignmentNode, SymbolNode, FunctionNode, parse, resolve, simplifyConstant, compile, Help, leafCount, simplifyCore, evaluate, help, Parser, simplify, symbolicEqual, parser, rationalize, derivative;
   var init_impureFunctionsAny_generated = __esm({
     "node_modules/mathjs/lib/esm/entry/impureFunctionsAny.generated.js"() {
       init_extends();
@@ -67329,20 +67484,6 @@ svg {
         simplify,
         typed: typed2
       });
-      derivative = createDerivative({
-        ConstantNode,
-        FunctionNode,
-        OperatorNode,
-        ParenthesisNode,
-        SymbolNode,
-        config,
-        equal,
-        isZero,
-        numeric: numeric2,
-        parse,
-        simplify,
-        typed: typed2
-      });
       parser = createParser({
         Parser,
         typed: typed2
@@ -67373,6 +67514,20 @@ svg {
         simplifyConstant,
         simplifyCore,
         subtract,
+        typed: typed2
+      });
+      derivative = createDerivative({
+        ConstantNode,
+        FunctionNode,
+        OperatorNode,
+        ParenthesisNode,
+        SymbolNode,
+        config,
+        equal,
+        isZero,
+        numeric: numeric2,
+        parse,
+        simplify,
         typed: typed2
       });
       _extends(math, {
@@ -67419,8 +67574,8 @@ svg {
         combinations,
         complex,
         conj,
-        cosh: cosh3,
-        coth,
+        cos: cos2,
+        cot,
         csc,
         cube,
         equalScalar,
@@ -67456,6 +67611,7 @@ svg {
         splitUnit,
         square,
         string,
+        subtractScalar,
         tan: tan2,
         typeOf: typeOf2,
         acosh: acosh3,
@@ -67465,7 +67621,7 @@ svg {
         bin,
         chain,
         combinationsWithRep,
-        cos: cos2,
+        cosh: cosh3,
         csch,
         isNaN: isNaN2,
         isPrime,
@@ -67477,7 +67633,7 @@ svg {
         tanh: tanh3,
         unaryMinus,
         acoth,
-        cot,
+        coth,
         fraction,
         isNumeric,
         matrix,
@@ -67501,16 +67657,16 @@ svg {
         dotDivide,
         equal,
         flatten: flatten2,
-        gcd,
         hasNumericValue,
         identity,
         kron,
         largerEq,
         leftShift,
+        lsolve,
         matrixFromColumns,
-        mod: mod2,
         nthRoot,
         ones,
+        qr,
         resize: resize2,
         rightArithShift,
         round: round2,
@@ -67534,18 +67690,18 @@ svg {
         dot,
         equalText,
         floor: floor2,
+        gcd,
         hypot: hypot2,
-        invmod,
         larger,
         log: log3,
-        lsolve,
+        lsolveAll,
         matrixFromRows,
         min: min2,
+        mod: mod2,
         multiply,
         nthRoots,
         or,
         partitionSelect,
-        qr,
         rightLogShift,
         slu,
         subset,
@@ -67563,11 +67719,10 @@ svg {
         fix,
         index,
         intersect,
+        invmod,
         lcm,
         log1p: log1p2,
-        lsolveAll,
         max: max2,
-        quantileSeq,
         setCartesian,
         setDistinct,
         setIsSubset,
@@ -67594,7 +67749,7 @@ svg {
         bohrMagneton,
         boltzmann,
         conductanceQuantum,
-        createUnit,
+        coulomb,
         deuteronMass,
         dotPow,
         electricConstant,
@@ -67617,6 +67772,7 @@ svg {
         planckLength,
         planckTemperature,
         protonMass,
+        quantumOfCirculation,
         reducedPlanckConstant,
         rydberg,
         secondRadiation,
@@ -67625,7 +67781,7 @@ svg {
         thomsonCrossSection,
         avogadro,
         bohrRadius,
-        coulomb,
+        createUnit,
         divide: divide2,
         electronMass,
         factorial,
@@ -67655,7 +67811,7 @@ svg {
         mean,
         molarVolume,
         planckConstant,
-        quantumOfCirculation,
+        quantileSeq,
         simplifyCore,
         variance,
         classicalElectronRadius,
@@ -67664,16 +67820,17 @@ svg {
         median,
         simplify,
         symbolicEqual,
-        derivative,
-        kldivergence,
+        corr,
+        freqz,
         mad,
         parser,
         rationalize,
         std,
         zeta,
-        freqz,
+        derivative,
         norm,
         rotationMatrix,
+        kldivergence,
         planckTime,
         schur,
         rotate,
@@ -67706,13 +67863,11 @@ svg {
           numeric: numeric2,
           typed: typed2
         }),
-        quantileSeq: createQuantileSeqTransform({
+        print: createPrintTransform({
           add: add2,
-          compare: compare2,
-          isInteger: isInteger2,
-          multiply,
-          partitionSelect,
-          typed: typed2
+          matrix,
+          typed: typed2,
+          zeros: zeros2
         }),
         diff: createDiffTransform({
           bignumber,
@@ -67775,6 +67930,20 @@ svg {
         mean: createMeanTransform({
           add: add2,
           divide: divide2,
+          typed: typed2
+        }),
+        quantileSeq: createQuantileSeqTransform({
+          add: add2,
+          bignumber,
+          compare: compare2,
+          divide: divide2,
+          isInteger: isInteger2,
+          larger,
+          multiply,
+          partitionSelect,
+          smaller,
+          smallerEq,
+          subtract,
           typed: typed2
         }),
         variance: createVarianceTransform({
@@ -67875,27 +68044,27 @@ svg {
       init_lib3();
       init_esm();
       init_material_color_utilities();
-      AddAliasReturnSchema = z3.object({
+      AddAliasReturnSchema = z4.object({
         alias: AliasDataSchema
       });
-      AliasMethodsSchema = z3.object({
+      AliasMethodsSchema = z4.object({
         alias: AliasDataSchema,
-        setName: z3.function(z3.tuple([z3.string()])),
-        setTone: z3.function(z3.tuple([z3.union([z3.string(), z3.number()]), z3.number()])),
-        setTones: z3.function(z3.tuple([z3.number(), z3.number()])),
-        remove: z3.function()
+        setName: z4.function(z4.tuple([z4.string()])),
+        setTone: z4.function(z4.tuple([z4.union([z4.string(), z4.number()]), z4.number()])),
+        setTones: z4.function(z4.tuple([z4.number(), z4.number()])),
+        remove: z4.function()
       });
-      AliasFunctionSchema = z3.function(z3.tuple([z3.string()])).returns(AliasMethodsSchema);
-      ThemeColorDataSchema = z3.object({
-        id: z3.string(),
-        name: z3.string(),
-        sourceHex: z3.string(),
+      AliasFunctionSchema = z4.function(z4.tuple([z4.string()])).returns(AliasMethodsSchema);
+      ThemeColorDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        sourceHex: z4.string(),
         sourceColor: ColorSchema,
         endColor: ColorSchema,
-        tones: z3.array(z3.number()),
-        hueCalc: z3.string(),
-        chromaCalc: z3.string(),
-        aliases: z3.array(AliasDataSchema)
+        tones: z4.array(z4.number()),
+        hueCalc: z4.string(),
+        chromaCalc: z4.string(),
+        aliases: z4.array(AliasDataSchema)
       });
       baseColor = useColorStore.getState();
       color = __spreadProps(__spreadValues({}, baseColor), {
@@ -67944,25 +68113,25 @@ svg {
         aliases: []
       });
       useThemeColorDataStore = create((...a3) => __spreadValues({}, themeColorDataStore(...a3)));
-      ThemeColorActionsSchema = z3.object({
-        set: z3.object({
-          id: z3.function().args(z3.string(), z3.void()),
-          name: z3.function().args(z3.string(), z3.void()),
-          sourceHex: z3.function().args(z3.string(), z3.void()),
-          sourceColor: z3.function().args(ColorSchema, z3.void()),
-          endColor: z3.function().args(ColorSchema, z3.void()),
-          tones: z3.function().args(z3.array(z3.number()), z3.void()),
-          hueCalc: z3.function().args(z3.string(), z3.void()),
-          chromaCalc: z3.function().args(z3.string(), z3.void()),
-          aliases: z3.function().args(z3.array(AliasDataSchema), z3.void()),
-          addAlias: z3.function(z3.tuple([]), AddAliasReturnSchema),
+      ThemeColorActionsSchema = z4.object({
+        set: z4.object({
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          sourceHex: z4.function().args(z4.string(), z4.void()),
+          sourceColor: z4.function().args(ColorSchema, z4.void()),
+          endColor: z4.function().args(ColorSchema, z4.void()),
+          tones: z4.function().args(z4.array(z4.number()), z4.void()),
+          hueCalc: z4.function().args(z4.string(), z4.void()),
+          chromaCalc: z4.function().args(z4.string(), z4.void()),
+          aliases: z4.function().args(z4.array(AliasDataSchema), z4.void()),
+          addAlias: z4.function(z4.tuple([]), AddAliasReturnSchema),
           alias: AliasFunctionSchema
         })
       });
       themeColorActionsStore = (set) => ({
         set: {
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name307) => set((state) => __spreadProps(__spreadValues({}, state), { name: name307 })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
           sourceHex: (sourceHex) => set((state) => __spreadProps(__spreadValues({}, state), {
             sourceHex,
             sourceColor: __spreadProps(__spreadValues({}, state), { sourceHex })
@@ -67997,11 +68166,11 @@ svg {
               throw new Error("Alias not found");
             }
             const alias = requestedAlias;
-            const setName = (name307) => {
+            const setName = (name310) => {
               const newAliases = [...state.aliases];
               const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
               if (aliasToUpdate) {
-                aliasToUpdate.name = name307;
+                aliasToUpdate.name = name310;
               }
               set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
             };
@@ -68087,7 +68256,7 @@ svg {
         aliases: [],
         set: {
           id: (id) => set(() => ({ id })),
-          name: (name307) => set(() => ({ name: name307 })),
+          name: (name310) => set(() => ({ name: name310 })),
           sourceHex: (sourceHex) => set((state) => ({
             sourceHex,
             sourceColor: __spreadProps(__spreadValues({}, state.sourceColor), { sourceHex })
@@ -68122,11 +68291,11 @@ svg {
               throw new Error("Alias not found");
             }
             const alias = requestedAlias;
-            const setName = (name307) => {
+            const setName = (name310) => {
               const newAliases = [...state.aliases];
               const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
               if (aliasToUpdate) {
-                aliasToUpdate.name = name307;
+                aliasToUpdate.name = name310;
               }
               set(() => ({ aliases: newAliases }));
             };
@@ -68177,8 +68346,8 @@ svg {
         const themeColor = themeColorStore2((state) => state);
         const id = themeColor.id;
         const setId = (id2) => themeColorStore2.setState({ id: id2 });
-        const name307 = themeColor.name;
-        const setName = (name308) => themeColor.set.name(name308);
+        const name310 = themeColor.name;
+        const setName = (name311) => themeColor.set.name(name311);
         const sourceHex = themeColor.sourceHex;
         const setSourceHex = (sourceHex2) => {
           const newColor = themeColor.sourceColor;
@@ -68356,11 +68525,11 @@ svg {
             throw new Error("Alias not found");
           }
           const alias2 = requestedAlias;
-          const setName2 = (name308) => {
+          const setName2 = (name311) => {
             const newAliases = [...aliases];
             const aliasToUpdate = newAliases.find((alias3) => alias3.id === id2);
             if (aliasToUpdate) {
-              aliasToUpdate.name = name308;
+              aliasToUpdate.name = name311;
             }
             setAliases(newAliases);
           };
@@ -68410,7 +68579,7 @@ svg {
         }, []);
         return {
           id,
-          name: name307,
+          name: name310,
           sourceHex,
           sourceColor,
           endColor,
@@ -68591,9 +68760,9 @@ svg {
           alias.color[0].tone,
           alias.color[1].tone
         ]);
-        const onSetAliasName = (id, name307) => {
-          setAliasName(name307);
-          onSetName(id, name307);
+        const onSetAliasName = (id, name310) => {
+          setAliasName(name310);
+          onSetName(id, name310);
         };
         const onSetAliasLightTone = (id, tone) => {
           setAliasColor([tone, alias.color[1].tone]);
@@ -68608,7 +68777,7 @@ svg {
           {
             key: alias.id,
             id: alias.id,
-            className: "h-8 flex flex-row items-center"
+            className: "flex h-8 flex-row items-center"
           },
           /* @__PURE__ */ y("div", { className: "flex-grow" }, /* @__PURE__ */ y(
             Textbox,
@@ -68622,7 +68791,10 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[0].toString(),
-              onInput: (e6) => onSetAliasLightTone(alias.id, parseInt(e6.currentTarget.value)),
+              onInput: (e6) => onSetAliasLightTone(
+                alias.id,
+                parseInt(e6.currentTarget.value)
+              ),
               placeholder: "light"
             }
           )),
@@ -68630,19 +68802,29 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[1].toString(),
-              onInput: (e6) => onSetAliasDarkTone(alias.id, parseInt(e6.currentTarget.value)),
+              onInput: (e6) => onSetAliasDarkTone(
+                alias.id,
+                parseInt(e6.currentTarget.value)
+              ),
               placeholder: "dark"
             }
           )),
-          /* @__PURE__ */ y(IconButton, { title: "Remove alias", onClick: () => onRemoveAlias(alias.id) }, /* @__PURE__ */ y(IconMinus32, null))
+          /* @__PURE__ */ y(
+            IconButton,
+            {
+              title: "Remove alias",
+              onClick: () => onRemoveAlias(alias.id)
+            },
+            /* @__PURE__ */ y(IconMinus32, null)
+          )
         );
       };
       AliasList = ({ aliases, onSetAliases }) => {
         const [aliasItems, setAliasItems] = h2(aliases);
-        const onSetName = (id, name307) => {
+        const onSetName = (id, name310) => {
           const alias = aliases.find((alias2) => alias2.id === id);
           if (alias) {
-            alias.name = name307;
+            alias.name = name310;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
           }
@@ -68697,10 +68879,22 @@ svg {
         const darkHct = Hct.from(hue, chroma, darkModeTone);
         const lightHex = hexFromHct(lightHct);
         const darkHex = hexFromHct(darkHct);
-        return /* @__PURE__ */ y("div", { className: "h-8 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full flex-grow", style: `background: ${lightHex}` }), /* @__PURE__ */ y("div", { className: "h-full flex-grow", style: `background: ${darkHex}` }));
+        return /* @__PURE__ */ y("div", { className: "flex h-8 w-full" }, /* @__PURE__ */ y(
+          "div",
+          {
+            className: "h-full flex-grow",
+            style: `background: ${lightHex}`
+          }
+        ), /* @__PURE__ */ y(
+          "div",
+          {
+            className: "h-full flex-grow",
+            style: `background: ${darkHex}`
+          }
+        ));
       };
       AliasPreviewList = ({ hue, chroma, aliases }) => {
-        return /* @__PURE__ */ y("div", { className: "w-full h-8" }, aliases.map((alias) => /* @__PURE__ */ y(
+        return /* @__PURE__ */ y("div", { className: "h-8 w-full" }, aliases.map((alias) => /* @__PURE__ */ y(
           AliasTonePreview,
           {
             hue,
@@ -68787,11 +68981,16 @@ svg {
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+            calculateChroma(
+              themeColor.sourceColor.hct.chroma,
+              themeColor.chromaCalc
+            )
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaCalcInput(calculatedChroma.toString());
           }
         }, [hexColorInput]);
@@ -68814,11 +69013,16 @@ svg {
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+            calculateChroma(
+              themeColor.sourceColor.hct.chroma,
+              themeColor.chromaCalc
+            )
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaCalcInput(calculatedChroma.toString());
           }
         };
@@ -68828,7 +69032,10 @@ svg {
           setHueSlider(newHueCalcInput);
           setHueCalcInput(newHueCalcInput.toString());
           console.log(
-            calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString())
+            calculateHue(
+              themeColor.sourceColor.hct.hue,
+              newHueCalcInput.toString()
+            )
           );
         };
         const onHueCalcInput = (e6) => {
@@ -68855,13 +69062,18 @@ svg {
         const onChromaCalcInput = (e6) => {
           const newChromaCalcInput = e6.currentTarget.value;
           const calculatedChroma = round2(
-            calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput)
+            calculateChroma(
+              themeColor.sourceColor.hct.chroma,
+              newChromaCalcInput
+            )
           );
           themeColor.set.chromaCalc(newChromaCalcInput);
           setChromaSlider(calculatedChroma);
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaSlider(themeColor.sourceColor.hct.chroma);
           }
         };
@@ -68874,10 +69086,10 @@ svg {
         };
         const options = [
           {
-            children: /* @__PURE__ */ y("div", { className: "tab-content absolute top-10 left-0 w-full overflow-y-scroll flex flex-row" }, /* @__PURE__ */ y("div", { className: "w-10 h-full overflow-y-scroll pt-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y(
+            children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center gap-2 overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
               "div",
               {
-                className: "w-6 h-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue",
+                className: "h-6 w-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue",
                 style: {
                   background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                     themeColor.endColor.hct.hue,
@@ -68894,11 +69106,13 @@ svg {
                   )}, black)`
                 }
               }
-            ), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 value: themeColor.name,
-                onChange: (e6) => themeColor.set.name(e6.currentTarget.value),
+                onChange: (e6) => themeColor.set.name(
+                  e6.currentTarget.value
+                ),
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
@@ -68911,7 +69125,17 @@ svg {
                 onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 pt-1 border-l border-neutral-700" }, /* @__PURE__ */ y("p", { className: "p-2" }, themeColor.name), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.endColor.hct.hue), " C:", " ", round2(themeColor.endColor.hct.chroma), " T:", " ", round2(themeColor.endColor.hct.tone))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H:", " ", round2(
+              themeColor.sourceColor.hct.hue
+            ), " ", "C:", " ", round2(
+              themeColor.sourceColor.hct.chroma
+            ), " ", "T:", " ", round2(
+              themeColor.sourceColor.hct.tone
+            )))), /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-l pt-1" }, /* @__PURE__ */ y("div", { className: "p-2" }, themeColor.name), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H:", " ", round2(themeColor.endColor.hct.hue), " ", "C:", " ", round2(
+              themeColor.endColor.hct.chroma
+            ), " ", "T:", " ", round2(
+              themeColor.endColor.hct.tone
+            ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -68922,13 +69146,19 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-t" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
                 maximum: 360,
                 minimum: 0,
                 onInput: (e6) => onHueSliderInput(e6),
                 value: themeColor.hueCalc
+              }
+            ), /* @__PURE__ */ y(
+              "div",
+              {
+                className: "hue-slider-bar absolute h-px",
+                style: `width: 157px; transform: translate(-1px, -1px)`
               }
             )), /* @__PURE__ */ y(
               Textbox,
@@ -68937,7 +69167,11 @@ svg {
                 onInput: (e6) => onHueCalcInput(e6),
                 placeholder: "Hue value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "grow h-full w-172 border-t border-l border-neutral-700" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
+              themeColor.sourceColor.hct.hue
+            )))), /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-l border-t" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(
+              themeColor.endColor.hct.chroma
+            ), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(
               findMaxChromaForHueAtTone(
                 hue(),
                 themeColor.endColor.hct.tone
@@ -68958,8 +69192,8 @@ svg {
             ), /* @__PURE__ */ y(
               "div",
               {
-                className: "absolute h-px chroma-slider-bar",
-                style: `width: 150px; transform: translate(-1px, -1px); background: linear-gradient(to right, #777, ${chromaHex}`
+                className: "chroma-slider-bar absolute h-px",
+                style: `width: 156px; transform: translate(-1px, -1px); background: linear-gradient(to right, #777, ${chromaHex}`
               }
             )), /* @__PURE__ */ y(
               Textbox,
@@ -68968,7 +69202,9 @@ svg {
                 onInput: (e6) => onChromaCalcInput(e6),
                 placeholder: "Chroma value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(themeColor.sourceColor.hct.chroma))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
+              themeColor.sourceColor.hct.chroma
+            ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -68979,7 +69215,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow h-full" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
               TextboxMultiline,
               {
                 value: tones,
@@ -68998,13 +69234,13 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "grow flex flex-row border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "grow flex-col" }, /* @__PURE__ */ y("div", { className: "grow flex justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "grow flex-col" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y(
               AliasList,
               {
                 aliases: themeColor.aliases,
                 onSetAliases
               }
-            )), /* @__PURE__ */ y("div", { className: "h-full w-32 flex flex-col" }, /* @__PURE__ */ y("div", { className: "h-8 w-32 flex justify-around items-center" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark")), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-full w-32 flex-col" }, /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark")), /* @__PURE__ */ y(
               AliasPreviewList,
               {
                 hue: themeColor.endColor.hct.hue,
@@ -69015,7 +69251,7 @@ svg {
             value: "Primitives"
           },
           {
-            children: /* @__PURE__ */ y("div", { className: "absolute top-10 left-0 w-full h-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "flex flex-row w-full border-t border-neutral-700" }, /* @__PURE__ */ y("div", { className: "w-10 overflow-y-scroll py-2 flex flex-col items-center gap-2" }, /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 bg-gradient-conic rounded-full opacity-20" }), /* @__PURE__ */ y("div", { className: " w-6 h-6 outline-2 outline-neutral-500 outline-dashed rounded-full relative flex items-center justify-center" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "h-24 grow flex flex-row" }, /* @__PURE__ */ y("div", { className: "grow flex flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
+            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "border-gridlines flex w-full flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "border-gridlines flex w-full flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
             value: "Aliases"
           }
         ];
@@ -69046,35 +69282,35 @@ svg {
       init_lib3();
       init_esm();
       init_index_browser();
-      ThemeColorFunctionSchema = z3.function(z3.tuple([z3.string()])).returns(
-        z3.object({
+      ThemeColorFunctionSchema = z4.function(z4.tuple([z4.string()])).returns(
+        z4.object({
           themeColor: ThemeColorDataSchema,
-          setThemeColor: z3.function().args(ThemeColorDataSchema, z3.void()),
-          remove: z3.function().args(z3.void())
+          setThemeColor: z4.function().args(ThemeColorDataSchema, z4.void()),
+          remove: z4.function().args(z4.void())
         })
       );
-      AliasGroupDataSchema = z3.object({
-        id: z3.string(),
-        name: z3.string(),
-        themeColors: z3.array(z3.string()),
-        aliases: z3.array(AliasSchema)
+      AliasGroupDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        themeColors: z4.array(z4.string()),
+        aliases: z4.array(AliasSchema)
       });
       AliasGroupSchema = AliasGroupDataSchema;
-      ThemeDataSchema = z3.object({
-        id: z3.string(),
-        name: z3.string(),
-        themeColors: z3.array(ThemeColorDataSchema),
-        aliasGroups: z3.array(AliasGroupSchema)
+      ThemeDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        themeColors: z4.array(ThemeColorDataSchema),
+        aliasGroups: z4.array(AliasGroupSchema)
       });
-      ThemeActionsSchema = z3.object({
-        set: z3.object({
-          id: z3.function().args(z3.string(), z3.void()),
-          name: z3.function().args(z3.string(), z3.void()),
-          themeColors: z3.function().args(z3.array(ThemeColorDataSchema), z3.void()),
-          addThemeColor: z3.function().args(ThemeColorDataSchema, z3.void()),
+      ThemeActionsSchema = z4.object({
+        set: z4.object({
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          themeColors: z4.function().args(z4.array(ThemeColorDataSchema), z4.void()),
+          addThemeColor: z4.function().args(ThemeColorDataSchema, z4.void()),
           themeColor: ThemeColorFunctionSchema,
-          addAliasGroup: z3.function().args(AliasGroupSchema, z3.void()),
-          aliasGroup: z3.function().args(z3.string(), z3.void())
+          addAliasGroup: z4.function().args(AliasGroupSchema, z4.void()),
+          aliasGroup: z4.function().args(z4.string(), z4.void())
         })
       });
       ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
@@ -69092,7 +69328,7 @@ svg {
         aliasGroups: [],
         set: {
           id: (id) => set(() => ({ id })),
-          name: (name307) => set(() => ({ name: name307 })),
+          name: (name310) => set(() => ({ name: name310 })),
           themeColors: (themeColors) => set(() => ({ themeColors })),
           addThemeColor: (themeColor) => set((state) => {
             const newThemeColors = [...state.themeColors];
@@ -69157,8 +69393,8 @@ svg {
         const newThemeColor = useThemeColor("397456");
         const id = theme.id;
         const setId = (id2) => theme.set.id(id2);
-        const name307 = theme.name;
-        const setName = (name308) => theme.set.name(name308);
+        const name310 = theme.name;
+        const setName = (name311) => theme.set.name(name311);
         const themeColors = theme.themeColors;
         const setThemeColors = (themeColors2) => theme.set.themeColors(themeColors2);
         const addThemeColor = () => {
@@ -69224,7 +69460,7 @@ svg {
         };
         return {
           id,
-          name: name307,
+          name: name310,
           themeColors,
           aliasGroups,
           set: {
@@ -69296,7 +69532,7 @@ svg {
         const onSetThemeColors = (themeColors2) => {
           theme.set.themeColors(themeColors2);
         };
-        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "overflow-y-auto h-full bg-neutral-800" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute w-full h-px bg-neutral-700 top-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 left-10" }), /* @__PURE__ */ y("div", { className: "absolute h-full w-px bg-neutral-700 right-32" })), /* @__PURE__ */ y("div", { className: "h-10 w-full flex" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "grow flex flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "h-full px-2 flex items-center justify-center" }, /* @__PURE__ */ y(
+        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "bg-gridlines absolute top-10 h-px w-full" }), /* @__PURE__ */ y("div", { className: "bg-gridlines absolute left-10 h-full w-px" }), /* @__PURE__ */ y("div", { className: "bg-gridlines absolute right-32 h-full w-px" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-center px-2" }, /* @__PURE__ */ y(
           Textbox,
           {
             value: theme.name,
@@ -69314,7 +69550,7 @@ svg {
         )), /* @__PURE__ */ y(
           "button",
           {
-            className: "build-button h-full z-50 w-32 flex items-center justify-center bg-neutral-900 hover:bg-green-600 active:bg-red-700",
+            className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
             onClick: (e6) => console.log(theme.themeColors)
           },
           "Build ",
@@ -70045,10 +70281,10 @@ complex.js/complex.js:
 
 fraction.js/fraction.js:
   (**
-   * @license Fraction.js v4.2.0 05/03/2022
+   * @license Fraction.js v4.3.0 20/08/2023
    * https://www.xarg.org/2014/03/rational-numbers-in-javascript/
    *
-   * Copyright (c) 2021, Robert Eisele (robert@xarg.org)
+   * Copyright (c) 2023, Robert Eisele (robert@raw.org)
    * Dual licensed under the MIT or GPL Version 2 licenses.
    **)
 */
