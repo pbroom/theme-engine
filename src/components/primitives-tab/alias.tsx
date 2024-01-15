@@ -5,6 +5,7 @@ import {
     IconButton,
     TextboxNumeric,
     IconMinus32,
+    Code,
 } from '@create-figma-plugin/ui';
 import { AliasData } from '@/src/hooks/useAlias';
 import { useEffect } from 'react';
@@ -25,7 +26,7 @@ type AliasItemProps = {
  * Renders an alias item component.
  *
  * @param {AliasItemProps} props - The props for the AliasItem component.
- * @returns {JSX.Element} The rendered AliasItem component.
+ * @returns {h.JSX.Element} The rendered AliasItem component.
  */
 const AliasItem = ({
     alias,
@@ -101,6 +102,8 @@ const AliasItem = ({
 };
 
 type AliasListProps = {
+    hue: number;
+    chroma: number;
     aliases: AliasData[];
     onSetAliases: (aliases: AliasData[]) => void;
 };
@@ -112,7 +115,7 @@ type AliasListProps = {
  * @param {Function} onSetAliases - The callback function to update the list of aliases.
  * @returns {JSX.Element} The rendered list of aliases.
  */
-const AliasList = ({ aliases, onSetAliases }: AliasListProps) => {
+const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
     const [aliasItems, setAliasItems] = useState(aliases);
     const onSetName = (id: string, name: string) => {
         const alias = aliases.find((alias) => alias.id === id);
@@ -161,7 +164,22 @@ const AliasList = ({ aliases, onSetAliases }: AliasListProps) => {
             />
         );
     });
-    return <Fragment>{aliasList}</Fragment>;
+    const aliasPreview = aliasItems.map((alias) => {
+        return (
+            <AliasTonePreview
+                hue={hue}
+                chroma={chroma}
+                lightModeTone={alias.color[0].tone}
+                darkModeTone={alias.color[1].tone}
+            />
+        );
+    });
+    return (
+        <div className="flex h-8 flex-row items-center">
+            <div className="h-8 grow">{aliasList}</div>
+            <div className="h-8 w-32">{aliasPreview}</div>
+        </div>
+    );
 };
 
 type AliasTonePreviewProps = {
@@ -190,16 +208,24 @@ const AliasTonePreview = ({
     const darkHct = Hct.from(hue, chroma, darkModeTone);
     const lightHex = hexFromHct(lightHct);
     const darkHex = hexFromHct(darkHct);
+    const textColor = (tone: number) =>
+        tone > 50 ? 'rgb(0,0,0,0.85)' : 'rgb(255,255,255,0.9)';
+    // TODO: Figure out how to write to clipboard.
+
     return (
         <div className="flex h-8 w-full">
             <div
-                className="h-full flex-grow"
-                style={`background: ${lightHex}`}
-            ></div>
+                className="h-full w-16"
+                style={`background: ${lightHex}; color: ${textColor(lightModeTone)}`}
+            >
+                {/* <Code>{lightHex}</Code> */}
+            </div>
             <div
-                className="h-full flex-grow"
-                style={`background: ${darkHex}`}
-            ></div>
+                className="h-full w-16"
+                style={`background: ${darkHex}; color: ${textColor(darkModeTone)}`}
+            >
+                {/* <Code>{darkHex}</Code> */}
+            </div>
         </div>
     );
 };

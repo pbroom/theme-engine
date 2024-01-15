@@ -443,29 +443,25 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                             ></div>
                         </div>
                         <div className="border-gridlines flex grow flex-row border-t">
-                            <div className="grow flex-col">
-                                <div className="flex grow justify-between">
-                                    <span className="p-2">Aliases</span>
-                                    <IconButton onClick={onAddAlias}>
-                                        <IconPlus32 />
-                                    </IconButton>
-                                </div>
-                                <AliasList
-                                    aliases={themeColor.aliases}
-                                    onSetAliases={onSetAliases}
-                                />
+                            <div className="flex grow justify-between">
+                                <span className="p-2">Aliases</span>
+                                <IconButton onClick={onAddAlias}>
+                                    <IconPlus32 />
+                                </IconButton>
                             </div>
-                            <div className="flex h-full w-32 flex-col">
-                                <div className="flex h-8 w-32 items-center justify-around">
-                                    <span>Light</span>
-                                    <span>Dark</span>
-                                </div>
-                                <AliasPreviewList
-                                    hue={themeColor.endColor.hct.hue}
-                                    chroma={themeColor.endColor.hct.chroma}
-                                    aliases={themeColor.aliases}
-                                />
+
+                            <div className="flex h-8 w-32 items-center justify-around">
+                                <span>Light</span>
+                                <span>Dark</span>
                             </div>
+                        </div>
+                        <div>
+                            <AliasList
+                                hue={themeColor.endColor.hct.hue}
+                                chroma={themeColor.endColor.hct.chroma}
+                                aliases={themeColor.aliases}
+                                onSetAliases={onSetAliases}
+                            />
                         </div>
                     </div>
                 </div>

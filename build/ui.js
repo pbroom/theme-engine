@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a9832d29-8416-4182-817b-2f285dbc9608/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3025bce5-0fc2-40ad-bee4-71ec5cf0f767/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a9832d29-8416-4182-817b-2f285dbc9608/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3025bce5-0fc2-40ad-bee4-71ec5cf0f767/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -780,6 +780,9 @@ video {
 .w-px {
   width: 1px;
 }
+.w-16 {
+  width: 4rem;
+}
 .max-w-[172px] {
   max-width: 172px;
 }
@@ -1138,6 +1141,12 @@ video {
 .text-neutral-400 {
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+.text-opacity-80 {
+  --tw-text-opacity: 0.8;
+}
+.text-opacity-50 {
+  --tw-text-opacity: 0.5;
 }
 .underline {
   text-decoration-line: underline;
@@ -2318,10 +2327,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0bda1e4-0723-4a86-bb7d-092281b42f20/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b751458-6927-4d44-bc02-1dd9da3ec8eb/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e0bda1e4-0723-4a86-bb7d-092281b42f20/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b751458-6927-4d44-bc02-1dd9da3ec8eb/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2378,10 +2387,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77ef0a98-f43a-4aca-9053-d45e03c9fa56/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa52fb6e-f83b-4c42-9ec0-f740717d602c/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77ef0a98-f43a-4aca-9053-d45e03c9fa56/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa52fb6e-f83b-4c42-9ec0-f740717d602c/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -2451,10 +2460,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb506926-2403-4304-b285-b183154a2cdf/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd32130c-546a-417c-9eee-d36b1302d512/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bb506926-2403-4304-b285-b183154a2cdf/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd32130c-546a-417c-9eee-d36b1302d512/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -2558,10 +2567,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/505de95d-69e4-49bc-8171-c02f8ad50b9c/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7a0c07-3f4c-405d-b651-cb4c9a92ce79/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/505de95d-69e4-49bc-8171-c02f8ad50b9c/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7a0c07-3f4c-405d-b651-cb4c9a92ce79/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3158,10 +3167,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c1c66b6-b709-4286-ad4b-f7917c220f47/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b20252-73b7-457a-b974-313d0ad8f744/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c1c66b6-b709-4286-ad4b-f7917c220f47/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b20252-73b7-457a-b974-313d0ad8f744/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3666,10 +3675,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/efdc9fef-5256-4ff0-a041-252e8435e14d/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d335159e-756a-4c17-a618-d68f26091091/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/efdc9fef-5256-4ff0-a041-252e8435e14d/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d335159e-756a-4c17-a618-d68f26091091/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4009,10 +4018,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c81b094-932d-4abf-a835-79662505c5e7/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04b12970-7df8-43f5-a71a-ad9388a017da/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c81b094-932d-4abf-a835-79662505c5e7/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04b12970-7df8-43f5-a71a-ad9388a017da/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4211,10 +4220,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb73234a-ff0b-400a-a935-fe293b8689cf/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5865f6a-cb2f-4e37-970c-3fddf01da532/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cb73234a-ff0b-400a-a935-fe293b8689cf/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5865f6a-cb2f-4e37-970c-3fddf01da532/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4307,10 +4316,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eecef1d-5295-4966-a956-a49fc6a308e4/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31758600-c282-40ef-a84e-c096483dd76d/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3eecef1d-5295-4966-a956-a49fc6a308e4/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31758600-c282-40ef-a84e-c096483dd76d/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -4391,10 +4400,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f14b161-0731-4070-b51e-c478fd8a95ca/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b58ba2a-27c1-4fff-97c3-e5fda9ff0b7b/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f14b161-0731-4070-b51e-c478fd8a95ca/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b58ba2a-27c1-4fff-97c3-e5fda9ff0b7b/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -4423,9 +4432,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05559556-6c91-40ec-91e5-aa7127d20d9a/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e1b1135-0c8b-48c4-be0a-53baa9ed8a18/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05559556-6c91-40ec-91e5-aa7127d20d9a/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e1b1135-0c8b-48c4-be0a-53baa9ed8a18/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -68738,7 +68747,7 @@ svg {
   });
 
   // src/components/primitives-tab/alias.tsx
-  var AliasItem, AliasList, AliasTonePreview, AliasPreviewList;
+  var AliasItem, AliasList, AliasTonePreview;
   var init_alias = __esm({
     "src/components/primitives-tab/alias.tsx"() {
       "use strict";
@@ -68819,7 +68828,7 @@ svg {
           )
         );
       };
-      AliasList = ({ aliases, onSetAliases }) => {
+      AliasList = ({ hue, chroma, aliases, onSetAliases }) => {
         const [aliasItems, setAliasItems] = h2(aliases);
         const onSetName = (id, name310) => {
           const alias = aliases.find((alias2) => alias2.id === id);
@@ -68867,7 +68876,18 @@ svg {
             }
           );
         });
-        return /* @__PURE__ */ y(g, null, aliasList);
+        const aliasPreview = aliasItems.map((alias) => {
+          return /* @__PURE__ */ y(
+            AliasTonePreview,
+            {
+              hue,
+              chroma,
+              lightModeTone: alias.color[0].tone,
+              darkModeTone: alias.color[1].tone
+            }
+          );
+        });
+        return /* @__PURE__ */ y("div", { className: "flex h-8 flex-row items-center" }, /* @__PURE__ */ y("div", { className: "h-8 grow" }, aliasList), /* @__PURE__ */ y("div", { className: "h-8 w-32" }, aliasPreview));
       };
       AliasTonePreview = ({
         hue,
@@ -68879,30 +68899,20 @@ svg {
         const darkHct = Hct.from(hue, chroma, darkModeTone);
         const lightHex = hexFromHct(lightHct);
         const darkHex = hexFromHct(darkHct);
+        const textColor = (tone) => tone > 50 ? "rgb(0,0,0,0.85)" : "rgb(255,255,255,0.9)";
         return /* @__PURE__ */ y("div", { className: "flex h-8 w-full" }, /* @__PURE__ */ y(
           "div",
           {
-            className: "h-full flex-grow",
-            style: `background: ${lightHex}`
+            className: "h-full w-16",
+            style: `background: ${lightHex}; color: ${textColor(lightModeTone)}`
           }
         ), /* @__PURE__ */ y(
           "div",
           {
-            className: "h-full flex-grow",
-            style: `background: ${darkHex}`
+            className: "h-full w-16",
+            style: `background: ${darkHex}; color: ${textColor(darkModeTone)}`
           }
         ));
-      };
-      AliasPreviewList = ({ hue, chroma, aliases }) => {
-        return /* @__PURE__ */ y("div", { className: "h-8 w-full" }, aliases.map((alias) => /* @__PURE__ */ y(
-          AliasTonePreview,
-          {
-            hue,
-            chroma,
-            lightModeTone: alias.color[0].tone,
-            darkModeTone: alias.color[1].tone
-          }
-        )));
       };
     }
   });
@@ -69234,20 +69244,15 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "grow flex-col" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
               AliasList,
-              {
-                aliases: themeColor.aliases,
-                onSetAliases
-              }
-            )), /* @__PURE__ */ y("div", { className: "flex h-full w-32 flex-col" }, /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark")), /* @__PURE__ */ y(
-              AliasPreviewList,
               {
                 hue: themeColor.endColor.hct.hue,
                 chroma: themeColor.endColor.hct.chroma,
-                aliases: themeColor.aliases
+                aliases: themeColor.aliases,
+                onSetAliases
               }
-            ))))),
+            )))),
             value: "Primitives"
           },
           {

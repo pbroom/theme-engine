@@ -1,49 +1,50 @@
 import {
-	convertHexColorToRgbColor,
-	showUI,
+    convertHexColorToRgbColor,
+    showUI,
 } from '@create-figma-plugin/utilities';
 import { paletteTones, findMaxChromasForHue } from './color';
 import { paletteGroup } from './palette-swatches';
 import {
-	paletteVariableCollection,
-	paletteColorVariable,
+    paletteVariableCollection,
+    paletteColorVariable,
 } from './palette-variables';
 import VariableCollection from './variable-collection';
+import { copyToClipboard, copyToClipboardAsync } from 'figx';
 
 const height = (pixelHeight: number) => {
-	return pixelHeight;
+    return pixelHeight;
 };
 export default function () {
-	showUI({ height: height(640), width: 512, title: 'Dynamic Color' });
+    showUI({ height: height(640), width: 512, title: 'Dynamic Color' });
 }
 
 /**
  * This function is triggered when the plugin is run. It retrieves all local variable collections and sends a message to the UI with the collections and their names as options.
  */
 figma.on('run', () => {
-	const localCollections = figma.variables.getLocalVariableCollections();
-	const type = 'localCollections';
-	const options = [];
-	const collections = [];
-	const modes = [];
-	for (let i = 0; i < localCollections.length; i++) {
-		const newCollection = new VariableCollection(
-			localCollections[i].id,
-			localCollections[i].name,
-			localCollections[i].variableIds,
-			localCollections[i].defaultModeId,
-			localCollections[i].modes,
-			localCollections[i].remote,
-			localCollections[i].key
-		);
-		const collectionName = newCollection.name;
-		collections.push(newCollection);
-		options.push({ value: collectionName });
-		modes.push(newCollection.modes);
-	}
-	const message = { type, options, collections, modes };
-	figma.ui.postMessage(message);
-	// console.log(findMaxChromasForHue(163));
+    const localCollections = figma.variables.getLocalVariableCollections();
+    const type = 'localCollections';
+    const options = [];
+    const collections = [];
+    const modes = [];
+    for (let i = 0; i < localCollections.length; i++) {
+        const newCollection = new VariableCollection(
+            localCollections[i].id,
+            localCollections[i].name,
+            localCollections[i].variableIds,
+            localCollections[i].defaultModeId,
+            localCollections[i].modes,
+            localCollections[i].remote,
+            localCollections[i].key,
+        );
+        const collectionName = newCollection.name;
+        collections.push(newCollection);
+        options.push({ value: collectionName });
+        modes.push(newCollection.modes);
+    }
+    const message = { type, options, collections, modes };
+    figma.ui.postMessage(message);
+    // console.log(findMaxChromasForHue(163));
 });
 
 /**
@@ -60,39 +61,39 @@ figma.on('run', () => {
  * @returns {Object} - The swatches or variables generated based on the message type.
  */
 figma.ui.onmessage = (pluginMessage) => {
-	if (pluginMessage.type === 'windowResize') {
-		const windowSize = pluginMessage.windowSize;
-		console.log(windowSize);
-		figma.ui.resize(280, height(windowSize.height));
-	}
+    if (pluginMessage.type === 'windowResize') {
+        const windowSize = pluginMessage.windowSize;
+        console.log(windowSize);
+        figma.ui.resize(280, height(windowSize.height));
+    }
 
-	if (pluginMessage.type === 'build') {
-		const colorName = pluginMessage.name ? pluginMessage.name : 'color';
-		const toneStops = pluginMessage.toneStops;
-		const hexColor = pluginMessage.color;
+    if (pluginMessage.type === 'build') {
+        const colorName = pluginMessage.name ? pluginMessage.name : 'color';
+        const toneStops = pluginMessage.toneStops;
+        const hexColor = pluginMessage.color;
 
-		const palette = paletteTones(hexColor, toneStops);
-		const swatches = paletteGroup(colorName, hexColor, palette);
-		return swatches;
-	}
+        const palette = paletteTones(hexColor, toneStops);
+        const swatches = paletteGroup(colorName, hexColor, palette);
+        return swatches;
+    }
 
-	if (pluginMessage.type === 'createVariables') {
-		const colorName = pluginMessage.name ? pluginMessage.name : 'color';
-		const toneStops = pluginMessage.toneStops;
-		const hexColor = pluginMessage.color;
-		const collectionId = pluginMessage.collectionId;
-		const Overwrite = pluginMessage.overwriteVariables;
-		const bindStyles = pluginMessage.bindStyles;
-		const palette = paletteTones(hexColor, toneStops);
-		const variables = paletteVariableCollection(
-			collectionId,
-			colorName,
-			hexColor,
-			palette,
-			Overwrite,
-			bindStyles
-		);
-		console.log(variables);
-		return variables;
-	}
+    if (pluginMessage.type === 'createVariables') {
+        const colorName = pluginMessage.name ? pluginMessage.name : 'color';
+        const toneStops = pluginMessage.toneStops;
+        const hexColor = pluginMessage.color;
+        const collectionId = pluginMessage.collectionId;
+        const Overwrite = pluginMessage.overwriteVariables;
+        const bindStyles = pluginMessage.bindStyles;
+        const palette = paletteTones(hexColor, toneStops);
+        const variables = paletteVariableCollection(
+            collectionId,
+            colorName,
+            hexColor,
+            palette,
+            Overwrite,
+            bindStyles,
+        );
+        console.log(variables);
+        return variables;
+    }
 };
