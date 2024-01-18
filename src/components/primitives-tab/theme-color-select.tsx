@@ -3,11 +3,14 @@ import { useEffect, useState } from 'preact/hooks';
 import { quickHexFromHct } from '@/src/lib/color-utils';
 import { ThemeColorData } from '@/src/hooks/useThemeColor';
 
+export { ThemeColorSelect };
+
 type ThemeColorSwatchProps = {
     themeColorId: string;
     name: string;
     hue: number;
     chroma: number;
+    isSelected: boolean;
     onClick: (themeColorId: string) => void;
 };
 
@@ -16,12 +19,13 @@ const ThemeColorSwatch = ({
     name,
     hue,
     chroma,
+    isSelected,
+    onClick,
 }: ThemeColorSwatchProps) => {
     return (
-        <div
-            key={themeColorId}
+        <button
             title={name}
-            className="h-6 w-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue"
+            className={`theme-color-swatch h-6 w-6 rounded-full ${isSelected ? 'selected-theme-color' : ''}`}
             style={{
                 background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                     hue,
@@ -33,44 +37,48 @@ const ThemeColorSwatch = ({
                     25,
                 )}, black)`,
             }}
+            onClick={() => onClick(themeColorId)}
         />
     );
 };
 
 type ThemeColorSelectProps = {
     themeColors: ThemeColorData[];
+    selectedThemeColor: string;
+    onSelectThemeColor: (themeColorId: string) => void;
 };
 
-const ThemeColorSelect = ({ themeColors }: ThemeColorSelectProps) => {
-    const [selectedThemeColorId, setSelectedThemeColorId] = useState<string>(
-        themeColors[0].id,
+/**
+ * Renders a select component for theme colors.
+ * @param {ThemeColorData[]} themeColors - An array of theme colors.
+ * @returns {JSX.Element} The rendered theme color select component.
+ */
+const ThemeColorSelect = ({
+    themeColors,
+    selectedThemeColor,
+    onSelectThemeColor,
+}: ThemeColorSelectProps) => {
+    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>(
+        [],
     );
-    const [themeColorSwatches, setThemeColorSwatches] = useState<
-        h.JSX.Element[]
-    >([]);
 
     useEffect(() => {
         const newThemeColorSwatches = themeColors.map((themeColor) => {
             return (
-                <ThemeColorSwatch
-                    key={themeColor.id}
-                    themeColorId={themeColor.id}
-                    name={themeColor.name}
-                    hue={themeColor.endColor.hct.hue}
-                    chroma={themeColor.endColor.hct.chroma}
-                    onClick={setSelectedThemeColorId}
-                />
+                <li key={themeColor.id}>
+                    <ThemeColorSwatch
+                        themeColorId={themeColor.id}
+                        name={themeColor.name}
+                        hue={themeColor.endColor.hct.hue}
+                        chroma={themeColor.endColor.hct.chroma}
+                        isSelected={themeColor.id === selectedThemeColor}
+                        onClick={onSelectThemeColor}
+                    />
+                </li>
             );
         });
         setThemeColorSwatches(newThemeColorSwatches);
     }, [themeColors]);
 
-    return (
-        <div className="flex flex-col items-center">
-            <div className="flex flex-row">{themeColorSwatches}</div>
-            <div className="text-xs text-neutral-400">
-                {selectedThemeColorId}
-            </div>
-        </div>
-    );
+    return <ul className="flex flex-col gap-1">{themeColorSwatches}</ul>;
 };

@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3025bce5-0fc2-40ad-bee4-71ec5cf0f767/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5a1fa6d-2761-4e70-b552-05d880a25445/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3025bce5-0fc2-40ad-bee4-71ec5cf0f767/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5a1fa6d-2761-4e70-b552-05d880a25445/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -729,6 +729,9 @@ video {
 .w-12 {
   width: 3rem;
 }
+.w-16 {
+  width: 4rem;
+}
 .w-172 {
   width: 172px;
 }
@@ -779,9 +782,6 @@ video {
 }
 .w-px {
   width: 1px;
-}
-.w-16 {
-  width: 4rem;
 }
 .max-w-[172px] {
   max-width: 172px;
@@ -1142,11 +1142,11 @@ video {
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));
 }
-.text-opacity-80 {
-  --tw-text-opacity: 0.8;
-}
 .text-opacity-50 {
   --tw-text-opacity: 0.5;
+}
+.text-opacity-80 {
+  --tw-text-opacity: 0.8;
 }
 .underline {
   text-decoration-line: underline;
@@ -2327,10 +2327,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b751458-6927-4d44-bc02-1dd9da3ec8eb/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d6e8444-acbc-4aee-a4b0-2399d096c6aa/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b751458-6927-4d44-bc02-1dd9da3ec8eb/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d6e8444-acbc-4aee-a4b0-2399d096c6aa/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2367,6 +2367,100 @@ video {
     }
   });
 
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/152c7fd7-02ac-42f0-b9e1-44ce073e3500/menu.module.js
+  var menu_module_default;
+  var init_menu_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/152c7fd7-02ac-42f0-b9e1-44ce073e3500/menu.module.js"() {
+      if (document.getElementById("4fc51b39c8") === null) {
+        const element = document.createElement("style");
+        element.id = "4fc51b39c8";
+        element.textContent = `._menu_c5se2_1 {
+  position: absolute;
+  z-index: var(--z-index-2);
+  left: 0;
+  min-width: 100%;
+  padding: var(--space-extra-small) 0;
+  border-radius: var(--border-radius-2);
+  background-color: #1e1e1e; /* FIXME */
+  box-shadow: var(--box-shadow-menu);
+  color: rgba(255, 255, 255, 1); /* FIXME */
+  font-size: var(--font-size-12);
+  overflow-y: auto;
+}
+._menu_c5se2_1::-webkit-scrollbar {
+  display: none;
+}
+._menu_c5se2_1:empty {
+  display: none;
+}
+
+._hidden_c5se2_21 {
+  position: fixed;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5),
+  screen and (min-resolution: 1.5dppx) {
+  ._menu_c5se2_1 {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+._optionHeader_c5se2_34,
+._optionValue_c5se2_35 {
+  overflow: hidden;
+  padding: 4px var(--space-medium) 4px 32px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+._optionHeader_c5se2_34 {
+  color: rgba(255, 255, 255, 0.7); /* FIXME */
+  font-size: var(--font-size-12);
+}
+
+._optionValue_c5se2_35 {
+  position: relative;
+}
+._optionValueSelected_c5se2_50 {
+  background-color: var(--figma-color-bg-brand);
+}
+._optionValueDisabled_c5se2_53 {
+  color: rgba(255, 255, 255, 0.4); /* FIXME */
+}
+
+._optionSeparator_c5se2_57 {
+  width: 100%;
+  height: 1px;
+  margin: var(--space-extra-small) 0;
+  background-color: #444444; /* FIXME */
+}
+
+._input_c5se2_64 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+._checkIcon_c5se2_75 {
+  position: absolute;
+  top: 5px;
+  left: var(--space-extra-small);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY3NzL21lbnUubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsT0FBTztFQUNQLGVBQWU7RUFDZixtQ0FBbUM7RUFDbkMscUNBQXFDO0VBQ3JDLHlCQUF5QixFQUFFLFVBQVU7RUFDckMsa0NBQWtDO0VBQ2xDLDZCQUE2QixFQUFFLFVBQVU7RUFDekMsOEJBQThCO0VBQzlCLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGtCQUFrQjtBQUNwQjs7QUFFQTs7RUFFRTtJQUNFLG1DQUFtQztFQUNyQztBQUNGOztBQUVBOztFQUVFLGdCQUFnQjtFQUNoQix5Q0FBeUM7RUFDekMsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLCtCQUErQixFQUFFLFVBQVU7RUFDM0MsOEJBQThCO0FBQ2hDOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSw2Q0FBNkM7QUFDL0M7QUFDQTtFQUNFLCtCQUErQixFQUFFLFVBQVU7QUFDN0M7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsV0FBVztFQUNYLGtDQUFrQztFQUNsQyx5QkFBeUIsRUFBRSxVQUFVO0FBQ3ZDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCxjQUFjO0VBQ2QsV0FBVztFQUNYLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsOEJBQThCO0FBQ2hDIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY3NzL21lbnUubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tZW51IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTIpO1xuICBsZWZ0OiAwO1xuICBtaW4td2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKSAwO1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWUxZTFlOyAvKiBGSVhNRSAqL1xuICBib3gtc2hhZG93OiB2YXIoLS1ib3gtc2hhZG93LW1lbnUpO1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAxKTsgLyogRklYTUUgKi9cbiAgZm9udC1zaXplOiB2YXIoLS1mb250LXNpemUtMTIpO1xuICBvdmVyZmxvdy15OiBhdXRvO1xufVxuLm1lbnU6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5tZW51OmVtcHR5IHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmhpZGRlbiB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKC13ZWJraXQtbWluLWRldmljZS1waXhlbC1yYXRpbzogMS41KSxcbiAgc2NyZWVuIGFuZCAobWluLXJlc29sdXRpb246IDEuNWRwcHgpIHtcbiAgLm1lbnUge1xuICAgIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICB9XG59XG5cbi5vcHRpb25IZWFkZXIsXG4ub3B0aW9uVmFsdWUge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiA0cHggdmFyKC0tc3BhY2UtbWVkaXVtKSA0cHggMzJweDtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5vcHRpb25IZWFkZXIge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpOyAvKiBGSVhNRSAqL1xuICBmb250LXNpemU6IHZhcigtLWZvbnQtc2l6ZS0xMik7XG59XG5cbi5vcHRpb25WYWx1ZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5vcHRpb25WYWx1ZVNlbGVjdGVkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctYnJhbmQpO1xufVxuLm9wdGlvblZhbHVlRGlzYWJsZWQge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpOyAvKiBGSVhNRSAqL1xufVxuXG4ub3B0aW9uU2VwYXJhdG9yIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMXB4O1xuICBtYXJnaW46IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKSAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDQ0NDQ0OyAvKiBGSVhNRSAqL1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5jaGVja0ljb24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNXB4O1xuICBsZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      menu_module_default = { "menu": "_menu_c5se2_1", "hidden": "_hidden_c5se2_21", "optionHeader": "_optionHeader_c5se2_34", "optionValue": "_optionValue_c5se2_35", "optionValueSelected": "_optionValueSelected_c5se2_50", "optionValueDisabled": "_optionValueDisabled_c5se2_53", "optionSeparator": "_optionSeparator_c5se2_57", "input": "_input_c5se2_64", "checkIcon": "_checkIcon_c5se2_75" };
+    }
+  });
+
   // node_modules/@create-figma-plugin/ui/lib/utilities/get-current-from-ref.js
   function getCurrentFromRef(ref) {
     if (ref.current === null) {
@@ -2379,18 +2473,622 @@ video {
     }
   });
 
+  // node_modules/@create-figma-plugin/ui/lib/hooks/use-mouse-down-outside.js
+  function useMouseDownOutside(options) {
+    const { ref, onMouseDownOutside } = options;
+    p2(function() {
+      function handleBlur() {
+        onMouseDownOutside();
+      }
+      function handleMouseDown(event) {
+        const element = getCurrentFromRef(ref);
+        if (element === event.target || element.contains(event.target)) {
+          return;
+        }
+        onMouseDownOutside();
+      }
+      window.addEventListener("blur", handleBlur);
+      window.addEventListener("mousedown", handleMouseDown);
+      return function() {
+        window.removeEventListener("blur", handleBlur);
+        window.removeEventListener("mousedown", handleMouseDown);
+      };
+    }, [ref, onMouseDownOutside]);
+  }
+  var init_use_mouse_down_outside = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/hooks/use-mouse-down-outside.js"() {
+      init_hooks_module();
+      init_get_current_from_ref();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/hooks/use-scrollable-menu.js
+  function useScrollableMenu(options) {
+    const { itemIdDataAttributeName, menuElementRef, selectedId, setSelectedId } = options;
+    const getItemElements = T2(function() {
+      return Array.from(getCurrentFromRef(menuElementRef).querySelectorAll(`[${itemIdDataAttributeName}]`)).filter(function(element) {
+        return element.hasAttribute("disabled") === false;
+      });
+    }, [itemIdDataAttributeName, menuElementRef]);
+    const findIndexByItemId = T2(function(id) {
+      if (id === null) {
+        return -1;
+      }
+      const index2 = getItemElements().findIndex(function(element) {
+        return element.getAttribute(itemIdDataAttributeName) === id;
+      });
+      if (index2 === -1) {
+        throw new Error("`index` is `-1`");
+      }
+      return index2;
+    }, [getItemElements, itemIdDataAttributeName]);
+    const updateScrollPosition = T2(function(id) {
+      const itemElements = getItemElements();
+      const index2 = findIndexByItemId(id);
+      const selectedElement = itemElements[index2];
+      const selectedElementOffsetTop = selectedElement.getBoundingClientRect().top;
+      const menuElement = getCurrentFromRef(menuElementRef);
+      const menuElementOffsetTop = menuElement.getBoundingClientRect().top;
+      if (selectedElementOffsetTop < menuElementOffsetTop) {
+        selectedElement.scrollIntoView();
+        return;
+      }
+      const offsetBottom = selectedElementOffsetTop + selectedElement.offsetHeight;
+      if (offsetBottom > menuElementOffsetTop + menuElement.offsetHeight) {
+        selectedElement.scrollIntoView();
+      }
+    }, [findIndexByItemId, getItemElements, menuElementRef]);
+    const handleScrollableMenuKeyDown = T2(function(event) {
+      const key = event.key;
+      if (key === "ArrowDown" || key === "ArrowUp") {
+        const itemElements = getItemElements();
+        const index2 = findIndexByItemId(selectedId);
+        let newIndex;
+        if (key === "ArrowDown") {
+          newIndex = index2 === -1 || index2 === itemElements.length - 1 ? 0 : index2 + 1;
+        } else {
+          newIndex = index2 === -1 || index2 === 0 ? itemElements.length - 1 : index2 - 1;
+        }
+        const selectedElement = itemElements[newIndex];
+        const newSelectedId = selectedElement.getAttribute(itemIdDataAttributeName);
+        setSelectedId(newSelectedId);
+        updateScrollPosition(newSelectedId);
+      }
+    }, [
+      getItemElements,
+      findIndexByItemId,
+      itemIdDataAttributeName,
+      setSelectedId,
+      selectedId,
+      updateScrollPosition
+    ]);
+    const handleScrollableMenuItemMouseMove = T2(function(event) {
+      const id = event.currentTarget.getAttribute(itemIdDataAttributeName);
+      if (id !== selectedId) {
+        setSelectedId(id);
+      }
+    }, [itemIdDataAttributeName, selectedId, setSelectedId]);
+    return {
+      handleScrollableMenuItemMouseMove,
+      handleScrollableMenuKeyDown
+    };
+  }
+  var init_use_scrollable_menu = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/hooks/use-scrollable-menu.js"() {
+      init_hooks_module();
+      init_get_current_from_ref();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/icons/icon-8/icon-control-chevron-down-8.js
+  var IconControlChevronDown8;
+  var init_icon_control_chevron_down_8 = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/icons/icon-8/icon-control-chevron-down-8.js"() {
+      init_create_icon();
+      IconControlChevronDown8 = createIcon("m3.64641 6.35352-3-3 .70711-.70711 2.64644 2.64645 2.64645-2.64645.70711.70711-3 3-.35356.35355z", { height: 8, width: 8 });
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-menu-checkmark-checked-16.js
+  var IconMenuCheckmarkChecked16;
+  var init_icon_menu_checkmark_checked_16 = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-menu-checkmark-checked-16.js"() {
+      init_create_icon();
+      IconMenuCheckmarkChecked16 = createIcon("M13.2069 5.20724 7.70688 10.7072l-.70711.7072-.70711-.7072-3-2.99996 1.41422-1.41421 2.29289 2.29289 4.79293-4.79289z", { height: 16, width: 16 });
+    }
+  });
+
   // node_modules/@create-figma-plugin/ui/lib/utilities/private/constants.js
-  var ITEM_ID_DATA_ATTRIBUTE_NAME;
+  var INVALID_ID, VIEWPORT_MARGIN, ITEM_ID_DATA_ATTRIBUTE_NAME;
   var init_constants = __esm({
     "node_modules/@create-figma-plugin/ui/lib/utilities/private/constants.js"() {
+      INVALID_ID = null;
+      VIEWPORT_MARGIN = 12;
       ITEM_ID_DATA_ATTRIBUTE_NAME = "data-item-id";
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa52fb6e-f83b-4c42-9ec0-f740717d602c/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a1af11a-7f4b-4f19-be6f-245ef01b594c/dropdown.module.js
+  var dropdown_module_default;
+  var init_dropdown_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a1af11a-7f4b-4f19-be6f-245ef01b594c/dropdown.module.js"() {
+      if (document.getElementById("3f20a96f51") === null) {
+        const element = document.createElement("style");
+        element.id = "3f20a96f51";
+        element.textContent = `._dropdown_l9ibg_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+  display: flex;
+  width: 100%;
+  min-width: 0; /* See https://css-tricks.com/flexbox-truncated-text/ */
+  height: 28px;
+  align-items: center;
+  padding-left: var(--space-extra-small);
+  color: var(--figma-color-text);
+}
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):focus-within {
+  z-index: var(--z-index-2); /* stack \`.dropdown\` over its sibling elements */
+  outline: 0;
+}
+
+._menu_l9ibg_17 {
+  position: fixed;
+}
+
+._disabled_l9ibg_12 {
+  cursor: not-allowed;
+}
+
+._icon_l9ibg_25 {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: var(--figma-color-icon-secondary);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+._disabled_l9ibg_12 ._icon_l9ibg_25 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._empty_l9ibg_37 {
+  flex-grow: 1;
+}
+
+._value_l9ibg_41 {
+  overflow: hidden;
+  margin-right: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):hover ._value_l9ibg_41,
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):focus ._value_l9ibg_41,
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):focus-within ._value_l9ibg_41 {
+  flex-grow: 1;
+}
+._disabled_l9ibg_12 ._value_l9ibg_41 {
+  color: var(--figma-color-text-disabled);
+}
+._hasIcon_l9ibg_55 ._value_l9ibg_41 {
+  padding-left: var(--space-extra-large);
+}
+
+._placeholder_l9ibg_59 {
+  color: var(--figma-color-text-tertiary);
+}
+
+._chevronIcon_l9ibg_63 {
+  margin-right: var(--space-extra-small);
+  color: var(--figma-color-icon-secondary);
+}
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):hover ._chevronIcon_l9ibg_63 {
+  color: var(--figma-color-icon);
+}
+._disabled_l9ibg_12 ._chevronIcon_l9ibg_63 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._border_l9ibg_74 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+}
+._hasBorder_l9ibg_83 ._border_l9ibg_74,
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):not(:focus):hover ._border_l9ibg_74 {
+  border-color: var(--figma-color-border);
+}
+._dropdown_l9ibg_1:focus ._border_l9ibg_74 {
+  top: -1px;
+  bottom: -1px;
+  border-width: 2px;
+  border-color: var(--figma-color-border-brand-strong);
+}
+
+._underline_l9ibg_94 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):hover ._underline_l9ibg_94,
+._dropdown_l9ibg_1:not(._disabled_l9ibg_12):focus ._underline_l9ibg_94 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9kcm9wZG93bi9kcm9wZG93bi5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsV0FBVztFQUNYLFlBQVksRUFBRSx1REFBdUQ7RUFDckUsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixzQ0FBc0M7RUFDdEMsOEJBQThCO0FBQ2hDO0FBQ0E7RUFDRSx5QkFBeUIsRUFBRSxnREFBZ0Q7RUFDM0UsVUFBVTtBQUNaOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxrQkFBa0I7RUFDbEIsZ0NBQWdDO0FBQ2xDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFDckI7QUFDQTs7O0VBR0UsWUFBWTtBQUNkO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7QUFDQTtFQUNFLHNDQUFzQztBQUN4Qzs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLHNDQUFzQztFQUN0Qyx3Q0FBd0M7QUFDMUM7QUFDQTtFQUNFLDhCQUE4QjtBQUNoQztBQUNBO0VBQ0UsdUNBQXVDO0FBQ3pDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCw2QkFBNkI7RUFDN0IscUNBQXFDO0FBQ3ZDO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvZHJvcGRvd24vZHJvcGRvd24ubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcm9wZG93biB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0xKTtcbiAgZGlzcGxheTogZmxleDtcbiAgd2lkdGg6IDEwMCU7XG4gIG1pbi13aWR0aDogMDsgLyogU2VlIGh0dHBzOi8vY3NzLXRyaWNrcy5jb20vZmxleGJveC10cnVuY2F0ZWQtdGV4dC8gKi9cbiAgaGVpZ2h0OiAyOHB4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQpO1xufVxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmZvY3VzLXdpdGhpbiB7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMik7IC8qIHN0YWNrIGAuZHJvcGRvd25gIG92ZXIgaXRzIHNpYmxpbmcgZWxlbWVudHMgKi9cbiAgb3V0bGluZTogMDtcbn1cblxuLm1lbnUge1xuICBwb3NpdGlvbjogZml4ZWQ7XG59XG5cbi5kaXNhYmxlZCB7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG59XG4uZGlzYWJsZWQgLmljb24ge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbi1kaXNhYmxlZCk7XG59XG5cbi5lbXB0eSB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cblxuLnZhbHVlIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgbWFyZ2luLXJpZ2h0OiA2cHg7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmhvdmVyIC52YWx1ZSxcbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpmb2N1cyAudmFsdWUsXG4uZHJvcGRvd246bm90KC5kaXNhYmxlZCk6Zm9jdXMtd2l0aGluIC52YWx1ZSB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5kaXNhYmxlZCAudmFsdWUge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG59XG4uaGFzSWNvbiAudmFsdWUge1xuICBwYWRkaW5nLWxlZnQ6IHZhcigtLXNwYWNlLWV4dHJhLWxhcmdlKTtcbn1cblxuLnBsYWNlaG9sZGVyIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLXRleHQtdGVydGlhcnkpO1xufVxuXG4uY2hldnJvbkljb24ge1xuICBtYXJnaW4tcmlnaHQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tc2Vjb25kYXJ5KTtcbn1cbi5kcm9wZG93bjpub3QoLmRpc2FibGVkKTpob3ZlciAuY2hldnJvbkljb24ge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItaWNvbik7XG59XG4uZGlzYWJsZWQgLmNoZXZyb25JY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uYm9yZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOm5vdCg6Zm9jdXMpOmhvdmVyIC5ib3JkZXIge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlcik7XG59XG4uZHJvcGRvd246Zm9jdXMgLmJvcmRlciB7XG4gIHRvcDogLTFweDtcbiAgYm90dG9tOiAtMXB4O1xuICBib3JkZXItd2lkdGg6IDJweDtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXItYnJhbmQtc3Ryb25nKTtcbn1cblxuLnVuZGVybGluZSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGhlaWdodDogMXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1ib3JkZXIpO1xufVxuLmRyb3Bkb3duOm5vdCguZGlzYWJsZWQpOmhvdmVyIC51bmRlcmxpbmUsXG4uZHJvcGRvd246bm90KC5kaXNhYmxlZCk6Zm9jdXMgLnVuZGVybGluZSB7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuIl19 */`;
+        document.head.append(element);
+      }
+      dropdown_module_default = { "dropdown": "_dropdown_l9ibg_1", "disabled": "_disabled_l9ibg_12", "menu": "_menu_l9ibg_17", "icon": "_icon_l9ibg_25", "empty": "_empty_l9ibg_37", "value": "_value_l9ibg_41", "hasIcon": "_hasIcon_l9ibg_55", "placeholder": "_placeholder_l9ibg_59", "chevronIcon": "_chevronIcon_l9ibg_63", "border": "_border_l9ibg_74", "hasBorder": "_hasBorder_l9ibg_83", "underline": "_underline_l9ibg_94" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/update-menu-element-layout.js
+  function updateMenuElementLayout(rootElement, menuElement, selectedId) {
+    const rootElementBoundingClientRect = rootElement.getBoundingClientRect();
+    const rootWidth = rootElement.offsetWidth;
+    const rootHeight = rootElement.offsetHeight;
+    const rootLeft = rootElementBoundingClientRect.left;
+    const rootTop = rootElementBoundingClientRect.top;
+    menuElement.style.minWidth = `${rootWidth}px`;
+    const menuElementMaxWidth = window.innerWidth - 2 * VIEWPORT_MARGIN;
+    menuElement.style.maxWidth = `${menuElementMaxWidth}px`;
+    const menuElementMaxHeight = window.innerHeight - 2 * VIEWPORT_MARGIN;
+    menuElement.style.maxHeight = `${menuElementMaxHeight}px`;
+    const menuWidth = menuElement.offsetWidth;
+    const menuHeight = menuElement.offsetHeight;
+    const menuScrollHeight = menuElement.scrollHeight;
+    const menuPaddingTop = parseInt(window.getComputedStyle(menuElement).paddingTop, 10);
+    const labelElement = getSelectedLabelElement(menuElement, selectedId);
+    const left = computeLeft({
+      menuWidth,
+      rootLeft
+    });
+    menuElement.style.left = `${left}px`;
+    const top = computeTop({
+      menuHeight,
+      rootTop,
+      selectedTop: labelElement.offsetTop
+    });
+    menuElement.style.top = `${top}px`;
+    const isScrollable = menuScrollHeight > menuHeight;
+    if (isScrollable === false) {
+      return;
+    }
+    menuElement.scrollTop = computeScrollTop({
+      menuHeight,
+      menuPaddingTop,
+      menuScrollHeight,
+      rootHeight,
+      rootTop,
+      selectedTop: labelElement.offsetTop
+    });
+  }
+  function getSelectedLabelElement(menuElement, selectedId) {
+    const inputElement = menuElement.querySelector(selectedId === INVALID_ID ? `[${ITEM_ID_DATA_ATTRIBUTE_NAME}]` : `[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${selectedId}']`);
+    if (inputElement === null) {
+      throw new Error("`inputElement` is `null`");
+    }
+    const labelElement = inputElement.parentElement;
+    if (labelElement === null) {
+      throw new Error("`labelElement` is `null`");
+    }
+    return labelElement;
+  }
+  function computeLeft(options) {
+    const { menuWidth, rootLeft } = options;
+    if (rootLeft <= VIEWPORT_MARGIN) {
+      return VIEWPORT_MARGIN;
+    }
+    const viewportWidth = window.innerWidth;
+    if (rootLeft + menuWidth > viewportWidth - VIEWPORT_MARGIN) {
+      return viewportWidth - VIEWPORT_MARGIN - menuWidth;
+    }
+    return rootLeft;
+  }
+  function computeTop(options) {
+    const { menuHeight, rootTop, selectedTop } = options;
+    const viewportHeight = window.innerHeight;
+    if (rootTop <= VIEWPORT_MARGIN || menuHeight === viewportHeight - 2 * VIEWPORT_MARGIN) {
+      return VIEWPORT_MARGIN;
+    }
+    const top = rootTop - selectedTop;
+    const minimumTop = VIEWPORT_MARGIN;
+    const maximumTop = viewportHeight - VIEWPORT_MARGIN - menuHeight;
+    return restrictToRange(top, minimumTop, maximumTop);
+  }
+  function computeScrollTop(options) {
+    const { menuHeight, menuPaddingTop, menuScrollHeight, rootHeight, rootTop, selectedTop } = options;
+    const restrictedRootTop = restrictToRange(rootTop, VIEWPORT_MARGIN, window.innerHeight - VIEWPORT_MARGIN - rootHeight + menuPaddingTop / 2);
+    const scrollTop = selectedTop - (restrictedRootTop - VIEWPORT_MARGIN);
+    const minimumScrollTop = 0;
+    const maximumScrollTop = menuScrollHeight - menuHeight;
+    return restrictToRange(scrollTop, minimumScrollTop, maximumScrollTop);
+  }
+  function restrictToRange(number2, minimum, maximum) {
+    return Math.min(Math.max(number2, minimum), maximum);
+  }
+  var init_update_menu_element_layout = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/dropdown/private/update-menu-element-layout.js"() {
+      init_constants();
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/dropdown/dropdown.js
+  function getDropdownOptionValue(option) {
+    if (typeof option !== "string") {
+      if ("text" in option) {
+        return option.text;
+      }
+      if ("value" in option) {
+        return option.value;
+      }
+    }
+    throw new Error("Invariant violation");
+  }
+  function findOptionIndexByValue(options, value2) {
+    if (value2 === null) {
+      return -1;
+    }
+    let index2 = 0;
+    for (const option of options) {
+      if (typeof option !== "string" && "value" in option && option.value === value2) {
+        return index2;
+      }
+      index2 += 1;
+    }
+    return -1;
+  }
+  var Dropdown;
+  var init_dropdown = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/dropdown/dropdown.js"() {
+      init_preact_module();
+      init_compat_module();
+      init_hooks_module();
+      init_menu_module();
+      init_use_mouse_down_outside();
+      init_use_scrollable_menu();
+      init_icon_control_chevron_down_8();
+      init_icon_menu_checkmark_checked_16();
+      init_create_class_name();
+      init_create_component();
+      init_get_current_from_ref();
+      init_no_op();
+      init_constants();
+      init_dropdown_module();
+      init_update_menu_element_layout();
+      Dropdown = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, icon, onChange = noop, onKeyDown = noop, onMouseDown = noop, onValueChange = noop, options, placeholder, propagateEscapeKeyDown = true, value: value2, variant } = _b, rest = __objRest(_b, ["disabled", "icon", "onChange", "onKeyDown", "onMouseDown", "onValueChange", "options", "placeholder", "propagateEscapeKeyDown", "value", "variant"]);
+        if (typeof icon === "string" && icon.length !== 1) {
+          throw new Error(`String \`icon\` must be a single character: "${icon}"`);
+        }
+        const rootElementRef = _2(null);
+        const menuElementRef = _2(null);
+        const [isMenuVisible, setIsMenuVisible] = h2(false);
+        const index2 = findOptionIndexByValue(options, value2);
+        if (value2 !== null && index2 === -1) {
+          throw new Error(`Invalid \`value\`: ${value2}`);
+        }
+        const [selectedId, setSelectedId] = h2(index2 === -1 ? INVALID_ID : `${index2}`);
+        const children = typeof options[index2] === "undefined" ? "" : getDropdownOptionValue(options[index2]);
+        const { handleScrollableMenuKeyDown, handleScrollableMenuItemMouseMove } = useScrollableMenu({
+          itemIdDataAttributeName: ITEM_ID_DATA_ATTRIBUTE_NAME,
+          menuElementRef,
+          selectedId,
+          setSelectedId
+        });
+        const triggerRootBlur = T2(function() {
+          getCurrentFromRef(rootElementRef).blur();
+        }, []);
+        const triggerRootFocus = T2(function() {
+          getCurrentFromRef(rootElementRef).focus();
+        }, []);
+        const triggerMenuUpdateLayout = T2(function(selectedId2) {
+          const rootElement = getCurrentFromRef(rootElementRef);
+          const menuElement = getCurrentFromRef(menuElementRef);
+          updateMenuElementLayout(rootElement, menuElement, selectedId2);
+        }, []);
+        const triggerMenuHide = T2(function() {
+          setIsMenuVisible(false);
+          setSelectedId(INVALID_ID);
+        }, []);
+        const triggerMenuShow = T2(function() {
+          if (isMenuVisible === true) {
+            return;
+          }
+          setIsMenuVisible(true);
+          if (value2 === null) {
+            triggerMenuUpdateLayout(selectedId);
+            return;
+          }
+          const index3 = findOptionIndexByValue(options, value2);
+          if (index3 === -1) {
+            throw new Error(`Invalid \`value\`: ${value2}`);
+          }
+          const newSelectedId = `${index3}`;
+          setSelectedId(newSelectedId);
+          triggerMenuUpdateLayout(newSelectedId);
+        }, [isMenuVisible, options, selectedId, triggerMenuUpdateLayout, value2]);
+        const handleRootKeyDown = T2(function(event) {
+          onKeyDown(event);
+          const key = event.key;
+          if (key === "ArrowUp" || key === "ArrowDown") {
+            event.preventDefault();
+            if (isMenuVisible === false) {
+              triggerMenuShow();
+              return;
+            }
+            handleScrollableMenuKeyDown(event);
+            return;
+          }
+          if (key === "Escape") {
+            event.preventDefault();
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            if (isMenuVisible === true) {
+              triggerMenuHide();
+              return;
+            }
+            triggerRootBlur();
+            return;
+          }
+          if (key === "Enter") {
+            event.preventDefault();
+            if (isMenuVisible === false) {
+              triggerMenuShow();
+              return;
+            }
+            if (selectedId !== INVALID_ID) {
+              const selectedElement = getCurrentFromRef(menuElementRef).querySelector(`[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${selectedId}']`);
+              if (selectedElement === null) {
+                throw new Error("`selectedElement` is `null`");
+              }
+              selectedElement.checked = true;
+              const changeEvent = new window.Event("change", {
+                bubbles: true,
+                cancelable: true
+              });
+              selectedElement.dispatchEvent(changeEvent);
+            }
+            triggerMenuHide();
+            return;
+          }
+          if (key === "Tab") {
+            triggerMenuHide();
+            return;
+          }
+        }, [
+          handleScrollableMenuKeyDown,
+          isMenuVisible,
+          onKeyDown,
+          propagateEscapeKeyDown,
+          selectedId,
+          triggerMenuHide,
+          triggerMenuShow,
+          triggerRootBlur
+        ]);
+        const handleRootMouseDown = T2(function(event) {
+          onMouseDown(event);
+          if (isMenuVisible === false) {
+            triggerMenuShow();
+          }
+        }, [isMenuVisible, onMouseDown, triggerMenuShow]);
+        const handleMenuMouseDown = T2(function(event) {
+          event.stopPropagation();
+        }, []);
+        const handleOptionChange = T2(function(event) {
+          onChange(event);
+          const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
+          if (id === null) {
+            throw new Error("`id` is `null`");
+          }
+          const optionValue = options[parseInt(id, 10)];
+          const newValue = optionValue.value;
+          onValueChange(newValue);
+          triggerRootFocus();
+          triggerMenuHide();
+        }, [onChange, onValueChange, options, triggerMenuHide, triggerRootFocus]);
+        const handleSelectedOptionClick = T2(function() {
+          triggerRootFocus();
+          triggerMenuHide();
+        }, [triggerMenuHide, triggerRootFocus]);
+        const handleMouseDownOutside = T2(function() {
+          if (isMenuVisible === false) {
+            return;
+          }
+          triggerMenuHide();
+          triggerRootBlur();
+        }, [isMenuVisible, triggerRootBlur, triggerMenuHide]);
+        useMouseDownOutside({
+          onMouseDownOutside: handleMouseDownOutside,
+          ref: rootElementRef
+        });
+        p2(function() {
+          function handleWindowScroll() {
+            if (isMenuVisible === false) {
+              return;
+            }
+            triggerRootFocus();
+            triggerMenuHide();
+          }
+          window.addEventListener("scroll", handleWindowScroll);
+          return function() {
+            window.removeEventListener("scroll", handleWindowScroll);
+          };
+        }, [isMenuVisible, triggerMenuHide, triggerRootFocus]);
+        const refCallback = T2(function(rootElement) {
+          rootElementRef.current = rootElement;
+          if (ref === null) {
+            return;
+          }
+          if (typeof ref === "function") {
+            ref(rootElement);
+            return;
+          }
+          ref.current = rootElement;
+        }, [ref, rootElementRef]);
+        return y(
+          "div",
+          __spreadProps(__spreadValues({}, rest), { ref: refCallback, class: createClassName([
+            dropdown_module_default.dropdown,
+            variant === "border" ? dropdown_module_default.hasBorder : null,
+            typeof icon !== "undefined" ? dropdown_module_default.hasIcon : null,
+            disabled === true ? dropdown_module_default.disabled : null
+          ]), onKeyDown: disabled === true ? void 0 : handleRootKeyDown, onMouseDown: handleRootMouseDown, tabIndex: 0 }),
+          typeof icon === "undefined" ? null : y("div", { class: dropdown_module_default.icon }, icon),
+          value2 === null ? typeof placeholder === "undefined" ? y("div", { class: dropdown_module_default.empty }) : y("div", { class: createClassName([
+            dropdown_module_default.value,
+            dropdown_module_default.placeholder
+          ]) }, placeholder) : y("div", { class: dropdown_module_default.value }, children),
+          y(
+            "div",
+            { class: dropdown_module_default.chevronIcon },
+            y(IconControlChevronDown8, null)
+          ),
+          variant === "underline" ? y("div", { class: dropdown_module_default.underline }) : null,
+          y("div", { class: dropdown_module_default.border }),
+          j3(y("div", { ref: menuElementRef, class: createClassName([
+            menu_module_default.menu,
+            dropdown_module_default.menu,
+            disabled === true || isMenuVisible === false ? menu_module_default.hidden : null
+          ]), onMouseDown: handleMenuMouseDown }, options.map(function(option, index3) {
+            if (typeof option === "string") {
+              return y("hr", { key: index3, class: menu_module_default.optionSeparator });
+            }
+            if ("header" in option) {
+              return y("h1", { key: index3, class: menu_module_default.optionHeader }, option.header);
+            }
+            return y(
+              "label",
+              { key: index3, class: createClassName([
+                menu_module_default.optionValue,
+                option.disabled === true ? menu_module_default.optionValueDisabled : null,
+                option.disabled !== true && `${index3}` === selectedId ? menu_module_default.optionValueSelected : null
+              ]) },
+              y("input", { checked: value2 === option.value, class: menu_module_default.input, disabled: option.disabled === true, onChange: value2 === option.value ? void 0 : handleOptionChange, onClick: value2 === option.value ? handleSelectedOptionClick : void 0, onMouseMove: handleScrollableMenuItemMouseMove, tabIndex: -1, type: "radio", value: `${option.value}`, [ITEM_ID_DATA_ATTRIBUTE_NAME]: `${index3}` }),
+              option.value === value2 ? y(
+                "div",
+                { class: menu_module_default.checkIcon },
+                y(IconMenuCheckmarkChecked16, null)
+              ) : null,
+              typeof option.text === "undefined" ? option.value : option.text
+            );
+          })), document.body)
+        );
+      });
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7f9a68a4-ab0f-45a8-ab82-f9eb0794b967/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/aa52fb6e-f83b-4c42-9ec0-f740717d602c/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7f9a68a4-ab0f-45a8-ab82-f9eb0794b967/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -2460,10 +3158,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd32130c-546a-417c-9eee-d36b1302d512/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4812163a-9fca-4ecd-b2bc-6a8da31e26ed/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd32130c-546a-417c-9eee-d36b1302d512/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4812163a-9fca-4ecd-b2bc-6a8da31e26ed/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -2567,10 +3265,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7a0c07-3f4c-405d-b651-cb4c9a92ce79/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/407bd5b9-3dfc-444b-9c09-88c6c74ffbf1/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d7a0c07-3f4c-405d-b651-cb4c9a92ce79/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/407bd5b9-3dfc-444b-9c09-88c6c74ffbf1/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3167,10 +3865,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b20252-73b7-457a-b974-313d0ad8f744/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edd23306-353c-4175-ba1b-56b2db74b352/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a7b20252-73b7-457a-b974-313d0ad8f744/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edd23306-353c-4175-ba1b-56b2db74b352/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -3675,10 +4373,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d335159e-756a-4c17-a618-d68f26091091/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3dc6aa2-4607-4da6-9521-b7a8b455ebed/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d335159e-756a-4c17-a618-d68f26091091/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3dc6aa2-4607-4da6-9521-b7a8b455ebed/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4018,10 +4716,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04b12970-7df8-43f5-a71a-ad9388a017da/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/777b31e1-ffa3-4288-9762-b6e4daabccaf/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/04b12970-7df8-43f5-a71a-ad9388a017da/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/777b31e1-ffa3-4288-9762-b6e4daabccaf/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4220,10 +4918,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5865f6a-cb2f-4e37-970c-3fddf01da532/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe27decb-dea6-4955-a552-0f3dc31bec6b/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f5865f6a-cb2f-4e37-970c-3fddf01da532/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe27decb-dea6-4955-a552-0f3dc31bec6b/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4316,10 +5014,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31758600-c282-40ef-a84e-c096483dd76d/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e27fff5-76a2-403e-a3e6-705fab3da610/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31758600-c282-40ef-a84e-c096483dd76d/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e27fff5-76a2-403e-a3e6-705fab3da610/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -4400,10 +5098,19 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b58ba2a-27c1-4fff-97c3-e5fda9ff0b7b/muted.module.js
+  // node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-styles-32.js
+  var IconStyles32;
+  var init_icon_styles_32 = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-styles-32.js"() {
+      init_create_icon();
+      IconStyles32 = createIcon("M11.5 13c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5m6 0c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5m1.5 7.5c-.8284 0-1.5-.6716-1.5-1.5s.6716-1.5 1.5-1.5 1.5.6716 1.5 1.5-.6716 1.5-1.5 1.5M11.5 19c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5", { height: 32, width: 32 });
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f274aac-4cd6-499a-a3d6-e5105a0bae65/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b58ba2a-27c1-4fff-97c3-e5fda9ff0b7b/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f274aac-4cd6-499a-a3d6-e5105a0bae65/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -4432,9 +5139,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e1b1135-0c8b-48c4-be0a-53baa9ed8a18/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/45771207-c3a8-42b4-a46e-917a4178dafc/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e1b1135-0c8b-48c4-be0a-53baa9ed8a18/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/45771207-c3a8-42b4-a46e-917a4178dafc/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -4557,6 +5264,7 @@ svg {
   // node_modules/@create-figma-plugin/ui/lib/index.js
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
+      init_dropdown();
       init_icon_button();
       init_range_slider();
       init_tabs();
@@ -4567,6 +5275,7 @@ svg {
       init_icon_chevron_down_16();
       init_icon_minus_32();
       init_icon_plus_32();
+      init_icon_styles_32();
       init_muted();
       init_render();
     }
@@ -7525,6 +8234,80 @@ svg {
       init_string_utils();
       init_image_utils();
       init_theme_utils();
+    }
+  });
+
+  // node_modules/lucide-react/dist/esm/defaultAttributes.js
+  var defaultAttributes;
+  var init_defaultAttributes = __esm({
+    "node_modules/lucide-react/dist/esm/defaultAttributes.js"() {
+      defaultAttributes = {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      };
+    }
+  });
+
+  // node_modules/lucide-react/dist/esm/createLucideIcon.js
+  var toKebabCase, createLucideIcon;
+  var init_createLucideIcon = __esm({
+    "node_modules/lucide-react/dist/esm/createLucideIcon.js"() {
+      init_compat_module();
+      init_defaultAttributes();
+      toKebabCase = (string2) => string2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+      createLucideIcon = (iconName, iconNode) => {
+        const Component = N2(
+          (_a, ref) => {
+            var _b = _a, { color: color2 = "currentColor", size: size2 = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children } = _b, rest = __objRest(_b, ["color", "size", "strokeWidth", "absoluteStrokeWidth", "className", "children"]);
+            return y(
+              "svg",
+              __spreadValues(__spreadProps(__spreadValues({
+                ref
+              }, defaultAttributes), {
+                width: size2,
+                height: size2,
+                stroke: color2,
+                strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size2) : strokeWidth,
+                className: ["lucide", `lucide-${toKebabCase(iconName)}`, className].join(" ")
+              }), rest),
+              [
+                ...iconNode.map(([tag2, attrs]) => y(tag2, attrs)),
+                ...(Array.isArray(children) ? children : [children]) || []
+              ]
+            );
+          }
+        );
+        Component.displayName = `${iconName}`;
+        return Component;
+      };
+    }
+  });
+
+  // node_modules/lucide-react/dist/esm/icons/copy-plus.js
+  var CopyPlus;
+  var init_copy_plus = __esm({
+    "node_modules/lucide-react/dist/esm/icons/copy-plus.js"() {
+      init_createLucideIcon();
+      CopyPlus = createLucideIcon("CopyPlus", [
+        ["line", { x1: "15", x2: "15", y1: "12", y2: "18", key: "1p7wdc" }],
+        ["line", { x1: "12", x2: "18", y1: "15", y2: "15", key: "1nscbv" }],
+        ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
+        ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
+      ]);
+    }
+  });
+
+  // node_modules/lucide-react/dist/esm/lucide-react.js
+  var init_lucide_react = __esm({
+    "node_modules/lucide-react/dist/esm/lucide-react.js"() {
+      init_copy_plus();
     }
   });
 
@@ -18266,7 +19049,13 @@ svg {
                 Hct.from(state.hct.hue, state.hct.chroma, state.hct.tone)
               );
               setRgba(
-                rgbaFromHct(Hct.from(state.hct.hue, state.hct.chroma, state.hct.tone))
+                rgbaFromHct(
+                  Hct.from(
+                    state.hct.hue,
+                    state.hct.chroma,
+                    state.hct.tone
+                  )
+                )
               );
               setHex(newHex);
               setFigmaSolidColor(SolidColorFromRgbColor(rgbFromHex(newHex)));
@@ -18275,7 +19064,7 @@ svg {
         }, []);
         p2(() => {
           if (sourceHex !== hexColor) {
-            setSourceHex(hexColor);
+            setSourceHex(hexColor != null ? hexColor : "397456");
           }
         }, []);
         return {
@@ -68059,7 +68848,9 @@ svg {
       AliasMethodsSchema = z4.object({
         alias: AliasDataSchema,
         setName: z4.function(z4.tuple([z4.string()])),
-        setTone: z4.function(z4.tuple([z4.union([z4.string(), z4.number()]), z4.number()])),
+        setTone: z4.function(
+          z4.tuple([z4.union([z4.string(), z4.number()]), z4.number()])
+        ),
         setTones: z4.function(z4.tuple([z4.number(), z4.number()])),
         remove: z4.function()
       });
@@ -68177,7 +68968,9 @@ svg {
             const alias = requestedAlias;
             const setName = (name310) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 aliasToUpdate.name = name310;
               }
@@ -68185,7 +68978,9 @@ svg {
             };
             const setTone2 = (mode2, tone) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 if (typeof mode2 === "string") {
                   const colorToUpdate = aliasToUpdate.color.find(
@@ -68204,7 +68999,9 @@ svg {
             };
             const setTones = (firstTone, secondTone) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 aliasToUpdate.color[0].tone = firstTone;
                 aliasToUpdate.color[1].tone = secondTone;
@@ -68302,7 +69099,9 @@ svg {
             const alias = requestedAlias;
             const setName = (name310) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 aliasToUpdate.name = name310;
               }
@@ -68310,7 +69109,9 @@ svg {
             };
             const setTone2 = (mode2, tone) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 if (typeof mode2 === "string") {
                   const colorToUpdate = aliasToUpdate.color.find(
@@ -68329,7 +69130,9 @@ svg {
             };
             const setTones = (firstTone, secondTone) => {
               const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find((alias2) => alias2.id === id);
+              const aliasToUpdate = newAliases.find(
+                (alias2) => alias2.id === id
+              );
               if (aliasToUpdate) {
                 aliasToUpdate.color[0].tone = firstTone;
                 aliasToUpdate.color[1].tone = secondTone;
@@ -68349,7 +69152,7 @@ svg {
         }
       });
       useThemeColorStore = create()((...a3) => __spreadValues({}, themeColorStore(...a3)));
-      useThemeColor = (hexColor) => {
+      useThemeColor = (hexColor = "397456") => {
         const color2 = useColor(hexColor);
         const themeColorStore2 = useThemeColorStore;
         const themeColor = themeColorStore2((state) => state);
@@ -68393,7 +69196,10 @@ svg {
               const truncatedExpression = hueCalc2.substring(0, i5);
               try {
                 lastValidHue = evaluate(
-                  truncatedExpression.replace(/h/gi, sourceHue.toString())
+                  truncatedExpression.replace(
+                    /h/gi,
+                    sourceHue.toString()
+                  )
                 );
                 break;
               } catch (e6) {
@@ -68423,7 +69229,10 @@ svg {
               const truncatedExpression = chromaCalc2.substring(0, i5);
               try {
                 lastValidChroma = evaluate(
-                  truncatedExpression.replace(/c/gi, sourceChroma.toString())
+                  truncatedExpression.replace(
+                    /c/gi,
+                    sourceChroma.toString()
+                  )
                 );
                 break;
               } catch (error2) {
@@ -68917,6 +69726,71 @@ svg {
     }
   });
 
+  // src/components/primitives-tab/theme-color-select.tsx
+  var ThemeColorSwatch, ThemeColorSelect;
+  var init_theme_color_select = __esm({
+    "src/components/primitives-tab/theme-color-select.tsx"() {
+      "use strict";
+      init_preact_module();
+      init_hooks_module();
+      init_color_utils2();
+      ThemeColorSwatch = ({
+        themeColorId,
+        name: name310,
+        hue,
+        chroma,
+        isSelected,
+        onClick
+      }) => {
+        return /* @__PURE__ */ y(
+          "button",
+          {
+            title: name310,
+            className: `theme-color-swatch h-6 w-6 rounded-full ${isSelected ? "selected-theme-color" : ""}`,
+            style: {
+              background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
+                hue,
+                chroma,
+                75
+              )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(
+                hue,
+                chroma,
+                25
+              )}, black)`
+            },
+            onClick: () => onClick(themeColorId)
+          }
+        );
+      };
+      ThemeColorSelect = ({
+        themeColors,
+        selectedThemeColor,
+        onSelectThemeColor
+      }) => {
+        const [themeColorSwatches, setThemeColorSwatches] = h2(
+          []
+        );
+        p2(() => {
+          const newThemeColorSwatches = themeColors.map((themeColor) => {
+            return /* @__PURE__ */ y("li", { key: themeColor.id }, /* @__PURE__ */ y(
+              ThemeColorSwatch,
+              {
+                themeColorId: themeColor.id,
+                name: themeColor.name,
+                hue: themeColor.endColor.hct.hue,
+                chroma: themeColor.endColor.hct.chroma,
+                isSelected: themeColor.id === selectedThemeColor,
+                onClick: onSelectThemeColor
+              }
+            ));
+          });
+          setThemeColorSwatches(newThemeColorSwatches);
+        }, [themeColors]);
+        return /* @__PURE__ */ y("ul", { className: "flex flex-col gap-1" }, themeColorSwatches);
+      };
+    }
+  });
+
   // src/components/tabs.tsx
   var TabGroup, tabs_default;
   var init_tabs2 = __esm({
@@ -68925,6 +69799,7 @@ svg {
       init_preact_module();
       init_hooks_module();
       init_material_color_utilities();
+      init_lucide_react();
       init_lib2();
       init_lib2();
       init_useThemeColor();
@@ -68932,13 +69807,13 @@ svg {
       init_color_utils2();
       init_useColor();
       init_alias();
+      init_theme_color_select();
       TabGroup = ({ themeColors, onSetThemeColors }) => {
         const [tabValue, setTabValue] = h2("Primitives");
         const [themeColorList, setThemeColorList] = h2(themeColors);
-        const [currentThemeColor, setCurrentThemeColor] = h2(
-          themeColors[0]
-        );
         const themeColor = useThemeColor("397456");
+        const onSelectThemeColor = (themeColorId) => {
+        };
         p2(() => {
           if (themeColors.length === 0) {
             const newThemeColor = themeColor;
@@ -68947,9 +69822,7 @@ svg {
           setThemeColorList(themeColors);
           console.log(themeColors);
         }, [themeColors]);
-        const [hexColorInput, setHexColorInput] = h2(
-          themeColor.sourceColor.sourceHex
-        );
+        const [hexColorInput, setHexColorInput] = h2(themeColor.sourceColor.sourceHex);
         const [tones, setTones] = h2(themeColor.tones.join(", "));
         const hue = () => {
           const sourceHue = themeColor.sourceColor.hct.hue;
@@ -68964,13 +69837,9 @@ svg {
           return chroma2;
         };
         const [hueSlider, setHueSlider] = h2(hue);
-        const [hueCalcInput, setHueCalcInput] = h2(
-          themeColor.hueCalc.toString()
-        );
+        const [hueCalcInput, setHueCalcInput] = h2(themeColor.hueCalc.toString());
         const [chromaSlider, setChromaSlider] = h2(chroma);
-        const [chromaCalcInput, setChromaCalcInput] = h2(
-          themeColor.chromaCalc.toString()
-        );
+        const [chromaCalcInput, setChromaCalcInput] = h2(themeColor.chromaCalc.toString());
         const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
         const chromaHex = hexFromHct(newHct);
         p2(() => {
@@ -68982,25 +69851,18 @@ svg {
           themeColor.set.chromaCalc(chromaCalcInput);
         }, [chromaCalcInput]);
         p2(() => {
-          const calculatedHue = round2(
-            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
-          );
+          const calculatedHue = round2(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(
-              themeColor.sourceColor.hct.chroma,
-              themeColor.chromaCalc
-            )
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
           }
         }, [hexColorInput]);
@@ -69014,25 +69876,18 @@ svg {
           setHexColorInput(newHexColorInput);
           themeColor.set.sourceHex(newHexColorInput);
           themeColor.sourceColor.setSourceHex(newHexColorInput);
-          const calculatedHue = round2(
-            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
-          );
+          const calculatedHue = round2(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(
-              themeColor.sourceColor.hct.chroma,
-              themeColor.chromaCalc
-            )
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
           }
         };
@@ -69041,19 +69896,11 @@ svg {
           themeColor.set.hueCalc(newHueCalcInput.toString());
           setHueSlider(newHueCalcInput);
           setHueCalcInput(newHueCalcInput.toString());
-          console.log(
-            calculateHue(
-              themeColor.sourceColor.hct.hue,
-              newHueCalcInput.toString()
-            )
-          );
+          console.log(calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString()));
         };
         const onHueCalcInput = (e6) => {
           const newHueCalcInput = e6.currentTarget.value;
-          const calculatedHue = calculateHue(
-            themeColor.sourceColor.hct.hue,
-            newHueCalcInput
-          );
+          const calculatedHue = calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput);
           themeColor.set.hueCalc(newHueCalcInput);
           setHueCalcInput(newHueCalcInput);
           setHueSlider(calculatedHue);
@@ -69071,19 +69918,12 @@ svg {
         };
         const onChromaCalcInput = (e6) => {
           const newChromaCalcInput = e6.currentTarget.value;
-          const calculatedChroma = round2(
-            calculateChroma(
-              themeColor.sourceColor.hct.chroma,
-              newChromaCalcInput
-            )
-          );
+          const calculatedChroma = round2(calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput));
           themeColor.set.chromaCalc(newChromaCalcInput);
           setChromaSlider(calculatedChroma);
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
-            themeColor.set.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaSlider(themeColor.sourceColor.hct.chroma);
           }
         };
@@ -69094,40 +69934,33 @@ svg {
         const onSetAliases = (aliases) => {
           themeColor.set.aliases(aliases);
         };
+        const themeColorOptions = [
+          {
+            value: "Duplicate theme color"
+          },
+          {
+            value: "Delete theme color"
+          }
+        ];
         const options = [
           {
-            children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center gap-2 overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
-              "div",
+            children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center gap-1 overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
+              ThemeColorSelect,
               {
-                className: "h-6 w-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue",
-                style: {
-                  background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
-                    themeColor.endColor.hct.hue,
-                    themeColor.endColor.hct.chroma,
-                    75
-                  )}, ${quickHexFromHct(
-                    themeColor.endColor.hct.hue,
-                    themeColor.endColor.hct.chroma,
-                    50
-                  )}, ${quickHexFromHct(
-                    themeColor.endColor.hct.hue,
-                    themeColor.endColor.hct.chroma,
-                    25
-                  )}, black)`
-                }
+                themeColors,
+                selectedThemeColor: themeColor.id,
+                onSelectThemeColor
               }
-            ), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconPlus32, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
               Textbox,
               {
                 value: themeColor.name,
-                onChange: (e6) => themeColor.set.name(
-                  e6.currentTarget.value
-                ),
+                onChange: (e6) => themeColor.set.name(e6.currentTarget.value),
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
               }
-            ), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(CopyPlus, { size: 17, strokeWidth: 1.3 })), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(IconMinus32, null))), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
               TextboxColor,
               {
                 hexColor: hexColorInput,
@@ -69135,17 +69968,7 @@ svg {
                 onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H:", " ", round2(
-              themeColor.sourceColor.hct.hue
-            ), " ", "C:", " ", round2(
-              themeColor.sourceColor.hct.chroma
-            ), " ", "T:", " ", round2(
-              themeColor.sourceColor.hct.tone
-            )))), /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-l pt-1" }, /* @__PURE__ */ y("div", { className: "p-2" }, themeColor.name), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H:", " ", round2(themeColor.endColor.hct.hue), " ", "C:", " ", round2(
-              themeColor.endColor.hct.chroma
-            ), " ", "T:", " ", round2(
-              themeColor.endColor.hct.tone
-            ))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(IconStyles32, null))), /* @__PURE__ */ y(Dropdown, { options: themeColorOptions, value: null, placeholder: "Color options" })), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-gridlines pt-1" }, /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone))), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.endColor.hct.hue), " C:", " ", round2(themeColor.endColor.hct.chroma), " T:", " ", round2(themeColor.endColor.hct.tone))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -69156,7 +69979,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-t" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
                 maximum: 360,
@@ -69177,23 +70000,11 @@ svg {
                 onInput: (e6) => onHueCalcInput(e6),
                 placeholder: "Hue value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
-              themeColor.sourceColor.hct.hue
-            )))), /* @__PURE__ */ y("div", { className: "border-gridlines h-full w-172 grow border-l border-t" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(
-              themeColor.endColor.hct.chroma
-            ), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(
-              findMaxChromaForHueAtTone(
-                hue(),
-                themeColor.endColor.hct.tone
-              )
-            )))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone))))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
                 maximum: round2(
-                  findMaxChromaForHueAtTone(
-                    hue(),
-                    themeColor.endColor.hct.tone
-                  )
+                  findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone)
                 ),
                 minimum: 0,
                 onInput: (e6) => onChromaSliderInput(e6),
@@ -69212,9 +70023,7 @@ svg {
                 onInput: (e6) => onChromaCalcInput(e6),
                 placeholder: "Chroma value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
-              themeColor.sourceColor.hct.chroma
-            ))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) = ", round2(themeColor.sourceColor.hct.chroma))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -69225,7 +70034,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
               TextboxMultiline,
               {
                 value: tones,
@@ -69244,7 +70053,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "border-gridlines flex grow flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
               AliasList,
               {
                 hue: themeColor.endColor.hct.hue,
@@ -69256,7 +70065,7 @@ svg {
             value: "Primitives"
           },
           {
-            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "border-gridlines flex w-full flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "border-gridlines flex w-full flex-row border-t" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
+            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
             value: "Aliases"
           }
         ];
@@ -69264,14 +70073,7 @@ svg {
           console.log(newValue);
           setTabValue(newValue);
         }
-        return /* @__PURE__ */ y(
-          Tabs,
-          {
-            onValueChange: handleValueChange,
-            options,
-            value: tabValue
-          }
-        );
+        return /* @__PURE__ */ y(Tabs, { onValueChange: handleValueChange, options, value: tabValue });
       };
       tabs_default = TabGroup;
     }
@@ -69502,24 +70304,23 @@ svg {
       init_compat_module();
       Plugin = () => {
         const theme = useTheme();
-        const themeColor = useThemeColor("397456");
+        const themeColor = useThemeColor();
         const primary = themeColor;
         const secondary = themeColor;
         const tertiary = themeColor;
         const neutral = themeColor;
         const neutralVariant = themeColor;
         const error = themeColor;
-        const themeColors = [
-          primary,
-          secondary,
-          tertiary,
-          neutral,
-          neutralVariant,
-          error
-        ];
+        const themeColors = [primary, secondary, tertiary, neutral, neutralVariant, error];
         p2(() => {
+          primary.set.name("Primary");
+          secondary.set.name("Secondary");
+          tertiary.set.name("Tertiary");
+          neutral.set.name("Neutral");
+          neutralVariant.set.name("Neutral Variant");
+          error.set.name("Error");
           if (theme.themeColors.length === 0) {
-            theme.set.themeColors(themeColors);
+            theme.set.themeColors([primary, secondary, tertiary, neutral, neutralVariant, error]);
           }
           console.log(theme);
         }, []);
@@ -69537,7 +70338,7 @@ svg {
         const onSetThemeColors = (themeColors2) => {
           theme.set.themeColors(themeColors2);
         };
-        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "bg-gridlines absolute top-10 h-px w-full" }), /* @__PURE__ */ y("div", { className: "bg-gridlines absolute left-10 h-full w-px" }), /* @__PURE__ */ y("div", { className: "bg-gridlines absolute right-32 h-full w-px" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-center px-2" }, /* @__PURE__ */ y(
+        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-center px-2" }, /* @__PURE__ */ y(
           Textbox,
           {
             value: theme.name,
@@ -69546,13 +70347,7 @@ svg {
             onfocusout: () => nameTheNameless(),
             placeholder: "Theme name"
           }
-        )), /* @__PURE__ */ y(
-          tabs_default,
-          {
-            themeColors: theme.themeColors,
-            onSetThemeColors
-          }
-        )), /* @__PURE__ */ y(
+        )), /* @__PURE__ */ y(tabs_default, { themeColors: theme.themeColors, onSetThemeColors })), /* @__PURE__ */ y(
           "button",
           {
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
@@ -70243,6 +71038,38 @@ svg {
    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    * See the License for the specific language governing permissions and
    * limitations under the License.
+   *)
+
+lucide-react/dist/esm/defaultAttributes.js:
+  (**
+   * @license lucide-react v0.293.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   *)
+
+lucide-react/dist/esm/createLucideIcon.js:
+  (**
+   * @license lucide-react v0.293.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   *)
+
+lucide-react/dist/esm/icons/copy-plus.js:
+  (**
+   * @license lucide-react v0.293.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   *)
+
+lucide-react/dist/esm/lucide-react.js:
+  (**
+   * @license lucide-react v0.293.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
    *)
 
 use-sync-external-store/cjs/use-sync-external-store-shim.development.js:

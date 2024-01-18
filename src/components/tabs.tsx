@@ -2,22 +2,26 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
+import { CopyPlus } from 'lucide-react';
 import {
     IconButton,
+    IconEllipsis32,
+    IconMinus32,
+    IconStyles32,
+    Dropdown,
     Muted,
     RangeSlider,
     Tabs,
     TabsOption,
+    Text,
     Textbox,
     TextboxColor,
     TextboxMultiline,
+    Button,
+    DropdownOption,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
-import {
-    ThemeColor,
-    ThemeColorData,
-    useThemeColor,
-} from '../hooks/useThemeColor';
+import { ThemeColor, ThemeColorData, useThemeColor } from '../hooks/useThemeColor';
 import { round } from 'mathjs';
 import {
     getStopsFromString,
@@ -30,6 +34,7 @@ import {
 import { hexFromHct } from '../hooks/useColor';
 import { AliasData } from '../hooks/useAlias';
 import { AliasPreviewList, AliasList } from './primitives-tab/alias';
+import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 
 type TabGroupProps = {
     themeColors: ThemeColorData[];
@@ -38,12 +43,11 @@ type TabGroupProps = {
 
 const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
-    const [themeColorList, setThemeColorList] =
-        useState<ThemeColorData[]>(themeColors);
-    const [currentThemeColor, setCurrentThemeColor] = useState<ThemeColorData>(
-        themeColors[0],
-    );
+    const [themeColorList, setThemeColorList] = useState<ThemeColorData[]>(themeColors);
+
     const themeColor: ThemeColor = useThemeColor('397456');
+
+    const onSelectThemeColor = (themeColorId: string) => {};
 
     useEffect(() => {
         if (themeColors.length === 0) {
@@ -54,9 +58,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         console.log(themeColors);
     }, [themeColors]);
 
-    const [hexColorInput, setHexColorInput] = useState<string>(
-        themeColor.sourceColor.sourceHex,
-    );
+    const [hexColorInput, setHexColorInput] = useState<string>(themeColor.sourceColor.sourceHex);
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
     const hue = () => {
         const sourceHue: number = themeColor.sourceColor.hct.hue;
@@ -71,13 +73,9 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         return chroma;
     };
     const [hueSlider, setHueSlider] = useState<number>(hue);
-    const [hueCalcInput, setHueCalcInput] = useState<string>(
-        themeColor.hueCalc.toString(),
-    );
+    const [hueCalcInput, setHueCalcInput] = useState<string>(themeColor.hueCalc.toString());
     const [chromaSlider, setChromaSlider] = useState<number>(chroma);
-    const [chromaCalcInput, setChromaCalcInput] = useState<string>(
-        themeColor.chromaCalc.toString(),
-    );
+    const [chromaCalcInput, setChromaCalcInput] = useState<string>(themeColor.chromaCalc.toString());
 
     const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
 
@@ -93,9 +91,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
     }, [chromaCalcInput]);
 
     useEffect(() => {
-        const calculatedHue: number = round(
-            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc),
-        );
+        const calculatedHue: number = round(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
         setHueSlider(calculatedHue);
         if (!themeColor.hueCalc.toLowerCase().includes('h')) {
             themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
@@ -103,16 +99,11 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         }
 
         const calculatedChroma: number = round(
-            calculateChroma(
-                themeColor.sourceColor.hct.chroma,
-                themeColor.chromaCalc,
-            ),
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc),
         );
         setChromaSlider(calculatedChroma);
         if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
-            themeColor.set.chromaCalc(
-                themeColor.sourceColor.hct.chroma.toString(),
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
         }
     }, [hexColorInput]);
@@ -128,9 +119,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         themeColor.set.sourceHex(newHexColorInput);
         themeColor.sourceColor.setSourceHex(newHexColorInput);
 
-        const calculatedHue: number = round(
-            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc),
-        );
+        const calculatedHue: number = round(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
         setHueSlider(calculatedHue);
         // if the hueCalcInput is an expression, don't update it
         if (!themeColor.hueCalc.toLowerCase().includes('h')) {
@@ -139,16 +128,11 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         }
 
         const calculatedChroma: number = round(
-            calculateChroma(
-                themeColor.sourceColor.hct.chroma,
-                themeColor.chromaCalc,
-            ),
+            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc),
         );
         setChromaSlider(calculatedChroma);
         if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
-            themeColor.set.chromaCalc(
-                themeColor.sourceColor.hct.chroma.toString(),
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaCalcInput(calculatedChroma.toString());
         }
     };
@@ -157,19 +141,11 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         themeColor.set.hueCalc(newHueCalcInput.toString());
         setHueSlider(newHueCalcInput);
         setHueCalcInput(newHueCalcInput.toString());
-        console.log(
-            calculateHue(
-                themeColor.sourceColor.hct.hue,
-                newHueCalcInput.toString(),
-            ),
-        );
+        console.log(calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString()));
     };
     const onHueCalcInput = (e: any) => {
         const newHueCalcInput: string = e.currentTarget.value;
-        const calculatedHue: number = calculateHue(
-            themeColor.sourceColor.hct.hue,
-            newHueCalcInput,
-        );
+        const calculatedHue: number = calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput);
         themeColor.set.hueCalc(newHueCalcInput);
         setHueCalcInput(newHueCalcInput);
         setHueSlider(calculatedHue);
@@ -187,19 +163,12 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
     };
     const onChromaCalcInput = (e: any) => {
         const newChromaCalcInput: string = e.currentTarget.value;
-        const calculatedChroma: number = round(
-            calculateChroma(
-                themeColor.sourceColor.hct.chroma,
-                newChromaCalcInput,
-            ),
-        );
+        const calculatedChroma: number = round(calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput));
         themeColor.set.chromaCalc(newChromaCalcInput);
         setChromaSlider(calculatedChroma);
         setChromaCalcInput(newChromaCalcInput);
         if (newChromaCalcInput === '') {
-            themeColor.set.chromaCalc(
-                themeColor.sourceColor.hct.chroma.toString(),
-            );
+            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
             setChromaSlider(themeColor.sourceColor.hct.chroma);
         }
     };
@@ -211,96 +180,76 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         themeColor.set.aliases(aliases);
     };
 
+    const themeColorOptions: Array<DropdownOption> = [
+        {
+            value: 'Duplicate theme color',
+        },
+        {
+            value: 'Delete theme color',
+        },
+    ];
+
     const options: Array<TabsOption> = [
         {
             children: (
                 <div className="tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll">
-                    <div className="flex h-full w-10 flex-col items-center gap-2 overflow-y-scroll pt-2">
-                        <div
-                            className="h-6 w-6 rounded-full outline outline-1 outline-offset-4 outline-fig-blue"
-                            style={{
-                                background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
-                                    themeColor.endColor.hct.hue,
-                                    themeColor.endColor.hct.chroma,
-                                    75,
-                                )}, ${quickHexFromHct(
-                                    themeColor.endColor.hct.hue,
-                                    themeColor.endColor.hct.chroma,
-                                    50,
-                                )}, ${quickHexFromHct(
-                                    themeColor.endColor.hct.hue,
-                                    themeColor.endColor.hct.chroma,
-                                    25,
-                                )}, black)`,
-                            }}
-                        ></div>
-                        <div className=" h-6 w-6 rounded-full bg-gradient-conic"></div>
-                        <div className=" h-6 w-6 rounded-full bg-gradient-conic"></div>
-                        <div className=" h-6 w-6 rounded-full bg-gradient-conic"></div>
-                        <div className=" h-6 w-6 rounded-full bg-gradient-conic"></div>
-                        <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
-                            <span className="absolute">
-                                <IconPlus32 />
-                            </span>
-                        </div>
+                    <div className="flex h-full w-10 flex-col items-center gap-1 overflow-y-scroll pt-2">
+                        <ThemeColorSelect
+                            themeColors={themeColors}
+                            selectedThemeColor={themeColor.id}
+                            onSelectThemeColor={onSelectThemeColor}
+                        />
+                        <IconButton onClick={onAddAlias}>
+                            <IconPlus32 />
+                        </IconButton>
                     </div>
                     <div className="h-full grow">
                         <div className="flex h-24 grow flex-row">
                             <div className="flex grow flex-row">
                                 {/* Section 1A */}
                                 <div className="h-full w-172 pt-1">
-                                    <Textbox
-                                        value={themeColor.name}
-                                        onChange={(e) =>
-                                            themeColor.set.name(
-                                                e.currentTarget.value,
-                                            )
-                                        }
-                                        onBlur={() => nameTheNameless()}
-                                        onfocusout={() => nameTheNameless()}
-                                        placeholder="Color name"
-                                    />
-                                    <TextboxColor
-                                        hexColor={hexColorInput}
-                                        onHexColorInput={(e) =>
-                                            onHexColorInput(e)
-                                        }
-                                        onOpacityInput={(e) => '100%'}
-                                        opacity={'100%'}
-                                    />
-                                    <div className="px-2 opacity-60">
-                                        <Muted>
-                                            H:{' '}
-                                            {round(
-                                                themeColor.sourceColor.hct.hue,
-                                            )}{' '}
-                                            C:{' '}
-                                            {round(
-                                                themeColor.sourceColor.hct
-                                                    .chroma,
-                                            )}{' '}
-                                            T:{' '}
-                                            {round(
-                                                themeColor.sourceColor.hct.tone,
-                                            )}
-                                        </Muted>
+                                    <div className="flex flex-row">
+                                        <Textbox
+                                            value={themeColor.name}
+                                            onChange={(e) => themeColor.set.name(e.currentTarget.value)}
+                                            onBlur={() => nameTheNameless()}
+                                            onfocusout={() => nameTheNameless()}
+                                            placeholder="Color name"
+                                        />
+                                        <IconButton>
+                                            <CopyPlus size={17} strokeWidth={1.3} />
+                                        </IconButton>
+                                        <IconButton>
+                                            <IconMinus32 />
+                                        </IconButton>
                                     </div>
+                                    <div className="flex flex-row">
+                                        <TextboxColor
+                                            hexColor={hexColorInput}
+                                            onHexColorInput={(e) => onHexColorInput(e)}
+                                            onOpacityInput={(e) => '100%'}
+                                            opacity={'100%'}
+                                        />
+                                        <IconButton>
+                                            <IconStyles32 />
+                                        </IconButton>
+                                    </div>
+                                    <Dropdown options={themeColorOptions} value={null} placeholder="Color options" />
                                 </div>
                                 {/* Section 1B */}
-                                <div className="border-gridlines h-full w-172 grow border-l pt-1">
-                                    <div className="p-2">{themeColor.name}</div>
+                                <div className="h-full w-172 grow border-l border-gridlines pt-1">
                                     <div className="px-2 opacity-60">
                                         <Muted>
-                                            H:{' '}
-                                            {round(themeColor.endColor.hct.hue)}{' '}
-                                            C:{' '}
-                                            {round(
-                                                themeColor.endColor.hct.chroma,
-                                            )}{' '}
-                                            T:{' '}
-                                            {round(
-                                                themeColor.endColor.hct.tone,
-                                            )}
+                                            H: {round(themeColor.sourceColor.hct.hue)} C:{' '}
+                                            {round(themeColor.sourceColor.hct.chroma)} T:{' '}
+                                            {round(themeColor.sourceColor.hct.tone)}
+                                        </Muted>
+                                    </div>
+                                    <div className="px-2 opacity-60">
+                                        <Muted>
+                                            H: {round(themeColor.endColor.hct.hue)} C:{' '}
+                                            {round(themeColor.endColor.hct.chroma)} T:{' '}
+                                            {round(themeColor.endColor.hct.tone)}
                                         </Muted>
                                     </div>
                                 </div>
@@ -318,12 +267,10 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                         <div className="flex h-24 grow flex-row">
                             <div className="flex grow flex-row">
                                 {/* Section 2A */}
-                                <div className="border-gridlines h-full w-172 grow border-t">
+                                <div className="h-full w-172 grow border-t border-gridlines">
                                     <div className="flex flex-row justify-between">
                                         <span className="p-2">Hue</span>
-                                        <span className="p-2">
-                                            {round(hue())}
-                                        </span>
+                                        <span className="p-2">{round(hue())}</span>
                                     </div>
                                     <div className="hue-slider px-2 pb-1">
                                         <RangeSlider
@@ -343,47 +290,28 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                                         placeholder="Hue value or expression"
                                     />
                                     <div className="px-2 py-1 opacity-60">
-                                        <Muted>
-                                            Source Hue (h) ={' '}
-                                            {round(
-                                                themeColor.sourceColor.hct.hue,
-                                            )}
-                                        </Muted>
+                                        <Muted>Source Hue (h) = {round(themeColor.sourceColor.hct.hue)}</Muted>
                                     </div>
                                 </div>
                                 {/* Section 2B */}
-                                <div className="border-gridlines h-full w-172 grow border-l border-t">
+                                <div className="h-full w-172 grow border-l border-t border-gridlines">
                                     <div className="flex flex-row justify-between">
                                         <span className="p-2">Chroma</span>
                                         <span className="p-2">
-                                            {round(
-                                                themeColor.endColor.hct.chroma,
-                                            )}{' '}
+                                            {round(themeColor.endColor.hct.chroma)}{' '}
                                             <span className="opacity-40">
                                                 /{' '}
-                                                {round(
-                                                    findMaxChromaForHueAtTone(
-                                                        hue(),
-                                                        themeColor.endColor.hct
-                                                            .tone,
-                                                    ),
-                                                )}
+                                                {round(findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone))}
                                             </span>
                                         </span>
                                     </div>
                                     <div className="chroma-slider px-2 pb-1">
                                         <RangeSlider
                                             maximum={round(
-                                                findMaxChromaForHueAtTone(
-                                                    hue(),
-                                                    themeColor.endColor.hct
-                                                        .tone,
-                                                ),
+                                                findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone),
                                             )}
                                             minimum={0}
-                                            onInput={(e) =>
-                                                onChromaSliderInput(e)
-                                            }
+                                            onInput={(e) => onChromaSliderInput(e)}
                                             value={themeColor.chromaCalc}
                                         />
                                         <div
@@ -397,13 +325,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                                         placeholder="Chroma value or expression"
                                     />
                                     <div className="px-2 py-1 opacity-60">
-                                        <Muted>
-                                            Source Chroma (c) ={' '}
-                                            {round(
-                                                themeColor.sourceColor.hct
-                                                    .chroma,
-                                            )}
-                                        </Muted>
+                                        <Muted>Source Chroma (c) = {round(themeColor.sourceColor.hct.chroma)}</Muted>
                                     </div>
                                 </div>
                             </div>
@@ -418,15 +340,13 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                             ></div>
                         </div>
                         <div className="flex h-24 grow flex-row">
-                            <div className="border-gridlines flex grow flex-row border-t">
+                            <div className="flex grow flex-row border-t border-gridlines">
                                 {/* Section 3A */}
                                 <div className="h-full grow">
                                     <p className="p-2">Tones</p>
                                     <TextboxMultiline
                                         value={tones}
-                                        onInput={(e) =>
-                                            setTones(e.currentTarget.value)
-                                        }
+                                        onInput={(e) => setTones(e.currentTarget.value)}
                                         placeholder="Return tones 0-100"
                                     />
                                 </div>
@@ -442,7 +362,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                                 }}
                             ></div>
                         </div>
-                        <div className="border-gridlines flex grow flex-row border-t">
+                        <div className="flex grow flex-row border-t border-gridlines">
                             <div className="flex grow justify-between">
                                 <span className="p-2">Aliases</span>
                                 <IconButton onClick={onAddAlias}>
@@ -471,7 +391,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         {
             children: (
                 <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="border-gridlines flex w-full flex-row border-t">
+                    <div className="flex w-full flex-row border-t border-gridlines">
                         <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
                             <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
                             <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
@@ -492,7 +412,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
                             </div>
                         </div>
                     </div>
-                    <div className="border-gridlines flex w-full flex-row border-t">
+                    <div className="flex w-full flex-row border-t border-gridlines">
                         <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
                             <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
                             <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
@@ -522,13 +442,7 @@ const TabGroup = ({ themeColors, onSetThemeColors }: TabGroupProps) => {
         console.log(newValue);
         setTabValue(newValue);
     }
-    return (
-        <Tabs
-            onValueChange={handleValueChange}
-            options={options}
-            value={tabValue}
-        />
-    );
+    return <Tabs onValueChange={handleValueChange} options={options} value={tabValue} />;
 };
 
 export default TabGroup;
