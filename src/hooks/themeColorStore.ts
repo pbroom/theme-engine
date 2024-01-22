@@ -24,9 +24,13 @@ import {
     aliasGroupData,
     aliasGroupActions,
     createAlias,
+    AliasGroupDataSchema,
+    createAliasGroup,
 } from './aliasGroupStore';
+import { ColorData, ColorDataSchema } from './colorStore';
 
 export {
+    createThemeColor,
     ThemeColorDataSchema,
     ThemeColorActionsSchema,
     type ThemeColorData,
@@ -39,12 +43,42 @@ export {
     useThemeColor,
 };
 
+const defaultSourceHex = '397456';
+const defaultName = 'Color';
+const defaultHueCalc = '';
+const defaultChromaCalc = '';
+const defaultTones = [
+    0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
+    25, 35, 87, 92, 94, 96, 98,
+];
+const defaultAliasGroup = createAliasGroup();
+
+const createThemeColor = (
+    sourceHex: string = defaultSourceHex,
+): ThemeColorData => {
+    return {
+        id: nanoid(12),
+        name: defaultName,
+        sourceHex: sourceHex,
+        sourceColor: createColorFrom().hex(sourceHex),
+        endColor: calculateEndColor(
+            createColorFrom().hex(sourceHex).hct,
+            defaultHueCalc,
+            defaultChromaCalc,
+        ),
+        tones: defaultTones,
+        hueCalc: defaultHueCalc,
+        chromaCalc: defaultChromaCalc,
+        aliasGroup: defaultAliasGroup,
+    };
+};
+
 const ThemeColorDataSchema = z.object({
     id: z.string().default(nanoid(12)),
-    name: z.string().default('Color'),
-    sourceHex: z.string().default('397456'),
-    sourceColor: ColorSchema,
-    endColor: ColorSchema,
+    name: z.string().default(defaultName),
+    sourceHex: z.string().default(defaultSourceHex),
+    sourceColor: ColorDataSchema,
+    endColor: ColorDataSchema,
     tones: z
         .array(z.number())
         .default([
@@ -53,28 +87,24 @@ const ThemeColorDataSchema = z.object({
         ]),
     hueCalc: z.string().default('163'),
     chromaCalc: z.string().default('33'),
+    aliasGroup: AliasGroupDataSchema,
 });
 type ThemeColorData = z.infer<typeof ThemeColorDataSchema>;
 
-const baseColor: Color = useColor.getState();
-const color: Color = {
-    ...baseColor,
-    sourceHex: '397456',
-    hct: { hue: 163, chroma: 33, tone: 44 },
-    rgba: rgbaFromHct(Hct.from(163, 33, 44)),
-    hex: hexFromHct(Hct.from(163, 33, 44)),
-};
-
 const themeColorData: StateCreator<ThemeColorData> = () => ({
     id: nanoid(12),
-    name: 'color',
-    sourceHex: '397456',
-    sourceColor: color,
-    endColor: color,
-    tones: [],
-    hueCalc: '',
-    chromaCalc: '',
-    aliases: [],
+    name: defaultName,
+    sourceHex: defaultSourceHex,
+    sourceColor: createColorFrom().hex(defaultSourceHex),
+    endColor: calculateEndColor(
+        createColorFrom().hex(defaultSourceHex).hct,
+        defaultHueCalc,
+        defaultChromaCalc,
+    ),
+    tones: defaultTones,
+    hueCalc: defaultHueCalc,
+    chromaCalc: defaultChromaCalc,
+    aliasGroup: defaultAliasGroup,
 });
 
 const useThemeColorData = create<ThemeColorData>((...a) => ({

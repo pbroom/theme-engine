@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 export {
     createAlias,
     createAliasList,
+    createAliasGroup,
     AliasDataSchema,
     AliasActionsSchema,
     type AliasData,
@@ -45,6 +46,21 @@ const createAliasList = (aliases: AliasData[] = []): AliasData[] => {
     );
 };
 
+const createAliasGroup = (
+    id: string = nanoid(12),
+    name: string = 'Alias group',
+    aliases: AliasData[] = [
+        createAlias(nanoid(12), 'color', 40, 80),
+        createAlias(nanoid(12), 'onColor', 100, 20),
+    ],
+): AliasGroupData => {
+    return {
+        id: id,
+        name: name,
+        aliases: aliases,
+    };
+};
+
 const AliasDataSchema = z.object({
     id: z.string().default(() => nanoid(12)),
     name: z.string().default('Alias'),
@@ -65,14 +81,14 @@ type AliasActions = z.infer<typeof AliasActionsSchema>;
 
 type Alias = AliasData & AliasActions;
 
-const aliasDataStore: StateCreator<AliasData> = () => ({
+const aliasData: StateCreator<AliasData> = () => ({
     id: nanoid(12),
     name: 'Alias',
     lightModeTone: 80,
     darkModeTone: 20,
 });
 
-const aliasActionsStore: StateCreator<AliasActions> = (set) => ({
+const aliasActions: StateCreator<AliasActions> = (set) => ({
     set: {
         id: (id) => set((state) => ({ ...state, id })),
         name: (name) => set((state) => ({ ...state, name })),
@@ -84,12 +100,13 @@ const aliasActionsStore: StateCreator<AliasActions> = (set) => ({
 });
 
 const useAlias = create<AliasData & AliasActions>((...a) => ({
-    ...aliasDataStore(...a),
-    ...aliasActionsStore(...a),
+    ...aliasData(...a),
+    ...aliasActions(...a),
 }));
 
 const AliasGroupDataSchema = z.object({
     id: z.string().default(() => nanoid(12)),
+    name: z.string().default('Alias group'),
     aliases: z.array(AliasDataSchema),
 });
 

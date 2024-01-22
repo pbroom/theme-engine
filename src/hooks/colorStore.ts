@@ -38,136 +38,6 @@ export {
     useColor,
 };
 
-const RgbaSchema = z.object({
-    r: z.number().min(0).max(255),
-    g: z.number().min(0).max(255),
-    b: z.number().min(0).max(255),
-    a: z.number().min(0).max(255),
-});
-
-const HctSchema = z.object({
-    hue: z.number().min(0).max(360),
-    chroma: z.number().min(0).max(150),
-    tone: z.number().min(0).max(100),
-});
-
-const SolidColorSchema = z.object({
-    type: z.literal('SOLID'),
-    color: z.object({
-        r: z.number().min(0).max(255),
-        g: z.number().min(0).max(255),
-        b: z.number().min(0).max(255),
-    }),
-});
-type SolidColor = z.infer<typeof SolidColorSchema>;
-
-const ColorDataSchema = z.object({
-    sourceHex: z.string().default('397456'),
-    hct: HctSchema,
-    rgba: z.union([z.string(), RgbaSchema]),
-    hex: z.string().refine(validator.isHexColor),
-    figmaSolidColor: SolidColorSchema,
-});
-type ColorData = z.infer<typeof ColorDataSchema>;
-const ColorActionsSchema = z.object({
-    setSourceHex: z.function().args(z.string(), z.void()),
-    setHct: z.function().args(HctSchema, z.void()),
-    setRgba: z.function().args(z.union([z.string(), RgbaSchema]), z.void()),
-    setHex: z.function().args(z.string(), z.void()),
-    setFigmaSolidColor: z.function().args(SolidColorSchema, z.void()),
-    setHue: z.function().args(z.number(), z.void()),
-    setChroma: z.function().args(z.number(), z.void()),
-    setTone: z.function().args(z.number(), z.void()),
-});
-type ColorActions = z.infer<typeof ColorActionsSchema>;
-const ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
-type Color = ColorData & ColorActions;
-
-/**
- * Removes the '#' character from the beginning of a hex color string.
- * @param hexColor - The hex color string to clean.
- * @returns The cleaned hex color string.
- */
-const cleanedHexColor = (hexColor: string) => {
-    return hexColor.startsWith('#') ? hexColor.slice(1) : hexColor;
-};
-
-// Function to update HCT values and dependent properties
-const updateHctValues = (
-    newHue: number,
-    newChroma: number,
-    newTone: number,
-) => {
-    const updatedHct = Hct.from(newHue, newChroma, newTone);
-    return useColor.setState({ hct: updatedHct });
-};
-
-// Individual setters for hue, chroma, and tone
-const setHue = (newHue: number) =>
-    updateHctValues(
-        newHue,
-        useColor.getState().hct.chroma,
-        useColor.getState().hct.tone,
-    );
-const setChroma = (newChroma: number) =>
-    updateHctValues(
-        useColor.getState().hct.hue,
-        newChroma,
-        useColor.getState().hct.tone,
-    );
-const setTone = (newTone: number) =>
-    updateHctValues(
-        useColor.getState().hct.hue,
-        useColor.getState().hct.chroma,
-        newTone,
-    );
-
-const hexFromString = (hexColor: string) => cleanedHexColor(hexColor);
-const HctFromHex = (hexColor: string) =>
-    Hct.fromInt(argbFromHex(hexFromString(hexColor)));
-const argbFromHct = (hctColor?: Hct) =>
-    hctColor?.toInt() || Hct.from(0, 0, 0).toInt();
-const rgbFromHex = (hex: string) => {
-    const result = convertHexColorToRgbColor(cleanedHexColor(hex));
-    return result !== null ? result : { r: 0, g: 0, b: 0 };
-};
-const rgbaFromHct = (hct: Hct) => {
-    const argb = argbFromHct(hct);
-    return rgbaFromArgb(argb);
-};
-const hexFromHct = (hct: Hct) => {
-    const argb = argbFromHct(hct);
-    return hexFromArgb(argb);
-};
-const SolidColorFromRgbColor = (rgbColor: RGB): SolidColor => {
-    if (!rgbColor) {
-        return { type: 'SOLID', color: { r: 0, g: 0, b: 0 } };
-    }
-    return { type: 'SOLID', color: rgbColor };
-};
-
-const colorData: StateCreator<ColorData> = (set) => ({
-    sourceHex: '',
-    hct: { hue: 0, chroma: 0, tone: 0 },
-    rgba: { r: 0, g: 0, b: 0, a: 0 },
-    hex: '',
-    figmaSolidColor: { type: 'SOLID', color: { r: 0, g: 0, b: 0 } },
-});
-const colorActions: StateCreator<ColorActions> = (set, get) => ({
-    setSourceHex: (sourceHex) =>
-        set((state) => ({ ...state, sourceHex: sourceHex })),
-    setHct: (hct) => set((state) => ({ ...state, hct: hct })),
-    setRgba: (rgba) => set((state) => ({ ...state, rgba: rgba })),
-    setHex: (hex) => set((state) => ({ ...state, hex: hex })),
-    setFigmaSolidColor: (figmaSolidColor) =>
-        set((state) => ({ ...state, figmaSolidColor: figmaSolidColor })),
-    setHue: (hue) =>
-        set((state) => ({ ...state, hct: { ...state, hue: hue } })),
-    setChroma: (chroma) =>
-        set((state) => ({ ...state, hct: { ...state, chroma: chroma } })),
-    setTone: (tone) => set((state) => ({ ...state, hct: { ...state, tone } })),
-});
-
 export const createColorFrom = () => {
     const hex = (hexColor: string) => {
         return {
@@ -266,6 +136,69 @@ const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
     }
 };
 
+/**
+ * Removes the '#' character from the beginning of a hex color string.
+ * @param hexColor - The hex color string to clean.
+ * @returns The cleaned hex color string.
+ */
+const cleanedHexColor = (hexColor: string) => {
+    return hexColor.startsWith('#') ? hexColor.slice(1) : hexColor;
+};
+
+// Function to update HCT values and dependent properties
+const updateHctValues = (
+    newHue: number,
+    newChroma: number,
+    newTone: number,
+) => {
+    const updatedHct = Hct.from(newHue, newChroma, newTone);
+    return useColor.setState({ hct: updatedHct });
+};
+
+// Individual setters for hue, chroma, and tone
+const setHue = (newHue: number) =>
+    updateHctValues(
+        newHue,
+        useColor.getState().hct.chroma,
+        useColor.getState().hct.tone,
+    );
+const setChroma = (newChroma: number) =>
+    updateHctValues(
+        useColor.getState().hct.hue,
+        newChroma,
+        useColor.getState().hct.tone,
+    );
+const setTone = (newTone: number) =>
+    updateHctValues(
+        useColor.getState().hct.hue,
+        useColor.getState().hct.chroma,
+        newTone,
+    );
+
+const hexFromString = (hexColor: string) => cleanedHexColor(hexColor);
+const HctFromHex = (hexColor: string) =>
+    Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+const argbFromHct = (hctColor?: Hct) =>
+    hctColor?.toInt() || Hct.from(0, 0, 0).toInt();
+const rgbFromHex = (hex: string) => {
+    const result = convertHexColorToRgbColor(cleanedHexColor(hex));
+    return result !== null ? result : { r: 0, g: 0, b: 0 };
+};
+const rgbaFromHct = (hct: Hct) => {
+    const argb = argbFromHct(hct);
+    return rgbaFromArgb(argb);
+};
+const hexFromHct = (hct: Hct) => {
+    const argb = argbFromHct(hct);
+    return hexFromArgb(argb);
+};
+const SolidColorFromRgbColor = (rgbColor: RGB): SolidColor => {
+    if (!rgbColor) {
+        return { type: 'SOLID', color: { r: 0, g: 0, b: 0 } };
+    }
+    return { type: 'SOLID', color: rgbColor };
+};
+
 const calculateEndColor = (
     sourceHct: { hue: number; chroma: number; tone: number },
     hueCalc: string = 'h',
@@ -275,6 +208,73 @@ const calculateEndColor = (
     const chroma = calculateChroma(sourceHct.chroma, chromaCalc);
     return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
 };
+
+const RgbaSchema = z.object({
+    r: z.number().min(0).max(255),
+    g: z.number().min(0).max(255),
+    b: z.number().min(0).max(255),
+    a: z.number().min(0).max(255),
+});
+
+const HctSchema = z.object({
+    hue: z.number().min(0).max(360),
+    chroma: z.number().min(0).max(150),
+    tone: z.number().min(0).max(100),
+});
+
+const SolidColorSchema = z.object({
+    type: z.literal('SOLID'),
+    color: z.object({
+        r: z.number().min(0).max(255),
+        g: z.number().min(0).max(255),
+        b: z.number().min(0).max(255),
+    }),
+});
+type SolidColor = z.infer<typeof SolidColorSchema>;
+
+const ColorDataSchema = z.object({
+    sourceHex: z.string().default('397456'),
+    hct: HctSchema,
+    rgba: z.union([z.string(), RgbaSchema]),
+    hex: z.string().refine(validator.isHexColor),
+    figmaSolidColor: SolidColorSchema,
+});
+type ColorData = z.infer<typeof ColorDataSchema>;
+const ColorActionsSchema = z.object({
+    setSourceHex: z.function().args(z.string(), z.void()),
+    setHct: z.function().args(HctSchema, z.void()),
+    setRgba: z.function().args(z.union([z.string(), RgbaSchema]), z.void()),
+    setHex: z.function().args(z.string(), z.void()),
+    setFigmaSolidColor: z.function().args(SolidColorSchema, z.void()),
+    setHue: z.function().args(z.number(), z.void()),
+    setChroma: z.function().args(z.number(), z.void()),
+    setTone: z.function().args(z.number(), z.void()),
+});
+type ColorActions = z.infer<typeof ColorActionsSchema>;
+const ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
+type Color = ColorData & ColorActions;
+
+const colorData: StateCreator<ColorData> = (set) => ({
+    sourceHex: '',
+    hct: { hue: 0, chroma: 0, tone: 0 },
+    rgba: { r: 0, g: 0, b: 0, a: 0 },
+    hex: '',
+    figmaSolidColor: { type: 'SOLID', color: { r: 0, g: 0, b: 0 } },
+});
+const colorActions: StateCreator<ColorActions> = (set, get) => ({
+    setSourceHex: (sourceHex) =>
+        set((state) => ({ ...state, sourceHex: sourceHex })),
+    setHct: (hct) => set((state) => ({ ...state, hct: hct })),
+    setRgba: (rgba) => set((state) => ({ ...state, rgba: rgba })),
+    setHex: (hex) => set((state) => ({ ...state, hex: hex })),
+    setFigmaSolidColor: (figmaSolidColor) =>
+        set((state) => ({ ...state, figmaSolidColor: figmaSolidColor })),
+    setHue: (hue) =>
+        set((state) => ({ ...state, hct: { ...state, hue: hue } })),
+    setChroma: (chroma) =>
+        set((state) => ({ ...state, hct: { ...state, chroma: chroma } })),
+    setTone: (tone) => set((state) => ({ ...state, hct: { ...state, tone } })),
+});
 
 const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
     ...colorData(set, ...a),
