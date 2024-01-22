@@ -80,6 +80,7 @@ export const Plugin = () => {
                     <TabGroup themeColors={theme.themeColors} onSetThemeColors={onSetThemeColors} />
                 </div>
                 <button
+                    title="Build theme"
                     className="build-button z-50 flex h-full w-32 items-center justify-center font-medium"
                     onClick={(e) => console.log(theme.themeColors)}
                 >

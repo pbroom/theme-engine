@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { quickHexFromHct } from '@/src/lib/color-utils';
 import { ThemeColorData } from '@/src/hooks/useThemeColor';
+import { IconButton } from '@create-figma-plugin/ui';
 
 export { ThemeColorSelect };
 
@@ -14,31 +15,20 @@ type ThemeColorSwatchProps = {
     onClick: (themeColorId: string) => void;
 };
 
-const ThemeColorSwatch = ({
-    themeColorId,
-    name,
-    hue,
-    chroma,
-    isSelected,
-    onClick,
-}: ThemeColorSwatchProps) => {
+const ThemeColorSwatch = ({ themeColorId, name, hue, chroma, isSelected, onClick }: ThemeColorSwatchProps) => {
     return (
-        <button
-            title={name}
-            className={`theme-color-swatch h-6 w-6 rounded-full ${isSelected ? 'selected-theme-color' : ''}`}
-            style={{
-                background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
-                    hue,
-                    chroma,
-                    75,
-                )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(
-                    hue,
-                    chroma,
-                    25,
-                )}, black)`,
-            }}
-            onClick={() => onClick(themeColorId)}
-        />
+        <IconButton title={name} onClick={() => onClick(themeColorId)}>
+            <div
+                className={`theme-color-swatch h-6 w-6 rounded-full ${isSelected ? 'selected-theme-color' : ''} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
+                style={{
+                    background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
+                        hue,
+                        chroma,
+                        75,
+                    )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(hue, chroma, 25)}, black)`,
+                }}
+            />
+        </IconButton>
     );
 };
 
@@ -53,14 +43,8 @@ type ThemeColorSelectProps = {
  * @param {ThemeColorData[]} themeColors - An array of theme colors.
  * @returns {JSX.Element} The rendered theme color select component.
  */
-const ThemeColorSelect = ({
-    themeColors,
-    selectedThemeColor,
-    onSelectThemeColor,
-}: ThemeColorSelectProps) => {
-    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>(
-        [],
-    );
+const ThemeColorSelect = ({ themeColors, selectedThemeColor, onSelectThemeColor }: ThemeColorSelectProps) => {
+    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
         const newThemeColorSwatches = themeColors.map((themeColor) => {

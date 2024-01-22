@@ -1,5 +1,10 @@
 import { useEffect, useRef } from 'preact/hooks';
-import { argbFromHex, Hct, rgbaFromArgb, hexFromArgb } from '@material/material-color-utilities';
+import {
+    argbFromHex,
+    Hct,
+    rgbaFromArgb,
+    hexFromArgb,
+} from '@material/material-color-utilities';
 import { convertHexColorToRgbColor } from '@create-figma-plugin/utilities';
 import z from 'zod';
 import validator from 'validator';
@@ -29,9 +34,6 @@ export {
     rgbaFromHct,
     hexFromHct,
     SolidColorFromRgbColor,
-    createColorFrom,
-    calculateHue,
-    calculateChroma,
     calculateEndColor,
     useColor,
 };
@@ -91,22 +93,40 @@ const cleanedHexColor = (hexColor: string) => {
 };
 
 // Function to update HCT values and dependent properties
-const updateHctValues = (newHue: number, newChroma: number, newTone: number) => {
+const updateHctValues = (
+    newHue: number,
+    newChroma: number,
+    newTone: number,
+) => {
     const updatedHct = Hct.from(newHue, newChroma, newTone);
     return useColor.setState({ hct: updatedHct });
 };
 
 // Individual setters for hue, chroma, and tone
 const setHue = (newHue: number) =>
-    updateHctValues(newHue, useColor.getState().hct.chroma, useColor.getState().hct.tone);
+    updateHctValues(
+        newHue,
+        useColor.getState().hct.chroma,
+        useColor.getState().hct.tone,
+    );
 const setChroma = (newChroma: number) =>
-    updateHctValues(useColor.getState().hct.hue, newChroma, useColor.getState().hct.tone);
+    updateHctValues(
+        useColor.getState().hct.hue,
+        newChroma,
+        useColor.getState().hct.tone,
+    );
 const setTone = (newTone: number) =>
-    updateHctValues(useColor.getState().hct.hue, useColor.getState().hct.chroma, newTone);
+    updateHctValues(
+        useColor.getState().hct.hue,
+        useColor.getState().hct.chroma,
+        newTone,
+    );
 
 const hexFromString = (hexColor: string) => cleanedHexColor(hexColor);
-const HctFromHex = (hexColor: string) => Hct.fromInt(argbFromHex(hexFromString(hexColor)));
-const argbFromHct = (hctColor?: Hct) => hctColor?.toInt() || Hct.from(0, 0, 0).toInt();
+const HctFromHex = (hexColor: string) =>
+    Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+const argbFromHct = (hctColor?: Hct) =>
+    hctColor?.toInt() || Hct.from(0, 0, 0).toInt();
 const rgbFromHex = (hex: string) => {
     const result = convertHexColorToRgbColor(cleanedHexColor(hex));
     return result !== null ? result : { r: 0, g: 0, b: 0 };
@@ -134,17 +154,21 @@ const colorData: StateCreator<ColorData> = (set) => ({
     figmaSolidColor: { type: 'SOLID', color: { r: 0, g: 0, b: 0 } },
 });
 const colorActions: StateCreator<ColorActions> = (set, get) => ({
-    setSourceHex: (sourceHex) => set((state) => ({ ...state, sourceHex: sourceHex })),
+    setSourceHex: (sourceHex) =>
+        set((state) => ({ ...state, sourceHex: sourceHex })),
     setHct: (hct) => set((state) => ({ ...state, hct: hct })),
     setRgba: (rgba) => set((state) => ({ ...state, rgba: rgba })),
     setHex: (hex) => set((state) => ({ ...state, hex: hex })),
-    setFigmaSolidColor: (figmaSolidColor) => set((state) => ({ ...state, figmaSolidColor: figmaSolidColor })),
-    setHue: (hue) => set((state) => ({ ...state, hct: { ...state, hue: hue } })),
-    setChroma: (chroma) => set((state) => ({ ...state, hct: { ...state, chroma: chroma } })),
+    setFigmaSolidColor: (figmaSolidColor) =>
+        set((state) => ({ ...state, figmaSolidColor: figmaSolidColor })),
+    setHue: (hue) =>
+        set((state) => ({ ...state, hct: { ...state, hue: hue } })),
+    setChroma: (chroma) =>
+        set((state) => ({ ...state, hct: { ...state, chroma: chroma } })),
     setTone: (tone) => set((state) => ({ ...state, hct: { ...state, tone } })),
 });
 
-const createColorFrom = () => {
+export const createColorFrom = () => {
     const hex = (hexColor: string) => {
         return {
             sourceHex: hexColor,
@@ -160,7 +184,9 @@ const createColorFrom = () => {
             hct: hct,
             rgba: rgbaFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
             hex: hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
-            figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)))),
+            figmaSolidColor: SolidColorFromRgbColor(
+                rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone))),
+            ),
         };
     };
     return { hex, hct };
@@ -188,14 +214,18 @@ const calculateHue = (hueValue: number, hueCalcValue: string) => {
         for (let i = hueCalc.length - 1; i >= 0; i--) {
             const truncatedExpression = hueCalc.substring(0, i);
             try {
-                lastValidHue = evaluate(truncatedExpression.replace(/h/gi, sourceHue.toString())) as number;
+                lastValidHue = evaluate(
+                    truncatedExpression.replace(/h/gi, sourceHue.toString()),
+                ) as number;
                 break; // Stop the loop if we successfully evaluate the expression
             } catch (e) {
                 // Continue truncating
             }
         }
         // Set hue to the last successfully evaluated value, or the default hue if none was successful
-        const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
+        const hue = !isNaN(lastValidHue)
+            ? Math.abs(lastValidHue % 360)
+            : sourceHue;
         return hue;
     }
 };
@@ -210,7 +240,10 @@ const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
     }
     try {
         // Replace 'c' regardless of its case
-        const parsedChromaCalc = chromaCalc.replace(/c/gi, sourceChroma.toString());
+        const parsedChromaCalc = chromaCalc.replace(
+            /c/gi,
+            sourceChroma.toString(),
+        );
         // Evaluate parsedChromaCalc
         const chroma = Math.abs(evaluate(parsedChromaCalc) as number);
         return chroma;
@@ -221,7 +254,9 @@ const calculateChroma = (chromaValue: number, chromaCalcValue: string) => {
         for (let i = chromaCalc.length - 1; i >= 0; i--) {
             const truncatedExpression = chromaCalc.substring(0, i);
             try {
-                lastValidChroma = evaluate(truncatedExpression.replace(/c/gi, sourceChroma.toString()));
+                lastValidChroma = evaluate(
+                    truncatedExpression.replace(/c/gi, sourceChroma.toString()),
+                );
                 break;
             } catch (error) {
                 continue;
@@ -250,7 +285,7 @@ const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
             sourceHex: sourceHex,
             hct: HctFromHex(sourceHex),
             rgba: rgbaFromHct(HctFromHex(sourceHex)),
-            hex: sourceHex,
+            hex: hexFromHct(HctFromHex(sourceHex)),
             figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(sourceHex)),
         })),
     setHct: (hct) =>
@@ -259,7 +294,9 @@ const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
             hct: hct,
             rgba: rgbaFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
             hex: hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
-            figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)))),
+            figmaSolidColor: SolidColorFromRgbColor(
+                rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone))),
+            ),
         })),
     setHue: (hue) =>
         set((state) => ({
@@ -268,7 +305,9 @@ const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
             rgba: rgbaFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
             hex: hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
             figmaSolidColor: SolidColorFromRgbColor(
-                rgbFromHex(hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone))),
+                rgbFromHex(
+                    hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
+                ),
             ),
         })),
     setChroma: (chroma) =>
@@ -278,7 +317,9 @@ const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
             rgba: rgbaFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
             hex: hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
             figmaSolidColor: SolidColorFromRgbColor(
-                rgbFromHex(hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone))),
+                rgbFromHex(
+                    hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
+                ),
             ),
         })),
     setTone: (tone) =>
@@ -288,7 +329,9 @@ const useColor = create<ColorData & ColorActions>()((set, ...a) => ({
             rgba: rgbaFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
             hex: hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
             figmaSolidColor: SolidColorFromRgbColor(
-                rgbFromHex(hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone))),
+                rgbFromHex(
+                    hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
+                ),
             ),
         })),
 }));

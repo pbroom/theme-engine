@@ -3,5 +3,5 @@ module.exports = {
     tailwindFunctions: ['clsx'],
     singleQuote: true,
     tabWidth: 4,
-    printWidth: 120,
+    printWidth: 80,
 };

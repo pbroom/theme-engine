@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5a1fa6d-2761-4e70-b552-05d880a25445/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/772e4eba-af20-4385-aeaf-233e8de54ec9/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5a1fa6d-2761-4e70-b552-05d880a25445/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/772e4eba-af20-4385-aeaf-233e8de54ec9/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -741,6 +741,9 @@ video {
 .w-32 {
   width: 8rem;
 }
+.w-344 {
+  width: 344px;
+}
 .w-36 {
   width: 9rem;
 }
@@ -785,6 +788,9 @@ video {
 }
 .max-w-[172px] {
   max-width: 172px;
+}
+.flex-1 {
+  flex: 1 1 0%;
 }
 .flex-grow {
   flex-grow: 1;
@@ -842,6 +848,9 @@ video {
 }
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-4 {
+  gap: 1rem;
 }
 .place-self-end {
   place-self: end;
@@ -1213,6 +1222,9 @@ video {
 .outline-slate-500 {
   outline-color: #64748b;
 }
+.outline-gridlines {
+  outline-color: hsl(0, 0%, 50%, 0.25);
+}
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
 }
@@ -1255,16 +1267,7 @@ video {
     background-color: unset !important;
 }
 .hue-slider-bar {
-    background: linear-gradient(
-        to right,
-        #f00,
-        #ff0,
-        #0f0,
-        #0ff,
-        #00f,
-        #f0f,
-        #f00
-    );
+    background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
 }
 .tab-content {
     height: 600px;
@@ -1273,16 +1276,7 @@ video {
         background-color: rgb(128, 128, 128, 0.08);
     }
 .build-button:active {
-        background: linear-gradient(
-            60deg,
-            #f00,
-            #ff0,
-            #0f0,
-            #0ff,
-            #00f,
-            #f0f,
-            #f00
-        );
+        background: linear-gradient(60deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
         background-size: 800% auto;
         animation: gradientMove 45s linear infinite;
     }
@@ -1294,6 +1288,13 @@ video {
             background-position: -800% 0%;
         }
     }
+/* .theme-color-swatch {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} */
 .active\\:bg-neutral-700:active {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
@@ -1341,6 +1342,24 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
+.hover\\:outline:where([data-rac])[data-hovered] {
+  outline-style: solid;
+}
+.hover\\:outline-2:where([data-rac])[data-hovered] {
+  outline-width: 2px;
+}
+.hover\\:outline-offset-1:where([data-rac])[data-hovered] {
+  outline-offset: 1px;
+}
+.hover\\:outline-offset-2:where([data-rac])[data-hovered] {
+  outline-offset: 2px;
+}
+.hover\\:outline-fig-blue:where([data-rac])[data-hovered] {
+  outline-color: #18A0FB;
+}
+.hover\\:outline-gridlines:where([data-rac])[data-hovered] {
+  outline-color: hsl(0, 0%, 50%, 0.25);
+}
 .hover\\:translate-x-8:where(:not([data-rac])):hover {
   --tw-translate-x: 2rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1360,6 +1379,24 @@ video {
 .hover\\:bg-neutral-700:where(:not([data-rac])):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+}
+.hover\\:outline:where(:not([data-rac])):hover {
+  outline-style: solid;
+}
+.hover\\:outline-2:where(:not([data-rac])):hover {
+  outline-width: 2px;
+}
+.hover\\:outline-offset-1:where(:not([data-rac])):hover {
+  outline-offset: 1px;
+}
+.hover\\:outline-offset-2:where(:not([data-rac])):hover {
+  outline-offset: 2px;
+}
+.hover\\:outline-fig-blue:where(:not([data-rac])):hover {
+  outline-color: #18A0FB;
+}
+.hover\\:outline-gridlines:where(:not([data-rac])):hover {
+  outline-color: hsl(0, 0%, 50%, 0.25);
 }
 .focus\\:bg-red-500:where([data-rac])[data-focused] {
   --tw-bg-opacity: 1;
@@ -2327,10 +2364,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d6e8444-acbc-4aee-a4b0-2399d096c6aa/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58a4d91-9d3d-40fc-ae01-25ba8e0df1d6/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d6e8444-acbc-4aee-a4b0-2399d096c6aa/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58a4d91-9d3d-40fc-ae01-25ba8e0df1d6/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2367,10 +2404,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/152c7fd7-02ac-42f0-b9e1-44ce073e3500/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/191bf6ff-4d86-4b0d-ab82-1a3e0d01e2e2/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/152c7fd7-02ac-42f0-b9e1-44ce073e3500/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/191bf6ff-4d86-4b0d-ab82-1a3e0d01e2e2/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2608,10 +2645,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a1af11a-7f4b-4f19-be6f-245ef01b594c/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d6a449d-9d96-4247-a567-8b8bf9cc356f/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a1af11a-7f4b-4f19-be6f-245ef01b594c/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d6a449d-9d96-4247-a567-8b8bf9cc356f/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3085,10 +3122,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7f9a68a4-ab0f-45a8-ab82-f9eb0794b967/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f3eed117-ed1c-4064-b88c-b0c53039baef/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7f9a68a4-ab0f-45a8-ab82-f9eb0794b967/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f3eed117-ed1c-4064-b88c-b0c53039baef/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3158,10 +3195,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4812163a-9fca-4ecd-b2bc-6a8da31e26ed/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77295762-feff-470f-84ba-7e9f8c11230a/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4812163a-9fca-4ecd-b2bc-6a8da31e26ed/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77295762-feff-470f-84ba-7e9f8c11230a/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3265,10 +3302,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/407bd5b9-3dfc-444b-9c09-88c6c74ffbf1/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/779ca292-05fa-4a8a-835c-108a66f18038/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/407bd5b9-3dfc-444b-9c09-88c6c74ffbf1/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/779ca292-05fa-4a8a-835c-108a66f18038/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3865,10 +3902,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edd23306-353c-4175-ba1b-56b2db74b352/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82f3e434-0f02-4196-90cd-3560ecf5d4a3/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/edd23306-353c-4175-ba1b-56b2db74b352/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82f3e434-0f02-4196-90cd-3560ecf5d4a3/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4373,10 +4410,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3dc6aa2-4607-4da6-9521-b7a8b455ebed/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5e62a87-53ec-41dd-82d6-c3796ef25c0a/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3dc6aa2-4607-4da6-9521-b7a8b455ebed/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5e62a87-53ec-41dd-82d6-c3796ef25c0a/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4716,10 +4753,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/777b31e1-ffa3-4288-9762-b6e4daabccaf/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20053bb1-b7cd-4bb1-9673-df723deed749/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/777b31e1-ffa3-4288-9762-b6e4daabccaf/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20053bb1-b7cd-4bb1-9673-df723deed749/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4918,10 +4955,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe27decb-dea6-4955-a552-0f3dc31bec6b/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3dd4902-73c2-4f99-8231-a5f1d9ba86cc/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fe27decb-dea6-4955-a552-0f3dc31bec6b/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3dd4902-73c2-4f99-8231-a5f1d9ba86cc/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5014,10 +5051,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e27fff5-76a2-403e-a3e6-705fab3da610/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3648b55c-d2b1-4a94-9170-7d18bab519a7/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4e27fff5-76a2-403e-a3e6-705fab3da610/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3648b55c-d2b1-4a94-9170-7d18bab519a7/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5098,19 +5135,10 @@ video {
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-styles-32.js
-  var IconStyles32;
-  var init_icon_styles_32 = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-styles-32.js"() {
-      init_create_icon();
-      IconStyles32 = createIcon("M11.5 13c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5m6 0c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5m1.5 7.5c-.8284 0-1.5-.6716-1.5-1.5s.6716-1.5 1.5-1.5 1.5.6716 1.5 1.5-.6716 1.5-1.5 1.5M11.5 19c0 .8284.6716 1.5 1.5 1.5s1.5-.6716 1.5-1.5-.6716-1.5-1.5-1.5-1.5.6716-1.5 1.5", { height: 32, width: 32 });
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f274aac-4cd6-499a-a3d6-e5105a0bae65/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d481743-7620-42cf-8836-f6cbcb3b5f58/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0f274aac-4cd6-499a-a3d6-e5105a0bae65/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d481743-7620-42cf-8836-f6cbcb3b5f58/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5139,9 +5167,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/45771207-c3a8-42b4-a46e-917a4178dafc/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d986e9-e086-4371-835b-34ce1c1ff48f/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/45771207-c3a8-42b4-a46e-917a4178dafc/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d986e9-e086-4371-835b-34ce1c1ff48f/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -5275,7 +5303,6 @@ svg {
       init_icon_chevron_down_16();
       init_icon_minus_32();
       init_icon_plus_32();
-      init_icon_styles_32();
       init_muted();
       init_render();
     }
@@ -69734,42 +69761,24 @@ svg {
       init_preact_module();
       init_hooks_module();
       init_color_utils2();
-      ThemeColorSwatch = ({
-        themeColorId,
-        name: name310,
-        hue,
-        chroma,
-        isSelected,
-        onClick
-      }) => {
-        return /* @__PURE__ */ y(
-          "button",
+      init_lib2();
+      ThemeColorSwatch = ({ themeColorId, name: name310, hue, chroma, isSelected, onClick }) => {
+        return /* @__PURE__ */ y(IconButton, { title: name310, onClick: () => onClick(themeColorId) }, /* @__PURE__ */ y(
+          "div",
           {
-            title: name310,
-            className: `theme-color-swatch h-6 w-6 rounded-full ${isSelected ? "selected-theme-color" : ""}`,
+            className: `theme-color-swatch h-6 w-6 rounded-full ${isSelected ? "selected-theme-color" : ""} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`,
             style: {
               background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                 hue,
                 chroma,
                 75
-              )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(
-                hue,
-                chroma,
-                25
-              )}, black)`
-            },
-            onClick: () => onClick(themeColorId)
+              )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(hue, chroma, 25)}, black)`
+            }
           }
-        );
+        ));
       };
-      ThemeColorSelect = ({
-        themeColors,
-        selectedThemeColor,
-        onSelectThemeColor
-      }) => {
-        const [themeColorSwatches, setThemeColorSwatches] = h2(
-          []
-        );
+      ThemeColorSelect = ({ themeColors, selectedThemeColor, onSelectThemeColor }) => {
+        const [themeColorSwatches, setThemeColorSwatches] = h2([]);
         p2(() => {
           const newThemeColorSwatches = themeColors.map((themeColor) => {
             return /* @__PURE__ */ y("li", { key: themeColor.id }, /* @__PURE__ */ y(
@@ -69792,7 +69801,7 @@ svg {
   });
 
   // src/components/tabs.tsx
-  var TabGroup, tabs_default;
+  var CopyPlusIcon, TabGroup, tabs_default;
   var init_tabs2 = __esm({
     "src/components/tabs.tsx"() {
       "use strict";
@@ -69808,6 +69817,7 @@ svg {
       init_useColor();
       init_alias();
       init_theme_color_select();
+      CopyPlusIcon = CopyPlus;
       TabGroup = ({ themeColors, onSetThemeColors }) => {
         const [tabValue, setTabValue] = h2("Primitives");
         const [themeColorList, setThemeColorList] = h2(themeColors);
@@ -69944,31 +69954,41 @@ svg {
         ];
         const options = [
           {
-            children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center gap-1 overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
+            children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
               ThemeColorSelect,
               {
                 themeColors,
                 selectedThemeColor: themeColor.id,
                 onSelectThemeColor
               }
-            ), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(IconButton, { title: "Add color", onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
               Textbox,
               {
+                title: "Color name",
                 value: themeColor.name,
                 onChange: (e6) => themeColor.set.name(e6.currentTarget.value),
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
               }
-            ), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(CopyPlus, { size: 17, strokeWidth: 1.3 })), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(IconMinus32, null))), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y(IconButton, { title: `Duplicate color` }, /* @__PURE__ */ y(CopyPlusIcon, { size: 17, strokeWidth: 1.3 })), /* @__PURE__ */ y(IconButton, { title: `Remove color from theme` }, /* @__PURE__ */ y(IconMinus32, null))), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
               TextboxColor,
               {
+                title: "Source color",
                 hexColor: hexColorInput,
                 onHexColorInput: (e6) => onHexColorInput(e6),
                 onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
-            ), /* @__PURE__ */ y(IconButton, null, /* @__PURE__ */ y(IconStyles32, null))), /* @__PURE__ */ y(Dropdown, { options: themeColorOptions, value: null, placeholder: "Color options" })), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-gridlines pt-1" }, /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone))), /* @__PURE__ */ y("div", { className: "px-2 opacity-60" }, /* @__PURE__ */ y(Muted, null, "H: ", round2(themeColor.endColor.hct.hue), " C:", " ", round2(themeColor.endColor.hct.chroma), " T:", " ", round2(themeColor.endColor.hct.tone))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(
+              Dropdown,
+              {
+                title: "Source color options",
+                options: themeColorOptions,
+                value: null,
+                placeholder: "Color options"
+              }
+            )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -69982,6 +70002,7 @@ svg {
             )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
+                title: "Adjust hue",
                 maximum: 360,
                 minimum: 0,
                 onInput: (e6) => onHueSliderInput(e6),
@@ -69996,6 +70017,7 @@ svg {
             )), /* @__PURE__ */ y(
               Textbox,
               {
+                title: "Hue expression",
                 value: hueCalcInput,
                 onInput: (e6) => onHueCalcInput(e6),
                 placeholder: "Hue value or expression"
@@ -70003,6 +70025,7 @@ svg {
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone))))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
+                title: "Adjust chroma",
                 maximum: round2(
                   findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone)
                 ),
@@ -70019,6 +70042,7 @@ svg {
             )), /* @__PURE__ */ y(
               Textbox,
               {
+                title: "Chroma expression",
                 value: chromaCalcInput,
                 onInput: (e6) => onChromaCalcInput(e6),
                 placeholder: "Chroma value or expression"
@@ -70037,6 +70061,7 @@ svg {
             )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
               TextboxMultiline,
               {
+                title: "Tones",
                 value: tones,
                 onInput: (e6) => setTones(e6.currentTarget.value),
                 placeholder: "Return tones 0-100"
@@ -70053,7 +70078,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { title: "Create alias", onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
               AliasList,
               {
                 hue: themeColor.endColor.hct.hue,
@@ -70350,6 +70375,7 @@ svg {
         )), /* @__PURE__ */ y(tabs_default, { themeColors: theme.themeColors, onSetThemeColors })), /* @__PURE__ */ y(
           "button",
           {
+            title: "Build theme",
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
             onClick: (e6) => console.log(theme.themeColors)
           },
