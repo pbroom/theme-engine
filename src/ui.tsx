@@ -2,59 +2,35 @@ import '!./dist/tailwind.css';
 import { Textbox, render } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
-import { useThemeColor, ThemeColor, ThemeColorData, useThemeColorStore } from './hooks/useThemeColor';
+import {
+    useThemeColor,
+    ThemeColorData,
+    createThemeColor,
+} from './hooks/useThemeColor';
 import { nanoid } from 'nanoid';
-import { useTheme } from './hooks/useTheme';
-import { useEffect } from 'react';
-import { Color, SolidColorFromRgbColor, hexFromHct, rgbFromHex, rgbaFromHct, useColor } from './hooks/useColor';
-import { set } from 'lodash';
-
-declare global {
-    namespace React {
-        interface ReactElement {
-            nodeName: any;
-            attributes: any;
-            children: any;
-        }
-    }
-}
+import { useTheme, defaultThemeColors, ThemeData } from './hooks/useTheme';
+import { useEffect, useState } from 'react';
+import { create, set } from 'lodash';
+import { useThemeList } from './hooks/useThemeList';
 
 export const Plugin = () => {
+    const themeList = useThemeList();
+    console.log(themeList);
     const theme = useTheme();
-    const themeColor = useThemeColor();
-    const primary = themeColor;
-    const secondary = themeColor;
-    const tertiary = themeColor;
-    const neutral = themeColor;
-    const neutralVariant = themeColor;
-    const error = themeColor;
-    const themeColors: ThemeColorData[] = [primary, secondary, tertiary, neutral, neutralVariant, error];
+    const themeData: ThemeData = theme.data;
     useEffect(() => {
-        primary.set.name('Primary');
-        secondary.set.name('Secondary');
-        tertiary.set.name('Tertiary');
-        neutral.set.name('Neutral');
-        neutralVariant.set.name('Neutral Variant');
-        error.set.name('Error');
-        if (theme.themeColors.length === 0) {
-            theme.set.themeColors([primary, secondary, tertiary, neutral, neutralVariant, error]);
-        }
-        console.log(theme);
+        //TODO: this will need to be dynamic for changing themes
+        const startingTheme = { ...theme, ...themeList.themes[0] };
+        setTheme(startingTheme);
     }, []);
 
-    const log = () => {
-        theme.set.id(nanoid(6));
-        theme.set.addThemeColor(primary);
-        console.log(theme);
-        console.log(nanoid(6));
-    };
     const nameTheNameless = () => {
         if (!theme.name) {
             theme.set.name('Theme');
         }
     };
-    const onSetThemeColors = (themeColors: ThemeColorData[]) => {
-        theme.set.themeColors(themeColors);
+    const onSetThemeData = (themeData: ThemeData) => {
+        setTheme({ ...theme, ...themeData });
     };
     // Rendering the UI
     return (
@@ -71,18 +47,23 @@ export const Plugin = () => {
                         {/* <ThemeMenu themes={ThemeList} /> */}
                         <Textbox
                             value={theme.name}
-                            onChange={(e) => theme.set.name(e.currentTarget.value)}
+                            onChange={(e) =>
+                                theme.set.name(e.currentTarget.value)
+                            }
                             onBlur={() => nameTheNameless()}
                             onfocusout={() => nameTheNameless()}
                             placeholder="Theme name"
                         />
                     </div>
-                    <TabGroup themeColors={theme.themeColors} onSetThemeColors={onSetThemeColors} />
+                    <TabGroup
+                        themeData={theme.data}
+                        onSetThemeData={onSetThemeData}
+                    />
                 </div>
                 <button
                     title="Build theme"
                     className="build-button z-50 flex h-full w-32 items-center justify-center font-medium"
-                    onClick={(e) => console.log(theme.themeColors)}
+                    onClick={(e) => console.log(themeList)}
                 >
                     Build {theme.name}
                 </button>

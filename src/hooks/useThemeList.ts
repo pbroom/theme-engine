@@ -1,78 +1,118 @@
-import type { Theme } from './useTheme';
-import { useTheme, ThemeSchema } from './useTheme';
-import { v4 as uuidv4 } from 'uuid';
 import z from 'zod';
-import { create } from 'zustand';
+import { create, StateCreator } from 'zustand';
+import { nanoid } from 'nanoid';
+import { ThemeDataSchema, type ThemeData, createTheme } from './useTheme';
 
-export const ThemeListDataSchema = z.object({
-	id: z.string().uuid(),
-	themes: z.array(ThemeSchema),
-});
-export type ThemeListData = z.infer<typeof ThemeListDataSchema>;
-export const ThemeListActionsSchema = z.object({
-	setId: z.function().args(z.string(), z.void()),
-	setThemes: z.function().args(z.array(ThemeSchema), z.void()),
-	addTheme: z.function().args(z.string(), z.void()),
-	removeTheme: z.function().args(ThemeSchema, z.void()),
-});
-export const ThemeListSchema = ThemeListDataSchema.merge(
-	ThemeListActionsSchema
-);
-export type ThemeList = z.infer<typeof ThemeListSchema>;
-
-export const useThemeListStore = create<ThemeList>((set) => ({
-	id: uuidv4(),
-	themes: [],
-	setId: (id) => set(() => ({ id })),
-	setThemes: (themes) => set(() => ({ themes })),
-	addTheme: () =>
-		set((state) => {
-			const newThemes = [...state.themes];
-			newThemes.push(useTheme());
-			return { themes: newThemes };
-		}),
-	removeTheme: (theme) =>
-		set((state) => {
-			const newThemes = [...state.themes];
-			const index = newThemes.indexOf(theme);
-			if (index !== -1) {
-				newThemes.splice(index, 1);
-			}
-			return { themes: newThemes };
-		}),
-}));
-
-const useThemeList = (themeList?: Theme[]): ThemeList => {
-	const id = useThemeListStore((state) => state.id);
-	const setId = useThemeListStore((state) => state.setId);
-	const themes = useThemeListStore((state) => state.themes);
-	const setThemes = useThemeListStore((state) => state.setThemes);
-
-	/**
-	 * Adds a new theme to the theme list.
-	 *
-	 * @param {string} themeName - The name of the theme to add.
-	 */
-	const addTheme = () => {
-		const newTheme = useTheme();
-		setThemes([...themes, newTheme]);
-	};
-
-	const removeTheme = (theme: Theme) => {
-		const index = themes.indexOf(theme);
-		if (index !== -1) {
-			themes.splice(index, 1);
-		}
-	};
-
-	return {
-		id,
-		themes,
-		setId,
-		setThemes,
-		addTheme,
-		removeTheme,
-	};
+export {
+    createThemeList,
+    ThemeListDataSchema,
+    ThemeListActionsSchema,
+    type ThemeListData,
+    type ThemeListActions,
+    useThemeList,
 };
 
-export default useThemeList;
+const defaultThemes: ThemeData[] = [createTheme()];
+
+/**
+ * Creates a theme list with the specified ID and themes.
+ * @param id The ID of the theme list. Defaults to a randomly generated ID.
+ * @param themes An array of ThemeData objects representing the themes in the list. Defaults to the defaultThemes array.
+ * @returns An object representing the theme list, with an ID and an array of themes.
+ */
+const createThemeList = (
+    id: string = nanoid(12),
+    themes: ThemeData[] = defaultThemes,
+) => {
+    return {
+        id: id,
+        themes: themes,
+    };
+};
+
+const ThemeListDataSchema = z.object({
+    id: z.string(),
+    themes: z.array(ThemeDataSchema),
+});
+
+type ThemeListData = z.infer<typeof ThemeListDataSchema>;
+
+const ThemeListActionsSchema = z.object({
+    set: z.object({
+        all: z.function().args(ThemeListDataSchema, z.void()),
+        id: z.function().args(z.string(), z.void()),
+        themes: z.function().args(z.array(ThemeDataSchema), z.void()),
+    }),
+    data: z.function(),
+});
+
+type ThemeListActions = z.infer<typeof ThemeListActionsSchema>;
+
+const themeListData: StateCreator<ThemeListData> = () => ({
+    id: nanoid(12),
+    themes: defaultThemes,
+});
+
+/**
+ * Creates a state creator for theme list actions.
+ * @param set - The state setter function.
+ * @returns An object containing theme list actions.
+ */
+const themeListActions: StateCreator<ThemeListActions> = (set) => ({
+    set: {
+        all: (themeListData) =>
+            set((state) => ({ ...state, ...themeListData })),
+        id: (id) => set((state) => ({ ...state, id })),
+        themes: (themes) => set((state) => ({ ...state, themes })),
+    },
+    data: () => {},
+});
+
+/**
+ * Creates a state object for managing a list of themes.
+ * @param set - The state setter function provided by the state hook.
+ * @param ...a - Additional arguments passed to the state creator.
+ * @returns The state object with theme list data and actions.
+ */
+const themeList: StateCreator<ThemeListData & ThemeListActions> = (
+    set,
+    get,
+    ...a
+) => ({
+    ...themeListData(set, get, ...a),
+    ...themeListActions(set, get, ...a),
+    data: () => {
+        const state = get();
+        const { id, themes } = state;
+        const themeListData: ThemeListData = { id, themes };
+        return themeListData;
+    },
+    theme: {
+        add: (theme: ThemeData) =>
+            set((state) => ({
+                ...state,
+                themes: [...state.themes, theme],
+            })),
+        duplicate: (id: string) =>
+            set((state) => {
+                const theme = state.themes.find((theme) => theme.id === id);
+                return theme
+                    ? { ...state, themes: [...state.themes, theme] }
+                    : state;
+            }),
+        update: (id: string, theme: ThemeData) =>
+            set((state) => ({
+                ...state,
+                themes: state.themes.map((t) => (t.id === id ? theme : t)),
+            })),
+        remove: (id: string) =>
+            set((state) => ({
+                ...state,
+                themes: state.themes.filter((t) => t.id !== id),
+            })),
+    },
+});
+
+const useThemeList = create<ThemeListData & ThemeListActions>((set, ...a) => ({
+    ...themeList(set, ...a),
+}));

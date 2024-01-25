@@ -7,7 +7,7 @@ import {
     IconMinus32,
     Code,
 } from '@create-figma-plugin/ui';
-import { AliasData } from '@/src/hooks/useAlias';
+import { AliasData } from '@/src/hooks/useAliasGroup';
 import { useEffect } from 'react';
 import { hexFromHct } from '@/src/hooks/useColor';
 import { Hct } from '@material/material-color-utilities';
@@ -37,19 +37,19 @@ const AliasItem = ({
 }: AliasItemProps) => {
     const [aliasName, setAliasName] = useState(alias.name);
     const [aliasColor, setAliasColor] = useState([
-        alias.color[0].tone,
-        alias.color[1].tone,
+        alias.lightModeTone,
+        alias.darkModeTone,
     ]);
     const onSetAliasName = (id: string, name: string) => {
         setAliasName(name);
         onSetName(id, name);
     };
     const onSetAliasLightTone = (id: string, tone: number) => {
-        setAliasColor([tone, alias.color[1].tone]);
+        setAliasColor([tone, alias.darkModeTone]);
         onSetLightTone(id, tone);
     };
     const onSetAliasDarkTone = (id: string, tone: number) => {
-        setAliasColor([alias.color[0].tone, tone]);
+        setAliasColor([alias.lightModeTone, tone]);
         onSetDarkTone(id, tone);
     };
     return (
@@ -128,7 +128,7 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
     const onSetLightTone = (id: string, tone: number) => {
         const alias = aliases.find((alias) => alias.id === id);
         if (alias) {
-            alias.color[0].tone = tone;
+            alias.lightModeTone = tone;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
         }
@@ -136,7 +136,7 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
     const onSetDarkTone = (id: string, tone: number) => {
         const alias = aliases.find((alias) => alias.id === id);
         if (alias) {
-            alias.color[1].tone = tone;
+            alias.darkModeTone = tone;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
         }
@@ -169,8 +169,8 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
             <AliasTonePreview
                 hue={hue}
                 chroma={chroma}
-                lightModeTone={alias.color[0].tone}
-                darkModeTone={alias.color[1].tone}
+                lightModeTone={alias.lightModeTone}
+                darkModeTone={alias.darkModeTone}
             />
         );
     });
@@ -252,8 +252,8 @@ const AliasPreviewList = ({ hue, chroma, aliases }: AliasPreviewListProps) => {
                 <AliasTonePreview
                     hue={hue}
                     chroma={chroma}
-                    lightModeTone={alias.color[0].tone}
-                    darkModeTone={alias.color[1].tone}
+                    lightModeTone={alias.lightModeTone}
+                    darkModeTone={alias.darkModeTone}
                 />
             ))}
         </div>

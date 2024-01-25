@@ -15,7 +15,14 @@ type ThemeColorSwatchProps = {
     onClick: (themeColorId: string) => void;
 };
 
-const ThemeColorSwatch = ({ themeColorId, name, hue, chroma, isSelected, onClick }: ThemeColorSwatchProps) => {
+const ThemeColorSwatch = ({
+    themeColorId,
+    name,
+    hue,
+    chroma,
+    isSelected,
+    onClick,
+}: ThemeColorSwatchProps) => {
     return (
         <IconButton title={name} onClick={() => onClick(themeColorId)}>
             <div
@@ -43,8 +50,14 @@ type ThemeColorSelectProps = {
  * @param {ThemeColorData[]} themeColors - An array of theme colors.
  * @returns {JSX.Element} The rendered theme color select component.
  */
-const ThemeColorSelect = ({ themeColors, selectedThemeColor, onSelectThemeColor }: ThemeColorSelectProps) => {
-    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>([]);
+const ThemeColorSelect = ({
+    themeColors,
+    selectedThemeColor,
+    onSelectThemeColor,
+}: ThemeColorSelectProps) => {
+    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>(
+        [],
+    );
 
     useEffect(() => {
         const newThemeColorSwatches = themeColors.map((themeColor) => {

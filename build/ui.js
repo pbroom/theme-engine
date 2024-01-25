@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/772e4eba-af20-4385-aeaf-233e8de54ec9/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/42d64c2c-1b0f-4331-80b5-d4041f1ac44d/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/772e4eba-af20-4385-aeaf-233e8de54ec9/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/42d64c2c-1b0f-4331-80b5-d4041f1ac44d/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1216,14 +1216,14 @@ video {
 .outline-fig-blue {
   outline-color: #18A0FB;
 }
+.outline-gridlines {
+  outline-color: hsl(0, 0%, 50%, 0.25);
+}
 .outline-neutral-500 {
   outline-color: #737373;
 }
 .outline-slate-500 {
   outline-color: #64748b;
-}
-.outline-gridlines {
-  outline-color: hsl(0, 0%, 50%, 0.25);
 }
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
@@ -1465,16 +1465,16 @@ video {
     l3 && l3.removeChild(n3);
   }
   function y(l3, u3, t3) {
-    var i5, o3, r3, f3 = {};
+    var i4, o3, r3, f3 = {};
     for (r3 in u3)
-      "key" == r3 ? i5 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : f3[r3] = u3[r3];
+      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : f3[r3] = u3[r3];
     if (arguments.length > 2 && (f3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), "function" == typeof l3 && null != l3.defaultProps)
       for (r3 in l3.defaultProps)
         void 0 === f3[r3] && (f3[r3] = l3.defaultProps[r3]);
-    return d(l3, f3, i5, o3, null);
+    return d(l3, f3, i4, o3, null);
   }
-  function d(n3, t3, i5, o3, r3) {
-    var f3 = { type: n3, props: t3, key: i5, ref: o3, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: null == r3 ? ++u : r3, __i: -1, __u: 0 };
+  function d(n3, t3, i4, o3, r3) {
+    var f3 = { type: n3, props: t3, key: i4, ref: o3, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: null == r3 ? ++u : r3, __i: -1, __u: 0 };
     return null == r3 && null != l.vnode && l.vnode(f3), f3;
   }
   function _() {
@@ -1509,30 +1509,30 @@ video {
     (!n3.__d && (n3.__d = true) && i.push(n3) && !x.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(x);
   }
   function x() {
-    var n3, u3, t3, o3, r3, e6, c3, s3, a3;
+    var n3, u3, t3, o3, r3, e5, c3, s3, a3;
     for (i.sort(f); n3 = i.shift(); )
-      n3.__d && (u3 = i.length, o3 = void 0, e6 = (r3 = (t3 = n3).__v).__e, s3 = [], a3 = [], (c3 = t3.__P) && ((o3 = v({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(o3), L(c3, o3, r3, t3.__n, void 0 !== c3.ownerSVGElement, 32 & r3.__u ? [e6] : null, s3, null == e6 ? m(r3) : e6, !!(32 & r3.__u), a3), o3.__.__k[o3.__i] = o3, M(s3, o3, a3), o3.__e != e6 && k(o3)), i.length > u3 && i.sort(f));
+      n3.__d && (u3 = i.length, o3 = void 0, e5 = (r3 = (t3 = n3).__v).__e, s3 = [], a3 = [], (c3 = t3.__P) && ((o3 = v({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(o3), L(c3, o3, r3, t3.__n, void 0 !== c3.ownerSVGElement, 32 & r3.__u ? [e5] : null, s3, null == e5 ? m(r3) : e5, !!(32 & r3.__u), a3), o3.__.__k[o3.__i] = o3, M(s3, o3, a3), o3.__e != e5 && k(o3)), i.length > u3 && i.sort(f));
     x.__r = 0;
   }
-  function C(n3, l3, u3, t3, i5, o3, r3, f3, e6, a3, h3) {
+  function C(n3, l3, u3, t3, i4, o3, r3, f3, e5, a3, h3) {
     var v3, p3, y3, d3, _3, g4 = t3 && t3.__k || s, b3 = l3.length;
-    for (u3.__d = e6, P(u3, l3, g4), e6 = u3.__d, v3 = 0; v3 < b3; v3++)
-      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i5, o3, r3, f3, e6, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e6 = S(y3, e6, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e6 = y3.__d : d3 && (e6 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
-    u3.__d = e6, u3.__e = _3;
+    for (u3.__d = e5, P(u3, l3, g4), e5 = u3.__d, v3 = 0; v3 < b3; v3++)
+      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e5, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e5 = S(y3, e5, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e5 = y3.__d : d3 && (e5 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
+    u3.__d = e5, u3.__e = _3;
   }
   function P(n3, l3, u3) {
-    var t3, i5, o3, r3, f3, e6 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
-    for (n3.__k = [], t3 = 0; t3 < e6; t3++)
-      null != (i5 = n3.__k[t3] = null == (i5 = l3[t3]) || "boolean" == typeof i5 || "function" == typeof i5 ? null : "string" == typeof i5 || "number" == typeof i5 || "bigint" == typeof i5 || i5.constructor == String ? d(null, i5, null, null, i5) : h(i5) ? d(g, { children: i5 }, null, null, null) : void 0 === i5.constructor && i5.__b > 0 ? d(i5.type, i5.props, i5.key, i5.ref ? i5.ref : null, i5.__v) : i5) ? (i5.__ = n3, i5.__b = n3.__b + 1, f3 = H(i5, u3, r3 = t3 + a3, s3), i5.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i5.type && (i5.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e6 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i5.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
+    var t3, i4, o3, r3, f3, e5 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
+    for (n3.__k = [], t3 = 0; t3 < e5; t3++)
+      null != (i4 = n3.__k[t3] = null == (i4 = l3[t3]) || "boolean" == typeof i4 || "function" == typeof i4 ? null : "string" == typeof i4 || "number" == typeof i4 || "bigint" == typeof i4 || i4.constructor == String ? d(null, i4, null, null, i4) : h(i4) ? d(g, { children: i4 }, null, null, null) : void 0 === i4.constructor && i4.__b > 0 ? d(i4.type, i4.props, i4.key, i4.ref ? i4.ref : null, i4.__v) : i4) ? (i4.__ = n3, i4.__b = n3.__b + 1, f3 = H(i4, u3, r3 = t3 + a3, s3), i4.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i4.type && (i4.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e5 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i4.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
     if (s3)
       for (t3 = 0; t3 < c3; t3++)
         null != (o3 = u3[t3]) && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3));
   }
   function S(n3, l3, u3) {
-    var t3, i5;
+    var t3, i4;
     if ("function" == typeof n3.type) {
-      for (t3 = n3.__k, i5 = 0; t3 && i5 < t3.length; i5++)
-        t3[i5] && (t3[i5].__ = n3, l3 = S(t3[i5], l3, u3));
+      for (t3 = n3.__k, i4 = 0; t3 && i4 < t3.length; i4++)
+        t3[i4] && (t3[i4].__ = n3, l3 = S(t3[i4], l3, u3));
       return l3;
     }
     return n3.__e != l3 && (u3.insertBefore(n3.__e, l3 || null), l3 = n3.__e), l3 && l3.nextSibling;
@@ -1543,18 +1543,18 @@ video {
     }) : l3.push(n3)), l3;
   }
   function H(n3, l3, u3, t3) {
-    var i5 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e6 = l3[u3];
-    if (null === e6 || e6 && i5 == e6.key && o3 === e6.type)
+    var i4 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e5 = l3[u3];
+    if (null === e5 || e5 && i4 == e5.key && o3 === e5.type)
       return u3;
-    if (t3 > (null != e6 && 0 == (131072 & e6.__u) ? 1 : 0))
+    if (t3 > (null != e5 && 0 == (131072 & e5.__u) ? 1 : 0))
       for (; r3 >= 0 || f3 < l3.length; ) {
         if (r3 >= 0) {
-          if ((e6 = l3[r3]) && 0 == (131072 & e6.__u) && i5 == e6.key && o3 === e6.type)
+          if ((e5 = l3[r3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
             return r3;
           r3--;
         }
         if (f3 < l3.length) {
-          if ((e6 = l3[f3]) && 0 == (131072 & e6.__u) && i5 == e6.key && o3 === e6.type)
+          if ((e5 = l3[f3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
             return f3;
           f3++;
         }
@@ -1564,7 +1564,7 @@ video {
   function I(n3, l3, u3) {
     "-" === l3[0] ? n3.setProperty(l3, null == u3 ? "" : u3) : n3[l3] = null == u3 ? "" : "number" != typeof u3 || a.test(l3) ? u3 : u3 + "px";
   }
-  function T(n3, l3, u3, t3, i5) {
+  function T(n3, l3, u3, t3, i4) {
     var o3;
     n:
       if ("style" === l3)
@@ -1581,7 +1581,7 @@ video {
       else if ("o" === l3[0] && "n" === l3[1])
         o3 = l3 !== (l3 = l3.replace(/(PointerCapture)$|Capture$/, "$1")), l3 = l3.toLowerCase() in n3 ? l3.toLowerCase().slice(2) : l3.slice(2), n3.l || (n3.l = {}), n3.l[l3 + o3] = u3, u3 ? t3 ? u3.u = t3.u : (u3.u = Date.now(), n3.addEventListener(l3, o3 ? D : A, o3)) : n3.removeEventListener(l3, o3 ? D : A, o3);
       else {
-        if (i5)
+        if (i4)
           l3 = l3.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
         else if ("width" !== l3 && "height" !== l3 && "href" !== l3 && "list" !== l3 && "form" !== l3 && "tabIndex" !== l3 && "download" !== l3 && "rowSpan" !== l3 && "colSpan" !== l3 && "role" !== l3 && l3 in n3)
           try {
@@ -1604,15 +1604,15 @@ video {
   function D(n3) {
     return this.l[n3.type + true](l.event ? l.event(n3) : n3);
   }
-  function L(n3, u3, t3, i5, o3, r3, f3, e6, c3, s3) {
+  function L(n3, u3, t3, i4, o3, r3, f3, e5, c3, s3) {
     var a3, p3, y3, d3, _3, m3, k4, w4, x4, P6, S2, $3, H3, I3, T4, A4 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
-    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e6 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
+    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e5 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
     n:
       if ("function" == typeof A4)
         try {
-          if (w4 = u3.props, x4 = (a3 = A4.contextType) && i5[a3.__c], P6 = a3 ? x4 ? x4.props.value : a3.__ : i5, t3.__c ? k4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(w4, P6) : (u3.__c = p3 = new b(w4, P6), p3.constructor = A4, p3.render = O), x4 && x4.sub(p3), p3.props = w4, p3.state || (p3.state = {}), p3.context = P6, p3.__n = i5, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(w4, p3.__s))), d3 = p3.props, _3 = p3.state, p3.__v = u3, y3)
+          if (w4 = u3.props, x4 = (a3 = A4.contextType) && i4[a3.__c], P6 = a3 ? x4 ? x4.props.value : a3.__ : i4, t3.__c ? k4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(w4, P6) : (u3.__c = p3 = new b(w4, P6), p3.constructor = A4, p3.render = O), x4 && x4.sub(p3), p3.props = w4, p3.state || (p3.state = {}), p3.context = P6, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(w4, p3.__s))), d3 = p3.props, _3 = p3.state, p3.__v = u3, y3)
             null == A4.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
           else {
             if (null == A4.getDerivedStateFromProps && w4 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(w4, P6), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(w4, p3.__s, P6) || u3.__v === t3.__v)) {
@@ -1635,18 +1635,18 @@ video {
             do {
               p3.__d = false, $3 && $3(u3), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
             } while (p3.__d && ++H3 < 25);
-          p3.state = p3.__s, null != p3.getChildContext && (i5 = v(v({}, i5), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i5, o3, r3, f3, e6, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
+          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e5, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
         } catch (n4) {
-          u3.__v = null, c3 || null != r3 ? (u3.__e = e6, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e6)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
+          u3.__v = null, c3 || null != r3 ? (u3.__e = e5, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e5)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
         }
       else
-        null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = j(t3.__e, u3, t3, i5, o3, r3, f3, c3, s3);
+        null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = j(t3.__e, u3, t3, i4, o3, r3, f3, c3, s3);
     (a3 = l.diffed) && a3(u3);
   }
   function M(n3, u3, t3) {
     u3.__d = void 0;
-    for (var i5 = 0; i5 < t3.length; i5++)
-      z(t3[i5], t3[++i5], t3[++i5]);
+    for (var i4 = 0; i4 < t3.length; i4++)
+      z(t3[i4], t3[++i4], t3[++i4]);
     l.__c && l.__c(u3, n3), n3.some(function(u4) {
       try {
         n3 = u4.__h, u4.__h = [], n3.some(function(n4) {
@@ -1657,7 +1657,7 @@ video {
       }
     });
   }
-  function j(l3, u3, t3, i5, o3, r3, f3, e6, s3) {
+  function j(l3, u3, t3, i4, o3, r3, f3, e5, s3) {
     var a3, v3, y3, d3, _3, g4, b3, k4 = t3.props, w4 = u3.props, x4 = u3.type;
     if ("svg" === x4 && (o3 = true), null != r3) {
       for (a3 = 0; a3 < r3.length; a3++)
@@ -1669,24 +1669,24 @@ video {
     if (null == l3) {
       if (null === x4)
         return document.createTextNode(w4);
-      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, w4.is && w4), r3 = null, e6 = false;
+      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, w4.is && w4), r3 = null, e5 = false;
     }
     if (null === x4)
-      k4 === w4 || e6 && l3.data === w4 || (l3.data = w4);
+      k4 === w4 || e5 && l3.data === w4 || (l3.data = w4);
     else {
-      if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e6 && null != r3)
+      if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e5 && null != r3)
         for (k4 = {}, a3 = 0; a3 < l3.attributes.length; a3++)
           k4[(_3 = l3.attributes[a3]).name] = _3.value;
       for (a3 in k4)
         _3 = k4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _3 : "key" === a3 || a3 in w4 || T(l3, a3, null, _3, o3));
       for (a3 in w4)
-        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e6 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
+        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e5 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
       if (v3)
-        e6 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
-      else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i5, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e6, s3), null != r3)
+        e5 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
+      else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e5, s3), null != r3)
         for (a3 = r3.length; a3--; )
           null != r3[a3] && p(r3[a3]);
-      e6 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== k4[a3]) && T(l3, a3, g4, k4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && T(l3, a3, b3, k4[a3], false));
+      e5 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== k4[a3]) && T(l3, a3, g4, k4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && T(l3, a3, b3, k4[a3], false));
     }
     return l3;
   }
@@ -1698,36 +1698,36 @@ video {
     }
   }
   function N(n3, u3, t3) {
-    var i5, o3;
-    if (l.unmount && l.unmount(n3), (i5 = n3.ref) && (i5.current && i5.current !== n3.__e || z(i5, null, u3)), null != (i5 = n3.__c)) {
-      if (i5.componentWillUnmount)
+    var i4, o3;
+    if (l.unmount && l.unmount(n3), (i4 = n3.ref) && (i4.current && i4.current !== n3.__e || z(i4, null, u3)), null != (i4 = n3.__c)) {
+      if (i4.componentWillUnmount)
         try {
-          i5.componentWillUnmount();
+          i4.componentWillUnmount();
         } catch (n4) {
           l.__e(n4, u3);
         }
-      i5.base = i5.__P = null, n3.__c = void 0;
+      i4.base = i4.__P = null, n3.__c = void 0;
     }
-    if (i5 = n3.__k)
-      for (o3 = 0; o3 < i5.length; o3++)
-        i5[o3] && N(i5[o3], u3, t3 || "function" != typeof n3.type);
+    if (i4 = n3.__k)
+      for (o3 = 0; o3 < i4.length; o3++)
+        i4[o3] && N(i4[o3], u3, t3 || "function" != typeof n3.type);
     t3 || null == n3.__e || p(n3.__e), n3.__ = n3.__e = n3.__d = void 0;
   }
   function O(n3, l3, u3) {
     return this.constructor(n3, u3);
   }
-  function q(u3, t3, i5) {
-    var o3, r3, f3, e6;
-    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i5) ? null : i5 && i5.__k || t3.__k, f3 = [], e6 = [], L(t3, u3 = (!o3 && i5 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i5 ? [i5] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i5 ? i5 : r3 ? r3.__e : t3.firstChild, o3, e6), M(f3, u3, e6);
+  function q(u3, t3, i4) {
+    var o3, r3, f3, e5;
+    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f3 = [], e5 = [], L(t3, u3 = (!o3 && i4 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e5), M(f3, u3, e5);
   }
   function B(n3, l3) {
     q(n3, l3, B);
   }
   function E(l3, u3, t3) {
-    var i5, o3, r3, f3, e6 = v({}, l3.props);
+    var i4, o3, r3, f3, e5 = v({}, l3.props);
     for (r3 in l3.type && l3.type.defaultProps && (f3 = l3.type.defaultProps), u3)
-      "key" == r3 ? i5 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e6[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
-    return arguments.length > 2 && (e6.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e6, i5 || l3.key, o3 || l3.ref, null);
+      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e5[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
+    return arguments.length > 2 && (e5.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e5, i4 || l3.key, o3 || l3.ref, null);
   }
   function F(n3, l3) {
     var u3 = { __c: l3 = "__cC" + e++, __: n3, Consumer: function(n4, l4) {
@@ -1758,11 +1758,11 @@ video {
       a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
       h = Array.isArray;
       n = s.slice, l = { __e: function(n3, l3, u3, t3) {
-        for (var i5, o3, r3; l3 = l3.__; )
-          if ((i5 = l3.__c) && !i5.__)
+        for (var i4, o3, r3; l3 = l3.__; )
+          if ((i4 = l3.__c) && !i4.__)
             try {
-              if ((o3 = i5.constructor) && null != o3.getDerivedStateFromError && (i5.setState(o3.getDerivedStateFromError(n3)), r3 = i5.__d), null != i5.componentDidCatch && (i5.componentDidCatch(n3, t3 || {}), r3 = i5.__d), r3)
-                return i5.__E = i5;
+              if ((o3 = i4.constructor) && null != o3.getDerivedStateFromError && (i4.setState(o3.getDerivedStateFromError(n3)), r3 = i4.__d), null != i4.componentDidCatch && (i4.componentDidCatch(n3, t3 || {}), r3 = i4.__d), r3)
+                return i4.__E = i4;
             } catch (l4) {
               n3 = l4;
             }
@@ -1794,15 +1794,15 @@ video {
   // node_modules/preact/hooks/dist/hooks.module.js
   function d2(t3, u3) {
     l.__h && l.__h(r2, t3, o2 || u3), o2 = 0;
-    var i5 = r2.__H || (r2.__H = { __: [], __h: [] });
-    return t3 >= i5.__.length && i5.__.push({ __V: c2 }), i5.__[t3];
+    var i4 = r2.__H || (r2.__H = { __: [], __h: [] });
+    return t3 >= i4.__.length && i4.__.push({ __V: c2 }), i4.__[t3];
   }
   function h2(n3) {
     return o2 = 1, s2(B2, n3);
   }
-  function s2(n3, u3, i5) {
+  function s2(n3, u3, i4) {
     var o3 = d2(t2++, 2);
-    if (o3.t = n3, !o3.__c && (o3.__ = [i5 ? i5(u3) : B2(void 0, u3), function(n4) {
+    if (o3.t = n3, !o3.__c && (o3.__ = [i4 ? i4(u3) : B2(void 0, u3), function(n4) {
       var t3 = o3.__N ? o3.__N[0] : o3.__[0], r3 = o3.t(t3, n4);
       t3 !== r3 && (o3.__N = [r3, o3.__[1]], o3.__c.setState({}));
     }], o3.__c = r2, !r2.u)) {
@@ -1816,33 +1816,33 @@ video {
           return !n5.__N;
         }))
           return !c3 || c3.call(this, n4, t3, r3);
-        var i6 = false;
+        var i5 = false;
         return u4.forEach(function(n5) {
           if (n5.__N) {
             var t4 = n5.__[0];
-            n5.__ = n5.__N, n5.__N = void 0, t4 !== n5.__[0] && (i6 = true);
+            n5.__ = n5.__N, n5.__N = void 0, t4 !== n5.__[0] && (i5 = true);
           }
-        }), !(!i6 && o3.__c.props === n4) && (!c3 || c3.call(this, n4, t3, r3));
+        }), !(!i5 && o3.__c.props === n4) && (!c3 || c3.call(this, n4, t3, r3));
       };
       r2.u = true;
-      var c3 = r2.shouldComponentUpdate, e6 = r2.componentWillUpdate;
+      var c3 = r2.shouldComponentUpdate, e5 = r2.componentWillUpdate;
       r2.componentWillUpdate = function(n4, t3, r3) {
         if (this.__e) {
           var u4 = c3;
           c3 = void 0, f3(n4, t3, r3), c3 = u4;
         }
-        e6 && e6.call(this, n4, t3, r3);
+        e5 && e5.call(this, n4, t3, r3);
       }, r2.shouldComponentUpdate = f3;
     }
     return o3.__N || o3.__;
   }
-  function p2(u3, i5) {
+  function p2(u3, i4) {
     var o3 = d2(t2++, 3);
-    !l.__s && z2(o3.__H, i5) && (o3.__ = u3, o3.i = i5, r2.__H.__h.push(o3));
+    !l.__s && z2(o3.__H, i4) && (o3.__ = u3, o3.i = i4, r2.__H.__h.push(o3));
   }
-  function y2(u3, i5) {
+  function y2(u3, i4) {
     var o3 = d2(t2++, 4);
-    !l.__s && z2(o3.__H, i5) && (o3.__ = u3, o3.i = i5, r2.__h.push(o3));
+    !l.__s && z2(o3.__H, i4) && (o3.__ = u3, o3.i = i4, r2.__h.push(o3));
   }
   function _2(n3) {
     return o2 = 5, F2(function() {
@@ -1868,18 +1868,18 @@ video {
     }, t3);
   }
   function q2(n3) {
-    var u3 = r2.context[n3.__c], i5 = d2(t2++, 9);
-    return i5.c = n3, u3 ? (null == i5.__ && (i5.__ = true, u3.sub(r2)), u3.props.value) : n3.__;
+    var u3 = r2.context[n3.__c], i4 = d2(t2++, 9);
+    return i4.c = n3, u3 ? (null == i4.__ && (i4.__ = true, u3.sub(r2)), u3.props.value) : n3.__;
   }
   function x2(t3, r3) {
     l.useDebugValue && l.useDebugValue(r3 ? r3(t3) : t3);
   }
   function P2(n3) {
-    var u3 = d2(t2++, 10), i5 = h2();
+    var u3 = d2(t2++, 10), i4 = h2();
     return u3.__ = n3, r2.componentDidCatch || (r2.componentDidCatch = function(n4, t3) {
-      u3.__ && u3.__(n4, t3), i5[1](n4);
-    }), [i5[0], function() {
-      i5[1](void 0);
+      u3.__ && u3.__(n4, t3), i4[1](n4);
+    }), [i4[0], function() {
+      i4[1](void 0);
     }];
   }
   function V() {
@@ -1887,8 +1887,8 @@ video {
     if (!n3.__) {
       for (var u3 = r2.__v; null !== u3 && !u3.__m && null !== u3.__; )
         u3 = u3.__;
-      var i5 = u3.__m || (u3.__m = [0, 0]);
-      n3.__ = "P" + i5[0] + "-" + i5[1]++;
+      var i4 = u3.__m || (u3.__m = [0, 0]);
+      n3.__ = "P" + i4[0] + "-" + i4[1]++;
     }
     return n3.__;
   }
@@ -1939,10 +1939,10 @@ video {
         r2 = null, e2 && e2(n3);
       }, l.__r = function(n3) {
         a2 && a2(n3), t2 = 0;
-        var i5 = (r2 = n3.__c).__H;
-        i5 && (u2 === r2 ? (i5.__h = [], r2.__h = [], i5.__.forEach(function(n4) {
+        var i4 = (r2 = n3.__c).__H;
+        i4 && (u2 === r2 ? (i4.__h = [], r2.__h = [], i4.__.forEach(function(n4) {
           n4.__N && (n4.__ = n4.__N), n4.__V = c2, n4.__N = n4.i = void 0;
-        })) : (i5.__h.forEach(k2), i5.__h.forEach(w2), i5.__h = [], t2 = 0)), u2 = r2;
+        })) : (i4.__h.forEach(k2), i4.__h.forEach(w2), i4.__h = [], t2 = 0)), u2 = r2;
       }, l.diffed = function(t3) {
         v2 && v2(t3);
         var o3 = t3.__c;
@@ -2026,13 +2026,13 @@ video {
     version: () => ln
   });
   function g3(n3, t3) {
-    for (var e6 in t3)
-      n3[e6] = t3[e6];
+    for (var e5 in t3)
+      n3[e5] = t3[e5];
     return n3;
   }
   function C2(n3, t3) {
-    for (var e6 in n3)
-      if ("__source" !== e6 && !(e6 in t3))
+    for (var e5 in n3)
+      if ("__source" !== e5 && !(e5 in t3))
         return true;
     for (var r3 in t3)
       if ("__source" !== r3 && n3[r3] !== t3[r3])
@@ -2042,34 +2042,34 @@ video {
   function E2(n3) {
     this.props = n3;
   }
-  function w3(n3, e6) {
+  function w3(n3, e5) {
     function r3(n4) {
       var t3 = this.props.ref, r4 = t3 == n4.ref;
-      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e6 ? !e6(this.props, n4) || !r4 : C2(this.props, n4);
+      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e5 ? !e5(this.props, n4) || !r4 : C2(this.props, n4);
     }
-    function u3(e7) {
-      return this.shouldComponentUpdate = r3, y(n3, e7);
+    function u3(e6) {
+      return this.shouldComponentUpdate = r3, y(n3, e6);
     }
     return u3.displayName = "Memo(" + (n3.displayName || n3.name) + ")", u3.prototype.isReactComponent = true, u3.__f = true, u3;
   }
   function N2(n3) {
     function t3(t4) {
-      var e6 = g3({}, t4);
-      return delete e6.ref, n3(e6, t4.ref || null);
+      var e5 = g3({}, t4);
+      return delete e5.ref, n3(e5, t4.ref || null);
     }
     return t3.$$typeof = R, t3.render = t3, t3.prototype.isReactComponent = t3.__f = true, t3.displayName = "ForwardRef(" + (n3.displayName || n3.name) + ")", t3;
   }
-  function F3(n3, t3, e6) {
+  function F3(n3, t3, e5) {
     return n3 && (n3.__c && n3.__c.__H && (n3.__c.__H.__.forEach(function(n4) {
       "function" == typeof n4.__c && n4.__c();
-    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e6 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return F3(n4, t3, e6);
+    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e5 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return F3(n4, t3, e5);
     })), n3;
   }
-  function I2(n3, t3, e6) {
-    return n3 && e6 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return I2(n4, t3, e6);
-    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e6.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e6)), n3;
+  function I2(n3, t3, e5) {
+    return n3 && e5 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return I2(n4, t3, e5);
+    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e5.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e5)), n3;
   }
   function L2() {
     this.__u = 0, this.t = null, this.__b = null;
@@ -2079,16 +2079,16 @@ video {
     return t3 && t3.__a && t3.__a(n3);
   }
   function D2(n3) {
-    var e6, r3, u3;
+    var e5, r3, u3;
     function o3(o4) {
-      if (e6 || (e6 = n3()).then(function(n4) {
+      if (e5 || (e5 = n3()).then(function(n4) {
         r3 = n4.default || n4;
       }, function(n4) {
         u3 = n4;
       }), u3)
         throw u3;
       if (!r3)
-        throw e6;
+        throw e5;
       return y(r3, o4);
     }
     return o3.displayName = "Lazy", o3.__f = true, o3;
@@ -2102,26 +2102,26 @@ video {
     }, n3.children;
   }
   function P3(n3) {
-    var e6 = this, r3 = n3.i;
-    e6.componentWillUnmount = function() {
-      q(null, e6.l), e6.l = null, e6.i = null;
-    }, e6.i && e6.i !== r3 && e6.componentWillUnmount(), e6.l || (e6.i = r3, e6.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
+    var e5 = this, r3 = n3.i;
+    e5.componentWillUnmount = function() {
+      q(null, e5.l), e5.l = null, e5.i = null;
+    }, e5.i && e5.i !== r3 && e5.componentWillUnmount(), e5.l || (e5.i = r3, e5.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
+      this.childNodes.push(n4), e5.i.appendChild(n4);
     }, insertBefore: function(n4, t3) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
+      this.childNodes.push(n4), e5.i.appendChild(n4);
     }, removeChild: function(n4) {
-      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
-    } }), q(y(W, { context: e6.context }, n3.__v), e6.l);
+      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e5.i.removeChild(n4);
+    } }), q(y(W, { context: e5.context }, n3.__v), e5.l);
   }
-  function j3(n3, e6) {
-    var r3 = y(P3, { __v: n3, i: e6 });
-    return r3.containerInfo = e6, r3;
+  function j3(n3, e5) {
+    var r3 = y(P3, { __v: n3, i: e5 });
+    return r3.containerInfo = e5, r3;
   }
-  function q3(n3, t3, e6) {
-    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  function q3(n3, t3, e5) {
+    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
   }
-  function G(n3, t3, e6) {
-    return B(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  function G(n3, t3, e5) {
+    return B(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
   }
   function K() {
   }
@@ -2159,20 +2159,20 @@ video {
     return [false, yn];
   }
   function Cn(n3, t3) {
-    var e6 = t3(), r3 = h2({ h: { __: e6, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
+    var e5 = t3(), r3 = h2({ h: { __: e5, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
     return y2(function() {
-      u3.__ = e6, u3.v = t3, En(u3) && o3({ h: u3 });
-    }, [n3, e6, t3]), p2(function() {
+      u3.__ = e5, u3.v = t3, En(u3) && o3({ h: u3 });
+    }, [n3, e5, t3]), p2(function() {
       return En(u3) && o3({ h: u3 }), n3(function() {
         En(u3) && o3({ h: u3 });
       });
-    }, [n3]), e6;
+    }, [n3]), e5;
   }
   function En(n3) {
-    var t3, e6, r3 = n3.v, u3 = n3.__;
+    var t3, e5, r3 = n3.v, u3 = n3.__;
     try {
       var o3 = r3();
-      return !((t3 = u3) === (e6 = o3) && (0 !== t3 || 1 / t3 == 1 / e6) || t3 != t3 && e6 != e6);
+      return !((t3 = u3) === (e5 = o3) && (0 !== t3 || 1 / t3 == 1 / e5) || t3 != t3 && e5 != e5);
     } catch (n4) {
       return true;
     }
@@ -2204,25 +2204,25 @@ video {
         return t3[0];
       }, toArray: $ };
       O2 = l.__e;
-      l.__e = function(n3, t3, e6, r3) {
+      l.__e = function(n3, t3, e5, r3) {
         if (n3.then) {
           for (var u3, o3 = t3; o3 = o3.__; )
             if ((u3 = o3.__c) && u3.__c)
-              return null == t3.__e && (t3.__e = e6.__e, t3.__k = e6.__k), u3.__c(n3, t3);
+              return null == t3.__e && (t3.__e = e5.__e, t3.__k = e5.__k), u3.__c(n3, t3);
         }
-        O2(n3, t3, e6, r3);
+        O2(n3, t3, e5, r3);
       };
       T3 = l.unmount;
       l.unmount = function(n3) {
         var t3 = n3.__c;
         t3 && t3.__R && t3.__R(), t3 && 32 & n3.__u && (n3.type = null), T3 && T3(n3);
       }, (L2.prototype = new b()).__c = function(n3, t3) {
-        var e6 = t3.__c, r3 = this;
-        null == r3.t && (r3.t = []), r3.t.push(e6);
-        var u3 = U(r3.__v), o3 = false, i5 = function() {
-          o3 || (o3 = true, e6.__R = null, u3 ? u3(l3) : l3());
+        var e5 = t3.__c, r3 = this;
+        null == r3.t && (r3.t = []), r3.t.push(e5);
+        var u3 = U(r3.__v), o3 = false, i4 = function() {
+          o3 || (o3 = true, e5.__R = null, u3 ? u3(l3) : l3());
         };
-        e6.__R = i5;
+        e5.__R = i4;
         var l3 = function() {
           if (!--r3.__u) {
             if (r3.state.__a) {
@@ -2234,10 +2234,10 @@ video {
               t4.forceUpdate();
           }
         };
-        r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i5, i5);
+        r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i4, i4);
       }, L2.prototype.componentWillUnmount = function() {
         this.t = [];
-      }, L2.prototype.render = function(n3, e6) {
+      }, L2.prototype.render = function(n3, e5) {
         if (this.__b) {
           if (this.__v.__k) {
             var r3 = document.createElement("div"), o3 = this.__v.__k[0].__c;
@@ -2245,38 +2245,38 @@ video {
           }
           this.__b = null;
         }
-        var i5 = e6.__a && y(g, null, n3.fallback);
-        return i5 && (i5.__u &= -33), [y(g, null, e6.__a ? null : n3.children), i5];
+        var i4 = e5.__a && y(g, null, n3.fallback);
+        return i4 && (i4.__u &= -33), [y(g, null, e5.__a ? null : n3.children), i4];
       };
-      V2 = function(n3, t3, e6) {
-        if (++e6[1] === e6[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
-          for (e6 = n3.u; e6; ) {
-            for (; e6.length > 3; )
-              e6.pop()();
-            if (e6[1] < e6[0])
+      V2 = function(n3, t3, e5) {
+        if (++e5[1] === e5[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
+          for (e5 = n3.u; e5; ) {
+            for (; e5.length > 3; )
+              e5.pop()();
+            if (e5[1] < e5[0])
               break;
-            n3.u = e6 = e6[2];
+            n3.u = e5 = e5[2];
           }
       };
       (M2.prototype = new b()).__a = function(n3) {
-        var t3 = this, e6 = U(t3.__v), r3 = t3.o.get(n3);
+        var t3 = this, e5 = U(t3.__v), r3 = t3.o.get(n3);
         return r3[0]++, function(u3) {
           var o3 = function() {
             t3.props.revealOrder ? (r3.push(u3), V2(t3, n3, r3)) : u3();
           };
-          e6 ? e6(o3) : o3();
+          e5 ? e5(o3) : o3();
         };
       }, M2.prototype.render = function(n3) {
         this.u = null, this.o = /* @__PURE__ */ new Map();
         var t3 = $(n3.children);
         n3.revealOrder && "b" === n3.revealOrder[0] && t3.reverse();
-        for (var e6 = t3.length; e6--; )
-          this.o.set(t3[e6], this.u = [1, 0, this.u]);
+        for (var e5 = t3.length; e5--; )
+          this.o.set(t3[e5], this.u = [1, 0, this.u]);
         return n3.children;
       }, M2.prototype.componentDidUpdate = M2.prototype.componentDidMount = function() {
         var n3 = this;
-        this.o.forEach(function(t3, e6) {
-          V2(n3, e6, t3);
+        this.o.forEach(function(t3, e5) {
+          V2(n3, e5, t3);
         });
       };
       z3 = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103;
@@ -2304,17 +2304,17 @@ video {
       en = l.vnode;
       l.vnode = function(n3) {
         "string" == typeof n3.type && function(n4) {
-          var t3 = n4.props, e6 = n4.type, u3 = {};
+          var t3 = n4.props, e5 = n4.type, u3 = {};
           for (var o3 in t3) {
-            var i5 = t3[o3];
-            if (!("value" === o3 && "defaultValue" in t3 && null == i5 || Y && "children" === o3 && "noscript" === e6 || "class" === o3 || "className" === o3)) {
+            var i4 = t3[o3];
+            if (!("value" === o3 && "defaultValue" in t3 && null == i4 || Y && "children" === o3 && "noscript" === e5 || "class" === o3 || "className" === o3)) {
               var l3 = o3.toLowerCase();
-              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i5 ? i5 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e6 && "textarea" !== e6 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e6.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i5 && (i5 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i5;
+              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i4 ? i4 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e5 && "textarea" !== e5 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e5.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i4 && (i4 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i4;
             }
           }
-          "select" == e6 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
+          "select" == e5 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
             n5.props.selected = -1 != u3.value.indexOf(n5.props.value);
-          })), "select" == e6 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
+          })), "select" == e5 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
             n5.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n5.props.value) : u3.defaultValue == n5.props.value;
           })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", tn)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n4.props = u3;
         }(n3), n3.$$typeof = z3, en && en(n3);
@@ -2326,8 +2326,8 @@ video {
       un = l.diffed;
       l.diffed = function(n3) {
         un && un(n3);
-        var t3 = n3.props, e6 = n3.__e;
-        null != e6 && "textarea" === n3.type && "value" in t3 && t3.value !== e6.value && (e6.value = null == t3.value ? "" : t3.value), nn = null;
+        var t3 = n3.props, e5 = n3.__e;
+        null != e5 && "textarea" === n3.type && "value" in t3 && t3.value !== e5.value && (e5.value = null == t3.value ? "" : t3.value), nn = null;
       };
       on = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
         return nn.__n[n3.__c].props.value;
@@ -2364,10 +2364,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58a4d91-9d3d-40fc-ae01-25ba8e0df1d6/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ee9461-0d6d-43af-b69a-c3137e436fe2/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c58a4d91-9d3d-40fc-ae01-25ba8e0df1d6/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2ee9461-0d6d-43af-b69a-c3137e436fe2/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2386,11 +2386,11 @@ video {
   function createIcon(path, options) {
     const { width, height } = options;
     return createComponent(function(_a) {
-      var _b = _a, { color: color2 } = _b, rest = __objRest(_b, ["color"]);
+      var _b = _a, { color } = _b, rest = __objRest(_b, ["color"]);
       return y(
         "svg",
         __spreadProps(__spreadValues({}, rest), { class: icon_module_default.icon, height, style: {
-          fill: typeof color2 === "undefined" ? "currentColor" : `var(--figma-color-icon-${color2})`
+          fill: typeof color === "undefined" ? "currentColor" : `var(--figma-color-icon-${color})`
         }, width, xmlns: "http://www.w3.org/2000/svg" }),
         y("path", { "clip-rule": "evenodd", d: path, "fill-rule": "evenodd" })
       );
@@ -2404,10 +2404,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/191bf6ff-4d86-4b0d-ab82-1a3e0d01e2e2/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8d849e0-8ff5-4273-af63-2d2f41c0565d/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/191bf6ff-4d86-4b0d-ab82-1a3e0d01e2e2/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8d849e0-8ff5-4273-af63-2d2f41c0565d/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2645,10 +2645,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d6a449d-9d96-4247-a567-8b8bf9cc356f/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7aa42602-6e1f-4553-af2a-423407e6e0a1/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1d6a449d-9d96-4247-a567-8b8bf9cc356f/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7aa42602-6e1f-4553-af2a-423407e6e0a1/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3122,10 +3122,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f3eed117-ed1c-4064-b88c-b0c53039baef/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f56ab549-4de6-46db-afdc-cbfb5b8fb2c7/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f3eed117-ed1c-4064-b88c-b0c53039baef/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f56ab549-4de6-46db-afdc-cbfb5b8fb2c7/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3195,10 +3195,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77295762-feff-470f-84ba-7e9f8c11230a/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/620ed9dc-4686-4ec6-a7fb-a276ec72d7b9/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77295762-feff-470f-84ba-7e9f8c11230a/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/620ed9dc-4686-4ec6-a7fb-a276ec72d7b9/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3302,10 +3302,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/779ca292-05fa-4a8a-835c-108a66f18038/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0c79dc5-5721-4b6e-9d03-c9713b48ca1a/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/779ca292-05fa-4a8a-835c-108a66f18038/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0c79dc5-5721-4b6e-9d03-c9713b48ca1a/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3452,7 +3452,7 @@ video {
         g: green / 255,
         r: red / 255
       };
-    } catch (e6) {
+    } catch (e5) {
       return null;
     }
   }
@@ -3699,7 +3699,7 @@ video {
     }
     try {
       return rgbHex(Math.round(r3 * 255), Math.round(g4 * 255), Math.round(b3 * 255)).toUpperCase();
-    } catch (e6) {
+    } catch (e5) {
       return null;
     }
   }
@@ -3763,10 +3763,10 @@ video {
   // node_modules/@create-figma-plugin/utilities/lib/number/is-valid-numeric-input.js
   function isValidNumericInput(value2, options = { integersOnly: false }) {
     const split = (value2[0] === "-" ? value2.substring(1) : value2).split(operatorRegex);
-    let i5 = -1;
-    while (++i5 < split.length) {
-      const operand = split[i5];
-      if (operand === "" && i5 !== split.length - 1 || (options.integersOnly === true ? integerOperandRegex : floatOperandRegex).test(operand) === false) {
+    let i4 = -1;
+    while (++i4 < split.length) {
+      const operand = split[i4];
+      if (operand === "" && i4 !== split.length - 1 || (options.integersOnly === true ? integerOperandRegex : floatOperandRegex).test(operand) === false) {
         return false;
       }
     }
@@ -3902,10 +3902,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82f3e434-0f02-4196-90cd-3560ecf5d4a3/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f539d8a0-8401-4d07-9e48-f13b8b75c0f0/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82f3e434-0f02-4196-90cd-3560ecf5d4a3/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f539d8a0-8401-4d07-9e48-f13b8b75c0f0/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4410,10 +4410,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5e62a87-53ec-41dd-82d6-c3796ef25c0a/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/daec5b8f-e25f-4c98-9c5e-6345d29b6a6c/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c5e62a87-53ec-41dd-82d6-c3796ef25c0a/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/daec5b8f-e25f-4c98-9c5e-6345d29b6a6c/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4753,10 +4753,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20053bb1-b7cd-4bb1-9673-df723deed749/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77306839-2223-408c-9a67-df43faa913bc/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/20053bb1-b7cd-4bb1-9673-df723deed749/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77306839-2223-408c-9a67-df43faa913bc/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4955,10 +4955,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3dd4902-73c2-4f99-8231-a5f1d9ba86cc/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8fa97a86-215f-4c5e-9972-fb34d393276e/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a3dd4902-73c2-4f99-8231-a5f1d9ba86cc/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8fa97a86-215f-4c5e-9972-fb34d393276e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5051,10 +5051,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3648b55c-d2b1-4a94-9170-7d18bab519a7/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6feb8271-ec88-4e68-82fb-b5d028e1c65e/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3648b55c-d2b1-4a94-9170-7d18bab519a7/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6feb8271-ec88-4e68-82fb-b5d028e1c65e/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5135,10 +5135,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d481743-7620-42cf-8836-f6cbcb3b5f58/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d02f0468-efef-48a9-863b-950ff4a0fae5/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0d481743-7620-42cf-8836-f6cbcb3b5f58/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d02f0468-efef-48a9-863b-950ff4a0fae5/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5167,9 +5167,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d986e9-e086-4371-835b-34ce1c1ff48f/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a832746-2143-48c9-bd6b-0a6c61afac49/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d986e9-e086-4371-835b-34ce1c1ff48f/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a832746-2143-48c9-bd6b-0a6c61afac49/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -5447,19 +5447,19 @@ svg {
     return { r: r3, g: g4, b: b3, a: a3 };
   }
   function labF(t3) {
-    const e6 = 216 / 24389;
+    const e5 = 216 / 24389;
     const kappa = 24389 / 27;
-    if (t3 > e6) {
+    if (t3 > e5) {
       return Math.pow(t3, 1 / 3);
     } else {
       return (kappa * t3 + 16) / 116;
     }
   }
   function labInvf(ft) {
-    const e6 = 216 / 24389;
+    const e5 = 216 / 24389;
     const kappa = 24389 / 27;
     const ft3 = ft * ft * ft;
-    if (ft3 > e6) {
+    if (ft3 > e5) {
       return ft3;
     } else {
       return (116 * ft - 16) / kappa;
@@ -6098,7 +6098,7 @@ svg {
                 lPlane = _HctSolver.criticalPlaneAbove(_HctSolver.trueDelinearized(left[axis]));
                 rPlane = _HctSolver.criticalPlaneBelow(_HctSolver.trueDelinearized(right[axis]));
               }
-              for (let i5 = 0; i5 < 8; i5++) {
+              for (let i4 = 0; i4 < 8; i4++) {
                 if (Math.abs(rPlane - lPlane) <= 1) {
                   break;
                 } else {
@@ -7851,11 +7851,11 @@ svg {
             return sanitizeDegreesDouble(sourceColor.hue + rotations[0]);
           }
           const size2 = hues.length;
-          for (let i5 = 0; i5 <= size2 - 2; i5++) {
-            const thisHue = hues[i5];
-            const nextHue = hues[i5 + 1];
+          for (let i4 = 0; i4 <= size2 - 2; i4++) {
+            const thisHue = hues[i4];
+            const nextHue = hues[i4 + 1];
             if (thisHue < sourceHue && sourceHue < nextHue) {
-              return sanitizeDegreesDouble(sourceHue + rotations[i5]);
+              return sanitizeDegreesDouble(sourceHue + rotations[i4]);
             }
           }
           return sourceHue;
@@ -8105,8 +8105,8 @@ svg {
           const hueExcitedProportions = new Array(360).fill(0);
           for (let hue = 0; hue < 360; hue++) {
             const proportion = huePopulation[hue] / populationSum;
-            for (let i5 = hue - 14; i5 < hue + 16; i5++) {
-              const neighborHue = sanitizeDegreesInt(i5);
+            for (let i4 = hue - 14; i4 < hue + 16; i4++) {
+              const neighborHue = sanitizeDegreesInt(i4);
               hueExcitedProportions[neighborHue] += proportion;
             }
           }
@@ -8165,9 +8165,9 @@ svg {
     const g4 = greenFromArgb(argb);
     const b3 = blueFromArgb(argb);
     const outParts = [r3.toString(16), g4.toString(16), b3.toString(16)];
-    for (const [i5, part] of outParts.entries()) {
+    for (const [i4, part] of outParts.entries()) {
       if (part.length === 1) {
-        outParts[i5] = "0" + part;
+        outParts[i4] = "0" + part;
       }
     }
     return "#" + outParts.join("");
@@ -8292,7 +8292,7 @@ svg {
       createLucideIcon = (iconName, iconNode) => {
         const Component = N2(
           (_a, ref) => {
-            var _b = _a, { color: color2 = "currentColor", size: size2 = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children } = _b, rest = __objRest(_b, ["color", "size", "strokeWidth", "absoluteStrokeWidth", "className", "children"]);
+            var _b = _a, { color = "currentColor", size: size2 = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children } = _b, rest = __objRest(_b, ["color", "size", "strokeWidth", "absoluteStrokeWidth", "className", "children"]);
             return y(
               "svg",
               __spreadValues(__spreadProps(__spreadValues({
@@ -8300,7 +8300,7 @@ svg {
               }, defaultAttributes), {
                 width: size2,
                 height: size2,
-                stroke: color2,
+                stroke: color,
                 strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size2) : strokeWidth,
                 className: ["lucide", `lucide-${toKebabCase(iconName)}`, className].join(" ")
               }), rest),
@@ -8492,8 +8492,8 @@ svg {
           return util2.objectValues(filtered);
         };
         util2.objectValues = (obj) => {
-          return util2.objectKeys(obj).map(function(e6) {
-            return obj[e6];
+          return util2.objectKeys(obj).map(function(e5) {
+            return obj[e5];
           });
         };
         util2.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object) => {
@@ -8653,10 +8653,10 @@ svg {
                 fieldErrors._errors.push(mapper(issue));
               } else {
                 let curr = fieldErrors;
-                let i5 = 0;
-                while (i5 < issue.path.length) {
-                  const el = issue.path[i5];
-                  const terminal = i5 === issue.path.length - 1;
+                let i4 = 0;
+                while (i4 < issue.path.length) {
+                  const el = issue.path[i4];
+                  const terminal = i4 === issue.path.length - 1;
                   if (!terminal) {
                     curr[el] = curr[el] || { _errors: [] };
                   } else {
@@ -8664,7 +8664,7 @@ svg {
                     curr[el]._errors.push(mapper(issue));
                   }
                   curr = curr[el];
-                  i5++;
+                  i4++;
                 }
               }
             }
@@ -10284,14 +10284,14 @@ svg {
             }
           }
           if (ctx.common.async) {
-            return Promise.all([...ctx.data].map((item, i5) => {
-              return def.type._parseAsync(new ParseInputLazyPath(ctx, item, ctx.path, i5));
+            return Promise.all([...ctx.data].map((item, i4) => {
+              return def.type._parseAsync(new ParseInputLazyPath(ctx, item, ctx.path, i4));
             })).then((result2) => {
               return ParseStatus.mergeArray(status, result2);
             });
           }
-          const result = [...ctx.data].map((item, i5) => {
-            return def.type._parseSync(new ParseInputLazyPath(ctx, item, ctx.path, i5));
+          const result = [...ctx.data].map((item, i4) => {
+            return def.type._parseSync(new ParseInputLazyPath(ctx, item, ctx.path, i4));
           });
           return ParseStatus.mergeArray(status, result);
         }
@@ -11109,7 +11109,7 @@ svg {
             }
             return { status: status.value, value: parsedSet };
           }
-          const elements = [...ctx.data.values()].map((item, i5) => valueType._parse(new ParseInputLazyPath(ctx, item, ctx.path, i5)));
+          const elements = [...ctx.data.values()].map((item, i4) => valueType._parse(new ParseInputLazyPath(ctx, item, ctx.path, i4)));
           if (ctx.common.async) {
             return Promise.all(elements).then((elements2) => finalizeSet(elements2));
           } else {
@@ -11194,13 +11194,13 @@ svg {
             const me = this;
             return OK(async function(...args) {
               const error = new ZodError([]);
-              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e6) => {
-                error.addIssue(makeArgsIssue(args, e6));
+              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e5) => {
+                error.addIssue(makeArgsIssue(args, e5));
                 throw error;
               });
               const result = await Reflect.apply(fn2, this, parsedArgs);
-              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e6) => {
-                error.addIssue(makeReturnsIssue(result, e6));
+              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e5) => {
+                error.addIssue(makeReturnsIssue(result, e5));
                 throw error;
               });
               return parsedReturns;
@@ -12123,14 +12123,14 @@ svg {
       exports.decimal = decimal;
       var englishLocales = ["AU", "GB", "HK", "IN", "NZ", "ZA", "ZM"];
       exports.englishLocales = englishLocales;
-      for (i5 = 0; i5 < englishLocales.length; i5++) {
-        locale = "en-".concat(englishLocales[i5]);
+      for (i4 = 0; i4 < englishLocales.length; i4++) {
+        locale = "en-".concat(englishLocales[i4]);
         alpha[locale] = alpha["en-US"];
         alphanumeric[locale] = alphanumeric["en-US"];
         decimal[locale] = decimal["en-US"];
       }
       var locale;
-      var i5;
+      var i4;
       var arabicLocales = ["AE", "BH", "DZ", "EG", "IQ", "JO", "KW", "LB", "LY", "MA", "QM", "QA", "SA", "SD", "SY", "TN", "YE"];
       exports.arabicLocales = arabicLocales;
       for (_i = 0; _i < arabicLocales.length; _i++) {
@@ -12660,8 +12660,8 @@ svg {
             return false;
           }
           var _user_parts = username.split(".");
-          for (var i5 = 0; i5 < _user_parts.length; i5++) {
-            if (!gmailUserPart.test(_user_parts[i5])) {
+          for (var i4 = 0; i4 < _user_parts.length; i4++) {
+            if (!gmailUserPart.test(_user_parts[i4])) {
               return false;
             }
           }
@@ -12728,8 +12728,8 @@ svg {
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
       }
-      function _slicedToArray(arr, i5) {
-        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i5) || _unsupportedIterableToArray(arr, i5) || _nonIterableRest();
+      function _slicedToArray(arr, i4) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i4) || _unsupportedIterableToArray(arr, i4) || _nonIterableRest();
       }
       function _nonIterableRest() {
         throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -12750,12 +12750,12 @@ svg {
       function _arrayLikeToArray(arr, len) {
         if (len == null || len > arr.length)
           len = arr.length;
-        for (var i5 = 0, arr2 = new Array(len); i5 < len; i5++) {
-          arr2[i5] = arr[i5];
+        for (var i4 = 0, arr2 = new Array(len); i4 < len; i4++) {
+          arr2[i4] = arr[i4];
         }
         return arr2;
       }
-      function _iterableToArrayLimit(arr, i5) {
+      function _iterableToArrayLimit(arr, i4) {
         if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr)))
           return;
         var _arr = [];
@@ -12765,7 +12765,7 @@ svg {
         try {
           for (var _i = arr[Symbol.iterator](), _s; !(_n2 = (_s = _i.next()).done); _n2 = true) {
             _arr.push(_s.value);
-            if (i5 && _arr.length === i5)
+            if (i4 && _arr.length === i4)
               break;
           }
         } catch (err) {
@@ -12805,8 +12805,8 @@ svg {
         return Object.prototype.toString.call(obj) === "[object RegExp]";
       }
       function checkHost(host, matches) {
-        for (var i5 = 0; i5 < matches.length; i5++) {
-          var match = matches[i5];
+        for (var i4 = 0; i4 < matches.length; i4++) {
+          var match = matches[i4];
           if (host === match || isRegExp2(match) && match.test(host)) {
             return true;
           }
@@ -13031,13 +13031,13 @@ svg {
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
       }
-      function _slicedToArray(arr, i5) {
-        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i5) || _unsupportedIterableToArray(arr, i5) || _nonIterableRest();
+      function _slicedToArray(arr, i4) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i4) || _unsupportedIterableToArray(arr, i4) || _nonIterableRest();
       }
       function _nonIterableRest() {
         throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }
-      function _iterableToArrayLimit(arr, i5) {
+      function _iterableToArrayLimit(arr, i4) {
         if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr)))
           return;
         var _arr = [];
@@ -13047,7 +13047,7 @@ svg {
         try {
           for (var _i = arr[Symbol.iterator](), _s; !(_n2 = (_s = _i.next()).done); _n2 = true) {
             _arr.push(_s.value);
-            if (i5 && _arr.length === i5)
+            if (i4 && _arr.length === i4)
               break;
           }
         } catch (err) {
@@ -13074,14 +13074,14 @@ svg {
           if (Array.isArray(o3) || (it = _unsupportedIterableToArray(o3)) || allowArrayLike && o3 && typeof o3.length === "number") {
             if (it)
               o3 = it;
-            var i5 = 0;
+            var i4 = 0;
             var F4 = function F5() {
             };
             return { s: F4, n: function n3() {
-              if (i5 >= o3.length)
+              if (i4 >= o3.length)
                 return { done: true };
-              return { done: false, value: o3[i5++] };
-            }, e: function e6(_e2) {
+              return { done: false, value: o3[i4++] };
+            }, e: function e5(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -13094,7 +13094,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e6(_e3) {
+        }, e: function e5(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -13123,8 +13123,8 @@ svg {
       function _arrayLikeToArray(arr, len) {
         if (len == null || len > arr.length)
           len = arr.length;
-        for (var i5 = 0, arr2 = new Array(len); i5 < len; i5++) {
-          arr2[i5] = arr[i5];
+        for (var i4 = 0, arr2 = new Array(len); i4 < len; i4++) {
+          arr2[i4] = arr[i4];
         }
         return arr2;
       }
@@ -13138,8 +13138,8 @@ svg {
       }
       function zip(date, format5) {
         var zippedArr = [], len = Math.min(date.length, format5.length);
-        for (var i5 = 0; i5 < len; i5++) {
-          zippedArr.push([date[i5], format5[i5]]);
+        for (var i4 = 0; i4 < len; i4++) {
+          zippedArr.push([date[i4], format5[i4]]);
         }
         return zippedArr;
       }
@@ -13667,8 +13667,8 @@ svg {
         }
         str = str.replace(/-/g, "");
         var sum3 = 0, mul2 = 2, l3 = 14;
-        for (var i5 = 0; i5 < l3; i5++) {
-          var digit = str.substring(l3 - i5 - 1, l3 - i5);
+        for (var i4 = 0; i4 < l3; i4++) {
+          var digit = str.substring(l3 - i4 - 1, l3 - i4);
           var tp = parseInt(digit, 10) * mul2;
           if (tp >= 10) {
             sum3 += tp % 10 + 1;
@@ -14449,7 +14449,7 @@ svg {
           }
           var obj = JSON.parse(str);
           return primitives.includes(obj) || !!obj && _typeof2(obj) === "object";
-        } catch (e6) {
+        } catch (e5) {
         }
         return false;
       }
@@ -14658,12 +14658,12 @@ svg {
       }
       function isIn(str, options) {
         (0, _assertString.default)(str);
-        var i5;
+        var i4;
         if (Object.prototype.toString.call(options) === "[object Array]") {
           var array = [];
-          for (i5 in options) {
-            if ({}.hasOwnProperty.call(options, i5)) {
-              array[i5] = (0, _toString.default)(options[i5]);
+          for (i4 in options) {
+            if ({}.hasOwnProperty.call(options, i4)) {
+              array[i4] = (0, _toString.default)(options[i4]);
             }
           }
           return array.indexOf(str) >= 0;
@@ -14698,8 +14698,8 @@ svg {
         var digit;
         var tmpNum;
         var shouldDouble;
-        for (var i5 = sanitized.length - 1; i5 >= 0; i5--) {
-          digit = sanitized.substring(i5, i5 + 1);
+        for (var i4 = sanitized.length - 1; i4 >= 0; i4--) {
+          digit = sanitized.substring(i4, i4 + 1);
           tmpNum = parseInt(digit, 10);
           if (shouldDouble) {
             tmpNum *= 2;
@@ -14861,8 +14861,8 @@ svg {
           }
           var c3 = 0;
           var invertedArray = sanitized.replace(/\s/g, "").split("").map(Number).reverse();
-          invertedArray.forEach(function(val, i5) {
-            c3 = d3[c3][p3[i5 % 8][val]];
+          invertedArray.forEach(function(val, i4) {
+            c3 = d3[c3][p3[i4 % 8][val]];
           });
           return c3 === 0;
         },
@@ -14874,8 +14874,8 @@ svg {
             return false;
           var lastNumber = parseInt(str.slice(9, 10), 10);
           var sum3 = 0;
-          for (var i5 = 0; i5 < 9; i5++) {
-            sum3 += parseInt(str.slice(i5, i5 + 1), 10) * (10 - i5);
+          for (var i4 = 0; i4 < 9; i4++) {
+            sum3 += parseInt(str.slice(i4, i4 + 1), 10) * (10 - i4);
           }
           sum3 %= 11;
           return sum3 < 2 && lastNumber === sum3 || sum3 >= 2 && lastNumber === 11 - sum3;
@@ -14906,8 +14906,8 @@ svg {
           if (!str.match(/^[1-8]\d{12}$/))
             return false;
           var sum3 = 0;
-          for (var i5 = 0; i5 < 12; i5++) {
-            sum3 += parseInt(str[i5], 10) * (13 - i5);
+          for (var i4 = 0; i4 < 12; i4++) {
+            sum3 += parseInt(str[i4], 10) * (13 - i4);
           }
           return str[12] === ((11 - sum3 % 11) % 10).toString();
         },
@@ -14928,8 +14928,8 @@ svg {
           }
           var id = sanitized;
           var sum3 = 0, incNum;
-          for (var i5 = 0; i5 < id.length; i5++) {
-            incNum = Number(id[i5]) * (i5 % 2 + 1);
+          for (var i4 = 0; i4 < id.length; i4++) {
+            incNum = Number(id[i4]) * (i4 % 2 + 1);
             sum3 += incNum > 9 ? incNum - 9 : incNum;
           }
           return sum3 % 10 === 0;
@@ -15043,8 +15043,8 @@ svg {
           var getParityBit = function getParityBit2(idCardNo) {
             var id17 = idCardNo.substring(0, 17);
             var power = 0;
-            for (var i5 = 0; i5 < 17; i5++) {
-              power += parseInt(id17.charAt(i5), 10) * parseInt(powers[i5], 10);
+            for (var i4 = 0; i4 < 17; i4++) {
+              power += parseInt(id17.charAt(i4), 10) * parseInt(powers[i4], 10);
             }
             var mod3 = power % 11;
             return parityBit[mod3];
@@ -15102,13 +15102,13 @@ svg {
           if (str.length === 8)
             str = "3".concat(str);
           var checkSumVal = 0;
-          for (var i5 = 0; i5 <= 7; i5++) {
+          for (var i4 = 0; i4 <= 7; i4++) {
             var convertedChar = void 0;
-            if (!regexIsDigit.test(str[i5]))
-              convertedChar = (str[i5].charCodeAt(0) - 55) % 11;
+            if (!regexIsDigit.test(str[i4]))
+              convertedChar = (str[i4].charCodeAt(0) - 55) % 11;
             else
-              convertedChar = str[i5];
-            checkSumVal += convertedChar * (9 - i5);
+              convertedChar = str[i4];
+            checkSumVal += convertedChar * (9 - i4);
           }
           checkSumVal %= 11;
           var checkSumConverted;
@@ -15248,9 +15248,9 @@ svg {
         }
         var double = true;
         var sum3 = 0;
-        for (var i5 = str.length - 2; i5 >= 0; i5--) {
-          if (str[i5] >= "A" && str[i5] <= "Z") {
-            var value2 = str[i5].charCodeAt(0) - 55;
+        for (var i4 = str.length - 2; i4 >= 0; i4--) {
+          if (str[i4] >= "A" && str[i4] <= "Z") {
+            var value2 = str[i4].charCodeAt(0) - 55;
             var lo = value2 % 10;
             var hi = Math.trunc(value2 / 10);
             for (var _i = 0, _arr = [lo, hi]; _i < _arr.length; _i++) {
@@ -15267,7 +15267,7 @@ svg {
               double = !double;
             }
           } else {
-            var _digit = str[i5].charCodeAt(0) - "0".charCodeAt(0);
+            var _digit = str[i4].charCodeAt(0) - "0".charCodeAt(0);
             if (double) {
               if (_digit >= 5) {
                 sum3 += 1 + (_digit - 5) * 2;
@@ -15319,8 +15319,8 @@ svg {
           if (!possibleIsbn10.test(sanitizedIsbn)) {
             return false;
           }
-          for (var i5 = 0; i5 < version3 - 1; i5++) {
-            checksum += (i5 + 1) * sanitizedIsbn.charAt(i5);
+          for (var i4 = 0; i4 < version3 - 1; i4++) {
+            checksum += (i4 + 1) * sanitizedIsbn.charAt(i4);
           }
           if (sanitizedIsbn.charAt(9) === "X") {
             checksum += 10 * 10;
@@ -15372,9 +15372,9 @@ svg {
         }
         var digits2 = str.replace("-", "").toUpperCase();
         var checksum = 0;
-        for (var i5 = 0; i5 < digits2.length; i5++) {
-          var digit = digits2[i5];
-          checksum += (digit === "X" ? 10 : +digit) * (8 - i5);
+        for (var i4 = 0; i4 < digits2.length; i4++) {
+          var digit = digits2[i4];
+          checksum += (digit === "X" ? 10 : +digit) * (8 - i4);
         }
         return checksum % 11 === 0;
       }
@@ -15396,8 +15396,8 @@ svg {
       exports.verhoeffCheck = verhoeffCheck;
       function iso7064Check(str) {
         var checkvalue = 10;
-        for (var i5 = 0; i5 < str.length - 1; i5++) {
-          checkvalue = (parseInt(str[i5], 10) + checkvalue) % 10 === 0 ? 10 * 2 % 11 : (parseInt(str[i5], 10) + checkvalue) % 10 * 2 % 11;
+        for (var i4 = 0; i4 < str.length - 1; i4++) {
+          checkvalue = (parseInt(str[i4], 10) + checkvalue) % 10 === 0 ? 10 * 2 % 11 : (parseInt(str[i4], 10) + checkvalue) % 10 * 2 % 11;
         }
         checkvalue = checkvalue === 1 ? 0 : 11 - checkvalue;
         return checkvalue === parseInt(str[10], 10);
@@ -15405,9 +15405,9 @@ svg {
       function luhnCheck(str) {
         var checksum = 0;
         var second = false;
-        for (var i5 = str.length - 1; i5 >= 0; i5--) {
+        for (var i4 = str.length - 1; i4 >= 0; i4--) {
           if (second) {
-            var product3 = parseInt(str[i5], 10) * 2;
+            var product3 = parseInt(str[i4], 10) * 2;
             if (product3 > 9) {
               checksum += product3.toString().split("").map(function(a3) {
                 return parseInt(a3, 10);
@@ -15418,7 +15418,7 @@ svg {
               checksum += product3;
             }
           } else {
-            checksum += parseInt(str[i5], 10);
+            checksum += parseInt(str[i4], 10);
           }
           second = !second;
         }
@@ -15426,8 +15426,8 @@ svg {
       }
       function reverseMultiplyAndSum(digits2, base) {
         var total = 0;
-        for (var i5 = 0; i5 < digits2.length; i5++) {
-          total += digits2[i5] * (base - i5);
+        for (var i4 = 0; i4 < digits2.length; i4++) {
+          total += digits2[i4] * (base - i4);
         }
         return total;
       }
@@ -15436,8 +15436,8 @@ svg {
         var p_table = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 5, 7, 6, 2, 8, 3, 0, 9, 4], [5, 8, 0, 3, 7, 9, 6, 1, 4, 2], [8, 9, 1, 6, 0, 4, 3, 5, 2, 7], [9, 4, 5, 3, 1, 2, 6, 8, 7, 0], [4, 2, 8, 6, 5, 7, 3, 9, 0, 1], [2, 7, 9, 3, 8, 0, 6, 4, 1, 5], [7, 0, 4, 6, 9, 1, 3, 2, 5, 8]];
         var str_copy = str.split("").reverse().join("");
         var checksum = 0;
-        for (var i5 = 0; i5 < str_copy.length; i5++) {
-          checksum = d_table[checksum][p_table[i5 % 8][parseInt(str_copy[i5], 10)]];
+        for (var i4 = 0; i4 < str_copy.length; i4++) {
+          checksum = d_table[checksum][p_table[i4 % 8][parseInt(str_copy[i4], 10)]];
         }
         return checksum === 0;
       }
@@ -15539,8 +15539,8 @@ svg {
       function _arrayLikeToArray(arr, len) {
         if (len == null || len > arr.length)
           len = arr.length;
-        for (var i5 = 0, arr2 = new Array(len); i5 < len; i5++) {
-          arr2[i5] = arr[i5];
+        for (var i4 = 0, arr2 = new Array(len); i4 < len; i4++) {
+          arr2[i4] = arr[i4];
         }
         return arr2;
       }
@@ -15568,8 +15568,8 @@ svg {
         });
         var multip_lookup = [2, 4, 8, 5, 10, 9, 7, 3, 6];
         var checksum = 0;
-        for (var i5 = 0; i5 < multip_lookup.length; i5++) {
-          checksum += digits2[i5] * multip_lookup[i5];
+        for (var i4 = 0; i4 < multip_lookup.length; i4++) {
+          checksum += digits2[i4] * multip_lookup[i4];
         }
         checksum = checksum % 11 === 10 ? 0 : checksum % 11;
         return checksum === digits2[9];
@@ -15578,13 +15578,13 @@ svg {
         var digitsArray = input.split("");
         var even = digitsArray.filter(function(_3, idx) {
           return idx % 2;
-        }).map(function(i5) {
-          return Number(i5) * 2;
+        }).map(function(i4) {
+          return Number(i4) * 2;
         }).join("").split("");
         var total = digitsArray.filter(function(_3, idx) {
           return !(idx % 2);
-        }).concat(even).map(function(i5) {
-          return Number(i5);
+        }).concat(even).map(function(i4) {
+          return Number(i4);
         }).reduce(function(acc, cur) {
           return acc + cur;
         });
@@ -15651,11 +15651,11 @@ svg {
           return parseInt(a3, 10);
         });
         var occurences = [];
-        for (var i5 = 0; i5 < digits2.length - 1; i5++) {
+        for (var i4 = 0; i4 < digits2.length - 1; i4++) {
           occurences.push("");
           for (var j4 = 0; j4 < digits2.length - 1; j4++) {
-            if (digits2[i5] === digits2[j4]) {
-              occurences[i5] += j4;
+            if (digits2[i4] === digits2[j4]) {
+              occurences[i4] += j4;
             }
           }
         }
@@ -15722,8 +15722,8 @@ svg {
         });
         var checksum = 0;
         var weight = 4;
-        for (var i5 = 0; i5 < 9; i5++) {
-          checksum += digits2[i5] * weight;
+        for (var i4 = 0; i4 < 9; i4++) {
+          checksum += digits2[i4] * weight;
           weight -= 1;
           if (weight === 1) {
             weight = 7;
@@ -15740,8 +15740,8 @@ svg {
           return parseInt(a3, 10);
         });
         var checksum = 0;
-        for (var i5 = 1; i5 < digits2.length; i5 += 2) {
-          checksum += digits2[i5];
+        for (var i4 = 1; i4 < digits2.length; i4 += 2) {
+          checksum += digits2[i4];
         }
         for (var _i2 = 0; _i2 < digits2.length; _i2 += 2) {
           if (digits2[_i2] < 2) {
@@ -15760,8 +15760,8 @@ svg {
           return parseInt(a3, 10);
         });
         var checksum = 0;
-        for (var i5 = 0; i5 < 8; i5++) {
-          checksum += digits2[i5] * Math.pow(2, 8 - i5);
+        for (var i4 = 0; i4 < 8; i4++) {
+          checksum += digits2[i4] * Math.pow(2, 8 - i4);
         }
         return checksum % 11 % 10 === digits2[8];
       }
@@ -15853,8 +15853,8 @@ svg {
         });
         var checksum = 0;
         var weight = 1;
-        for (var i5 = 0; i5 < 10; i5++) {
-          checksum += digits2[i5] * weight;
+        for (var i4 = 0; i4 < 10; i4++) {
+          checksum += digits2[i4] * weight;
           weight += 1;
           if (weight === 10) {
             weight = 1;
@@ -15943,27 +15943,27 @@ svg {
           return parseInt(a3, 10);
         });
         var checksum = 8;
-        for (var i5 = 1; i5 < 9; i5++) {
-          checksum += digits2[i5] * (i5 + 1);
+        for (var i4 = 1; i4 < 9; i4++) {
+          checksum += digits2[i4] * (i4 + 1);
         }
         return checksum % 11 === digits2[9];
       }
       function itItNameCheck(name310) {
         var vowelflag = false;
         var xflag = false;
-        for (var i5 = 0; i5 < 3; i5++) {
-          if (!vowelflag && /[AEIOU]/.test(name310[i5])) {
+        for (var i4 = 0; i4 < 3; i4++) {
+          if (!vowelflag && /[AEIOU]/.test(name310[i4])) {
             vowelflag = true;
-          } else if (!xflag && vowelflag && name310[i5] === "X") {
+          } else if (!xflag && vowelflag && name310[i4] === "X") {
             xflag = true;
-          } else if (i5 > 0) {
+          } else if (i4 > 0) {
             if (vowelflag && !xflag) {
-              if (!/[AEIOU]/.test(name310[i5])) {
+              if (!/[AEIOU]/.test(name310[i4])) {
                 return false;
               }
             }
             if (xflag) {
-              if (!/X/.test(name310[i5])) {
+              if (!/X/.test(name310[i4])) {
                 return false;
               }
             }
@@ -15993,9 +15993,9 @@ svg {
           V: "9"
         };
         for (var _i4 = 0, _number_locations = number_locations; _i4 < _number_locations.length; _i4++) {
-          var i5 = _number_locations[_i4];
-          if (chars[i5] in number_replace) {
-            chars.splice(i5, 1, number_replace[chars[i5]]);
+          var i4 = _number_locations[_i4];
+          if (chars[i4] in number_replace) {
+            chars.splice(i4, 1, number_replace[chars[i4]]);
           }
         }
         var month_replace = {
@@ -16106,8 +16106,8 @@ svg {
           }
           var checksum = 1101;
           var multip_lookup = [1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
-          for (var i5 = 0; i5 < tin.length - 1; i5++) {
-            checksum -= parseInt(tin[i5], 10) * multip_lookup[i5];
+          for (var i4 = 0; i4 < tin.length - 1; i4++) {
+            checksum -= parseInt(tin[i4], 10) * multip_lookup[i4];
           }
           return parseInt(tin[10], 10) === checksum % 11;
         }
@@ -16149,8 +16149,8 @@ svg {
         if (tin.length === 10) {
           var lookup = [6, 5, 7, 2, 3, 4, 5, 6, 7];
           var _checksum = 0;
-          for (var i5 = 0; i5 < lookup.length; i5++) {
-            _checksum += parseInt(tin[i5], 10) * lookup[i5];
+          for (var i4 = 0; i4 < lookup.length; i4++) {
+            _checksum += parseInt(tin[i4], 10) * lookup[i4];
           }
           _checksum %= 11;
           if (_checksum === 10) {
@@ -16206,8 +16206,8 @@ svg {
             tin === "11111111111" || tin === "22222222222" || tin === "33333333333" || tin === "44444444444" || tin === "55555555555" || tin === "66666666666" || tin === "77777777777" || tin === "88888888888" || tin === "99999999999" || tin === "00000000000"
           )
             return false;
-          for (var i5 = 1; i5 <= 9; i5++) {
-            _sum += parseInt(tin.substring(i5 - 1, i5), 10) * (11 - i5);
+          for (var i4 = 1; i4 <= 9; i4++) {
+            _sum += parseInt(tin.substring(i4 - 1, i4), 10) * (11 - i4);
           }
           remainder = _sum * 10 % 11;
           if (remainder === 10)
@@ -16304,8 +16304,8 @@ svg {
           });
           var multipliers = [2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9];
           var checksum = 0;
-          for (var i5 = 0; i5 < multipliers.length; i5++) {
-            checksum += digits2[i5] * multipliers[i5];
+          for (var i4 = 0; i4 < multipliers.length; i4++) {
+            checksum += digits2[i4] * multipliers[i4];
           }
           if (checksum % 11 === 10) {
             return digits2[12] === 1;
@@ -16860,10 +16860,10 @@ svg {
           return false;
         if (str.length === 11) {
           var sum3 = 0;
-          for (var i5 = 0; i5 < str.length - 1; i5++) {
-            if (!isDigit.test(str[i5])) {
+          for (var i4 = 0; i4 < str.length - 1; i4++) {
+            if (!isDigit.test(str[i4])) {
               var convertedCode = void 0;
-              var letterCode = str.charCodeAt(i5) - 55;
+              var letterCode = str.charCodeAt(i4) - 55;
               if (letterCode < 11)
                 convertedCode = letterCode;
               else if (letterCode >= 11 && letterCode <= 20)
@@ -16872,9 +16872,9 @@ svg {
                 convertedCode = 23 + letterCode % 21;
               else
                 convertedCode = 34 + letterCode % 31;
-              sum3 += convertedCode * Math.pow(2, i5);
+              sum3 += convertedCode * Math.pow(2, i4);
             } else
-              sum3 += str[i5] * Math.pow(2, i5);
+              sum3 += str[i4] * Math.pow(2, i4);
           }
           var checkSumDigit = sum3 % 11;
           return Number(str[str.length - 1]) === checkSumDigit;
@@ -17125,8 +17125,8 @@ svg {
         if (mediaType !== "" && !validMediaType.test(mediaType)) {
           return false;
         }
-        for (var i5 = 0; i5 < attributes.length; i5++) {
-          if (!(i5 === attributes.length - 1 && attributes[i5].toLowerCase() === "base64") && !validAttribute.test(attributes[i5])) {
+        for (var i4 = 0; i4 < attributes.length; i4++) {
+          if (!(i4 === attributes.length - 1 && attributes[i4].toLowerCase() === "base64") && !validAttribute.test(attributes[i4])) {
             return false;
           }
         }
@@ -17253,13 +17253,13 @@ svg {
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
       }
-      function _slicedToArray(arr, i5) {
-        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i5) || _unsupportedIterableToArray(arr, i5) || _nonIterableRest();
+      function _slicedToArray(arr, i4) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i4) || _unsupportedIterableToArray(arr, i4) || _nonIterableRest();
       }
       function _nonIterableRest() {
         throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }
-      function _iterableToArrayLimit(arr, i5) {
+      function _iterableToArrayLimit(arr, i4) {
         if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr)))
           return;
         var _arr = [];
@@ -17269,7 +17269,7 @@ svg {
         try {
           for (var _i = arr[Symbol.iterator](), _s; !(_n2 = (_s = _i.next()).done); _n2 = true) {
             _arr.push(_s.value);
-            if (i5 && _arr.length === i5)
+            if (i4 && _arr.length === i4)
               break;
           }
         } catch (err) {
@@ -17296,14 +17296,14 @@ svg {
           if (Array.isArray(o3) || (it = _unsupportedIterableToArray(o3)) || allowArrayLike && o3 && typeof o3.length === "number") {
             if (it)
               o3 = it;
-            var i5 = 0;
+            var i4 = 0;
             var F4 = function F5() {
             };
             return { s: F4, n: function n3() {
-              if (i5 >= o3.length)
+              if (i4 >= o3.length)
                 return { done: true };
-              return { done: false, value: o3[i5++] };
-            }, e: function e6(_e2) {
+              return { done: false, value: o3[i4++] };
+            }, e: function e5(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -17316,7 +17316,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e6(_e3) {
+        }, e: function e5(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -17345,8 +17345,8 @@ svg {
       function _arrayLikeToArray(arr, len) {
         if (len == null || len > arr.length)
           len = arr.length;
-        for (var i5 = 0, arr2 = new Array(len); i5 < len; i5++) {
-          arr2[i5] = arr[i5];
+        for (var i4 = 0, arr2 = new Array(len); i4 < len; i4++) {
+          arr2[i4] = arr[i4];
         }
         return arr2;
       }
@@ -17699,8 +17699,8 @@ svg {
       }
       function isWhitelisted(str, chars) {
         (0, _assertString.default)(str);
-        for (var i5 = str.length - 1; i5 >= 0; i5--) {
-          if (chars.indexOf(str[i5]) === -1) {
+        for (var i4 = str.length - 1; i4 >= 0; i4--) {
+          if (chars.indexOf(str[i4]) === -1) {
             return false;
           }
         }
@@ -18692,7 +18692,7 @@ svg {
             return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
-          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue2 = React.useDebugValue;
+          var useState2 = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue2 = React.useDebugValue;
           var didWarnOld18Alpha = false;
           var didWarnUncachedGetSnapshot = false;
           function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
@@ -18714,7 +18714,7 @@ svg {
                 }
               }
             }
-            var _useState = useState({
+            var _useState = useState2({
               inst: {
                 value: value2,
                 getSnapshot
@@ -18931,300 +18931,11 @@ svg {
     }
   });
 
-  // src/hooks/useColor.ts
-  var import_validator, RgbaSchema, HctSchema, SolidColorSchema, ColorDataSchema, ColorActionsSchema, ColorSchema, cleanedHexColor, updateHctValues, setHue, setChroma, setTone, hexFromString, HctFromHex, argbFromHct, rgbFromHex, rgbaFromHct, hexFromHct, SolidColorFromRgbColor, colorStore, useColorStore, useColor;
-  var init_useColor = __esm({
-    "src/hooks/useColor.ts"() {
-      "use strict";
-      init_hooks_module();
-      init_material_color_utilities();
-      init_lib();
-      init_lib3();
-      import_validator = __toESM(require_validator());
-      init_esm();
-      RgbaSchema = z4.object({
-        r: z4.number().min(0).max(255),
-        g: z4.number().min(0).max(255),
-        b: z4.number().min(0).max(255),
-        a: z4.number().min(0).max(255)
-      });
-      HctSchema = z4.object({
-        hue: z4.number().min(0).max(360),
-        chroma: z4.number().min(0).max(150),
-        tone: z4.number().min(0).max(100)
-      });
-      SolidColorSchema = z4.object({
-        type: z4.literal("SOLID"),
-        color: z4.object({
-          r: z4.number().min(0).max(255),
-          g: z4.number().min(0).max(255),
-          b: z4.number().min(0).max(255)
-        })
-      });
-      ColorDataSchema = z4.object({
-        sourceHex: z4.string(),
-        hct: HctSchema,
-        rgba: z4.union([z4.string(), RgbaSchema]),
-        hex: z4.string().refine(import_validator.default.isHexColor),
-        figmaSolidColor: SolidColorSchema
-      });
-      ColorActionsSchema = z4.object({
-        setSourceHex: z4.function().args(z4.string(), z4.void()),
-        setHct: z4.function().args(HctSchema, z4.void()),
-        setRgba: z4.function().args(z4.union([z4.string(), RgbaSchema]), z4.void()),
-        setHex: z4.function().args(z4.string(), z4.void()),
-        setFigmaSolidColor: z4.function().args(SolidColorSchema, z4.void()),
-        setHue: z4.function().args(z4.number(), z4.void()),
-        setChroma: z4.function().args(z4.number(), z4.void()),
-        setTone: z4.function().args(z4.number(), z4.void())
-      });
-      ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
-      cleanedHexColor = (hexColor) => {
-        return hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
-      };
-      updateHctValues = (newHue, newChroma, newTone) => {
-        const updatedHct = Hct.from(newHue, newChroma, newTone);
-        return useColorStore.setState({ hct: updatedHct });
-      };
-      setHue = (newHue) => updateHctValues(
-        newHue,
-        useColorStore.getState().hct.chroma,
-        useColorStore.getState().hct.tone
-      );
-      setChroma = (newChroma) => updateHctValues(
-        useColorStore.getState().hct.hue,
-        newChroma,
-        useColorStore.getState().hct.tone
-      );
-      setTone = (newTone) => updateHctValues(
-        useColorStore.getState().hct.hue,
-        useColorStore.getState().hct.chroma,
-        newTone
-      );
-      hexFromString = (hexColor) => cleanedHexColor(hexColor);
-      HctFromHex = (hexColor) => Hct.fromInt(argbFromHex(hexFromString(hexColor)));
-      argbFromHct = (hctColor) => (hctColor == null ? void 0 : hctColor.toInt()) || Hct.from(0, 0, 0).toInt();
-      rgbFromHex = (hex2) => {
-        const result = convertHexColorToRgbColor(cleanedHexColor(hex2));
-        return result !== null ? result : { r: 0, g: 0, b: 0 };
-      };
-      rgbaFromHct = (hct) => {
-        const argb = argbFromHct(hct);
-        return rgbaFromArgb(argb);
-      };
-      hexFromHct = (hct) => {
-        const argb = argbFromHct(hct);
-        return hexFromArgb(argb);
-      };
-      SolidColorFromRgbColor = (rgbColor) => {
-        if (!rgbColor) {
-          return { type: "SOLID", color: { r: 0, g: 0, b: 0 } };
-        }
-        return { type: "SOLID", color: rgbColor };
-      };
-      colorStore = (set) => ({
-        sourceHex: "397456",
-        hct: { hue: 0, chroma: 0, tone: 0 },
-        rgba: { r: 0, g: 0, b: 0, a: 0 },
-        hex: "000000",
-        figmaSolidColor: { type: "SOLID", color: { r: 0, g: 0, b: 0 } },
-        setSourceHex: (sourceHex) => set(() => ({ sourceHex })),
-        setHct: (hct) => set(() => ({ hct })),
-        setRgba: (rgba) => set(() => ({ rgba })),
-        setHex: (hex2) => set(() => ({ hex: hex2 })),
-        setFigmaSolidColor: (figmaSolidColor) => set(() => ({ figmaSolidColor })),
-        setHue: (hue) => set((state) => ({ hct: __spreadProps(__spreadValues({}, state.hct), { hue }) })),
-        setChroma: (chroma) => set((state) => ({ hct: __spreadProps(__spreadValues({}, state.hct), { chroma }) })),
-        setTone: (tone) => set((state) => ({ hct: __spreadProps(__spreadValues({}, state.hct), { tone }) }))
-      });
-      useColorStore = create()((...a3) => __spreadValues({}, colorStore(...a3)));
-      useColor = (hexColor) => {
-        const colorStore2 = useColorStore;
-        const color2 = colorStore2((state) => state);
-        const sourceHex = color2.sourceHex;
-        const setSourceHex = (sourceHex2) => color2.setSourceHex(sourceHex2);
-        const hct = color2.hct;
-        const setHct = (hct2) => {
-          if (typeof hct2 === "string") {
-            const hctFromString = HctFromHex(hct2);
-            return color2.setHct(hctFromString);
-          }
-          if (typeof hct2 === "object") {
-            const hctFromObject = Hct.from(hct2.hue, hct2.chroma, hct2.tone);
-            return color2.setHct(hctFromObject);
-          }
-          color2.setHct(hct2);
-        };
-        const rgba = color2.rgba;
-        const setRgba = (rgba2) => color2.setRgba(rgba2);
-        const hex2 = color2.hex;
-        const setHex = (hex3) => color2.setHex(hex3);
-        const figmaSolidColor = color2.figmaSolidColor;
-        const setFigmaSolidColor = (figmaSolidColor2) => color2.setFigmaSolidColor(figmaSolidColor2);
-        const sourceHexRef = _2(colorStore2.getState().sourceHex);
-        const hctRef = _2(colorStore2.getState().hct);
-        p2(() => {
-          colorStore2.subscribe((state) => {
-            if (sourceHexRef.current !== state.sourceHex) {
-              const newHct = HctFromHex(state.sourceHex);
-              sourceHexRef.current = state.sourceHex;
-              setHct(newHct);
-            }
-            if (hctRef.current.hue !== state.hct.hue || hctRef.current.chroma !== state.hct.chroma || hctRef.current.tone !== state.hct.tone) {
-              hctRef.current = state.hct;
-              const newHex = hexFromHct(
-                Hct.from(state.hct.hue, state.hct.chroma, state.hct.tone)
-              );
-              setRgba(
-                rgbaFromHct(
-                  Hct.from(
-                    state.hct.hue,
-                    state.hct.chroma,
-                    state.hct.tone
-                  )
-                )
-              );
-              setHex(newHex);
-              setFigmaSolidColor(SolidColorFromRgbColor(rgbFromHex(newHex)));
-            }
-          });
-        }, []);
-        p2(() => {
-          if (sourceHex !== hexColor) {
-            setSourceHex(hexColor != null ? hexColor : "397456");
-          }
-        }, []);
-        return {
-          sourceHex,
-          rgba,
-          hct,
-          hex: hex2,
-          figmaSolidColor,
-          setSourceHex,
-          setHct,
-          setRgba,
-          setHex,
-          setFigmaSolidColor,
-          setHue,
-          setChroma,
-          setTone
-        };
-      };
-    }
-  });
-
-  // node_modules/nanoid/index.browser.js
-  var nanoid;
-  var init_index_browser = __esm({
-    "node_modules/nanoid/index.browser.js"() {
-      nanoid = (size2 = 21) => crypto.getRandomValues(new Uint8Array(size2)).reduce((id, byte) => {
-        byte &= 63;
-        if (byte < 36) {
-          id += byte.toString(36);
-        } else if (byte < 62) {
-          id += (byte - 26).toString(36).toUpperCase();
-        } else if (byte > 62) {
-          id += "-";
-        } else {
-          id += "_";
-        }
-        return id;
-      }, "");
-    }
-  });
-
-  // src/hooks/useAlias.ts
-  var AliasDataSchema, AliasActionsSchema, AliasSchema, aliasActionsStore, useAliasActionsStore, useAliasStore;
-  var init_useAlias = __esm({
-    "src/hooks/useAlias.ts"() {
-      "use strict";
-      init_lib3();
-      init_esm();
-      init_index_browser();
-      AliasDataSchema = z4.object({
-        id: z4.string(),
-        name: z4.string(),
-        color: z4.array(
-          z4.object({
-            mode: z4.enum(["light", "dark"]),
-            tone: z4.number().int().min(0).max(100)
-          })
-        )
-      });
-      AliasActionsSchema = z4.object({
-        set: z4.object({
-          id: z4.function().args(z4.string(), z4.void()),
-          name: z4.function().args(z4.string(), z4.void()),
-          color: z4.function().args(
-            z4.array(
-              z4.object({
-                mode: z4.string(),
-                tone: z4.number()
-              })
-            ),
-            z4.void()
-          ),
-          toneForMode: z4.function().args(z4.union([z4.string(), z4.number()]), z4.number(), z4.void())
-        })
-      });
-      AliasSchema = AliasDataSchema.merge(AliasActionsSchema);
-      aliasActionsStore = (set) => ({
-        set: {
-          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          color: (color2) => set((state) => __spreadProps(__spreadValues({}, state), {
-            color: color2
-          })),
-          toneForMode: (mode2, tone) => set((state) => {
-            const newColor = [...state.color];
-            const colorIndex = newColor.findIndex(
-              (newColorItem) => newColorItem.mode === mode2
-            );
-            if (colorIndex === -1) {
-              newColor.push({ mode: mode2.toString(), tone });
-            } else {
-              newColor[colorIndex].tone = tone;
-            }
-            return __spreadProps(__spreadValues({}, state), { color: newColor });
-          })
-        }
-      });
-      useAliasActionsStore = create((...a3) => __spreadValues({}, aliasActionsStore(...a3)));
-      useAliasStore = create((set) => ({
-        id: nanoid(12),
-        name: `Alias`,
-        color: [
-          { mode: "light", tone: 80 },
-          { mode: "dark", tone: 20 }
-        ],
-        set: {
-          id: (id) => set(() => ({ id })),
-          name: (name310) => set(() => ({ name: name310 })),
-          color: (color2) => set(() => ({
-            color: color2
-          })),
-          toneForMode: (mode2, tone) => set((state) => {
-            const newColor = [...state.color];
-            const colorIndex = newColor.findIndex(
-              (newColor2) => newColor2.mode === mode2
-            );
-            if (colorIndex === -1) {
-              newColor.push({ mode: mode2.toString(), tone });
-            } else {
-              newColor[colorIndex].tone = tone;
-            }
-            return { color: newColor };
-          })
-        }
-      }));
-    }
-  });
-
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i5 = 1; i5 < arguments.length; i5++) {
-        var source = arguments[i5];
+      for (var i4 = 1; i4 < arguments.length; i4++) {
+        var source = arguments[i4];
         for (var key in source) {
           if (Object.prototype.hasOwnProperty.call(source, key)) {
             target[key] = source[key];
@@ -19454,7 +19165,7 @@ svg {
     return a3;
   }
   function deepStrictEqual(a3, b3) {
-    var prop, i5, len;
+    var prop, i4, len;
     if (Array.isArray(a3)) {
       if (!Array.isArray(b3)) {
         return false;
@@ -19462,8 +19173,8 @@ svg {
       if (a3.length !== b3.length) {
         return false;
       }
-      for (i5 = 0, len = a3.length; i5 < len; i5++) {
-        if (!deepStrictEqual(a3[i5], b3[i5])) {
+      for (i4 = 0, len = a3.length; i4 < len; i4++) {
+        if (!deepStrictEqual(a3[i4], b3[i4])) {
           return false;
         }
       }
@@ -19513,8 +19224,8 @@ svg {
   }
   function pickShallow(object, properties2) {
     var copy = {};
-    for (var i5 = 0; i5 < properties2.length; i5++) {
-      var key = properties2[i5];
+    for (var i4 = 0; i4 < properties2.length; i4++) {
+      var key = properties2[i4];
       var value2 = object[key];
       if (value2 !== void 0) {
         copy[key] = value2;
@@ -19656,28 +19367,28 @@ svg {
             let beforeSpec = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "any";
             const beforeIndex = beforeSpec ? findType(beforeSpec).index : typeList.length;
             const newTypes = [];
-            for (let i5 = 0; i5 < types.length; ++i5) {
-              if (!types[i5] || typeof types[i5].name !== "string" || typeof types[i5].test !== "function") {
+            for (let i4 = 0; i4 < types.length; ++i4) {
+              if (!types[i4] || typeof types[i4].name !== "string" || typeof types[i4].test !== "function") {
                 throw new TypeError("Object with properties {name: string, test: function} expected");
               }
-              const typeName = types[i5].name;
+              const typeName = types[i4].name;
               if (typeMap.has(typeName)) {
                 throw new TypeError('Duplicate type name "' + typeName + '"');
               }
               newTypes.push(typeName);
               typeMap.set(typeName, {
                 name: typeName,
-                test: types[i5].test,
-                isAny: types[i5].isAny,
-                index: beforeIndex + i5,
+                test: types[i4].test,
+                isAny: types[i4].isAny,
+                index: beforeIndex + i4,
                 conversionsTo: []
                 // Newly added type can't have any conversions to it
               });
             }
             const affectedTypes = typeList.slice(beforeIndex);
             typeList = typeList.slice(0, beforeIndex).concat(newTypes).concat(affectedTypes);
-            for (let i5 = beforeIndex + newTypes.length; i5 < typeList.length; ++i5) {
-              typeMap.get(typeList[i5]).index = i5;
+            for (let i4 = beforeIndex + newTypes.length; i4 < typeList.length; ++i4) {
+              typeMap.get(typeList[i4]).index = i4;
             }
           }
           function clear() {
@@ -19733,12 +19444,12 @@ svg {
             } else {
               remainingSignatures = fn2._typedFunctionData.signatures;
             }
-            for (let i5 = 0; i5 < nParams; ++i5) {
-              const want = params[i5];
+            for (let i4 = 0; i4 < nParams; ++i4) {
+              const want = params[i4];
               const filteredSignatures = [];
               let possibility;
               for (possibility of remainingSignatures) {
-                const have = getParamAtIndex(possibility.params, i5);
+                const have = getParamAtIndex(possibility.params, i4);
                 if (!have || want.restParam && !have.restParam) {
                   continue;
                 }
@@ -19774,10 +19485,10 @@ svg {
             if (conversions.length === 0) {
               throw new Error("There are no conversions to " + typeName + " defined.");
             }
-            for (let i5 = 0; i5 < conversions.length; i5++) {
-              const fromType = findType(conversions[i5].from);
+            for (let i4 = 0; i4 < conversions.length; i4++) {
+              const fromType = findType(conversions[i4].from);
               if (fromType.test(value2)) {
-                return conversions[i5].convert(value2);
+                return conversions[i4].convert(value2);
               }
             }
             throw new Error("Cannot convert " + value2 + " to " + typeName);
@@ -19856,10 +19567,10 @@ svg {
               return params;
             }
             const rawParams = signature.split(",");
-            for (let i5 = 0; i5 < rawParams.length; ++i5) {
-              const parsedParam = parseParam(rawParams[i5].trim());
-              if (parsedParam.restParam && i5 !== rawParams.length - 1) {
-                throw new SyntaxError('Unexpected rest parameter "' + rawParams[i5] + '": only allowed for the last parameter');
+            for (let i4 = 0; i4 < rawParams.length; ++i4) {
+              const parsedParam = parseParam(rawParams[i4].trim());
+              if (parsedParam.restParam && i4 !== rawParams.length - 1) {
+                throw new SyntaxError('Unexpected rest parameter "' + rawParams[i4] + '": only allowed for the last parameter');
               }
               if (parsedParam.types.length === 0) {
                 return null;
@@ -19888,8 +19599,8 @@ svg {
                 return findType(type.name).test;
               });
               return function or2(x4) {
-                for (let i5 = 0; i5 < tests.length; i5++) {
-                  if (tests[i5](x4)) {
+                for (let i4 = 0; i4 < tests.length; i4++) {
+                  if (tests[i4](x4)) {
                     return true;
                   }
                 }
@@ -19904,16 +19615,16 @@ svg {
               const varIndex = tests.length;
               const lastTest = compileTest(last(params));
               const testRestParam = function(args) {
-                for (let i5 = varIndex; i5 < args.length; i5++) {
-                  if (!lastTest(args[i5])) {
+                for (let i4 = varIndex; i4 < args.length; i4++) {
+                  if (!lastTest(args[i4])) {
                     return false;
                   }
                 }
                 return true;
               };
               return function testArgs(args) {
-                for (let i5 = 0; i5 < tests.length; i5++) {
-                  if (!tests[i5](args[i5])) {
+                for (let i4 = 0; i4 < tests.length; i4++) {
+                  if (!tests[i4](args[i4])) {
                     return false;
                   }
                 }
@@ -19938,8 +19649,8 @@ svg {
               } else {
                 tests = params.map(compileTest);
                 return function testArgs(args) {
-                  for (let i5 = 0; i5 < tests.length; i5++) {
-                    if (!tests[i5](args[i5])) {
+                  for (let i4 = 0; i4 < tests.length; i4++) {
+                    if (!tests[i4](args[i4])) {
                       return false;
                     }
                   }
@@ -20030,8 +19741,8 @@ svg {
               return err;
             }
             const argTypes = [];
-            for (let i5 = 0; i5 < args.length; ++i5) {
-              argTypes.push(findTypeNames(args[i5]).join("|"));
+            for (let i4 = 0; i4 < args.length; ++i4) {
+              argTypes.push(findTypeNames(args[i4]).join("|"));
             }
             err = new TypeError('Arguments of type "' + argTypes.join(", ") + '" do not match any of the defined signatures of function ' + _name + ".");
             err.data = {
@@ -20042,18 +19753,18 @@ svg {
           }
           function getLowestTypeIndex(param) {
             let min3 = typeList.length + 1;
-            for (let i5 = 0; i5 < param.types.length; i5++) {
-              if (isExactType(param.types[i5])) {
-                min3 = Math.min(min3, param.types[i5].typeIndex);
+            for (let i4 = 0; i4 < param.types.length; i4++) {
+              if (isExactType(param.types[i4])) {
+                min3 = Math.min(min3, param.types[i4].typeIndex);
               }
             }
             return min3;
           }
           function getLowestConversionIndex(param) {
             let min3 = nConversions + 1;
-            for (let i5 = 0; i5 < param.types.length; i5++) {
-              if (!isExactType(param.types[i5])) {
-                min3 = Math.min(min3, param.types[i5].conversionIndex);
+            for (let i4 = 0; i4 < param.types.length; i4++) {
+              if (!isExactType(param.types[i4])) {
+                min3 = Math.min(min3, param.types[i4].conversionIndex);
               }
             }
             return min3;
@@ -20153,8 +19864,8 @@ svg {
             }
             const comparisons = [];
             let tc = 0;
-            for (let i5 = 0; i5 < pars1.length; ++i5) {
-              const thisComparison = compareParams(pars1[i5], pars2[i5]);
+            for (let i4 = 0; i4 < pars1.length; ++i4) {
+              const thisComparison = compareParams(pars1[i4], pars2[i4]);
               comparisons.push(thisComparison);
               tc += thisComparison;
             }
@@ -20183,9 +19894,9 @@ svg {
             }
             matches = matches.concat([]);
             const knownTypes = new Set(typeNames);
-            for (let i5 = 1; i5 < types.length; ++i5) {
+            for (let i4 = 1; i4 < types.length; ++i4) {
               let newMatch;
-              for (newMatch of types[i5].conversionsTo) {
+              for (newMatch of types[i4].conversionsTo) {
                 if (!knownTypes.has(newMatch.from)) {
                   matches.push(newMatch);
                   knownTypes.add(newMatch.from);
@@ -20202,8 +19913,8 @@ svg {
               fnConvert = function convertArgs() {
                 const args = [];
                 const last2 = restParam ? arguments.length - 1 : arguments.length;
-                for (let i5 = 0; i5 < last2; i5++) {
-                  args[i5] = compiledConversions[i5](arguments[i5]);
+                for (let i4 = 0; i4 < last2; i4++) {
+                  args[i4] = compiledConversions[i4](arguments[i4]);
                 }
                 if (restParam) {
                   args[last2] = arguments[last2].map(compiledConversions[last2]);
@@ -20260,9 +19971,9 @@ svg {
                 };
               default:
                 return function convertArg(arg2) {
-                  for (let i5 = 0; i5 < conversions.length; i5++) {
-                    if (tests[i5](arg2)) {
-                      return conversions[i5](arg2);
+                  for (let i4 = 0; i4 < conversions.length; i4++) {
+                    if (tests[i4](arg2)) {
+                      return conversions[i4](arg2);
                     }
                   }
                   return arg2;
@@ -20308,9 +20019,9 @@ svg {
           }
           function conflicting(params1, params2) {
             const ii = Math.max(params1.length, params2.length);
-            for (let i5 = 0; i5 < ii; i5++) {
-              const typeSet1 = getTypeSetAtIndex(params1, i5);
-              const typeSet2 = getTypeSetAtIndex(params2, i5);
+            for (let i4 = 0; i4 < ii; i4++) {
+              const typeSet1 = getTypeSetAtIndex(params1, i4);
+              const typeSet2 = getTypeSetAtIndex(params2, i4);
               let overlap = false;
               let name310;
               for (name310 of typeSet2) {
@@ -20363,21 +20074,21 @@ svg {
             while (leftUnresolved) {
               leftUnresolved = false;
               let nothingResolved = true;
-              for (let i5 = 0; i5 < resolvedFunctions.length; ++i5) {
-                if (isResolved[i5])
+              for (let i4 = 0; i4 < resolvedFunctions.length; ++i4) {
+                if (isResolved[i4])
                   continue;
-                const fn2 = resolvedFunctions[i5];
+                const fn2 = resolvedFunctions[i4];
                 if (isReferToSelf(fn2)) {
-                  resolvedFunctions[i5] = fn2.referToSelf.callback(self2);
-                  resolvedFunctions[i5].referToSelf = fn2.referToSelf;
-                  isResolved[i5] = true;
+                  resolvedFunctions[i4] = fn2.referToSelf.callback(self2);
+                  resolvedFunctions[i4].referToSelf = fn2.referToSelf;
+                  isResolved[i4] = true;
                   nothingResolved = false;
                 } else if (isReferTo(fn2)) {
                   const resolvedReferences = collectResolutions(fn2.referTo.references, resolvedFunctions, signatureMap);
                   if (resolvedReferences) {
-                    resolvedFunctions[i5] = fn2.referTo.callback.apply(this, resolvedReferences);
-                    resolvedFunctions[i5].referTo = fn2.referTo;
-                    isResolved[i5] = true;
+                    resolvedFunctions[i4] = fn2.referTo.callback.apply(this, resolvedReferences);
+                    resolvedFunctions[i4].referTo = fn2.referTo;
+                    isResolved[i4] = true;
                     nothingResolved = false;
                   } else {
                     leftUnresolved = true;
@@ -20465,8 +20176,8 @@ svg {
             const ok4 = signatures[4] && signatures[4].params.length <= 2 && !hasRestParam(signatures[4].params);
             const ok5 = signatures[5] && signatures[5].params.length <= 2 && !hasRestParam(signatures[5].params);
             const allOk = ok0 && ok1 && ok2 && ok3 && ok4 && ok5;
-            for (let i5 = 0; i5 < signatures.length; ++i5) {
-              signatures[i5].test = compileTests(signatures[i5].params);
+            for (let i4 = 0; i4 < signatures.length; ++i4) {
+              signatures[i4].test = compileTests(signatures[i4].params);
             }
             const test00 = ok0 ? compileTest(signatures[0].params[0]) : notOk;
             const test10 = ok1 ? compileTest(signatures[1].params[0]) : notOk;
@@ -20480,8 +20191,8 @@ svg {
             const test31 = ok3 ? compileTest(signatures[3].params[1]) : notOk;
             const test41 = ok4 ? compileTest(signatures[4].params[1]) : notOk;
             const test51 = ok5 ? compileTest(signatures[5].params[1]) : notOk;
-            for (let i5 = 0; i5 < signatures.length; ++i5) {
-              signatures[i5].implementation = compileArgsPreprocessing(signatures[i5].params, signatures[i5].fn);
+            for (let i4 = 0; i4 < signatures.length; ++i4) {
+              signatures[i4].implementation = compileArgsPreprocessing(signatures[i4].params, signatures[i4].fn);
             }
             const fn0 = ok0 ? signatures[0].implementation : undef;
             const fn1 = ok1 ? signatures[1].implementation : undef;
@@ -20500,9 +20211,9 @@ svg {
             const tests = signatures.map((s4) => s4.test);
             const fns = signatures.map((s4) => s4.implementation);
             const generic = function generic2() {
-              for (let i5 = iStart; i5 < iEnd; i5++) {
-                if (tests[i5](arguments)) {
-                  return fns[i5].apply(this, arguments);
+              for (let i4 = iStart; i4 < iEnd; i4++) {
+                if (tests[i4](arguments)) {
+                  return fns[i4].apply(this, arguments);
                 }
               }
               return typed3.onMismatch(name310, arguments, signatures);
@@ -20554,9 +20265,9 @@ svg {
             return Array.prototype.slice.call(arr, start, end);
           }
           function findInArray(arr, test) {
-            for (let i5 = 0; i5 < arr.length; i5++) {
-              if (test(arr[i5])) {
-                return arr[i5];
+            for (let i4 = 0; i4 < arr.length; i4++) {
+              if (test(arr[i4])) {
+                return arr[i4];
               }
             }
             return void 0;
@@ -20644,8 +20355,8 @@ svg {
             const start = named ? 1 : 0;
             let name310 = named ? maybeName : "";
             const allSignatures = {};
-            for (let i5 = start; i5 < arguments.length; ++i5) {
-              const item = arguments[i5];
+            for (let i4 = start; i4 < arguments.length; ++i4) {
+              const item = arguments[i4];
               let theseSignatures = {};
               let thisName;
               if (typeof item === "function") {
@@ -20662,9 +20373,9 @@ svg {
                 }
               }
               if (Object.keys(theseSignatures).length === 0) {
-                const err = new TypeError("Argument to 'typed' at index " + i5 + " is not a (typed) function, nor an object with signatures as keys and functions as values.");
+                const err = new TypeError("Argument to 'typed' at index " + i4 + " is not a (typed) function, nor an object with signatures as keys and functions as values.");
                 err.data = {
-                  index: i5,
+                  index: i4,
                   argument: item
                 };
                 throw err;
@@ -20743,9 +20454,9 @@ svg {
               throw new TypeError(NOT_TYPED_FUNCTION);
             }
             const sigs = tf._typedFunctionData.signatures;
-            for (let i5 = 0; i5 < sigs.length; ++i5) {
-              if (sigs[i5].test(argList)) {
-                return sigs[i5];
+            for (let i4 = 0; i4 < sigs.length; ++i4) {
+              if (sigs[i4].test(argList)) {
+                return sigs[i4];
               }
             }
             return null;
@@ -20844,8 +20555,8 @@ svg {
       case "auto":
         return toPrecision(value2, precision, options && options).replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e6 = arguments[4];
-          return digits2 !== "." ? digits2 + e6 : e6;
+          var e5 = arguments[4];
+          return digits2 !== "." ? digits2 + e5 : e5;
         });
       default:
         throw new Error('Unknown notation "' + notation + '". Choose "auto", "exponential", "fixed", "bin", "oct", or "hex.');
@@ -20883,20 +20594,20 @@ svg {
     }
     var split = splitNumber(value2);
     var rounded = roundDigits(split, precision);
-    var e6 = rounded.exponent;
+    var e5 = rounded.exponent;
     var c3 = rounded.coefficients;
-    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
+    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
     if (isNumber(precision)) {
-      while (precision > c3.length || e6 - newExp + 1 > c3.length) {
+      while (precision > c3.length || e5 - newExp + 1 > c3.length) {
         c3.push(0);
       }
     } else {
-      var missingZeros = Math.abs(e6 - newExp) - (c3.length - 1);
-      for (var i5 = 0; i5 < missingZeros; i5++) {
+      var missingZeros = Math.abs(e5 - newExp) - (c3.length - 1);
+      for (var i4 = 0; i4 < missingZeros; i4++) {
         c3.push(0);
       }
     }
-    var expDiff = Math.abs(e6 - newExp);
+    var expDiff = Math.abs(e5 - newExp);
     var decimalIdx = 1;
     while (expDiff > 0) {
       decimalIdx++;
@@ -20904,7 +20615,7 @@ svg {
     }
     var decimals = c3.slice(decimalIdx).join("");
     var decimalVal = isNumber(precision) && decimals.length || decimals.match(/[1-9]/) ? "." + decimals : "";
-    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
+    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
     return rounded.sign + str;
   }
   function toFixed(value2, precision) {
@@ -20935,12 +20646,12 @@ svg {
     var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     var c3 = rounded.coefficients;
-    var e6 = rounded.exponent;
+    var e5 = rounded.exponent;
     if (c3.length < precision) {
       c3 = c3.concat(zeros(precision - c3.length));
     }
     var first = c3.shift();
-    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e6 >= 0 ? "+" : "") + e6;
+    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e5 >= 0 ? "+" : "") + e5;
   }
   function toPrecision(value2, precision, options) {
     if (isNaN(value2) || !isFinite(value2)) {
@@ -20954,13 +20665,13 @@ svg {
       return toExponential(value2, precision);
     } else {
       var c3 = rounded.coefficients;
-      var e6 = rounded.exponent;
+      var e5 = rounded.exponent;
       if (c3.length < precision) {
         c3 = c3.concat(zeros(precision - c3.length));
       }
-      c3 = c3.concat(zeros(e6 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
-      c3 = zeros(-e6).concat(c3);
-      var dot2 = e6 > 0 ? e6 : 0;
+      c3 = c3.concat(zeros(e5 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
+      c3 = zeros(-e5).concat(c3);
+      var dot2 = e5 > 0 ? e5 : 0;
       if (dot2 < c3.length - 1) {
         c3.splice(dot2 + 1, 0, ".");
       }
@@ -20982,17 +20693,17 @@ svg {
     if (c3.length > precision) {
       var removed = c3.splice(precision, c3.length - precision);
       if (removed[0] >= 5) {
-        var i5 = precision - 1;
-        c3[i5]++;
-        while (c3[i5] === 10) {
+        var i4 = precision - 1;
+        c3[i4]++;
+        while (c3[i4] === 10) {
           c3.pop();
-          if (i5 === 0) {
+          if (i4 === 0) {
             c3.unshift(0);
             rounded.exponent++;
-            i5++;
+            i4++;
           }
-          i5--;
-          c3[i5]++;
+          i4--;
+          c3[i4]++;
         }
       }
     }
@@ -21000,7 +20711,7 @@ svg {
   }
   function zeros(length) {
     var arr = [];
-    for (var i5 = 0; i5 < length; i5++) {
+    for (var i4 = 0; i4 < length; i4++) {
       arr.push(0);
     }
     return arr;
@@ -21092,8 +20803,8 @@ svg {
         return (Math.exp(x4) - Math.exp(-x4)) / 2;
       };
       tanh = Math.tanh || function(x4) {
-        var e6 = Math.exp(2 * x4);
-        return (e6 - 1) / (e6 + 1);
+        var e5 = Math.exp(2 * x4);
+        return (e5 - 1) / (e5 + 1);
       };
     }
   });
@@ -21186,8 +20897,8 @@ svg {
         }
         return str.replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e6 = arguments[4];
-          return digits2 !== "." ? digits2 + e6 : e6;
+          var e5 = arguments[4];
+          return digits2 !== "." ? digits2 + e5 : e5;
         });
       }
       default:
@@ -21195,15 +20906,15 @@ svg {
     }
   }
   function toEngineering2(value2, precision) {
-    var e6 = value2.e;
-    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
+    var e5 = value2.e;
+    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
     var valueWithoutExp = value2.mul(Math.pow(10, -newExp));
     var valueStr = valueWithoutExp.toPrecision(precision);
     if (valueStr.indexOf("e") !== -1) {
       var BigNumber2 = value2.constructor;
       valueStr = new BigNumber2(valueStr).toFixed();
     }
-    return valueStr + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
+    return valueStr + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
   }
   function toExponential2(value2, precision) {
     if (precision !== void 0) {
@@ -21274,11 +20985,11 @@ svg {
   function stringify(value2) {
     var text = String(value2);
     var escaped = "";
-    var i5 = 0;
-    while (i5 < text.length) {
-      var c3 = text.charAt(i5);
+    var i4 = 0;
+    while (i4 < text.length) {
+      var c3 = text.charAt(i4);
       escaped += c3 in controlCharacters ? controlCharacters[c3] : c3;
-      i5++;
+      i4++;
     }
     return '"' + escaped + '"';
   }
@@ -21291,11 +21002,11 @@ svg {
     if (Array.isArray(array)) {
       var str = "[";
       var len = array.length;
-      for (var i5 = 0; i5 < len; i5++) {
-        if (i5 !== 0) {
+      for (var i4 = 0; i4 < len; i4++) {
+        if (i4 !== 0) {
           str += ", ";
         }
-        str += formatArray(array[i5], options);
+        str += formatArray(array[i4], options);
       }
       str += "]";
       return str;
@@ -21394,23 +21105,23 @@ svg {
     return s3;
   }
   function _validate(array, size2, dim) {
-    var i5;
+    var i4;
     var len = array.length;
     if (len !== size2[dim]) {
       throw new DimensionError(len, size2[dim]);
     }
     if (dim < size2.length - 1) {
       var dimNext = dim + 1;
-      for (i5 = 0; i5 < len; i5++) {
-        var child = array[i5];
+      for (i4 = 0; i4 < len; i4++) {
+        var child = array[i4];
         if (!Array.isArray(child)) {
           throw new DimensionError(size2.length - 1, size2.length, "<");
         }
-        _validate(array[i5], size2, dimNext);
+        _validate(array[i4], size2, dimNext);
       }
     } else {
-      for (i5 = 0; i5 < len; i5++) {
-        if (Array.isArray(array[i5])) {
+      for (i4 = 0; i4 < len; i4++) {
+        if (Array.isArray(array[i4])) {
           throw new DimensionError(size2.length + 1, size2.length, ">");
         }
       }
@@ -21429,9 +21140,9 @@ svg {
   function validateIndexSourceSize(value2, index2) {
     var valueSize = value2.isMatrix ? value2._size : arraySize(value2);
     var sourceSize = index2._sourceSize;
-    sourceSize.forEach((sourceDim, i5) => {
-      if (sourceDim !== null && sourceDim !== valueSize[i5]) {
-        throw new DimensionError(sourceDim, valueSize[i5]);
+    sourceSize.forEach((sourceDim, i4) => {
+      if (sourceDim !== null && sourceDim !== valueSize[i4]) {
+        throw new DimensionError(sourceDim, valueSize[i4]);
       }
     });
   }
@@ -21446,8 +21157,8 @@ svg {
     }
   }
   function isEmptyIndex(index2) {
-    for (var i5 = 0; i5 < index2._dimensions.length; ++i5) {
-      var dimension = index2._dimensions[i5];
+    for (var i4 = 0; i4 < index2._dimensions.length; ++i4) {
+      var dimension = index2._dimensions[i4];
       if (dimension._data && isArray(dimension._data)) {
         if (dimension._size[0] === 0) {
           return true;
@@ -21484,7 +21195,7 @@ svg {
     return array;
   }
   function _resize(array, size2, dim, defaultValue) {
-    var i5;
+    var i4;
     var elem;
     var oldLen = array.length;
     var newLen = size2[dim];
@@ -21492,27 +21203,27 @@ svg {
     array.length = newLen;
     if (dim < size2.length - 1) {
       var dimNext = dim + 1;
-      for (i5 = 0; i5 < minLen; i5++) {
-        elem = array[i5];
+      for (i4 = 0; i4 < minLen; i4++) {
+        elem = array[i4];
         if (!Array.isArray(elem)) {
           elem = [elem];
-          array[i5] = elem;
+          array[i4] = elem;
         }
         _resize(elem, size2, dimNext, defaultValue);
       }
-      for (i5 = minLen; i5 < newLen; i5++) {
+      for (i4 = minLen; i4 < newLen; i4++) {
         elem = [];
-        array[i5] = elem;
+        array[i4] = elem;
         _resize(elem, size2, dimNext, defaultValue);
       }
     } else {
-      for (i5 = 0; i5 < minLen; i5++) {
-        while (Array.isArray(array[i5])) {
-          array[i5] = array[i5][0];
+      for (i4 = 0; i4 < minLen; i4++) {
+        while (Array.isArray(array[i4])) {
+          array[i4] = array[i4][0];
         }
       }
-      for (i5 = minLen; i5 < newLen; i5++) {
-        array[i5] = defaultValue;
+      for (i4 = minLen; i4 < newLen; i4++) {
+        array[i4] = defaultValue;
       }
     }
   }
@@ -21532,11 +21243,11 @@ svg {
     }
     try {
       return _reshape(flatArray, sizes);
-    } catch (e6) {
-      if (e6 instanceof DimensionError) {
+    } catch (e5) {
+      if (e5 instanceof DimensionError) {
         throw new DimensionError(newLength, currentLength, "!=");
       }
-      throw e6;
+      throw e5;
     }
   }
   function processSizesWildcard(sizes, currentLength) {
@@ -21569,8 +21280,8 @@ svg {
       var size2 = sizes[sizeIndex];
       tmpArray2 = [];
       var length = tmpArray.length / size2;
-      for (var i5 = 0; i5 < length; i5++) {
-        tmpArray2.push(tmpArray.slice(i5 * size2, (i5 + 1) * size2));
+      for (var i4 = 0; i4 < length; i4++) {
+        tmpArray2.push(tmpArray.slice(i4 * size2, (i4 + 1) * size2));
       }
       tmpArray = tmpArray2;
     }
@@ -21593,11 +21304,11 @@ svg {
     return array;
   }
   function _squeeze(array, dims, dim) {
-    var i5, ii;
+    var i4, ii;
     if (dim < dims) {
       var next = dim + 1;
-      for (i5 = 0, ii = array.length; i5 < ii; i5++) {
-        array[i5] = _squeeze(array[i5], dims, next);
+      for (i4 = 0, ii = array.length; i4 < ii; i4++) {
+        array[i4] = _squeeze(array[i4], dims, next);
       }
     } else {
       while (Array.isArray(array)) {
@@ -21609,7 +21320,7 @@ svg {
   function unsqueeze(array, dims, outer, size2) {
     var s3 = size2 || arraySize(array);
     if (outer) {
-      for (var i5 = 0; i5 < outer; i5++) {
+      for (var i4 = 0; i4 < outer; i4++) {
         array = [array];
         s3.unshift(1);
       }
@@ -21621,11 +21332,11 @@ svg {
     return array;
   }
   function _unsqueeze(array, dims, dim) {
-    var i5, ii;
+    var i4, ii;
     if (Array.isArray(array)) {
       var next = dim + 1;
-      for (i5 = 0, ii = array.length; i5 < ii; i5++) {
-        array[i5] = _unsqueeze(array[i5], dims, next);
+      for (i4 = 0, ii = array.length; i4 < ii; i4++) {
+        array[i4] = _unsqueeze(array[i4], dims, next);
       }
     } else {
       for (var d3 = dim; d3 < dims; d3++) {
@@ -21682,14 +21393,14 @@ svg {
       value: a3[0],
       identifier: 0
     };
-    for (var i5 = 1; i5 < a3.length; i5++) {
-      if (a3[i5] === a3[i5 - 1]) {
+    for (var i4 = 1; i4 < a3.length; i4++) {
+      if (a3[i4] === a3[i4 - 1]) {
         count2++;
       } else {
         count2 = 0;
       }
       b3.push({
-        value: a3[i5],
+        value: a3[i4],
         identifier: count2
       });
     }
@@ -21703,18 +21414,18 @@ svg {
       return a3;
     }
     var b3 = [];
-    for (var i5 = 0; i5 < a3.length; i5++) {
-      b3.push(a3[i5].value);
+    for (var i4 = 0; i4 < a3.length; i4++) {
+      b3.push(a3[i4].value);
     }
     return b3;
   }
   function getArrayDataType(array, typeOf3) {
     var type;
     var length = 0;
-    for (var i5 = 0; i5 < array.length; i5++) {
-      var item = array[i5];
+    for (var i4 = 0; i4 < array.length; i4++) {
+      var item = array[i4];
       var _isArray = Array.isArray(item);
-      if (i5 === 0 && _isArray) {
+      if (i4 === 0 && _isArray) {
         length = item.length;
       }
       if (_isArray && item.length !== length) {
@@ -21736,8 +21447,8 @@ svg {
         throw new DimensionError(a3.length, b3.length);
       }
       var c3 = [];
-      for (var i5 = 0; i5 < a3.length; i5++) {
-        c3[i5] = concatRecursive(a3[i5], b3[i5], concatDim, dim + 1);
+      for (var i4 = 0; i4 < a3.length; i4++) {
+        c3[i4] = concatRecursive(a3[i4], b3[i4], concatDim, dim + 1);
       }
       return c3;
     } else {
@@ -21765,9 +21476,9 @@ svg {
     var dimensions = sizes.map((s3) => s3.length);
     var N3 = Math.max(...dimensions);
     var sizeMax = new Array(N3).fill(null);
-    for (var i5 = 0; i5 < sizes.length; i5++) {
-      var size2 = sizes[i5];
-      var dim = dimensions[i5];
+    for (var i4 = 0; i4 < sizes.length; i4++) {
+      var size2 = sizes[i4];
+      var dim = dimensions[i4];
       for (var j4 = 0; j4 < dim; j4++) {
         var n3 = N3 - dim + j4;
         if (size2[j4] > sizeMax[n3]) {
@@ -22448,17 +22159,17 @@ svg {
 
   // node_modules/decimal.js/decimal.mjs
   function digitsToString(d3) {
-    var i5, k4, ws, indexOfLastWord = d3.length - 1, str = "", w4 = d3[0];
+    var i4, k4, ws, indexOfLastWord = d3.length - 1, str = "", w4 = d3[0];
     if (indexOfLastWord > 0) {
       str += w4;
-      for (i5 = 1; i5 < indexOfLastWord; i5++) {
-        ws = d3[i5] + "";
+      for (i4 = 1; i4 < indexOfLastWord; i4++) {
+        ws = d3[i4] + "";
         k4 = LOG_BASE - ws.length;
         if (k4)
           str += getZeroString(k4);
         str += ws;
       }
-      w4 = d3[i5];
+      w4 = d3[i4];
       ws = w4 + "";
       k4 = LOG_BASE - ws.length;
       if (k4)
@@ -22470,55 +22181,55 @@ svg {
       w4 /= 10;
     return str + w4;
   }
-  function checkInt32(i5, min3, max3) {
-    if (i5 !== ~~i5 || i5 < min3 || i5 > max3) {
-      throw Error(invalidArgument + i5);
+  function checkInt32(i4, min3, max3) {
+    if (i4 !== ~~i4 || i4 < min3 || i4 > max3) {
+      throw Error(invalidArgument + i4);
     }
   }
-  function checkRoundingDigits(d3, i5, rm, repeating) {
+  function checkRoundingDigits(d3, i4, rm, repeating) {
     var di, k4, r3, rd;
     for (k4 = d3[0]; k4 >= 10; k4 /= 10)
-      --i5;
-    if (--i5 < 0) {
-      i5 += LOG_BASE;
+      --i4;
+    if (--i4 < 0) {
+      i4 += LOG_BASE;
       di = 0;
     } else {
-      di = Math.ceil((i5 + 1) / LOG_BASE);
-      i5 %= LOG_BASE;
+      di = Math.ceil((i4 + 1) / LOG_BASE);
+      i4 %= LOG_BASE;
     }
-    k4 = mathpow(10, LOG_BASE - i5);
+    k4 = mathpow(10, LOG_BASE - i4);
     rd = d3[di] % k4 | 0;
     if (repeating == null) {
-      if (i5 < 3) {
-        if (i5 == 0)
+      if (i4 < 3) {
+        if (i4 == 0)
           rd = rd / 100 | 0;
-        else if (i5 == 1)
+        else if (i4 == 1)
           rd = rd / 10 | 0;
         r3 = rm < 4 && rd == 99999 || rm > 3 && rd == 49999 || rd == 5e4 || rd == 0;
       } else {
-        r3 = (rm < 4 && rd + 1 == k4 || rm > 3 && rd + 1 == k4 / 2) && (d3[di + 1] / k4 / 100 | 0) == mathpow(10, i5 - 2) - 1 || (rd == k4 / 2 || rd == 0) && (d3[di + 1] / k4 / 100 | 0) == 0;
+        r3 = (rm < 4 && rd + 1 == k4 || rm > 3 && rd + 1 == k4 / 2) && (d3[di + 1] / k4 / 100 | 0) == mathpow(10, i4 - 2) - 1 || (rd == k4 / 2 || rd == 0) && (d3[di + 1] / k4 / 100 | 0) == 0;
       }
     } else {
-      if (i5 < 4) {
-        if (i5 == 0)
+      if (i4 < 4) {
+        if (i4 == 0)
           rd = rd / 1e3 | 0;
-        else if (i5 == 1)
+        else if (i4 == 1)
           rd = rd / 100 | 0;
-        else if (i5 == 2)
+        else if (i4 == 2)
           rd = rd / 10 | 0;
         r3 = (repeating || rm < 4) && rd == 9999 || !repeating && rm > 3 && rd == 4999;
       } else {
-        r3 = ((repeating || rm < 4) && rd + 1 == k4 || !repeating && rm > 3 && rd + 1 == k4 / 2) && (d3[di + 1] / k4 / 1e3 | 0) == mathpow(10, i5 - 3) - 1;
+        r3 = ((repeating || rm < 4) && rd + 1 == k4 || !repeating && rm > 3 && rd + 1 == k4 / 2) && (d3[di + 1] / k4 / 1e3 | 0) == mathpow(10, i4 - 3) - 1;
       }
     }
     return r3;
   }
   function convertBase(str, baseIn, baseOut) {
-    var j4, arr = [0], arrL, i5 = 0, strL = str.length;
-    for (; i5 < strL; ) {
+    var j4, arr = [0], arrL, i4 = 0, strL = str.length;
+    for (; i4 < strL; ) {
       for (arrL = arr.length; arrL--; )
         arr[arrL] *= baseIn;
-      arr[0] += NUMERALS.indexOf(str.charAt(i5++));
+      arr[0] += NUMERALS.indexOf(str.charAt(i4++));
       for (j4 = 0; j4 < arr.length; j4++) {
         if (arr[j4] > baseOut - 1) {
           if (arr[j4 + 1] === void 0)
@@ -22544,7 +22255,7 @@ svg {
     }
     Ctor.precision += k4;
     x4 = taylorSeries(Ctor, 1, x4.times(y3), new Ctor(1));
-    for (var i5 = k4; i5--; ) {
+    for (var i4 = k4; i4--; ) {
       var cos2x = x4.times(x4);
       x4 = cos2x.times(cos2x).minus(cos2x).times(8).plus(1);
     }
@@ -22552,7 +22263,7 @@ svg {
     return x4;
   }
   function finalise(x4, sd, rm, isTruncated) {
-    var digits2, i5, j4, k4, rd, roundUp, w4, xd, xdi, Ctor = x4.constructor;
+    var digits2, i4, j4, k4, rd, roundUp, w4, xd, xdi, Ctor = x4.constructor;
     out:
       if (sd != null) {
         xd = x4.d;
@@ -22560,14 +22271,14 @@ svg {
           return x4;
         for (digits2 = 1, k4 = xd[0]; k4 >= 10; k4 /= 10)
           digits2++;
-        i5 = sd - digits2;
-        if (i5 < 0) {
-          i5 += LOG_BASE;
+        i4 = sd - digits2;
+        if (i4 < 0) {
+          i4 += LOG_BASE;
           j4 = sd;
           w4 = xd[xdi = 0];
           rd = w4 / mathpow(10, digits2 - j4 - 1) % 10 | 0;
         } else {
-          xdi = Math.ceil((i5 + 1) / LOG_BASE);
+          xdi = Math.ceil((i4 + 1) / LOG_BASE);
           k4 = xd.length;
           if (xdi >= k4) {
             if (isTruncated) {
@@ -22575,8 +22286,8 @@ svg {
                 xd.push(0);
               w4 = rd = 0;
               digits2 = 1;
-              i5 %= LOG_BASE;
-              j4 = i5 - LOG_BASE + 1;
+              i4 %= LOG_BASE;
+              j4 = i4 - LOG_BASE + 1;
             } else {
               break out;
             }
@@ -22584,14 +22295,14 @@ svg {
             w4 = k4 = xd[xdi];
             for (digits2 = 1; k4 >= 10; k4 /= 10)
               digits2++;
-            i5 %= LOG_BASE;
-            j4 = i5 - LOG_BASE + digits2;
+            i4 %= LOG_BASE;
+            j4 = i4 - LOG_BASE + digits2;
             rd = j4 < 0 ? 0 : w4 / mathpow(10, digits2 - j4 - 1) % 10 | 0;
           }
         }
         isTruncated = isTruncated || sd < 0 || xd[xdi + 1] !== void 0 || (j4 < 0 ? w4 : w4 % mathpow(10, digits2 - j4 - 1));
         roundUp = rm < 4 ? (rd || isTruncated) && (rm == 0 || rm == (x4.s < 0 ? 3 : 2)) : rd > 5 || rd == 5 && (rm == 4 || isTruncated || rm == 6 && // Check whether the digit to the left of the rounding digit is odd.
-        (i5 > 0 ? j4 > 0 ? w4 / mathpow(10, digits2 - j4) : 0 : xd[xdi - 1]) % 10 & 1 || rm == (x4.s < 0 ? 8 : 7));
+        (i4 > 0 ? j4 > 0 ? w4 / mathpow(10, digits2 - j4) : 0 : xd[xdi - 1]) % 10 & 1 || rm == (x4.s < 0 ? 8 : 7));
         if (sd < 1 || !xd[0]) {
           xd.length = 0;
           if (roundUp) {
@@ -22603,24 +22314,24 @@ svg {
           }
           return x4;
         }
-        if (i5 == 0) {
+        if (i4 == 0) {
           xd.length = xdi;
           k4 = 1;
           xdi--;
         } else {
           xd.length = xdi + 1;
-          k4 = mathpow(10, LOG_BASE - i5);
+          k4 = mathpow(10, LOG_BASE - i4);
           xd[xdi] = j4 > 0 ? (w4 / mathpow(10, digits2 - j4) % mathpow(10, j4) | 0) * k4 : 0;
         }
         if (roundUp) {
           for (; ; ) {
             if (xdi == 0) {
-              for (i5 = 1, j4 = xd[0]; j4 >= 10; j4 /= 10)
-                i5++;
+              for (i4 = 1, j4 = xd[0]; j4 >= 10; j4 /= 10)
+                i4++;
               j4 = xd[0] += k4;
               for (k4 = 1; j4 >= 10; j4 /= 10)
                 k4++;
-              if (i5 != k4) {
+              if (i4 != k4) {
                 x4.e++;
                 if (xd[0] == BASE)
                   xd[0] = 1;
@@ -22635,7 +22346,7 @@ svg {
             }
           }
         }
-        for (i5 = xd.length; xd[--i5] === 0; )
+        for (i4 = xd.length; xd[--i4] === 0; )
           xd.pop();
       }
     if (external) {
@@ -22652,7 +22363,7 @@ svg {
   function finiteToString(x4, isExp, sd) {
     if (!x4.isFinite())
       return nonFiniteToString(x4);
-    var k4, e6 = x4.e, str = digitsToString(x4.d), len = str.length;
+    var k4, e5 = x4.e, str = digitsToString(x4.d), len = str.length;
     if (isExp) {
       if (sd && (k4 = sd - len) > 0) {
         str = str.charAt(0) + "." + str.slice(1) + getZeroString(k4);
@@ -22660,30 +22371,30 @@ svg {
         str = str.charAt(0) + "." + str.slice(1);
       }
       str = str + (x4.e < 0 ? "e" : "e+") + x4.e;
-    } else if (e6 < 0) {
-      str = "0." + getZeroString(-e6 - 1) + str;
+    } else if (e5 < 0) {
+      str = "0." + getZeroString(-e5 - 1) + str;
       if (sd && (k4 = sd - len) > 0)
         str += getZeroString(k4);
-    } else if (e6 >= len) {
-      str += getZeroString(e6 + 1 - len);
-      if (sd && (k4 = sd - e6 - 1) > 0)
+    } else if (e5 >= len) {
+      str += getZeroString(e5 + 1 - len);
+      if (sd && (k4 = sd - e5 - 1) > 0)
         str = str + "." + getZeroString(k4);
     } else {
-      if ((k4 = e6 + 1) < len)
+      if ((k4 = e5 + 1) < len)
         str = str.slice(0, k4) + "." + str.slice(k4);
       if (sd && (k4 = sd - len) > 0) {
-        if (e6 + 1 === len)
+        if (e5 + 1 === len)
           str += ".";
         str += getZeroString(k4);
       }
     }
     return str;
   }
-  function getBase10Exponent(digits2, e6) {
+  function getBase10Exponent(digits2, e5) {
     var w4 = digits2[0];
-    for (e6 *= LOG_BASE; w4 >= 10; w4 /= 10)
-      e6++;
-    return e6;
+    for (e5 *= LOG_BASE; w4 >= 10; w4 /= 10)
+      e5++;
+    return e5;
   }
   function getLn10(Ctor, sd, pr) {
     if (sd > LN10_PRECISION) {
@@ -22742,9 +22453,9 @@ svg {
     return n3.d[n3.d.length - 1] & 1;
   }
   function maxOrMin(Ctor, args, ltgt) {
-    var y3, x4 = new Ctor(args[0]), i5 = 0;
-    for (; ++i5 < args.length; ) {
-      y3 = new Ctor(args[i5]);
+    var y3, x4 = new Ctor(args[0]), i4 = 0;
+    for (; ++i4 < args.length; ) {
+      y3 = new Ctor(args[i4]);
       if (!y3.s) {
         x4 = y3;
         break;
@@ -22755,7 +22466,7 @@ svg {
     return x4;
   }
   function naturalExponential(x4, sd) {
-    var denominator, guard, j4, pow3, sum3, t3, wpr, rep = 0, i5 = 0, k4 = 0, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
+    var denominator, guard, j4, pow3, sum3, t3, wpr, rep = 0, i4 = 0, k4 = 0, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
     if (!x4.d || !x4.d[0] || x4.e > 17) {
       return new Ctor(x4.d ? !x4.d[0] ? 1 : x4.s < 0 ? 0 : 1 / 0 : x4.s ? x4.s < 0 ? 0 : x4 : 0 / 0);
     }
@@ -22776,7 +22487,7 @@ svg {
     Ctor.precision = wpr;
     for (; ; ) {
       pow3 = finalise(pow3.times(x4), wpr, 1);
-      denominator = denominator.times(++i5);
+      denominator = denominator.times(++i4);
       t3 = sum3.plus(divide(pow3, denominator, wpr, 1));
       if (digitsToString(t3.d).slice(0, wpr) === digitsToString(sum3.d).slice(0, wpr)) {
         j4 = k4;
@@ -22786,7 +22497,7 @@ svg {
           if (rep < 3 && checkRoundingDigits(sum3.d, wpr - guard, rm, rep)) {
             Ctor.precision = wpr += 10;
             denominator = pow3 = t3 = new Ctor(1);
-            i5 = 0;
+            i4 = 0;
             rep++;
           } else {
             return finalise(sum3, Ctor.precision = pr, rm, external = true);
@@ -22800,7 +22511,7 @@ svg {
     }
   }
   function naturalLogarithm(y3, sd) {
-    var c3, c0, denominator, e6, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
+    var c3, c0, denominator, e5, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
     if (x4.s < 0 || !xd || !xd[0] || !x4.e && xd[0] == 1 && xd.length == 1) {
       return new Ctor(xd && !xd[0] ? -1 / 0 : x4.s != 1 ? NaN : xd ? 0 : x4);
     }
@@ -22813,22 +22524,22 @@ svg {
     Ctor.precision = wpr += guard;
     c3 = digitsToString(xd);
     c0 = c3.charAt(0);
-    if (Math.abs(e6 = x4.e) < 15e14) {
+    if (Math.abs(e5 = x4.e) < 15e14) {
       while (c0 < 7 && c0 != 1 || c0 == 1 && c3.charAt(1) > 3) {
         x4 = x4.times(y3);
         c3 = digitsToString(x4.d);
         c0 = c3.charAt(0);
         n3++;
       }
-      e6 = x4.e;
+      e5 = x4.e;
       if (c0 > 1) {
         x4 = new Ctor("0." + c3);
-        e6++;
+        e5++;
       } else {
         x4 = new Ctor(c0 + "." + c3.slice(1));
       }
     } else {
-      t3 = getLn10(Ctor, wpr + 2, pr).times(e6 + "");
+      t3 = getLn10(Ctor, wpr + 2, pr).times(e5 + "");
       x4 = naturalLogarithm(new Ctor(c0 + "." + c3.slice(1)), wpr - guard).plus(t3);
       Ctor.precision = pr;
       return sd == null ? finalise(x4, pr, rm, external = true) : x4;
@@ -22842,8 +22553,8 @@ svg {
       t3 = sum3.plus(divide(numerator, new Ctor(denominator), wpr, 1));
       if (digitsToString(t3.d).slice(0, wpr) === digitsToString(sum3.d).slice(0, wpr)) {
         sum3 = sum3.times(2);
-        if (e6 !== 0)
-          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e6 + ""));
+        if (e5 !== 0)
+          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e5 + ""));
         sum3 = divide(sum3, new Ctor(n3), wpr, 1);
         if (sd == null) {
           if (checkRoundingDigits(sum3.d, wpr - guard, rm, rep)) {
@@ -22867,40 +22578,40 @@ svg {
     return String(x4.s * x4.s / 0);
   }
   function parseDecimal(x4, str) {
-    var e6, i5, len;
-    if ((e6 = str.indexOf(".")) > -1)
+    var e5, i4, len;
+    if ((e5 = str.indexOf(".")) > -1)
       str = str.replace(".", "");
-    if ((i5 = str.search(/e/i)) > 0) {
-      if (e6 < 0)
-        e6 = i5;
-      e6 += +str.slice(i5 + 1);
-      str = str.substring(0, i5);
-    } else if (e6 < 0) {
-      e6 = str.length;
+    if ((i4 = str.search(/e/i)) > 0) {
+      if (e5 < 0)
+        e5 = i4;
+      e5 += +str.slice(i4 + 1);
+      str = str.substring(0, i4);
+    } else if (e5 < 0) {
+      e5 = str.length;
     }
-    for (i5 = 0; str.charCodeAt(i5) === 48; i5++)
+    for (i4 = 0; str.charCodeAt(i4) === 48; i4++)
       ;
     for (len = str.length; str.charCodeAt(len - 1) === 48; --len)
       ;
-    str = str.slice(i5, len);
+    str = str.slice(i4, len);
     if (str) {
-      len -= i5;
-      x4.e = e6 = e6 - i5 - 1;
+      len -= i4;
+      x4.e = e5 = e5 - i4 - 1;
       x4.d = [];
-      i5 = (e6 + 1) % LOG_BASE;
-      if (e6 < 0)
-        i5 += LOG_BASE;
-      if (i5 < len) {
-        if (i5)
-          x4.d.push(+str.slice(0, i5));
-        for (len -= LOG_BASE; i5 < len; )
-          x4.d.push(+str.slice(i5, i5 += LOG_BASE));
-        str = str.slice(i5);
-        i5 = LOG_BASE - str.length;
+      i4 = (e5 + 1) % LOG_BASE;
+      if (e5 < 0)
+        i4 += LOG_BASE;
+      if (i4 < len) {
+        if (i4)
+          x4.d.push(+str.slice(0, i4));
+        for (len -= LOG_BASE; i4 < len; )
+          x4.d.push(+str.slice(i4, i4 += LOG_BASE));
+        str = str.slice(i4);
+        i4 = LOG_BASE - str.length;
       } else {
-        i5 -= len;
+        i4 -= len;
       }
-      for (; i5--; )
+      for (; i4--; )
         str += "0";
       x4.d.push(+str);
       if (external) {
@@ -22919,7 +22630,7 @@ svg {
     return x4;
   }
   function parseOther(x4, str) {
-    var base, Ctor, divisor, i5, isFloat, len, p3, xd, xe;
+    var base, Ctor, divisor, i4, isFloat, len, p3, xd, xe;
     if (str.indexOf("_") > -1) {
       str = str.replace(/(\d)_(?=\d)/g, "$1");
       if (isDecimal.test(str))
@@ -22941,27 +22652,27 @@ svg {
     } else {
       throw Error(invalidArgument + str);
     }
-    i5 = str.search(/p/i);
-    if (i5 > 0) {
-      p3 = +str.slice(i5 + 1);
-      str = str.substring(2, i5);
+    i4 = str.search(/p/i);
+    if (i4 > 0) {
+      p3 = +str.slice(i4 + 1);
+      str = str.substring(2, i4);
     } else {
       str = str.slice(2);
     }
-    i5 = str.indexOf(".");
-    isFloat = i5 >= 0;
+    i4 = str.indexOf(".");
+    isFloat = i4 >= 0;
     Ctor = x4.constructor;
     if (isFloat) {
       str = str.replace(".", "");
       len = str.length;
-      i5 = len - i5;
-      divisor = intPow(Ctor, new Ctor(base), i5, i5 * 2);
+      i4 = len - i4;
+      divisor = intPow(Ctor, new Ctor(base), i4, i4 * 2);
     }
     xd = convertBase(str, base, BASE);
     xe = xd.length - 1;
-    for (i5 = xe; xd[i5] === 0; --i5)
+    for (i4 = xe; xd[i4] === 0; --i4)
       xd.pop();
-    if (i5 < 0)
+    if (i4 < 0)
       return new Ctor(x4.s * 0);
     x4.e = getBase10Exponent(xd, xe);
     x4.d = xd;
@@ -22990,7 +22701,7 @@ svg {
     return x4;
   }
   function taylorSeries(Ctor, n3, x4, y3, isHyperbolic) {
-    var j4, t3, u3, x22, i5 = 1, pr = Ctor.precision, k4 = Math.ceil(pr / LOG_BASE);
+    var j4, t3, u3, x22, i4 = 1, pr = Ctor.precision, k4 = Math.ceil(pr / LOG_BASE);
     external = false;
     x22 = x4.times(x4);
     u3 = new Ctor(y3);
@@ -23009,15 +22720,15 @@ svg {
       u3 = y3;
       y3 = t3;
       t3 = j4;
-      i5++;
+      i4++;
     }
     external = true;
     t3.d.length = k4 + 1;
     return t3;
   }
-  function tinyPow(b3, e6) {
+  function tinyPow(b3, e5) {
     var n3 = b3;
-    while (--e6)
+    while (--e5)
       n3 *= b3;
     return n3;
   }
@@ -23042,7 +22753,7 @@ svg {
     return x4.minus(pi3).abs();
   }
   function toStringBinary(x4, baseOut, sd, rm) {
-    var base, e6, i5, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
+    var base, e5, i4, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
     if (isExp) {
       checkInt32(sd, 1, MAX_DIGITS);
       if (rm === void 0)
@@ -23057,7 +22768,7 @@ svg {
       str = nonFiniteToString(x4);
     } else {
       str = finiteToString(x4);
-      i5 = str.indexOf(".");
+      i4 = str.indexOf(".");
       if (isExp) {
         base = 2;
         if (baseOut == 16) {
@@ -23068,75 +22779,75 @@ svg {
       } else {
         base = baseOut;
       }
-      if (i5 >= 0) {
+      if (i4 >= 0) {
         str = str.replace(".", "");
         y3 = new Ctor(1);
-        y3.e = str.length - i5;
+        y3.e = str.length - i4;
         y3.d = convertBase(finiteToString(y3), 10, base);
         y3.e = y3.d.length;
       }
       xd = convertBase(str, 10, base);
-      e6 = len = xd.length;
+      e5 = len = xd.length;
       for (; xd[--len] == 0; )
         xd.pop();
       if (!xd[0]) {
         str = isExp ? "0p+0" : "0";
       } else {
-        if (i5 < 0) {
-          e6--;
+        if (i4 < 0) {
+          e5--;
         } else {
           x4 = new Ctor(x4);
           x4.d = xd;
-          x4.e = e6;
+          x4.e = e5;
           x4 = divide(x4, y3, sd, rm, 0, base);
           xd = x4.d;
-          e6 = x4.e;
+          e5 = x4.e;
           roundUp = inexact;
         }
-        i5 = xd[sd];
+        i4 = xd[sd];
         k4 = base / 2;
         roundUp = roundUp || xd[sd + 1] !== void 0;
-        roundUp = rm < 4 ? (i5 !== void 0 || roundUp) && (rm === 0 || rm === (x4.s < 0 ? 3 : 2)) : i5 > k4 || i5 === k4 && (rm === 4 || roundUp || rm === 6 && xd[sd - 1] & 1 || rm === (x4.s < 0 ? 8 : 7));
+        roundUp = rm < 4 ? (i4 !== void 0 || roundUp) && (rm === 0 || rm === (x4.s < 0 ? 3 : 2)) : i4 > k4 || i4 === k4 && (rm === 4 || roundUp || rm === 6 && xd[sd - 1] & 1 || rm === (x4.s < 0 ? 8 : 7));
         xd.length = sd;
         if (roundUp) {
           for (; ++xd[--sd] > base - 1; ) {
             xd[sd] = 0;
             if (!sd) {
-              ++e6;
+              ++e5;
               xd.unshift(1);
             }
           }
         }
         for (len = xd.length; !xd[len - 1]; --len)
           ;
-        for (i5 = 0, str = ""; i5 < len; i5++)
-          str += NUMERALS.charAt(xd[i5]);
+        for (i4 = 0, str = ""; i4 < len; i4++)
+          str += NUMERALS.charAt(xd[i4]);
         if (isExp) {
           if (len > 1) {
             if (baseOut == 16 || baseOut == 8) {
-              i5 = baseOut == 16 ? 4 : 3;
-              for (--len; len % i5; len++)
+              i4 = baseOut == 16 ? 4 : 3;
+              for (--len; len % i4; len++)
                 str += "0";
               xd = convertBase(str, base, baseOut);
               for (len = xd.length; !xd[len - 1]; --len)
                 ;
-              for (i5 = 1, str = "1."; i5 < len; i5++)
-                str += NUMERALS.charAt(xd[i5]);
+              for (i4 = 1, str = "1."; i4 < len; i4++)
+                str += NUMERALS.charAt(xd[i4]);
             } else {
               str = str.charAt(0) + "." + str.slice(1);
             }
           }
-          str = str + (e6 < 0 ? "p" : "p+") + e6;
-        } else if (e6 < 0) {
-          for (; ++e6; )
+          str = str + (e5 < 0 ? "p" : "p+") + e5;
+        } else if (e5 < 0) {
+          for (; ++e5; )
             str = "0" + str;
           str = "0." + str;
         } else {
-          if (++e6 > len)
-            for (e6 -= len; e6--; )
+          if (++e5 > len)
+            for (e5 -= len; e5--; )
               str += "0";
-          else if (e6 < len)
-            str = str.slice(0, e6) + "." + str.slice(e6);
+          else if (e5 < len)
+            str = str.slice(0, e5) + "." + str.slice(e5);
         }
       }
       str = (baseOut == 16 ? "0x" : baseOut == 2 ? "0b" : baseOut == 8 ? "0o" : "") + str;
@@ -23213,7 +22924,7 @@ svg {
   function config3(obj) {
     if (!obj || typeof obj !== "object")
       throw Error(decimalError + "Object expected");
-    var i5, p3, v3, useDefaults = obj.defaults === true, ps = [
+    var i4, p3, v3, useDefaults = obj.defaults === true, ps = [
       "precision",
       1,
       MAX_DIGITS,
@@ -23236,11 +22947,11 @@ svg {
       0,
       9
     ];
-    for (i5 = 0; i5 < ps.length; i5 += 3) {
-      if (p3 = ps[i5], useDefaults)
+    for (i4 = 0; i4 < ps.length; i4 += 3) {
+      if (p3 = ps[i4], useDefaults)
         this[p3] = DEFAULTS[p3];
       if ((v3 = obj[p3]) !== void 0) {
-        if (mathfloor(v3) === v3 && v3 >= ps[i5 + 1] && v3 <= ps[i5 + 2])
+        if (mathfloor(v3) === v3 && v3 >= ps[i4 + 1] && v3 <= ps[i4 + 2])
           this[p3] = v3;
         else
           throw Error(invalidArgument + p3 + ": " + v3);
@@ -23272,9 +22983,9 @@ svg {
     return new this(x4).cosh();
   }
   function clone3(obj) {
-    var i5, p3, ps;
+    var i4, p3, ps;
     function Decimal2(v3) {
-      var e6, i6, t3, x4 = this;
+      var e5, i5, t3, x4 = this;
       if (!(x4 instanceof Decimal2))
         return new Decimal2(v3);
       x4.constructor = Decimal2;
@@ -23312,21 +23023,21 @@ svg {
           x4.s = 1;
         }
         if (v3 === ~~v3 && v3 < 1e7) {
-          for (e6 = 0, i6 = v3; i6 >= 10; i6 /= 10)
-            e6++;
+          for (e5 = 0, i5 = v3; i5 >= 10; i5 /= 10)
+            e5++;
           if (external) {
-            if (e6 > Decimal2.maxE) {
+            if (e5 > Decimal2.maxE) {
               x4.e = NaN;
               x4.d = null;
-            } else if (e6 < Decimal2.minE) {
+            } else if (e5 < Decimal2.minE) {
               x4.e = 0;
               x4.d = [0];
             } else {
-              x4.e = e6;
+              x4.e = e5;
               x4.d = [v3];
             }
           } else {
-            x4.e = e6;
+            x4.e = e5;
             x4.d = [v3];
           }
           return;
@@ -23341,11 +23052,11 @@ svg {
       } else if (t3 !== "string") {
         throw Error(invalidArgument + v3);
       }
-      if ((i6 = v3.charCodeAt(0)) === 45) {
+      if ((i5 = v3.charCodeAt(0)) === 45) {
         v3 = v3.slice(1);
         x4.s = -1;
       } else {
-        if (i6 === 43)
+        if (i5 === 43)
           v3 = v3.slice(1);
         x4.s = 1;
       }
@@ -23408,8 +23119,8 @@ svg {
     if (obj) {
       if (obj.defaults !== true) {
         ps = ["precision", "rounding", "toExpNeg", "toExpPos", "maxE", "minE", "modulo", "crypto"];
-        for (i5 = 0; i5 < ps.length; )
-          if (!obj.hasOwnProperty(p3 = ps[i5++]))
+        for (i4 = 0; i4 < ps.length; )
+          if (!obj.hasOwnProperty(p3 = ps[i4++]))
             obj[p3] = this[p3];
       }
     }
@@ -23426,10 +23137,10 @@ svg {
     return finalise(x4 = new this(x4), x4.e + 1, 3);
   }
   function hypot() {
-    var i5, n3, t3 = new this(0);
+    var i4, n3, t3 = new this(0);
     external = false;
-    for (i5 = 0; i5 < arguments.length; ) {
-      n3 = new this(arguments[i5++]);
+    for (i4 = 0; i4 < arguments.length; ) {
+      n3 = new this(arguments[i4++]);
       if (!n3.d) {
         if (n3.s) {
           external = true;
@@ -23474,61 +23185,61 @@ svg {
     return new this(x4).pow(y3);
   }
   function random(sd) {
-    var d3, e6, k4, n3, i5 = 0, r3 = new this(1), rd = [];
+    var d3, e5, k4, n3, i4 = 0, r3 = new this(1), rd = [];
     if (sd === void 0)
       sd = this.precision;
     else
       checkInt32(sd, 1, MAX_DIGITS);
     k4 = Math.ceil(sd / LOG_BASE);
     if (!this.crypto) {
-      for (; i5 < k4; )
-        rd[i5++] = Math.random() * 1e7 | 0;
+      for (; i4 < k4; )
+        rd[i4++] = Math.random() * 1e7 | 0;
     } else if (crypto.getRandomValues) {
       d3 = crypto.getRandomValues(new Uint32Array(k4));
-      for (; i5 < k4; ) {
-        n3 = d3[i5];
+      for (; i4 < k4; ) {
+        n3 = d3[i4];
         if (n3 >= 429e7) {
-          d3[i5] = crypto.getRandomValues(new Uint32Array(1))[0];
+          d3[i4] = crypto.getRandomValues(new Uint32Array(1))[0];
         } else {
-          rd[i5++] = n3 % 1e7;
+          rd[i4++] = n3 % 1e7;
         }
       }
     } else if (crypto.randomBytes) {
       d3 = crypto.randomBytes(k4 *= 4);
-      for (; i5 < k4; ) {
-        n3 = d3[i5] + (d3[i5 + 1] << 8) + (d3[i5 + 2] << 16) + ((d3[i5 + 3] & 127) << 24);
+      for (; i4 < k4; ) {
+        n3 = d3[i4] + (d3[i4 + 1] << 8) + (d3[i4 + 2] << 16) + ((d3[i4 + 3] & 127) << 24);
         if (n3 >= 214e7) {
-          crypto.randomBytes(4).copy(d3, i5);
+          crypto.randomBytes(4).copy(d3, i4);
         } else {
           rd.push(n3 % 1e7);
-          i5 += 4;
+          i4 += 4;
         }
       }
-      i5 = k4 / 4;
+      i4 = k4 / 4;
     } else {
       throw Error(cryptoUnavailable);
     }
-    k4 = rd[--i5];
+    k4 = rd[--i4];
     sd %= LOG_BASE;
     if (k4 && sd) {
       n3 = mathpow(10, LOG_BASE - sd);
-      rd[i5] = (k4 / n3 | 0) * n3;
+      rd[i4] = (k4 / n3 | 0) * n3;
     }
-    for (; rd[i5] === 0; i5--)
+    for (; rd[i4] === 0; i4--)
       rd.pop();
-    if (i5 < 0) {
-      e6 = 0;
+    if (i4 < 0) {
+      e5 = 0;
       rd = [0];
     } else {
-      e6 = -1;
-      for (; rd[0] === 0; e6 -= LOG_BASE)
+      e5 = -1;
+      for (; rd[0] === 0; e5 -= LOG_BASE)
         rd.shift();
       for (k4 = 1, n3 = rd[0]; n3 >= 10; n3 /= 10)
         k4++;
       if (k4 < LOG_BASE)
-        e6 -= LOG_BASE - k4;
+        e5 -= LOG_BASE - k4;
     }
-    r3.e = e6;
+    r3.e = e5;
     r3.d = rd;
     return r3;
   }
@@ -23552,10 +23263,10 @@ svg {
     return new this(x4).sub(y3);
   }
   function sum() {
-    var i5 = 0, args = arguments, x4 = new this(args[i5]);
+    var i4 = 0, args = arguments, x4 = new this(args[i4]);
     external = false;
-    for (; x4.s && ++i5 < args.length; )
-      x4 = x4.plus(args[i5]);
+    for (; x4.s && ++i4 < args.length; )
+      x4 = x4.plus(args[i4]);
     external = true;
     return finalise(x4, this.precision, this.rounding);
   }
@@ -23674,7 +23385,7 @@ svg {
         return k4 < 0 ? min3 : x4.cmp(max3) > 0 ? max3 : new Ctor(x4);
       };
       P4.comparedTo = P4.cmp = function(y3) {
-        var i5, j4, xdL, ydL, x4 = this, xd = x4.d, yd = (y3 = new x4.constructor(y3)).d, xs = x4.s, ys = y3.s;
+        var i4, j4, xdL, ydL, x4 = this, xd = x4.d, yd = (y3 = new x4.constructor(y3)).d, xs = x4.s, ys = y3.s;
         if (!xd || !yd) {
           return !xs || !ys ? NaN : xs !== ys ? xs : xd === yd ? 0 : !xd ^ xs < 0 ? 1 : -1;
         }
@@ -23686,9 +23397,9 @@ svg {
           return x4.e > y3.e ^ xs < 0 ? 1 : -1;
         xdL = xd.length;
         ydL = yd.length;
-        for (i5 = 0, j4 = xdL < ydL ? xdL : ydL; i5 < j4; ++i5) {
-          if (xd[i5] !== yd[i5])
-            return xd[i5] > yd[i5] ^ xs < 0 ? 1 : -1;
+        for (i4 = 0, j4 = xdL < ydL ? xdL : ydL; i4 < j4; ++i4) {
+          if (xd[i4] !== yd[i4])
+            return xd[i4] > yd[i4] ^ xs < 0 ? 1 : -1;
         }
         return xdL === ydL ? 0 : xdL > ydL ^ xs < 0 ? 1 : -1;
       };
@@ -23708,30 +23419,30 @@ svg {
         return finalise(quadrant == 2 || quadrant == 3 ? x4.neg() : x4, pr, rm, true);
       };
       P4.cubeRoot = P4.cbrt = function() {
-        var e6, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
+        var e5, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
         external = false;
         s3 = x4.s * mathpow(x4.s * x4, 1 / 3);
         if (!s3 || Math.abs(s3) == 1 / 0) {
           n3 = digitsToString(x4.d);
-          e6 = x4.e;
-          if (s3 = (e6 - n3.length + 1) % 3)
+          e5 = x4.e;
+          if (s3 = (e5 - n3.length + 1) % 3)
             n3 += s3 == 1 || s3 == -2 ? "0" : "00";
           s3 = mathpow(n3, 1 / 3);
-          e6 = mathfloor((e6 + 1) / 3) - (e6 % 3 == (e6 < 0 ? -1 : 2));
+          e5 = mathfloor((e5 + 1) / 3) - (e5 % 3 == (e5 < 0 ? -1 : 2));
           if (s3 == 1 / 0) {
-            n3 = "5e" + e6;
+            n3 = "5e" + e5;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
           }
           r3 = new Ctor(n3);
           r3.s = x4.s;
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e6 = Ctor.precision) + 3;
+        sd = (e5 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           t32 = t3.times(t3).times(t3);
@@ -23741,7 +23452,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e6 + 1, 0);
+                finalise(t3, e5 + 1, 0);
                 if (t3.times(t3).times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -23751,7 +23462,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e6 + 1, 1);
+                finalise(r3, e5 + 1, 1);
                 m3 = !r3.times(r3).times(r3).eq(x4);
               }
               break;
@@ -23759,7 +23470,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e6, Ctor.rounding, m3);
+        return finalise(r3, e5, Ctor.rounding, m3);
       };
       P4.decimalPlaces = P4.dp = function() {
         var w4, d3 = this.d, n3 = NaN;
@@ -23814,8 +23525,8 @@ svg {
           n3 = "2.3283064365386962890625e-10";
         }
         x4 = taylorSeries(Ctor, 1, x4.times(n3), new Ctor(1), true);
-        var cosh2_x, i5 = k4, d8 = new Ctor(8);
-        for (; i5--; ) {
+        var cosh2_x, i4 = k4, d8 = new Ctor(8);
+        for (; i4--; ) {
           cosh2_x = x4.times(x4);
           x4 = one.minus(cosh2_x.times(d8.minus(cosh2_x.times(d8))));
         }
@@ -23949,7 +23660,7 @@ svg {
         return x4.times(2);
       };
       P4.inverseTangent = P4.atan = function() {
-        var i5, j4, k4, n3, px, t3, r3, wpr, x22, x4 = this, Ctor = x4.constructor, pr = Ctor.precision, rm = Ctor.rounding;
+        var i4, j4, k4, n3, px, t3, r3, wpr, x22, x4 = this, Ctor = x4.constructor, pr = Ctor.precision, rm = Ctor.rounding;
         if (!x4.isFinite()) {
           if (!x4.s)
             return new Ctor(NaN);
@@ -23968,7 +23679,7 @@ svg {
         Ctor.precision = wpr = pr + 10;
         Ctor.rounding = 1;
         k4 = Math.min(28, wpr / LOG_BASE + 2 | 0);
-        for (i5 = k4; i5; --i5)
+        for (i4 = k4; i4; --i4)
           x4 = x4.div(x4.times(x4).plus(1).sqrt().plus(1));
         external = false;
         j4 = Math.ceil(wpr / LOG_BASE);
@@ -23976,13 +23687,13 @@ svg {
         x22 = x4.times(x4);
         r3 = new Ctor(x4);
         px = x4;
-        for (; i5 !== -1; ) {
+        for (; i4 !== -1; ) {
           px = px.times(x22);
           t3 = r3.minus(px.div(n3 += 2));
           px = px.times(x22);
           r3 = t3.plus(px.div(n3 += 2));
           if (r3.d[j4] !== void 0)
-            for (i5 = j4; r3.d[i5] === t3.d[i5] && i5--; )
+            for (i4 = j4; r3.d[i4] === t3.d[i4] && i4--; )
               ;
         }
         if (k4)
@@ -24062,7 +23773,7 @@ svg {
         return finalise(r3, pr, rm);
       };
       P4.minus = P4.sub = function(y3) {
-        var d3, e6, i5, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
+        var d3, e5, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24090,10 +23801,10 @@ svg {
             return new Ctor(rm === 3 ? -0 : 0);
           return external ? finalise(y3, pr, rm) : y3;
         }
-        e6 = mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(y3.e / LOG_BASE);
         xe = mathfloor(x4.e / LOG_BASE);
         xd = xd.slice();
-        k4 = xe - e6;
+        k4 = xe - e5;
         if (k4) {
           xLTy = k4 < 0;
           if (xLTy) {
@@ -24102,27 +23813,27 @@ svg {
             len = yd.length;
           } else {
             d3 = yd;
-            e6 = xe;
+            e5 = xe;
             len = xd.length;
           }
-          i5 = Math.max(Math.ceil(pr / LOG_BASE), len) + 2;
-          if (k4 > i5) {
-            k4 = i5;
+          i4 = Math.max(Math.ceil(pr / LOG_BASE), len) + 2;
+          if (k4 > i4) {
+            k4 = i4;
             d3.length = 1;
           }
           d3.reverse();
-          for (i5 = k4; i5--; )
+          for (i4 = k4; i4--; )
             d3.push(0);
           d3.reverse();
         } else {
-          i5 = xd.length;
+          i4 = xd.length;
           len = yd.length;
-          xLTy = i5 < len;
+          xLTy = i4 < len;
           if (xLTy)
-            len = i5;
-          for (i5 = 0; i5 < len; i5++) {
-            if (xd[i5] != yd[i5]) {
-              xLTy = xd[i5] < yd[i5];
+            len = i4;
+          for (i4 = 0; i4 < len; i4++) {
+            if (xd[i4] != yd[i4]) {
+              xLTy = xd[i4] < yd[i4];
               break;
             }
           }
@@ -24135,25 +23846,25 @@ svg {
           y3.s = -y3.s;
         }
         len = xd.length;
-        for (i5 = yd.length - len; i5 > 0; --i5)
+        for (i4 = yd.length - len; i4 > 0; --i4)
           xd[len++] = 0;
-        for (i5 = yd.length; i5 > k4; ) {
-          if (xd[--i5] < yd[i5]) {
-            for (j4 = i5; j4 && xd[--j4] === 0; )
+        for (i4 = yd.length; i4 > k4; ) {
+          if (xd[--i4] < yd[i4]) {
+            for (j4 = i4; j4 && xd[--j4] === 0; )
               xd[j4] = BASE - 1;
             --xd[j4];
-            xd[i5] += BASE;
+            xd[i4] += BASE;
           }
-          xd[i5] -= yd[i5];
+          xd[i4] -= yd[i4];
         }
         for (; xd[--len] === 0; )
           xd.pop();
         for (; xd[0] === 0; xd.shift())
-          --e6;
+          --e5;
         if (!xd[0])
           return new Ctor(rm === 3 ? -0 : 0);
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e6);
+        y3.e = getBase10Exponent(xd, e5);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.modulo = P4.mod = function(y3) {
@@ -24187,7 +23898,7 @@ svg {
         return finalise(x4);
       };
       P4.plus = P4.add = function(y3) {
-        var carry, d3, e6, i5, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
+        var carry, d3, e5, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24210,50 +23921,50 @@ svg {
           return external ? finalise(y3, pr, rm) : y3;
         }
         k4 = mathfloor(x4.e / LOG_BASE);
-        e6 = mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(y3.e / LOG_BASE);
         xd = xd.slice();
-        i5 = k4 - e6;
-        if (i5) {
-          if (i5 < 0) {
+        i4 = k4 - e5;
+        if (i4) {
+          if (i4 < 0) {
             d3 = xd;
-            i5 = -i5;
+            i4 = -i4;
             len = yd.length;
           } else {
             d3 = yd;
-            e6 = k4;
+            e5 = k4;
             len = xd.length;
           }
           k4 = Math.ceil(pr / LOG_BASE);
           len = k4 > len ? k4 + 1 : len + 1;
-          if (i5 > len) {
-            i5 = len;
+          if (i4 > len) {
+            i4 = len;
             d3.length = 1;
           }
           d3.reverse();
-          for (; i5--; )
+          for (; i4--; )
             d3.push(0);
           d3.reverse();
         }
         len = xd.length;
-        i5 = yd.length;
-        if (len - i5 < 0) {
-          i5 = len;
+        i4 = yd.length;
+        if (len - i4 < 0) {
+          i4 = len;
           d3 = yd;
           yd = xd;
           xd = d3;
         }
-        for (carry = 0; i5; ) {
-          carry = (xd[--i5] = xd[i5] + yd[i5] + carry) / BASE | 0;
-          xd[i5] %= BASE;
+        for (carry = 0; i4; ) {
+          carry = (xd[--i4] = xd[i4] + yd[i4] + carry) / BASE | 0;
+          xd[i4] %= BASE;
         }
         if (carry) {
           xd.unshift(carry);
-          ++e6;
+          ++e5;
         }
         for (len = xd.length; xd[--len] == 0; )
           xd.pop();
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e6);
+        y3.e = getBase10Exponent(xd, e5);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.precision = P4.sd = function(z5) {
@@ -24289,7 +24000,7 @@ svg {
         return finalise(quadrant > 2 ? x4.neg() : x4, pr, rm, true);
       };
       P4.squareRoot = P4.sqrt = function() {
-        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e6 = x4.e, s3 = x4.s, Ctor = x4.constructor;
+        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e5 = x4.e, s3 = x4.s, Ctor = x4.constructor;
         if (s3 !== 1 || !d3 || !d3[0]) {
           return new Ctor(!s3 || s3 < 0 && (!d3 || d3[0]) ? NaN : d3 ? x4 : 1 / 0);
         }
@@ -24297,21 +24008,21 @@ svg {
         s3 = Math.sqrt(+x4);
         if (s3 == 0 || s3 == 1 / 0) {
           n3 = digitsToString(d3);
-          if ((n3.length + e6) % 2 == 0)
+          if ((n3.length + e5) % 2 == 0)
             n3 += "0";
           s3 = Math.sqrt(n3);
-          e6 = mathfloor((e6 + 1) / 2) - (e6 < 0 || e6 % 2);
+          e5 = mathfloor((e5 + 1) / 2) - (e5 < 0 || e5 % 2);
           if (s3 == 1 / 0) {
-            n3 = "5e" + e6;
+            n3 = "5e" + e5;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
           }
           r3 = new Ctor(n3);
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e6 = Ctor.precision) + 3;
+        sd = (e5 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           r3 = t3.plus(divide(x4, t3, sd + 2, 1)).times(0.5);
@@ -24319,7 +24030,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e6 + 1, 0);
+                finalise(t3, e5 + 1, 0);
                 if (t3.times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -24329,7 +24040,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e6 + 1, 1);
+                finalise(r3, e5 + 1, 1);
                 m3 = !r3.times(r3).eq(x4);
               }
               break;
@@ -24337,7 +24048,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e6, Ctor.rounding, m3);
+        return finalise(r3, e5, Ctor.rounding, m3);
       };
       P4.tangent = P4.tan = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
@@ -24357,12 +24068,12 @@ svg {
         return finalise(quadrant == 2 || quadrant == 4 ? x4.neg() : x4, pr, rm, true);
       };
       P4.times = P4.mul = function(y3) {
-        var carry, e6, i5, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
+        var carry, e5, i4, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
         y3.s *= x4.s;
         if (!xd || !xd[0] || !yd || !yd[0]) {
           return new Ctor(!y3.s || xd && !xd[0] && !yd || yd && !yd[0] && !xd ? NaN : !xd || !yd ? y3.s / 0 : y3.s * 0);
         }
-        e6 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
         xdL = xd.length;
         ydL = yd.length;
         if (xdL < ydL) {
@@ -24375,12 +24086,12 @@ svg {
         }
         r3 = [];
         rL = xdL + ydL;
-        for (i5 = rL; i5--; )
+        for (i4 = rL; i4--; )
           r3.push(0);
-        for (i5 = ydL; --i5 >= 0; ) {
+        for (i4 = ydL; --i4 >= 0; ) {
           carry = 0;
-          for (k4 = xdL + i5; k4 > i5; ) {
-            t3 = r3[k4] + yd[i5] * xd[k4 - i5 - 1] + carry;
+          for (k4 = xdL + i4; k4 > i4; ) {
+            t3 = r3[k4] + yd[i4] * xd[k4 - i4 - 1] + carry;
             r3[k4--] = t3 % BASE | 0;
             carry = t3 / BASE | 0;
           }
@@ -24389,11 +24100,11 @@ svg {
         for (; !r3[--rL]; )
           r3.pop();
         if (carry)
-          ++e6;
+          ++e5;
         else
           r3.shift();
         y3.d = r3;
-        y3.e = getBase10Exponent(r3, e6);
+        y3.e = getBase10Exponent(r3, e5);
         return external ? finalise(y3, Ctor.precision, Ctor.rounding) : y3;
       };
       P4.toBinary = function(sd, rm) {
@@ -24442,27 +24153,27 @@ svg {
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
       P4.toFraction = function(maxD) {
-        var d3, d0, d1, d22, e6, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
+        var d3, d0, d1, d22, e5, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
         if (!xd)
           return new Ctor(x4);
         n16 = d0 = new Ctor(1);
         d1 = n0 = new Ctor(0);
         d3 = new Ctor(d1);
-        e6 = d3.e = getPrecision(xd) - x4.e - 1;
-        k4 = e6 % LOG_BASE;
+        e5 = d3.e = getPrecision(xd) - x4.e - 1;
+        k4 = e5 % LOG_BASE;
         d3.d[0] = mathpow(10, k4 < 0 ? LOG_BASE + k4 : k4);
         if (maxD == null) {
-          maxD = e6 > 0 ? d3 : n16;
+          maxD = e5 > 0 ? d3 : n16;
         } else {
           n3 = new Ctor(maxD);
           if (!n3.isInt() || n3.lt(n16))
             throw Error(invalidArgument + n3);
-          maxD = n3.gt(d3) ? e6 > 0 ? d3 : n16 : n3;
+          maxD = n3.gt(d3) ? e5 > 0 ? d3 : n16 : n3;
         }
         external = false;
         n3 = new Ctor(digitsToString(xd));
         pr = Ctor.precision;
-        Ctor.precision = e6 = xd.length * LOG_BASE * 2;
+        Ctor.precision = e5 = xd.length * LOG_BASE * 2;
         for (; ; ) {
           q4 = divide(n3, d3, 0, 1, 1);
           d22 = d0.plus(q4.times(d1));
@@ -24481,7 +24192,7 @@ svg {
         n0 = n0.plus(d22.times(n16));
         d0 = d0.plus(d22.times(d1));
         n0.s = n16.s = x4.s;
-        r3 = divide(n16, d1, e6, 1).minus(x4).abs().cmp(divide(n0, d0, e6, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
+        r3 = divide(n16, d1, e5, 1).minus(x4).abs().cmp(divide(n0, d0, e5, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
         Ctor.precision = pr;
         external = true;
         return r3;
@@ -24530,7 +24241,7 @@ svg {
         return toStringBinary(this, 8, sd, rm);
       };
       P4.toPower = P4.pow = function(y3) {
-        var e6, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
+        var e5, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
         if (!x4.d || !y3.d || !x4.d[0] || !y3.d[0])
           return new Ctor(mathpow(+x4, yn2));
         x4 = new Ctor(x4);
@@ -24540,16 +24251,16 @@ svg {
         rm = Ctor.rounding;
         if (y3.eq(1))
           return finalise(x4, pr, rm);
-        e6 = mathfloor(y3.e / LOG_BASE);
-        if (e6 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
+        e5 = mathfloor(y3.e / LOG_BASE);
+        if (e5 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
           r3 = intPow(Ctor, x4, k4, pr);
           return y3.s < 0 ? new Ctor(1).div(r3) : finalise(r3, pr, rm);
         }
         s3 = x4.s;
         if (s3 < 0) {
-          if (e6 < y3.d.length - 1)
+          if (e5 < y3.d.length - 1)
             return new Ctor(NaN);
-          if ((y3.d[e6] & 1) == 0)
+          if ((y3.d[e5] & 1) == 0)
             s3 = 1;
           if (x4.e == 0 && x4.d[0] == 1 && x4.d.length == 1) {
             x4.s = s3;
@@ -24557,18 +24268,18 @@ svg {
           }
         }
         k4 = mathpow(+x4, yn2);
-        e6 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
-        if (e6 > Ctor.maxE + 1 || e6 < Ctor.minE - 1)
-          return new Ctor(e6 > 0 ? s3 / 0 : 0);
+        e5 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
+        if (e5 > Ctor.maxE + 1 || e5 < Ctor.minE - 1)
+          return new Ctor(e5 > 0 ? s3 / 0 : 0);
         external = false;
         Ctor.rounding = x4.s = 1;
-        k4 = Math.min(12, (e6 + "").length);
+        k4 = Math.min(12, (e5 + "").length);
         r3 = naturalExponential(y3.times(naturalLogarithm(x4, pr + k4)), pr);
         if (r3.d) {
           r3 = finalise(r3, pr + 5, 1);
           if (checkRoundingDigits(r3.d, pr, rm)) {
-            e6 = pr + 10;
-            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e6 + k4)), e6), e6 + 5, 1);
+            e5 = pr + 10;
+            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e5 + k4)), e5), e5 + 5, 1);
             if (+digitsToString(r3.d).slice(pr + 1, pr + 15) + 1 == 1e14) {
               r3 = finalise(r3, pr + 1, 0);
             }
@@ -24621,10 +24332,10 @@ svg {
       };
       divide = /* @__PURE__ */ function() {
         function multiplyInteger(x4, k4, base) {
-          var temp, carry = 0, i5 = x4.length;
-          for (x4 = x4.slice(); i5--; ) {
-            temp = x4[i5] * k4 + carry;
-            x4[i5] = temp % base | 0;
+          var temp, carry = 0, i4 = x4.length;
+          for (x4 = x4.slice(); i4--; ) {
+            temp = x4[i4] * k4 + carry;
+            x4[i4] = temp % base | 0;
             carry = temp / base | 0;
           }
           if (carry)
@@ -24632,13 +24343,13 @@ svg {
           return x4;
         }
         function compare3(a3, b3, aL, bL) {
-          var i5, r3;
+          var i4, r3;
           if (aL != bL) {
             r3 = aL > bL ? 1 : -1;
           } else {
-            for (i5 = r3 = 0; i5 < aL; i5++) {
-              if (a3[i5] != b3[i5]) {
-                r3 = a3[i5] > b3[i5] ? 1 : -1;
+            for (i4 = r3 = 0; i4 < aL; i4++) {
+              if (a3[i4] != b3[i4]) {
+                r3 = a3[i4] > b3[i4] ? 1 : -1;
                 break;
               }
             }
@@ -24646,17 +24357,17 @@ svg {
           return r3;
         }
         function subtract2(a3, b3, aL, base) {
-          var i5 = 0;
+          var i4 = 0;
           for (; aL--; ) {
-            a3[aL] -= i5;
-            i5 = a3[aL] < b3[aL] ? 1 : 0;
-            a3[aL] = i5 * base + a3[aL] - b3[aL];
+            a3[aL] -= i4;
+            i4 = a3[aL] < b3[aL] ? 1 : 0;
+            a3[aL] = i4 * base + a3[aL] - b3[aL];
           }
           for (; !a3[0] && a3.length > 1; )
             a3.shift();
         }
         return function(x4, y3, pr, rm, dp, base) {
-          var cmp, e6, i5, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
+          var cmp, e5, i4, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
           if (!xd || !xd[0] || !yd || !yd[0]) {
             return new Ctor(
               // Return NaN if either NaN, or both Infinity or 0.
@@ -24668,20 +24379,20 @@ svg {
           }
           if (base) {
             logBase = 1;
-            e6 = x4.e - y3.e;
+            e5 = x4.e - y3.e;
           } else {
             base = BASE;
             logBase = LOG_BASE;
-            e6 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
+            e5 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
           }
           yL = yd.length;
           xL = xd.length;
           q4 = new Ctor(sign4);
           qd = q4.d = [];
-          for (i5 = 0; yd[i5] == (xd[i5] || 0); i5++)
+          for (i4 = 0; yd[i4] == (xd[i4] || 0); i4++)
             ;
-          if (yd[i5] > (xd[i5] || 0))
-            e6--;
+          if (yd[i4] > (xd[i4] || 0))
+            e5--;
           if (pr == null) {
             sd = pr = Ctor.precision;
             rm = Ctor.rounding;
@@ -24695,17 +24406,17 @@ svg {
             more = true;
           } else {
             sd = sd / logBase + 2 | 0;
-            i5 = 0;
+            i4 = 0;
             if (yL == 1) {
               k4 = 0;
               yd = yd[0];
               sd++;
-              for (; (i5 < xL || k4) && sd--; i5++) {
-                t3 = k4 * base + (xd[i5] || 0);
-                qd[i5] = t3 / yd | 0;
+              for (; (i4 < xL || k4) && sd--; i4++) {
+                t3 = k4 * base + (xd[i4] || 0);
+                qd[i4] = t3 / yd | 0;
                 k4 = t3 % yd | 0;
               }
-              more = k4 || i5 < xL;
+              more = k4 || i4 < xL;
             } else {
               k4 = base / (yd[0] + 1) | 0;
               if (k4 > 1) {
@@ -24765,7 +24476,7 @@ svg {
                   k4++;
                   rem = [0];
                 }
-                qd[i5++] = k4;
+                qd[i4++] = k4;
                 if (cmp && rem[0]) {
                   rem[remL++] = xd[xi] || 0;
                 } else {
@@ -24779,12 +24490,12 @@ svg {
               qd.shift();
           }
           if (logBase == 1) {
-            q4.e = e6;
+            q4.e = e5;
             inexact = more;
           } else {
-            for (i5 = 1, k4 = qd[0]; k4 >= 10; k4 /= 10)
-              i5++;
-            q4.e = i5 + e6 * logBase - 1;
+            for (i4 = 1, k4 = qd[0]; k4 >= 10; k4 /= 10)
+              i4++;
+            q4.e = i4 + e5 * logBase - 1;
             finalise(q4, dp ? pr + q4.e + 1 : pr, rm, more);
           }
           return q4;
@@ -24937,8 +24648,8 @@ svg {
                 if (tokens === null) {
                   parser_exit();
                 }
-                for (var i5 = 0; i5 < tokens.length; i5++) {
-                  var c3 = tokens[i5];
+                for (var i4 = 0; i4 < tokens.length; i4++) {
+                  var c3 = tokens[i4];
                   if (c3 === " " || c3 === "	" || c3 === "\n") {
                   } else if (c3 === "+") {
                     plus++;
@@ -24948,9 +24659,9 @@ svg {
                     if (plus + minus === 0) {
                       parser_exit();
                     }
-                    if (tokens[i5 + 1] !== " " && !isNaN(tokens[i5 + 1])) {
-                      z5["im"] += parseFloat((minus % 2 ? "-" : "") + tokens[i5 + 1]);
-                      i5++;
+                    if (tokens[i4 + 1] !== " " && !isNaN(tokens[i4 + 1])) {
+                      z5["im"] += parseFloat((minus % 2 ? "-" : "") + tokens[i4 + 1]);
+                      i4++;
                     } else {
                       z5["im"] += parseFloat((minus % 2 ? "-" : "") + "1");
                     }
@@ -24959,9 +24670,9 @@ svg {
                     if (plus + minus === 0 || isNaN(c3)) {
                       parser_exit();
                     }
-                    if (tokens[i5 + 1] === "i" || tokens[i5 + 1] === "I") {
+                    if (tokens[i4 + 1] === "i" || tokens[i4 + 1] === "I") {
                       z5["im"] += parseFloat((minus % 2 ? "-" : "") + c3);
-                      i5++;
+                      i4++;
                     } else {
                       z5["re"] += parseFloat((minus % 2 ? "-" : "") + c3);
                     }
@@ -26010,14 +25721,14 @@ svg {
         function factorize(num) {
           var factors = {};
           var n3 = num;
-          var i5 = 2;
+          var i4 = 2;
           var s3 = 4;
           while (s3 <= n3) {
-            while (n3 % i5 === 0) {
-              n3 /= i5;
-              factors[i5] = (factors[i5] || 0) + 1;
+            while (n3 % i4 === 0) {
+              n3 /= i4;
+              factors[i4] = (factors[i4] || 0) + 1;
             }
-            s3 += 1 + 2 * i5++;
+            s3 += 1 + 2 * i4++;
           }
           if (n3 !== num) {
             if (n3 > 1)
@@ -26163,10 +25874,10 @@ svg {
           P6["n"] = Math.abs(n3);
           P6["d"] = Math.abs(d3);
         };
-        function modpow(b3, e6, m3) {
+        function modpow(b3, e5, m3) {
           var r3 = 1;
-          for (; e6 > 0; b3 = b3 * b3 % m3, e6 >>= 1) {
-            if (e6 & 1) {
+          for (; e5 > 0; b3 = b3 * b3 % m3, e5 >>= 1) {
+            if (e5 & 1) {
               r3 = r3 * b3 % m3;
             }
           }
@@ -26471,9 +26182,9 @@ svg {
             eps = eps || 1e-3;
             var thisABS = this["abs"]();
             var cont = thisABS["toContinued"]();
-            for (var i5 = 1; i5 < cont.length; i5++) {
-              var s3 = newFraction(cont[i5 - 1], 1);
-              for (var k4 = i5 - 2; k4 >= 0; k4--) {
+            for (var i4 = 1; i4 < cont.length; i4++) {
+              var s3 = newFraction(cont[i4 - 1], 1);
+              for (var k4 = i4 - 2; k4 >= 0; k4--) {
                 s3 = s3["inverse"]()["add"](cont[k4]);
               }
               if (Math.abs(s3["sub"](thisABS).valueOf()) < eps) {
@@ -26594,20 +26305,20 @@ svg {
             if (N3)
               str += ".";
             if (cycLen) {
-              for (var i5 = cycOff; i5--; ) {
+              for (var i4 = cycOff; i4--; ) {
                 str += N3 / D3 | 0;
                 N3 %= D3;
                 N3 *= 10;
               }
               str += "(";
-              for (var i5 = cycLen; i5--; ) {
+              for (var i4 = cycLen; i4--; ) {
                 str += N3 / D3 | 0;
                 N3 %= D3;
                 N3 *= 10;
               }
               str += ")";
             } else {
-              for (var i5 = dec; N3 && i5--; ) {
+              for (var i4 = dec; N3 && i4--; ) {
                 str += N3 / D3 | 0;
                 N3 %= D3;
                 N3 *= 10;
@@ -26774,18 +26485,18 @@ svg {
           var x4 = this.start;
           var step = this.step;
           var end = this.end;
-          var i5 = 0;
+          var i4 = 0;
           if (step > 0) {
             while (x4 < end) {
-              callback(x4, [i5], this);
+              callback(x4, [i4], this);
               x4 += step;
-              i5++;
+              i4++;
             }
           } else if (step < 0) {
             while (x4 > end) {
-              callback(x4, [i5], this);
+              callback(x4, [i4], this);
               x4 += step;
-              i5++;
+              i4++;
             }
           }
         };
@@ -26984,8 +26695,8 @@ svg {
         };
       }
       var args = [];
-      for (var i5 = 0; i5 < arguments.length; i5++) {
-        args[i5] = arguments[i5];
+      for (var i4 = 0; i4 < arguments.length; i4++) {
+        args[i4] = arguments[i4];
       }
       var hash = hasher2(args);
       if (memoize2.cache.values.has(hash)) {
@@ -27107,8 +26818,8 @@ svg {
             validateIndex(index2[x4], this._size[x4]);
           }
           var data = this._data;
-          for (var i5 = 0, ii = index2.length; i5 < ii; i5++) {
-            var indexI = index2[i5];
+          for (var i4 = 0, ii = index2.length; i4 < ii; i4++) {
+            var indexI = index2[i4];
             validateIndex(indexI, data.length);
             data = data[indexI];
           }
@@ -27121,14 +26832,14 @@ svg {
           if (index2.length < this._size.length) {
             throw new DimensionError(index2.length, this._size.length, "<");
           }
-          var i5, ii, indexI;
-          var size2 = index2.map(function(i6) {
-            return i6 + 1;
+          var i4, ii, indexI;
+          var size2 = index2.map(function(i5) {
+            return i5 + 1;
           });
           _fit(this, size2, defaultValue);
           var data = this._data;
-          for (i5 = 0, ii = index2.length - 1; i5 < ii; i5++) {
-            indexI = index2[i5];
+          for (i4 = 0, ii = index2.length - 1; i4 < ii; i4++) {
+            indexI = index2[i4];
             validateIndex(indexI, data.length);
             data = data[indexI];
           }
@@ -27151,9 +26862,9 @@ svg {
             }
             var min3 = index2.min();
             var max3 = index2.max();
-            for (var i5 = 0, ii = matrix2._size.length; i5 < ii; i5++) {
-              validateIndex(min3[i5], matrix2._size[i5]);
-              validateIndex(max3[i5], matrix2._size[i5]);
+            for (var i4 = 0, ii = matrix2._size.length; i4 < ii; i4++) {
+              validateIndex(min3[i4], matrix2._size[i4]);
+              validateIndex(max3[i4], matrix2._size[i4]);
             }
             return new DenseMatrix2(_getSubmatrix(matrix2._data, index2, size2.length, 0), matrix2._datatype);
           }
@@ -27162,14 +26873,14 @@ svg {
           var last = dim === dims - 1;
           var range2 = index2.dimension(dim);
           if (last) {
-            return range2.map(function(i5) {
-              validateIndex(i5, data.length);
-              return data[i5];
+            return range2.map(function(i4) {
+              validateIndex(i4, data.length);
+              return data[i4];
             }).valueOf();
           } else {
-            return range2.map(function(i5) {
-              validateIndex(i5, data.length);
-              var child = data[i5];
+            return range2.map(function(i4) {
+              validateIndex(i4, data.length);
+              var child = data[i4];
               return _getSubmatrix(child, index2, dims, dim + 1);
             }).valueOf();
           }
@@ -27208,22 +26919,22 @@ svg {
               throw new DimensionError(iSize.length, matrix2._size.length, "<");
             }
             if (sSize.length < iSize.length) {
-              var i5 = 0;
+              var i4 = 0;
               var outer = 0;
-              while (iSize[i5] === 1 && sSize[i5] === 1) {
-                i5++;
+              while (iSize[i4] === 1 && sSize[i4] === 1) {
+                i4++;
               }
-              while (iSize[i5] === 1) {
+              while (iSize[i4] === 1) {
                 outer++;
-                i5++;
+                i4++;
               }
               submatrix = unsqueeze(submatrix, iSize.length, outer, sSize);
             }
             if (!deepStrictEqual(iSize, sSize)) {
               throw new DimensionError(iSize, sSize, ">");
             }
-            var size2 = index2.max().map(function(i6) {
-              return i6 + 1;
+            var size2 = index2.max().map(function(i5) {
+              return i5 + 1;
             });
             _fit(matrix2, size2, defaultValue);
             var dims = iSize.length;
@@ -27283,9 +26994,9 @@ svg {
             newSize.push(0);
             changed = true;
           }
-          for (var i5 = 0, ii = size2.length; i5 < ii; i5++) {
-            if (size2[i5] > newSize[i5]) {
-              newSize[i5] = size2[i5];
+          for (var i4 = 0, ii = size2.length; i4 < ii; i4++) {
+            if (size2[i4] > newSize[i4]) {
+              newSize[i4] = size2[i4];
               changed = true;
             }
           }
@@ -27309,8 +27020,8 @@ svg {
           var args = maxArgumentCount(callback);
           var recurse = function recurse2(value2, index2) {
             if (isArray(value2)) {
-              return value2.map(function(child, i5) {
-                return recurse2(child, index2.concat(i5));
+              return value2.map(function(child, i4) {
+                return recurse2(child, index2.concat(i4));
               });
             } else {
               if (args === 1) {
@@ -27330,8 +27041,8 @@ svg {
           var me = this;
           var recurse = function recurse2(value2, index2) {
             if (isArray(value2)) {
-              value2.forEach(function(child, i5) {
-                recurse2(child, index2.concat(i5));
+              value2.forEach(function(child, i4) {
+                recurse2(child, index2.concat(i4));
               });
             } else {
               callback(value2, index2, me);
@@ -27342,8 +27053,8 @@ svg {
         DenseMatrix2.prototype[Symbol.iterator] = function* () {
           var recurse = function* recurse2(value2, index2) {
             if (isArray(value2)) {
-              for (var i5 = 0; i5 < value2.length; i5++) {
-                yield* __yieldStar(recurse2(value2[i5], index2.concat(i5)));
+              for (var i4 = 0; i4 < value2.length; i4++) {
+                yield* __yieldStar(recurse2(value2[i4], index2.concat(i4)));
               }
             } else {
               yield {
@@ -27374,12 +27085,12 @@ svg {
             throw new TypeError("Rows can only be returned for a 2D matrix.");
           }
           var data = this._data;
-          var _loop = function _loop2(i6) {
-            var col = data.map((row2) => [row2[i6]]);
+          var _loop = function _loop2(i5) {
+            var col = data.map((row2) => [row2[i5]]);
             result.push(new DenseMatrix2(col, _this._datatype));
           };
-          for (var i5 = 0; i5 < s3[1]; i5++) {
-            _loop(i5);
+          for (var i4 = 0; i4 < s3[1]; i4++) {
+            _loop(i4);
           }
           return result;
         };
@@ -27420,8 +27131,8 @@ svg {
           var columns = this._size[1];
           var n3 = Math.min(rows - kSub, columns - kSuper);
           var data = [];
-          for (var i5 = 0; i5 < n3; i5++) {
-            data[i5] = this._data[i5 + kSub][i5 + kSuper];
+          for (var i4 = 0; i4 < n3; i4++) {
+            data[i4] = this._data[i4 + kSub][i4 + kSuper];
           }
           return new DenseMatrix2({
             data,
@@ -27465,16 +27176,16 @@ svg {
             if (value2.length !== n3) {
               throw new Error("Invalid value array length");
             }
-            _value = function _value2(i5) {
-              return value2[i5];
+            _value = function _value2(i4) {
+              return value2[i4];
             };
           } else if (isMatrix(value2)) {
             var ms = value2.size();
             if (ms.length !== 1 || ms[0] !== n3) {
               throw new Error("Invalid matrix length");
             }
-            _value = function _value2(i5) {
-              return value2.get([i5]);
+            _value = function _value2(i4) {
+              return value2.get([i4]);
             };
           } else {
             _value = function _value2() {
@@ -27499,21 +27210,21 @@ svg {
         DenseMatrix2.fromJSON = function(json) {
           return new DenseMatrix2(json);
         };
-        DenseMatrix2.prototype.swapRows = function(i5, j4) {
-          if (!isNumber(i5) || !isInteger(i5) || !isNumber(j4) || !isInteger(j4)) {
+        DenseMatrix2.prototype.swapRows = function(i4, j4) {
+          if (!isNumber(i4) || !isInteger(i4) || !isNumber(j4) || !isInteger(j4)) {
             throw new Error("Row index must be positive integers");
           }
           if (this._size.length !== 2) {
             throw new Error("Only two dimensional matrix is supported");
           }
-          validateIndex(i5, this._size[0]);
+          validateIndex(i4, this._size[0]);
           validateIndex(j4, this._size[0]);
-          DenseMatrix2._swapRows(i5, j4, this._data);
+          DenseMatrix2._swapRows(i4, j4, this._data);
           return this;
         };
-        DenseMatrix2._swapRows = function(i5, j4, data) {
-          var vi = data[i5];
-          data[i5] = data[j4];
+        DenseMatrix2._swapRows = function(i4, j4, data) {
+          var vi = data[i4];
+          data[i4] = data[j4];
           data[j4] = vi;
         };
         function preprocess(data) {
@@ -27555,12 +27266,12 @@ svg {
   function _switch(mat) {
     var I3 = mat.length;
     var J2 = mat[0].length;
-    var i5, j4;
+    var i4, j4;
     var ret = [];
     for (j4 = 0; j4 < J2; j4++) {
       var tmp = [];
-      for (i5 = 0; i5 < I3; i5++) {
-        tmp.push(mat[i5][j4]);
+      for (i4 = 0; i4 < I3; i4++) {
+        tmp.push(mat[i4][j4]);
       }
       ret.push(tmp);
     }
@@ -27573,8 +27284,8 @@ svg {
 
   // node_modules/mathjs/lib/esm/utils/collection.js
   function containsCollections(array) {
-    for (var i5 = 0; i5 < array.length; i5++) {
-      if (isCollection(array[i5])) {
+    for (var i4 = 0; i4 < array.length; i4++) {
+      if (isCollection(array[i4])) {
         return true;
       }
     }
@@ -27584,8 +27295,8 @@ svg {
     if (isMatrix(array)) {
       array = array.valueOf();
     }
-    for (var i5 = 0, ii = array.length; i5 < ii; i5++) {
-      var value2 = array[i5];
+    for (var i4 = 0, ii = array.length; i4 < ii; i4++) {
+      var value2 = array[i4];
       if (Array.isArray(value2)) {
         deepForEach(value2, callback);
       } else {
@@ -27614,26 +27325,26 @@ svg {
     }
   }
   function _reduce(mat, dim, callback) {
-    var i5, ret, val, tran;
+    var i4, ret, val, tran;
     if (dim <= 0) {
       if (!Array.isArray(mat[0])) {
         val = mat[0];
-        for (i5 = 1; i5 < mat.length; i5++) {
-          val = callback(val, mat[i5]);
+        for (i4 = 1; i4 < mat.length; i4++) {
+          val = callback(val, mat[i4]);
         }
         return val;
       } else {
         tran = _switch(mat);
         ret = [];
-        for (i5 = 0; i5 < tran.length; i5++) {
-          ret[i5] = _reduce(tran[i5], dim - 1, callback);
+        for (i4 = 0; i4 < tran.length; i4++) {
+          ret[i4] = _reduce(tran[i4], dim - 1, callback);
         }
         return ret;
       }
     } else {
       ret = [];
-      for (i5 = 0; i5 < mat.length; i5++) {
-        ret[i5] = _reduce(mat[i5], dim - 1, callback);
+      for (i4 = 0; i4 < mat.length; i4++) {
+        ret[i4] = _reduce(mat[i4], dim - 1, callback);
       }
       return ret;
     }
@@ -27642,32 +27353,32 @@ svg {
     var avalues = a3._values;
     var aindex = a3._index;
     var aptr = a3._ptr;
-    var k4, k0, k1, i5;
+    var k4, k0, k1, i4;
     if (x4) {
       for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-        i5 = aindex[k4];
-        if (w4[i5] !== mark) {
-          w4[i5] = mark;
-          cindex.push(i5);
+        i4 = aindex[k4];
+        if (w4[i4] !== mark) {
+          w4[i4] = mark;
+          cindex.push(i4);
           if (update) {
-            x4[i5] = inverse ? f3(avalues[k4], value2) : f3(value2, avalues[k4]);
-            u3[i5] = mark;
+            x4[i4] = inverse ? f3(avalues[k4], value2) : f3(value2, avalues[k4]);
+            u3[i4] = mark;
           } else {
-            x4[i5] = avalues[k4];
+            x4[i4] = avalues[k4];
           }
         } else {
-          x4[i5] = inverse ? f3(avalues[k4], x4[i5]) : f3(x4[i5], avalues[k4]);
-          u3[i5] = mark;
+          x4[i4] = inverse ? f3(avalues[k4], x4[i4]) : f3(x4[i4], avalues[k4]);
+          u3[i4] = mark;
         }
       }
     } else {
       for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-        i5 = aindex[k4];
-        if (w4[i5] !== mark) {
-          w4[i5] = mark;
-          cindex.push(i5);
+        i4 = aindex[k4];
+        if (w4[i4] !== mark) {
+          w4[i4] = mark;
+          cindex.push(i4);
         } else {
-          u3[i5] = mark;
+          u3[i4] = mark;
         }
       }
     }
@@ -27959,15 +27670,15 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/product.js
-  function product2(i5, n3) {
-    if (n3 < i5) {
+  function product2(i4, n3) {
+    if (n3 < i4) {
       return 1;
     }
-    if (n3 === i5) {
+    if (n3 === i4) {
       return n3;
     }
-    var half = n3 + i5 >> 1;
-    return product2(i5, half) * product2(half + 1, n3);
+    var half = n3 + i4 >> 1;
+    return product2(i4, half) * product2(half + 1, n3);
   }
   var init_product = __esm({
     "node_modules/mathjs/lib/esm/utils/product.js"() {
@@ -28079,8 +27790,8 @@ svg {
     }
     --n3;
     x4 = gammaP[0];
-    for (var i5 = 1; i5 < gammaP.length; ++i5) {
-      x4 += gammaP[i5] / (n3 + i5);
+    for (var i4 = 1; i4 < gammaP.length; ++i4) {
+      x4 += gammaP[i4] / (n3 + i4);
     }
     var t3 = n3 + gammaG + 0.5;
     return Math.sqrt(2 * Math.PI) * Math.pow(t3, n3 + 0.5) * Math.exp(-t3) * x4;
@@ -28098,8 +27809,8 @@ svg {
     n3 = n3 - 1;
     var base = n3 + lgammaG + 0.5;
     var sum3 = lgammaSeries[0];
-    for (var i5 = lgammaN - 1; i5 >= 1; i5--) {
-      sum3 += lgammaSeries[i5] / (n3 + i5);
+    for (var i4 = lgammaN - 1; i4 >= 1; i4--) {
+      sum3 += lgammaSeries[i4] / (n3 + i4);
     }
     return lnSqrt2PI + (n3 + 0.5) * Math.log(base) - base + Math.log(sum3);
   }
@@ -28172,8 +27883,8 @@ svg {
     return 1 / Math.tan(x4);
   }
   function cothNumber(x4) {
-    var e6 = Math.exp(2 * x4);
-    return (e6 + 1) / (e6 - 1);
+    var e5 = Math.exp(2 * x4);
+    return (e5 + 1) / (e5 - 1);
   }
   function cscNumber(x4) {
     return 1 / Math.sin(x4);
@@ -28652,8 +28363,8 @@ svg {
             var j4 = 0;
             do {
               matrix2._ptr.push(matrix2._index.length);
-              for (var i5 = 0; i5 < rows; i5++) {
-                var row2 = data[i5];
+              for (var i4 = 0; i4 < rows; i4++) {
+                var row2 = data[i4];
                 if (isArray(row2)) {
                   if (j4 === 0 && columns < row2.length) {
                     columns = row2.length;
@@ -28662,7 +28373,7 @@ svg {
                     var v3 = row2[j4];
                     if (!eq(v3, zero)) {
                       matrix2._values.push(v3);
-                      matrix2._index.push(i5);
+                      matrix2._index.push(i4);
                     }
                   }
                 } else {
@@ -28671,7 +28382,7 @@ svg {
                   }
                   if (!eq(row2, zero)) {
                     matrix2._values.push(row2);
-                    matrix2._index.push(i5);
+                    matrix2._index.push(i4);
                   }
                 }
               }
@@ -28734,12 +28445,12 @@ svg {
           if (size2.length !== matrix2._size.length) {
             throw new DimensionError(size2.length, matrix2._size.length);
           }
-          var i5, ii, k4, kk;
+          var i4, ii, k4, kk;
           var min3 = idx.min();
           var max3 = idx.max();
-          for (i5 = 0, ii = matrix2._size.length; i5 < ii; i5++) {
-            validateIndex(min3[i5], matrix2._size[i5]);
-            validateIndex(max3[i5], matrix2._size[i5]);
+          for (i4 = 0, ii = matrix2._size.length; i4 < ii; i4++) {
+            validateIndex(min3[i4], matrix2._size[i4]);
+            validateIndex(max3[i4], matrix2._size[i4]);
           }
           var mvalues = matrix2._values;
           var mindex = matrix2._index;
@@ -28748,9 +28459,9 @@ svg {
           var columns = idx.dimension(1);
           var w4 = [];
           var pv = [];
-          rows.forEach(function(i6, r3) {
-            pv[i6] = r3[0];
-            w4[i6] = true;
+          rows.forEach(function(i5, r3) {
+            pv[i5] = r3[0];
+            w4[i5] = true;
           });
           var values = mvalues ? [] : void 0;
           var index2 = [];
@@ -28758,9 +28469,9 @@ svg {
           columns.forEach(function(j4) {
             ptr.push(index2.length);
             for (k4 = mptr[j4], kk = mptr[j4 + 1]; k4 < kk; k4++) {
-              i5 = mindex[k4];
-              if (w4[i5] === true) {
-                index2.push(pv[i5]);
+              i4 = mindex[k4];
+              if (w4[i4] === true) {
+                index2.push(pv[i4]);
                 if (values) {
                   values.push(mvalues[k4]);
                 }
@@ -28799,14 +28510,14 @@ svg {
               throw new DimensionError(iSize.length, matrix2._size.length, "<");
             }
             if (sSize.length < iSize.length) {
-              var i5 = 0;
+              var i4 = 0;
               var outer = 0;
-              while (iSize[i5] === 1 && sSize[i5] === 1) {
-                i5++;
+              while (iSize[i4] === 1 && sSize[i4] === 1) {
+                i4++;
               }
-              while (iSize[i5] === 1) {
+              while (iSize[i4] === 1) {
                 outer++;
-                i5++;
+                i4++;
               }
               submatrix = unsqueeze(submatrix, iSize.length, outer, sSize);
             }
@@ -28843,12 +28554,12 @@ svg {
           if (!this._values) {
             throw new Error("Cannot invoke get on a Pattern only matrix");
           }
-          var i5 = index2[0];
+          var i4 = index2[0];
           var j4 = index2[1];
-          validateIndex(i5, this._size[0]);
+          validateIndex(i4, this._size[0]);
           validateIndex(j4, this._size[1]);
-          var k4 = _getValueIndex(i5, this._ptr[j4], this._ptr[j4 + 1], this._index);
-          if (k4 < this._ptr[j4 + 1] && this._index[k4] === i5) {
+          var k4 = _getValueIndex(i4, this._ptr[j4], this._ptr[j4 + 1], this._index);
+          if (k4 < this._ptr[j4 + 1] && this._index[k4] === i4) {
             return this._values[k4];
           }
           return 0;
@@ -28863,7 +28574,7 @@ svg {
           if (!this._values) {
             throw new Error("Cannot invoke set on a Pattern only matrix");
           }
-          var i5 = index2[0];
+          var i4 = index2[0];
           var j4 = index2[1];
           var rows = this._size[0];
           var columns = this._size[1];
@@ -28873,15 +28584,15 @@ svg {
             eq = typed3.find(equalScalar2, [this._datatype, this._datatype]) || equalScalar2;
             zero = typed3.convert(0, this._datatype);
           }
-          if (i5 > rows - 1 || j4 > columns - 1) {
-            _resize2(this, Math.max(i5 + 1, rows), Math.max(j4 + 1, columns), defaultValue);
+          if (i4 > rows - 1 || j4 > columns - 1) {
+            _resize2(this, Math.max(i4 + 1, rows), Math.max(j4 + 1, columns), defaultValue);
             rows = this._size[0];
             columns = this._size[1];
           }
-          validateIndex(i5, rows);
+          validateIndex(i4, rows);
           validateIndex(j4, columns);
-          var k4 = _getValueIndex(i5, this._ptr[j4], this._ptr[j4 + 1], this._index);
-          if (k4 < this._ptr[j4 + 1] && this._index[k4] === i5) {
+          var k4 = _getValueIndex(i4, this._ptr[j4], this._ptr[j4 + 1], this._index);
+          if (k4 < this._ptr[j4 + 1] && this._index[k4] === i4) {
             if (!eq(v3, zero)) {
               this._values[k4] = v3;
             } else {
@@ -28889,17 +28600,17 @@ svg {
             }
           } else {
             if (!eq(v3, zero)) {
-              _insert(k4, i5, j4, v3, this._values, this._index, this._ptr);
+              _insert(k4, i4, j4, v3, this._values, this._index, this._ptr);
             }
           }
           return this;
         };
-        function _getValueIndex(i5, top, bottom, index2) {
+        function _getValueIndex(i4, top, bottom, index2) {
           if (bottom - top === 0) {
             return bottom;
           }
           for (var r3 = top; r3 < bottom; r3++) {
-            if (index2[r3] === i5) {
+            if (index2[r3] === i4) {
               return r3;
             }
           }
@@ -28912,9 +28623,9 @@ svg {
             ptr[x4]--;
           }
         }
-        function _insert(k4, i5, j4, v3, values, index2, ptr) {
+        function _insert(k4, i4, j4, v3, values, index2, ptr) {
           values.splice(k4, 0, v3);
-          index2.splice(k4, 0, i5);
+          index2.splice(k4, 0, i4);
           for (var x4 = j4 + 1; x4 < ptr.length; x4++) {
             ptr[x4]++;
           }
@@ -28949,14 +28660,14 @@ svg {
           var ins = !eq(value2, zero);
           var r3 = matrix2._size[0];
           var c3 = matrix2._size[1];
-          var i5, j4, k4;
+          var i4, j4, k4;
           if (columns > c3) {
             for (j4 = c3; j4 < columns; j4++) {
               matrix2._ptr[j4] = matrix2._values.length;
               if (ins) {
-                for (i5 = 0; i5 < r3; i5++) {
+                for (i4 = 0; i4 < r3; i4++) {
                   matrix2._values.push(value2);
-                  matrix2._index.push(i5);
+                  matrix2._index.push(i4);
                 }
               }
             }
@@ -28974,9 +28685,9 @@ svg {
                 matrix2._ptr[j4] = matrix2._ptr[j4] + n3;
                 k4 = matrix2._ptr[j4 + 1] + n3;
                 var p3 = 0;
-                for (i5 = r3; i5 < rows; i5++, p3++) {
+                for (i4 = r3; i4 < rows; i4++, p3++) {
                   matrix2._values.splice(k4 + p3, 0, value2);
-                  matrix2._index.splice(k4 + p3, 0, i5);
+                  matrix2._index.splice(k4 + p3, 0, i4);
                   n3++;
                 }
               }
@@ -28989,8 +28700,8 @@ svg {
               var k0 = matrix2._ptr[j4];
               var k1 = matrix2._ptr[j4 + 1] - d3;
               for (k4 = k0; k4 < k1; k4++) {
-                i5 = matrix2._index[k4];
-                if (i5 > rows - 1) {
+                i4 = matrix2._index[k4];
+                if (i4 > rows - 1) {
                   matrix2._values.splice(k4, 1);
                   matrix2._index.splice(k4, 1);
                   d3++;
@@ -29026,9 +28737,9 @@ svg {
             return m3;
           }
           var colIndex = [];
-          for (var i5 = 0; i5 < m3._ptr.length; i5++) {
-            for (var j4 = 0; j4 < m3._ptr[i5 + 1] - m3._ptr[i5]; j4++) {
-              colIndex.push(i5);
+          for (var i4 = 0; i4 < m3._ptr.length; i4++) {
+            for (var j4 = 0; j4 < m3._ptr[i4 + 1] - m3._ptr[i4]; j4++) {
+              colIndex.push(i4);
             }
           }
           var values = m3._values.slice();
@@ -29077,12 +28788,12 @@ svg {
           var rows = this._size[0];
           var columns = this._size[1];
           var args = maxArgumentCount(callback);
-          var invoke = function invoke2(v3, i5, j4) {
+          var invoke = function invoke2(v3, i4, j4) {
             if (args === 1)
               return callback(v3);
             if (args === 2)
-              return callback(v3, [i5, j4]);
-            return callback(v3, [i5, j4], me);
+              return callback(v3, [i4, j4]);
+            return callback(v3, [i4, j4], me);
           };
           return _map3(this, 0, rows - 1, 0, columns - 1, invoke, skipZeros);
         };
@@ -29109,9 +28820,9 @@ svg {
             var k1 = matrix2._ptr[j4 + 1];
             if (skipZeros) {
               for (var k4 = k0; k4 < k1; k4++) {
-                var i5 = matrix2._index[k4];
-                if (i5 >= minRow && i5 <= maxRow) {
-                  invoke(matrix2._values[k4], i5 - minRow, j4 - minColumn);
+                var i4 = matrix2._index[k4];
+                if (i4 >= minRow && i4 <= maxRow) {
+                  invoke(matrix2._values[k4], i4 - minRow, j4 - minColumn);
                 }
               }
             } else {
@@ -29146,8 +28857,8 @@ svg {
             var k1 = this._ptr[j4 + 1];
             if (skipZeros) {
               for (var k4 = k0; k4 < k1; k4++) {
-                var i5 = this._index[k4];
-                callback(this._values[k4], [i5, j4], me);
+                var i4 = this._index[k4];
+                callback(this._values[k4], [i4, j4], me);
               }
             } else {
               var values = {};
@@ -29171,10 +28882,10 @@ svg {
             var k0 = this._ptr[j4];
             var k1 = this._ptr[j4 + 1];
             for (var k4 = k0; k4 < k1; k4++) {
-              var i5 = this._index[k4];
+              var i4 = this._index[k4];
               yield {
                 value: this._values[k4],
-                index: [i5, j4]
+                index: [i4, j4]
               };
             }
           }
@@ -29189,19 +28900,19 @@ svg {
           var rows = size2[0];
           var columns = size2[1];
           var a3 = [];
-          var i5, j4;
-          for (i5 = 0; i5 < rows; i5++) {
-            a3[i5] = [];
+          var i4, j4;
+          for (i4 = 0; i4 < rows; i4++) {
+            a3[i4] = [];
             for (j4 = 0; j4 < columns; j4++) {
-              a3[i5][j4] = 0;
+              a3[i4][j4] = 0;
             }
           }
           for (j4 = 0; j4 < columns; j4++) {
             var k0 = ptr[j4];
             var k1 = ptr[j4 + 1];
             for (var k4 = k0; k4 < k1; k4++) {
-              i5 = index2[k4];
-              a3[i5][j4] = values ? copy ? clone(values[k4]) : values[k4] : 1;
+              i4 = index2[k4];
+              a3[i4][j4] = values ? copy ? clone(values[k4]) : values[k4] : 1;
             }
           }
           return a3;
@@ -29215,8 +28926,8 @@ svg {
             var k0 = this._ptr[j4];
             var k1 = this._ptr[j4 + 1];
             for (var k4 = k0; k4 < k1; k4++) {
-              var i5 = this._index[k4];
-              str += "\n    (" + format3(i5, options) + ", " + format3(j4, options) + ") ==> " + (this._values ? format3(this._values[k4], options) : "X");
+              var i4 = this._index[k4];
+              str += "\n    (" + format3(i4, options) + ", " + format3(j4, options) + ") ==> " + (this._values ? format3(this._values[k4], options) : "X");
             }
           }
           return str;
@@ -29258,10 +28969,10 @@ svg {
             var k0 = this._ptr[j4];
             var k1 = this._ptr[j4 + 1];
             for (var x4 = k0; x4 < k1; x4++) {
-              var i5 = this._index[x4];
-              if (i5 === j4 - kSuper + kSub) {
+              var i4 = this._index[x4];
+              if (i4 === j4 - kSuper + kSub) {
                 values.push(this._values[x4]);
-                index2[values.length - 1] = i5 - kSub;
+                index2[values.length - 1] = i4 - kSub;
                 break;
               }
             }
@@ -29319,16 +29030,16 @@ svg {
             if (value2.length !== n3) {
               throw new Error("Invalid value array length");
             }
-            _value = function _value2(i6) {
-              return value2[i6];
+            _value = function _value2(i5) {
+              return value2[i5];
             };
           } else if (isMatrix(value2)) {
             var ms = value2.size();
             if (ms.length !== 1 || ms[0] !== n3) {
               throw new Error("Invalid matrix length");
             }
-            _value = function _value2(i6) {
-              return value2.get([i6]);
+            _value = function _value2(i5) {
+              return value2.get([i5]);
             };
           } else {
             _value = function _value2() {
@@ -29340,11 +29051,11 @@ svg {
           var ptr = [];
           for (var j4 = 0; j4 < columns; j4++) {
             ptr.push(values.length);
-            var i5 = j4 - kSuper;
-            if (i5 >= 0 && i5 < n3) {
-              var v3 = _value(i5);
+            var i4 = j4 - kSuper;
+            if (i4 >= 0 && i4 < n3) {
+              var v3 = _value(i4);
               if (!eq(v3, zero)) {
-                index2.push(i5 + kSub);
+                index2.push(i4 + kSub);
                 values.push(v3);
               }
             }
@@ -29357,16 +29068,16 @@ svg {
             size: [rows, columns]
           });
         };
-        SparseMatrix2.prototype.swapRows = function(i5, j4) {
-          if (!isNumber(i5) || !isInteger(i5) || !isNumber(j4) || !isInteger(j4)) {
+        SparseMatrix2.prototype.swapRows = function(i4, j4) {
+          if (!isNumber(i4) || !isInteger(i4) || !isNumber(j4) || !isInteger(j4)) {
             throw new Error("Row index must be positive integers");
           }
           if (this._size.length !== 2) {
             throw new Error("Only two dimensional matrix is supported");
           }
-          validateIndex(i5, this._size[0]);
+          validateIndex(i4, this._size[0]);
           validateIndex(j4, this._size[0]);
-          SparseMatrix2._swapRows(i5, j4, this._size[1], this._values, this._index, this._ptr);
+          SparseMatrix2._swapRows(i4, j4, this._size[1], this._values, this._index, this._ptr);
           return this;
         };
         SparseMatrix2._forEachRow = function(j4, values, index2, ptr, callback) {
@@ -29446,9 +29157,9 @@ svg {
   function makeNumberFromNonDecimalParts(parts) {
     var n3 = parseInt(parts.integerPart, parts.radix);
     var f3 = 0;
-    for (var i5 = 0; i5 < parts.fractionalPart.length; i5++) {
-      var digitValue = parseInt(parts.fractionalPart[i5], parts.radix);
-      f3 += digitValue / Math.pow(parts.radix, i5 + 1);
+    for (var i4 = 0; i4 < parts.fractionalPart.length; i4++) {
+      var digitValue = parseInt(parts.fractionalPart[i4], parts.radix);
+      f3 += digitValue / Math.pow(parts.radix, i4 + 1);
     }
     var result = n3 + f3;
     if (isNaN(result)) {
@@ -29956,8 +29667,8 @@ svg {
             throw new TypeError("At least one column is needed to construct a matrix.");
           var N3 = checkVectorTypeAndReturnLength(arr[0]);
           var result = [];
-          for (var i5 = 0; i5 < N3; i5++) {
-            result[i5] = [];
+          for (var i4 = 0; i4 < N3; i4++) {
+            result[i4] = [];
           }
           for (var col of arr) {
             var colLength = checkVectorTypeAndReturnLength(col);
@@ -30104,22 +29815,22 @@ svg {
 
   // node_modules/mathjs/lib/esm/function/matrix/apply.js
   function _apply(mat, dim, callback) {
-    var i5, ret, tran;
+    var i4, ret, tran;
     if (dim <= 0) {
       if (!Array.isArray(mat[0])) {
         return callback(mat);
       } else {
         tran = _switch2(mat);
         ret = [];
-        for (i5 = 0; i5 < tran.length; i5++) {
-          ret[i5] = _apply(tran[i5], dim - 1, callback);
+        for (i4 = 0; i4 < tran.length; i4++) {
+          ret[i4] = _apply(tran[i4], dim - 1, callback);
         }
         return ret;
       }
     } else {
       ret = [];
-      for (i5 = 0; i5 < mat.length; i5++) {
-        ret[i5] = _apply(mat[i5], dim - 1, callback);
+      for (i4 = 0; i4 < mat.length; i4++) {
+        ret[i4] = _apply(mat[i4], dim - 1, callback);
       }
       return ret;
     }
@@ -30127,12 +29838,12 @@ svg {
   function _switch2(mat) {
     var I3 = mat.length;
     var J2 = mat[0].length;
-    var i5, j4;
+    var i4, j4;
     var ret = [];
     for (j4 = 0; j4 < J2; j4++) {
       var tmp = [];
-      for (i5 = 0; i5 < I3; i5++) {
-        tmp.push(mat[i5][j4]);
+      for (i4 = 0; i4 < I3; i4++) {
+        tmp.push(mat[i4][j4]);
       }
       ret.push(tmp);
     }
@@ -30369,10 +30080,10 @@ svg {
           for (var j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             for (var k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var i5 = aindex[k4];
+              var i4 = aindex[k4];
               var v3 = inverse ? cf(b3, avalues[k4]) : cf(avalues[k4], b3);
               if (!eq(v3, zero)) {
-                cindex.push(i5);
+                cindex.push(i4);
                 cvalues.push(v3);
               }
             }
@@ -30430,14 +30141,14 @@ svg {
               x4[r3] = avalues[k4];
               w4[r3] = mark;
             }
-            for (var i5 = 0; i5 < rows; i5++) {
+            for (var i4 = 0; i4 < rows; i4++) {
               if (j4 === 0) {
-                cdata[i5] = [];
+                cdata[i4] = [];
               }
-              if (w4[i5] === mark) {
-                cdata[i5][j4] = inverse ? cf(b3, x4[i5]) : cf(x4[i5], b3);
+              if (w4[i4] === mark) {
+                cdata[i4][j4] = inverse ? cf(b3, x4[i4]) : cf(x4[i4], b3);
               } else {
-                cdata[i5][j4] = inverse ? cf(b3, 0) : cf(0, b3);
+                cdata[i4][j4] = inverse ? cf(b3, 0) : cf(0, b3);
               }
             }
           }
@@ -30484,8 +30195,8 @@ svg {
         function _iterate(f3, level, s3, n3, av, bv, inverse) {
           var cv = [];
           if (level === s3.length - 1) {
-            for (var i5 = 0; i5 < n3; i5++) {
-              cv[i5] = inverse ? f3(bv, av[i5]) : f3(av[i5], bv);
+            for (var i4 = 0; i4 < n3; i4++) {
+              cv[i4] = inverse ? f3(bv, av[i4]) : f3(av[i4], bv);
             }
           } else {
             for (var j4 = 0; j4 < n3; j4++) {
@@ -30516,19 +30227,19 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          round: round4
+          round: round3
         } = _ref;
         return typed3(name40, {
           number: function number2(x4) {
-            if (nearlyEqual(x4, round4(x4), config4.epsilon)) {
-              return round4(x4);
+            if (nearlyEqual(x4, round3(x4), config4.epsilon)) {
+              return round3(x4);
             } else {
               return Math.ceil(x4);
             }
           },
           "number, number": function numberNumber(x4, n3) {
-            if (nearlyEqual(x4, round4(x4, n3), config4.epsilon)) {
-              return round4(x4, n3);
+            if (nearlyEqual(x4, round3(x4, n3), config4.epsilon)) {
+              return round3(x4, n3);
             } else {
               var [number2, exponent] = "".concat(x4, "e").split("e");
               var result = Math.ceil(Number("".concat(number2, "e").concat(Number(exponent) + n3)));
@@ -30542,7 +30253,7 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          round: round4,
+          round: round3,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
@@ -30562,7 +30273,7 @@ svg {
         var ceilNumber = createCeilNumber({
           typed: typed3,
           config: config4,
-          round: round4
+          round: round3
         });
         return typed3("ceil", {
           number: ceilNumber.signatures.number,
@@ -30577,15 +30288,15 @@ svg {
             return x4.ceil(n3.toNumber());
           },
           BigNumber: function BigNumber2(x4) {
-            if (nearlyEqual2(x4, round4(x4), config4.epsilon)) {
-              return round4(x4);
+            if (nearlyEqual2(x4, round3(x4), config4.epsilon)) {
+              return round3(x4);
             } else {
               return x4.ceil();
             }
           },
           "BigNumber, BigNumber": function BigNumberBigNumber(x4, n3) {
-            if (nearlyEqual2(x4, round4(x4, n3), config4.epsilon)) {
-              return round4(x4, n3);
+            if (nearlyEqual2(x4, round3(x4, n3), config4.epsilon)) {
+              return round3(x4, n3);
             } else {
               return x4.toDecimalPlaces(n3.toNumber(), decimal_default.ROUND_CEIL);
             }
@@ -30603,7 +30314,7 @@ svg {
             return deepMap(x4, self2, true);
           }),
           "Array, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
-            return deepMap(x4, (i5) => self2(i5, n3), true);
+            return deepMap(x4, (i4) => self2(i4, n3), true);
           }),
           "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
             return matAlgo11xS0s(x4, y3, self2, false);
@@ -30787,7 +30498,7 @@ svg {
             return deepMap(x4, self2, true);
           }),
           "Array | Matrix, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
-            return deepMap(x4, (i5) => self2(i5, n3), true);
+            return deepMap(x4, (i4) => self2(i4, n3), true);
           }),
           "number | Complex | Fraction | BigNumber, Array": typed3.referToSelf((self2) => (x4, y3) => {
             return matAlgo14xDs(matrix2(y3), x4, self2, true).valueOf();
@@ -30823,19 +30534,19 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          round: round4
+          round: round3
         } = _ref;
         return typed3(name45, {
           number: function number2(x4) {
-            if (nearlyEqual(x4, round4(x4), config4.epsilon)) {
-              return round4(x4);
+            if (nearlyEqual(x4, round3(x4), config4.epsilon)) {
+              return round3(x4);
             } else {
               return Math.floor(x4);
             }
           },
           "number, number": function numberNumber(x4, n3) {
-            if (nearlyEqual(x4, round4(x4, n3), config4.epsilon)) {
-              return round4(x4, n3);
+            if (nearlyEqual(x4, round3(x4, n3), config4.epsilon)) {
+              return round3(x4, n3);
             } else {
               var [number2, exponent] = "".concat(x4, "e").split("e");
               var result = Math.floor(Number("".concat(number2, "e").concat(Number(exponent) + n3)));
@@ -30849,7 +30560,7 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          round: round4,
+          round: round3,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
@@ -30869,7 +30580,7 @@ svg {
         var floorNumber = createFloorNumber({
           typed: typed3,
           config: config4,
-          round: round4
+          round: round3
         });
         return typed3("floor", {
           number: floorNumber.signatures.number,
@@ -30884,15 +30595,15 @@ svg {
             return x4.floor(n3.toNumber());
           },
           BigNumber: function BigNumber2(x4) {
-            if (nearlyEqual2(x4, round4(x4), config4.epsilon)) {
-              return round4(x4);
+            if (nearlyEqual2(x4, round3(x4), config4.epsilon)) {
+              return round3(x4);
             } else {
               return x4.floor();
             }
           },
           "BigNumber, BigNumber": function BigNumberBigNumber(x4, n3) {
-            if (nearlyEqual2(x4, round4(x4, n3), config4.epsilon)) {
-              return round4(x4, n3);
+            if (nearlyEqual2(x4, round3(x4, n3), config4.epsilon)) {
+              return round3(x4, n3);
             } else {
               return x4.toDecimalPlaces(n3.toNumber(), decimal_default.ROUND_FLOOR);
             }
@@ -30910,7 +30621,7 @@ svg {
             return deepMap(x4, self2, true);
           }),
           "Array, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
-            return deepMap(x4, (i5) => self2(i5, n3), true);
+            return deepMap(x4, (i4) => self2(i4, n3), true);
           }),
           "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
             return matAlgo11xS0s(x4, y3, self2, false);
@@ -30983,10 +30694,10 @@ svg {
           for (var j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var i5 = bindex[k4];
-              var cij = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
+              var i4 = bindex[k4];
+              var cij = inverse ? cf(bvalues[k4], adata[i4][j4]) : cf(adata[i4][j4], bvalues[k4]);
               if (!eq(cij, zero)) {
-                cindex.push(i5);
+                cindex.push(i4);
                 cvalues.push(cij);
               }
             }
@@ -31053,9 +30764,9 @@ svg {
           for (var j4 = 0; j4 < columns; j4++) {
             var mark = j4 + 1;
             for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              var i5 = bindex[k4];
-              x4[i5] = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
-              w4[i5] = mark;
+              var i4 = bindex[k4];
+              x4[i4] = inverse ? cf(bvalues[k4], adata[i4][j4]) : cf(adata[i4][j4], bvalues[k4]);
+              w4[i4] = mark;
             }
             for (var y3 = 0; y3 < rows; y3++) {
               if (w4[y3] === mark) {
@@ -31124,37 +30835,37 @@ svg {
           var xb = cvalues ? [] : void 0;
           var wa = [];
           var wb = [];
-          var i5, j4, k4, k1;
+          var i4, j4, k4, k1;
           for (j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             var mark = j4 + 1;
             for (k4 = aptr[j4], k1 = aptr[j4 + 1]; k4 < k1; k4++) {
-              i5 = aindex[k4];
-              cindex.push(i5);
-              wa[i5] = mark;
+              i4 = aindex[k4];
+              cindex.push(i4);
+              wa[i4] = mark;
               if (xa) {
-                xa[i5] = avalues[k4];
+                xa[i4] = avalues[k4];
               }
             }
             for (k4 = bptr[j4], k1 = bptr[j4 + 1]; k4 < k1; k4++) {
-              i5 = bindex[k4];
-              if (wa[i5] !== mark) {
-                cindex.push(i5);
+              i4 = bindex[k4];
+              if (wa[i4] !== mark) {
+                cindex.push(i4);
               }
-              wb[i5] = mark;
+              wb[i4] = mark;
               if (xb) {
-                xb[i5] = bvalues[k4];
+                xb[i4] = bvalues[k4];
               }
             }
             if (cvalues) {
               k4 = cptr[j4];
               while (k4 < cindex.length) {
-                i5 = cindex[k4];
-                var wai = wa[i5];
-                var wbi = wb[i5];
+                i4 = cindex[k4];
+                var wai = wa[i4];
+                var wbi = wb[i4];
                 if (wai === mark || wbi === mark) {
-                  var va = wai === mark ? xa[i5] : zero;
-                  var vb = wbi === mark ? xb[i5] : zero;
+                  var va = wai === mark ? xa[i4] : zero;
+                  var vb = wbi === mark ? xb[i4] : zero;
                   var vc = cf(va, vb);
                   if (!eq(vc, zero)) {
                     cvalues.push(vc);
@@ -31224,8 +30935,8 @@ svg {
         function _iterate(f3, level, s3, n3, av, bv) {
           var cv = [];
           if (level === s3.length - 1) {
-            for (var i5 = 0; i5 < n3; i5++) {
-              cv[i5] = f3(av[i5], bv[i5]);
+            for (var i4 = 0; i4 < n3; i4++) {
+              cv[i4] = f3(av[i4], bv[i4]);
             }
           } else {
             for (var j4 = 0; j4 < n3; j4++) {
@@ -31253,7 +30964,7 @@ svg {
         return function(A4, B4) {
           var N3 = Math.max(A4._size.length, B4._size.length);
           if (A4._size.length === B4._size.length) {
-            if (A4._size.every((dim2, i5) => dim2 === B4._size[i5])) {
+            if (A4._size.every((dim2, i4) => dim2 === B4._size[i4])) {
               return [A4, B4];
             }
           }
@@ -31447,7 +31158,7 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          round: round4,
+          round: round3,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
@@ -31457,7 +31168,7 @@ svg {
         var floor3 = createFloor({
           typed: typed3,
           config: config4,
-          round: round4,
+          round: round3,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
@@ -31549,25 +31260,25 @@ svg {
           var columns = asize[1];
           var dt = typeof adt === "string" && adt === bdt ? adt : void 0;
           var cf = dt ? typed3.find(callback, [dt, dt]) : callback;
-          var i5, j4;
+          var i4, j4;
           var cdata = [];
-          for (i5 = 0; i5 < rows; i5++) {
-            cdata[i5] = [];
+          for (i4 = 0; i4 < rows; i4++) {
+            cdata[i4] = [];
           }
           var x4 = [];
           var w4 = [];
           for (j4 = 0; j4 < columns; j4++) {
             var mark = j4 + 1;
             for (var k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = bindex[k4];
-              x4[i5] = inverse ? cf(bvalues[k4], adata[i5][j4]) : cf(adata[i5][j4], bvalues[k4]);
-              w4[i5] = mark;
+              i4 = bindex[k4];
+              x4[i4] = inverse ? cf(bvalues[k4], adata[i4][j4]) : cf(adata[i4][j4], bvalues[k4]);
+              w4[i4] = mark;
             }
-            for (i5 = 0; i5 < rows; i5++) {
-              if (w4[i5] === mark) {
-                cdata[i5][j4] = x4[i5];
+            for (i4 = 0; i4 < rows; i4++) {
+              if (w4[i4] === mark) {
+                cdata[i4][j4] = x4[i4];
               } else {
-                cdata[i5][j4] = adata[i5][j4];
+                cdata[i4][j4] = adata[i4][j4];
               }
             }
           }
@@ -31630,46 +31341,46 @@ svg {
           var xb = avalues && bvalues ? [] : void 0;
           var wa = [];
           var wb = [];
-          var i5, j4, k4, k0, k1;
+          var i4, j4, k4, k0, k1;
           for (j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             var mark = j4 + 1;
             for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = aindex[k4];
-              cindex.push(i5);
-              wa[i5] = mark;
+              i4 = aindex[k4];
+              cindex.push(i4);
+              wa[i4] = mark;
               if (xa) {
-                xa[i5] = avalues[k4];
+                xa[i4] = avalues[k4];
               }
             }
             for (k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = bindex[k4];
-              if (wa[i5] === mark) {
+              i4 = bindex[k4];
+              if (wa[i4] === mark) {
                 if (xa) {
-                  var v3 = cf(xa[i5], bvalues[k4]);
+                  var v3 = cf(xa[i4], bvalues[k4]);
                   if (!eq(v3, zero)) {
-                    xa[i5] = v3;
+                    xa[i4] = v3;
                   } else {
-                    wa[i5] = null;
+                    wa[i4] = null;
                   }
                 }
               } else {
-                cindex.push(i5);
-                wb[i5] = mark;
+                cindex.push(i4);
+                wb[i4] = mark;
                 if (xb) {
-                  xb[i5] = bvalues[k4];
+                  xb[i4] = bvalues[k4];
                 }
               }
             }
             if (xa && xb) {
               k4 = cptr[j4];
               while (k4 < cindex.length) {
-                i5 = cindex[k4];
-                if (wa[i5] === mark) {
-                  cvalues[k4] = xa[i5];
+                i4 = cindex[k4];
+                if (wa[i4] === mark) {
+                  cvalues[k4] = xa[i4];
                   k4++;
-                } else if (wb[i5] === mark) {
-                  cvalues[k4] = xb[i5];
+                } else if (wb[i4] === mark) {
+                  cvalues[k4] = xb[i4];
                   k4++;
                 } else {
                   cindex.splice(k4, 1);
@@ -31730,14 +31441,14 @@ svg {
               x4[r3] = avalues[k4];
               w4[r3] = mark;
             }
-            for (var i5 = 0; i5 < rows; i5++) {
+            for (var i4 = 0; i4 < rows; i4++) {
               if (j4 === 0) {
-                cdata[i5] = [];
+                cdata[i4] = [];
               }
-              if (w4[i5] === mark) {
-                cdata[i5][j4] = inverse ? cf(b3, x4[i5]) : cf(x4[i5], b3);
+              if (w4[i4] === mark) {
+                cdata[i4][j4] = inverse ? cf(b3, x4[i4]) : cf(x4[i4], b3);
               } else {
-                cdata[i5][j4] = b3;
+                cdata[i4][j4] = b3;
               }
             }
           }
@@ -31796,7 +31507,7 @@ svg {
           typed: typed3,
           matrix: matrix2,
           config: config4,
-          round: round4,
+          round: round3,
           equalScalar: equalScalar2,
           zeros: zeros3,
           BigNumber: BigNumber2,
@@ -31806,7 +31517,7 @@ svg {
         var mod3 = createMod({
           typed: typed3,
           config: config4,
-          round: round4,
+          round: round3,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
@@ -31840,8 +31551,8 @@ svg {
         }), {
           [gcdManyTypesSignature]: typed3.referToSelf((self2) => (a3, b3, args) => {
             var res = self2(a3, b3);
-            for (var i5 = 0; i5 < args.length; i5++) {
-              res = self2(res, args[i5]);
+            for (var i4 = 0; i4 < args.length; i4++) {
+              res = self2(res, args[i4]);
             }
             return res;
           }),
@@ -31939,9 +31650,9 @@ svg {
             if (x4) {
               var k4 = cptr[j4];
               while (k4 < cindex.length) {
-                var i5 = cindex[k4];
-                if (u3[i5] === mark) {
-                  var v3 = x4[i5];
+                var i4 = cindex[k4];
+                if (u3[i4] === mark) {
+                  var v3 = x4[i4];
                   if (!eq(v3, zero)) {
                     cvalues.push(v3);
                     k4++;
@@ -32017,8 +31728,8 @@ svg {
         var lcmManySignature = {};
         lcmManySignature["".concat(lcmTypes, ", ").concat(lcmTypes, ", ...").concat(lcmTypes)] = typed3.referToSelf((self2) => (a3, b3, args) => {
           var res = self2(a3, b3);
-          for (var i5 = 0; i5 < args.length; i5++) {
-            res = self2(res, args[i5]);
+          for (var i4 = 0; i4 < args.length; i4++) {
+            res = self2(res, args[i4]);
           }
           return res;
         });
@@ -32260,8 +31971,8 @@ svg {
           var c3 = [];
           for (var j4 = 0; j4 < bcolumns; j4++) {
             var sum3 = mf(adata[0], bdata[0][j4]);
-            for (var i5 = 1; i5 < alength; i5++) {
-              sum3 = af(sum3, mf(adata[i5], bdata[i5][j4]));
+            for (var i4 = 1; i4 < alength; i4++) {
+              sum3 = af(sum3, mf(adata[i4], bdata[i4][j4]));
             }
             c3[j4] = sum3;
           }
@@ -32298,13 +32009,13 @@ svg {
             mf = typed3.find(multiplyScalar2, [dt, dt]);
           }
           var c3 = [];
-          for (var i5 = 0; i5 < arows; i5++) {
-            var row2 = adata[i5];
+          for (var i4 = 0; i4 < arows; i4++) {
+            var row2 = adata[i4];
             var sum3 = mf(row2[0], bdata[0]);
             for (var j4 = 1; j4 < acolumns; j4++) {
               sum3 = af(sum3, mf(row2[j4], bdata[j4]));
             }
-            c3[i5] = sum3;
+            c3[i4] = sum3;
           }
           return a3.createDenseMatrix({
             data: c3,
@@ -32331,15 +32042,15 @@ svg {
             mf = typed3.find(multiplyScalar2, [dt, dt]);
           }
           var c3 = [];
-          for (var i5 = 0; i5 < arows; i5++) {
-            var row2 = adata[i5];
-            c3[i5] = [];
+          for (var i4 = 0; i4 < arows; i4++) {
+            var row2 = adata[i4];
+            c3[i4] = [];
             for (var j4 = 0; j4 < bcolumns; j4++) {
               var sum3 = mf(row2[0], bdata[0][j4]);
               for (var x4 = 1; x4 < acolumns; x4++) {
                 sum3 = af(sum3, mf(row2[x4], bdata[x4][j4]));
               }
-              c3[i5][j4] = sum3;
+              c3[i4][j4] = sum3;
             }
           }
           return a3.createDenseMatrix({
@@ -32390,20 +32101,20 @@ svg {
             var kb1 = bptr[jb + 1];
             if (kb1 > kb0) {
               var last = 0;
-              for (var i5 = 0; i5 < arows; i5++) {
-                var mark = i5 + 1;
+              for (var i4 = 0; i4 < arows; i4++) {
+                var mark = i4 + 1;
                 var cij = void 0;
                 for (var kb = kb0; kb < kb1; kb++) {
                   var ib = bindex[kb];
                   if (last !== mark) {
-                    cij = mf(adata[i5][ib], bvalues[kb]);
+                    cij = mf(adata[i4][ib], bvalues[kb]);
                     last = mark;
                   } else {
-                    cij = af(cij, mf(adata[i5][ib], bvalues[kb]));
+                    cij = af(cij, mf(adata[i4][ib], bvalues[kb]));
                   }
                 }
                 if (last === mark && !eq(cij, zero)) {
-                  cindex.push(i5);
+                  cindex.push(i4);
                   cvalues.push(cij);
                 }
               }
@@ -32649,8 +32360,8 @@ svg {
           "any, any": multiplyScalar2,
           "any, any, ...any": typed3.referToSelf((self2) => (x4, y3, rest) => {
             var result = self2(x4, y3);
-            for (var i5 = 0; i5 < rest.length; i5++) {
-              result = self2(result, rest[i5]);
+            for (var i4 = 0; i4 < rest.length; i4++) {
+              result = self2(result, rest[i4]);
             }
             return result;
           })
@@ -33095,28 +32806,28 @@ svg {
           var cptr = [];
           var x4 = cvalues ? [] : void 0;
           var w4 = [];
-          var i5, j4, k4, k0, k1;
+          var i4, j4, k4, k0, k1;
           for (j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             var mark = j4 + 1;
             if (x4) {
               for (k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-                i5 = bindex[k4];
-                w4[i5] = mark;
-                x4[i5] = bvalues[k4];
+                i4 = bindex[k4];
+                w4[i4] = mark;
+                x4[i4] = bvalues[k4];
               }
             }
             for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = aindex[k4];
+              i4 = aindex[k4];
               if (x4) {
-                var vb = w4[i5] === mark ? x4[i5] : zero;
+                var vb = w4[i4] === mark ? x4[i4] : zero;
                 var vc = cf(avalues[k4], vb);
                 if (!eq(vc, zero)) {
-                  cindex.push(i5);
+                  cindex.push(i4);
                   cvalues.push(vc);
                 }
               } else {
-                cindex.push(i5);
+                cindex.push(i4);
               }
             }
           }
@@ -33275,8 +32986,8 @@ svg {
     var ySign = +(y3.s < 0);
     if (xSign) {
       xBits = decCoefficientToBinaryString(bitNotBigNumber(x4));
-      for (var i5 = 0; i5 < xBits.length; ++i5) {
-        xBits[i5] ^= 1;
+      for (var i4 = 0; i4 < xBits.length; ++i4) {
+        xBits[i4] ^= 1;
       }
     } else {
       xBits = decCoefficientToBinaryString(x4);
@@ -33332,8 +33043,8 @@ svg {
   function decCoefficientToBinaryString(x4) {
     var a3 = x4.d;
     var r3 = a3[0] + "";
-    for (var i5 = 1; i5 < a3.length; ++i5) {
-      var s3 = a3[i5] + "";
+    for (var i4 = 1; i4 < a3.length; ++i4) {
+      var s3 = a3[i4] + "";
       for (var z5 = 7 - s3.length; z5--; ) {
         s3 = "0" + s3;
       }
@@ -33613,10 +33324,10 @@ svg {
             zero = typed3.convert(0, dt);
             cf = typed3.find(callback, [dt, dt]);
           }
-          var i5, j4;
+          var i4, j4;
           var cdata = [];
-          for (i5 = 0; i5 < rows; i5++) {
-            cdata[i5] = [];
+          for (i4 = 0; i4 < rows; i4++) {
+            cdata[i4] = [];
           }
           var xa = [];
           var xb = [];
@@ -33626,10 +33337,10 @@ svg {
             var mark = j4 + 1;
             _scatter(a3, j4, wa, xa, mark);
             _scatter(b3, j4, wb, xb, mark);
-            for (i5 = 0; i5 < rows; i5++) {
-              var va = wa[i5] === mark ? xa[i5] : zero;
-              var vb = wb[i5] === mark ? xb[i5] : zero;
-              cdata[i5][j4] = cf(va, vb);
+            for (i4 = 0; i4 < rows; i4++) {
+              var va = wa[i4] === mark ? xa[i4] : zero;
+              var vb = wb[i4] === mark ? xb[i4] : zero;
+              cdata[i4][j4] = cf(va, vb);
             }
           }
           return new DenseMatrix2({
@@ -33643,9 +33354,9 @@ svg {
           var index2 = m3._index;
           var ptr = m3._ptr;
           for (var k4 = ptr[j4], k1 = ptr[j4 + 1]; k4 < k1; k4++) {
-            var i5 = index2[k4];
-            w4[i5] = mark;
-            x4[i5] = values[k4];
+            var i4 = index2[k4];
+            w4[i4] = mark;
+            x4[i4] = values[k4];
           }
         }
       });
@@ -33950,19 +33661,19 @@ svg {
         return typed3(name84, {
           // TODO: change signature to '...Array | Matrix, dim?' when supported
           "...Array | Matrix | number | BigNumber": function ArrayMatrixNumberBigNumber(args) {
-            var i5;
+            var i4;
             var len = args.length;
             var dim = -1;
             var prevDim;
             var asMatrix = false;
             var matrices = [];
-            for (i5 = 0; i5 < len; i5++) {
-              var arg2 = args[i5];
+            for (i4 = 0; i4 < len; i4++) {
+              var arg2 = args[i4];
               if (isMatrix(arg2)) {
                 asMatrix = true;
               }
               if (isNumber(arg2) || isBigNumber(arg2)) {
-                if (i5 !== len - 1) {
+                if (i4 !== len - 1) {
                   throw new Error("Dimension must be specified as last argument");
                 }
                 prevDim = dim;
@@ -33970,16 +33681,16 @@ svg {
                 if (!isInteger3(dim)) {
                   throw new TypeError("Integer number expected for dimension");
                 }
-                if (dim < 0 || i5 > 0 && dim > prevDim) {
+                if (dim < 0 || i4 > 0 && dim > prevDim) {
                   throw new IndexError(dim, prevDim + 1);
                 }
               } else {
                 var m3 = clone(arg2).valueOf();
                 var size2 = arraySize(m3);
-                matrices[i5] = m3;
+                matrices[i4] = m3;
                 prevDim = dim;
                 dim = size2.length - 1;
-                if (i5 > 0 && dim !== prevDim) {
+                if (i4 > 0 && dim !== prevDim) {
                   throw new DimensionError(prevDim + 1, dim + 1);
                 }
               }
@@ -34201,8 +33912,8 @@ svg {
           }
           var n3 = Math.min(s3[0] - kSub, s3[1] - kSuper);
           var vector = [];
-          for (var i5 = 0; i5 < n3; i5++) {
-            vector[i5] = x4[i5 + kSub][i5 + kSuper];
+          for (var i4 = 0; i4 < n3; i4++) {
+            vector[i4] = x4[i4 + kSub][i4 + kSuper];
           }
           return format5 !== null ? matrix2(vector) : vector;
         }
@@ -34323,8 +34034,8 @@ svg {
   function _forEach(array, callback) {
     var recurse = function recurse2(value2, index2) {
       if (Array.isArray(value2)) {
-        forEach(value2, function(child, i5) {
-          recurse2(child, index2.concat(i5));
+        forEach(value2, function(child, i4) {
+          recurse2(child, index2.concat(i4));
         });
       } else {
         return applyCallback(callback, value2, index2, array, "forEach");
@@ -34535,8 +34246,8 @@ svg {
   function _map(array, callback) {
     var recurse = function recurse2(value2, index2) {
       if (Array.isArray(value2)) {
-        return value2.map(function(child, i5) {
-          return recurse2(child, index2.concat(i5));
+        return value2.map(function(child, i4) {
+          return recurse2(child, index2.concat(i4));
         });
       } else {
         return applyCallback(callback, value2, index2, array, "map");
@@ -34623,8 +34334,8 @@ svg {
         function _diff(arr) {
           var result = [];
           var size2 = arr.length;
-          for (var i5 = 1; i5 < size2; i5++) {
-            result.push(_ElementDiff(arr[i5 - 1], arr[i5]));
+          for (var i4 = 1; i4 < size2; i4++) {
+            result.push(_ElementDiff(arr[i4 - 1], arr[i4]));
           }
           return result;
         }
@@ -34649,8 +34360,8 @@ svg {
           }
           var result = [];
           var size2 = arr1.length;
-          for (var i5 = 0; i5 < size2; i5++) {
-            result.push(_ElementDiff(arr1[i5], arr2[i5]));
+          for (var i4 = 0; i4 < size2; i4++) {
+            result.push(_ElementDiff(arr1[i4], arr2[i4]));
           }
           return result;
         }
@@ -34977,7 +34688,7 @@ svg {
             return str.substring(0, len);
           } else if (str.length < len) {
             var res = str;
-            for (var i5 = 0, ii = len - str.length; i5 < ii; i5++) {
+            for (var i4 = 0, ii = len - str.length; i4 < ii; i4++) {
               res += defaultChar;
             }
             return res;
@@ -35301,11 +35012,11 @@ svg {
     validateIndex(index2.min()[0]);
     validateIndex(index2.max()[0]);
     var chars = [];
-    for (var i5 = 0; i5 < strLen; i5++) {
-      chars[i5] = str.charAt(i5);
+    for (var i4 = 0; i4 < strLen; i4++) {
+      chars[i4] = str.charAt(i4);
     }
-    range2.forEach(function(v3, i6) {
-      chars[v3] = replacement.charAt(i6[0]);
+    range2.forEach(function(v3, i5) {
+      chars[v3] = replacement.charAt(i5[0]);
     });
     if (chars.length > strLen) {
       for (var _i = strLen - 1, _len = chars.length; _i < _len; _i++) {
@@ -35484,8 +35195,8 @@ svg {
           var transposedRow;
           for (var j4 = 0; j4 < columns; j4++) {
             transposedRow = transposed[j4] = [];
-            for (var i5 = 0; i5 < rows; i5++) {
-              transposedRow[i5] = clone(data[i5][j4]);
+            for (var i4 = 0; i4 < rows; i4++) {
+              transposedRow[i4] = clone(data[i4][j4]);
             }
           }
           return m3.createDenseMatrix({
@@ -35510,10 +35221,10 @@ svg {
             w4[index2[p3]]++;
           }
           var sum3 = 0;
-          for (var i5 = 0; i5 < rows; i5++) {
+          for (var i4 = 0; i4 < rows; i4++) {
             cptr.push(sum3);
-            sum3 += w4[i5];
-            w4[i5] = cptr[i5];
+            sum3 += w4[i4];
+            w4[i4] = cptr[i4];
           }
           cptr.push(sum3);
           for (j4 = 0; j4 < columns; j4++) {
@@ -35680,12 +35391,12 @@ svg {
         function _1dFft(arr, dim) {
           var size2 = arraySize(arr);
           if (dim !== 0)
-            return new Array(size2[0]).fill(0).map((_3, i5) => _1dFft(arr[i5], dim - 1));
+            return new Array(size2[0]).fill(0).map((_3, i4) => _1dFft(arr[i4], dim - 1));
           if (size2.length === 1)
             return _fft(arr);
           function _transpose(arr2) {
             var size3 = arraySize(arr2);
-            return new Array(size3[1]).fill(0).map((_3, j4) => new Array(size3[0]).fill(0).map((_4, i5) => arr2[i5][j4]));
+            return new Array(size3[1]).fill(0).map((_3, j4) => new Array(size3[0]).fill(0).map((_4, i4) => arr2[i4][j4]));
           }
           return _transpose(_1dFft(_transpose(arr), 1));
         }
@@ -35693,15 +35404,15 @@ svg {
           var n3 = arr.length;
           var w4 = exp3(divideScalar2(multiplyScalar2(-1, multiplyScalar2(I3, tau3)), n3));
           var chirp = [];
-          for (var i5 = 1 - n3; i5 < n3; i5++) {
-            chirp.push(pow3(w4, divideScalar2(pow3(i5, 2), 2)));
+          for (var i4 = 1 - n3; i4 < n3; i4++) {
+            chirp.push(pow3(w4, divideScalar2(pow3(i4, 2), 2)));
           }
           var N22 = pow3(2, ceil3(log25(n3 + n3 - 1)));
-          var xp = [...new Array(n3).fill(0).map((_3, i6) => multiplyScalar2(arr[i6], chirp[n3 - 1 + i6])), ...new Array(N22 - n3).fill(0)];
-          var ichirp = [...new Array(n3 + n3 - 1).fill(0).map((_3, i6) => divideScalar2(1, chirp[i6])), ...new Array(N22 - (n3 + n3 - 1)).fill(0)];
+          var xp = [...new Array(n3).fill(0).map((_3, i5) => multiplyScalar2(arr[i5], chirp[n3 - 1 + i5])), ...new Array(N22 - n3).fill(0)];
+          var ichirp = [...new Array(n3 + n3 - 1).fill(0).map((_3, i5) => divideScalar2(1, chirp[i5])), ...new Array(N22 - (n3 + n3 - 1)).fill(0)];
           var fftXp = _fft(xp);
           var fftIchirp = _fft(ichirp);
-          var fftProduct = new Array(N22).fill(0).map((_3, i6) => multiplyScalar2(fftXp[i6], fftIchirp[i6]));
+          var fftProduct = new Array(N22).fill(0).map((_3, i5) => multiplyScalar2(fftXp[i5], fftIchirp[i5]));
           var ifftProduct = dotDivide2(conj2(_ndFft(conj2(fftProduct))), N22);
           var ret = [];
           for (var _i = n3 - 1; _i < n3 + n3 - 1; _i++) {
@@ -35714,7 +35425,7 @@ svg {
           if (len === 1)
             return [arr[0]];
           if (len % 2 === 0) {
-            var ret = [..._fft(arr.filter((_3, i5) => i5 % 2 === 0), len / 2), ..._fft(arr.filter((_3, i5) => i5 % 2 === 1), len / 2)];
+            var ret = [..._fft(arr.filter((_3, i4) => i4 % 2 === 0), len / 2), ..._fft(arr.filter((_3, i4) => i4 % 2 === 1), len / 2)];
             for (var k4 = 0; k4 < len / 2; k4++) {
               var p3 = ret[k4];
               var q4 = multiplyScalar2(ret[k4 + len / 2], exp3(multiplyScalar2(multiplyScalar2(tau3, I3), divideScalar2(-k4, len))));
@@ -35774,11 +35485,11 @@ svg {
   function toPrimitive(t3, r3) {
     if ("object" != _typeof(t3) || !t3)
       return t3;
-    var e6 = t3[Symbol.toPrimitive];
-    if (void 0 !== e6) {
-      var i5 = e6.call(t3, r3 || "default");
-      if ("object" != _typeof(i5))
-        return i5;
+    var e5 = t3[Symbol.toPrimitive];
+    if (void 0 !== e5) {
+      var i4 = e5.call(t3, r3 || "default");
+      if ("object" != _typeof(i4))
+        return i4;
       throw new TypeError("@@toPrimitive must return a primitive value.");
     }
     return ("string" === r3 ? String : Number)(t3);
@@ -35791,8 +35502,8 @@ svg {
 
   // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
   function toPropertyKey(t3) {
-    var i5 = toPrimitive(t3, "string");
-    return "symbol" == _typeof(i5) ? i5 : String(i5);
+    var i4 = toPrimitive(t3, "string");
+    return "symbol" == _typeof(i4) ? i4 : String(i4);
   }
   var init_toPropertyKey = __esm({
     "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
@@ -35823,26 +35534,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/numeric/solveODE.js
-  function ownKeys(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread(e6) {
+  function _objectSpread(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name112, dependencies112, createSolveODE;
   var init_solveODE = __esm({
@@ -35914,8 +35625,8 @@ svg {
               var k4 = [];
               h3 = trimStep(t3[n3], tf, h3);
               k4.push(f3(t3[n3], y3[n3]));
-              for (var i5 = 1; i5 < c3.length; ++i5) {
-                k4.push(f3(add3(t3[n3], multiply2(c3[i5], h3)), add3(y3[n3], multiply2(h3, a3[i5], k4))));
+              for (var i4 = 1; i4 < c3.length; ++i4) {
+                k4.push(f3(add3(t3[n3], multiply2(c3[i4], h3)), add3(y3[n3], multiply2(h3, a3[i4], k4))));
               }
               var TE = max3(abs3(map3(multiply2(deltaB, k4), (X2) => isUnit(X2) ? X2.value : X2)));
               if (TE < tol && tol / TE > 1 / 4) {
@@ -36082,20 +35793,20 @@ svg {
           var ysq = y3 * y3;
           var xnum = P5[0][4] * ysq;
           var xden = ysq;
-          var i5;
-          for (i5 = 0; i5 < 3; i5 += 1) {
-            xnum = (xnum + P5[0][i5]) * ysq;
-            xden = (xden + Q2[0][i5]) * ysq;
+          var i4;
+          for (i4 = 0; i4 < 3; i4 += 1) {
+            xnum = (xnum + P5[0][i4]) * ysq;
+            xden = (xden + Q2[0][i4]) * ysq;
           }
           return y3 * (xnum + P5[0][3]) / (xden + Q2[0][3]);
         }
         function erfc2(y3) {
           var xnum = P5[1][8] * y3;
           var xden = y3;
-          var i5;
-          for (i5 = 0; i5 < 7; i5 += 1) {
-            xnum = (xnum + P5[1][i5]) * y3;
-            xden = (xden + Q2[1][i5]) * y3;
+          var i4;
+          for (i4 = 0; i4 < 7; i4 += 1) {
+            xnum = (xnum + P5[1][i4]) * y3;
+            xden = (xden + Q2[1][i4]) * y3;
           }
           var result = (xnum + P5[1][7]) / (xden + Q2[1][7]);
           var ysq = parseInt(y3 * 16) / 16;
@@ -36106,10 +35817,10 @@ svg {
           var ysq = 1 / (y3 * y3);
           var xnum = P5[2][5] * ysq;
           var xden = ysq;
-          var i5;
-          for (i5 = 0; i5 < 4; i5 += 1) {
-            xnum = (xnum + P5[2][i5]) * ysq;
-            xden = (xden + Q2[2][i5]) * ysq;
+          var i4;
+          for (i4 = 0; i4 < 4; i4 += 1) {
+            xnum = (xnum + P5[2][i4]) * ysq;
+            xden = (xden + Q2[2][i4]) * ysq;
           }
           var result = ysq * (xnum + P5[2][4]) / (xden + Q2[2][4]);
           result = (SQRPI - result) / y3;
@@ -36246,8 +35957,8 @@ svg {
           var count2 = {};
           var mode2 = [];
           var max3 = 0;
-          for (var i5 = 0; i5 < values.length; i5++) {
-            var value2 = values[i5];
+          for (var i4 = 0; i4 < values.length; i4++) {
+            var value2 = values[i4];
             if (isNumeric2(value2) && isNaN3(value2)) {
               throw new Error("Cannot calculate mode of an array containing NaN values");
             }
@@ -36546,8 +36257,8 @@ svg {
             if (x4 % 2 === 0 || x4 % 3 === 0) {
               return false;
             }
-            for (var i5 = 5; i5 * i5 <= x4; i5 += 6) {
-              if (x4 % i5 === 0 || x4 % (i5 + 2) === 0) {
+            for (var i4 = 5; i4 * i4 <= x4; i4 += 6) {
+              if (x4 % i4 === 0 || x4 % (i4 + 2) === 0) {
                 return false;
               }
             }
@@ -36563,8 +36274,8 @@ svg {
               return false;
             if (n3.lt(Math.pow(2, 32))) {
               var x4 = n3.toNumber();
-              for (var i5 = 5; i5 * i5 <= x4; i5 += 6) {
-                if (x4 % i5 === 0 || x4 % (i5 + 2) === 0) {
+              for (var i4 = 5; i4 * i4 <= x4; i4 += 6) {
+                if (x4 % i4 === 0 || x4 % (i4 + 2) === 0) {
                   return false;
                 }
               }
@@ -37237,8 +36948,8 @@ svg {
           if (bSize[0] !== rows) {
             throw new RangeError("Dimension mismatch. Matrix columns must match vector length.");
           }
-          for (var i5 = 0; i5 < rows; i5++) {
-            data[i5] = [bdata[i5]];
+          for (var i4 = 0; i4 < rows; i4++) {
+            data[i4] = [bdata[i4]];
           }
           return new DenseMatrix2({
             data,
@@ -37372,8 +37083,8 @@ svg {
                 throw new Error("Linear system cannot be solved since matrix is singular");
               }
               xj = divideScalar2(bj, vjj);
-              for (var i5 = j4 + 1; i5 < rows; i5++) {
-                bdata[i5] = [subtractScalar2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
+              for (var i4 = j4 + 1; i4 < rows; i4++) {
+                bdata[i4] = [subtractScalar2(bdata[i4][0] || 0, multiplyScalar2(xj, mdata[i4][j4]))];
               }
             } else {
               xj = 0;
@@ -37403,12 +37114,12 @@ svg {
               var firstIndex = ptr[j4];
               var lastIndex = ptr[j4 + 1];
               for (var k4 = firstIndex; k4 < lastIndex; k4++) {
-                var i5 = index2[k4];
-                if (i5 === j4) {
+                var i4 = index2[k4];
+                if (i4 === j4) {
                   vjj = values[k4];
-                } else if (i5 > j4) {
+                } else if (i4 > j4) {
                   jValues.push(values[k4]);
-                  jIndices.push(i5);
+                  jIndices.push(i4);
                 }
               }
               if (equalScalar2(vjj, 0)) {
@@ -37483,8 +37194,8 @@ svg {
                 throw new Error("Linear system cannot be solved since matrix is singular");
               }
               xj = divideScalar2(bj, vjj);
-              for (var i5 = j4 - 1; i5 >= 0; i5--) {
-                bdata[i5] = [subtractScalar2(bdata[i5][0] || 0, multiplyScalar2(xj, mdata[i5][j4]))];
+              for (var i4 = j4 - 1; i4 >= 0; i4--) {
+                bdata[i4] = [subtractScalar2(bdata[i4][0] || 0, multiplyScalar2(xj, mdata[i4][j4]))];
               }
             } else {
               xj = 0;
@@ -37514,12 +37225,12 @@ svg {
               var firstIndex = ptr[j4];
               var lastIndex = ptr[j4 + 1];
               for (var k4 = lastIndex - 1; k4 >= firstIndex; k4--) {
-                var i5 = index2[k4];
-                if (i5 === j4) {
+                var i4 = index2[k4];
+                if (i4 === j4) {
                   vjj = values[k4];
-                } else if (i5 < j4) {
+                } else if (i4 < j4) {
                   jValues.push(values[k4]);
-                  jIndices.push(i5);
+                  jIndices.push(i4);
                 }
               }
               if (equalScalar2(vjj, 0)) {
@@ -37579,20 +37290,20 @@ svg {
           }
         });
         function _denseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
-          for (var i5 = 0; i5 < columns; i5++) {
+          for (var i4 = 0; i4 < columns; i4++) {
             var L3 = B4.length;
             for (var k4 = 0; k4 < L3; k4++) {
               var b3 = B4[k4];
-              if (!equalScalar2(M3[i5][i5], 0)) {
-                b3[i5] = divideScalar2(b3[i5], M3[i5][i5]);
-                for (var j4 = i5 + 1; j4 < columns; j4++) {
-                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
+              if (!equalScalar2(M3[i4][i4], 0)) {
+                b3[i4] = divideScalar2(b3[i4], M3[i4][i4]);
+                for (var j4 = i4 + 1; j4 < columns; j4++) {
+                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i4], M3[j4][i4]));
                 }
-              } else if (!equalScalar2(b3[i5], 0)) {
+              } else if (!equalScalar2(b3[i4], 0)) {
                 if (k4 === 0) {
                   return [];
                 } else {
@@ -37602,51 +37313,51 @@ svg {
                 }
               } else if (k4 === 0) {
                 var bNew = [...b3];
-                bNew[i5] = 1;
-                for (var _j = i5 + 1; _j < columns; _j++) {
-                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i5]);
+                bNew[i4] = 1;
+                for (var _j = i4 + 1; _j < columns; _j++) {
+                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i4]);
                 }
                 B4.push(bNew);
               }
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
         function _sparseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
           var index2 = m3._index;
           var ptr = m3._ptr;
-          for (var i5 = 0; i5 < columns; i5++) {
+          for (var i4 = 0; i4 < columns; i4++) {
             var L3 = B4.length;
             for (var k4 = 0; k4 < L3; k4++) {
               var b3 = B4[k4];
               var iValues = [];
               var iIndices = [];
-              var firstIndex = ptr[i5];
-              var lastIndex = ptr[i5 + 1];
+              var firstIndex = ptr[i4];
+              var lastIndex = ptr[i4 + 1];
               var Mii = 0;
               for (var j4 = firstIndex; j4 < lastIndex; j4++) {
                 var J2 = index2[j4];
-                if (J2 === i5) {
+                if (J2 === i4) {
                   Mii = values[j4];
-                } else if (J2 > i5) {
+                } else if (J2 > i4) {
                   iValues.push(values[j4]);
                   iIndices.push(J2);
                 }
               }
               if (!equalScalar2(Mii, 0)) {
-                b3[i5] = divideScalar2(b3[i5], Mii);
+                b3[i4] = divideScalar2(b3[i4], Mii);
                 for (var _j2 = 0, _lastIndex = iIndices.length; _j2 < _lastIndex; _j2++) {
                   var _J = iIndices[_j2];
-                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
+                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i4], iValues[_j2]));
                 }
-              } else if (!equalScalar2(b3[i5], 0)) {
+              } else if (!equalScalar2(b3[i4], 0)) {
                 if (k4 === 0) {
                   return [];
                 } else {
@@ -37656,7 +37367,7 @@ svg {
                 }
               } else if (k4 === 0) {
                 var bNew = [...b3];
-                bNew[i5] = 1;
+                bNew[i4] = 1;
                 for (var _j3 = 0, _lastIndex2 = iIndices.length; _j3 < _lastIndex2; _j3++) {
                   var _J2 = iIndices[_j3];
                   bNew[_J2] = subtractScalar2(bNew[_J2], iValues[_j3]);
@@ -37666,7 +37377,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
@@ -37709,20 +37420,20 @@ svg {
           }
         });
         function _denseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
-          for (var i5 = columns - 1; i5 >= 0; i5--) {
+          for (var i4 = columns - 1; i4 >= 0; i4--) {
             var L3 = B4.length;
             for (var k4 = 0; k4 < L3; k4++) {
               var b3 = B4[k4];
-              if (!equalScalar2(M3[i5][i5], 0)) {
-                b3[i5] = divideScalar2(b3[i5], M3[i5][i5]);
-                for (var j4 = i5 - 1; j4 >= 0; j4--) {
-                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i5], M3[j4][i5]));
+              if (!equalScalar2(M3[i4][i4], 0)) {
+                b3[i4] = divideScalar2(b3[i4], M3[i4][i4]);
+                for (var j4 = i4 - 1; j4 >= 0; j4--) {
+                  b3[j4] = subtractScalar2(b3[j4], multiplyScalar2(b3[i4], M3[j4][i4]));
                 }
-              } else if (!equalScalar2(b3[i5], 0)) {
+              } else if (!equalScalar2(b3[i4], 0)) {
                 if (k4 === 0) {
                   return [];
                 } else {
@@ -37732,51 +37443,51 @@ svg {
                 }
               } else if (k4 === 0) {
                 var bNew = [...b3];
-                bNew[i5] = 1;
-                for (var _j = i5 - 1; _j >= 0; _j--) {
-                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i5]);
+                bNew[i4] = 1;
+                for (var _j = i4 - 1; _j >= 0; _j--) {
+                  bNew[_j] = subtractScalar2(bNew[_j], M3[_j][i4]);
                 }
                 B4.push(bNew);
               }
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
         function _sparseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
           var index2 = m3._index;
           var ptr = m3._ptr;
-          for (var i5 = columns - 1; i5 >= 0; i5--) {
+          for (var i4 = columns - 1; i4 >= 0; i4--) {
             var L3 = B4.length;
             for (var k4 = 0; k4 < L3; k4++) {
               var b3 = B4[k4];
               var iValues = [];
               var iIndices = [];
-              var firstIndex = ptr[i5];
-              var lastIndex = ptr[i5 + 1];
+              var firstIndex = ptr[i4];
+              var lastIndex = ptr[i4 + 1];
               var Mii = 0;
               for (var j4 = lastIndex - 1; j4 >= firstIndex; j4--) {
                 var J2 = index2[j4];
-                if (J2 === i5) {
+                if (J2 === i4) {
                   Mii = values[j4];
-                } else if (J2 < i5) {
+                } else if (J2 < i4) {
                   iValues.push(values[j4]);
                   iIndices.push(J2);
                 }
               }
               if (!equalScalar2(Mii, 0)) {
-                b3[i5] = divideScalar2(b3[i5], Mii);
+                b3[i4] = divideScalar2(b3[i4], Mii);
                 for (var _j2 = 0, _lastIndex = iIndices.length; _j2 < _lastIndex; _j2++) {
                   var _J = iIndices[_j2];
-                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i5], iValues[_j2]));
+                  b3[_J] = subtractScalar2(b3[_J], multiplyScalar2(b3[i4], iValues[_j2]));
                 }
-              } else if (!equalScalar2(b3[i5], 0)) {
+              } else if (!equalScalar2(b3[i4], 0)) {
                 if (k4 === 0) {
                   return [];
                 } else {
@@ -37786,7 +37497,7 @@ svg {
                 }
               } else if (k4 === 0) {
                 var bNew = [...b3];
-                bNew[i5] = 1;
+                bNew[i4] = 1;
                 for (var _j3 = 0, _lastIndex2 = iIndices.length; _j3 < _lastIndex2; _j3++) {
                   var _J2 = iIndices[_j3];
                   bNew[_J2] = subtractScalar2(bNew[_J2], iValues[_j3]);
@@ -37796,7 +37507,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
@@ -37854,26 +37565,26 @@ svg {
           var cptr = [];
           var x4 = [];
           var w4 = [];
-          var k4, k0, k1, i5;
+          var k4, k0, k1, i4;
           for (var j4 = 0; j4 < columns; j4++) {
             cptr[j4] = cindex.length;
             var mark = j4 + 1;
             for (k0 = aptr[j4], k1 = aptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = aindex[k4];
-              w4[i5] = mark;
-              x4[i5] = avalues[k4];
-              cindex.push(i5);
+              i4 = aindex[k4];
+              w4[i4] = mark;
+              x4[i4] = avalues[k4];
+              cindex.push(i4);
             }
             for (k0 = bptr[j4], k1 = bptr[j4 + 1], k4 = k0; k4 < k1; k4++) {
-              i5 = bindex[k4];
-              if (w4[i5] === mark) {
-                x4[i5] = cf(x4[i5], bvalues[k4]);
+              i4 = bindex[k4];
+              if (w4[i4] === mark) {
+                x4[i4] = cf(x4[i4], bvalues[k4]);
               }
             }
             k4 = cptr[j4];
             while (k4 < cindex.length) {
-              i5 = cindex[k4];
-              var v3 = x4[i5];
+              i4 = cindex[k4];
+              var v3 = x4[i4];
               if (!eq(v3, zero)) {
                 cvalues.push(v3);
                 k4++;
@@ -38367,9 +38078,9 @@ svg {
     "node_modules/javascript-natural-sort/naturalSort.js"(exports, module) {
       module.exports = function naturalSort2(a3, b3) {
         "use strict";
-        var re2 = /(^([+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?)?$|^0x[0-9a-f]+$|\d+)/gi, sre = /(^[ ]*|[ ]*$)/g, dre = /(^([\w ]+,?[\w ]+)?[\w ]+,?[\w ]+\d+:\d+(:\d+)?[\w ]?|^\d{1,4}[\/\-]\d{1,4}[\/\-]\d{1,4}|^\w+, \w+ \d+, \d{4})/, hre = /^0x[0-9a-f]+$/i, ore = /^0/, i5 = function(s3) {
+        var re2 = /(^([+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?)?$|^0x[0-9a-f]+$|\d+)/gi, sre = /(^[ ]*|[ ]*$)/g, dre = /(^([\w ]+,?[\w ]+)?[\w ]+,?[\w ]+\d+:\d+(:\d+)?[\w ]?|^\d{1,4}[\/\-]\d{1,4}[\/\-]\d{1,4}|^\w+, \w+ \d+, \d{4})/, hre = /^0x[0-9a-f]+$/i, ore = /^0/, i4 = function(s3) {
           return naturalSort2.insensitive && ("" + s3).toLowerCase() || "" + s3;
-        }, x4 = i5(a3).replace(sre, "") || "", y3 = i5(b3).replace(sre, "") || "", xN = x4.replace(re2, "\0$1\0").replace(/\0$/, "").replace(/^\0/, "").split("\0"), yN = y3.replace(re2, "\0$1\0").replace(/\0$/, "").replace(/^\0/, "").split("\0"), xD = parseInt(x4.match(hre), 16) || xN.length !== 1 && x4.match(dre) && Date.parse(x4), yD = parseInt(y3.match(hre), 16) || xD && y3.match(dre) && Date.parse(y3) || null, oFxNcL, oFyNcL;
+        }, x4 = i4(a3).replace(sre, "") || "", y3 = i4(b3).replace(sre, "") || "", xN = x4.replace(re2, "\0$1\0").replace(/\0$/, "").replace(/^\0/, "").split("\0"), yN = y3.replace(re2, "\0$1\0").replace(/\0$/, "").replace(/^\0/, "").split("\0"), xD = parseInt(x4.match(hre), 16) || xN.length !== 1 && x4.match(dre) && Date.parse(x4), yD = parseInt(y3.match(hre), 16) || xD && y3.match(dre) && Date.parse(y3) || null, oFxNcL, oFyNcL;
         if (yD) {
           if (xD < yD) {
             return -1;
@@ -38506,8 +38217,8 @@ svg {
           return compareArrays(compareNatural2, x4, y3);
         }
         function compareArrays(compareNatural2, x4, y3) {
-          for (var i5 = 0, ii = Math.min(x4.length, y3.length); i5 < ii; i5++) {
-            var v3 = compareNatural2(x4[i5], y3[i5]);
+          for (var i4 = 0, ii = Math.min(x4.length, y3.length); i4 < ii; i4++) {
+            var v3 = compareNatural2(x4[i4], y3[i4]);
             if (v3 !== 0) {
               return v3;
             }
@@ -38529,8 +38240,8 @@ svg {
           if (c3 !== 0) {
             return c3;
           }
-          for (var i5 = 0; i5 < keysX.length; i5++) {
-            var v3 = compareNatural2(x4[keysX[i5]], y3[keysY[i5]]);
+          for (var i4 = 0; i4 < keysX.length; i4++) {
+            var v3 = compareNatural2(x4[keysX[i4]], y3[keysY[i4]]);
             if (v3 !== 0) {
               return v3;
             }
@@ -38979,8 +38690,8 @@ svg {
               if (len !== y3.length) {
                 return false;
               }
-              for (var i5 = 0; i5 < len; i5++) {
-                if (!_deepEqual(x4[i5], y3[i5])) {
+              for (var i4 = 0; i4 < len; i4++) {
+                if (!_deepEqual(x4[i4], y3[i4])) {
                   return false;
                 }
               }
@@ -39127,9 +38838,9 @@ svg {
           if (k4 >= arr.length) {
             throw new Error("k out of bounds");
           }
-          for (var i5 = 0; i5 < arr.length; i5++) {
-            if (isNumeric2(arr[i5]) && isNaN3(arr[i5])) {
-              return arr[i5];
+          for (var i4 = 0; i4 < arr.length; i4++) {
+            if (isNumeric2(arr[i4]) && isNaN3(arr[i4])) {
+              return arr[i4];
             }
           }
           var from = 0;
@@ -39516,8 +39227,8 @@ svg {
           this._dimensions = [];
           this._sourceSize = [];
           this._isScalar = true;
-          for (var i5 = 0, ii = arguments.length; i5 < ii; i5++) {
-            var arg2 = arguments[i5];
+          for (var i4 = 0, ii = arguments.length; i4 < ii; i4++) {
+            var arg2 = arguments[i4];
             var argIsArray = isArray(arg2);
             var argIsMatrix = isMatrix(arg2);
             var sourceSize = null;
@@ -39553,8 +39264,8 @@ svg {
         Index2.prototype.type = "Index";
         Index2.prototype.isIndex = true;
         function _createImmutableMatrix(arg2) {
-          for (var i5 = 0, l3 = arg2.length; i5 < l3; i5++) {
-            if (typeof arg2[i5] !== "number" || !isInteger(arg2[i5])) {
+          for (var i4 = 0, l3 = arg2.length; i4 < l3; i4++) {
+            if (typeof arg2[i4] !== "number" || !isInteger(arg2[i4])) {
               throw new TypeError("Index parameters must be positive integer numbers");
             }
           }
@@ -39574,31 +39285,31 @@ svg {
         };
         Index2.prototype.size = function() {
           var size2 = [];
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            var d3 = this._dimensions[i5];
-            size2[i5] = typeof d3 === "string" ? 1 : d3.size()[0];
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            var d3 = this._dimensions[i4];
+            size2[i4] = typeof d3 === "string" ? 1 : d3.size()[0];
           }
           return size2;
         };
         Index2.prototype.max = function() {
           var values = [];
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            var range2 = this._dimensions[i5];
-            values[i5] = typeof range2 === "string" ? range2 : range2.max();
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            var range2 = this._dimensions[i4];
+            values[i4] = typeof range2 === "string" ? range2 : range2.max();
           }
           return values;
         };
         Index2.prototype.min = function() {
           var values = [];
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            var range2 = this._dimensions[i5];
-            values[i5] = typeof range2 === "string" ? range2 : range2.min();
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            var range2 = this._dimensions[i4];
+            values[i4] = typeof range2 === "string" ? range2 : range2.min();
           }
           return values;
         };
         Index2.prototype.forEach = function(callback) {
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            callback(this._dimensions[i5], i5, this);
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            callback(this._dimensions[i4], i4, this);
           }
         };
         Index2.prototype.dimension = function(dim) {
@@ -39615,8 +39326,8 @@ svg {
         };
         Index2.prototype.toArray = function() {
           var array = [];
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            var dimension = this._dimensions[i5];
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            var dimension = this._dimensions[i4];
             array.push(typeof dimension === "string" ? dimension : dimension.toArray());
           }
           return array;
@@ -39624,8 +39335,8 @@ svg {
         Index2.prototype.valueOf = Index2.prototype.toArray;
         Index2.prototype.toString = function() {
           var strings = [];
-          for (var i5 = 0, ii = this._dimensions.length; i5 < ii; i5++) {
-            var dimension = this._dimensions[i5];
+          for (var i4 = 0, ii = this._dimensions.length; i4 < ii; i4++) {
+            var dimension = this._dimensions[i4];
             if (typeof dimension === "string") {
               strings.push(JSON.stringify(dimension));
             } else {
@@ -39835,8 +39546,8 @@ svg {
             numRoots--;
           }
           minimum = null;
-          for (var i5 = 0; i5 < arraySize2; i5++) {
-            y3 = array[i5];
+          for (var i4 = 0; i4 < arraySize2; i4++) {
+            y3 = array[i4];
             if (!y3) {
               continue;
             }
@@ -39885,26 +39596,26 @@ svg {
         }
         Spa2.prototype.type = "Spa";
         Spa2.prototype.isSpa = true;
-        Spa2.prototype.set = function(i5, v3) {
-          if (!this._values[i5]) {
-            var node = this._heap.insert(i5, v3);
-            this._values[i5] = node;
+        Spa2.prototype.set = function(i4, v3) {
+          if (!this._values[i4]) {
+            var node = this._heap.insert(i4, v3);
+            this._values[i4] = node;
           } else {
-            this._values[i5].value = v3;
+            this._values[i4].value = v3;
           }
         };
-        Spa2.prototype.get = function(i5) {
-          var node = this._values[i5];
+        Spa2.prototype.get = function(i4) {
+          var node = this._values[i4];
           if (node) {
             return node.value;
           }
           return 0;
         };
-        Spa2.prototype.accumulate = function(i5, v3) {
-          var node = this._values[i5];
+        Spa2.prototype.accumulate = function(i4, v3) {
+          var node = this._values[i4];
           if (!node) {
-            node = this._heap.insert(i5, v3);
-            this._values[i5] = node;
+            node = this._heap.insert(i4, v3);
+            this._values[i4] = node;
           } else {
             node.value = addScalar2(node.value, v3);
           }
@@ -39928,25 +39639,25 @@ svg {
               nodes.push(node);
             }
           }
-          for (var i5 = 0; i5 < nodes.length; i5++) {
-            var n3 = nodes[i5];
+          for (var i4 = 0; i4 < nodes.length; i4++) {
+            var n3 = nodes[i4];
             node = heap.insert(n3.key, n3.value);
             values[node.key] = node;
           }
         };
-        Spa2.prototype.swap = function(i5, j4) {
-          var nodei = this._values[i5];
+        Spa2.prototype.swap = function(i4, j4) {
+          var nodei = this._values[i4];
           var nodej = this._values[j4];
           if (!nodei && nodej) {
-            nodei = this._heap.insert(i5, nodej.value);
+            nodei = this._heap.insert(i4, nodej.value);
             this._heap.remove(nodej);
-            this._values[i5] = nodei;
+            this._values[i4] = nodei;
             this._values[j4] = void 0;
           } else if (nodei && !nodej) {
             nodej = this._heap.insert(j4, nodei.value);
             this._heap.remove(nodei);
             this._values[j4] = nodej;
-            this._values[i5] = void 0;
+            this._values[i4] = void 0;
           } else if (nodei && nodej) {
             var v3 = nodei.value;
             nodei.value = nodej.value;
@@ -39992,26 +39703,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/Unit.js
-  function ownKeys2(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys2(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread2(e6) {
+  function _objectSpread2(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys2(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name161, dependencies161, createUnitClass;
   var init_Unit = __esm({
@@ -40037,7 +39748,7 @@ svg {
           pow: pow3,
           abs: abs3,
           fix: fix2,
-          round: round4,
+          round: round3,
           equal: equal2,
           isNumeric: isNumeric2,
           format: format5,
@@ -40252,8 +39963,8 @@ svg {
               prefix: res.prefix,
               power
             });
-            for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-              unit3.dimensions[i5] += (res.unit.dimensions[i5] || 0) * power;
+            for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+              unit3.dimensions[i4] += (res.unit.dimensions[i4] || 0) * power;
             }
             skipWhitespace();
             while (c3 === ")") {
@@ -40305,11 +40016,11 @@ svg {
           unit3.value = clone(this.value);
           unit3.dimensions = this.dimensions.slice(0);
           unit3.units = [];
-          for (var i5 = 0; i5 < this.units.length; i5++) {
-            unit3.units[i5] = {};
-            for (var p3 in this.units[i5]) {
-              if (hasOwnProperty(this.units[i5], p3)) {
-                unit3.units[i5][p3] = this.units[i5][p3];
+          for (var i4 = 0; i4 < this.units.length; i4++) {
+            unit3.units[i4] = {};
+            for (var p3 in this.units[i4]) {
+              if (hasOwnProperty(this.units[i4], p3)) {
+                unit3.units[i4][p3] = this.units[i4][p3];
               }
             }
           }
@@ -40330,10 +40041,10 @@ svg {
           }
           var res = value2;
           var convert = Unit2._getNumberConverter(typeOf(value2));
-          for (var i5 = 0; i5 < this.units.length; i5++) {
-            var unitValue = convert(this.units[i5].unit.value);
-            var unitPrefixValue = convert(this.units[i5].prefix.value);
-            var unitPower = convert(this.units[i5].power);
+          for (var i4 = 0; i4 < this.units.length; i4++) {
+            var unitValue = convert(this.units[i4].unit.value);
+            var unitPrefixValue = convert(this.units[i4].prefix.value);
+            var unitPower = convert(this.units[i4].power);
             res = multiplyScalar2(res, pow3(multiplyScalar2(unitValue, unitPrefixValue), unitPower));
           }
           return res;
@@ -40344,10 +40055,10 @@ svg {
           }
           var res = value2;
           var convert = Unit2._getNumberConverter(typeOf(value2));
-          for (var i5 = 0; i5 < this.units.length; i5++) {
-            var unitValue = convert(this.units[i5].unit.value);
-            var unitPrefixValue = convert(this.units[i5].prefix.value);
-            var unitPower = convert(this.units[i5].power);
+          for (var i4 = 0; i4 < this.units.length; i4++) {
+            var unitValue = convert(this.units[i4].unit.value);
+            var unitPrefixValue = convert(this.units[i4].prefix.value);
+            var unitPower = convert(this.units[i4].power);
             res = divideScalar2(res, pow3(multiplyScalar2(unitValue, unitPrefixValue), unitPower));
           }
           return res;
@@ -40392,16 +40103,16 @@ svg {
           if (!base) {
             return false;
           }
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            if (Math.abs((this.dimensions[i5] || 0) - (base.dimensions[i5] || 0)) > 1e-12) {
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            if (Math.abs((this.dimensions[i4] || 0) - (base.dimensions[i4] || 0)) > 1e-12) {
               return false;
             }
           }
           return true;
         };
         Unit2.prototype.equalBase = function(other) {
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            if (Math.abs((this.dimensions[i5] || 0) - (other.dimensions[i5] || 0)) > 1e-12) {
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            if (Math.abs((this.dimensions[i4] || 0) - (other.dimensions[i4] || 0)) > 1e-12) {
               return false;
             }
           }
@@ -40413,8 +40124,8 @@ svg {
         Unit2.prototype.multiply = function(_other) {
           var res = this.clone();
           var other = isUnit(_other) ? _other : new Unit2(_other);
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            res.dimensions[i5] = (this.dimensions[i5] || 0) + (other.dimensions[i5] || 0);
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            res.dimensions[i4] = (this.dimensions[i4] || 0) + (other.dimensions[i4] || 0);
           }
           for (var _i = 0; _i < other.units.length; _i++) {
             var inverted = _objectSpread2({}, other.units[_i]);
@@ -40438,8 +40149,8 @@ svg {
         Unit2.prototype.divide = function(_other) {
           var res = this.clone();
           var other = isUnit(_other) ? _other : new Unit2(_other);
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            res.dimensions[i5] = (this.dimensions[i5] || 0) - (other.dimensions[i5] || 0);
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            res.dimensions[i4] = (this.dimensions[i4] || 0) - (other.dimensions[i4] || 0);
           }
           for (var _i2 = 0; _i2 < other.units.length; _i2++) {
             var inverted = _objectSpread2(_objectSpread2({}, other.units[_i2]), {}, {
@@ -40461,8 +40172,8 @@ svg {
         };
         Unit2.prototype.pow = function(p3) {
           var res = this.clone();
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            res.dimensions[i5] = (this.dimensions[i5] || 0) * p3;
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            res.dimensions[i4] = (this.dimensions[i4] || 0) * p3;
           }
           for (var _i3 = 0; _i3 < res.units.length; _i3++) {
             res.units[_i3].power *= p3;
@@ -40495,9 +40206,9 @@ svg {
               ret.value = subtractScalar2(abs3(addScalar2(ret.value, unitOffset)), unitOffset);
             }
           }
-          for (var i5 in ret.units) {
-            if (ret.units[i5].unit.name === "VA" || ret.units[i5].unit.name === "VAR") {
-              ret.units[i5].unit = UNITS.W;
+          for (var i4 in ret.units) {
+            if (ret.units[i4].unit.name === "VA" || ret.units[i4].unit.name === "VAR") {
+              ret.units[i4].unit = UNITS.W;
             }
           }
           return ret;
@@ -40596,14 +40307,14 @@ svg {
               }];
             } else {
               var missingBaseDim = false;
-              for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-                var baseDim = BASE_DIMENSIONS[i5];
-                if (Math.abs(ret.dimensions[i5] || 0) > 1e-12) {
+              for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+                var baseDim = BASE_DIMENSIONS[i4];
+                if (Math.abs(ret.dimensions[i4] || 0) > 1e-12) {
                   if (hasOwnProperty(currentUnitSystem, baseDim)) {
                     proposedUnitList.push({
                       unit: currentUnitSystem[baseDim].unit,
                       prefix: currentUnitSystem[baseDim].prefix,
-                      power: ret.dimensions[i5] || 0
+                      power: ret.dimensions[i4] || 0
                     });
                   } else {
                     missingBaseDim = true;
@@ -40620,14 +40331,14 @@ svg {
         Unit2.prototype.toSI = function() {
           var ret = this.clone();
           var proposedUnitList = [];
-          for (var i5 = 0; i5 < BASE_DIMENSIONS.length; i5++) {
-            var baseDim = BASE_DIMENSIONS[i5];
-            if (Math.abs(ret.dimensions[i5] || 0) > 1e-12) {
+          for (var i4 = 0; i4 < BASE_DIMENSIONS.length; i4++) {
+            var baseDim = BASE_DIMENSIONS[i4];
+            if (Math.abs(ret.dimensions[i4] || 0) > 1e-12) {
               if (hasOwnProperty(UNIT_SYSTEMS.si, baseDim)) {
                 proposedUnitList.push({
                   unit: UNIT_SYSTEMS.si[baseDim].unit,
                   prefix: UNIT_SYSTEMS.si[baseDim].prefix,
-                  power: ret.dimensions[i5] || 0
+                  power: ret.dimensions[i4] || 0
                 });
               } else {
                 throw new Error("Cannot express custom unit " + baseDim + " in SI units");
@@ -40644,14 +40355,14 @@ svg {
           var strDen = "";
           var nNum = 0;
           var nDen = 0;
-          for (var i5 = 0; i5 < this.units.length; i5++) {
-            if (this.units[i5].power > 0) {
+          for (var i4 = 0; i4 < this.units.length; i4++) {
+            if (this.units[i4].power > 0) {
               nNum++;
-              strNum += " " + this.units[i5].prefix.name + this.units[i5].unit.name;
-              if (Math.abs(this.units[i5].power - 1) > 1e-15) {
-                strNum += "^" + this.units[i5].power;
+              strNum += " " + this.units[i4].prefix.name + this.units[i4].unit.name;
+              if (Math.abs(this.units[i4].power - 1) > 1e-15) {
+                strNum += "^" + this.units[i4].power;
               }
-            } else if (this.units[i5].power < 0) {
+            } else if (this.units[i4].power < 0) {
               nDen++;
             }
           }
@@ -40691,13 +40402,13 @@ svg {
           if (typeof simp.value !== "undefined" && simp.value !== null && isComplex(simp.value)) {
             isImaginary = Math.abs(simp.value.re) < 1e-14;
           }
-          for (var i5 in simp.units) {
-            if (hasOwnProperty(simp.units, i5)) {
-              if (simp.units[i5].unit) {
-                if (simp.units[i5].unit.name === "VA" && isImaginary) {
-                  simp.units[i5].unit = UNITS.VAR;
-                } else if (simp.units[i5].unit.name === "VAR" && !isImaginary) {
-                  simp.units[i5].unit = UNITS.VA;
+          for (var i4 in simp.units) {
+            if (hasOwnProperty(simp.units, i4)) {
+              if (simp.units[i4].unit) {
+                if (simp.units[i4].unit.name === "VA" && isImaginary) {
+                  simp.units[i4].unit = UNITS.VAR;
+                } else if (simp.units[i4].unit.name === "VAR" && !isImaginary) {
+                  simp.units[i4].unit = UNITS.VA;
                 }
               }
             }
@@ -40755,12 +40466,12 @@ svg {
         Unit2.prototype.splitUnit = function(parts) {
           var x4 = this.clone();
           var ret = [];
-          for (var i5 = 0; i5 < parts.length; i5++) {
-            x4 = x4.to(parts[i5]);
-            if (i5 === parts.length - 1)
+          for (var i4 = 0; i4 < parts.length; i4++) {
+            x4 = x4.to(parts[i4]);
+            if (i4 === parts.length - 1)
               break;
             var xNumeric = x4.toNumeric();
-            var xRounded = round4(xNumeric);
+            var xRounded = round3(xNumeric);
             var xFixed = void 0;
             var isNearlyEqual = equal2(xRounded, xNumeric);
             if (isNearlyEqual) {
@@ -40768,7 +40479,7 @@ svg {
             } else {
               xFixed = fix2(x4.toNumeric());
             }
-            var y3 = new Unit2(xFixed, parts[i5].toString());
+            var y3 = new Unit2(xFixed, parts[i4].toString());
             ret.push(y3);
             x4 = subtractScalar2(x4, y3);
           }
@@ -43097,12 +42808,12 @@ svg {
           return /^[a-zA-Z]$/.test(c4);
         };
         function assertUnitNameIsValid(name310) {
-          for (var i5 = 0; i5 < name310.length; i5++) {
-            c3 = name310.charAt(i5);
-            if (i5 === 0 && !Unit2.isValidAlpha(c3)) {
+          for (var i4 = 0; i4 < name310.length; i4++) {
+            c3 = name310.charAt(i4);
+            if (i4 === 0 && !Unit2.isValidAlpha(c3)) {
               throw new Error('Invalid unit name (must begin with alpha character): "' + name310 + '"');
             }
-            if (i5 > 0 && !(Unit2.isValidAlpha(c3) || isDigit(c3))) {
+            if (i4 > 0 && !(Unit2.isValidAlpha(c3) || isDigit(c3))) {
               throw new Error('Invalid unit name (only alphanumeric characters are allowed): "' + name310 + '"');
             }
           }
@@ -43117,8 +42828,8 @@ svg {
                 Unit2.deleteUnit(_key4);
               }
               if (obj[_key4].aliases) {
-                for (var i5 = 0; i5 < obj[_key4].aliases.length; i5++) {
-                  Unit2.deleteUnit(obj[_key4].aliases[i5]);
+                for (var i4 = 0; i4 < obj[_key4].aliases.length; i4++) {
+                  Unit2.deleteUnit(obj[_key4].aliases[i4]);
                 }
               }
             }
@@ -43166,9 +42877,9 @@ svg {
             throw new TypeError('Cannot create unit "' + name310 + '" from "' + obj.toString() + '": expecting "string" or "Unit" or "Object"');
           }
           if (aliases) {
-            for (var i5 = 0; i5 < aliases.length; i5++) {
-              if (hasOwnProperty(UNITS, aliases[i5])) {
-                throw new Error('Cannot create alias "' + aliases[i5] + '": a unit with that name already exists');
+            for (var i4 = 0; i4 < aliases.length; i4++) {
+              if (hasOwnProperty(UNITS, aliases[i4])) {
+                throw new Error('Cannot create alias "' + aliases[i4] + '": a unit with that name already exists');
               }
             }
           }
@@ -44158,9 +43869,9 @@ svg {
               var b1 = flatten(Array.isArray(a1) ? a1 : a1.toArray()).sort(compareNatural2);
               var b22 = flatten(Array.isArray(a22) ? a22 : a22.toArray()).sort(compareNatural2);
               result = [];
-              for (var i5 = 0; i5 < b1.length; i5++) {
+              for (var i4 = 0; i4 < b1.length; i4++) {
                 for (var j4 = 0; j4 < b22.length; j4++) {
-                  result.push([b1[i5], b22[j4]]);
+                  result.push([b1[i4], b22[j4]]);
                 }
               }
             }
@@ -44203,16 +43914,16 @@ svg {
               var b22 = identify(flatten(Array.isArray(a22) ? a22 : a22.toArray()).sort(compareNatural2));
               result = [];
               var inb2;
-              for (var i5 = 0; i5 < b1.length; i5++) {
+              for (var i4 = 0; i4 < b1.length; i4++) {
                 inb2 = false;
                 for (var j4 = 0; j4 < b22.length; j4++) {
-                  if (compareNatural2(b1[i5].value, b22[j4].value) === 0 && b1[i5].identifier === b22[j4].identifier) {
+                  if (compareNatural2(b1[i4].value, b22[j4].value) === 0 && b1[i4].identifier === b22[j4].identifier) {
                     inb2 = true;
                     break;
                   }
                 }
                 if (!inb2) {
-                  result.push(b1[i5]);
+                  result.push(b1[i4]);
                 }
               }
             }
@@ -44252,9 +43963,9 @@ svg {
               var b3 = flatten(Array.isArray(a3) ? a3 : a3.toArray()).sort(compareNatural2);
               result = [];
               result.push(b3[0]);
-              for (var i5 = 1; i5 < b3.length; i5++) {
-                if (compareNatural2(b3[i5], b3[i5 - 1]) !== 0) {
-                  result.push(b3[i5]);
+              for (var i4 = 1; i4 < b3.length; i4++) {
+                if (compareNatural2(b3[i4], b3[i4 - 1]) !== 0) {
+                  result.push(b3[i4]);
                 }
               }
             }
@@ -44294,10 +44005,10 @@ svg {
               var b1 = identify(flatten(Array.isArray(a1) ? a1 : a1.toArray()).sort(compareNatural2));
               var b22 = identify(flatten(Array.isArray(a22) ? a22 : a22.toArray()).sort(compareNatural2));
               result = [];
-              for (var i5 = 0; i5 < b1.length; i5++) {
+              for (var i4 = 0; i4 < b1.length; i4++) {
                 for (var j4 = 0; j4 < b22.length; j4++) {
-                  if (compareNatural2(b1[i5].value, b22[j4].value) === 0 && b1[i5].identifier === b22[j4].identifier) {
-                    result.push(b1[i5]);
+                  if (compareNatural2(b1[i4].value, b22[j4].value) === 0 && b1[i4].identifier === b22[j4].identifier) {
+                    result.push(b1[i4]);
                     break;
                   }
                 }
@@ -44339,10 +44050,10 @@ svg {
             var b1 = identify(flatten(Array.isArray(a1) ? a1 : a1.toArray()).sort(compareNatural2));
             var b22 = identify(flatten(Array.isArray(a22) ? a22 : a22.toArray()).sort(compareNatural2));
             var inb2;
-            for (var i5 = 0; i5 < b1.length; i5++) {
+            for (var i4 = 0; i4 < b1.length; i4++) {
               inb2 = false;
               for (var j4 = 0; j4 < b22.length; j4++) {
-                if (compareNatural2(b1[i5].value, b22[j4].value) === 0 && b1[i5].identifier === b22[j4].identifier) {
+                if (compareNatural2(b1[i4].value, b22[j4].value) === 0 && b1[i4].identifier === b22[j4].identifier) {
                   inb2 = true;
                   break;
                 }
@@ -44375,14 +44086,14 @@ svg {
           Index: Index2
         } = _ref;
         return typed3(name195, {
-          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e6, a3) {
+          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e5, a3) {
             if (subset2(size2(a3), new Index2(0)) === 0) {
               return 0;
             }
             var b3 = flatten(Array.isArray(a3) ? a3 : a3.toArray());
             var count2 = 0;
-            for (var i5 = 0; i5 < b3.length; i5++) {
-              if (compareNatural2(b3[i5], e6) === 0) {
+            for (var i4 = 0; i4 < b3.length; i4++) {
+              if (compareNatural2(b3[i4], e5) === 0) {
                 count2++;
               }
             }
@@ -44426,17 +44137,17 @@ svg {
         });
         function _subset(array, bitarray) {
           var result = [];
-          for (var i5 = 0; i5 < bitarray.length; i5++) {
-            if (bitarray[i5] === "1") {
-              result.push(array[i5]);
+          for (var i4 = 0; i4 < bitarray.length; i4++) {
+            if (bitarray[i4] === "1") {
+              result.push(array[i4]);
             }
           }
           return result;
         }
         function _sort(array) {
           var temp = [];
-          for (var i5 = array.length - 1; i5 > 0; i5--) {
-            for (var j4 = 0; j4 < i5; j4++) {
+          for (var i4 = array.length - 1; i4 > 0; i4--) {
+            for (var j4 = 0; j4 < i4; j4++) {
               if (array[j4].length > array[j4 + 1].length) {
                 temp = array[j4];
                 array[j4] = array[j4 + 1];
@@ -44473,8 +44184,8 @@ svg {
             } else {
               var b3 = flatten(Array.isArray(a3) ? a3 : a3.toArray()).sort(compareNatural2);
               var count2 = 1;
-              for (var i5 = 1; i5 < b3.length; i5++) {
-                if (compareNatural2(b3[i5], b3[i5 - 1]) !== 0) {
+              for (var i4 = 1; i4 < b3.length; i4++) {
+                if (compareNatural2(b3[i4], b3[i4 - 1]) !== 0) {
                   count2++;
                 }
               }
@@ -44594,8 +44305,8 @@ svg {
           "any, any": addScalar2,
           "any, any, ...any": typed3.referToSelf((self2) => (x4, y3, rest) => {
             var result = self2(x4, y3);
-            for (var i5 = 0; i5 < rest.length; i5++) {
-              result = self2(result, rest[i5]);
+            for (var i4 = 0; i4 < rest.length; i4++) {
+              result = self2(result, rest[i4]);
             }
             return result;
           })
@@ -44637,11 +44348,11 @@ svg {
         function _hypot(args) {
           var result = 0;
           var largest = 0;
-          for (var i5 = 0; i5 < args.length; i5++) {
-            if (isComplex(args[i5])) {
+          for (var i4 = 0; i4 < args.length; i4++) {
+            if (isComplex(args[i4])) {
               throw new TypeError("Unexpected type of argument to hypot");
             }
-            var value2 = abs3(args[i5]);
+            var value2 = abs3(args[i4]);
             if (smaller2(largest, value2)) {
               result = multiplyScalar2(result, multiplyScalar2(divideScalar2(largest, value2), divideScalar2(largest, value2)));
               result = addScalar2(result, 1);
@@ -44780,12 +44491,12 @@ svg {
           var r3 = [];
           var maxr = 0;
           x4.forEach(function(value2, index2) {
-            var i5 = index2[0];
-            var ri = add3(r3[i5] || 0, abs3(value2));
+            var i4 = index2[0];
+            var ri = add3(r3[i4] || 0, abs3(value2));
             if (larger2(ri, maxr)) {
               maxr = ri;
             }
-            r3[i5] = ri;
+            r3[i4] = ri;
           }, true);
           return maxr;
         }
@@ -44882,8 +44593,8 @@ svg {
           }
           if (!aIsColumn && !bIsColumn) {
             var c3 = mul2(conj2(adata[0]), bdata[0]);
-            for (var i5 = 1; i5 < N3; i5++) {
-              c3 = add3(c3, mul2(conj2(adata[i5]), bdata[i5]));
+            for (var i4 = 1; i4 < N3; i4++) {
+              c3 = add3(c3, mul2(conj2(adata[i4]), bdata[i4]));
             }
             return c3;
           }
@@ -44918,13 +44629,13 @@ svg {
           var c3 = 0;
           var add3 = addScalar2;
           var mul2 = multiplyScalar2;
-          var i5 = 0;
+          var i4 = 0;
           var j4 = 0;
-          while (i5 < xindex.length && j4 < yindex.length) {
-            var I3 = xindex[i5];
+          while (i4 < xindex.length && j4 < yindex.length) {
+            var I3 = xindex[i4];
             var J2 = yindex[j4];
             if (I3 < J2) {
-              i5++;
+              i4++;
               continue;
             }
             if (I3 > J2) {
@@ -44932,8 +44643,8 @@ svg {
               continue;
             }
             if (I3 === J2) {
-              c3 = add3(c3, mul2(xvalues[i5], yvalues[j4]));
-              i5++;
+              c3 = add3(c3, mul2(xvalues[i4], yvalues[j4]));
+              i4++;
               j4++;
             }
           }
@@ -44983,8 +44694,8 @@ svg {
               var cols = size2[1];
               if (rows === cols) {
                 var sum3 = 0;
-                for (var i5 = 0; i5 < rows; i5++) {
-                  sum3 = add3(sum3, data[i5][i5]);
+                for (var i4 = 0; i4 < rows; i4++) {
+                  sum3 = add3(sum3, data[i4][i4]);
                 }
                 return sum3;
               } else {
@@ -45009,12 +44720,12 @@ svg {
                 var k0 = ptr[j4];
                 var k1 = ptr[j4 + 1];
                 for (var k4 = k0; k4 < k1; k4++) {
-                  var i5 = index2[k4];
-                  if (i5 === j4) {
+                  var i4 = index2[k4];
+                  if (i4 === j4) {
                     sum3 = add3(sum3, values[k4]);
                     break;
                   }
-                  if (i5 > j4) {
+                  if (i4 > j4) {
                     break;
                   }
                 }
@@ -45699,9 +45410,9 @@ svg {
            * @param {function(child: Node, path: string, parent: Node)} callback
            */
           forEach(callback) {
-            for (var i5 = 0; i5 < this.items.length; i5++) {
-              var node = this.items[i5];
-              callback(node, "items[" + i5 + "]", this);
+            for (var i4 = 0; i4 < this.items.length; i4++) {
+              var node = this.items[i4];
+              callback(node, "items[" + i4 + "]", this);
             }
           }
           /**
@@ -45712,8 +45423,8 @@ svg {
            */
           map(callback) {
             var items = [];
-            for (var i5 = 0; i5 < this.items.length; i5++) {
-              items[i5] = this._ifNode(callback(this.items[i5], "items[" + i5 + "]", this));
+            for (var i4 = 0; i4 < this.items.length; i4++) {
+              items[i4] = this._ifNode(callback(this.items[i4], "items[" + i4 + "]", this));
             }
             return new ArrayNode2(items);
           }
@@ -45854,9 +45565,9 @@ svg {
     }
     var identifier = node.getIdentifier();
     var precedence = null;
-    for (var i5 = 0; i5 < properties.length; i5++) {
-      if (identifier in properties[i5]) {
-        precedence = i5;
+    for (var i4 = 0; i4 < properties.length; i4++) {
+      if (identifier in properties[i4]) {
+        precedence = i4;
         break;
       }
     }
@@ -45901,8 +45612,8 @@ svg {
     }
     var property = properties[index2][identifierA];
     if (hasOwnProperty(property, "associativeWith") && property.associativeWith instanceof Array) {
-      for (var i5 = 0; i5 < property.associativeWith.length; i5++) {
-        if (property.associativeWith[i5] === identifierB) {
+      for (var i4 = 0; i4 < property.associativeWith.length; i4++) {
+        if (property.associativeWith[i4] === identifierB) {
           return true;
         }
       }
@@ -46507,8 +46218,8 @@ svg {
            * @param {function(child: Node, path: string, parent: Node)} callback
            */
           forEach(callback) {
-            for (var i5 = 0; i5 < this.blocks.length; i5++) {
-              callback(this.blocks[i5].node, "blocks[" + i5 + "].node", this);
+            for (var i4 = 0; i4 < this.blocks.length; i4++) {
+              callback(this.blocks[i4].node, "blocks[" + i4 + "].node", this);
             }
           }
           /**
@@ -46519,10 +46230,10 @@ svg {
            */
           map(callback) {
             var blocks = [];
-            for (var i5 = 0; i5 < this.blocks.length; i5++) {
-              var block = this.blocks[i5];
-              var node = this._ifNode(callback(block.node, "blocks[" + i5 + "].node", this));
-              blocks[i5] = {
+            for (var i4 = 0; i4 < this.blocks.length; i4++) {
+              var block = this.blocks[i4];
+              var node = this._ifNode(callback(block.node, "blocks[" + i4 + "].node", this));
+              blocks[i4] = {
                 node,
                 visible: block.visible
               };
@@ -46818,8 +46529,8 @@ svg {
     "node_modules/escape-latex/dist/index.js"(exports, module) {
       "use strict";
       var _extends2 = Object.assign || function(target) {
-        for (var i5 = 1; i5 < arguments.length; i5++) {
-          var source = arguments[i5];
+        for (var i4 = 1; i4 < arguments.length; i4++) {
+          var source = arguments[i4];
           for (var key in source) {
             if (Object.prototype.hasOwnProperty.call(source, key)) {
               target[key] = source[key];
@@ -47639,8 +47350,8 @@ svg {
               var signatures = {};
               signatures[signature] = function() {
                 var childArgs = Object.create(args);
-                for (var i5 = 0; i5 < params.length; i5++) {
-                  childArgs[params[i5]] = arguments[i5];
+                for (var i4 = 0; i4 < params.length; i4++) {
+                  childArgs[params[i4]] = arguments[i4];
                 }
                 return evalExpr(scope, childArgs, context);
               };
@@ -47728,8 +47439,8 @@ svg {
           toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var params = [];
-            for (var i5 = 0; i5 < this.params.length; i5++) {
-              params.push('<span class="math-symbol math-parameter">' + escape(this.params[i5]) + "</span>");
+            for (var i4 = 0; i4 < this.params.length; i4++) {
+              params.push('<span class="math-symbol math-parameter">' + escape(this.params[i4]) + "</span>");
             }
             var expr = this.expr.toHTML(options);
             if (needParenthesis(this, parenthesis, options && options.implicit)) {
@@ -47823,7 +47534,7 @@ svg {
            *                        evalNode(scope: Object, args: Object, context: *)
            */
           _compile(math2, argNames) {
-            var evalDimensions = map(this.dimensions, function(dimension, i5) {
+            var evalDimensions = map(this.dimensions, function(dimension, i4) {
               var needsEnd = dimension.filter((node) => node.isSymbolNode && node.name === "end").length > 0;
               if (needsEnd) {
                 var childArgNames = Object.create(argNames);
@@ -47835,7 +47546,7 @@ svg {
                   }
                   var s3 = size2(context).valueOf();
                   var childArgs = Object.create(args);
-                  childArgs.end = s3[i5];
+                  childArgs.end = s3[i4];
                   return _evalDimension(scope, childArgs, context);
                 };
               } else {
@@ -47855,8 +47566,8 @@ svg {
            * @param {function(child: Node, path: string, parent: Node)} callback
            */
           forEach(callback) {
-            for (var i5 = 0; i5 < this.dimensions.length; i5++) {
-              callback(this.dimensions[i5], "dimensions[" + i5 + "]", this);
+            for (var i4 = 0; i4 < this.dimensions.length; i4++) {
+              callback(this.dimensions[i4], "dimensions[" + i4 + "]", this);
             }
           }
           /**
@@ -47867,8 +47578,8 @@ svg {
            */
           map(callback) {
             var dimensions = [];
-            for (var i5 = 0; i5 < this.dimensions.length; i5++) {
-              dimensions[i5] = this._ifNode(callback(this.dimensions[i5], "dimensions[" + i5 + "]", this));
+            for (var i4 = 0; i4 < this.dimensions.length; i4++) {
+              dimensions[i4] = this._ifNode(callback(this.dimensions[i4], "dimensions[" + i4 + "]", this));
             }
             return new IndexNode2(dimensions, this.dotNotation);
           }
@@ -47931,8 +47642,8 @@ svg {
            */
           toHTML(options) {
             var dimensions = [];
-            for (var i5 = 0; i5 < this.dimensions.length; i5++) {
-              dimensions[i5] = this.dimensions[i5].toHTML();
+            for (var i4 = 0; i4 < this.dimensions.length; i4++) {
+              dimensions[i4] = this.dimensions[i4].toHTML();
             }
             if (this.dotNotation) {
               return '<span class="math-operator math-accessor-operator">.</span><span class="math-symbol math-property">' + escape(this.getObjectProperty()) + "</span>";
@@ -48311,9 +48022,9 @@ svg {
               break;
           }
           if (args.length >= 2 && root.getIdentifier() === "OperatorNode:multiply" && root.implicit && parenthesis !== "all" && implicit === "hide") {
-            for (var i5 = 1; i5 < result.length; ++i5) {
-              if (startsWithConstant(args[i5], parenthesis) && !result[i5 - 1] && (parenthesis !== "keep" || !isParenthesisNode(args[i5 - 1]))) {
-                result[i5] = true;
+            for (var i4 = 1; i4 < result.length; ++i4) {
+              if (startsWithConstant(args[i4], parenthesis) && !result[i4 - 1] && (parenthesis !== "keep" || !isParenthesisNode(args[i4 - 1]))) {
+                result[i4] = true;
               }
             }
           }
@@ -48403,8 +48114,8 @@ svg {
            * @param {function(child: Node, path: string, parent: Node)} callback
            */
           forEach(callback) {
-            for (var i5 = 0; i5 < this.args.length; i5++) {
-              callback(this.args[i5], "args[" + i5 + "]", this);
+            for (var i4 = 0; i4 < this.args.length; i4++) {
+              callback(this.args[i4], "args[" + i4 + "]", this);
             }
           }
           /**
@@ -48415,8 +48126,8 @@ svg {
            */
           map(callback) {
             var args = [];
-            for (var i5 = 0; i5 < this.args.length; i5++) {
-              args[i5] = this._ifNode(callback(this.args[i5], "args[" + i5 + "]", this));
+            for (var i4 = 0; i4 < this.args.length; i4++) {
+              args[i4] = this._ifNode(callback(this.args[i4], "args[" + i4 + "]", this));
             }
             return new OperatorNode2(this.op, this.fn, args, this.implicit, this.isPercentage);
           }
@@ -49133,10 +48844,10 @@ svg {
             return function evalRelationalNode(scope, args, context) {
               var evalLhs;
               var evalRhs = compiled[0](scope, args, context);
-              for (var i5 = 0; i5 < self2.conditionals.length; i5++) {
+              for (var i4 = 0; i4 < self2.conditionals.length; i4++) {
                 evalLhs = evalRhs;
-                evalRhs = compiled[i5 + 1](scope, args, context);
-                var condFn = getSafeProperty(math2, self2.conditionals[i5]);
+                evalRhs = compiled[i4 + 1](scope, args, context);
+                var condFn = getSafeProperty(math2, self2.conditionals[i4]);
                 if (!condFn(evalLhs, evalRhs)) {
                   return false;
                 }
@@ -49149,7 +48860,7 @@ svg {
            * @param {function(child: Node, path: string, parent: Node)} callback
            */
           forEach(callback) {
-            this.params.forEach((n3, i5) => callback(n3, "params[" + i5 + "]", this), this);
+            this.params.forEach((n3, i4) => callback(n3, "params[" + i4 + "]", this), this);
           }
           /**
            * Create a new RelationalNode whose children are the results of calling
@@ -49158,7 +48869,7 @@ svg {
            * @returns {RelationalNode} Returns a transformed copy of the node
            */
           map(callback) {
-            return new RelationalNode2(this.conditionals.slice(), this.params.map((n3, i5) => this._ifNode(callback(n3, "params[" + i5 + "]", this)), this));
+            return new RelationalNode2(this.conditionals.slice(), this.params.map((n3, i4) => this._ifNode(callback(n3, "params[" + i4 + "]", this)), this));
           }
           /**
            * Create a clone of this node, a shallow copy
@@ -49180,9 +48891,9 @@ svg {
               return parenthesis === "all" || paramPrecedence !== null && paramPrecedence <= precedence ? "(" + p3.toString(options) + ")" : p3.toString(options);
             });
             var ret = paramStrings[0];
-            for (var i5 = 0; i5 < this.conditionals.length; i5++) {
-              ret += " " + operatorMap[this.conditionals[i5]];
-              ret += " " + paramStrings[i5 + 1];
+            for (var i4 = 0; i4 < this.conditionals.length; i4++) {
+              ret += " " + operatorMap[this.conditionals[i4]];
+              ret += " " + paramStrings[i4 + 1];
             }
             return ret;
           }
@@ -49221,8 +48932,8 @@ svg {
               return parenthesis === "all" || paramPrecedence !== null && paramPrecedence <= precedence ? '<span class="math-parenthesis math-round-parenthesis">(</span>' + p3.toHTML(options) + '<span class="math-parenthesis math-round-parenthesis">)</span>' : p3.toHTML(options);
             });
             var ret = paramStrings[0];
-            for (var i5 = 0; i5 < this.conditionals.length; i5++) {
-              ret += '<span class="math-operator math-binary-operator math-explicit-binary-operator">' + escape(operatorMap[this.conditionals[i5]]) + "</span>" + paramStrings[i5 + 1];
+            for (var i4 = 0; i4 < this.conditionals.length; i4++) {
+              ret += '<span class="math-operator math-binary-operator math-explicit-binary-operator">' + escape(operatorMap[this.conditionals[i4]]) + "</span>" + paramStrings[i4 + 1];
             }
             return ret;
           }
@@ -49239,8 +48950,8 @@ svg {
               return parenthesis === "all" || paramPrecedence !== null && paramPrecedence <= precedence ? "\\left(" + p3.toTex(options) + "\right)" : p3.toTex(options);
             });
             var ret = paramStrings[0];
-            for (var i5 = 0; i5 < this.conditionals.length; i5++) {
-              ret += latexOperators[this.conditionals[i5]] + paramStrings[i5 + 1];
+            for (var i4 = 0; i4 < this.conditionals.length; i4++) {
+              ret += latexOperators[this.conditionals[i4]] + paramStrings[i4 + 1];
             }
             return ret;
           }
@@ -49676,8 +49387,8 @@ svg {
            */
           forEach(callback) {
             callback(this.fn, "fn", this);
-            for (var i5 = 0; i5 < this.args.length; i5++) {
-              callback(this.args[i5], "args[" + i5 + "]", this);
+            for (var i4 = 0; i4 < this.args.length; i4++) {
+              callback(this.args[i4], "args[" + i4 + "]", this);
             }
           }
           /**
@@ -49689,8 +49400,8 @@ svg {
           map(callback) {
             var fn2 = this._ifNode(callback(this.fn, "fn", this));
             var args = [];
-            for (var i5 = 0; i5 < this.args.length; i5++) {
-              args[i5] = this._ifNode(callback(this.args[i5], "args[" + i5 + "]", this));
+            for (var i4 = 0; i4 < this.args.length; i4++) {
+              args[i4] = this._ifNode(callback(this.args[i4], "args[" + i4 + "]", this));
             }
             return new FunctionNode2(fn2, args);
           }
@@ -51084,30 +50795,30 @@ svg {
           var lsize = [rows, n3];
           var udata = [];
           var usize = [n3, columns];
-          var i5, j4, k4;
+          var i4, j4, k4;
           var p3 = [];
-          for (i5 = 0; i5 < rows; i5++) {
-            p3[i5] = i5;
+          for (i4 = 0; i4 < rows; i4++) {
+            p3[i4] = i4;
           }
           for (j4 = 0; j4 < columns; j4++) {
             if (j4 > 0) {
-              for (i5 = 0; i5 < rows; i5++) {
-                var min3 = Math.min(i5, j4);
+              for (i4 = 0; i4 < rows; i4++) {
+                var min3 = Math.min(i4, j4);
                 var s3 = 0;
                 for (k4 = 0; k4 < min3; k4++) {
-                  s3 = addScalar2(s3, multiplyScalar2(data[i5][k4], data[k4][j4]));
+                  s3 = addScalar2(s3, multiplyScalar2(data[i4][k4], data[k4][j4]));
                 }
-                data[i5][j4] = subtractScalar2(data[i5][j4], s3);
+                data[i4][j4] = subtractScalar2(data[i4][j4], s3);
               }
             }
             var pi3 = j4;
             var pabsv = 0;
             var vjj = 0;
-            for (i5 = j4; i5 < rows; i5++) {
-              var v3 = data[i5][j4];
+            for (i4 = j4; i4 < rows; i4++) {
+              var v3 = data[i4][j4];
               var absv = abs3(v3);
               if (larger2(absv, pabsv)) {
-                pi3 = i5;
+                pi3 = i4;
                 pabsv = absv;
                 vjj = v3;
               }
@@ -51117,45 +50828,45 @@ svg {
               DenseMatrix2._swapRows(j4, pi3, data);
             }
             if (j4 < rows) {
-              for (i5 = j4 + 1; i5 < rows; i5++) {
-                var vij = data[i5][j4];
+              for (i4 = j4 + 1; i4 < rows; i4++) {
+                var vij = data[i4][j4];
                 if (!equalScalar2(vij, 0)) {
-                  data[i5][j4] = divideScalar2(data[i5][j4], vjj);
+                  data[i4][j4] = divideScalar2(data[i4][j4], vjj);
                 }
               }
             }
           }
           for (j4 = 0; j4 < columns; j4++) {
-            for (i5 = 0; i5 < rows; i5++) {
+            for (i4 = 0; i4 < rows; i4++) {
               if (j4 === 0) {
-                if (i5 < columns) {
-                  udata[i5] = [];
+                if (i4 < columns) {
+                  udata[i4] = [];
                 }
-                ldata[i5] = [];
+                ldata[i4] = [];
               }
-              if (i5 < j4) {
-                if (i5 < columns) {
-                  udata[i5][j4] = data[i5][j4];
+              if (i4 < j4) {
+                if (i4 < columns) {
+                  udata[i4][j4] = data[i4][j4];
                 }
                 if (j4 < rows) {
-                  ldata[i5][j4] = 0;
+                  ldata[i4][j4] = 0;
                 }
                 continue;
               }
-              if (i5 === j4) {
-                if (i5 < columns) {
-                  udata[i5][j4] = data[i5][j4];
+              if (i4 === j4) {
+                if (i4 < columns) {
+                  udata[i4][j4] = data[i4][j4];
                 }
                 if (j4 < rows) {
-                  ldata[i5][j4] = 1;
+                  ldata[i4][j4] = 1;
                 }
                 continue;
               }
-              if (i5 < columns) {
-                udata[i5][j4] = 0;
+              if (i4 < columns) {
+                udata[i4][j4] = 0;
               }
               if (j4 < rows) {
-                ldata[i5][j4] = data[i5][j4];
+                ldata[i4][j4] = data[i4][j4];
               }
             }
           }
@@ -51168,8 +50879,8 @@ svg {
             size: usize
           });
           var pv = [];
-          for (i5 = 0, n3 = p3.length; i5 < n3; i5++) {
-            pv[p3[i5]] = i5;
+          for (i4 = 0, n3 = p3.length; i4 < n3; i4++) {
+            pv[p3[i4]] = i4;
           }
           return {
             L: l3,
@@ -51195,12 +50906,12 @@ svg {
           var uindex = [];
           var uptr = [];
           var usize = [n3, columns];
-          var i5, j4, k4;
+          var i4, j4, k4;
           var pvCo = [];
           var pvOc = [];
-          for (i5 = 0; i5 < rows; i5++) {
-            pvCo[i5] = i5;
-            pvOc[i5] = i5;
+          for (i4 = 0; i4 < rows; i4++) {
+            pvCo[i4] = i4;
+            pvOc[i4] = i4;
           }
           var swapIndeces = function swapIndeces2(x4, y3) {
             var kx = pvOc[x4];
@@ -51221,14 +50932,14 @@ svg {
             var k0 = ptr[j4];
             var k1 = ptr[j4 + 1];
             for (k4 = k0; k4 < k1; k4++) {
-              i5 = index2[k4];
-              spa.set(pvCo[i5], values[k4]);
+              i4 = index2[k4];
+              spa.set(pvCo[i4], values[k4]);
             }
             if (j4 > 0) {
               spa.forEach(0, j4 - 1, function(k5, vkj) {
-                SparseMatrix2._forEachRow(k5, lvalues, lindex, lptr, function(i6, vik) {
-                  if (i6 > k5) {
-                    spa.accumulate(i6, unaryMinus2(multiplyScalar2(vik, vkj)));
+                SparseMatrix2._forEachRow(k5, lvalues, lindex, lptr, function(i5, vik) {
+                  if (i5 > k5) {
+                    spa.accumulate(i5, unaryMinus2(multiplyScalar2(vik, vkj)));
                   }
                 });
               });
@@ -51342,43 +51053,43 @@ svg {
           var Qdata = Q3._data;
           var R2 = m3.clone();
           var Rdata = R2._data;
-          var i5, j4, k4;
+          var i4, j4, k4;
           var w4 = zeros3([rows], "");
           for (k4 = 0; k4 < Math.min(cols, rows); ++k4) {
             var pivot = Rdata[k4][k4];
             var sgn = unaryMinus2(equal2(pivot, 0) ? 1 : sign4(pivot));
             var conjSgn = conj2(sgn);
             var alphaSquared = 0;
-            for (i5 = k4; i5 < rows; i5++) {
-              alphaSquared = addScalar2(alphaSquared, multiplyScalar2(Rdata[i5][k4], conj2(Rdata[i5][k4])));
+            for (i4 = k4; i4 < rows; i4++) {
+              alphaSquared = addScalar2(alphaSquared, multiplyScalar2(Rdata[i4][k4], conj2(Rdata[i4][k4])));
             }
             var alpha = multiplyScalar2(sgn, sqrt3(alphaSquared));
             if (!isZero2(alpha)) {
               var u1 = subtractScalar2(pivot, alpha);
               w4[k4] = 1;
-              for (i5 = k4 + 1; i5 < rows; i5++) {
-                w4[i5] = divideScalar2(Rdata[i5][k4], u1);
+              for (i4 = k4 + 1; i4 < rows; i4++) {
+                w4[i4] = divideScalar2(Rdata[i4][k4], u1);
               }
               var tau3 = unaryMinus2(conj2(divideScalar2(u1, alpha)));
               var s3 = void 0;
               for (j4 = k4; j4 < cols; j4++) {
                 s3 = 0;
-                for (i5 = k4; i5 < rows; i5++) {
-                  s3 = addScalar2(s3, multiplyScalar2(conj2(w4[i5]), Rdata[i5][j4]));
+                for (i4 = k4; i4 < rows; i4++) {
+                  s3 = addScalar2(s3, multiplyScalar2(conj2(w4[i4]), Rdata[i4][j4]));
                 }
                 s3 = multiplyScalar2(s3, tau3);
-                for (i5 = k4; i5 < rows; i5++) {
-                  Rdata[i5][j4] = multiplyScalar2(subtractScalar2(Rdata[i5][j4], multiplyScalar2(w4[i5], s3)), conjSgn);
+                for (i4 = k4; i4 < rows; i4++) {
+                  Rdata[i4][j4] = multiplyScalar2(subtractScalar2(Rdata[i4][j4], multiplyScalar2(w4[i4], s3)), conjSgn);
                 }
               }
-              for (i5 = 0; i5 < rows; i5++) {
+              for (i4 = 0; i4 < rows; i4++) {
                 s3 = 0;
                 for (j4 = k4; j4 < rows; j4++) {
-                  s3 = addScalar2(s3, multiplyScalar2(Qdata[i5][j4], w4[j4]));
+                  s3 = addScalar2(s3, multiplyScalar2(Qdata[i4][j4], w4[j4]));
                 }
                 s3 = multiplyScalar2(s3, tau3);
                 for (j4 = k4; j4 < rows; ++j4) {
-                  Qdata[i5][j4] = divideScalar2(subtractScalar2(Qdata[i5][j4], multiplyScalar2(s3, conj2(w4[j4]))), conjSgn);
+                  Qdata[i4][j4] = divideScalar2(subtractScalar2(Qdata[i4][j4], multiplyScalar2(s3, conj2(w4[j4]))), conjSgn);
                 }
               }
             }
@@ -51396,9 +51107,9 @@ svg {
           var Rdata = ret.R._data;
           if (m3._data.length > 0) {
             var zero = Rdata[0][0].type === "Complex" ? complex2(0) : 0;
-            for (var i5 = 0; i5 < Rdata.length; ++i5) {
-              for (var j4 = 0; j4 < i5 && j4 < (Rdata[0] || []).length; ++j4) {
-                Rdata[i5][j4] = zero;
+            for (var i4 = 0; i4 < Rdata.length; ++i4) {
+              for (var j4 = 0; j4 < i4 && j4 < (Rdata[0] || []).length; ++j4) {
+                Rdata[i4][j4] = zero;
               }
             }
           }
@@ -51456,14 +51167,14 @@ svg {
     w4[stack] = j4;
     while (top >= 0) {
       var p3 = w4[stack + top];
-      var i5 = w4[head + p3];
-      if (i5 === -1) {
+      var i4 = w4[head + p3];
+      if (i4 === -1) {
         top--;
         post[k4++] = p3;
       } else {
-        w4[head + p3] = w4[next + i5];
+        w4[head + p3] = w4[next + i4];
         ++top;
-        w4[stack + top] = i5;
+        w4[stack + top] = i4;
       }
     }
     return k4;
@@ -51523,10 +51234,10 @@ svg {
     var w4 = [];
     var ancestor = 0;
     var prev = n3;
-    var i5, inext;
+    var i4, inext;
     if (ata) {
-      for (i5 = 0; i5 < m3; i5++) {
-        w4[prev + i5] = -1;
+      for (i4 = 0; i4 < m3; i4++) {
+        w4[prev + i4] = -1;
       }
     }
     for (var k4 = 0; k4 < n3; k4++) {
@@ -51534,12 +51245,12 @@ svg {
       w4[ancestor + k4] = -1;
       for (var p0 = aptr[k4], p1 = aptr[k4 + 1], p3 = p0; p3 < p1; p3++) {
         var r3 = aindex[p3];
-        i5 = ata ? w4[prev + r3] : r3;
-        for (; i5 !== -1 && i5 < k4; i5 = inext) {
-          inext = w4[ancestor + i5];
-          w4[ancestor + i5] = k4;
+        i4 = ata ? w4[prev + r3] : r3;
+        for (; i4 !== -1 && i4 < k4; i4 = inext) {
+          inext = w4[ancestor + i4];
+          w4[ancestor + i4] = k4;
           if (inext === -1) {
-            parent[i5] = k4;
+            parent[i4] = k4;
           }
         }
         if (ata) {
@@ -51588,8 +51299,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csFlip.js
-  function csFlip(i5) {
-    return -i5 - 2;
+  function csFlip(i4) {
+    return -i4 - 2;
   }
   var init_csFlip = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csFlip.js"() {
@@ -51641,7 +51352,7 @@ svg {
           var mark = _initializeQuotientGraph(n3, cptr, W2, len, head, last, next, hhead, nv, w4, elen, degree);
           var nel = _initializeDegreeLists(n3, cptr, W2, degree, elen, w4, dense, nv, head, last, next);
           var mindeg = 0;
-          var i5, j4, k4, k1, k22, e6, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
+          var i4, j4, k4, k1, k22, e5, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
           while (nel < n3) {
             for (k4 = -1; mindeg < n3 && (k4 = W2[head + mindeg]) === -1; mindeg++)
               ;
@@ -51659,34 +51370,34 @@ svg {
             var pk2 = pk1;
             for (k1 = 1; k1 <= elenk + 1; k1++) {
               if (k1 > elenk) {
-                e6 = k4;
+                e5 = k4;
                 pj = p3;
                 ln3 = W2[len + k4] - elenk;
               } else {
-                e6 = cindex[p3++];
-                pj = cptr[e6];
-                ln3 = W2[len + e6];
+                e5 = cindex[p3++];
+                pj = cptr[e5];
+                ln3 = W2[len + e5];
               }
               for (k22 = 1; k22 <= ln3; k22++) {
-                i5 = cindex[pj++];
-                if ((nvi = W2[nv + i5]) <= 0) {
+                i4 = cindex[pj++];
+                if ((nvi = W2[nv + i4]) <= 0) {
                   continue;
                 }
                 dk += nvi;
-                W2[nv + i5] = -nvi;
-                cindex[pk2++] = i5;
-                if (W2[next + i5] !== -1) {
-                  last[W2[next + i5]] = last[i5];
+                W2[nv + i4] = -nvi;
+                cindex[pk2++] = i4;
+                if (W2[next + i4] !== -1) {
+                  last[W2[next + i4]] = last[i4];
                 }
-                if (last[i5] !== -1) {
-                  W2[next + last[i5]] = W2[next + i5];
+                if (last[i4] !== -1) {
+                  W2[next + last[i4]] = W2[next + i4];
                 } else {
-                  W2[head + W2[degree + i5]] = W2[next + i5];
+                  W2[head + W2[degree + i4]] = W2[next + i4];
                 }
               }
-              if (e6 !== k4) {
-                cptr[e6] = csFlip(k4);
-                W2[w4 + e6] = 0;
+              if (e5 !== k4) {
+                cptr[e5] = csFlip(k4);
+                W2[w4 + e5] = 0;
               }
             }
             if (elenk !== 0) {
@@ -51698,43 +51409,43 @@ svg {
             W2[elen + k4] = -2;
             mark = _wclear(mark, lemax, W2, w4, n3);
             for (pk = pk1; pk < pk2; pk++) {
-              i5 = cindex[pk];
-              if ((eln = W2[elen + i5]) <= 0) {
+              i4 = cindex[pk];
+              if ((eln = W2[elen + i4]) <= 0) {
                 continue;
               }
-              nvi = -W2[nv + i5];
+              nvi = -W2[nv + i4];
               var wnvi = mark - nvi;
-              for (p3 = cptr[i5], p1 = cptr[i5] + eln - 1; p3 <= p1; p3++) {
-                e6 = cindex[p3];
-                if (W2[w4 + e6] >= mark) {
-                  W2[w4 + e6] -= nvi;
-                } else if (W2[w4 + e6] !== 0) {
-                  W2[w4 + e6] = W2[degree + e6] + wnvi;
+              for (p3 = cptr[i4], p1 = cptr[i4] + eln - 1; p3 <= p1; p3++) {
+                e5 = cindex[p3];
+                if (W2[w4 + e5] >= mark) {
+                  W2[w4 + e5] -= nvi;
+                } else if (W2[w4 + e5] !== 0) {
+                  W2[w4 + e5] = W2[degree + e5] + wnvi;
                 }
               }
             }
             for (pk = pk1; pk < pk2; pk++) {
-              i5 = cindex[pk];
-              p1 = cptr[i5];
-              p22 = p1 + W2[elen + i5] - 1;
+              i4 = cindex[pk];
+              p1 = cptr[i4];
+              p22 = p1 + W2[elen + i4] - 1;
               pn2 = p1;
               for (h3 = 0, d3 = 0, p3 = p1; p3 <= p22; p3++) {
-                e6 = cindex[p3];
-                if (W2[w4 + e6] !== 0) {
-                  var dext = W2[w4 + e6] - mark;
+                e5 = cindex[p3];
+                if (W2[w4 + e5] !== 0) {
+                  var dext = W2[w4 + e5] - mark;
                   if (dext > 0) {
                     d3 += dext;
-                    cindex[pn2++] = e6;
-                    h3 += e6;
+                    cindex[pn2++] = e5;
+                    h3 += e5;
                   } else {
-                    cptr[e6] = csFlip(k4);
-                    W2[w4 + e6] = 0;
+                    cptr[e5] = csFlip(k4);
+                    W2[w4 + e5] = 0;
                   }
                 }
               }
-              W2[elen + i5] = pn2 - p1 + 1;
+              W2[elen + i4] = pn2 - p1 + 1;
               var p32 = pn2;
-              var p4 = p1 + W2[len + i5];
+              var p4 = p1 + W2[len + i4];
               for (p3 = p22 + 1; p3 < p4; p3++) {
                 j4 = cindex[p3];
                 var nvj = W2[nv + j4];
@@ -51746,44 +51457,44 @@ svg {
                 h3 += j4;
               }
               if (d3 === 0) {
-                cptr[i5] = csFlip(k4);
-                nvi = -W2[nv + i5];
+                cptr[i4] = csFlip(k4);
+                nvi = -W2[nv + i4];
                 dk -= nvi;
                 nvk += nvi;
                 nel += nvi;
-                W2[nv + i5] = 0;
-                W2[elen + i5] = -1;
+                W2[nv + i4] = 0;
+                W2[elen + i4] = -1;
               } else {
-                W2[degree + i5] = Math.min(W2[degree + i5], d3);
+                W2[degree + i4] = Math.min(W2[degree + i4], d3);
                 cindex[pn2] = cindex[p32];
                 cindex[p32] = cindex[p1];
                 cindex[p1] = k4;
-                W2[len + i5] = pn2 - p1 + 1;
+                W2[len + i4] = pn2 - p1 + 1;
                 h3 = (h3 < 0 ? -h3 : h3) % n3;
-                W2[next + i5] = W2[hhead + h3];
-                W2[hhead + h3] = i5;
-                last[i5] = h3;
+                W2[next + i4] = W2[hhead + h3];
+                W2[hhead + h3] = i4;
+                last[i4] = h3;
               }
             }
             W2[degree + k4] = dk;
             lemax = Math.max(lemax, dk);
             mark = _wclear(mark + lemax, lemax, W2, w4, n3);
             for (pk = pk1; pk < pk2; pk++) {
-              i5 = cindex[pk];
-              if (W2[nv + i5] >= 0) {
+              i4 = cindex[pk];
+              if (W2[nv + i4] >= 0) {
                 continue;
               }
-              h3 = last[i5];
-              i5 = W2[hhead + h3];
+              h3 = last[i4];
+              i4 = W2[hhead + h3];
               W2[hhead + h3] = -1;
-              for (; i5 !== -1 && W2[next + i5] !== -1; i5 = W2[next + i5], mark++) {
-                ln3 = W2[len + i5];
-                eln = W2[elen + i5];
-                for (p3 = cptr[i5] + 1; p3 <= cptr[i5] + ln3 - 1; p3++) {
+              for (; i4 !== -1 && W2[next + i4] !== -1; i4 = W2[next + i4], mark++) {
+                ln3 = W2[len + i4];
+                eln = W2[elen + i4];
+                for (p3 = cptr[i4] + 1; p3 <= cptr[i4] + ln3 - 1; p3++) {
                   W2[w4 + cindex[p3]] = mark;
                 }
-                var jlast = i5;
-                for (j4 = W2[next + i5]; j4 !== -1; ) {
+                var jlast = i4;
+                for (j4 = W2[next + i4]; j4 !== -1; ) {
                   var ok = W2[len + j4] === ln3 && W2[elen + j4] === eln;
                   for (p3 = cptr[j4] + 1; ok && p3 <= cptr[j4] + ln3 - 1; p3++) {
                     if (W2[w4 + cindex[p3]] !== mark) {
@@ -51791,8 +51502,8 @@ svg {
                     }
                   }
                   if (ok) {
-                    cptr[j4] = csFlip(i5);
-                    W2[nv + i5] += W2[nv + j4];
+                    cptr[j4] = csFlip(i4);
+                    W2[nv + i4] += W2[nv + j4];
                     W2[nv + j4] = 0;
                     W2[elen + j4] = -1;
                     j4 = W2[next + j4];
@@ -51805,22 +51516,22 @@ svg {
               }
             }
             for (p3 = pk1, pk = pk1; pk < pk2; pk++) {
-              i5 = cindex[pk];
-              if ((nvi = -W2[nv + i5]) <= 0) {
+              i4 = cindex[pk];
+              if ((nvi = -W2[nv + i4]) <= 0) {
                 continue;
               }
-              W2[nv + i5] = nvi;
-              d3 = W2[degree + i5] + dk - nvi;
+              W2[nv + i4] = nvi;
+              d3 = W2[degree + i4] + dk - nvi;
               d3 = Math.min(d3, n3 - nel - nvi);
               if (W2[head + d3] !== -1) {
-                last[W2[head + d3]] = i5;
+                last[W2[head + d3]] = i4;
               }
-              W2[next + i5] = W2[head + d3];
-              last[i5] = -1;
-              W2[head + d3] = i5;
+              W2[next + i4] = W2[head + d3];
+              last[i4] = -1;
+              W2[head + d3] = i4;
               mindeg = Math.min(mindeg, d3);
-              W2[degree + i5] = d3;
-              cindex[p3++] = i5;
+              W2[degree + i4] = d3;
+              cindex[p3++] = i4;
             }
             W2[nv + k4] = nvk;
             if ((W2[len + k4] = p3 - pk1) === 0) {
@@ -51831,8 +51542,8 @@ svg {
               cnz = p3;
             }
           }
-          for (i5 = 0; i5 < n3; i5++) {
-            cptr[i5] = csFlip(cptr[i5]);
+          for (i4 = 0; i4 < n3; i4++) {
+            cptr[i4] = csFlip(cptr[i4]);
           }
           for (j4 = 0; j4 <= n3; j4++) {
             W2[head + j4] = -1;
@@ -51844,18 +51555,18 @@ svg {
             W2[next + j4] = W2[head + cptr[j4]];
             W2[head + cptr[j4]] = j4;
           }
-          for (e6 = n3; e6 >= 0; e6--) {
-            if (W2[nv + e6] <= 0) {
+          for (e5 = n3; e5 >= 0; e5--) {
+            if (W2[nv + e5] <= 0) {
               continue;
             }
-            if (cptr[e6] !== -1) {
-              W2[next + e6] = W2[head + cptr[e6]];
-              W2[head + cptr[e6]] = e6;
+            if (cptr[e5] !== -1) {
+              W2[next + e5] = W2[head + cptr[e5]];
+              W2[head + cptr[e5]] = e5;
             }
           }
-          for (k4 = 0, i5 = 0; i5 <= n3; i5++) {
-            if (cptr[i5] === -1) {
-              k4 = csTdfs(i5, k4, W2, head, next, P6, w4);
+          for (k4 = 0, i4 = 0; i4 <= n3; i4++) {
+            if (cptr[i4] === -1) {
+              k4 = csTdfs(i4, k4, W2, head, next, P6, w4);
             }
           }
           P6.splice(P6.length - 1, 1);
@@ -51891,15 +51602,15 @@ svg {
             W2[len + k4] = cptr[k4 + 1] - cptr[k4];
           }
           W2[len + n3] = 0;
-          for (var i5 = 0; i5 <= n3; i5++) {
-            W2[head + i5] = -1;
-            last[i5] = -1;
-            W2[next + i5] = -1;
-            W2[hhead + i5] = -1;
-            W2[nv + i5] = 1;
-            W2[w4 + i5] = 1;
-            W2[elen + i5] = 0;
-            W2[degree + i5] = W2[len + i5];
+          for (var i4 = 0; i4 <= n3; i4++) {
+            W2[head + i4] = -1;
+            last[i4] = -1;
+            W2[next + i4] = -1;
+            W2[hhead + i4] = -1;
+            W2[nv + i4] = 1;
+            W2[w4 + i4] = 1;
+            W2[elen + i4] = 0;
+            W2[degree + i4] = W2[len + i4];
           }
           var mark = _wclear(0, 0, W2, w4, n3);
           W2[elen + n3] = -2;
@@ -51909,26 +51620,26 @@ svg {
         }
         function _initializeDegreeLists(n3, cptr, W2, degree, elen, w4, dense, nv, head, last, next) {
           var nel = 0;
-          for (var i5 = 0; i5 < n3; i5++) {
-            var d3 = W2[degree + i5];
+          for (var i4 = 0; i4 < n3; i4++) {
+            var d3 = W2[degree + i4];
             if (d3 === 0) {
-              W2[elen + i5] = -2;
+              W2[elen + i4] = -2;
               nel++;
-              cptr[i5] = -1;
-              W2[w4 + i5] = 0;
+              cptr[i4] = -1;
+              W2[w4 + i4] = 0;
             } else if (d3 > dense) {
-              W2[nv + i5] = 0;
-              W2[elen + i5] = -1;
+              W2[nv + i4] = 0;
+              W2[elen + i4] = -1;
               nel++;
-              cptr[i5] = csFlip(n3);
+              cptr[i4] = csFlip(n3);
               W2[nv + n3]++;
             } else {
               var h3 = W2[head + d3];
               if (h3 !== -1) {
-                last[h3] = i5;
+                last[h3] = i4;
               }
-              W2[next + i5] = W2[head + d3];
-              W2[head + d3] = i5;
+              W2[next + i4] = W2[head + d3];
+              W2[head + d3] = i4;
             }
           }
           return nel;
@@ -51944,27 +51655,27 @@ svg {
           }
           return mark;
         }
-        function _diag(i5, j4) {
-          return i5 !== j4;
+        function _diag(i4, j4) {
+          return i4 !== j4;
         }
       });
     }
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csLeaf.js
-  function csLeaf(i5, j4, w4, first, maxfirst, prevleaf, ancestor) {
+  function csLeaf(i4, j4, w4, first, maxfirst, prevleaf, ancestor) {
     var s3, sparent;
     var jleaf = 0;
     var q4;
-    if (i5 <= j4 || w4[first + j4] <= w4[maxfirst + i5]) {
+    if (i4 <= j4 || w4[first + j4] <= w4[maxfirst + i4]) {
       return -1;
     }
-    w4[maxfirst + i5] = w4[first + j4];
-    var jprev = w4[prevleaf + i5];
-    w4[prevleaf + i5] = j4;
+    w4[maxfirst + i4] = w4[first + j4];
+    var jprev = w4[prevleaf + i4];
+    w4[prevleaf + i4] = j4;
     if (jprev === -1) {
       jleaf = 1;
-      q4 = i5;
+      q4 = i4;
     } else {
       jleaf = 2;
       for (q4 = jprev; q4 !== w4[ancestor + q4]; q4 = w4[ancestor + q4])
@@ -52003,7 +51714,7 @@ svg {
           var asize = a3._size;
           var m3 = asize[0];
           var n3 = asize[1];
-          var i5, j4, k4, J2, p3, p0, p1;
+          var i4, j4, k4, J2, p3, p0, p1;
           var s3 = 4 * n3 + (ata ? n3 + m3 + 1 : 0);
           var w4 = [];
           var ancestor = 0;
@@ -52030,16 +51741,16 @@ svg {
             for (k4 = 0; k4 < n3; k4++) {
               w4[post[k4]] = k4;
             }
-            for (i5 = 0; i5 < m3; i5++) {
-              for (k4 = n3, p0 = tptr[i5], p1 = tptr[i5 + 1], p3 = p0; p3 < p1; p3++) {
+            for (i4 = 0; i4 < m3; i4++) {
+              for (k4 = n3, p0 = tptr[i4], p1 = tptr[i4 + 1], p3 = p0; p3 < p1; p3++) {
                 k4 = Math.min(k4, w4[tindex[p3]]);
               }
-              w4[next + i5] = w4[head + k4];
-              w4[head + k4] = i5;
+              w4[next + i4] = w4[head + k4];
+              w4[head + k4] = i4;
             }
           }
-          for (i5 = 0; i5 < n3; i5++) {
-            w4[ancestor + i5] = i5;
+          for (i4 = 0; i4 < n3; i4++) {
+            w4[ancestor + i4] = i4;
           }
           for (k4 = 0; k4 < n3; k4++) {
             j4 = post[k4];
@@ -52048,8 +51759,8 @@ svg {
             }
             for (J2 = ata ? w4[head + k4] : j4; J2 !== -1; J2 = ata ? w4[next + J2] : -1) {
               for (p3 = tptr[J2]; p3 < tptr[J2 + 1]; p3++) {
-                i5 = tindex[p3];
-                var r3 = csLeaf(i5, j4, w4, first, maxfirst, prevleaf, ancestor);
+                i4 = tindex[p3];
+                var r3 = csLeaf(i4, j4, w4, first, maxfirst, prevleaf, ancestor);
                 if (r3.jleaf >= 1) {
                   colcount[j4]++;
                 }
@@ -52141,41 +51852,41 @@ svg {
           var head = m3;
           var tail = m3 + n3;
           var nque = m3 + 2 * n3;
-          var i5, k4, p3, p0, p1;
+          var i4, k4, p3, p0, p1;
           for (k4 = 0; k4 < n3; k4++) {
             w4[head + k4] = -1;
             w4[tail + k4] = -1;
             w4[nque + k4] = 0;
           }
-          for (i5 = 0; i5 < m3; i5++) {
-            leftmost[i5] = -1;
+          for (i4 = 0; i4 < m3; i4++) {
+            leftmost[i4] = -1;
           }
           for (k4 = n3 - 1; k4 >= 0; k4--) {
             for (p0 = aptr[k4], p1 = aptr[k4 + 1], p3 = p0; p3 < p1; p3++) {
               leftmost[aindex[p3]] = k4;
             }
           }
-          for (i5 = m3 - 1; i5 >= 0; i5--) {
-            pinv2[i5] = -1;
-            k4 = leftmost[i5];
+          for (i4 = m3 - 1; i4 >= 0; i4--) {
+            pinv2[i4] = -1;
+            k4 = leftmost[i4];
             if (k4 === -1) {
               continue;
             }
             if (w4[nque + k4]++ === 0) {
-              w4[tail + k4] = i5;
+              w4[tail + k4] = i4;
             }
-            w4[next + i5] = w4[head + k4];
-            w4[head + k4] = i5;
+            w4[next + i4] = w4[head + k4];
+            w4[head + k4] = i4;
           }
           s3.lnz = 0;
           s3.m2 = m3;
           for (k4 = 0; k4 < n3; k4++) {
-            i5 = w4[head + k4];
+            i4 = w4[head + k4];
             s3.lnz++;
-            if (i5 < 0) {
-              i5 = s3.m2++;
+            if (i4 < 0) {
+              i4 = s3.m2++;
             }
-            pinv2[i5] = k4;
+            pinv2[i4] = k4;
             if (--nque[k4] <= 0) {
               continue;
             }
@@ -52186,13 +51897,13 @@ svg {
                 w4[tail + pa] = w4[tail + k4];
               }
               w4[next + w4[tail + k4]] = w4[head + pa];
-              w4[head + pa] = w4[next + i5];
+              w4[head + pa] = w4[next + i4];
               w4[nque + pa] += w4[nque + k4];
             }
           }
-          for (i5 = 0; i5 < m3; i5++) {
-            if (pinv2[i5] < 0) {
-              pinv2[i5] = k4++;
+          for (i4 = 0; i4 < m3; i4++) {
+            if (pinv2[i4] < 0) {
+              pinv2[i4] = k4++;
             }
           }
           return true;
@@ -52221,8 +51932,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csUnflip.js
-  function csUnflip(i5) {
-    return i5 < 0 ? csFlip(i5) : i5;
+  function csUnflip(i4) {
+    return i4 < 0 ? csFlip(i4) : i4;
   }
   var init_csUnflip = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csUnflip.js"() {
@@ -52236,7 +51947,7 @@ svg {
     var ptr = g4._ptr;
     var size2 = g4._size;
     var n3 = size2[1];
-    var i5, p3, p22;
+    var i4, p3, p22;
     var head = 0;
     xi[0] = j4;
     while (head >= 0) {
@@ -52248,12 +51959,12 @@ svg {
       }
       var done = 1;
       for (p3 = xi[n3 + head], p22 = jnew < 0 ? 0 : csUnflip(ptr[jnew + 1]); p3 < p22; p3++) {
-        i5 = index2[p3];
-        if (csMarked(ptr, i5)) {
+        i4 = index2[p3];
+        if (csMarked(ptr, i4)) {
           continue;
         }
         xi[n3 + head] = p3;
-        xi[++head] = i5;
+        xi[++head] = i4;
         done = 0;
         break;
       }
@@ -52282,9 +51993,9 @@ svg {
     var p3, p0, p1;
     var top = n3;
     for (p0 = bptr[k4], p1 = bptr[k4 + 1], p3 = p0; p3 < p1; p3++) {
-      var i5 = bindex[p3];
-      if (!csMarked(gptr, i5)) {
-        top = csDfs(i5, g4, top, xi, pinv2);
+      var i4 = bindex[p3];
+      if (!csMarked(gptr, i4)) {
+        top = csDfs(i4, g4, top, xi, pinv2);
       }
     }
     for (p3 = top; p3 < n3; p3++) {
@@ -52343,8 +52054,8 @@ svg {
             p3 = lo ? p0 + 1 : p0;
             q4 = lo ? p1 : p1 - 1;
             for (; p3 < q4; p3++) {
-              var i5 = gindex[p3];
-              x4[i5] = subtract2(x4[i5], multiply2(gvalues[p3], x4[j4]));
+              var i4 = gindex[p3];
+              x4[i4] = subtract2(x4[i4], multiply2(gvalues[p3], x4[j4]));
             }
           }
           return top;
@@ -52409,13 +52120,13 @@ svg {
             size: [n3, n3]
           });
           var pinv2 = [];
-          var i5, p3;
+          var i4, p3;
           var x4 = [];
           var xi = [];
-          for (i5 = 0; i5 < n3; i5++) {
-            x4[i5] = 0;
-            pinv2[i5] = -1;
-            lptr[i5 + 1] = 0;
+          for (i4 = 0; i4 < n3; i4++) {
+            x4[i4] = 0;
+            pinv2[i4] = -1;
+            lptr[i4 + 1] = 0;
           }
           lnz = 0;
           unz = 0;
@@ -52427,16 +52138,16 @@ svg {
             var ipiv = -1;
             var a3 = -1;
             for (p3 = top; p3 < n3; p3++) {
-              i5 = xi[p3];
-              if (pinv2[i5] < 0) {
-                var xabs = abs3(x4[i5]);
+              i4 = xi[p3];
+              if (pinv2[i4] < 0) {
+                var xabs = abs3(x4[i4]);
                 if (larger2(xabs, a3)) {
                   a3 = xabs;
-                  ipiv = i5;
+                  ipiv = i4;
                 }
               } else {
-                uindex[unz] = pinv2[i5];
-                uvalues[unz++] = x4[i5];
+                uindex[unz] = pinv2[i4];
+                uvalues[unz++] = x4[i4];
               }
             }
             if (ipiv === -1 || a3 <= 0) {
@@ -52452,12 +52163,12 @@ svg {
             lindex[lnz] = ipiv;
             lvalues[lnz++] = 1;
             for (p3 = top; p3 < n3; p3++) {
-              i5 = xi[p3];
-              if (pinv2[i5] < 0) {
-                lindex[lnz] = i5;
-                lvalues[lnz++] = divideScalar2(x4[i5], pivot);
+              i4 = xi[p3];
+              if (pinv2[i4] < 0) {
+                lindex[lnz] = i4;
+                lvalues[lnz++] = divideScalar2(x4[i4], pivot);
               }
-              x4[i5] = 0;
+              x4[i4] = 0;
             }
           }
           lptr[n3] = lnz;
@@ -52768,14 +52479,14 @@ svg {
           if (doc.examples) {
             desc += "Examples:\n";
             var scope = {};
-            for (var i5 = 0; i5 < doc.examples.length; i5++) {
-              var expr = doc.examples[i5];
+            for (var i4 = 0; i4 < doc.examples.length; i4++) {
+              var expr = doc.examples[i4];
               desc += "    " + expr + "\n";
               var res = void 0;
               try {
                 res = parse2(expr).compile().evaluate(scope);
-              } catch (e6) {
-                res = e6;
+              } catch (e5) {
+                res = e5;
               }
               if (res !== void 0 && !isHelp(res)) {
                 desc += "        " + format3(res, {
@@ -52879,8 +52590,8 @@ svg {
               return new Chain2(fn2(this.value));
             }
             var args = [this.value];
-            for (var i5 = 0; i5 < arguments.length; i5++) {
-              args[i5 + 1] = arguments[i5];
+            for (var i4 = 0; i4 < arguments.length; i4++) {
+              args[i4 + 1] = arguments[i4];
             }
             if (typed3.isTypedFunction(fn2)) {
               var sigObject = typed3.resolve(fn2, args);
@@ -57434,7 +57145,7 @@ svg {
             return subtractScalar2(multiply2(matrix3[0][0], matrix3[1][1]), multiply2(matrix3[1][0], matrix3[0][1]));
           } else {
             var negated = false;
-            var rowIndices = new Array(rows).fill(0).map((_3, i6) => i6);
+            var rowIndices = new Array(rows).fill(0).map((_3, i5) => i5);
             for (var k4 = 0; k4 < rows; k4++) {
               var k_ = rowIndices[k4];
               if (isZero2(matrix3[k_][k4])) {
@@ -57453,8 +57164,8 @@ svg {
               }
               var piv = matrix3[k_][k4];
               var piv_ = k4 === 0 ? 1 : matrix3[rowIndices[k4 - 1]][k4 - 1];
-              for (var i5 = k4 + 1; i5 < rows; i5++) {
-                var i_ = rowIndices[i5];
+              for (var i4 = k4 + 1; i4 < rows; i4++) {
+                var i_ = rowIndices[i4];
                 for (var j4 = k4 + 1; j4 < rows; j4++) {
                   matrix3[i_][j4] = divideScalar2(subtractScalar2(multiply2(matrix3[i_][j4], piv), multiply2(matrix3[i_][k4], matrix3[k_][j4])), piv_);
                 }
@@ -57686,18 +57397,18 @@ svg {
             if (cols <= lead) {
               return M3;
             }
-            var i5 = r3;
-            while (_isZero(M3[i5][lead])) {
-              i5++;
-              if (rows === i5) {
-                i5 = r3;
+            var i4 = r3;
+            while (_isZero(M3[i4][lead])) {
+              i4++;
+              if (rows === i4) {
+                i4 = r3;
                 lead++;
                 if (cols === lead) {
                   return M3;
                 }
               }
             }
-            [M3[i5], M3[r3]] = [M3[r3], M3[i5]];
+            [M3[i4], M3[r3]] = [M3[r3], M3[i4]];
             var val = M3[r3][lead];
             for (var j4 = 0; j4 < cols; j4++) {
               M3[r3][j4] = dotDivide2(M3[r3][j4], val);
@@ -57716,8 +57427,8 @@ svg {
         }
         function _rankFact(mat, rows, cols) {
           var rref = _rref(mat, rows, cols);
-          var C3 = mat.map((_3, i5) => _3.filter((_4, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
-          var F4 = rref.filter((_3, i5) => !_isZero(dot2(rref[i5], rref[i5])));
+          var C3 = mat.map((_3, i4) => _3.filter((_4, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
+          var F4 = rref.filter((_3, i4) => !_isZero(dot2(rref[i4], rref[i4])));
           return {
             C: C3,
             F: F4
@@ -57792,13 +57503,13 @@ svg {
       var last = false;
       while (!last) {
         last = true;
-        for (var i5 = 0; i5 < N3; i5++) {
+        for (var i4 = 0; i4 < N3; i4++) {
           var colNorm = realzero;
           var rowNorm = realzero;
           for (var j4 = 0; j4 < N3; j4++) {
-            if (i5 === j4)
+            if (i4 === j4)
               continue;
-            var c3 = abs3(arr[i5][j4]);
+            var c3 = abs3(arr[i4][j4]);
             colNorm = addScalar2(colNorm, c3);
             rowNorm = addScalar2(rowNorm, c3);
           }
@@ -57820,14 +57531,14 @@ svg {
               last = false;
               var g4 = divideScalar2(1, f3);
               for (var _j = 0; _j < N3; _j++) {
-                if (i5 === _j) {
+                if (i4 === _j) {
                   continue;
                 }
-                arr[i5][_j] = multiplyScalar2(arr[i5][_j], f3);
-                arr[_j][i5] = multiplyScalar2(arr[_j][i5], g4);
+                arr[i4][_j] = multiplyScalar2(arr[i4][_j], f3);
+                arr[_j][i4] = multiplyScalar2(arr[_j][i4], g4);
               }
               if (findVectors) {
-                Rdiag[i5] = multiplyScalar2(Rdiag[i5], f3);
+                Rdiag[i4] = multiplyScalar2(Rdiag[i4], f3);
               }
             }
           }
@@ -57842,11 +57553,11 @@ svg {
       if (big) {
         prec = bignumber2(prec);
       }
-      for (var i5 = 0; i5 < N3 - 2; i5++) {
+      for (var i4 = 0; i4 < N3 - 2; i4++) {
         var maxIndex = 0;
         var max3 = zero;
-        for (var j4 = i5 + 1; j4 < N3; j4++) {
-          var el = arr[j4][i5];
+        for (var j4 = i4 + 1; j4 < N3; j4++) {
+          var el = arr[j4][i4];
           if (smaller2(abs3(max3), abs3(el))) {
             max3 = el;
             maxIndex = j4;
@@ -57855,35 +57566,35 @@ svg {
         if (smaller2(abs3(max3), prec)) {
           continue;
         }
-        if (maxIndex !== i5 + 1) {
+        if (maxIndex !== i4 + 1) {
           var tmp1 = arr[maxIndex];
-          arr[maxIndex] = arr[i5 + 1];
-          arr[i5 + 1] = tmp1;
+          arr[maxIndex] = arr[i4 + 1];
+          arr[i4 + 1] = tmp1;
           for (var _j2 = 0; _j2 < N3; _j2++) {
             var tmp2 = arr[_j2][maxIndex];
-            arr[_j2][maxIndex] = arr[_j2][i5 + 1];
-            arr[_j2][i5 + 1] = tmp2;
+            arr[_j2][maxIndex] = arr[_j2][i4 + 1];
+            arr[_j2][i4 + 1] = tmp2;
           }
           if (findVectors) {
             var tmp3 = R2[maxIndex];
-            R2[maxIndex] = R2[i5 + 1];
-            R2[i5 + 1] = tmp3;
+            R2[maxIndex] = R2[i4 + 1];
+            R2[i4 + 1] = tmp3;
           }
         }
-        for (var _j3 = i5 + 2; _j3 < N3; _j3++) {
-          var n3 = divideScalar2(arr[_j3][i5], max3);
+        for (var _j3 = i4 + 2; _j3 < N3; _j3++) {
+          var n3 = divideScalar2(arr[_j3][i4], max3);
           if (n3 === 0) {
             continue;
           }
           for (var k4 = 0; k4 < N3; k4++) {
-            arr[_j3][k4] = subtract2(arr[_j3][k4], multiplyScalar2(n3, arr[i5 + 1][k4]));
+            arr[_j3][k4] = subtract2(arr[_j3][k4], multiplyScalar2(n3, arr[i4 + 1][k4]));
           }
           for (var _k = 0; _k < N3; _k++) {
-            arr[_k][i5 + 1] = addScalar2(arr[_k][i5 + 1], multiplyScalar2(n3, arr[_k][_j3]));
+            arr[_k][i4 + 1] = addScalar2(arr[_k][i4 + 1], multiplyScalar2(n3, arr[_k][_j3]));
           }
           if (findVectors) {
             for (var _k2 = 0; _k2 < N3; _k2++) {
-              R2[_j3][_k2] = subtract2(R2[_j3][_k2], multiplyScalar2(n3, R2[i5 + 1][_k2]));
+              R2[_j3][_k2] = subtract2(R2[_j3][_k2], multiplyScalar2(n3, R2[i4 + 1][_k2]));
             }
           }
         }
@@ -57907,8 +57618,8 @@ svg {
       while (lastConvergenceBefore <= 100) {
         lastConvergenceBefore += 1;
         var k4 = 0;
-        for (var i5 = 0; i5 < n3; i5++) {
-          arr[i5][i5] = subtract2(arr[i5][i5], k4);
+        for (var i4 = 0; i4 < n3; i4++) {
+          arr[i4][i4] = subtract2(arr[i4][i4], k4);
         }
         var {
           Q: Q3,
@@ -57984,12 +57695,12 @@ svg {
       var uniqueValues = [];
       var multiplicities = [];
       for (var \u03BB of values) {
-        var i5 = indexOf(uniqueValues, \u03BB, equal2);
-        if (i5 === -1) {
+        var i4 = indexOf(uniqueValues, \u03BB, equal2);
+        if (i4 === -1) {
           uniqueValues.push(\u03BB);
           multiplicities.push(1);
         } else {
-          multiplicities[i5] += 1;
+          multiplicities[i4] += 1;
         }
       }
       var vectors = [];
@@ -58054,8 +57765,8 @@ svg {
       }
     }
     function inflateMatrix(arr, N3) {
-      for (var i5 = 0; i5 < arr.length; i5++) {
-        arr[i5].push(...Array(N3 - arr[i5].length).fill(0));
+      for (var i4 = 0; i4 < arr.length; i4++) {
+        arr[i4].push(...Array(N3 - arr[i4].length).fill(0));
       }
       for (var _i5 = arr.length; _i5 < N3; _i5++) {
         arr.push(Array(N3).fill(0));
@@ -58065,8 +57776,8 @@ svg {
     }
     function blockDiag(arr, N3) {
       var M3 = [];
-      for (var i5 = 0; i5 < N3; i5++) {
-        M3[i5] = Array(N3).fill(0);
+      for (var i4 = 0; i4 < N3; i4++) {
+        M3[i4] = Array(N3).fill(0);
       }
       var I3 = 0;
       for (var sub2 of arr) {
@@ -58081,9 +57792,9 @@ svg {
       return M3;
     }
     function indexOf(arr, el, fn2) {
-      for (var i5 = 0; i5 < arr.length; i5++) {
-        if (fn2(arr[i5], el)) {
-          return i5;
+      for (var i4 = 0; i4 < arr.length; i4++) {
+        if (fn2(arr[i4], el)) {
+          return i4;
         }
       }
       return -1;
@@ -58091,24 +57802,24 @@ svg {
     function inverseIterate(A4, N3, orthog, prec, type) {
       var largeNum = type === "BigNumber" ? bignumber2(1e3) : 1e3;
       var b3;
-      var i5 = 0;
+      var i4 = 0;
       while (true) {
         b3 = randomOrthogonalVector(N3, orthog, type);
         b3 = usolve2(A4, b3);
         if (larger2(norm2(b3), largeNum)) {
           break;
         }
-        if (++i5 >= 5) {
+        if (++i4 >= 5) {
           return null;
         }
       }
-      i5 = 0;
+      i4 = 0;
       while (true) {
         var c3 = usolve2(A4, b3);
         if (smaller2(norm2(orthogonalComplement(b3, [c3])), prec)) {
           break;
         }
-        if (++i5 >= 10) {
+        if (++i4 >= 10) {
           return null;
         }
         b3 = normalize(c3);
@@ -58183,9 +57894,9 @@ svg {
       var e0 = Math.abs(precision / N3);
       var psi;
       var Sij = new Array(N3);
-      for (var i5 = 0; i5 < N3; i5++) {
-        Sij[i5] = createArray(N3, 0);
-        Sij[i5][i5] = 1;
+      for (var i4 = 0; i4 < N3; i4++) {
+        Sij[i4] = createArray(N3, 0);
+        Sij[i4][i4] = 1;
       }
       var Vab = getAij(x4);
       while (Math.abs(Vab[1]) >= Math.abs(e0)) {
@@ -58207,9 +57918,9 @@ svg {
       var e0 = abs3(precision / N3);
       var psi;
       var Sij = new Array(N3);
-      for (var i5 = 0; i5 < N3; i5++) {
-        Sij[i5] = createArray(N3, 0);
-        Sij[i5][i5] = 1;
+      for (var i4 = 0; i4 < N3; i4++) {
+        Sij[i4] = createArray(N3, 0);
+        Sij[i4][i4] = 1;
       }
       var Vab = getAijBig(x4);
       while (abs3(Vab[1]) >= abs3(e0)) {
@@ -58242,39 +57953,39 @@ svg {
         return multiplyScalar2(0.5, atan4(multiply2(2, aij, inv2(denom))));
       }
     }
-    function Sij1(Sij, theta, i5, j4) {
+    function Sij1(Sij, theta, i4, j4) {
       var N3 = Sij.length;
       var c3 = Math.cos(theta);
       var s3 = Math.sin(theta);
       var Ski = createArray(N3, 0);
       var Skj = createArray(N3, 0);
       for (var k4 = 0; k4 < N3; k4++) {
-        Ski[k4] = c3 * Sij[k4][i5] - s3 * Sij[k4][j4];
-        Skj[k4] = s3 * Sij[k4][i5] + c3 * Sij[k4][j4];
+        Ski[k4] = c3 * Sij[k4][i4] - s3 * Sij[k4][j4];
+        Skj[k4] = s3 * Sij[k4][i4] + c3 * Sij[k4][j4];
       }
       for (var _k = 0; _k < N3; _k++) {
-        Sij[_k][i5] = Ski[_k];
+        Sij[_k][i4] = Ski[_k];
         Sij[_k][j4] = Skj[_k];
       }
       return Sij;
     }
-    function Sij1Big(Sij, theta, i5, j4) {
+    function Sij1Big(Sij, theta, i4, j4) {
       var N3 = Sij.length;
       var c3 = cos3(theta);
       var s3 = sin3(theta);
       var Ski = createArray(N3, bignumber2(0));
       var Skj = createArray(N3, bignumber2(0));
       for (var k4 = 0; k4 < N3; k4++) {
-        Ski[k4] = subtract2(multiplyScalar2(c3, Sij[k4][i5]), multiplyScalar2(s3, Sij[k4][j4]));
-        Skj[k4] = addScalar2(multiplyScalar2(s3, Sij[k4][i5]), multiplyScalar2(c3, Sij[k4][j4]));
+        Ski[k4] = subtract2(multiplyScalar2(c3, Sij[k4][i4]), multiplyScalar2(s3, Sij[k4][j4]));
+        Skj[k4] = addScalar2(multiplyScalar2(s3, Sij[k4][i4]), multiplyScalar2(c3, Sij[k4][j4]));
       }
       for (var _k2 = 0; _k2 < N3; _k2++) {
-        Sij[_k2][i5] = Ski[_k2];
+        Sij[_k2][i4] = Ski[_k2];
         Sij[_k2][j4] = Skj[_k2];
       }
       return Sij;
     }
-    function x1Big(Hij, theta, i5, j4) {
+    function x1Big(Hij, theta, i4, j4) {
       var N3 = Hij.length;
       var c3 = bignumber2(cos3(theta));
       var s3 = bignumber2(sin3(theta));
@@ -58282,28 +57993,28 @@ svg {
       var s22 = multiplyScalar2(s3, s3);
       var Aki = createArray(N3, bignumber2(0));
       var Akj = createArray(N3, bignumber2(0));
-      var csHij = multiply2(bignumber2(2), c3, s3, Hij[i5][j4]);
-      var Aii = addScalar2(subtract2(multiplyScalar2(c22, Hij[i5][i5]), csHij), multiplyScalar2(s22, Hij[j4][j4]));
-      var Ajj = add3(multiplyScalar2(s22, Hij[i5][i5]), csHij, multiplyScalar2(c22, Hij[j4][j4]));
+      var csHij = multiply2(bignumber2(2), c3, s3, Hij[i4][j4]);
+      var Aii = addScalar2(subtract2(multiplyScalar2(c22, Hij[i4][i4]), csHij), multiplyScalar2(s22, Hij[j4][j4]));
+      var Ajj = add3(multiplyScalar2(s22, Hij[i4][i4]), csHij, multiplyScalar2(c22, Hij[j4][j4]));
       for (var k4 = 0; k4 < N3; k4++) {
-        Aki[k4] = subtract2(multiplyScalar2(c3, Hij[i5][k4]), multiplyScalar2(s3, Hij[j4][k4]));
-        Akj[k4] = addScalar2(multiplyScalar2(s3, Hij[i5][k4]), multiplyScalar2(c3, Hij[j4][k4]));
+        Aki[k4] = subtract2(multiplyScalar2(c3, Hij[i4][k4]), multiplyScalar2(s3, Hij[j4][k4]));
+        Akj[k4] = addScalar2(multiplyScalar2(s3, Hij[i4][k4]), multiplyScalar2(c3, Hij[j4][k4]));
       }
-      Hij[i5][i5] = Aii;
+      Hij[i4][i4] = Aii;
       Hij[j4][j4] = Ajj;
-      Hij[i5][j4] = bignumber2(0);
-      Hij[j4][i5] = bignumber2(0);
+      Hij[i4][j4] = bignumber2(0);
+      Hij[j4][i4] = bignumber2(0);
       for (var _k3 = 0; _k3 < N3; _k3++) {
-        if (_k3 !== i5 && _k3 !== j4) {
-          Hij[i5][_k3] = Aki[_k3];
-          Hij[_k3][i5] = Aki[_k3];
+        if (_k3 !== i4 && _k3 !== j4) {
+          Hij[i4][_k3] = Aki[_k3];
+          Hij[_k3][i4] = Aki[_k3];
           Hij[j4][_k3] = Akj[_k3];
           Hij[_k3][j4] = Akj[_k3];
         }
       }
       return Hij;
     }
-    function x1(Hij, theta, i5, j4) {
+    function x1(Hij, theta, i4, j4) {
       var N3 = Hij.length;
       var c3 = Math.cos(theta);
       var s3 = Math.sin(theta);
@@ -58311,20 +58022,20 @@ svg {
       var s22 = s3 * s3;
       var Aki = createArray(N3, 0);
       var Akj = createArray(N3, 0);
-      var Aii = c22 * Hij[i5][i5] - 2 * c3 * s3 * Hij[i5][j4] + s22 * Hij[j4][j4];
-      var Ajj = s22 * Hij[i5][i5] + 2 * c3 * s3 * Hij[i5][j4] + c22 * Hij[j4][j4];
+      var Aii = c22 * Hij[i4][i4] - 2 * c3 * s3 * Hij[i4][j4] + s22 * Hij[j4][j4];
+      var Ajj = s22 * Hij[i4][i4] + 2 * c3 * s3 * Hij[i4][j4] + c22 * Hij[j4][j4];
       for (var k4 = 0; k4 < N3; k4++) {
-        Aki[k4] = c3 * Hij[i5][k4] - s3 * Hij[j4][k4];
-        Akj[k4] = s3 * Hij[i5][k4] + c3 * Hij[j4][k4];
+        Aki[k4] = c3 * Hij[i4][k4] - s3 * Hij[j4][k4];
+        Akj[k4] = s3 * Hij[i4][k4] + c3 * Hij[j4][k4];
       }
-      Hij[i5][i5] = Aii;
+      Hij[i4][i4] = Aii;
       Hij[j4][j4] = Ajj;
-      Hij[i5][j4] = 0;
-      Hij[j4][i5] = 0;
+      Hij[i4][j4] = 0;
+      Hij[j4][i4] = 0;
       for (var _k4 = 0; _k4 < N3; _k4++) {
-        if (_k4 !== i5 && _k4 !== j4) {
-          Hij[i5][_k4] = Aki[_k4];
-          Hij[_k4][i5] = Aki[_k4];
+        if (_k4 !== i4 && _k4 !== j4) {
+          Hij[i4][_k4] = Aki[_k4];
+          Hij[_k4][i4] = Aki[_k4];
           Hij[j4][_k4] = Akj[_k4];
           Hij[_k4][j4] = Akj[_k4];
         }
@@ -58335,11 +58046,11 @@ svg {
       var N3 = Mij.length;
       var maxMij = 0;
       var maxIJ = [0, 1];
-      for (var i5 = 0; i5 < N3; i5++) {
-        for (var j4 = i5 + 1; j4 < N3; j4++) {
-          if (Math.abs(maxMij) < Math.abs(Mij[i5][j4])) {
-            maxMij = Math.abs(Mij[i5][j4]);
-            maxIJ = [i5, j4];
+      for (var i4 = 0; i4 < N3; i4++) {
+        for (var j4 = i4 + 1; j4 < N3; j4++) {
+          if (Math.abs(maxMij) < Math.abs(Mij[i4][j4])) {
+            maxMij = Math.abs(Mij[i4][j4]);
+            maxIJ = [i4, j4];
           }
         }
       }
@@ -58349,11 +58060,11 @@ svg {
       var N3 = Mij.length;
       var maxMij = 0;
       var maxIJ = [0, 1];
-      for (var i5 = 0; i5 < N3; i5++) {
-        for (var j4 = i5 + 1; j4 < N3; j4++) {
-          if (abs3(maxMij) < abs3(Mij[i5][j4])) {
-            maxMij = abs3(Mij[i5][j4]);
-            maxIJ = [i5, j4];
+      for (var i4 = 0; i4 < N3; i4++) {
+        for (var j4 = i4 + 1; j4 < N3; j4++) {
+          if (abs3(maxMij) < abs3(Mij[i4][j4])) {
+            maxMij = abs3(Mij[i4][j4]);
+            maxIJ = [i4, j4];
           }
         }
       }
@@ -58366,7 +58077,7 @@ svg {
       for (var k4 = 0; k4 < N3; k4++) {
         vectors[k4] = Array(N3);
       }
-      for (var i5 = 0; i5 < N3; i5++) {
+      for (var i4 = 0; i4 < N3; i4++) {
         var minID = 0;
         var minE = E3[0];
         for (var j4 = 0; j4 < E3.length; j4++) {
@@ -58375,9 +58086,9 @@ svg {
             minE = E3[minID];
           }
         }
-        values[i5] = E3.splice(minID, 1)[0];
+        values[i4] = E3.splice(minID, 1)[0];
         for (var _k5 = 0; _k5 < N3; _k5++) {
-          vectors[_k5][i5] = S2[_k5][minID];
+          vectors[_k5][i4] = S2[_k5][minID];
           S2[_k5].splice(minID, 1);
         }
       }
@@ -58388,8 +58099,8 @@ svg {
     }
     function createArray(size2, value2) {
       var array = new Array(size2);
-      for (var i5 = 0; i5 < size2; i5++) {
-        array[i5] = value2;
+      for (var i4 = 0; i4 < size2; i4++) {
+        array[i4] = value2;
       }
       return array;
     }
@@ -58538,9 +58249,9 @@ svg {
           return doComplexEigs(arr, N3, prec, type);
         }
         function isSymmetric(arr, N3, prec) {
-          for (var i5 = 0; i5 < N3; i5++) {
-            for (var j4 = i5; j4 < N3; j4++) {
-              if (larger2(bignumber2(abs3(subtract2(arr[i5][j4], arr[j4][i5]))), prec)) {
+          for (var i4 = 0; i4 < N3; i4++) {
+            for (var j4 = i4; j4 < N3; j4++) {
+              if (larger2(bignumber2(abs3(subtract2(arr[i4][j4], arr[j4][i4]))), prec)) {
                 return false;
               }
             }
@@ -58548,9 +58259,9 @@ svg {
           return true;
         }
         function isReal(arr, N3, prec) {
-          for (var i5 = 0; i5 < N3; i5++) {
+          for (var i4 = 0; i4 < N3; i4++) {
             for (var j4 = 0; j4 < N3; j4++) {
-              if (larger2(bignumber2(abs3(im2(arr[i5][j4]))), prec)) {
+              if (larger2(bignumber2(abs3(im2(arr[i4][j4]))), prec)) {
                 return false;
               }
             }
@@ -58558,9 +58269,9 @@ svg {
           return true;
         }
         function coerceReal(arr, N3) {
-          for (var i5 = 0; i5 < N3; i5++) {
+          for (var i4 = 0; i4 < N3; i4++) {
             for (var j4 = 0; j4 < N3; j4++) {
-              arr[i5][j4] = re2(arr[i5][j4]);
+              arr[i4][j4] = re2(arr[i4][j4]);
             }
           }
         }
@@ -58572,9 +58283,9 @@ svg {
           var hasNumber = false;
           var hasBig = false;
           var hasComplex = false;
-          for (var i5 = 0; i5 < N3; i5++) {
+          for (var i4 = 0; i4 < N3; i4++) {
             for (var j4 = 0; j4 < N3; j4++) {
-              var el = arr[i5][j4];
+              var el = arr[i4][j4];
               if (isNumber(el) || isFraction(el)) {
                 hasNumber = true;
               } else if (isBigNumber(el)) {
@@ -58656,12 +58367,12 @@ svg {
             var factor = 1;
             var AposToI = Apos;
             var alternate = -1;
-            for (var i5 = 1; i5 <= q4; i5++) {
-              if (i5 > 1) {
+            for (var i4 = 1; i4 <= q4; i4++) {
+              if (i4 > 1) {
                 AposToI = multiply2(AposToI, Apos);
                 alternate = -alternate;
               }
-              factor = factor * (q4 - i5 + 1) / ((2 * q4 - i5 + 1) * i5);
+              factor = factor * (q4 - i4 + 1) / ((2 * q4 - i4 + 1) * i4);
               N3 = add3(N3, multiply2(factor, AposToI));
               D3 = add3(D3, multiply2(factor * alternate, AposToI));
             }
@@ -58675,10 +58386,10 @@ svg {
         function infinityNorm(A4) {
           var n3 = A4.size()[0];
           var infNorm = 0;
-          for (var i5 = 0; i5 < n3; i5++) {
+          for (var i4 = 0; i4 < n3; i4++) {
             var rowSum = 0;
             for (var j4 = 0; j4 < n3; j4++) {
-              rowSum += abs3(A4.get([i5, j4]));
+              rowSum += abs3(A4.get([i4, j4]));
             }
             infNorm = Math.max(rowSum, infNorm);
           }
@@ -58701,8 +58412,8 @@ svg {
         }
         function errorEstimate(infNorm, q4, j4) {
           var qfac = 1;
-          for (var i5 = 2; i5 <= q4; i5++) {
-            qfac *= i5;
+          for (var i4 = 2; i4 <= q4; i4++) {
+            qfac *= i4;
           }
           var twoqfac = qfac;
           for (var _i2 = q4 + 1; _i2 <= 2 * q4; _i2++) {
@@ -59204,8 +58915,8 @@ svg {
         function _objectToArray(o3) {
           var keys = Object.keys(o3);
           var a3 = [];
-          for (var i5 = 0; i5 < keys.length; i5++) {
-            a3.push(o3[keys[i5]]);
+          for (var i4 = 0; i4 < keys.length; i4++) {
+            a3.push(o3[keys[i4]]);
           }
           return a3;
         }
@@ -59238,8 +58949,8 @@ svg {
           var vectorSize = x4.length;
           var result = 0;
           var diff2 = 0;
-          for (var i5 = 0; i5 < vectorSize; i5++) {
-            diff2 = subtractScalar2(x4[i5], y3[i5]);
+          for (var i4 = 0; i4 < vectorSize; i4++) {
+            diff2 = subtractScalar2(x4[i4], y3[i4]);
             result = addScalar2(multiplyScalar2(diff2, diff2), result);
           }
           return sqrt3(result);
@@ -59248,13 +58959,13 @@ svg {
           var result = [];
           var pointA = [];
           var pointB = [];
-          for (var i5 = 0; i5 < a3.length - 1; i5++) {
-            for (var j4 = i5 + 1; j4 < a3.length; j4++) {
+          for (var i4 = 0; i4 < a3.length - 1; i4++) {
+            for (var j4 = i4 + 1; j4 < a3.length; j4++) {
               if (a3[0].length === 2) {
-                pointA = [a3[i5][0], a3[i5][1]];
+                pointA = [a3[i4][0], a3[i4][1]];
                 pointB = [a3[j4][0], a3[j4][1]];
               } else if (a3[0].length === 3) {
-                pointA = [a3[i5][0], a3[i5][1], a3[i5][2]];
+                pointA = [a3[i4][0], a3[i4][1], a3[i4][2]];
                 pointB = [a3[j4][0], a3[j4][1], a3[j4][2]];
               }
               result.push(_euclideanDistance(pointA, pointB));
@@ -59391,10 +59102,10 @@ svg {
           var t3 = divideScalar2(addScalar2(subtract2(subtract2(d20o11, d21o10), d20o21), d21o20), det2);
           return add3(multiply2(d1, t3), o1);
         }
-        function _intersect3dHelper(a3, b3, c3, d3, e6, f3, g4, h3, i5, j4, k4, l3) {
+        function _intersect3dHelper(a3, b3, c3, d3, e5, f3, g4, h3, i4, j4, k4, l3) {
           var add1 = multiplyScalar2(subtract2(a3, b3), subtract2(c3, d3));
-          var add22 = multiplyScalar2(subtract2(e6, f3), subtract2(g4, h3));
-          var add32 = multiplyScalar2(subtract2(i5, j4), subtract2(k4, l3));
+          var add22 = multiplyScalar2(subtract2(e5, f3), subtract2(g4, h3));
+          var add32 = multiplyScalar2(subtract2(i4, j4), subtract2(k4, l3));
           return addScalar2(addScalar2(add1, add22), add32);
         }
         function _intersect3d(x1, y1, z1, x22, y22, z22, x32, y3, z32, x4, y4, z42) {
@@ -59547,8 +59258,8 @@ svg {
             return [];
           }
           var sums = [unaryPlus2(array[0])];
-          for (var i5 = 1; i5 < array.length; ++i5) {
-            sums.push(add3(sums[i5 - 1], array[i5]));
+          for (var i4 = 1; i4 < array.length; ++i4) {
+            sums.push(add3(sums[i4 - 1], array[i4]));
           }
           return sums;
         }
@@ -59564,7 +59275,7 @@ svg {
           }
         }
         function _cumsumDimensional(mat, dim) {
-          var i5, ret, tran;
+          var i4, ret, tran;
           if (dim <= 0) {
             var initialValue = mat[0][0];
             if (!Array.isArray(initialValue)) {
@@ -59572,15 +59283,15 @@ svg {
             } else {
               tran = _switch(mat);
               ret = [];
-              for (i5 = 0; i5 < tran.length; i5++) {
-                ret[i5] = _cumsumDimensional(tran[i5], dim - 1);
+              for (i4 = 0; i4 < tran.length; i4++) {
+                ret[i4] = _cumsumDimensional(tran[i4], dim - 1);
               }
               return ret;
             }
           } else {
             ret = [];
-            for (i5 = 0; i5 < mat.length; i5++) {
-              ret[i5] = _cumsumDimensional(mat[i5], dim - 1);
+            for (i4 = 0; i4 < mat.length; i4++) {
+              ret[i4] = _cumsumDimensional(mat[i4], dim - 1);
             }
             return ret;
           }
@@ -59676,9 +59387,9 @@ svg {
               var mid = num / 2 - 1;
               var right = partitionSelect2(array, mid + 1);
               var left = array[mid];
-              for (var i5 = 0; i5 < mid; ++i5) {
-                if (compare3(array[i5], left) > 0) {
-                  left = array[i5];
+              for (var i4 = 0; i4 < mid; ++i4) {
+                if (compare3(array[i4], left) > 0) {
+                  left = array[i4];
                 }
               }
               return middle2(left, right);
@@ -59917,8 +59628,8 @@ svg {
             }
             var nPlusOne = add3(probOrN, 1);
             probArr = [];
-            for (var i5 = 0; smaller2(i5, probOrN); i5++) {
-              var prob = divide3(i5 + 1, nPlusOne);
+            for (var i4 = 0; smaller2(i4, probOrN); i4++) {
+              var prob = divide3(i4 + 1, nPlusOne);
               probArr.push(_quantileSeq(dataArr, prob, sorted));
             }
             return isNumber(probOrN) ? probArr : bignumber2(probArr);
@@ -59928,8 +59639,8 @@ svg {
           var dataArr = data.valueOf();
           var probOrNArr = probOrN.valueOf();
           var probArr = [];
-          for (var i5 = 0; i5 < probOrNArr.length; ++i5) {
-            probArr.push(_quantileSeq(dataArr, probOrNArr[i5], sorted));
+          for (var i4 = 0; i4 < probOrNArr.length; ++i4) {
+            probArr.push(_quantileSeq(dataArr, probOrNArr[i4], sorted));
           }
           return probArr;
         }
@@ -59953,9 +59664,9 @@ svg {
           } else {
             right = partitionSelect2(flat, integerPart + 1);
             left = flat[integerPart];
-            for (var i5 = 0; i5 < integerPart; ++i5) {
-              if (compare3(flat[i5], left) > 0) {
-                left = flat[i5];
+            for (var i4 = 0; i4 < integerPart; ++i4) {
+              if (compare3(flat[i4], left) > 0) {
+                left = flat[i4];
               }
             }
           }
@@ -60051,11 +59762,11 @@ svg {
             if (A4.length !== B4.length) {
               throw new SyntaxError("Dimension mismatch. Array A and B must have the same length.");
             }
-            for (var i5 = 0; i5 < A4.length; i5++) {
-              if (A4[i5].length !== B4[i5].length) {
+            for (var i4 = 0; i4 < A4.length; i4++) {
+              if (A4[i4].length !== B4[i4].length) {
                 throw new SyntaxError("Dimension mismatch. Array A and B must have the same number of elements.");
               }
-              correlations.push(correlation(A4[i5], B4[i5]));
+              correlations.push(correlation(A4[i4], B4[i4]));
             }
             return correlations;
           } else {
@@ -60099,7 +59810,7 @@ svg {
           "number, number": combinationsNumber,
           "BigNumber, BigNumber": function BigNumberBigNumber(n3, k4) {
             var BigNumber2 = n3.constructor;
-            var result, i5;
+            var result, i4;
             var nMinusk = n3.minus(k4);
             var one = new BigNumber2(1);
             if (!isPositiveInteger(n3) || !isPositiveInteger(k4)) {
@@ -60110,12 +59821,12 @@ svg {
             }
             result = one;
             if (k4.lt(nMinusk)) {
-              for (i5 = one; i5.lte(nMinusk); i5 = i5.plus(one)) {
-                result = result.times(k4.plus(i5)).dividedBy(i5);
+              for (i4 = one; i4.lte(nMinusk); i4 = i4.plus(one)) {
+                result = result.times(k4.plus(i4)).dividedBy(i4);
               }
             } else {
-              for (i5 = one; i5.lte(k4); i5 = i5.plus(one)) {
-                result = result.times(nMinusk.plus(i5)).dividedBy(i5);
+              for (i4 = one; i4.lte(k4); i4 = i4.plus(one)) {
+                result = result.times(nMinusk.plus(i4)).dividedBy(i4);
               }
             }
             return result;
@@ -60162,7 +59873,7 @@ svg {
           },
           "BigNumber, BigNumber": function BigNumberBigNumber(n3, k4) {
             var BigNumber2 = n3.constructor;
-            var result, i5;
+            var result, i4;
             var one = new BigNumber2(1);
             var nMinusOne = n3.minus(one);
             if (!isPositiveInteger2(n3) || !isPositiveInteger2(k4)) {
@@ -60173,12 +59884,12 @@ svg {
             }
             result = one;
             if (k4.lt(nMinusOne)) {
-              for (i5 = one; i5.lte(nMinusOne); i5 = i5.plus(one)) {
-                result = result.times(k4.plus(i5)).dividedBy(i5);
+              for (i4 = one; i4.lte(nMinusOne); i4 = i4.plus(one)) {
+                result = result.times(k4.plus(i4)).dividedBy(i4);
               }
             } else {
-              for (i5 = one; i5.lte(k4); i5 = i5.plus(one)) {
-                result = result.times(nMinusOne.plus(i5)).dividedBy(i5);
+              for (i4 = one; i4.lte(k4); i4 = i4.plus(one)) {
+                result = result.times(nMinusOne.plus(i4)).dividedBy(i4);
               }
             }
             return result;
@@ -60216,9 +59927,9 @@ svg {
           }
           n3 = new Complex3(n3.re - 1, n3.im);
           var x4 = new Complex3(gammaP[0], 0);
-          for (var i5 = 1; i5 < gammaP.length; ++i5) {
-            var gammaPval = new Complex3(gammaP[i5], 0);
-            x4 = x4.add(gammaPval.div(n3.add(i5)));
+          for (var i4 = 1; i4 < gammaP.length; ++i4) {
+            var gammaPval = new Complex3(gammaP[i4], 0);
+            x4 = x4.add(gammaPval.div(n3.add(i4)));
           }
           var t3 = new Complex3(n3.re + gammaG + 0.5, n3.im);
           var twoPiSqrt = Math.sqrt(2 * Math.PI);
@@ -60317,9 +60028,9 @@ svg {
           var b3 = coeffs[1];
           var r3 = 2 * rzz.re;
           var s3 = rzz.re * rzz.re + rzz.im * rzz.im;
-          for (var i5 = 2; i5 < 8; i5++) {
+          for (var i4 = 2; i4 < 8; i4++) {
             var tmp = b3;
-            b3 = -s3 * a3 + coeffs[i5];
+            b3 = -s3 * a3 + coeffs[i4];
             a3 = r3 * a3 + tmp;
           }
           var rightPart = rz.mul(rzz.mul(a3).add(b3));
@@ -60510,7 +60221,7 @@ svg {
             return product2(n3 - k4 + 1, n3);
           },
           "BigNumber, BigNumber": function BigNumberBigNumber(n3, k4) {
-            var result, i5;
+            var result, i4;
             if (!isPositiveInteger3(n3) || !isPositiveInteger3(k4)) {
               throw new TypeError("Positive integer value expected in function permutations");
             }
@@ -60519,8 +60230,8 @@ svg {
             }
             var one = n3.mul(0).add(1);
             result = one;
-            for (i5 = n3.minus(k4).plus(1); i5.lte(n3); i5 = i5.plus(1)) {
-              result = result.times(i5);
+            for (i4 = n3.minus(k4).plus(1); i4.lte(n3); i4 = i4.plus(1)) {
+              result = result.times(i4);
             }
             return result;
           }
@@ -60589,8 +60300,8 @@ svg {
           var n3 = 4022871197;
           var mash = function(data) {
             data = String(data);
-            for (var i5 = 0; i5 < data.length; i5++) {
-              n3 += data.charCodeAt(i5);
+            for (var i4 = 0; i4 < data.length; i4++) {
+              n3 += data.charCodeAt(i4);
               var h3 = 0.02519603282416938 * n3;
               n3 = h3 >>> 0;
               h3 -= n3;
@@ -60784,21 +60495,21 @@ svg {
         function XorGen(seed) {
           var me = this;
           me.next = function() {
-            var X2 = me.x, i5 = me.i, t3, v3, w4;
-            t3 = X2[i5];
+            var X2 = me.x, i4 = me.i, t3, v3, w4;
+            t3 = X2[i4];
             t3 ^= t3 >>> 7;
             v3 = t3 ^ t3 << 24;
-            t3 = X2[i5 + 1 & 7];
+            t3 = X2[i4 + 1 & 7];
             v3 ^= t3 ^ t3 >>> 10;
-            t3 = X2[i5 + 3 & 7];
+            t3 = X2[i4 + 3 & 7];
             v3 ^= t3 ^ t3 >>> 3;
-            t3 = X2[i5 + 4 & 7];
+            t3 = X2[i4 + 4 & 7];
             v3 ^= t3 ^ t3 << 7;
-            t3 = X2[i5 + 7 & 7];
+            t3 = X2[i4 + 7 & 7];
             t3 = t3 ^ t3 << 13;
             v3 ^= t3 ^ t3 << 9;
-            X2[i5] = v3;
-            me.i = i5 + 1 & 7;
+            X2[i4] = v3;
+            me.i = i4 + 1 & 7;
             return v3;
           };
           function init(me2, seed2) {
@@ -60881,20 +60592,20 @@ svg {
         function XorGen(seed) {
           var me = this;
           me.next = function() {
-            var w4 = me.w, X2 = me.X, i5 = me.i, t3, v3;
+            var w4 = me.w, X2 = me.X, i4 = me.i, t3, v3;
             me.w = w4 = w4 + 1640531527 | 0;
-            v3 = X2[i5 + 34 & 127];
-            t3 = X2[i5 = i5 + 1 & 127];
+            v3 = X2[i4 + 34 & 127];
+            t3 = X2[i4 = i4 + 1 & 127];
             v3 ^= v3 << 13;
             t3 ^= t3 << 17;
             v3 ^= v3 >>> 15;
             t3 ^= t3 >>> 12;
-            v3 = X2[i5] = v3 ^ t3;
-            me.i = i5;
+            v3 = X2[i4] = v3 ^ t3;
+            me.i = i4;
             return v3 + (w4 ^ w4 >>> 16) | 0;
           };
           function init(me2, seed2) {
-            var t3, v3, i5, j4, w4, X2 = [], limit = 128;
+            var t3, v3, i4, j4, w4, X2 = [], limit = 128;
             if (seed2 === (seed2 | 0)) {
               v3 = seed2;
               seed2 = null;
@@ -60903,7 +60614,7 @@ svg {
               v3 = 0;
               limit = Math.max(limit, seed2.length);
             }
-            for (i5 = 0, j4 = -32; j4 < limit; ++j4) {
+            for (i4 = 0, j4 = -32; j4 < limit; ++j4) {
               if (seed2)
                 v3 ^= seed2.charCodeAt((j4 + 32) % seed2.length);
               if (j4 === 0)
@@ -60915,25 +60626,25 @@ svg {
               if (j4 >= 0) {
                 w4 = w4 + 1640531527 | 0;
                 t3 = X2[j4 & 127] ^= v3 + w4;
-                i5 = 0 == t3 ? i5 + 1 : 0;
+                i4 = 0 == t3 ? i4 + 1 : 0;
               }
             }
-            if (i5 >= 128) {
+            if (i4 >= 128) {
               X2[(seed2 && seed2.length || 0) & 127] = -1;
             }
-            i5 = 127;
+            i4 = 127;
             for (j4 = 4 * 128; j4 > 0; --j4) {
-              v3 = X2[i5 + 34 & 127];
-              t3 = X2[i5 = i5 + 1 & 127];
+              v3 = X2[i4 + 34 & 127];
+              t3 = X2[i4 = i4 + 1 & 127];
               v3 ^= v3 << 13;
               t3 ^= t3 << 17;
               v3 ^= v3 >>> 15;
               t3 ^= t3 >>> 12;
-              X2[i5] = v3 ^ t3;
+              X2[i4] = v3 ^ t3;
             }
             me2.w = w4;
             me2.X = X2;
-            me2.i = i5;
+            me2.i = i4;
           }
           init(me, seed);
         }
@@ -61130,24 +60841,24 @@ svg {
           );
         }
         function ARC4(key) {
-          var t3, keylen = key.length, me = this, i5 = 0, j4 = me.i = me.j = 0, s3 = me.S = [];
+          var t3, keylen = key.length, me = this, i4 = 0, j4 = me.i = me.j = 0, s3 = me.S = [];
           if (!keylen) {
             key = [keylen++];
           }
-          while (i5 < width) {
-            s3[i5] = i5++;
+          while (i4 < width) {
+            s3[i4] = i4++;
           }
-          for (i5 = 0; i5 < width; i5++) {
-            s3[i5] = s3[j4 = mask & j4 + key[i5 % keylen] + (t3 = s3[i5])];
+          for (i4 = 0; i4 < width; i4++) {
+            s3[i4] = s3[j4 = mask & j4 + key[i4 % keylen] + (t3 = s3[i4])];
             s3[j4] = t3;
           }
           (me.g = function(count2) {
-            var t4, r3 = 0, i6 = me.i, j5 = me.j, s4 = me.S;
+            var t4, r3 = 0, i5 = me.i, j5 = me.j, s4 = me.S;
             while (count2--) {
-              t4 = s4[i6 = mask & i6 + 1];
-              r3 = r3 * width + s4[mask & (s4[i6] = s4[j5 = mask & j5 + t4]) + (s4[j5] = t4)];
+              t4 = s4[i5 = mask & i5 + 1];
+              r3 = r3 * width + s4[mask & (s4[i5] = s4[j5 = mask & j5 + t4]) + (s4[j5] = t4)];
             }
-            me.i = i6;
+            me.i = i5;
             me.j = j5;
             return r3;
           })(width);
@@ -61165,7 +60876,7 @@ svg {
             for (prop in obj) {
               try {
                 result.push(flatten3(obj[prop], depth - 1));
-              } catch (e6) {
+              } catch (e5) {
               }
             }
           }
@@ -61188,7 +60899,7 @@ svg {
               (global.crypto || global.msCrypto).getRandomValues(out);
             }
             return tostring(out);
-          } catch (e6) {
+          } catch (e5) {
             var browser = global.navigator, plugins = browser && browser.plugins;
             return [+/* @__PURE__ */ new Date(), global, plugins, global.screen, tostring(pool)];
           }
@@ -61340,11 +61051,11 @@ svg {
             if (weights.length !== possibles.length) {
               throw new Error("Weights must have the same length as possibles");
             }
-            for (var i5 = 0, len = weights.length; i5 < len; i5++) {
-              if (!isNumber(weights[i5]) || weights[i5] < 0) {
+            for (var i4 = 0, len = weights.length; i4 < len; i4++) {
+              if (!isNumber(weights[i4]) || weights[i4] < 0) {
                 throw new Error("Weights must be an array of positive numbers");
               }
-              totalWeights += weights[i5];
+              totalWeights += weights[i4];
             }
           }
           var length = possibles.length;
@@ -61376,7 +61087,7 @@ svg {
     var data = [];
     size2 = size2.slice(0);
     if (size2.length > 1) {
-      for (var i5 = 0, length = size2.shift(); i5 < length; i5++) {
+      for (var i4 = 0, length = size2.shift(); i4 < length; i4++) {
         data.push(randomMatrix(size2, random3));
       }
     } else {
@@ -61526,11 +61237,11 @@ svg {
                 continue;
               var row2 = cache[m3];
               var prev = cache[m3 - 1];
-              for (var i5 = row2.length; i5 <= m3 && i5 <= nk; ++i5) {
-                if (i5 === m3) {
-                  row2[i5] = 1;
+              for (var i4 = row2.length; i4 <= m3 && i4 <= nk; ++i4) {
+                if (i4 === m3) {
+                  row2[i4] = 1;
                 } else {
-                  row2[i5] = addScalar2(multiplyScalar2(make(i5), prev[i5]), prev[i5 - 1]);
+                  row2[i4] = addScalar2(multiplyScalar2(make(i4), prev[i4]), prev[i4 - 1]);
                 }
               }
             }
@@ -61562,8 +61273,8 @@ svg {
               throw new TypeError("Non-negative integer value expected in function bellNumbers");
             }
             var result = 0;
-            for (var i5 = 0; i5 <= n3; i5++) {
-              result = addScalar2(result, stirlingS22(n3, i5));
+            for (var i4 = 0; i4 <= n3; i4++) {
+              result = addScalar2(result, stirlingS22(n3, i4));
             }
             return result;
           }
@@ -61684,26 +61395,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplify/util.js
-  function ownKeys3(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys3(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread3(e6) {
+  function _objectSpread3(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys3(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name278, dependencies278, createUtil;
   var init_util = __esm({
@@ -61722,7 +61433,7 @@ svg {
         } = _ref;
         var T4 = true;
         var F4 = false;
-        var defaultName = "defaultF";
+        var defaultName2 = "defaultF";
         var defaultContext = {
           /*      */
           add: {
@@ -61795,7 +61506,7 @@ svg {
         };
         function hasProperty(nodeOrName, property) {
           var context = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : defaultContext;
-          var name310 = defaultName;
+          var name310 = defaultName2;
           if (typeof nodeOrName === "string") {
             name310 = nodeOrName;
           } else if (isOperatorNode(nodeOrName)) {
@@ -61814,12 +61525,12 @@ svg {
               return defaultContext[name310][property];
             }
           }
-          if (hasOwnProperty(context, defaultName)) {
-            var _properties = context[defaultName];
+          if (hasOwnProperty(context, defaultName2)) {
+            var _properties = context[defaultName2];
             if (hasOwnProperty(_properties, property)) {
               return _properties[property];
             }
-            return defaultContext[defaultName][property];
+            return defaultContext[defaultName2][property];
           }
           if (hasOwnProperty(defaultContext, name310)) {
             var _properties2 = defaultContext[name310];
@@ -61827,7 +61538,7 @@ svg {
               return _properties2[property];
             }
           }
-          return defaultContext[defaultName][property];
+          return defaultContext[defaultName2][property];
         }
         function isCommutative(node) {
           var context = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : defaultContext;
@@ -61853,16 +61564,16 @@ svg {
             return node;
           }
           node.args = allChildren(node, context);
-          for (var i5 = 0; i5 < node.args.length; i5++) {
-            flatten3(node.args[i5], context);
+          for (var i4 = 0; i4 < node.args.length; i4++) {
+            flatten3(node.args[i4], context);
           }
         }
         function allChildren(node, context) {
           var op;
           var children = [];
           var findChildren = function findChildren2(node2) {
-            for (var i5 = 0; i5 < node2.args.length; i5++) {
-              var child = node2.args[i5];
+            for (var i4 = 0; i4 < node2.args.length; i4++) {
+              var child = node2.args[i4];
               if (isOperatorNode(child) && op === child.op) {
                 findChildren2(child);
               } else {
@@ -61884,8 +61595,8 @@ svg {
           }
           var makeNode = createMakeNodeFunction(node);
           var l3 = node.args.length;
-          for (var i5 = 0; i5 < l3; i5++) {
-            unflattenr(node.args[i5], context);
+          for (var i4 = 0; i4 < l3; i4++) {
+            unflattenr(node.args[i4], context);
           }
           if (l3 > 2 && isAssociative(node, context)) {
             var curnode = node.args.pop();
@@ -61901,8 +61612,8 @@ svg {
           }
           var makeNode = createMakeNodeFunction(node);
           var l3 = node.args.length;
-          for (var i5 = 0; i5 < l3; i5++) {
-            unflattenl(node.args[i5], context);
+          for (var i4 = 0; i4 < l3; i4++) {
+            unflattenl(node.args[i4], context);
           }
           if (l3 > 2 && isAssociative(node, context)) {
             var curnode = node.args.shift();
@@ -62520,8 +62231,8 @@ svg {
         }
         function _buildRules(rules, context) {
           var ruleSet = [];
-          for (var i5 = 0; i5 < rules.length; i5++) {
-            var rule = rules[i5];
+          for (var i4 = 0; i4 < rules.length; i4++) {
+            var rule = rules[i4];
             var newRule = void 0;
             var ruleType = typeof rule;
             switch (ruleType) {
@@ -62563,17 +62274,17 @@ svg {
             var laststr = str;
             if (debug)
               console.log("Working on: ", str);
-            for (var i5 = 0; i5 < rules.length; i5++) {
+            for (var i4 = 0; i4 < rules.length; i4++) {
               var rulestr = "";
-              if (typeof rules[i5] === "function") {
-                res = rules[i5](res, options);
+              if (typeof rules[i4] === "function") {
+                res = rules[i4](res, options);
                 if (debug)
-                  rulestr = rules[i5].name;
+                  rulestr = rules[i4].name;
               } else {
                 flatten3(res, options.context);
-                res = applyRule(res, rules[i5], options.context);
+                res = applyRule(res, rules[i4], options.context);
                 if (debug) {
-                  rulestr = "".concat(rules[i5].l.toString(), " -> ").concat(rules[i5].r.toString());
+                  rulestr = "".concat(rules[i4].l.toString(), " -> ").concat(rules[i4].r.toString());
                 }
               }
               if (debug) {
@@ -62596,13 +62307,13 @@ svg {
         function mapRule(nodes, rule, context) {
           var resNodes = nodes;
           if (nodes) {
-            for (var i5 = 0; i5 < nodes.length; ++i5) {
-              var newNode = applyRule(nodes[i5], rule, context);
-              if (newNode !== nodes[i5]) {
+            for (var i4 = 0; i4 < nodes.length; ++i4) {
+              var newNode = applyRule(nodes[i4], rule, context);
+              if (newNode !== nodes[i4]) {
                 if (resNodes === nodes) {
                   resNodes = nodes.slice();
                 }
-                resNodes[i5] = newNode;
+                resNodes[i4] = newNode;
               }
             }
           }
@@ -62706,11 +62417,11 @@ svg {
           var right, rightArgs;
           var makeNode = createMakeNodeFunction(node);
           if (isCommutative(node, context)) {
-            for (var i5 = 0; i5 < node.args.length; i5++) {
+            for (var i4 = 0; i4 < node.args.length; i4++) {
               rightArgs = node.args.slice(0);
-              rightArgs.splice(i5, 1);
+              rightArgs.splice(i4, 1);
               right = rightArgs.length === 1 ? rightArgs[0] : makeNode(rightArgs);
-              res.push(makeNode([node.args[i5], right]));
+              res.push(makeNode([node.args[i4], right]));
             }
           } else {
             for (var _i = 1; _i < node.args.length; _i++) {
@@ -62776,11 +62487,11 @@ svg {
           var sets = childMatches.reduce(combineChildMatches);
           var uniqueSets = [];
           var unique = {};
-          for (var i5 = 0; i5 < sets.length; i5++) {
-            var s3 = JSON.stringify(sets[i5]);
+          for (var i4 = 0; i4 < sets.length; i4++) {
+            var s3 = JSON.stringify(sets[i4]);
             if (!unique[s3]) {
               unique[s3] = true;
-              uniqueSets.push(sets[i5]);
+              uniqueSets.push(sets[i4]);
             }
           }
           return uniqueSets;
@@ -62801,8 +62512,8 @@ svg {
             }
             if (node.args.length === 1 && rule.args.length === 1 || !isAssociative(node, context) && node.args.length === rule.args.length || isSplit) {
               var childMatches = [];
-              for (var i5 = 0; i5 < rule.args.length; i5++) {
-                var childMatch = _ruleMatch(rule.args[i5], node.args[i5], context);
+              for (var i4 = 0; i4 < rule.args.length; i4++) {
+                var childMatch = _ruleMatch(rule.args[i4], node.args[i4], context);
                 if (childMatch.length === 0) {
                   break;
                 }
@@ -62939,8 +62650,8 @@ svg {
             if (p3.args.length !== q4.args.length) {
               return false;
             }
-            for (var i5 = 0; i5 < p3.args.length; i5++) {
-              if (!_exactMatch(p3.args[i5], q4.args[i5])) {
+            for (var i4 = 0; i4 < p3.args.length; i4++) {
+              if (!_exactMatch(p3.args[i4], q4.args[i4])) {
                 return false;
               }
             }
@@ -63038,7 +62749,7 @@ svg {
             return new ConstantNode2(s3);
           },
           Matrix: function Matrix2(m3) {
-            return new ArrayNode2(m3.valueOf().map((e6) => _toNode(e6)));
+            return new ArrayNode2(m3.valueOf().map((e5) => _toNode(e5)));
           }
         });
         function _ensureNode(thing) {
@@ -63261,11 +62972,11 @@ svg {
                 if (isCommutative(fn2, options.context)) {
                   var consts = [];
                   var vars = [];
-                  for (var i5 = 0; i5 < _args.length; i5++) {
-                    if (!isNode(_args[i5])) {
-                      consts.push(_args[i5]);
+                  for (var i4 = 0; i4 < _args.length; i4++) {
+                    if (!isNode(_args[i4])) {
+                      consts.push(_args[i4]);
                     } else {
-                      vars.push(_args[i5]);
+                      vars.push(_args[i4]);
                     }
                   }
                   if (consts.length > 1) {
@@ -63776,8 +63487,8 @@ svg {
           "Object, FunctionNode | OperatorNode, string": function ObjectFunctionNodeOperatorNodeString(constNodes, node, varName) {
             if (node.args.length > 0) {
               var isConst = constTag(constNodes, node.args[0], varName);
-              for (var i5 = 1; i5 < node.args.length; ++i5) {
-                isConst = constTag(constNodes, node.args[i5], varName) && isConst;
+              for (var i4 = 1; i4 < node.args.length; ++i4) {
+                isConst = constTag(constNodes, node.args[i4], varName) && isConst;
               }
               if (isConst) {
                 constNodes[node] = true;
@@ -64045,8 +63756,8 @@ svg {
           if ((node.name === "log" || node.name === "nthRoot" || node.name === "pow") && node.args.length === 2) {
             return;
           }
-          for (var i5 = 0; i5 < node.args.length; ++i5) {
-            node.args[i5] = createConstantNode2(0);
+          for (var i4 = 0; i4 < node.args.length; ++i4) {
+            node.args[i4] = createConstantNode2(0);
           }
           node.compile().evaluate();
           throw new Error('Function "' + node.name + '" is not supported by derivative, or a wrong number of arguments is passed');
@@ -64193,8 +63904,8 @@ svg {
                 if (oper.indexOf(node2.op) === -1) {
                   throw new Error("Operator " + node2.op + " invalid in polynomial expression");
                 }
-                for (var i5 = 0; i5 < node2.args.length; i5++) {
-                  recPoly(node2.args[i5]);
+                for (var i4 = 0; i4 < node2.args.length; i4++) {
+                  recPoly(node2.args[i4]);
                 }
               }
             } else if (tp === "SymbolNode") {
@@ -64528,8 +64239,8 @@ svg {
           if (tp === "ParenthesisNode") {
             expandPower(node.content, node, "content");
           } else if (tp !== "ConstantNode" && tp !== "SymbolNode") {
-            for (var i5 = 0; i5 < node.args.length; i5++) {
-              expandPower(node.args[i5], node, i5);
+            for (var i4 = 0; i4 < node.args.length; i4++) {
+              expandPower(node.args[i4], node, i4);
             }
           }
           if (!internal) {
@@ -64551,20 +64262,20 @@ svg {
           maxExpo = coefficients.length - 1;
           var first = true;
           var no;
-          for (var i5 = maxExpo; i5 >= 0; i5--) {
-            if (coefficients[i5] === 0)
+          for (var i4 = maxExpo; i4 >= 0; i4--) {
+            if (coefficients[i4] === 0)
               continue;
-            var n16 = new ConstantNode2(first ? coefficients[i5] : Math.abs(coefficients[i5]));
-            var op = coefficients[i5] < 0 ? "-" : "+";
-            if (i5 > 0) {
+            var n16 = new ConstantNode2(first ? coefficients[i4] : Math.abs(coefficients[i4]));
+            var op = coefficients[i4] < 0 ? "-" : "+";
+            if (i4 > 0) {
               var n25 = new SymbolNode2(varname);
-              if (i5 > 1) {
-                var n3 = new ConstantNode2(i5);
+              if (i4 > 1) {
+                var n3 = new ConstantNode2(i4);
                 n25 = new OperatorNode2("^", "pow", [n25, n3]);
               }
-              if (coefficients[i5] === -1 && first) {
+              if (coefficients[i4] === -1 && first) {
                 n16 = new OperatorNode2("-", "unaryMinus", [n25]);
-              } else if (Math.abs(coefficients[i5]) === 1) {
+              } else if (Math.abs(coefficients[i4]) === 1) {
                 n16 = n25;
               } else {
                 n16 = new OperatorNode2("*", "multiply", [n16, n25]);
@@ -64708,8 +64419,8 @@ svg {
           }
           var num = [Complex3(1, 0)];
           var den = [Complex3(1, 0)];
-          for (var i5 = 0; i5 < z5.length; i5++) {
-            var zero = z5[i5];
+          for (var i4 = 0; i4 < z5.length; i4++) {
+            var zero = z5[i4];
             if (typeof zero === "number")
               zero = Complex3(zero, 0);
             num = _multiply(num, [Complex3(1, 0), Complex3(-zero.re, -zero.im)]);
@@ -64727,11 +64438,11 @@ svg {
         }
         function _multiply(a3, b3) {
           var c3 = [];
-          for (var i5 = 0; i5 < a3.length + b3.length - 1; i5++) {
-            c3[i5] = Complex3(0, 0);
+          for (var i4 = 0; i4 < a3.length + b3.length - 1; i4++) {
+            c3[i4] = Complex3(0, 0);
             for (var j4 = 0; j4 < a3.length; j4++) {
-              if (i5 - j4 >= 0 && i5 - j4 < b3.length) {
-                c3[i5] = add3(c3[i5], multiply2(a3[j4], b3[i5 - j4]));
+              if (i4 - j4 >= 0 && i4 - j4 < b3.length) {
+                c3[i4] = add3(c3[i4], multiply2(a3[j4], b3[i4 - j4]));
               }
             }
           }
@@ -64809,14 +64520,14 @@ svg {
         function _freqz(b3, a3, w4) {
           var num = [];
           var den = [];
-          for (var i5 = 0; i5 < w4.length; i5++) {
+          for (var i4 = 0; i4 < w4.length; i4++) {
             var sumNum = Complex3(0, 0);
             var sumDen = Complex3(0, 0);
             for (var j4 = 0; j4 < b3.length; j4++) {
-              sumNum = add3(sumNum, multiply2(b3[j4], Complex3(Math.cos(-j4 * w4[i5]), Math.sin(-j4 * w4[i5]))));
+              sumNum = add3(sumNum, multiply2(b3[j4], Complex3(Math.cos(-j4 * w4[i4]), Math.sin(-j4 * w4[i4]))));
             }
             for (var _j = 0; _j < a3.length; _j++) {
-              sumDen = add3(sumDen, multiply2(a3[_j], Complex3(Math.cos(-_j * w4[i5]), Math.sin(-_j * w4[i5]))));
+              sumDen = add3(sumDen, multiply2(a3[_j], Complex3(Math.cos(-_j * w4[i4]), Math.sin(-_j * w4[i4]))));
             }
             num.push(sumNum);
             den.push(sumDen);
@@ -64832,8 +64543,8 @@ svg {
         }
         function createBins(n3) {
           var bins = [];
-          for (var i5 = 0; i5 < n3; i5++) {
-            bins.push(i5 / n3 * Math.PI);
+          for (var i4 = 0; i4 < n3; i4++) {
+            bins.push(i4 / n3 * Math.PI);
           }
           return bins;
         }
@@ -65281,8 +64992,8 @@ svg {
           "Array | Matrix, function": function ArrayMatrixFunction(array, callback) {
             var recurse = function recurse2(value2, index2) {
               if (Array.isArray(value2)) {
-                forEach(value2, function(child, i5) {
-                  recurse2(child, index2.concat(i5 + 1));
+                forEach(value2, function(child, i4) {
+                  recurse2(child, index2.concat(i4 + 1));
                 });
               } else {
                 return applyCallback(callback, value2, index2, array, "forEach");
@@ -65313,8 +65024,8 @@ svg {
         } = _ref;
         return function indexTransform() {
           var args = [];
-          for (var i5 = 0, ii = arguments.length; i5 < ii; i5++) {
-            var arg2 = arguments[i5];
+          for (var i4 = 0, ii = arguments.length; i4 < ii; i4++) {
+            var arg2 = arguments[i4];
             if (isRange(arg2)) {
               arg2.start--;
               arg2.end -= arg2.step > 0 ? 0 : 2;
@@ -65336,7 +65047,7 @@ svg {
             } else {
               throw new TypeError("Dimension must be an Array, Matrix, number, string, or Range");
             }
-            args[i5] = arg2;
+            args[i4] = arg2;
           }
           var res = new Index2();
           Index2.apply(res, args);
@@ -65352,8 +65063,8 @@ svg {
   function _map2(array, callback, orig) {
     function recurse(value2, index2) {
       if (Array.isArray(value2)) {
-        return map(value2, function(child, i5) {
-          return recurse(child, index2.concat(i5 + 1));
+        return map(value2, function(child, i4) {
+          return recurse(child, index2.concat(i4 + 1));
         });
       } else {
         return applyCallback(callback, value2, index2, orig, "map");
@@ -68855,93 +68566,540 @@ svg {
     }
   });
 
+  // src/hooks/useColor.ts
+  var import_validator, RgbaSchema, HctSchema, SolidColorSchema, ColorDataSchema, ColorActionsSchema, ColorSchema, cleanedHexColor, hexFromString, HctFromHex, argbFromHct, rgbFromHex, rgbaFromHct, hexFromHct, SolidColorFromRgbColor, colorData, colorActions, createColorFrom, calculateHue, calculateChroma, calculateEndColor, useColor;
+  var init_useColor = __esm({
+    "src/hooks/useColor.ts"() {
+      "use strict";
+      init_material_color_utilities();
+      init_lib();
+      init_lib3();
+      import_validator = __toESM(require_validator());
+      init_esm();
+      init_esm2();
+      RgbaSchema = z4.object({
+        r: z4.number().min(0).max(255),
+        g: z4.number().min(0).max(255),
+        b: z4.number().min(0).max(255),
+        a: z4.number().min(0).max(255)
+      });
+      HctSchema = z4.object({
+        hue: z4.number().min(0).max(360),
+        chroma: z4.number().min(0).max(150),
+        tone: z4.number().min(0).max(100)
+      });
+      SolidColorSchema = z4.object({
+        type: z4.literal("SOLID"),
+        color: z4.object({
+          r: z4.number().min(0).max(255),
+          g: z4.number().min(0).max(255),
+          b: z4.number().min(0).max(255)
+        })
+      });
+      ColorDataSchema = z4.object({
+        sourceHex: z4.string(),
+        hct: HctSchema,
+        rgba: z4.union([z4.string(), RgbaSchema]),
+        hex: z4.string().refine(import_validator.default.isHexColor),
+        figmaSolidColor: SolidColorSchema
+      });
+      ColorActionsSchema = z4.object({
+        setAll: z4.function().args(ColorDataSchema, z4.void()),
+        setSourceHex: z4.function().args(z4.string(), z4.void()),
+        setHct: z4.function().args(HctSchema, z4.void()),
+        setRgba: z4.function().args(z4.union([z4.string(), RgbaSchema]), z4.void()),
+        setHex: z4.function().args(z4.string(), z4.void()),
+        setFigmaSolidColor: z4.function().args(SolidColorSchema, z4.void()),
+        setHue: z4.function().args(z4.number(), z4.void()),
+        setChroma: z4.function().args(z4.number(), z4.void()),
+        setTone: z4.function().args(z4.number(), z4.void()),
+        data: z4.function()
+      });
+      ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
+      cleanedHexColor = (hexColor) => {
+        return hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
+      };
+      hexFromString = (hexColor) => cleanedHexColor(hexColor);
+      HctFromHex = (hexColor) => Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+      argbFromHct = (hctColor) => (hctColor == null ? void 0 : hctColor.toInt()) || Hct.from(0, 0, 0).toInt();
+      rgbFromHex = (hex2) => {
+        const result = convertHexColorToRgbColor(cleanedHexColor(hex2));
+        return result !== null ? result : { r: 0, g: 0, b: 0 };
+      };
+      rgbaFromHct = (hct) => {
+        const argb = argbFromHct(hct);
+        return rgbaFromArgb(argb);
+      };
+      hexFromHct = (hct) => {
+        const argb = argbFromHct(hct);
+        return hexFromArgb(argb);
+      };
+      SolidColorFromRgbColor = (rgbColor) => {
+        if (!rgbColor) {
+          return { type: "SOLID", color: { r: 0, g: 0, b: 0 } };
+        }
+        return { type: "SOLID", color: rgbColor };
+      };
+      colorData = (set) => ({
+        sourceHex: "",
+        hct: { hue: 0, chroma: 0, tone: 0 },
+        rgba: { r: 0, g: 0, b: 0, a: 0 },
+        hex: "",
+        figmaSolidColor: { type: "SOLID", color: { r: 0, g: 0, b: 0 } }
+      });
+      colorActions = (set) => ({
+        setAll: (colorData2) => set((state) => __spreadValues(__spreadValues({}, state), colorData2)),
+        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), { sourceHex: sourceHex2 })),
+        setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), { hct })),
+        setRgba: (rgba) => set((state) => __spreadProps(__spreadValues({}, state), { rgba })),
+        setHex: (hex2) => set((state) => __spreadProps(__spreadValues({}, state), { hex: hex2 })),
+        setFigmaSolidColor: (figmaSolidColor) => set((state) => __spreadProps(__spreadValues({}, state), { figmaSolidColor })),
+        setHue: (hue) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { hue }) })),
+        setChroma: (chroma) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { chroma }) })),
+        setTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { tone }) })),
+        data: () => {
+        }
+      });
+      createColorFrom = () => {
+        const hex2 = (hexColor) => {
+          return {
+            sourceHex: hexColor,
+            hct: HctFromHex(hexColor),
+            rgba: rgbaFromHct(HctFromHex(hexColor)),
+            hex: hexFromHct(HctFromHex(hexColor)),
+            figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor))
+          };
+        };
+        const hct = (hct2) => {
+          return {
+            sourceHex: hexFromHct(Hct.from(hct2.hue, hct2.chroma, hct2.tone)),
+            hct: hct2,
+            rgba: rgbaFromHct(Hct.from(hct2.hue, hct2.chroma, hct2.tone)),
+            hex: hexFromHct(Hct.from(hct2.hue, hct2.chroma, hct2.tone)),
+            figmaSolidColor: SolidColorFromRgbColor(
+              rgbFromHex(hexFromHct(Hct.from(hct2.hue, hct2.chroma, hct2.tone)))
+            )
+          };
+        };
+        return { hex: hex2, hct };
+      };
+      calculateHue = (hueValue, hueCalcValue) => {
+        const hueCalc = hueCalcValue;
+        const sourceHue = hueValue;
+        if (!hueCalc.trim() || hueCalc === "") {
+          return sourceHue;
+        }
+        try {
+          const parsedHueCalc = hueCalc.replace(/h/gi, sourceHue.toString());
+          const hue = Math.abs(evaluate(parsedHueCalc) % 360);
+          return hue;
+        } catch (error) {
+          console.error("Invalid expression:", error);
+          let lastValidHue = NaN;
+          for (let i4 = hueCalc.length - 1; i4 >= 0; i4--) {
+            const truncatedExpression = hueCalc.substring(0, i4);
+            try {
+              lastValidHue = evaluate(
+                truncatedExpression.replace(/h/gi, sourceHue.toString())
+              );
+              break;
+            } catch (e5) {
+            }
+          }
+          const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
+          return hue;
+        }
+      };
+      calculateChroma = (chromaValue, chromaCalcValue) => {
+        const chromaCalc = chromaCalcValue;
+        const sourceChroma = chromaValue;
+        if (!chromaCalc.trim() || chromaCalc === "") {
+          return sourceChroma;
+        }
+        try {
+          const parsedChromaCalc = chromaCalc.replace(
+            /c/gi,
+            sourceChroma.toString()
+          );
+          const chroma = Math.abs(evaluate(parsedChromaCalc));
+          return chroma;
+        } catch (error) {
+          console.error("Invalid expression:", error);
+          let lastValidChroma = NaN;
+          for (let i4 = chromaCalc.length - 1; i4 >= 0; i4--) {
+            const truncatedExpression = chromaCalc.substring(0, i4);
+            try {
+              lastValidChroma = evaluate(
+                truncatedExpression.replace(/c/gi, sourceChroma.toString())
+              );
+              break;
+            } catch (error2) {
+              continue;
+            }
+          }
+          return lastValidChroma;
+        }
+      };
+      calculateEndColor = (sourceHct, hueCalc = "h", chromaCalc = "c") => {
+        const hue = calculateHue(sourceHct.hue, hueCalc);
+        const chroma = calculateChroma(sourceHct.chroma, chromaCalc);
+        return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
+      };
+      useColor = create()((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set, get, ...a3)), colorActions(set, get, ...a3)), {
+        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+          sourceHex: sourceHex2,
+          hct: HctFromHex(sourceHex2),
+          rgba: rgbaFromHct(HctFromHex(sourceHex2)),
+          hex: sourceHex2,
+          figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(sourceHex2))
+        })),
+        setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), {
+          hct,
+          rgba: rgbaFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
+          hex: hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
+          figmaSolidColor: SolidColorFromRgbColor(
+            rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)))
+          )
+        })),
+        setHue: (hue) => set((state) => __spreadProps(__spreadValues({}, state), {
+          hct: __spreadProps(__spreadValues({}, state.hct), { hue }),
+          rgba: rgbaFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
+          hex: hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
+          figmaSolidColor: SolidColorFromRgbColor(
+            rgbFromHex(
+              hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone))
+            )
+          )
+        })),
+        setChroma: (chroma) => set((state) => __spreadProps(__spreadValues({}, state), {
+          hct: __spreadProps(__spreadValues({}, state.hct), { chroma }),
+          rgba: rgbaFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
+          hex: hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
+          figmaSolidColor: SolidColorFromRgbColor(
+            rgbFromHex(
+              hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone))
+            )
+          )
+        })),
+        setTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
+          hct: __spreadProps(__spreadValues({}, state.hct), { tone }),
+          rgba: rgbaFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
+          hex: hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
+          figmaSolidColor: SolidColorFromRgbColor(
+            rgbFromHex(
+              hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone))
+            )
+          )
+        })),
+        data: () => {
+          const state = get();
+          const { sourceHex: sourceHex2, hct, rgba, hex: hex2, figmaSolidColor } = state;
+          const themeData2 = {
+            sourceHex: sourceHex2,
+            hct,
+            rgba,
+            hex: hex2,
+            figmaSolidColor
+          };
+          return themeData2;
+        }
+      }));
+    }
+  });
+
+  // node_modules/nanoid/index.browser.js
+  var nanoid;
+  var init_index_browser = __esm({
+    "node_modules/nanoid/index.browser.js"() {
+      nanoid = (size2 = 21) => crypto.getRandomValues(new Uint8Array(size2)).reduce((id, byte) => {
+        byte &= 63;
+        if (byte < 36) {
+          id += byte.toString(36);
+        } else if (byte < 62) {
+          id += (byte - 26).toString(36).toUpperCase();
+        } else if (byte > 62) {
+          id += "-";
+        } else {
+          id += "_";
+        }
+        return id;
+      }, "");
+    }
+  });
+
+  // src/hooks/useAliasGroup.ts
+  var createAlias, createAliasList, createAliasGroup, AliasDataSchema, AliasActionsSchema, aliasData, aliasActions, useAlias, AliasGroupDataSchema, aliasGroupData, AliasGroupActionsSchema, aliasGroupActions, AliasCrudSchema, aliasCrud, useAliasGroup;
+  var init_useAliasGroup = __esm({
+    "src/hooks/useAliasGroup.ts"() {
+      "use strict";
+      init_lib3();
+      init_esm();
+      init_index_browser();
+      createAlias = (id = nanoid(12), name310 = "Alias", lightModeTone = 80, darkModeTone = 20) => {
+        return {
+          id,
+          name: name310,
+          lightModeTone,
+          darkModeTone
+        };
+      };
+      createAliasList = (aliases = []) => {
+        return aliases.map(
+          (alias) => createAlias(
+            alias.id,
+            alias.name,
+            alias.lightModeTone,
+            alias.darkModeTone
+          )
+        );
+      };
+      createAliasGroup = (id = nanoid(12), name310 = "Alias group", aliases = [
+        createAlias(nanoid(12), "color", 40, 80),
+        createAlias(nanoid(12), "onColor", 100, 20),
+        createAlias(nanoid(12), "colorContainer", 90, 30),
+        createAlias(nanoid(12), "onColorContainer", 10, 90)
+      ], themeColorIds = []) => {
+        return {
+          id,
+          name: name310,
+          aliases,
+          themeColorIds
+        };
+      };
+      AliasDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        lightModeTone: z4.number().int().min(0).max(100),
+        darkModeTone: z4.number().int().min(0).max(100)
+      });
+      AliasActionsSchema = z4.object({
+        set: z4.object({
+          all: z4.function().args(AliasDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          lightModeTone: z4.function().args(z4.number(), z4.void()),
+          darkModeTone: z4.function().args(z4.number(), z4.void())
+        }),
+        data: z4.function()
+      });
+      aliasData = () => ({
+        id: nanoid(12),
+        name: "Alias",
+        lightModeTone: 80,
+        darkModeTone: 20
+      });
+      aliasActions = (set, get) => ({
+        set: {
+          all: (aliasData2) => set((state) => __spreadValues(__spreadValues({}, state), aliasData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), { lightModeTone })),
+          darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), { darkModeTone }))
+        },
+        data: () => {
+        }
+      });
+      useAlias = create((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasData(set, get, ...a3)), aliasActions(set, get, ...a3)), {
+        data: () => {
+          const state = get();
+          const { id, name: name310, lightModeTone, darkModeTone } = state;
+          const aliasData2 = {
+            id,
+            name: name310,
+            lightModeTone,
+            darkModeTone
+          };
+          return aliasData2;
+        }
+      }));
+      AliasGroupDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        aliases: z4.array(AliasDataSchema),
+        themeColorIds: z4.array(z4.string())
+      });
+      aliasGroupData = () => ({
+        id: nanoid(12),
+        name: "Alias group",
+        aliases: createAliasList([
+          createAlias(nanoid(12), "color", 40, 80),
+          createAlias(nanoid(12), "onColor", 100, 20),
+          createAlias(nanoid(12), "colorContainer", 90, 30),
+          createAlias(nanoid(12), "onColorContainer", 10, 90)
+        ]),
+        themeColorIds: []
+      });
+      AliasGroupActionsSchema = z4.object({
+        setAll: z4.function().args(AliasGroupDataSchema, z4.void()),
+        setId: z4.function().args(z4.string(), z4.void()),
+        setName: z4.function().args(z4.string(), z4.void()),
+        setAliases: z4.function().args(z4.array(AliasDataSchema), z4.void()),
+        setThemeColorIds: z4.function().args(z4.array(z4.string()), z4.void()),
+        data: z4.function()
+      });
+      aliasGroupActions = (set) => ({
+        setAll: (aliasGroupData4) => set((state) => __spreadValues(__spreadValues({}, state), aliasGroupData4)),
+        setId: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+        setName: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+        setAliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), { aliases })),
+        setThemeColorIds: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
+        data: () => {
+        }
+      });
+      AliasCrudSchema = z4.object({
+        alias: z4.object({
+          add: z4.function().args(z4.void()),
+          update: z4.function().args(z4.string(), AliasDataSchema, z4.void()),
+          remove: z4.function().args(z4.string(), z4.void())
+        }),
+        themeColorId: z4.object({
+          add: z4.function().args(z4.string(), z4.void()),
+          remove: z4.function().args(z4.string(), z4.void())
+        })
+      });
+      aliasCrud = (set) => ({
+        alias: {
+          add: () => set((state) => __spreadValues({}, state)),
+          update: (id, alias) => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
+        },
+        themeColorId: {
+          add: (id) => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
+        }
+      });
+      useAliasGroup = create(
+        (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasGroupData(set, get, ...a3)), aliasGroupActions(set, get, ...a3)), {
+          data: () => {
+            const state = get();
+            const { id, name: name310, aliases, themeColorIds } = state;
+            const aliasGroupData4 = {
+              id,
+              name: name310,
+              aliases,
+              themeColorIds
+            };
+            return aliasGroupData4;
+          },
+          alias: {
+            add: () => set((state) => __spreadProps(__spreadValues({}, state), {
+              aliases: [...state.aliases, createAlias()]
+            })),
+            update: (id, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
+              aliases: state.aliases.map(
+                (a4) => a4.id === id ? alias : a4
+              )
+            })),
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+              aliases: state.aliases.filter((a4) => a4.id !== id)
+            }))
+          },
+          themeColorId: {
+            add: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themeColorIds: [...state.themeColorIds, id]
+            })),
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themeColorIds: state.themeColorIds.filter((t3) => t3 !== id)
+            }))
+          }
+        })
+      );
+    }
+  });
+
   // src/hooks/useThemeColor.ts
-  var AddAliasReturnSchema, AliasMethodsSchema, AliasFunctionSchema, ThemeColorDataSchema, baseColor, color, themeColorDataStore, useThemeColorDataStore, ThemeColorActionsSchema, themeColorActionsStore, useThemeColorActionsStore, ThemeColorSchema, themeColorStore, useThemeColorStore, useThemeColor;
+  var defaultSourceHex, defaultName, defaultHueCalc, defaultChromaCalc, defaultTones, defaultAliasGroup, createThemeColor, ThemeColorDataSchema, themeColorData, useThemeColorData, ThemeColorActionsSchema, themeColorActions, useThemeColorActions, themeColorStore, useThemeColor;
   var init_useThemeColor = __esm({
     "src/hooks/useThemeColor.ts"() {
       "use strict";
       init_useColor();
       init_useColor();
-      init_useAlias();
-      init_esm2();
-      init_hooks_module();
       init_index_browser();
       init_lib3();
       init_esm();
-      init_material_color_utilities();
-      AddAliasReturnSchema = z4.object({
-        alias: AliasDataSchema
-      });
-      AliasMethodsSchema = z4.object({
-        alias: AliasDataSchema,
-        setName: z4.function(z4.tuple([z4.string()])),
-        setTone: z4.function(
-          z4.tuple([z4.union([z4.string(), z4.number()]), z4.number()])
-        ),
-        setTones: z4.function(z4.tuple([z4.number(), z4.number()])),
-        remove: z4.function()
-      });
-      AliasFunctionSchema = z4.function(z4.tuple([z4.string()])).returns(AliasMethodsSchema);
+      init_useAliasGroup();
+      init_useColor();
+      defaultSourceHex = "397456";
+      defaultName = "Color";
+      defaultHueCalc = "";
+      defaultChromaCalc = "";
+      defaultTones = [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        95,
+        99,
+        100,
+        4,
+        5,
+        6,
+        12,
+        17,
+        22,
+        24,
+        25,
+        35,
+        87,
+        92,
+        94,
+        96,
+        98
+      ];
+      defaultAliasGroup = createAliasGroup();
+      createThemeColor = (sourceHex2 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, aliasGroup = defaultAliasGroup) => {
+        return {
+          id: nanoid(12),
+          name: name310,
+          sourceHex: sourceHex2,
+          sourceColor: createColorFrom().hex(sourceHex2),
+          endColor: calculateEndColor(
+            createColorFrom().hex(sourceHex2).hct,
+            defaultHueCalc,
+            defaultChromaCalc
+          ),
+          tones: defaultTones,
+          hueCalc,
+          chromaCalc,
+          aliasGroup
+        };
+      };
       ThemeColorDataSchema = z4.object({
         id: z4.string(),
         name: z4.string(),
         sourceHex: z4.string(),
-        sourceColor: ColorSchema,
-        endColor: ColorSchema,
+        sourceColor: ColorDataSchema,
+        endColor: ColorDataSchema,
         tones: z4.array(z4.number()),
         hueCalc: z4.string(),
         chromaCalc: z4.string(),
-        aliases: z4.array(AliasDataSchema)
+        aliasGroup: AliasGroupDataSchema
       });
-      baseColor = useColorStore.getState();
-      color = __spreadProps(__spreadValues({}, baseColor), {
-        sourceHex: "397456",
-        hct: Hct.from(163, 33, 44),
-        rgba: rgbaFromHct(Hct.from(145, 40, 50)),
-        hex: hexFromHct(Hct.from(145, 40, 50))
-      });
-      themeColorDataStore = () => ({
+      themeColorData = () => ({
         id: nanoid(12),
-        name: "color",
-        sourceHex: "397456",
-        sourceColor: color,
-        endColor: color,
-        tones: [
-          0,
-          10,
-          20,
-          30,
-          40,
-          50,
-          60,
-          70,
-          80,
-          90,
-          95,
-          99,
-          100,
-          4,
-          5,
-          6,
-          12,
-          17,
-          22,
-          24,
-          25,
-          35,
-          87,
-          92,
-          94,
-          96,
-          98
-        ],
-        hueCalc: "163",
-        chromaCalc: "33",
-        aliases: []
+        name: defaultName,
+        sourceHex: defaultSourceHex,
+        sourceColor: createColorFrom().hex(defaultSourceHex),
+        endColor: calculateEndColor(
+          createColorFrom().hex(defaultSourceHex).hct,
+          defaultHueCalc,
+          defaultChromaCalc
+        ),
+        tones: defaultTones,
+        hueCalc: defaultHueCalc,
+        chromaCalc: defaultChromaCalc,
+        aliasGroup: defaultAliasGroup
       });
-      useThemeColorDataStore = create((...a3) => __spreadValues({}, themeColorDataStore(...a3)));
+      useThemeColorData = create((...a3) => __spreadValues({}, themeColorData(...a3)));
       ThemeColorActionsSchema = z4.object({
         set: z4.object({
+          all: z4.function().args(ThemeColorDataSchema, z4.void()),
           id: z4.function().args(z4.string(), z4.void()),
           name: z4.function().args(z4.string(), z4.void()),
           sourceHex: z4.function().args(z4.string(), z4.void()),
@@ -68950,503 +69108,108 @@ svg {
           tones: z4.function().args(z4.array(z4.number()), z4.void()),
           hueCalc: z4.function().args(z4.string(), z4.void()),
           chromaCalc: z4.function().args(z4.string(), z4.void()),
-          aliases: z4.function().args(z4.array(AliasDataSchema), z4.void()),
-          addAlias: z4.function(z4.tuple([]), AddAliasReturnSchema),
-          alias: AliasFunctionSchema
-        })
+          aliasGroup: z4.function().args(AliasGroupDataSchema, z4.void())
+        }),
+        data: z4.function()
       });
-      themeColorActionsStore = (set) => ({
+      themeColorActions = (set, get) => ({
         set: {
+          all: (themeColor) => set((state) => __spreadValues(__spreadValues({}, state), themeColor)),
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
           name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          sourceHex: (sourceHex) => set((state) => __spreadProps(__spreadValues({}, state), {
-            sourceHex,
-            sourceColor: __spreadProps(__spreadValues({}, state), { sourceHex })
+          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+            sourceHex: sourceHex2
           })),
           sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), { sourceColor })),
           endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), { endColor })),
           tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), { tones })),
           hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), { hueCalc })),
           chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), { chromaCalc })),
-          aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), { aliases })),
-          addAlias: () => {
-            const alias = {
-              id: nanoid(12),
-              name: "Alias",
-              color: [
-                { mode: "light", tone: 100 },
-                { mode: "dark", tone: 0 }
-              ]
-            };
-            const state = useThemeColorStore.getState();
-            const newAliases = [...state.aliases];
-            newAliases.push(alias);
-            set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
-            return { alias };
-          },
-          alias: (id) => {
-            const state = useThemeColorStore.getState();
-            const requestedAlias = state.aliases.find(
-              (alias2) => alias2.id === id
-            );
-            if (!requestedAlias) {
-              throw new Error("Alias not found");
-            }
-            const alias = requestedAlias;
-            const setName = (name310) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                aliasToUpdate.name = name310;
-              }
-              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
-            };
-            const setTone2 = (mode2, tone) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                if (typeof mode2 === "string") {
-                  const colorToUpdate = aliasToUpdate.color.find(
-                    (color2) => color2.mode === mode2
-                  );
-                  if (colorToUpdate) {
-                    colorToUpdate.tone = tone;
-                  }
-                } else if (typeof mode2 === "number") {
-                  if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
-                    aliasToUpdate.color[mode2].tone = tone;
-                  }
-                }
-              }
-              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
-            };
-            const setTones = (firstTone, secondTone) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                aliasToUpdate.color[0].tone = firstTone;
-                aliasToUpdate.color[1].tone = secondTone;
-              }
-              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
-            };
-            const remove = () => {
-              const newAliases = [...state.aliases];
-              const index2 = newAliases.indexOf(alias);
-              if (index2 > -1) {
-                newAliases.splice(index2, 1);
-              }
-              set((state2) => __spreadProps(__spreadValues({}, state2), { aliases: newAliases }));
-            };
-            return { alias, setName, setTone: setTone2, setTones, remove };
-          }
+          aliasGroup: (aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), { aliasGroup }))
+        },
+        data: () => {
         }
       });
-      useThemeColorActionsStore = create((...a3) => __spreadValues({}, themeColorActionsStore(...a3)));
-      ThemeColorSchema = ThemeColorDataSchema.merge(ThemeColorActionsSchema);
-      themeColorStore = (set) => ({
-        id: nanoid(12),
-        name: "color",
-        sourceHex: color.sourceHex,
-        sourceColor: color,
-        endColor: color,
-        tones: [
-          0,
-          10,
-          20,
-          30,
-          40,
-          50,
-          60,
-          70,
-          80,
-          90,
-          95,
-          99,
-          100,
-          4,
-          5,
-          6,
-          12,
-          17,
-          22,
-          24,
-          25,
-          35,
-          87,
-          92,
-          94,
-          96,
-          98
-        ],
-        hueCalc: "163",
-        chromaCalc: "33",
-        aliases: [],
-        set: {
-          id: (id) => set(() => ({ id })),
-          name: (name310) => set(() => ({ name: name310 })),
-          sourceHex: (sourceHex) => set((state) => ({
-            sourceHex,
-            sourceColor: __spreadProps(__spreadValues({}, state.sourceColor), { sourceHex })
+      useThemeColorActions = create((...a3) => __spreadValues({}, themeColorActions(...a3)));
+      themeColorStore = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues({}, themeColorData(set, get, ...a3)), themeColorActions(set, get, ...a3)), aliasCrud(set, get, ...a3)), {
+        data: () => {
+          const state = get();
+          const {
+            id,
+            name: name310,
+            sourceHex: sourceHex2,
+            sourceColor,
+            endColor,
+            tones,
+            hueCalc,
+            chromaCalc,
+            aliasGroup
+          } = state;
+          const themeColorData2 = {
+            id,
+            name: name310,
+            sourceHex: sourceHex2,
+            sourceColor,
+            endColor,
+            tones,
+            hueCalc,
+            chromaCalc,
+            aliasGroup
+          };
+          return themeColorData2;
+        },
+        set: __spreadProps(__spreadValues({}, themeColorActions(set, get, ...a3).set), {
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+            sourceHex: sourceHex2,
+            sourceColor: __spreadValues(__spreadValues({}, state.sourceColor), createColorFrom().hex(sourceHex2)),
+            endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
+              state.sourceColor.hct,
+              state.hueCalc,
+              state.chromaCalc
+            ))
           })),
-          sourceColor: (sourceColor) => set(() => ({ sourceColor })),
-          endColor: (endColor) => set(() => ({ endColor })),
-          tones: (tones) => set(() => ({ tones })),
-          hueCalc: (hueCalc) => set(() => ({ hueCalc })),
-          chromaCalc: (chromaCalc) => set(() => ({ chromaCalc })),
-          aliases: (aliases) => set(() => ({ aliases })),
-          addAlias: () => {
-            const alias = {
-              id: nanoid(12),
-              name: "Alias",
-              color: [
-                { mode: "light", tone: 100 },
-                { mode: "dark", tone: 0 }
-              ]
-            };
-            const state = useThemeColorStore.getState();
-            const newAliases = [...state.aliases];
-            newAliases.push(alias);
-            set(() => ({ aliases: newAliases }));
-            return { alias };
-          },
-          alias: (id) => {
-            const state = useThemeColorStore.getState();
-            const requestedAlias = state.aliases.find(
-              (alias2) => alias2.id === id
-            );
-            if (!requestedAlias) {
-              throw new Error("Alias not found");
-            }
-            const alias = requestedAlias;
-            const setName = (name310) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                aliasToUpdate.name = name310;
-              }
-              set(() => ({ aliases: newAliases }));
-            };
-            const setTone2 = (mode2, tone) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                if (typeof mode2 === "string") {
-                  const colorToUpdate = aliasToUpdate.color.find(
-                    (color2) => color2.mode === mode2
-                  );
-                  if (colorToUpdate) {
-                    colorToUpdate.tone = tone;
-                  }
-                } else if (typeof mode2 === "number") {
-                  if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
-                    aliasToUpdate.color[mode2].tone = tone;
-                  }
-                }
-              }
-              set(() => ({ aliases: newAliases }));
-            };
-            const setTones = (firstTone, secondTone) => {
-              const newAliases = [...state.aliases];
-              const aliasToUpdate = newAliases.find(
-                (alias2) => alias2.id === id
-              );
-              if (aliasToUpdate) {
-                aliasToUpdate.color[0].tone = firstTone;
-                aliasToUpdate.color[1].tone = secondTone;
-              }
-              set(() => ({ aliases: newAliases }));
-            };
-            const remove = () => {
-              const newAliases = [...state.aliases];
-              const index2 = newAliases.indexOf(alias);
-              if (index2 > -1) {
-                newAliases.splice(index2, 1);
-              }
-              set(() => ({ aliases: newAliases }));
-            };
-            return { alias, setName, setTone: setTone2, setTones, remove };
-          }
+          hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+            hueCalc,
+            endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
+              state.sourceColor.hct,
+              hueCalc,
+              state.chromaCalc
+            ))
+          })),
+          chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+            chromaCalc,
+            endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
+              state.sourceColor.hct,
+              state.hueCalc,
+              chromaCalc
+            ))
+          }))
+        }),
+        alias: {
+          add: () => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
+              aliases: [...state.aliasGroup.aliases, createAlias()]
+            })
+          })),
+          update: (id, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
+              aliases: state.aliasGroup.aliases.map(
+                (a4) => a4.id === id ? alias : a4
+              )
+            })
+          })),
+          remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
+              aliases: state.aliasGroup.aliases.filter(
+                (a4) => a4.id !== id
+              )
+            })
+          }))
         }
       });
-      useThemeColorStore = create()((...a3) => __spreadValues({}, themeColorStore(...a3)));
-      useThemeColor = (hexColor = "397456") => {
-        const color2 = useColor(hexColor);
-        const themeColorStore2 = useThemeColorStore;
-        const themeColor = themeColorStore2((state) => state);
-        const id = themeColor.id;
-        const setId = (id2) => themeColorStore2.setState({ id: id2 });
-        const name310 = themeColor.name;
-        const setName = (name311) => themeColor.set.name(name311);
-        const sourceHex = themeColor.sourceHex;
-        const setSourceHex = (sourceHex2) => {
-          const newColor = themeColor.sourceColor;
-          const newSourceColor = __spreadProps(__spreadValues({}, newColor), { sourceHex: sourceHex2 });
-          themeColor.set.sourceColor(newSourceColor);
-          themeColor.set.sourceHex(sourceHex2);
-        };
-        const sourceColor = themeColor.sourceColor;
-        const setSourceColor = (sourceColor2) => themeColor.set.sourceColor(sourceColor2);
-        const endColor = themeColor.endColor;
-        const setEndColor = (endColor2) => themeColor.set.endColor(endColor2);
-        const tones = themeColor.tones;
-        const setTones = (tones2) => themeColor.set.tones(tones2);
-        const hueCalc = themeColor.hueCalc;
-        const setHueCalc = (hueCalc2) => themeColor.set.hueCalc(hueCalc2);
-        const chromaCalc = themeColor.chromaCalc;
-        const setChromaCalc = (chromaCalc2) => themeColor.set.chromaCalc(chromaCalc2);
-        const aliases = themeColor.aliases;
-        const setAliases = (aliases2) => themeColor.set.aliases(aliases2);
-        const calculateHue2 = (hueValue, hueCalcValue) => {
-          const hueCalc2 = hueCalcValue || themeColor.hueCalc;
-          const sourceHue = hueValue || sourceColor.hct.hue;
-          if (!hueCalc2.trim() || hueCalc2 === "") {
-            return sourceHue;
-          }
-          try {
-            const parsedHueCalc = hueCalc2.replace(/h/gi, sourceHue.toString());
-            const hue = Math.abs(evaluate(parsedHueCalc) % 360);
-            return hue;
-          } catch (error) {
-            console.error("Invalid expression:", error);
-            let lastValidHue = NaN;
-            for (let i5 = hueCalc2.length - 1; i5 >= 0; i5--) {
-              const truncatedExpression = hueCalc2.substring(0, i5);
-              try {
-                lastValidHue = evaluate(
-                  truncatedExpression.replace(
-                    /h/gi,
-                    sourceHue.toString()
-                  )
-                );
-                break;
-              } catch (e6) {
-              }
-            }
-            const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
-            return hue;
-          }
-        };
-        const calculateChroma2 = (chromaValue, chromaCalcValue) => {
-          const chromaCalc2 = chromaCalcValue || themeColor.chromaCalc;
-          const sourceChroma = chromaValue || sourceColor.hct.chroma;
-          if (!chromaCalc2.trim() || chromaCalc2 === "") {
-            return sourceChroma;
-          }
-          try {
-            const parsedChromaCalc = chromaCalc2.replace(
-              /c/gi,
-              sourceChroma.toString()
-            );
-            const chroma = Math.abs(evaluate(parsedChromaCalc));
-            return chroma;
-          } catch (error) {
-            console.error("Invalid expression:", error);
-            let lastValidChroma = NaN;
-            for (let i5 = chromaCalc2.length - 1; i5 >= 0; i5--) {
-              const truncatedExpression = chromaCalc2.substring(0, i5);
-              try {
-                lastValidChroma = evaluate(
-                  truncatedExpression.replace(
-                    /c/gi,
-                    sourceChroma.toString()
-                  )
-                );
-                break;
-              } catch (error2) {
-                continue;
-              }
-            }
-            return lastValidChroma;
-          }
-        };
-        const sourceHexRef = _2(sourceColor.sourceHex);
-        const chromaCalcRef = _2(chromaCalc);
-        const hueCalcRef = _2(hueCalc);
-        p2(() => {
-          themeColorStore2.subscribe((state) => {
-            if (sourceHexRef.current !== state.sourceColor.sourceHex) {
-              sourceHexRef.current = state.sourceColor.sourceHex;
-              const newSourceHex = state.sourceColor.sourceHex;
-              const newHct = HctFromHex(newSourceHex);
-              const hueCalc2 = state.hueCalc;
-              const chromaCalc2 = state.chromaCalc;
-              const newSourceColor = __spreadProps(__spreadValues({}, color2), {
-                sourceHex: newSourceHex,
-                hct: newHct,
-                rgba: rgbaFromHct(newHct),
-                hex: hexFromHct(newHct),
-                figmaSolidColor: SolidColorFromRgbColor(
-                  rgbFromHex(hexFromHct(newHct))
-                )
-              });
-              setSourceColor(newSourceColor);
-              setSourceHex;
-              const endHct = Hct.from(
-                calculateHue2(newSourceColor.hct.hue, hueCalc2),
-                calculateChroma2(newSourceColor.hct.chroma, chromaCalc2),
-                newSourceColor.hct.tone
-              );
-              const newEndColor = __spreadProps(__spreadValues({}, newSourceColor), {
-                hct: endHct,
-                rgba: rgbaFromHct(endHct),
-                hex: hexFromHct(endHct),
-                figmaSolidColor: SolidColorFromRgbColor(
-                  rgbFromHex(hexFromHct(endHct))
-                )
-              });
-              setEndColor(newEndColor);
-            }
-            if (hueCalcRef.current !== state.hueCalc) {
-              hueCalcRef.current = state.hueCalc;
-              const hueCalc2 = state.hueCalc;
-              const chromaCalc2 = state.chromaCalc;
-              const newColor = state.sourceColor;
-              const endHct = Hct.from(
-                calculateHue2(newColor.hct.hue, hueCalc2),
-                calculateChroma2(newColor.hct.chroma, chromaCalc2),
-                newColor.hct.tone
-              );
-              const newEndColor = __spreadProps(__spreadValues({}, newColor), {
-                hct: endHct,
-                rgba: rgbaFromHct(endHct),
-                hex: hexFromHct(endHct),
-                figmaSolidColor: SolidColorFromRgbColor(
-                  rgbFromHex(hexFromHct(endHct))
-                )
-              });
-              setEndColor(newEndColor);
-            }
-            if (chromaCalcRef.current !== state.chromaCalc) {
-              chromaCalcRef.current = state.chromaCalc;
-              const newColor = state.sourceColor;
-              const hueCalc2 = state.hueCalc;
-              const chromaCalc2 = state.chromaCalc;
-              const endHct = Hct.from(
-                calculateHue2(newColor.hct.hue, hueCalc2),
-                calculateChroma2(newColor.hct.chroma, chromaCalc2),
-                newColor.hct.tone
-              );
-              const newEndColor = __spreadProps(__spreadValues({}, newColor), {
-                hct: endHct,
-                rgba: rgbaFromHct(endHct),
-                hex: hexFromHct(endHct),
-                figmaSolidColor: SolidColorFromRgbColor(
-                  rgbFromHex(hexFromHct(endHct))
-                )
-              });
-              setEndColor(newEndColor);
-            }
-          });
-        }, []);
-        const addAlias = () => {
-          const alias2 = {
-            id: nanoid(12),
-            name: "Alias",
-            color: [
-              { mode: "light", tone: 80 },
-              { mode: "dark", tone: 20 }
-            ]
-          };
-          const newAliases = [...aliases];
-          newAliases.push(alias2);
-          setAliases(newAliases);
-          return { alias: alias2 };
-        };
-        const alias = (id2) => {
-          const requestedAlias = aliases.find(
-            (alias3) => alias3.id === id2
-          );
-          if (!requestedAlias) {
-            throw new Error("Alias not found");
-          }
-          const alias2 = requestedAlias;
-          const setName2 = (name311) => {
-            const newAliases = [...aliases];
-            const aliasToUpdate = newAliases.find((alias3) => alias3.id === id2);
-            if (aliasToUpdate) {
-              aliasToUpdate.name = name311;
-            }
-            setAliases(newAliases);
-          };
-          const setTone2 = (mode2, tone) => {
-            const newAliases = [...aliases];
-            const aliasToUpdate = newAliases.find((alias3) => alias3.id === id2);
-            if (aliasToUpdate) {
-              if (typeof mode2 === "string") {
-                const colorToUpdate = aliasToUpdate.color.find(
-                  (color3) => color3.mode === mode2
-                );
-                if (colorToUpdate) {
-                  colorToUpdate.tone = tone;
-                }
-              } else if (typeof mode2 === "number") {
-                if (mode2 >= 0 && mode2 < aliasToUpdate.color.length) {
-                  aliasToUpdate.color[mode2].tone = tone;
-                }
-              }
-            }
-            setAliases(newAliases);
-          };
-          const setTones2 = (firstTone, secondTone) => {
-            const newAliases = [...aliases];
-            const aliasToUpdate = newAliases.find((alias3) => alias3.id === id2);
-            if (aliasToUpdate) {
-              aliasToUpdate.color[0].tone = firstTone;
-              aliasToUpdate.color[1].tone = secondTone;
-            }
-            setAliases(newAliases);
-          };
-          const remove = () => {
-            const newAliases = [...aliases];
-            const index2 = newAliases.indexOf(alias2);
-            if (index2 > -1) {
-              newAliases.splice(index2, 1);
-            }
-            setAliases(newAliases);
-          };
-          return { alias: alias2, setName: setName2, setTone: setTone2, setTones: setTones2, remove };
-        };
-        p2(() => {
-          if (sourceColor.sourceHex !== hexColor) {
-            const newSourceColor = useColor(hexColor);
-            setSourceColor(newSourceColor);
-          }
-        }, []);
-        return {
-          id,
-          name: name310,
-          sourceHex,
-          sourceColor,
-          endColor,
-          tones,
-          hueCalc,
-          chromaCalc,
-          aliases,
-          set: {
-            id: setId,
-            name: setName,
-            sourceHex: setSourceHex,
-            sourceColor: setSourceColor,
-            endColor: setEndColor,
-            tones: setTones,
-            hueCalc: setHueCalc,
-            chromaCalc: setChromaCalc,
-            aliases: setAliases,
-            addAlias,
-            alias
-          }
-        };
-      };
+      useThemeColor = create()((...a3) => __spreadValues({}, themeColorStore(...a3)));
     }
   });
 
@@ -69462,7 +69225,7 @@ svg {
     );
     return Array.from(stops);
   }
-  var quickHexFromHct, toneStops, paletteTones, getValues, hctTonalGradient, findMaxChromaForHueAtTone, calculateHue, calculateChroma;
+  var quickHexFromHct, toneStops, paletteTones, getValues, hctTonalGradient, findMaxChromaForHueAtTone, calculateHue2, calculateChroma2;
   var init_color_utils2 = __esm({
     "src/lib/color-utils.ts"() {
       "use strict";
@@ -69525,7 +69288,7 @@ svg {
         }
         return maximumChroma;
       };
-      calculateHue = (originalHueValue, hueCalcValue) => {
+      calculateHue2 = (originalHueValue, hueCalcValue) => {
         const hueCalc = hueCalcValue;
         const sourceHue = originalHueValue;
         if (!hueCalc.trim() || hueCalc === "") {
@@ -69538,21 +69301,21 @@ svg {
         } catch (error) {
           console.error("Invalid expression:", error);
           let lastValidHue = NaN;
-          for (let i5 = hueCalc.length - 1; i5 >= 0; i5--) {
-            const truncatedExpression = hueCalc.substring(0, i5);
+          for (let i4 = hueCalc.length - 1; i4 >= 0; i4--) {
+            const truncatedExpression = hueCalc.substring(0, i4);
             try {
               lastValidHue = evaluate(
                 truncatedExpression.replace(/h/gi, sourceHue.toString())
               );
               break;
-            } catch (e6) {
+            } catch (e5) {
             }
           }
           const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
           return hue;
         }
       };
-      calculateChroma = (originalChromaValue, chromaCalcValue) => {
+      calculateChroma2 = (originalChromaValue, chromaCalcValue) => {
         const chromaCalc = chromaCalcValue;
         const sourceChroma = originalChromaValue;
         if (!chromaCalc.trim() || chromaCalc === "") {
@@ -69565,8 +69328,8 @@ svg {
         } catch (error) {
           console.error("Invalid expression:", error);
           let lastValidChroma = NaN;
-          for (let i5 = chromaCalc.length - 1; i5 >= 0; i5--) {
-            const truncatedExpression = chromaCalc.substring(0, i5);
+          for (let i4 = chromaCalc.length - 1; i4 >= 0; i4--) {
+            const truncatedExpression = chromaCalc.substring(0, i4);
             try {
               lastValidChroma = evaluate(
                 truncatedExpression.replace(/c/gi, sourceChroma.toString())
@@ -69602,19 +69365,19 @@ svg {
       }) => {
         const [aliasName, setAliasName] = h2(alias.name);
         const [aliasColor, setAliasColor] = h2([
-          alias.color[0].tone,
-          alias.color[1].tone
+          alias.lightModeTone,
+          alias.darkModeTone
         ]);
         const onSetAliasName = (id, name310) => {
           setAliasName(name310);
           onSetName(id, name310);
         };
         const onSetAliasLightTone = (id, tone) => {
-          setAliasColor([tone, alias.color[1].tone]);
+          setAliasColor([tone, alias.darkModeTone]);
           onSetLightTone(id, tone);
         };
         const onSetAliasDarkTone = (id, tone) => {
-          setAliasColor([alias.color[0].tone, tone]);
+          setAliasColor([alias.lightModeTone, tone]);
           onSetDarkTone(id, tone);
         };
         return /* @__PURE__ */ y(
@@ -69628,7 +69391,7 @@ svg {
             Textbox,
             {
               value: aliasName,
-              onChange: (e6) => onSetAliasName(alias.id, e6.currentTarget.value),
+              onChange: (e5) => onSetAliasName(alias.id, e5.currentTarget.value),
               placeholder: "Alias name"
             }
           )),
@@ -69636,9 +69399,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[0].toString(),
-              onInput: (e6) => onSetAliasLightTone(
+              onInput: (e5) => onSetAliasLightTone(
                 alias.id,
-                parseInt(e6.currentTarget.value)
+                parseInt(e5.currentTarget.value)
               ),
               placeholder: "light"
             }
@@ -69647,9 +69410,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[1].toString(),
-              onInput: (e6) => onSetAliasDarkTone(
+              onInput: (e5) => onSetAliasDarkTone(
                 alias.id,
-                parseInt(e6.currentTarget.value)
+                parseInt(e5.currentTarget.value)
               ),
               placeholder: "dark"
             }
@@ -69677,7 +69440,7 @@ svg {
         const onSetLightTone = (id, tone) => {
           const alias = aliases.find((alias2) => alias2.id === id);
           if (alias) {
-            alias.color[0].tone = tone;
+            alias.lightModeTone = tone;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
           }
@@ -69685,7 +69448,7 @@ svg {
         const onSetDarkTone = (id, tone) => {
           const alias = aliases.find((alias2) => alias2.id === id);
           if (alias) {
-            alias.color[1].tone = tone;
+            alias.darkModeTone = tone;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
           }
@@ -69718,8 +69481,8 @@ svg {
             {
               hue,
               chroma,
-              lightModeTone: alias.color[0].tone,
-              darkModeTone: alias.color[1].tone
+              lightModeTone: alias.lightModeTone,
+              darkModeTone: alias.darkModeTone
             }
           );
         });
@@ -69762,7 +69525,14 @@ svg {
       init_hooks_module();
       init_color_utils2();
       init_lib2();
-      ThemeColorSwatch = ({ themeColorId, name: name310, hue, chroma, isSelected, onClick }) => {
+      ThemeColorSwatch = ({
+        themeColorId,
+        name: name310,
+        hue,
+        chroma,
+        isSelected,
+        onClick
+      }) => {
         return /* @__PURE__ */ y(IconButton, { title: name310, onClick: () => onClick(themeColorId) }, /* @__PURE__ */ y(
           "div",
           {
@@ -69777,8 +69547,14 @@ svg {
           }
         ));
       };
-      ThemeColorSelect = ({ themeColors, selectedThemeColor, onSelectThemeColor }) => {
-        const [themeColorSwatches, setThemeColorSwatches] = h2([]);
+      ThemeColorSelect = ({
+        themeColors,
+        selectedThemeColor,
+        onSelectThemeColor
+      }) => {
+        const [themeColorSwatches, setThemeColorSwatches] = h2(
+          []
+        );
         p2(() => {
           const newThemeColorSwatches = themeColors.map((themeColor) => {
             return /* @__PURE__ */ y("li", { key: themeColor.id }, /* @__PURE__ */ y(
@@ -69800,6 +69576,159 @@ svg {
     }
   });
 
+  // src/hooks/useTheme.ts
+  var sourceHex, defaultThemeColors, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
+  var init_useTheme = __esm({
+    "src/hooks/useTheme.ts"() {
+      "use strict";
+      init_lib3();
+      init_esm();
+      init_index_browser();
+      init_useThemeColor();
+      init_useAliasGroup();
+      sourceHex = "397456";
+      defaultThemeColors = [
+        createThemeColor(sourceHex, "Primary"),
+        createThemeColor("ffff00", "Secondary", "", "c/4"),
+        createThemeColor("00ff00", "Tertiary", "h+60", "c*0.6"),
+        createThemeColor("00ffff", "neutral", "", "c/12"),
+        createThemeColor("ff00ff", "neutralVariant", "", "c/8"),
+        createThemeColor("ff0000", "error", "25", "89")
+      ];
+      defaultAliasGroups = [createAliasGroup()];
+      createTheme = (id = nanoid(12), name310 = "Theme", themeColors = defaultThemeColors, aliasGroups = defaultAliasGroups) => {
+        return {
+          id,
+          name: name310,
+          themeColors,
+          aliasGroups
+        };
+      };
+      defaultThemeColor = createThemeColor();
+      ThemeDataSchema = z4.object({
+        id: z4.string(),
+        name: z4.string(),
+        themeColors: z4.array(ThemeColorDataSchema),
+        aliasGroups: z4.array(AliasGroupDataSchema)
+      });
+      ThemeActionsSchema = z4.object({
+        set: z4.object({
+          all: z4.function().args(ThemeDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          themeColors: z4.function().args(z4.array(ThemeColorDataSchema), z4.void()),
+          aliasGroups: z4.function().args(z4.array(AliasGroupDataSchema), z4.void())
+        }),
+        data: z4.function()
+      });
+      themeData = () => ({
+        id: nanoid(12),
+        name: "Theme",
+        themeColors: [createThemeColor()],
+        aliasGroups: []
+      });
+      themeActions = (set, get) => ({
+        set: {
+          all: (themeData2) => set((state) => __spreadValues(__spreadValues({}, state), themeData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          themeColors: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
+          aliasGroups: (aliasGroups) => set((state) => __spreadProps(__spreadValues({}, state), { aliasGroups }))
+        },
+        data: () => {
+        }
+      });
+      ThemeColorCrudSchema = z4.object({
+        themeColor: z4.object({
+          add: z4.function().args(ThemeColorDataSchema, z4.void()),
+          duplicate: z4.function().args(z4.string(), z4.void()),
+          update: z4.function().args(z4.string(), ThemeColorDataSchema, z4.void()),
+          remove: z4.function().args(z4.string(), z4.void())
+        })
+      });
+      themeColorCrud = (set) => ({
+        themeColor: {
+          add: () => set((state) => __spreadValues({}, state)),
+          duplicate: (id) => set((state) => __spreadValues({}, state)),
+          update: () => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
+        }
+      });
+      AliasGroupCrudSchema = z4.object({
+        aliasGroup: z4.object({
+          add: z4.function().args(z4.void()),
+          duplicate: z4.function().args(z4.string(), z4.void()),
+          update: z4.function().args(z4.string(), AliasGroupDataSchema, z4.void()),
+          remove: z4.function().args(z4.string(), z4.void())
+        })
+      });
+      aliasGroupCrud = (set) => ({
+        aliasGroup: {
+          add: () => set((state) => __spreadValues({}, state)),
+          duplicate: () => set((state) => __spreadValues({}, state)),
+          update: () => set((state) => __spreadValues({}, state)),
+          remove: () => set((state) => __spreadValues({}, state))
+        }
+      });
+      useTheme = create((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, themeData(set, get, ...a3)), themeActions(set, get, ...a3)), themeColorCrud(set, get, ...a3)), aliasGroupCrud(set, get, ...a3)), {
+        data: () => {
+          const state = get();
+          const { id, name: name310, themeColors, aliasGroups } = state;
+          const themeData2 = { id, name: name310, themeColors, aliasGroups };
+          return themeData2;
+        },
+        themeColor: {
+          add: (themeColor = __spreadProps(__spreadValues({}, defaultThemeColor), {
+            id: nanoid(12)
+          })) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themeColors: [...state.themeColors, themeColor]
+          })),
+          duplicate: (id) => set((state) => {
+            const themeColor = state.themeColors.find((c3) => c3.id === id);
+            if (themeColor) {
+              const newThemeColor = __spreadProps(__spreadValues({}, themeColor), { id: nanoid(12) });
+              return __spreadProps(__spreadValues({}, state), {
+                themeColors: [...state.themeColors, newThemeColor]
+              });
+            }
+            return state;
+          }),
+          update: (id, themeColor) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themeColors: state.themeColors.map(
+              (c3) => c3.id === id ? themeColor : c3
+            )
+          })),
+          remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themeColors: state.themeColors.filter((c3) => c3.id !== id)
+          }))
+        },
+        aliasGroup: {
+          add: () => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroups: [...state.aliasGroups, createAliasGroup()]
+          })),
+          duplicate: (id) => set((state) => {
+            const aliasGroup = state.aliasGroups.find((a4) => a4.id === id);
+            if (aliasGroup) {
+              const newAliasGroup = __spreadProps(__spreadValues({}, aliasGroup), { id: nanoid(12) });
+              return __spreadProps(__spreadValues({}, state), {
+                aliasGroups: [...state.aliasGroups, newAliasGroup]
+              });
+            }
+            return state;
+          }),
+          update: (id, aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroups: state.aliasGroups.map(
+              (a4) => a4.id === id ? aliasGroup : a4
+            )
+          })),
+          remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+            aliasGroups: state.aliasGroups.filter((a4) => a4.id !== id)
+          }))
+        }
+      }));
+    }
+  });
+
   // src/components/tabs.tsx
   var CopyPlusIcon, TabGroup, tabs_default;
   var init_tabs2 = __esm({
@@ -69817,39 +69746,53 @@ svg {
       init_useColor();
       init_alias();
       init_theme_color_select();
+      init_useTheme();
       CopyPlusIcon = CopyPlus;
-      TabGroup = ({ themeColors, onSetThemeColors }) => {
+      TabGroup = ({ themeData: themeData2, onSetThemeData }) => {
         const [tabValue, setTabValue] = h2("Primitives");
-        const [themeColorList, setThemeColorList] = h2(themeColors);
-        const themeColor = useThemeColor("397456");
+        const [themeColorList, setThemeColorList] = h2(
+          themeData2.themeColors
+        );
+        const theme = useTheme();
+        const themeColor = useThemeColor();
+        p2(() => {
+          theme.set.all(themeData2);
+          themeColor.set.all(themeData2.themeColors[0]);
+          console.log("themeData: ", themeData2);
+        }, []);
         const onSelectThemeColor = (themeColorId) => {
         };
         p2(() => {
-          if (themeColors.length === 0) {
+          if (theme.themeColors.length === 0) {
             const newThemeColor = themeColor;
             setThemeColorList([newThemeColor]);
           }
-          setThemeColorList(themeColors);
-          console.log(themeColors);
-        }, [themeColors]);
-        const [hexColorInput, setHexColorInput] = h2(themeColor.sourceColor.sourceHex);
+          console.log(theme.themeColors);
+        }, [theme.themeColors]);
+        const [hexColorInput, setHexColorInput] = h2(
+          themeColor.sourceColor.sourceHex
+        );
         const [tones, setTones] = h2(themeColor.tones.join(", "));
         const hue = () => {
           const sourceHue = themeColor.sourceColor.hct.hue;
           const hueCalcInput2 = themeColor.hueCalc;
-          const hue2 = calculateHue(sourceHue, hueCalcInput2);
+          const hue2 = calculateHue2(sourceHue, hueCalcInput2);
           return hue2;
         };
         const chroma = () => {
           const sourceChroma = themeColor.sourceColor.hct.chroma;
           const chromaCalcInput2 = themeColor.chromaCalc;
-          const chroma2 = calculateChroma(sourceChroma, chromaCalcInput2);
+          const chroma2 = calculateChroma2(sourceChroma, chromaCalcInput2);
           return chroma2;
         };
         const [hueSlider, setHueSlider] = h2(hue);
-        const [hueCalcInput, setHueCalcInput] = h2(themeColor.hueCalc.toString());
+        const [hueCalcInput, setHueCalcInput] = h2(
+          themeColor.hueCalc.toString()
+        );
         const [chromaSlider, setChromaSlider] = h2(chroma);
-        const [chromaCalcInput, setChromaCalcInput] = h2(themeColor.chromaCalc.toString());
+        const [chromaCalcInput, setChromaCalcInput] = h2(
+          themeColor.chromaCalc.toString()
+        );
         const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
         const chromaHex = hexFromHct(newHct);
         p2(() => {
@@ -69861,18 +69804,25 @@ svg {
           themeColor.set.chromaCalc(chromaCalcInput);
         }, [chromaCalcInput]);
         p2(() => {
-          const calculatedHue = round2(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
+          const calculatedHue = round2(
+            calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+          );
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+            calculateChroma2(
+              themeColor.sourceColor.hct.chroma,
+              themeColor.chromaCalc
+            )
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaCalcInput(calculatedChroma.toString());
           }
         }, [hexColorInput]);
@@ -69881,36 +69831,50 @@ svg {
             themeColor.set.name("Color");
           }
         };
-        const onHexColorInput = (e6) => {
-          const newHexColorInput = e6.currentTarget.value;
+        const onHexColorInput = (e5) => {
+          const newHexColorInput = e5.currentTarget.value;
           setHexColorInput(newHexColorInput);
           themeColor.set.sourceHex(newHexColorInput);
-          themeColor.sourceColor.setSourceHex(newHexColorInput);
-          const calculatedHue = round2(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc));
+          const calculatedHue = round2(
+            calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
+          );
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
-            calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)
+            calculateChroma2(
+              themeColor.sourceColor.hct.chroma,
+              themeColor.chromaCalc
+            )
           );
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaCalcInput(calculatedChroma.toString());
           }
         };
-        const onHueSliderInput = (e6) => {
-          const newHueCalcInput = e6.currentTarget.value;
+        const onHueSliderInput = (e5) => {
+          const newHueCalcInput = e5.currentTarget.value;
           themeColor.set.hueCalc(newHueCalcInput.toString());
           setHueSlider(newHueCalcInput);
           setHueCalcInput(newHueCalcInput.toString());
-          console.log(calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput.toString()));
+          console.log(
+            calculateHue2(
+              themeColor.sourceColor.hct.hue,
+              newHueCalcInput.toString()
+            )
+          );
         };
-        const onHueCalcInput = (e6) => {
-          const newHueCalcInput = e6.currentTarget.value;
-          const calculatedHue = calculateHue(themeColor.sourceColor.hct.hue, newHueCalcInput);
+        const onHueCalcInput = (e5) => {
+          const newHueCalcInput = e5.currentTarget.value;
+          const calculatedHue = calculateHue2(
+            themeColor.sourceColor.hct.hue,
+            newHueCalcInput
+          );
           themeColor.set.hueCalc(newHueCalcInput);
           setHueCalcInput(newHueCalcInput);
           setHueSlider(calculatedHue);
@@ -69919,30 +69883,44 @@ svg {
             setHueSlider(themeColor.sourceColor.hct.hue);
           }
         };
-        const onChromaSliderInput = (e6) => {
-          const newChromaCalcInput = e6.currentTarget.value;
+        const onChromaSliderInput = (e5) => {
+          const newChromaCalcInput = e5.currentTarget.value;
           themeColor.set.chromaCalc(newChromaCalcInput.toString());
           setChromaCalcInput(newChromaCalcInput.toString());
           setChromaSlider(newChromaCalcInput);
           console.log(themeColor.endColor.hct);
         };
-        const onChromaCalcInput = (e6) => {
-          const newChromaCalcInput = e6.currentTarget.value;
-          const calculatedChroma = round2(calculateChroma(themeColor.sourceColor.hct.chroma, newChromaCalcInput));
+        const onChromaCalcInput = (e5) => {
+          const newChromaCalcInput = e5.currentTarget.value;
+          const calculatedChroma = round2(
+            calculateChroma2(
+              themeColor.sourceColor.hct.chroma,
+              newChromaCalcInput
+            )
+          );
           themeColor.set.chromaCalc(newChromaCalcInput);
           setChromaSlider(calculatedChroma);
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
-            themeColor.set.chromaCalc(themeColor.sourceColor.hct.chroma.toString());
+            themeColor.set.chromaCalc(
+              themeColor.sourceColor.hct.chroma.toString()
+            );
             setChromaSlider(themeColor.sourceColor.hct.chroma);
           }
         };
         const onAddAlias = () => {
-          themeColor.set.addAlias();
-          console.log(themeColor.aliases);
+          themeColor.alias.add();
+          console.log(themeColor.aliasGroup.aliases);
         };
         const onSetAliases = (aliases) => {
-          themeColor.set.aliases(aliases);
+          themeColor.set.aliasGroup(__spreadProps(__spreadValues({}, themeColor.aliasGroup), {
+            aliases
+          }));
+        };
+        const onAddThemeColor = () => {
+          const newThemeColor = createThemeColor();
+          theme.themeColor.add(newThemeColor);
+          console.log(theme.themeColors);
         };
         const themeColorOptions = [
           {
@@ -69957,27 +69935,41 @@ svg {
             children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
               ThemeColorSelect,
               {
-                themeColors,
+                themeColors: theme.themeColors,
                 selectedThemeColor: themeColor.id,
                 onSelectThemeColor
               }
-            ), /* @__PURE__ */ y(IconButton, { title: "Add color", onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y(IconButton, { title: "Add color", onClick: onAddThemeColor }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 title: "Color name",
                 value: themeColor.name,
-                onChange: (e6) => themeColor.set.name(e6.currentTarget.value),
+                onChange: (e5) => themeColor.set.name(
+                  e5.currentTarget.value
+                ),
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
               }
-            )), /* @__PURE__ */ y(IconButton, { title: `Duplicate color` }, /* @__PURE__ */ y(CopyPlusIcon, { size: 17, strokeWidth: 1.3 })), /* @__PURE__ */ y(IconButton, { title: `Remove color from theme` }, /* @__PURE__ */ y(IconMinus32, null))), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y(IconButton, { title: `Duplicate color` }, /* @__PURE__ */ y(
+              CopyPlusIcon,
+              {
+                size: 17,
+                strokeWidth: 1.3
+              }
+            )), /* @__PURE__ */ y(
+              IconButton,
+              {
+                title: `Remove color from theme`
+              },
+              /* @__PURE__ */ y(IconMinus32, null)
+            )), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
               TextboxColor,
               {
                 title: "Source color",
                 hexColor: hexColorInput,
-                onHexColorInput: (e6) => onHexColorInput(e6),
-                onOpacityInput: (e6) => "100%",
+                onHexColorInput: (e5) => onHexColorInput(e5),
+                onOpacityInput: (e5) => "100%",
                 opacity: "100%"
               }
             ), /* @__PURE__ */ y(
@@ -69988,7 +69980,13 @@ svg {
                 value: null,
                 placeholder: "Color options"
               }
-            )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H: ", round2(themeColor.sourceColor.hct.hue), " C:", " ", round2(themeColor.sourceColor.hct.chroma), " T:", " ", round2(themeColor.sourceColor.hct.tone))))), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
+              themeColor.sourceColor.hct.hue
+            ), " ", "C:", " ", round2(
+              themeColor.sourceColor.hct.chroma
+            ), " ", "T:", " ", round2(
+              themeColor.sourceColor.hct.tone
+            ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -70005,7 +70003,7 @@ svg {
                 title: "Adjust hue",
                 maximum: 360,
                 minimum: 0,
-                onInput: (e6) => onHueSliderInput(e6),
+                onInput: (e5) => onHueSliderInput(e5),
                 value: themeColor.hueCalc
               }
             ), /* @__PURE__ */ y(
@@ -70019,18 +70017,30 @@ svg {
               {
                 title: "Hue expression",
                 value: hueCalcInput,
-                onInput: (e6) => onHueCalcInput(e6),
+                onInput: (e5) => onHueCalcInput(e5),
                 placeholder: "Hue value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) = ", round2(themeColor.sourceColor.hct.hue)))), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(themeColor.endColor.hct.chroma), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone))))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
+              themeColor.sourceColor.hct.hue
+            )))), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(
+              themeColor.endColor.hct.chroma
+            ), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/", " ", round2(
+              findMaxChromaForHueAtTone(
+                hue(),
+                themeColor.endColor.hct.tone
+              )
+            )))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-1" }, /* @__PURE__ */ y(
               RangeSlider,
               {
                 title: "Adjust chroma",
                 maximum: round2(
-                  findMaxChromaForHueAtTone(hue(), themeColor.endColor.hct.tone)
+                  findMaxChromaForHueAtTone(
+                    hue(),
+                    themeColor.endColor.hct.tone
+                  )
                 ),
                 minimum: 0,
-                onInput: (e6) => onChromaSliderInput(e6),
+                onInput: (e5) => onChromaSliderInput(e5),
                 value: themeColor.chromaCalc
               }
             ), /* @__PURE__ */ y(
@@ -70044,10 +70054,12 @@ svg {
               {
                 title: "Chroma expression",
                 value: chromaCalcInput,
-                onInput: (e6) => onChromaCalcInput(e6),
+                onInput: (e5) => onChromaCalcInput(e5),
                 placeholder: "Chroma value or expression"
               }
-            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) = ", round2(themeColor.sourceColor.hct.chroma))))), /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
+              themeColor.sourceColor.hct.chroma
+            ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -70063,7 +70075,7 @@ svg {
               {
                 title: "Tones",
                 value: tones,
-                onInput: (e6) => setTones(e6.currentTarget.value),
+                onInput: (e5) => setTones(e5.currentTarget.value),
                 placeholder: "Return tones 0-100"
               }
             ))), /* @__PURE__ */ y(
@@ -70078,12 +70090,19 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(IconButton, { title: "Create alias", onClick: onAddAlias }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(
+              IconButton,
+              {
+                title: "Create alias",
+                onClick: onAddAlias
+              },
+              /* @__PURE__ */ y(IconPlus32, null)
+            )), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
               AliasList,
               {
                 hue: themeColor.endColor.hct.hue,
                 chroma: themeColor.endColor.hct.chroma,
-                aliases: themeColor.aliases,
+                aliases: themeColor.aliasGroup.aliases,
                 onSetAliases
               }
             )))),
@@ -70098,214 +70117,78 @@ svg {
           console.log(newValue);
           setTabValue(newValue);
         }
-        return /* @__PURE__ */ y(Tabs, { onValueChange: handleValueChange, options, value: tabValue });
+        return /* @__PURE__ */ y(
+          Tabs,
+          {
+            onValueChange: handleValueChange,
+            options,
+            value: tabValue
+          }
+        );
       };
       tabs_default = TabGroup;
     }
   });
 
-  // src/hooks/useTheme.ts
-  var ThemeColorFunctionSchema, AliasGroupDataSchema, AliasGroupSchema, ThemeDataSchema, ThemeActionsSchema, ThemeSchema, aliasGroupStore, useAliasGroupStore, themeStore, useThemeStore, useTheme;
-  var init_useTheme = __esm({
-    "src/hooks/useTheme.ts"() {
+  // src/hooks/useThemeList.ts
+  var defaultThemes, ThemeListDataSchema, ThemeListActionsSchema, themeListData, themeListActions, themeList, useThemeList;
+  var init_useThemeList = __esm({
+    "src/hooks/useThemeList.ts"() {
       "use strict";
-      init_useThemeColor();
-      init_useAlias();
       init_lib3();
       init_esm();
       init_index_browser();
-      ThemeColorFunctionSchema = z4.function(z4.tuple([z4.string()])).returns(
-        z4.object({
-          themeColor: ThemeColorDataSchema,
-          setThemeColor: z4.function().args(ThemeColorDataSchema, z4.void()),
-          remove: z4.function().args(z4.void())
-        })
-      );
-      AliasGroupDataSchema = z4.object({
+      init_useTheme();
+      defaultThemes = [createTheme()];
+      ThemeListDataSchema = z4.object({
         id: z4.string(),
-        name: z4.string(),
-        themeColors: z4.array(z4.string()),
-        aliases: z4.array(AliasSchema)
+        themes: z4.array(ThemeDataSchema)
       });
-      AliasGroupSchema = AliasGroupDataSchema;
-      ThemeDataSchema = z4.object({
-        id: z4.string(),
-        name: z4.string(),
-        themeColors: z4.array(ThemeColorDataSchema),
-        aliasGroups: z4.array(AliasGroupSchema)
-      });
-      ThemeActionsSchema = z4.object({
+      ThemeListActionsSchema = z4.object({
         set: z4.object({
+          all: z4.function().args(ThemeListDataSchema, z4.void()),
           id: z4.function().args(z4.string(), z4.void()),
-          name: z4.function().args(z4.string(), z4.void()),
-          themeColors: z4.function().args(z4.array(ThemeColorDataSchema), z4.void()),
-          addThemeColor: z4.function().args(ThemeColorDataSchema, z4.void()),
-          themeColor: ThemeColorFunctionSchema,
-          addAliasGroup: z4.function().args(AliasGroupSchema, z4.void()),
-          aliasGroup: z4.function().args(z4.string(), z4.void())
-        })
+          themes: z4.function().args(z4.array(ThemeDataSchema), z4.void())
+        }),
+        data: z4.function()
       });
-      ThemeSchema = ThemeDataSchema.merge(ThemeActionsSchema);
-      aliasGroupStore = (set) => ({
+      themeListData = () => ({
         id: nanoid(12),
-        name: "Alias group",
-        themeColors: [],
-        aliases: []
+        themes: defaultThemes
       });
-      useAliasGroupStore = create()((...a3) => __spreadValues({}, aliasGroupStore(...a3)));
-      themeStore = (set) => ({
-        id: nanoid(12),
-        name: "theme",
-        themeColors: [],
-        aliasGroups: [],
+      themeListActions = (set) => ({
         set: {
-          id: (id) => set(() => ({ id })),
-          name: (name310) => set(() => ({ name: name310 })),
-          themeColors: (themeColors) => set(() => ({ themeColors })),
-          addThemeColor: (themeColor) => set((state) => {
-            const newThemeColors = [...state.themeColors];
-            newThemeColors.push(themeColor);
-            return { themeColors: newThemeColors };
-          }),
-          themeColor: (themeColorId) => {
-            const state = useThemeStore.getState();
-            const requestedThemeColor = state.themeColors.find(
-              (themeColor2) => themeColor2.id === themeColorId
-            );
-            if (!requestedThemeColor) {
-              throw new Error(`Could not find theme color with id ${themeColorId}`);
-            }
-            const themeColor = requestedThemeColor;
-            const setThemeColor = (newThemeColor) => {
-              const index2 = state.themeColors.indexOf(themeColor);
-              if (index2 !== -1) {
-                state.themeColors[index2] = newThemeColor;
-              }
-            };
-            const remove = () => {
-              const index2 = state.themeColors.indexOf(themeColor);
-              if (index2 !== -1) {
-                state.themeColors.splice(index2, 1);
-              }
-            };
-            return { themeColor, setThemeColor, remove };
-          },
-          addAliasGroup: (aliasGroup) => {
-            set((state) => {
-              const newAliasGroups = [...state.aliasGroups];
-              newAliasGroups.push(aliasGroup);
-              return { aliasGroups: newAliasGroups };
-            });
-          },
-          aliasGroup(aliasGroupId) {
-            const state = useThemeStore.getState();
-            const requestedAliasGroup = state.aliasGroups.find(
-              (aliasGroup2) => aliasGroup2.id === aliasGroupId
-            );
-            if (!requestedAliasGroup) {
-              throw new Error(`Could not find alias group with id ${aliasGroupId}`);
-            }
-            const aliasGroup = requestedAliasGroup;
-            const remove = () => {
-              const index2 = state.aliasGroups.indexOf(aliasGroup);
-              if (index2 !== -1) {
-                state.aliasGroups.splice(index2, 1);
-              }
-            };
-            return { aliasGroup, remove };
-          }
+          all: (themeListData2) => set((state) => __spreadValues(__spreadValues({}, state), themeListData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          themes: (themes) => set((state) => __spreadProps(__spreadValues({}, state), { themes }))
+        },
+        data: () => {
         }
       });
-      useThemeStore = create()((...a3) => __spreadValues({}, themeStore(...a3)));
-      useTheme = () => {
-        const themeStore2 = useThemeStore;
-        const theme = themeStore2((state) => state);
-        const aliasGroupStore2 = useAliasGroupStore;
-        const newAliasGroup = aliasGroupStore2((state) => state);
-        const newThemeColor = useThemeColor("397456");
-        const id = theme.id;
-        const setId = (id2) => theme.set.id(id2);
-        const name310 = theme.name;
-        const setName = (name311) => theme.set.name(name311);
-        const themeColors = theme.themeColors;
-        const setThemeColors = (themeColors2) => theme.set.themeColors(themeColors2);
-        const addThemeColor = () => {
-          const themeColor2 = __spreadProps(__spreadValues({}, newThemeColor), {
-            id: nanoid(12),
-            name: "Theme color"
-          });
-          theme.set.addThemeColor(themeColor2);
-        };
-        const themeColor = (themeColorIdOrIndex) => {
-          let requestedThemeColor;
-          let index2;
-          if (typeof themeColorIdOrIndex === "number") {
-            index2 = themeColorIdOrIndex;
-            requestedThemeColor = themeColors[index2];
-          } else if (typeof themeColorIdOrIndex === "string") {
-            requestedThemeColor = themeColors.find(
-              (themeColor3) => themeColor3.id === themeColorIdOrIndex
-            );
-          }
-          if (!requestedThemeColor) {
-            throw new Error(
-              `Could not find theme color with id or index ${themeColorIdOrIndex}`
-            );
-          }
-          const themeColor2 = requestedThemeColor;
-          const setThemeColor = (newThemeColor2) => theme.set.themeColor(themeColor2.id).setThemeColor(newThemeColor2);
-          const remove = () => {
-            if (index2 !== void 0) {
-              themeColors.splice(index2, 1);
-            } else {
-              const index3 = themeColors.indexOf(themeColor2);
-              if (index3 !== -1) {
-                themeColors.splice(index3, 1);
-              }
-            }
-          };
-          return {
-            themeColor: themeColor2,
-            setThemeColor,
-            remove
-          };
-        };
-        const aliasGroups = theme.aliasGroups;
-        const addAliasGroup = () => {
-          theme.set.addAliasGroup(newAliasGroup);
-        };
-        const aliasGroup = (aliasGroupId) => {
-          const requestedAliasGroup = aliasGroups.find(
-            (aliasGroup3) => aliasGroup3.id === aliasGroupId
-          );
-          if (!requestedAliasGroup) {
-            throw new Error(`Could not find alias group with id ${aliasGroupId}`);
-          }
-          const aliasGroup2 = requestedAliasGroup;
-          const remove = () => {
-            const index2 = aliasGroups.indexOf(aliasGroup2);
-            if (index2 !== -1) {
-              aliasGroups.splice(index2, 1);
-            }
-          };
-          return { aliasGroup: aliasGroup2, remove };
-        };
-        return {
-          id,
-          name: name310,
-          themeColors,
-          aliasGroups,
-          set: {
-            id: setId,
-            name: setName,
-            themeColors: setThemeColors,
-            addThemeColor,
-            themeColor,
-            addAliasGroup,
-            aliasGroup
-          }
-        };
-      };
+      themeList = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, themeListData(set, get, ...a3)), themeListActions(set, get, ...a3)), {
+        data: () => {
+          const state = get();
+          const { id, themes } = state;
+          const themeListData2 = { id, themes };
+          return themeListData2;
+        },
+        theme: {
+          add: (theme) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: [...state.themes, theme]
+          })),
+          duplicate: (id) => set((state) => {
+            const theme = state.themes.find((theme2) => theme2.id === id);
+            return theme ? __spreadProps(__spreadValues({}, state), { themes: [...state.themes, theme] }) : state;
+          }),
+          update: (id, theme) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: state.themes.map((t3) => t3.id === id ? theme : t3)
+          })),
+          remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: state.themes.filter((t3) => t3.id !== id)
+          }))
+        }
+      });
+      useThemeList = create((set, ...a3) => __spreadValues({}, themeList(set, ...a3)));
     }
   });
 
@@ -70323,61 +70206,47 @@ svg {
       init_lib2();
       init_preact_module();
       init_tabs2();
-      init_useThemeColor();
-      init_index_browser();
       init_useTheme();
       init_compat_module();
+      init_useThemeList();
       Plugin = () => {
+        const themeList2 = useThemeList();
+        console.log(themeList2);
         const theme = useTheme();
-        const themeColor = useThemeColor();
-        const primary = themeColor;
-        const secondary = themeColor;
-        const tertiary = themeColor;
-        const neutral = themeColor;
-        const neutralVariant = themeColor;
-        const error = themeColor;
-        const themeColors = [primary, secondary, tertiary, neutral, neutralVariant, error];
+        const themeData2 = theme.data;
         p2(() => {
-          primary.set.name("Primary");
-          secondary.set.name("Secondary");
-          tertiary.set.name("Tertiary");
-          neutral.set.name("Neutral");
-          neutralVariant.set.name("Neutral Variant");
-          error.set.name("Error");
-          if (theme.themeColors.length === 0) {
-            theme.set.themeColors([primary, secondary, tertiary, neutral, neutralVariant, error]);
-          }
-          console.log(theme);
+          const startingTheme = __spreadValues(__spreadValues({}, theme), themeList2.themes[0]);
+          setTheme(startingTheme);
         }, []);
-        const log4 = () => {
-          theme.set.id(nanoid(6));
-          theme.set.addThemeColor(primary);
-          console.log(theme);
-          console.log(nanoid(6));
-        };
         const nameTheNameless = () => {
           if (!theme.name) {
             theme.set.name("Theme");
           }
         };
-        const onSetThemeColors = (themeColors2) => {
-          theme.set.themeColors(themeColors2);
+        const onSetThemeData = (themeData3) => {
+          setTheme(__spreadValues(__spreadValues({}, theme), themeData3));
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-center px-2" }, /* @__PURE__ */ y(
           Textbox,
           {
             value: theme.name,
-            onChange: (e6) => theme.set.name(e6.currentTarget.value),
+            onChange: (e5) => theme.set.name(e5.currentTarget.value),
             onBlur: () => nameTheNameless(),
             onfocusout: () => nameTheNameless(),
             placeholder: "Theme name"
           }
-        )), /* @__PURE__ */ y(tabs_default, { themeColors: theme.themeColors, onSetThemeColors })), /* @__PURE__ */ y(
+        )), /* @__PURE__ */ y(
+          tabs_default,
+          {
+            themeData: theme.data,
+            onSetThemeData
+          }
+        )), /* @__PURE__ */ y(
           "button",
           {
             title: "Build theme",
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
-            onClick: (e6) => console.log(theme.themeColors)
+            onClick: (e5) => console.log(themeList2)
           },
           "Build ",
           theme.name
