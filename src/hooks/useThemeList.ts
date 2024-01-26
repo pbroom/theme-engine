@@ -43,7 +43,7 @@ const ThemeListActionsSchema = z.object({
         id: z.function().args(z.string(), z.void()),
         themes: z.function().args(z.array(ThemeDataSchema), z.void()),
     }),
-    data: z.function(),
+    data: ThemeListDataSchema,
 });
 
 type ThemeListActions = z.infer<typeof ThemeListActionsSchema>;
@@ -65,7 +65,7 @@ const themeListActions: StateCreator<ThemeListActions> = (set) => ({
         id: (id) => set((state) => ({ ...state, id })),
         themes: (themes) => set((state) => ({ ...state, themes })),
     },
-    data: () => {},
+    data: { id: '', themes: [] },
 });
 
 /**
@@ -81,12 +81,7 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
 ) => ({
     ...themeListData(set, get, ...a),
     ...themeListActions(set, get, ...a),
-    data: () => {
-        const state = get();
-        const { id, themes } = state;
-        const themeListData: ThemeListData = { id, themes };
-        return themeListData;
-    },
+    data: { id: get().id, themes: get().themes },
     theme: {
         add: (theme: ThemeData) =>
             set((state) => ({

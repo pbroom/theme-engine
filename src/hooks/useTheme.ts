@@ -84,7 +84,7 @@ const ThemeActionsSchema = z.object({
         themeColors: z.function().args(z.array(ThemeColorDataSchema), z.void()),
         aliasGroups: z.function().args(z.array(AliasGroupDataSchema), z.void()),
     }),
-    data: z.function(),
+    data: ThemeDataSchema,
 });
 
 type ThemeActions = z.infer<typeof ThemeActionsSchema>;
@@ -106,7 +106,7 @@ const themeActions: StateCreator<ThemeActions> = (set, get) => ({
         aliasGroups: (aliasGroups) =>
             set((state) => ({ ...state, aliasGroups })),
     },
-    data: () => {},
+    data: { id: '', name: '', themeColors: [], aliasGroups: [] },
 });
 
 const ThemeColorCrudSchema = z.object({
@@ -164,11 +164,11 @@ const useTheme = create<
     ...themeActions(set, get, ...a),
     ...themeColorCrud(set, get, ...a),
     ...aliasGroupCrud(set, get, ...a),
-    data: (): ThemeData => {
-        const state = get();
-        const { id, name, themeColors, aliasGroups } = state;
-        const themeData: ThemeData = { id, name, themeColors, aliasGroups };
-        return themeData;
+    data: {
+        id: get().id,
+        name: get().name,
+        themeColors: get().themeColors,
+        aliasGroups: get().aliasGroups,
     },
     themeColor: {
         add: (

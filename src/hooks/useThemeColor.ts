@@ -122,7 +122,7 @@ const ThemeColorActionsSchema = z.object({
         chromaCalc: z.function().args(z.string(), z.void()),
         aliasGroup: z.function().args(AliasGroupDataSchema, z.void()),
     }),
-    data: z.function(),
+    data: ThemeColorDataSchema,
 });
 type ThemeColorActions = z.infer<typeof ThemeColorActionsSchema>;
 
@@ -147,7 +147,17 @@ const themeColorActions: StateCreator<ThemeColorActions> = (set, get) => ({
         aliasGroup: (aliasGroup) =>
             set((state) => ({ ...state, aliasGroup: aliasGroup })),
     },
-    data: () => {},
+    data: {
+        id: '',
+        name: '',
+        sourceHex: '',
+        sourceColor: createColorFrom().hex('000000'),
+        endColor: createColorFrom().hex('000000'),
+        tones: [],
+        hueCalc: '',
+        chromaCalc: '',
+        aliasGroup: createAliasGroup(),
+    },
 });
 
 const useThemeColorActions = create<ThemeColorActions>((...a) => ({
@@ -160,31 +170,16 @@ const themeColorStore: StateCreator<ThemeColor> = (set, get, ...a) => ({
     ...themeColorData(set, get, ...a),
     ...themeColorActions(set, get, ...a),
     ...aliasCrud(set, get, ...a),
-    data: () => {
-        const state = get();
-        const {
-            id,
-            name,
-            sourceHex,
-            sourceColor,
-            endColor,
-            tones,
-            hueCalc,
-            chromaCalc,
-            aliasGroup,
-        } = state;
-        const themeColorData: ThemeColorData = {
-            id,
-            name,
-            sourceHex,
-            sourceColor,
-            endColor,
-            tones,
-            hueCalc,
-            chromaCalc,
-            aliasGroup,
-        };
-        return themeColorData;
+    data: {
+        id: get().id,
+        name: get().name,
+        sourceHex: get().sourceHex,
+        sourceColor: get().sourceColor,
+        endColor: get().endColor,
+        tones: get().tones,
+        hueCalc: get().hueCalc,
+        chromaCalc: get().chromaCalc,
+        aliasGroup: get().aliasGroup,
     },
     set: {
         ...themeColorActions(set, get, ...a).set,

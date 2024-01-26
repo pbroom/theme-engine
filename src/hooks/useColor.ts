@@ -82,7 +82,7 @@ const ColorActionsSchema = z.object({
     setHue: z.function().args(z.number(), z.void()),
     setChroma: z.function().args(z.number(), z.void()),
     setTone: z.function().args(z.number(), z.void()),
-    data: z.function(),
+    data: ColorDataSchema,
 });
 type ColorActions = z.infer<typeof ColorActionsSchema>;
 const ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
@@ -172,7 +172,13 @@ const colorActions: StateCreator<ColorActions> = (set) => ({
     setChroma: (chroma) =>
         set((state) => ({ ...state, hct: { ...state, chroma: chroma } })),
     setTone: (tone) => set((state) => ({ ...state, hct: { ...state, tone } })),
-    data: () => {},
+    data: {
+        sourceHex: '',
+        hct: { hue: 0, chroma: 0, tone: 0 },
+        rgba: { r: 0, g: 0, b: 0, a: 0 },
+        hex: '',
+        figmaSolidColor: { type: 'SOLID', color: { r: 0, g: 0, b: 0 } },
+    },
 });
 
 /**
@@ -380,16 +386,11 @@ const useColor = create<ColorData & ColorActions>()((set, get, ...a) => ({
                 ),
             ),
         })),
-    data: () => {
-        const state = get();
-        const { sourceHex, hct, rgba, hex, figmaSolidColor } = state;
-        const themeData: ColorData = {
-            sourceHex,
-            hct,
-            rgba,
-            hex,
-            figmaSolidColor,
-        };
-        return themeData;
+    data: {
+        sourceHex: get().sourceHex,
+        hct: get().hct,
+        rgba: get().rgba,
+        hex: get().hex,
+        figmaSolidColor: get().figmaSolidColor,
     },
 }));

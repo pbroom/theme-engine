@@ -106,7 +106,7 @@ const AliasActionsSchema = z.object({
         lightModeTone: z.function().args(z.number(), z.void()),
         darkModeTone: z.function().args(z.number(), z.void()),
     }),
-    data: z.function(),
+    data: AliasDataSchema,
 });
 type AliasActions = z.infer<typeof AliasActionsSchema>;
 
@@ -129,22 +129,17 @@ const aliasActions: StateCreator<AliasActions> = (set, get) => ({
         darkModeTone: (darkModeTone) =>
             set((state) => ({ ...state, darkModeTone })),
     },
-    data: () => {},
+    data: { id: '', name: '', lightModeTone: 0, darkModeTone: 0 },
 });
 
 const useAlias = create<AliasData & AliasActions>((set, get, ...a) => ({
     ...aliasData(set, get, ...a),
     ...aliasActions(set, get, ...a),
-    data: () => {
-        const state = get();
-        const { id, name, lightModeTone, darkModeTone } = state;
-        const aliasData: AliasData = {
-            id,
-            name,
-            lightModeTone,
-            darkModeTone,
-        };
-        return aliasData;
+    data: {
+        id: get().id,
+        name: get().name,
+        lightModeTone: get().lightModeTone,
+        darkModeTone: get().darkModeTone,
     },
 }));
 
@@ -175,7 +170,7 @@ const AliasGroupActionsSchema = z.object({
     setName: z.function().args(z.string(), z.void()),
     setAliases: z.function().args(z.array(AliasDataSchema), z.void()),
     setThemeColorIds: z.function().args(z.array(z.string()), z.void()),
-    data: z.function(),
+    data: AliasGroupDataSchema,
 });
 
 type AliasGroupActions = z.infer<typeof AliasGroupActionsSchema>;
@@ -188,7 +183,7 @@ const aliasGroupActions: StateCreator<AliasGroupActions> = (set) => ({
     setAliases: (aliases) => set((state) => ({ ...state, aliases: aliases })),
     setThemeColorIds: (themeColors) =>
         set((state) => ({ ...state, themeColors })),
-    data: () => {},
+    data: { id: '', name: '', aliases: [], themeColorIds: [] },
 });
 
 const AliasCrudSchema = z.object({
@@ -231,16 +226,11 @@ const useAliasGroup = create<AliasGroupData & AliasGroupActions & AliasCrud>(
     (set, get, ...a) => ({
         ...aliasGroupData(set, get, ...a),
         ...aliasGroupActions(set, get, ...a),
-        data: () => {
-            const state = get();
-            const { id, name, aliases, themeColorIds } = state;
-            const aliasGroupData: AliasGroupData = {
-                id,
-                name,
-                aliases,
-                themeColorIds,
-            };
-            return aliasGroupData;
+        data: {
+            id: get().id,
+            name: get().name,
+            aliases: get().aliases,
+            themeColorIds: get().themeColorIds,
         },
         alias: {
             add: () =>
