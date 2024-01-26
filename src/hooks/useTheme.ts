@@ -165,10 +165,10 @@ const useTheme = create<
     ...themeColorCrud(set, get, ...a),
     ...aliasGroupCrud(set, get, ...a),
     data: {
-        id: get().id,
-        name: get().name,
-        themeColors: get().themeColors,
-        aliasGroups: get().aliasGroups,
+        id: themeData(set, get, ...a).id,
+        name: themeData(set, get, ...a).name,
+        themeColors: themeData(set, get, ...a).themeColors,
+        aliasGroups: themeData(set, get, ...a).aliasGroups,
     },
     themeColor: {
         add: (

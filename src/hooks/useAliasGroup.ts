@@ -136,10 +136,10 @@ const useAlias = create<AliasData & AliasActions>((set, get, ...a) => ({
     ...aliasData(set, get, ...a),
     ...aliasActions(set, get, ...a),
     data: {
-        id: get().id,
-        name: get().name,
-        lightModeTone: get().lightModeTone,
-        darkModeTone: get().darkModeTone,
+        id: aliasData(set, get, ...a).id,
+        name: aliasData(set, get, ...a).name,
+        lightModeTone: aliasData(set, get, ...a).lightModeTone,
+        darkModeTone: aliasData(set, get, ...a).darkModeTone,
     },
 }));
 
@@ -227,10 +227,10 @@ const useAliasGroup = create<AliasGroupData & AliasGroupActions & AliasCrud>(
         ...aliasGroupData(set, get, ...a),
         ...aliasGroupActions(set, get, ...a),
         data: {
-            id: get().id,
-            name: get().name,
-            aliases: get().aliases,
-            themeColorIds: get().themeColorIds,
+            id: aliasGroupData(set, get, ...a).id,
+            name: aliasGroupData(set, get, ...a).name,
+            aliases: aliasGroupData(set, get, ...a).aliases,
+            themeColorIds: aliasGroupData(set, get, ...a).themeColorIds,
         },
         alias: {
             add: () =>

@@ -17,11 +17,9 @@ export const Plugin = () => {
     const themeList = useThemeList();
     console.log(themeList);
     const theme = useTheme();
-    const themeData: ThemeData = theme.data;
     useEffect(() => {
         //TODO: this will need to be dynamic for changing themes
-        const startingTheme = { ...theme, ...themeList.themes[0] };
-        setTheme(startingTheme);
+        theme.set.all(themeList.themes[0]);
     }, []);
 
     const nameTheNameless = () => {
@@ -30,7 +28,7 @@ export const Plugin = () => {
         }
     };
     const onSetThemeData = (themeData: ThemeData) => {
-        setTheme({ ...theme, ...themeData });
+        theme.set.all(themeData);
     };
     // Rendering the UI
     return (

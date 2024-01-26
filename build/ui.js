@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8ef8f627-9a44-4240-94eb-1bad25cb6a6c/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f8ce3c0-6e35-4ae8-a927-947a8aeacf41/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8ef8f627-9a44-4240-94eb-1bad25cb6a6c/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f8ce3c0-6e35-4ae8-a927-947a8aeacf41/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2364,10 +2364,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8797dc9-7ab6-486c-aa7c-8984096626b2/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b06d7616-b42e-4ae2-85ba-d67d6925ab0a/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b8797dc9-7ab6-486c-aa7c-8984096626b2/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b06d7616-b42e-4ae2-85ba-d67d6925ab0a/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2386,11 +2386,11 @@ video {
   function createIcon(path, options) {
     const { width, height } = options;
     return createComponent(function(_a) {
-      var _b = _a, { color } = _b, rest = __objRest(_b, ["color"]);
+      var _b = _a, { color: color2 } = _b, rest = __objRest(_b, ["color"]);
       return y(
         "svg",
         __spreadProps(__spreadValues({}, rest), { class: icon_module_default.icon, height, style: {
-          fill: typeof color === "undefined" ? "currentColor" : `var(--figma-color-icon-${color})`
+          fill: typeof color2 === "undefined" ? "currentColor" : `var(--figma-color-icon-${color2})`
         }, width, xmlns: "http://www.w3.org/2000/svg" }),
         y("path", { "clip-rule": "evenodd", d: path, "fill-rule": "evenodd" })
       );
@@ -2404,10 +2404,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad2801d-bbb9-49ae-bb85-27ca072e685a/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef1e20ae-a7f4-43a1-9df7-da50d1ff91af/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ad2801d-bbb9-49ae-bb85-27ca072e685a/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef1e20ae-a7f4-43a1-9df7-da50d1ff91af/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2645,10 +2645,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b0dd4e9-3e8e-4af8-9914-b76a70f3b166/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/117e4ff8-2ffc-4b29-bfbd-142acbde288a/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b0dd4e9-3e8e-4af8-9914-b76a70f3b166/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/117e4ff8-2ffc-4b29-bfbd-142acbde288a/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3122,10 +3122,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c2781180-70dc-41df-976d-bd5d7857a70a/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e4118e7-947d-4b82-9d8c-b1af575c1f94/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c2781180-70dc-41df-976d-bd5d7857a70a/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e4118e7-947d-4b82-9d8c-b1af575c1f94/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3195,10 +3195,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd8bdf93-5109-421d-8ff6-c2bf9a193b00/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8857e52-277e-44de-80fd-72fe42089ed5/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bd8bdf93-5109-421d-8ff6-c2bf9a193b00/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8857e52-277e-44de-80fd-72fe42089ed5/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3302,10 +3302,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d8c2894-3867-417a-80f2-7b5d1697528e/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0638f22-7c28-475d-b976-670644c8b92a/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d8c2894-3867-417a-80f2-7b5d1697528e/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0638f22-7c28-475d-b976-670644c8b92a/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3441,12 +3441,12 @@ video {
   });
 
   // node_modules/@create-figma-plugin/utilities/lib/color/convert-hex-color-to-rgb-color.js
-  function convertHexColorToRgbColor(hexColor) {
-    if (hexColor.length !== 3 && hexColor.length !== 6) {
+  function convertHexColorToRgbColor(hexColor2) {
+    if (hexColor2.length !== 3 && hexColor2.length !== 6) {
       return null;
     }
     try {
-      const { red, green, blue } = hexRgb(hexColor);
+      const { red, green, blue } = hexRgb(hexColor2);
       return {
         b: blue / 255,
         g: green / 255,
@@ -3621,11 +3621,11 @@ video {
 
   // node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js
   function convertNamedColorToHexColor(namedColor) {
-    const hexColor = NAMED_COLORS[namedColor.toLowerCase()];
-    if (typeof hexColor === "undefined") {
+    const hexColor2 = NAMED_COLORS[namedColor.toLowerCase()];
+    if (typeof hexColor2 === "undefined") {
       return null;
     }
-    return hexColor;
+    return hexColor2;
   }
   var init_convert_named_color_to_hex_color = __esm({
     "node_modules/@create-figma-plugin/utilities/lib/color/convert-named-color-to-hex-color.js"() {
@@ -3710,8 +3710,8 @@ video {
   });
 
   // node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js
-  function isValidHexColor(hexColor) {
-    return convertHexColorToRgbColor(hexColor) !== null;
+  function isValidHexColor(hexColor2) {
+    return convertHexColorToRgbColor(hexColor2) !== null;
   }
   var init_is_valid_hex_color = __esm({
     "node_modules/@create-figma-plugin/utilities/lib/color/is-valid-hex-color.js"() {
@@ -3902,10 +3902,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8dc8e4bf-6b18-42ee-ad9e-f89259e90f75/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da10b607-502f-4ba2-bbbd-9673424a339a/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8dc8e4bf-6b18-42ee-ad9e-f89259e90f75/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/da10b607-502f-4ba2-bbbd-9673424a339a/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4323,11 +4323,11 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/create-rgba-color.js
-  function createRgbaColor(hexColor, opacity) {
-    if (hexColor === "" || hexColor === MIXED_STRING || opacity === "" || opacity === MIXED_STRING) {
+  function createRgbaColor(hexColor2, opacity) {
+    if (hexColor2 === "" || hexColor2 === MIXED_STRING || opacity === "" || opacity === MIXED_STRING) {
       return null;
     }
-    const rgb = convertHexColorToRgbColor(hexColor);
+    const rgb = convertHexColorToRgbColor(hexColor2);
     if (rgb === null) {
       return null;
     }
@@ -4347,11 +4347,11 @@ video {
     if (parsedNamedColor !== null) {
       return parsedNamedColor;
     }
-    const hexColor = createHexColor(string2).toUpperCase();
-    if (isValidHexColor(hexColor) === false) {
+    const hexColor2 = createHexColor(string2).toUpperCase();
+    if (isValidHexColor(hexColor2) === false) {
       return null;
     }
-    return hexColor;
+    return hexColor2;
   }
   function createHexColor(string2) {
     switch (string2.length) {
@@ -4384,8 +4384,8 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/private/update-hex-color.js
-  function updateHexColor(hexColor, delta) {
-    const rgbColor = convertHexColorToRgbColor(hexColor);
+  function updateHexColor(hexColor2, delta) {
+    const rgbColor = convertHexColorToRgbColor(hexColor2);
     if (rgbColor === null) {
       throw new Error("Invalid `hexColor`");
     }
@@ -4410,10 +4410,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fc46b9-0a5c-4af8-9b34-3a866fef1ee3/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0fa28e0-b416-41a1-b651-0c7f0c28e55a/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fc46b9-0a5c-4af8-9b34-3a866fef1ee3/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0fa28e0-b416-41a1-b651-0c7f0c28e55a/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4585,7 +4585,7 @@ video {
       init_textbox_color_module();
       EMPTY_STRING4 = "";
       TextboxColor = createComponent(function(_a, ref) {
-        var _b = _a, { disabled = false, hexColor, hexColorPlaceholder, onHexColorInput = noop, onHexColorKeyDown = noop, onHexColorValueInput = noop, onOpacityInput = noop, onOpacityKeyDown = noop, onOpacityNumericValueInput = noop, onOpacityValueInput = noop, onRgbaColorValueInput = noop, opacity, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorPlaceholder", "onHexColorInput", "onHexColorKeyDown", "onHexColorValueInput", "onOpacityInput", "onOpacityKeyDown", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
+        var _b = _a, { disabled = false, hexColor: hexColor2, hexColorPlaceholder, onHexColorInput = noop, onHexColorKeyDown = noop, onHexColorValueInput = noop, onOpacityInput = noop, onOpacityKeyDown = noop, onOpacityNumericValueInput = noop, onOpacityValueInput = noop, onRgbaColorValueInput = noop, opacity, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorPlaceholder", "onHexColorInput", "onHexColorKeyDown", "onHexColorValueInput", "onOpacityInput", "onOpacityKeyDown", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
         const hexColorInputElementRef = _2(null);
         const opacityInputElementRef = _2(null);
         const revertOnEscapeKeyDownRef = _2(false);
@@ -4600,12 +4600,12 @@ video {
           inputElement.dispatchEvent(inputEvent);
         }, []);
         const handleHexColorSelectorFocus = T2(function(event) {
-          const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
-          setOriginalHexColor(hexColor2);
+          const hexColor3 = event.currentTarget.value.slice(1).toUpperCase();
+          setOriginalHexColor(hexColor3);
         }, []);
         const handleHexColorSelectorInput = T2(function(event) {
-          const hexColor2 = event.currentTarget.value.slice(1).toUpperCase();
-          setHexColorInputElementValue(hexColor2);
+          const hexColor3 = event.currentTarget.value.slice(1).toUpperCase();
+          setHexColorInputElementValue(hexColor3);
         }, [setHexColorInputElementValue]);
         const handleHexColorSelectorKeyDown = T2(function(event) {
           if (event.key !== "Escape") {
@@ -4631,26 +4631,26 @@ video {
             revertOnEscapeKeyDownRef.current = false;
             return;
           }
-          if (hexColor === EMPTY_STRING4) {
+          if (hexColor2 === EMPTY_STRING4) {
             if (originalHexColor !== EMPTY_STRING4) {
               setHexColorInputElementValue(originalHexColor);
             }
             setOriginalHexColor(EMPTY_STRING4);
             return;
           }
-          if (hexColor !== MIXED_STRING) {
-            const normalizedHexColor2 = normalizeUserInputColor(hexColor);
+          if (hexColor2 !== MIXED_STRING) {
+            const normalizedHexColor2 = normalizeUserInputColor(hexColor2);
             const newHexColor = normalizedHexColor2 === null ? originalHexColor : normalizedHexColor2;
-            if (newHexColor !== hexColor) {
+            if (newHexColor !== hexColor2) {
               setHexColorInputElementValue(newHexColor);
             }
           }
           setOriginalHexColor(EMPTY_STRING4);
-        }, [hexColor, originalHexColor, setHexColorInputElementValue]);
+        }, [hexColor2, originalHexColor, setHexColorInputElementValue]);
         const handleHexColorFocus = T2(function(event) {
-          setOriginalHexColor(hexColor);
+          setOriginalHexColor(hexColor2);
           event.currentTarget.select();
-        }, [hexColor]);
+        }, [hexColor2]);
         const handleHexColorInput = T2(function(event) {
           onHexColorInput(event);
           const newHexColor = event.currentTarget.value;
@@ -4686,7 +4686,7 @@ video {
           if (key === "ArrowDown" || key === "ArrowUp") {
             event.preventDefault();
             const delta = event.shiftKey === true ? 10 : 1;
-            const startingHexColor = hexColor === EMPTY_STRING4 || hexColor === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor;
+            const startingHexColor = hexColor2 === EMPTY_STRING4 || hexColor2 === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor2;
             const newHexColor = updateHexColor(startingHexColor, key === "ArrowDown" ? -1 * delta : delta);
             setHexColorInputElementValue(newHexColor);
             element.select();
@@ -4696,7 +4696,7 @@ video {
             return;
           }
         }, [
-          hexColor,
+          hexColor2,
           onHexColorKeyDown,
           originalHexColor,
           propagateEscapeKeyDown,
@@ -4704,17 +4704,17 @@ video {
           setHexColorInputElementValue
         ]);
         const handleHexColorMouseUp = T2(function(event) {
-          if (hexColor !== MIXED_STRING) {
+          if (hexColor2 !== MIXED_STRING) {
             return;
           }
           event.preventDefault();
-        }, [hexColor]);
+        }, [hexColor2]);
         const handleOpacityInput = T2(function(event) {
           onOpacityInput(event);
           const newOpacity = event.currentTarget.value;
-          const rgba = createRgbaColor(hexColor, newOpacity);
+          const rgba = createRgbaColor(hexColor2, newOpacity);
           onRgbaColorValueInput(rgba);
-        }, [hexColor, onOpacityInput, onRgbaColorValueInput]);
+        }, [hexColor2, onOpacityInput, onRgbaColorValueInput]);
         const handleOpacityNumericValueInput = T2(function(opacity2) {
           onOpacityNumericValueInput(opacity2 === null || opacity2 === MIXED_NUMBER ? opacity2 : opacity2 / 100);
         }, [onOpacityNumericValueInput]);
@@ -4722,8 +4722,8 @@ video {
           return opacity2 !== null;
         }, []);
         const parsedOpacity = parseOpacity(opacity);
-        const isHexColorValid = hexColor !== EMPTY_STRING4 && hexColor !== MIXED_STRING;
-        const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor) : "FFFFFF";
+        const isHexColorValid = hexColor2 !== EMPTY_STRING4 && hexColor2 !== MIXED_STRING;
+        const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor2) : "FFFFFF";
         const renderedHexColor = normalizedHexColor === null ? originalHexColor : normalizedHexColor;
         return y(
           "div",
@@ -4743,7 +4743,7 @@ video {
             y("div", { class: textbox_color_module_default.colorBorder })
           ),
           y("input", { class: textbox_color_module_default.hexColorSelector, disabled: disabled === true, onFocus: handleHexColorSelectorFocus, onInput: handleHexColorSelectorInput, onKeyDown: handleHexColorSelectorKeyDown, tabIndex: -1, type: "color", value: `#${renderedHexColor}` }),
-          y("input", __spreadProps(__spreadValues({}, rest), { ref: hexColorInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.hexColorInput]), disabled: disabled === true, onBlur: handleHexColorBlur, onFocus: handleHexColorFocus, onInput: handleHexColorInput, onKeyDown: handleHexColorKeyDown, onMouseUp: handleHexColorMouseUp, placeholder: hexColorPlaceholder, spellcheck: false, tabIndex: 0, type: "text", value: hexColor === MIXED_STRING ? "Mixed" : hexColor })),
+          y("input", __spreadProps(__spreadValues({}, rest), { ref: hexColorInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.hexColorInput]), disabled: disabled === true, onBlur: handleHexColorBlur, onFocus: handleHexColorFocus, onInput: handleHexColorInput, onKeyDown: handleHexColorKeyDown, onMouseUp: handleHexColorMouseUp, placeholder: hexColorPlaceholder, spellcheck: false, tabIndex: 0, type: "text", value: hexColor2 === MIXED_STRING ? "Mixed" : hexColor2 })),
           y(RawTextboxNumeric, { ref: opacityInputElementRef, class: createClassName([textbox_color_module_default.input, textbox_color_module_default.opacityInput]), disabled: disabled === true, maximum: 100, minimum: 0, onInput: handleOpacityInput, onKeyDown: onOpacityKeyDown, onNumericValueInput: handleOpacityNumericValueInput, onValueInput: onOpacityValueInput, placeholder: opacityPlaceholder, propagateEscapeKeyDown, revertOnEscapeKeyDown, suffix: "%", validateOnBlur: validateOpacityOnBlur, value: opacity }),
           y("div", { class: textbox_color_module_default.divider }),
           y("div", { class: textbox_color_module_default.border }),
@@ -4753,10 +4753,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b82e787-4249-4831-9ec9-8bf1be6cc8ca/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/707204eb-69d9-4923-ac0d-534501a5c447/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0b82e787-4249-4831-9ec9-8bf1be6cc8ca/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/707204eb-69d9-4923-ac0d-534501a5c447/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4955,10 +4955,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b50e84f-10de-4f60-838a-8a6c7c8055b5/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/211753ca-fb0c-416f-af6a-ede60b36f494/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1b50e84f-10de-4f60-838a-8a6c7c8055b5/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/211753ca-fb0c-416f-af6a-ede60b36f494/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5051,10 +5051,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fca863f9-b8f2-44ba-b2be-2b7e95a5303e/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db59fc92-3d19-45c2-b6af-84788293f8ff/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fca863f9-b8f2-44ba-b2be-2b7e95a5303e/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db59fc92-3d19-45c2-b6af-84788293f8ff/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5135,10 +5135,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/858af137-e895-47c3-8e4f-4c723461d458/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b0e9200-628e-4367-9ff7-229b5ac8cd86/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/858af137-e895-47c3-8e4f-4c723461d458/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b0e9200-628e-4367-9ff7-229b5ac8cd86/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5167,9 +5167,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/af3ffdae-6071-4991-86f7-422867dcb9c5/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6e9876a8-b094-4fdf-93e7-63f9bc41705f/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/af3ffdae-6071-4991-86f7-422867dcb9c5/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6e9876a8-b094-4fdf-93e7-63f9bc41705f/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -8292,7 +8292,7 @@ svg {
       createLucideIcon = (iconName, iconNode) => {
         const Component = N2(
           (_a, ref) => {
-            var _b = _a, { color = "currentColor", size: size2 = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children } = _b, rest = __objRest(_b, ["color", "size", "strokeWidth", "absoluteStrokeWidth", "className", "children"]);
+            var _b = _a, { color: color2 = "currentColor", size: size2 = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children } = _b, rest = __objRest(_b, ["color", "size", "strokeWidth", "absoluteStrokeWidth", "className", "children"]);
             return y(
               "svg",
               __spreadValues(__spreadProps(__spreadValues({
@@ -8300,7 +8300,7 @@ svg {
               }, defaultAttributes), {
                 width: size2,
                 height: size2,
-                stroke: color,
+                stroke: color2,
                 strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size2) : strokeWidth,
                 className: ["lucide", `lucide-${toKebabCase(iconName)}`, className].join(" ")
               }), rest),
@@ -68567,7 +68567,7 @@ svg {
   });
 
   // src/hooks/useColor.ts
-  var import_validator, RgbaSchema, HctSchema, SolidColorSchema, ColorDataSchema, ColorActionsSchema, ColorSchema, cleanedHexColor, hexFromString, HctFromHex, argbFromHct, rgbFromHex, rgbaFromHct, hexFromHct, SolidColorFromRgbColor, colorData, colorActions, createColorFrom, calculateHue, calculateChroma, calculateEndColor, useColor;
+  var import_validator, RgbaSchema, HctSchema, SolidColorSchema, ColorDataSchema, ColorActionsSchema, ColorSchema, cleanedHexColor, hexFromString, HctFromHex, argbFromHct, rgbFromHex, rgbaFromHct, hexFromHct, SolidColorFromRgbColor, hexColor, colorData, colorActions, createColorFrom, calculateHue, calculateChroma, calculateEndColor, color, useColor;
   var init_useColor = __esm({
     "src/hooks/useColor.ts"() {
       "use strict";
@@ -68616,11 +68616,11 @@ svg {
         data: ColorDataSchema
       });
       ColorSchema = ColorDataSchema.merge(ColorActionsSchema);
-      cleanedHexColor = (hexColor) => {
-        return hexColor.startsWith("#") ? hexColor.slice(1) : hexColor;
+      cleanedHexColor = (hexColor2) => {
+        return hexColor2.startsWith("#") ? hexColor2.slice(1) : hexColor2;
       };
-      hexFromString = (hexColor) => cleanedHexColor(hexColor);
-      HctFromHex = (hexColor) => Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+      hexFromString = (hexColor2) => cleanedHexColor(hexColor2);
+      HctFromHex = (hexColor2) => Hct.fromInt(argbFromHex(hexFromString(hexColor2)));
       argbFromHct = (hctColor) => (hctColor == null ? void 0 : hctColor.toInt()) || Hct.from(0, 0, 0).toInt();
       rgbFromHex = (hex2) => {
         const result = convertHexColorToRgbColor(cleanedHexColor(hex2));
@@ -68640,12 +68640,13 @@ svg {
         }
         return { type: "SOLID", color: rgbColor };
       };
-      colorData = (set) => ({
-        sourceHex: "",
-        hct: { hue: 0, chroma: 0, tone: 0 },
-        rgba: { r: 0, g: 0, b: 0, a: 0 },
-        hex: "",
-        figmaSolidColor: { type: "SOLID", color: { r: 0, g: 0, b: 0 } }
+      hexColor = "397456";
+      colorData = () => ({
+        sourceHex: hexColor,
+        hct: HctFromHex(hexColor),
+        rgba: rgbaFromHct(HctFromHex(hexColor)),
+        hex: hexFromHct(HctFromHex(hexColor)),
+        figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor))
       });
       colorActions = (set) => ({
         setAll: (colorData2) => set((state) => __spreadValues(__spreadValues({}, state), colorData2)),
@@ -68666,13 +68667,13 @@ svg {
         }
       });
       createColorFrom = () => {
-        const hex2 = (hexColor) => {
+        const hex2 = (hexColor2) => {
           return {
-            sourceHex: hexColor,
-            hct: HctFromHex(hexColor),
-            rgba: rgbaFromHct(HctFromHex(hexColor)),
-            hex: hexFromHct(HctFromHex(hexColor)),
-            figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor))
+            sourceHex: hexColor2,
+            hct: HctFromHex(hexColor2),
+            rgba: rgbaFromHct(HctFromHex(hexColor2)),
+            hex: hexFromHct(HctFromHex(hexColor2)),
+            figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor2))
           };
         };
         const hct = (hct2) => {
@@ -68750,7 +68751,7 @@ svg {
         const chroma = calculateChroma(sourceHct.chroma, chromaCalc);
         return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
       };
-      useColor = create()((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set, get, ...a3)), colorActions(set, get, ...a3)), {
+      color = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set, get, ...a3)), colorActions(set, get, ...a3)), {
         setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
           sourceHex: sourceHex2,
           hct: HctFromHex(sourceHex2),
@@ -68797,13 +68798,14 @@ svg {
           )
         })),
         data: {
-          sourceHex: get().sourceHex,
-          hct: get().hct,
-          rgba: get().rgba,
-          hex: get().hex,
-          figmaSolidColor: get().figmaSolidColor
+          sourceHex: colorData(set, get, ...a3).sourceHex,
+          hct: colorData(set, get, ...a3).hct,
+          rgba: colorData(set, get, ...a3).rgba,
+          hex: colorData(set, get, ...a3).hex,
+          figmaSolidColor: colorData(set, get, ...a3).figmaSolidColor
         }
-      }));
+      });
+      useColor = create()((set, get, ...a3) => __spreadValues({}, color(set, get, ...a3)));
     }
   });
 
@@ -68900,10 +68902,10 @@ svg {
       });
       useAlias = create((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasData(set, get, ...a3)), aliasActions(set, get, ...a3)), {
         data: {
-          id: get().id,
-          name: get().name,
-          lightModeTone: get().lightModeTone,
-          darkModeTone: get().darkModeTone
+          id: aliasData(set, get, ...a3).id,
+          name: aliasData(set, get, ...a3).name,
+          lightModeTone: aliasData(set, get, ...a3).lightModeTone,
+          darkModeTone: aliasData(set, get, ...a3).darkModeTone
         }
       }));
       AliasGroupDataSchema = z4.object({
@@ -68964,10 +68966,10 @@ svg {
       useAliasGroup = create(
         (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasGroupData(set, get, ...a3)), aliasGroupActions(set, get, ...a3)), {
           data: {
-            id: get().id,
-            name: get().name,
-            aliases: get().aliases,
-            themeColorIds: get().themeColorIds
+            id: aliasGroupData(set, get, ...a3).id,
+            name: aliasGroupData(set, get, ...a3).name,
+            aliases: aliasGroupData(set, get, ...a3).aliases,
+            themeColorIds: aliasGroupData(set, get, ...a3).themeColorIds
           },
           alias: {
             add: () => set((state) => __spreadProps(__spreadValues({}, state), {
@@ -69130,15 +69132,15 @@ svg {
       useThemeColorActions = create((...a3) => __spreadValues({}, themeColorActions(...a3)));
       themeColorStore = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues({}, themeColorData(set, get, ...a3)), themeColorActions(set, get, ...a3)), aliasCrud(set, get, ...a3)), {
         data: {
-          id: get().id,
-          name: get().name,
-          sourceHex: get().sourceHex,
-          sourceColor: get().sourceColor,
-          endColor: get().endColor,
-          tones: get().tones,
-          hueCalc: get().hueCalc,
-          chromaCalc: get().chromaCalc,
-          aliasGroup: get().aliasGroup
+          id: themeColorData(set, get, ...a3).id,
+          name: themeColorData(set, get, ...a3).name,
+          sourceHex: themeColorData(set, get, ...a3).sourceHex,
+          sourceColor: themeColorData(set, get, ...a3).sourceColor,
+          endColor: themeColorData(set, get, ...a3).endColor,
+          tones: themeColorData(set, get, ...a3).tones,
+          hueCalc: themeColorData(set, get, ...a3).hueCalc,
+          chromaCalc: themeColorData(set, get, ...a3).chromaCalc,
+          aliasGroup: themeColorData(set, get, ...a3).aliasGroup
         },
         set: __spreadProps(__spreadValues({}, themeColorActions(set, get, ...a3).set), {
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
@@ -69653,10 +69655,10 @@ svg {
       });
       useTheme = create((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, themeData(set, get, ...a3)), themeActions(set, get, ...a3)), themeColorCrud(set, get, ...a3)), aliasGroupCrud(set, get, ...a3)), {
         data: {
-          id: get().id,
-          name: get().name,
-          themeColors: get().themeColors,
-          aliasGroups: get().aliasGroups
+          id: themeData(set, get, ...a3).id,
+          name: themeData(set, get, ...a3).name,
+          themeColors: themeData(set, get, ...a3).themeColors,
+          aliasGroups: themeData(set, get, ...a3).aliasGroups
         },
         themeColor: {
           add: (themeColor = __spreadProps(__spreadValues({}, defaultThemeColor), {
@@ -70146,7 +70148,10 @@ svg {
         data: { id: "", themes: [] }
       });
       themeList = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, themeListData(set, get, ...a3)), themeListActions(set, get, ...a3)), {
-        data: { id: get().id, themes: get().themes },
+        data: {
+          id: themeListData(set, get, ...a3).id,
+          themes: themeListData(set, get, ...a3).themes
+        },
         theme: {
           add: (theme) => set((state) => __spreadProps(__spreadValues({}, state), {
             themes: [...state.themes, theme]
@@ -70188,18 +70193,16 @@ svg {
         const themeList2 = useThemeList();
         console.log(themeList2);
         const theme = useTheme();
-        const themeData2 = theme.data;
         p2(() => {
-          const startingTheme = __spreadValues(__spreadValues({}, theme), themeList2.themes[0]);
-          setTheme(startingTheme);
+          theme.set.all(themeList2.themes[0]);
         }, []);
         const nameTheNameless = () => {
           if (!theme.name) {
             theme.set.name("Theme");
           }
         };
-        const onSetThemeData = (themeData3) => {
-          setTheme(__spreadValues(__spreadValues({}, theme), themeData3));
+        const onSetThemeData = (themeData2) => {
+          theme.set.all(themeData2);
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-center px-2" }, /* @__PURE__ */ y(
           Textbox,

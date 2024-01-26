@@ -151,12 +151,14 @@ const SolidColorFromRgbColor = (rgbColor: RGB): SolidColor => {
     return { type: 'SOLID', color: rgbColor };
 };
 
-const colorData: StateCreator<ColorData> = (set) => ({
-    sourceHex: '',
-    hct: { hue: 0, chroma: 0, tone: 0 },
-    rgba: { r: 0, g: 0, b: 0, a: 0 },
-    hex: '',
-    figmaSolidColor: { type: 'SOLID', color: { r: 0, g: 0, b: 0 } },
+const hexColor = '397456';
+
+const colorData: StateCreator<ColorData> = () => ({
+    sourceHex: hexColor,
+    hct: HctFromHex(hexColor),
+    rgba: rgbaFromHct(HctFromHex(hexColor)),
+    hex: hexFromHct(HctFromHex(hexColor)),
+    figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor)),
 });
 const colorActions: StateCreator<ColorActions> = (set) => ({
     setAll: (colorData) => set((state) => ({ ...state, ...colorData })),
@@ -328,7 +330,7 @@ const calculateEndColor = (
     return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
 };
 
-const useColor = create<ColorData & ColorActions>()((set, get, ...a) => ({
+const color: StateCreator<Color> = (set, get, ...a) => ({
     ...colorData(set, get, ...a),
     ...colorActions(set, get, ...a),
     setSourceHex: (sourceHex) =>
@@ -387,10 +389,14 @@ const useColor = create<ColorData & ColorActions>()((set, get, ...a) => ({
             ),
         })),
     data: {
-        sourceHex: get().sourceHex,
-        hct: get().hct,
-        rgba: get().rgba,
-        hex: get().hex,
-        figmaSolidColor: get().figmaSolidColor,
+        sourceHex: colorData(set, get, ...a).sourceHex,
+        hct: colorData(set, get, ...a).hct,
+        rgba: colorData(set, get, ...a).rgba,
+        hex: colorData(set, get, ...a).hex,
+        figmaSolidColor: colorData(set, get, ...a).figmaSolidColor,
     },
+});
+
+const useColor = create<ColorData & ColorActions>()((set, get, ...a) => ({
+    ...color(set, get, ...a),
 }));
