@@ -31,7 +31,7 @@ export {
     useTheme,
 };
 
-const sourceHex = '397456';
+const sourceHex = 'ff0000';
 
 const defaultThemeColors: ThemeColorData[] = [
     createThemeColor(sourceHex, 'Primary'),

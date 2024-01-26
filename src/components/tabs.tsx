@@ -1,29 +1,24 @@
 /* eslint-disable */
 import { h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
 import { CopyPlus } from 'lucide-react';
 import {
     IconButton,
-    IconEllipsis32,
     IconMinus32,
-    IconStyles32,
     Dropdown,
     Muted,
     RangeSlider,
     Tabs,
     TabsOption,
-    Text,
     Textbox,
     TextboxColor,
     TextboxMultiline,
-    Button,
     DropdownOption,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 import {
     ThemeColor,
-    ThemeColorActions,
     ThemeColorData,
     createThemeColor,
     useThemeColor,
@@ -35,19 +30,13 @@ import {
     calculateChroma,
     hctTonalGradient,
     findMaxChromaForHueAtTone,
-    quickHexFromHct,
 } from '../lib/color-utils';
 import { hexFromHct } from '../hooks/useColor';
-import { AliasPreviewList, AliasList } from './primitives-tab/alias';
+import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
-import {
-    AliasData,
-    AliasGroupActions,
-    AliasGroupData,
-    createAlias,
-} from '../hooks/useAliasGroup';
-import { create } from 'lodash';
-import { Theme, ThemeActions, ThemeData, useTheme } from '../hooks/useTheme';
+import { AliasData } from '../hooks/useAliasGroup';
+import { Theme, ThemeData, useTheme } from '../hooks/useTheme';
+import { themeList } from '../ui';
 
 type TabGroupProps = {
     themeData: ThemeData;
@@ -63,6 +52,15 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
     );
     const theme: Theme = useTheme();
     const themeColor = useThemeColor();
+    const themeRef = useRef<ThemeData>(themeData);
+    useEffect(() => {
+        if (themeRef.current !== themeData) {
+            themeRef.current = themeData;
+            theme.set.all(themeData);
+            themeColor.set.all(themeData.themeColors[0]);
+            onSetThemeData(themeData);
+        }
+    }, [themeData]);
     useEffect(() => {
         theme.set.all(themeData);
         themeColor.set.all(themeData.themeColors[0]);
