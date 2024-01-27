@@ -1,5 +1,10 @@
 import '!./dist/tailwind.css';
-import { Textbox, render } from '@create-figma-plugin/ui';
+import {
+    Textbox,
+    Dropdown,
+    DropdownOption,
+    render,
+} from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
 import {
@@ -8,27 +13,97 @@ import {
     createThemeColor,
 } from './hooks/useThemeColor';
 import { nanoid } from 'nanoid';
-import { useTheme, defaultThemeColors, ThemeData } from './hooks/useTheme';
+import {
+    useTheme,
+    defaultThemeColors,
+    ThemeData,
+    createTheme,
+} from './hooks/useTheme';
 import { useEffect, useState } from 'react';
-import { create, set } from 'lodash';
 import { useThemeList } from './hooks/useThemeList';
 
 export const Plugin = () => {
     const themeList = useThemeList();
     console.log(themeList);
-    const theme = useTheme();
-    useEffect(() => {
-        //TODO: this will need to be dynamic for changing themes
-        theme.set.all(themeList.themes[0]);
-    }, []);
-
-    const nameTheNameless = () => {
-        if (!theme.name) {
-            theme.set.name('Theme');
+    const theme = themeList.themes[0];
+    const [currentTheme, setCurrentThemeName] = useState<string>(
+        `${theme.name}`,
+    );
+    const themeListOptions: Array<DropdownOption> = themeList.themes.map(
+        (theme) => ({
+            value: theme.name,
+            text: theme.name,
+        }),
+    );
+    const themeListMenuOptions: Array<DropdownOption> = [
+        {
+            value: 'New theme',
+        },
+        {
+            value: 'Rename',
+        },
+        {
+            value: 'Duplicate',
+        },
+        {
+            value: 'Delete',
+        },
+        '-',
+        {
+            header: 'Themes',
+        },
+        ...themeListOptions,
+    ];
+    console.log(themeListMenuOptions);
+    const handleOptionSelect = (
+        event: h.JSX.TargetedEvent<HTMLInputElement>,
+    ) => {
+        const selectedValue = event.currentTarget.value;
+        if (selectedValue === 'New theme') {
+            const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
+            const newTheme = createTheme(nanoid(12), newThemeName);
+            themeList.theme.add(newTheme);
+            setCurrentThemeName(newTheme.name);
+            console.log(themeList);
+        }
+        if (selectedValue === 'Rename') {
+            const newThemeName = prompt('New theme name');
+            if (newThemeName) {
+                themeList.set.themes({
+                    ...themeList.themes,
+                    [theme.id]: {
+                        ...theme,
+                        name: newThemeName,
+                    },
+                });
+                setCurrentThemeName(newThemeName);
+            }
+        }
+        if (selectedValue === 'Duplicate') {
+            // const newTheme: ThemeData = currentTheme;
+        }
+        if (selectedValue === 'Delete') {
+            const newThemeList = { ...themeList.themes };
+            // delete newThemeList[theme.id];
+            themeList.set.themes(newThemeList);
+            // setCurrentThemeName(Object.values(newThemeList)[0].name);
+        } else {
+            setCurrentThemeName(selectedValue);
         }
     };
+
+    const { name } = useTheme();
+
+    // const nameTheNameless = () => {
+    //     if (!theme.name) {
+    //         theme.set.name('Theme');
+    //     }
+    // };
     const onSetThemeData = (themeData: ThemeData) => {
-        theme.set.all(themeData);
+        themeList.set.themes({
+            ...themeList.themes,
+            ...themeData,
+        });
     };
     // Rendering the UI
     return (
@@ -40,10 +115,14 @@ export const Plugin = () => {
             </div>
             <div className="flex h-10 w-full">
                 <div className="h-full w-10"></div>
-                <div className="flex grow flex-row justify-between">
-                    <div className="flex h-full items-center justify-center px-2">
-                        {/* <ThemeMenu themes={ThemeList} /> */}
-                        <Textbox
+                <div className="flex grow flex-row justify-between pr-2">
+                    <div className="flex h-full items-center justify-between px-2">
+                        <Dropdown
+                            value={currentTheme}
+                            options={themeListMenuOptions}
+                            onChange={handleOptionSelect}
+                        />
+                        {/* <Textbox
                             value={theme.name}
                             onChange={(e) =>
                                 theme.set.name(e.currentTarget.value)
@@ -51,10 +130,10 @@ export const Plugin = () => {
                             onBlur={() => nameTheNameless()}
                             onfocusout={() => nameTheNameless()}
                             placeholder="Theme name"
-                        />
+                        /> */}
                     </div>
                     <TabGroup
-                        themeData={theme.data}
+                        themeData={theme}
                         onSetThemeData={onSetThemeData}
                     />
                 </div>

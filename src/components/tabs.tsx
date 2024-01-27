@@ -15,6 +15,7 @@ import {
     TextboxColor,
     TextboxMultiline,
     DropdownOption,
+    createClassName,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 import {
@@ -36,31 +37,19 @@ import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData } from '../hooks/useAliasGroup';
 import { Theme, ThemeData, useTheme } from '../hooks/useTheme';
-import { themeList } from '../ui';
 
 type TabGroupProps = {
     themeData: ThemeData;
     onSetThemeData: (themeData: ThemeData) => void;
+    className?: string;
 };
 
 const CopyPlusIcon = CopyPlus as any;
 
-const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
+const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
-    const [themeColorList, setThemeColorList] = useState<ThemeColorData[]>(
-        themeData.themeColors,
-    );
     const theme: Theme = useTheme();
-    const themeColor = useThemeColor();
-    const themeRef = useRef<ThemeData>(themeData);
-    useEffect(() => {
-        if (themeRef.current !== themeData) {
-            themeRef.current = themeData;
-            theme.set.all(themeData);
-            themeColor.set.all(themeData.themeColors[0]);
-            onSetThemeData(themeData);
-        }
-    }, [themeData]);
+    const themeColor: ThemeColor = useThemeColor();
     useEffect(() => {
         theme.set.all(themeData);
         themeColor.set.all(themeData.themeColors[0]);
@@ -68,14 +57,6 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
     }, []);
 
     const onSelectThemeColor = (themeColorId: string) => {};
-
-    useEffect(() => {
-        if (theme.themeColors.length === 0) {
-            const newThemeColor: ThemeColor = themeColor;
-            setThemeColorList([newThemeColor]);
-        }
-        console.log(theme.themeColors);
-    }, [theme.themeColors]);
 
     const [hexColorInput, setHexColorInput] = useState<string>(
         themeColor.sourceColor.sourceHex,
@@ -362,7 +343,7 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
                                             {round(hue())}
                                         </span>
                                     </div>
-                                    <div className="hue-slider px-2 pb-1">
+                                    <div className="hue-slider px-2 pb-2">
                                         <RangeSlider
                                             title="Adjust hue"
                                             maximum={360}
@@ -371,8 +352,8 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
                                             value={themeColor.hueCalc}
                                         />
                                         <div
-                                            className="hue-slider-bar absolute h-px"
-                                            style={`width: 157px; transform: translate(-1px, -1px)`}
+                                            className="hue-slider-bar absolute h-2 rounded-full"
+                                            style={`width: 157px; transform: translate(-1px, -4px)`}
                                         />
                                     </div>
                                     <Textbox
@@ -410,7 +391,7 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
                                             </span>
                                         </span>
                                     </div>
-                                    <div className="chroma-slider px-2 pb-1">
+                                    <div className="chroma-slider px-2 pb-2">
                                         <RangeSlider
                                             title="Adjust chroma"
                                             maximum={round(
@@ -427,8 +408,8 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
                                             value={themeColor.chromaCalc}
                                         />
                                         <div
-                                            className="chroma-slider-bar absolute h-px"
-                                            style={`width: 156px; transform: translate(-1px, -1px); background: linear-gradient(to right, #777, ${chromaHex}`}
+                                            className="chroma-slider-bar absolute h-2 rounded-full"
+                                            style={`width: 156px; transform: translate(-1px, -4px); background: linear-gradient(to right, #777, ${chromaHex}`}
                                         />
                                     </div>
                                     <Textbox
@@ -568,11 +549,13 @@ const TabGroup = ({ themeData, onSetThemeData }: TabGroupProps) => {
         setTabValue(newValue);
     }
     return (
-        <Tabs
-            onValueChange={handleValueChange}
-            options={options}
-            value={tabValue}
-        />
+        <div className={className}>
+            <Tabs
+                onValueChange={handleValueChange}
+                options={options}
+                value={tabValue}
+            />
+        </div>
     );
 };
 

@@ -1,6 +1,7 @@
 import z from 'zod';
 import { create, StateCreator } from 'zustand';
 import { nanoid } from 'nanoid';
+import { customAlphabet } from 'nanoid';
 import { ThemeDataSchema, type ThemeData, createTheme } from './useTheme';
 
 export {
@@ -12,7 +13,10 @@ export {
     useThemeList,
 };
 
-const defaultThemes: ThemeData[] = [createTheme()];
+const defaultThemes: ThemeData[] = [
+    createTheme(),
+    createTheme(nanoid(12), 'Theme 2'),
+];
 
 /**
  * Creates a theme list with the specified ID and themes.
@@ -43,6 +47,12 @@ const ThemeListActionsSchema = z.object({
         id: z.function().args(z.string(), z.void()),
         themes: z.function().args(z.array(ThemeDataSchema), z.void()),
     }),
+    theme: z.object({
+        add: z.function().args(ThemeDataSchema, z.void()),
+        duplicate: z.function().args(z.string(), z.void()),
+        update: z.function().args(z.string(), ThemeDataSchema, z.void()),
+        remove: z.function().args(z.string(), z.void()),
+    }),
     data: ThemeListDataSchema,
 });
 
@@ -64,6 +74,12 @@ const themeListActions: StateCreator<ThemeListActions> = (set) => ({
             set((state) => ({ ...state, ...themeListData })),
         id: (id) => set((state) => ({ ...state, id })),
         themes: (themes) => set((state) => ({ ...state, themes })),
+    },
+    theme: {
+        add: (theme) => set((state) => ({ ...state })),
+        duplicate: (id) => set((state) => ({ ...state })),
+        update: (id, theme) => set((state) => ({ ...state })),
+        remove: (id) => set((state) => ({ ...state })),
     },
     data: { id: '', themes: [] },
 });

@@ -9,6 +9,7 @@ declare const styles: {
   readonly "tab-content": string;
   readonly "build-button": string;
   readonly "gradientMove": string;
+  readonly "input": string;
 };
 export = styles;
 
