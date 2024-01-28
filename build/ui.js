@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4cd56c62-80aa-4905-903d-a2d18f18a573/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3f3a137-ccdc-47b1-9dac-e8c7554c8ace/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4cd56c62-80aa-4905-903d-a2d18f18a573/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3f3a137-ccdc-47b1-9dac-e8c7554c8ace/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2395,10 +2395,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c389e1b8-2b2c-4837-a1fa-1b3e00a69c40/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c51417d-f8e8-4c80-a5dd-ac118b2435db/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c389e1b8-2b2c-4837-a1fa-1b3e00a69c40/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c51417d-f8e8-4c80-a5dd-ac118b2435db/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2435,10 +2435,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c1401d7-f072-4d41-b538-3520c9e9fc98/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/83e5159f-ae92-4017-86c4-89a64365d11d/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c1401d7-f072-4d41-b538-3520c9e9fc98/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/83e5159f-ae92-4017-86c4-89a64365d11d/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2676,10 +2676,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d832e86-a508-4c79-aa0c-a288e916faee/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/701300c3-9cfa-4dd4-a0c0-d313c13a20e6/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d832e86-a508-4c79-aa0c-a288e916faee/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/701300c3-9cfa-4dd4-a0c0-d313c13a20e6/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3153,10 +3153,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff40c440-ccd1-467c-89cd-f6afd77b680f/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e769cfbb-2d2e-4e10-a026-ffd1b5e522a9/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff40c440-ccd1-467c-89cd-f6afd77b680f/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e769cfbb-2d2e-4e10-a026-ffd1b5e522a9/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3226,10 +3226,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cefc93f7-310d-4769-8039-f08e15eb59ce/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e2ee22e-92b5-4f3c-8170-f7ff197ce21c/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cefc93f7-310d-4769-8039-f08e15eb59ce/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e2ee22e-92b5-4f3c-8170-f7ff197ce21c/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3333,10 +3333,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e600f76b-769d-4687-9116-34e5dd931ac5/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5dc53216-fee5-4b0a-89cd-1a6470debc4a/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e600f76b-769d-4687-9116-34e5dd931ac5/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5dc53216-fee5-4b0a-89cd-1a6470debc4a/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3933,10 +3933,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d285f14-fc42-45dc-ad9a-14f8a0254e2b/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1a10894-7f3a-4fbb-a906-aa0803637831/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d285f14-fc42-45dc-ad9a-14f8a0254e2b/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1a10894-7f3a-4fbb-a906-aa0803637831/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4441,10 +4441,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/506b18ef-0093-45c8-9770-7cec32c89e51/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/71074c18-4167-4a31-813e-db3b0868514a/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/506b18ef-0093-45c8-9770-7cec32c89e51/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/71074c18-4167-4a31-813e-db3b0868514a/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4784,10 +4784,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9bd16f37-82ea-43c0-ad66-7af1e04d865d/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1454d329-f469-486d-a426-9a018f27d356/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9bd16f37-82ea-43c0-ad66-7af1e04d865d/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1454d329-f469-486d-a426-9a018f27d356/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4986,10 +4986,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c864804-0665-4396-ac35-7ac23e41652c/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0c7cb13-1008-4d30-ad69-6eef8dcae598/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c864804-0665-4396-ac35-7ac23e41652c/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0c7cb13-1008-4d30-ad69-6eef8dcae598/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5082,10 +5082,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93ae00d7-515e-4728-a279-7d42e7768611/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8aa5202-a224-48ee-a91b-267e08c4073b/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93ae00d7-515e-4728-a279-7d42e7768611/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8aa5202-a224-48ee-a91b-267e08c4073b/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5166,10 +5166,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ce26284a-e42a-40d1-b586-e8cf82cfd56c/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e8ab8a-8653-47b8-98bc-da18db2fba18/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ce26284a-e42a-40d1-b586-e8cf82cfd56c/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e8ab8a-8653-47b8-98bc-da18db2fba18/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5198,9 +5198,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bf3e6702-d33b-4dbd-b433-a05720e26664/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69159585-855b-41ba-8537-f0f2e53eac3c/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bf3e6702-d33b-4dbd-b433-a05720e26664/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69159585-855b-41ba-8537-f0f2e53eac3c/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -18723,7 +18723,7 @@ svg {
             return x4 === y3 && (x4 !== 0 || 1 / x4 === 1 / y3) || x4 !== x4 && y3 !== y3;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
-          var useState = React.useState, useEffect2 = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue2 = React.useDebugValue;
+          var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue2 = React.useDebugValue;
           var didWarnOld18Alpha = false;
           var didWarnUncachedGetSnapshot = false;
           function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
@@ -18760,7 +18760,7 @@ svg {
                 });
               }
             }, [subscribe, value2, getSnapshot]);
-            useEffect2(function() {
+            useEffect(function() {
               if (checkIfSnapshotChanged(inst)) {
                 forceUpdate({
                   inst
@@ -18833,7 +18833,7 @@ svg {
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var useSyncExternalStore = shim.useSyncExternalStore;
-          var useRef2 = React.useRef, useEffect2 = React.useEffect, useMemo = React.useMemo, useDebugValue2 = React.useDebugValue;
+          var useRef2 = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue2 = React.useDebugValue;
           function useSyncExternalStoreWithSelector2(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
             var instRef = useRef2(null);
             var inst;
@@ -18890,7 +18890,7 @@ svg {
               return [getSnapshotWithSelector, getServerSnapshotWithSelector];
             }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
             var value2 = useSyncExternalStore(subscribe, getSelection, getServerSelection);
-            useEffect2(function() {
+            useEffect(function() {
               inst.hasValue = true;
               inst.value = value2;
             }, [value2]);
@@ -69592,7 +69592,7 @@ svg {
   });
 
   // src/hooks/useTheme.ts
-  var sourceHex, defaultThemeColors, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
+  var sourceHex, defaultThemeColors, defaultThemeColors2, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
   var init_useTheme = __esm({
     "src/hooks/useTheme.ts"() {
       "use strict";
@@ -69609,6 +69609,14 @@ svg {
         createThemeColor("00ffff", "neutral", "", "c/12"),
         createThemeColor("ff00ff", "neutralVariant", "", "c/8"),
         createThemeColor("ff0000", "error", "25", "89")
+      ];
+      defaultThemeColors2 = [
+        createThemeColor("f0000f", "Primary"),
+        createThemeColor("ff00ff", "Secondary", "", "c/4"),
+        createThemeColor("00ff00", "Tertiary", "h+60", "c*0.6"),
+        createThemeColor("00ffff", "neutral", "", "c/12"),
+        createThemeColor("ffff00", "neutralVariant", "", "c/8"),
+        createThemeColor("0ff000", "error", "25", "89")
       ];
       defaultAliasGroups = [createAliasGroup()];
       createTheme = (id = nanoid(12), name310 = "Theme", themeColors = defaultThemeColors, aliasGroups = defaultAliasGroups) => {
@@ -70144,8 +70152,8 @@ svg {
       init_index_browser();
       init_useTheme();
       defaultThemes = [
-        createTheme(),
-        createTheme(nanoid(12), "Theme 2")
+        createTheme(nanoid(12), "banana"),
+        createTheme(nanoid(12), "Theme 2", defaultThemeColors2)
       ];
       ThemeListDataSchema = z4.object({
         id: z4.string(),
@@ -70226,76 +70234,148 @@ svg {
       init_useTheme();
       init_compat_module();
       init_useThemeList();
+      init_hooks_module();
       Plugin = () => {
         const themeList2 = useThemeList();
         console.log(themeList2);
         const theme = themeList2.themes[0];
-        const [currentTheme, setCurrentThemeName] = h2(
-          `${theme.name}`
-        );
-        const themeListOptions = themeList2.themes.map(
-          (theme2) => ({
-            value: theme2.name,
+        const [currentThemeId, setCurrentThemeId] = h2(`${theme.id}`);
+        const [isEditing, setIsEditing] = h2(false);
+        const inputRef = _2(null);
+        p2(() => {
+          if (isEditing && inputRef.current) {
+            inputRef.current.focus();
+            inputRef.current.select();
+          }
+        }, [isEditing]);
+        const handleTextboxBlur = () => {
+          setIsEditing(false);
+          nameTheNameless();
+        };
+        const handleTextboxKeyDown = (event) => {
+          if (event.key === "Enter" || event.key === "Escape") {
+            setIsEditing(false);
+            nameTheNameless();
+          }
+        };
+        const findThemeById = (id) => {
+          const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
+          if (!theme2) {
+            throw new Error(`Theme with id ${id} not found`);
+          }
+          return theme2;
+        };
+        const currentTheme = findThemeById(currentThemeId);
+        const themeListOptions = themeList2.themes.map((theme2) => {
+          return {
+            value: theme2.id,
             text: theme2.name
-          })
-        );
+          };
+        });
         const themeListMenuOptions = [
+          ...themeListOptions,
+          "-",
           {
-            value: "New theme"
+            value: "New theme..."
           },
           {
-            value: "Rename"
+            value: "Rename..."
           },
           {
             value: "Duplicate"
           },
           {
             value: "Delete"
-          },
-          "-",
-          {
-            header: "Themes"
-          },
-          ...themeListOptions
+          }
         ];
         console.log(themeListMenuOptions);
         const handleOptionSelect = (event) => {
+          var _a;
           const selectedValue = event.currentTarget.value;
-          if (selectedValue === "New theme") {
+          if (selectedValue === "New theme...") {
             const newThemeName = `Theme ${Object.keys(themeList2.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList2.theme.add(newTheme);
-            setCurrentThemeName(newTheme.name);
+            setCurrentThemeId(newTheme.id);
             console.log(themeList2);
           }
-          if (selectedValue === "Rename") {
-            const newThemeName = prompt("New theme name");
-            if (newThemeName) {
-              themeList2.set.themes(__spreadProps(__spreadValues({}, themeList2.themes), {
-                [theme.id]: __spreadProps(__spreadValues({}, theme), {
-                  name: newThemeName
-                })
-              }));
-              setCurrentThemeName(newThemeName);
-            }
+          if (selectedValue === "Rename...") {
+            setIsEditing(true);
           }
           if (selectedValue === "Duplicate") {
+            const newTheme = __spreadProps(__spreadValues({}, currentTheme), {
+              id: nanoid(12),
+              name: `${currentTheme.name} copy`
+            });
+            themeList2.theme.add(__spreadValues({}, newTheme));
+            setCurrentThemeId(newTheme.id);
           }
           if (selectedValue === "Delete") {
-            const newThemeList = __spreadValues({}, themeList2.themes);
-            themeList2.set.themes(newThemeList);
-          } else {
-            setCurrentThemeName(selectedValue);
+            const themeToDelete = currentThemeId;
+            const nextThemeId = (_a = themeList2.themes.find(
+              (theme2) => theme2.id !== currentThemeId
+            )) == null ? void 0 : _a.id;
+            if (!nextThemeId) {
+              const newTheme = createTheme(nanoid(12), "New theme");
+              themeList2.theme.add(newTheme);
+              setCurrentThemeId(newTheme.id);
+            } else {
+              setCurrentThemeId(nextThemeId);
+            }
+            themeList2.theme.remove(themeToDelete);
+          }
+          if (selectedValue !== "New theme..." && selectedValue !== "Rename..." && selectedValue !== "Duplicate" && selectedValue !== "Delete") {
+            setCurrentThemeId(selectedValue);
           }
         };
-        const { name: name310 } = useTheme();
+        function pickRandomName(names2) {
+          const randomIndex = Math.floor(Math.random() * names2.length);
+          return names2[randomIndex];
+        }
+        const names = [
+          "Themey McThemeFace",
+          // 8%
+          "Mr. Theme",
+          // 8%
+          "Theme",
+          // 84%
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme",
+          "Theme"
+        ];
+        const nameTheNameless = () => {
+          if (!currentTheme.name) {
+            themeList2.theme.update(currentThemeId, __spreadProps(__spreadValues({}, currentTheme), {
+              name: pickRandomName(names)
+            }));
+          }
+        };
         const onSetThemeData = (themeData2) => {
           themeList2.set.themes(__spreadValues(__spreadValues({}, themeList2.themes), themeData2));
         };
-        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center justify-between px-2" }, /* @__PURE__ */ y(
+        return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
+          Textbox,
+          {
+            ref: inputRef,
+            value: currentTheme.name,
+            onChange: (e5) => themeList2.theme.update(currentThemeId, __spreadProps(__spreadValues({}, currentTheme), {
+              name: e5.currentTarget.value
+            })),
+            onBlur: () => handleTextboxBlur,
+            onKeyDown: handleTextboxKeyDown,
+            onfocusout: () => handleTextboxBlur,
+            placeholder: "Theme name"
+          }
+        ) : /* @__PURE__ */ y(
           Dropdown,
           {
-            value: currentTheme,
+            value: currentThemeId,
             options: themeListMenuOptions,
             onChange: handleOptionSelect
           }
@@ -70312,8 +70392,7 @@ svg {
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
             onClick: (e5) => console.log(themeList2)
           },
-          "Build ",
-          theme.name
+          "Build Theme"
         )));
       };
       ui_default = render(Plugin);

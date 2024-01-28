@@ -21,26 +21,55 @@ import {
 } from './hooks/useTheme';
 import { useEffect, useState } from 'react';
 import { useThemeList } from './hooks/useThemeList';
+import { useRef } from 'preact/hooks';
+import { set } from 'lodash';
 
 export const Plugin = () => {
     const themeList = useThemeList();
     console.log(themeList);
     const theme = themeList.themes[0];
-    const [currentTheme, setCurrentThemeName] = useState<string>(
-        `${theme.name}`,
-    );
-    const themeListOptions: Array<DropdownOption> = themeList.themes.map(
-        (theme) => ({
-            value: theme.name,
+    const [currentThemeId, setCurrentThemeId] = useState<string>(`${theme.id}`);
+    const [isEditing, setIsEditing] = useState(false);
+    const inputRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        if (isEditing && inputRef.current) {
+            inputRef.current.focus();
+            inputRef.current.select();
+        }
+    }, [isEditing]);
+    const handleTextboxBlur = () => {
+        setIsEditing(false);
+        nameTheNameless();
+    };
+
+    const handleTextboxKeyDown = (event: { key: string }) => {
+        if (event.key === 'Enter' || event.key === 'Escape') {
+            setIsEditing(false);
+            nameTheNameless();
+        }
+    };
+    const findThemeById = (id: string) => {
+        const theme = themeList.themes.find((theme) => theme.id === id);
+        if (!theme) {
+            throw new Error(`Theme with id ${id} not found`);
+        }
+        return theme;
+    };
+    const currentTheme: ThemeData = findThemeById(currentThemeId);
+    const themeListOptions = themeList.themes.map((theme) => {
+        return {
+            value: theme.id,
             text: theme.name,
-        }),
-    );
+        };
+    });
     const themeListMenuOptions: Array<DropdownOption> = [
+        ...themeListOptions,
+        '-',
         {
-            value: 'New theme',
+            value: 'New theme...',
         },
         {
-            value: 'Rename',
+            value: 'Rename...',
         },
         {
             value: 'Duplicate',
@@ -48,57 +77,83 @@ export const Plugin = () => {
         {
             value: 'Delete',
         },
-        '-',
-        {
-            header: 'Themes',
-        },
-        ...themeListOptions,
     ];
     console.log(themeListMenuOptions);
     const handleOptionSelect = (
         event: h.JSX.TargetedEvent<HTMLInputElement>,
     ) => {
         const selectedValue = event.currentTarget.value;
-        if (selectedValue === 'New theme') {
+        if (selectedValue === 'New theme...') {
             const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList.theme.add(newTheme);
-            setCurrentThemeName(newTheme.name);
+            setCurrentThemeId(newTheme.id);
             console.log(themeList);
         }
-        if (selectedValue === 'Rename') {
-            const newThemeName = prompt('New theme name');
-            if (newThemeName) {
-                themeList.set.themes({
-                    ...themeList.themes,
-                    [theme.id]: {
-                        ...theme,
-                        name: newThemeName,
-                    },
-                });
-                setCurrentThemeName(newThemeName);
-            }
+        if (selectedValue === 'Rename...') {
+            setIsEditing(true);
         }
         if (selectedValue === 'Duplicate') {
-            // const newTheme: ThemeData = currentTheme;
+            const newTheme = {
+                ...currentTheme,
+                id: nanoid(12),
+                name: `${currentTheme.name} copy`,
+            };
+            themeList.theme.add({ ...newTheme });
+            setCurrentThemeId(newTheme.id);
         }
         if (selectedValue === 'Delete') {
-            const newThemeList = { ...themeList.themes };
-            // delete newThemeList[theme.id];
-            themeList.set.themes(newThemeList);
-            // setCurrentThemeName(Object.values(newThemeList)[0].name);
-        } else {
-            setCurrentThemeName(selectedValue);
+            const themeToDelete = currentThemeId;
+            // find the id of the next theme in the list that doesn't match the current theme
+            const nextThemeId = themeList.themes.find(
+                (theme) => theme.id !== currentThemeId,
+            )?.id;
+            if (!nextThemeId) {
+                const newTheme = createTheme(nanoid(12), 'New theme');
+                themeList.theme.add(newTheme);
+                setCurrentThemeId(newTheme.id);
+            } else {
+                setCurrentThemeId(nextThemeId);
+            }
+            themeList.theme.remove(themeToDelete);
+        }
+        if (
+            selectedValue !== 'New theme...' &&
+            selectedValue !== 'Rename...' &&
+            selectedValue !== 'Duplicate' &&
+            selectedValue !== 'Delete'
+        ) {
+            setCurrentThemeId(selectedValue);
         }
     };
 
-    const { name } = useTheme();
+    function pickRandomName(names: string[]) {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        return names[randomIndex];
+    }
+    const names = [
+        'Themey McThemeFace', // 8%
+        'Mr. Theme', // 8%
+        'Theme', // 84%
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+        'Theme',
+    ];
 
-    // const nameTheNameless = () => {
-    //     if (!theme.name) {
-    //         theme.set.name('Theme');
-    //     }
-    // };
+    const nameTheNameless = () => {
+        if (!currentTheme.name) {
+            themeList.theme.update(currentThemeId, {
+                ...currentTheme,
+                name: pickRandomName(names),
+            });
+        }
+    };
     const onSetThemeData = (themeData: ThemeData) => {
         themeList.set.themes({
             ...themeList.themes,
@@ -116,21 +171,29 @@ export const Plugin = () => {
             <div className="flex h-10 w-full">
                 <div className="h-full w-10"></div>
                 <div className="flex grow flex-row justify-between pr-2">
-                    <div className="flex h-full items-center justify-between px-2">
-                        <Dropdown
-                            value={currentTheme}
-                            options={themeListMenuOptions}
-                            onChange={handleOptionSelect}
-                        />
-                        {/* <Textbox
-                            value={theme.name}
-                            onChange={(e) =>
-                                theme.set.name(e.currentTarget.value)
-                            }
-                            onBlur={() => nameTheNameless()}
-                            onfocusout={() => nameTheNameless()}
-                            placeholder="Theme name"
-                        /> */}
+                    <div className="flex h-full items-center px-2">
+                        {isEditing ? (
+                            <Textbox
+                                ref={inputRef}
+                                value={currentTheme.name}
+                                onChange={(e) =>
+                                    themeList.theme.update(currentThemeId, {
+                                        ...currentTheme,
+                                        name: e.currentTarget.value,
+                                    })
+                                }
+                                onBlur={() => handleTextboxBlur}
+                                onKeyDown={handleTextboxKeyDown}
+                                onfocusout={() => handleTextboxBlur}
+                                placeholder="Theme name"
+                            />
+                        ) : (
+                            <Dropdown
+                                value={currentThemeId}
+                                options={themeListMenuOptions}
+                                onChange={handleOptionSelect}
+                            />
+                        )}
                     </div>
                     <TabGroup
                         themeData={theme}
@@ -142,7 +205,7 @@ export const Plugin = () => {
                     className="build-button z-50 flex h-full w-32 items-center justify-center font-medium"
                     onClick={(e) => console.log(themeList)}
                 >
-                    Build {theme.name}
+                    Build Theme
                 </button>
             </div>
         </div>

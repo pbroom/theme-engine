@@ -2,7 +2,12 @@ import z from 'zod';
 import { create, StateCreator } from 'zustand';
 import { nanoid } from 'nanoid';
 import { customAlphabet } from 'nanoid';
-import { ThemeDataSchema, type ThemeData, createTheme } from './useTheme';
+import {
+    ThemeDataSchema,
+    type ThemeData,
+    createTheme,
+    defaultThemeColors2,
+} from './useTheme';
 
 export {
     createThemeList,
@@ -14,8 +19,8 @@ export {
 };
 
 const defaultThemes: ThemeData[] = [
-    createTheme(),
-    createTheme(nanoid(12), 'Theme 2'),
+    createTheme(nanoid(12), 'banana'),
+    createTheme(nanoid(12), 'Theme 2', defaultThemeColors2),
 ];
 
 /**

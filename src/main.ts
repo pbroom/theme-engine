@@ -1,21 +1,14 @@
-import {
-    convertHexColorToRgbColor,
-    showUI,
-} from '@create-figma-plugin/utilities';
-import { paletteTones, findMaxChromasForHue } from './color';
+import { showUI } from '@create-figma-plugin/utilities';
+import { paletteTones } from './color';
 import { paletteGroup } from './palette-swatches';
-import {
-    paletteVariableCollection,
-    paletteColorVariable,
-} from './palette-variables';
+import { paletteVariableCollection } from './palette-variables';
 import VariableCollection from './variable-collection';
-import { copyToClipboard, copyToClipboardAsync } from 'figx';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
 };
 export default function () {
-    showUI({ height: height(640), width: 512, title: 'Dynamic Color' });
+    showUI({ height: height(640), width: 512, title: 'Theme Engine' });
 }
 
 /**

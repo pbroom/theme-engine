@@ -20,6 +20,7 @@ export {
     createThemeColor,
     createTheme,
     defaultThemeColors,
+    defaultThemeColors2,
     ThemeDataSchema,
     ThemeActionsSchema,
     type ThemeData,
@@ -40,6 +41,14 @@ const defaultThemeColors: ThemeColorData[] = [
     createThemeColor('00ffff', 'neutral', '', 'c/12'),
     createThemeColor('ff00ff', 'neutralVariant', '', 'c/8'),
     createThemeColor('ff0000', 'error', '25', '89'),
+];
+const defaultThemeColors2: ThemeColorData[] = [
+    createThemeColor('f0000f', 'Primary'),
+    createThemeColor('ff00ff', 'Secondary', '', 'c/4'),
+    createThemeColor('00ff00', 'Tertiary', 'h+60', 'c*0.6'),
+    createThemeColor('00ffff', 'neutral', '', 'c/12'),
+    createThemeColor('ffff00', 'neutralVariant', '', 'c/8'),
+    createThemeColor('0ff000', 'error', '25', '89'),
 ];
 const defaultAliasGroups: AliasGroupData[] = [createAliasGroup()];
 
