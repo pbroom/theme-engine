@@ -37,6 +37,8 @@ import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData } from '../hooks/useAliasGroup';
 import { Theme, ThemeData, useTheme } from '../hooks/useTheme';
+import { nan } from 'zod';
+import { nanoid } from 'nanoid';
 
 type TabGroupProps = {
     themeData: ThemeData;
@@ -48,6 +50,18 @@ const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
+    const [currentThemeColorId, setCurrentThemeColorId] = useState<string>(
+        `${themeData.themeColors[0].id}`,
+    );
+    const findThemeColorById = (id: string) => {
+        const theme = themeData.themeColors.find((theme) => theme.id === id);
+        if (!theme) {
+            throw new Error(`Theme with id ${id} not found`);
+        }
+        return theme;
+    };
+    const currentThemeColor: ThemeColorData =
+        findThemeColorById(currentThemeColorId);
     const theme: Theme = useTheme();
     const themeColor: ThemeColor = useThemeColor();
     useEffect(() => {
@@ -59,28 +73,30 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const onSelectThemeColor = (themeColorId: string) => {};
 
     const [hexColorInput, setHexColorInput] = useState<string>(
-        themeColor.sourceColor.sourceHex,
+        currentThemeColor.sourceColor.sourceHex,
     );
-    const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
+    const [tones, setTones] = useState<string>(
+        currentThemeColor.tones.join(', '),
+    );
     const hue = () => {
-        const sourceHue: number = themeColor.sourceColor.hct.hue;
-        const hueCalcInput: string = themeColor.hueCalc;
+        const sourceHue: number = currentThemeColor.sourceColor.hct.hue;
+        const hueCalcInput: string = currentThemeColor.hueCalc;
         const hue: number = calculateHue(sourceHue, hueCalcInput);
         return hue;
     };
     const chroma = () => {
-        const sourceChroma: number = themeColor.sourceColor.hct.chroma;
-        const chromaCalcInput: string = themeColor.chromaCalc;
+        const sourceChroma: number = currentThemeColor.sourceColor.hct.chroma;
+        const chromaCalcInput: string = currentThemeColor.chromaCalc;
         const chroma: number = calculateChroma(sourceChroma, chromaCalcInput);
         return chroma;
     };
     const [hueSlider, setHueSlider] = useState<number>(hue);
     const [hueCalcInput, setHueCalcInput] = useState<string>(
-        themeColor.hueCalc.toString(),
+        currentThemeColor.hueCalc.toString(),
     );
     const [chromaSlider, setChromaSlider] = useState<number>(chroma);
     const [chromaCalcInput, setChromaCalcInput] = useState<string>(
-        themeColor.chromaCalc.toString(),
+        currentThemeColor.chromaCalc.toString(),
     );
 
     const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
@@ -138,7 +154,9 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
         setHueSlider(calculatedHue);
         // if the hueCalcInput is an expression, don't update it
         if (!themeColor.hueCalc.toLowerCase().includes('h')) {
-            themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
+            themeColor.set.hueCalc(
+                currentThemeColor.sourceColor.hct.hue.toString(),
+            );
             setHueCalcInput(calculatedHue.toString());
         }
 
@@ -151,7 +169,7 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
         setChromaSlider(calculatedChroma);
         if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
             themeColor.set.chromaCalc(
-                themeColor.sourceColor.hct.chroma.toString(),
+                currentThemeColor.sourceColor.hct.chroma.toString(),
             );
             setChromaCalcInput(calculatedChroma.toString());
         }
@@ -163,7 +181,7 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
         setHueCalcInput(newHueCalcInput.toString());
         console.log(
             calculateHue(
-                themeColor.sourceColor.hct.hue,
+                currentThemeColor.sourceColor.hct.hue,
                 newHueCalcInput.toString(),
             ),
         );
@@ -171,7 +189,7 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const onHueCalcInput = (e: any) => {
         const newHueCalcInput: string = e.currentTarget.value;
         const calculatedHue: number = calculateHue(
-            themeColor.sourceColor.hct.hue,
+            currentThemeColor.sourceColor.hct.hue,
             newHueCalcInput,
         );
         themeColor.set.hueCalc(newHueCalcInput);
@@ -193,7 +211,7 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
         const newChromaCalcInput: string = e.currentTarget.value;
         const calculatedChroma: number = round(
             calculateChroma(
-                themeColor.sourceColor.hct.chroma,
+                currentThemeColor.sourceColor.hct.chroma,
                 newChromaCalcInput,
             ),
         );
@@ -202,9 +220,9 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
         setChromaCalcInput(newChromaCalcInput);
         if (newChromaCalcInput === '') {
             themeColor.set.chromaCalc(
-                themeColor.sourceColor.hct.chroma.toString(),
+                currentThemeColor.sourceColor.hct.chroma.toString(),
             );
-            setChromaSlider(themeColor.sourceColor.hct.chroma);
+            setChromaSlider(currentThemeColor.sourceColor.hct.chroma);
         }
     };
     const onAddAlias = () => {
@@ -257,7 +275,7 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
                                         <div className="flex-1">
                                             <Textbox
                                                 title="Color name"
-                                                value={themeColor.name}
+                                                value={currentThemeColor.name}
                                                 onChange={(e) =>
                                                     themeColor.set.name(
                                                         e.currentTarget.value,
@@ -270,7 +288,23 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
                                                 placeholder="Color name"
                                             />
                                         </div>
-                                        <IconButton title={`Duplicate color`}>
+                                        <IconButton
+                                            title={`Duplicate color`}
+                                            onClick={() => {
+                                                const newThemeColor: ThemeColorData =
+                                                    {
+                                                        ...themeColor,
+                                                        id: nanoid(12),
+                                                    };
+                                                theme.themeColor.add(
+                                                    newThemeColor,
+                                                );
+                                                onSetThemeData({
+                                                    ...theme.data,
+                                                    id: themeData.id,
+                                                });
+                                            }}
+                                        >
                                             <CopyPlusIcon
                                                 size={17}
                                                 strokeWidth={1.3}
@@ -303,17 +337,22 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
                                         <Muted title="Source color hue, chroma, tone">
                                             H:{' '}
                                             {round(
-                                                themeColor.sourceColor.hct.hue,
+                                                currentThemeColor.sourceColor
+                                                    .hct.hue,
                                             )}{' '}
                                             C:{' '}
                                             {round(
-                                                themeColor.sourceColor.hct
-                                                    .chroma,
+                                                currentThemeColor.sourceColor
+                                                    .hct.chroma,
                                             )}{' '}
                                             T:{' '}
                                             {round(
-                                                themeColor.sourceColor.hct.tone,
+                                                currentThemeColor.sourceColor
+                                                    .hct.tone,
                                             )}
+                                        </Muted>
+                                        <Muted title="End color hue, chroma, tone">
+                                            {themeData.name}
                                         </Muted>
                                         {/* <Muted title="End color hue, chroma, tone">
                                             H: {round(themeColor.endColor.hct.hue)} C:{' '}
@@ -327,8 +366,9 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
                                 className="h-full w-32"
                                 style={{
                                     background: `linear-gradient(to right, ${hctTonalGradient(
-                                        themeColor.sourceColor.hct.hue,
-                                        themeColor.sourceColor.hct.chroma,
+                                        currentThemeColor.sourceColor.hct.hue,
+                                        currentThemeColor.sourceColor.hct
+                                            .chroma,
                                     )})`,
                                 }}
                             ></div>

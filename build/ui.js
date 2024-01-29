@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3f3a137-ccdc-47b1-9dac-e8c7554c8ace/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8fdd7fa-d628-4a7a-b487-7eeeb1944ea0/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3f3a137-ccdc-47b1-9dac-e8c7554c8ace/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8fdd7fa-d628-4a7a-b487-7eeeb1944ea0/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2395,10 +2395,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c51417d-f8e8-4c80-a5dd-ac118b2435db/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01d96f40-47ab-40c0-9339-797c166814e4/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c51417d-f8e8-4c80-a5dd-ac118b2435db/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01d96f40-47ab-40c0-9339-797c166814e4/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2435,10 +2435,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/83e5159f-ae92-4017-86c4-89a64365d11d/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8e4d09d4-d2a9-49ad-adc0-7fcd44cf4a91/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/83e5159f-ae92-4017-86c4-89a64365d11d/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8e4d09d4-d2a9-49ad-adc0-7fcd44cf4a91/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2676,10 +2676,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/701300c3-9cfa-4dd4-a0c0-d313c13a20e6/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/809809bc-fb73-4591-9e2f-45e09a116d0e/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/701300c3-9cfa-4dd4-a0c0-d313c13a20e6/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/809809bc-fb73-4591-9e2f-45e09a116d0e/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3153,10 +3153,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e769cfbb-2d2e-4e10-a026-ffd1b5e522a9/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/005e5ec9-dcf9-4bf9-bb69-f97ffbfaa5f3/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e769cfbb-2d2e-4e10-a026-ffd1b5e522a9/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/005e5ec9-dcf9-4bf9-bb69-f97ffbfaa5f3/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3226,10 +3226,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e2ee22e-92b5-4f3c-8170-f7ff197ce21c/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c09a2812-70cd-422d-86ac-34a6427ca8d6/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e2ee22e-92b5-4f3c-8170-f7ff197ce21c/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c09a2812-70cd-422d-86ac-34a6427ca8d6/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3333,10 +3333,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5dc53216-fee5-4b0a-89cd-1a6470debc4a/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9f541a11-330f-44f4-965b-e8c3d9763f3c/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5dc53216-fee5-4b0a-89cd-1a6470debc4a/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9f541a11-330f-44f4-965b-e8c3d9763f3c/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3933,10 +3933,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1a10894-7f3a-4fbb-a906-aa0803637831/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddfa13bb-733e-492d-bfb0-59cabbbcc708/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c1a10894-7f3a-4fbb-a906-aa0803637831/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ddfa13bb-733e-492d-bfb0-59cabbbcc708/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4441,10 +4441,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/71074c18-4167-4a31-813e-db3b0868514a/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61956b3e-0c96-42a6-87d6-445dde35fca3/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/71074c18-4167-4a31-813e-db3b0868514a/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61956b3e-0c96-42a6-87d6-445dde35fca3/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4784,10 +4784,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1454d329-f469-486d-a426-9a018f27d356/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/670da046-aa6e-45df-bca7-3329b8d846a6/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1454d329-f469-486d-a426-9a018f27d356/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/670da046-aa6e-45df-bca7-3329b8d846a6/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4986,10 +4986,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0c7cb13-1008-4d30-ad69-6eef8dcae598/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d245c4b1-e9aa-419b-a4b4-7a33ee768c07/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f0c7cb13-1008-4d30-ad69-6eef8dcae598/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d245c4b1-e9aa-419b-a4b4-7a33ee768c07/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5082,10 +5082,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8aa5202-a224-48ee-a91b-267e08c4073b/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e60ebdee-271b-4ad1-9b8a-f0bd51c25c4e/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a8aa5202-a224-48ee-a91b-267e08c4073b/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e60ebdee-271b-4ad1-9b8a-f0bd51c25c4e/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5166,10 +5166,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e8ab8a-8653-47b8-98bc-da18db2fba18/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca7d8d9c-e772-4192-81c5-0e08ba47b790/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/81e8ab8a-8653-47b8-98bc-da18db2fba18/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ca7d8d9c-e772-4192-81c5-0e08ba47b790/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5198,9 +5198,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69159585-855b-41ba-8537-f0f2e53eac3c/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b383fad7-5a4a-4cb2-9d19-e534892d419d/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/69159585-855b-41ba-8537-f0f2e53eac3c/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b383fad7-5a4a-4cb2-9d19-e534892d419d/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -69769,9 +69769,21 @@ svg {
       init_alias();
       init_theme_color_select();
       init_useTheme();
+      init_index_browser();
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ themeData: themeData2, onSetThemeData, className }) => {
         const [tabValue, setTabValue] = h2("Primitives");
+        const [currentThemeColorId, setCurrentThemeColorId] = h2(
+          `${themeData2.themeColors[0].id}`
+        );
+        const findThemeColorById = (id) => {
+          const theme2 = themeData2.themeColors.find((theme3) => theme3.id === id);
+          if (!theme2) {
+            throw new Error(`Theme with id ${id} not found`);
+          }
+          return theme2;
+        };
+        const currentThemeColor = findThemeColorById(currentThemeColorId);
         const theme = useTheme();
         const themeColor = useThemeColor();
         p2(() => {
@@ -69782,28 +69794,30 @@ svg {
         const onSelectThemeColor = (themeColorId) => {
         };
         const [hexColorInput, setHexColorInput] = h2(
-          themeColor.sourceColor.sourceHex
+          currentThemeColor.sourceColor.sourceHex
         );
-        const [tones, setTones] = h2(themeColor.tones.join(", "));
+        const [tones, setTones] = h2(
+          currentThemeColor.tones.join(", ")
+        );
         const hue = () => {
-          const sourceHue = themeColor.sourceColor.hct.hue;
-          const hueCalcInput2 = themeColor.hueCalc;
+          const sourceHue = currentThemeColor.sourceColor.hct.hue;
+          const hueCalcInput2 = currentThemeColor.hueCalc;
           const hue2 = calculateHue2(sourceHue, hueCalcInput2);
           return hue2;
         };
         const chroma = () => {
-          const sourceChroma = themeColor.sourceColor.hct.chroma;
-          const chromaCalcInput2 = themeColor.chromaCalc;
+          const sourceChroma = currentThemeColor.sourceColor.hct.chroma;
+          const chromaCalcInput2 = currentThemeColor.chromaCalc;
           const chroma2 = calculateChroma2(sourceChroma, chromaCalcInput2);
           return chroma2;
         };
         const [hueSlider, setHueSlider] = h2(hue);
         const [hueCalcInput, setHueCalcInput] = h2(
-          themeColor.hueCalc.toString()
+          currentThemeColor.hueCalc.toString()
         );
         const [chromaSlider, setChromaSlider] = h2(chroma);
         const [chromaCalcInput, setChromaCalcInput] = h2(
-          themeColor.chromaCalc.toString()
+          currentThemeColor.chromaCalc.toString()
         );
         const newHct = Hct.from(hue(), findMaxChromaForHueAtTone(hue(), 50), 50);
         const chromaHex = hexFromHct(newHct);
@@ -69852,7 +69866,9 @@ svg {
           );
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
-            themeColor.set.hueCalc(themeColor.sourceColor.hct.hue.toString());
+            themeColor.set.hueCalc(
+              currentThemeColor.sourceColor.hct.hue.toString()
+            );
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
@@ -69864,7 +69880,7 @@ svg {
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
             themeColor.set.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
+              currentThemeColor.sourceColor.hct.chroma.toString()
             );
             setChromaCalcInput(calculatedChroma.toString());
           }
@@ -69876,7 +69892,7 @@ svg {
           setHueCalcInput(newHueCalcInput.toString());
           console.log(
             calculateHue2(
-              themeColor.sourceColor.hct.hue,
+              currentThemeColor.sourceColor.hct.hue,
               newHueCalcInput.toString()
             )
           );
@@ -69884,7 +69900,7 @@ svg {
         const onHueCalcInput = (e5) => {
           const newHueCalcInput = e5.currentTarget.value;
           const calculatedHue = calculateHue2(
-            themeColor.sourceColor.hct.hue,
+            currentThemeColor.sourceColor.hct.hue,
             newHueCalcInput
           );
           themeColor.set.hueCalc(newHueCalcInput);
@@ -69906,7 +69922,7 @@ svg {
           const newChromaCalcInput = e5.currentTarget.value;
           const calculatedChroma = round2(
             calculateChroma2(
-              themeColor.sourceColor.hct.chroma,
+              currentThemeColor.sourceColor.hct.chroma,
               newChromaCalcInput
             )
           );
@@ -69915,9 +69931,9 @@ svg {
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
             themeColor.set.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
+              currentThemeColor.sourceColor.hct.chroma.toString()
             );
-            setChromaSlider(themeColor.sourceColor.hct.chroma);
+            setChromaSlider(currentThemeColor.sourceColor.hct.chroma);
           }
         };
         const onAddAlias = () => {
@@ -69955,7 +69971,7 @@ svg {
               Textbox,
               {
                 title: "Color name",
-                value: themeColor.name,
+                value: currentThemeColor.name,
                 onChange: (e5) => themeColor.set.name(
                   e5.currentTarget.value
                 ),
@@ -69963,13 +69979,30 @@ svg {
                 onfocusout: () => nameTheNameless(),
                 placeholder: "Color name"
               }
-            )), /* @__PURE__ */ y(IconButton, { title: `Duplicate color` }, /* @__PURE__ */ y(
-              CopyPlusIcon,
-              {
-                size: 17,
-                strokeWidth: 1.3
-              }
             )), /* @__PURE__ */ y(
+              IconButton,
+              {
+                title: `Duplicate color`,
+                onClick: () => {
+                  const newThemeColor = __spreadProps(__spreadValues({}, themeColor), {
+                    id: nanoid(12)
+                  });
+                  theme.themeColor.add(
+                    newThemeColor
+                  );
+                  onSetThemeData(__spreadProps(__spreadValues({}, theme.data), {
+                    id: themeData2.id
+                  }));
+                }
+              },
+              /* @__PURE__ */ y(
+                CopyPlusIcon,
+                {
+                  size: 17,
+                  strokeWidth: 1.3
+                }
+              )
+            ), /* @__PURE__ */ y(
               IconButton,
               {
                 title: `Remove color from theme`
@@ -69993,19 +70026,19 @@ svg {
                 placeholder: "Color options"
               }
             )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
-              themeColor.sourceColor.hct.hue
+              currentThemeColor.sourceColor.hct.hue
             ), " ", "C:", " ", round2(
-              themeColor.sourceColor.hct.chroma
+              currentThemeColor.sourceColor.hct.chroma
             ), " ", "T:", " ", round2(
-              themeColor.sourceColor.hct.tone
-            ))))), /* @__PURE__ */ y(
+              currentThemeColor.sourceColor.hct.tone
+            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, themeData2.name)))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    themeColor.sourceColor.hct.hue,
-                    themeColor.sourceColor.hct.chroma
+                    currentThemeColor.sourceColor.hct.hue,
+                    currentThemeColor.sourceColor.hct.chroma
                   )})`
                 }
               }
@@ -70238,8 +70271,17 @@ svg {
       Plugin = () => {
         const themeList2 = useThemeList();
         console.log(themeList2);
-        const theme = themeList2.themes[0];
-        const [currentThemeId, setCurrentThemeId] = h2(`${theme.id}`);
+        const [currentThemeId, setCurrentThemeId] = h2(
+          `${themeList2.themes[0].id}`
+        );
+        const findThemeById = (id) => {
+          const theme = themeList2.themes.find((theme2) => theme2.id === id);
+          if (!theme) {
+            throw new Error(`Theme with id ${id} not found`);
+          }
+          return theme;
+        };
+        const currentTheme = findThemeById(currentThemeId);
         const [isEditing, setIsEditing] = h2(false);
         const inputRef = _2(null);
         p2(() => {
@@ -70258,18 +70300,10 @@ svg {
             nameTheNameless();
           }
         };
-        const findThemeById = (id) => {
-          const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
-          if (!theme2) {
-            throw new Error(`Theme with id ${id} not found`);
-          }
-          return theme2;
-        };
-        const currentTheme = findThemeById(currentThemeId);
-        const themeListOptions = themeList2.themes.map((theme2) => {
+        const themeListOptions = themeList2.themes.map((theme) => {
           return {
-            value: theme2.id,
-            text: theme2.name
+            value: theme.id,
+            text: theme.name
           };
         });
         const themeListMenuOptions = [
@@ -70313,7 +70347,7 @@ svg {
           if (selectedValue === "Delete") {
             const themeToDelete = currentThemeId;
             const nextThemeId = (_a = themeList2.themes.find(
-              (theme2) => theme2.id !== currentThemeId
+              (theme) => theme.id !== currentThemeId
             )) == null ? void 0 : _a.id;
             if (!nextThemeId) {
               const newTheme = createTheme(nanoid(12), "New theme");
@@ -70357,19 +70391,19 @@ svg {
           }
         };
         const onSetThemeData = (themeData2) => {
-          themeList2.set.themes(__spreadValues(__spreadValues({}, themeList2.themes), themeData2));
+          themeList2.theme.update(currentThemeId, themeData2);
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
           Textbox,
           {
             ref: inputRef,
-            value: currentTheme.name,
+            value: findThemeById(currentThemeId).name,
             onChange: (e5) => themeList2.theme.update(currentThemeId, __spreadProps(__spreadValues({}, currentTheme), {
               name: e5.currentTarget.value
             })),
-            onBlur: () => handleTextboxBlur,
+            onBlur: handleTextboxBlur,
             onKeyDown: handleTextboxKeyDown,
-            onfocusout: () => handleTextboxBlur,
+            onfocusout: handleTextboxBlur,
             placeholder: "Theme name"
           }
         ) : /* @__PURE__ */ y(
@@ -70382,7 +70416,7 @@ svg {
         )), /* @__PURE__ */ y(
           tabs_default,
           {
-            themeData: theme,
+            themeData: findThemeById(currentThemeId),
             onSetThemeData
           }
         )), /* @__PURE__ */ y(

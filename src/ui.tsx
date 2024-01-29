@@ -27,8 +27,18 @@ import { set } from 'lodash';
 export const Plugin = () => {
     const themeList = useThemeList();
     console.log(themeList);
-    const theme = themeList.themes[0];
-    const [currentThemeId, setCurrentThemeId] = useState<string>(`${theme.id}`);
+    const [currentThemeId, setCurrentThemeId] = useState<string>(
+        `${themeList.themes[0].id}`,
+    );
+    const findThemeById = (id: string) => {
+        const theme = themeList.themes.find((theme) => theme.id === id);
+        if (!theme) {
+            throw new Error(`Theme with id ${id} not found`);
+        }
+        return theme;
+    };
+    const currentTheme: ThemeData = findThemeById(currentThemeId);
+
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     useEffect(() => {
@@ -48,14 +58,7 @@ export const Plugin = () => {
             nameTheNameless();
         }
     };
-    const findThemeById = (id: string) => {
-        const theme = themeList.themes.find((theme) => theme.id === id);
-        if (!theme) {
-            throw new Error(`Theme with id ${id} not found`);
-        }
-        return theme;
-    };
-    const currentTheme: ThemeData = findThemeById(currentThemeId);
+
     const themeListOptions = themeList.themes.map((theme) => {
         return {
             value: theme.id,
@@ -155,10 +158,7 @@ export const Plugin = () => {
         }
     };
     const onSetThemeData = (themeData: ThemeData) => {
-        themeList.set.themes({
-            ...themeList.themes,
-            ...themeData,
-        });
+        themeList.theme.update(currentThemeId, themeData);
     };
     // Rendering the UI
     return (
@@ -175,16 +175,16 @@ export const Plugin = () => {
                         {isEditing ? (
                             <Textbox
                                 ref={inputRef}
-                                value={currentTheme.name}
+                                value={findThemeById(currentThemeId).name}
                                 onChange={(e) =>
                                     themeList.theme.update(currentThemeId, {
                                         ...currentTheme,
                                         name: e.currentTarget.value,
                                     })
                                 }
-                                onBlur={() => handleTextboxBlur}
+                                onBlur={handleTextboxBlur}
                                 onKeyDown={handleTextboxKeyDown}
-                                onfocusout={() => handleTextboxBlur}
+                                onfocusout={handleTextboxBlur}
                                 placeholder="Theme name"
                             />
                         ) : (
@@ -196,7 +196,7 @@ export const Plugin = () => {
                         )}
                     </div>
                     <TabGroup
-                        themeData={theme}
+                        themeData={findThemeById(currentThemeId)}
                         onSetThemeData={onSetThemeData}
                     />
                 </div>
