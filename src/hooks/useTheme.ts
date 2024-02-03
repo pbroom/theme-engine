@@ -15,6 +15,7 @@ import {
     createAliasGroup,
     AliasCrud,
 } from './useAliasGroup';
+import { subscribeWithSelector } from 'zustand/middleware';
 
 export {
     createThemeColor,
@@ -35,7 +36,7 @@ export {
 const sourceHex = 'ff0000';
 
 const defaultThemeColors: ThemeColorData[] = [
-    createThemeColor(sourceHex, 'Primary'),
+    createThemeColor(sourceHex, 'Primary', 'h', 'c'),
     createThemeColor('ffff00', 'Secondary', '', 'c/4'),
     createThemeColor('00ff00', 'Tertiary', 'h+60', 'c*0.6'),
     createThemeColor('00ffff', 'neutral', '', 'c/12'),
@@ -43,7 +44,7 @@ const defaultThemeColors: ThemeColorData[] = [
     createThemeColor('ff0000', 'error', '25', '89'),
 ];
 const defaultThemeColors2: ThemeColorData[] = [
-    createThemeColor('f0000f', 'Primary'),
+    createThemeColor('f0000f', 'Primary', 'h', 'c'),
     createThemeColor('ff00ff', 'Secondary', '', 'c/4'),
     createThemeColor('00ff00', 'Tertiary', 'h+60', 'c*0.6'),
     createThemeColor('00ffff', 'neutral', '', 'c/12'),
@@ -168,82 +169,88 @@ type Theme = ThemeData & ThemeActions & ThemeColorCrud & AliasGroupCrud;
  */
 const useTheme = create<
     ThemeData & ThemeActions & ThemeColorCrud & AliasGroupCrud
->((set, get, ...a) => ({
-    ...themeData(set, get, ...a),
-    ...themeActions(set, get, ...a),
-    ...themeColorCrud(set, get, ...a),
-    ...aliasGroupCrud(set, get, ...a),
-    data: {
-        id: themeData(set, get, ...a).id,
-        name: themeData(set, get, ...a).name,
-        themeColors: themeData(set, get, ...a).themeColors,
-        aliasGroups: themeData(set, get, ...a).aliasGroups,
-    },
-    themeColor: {
-        add: (
-            themeColor: ThemeColorData = {
-                ...defaultThemeColor,
-                id: nanoid(12),
-            },
-        ) =>
-            set((state) => ({
-                ...state,
-                themeColors: [...state.themeColors, themeColor],
-            })),
-        duplicate: (id: string) =>
-            set((state) => {
-                const themeColor = state.themeColors.find((c) => c.id === id);
-                if (themeColor) {
-                    const newThemeColor = { ...themeColor, id: nanoid(12) };
-                    return {
-                        ...state,
-                        themeColors: [...state.themeColors, newThemeColor],
-                    };
-                }
-                return state;
-            }),
-        update: (id: string, themeColor: ThemeColorData) =>
-            set((state) => ({
-                ...state,
-                themeColors: state.themeColors.map((c) =>
-                    c.id === id ? themeColor : c,
-                ),
-            })),
-        remove: (id: string) =>
-            set((state) => ({
-                ...state,
-                themeColors: state.themeColors.filter((c) => c.id !== id),
-            })),
-    },
-    aliasGroup: {
-        add: () =>
-            set((state) => ({
-                ...state,
-                aliasGroups: [...state.aliasGroups, createAliasGroup()],
-            })),
-        duplicate: (id: string) =>
-            set((state) => {
-                const aliasGroup = state.aliasGroups.find((a) => a.id === id);
-                if (aliasGroup) {
-                    const newAliasGroup = { ...aliasGroup, id: nanoid(12) };
-                    return {
-                        ...state,
-                        aliasGroups: [...state.aliasGroups, newAliasGroup],
-                    };
-                }
-                return state;
-            }),
-        update: (id: string, aliasGroup: AliasGroupData) =>
-            set((state) => ({
-                ...state,
-                aliasGroups: state.aliasGroups.map((a) =>
-                    a.id === id ? aliasGroup : a,
-                ),
-            })),
-        remove: (id: string) =>
-            set((state) => ({
-                ...state,
-                aliasGroups: state.aliasGroups.filter((a) => a.id !== id),
-            })),
-    },
-}));
+>()(
+    subscribeWithSelector((set, get, ...a) => ({
+        ...themeData(set, get, ...a),
+        ...themeActions(set, get, ...a),
+        ...themeColorCrud(set, get, ...a),
+        ...aliasGroupCrud(set, get, ...a),
+        data: {
+            id: themeData(set, get, ...a).id,
+            name: themeData(set, get, ...a).name,
+            themeColors: themeData(set, get, ...a).themeColors,
+            aliasGroups: themeData(set, get, ...a).aliasGroups,
+        },
+        themeColor: {
+            add: (
+                themeColor: ThemeColorData = {
+                    ...defaultThemeColor,
+                    id: nanoid(12),
+                },
+            ) =>
+                set((state) => ({
+                    ...state,
+                    themeColors: [...state.themeColors, themeColor],
+                })),
+            duplicate: (id: string) =>
+                set((state) => {
+                    const themeColor = state.themeColors.find(
+                        (c) => c.id === id,
+                    );
+                    if (themeColor) {
+                        const newThemeColor = { ...themeColor, id: nanoid(12) };
+                        return {
+                            ...state,
+                            themeColors: [...state.themeColors, newThemeColor],
+                        };
+                    }
+                    return state;
+                }),
+            update: (id: string, themeColor: ThemeColorData) =>
+                set((state) => ({
+                    ...state,
+                    themeColors: state.themeColors.map((c) =>
+                        c.id === id ? themeColor : c,
+                    ),
+                })),
+            remove: (id: string) =>
+                set((state) => ({
+                    ...state,
+                    themeColors: state.themeColors.filter((c) => c.id !== id),
+                })),
+        },
+        aliasGroup: {
+            add: () =>
+                set((state) => ({
+                    ...state,
+                    aliasGroups: [...state.aliasGroups, createAliasGroup()],
+                })),
+            duplicate: (id: string) =>
+                set((state) => {
+                    const aliasGroup = state.aliasGroups.find(
+                        (a) => a.id === id,
+                    );
+                    if (aliasGroup) {
+                        const newAliasGroup = { ...aliasGroup, id: nanoid(12) };
+                        return {
+                            ...state,
+                            aliasGroups: [...state.aliasGroups, newAliasGroup],
+                        };
+                    }
+                    return state;
+                }),
+            update: (id: string, aliasGroup: AliasGroupData) =>
+                set((state) => ({
+                    ...state,
+                    aliasGroups: state.aliasGroups.map((a) =>
+                        a.id === id ? aliasGroup : a,
+                    ),
+                })),
+            remove: (id: string) =>
+                set((state) => ({
+                    ...state,
+                    aliasGroups: state.aliasGroups.filter((a) => a.id !== id),
+                })),
+        },
+    })),
+);

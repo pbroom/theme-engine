@@ -22,7 +22,6 @@ import {
 import { useEffect, useState } from 'react';
 import { useThemeList } from './hooks/useThemeList';
 import { useRef } from 'preact/hooks';
-import { set } from 'lodash';
 
 export const Plugin = () => {
     const themeList = useThemeList();

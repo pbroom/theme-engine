@@ -1,5 +1,5 @@
 import z from 'zod';
-import { create, StateCreator } from 'zustand';
+import { create, State, StateCreator, StoreMutatorIdentifier } from 'zustand';
 import { nanoid } from 'nanoid';
 import { customAlphabet } from 'nanoid';
 import {

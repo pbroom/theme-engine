@@ -17,6 +17,7 @@ import {
     aliasCrud,
 } from './useAliasGroup';
 import { ColorDataSchema } from './useColor';
+import { subscribeWithSelector } from 'zustand/middleware';
 
 export {
     createThemeColor,
@@ -261,6 +262,8 @@ const themeColorStore: StateCreator<ThemeColor> = (set, get, ...a) => ({
     },
 });
 
-const useThemeColor = create<ThemeColor>()((...a) => ({
-    ...themeColorStore(...a),
-}));
+const useThemeColor = create<ThemeColor>()(
+    subscribeWithSelector((...a) => ({
+        ...themeColorStore(...a),
+    })),
+);
