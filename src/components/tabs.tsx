@@ -46,7 +46,7 @@ import {
     ThemeListData,
     useThemeList,
 } from '../hooks/useThemeList';
-import _, { set } from 'lodash';
+import _, { findIndex, set } from 'lodash';
 
 type TabGroupProps = {
     themeData: ThemeData;
@@ -58,13 +58,14 @@ const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
-    const [currentThemeId, setCurrentThemeId] = useState<string>(themeData.id);
-    const [currentThemeColorId, setCurrentThemeColorId] = useState<string>(
-        `${themeData.themeColors[0].id}`,
-    );
 
     const themeListStore = useThemeList;
     const themeList: ThemeListData & ThemeListActions = themeListStore();
+
+    const [currentThemeId, setCurrentThemeId] = useState<string>(themeData.id);
+    const [currentThemeColorId, setCurrentThemeColorId] = useState<string>(
+        `${themeListStore.getState().data.themes[0].themeColors[0].id}`,
+    );
     // const themeStore = useTheme;
     // const theme: Theme = themeStore();
     // const themeColorStore = useThemeColor;
@@ -91,7 +92,8 @@ const TabGroup = ({ themeData, onSetThemeData, className }: TabGroupProps) => {
     const setThemeColorName = (name: string) => {};
 
     const [hexColorInput, setHexColorInput] = useState<string>(
-        themeColorStore.getState().sourceColor.sourceHex,
+        // themeColorStore.getState().sourceColor.sourceHex,
+        themeListStore.getState().data.themes[0].themeColors[0].sourceColor.hex,
     );
     const [tones, setTones] = useState<string>(
         themeColorStore.getState().tones.join(', '),

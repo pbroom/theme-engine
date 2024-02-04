@@ -24,7 +24,8 @@ import { useThemeList } from './hooks/useThemeList';
 import { useRef } from 'preact/hooks';
 
 export const Plugin = () => {
-    const themeList = useThemeList();
+    const themeListStore = useThemeList;
+    const themeList = themeListStore();
     console.log(themeList);
     const [currentThemeId, setCurrentThemeId] = useState<string>(
         `${themeList.themes[0].id}`,
@@ -88,7 +89,7 @@ export const Plugin = () => {
         if (selectedValue === 'New theme...') {
             const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
-            themeList.theme.add(newTheme);
+            themeListStore.getState().theme('ADD', newTheme);
             setCurrentThemeId(newTheme.id);
             console.log(themeList);
         }
