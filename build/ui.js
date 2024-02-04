@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cff79e3c-1acb-45b1-87f1-5acbdba1f776/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06aa71ec-f3ca-4046-a232-9980e2b4586c/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cff79e3c-1acb-45b1-87f1-5acbdba1f776/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06aa71ec-f3ca-4046-a232-9980e2b4586c/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1546,10 +1546,10 @@ video {
     x.__r = 0;
   }
   function C(n3, l3, u3, t3, i4, o3, r3, f3, e5, a3, h3) {
-    var v3, p3, y3, d3, _4, g4 = t3 && t3.__k || s, b3 = l3.length;
+    var v3, p3, y3, d3, _3, g4 = t3 && t3.__k || s, b3 = l3.length;
     for (u3.__d = e5, P(u3, l3, g4), e5 = u3.__d, v3 = 0; v3 < b3; v3++)
-      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e5, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _4 && null != d3 && (_4 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e5 = S(y3, e5, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e5 = y3.__d : d3 && (e5 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
-    u3.__d = e5, u3.__e = _4;
+      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e5, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e5 = S(y3, e5, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e5 = y3.__d : d3 && (e5 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
+    u3.__d = e5, u3.__e = _3;
   }
   function P(n3, l3, u3) {
     var t3, i4, o3, r3, f3, e5 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
@@ -1636,14 +1636,14 @@ video {
     return this.l[n3.type + true](l.event ? l.event(n3) : n3);
   }
   function L(n3, u3, t3, i4, o3, r3, f3, e5, c3, s3) {
-    var a3, p3, y3, d3, _4, m3, k4, w4, x4, P6, S2, $3, H3, I3, T4, A4 = u3.type;
+    var a3, p3, y3, d3, _3, m3, k4, w4, x4, P6, S2, $3, H3, I3, T4, A4 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
     128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e5 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
     n:
       if ("function" == typeof A4)
         try {
-          if (w4 = u3.props, x4 = (a3 = A4.contextType) && i4[a3.__c], P6 = a3 ? x4 ? x4.props.value : a3.__ : i4, t3.__c ? k4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(w4, P6) : (u3.__c = p3 = new b(w4, P6), p3.constructor = A4, p3.render = O), x4 && x4.sub(p3), p3.props = w4, p3.state || (p3.state = {}), p3.context = P6, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(w4, p3.__s))), d3 = p3.props, _4 = p3.state, p3.__v = u3, y3)
+          if (w4 = u3.props, x4 = (a3 = A4.contextType) && i4[a3.__c], P6 = a3 ? x4 ? x4.props.value : a3.__ : i4, t3.__c ? k4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(w4, P6) : (u3.__c = p3 = new b(w4, P6), p3.constructor = A4, p3.render = O), x4 && x4.sub(p3), p3.props = w4, p3.state || (p3.state = {}), p3.context = P6, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(w4, p3.__s))), d3 = p3.props, _3 = p3.state, p3.__v = u3, y3)
             null == A4.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
           else {
             if (null == A4.getDerivedStateFromProps && w4 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(w4, P6), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(w4, p3.__s, P6) || u3.__v === t3.__v)) {
@@ -1655,7 +1655,7 @@ video {
               break n;
             }
             null != p3.componentWillUpdate && p3.componentWillUpdate(w4, p3.__s, P6), null != p3.componentDidUpdate && p3.__h.push(function() {
-              p3.componentDidUpdate(d3, _4, m3);
+              p3.componentDidUpdate(d3, _3, m3);
             });
           }
           if (p3.context = P6, p3.props = w4, p3.__P = n3, p3.__e = false, $3 = l.__r, H3 = 0, "prototype" in A4 && A4.prototype.render) {
@@ -1666,7 +1666,7 @@ video {
             do {
               p3.__d = false, $3 && $3(u3), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
             } while (p3.__d && ++H3 < 25);
-          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _4)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e5, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
+          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e5, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
         } catch (n4) {
           u3.__v = null, c3 || null != r3 ? (u3.__e = e5, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e5)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
         }
@@ -1689,11 +1689,11 @@ video {
     });
   }
   function j(l3, u3, t3, i4, o3, r3, f3, e5, s3) {
-    var a3, v3, y3, d3, _4, g4, b3, k4 = t3.props, w4 = u3.props, x4 = u3.type;
+    var a3, v3, y3, d3, _3, g4, b3, k4 = t3.props, w4 = u3.props, x4 = u3.type;
     if ("svg" === x4 && (o3 = true), null != r3) {
       for (a3 = 0; a3 < r3.length; a3++)
-        if ((_4 = r3[a3]) && "setAttribute" in _4 == !!x4 && (x4 ? _4.localName === x4 : 3 === _4.nodeType)) {
-          l3 = _4, r3[a3] = null;
+        if ((_3 = r3[a3]) && "setAttribute" in _3 == !!x4 && (x4 ? _3.localName === x4 : 3 === _3.nodeType)) {
+          l3 = _3, r3[a3] = null;
           break;
         }
     }
@@ -1707,11 +1707,11 @@ video {
     else {
       if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e5 && null != r3)
         for (k4 = {}, a3 = 0; a3 < l3.attributes.length; a3++)
-          k4[(_4 = l3.attributes[a3]).name] = _4.value;
+          k4[(_3 = l3.attributes[a3]).name] = _3.value;
       for (a3 in k4)
-        _4 = k4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _4 : "key" === a3 || a3 in w4 || T(l3, a3, null, _4, o3));
+        _3 = k4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _3 : "key" === a3 || a3 in w4 || T(l3, a3, null, _3, o3));
       for (a3 in w4)
-        _4 = w4[a3], "children" == a3 ? d3 = _4 : "dangerouslySetInnerHTML" == a3 ? v3 = _4 : "value" == a3 ? g4 = _4 : "checked" == a3 ? b3 = _4 : "key" === a3 || e5 && "function" != typeof _4 || k4[a3] === _4 || T(l3, a3, _4, k4[a3], o3);
+        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e5 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
       if (v3)
         e5 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
       else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e5, s3), null != r3)
@@ -2395,10 +2395,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cd48a1b-33ab-402a-935d-c0a9218d8ebc/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbe932fb-3b33-40fb-b060-233504c5ef7a/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cd48a1b-33ab-402a-935d-c0a9218d8ebc/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bbe932fb-3b33-40fb-b060-233504c5ef7a/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2435,10 +2435,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a434e8a5-2c01-419c-8bd5-67e40600ed8f/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef45f48f-986a-49fc-943f-cad473491ce1/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a434e8a5-2c01-419c-8bd5-67e40600ed8f/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef45f48f-986a-49fc-943f-cad473491ce1/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2676,10 +2676,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ee6b817c-cb97-4e65-bc8d-932754aaa696/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a985c38b-ec27-4bee-b6b6-dd988600a950/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ee6b817c-cb97-4e65-bc8d-932754aaa696/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a985c38b-ec27-4bee-b6b6-dd988600a950/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3153,10 +3153,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/339cee3f-2237-4dcb-b32f-ac9037c3ae4f/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/15cc440a-ad20-47dd-bba6-095ccb600812/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/339cee3f-2237-4dcb-b32f-ac9037c3ae4f/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/15cc440a-ad20-47dd-bba6-095ccb600812/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3226,10 +3226,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/652060dd-8696-418d-b3e6-339b3a9a2b32/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21058a5b-f1f9-4211-b7cb-c7a31038199c/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/652060dd-8696-418d-b3e6-339b3a9a2b32/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/21058a5b-f1f9-4211-b7cb-c7a31038199c/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3333,10 +3333,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1276da76-9fff-477d-b01a-a4857b501f0c/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a73d51d8-3fe2-4cd1-a2d3-84bb32b1058e/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1276da76-9fff-477d-b01a-a4857b501f0c/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a73d51d8-3fe2-4cd1-a2d3-84bb32b1058e/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3933,10 +3933,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61fac88e-6ba1-442a-8919-bbfabb9b84df/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f68fc98-9766-4cb5-b223-fd06aeae5f24/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61fac88e-6ba1-442a-8919-bbfabb9b84df/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f68fc98-9766-4cb5-b223-fd06aeae5f24/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4441,10 +4441,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbb81847-8870-48c8-abe9-650b4b767a5c/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/688e024f-8daa-4402-af94-fc3cd2b38bc4/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/cbb81847-8870-48c8-abe9-650b4b767a5c/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/688e024f-8daa-4402-af94-fc3cd2b38bc4/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4784,10 +4784,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d4b0df51-a7ec-4c23-8fd9-f068151f6712/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48cabe7b-c0a9-4364-b6fa-6020c5bc32b3/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d4b0df51-a7ec-4c23-8fd9-f068151f6712/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48cabe7b-c0a9-4364-b6fa-6020c5bc32b3/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4986,10 +4986,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/683a2e29-cec5-4070-885b-1146f796fbbd/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66be4db5-aa07-4ced-840f-780be94bd438/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/683a2e29-cec5-4070-885b-1146f796fbbd/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66be4db5-aa07-4ced-840f-780be94bd438/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5082,10 +5082,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/136983ba-892a-4d12-bee7-e8ab881b801a/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e220556-645d-4e7a-9f84-cc27812f63a2/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/136983ba-892a-4d12-bee7-e8ab881b801a/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3e220556-645d-4e7a-9f84-cc27812f63a2/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5166,10 +5166,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be5c7336-29fe-42ef-8c60-f7f125542c4a/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17e4f23b-98e9-4b65-bbce-675ef99e1acf/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be5c7336-29fe-42ef-8c60-f7f125542c4a/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/17e4f23b-98e9-4b65-bbce-675ef99e1acf/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5198,9 +5198,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7638a0c2-6114-4451-ae28-9c7907a10644/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d320875-62a4-4386-9a9d-54f2fb1b20e7/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7638a0c2-6114-4451-ae28-9c7907a10644/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3d320875-62a4-4386-9a9d-54f2fb1b20e7/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -8548,7 +8548,7 @@ svg {
           return array.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
         }
         util2.joinValues = joinValues;
-        util2.jsonStringifyReplacer = (_4, value2) => {
+        util2.jsonStringifyReplacer = (_3, value2) => {
           if (typeof value2 === "bigint") {
             return value2.toString();
           }
@@ -15607,12 +15607,12 @@ svg {
       }
       function isCanadianSIN(input) {
         var digitsArray = input.split("");
-        var even = digitsArray.filter(function(_4, idx) {
+        var even = digitsArray.filter(function(_3, idx) {
           return idx % 2;
         }).map(function(i4) {
           return Number(i4) * 2;
         }).join("").split("");
-        var total = digitsArray.filter(function(_4, idx) {
+        var total = digitsArray.filter(function(_3, idx) {
           return !(idx % 2);
         }).concat(even).map(function(i4) {
           return Number(i4);
@@ -18833,9 +18833,9 @@ svg {
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var useSyncExternalStore = shim.useSyncExternalStore;
-          var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue2 = React.useDebugValue;
+          var useRef2 = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue2 = React.useDebugValue;
           function useSyncExternalStoreWithSelector2(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
-            var instRef = useRef(null);
+            var instRef = useRef2(null);
             var inst;
             if (instRef.current === null) {
               inst = {
@@ -19242,7 +19242,7 @@ svg {
         }
         return _value;
       },
-      set: function set2(value2) {
+      set: function set(value2) {
         _value = value2;
         _uninitialized = false;
       },
@@ -29210,7 +29210,7 @@ svg {
           typed: typed3
         } = _ref;
         var number2 = typed3("number", {
-          "": function _4() {
+          "": function _3() {
             return 0;
           },
           number: function number3(x4) {
@@ -29284,7 +29284,7 @@ svg {
           typed: typed3
         } = _ref;
         return typed3(name20, {
-          "": function _4() {
+          "": function _3() {
             return "";
           },
           number: format,
@@ -29319,7 +29319,7 @@ svg {
           typed: typed3
         } = _ref;
         return typed3(name21, {
-          "": function _4() {
+          "": function _3() {
             return false;
           },
           boolean: function boolean2(x4) {
@@ -29367,7 +29367,7 @@ svg {
           BigNumber: BigNumber2
         } = _ref;
         return typed3("bignumber", {
-          "": function _4() {
+          "": function _3() {
             return new BigNumber2(0);
           },
           number: function number2(x4) {
@@ -29425,7 +29425,7 @@ svg {
           Complex: Complex3
         } = _ref;
         return typed3("complex", {
-          "": function _4() {
+          "": function _3() {
             return Complex3.ZERO;
           },
           number: function number2(x4) {
@@ -29529,7 +29529,7 @@ svg {
           SparseMatrix: SparseMatrix2
         } = _ref;
         return typed3(name25, {
-          "": function _4() {
+          "": function _3() {
             return _create([]);
           },
           string: function string2(format5) {
@@ -29601,7 +29601,7 @@ svg {
             m3 = matrix2(format5);
           }
           m3.resize(size2);
-          m3.forEach(function(_4, index2) {
+          m3.forEach(function(_3, index2) {
             var val = fn2(index2);
             if (isZero2(val))
               return;
@@ -34141,7 +34141,7 @@ svg {
           SparseMatrix: SparseMatrix2
         } = _ref;
         return typed3(name93, {
-          "": function _4() {
+          "": function _3() {
             return config4.matrix === "Matrix" ? matrix2([]) : [];
           },
           string: function string2(format5) {
@@ -34418,7 +34418,7 @@ svg {
           BigNumber: BigNumber2
         } = _ref;
         return typed3("ones", {
-          "": function _4() {
+          "": function _3() {
             return config4.matrix === "Array" ? _ones([]) : _ones([], "default");
           },
           // math.ones(m, n, p, ..., format)
@@ -34805,7 +34805,7 @@ svg {
           sin: sin3
         } = _ref;
         return typed3(name102, {
-          "": function _4() {
+          "": function _3() {
             return config4.matrix === "Matrix" ? matrix2([]) : [];
           },
           string: function string2(format5) {
@@ -35319,7 +35319,7 @@ svg {
           BigNumber: BigNumber2
         } = _ref;
         return typed3(name109, {
-          "": function _4() {
+          "": function _3() {
             return config4.matrix === "Array" ? _zeros([]) : _zeros([], "default");
           },
           // math.zeros(m, n, p, ..., format)
@@ -35422,12 +35422,12 @@ svg {
         function _1dFft(arr, dim) {
           var size2 = arraySize(arr);
           if (dim !== 0)
-            return new Array(size2[0]).fill(0).map((_4, i4) => _1dFft(arr[i4], dim - 1));
+            return new Array(size2[0]).fill(0).map((_3, i4) => _1dFft(arr[i4], dim - 1));
           if (size2.length === 1)
             return _fft(arr);
           function _transpose(arr2) {
             var size3 = arraySize(arr2);
-            return new Array(size3[1]).fill(0).map((_4, j4) => new Array(size3[0]).fill(0).map((_5, i4) => arr2[i4][j4]));
+            return new Array(size3[1]).fill(0).map((_3, j4) => new Array(size3[0]).fill(0).map((_4, i4) => arr2[i4][j4]));
           }
           return _transpose(_1dFft(_transpose(arr), 1));
         }
@@ -35439,11 +35439,11 @@ svg {
             chirp.push(pow3(w4, divideScalar2(pow3(i4, 2), 2)));
           }
           var N22 = pow3(2, ceil3(log25(n3 + n3 - 1)));
-          var xp = [...new Array(n3).fill(0).map((_4, i5) => multiplyScalar2(arr[i5], chirp[n3 - 1 + i5])), ...new Array(N22 - n3).fill(0)];
-          var ichirp = [...new Array(n3 + n3 - 1).fill(0).map((_4, i5) => divideScalar2(1, chirp[i5])), ...new Array(N22 - (n3 + n3 - 1)).fill(0)];
+          var xp = [...new Array(n3).fill(0).map((_3, i5) => multiplyScalar2(arr[i5], chirp[n3 - 1 + i5])), ...new Array(N22 - n3).fill(0)];
+          var ichirp = [...new Array(n3 + n3 - 1).fill(0).map((_3, i5) => divideScalar2(1, chirp[i5])), ...new Array(N22 - (n3 + n3 - 1)).fill(0)];
           var fftXp = _fft(xp);
           var fftIchirp = _fft(ichirp);
-          var fftProduct = new Array(N22).fill(0).map((_4, i5) => multiplyScalar2(fftXp[i5], fftIchirp[i5]));
+          var fftProduct = new Array(N22).fill(0).map((_3, i5) => multiplyScalar2(fftXp[i5], fftIchirp[i5]));
           var ifftProduct = dotDivide2(conj2(_ndFft(conj2(fftProduct))), N22);
           var ret = [];
           for (var _i = n3 - 1; _i < n3 + n3 - 1; _i++) {
@@ -35456,7 +35456,7 @@ svg {
           if (len === 1)
             return [arr[0]];
           if (len % 2 === 0) {
-            var ret = [..._fft(arr.filter((_4, i4) => i4 % 2 === 0), len / 2), ..._fft(arr.filter((_4, i4) => i4 % 2 === 1), len / 2)];
+            var ret = [..._fft(arr.filter((_3, i4) => i4 % 2 === 0), len / 2), ..._fft(arr.filter((_3, i4) => i4 % 2 === 1), len / 2)];
             for (var k4 = 0; k4 < len / 2; k4++) {
               var p3 = ret[k4];
               var q4 = multiplyScalar2(ret[k4 + len / 2], exp3(multiplyScalar2(multiplyScalar2(tau3, I3), divideScalar2(-k4, len))));
@@ -35975,7 +35975,7 @@ svg {
         } = _ref;
         return typed3(name115, {
           "Array | Matrix": _mode,
-          "...": function _4(args) {
+          "...": function _3(args) {
             return _mode(args);
           }
         });
@@ -36053,7 +36053,7 @@ svg {
             throw new Error("prod(A, dim) is not yet supported");
           },
           // prod(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             return _prod(args);
           }
         });
@@ -38997,7 +38997,7 @@ svg {
             return reduce(array, dim.valueOf(), _largest);
           },
           // max(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("Scalar values expected in function max");
             }
@@ -39060,7 +39060,7 @@ svg {
             return reduce(array, dim.valueOf(), _smallest);
           },
           // min(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("Scalar values expected in function min");
             }
@@ -43085,7 +43085,7 @@ svg {
           SparseMatrix: SparseMatrix2
         } = _ref;
         return typed3(name163, {
-          "": function _4() {
+          "": function _3() {
             return new SparseMatrix2([]);
           },
           string: function string2(datatype) {
@@ -50768,7 +50768,7 @@ svg {
           Parser: Parser2
         } = _ref;
         return typed3(name226, {
-          "": function _4() {
+          "": function _3() {
             return new Parser2();
           }
         });
@@ -57095,7 +57095,7 @@ svg {
           Chain: Chain2
         } = _ref;
         return typed3(name240, {
-          "": function _4() {
+          "": function _3() {
             return new Chain2();
           },
           any: function any(value2) {
@@ -57176,7 +57176,7 @@ svg {
             return subtractScalar2(multiply2(matrix3[0][0], matrix3[1][1]), multiply2(matrix3[1][0], matrix3[0][1]));
           } else {
             var negated = false;
-            var rowIndices = new Array(rows).fill(0).map((_4, i5) => i5);
+            var rowIndices = new Array(rows).fill(0).map((_3, i5) => i5);
             for (var k4 = 0; k4 < rows; k4++) {
               var k_ = rowIndices[k4];
               if (isZero2(matrix3[k_][k4])) {
@@ -57458,8 +57458,8 @@ svg {
         }
         function _rankFact(mat, rows, cols) {
           var rref = _rref(mat, rows, cols);
-          var C3 = mat.map((_4, i4) => _4.filter((_5, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
-          var F4 = rref.filter((_4, i4) => !_isZero(dot2(rref[i4], rref[i4])));
+          var C3 = mat.map((_3, i4) => _3.filter((_4, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
+          var F4 = rref.filter((_3, i4) => !_isZero(dot2(rref[i4], rref[i4])));
           return {
             C: C3,
             F: F4
@@ -57860,7 +57860,7 @@ svg {
     function randomOrthogonalVector(N3, orthog, type) {
       var big = type === "BigNumber";
       var cplx = type === "Complex";
-      var v3 = Array(N3).fill(0).map((_4) => 2 * Math.random() - 1);
+      var v3 = Array(N3).fill(0).map((_3) => 2 * Math.random() - 1);
       if (big) {
         v3 = v3.map((n3) => bignumber2(n3));
       }
@@ -59204,7 +59204,7 @@ svg {
           // sum([a, b, c, d, ...], dim)
           "Array | Matrix, number | BigNumber": _nsumDim,
           // sum(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("Scalar values expected in function sum");
             }
@@ -59270,7 +59270,7 @@ svg {
             return matrix2.create(_ncumSumDim(matrix2.valueOf(), dim));
           },
           // cumsum(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("All values expected to be scalar in function cumsum");
             }
@@ -59353,7 +59353,7 @@ svg {
           // mean([a, b, c, d, ...], dim)
           "Array | Matrix, number | BigNumber": _nmeanDim,
           // mean(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("Scalar values expected in function mean");
             }
@@ -59450,7 +59450,7 @@ svg {
             throw new Error("median(A, dim) is not yet supported");
           },
           // median(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             if (containsCollections(args)) {
               throw new TypeError("Scalar values expected in function median");
             }
@@ -59482,7 +59482,7 @@ svg {
           // mad([a, b, c, d, ...])
           "Array | Matrix": _mad,
           // mad(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             return _mad(args);
           }
         });
@@ -59543,7 +59543,7 @@ svg {
           // variance([a, b, c, c, ...], dim, normalization)
           "Array | Matrix, number | BigNumber, string": _varDim,
           // variance(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             return _var(args, DEFAULT_NORMALIZATION);
           }
         });
@@ -59732,7 +59732,7 @@ svg {
           // std([a, b, c, c, ...], dim, normalization)
           "Array | Matrix, number | BigNumber, string": _std,
           // std(a, b, c, d, ...)
-          "...": function _4(args) {
+          "...": function _3(args) {
             return _std(args);
           }
         });
@@ -68679,16 +68679,16 @@ svg {
         hex: hexFromHct(HctFromHex(hexColor)),
         figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor))
       });
-      colorActions = (set2) => ({
-        setAll: (colorData2) => set2((state) => __spreadValues(__spreadValues({}, state), colorData2)),
-        setSourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), { sourceHex: sourceHex2 })),
-        setHct: (hct) => set2((state) => __spreadProps(__spreadValues({}, state), { hct })),
-        setRgba: (rgba) => set2((state) => __spreadProps(__spreadValues({}, state), { rgba })),
-        setHex: (hex2) => set2((state) => __spreadProps(__spreadValues({}, state), { hex: hex2 })),
-        setFigmaSolidColor: (figmaSolidColor) => set2((state) => __spreadProps(__spreadValues({}, state), { figmaSolidColor })),
-        setHue: (hue) => set2((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { hue }) })),
-        setChroma: (chroma) => set2((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { chroma }) })),
-        setTone: (tone) => set2((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { tone }) })),
+      colorActions = (set) => ({
+        setAll: (colorData2) => set((state) => __spreadValues(__spreadValues({}, state), colorData2)),
+        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), { sourceHex: sourceHex2 })),
+        setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), { hct })),
+        setRgba: (rgba) => set((state) => __spreadProps(__spreadValues({}, state), { rgba })),
+        setHex: (hex2) => set((state) => __spreadProps(__spreadValues({}, state), { hex: hex2 })),
+        setFigmaSolidColor: (figmaSolidColor) => set((state) => __spreadProps(__spreadValues({}, state), { figmaSolidColor })),
+        setHue: (hue) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { hue }) })),
+        setChroma: (chroma) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { chroma }) })),
+        setTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), { hct: __spreadProps(__spreadValues({}, state), { tone }) })),
         data: {
           sourceHex: "",
           hct: { hue: 0, chroma: 0, tone: 0 },
@@ -68782,15 +68782,15 @@ svg {
         const chroma = calculateChroma(sourceHct.chroma, chromaCalc);
         return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
       };
-      color = (set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set2, get, ...a3)), colorActions(set2, get, ...a3)), {
-        setSourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), {
+      color = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set, get, ...a3)), colorActions(set, get, ...a3)), {
+        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
           sourceHex: sourceHex2,
           hct: HctFromHex(sourceHex2),
           rgba: rgbaFromHct(HctFromHex(sourceHex2)),
           hex: sourceHex2,
           figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(sourceHex2))
         })),
-        setHct: (hct) => set2((state) => __spreadProps(__spreadValues({}, state), {
+        setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), {
           hct,
           rgba: rgbaFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
           hex: hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)),
@@ -68798,7 +68798,7 @@ svg {
             rgbFromHex(hexFromHct(Hct.from(hct.hue, hct.chroma, hct.tone)))
           )
         })),
-        setHue: (hue) => set2((state) => __spreadProps(__spreadValues({}, state), {
+        setHue: (hue) => set((state) => __spreadProps(__spreadValues({}, state), {
           hct: __spreadProps(__spreadValues({}, state.hct), { hue }),
           rgba: rgbaFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
           hex: hexFromHct(Hct.from(hue, state.hct.chroma, state.hct.tone)),
@@ -68808,7 +68808,7 @@ svg {
             )
           )
         })),
-        setChroma: (chroma) => set2((state) => __spreadProps(__spreadValues({}, state), {
+        setChroma: (chroma) => set((state) => __spreadProps(__spreadValues({}, state), {
           hct: __spreadProps(__spreadValues({}, state.hct), { chroma }),
           rgba: rgbaFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
           hex: hexFromHct(Hct.from(state.hct.hue, chroma, state.hct.tone)),
@@ -68818,7 +68818,7 @@ svg {
             )
           )
         })),
-        setTone: (tone) => set2((state) => __spreadProps(__spreadValues({}, state), {
+        setTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
           hct: __spreadProps(__spreadValues({}, state.hct), { tone }),
           rgba: rgbaFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
           hex: hexFromHct(Hct.from(state.hct.hue, state.hct.chroma, tone)),
@@ -68829,14 +68829,14 @@ svg {
           )
         })),
         data: {
-          sourceHex: colorData(set2, get, ...a3).sourceHex,
-          hct: colorData(set2, get, ...a3).hct,
-          rgba: colorData(set2, get, ...a3).rgba,
-          hex: colorData(set2, get, ...a3).hex,
-          figmaSolidColor: colorData(set2, get, ...a3).figmaSolidColor
+          sourceHex: colorData(set, get, ...a3).sourceHex,
+          hct: colorData(set, get, ...a3).hct,
+          rgba: colorData(set, get, ...a3).rgba,
+          hex: colorData(set, get, ...a3).hex,
+          figmaSolidColor: colorData(set, get, ...a3).figmaSolidColor
         }
       });
-      useColor = create()((set2, get, ...a3) => __spreadValues({}, color(set2, get, ...a3)));
+      useColor = create()((set, get, ...a3) => __spreadValues({}, color(set, get, ...a3)));
     }
   });
 
@@ -68921,22 +68921,22 @@ svg {
         lightModeTone: 80,
         darkModeTone: 20
       });
-      aliasActions = (set2, get) => ({
+      aliasActions = (set, get) => ({
         set: {
-          all: (aliasData2) => set2((state) => __spreadValues(__spreadValues({}, state), aliasData2)),
-          id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          lightModeTone: (lightModeTone) => set2((state) => __spreadProps(__spreadValues({}, state), { lightModeTone })),
-          darkModeTone: (darkModeTone) => set2((state) => __spreadProps(__spreadValues({}, state), { darkModeTone }))
+          all: (aliasData2) => set((state) => __spreadValues(__spreadValues({}, state), aliasData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), { lightModeTone })),
+          darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), { darkModeTone }))
         },
         data: { id: "", name: "", lightModeTone: 0, darkModeTone: 0 }
       });
-      useAlias = create((set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasData(set2, get, ...a3)), aliasActions(set2, get, ...a3)), {
+      useAlias = create((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasData(set, get, ...a3)), aliasActions(set, get, ...a3)), {
         data: {
-          id: aliasData(set2, get, ...a3).id,
-          name: aliasData(set2, get, ...a3).name,
-          lightModeTone: aliasData(set2, get, ...a3).lightModeTone,
-          darkModeTone: aliasData(set2, get, ...a3).darkModeTone
+          id: aliasData(set, get, ...a3).id,
+          name: aliasData(set, get, ...a3).name,
+          lightModeTone: aliasData(set, get, ...a3).lightModeTone,
+          darkModeTone: aliasData(set, get, ...a3).darkModeTone
         }
       }));
       AliasGroupDataSchema = z4.object({
@@ -68964,12 +68964,12 @@ svg {
         setThemeColorIds: z4.function().args(z4.array(z4.string()), z4.void()),
         data: AliasGroupDataSchema
       });
-      aliasGroupActions = (set2) => ({
-        setAll: (aliasGroupData4) => set2((state) => __spreadValues(__spreadValues({}, state), aliasGroupData4)),
-        setId: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-        setName: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-        setAliases: (aliases) => set2((state) => __spreadProps(__spreadValues({}, state), { aliases })),
-        setThemeColorIds: (themeColors) => set2((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
+      aliasGroupActions = (set) => ({
+        setAll: (aliasGroupData4) => set((state) => __spreadValues(__spreadValues({}, state), aliasGroupData4)),
+        setId: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+        setName: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+        setAliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), { aliases })),
+        setThemeColorIds: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
         data: { id: "", name: "", aliases: [], themeColorIds: [] }
       });
       AliasCrudSchema = z4.object({
@@ -68983,43 +68983,43 @@ svg {
           remove: z4.function().args(z4.string(), z4.void())
         })
       });
-      aliasCrud = (set2) => ({
+      aliasCrud = (set) => ({
         alias: {
-          add: () => set2((state) => __spreadValues({}, state)),
-          update: (id, alias) => set2((state) => __spreadValues({}, state)),
-          remove: (id) => set2((state) => __spreadValues({}, state))
+          add: () => set((state) => __spreadValues({}, state)),
+          update: (id, alias) => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
         },
         themeColorId: {
-          add: (id) => set2((state) => __spreadValues({}, state)),
-          remove: (id) => set2((state) => __spreadValues({}, state))
+          add: (id) => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
         }
       });
       useAliasGroup = create(
-        (set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasGroupData(set2, get, ...a3)), aliasGroupActions(set2, get, ...a3)), {
+        (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, aliasGroupData(set, get, ...a3)), aliasGroupActions(set, get, ...a3)), {
           data: {
-            id: aliasGroupData(set2, get, ...a3).id,
-            name: aliasGroupData(set2, get, ...a3).name,
-            aliases: aliasGroupData(set2, get, ...a3).aliases,
-            themeColorIds: aliasGroupData(set2, get, ...a3).themeColorIds
+            id: aliasGroupData(set, get, ...a3).id,
+            name: aliasGroupData(set, get, ...a3).name,
+            aliases: aliasGroupData(set, get, ...a3).aliases,
+            themeColorIds: aliasGroupData(set, get, ...a3).themeColorIds
           },
           alias: {
-            add: () => set2((state) => __spreadProps(__spreadValues({}, state), {
+            add: () => set((state) => __spreadProps(__spreadValues({}, state), {
               aliases: [...state.aliases, createAlias()]
             })),
-            update: (id, alias) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            update: (id, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
               aliases: state.aliases.map(
                 (a4) => a4.id === id ? alias : a4
               )
             })),
-            remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
               aliases: state.aliases.filter((a4) => a4.id !== id)
             }))
           },
           themeColorId: {
-            add: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            add: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
               themeColorIds: [...state.themeColorIds, id]
             })),
-            remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
               themeColorIds: state.themeColorIds.filter((t3) => t3 !== id)
             }))
           }
@@ -69032,7 +69032,7 @@ svg {
   var subscribeWithSelectorImpl, subscribeWithSelector;
   var init_middleware = __esm({
     "node_modules/zustand/esm/middleware.mjs"() {
-      subscribeWithSelectorImpl = (fn2) => (set2, get, api) => {
+      subscribeWithSelectorImpl = (fn2) => (set, get, api) => {
         const origSubscribe = api.subscribe;
         api.subscribe = (selector, optListener, options) => {
           let listener = selector;
@@ -69052,7 +69052,7 @@ svg {
           }
           return origSubscribe(listener);
         };
-        const initialState = fn2(set2, get, api);
+        const initialState = fn2(set, get, api);
         return initialState;
       };
       subscribeWithSelector = subscribeWithSelectorImpl;
@@ -69165,20 +69165,20 @@ svg {
         }),
         data: ThemeColorDataSchema
       });
-      themeColorActions = (set2, get) => ({
+      themeColorActions = (set, get) => ({
         set: {
-          all: (themeColor2) => set2((state) => __spreadValues(__spreadValues({}, state), themeColor2)),
-          id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          sourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), {
+          all: (themeColor2) => set((state) => __spreadValues(__spreadValues({}, state), themeColor2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
             sourceHex: sourceHex2
           })),
-          sourceColor: (sourceColor) => set2((state) => __spreadProps(__spreadValues({}, state), { sourceColor })),
-          endColor: (endColor) => set2((state) => __spreadProps(__spreadValues({}, state), { endColor })),
-          tones: (tones) => set2((state) => __spreadProps(__spreadValues({}, state), { tones })),
-          hueCalc: (hueCalc) => set2((state) => __spreadProps(__spreadValues({}, state), { hueCalc })),
-          chromaCalc: (chromaCalc) => set2((state) => __spreadProps(__spreadValues({}, state), { chromaCalc })),
-          aliasGroup: (aliasGroup) => set2((state) => __spreadProps(__spreadValues({}, state), { aliasGroup }))
+          sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), { sourceColor })),
+          endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), { endColor })),
+          tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), { tones })),
+          hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), { hueCalc })),
+          chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), { chromaCalc })),
+          aliasGroup: (aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), { aliasGroup }))
         },
         data: {
           id: "",
@@ -69193,22 +69193,22 @@ svg {
         }
       });
       useThemeColorActions = create((...a3) => __spreadValues({}, themeColorActions(...a3)));
-      themeColorStore2 = (set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues({}, themeColorData(set2, get, ...a3)), themeColorActions(set2, get, ...a3)), aliasCrud(set2, get, ...a3)), {
+      themeColorStore2 = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues({}, themeColorData(set, get, ...a3)), themeColorActions(set, get, ...a3)), aliasCrud(set, get, ...a3)), {
         data: {
-          id: themeColorData(set2, get, ...a3).id,
-          name: themeColorData(set2, get, ...a3).name,
-          sourceHex: themeColorData(set2, get, ...a3).sourceHex,
-          sourceColor: themeColorData(set2, get, ...a3).sourceColor,
-          endColor: themeColorData(set2, get, ...a3).endColor,
-          tones: themeColorData(set2, get, ...a3).tones,
-          hueCalc: themeColorData(set2, get, ...a3).hueCalc,
-          chromaCalc: themeColorData(set2, get, ...a3).chromaCalc,
-          aliasGroup: themeColorData(set2, get, ...a3).aliasGroup
+          id: themeColorData(set, get, ...a3).id,
+          name: themeColorData(set, get, ...a3).name,
+          sourceHex: themeColorData(set, get, ...a3).sourceHex,
+          sourceColor: themeColorData(set, get, ...a3).sourceColor,
+          endColor: themeColorData(set, get, ...a3).endColor,
+          tones: themeColorData(set, get, ...a3).tones,
+          hueCalc: themeColorData(set, get, ...a3).hueCalc,
+          chromaCalc: themeColorData(set, get, ...a3).chromaCalc,
+          aliasGroup: themeColorData(set, get, ...a3).aliasGroup
         },
-        set: __spreadProps(__spreadValues({}, themeColorActions(set2, get, ...a3).set), {
-          id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          sourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), {
+        set: __spreadProps(__spreadValues({}, themeColorActions(set, get, ...a3).set), {
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
             sourceHex: sourceHex2,
             sourceColor: __spreadValues(__spreadValues({}, state.sourceColor), createColorFrom().hex(sourceHex2)),
             endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
@@ -69217,7 +69217,7 @@ svg {
               state.chromaCalc
             ))
           })),
-          hueCalc: (hueCalc) => set2((state) => __spreadProps(__spreadValues({}, state), {
+          hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
             hueCalc,
             endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
               state.sourceColor.hct,
@@ -69225,7 +69225,7 @@ svg {
               state.chromaCalc
             ))
           })),
-          chromaCalc: (chromaCalc) => set2((state) => __spreadProps(__spreadValues({}, state), {
+          chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
             chromaCalc,
             endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
               state.sourceColor.hct,
@@ -69235,19 +69235,19 @@ svg {
           }))
         }),
         alias: {
-          add: () => set2((state) => __spreadProps(__spreadValues({}, state), {
+          add: () => set((state) => __spreadProps(__spreadValues({}, state), {
             aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
               aliases: [...state.aliasGroup.aliases, createAlias()]
             })
           })),
-          update: (id, alias) => set2((state) => __spreadProps(__spreadValues({}, state), {
+          update: (id, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
             aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
               aliases: state.aliasGroup.aliases.map(
                 (a4) => a4.id === id ? alias : a4
               )
             })
           })),
-          remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+          remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
             aliasGroup: __spreadProps(__spreadValues({}, state.aliasGroup), {
               aliases: state.aliasGroup.aliases.filter(
                 (a4) => a4.id !== id
@@ -69716,13 +69716,13 @@ svg {
         themeColors: [createThemeColor()],
         aliasGroups: []
       });
-      themeActions = (set2, get) => ({
+      themeActions = (set, get) => ({
         set: {
-          all: (themeData2) => set2((state) => __spreadValues(__spreadValues({}, state), themeData2)),
-          id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          themeColors: (themeColors) => set2((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
-          aliasGroups: (aliasGroups) => set2((state) => __spreadProps(__spreadValues({}, state), { aliasGroups }))
+          all: (themeData2) => set((state) => __spreadValues(__spreadValues({}, state), themeData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          themeColors: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
+          aliasGroups: (aliasGroups) => set((state) => __spreadProps(__spreadValues({}, state), { aliasGroups }))
         },
         data: { id: "", name: "", themeColors: [], aliasGroups: [] }
       });
@@ -69734,12 +69734,12 @@ svg {
           remove: z4.function().args(z4.string(), z4.void())
         })
       });
-      themeColorCrud = (set2) => ({
+      themeColorCrud = (set) => ({
         themeColor: {
-          add: () => set2((state) => __spreadValues({}, state)),
-          duplicate: (id) => set2((state) => __spreadValues({}, state)),
-          update: () => set2((state) => __spreadValues({}, state)),
-          remove: (id) => set2((state) => __spreadValues({}, state))
+          add: () => set((state) => __spreadValues({}, state)),
+          duplicate: (id) => set((state) => __spreadValues({}, state)),
+          update: () => set((state) => __spreadValues({}, state)),
+          remove: (id) => set((state) => __spreadValues({}, state))
         }
       });
       AliasGroupCrudSchema = z4.object({
@@ -69750,29 +69750,29 @@ svg {
           remove: z4.function().args(z4.string(), z4.void())
         })
       });
-      aliasGroupCrud = (set2) => ({
+      aliasGroupCrud = (set) => ({
         aliasGroup: {
-          add: () => set2((state) => __spreadValues({}, state)),
-          duplicate: () => set2((state) => __spreadValues({}, state)),
-          update: () => set2((state) => __spreadValues({}, state)),
-          remove: () => set2((state) => __spreadValues({}, state))
+          add: () => set((state) => __spreadValues({}, state)),
+          duplicate: () => set((state) => __spreadValues({}, state)),
+          update: () => set((state) => __spreadValues({}, state)),
+          remove: () => set((state) => __spreadValues({}, state))
         }
       });
       useTheme = create()(
-        subscribeWithSelector((set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, themeData(set2, get, ...a3)), themeActions(set2, get, ...a3)), themeColorCrud(set2, get, ...a3)), aliasGroupCrud(set2, get, ...a3)), {
+        subscribeWithSelector((set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, themeData(set, get, ...a3)), themeActions(set, get, ...a3)), themeColorCrud(set, get, ...a3)), aliasGroupCrud(set, get, ...a3)), {
           data: {
-            id: themeData(set2, get, ...a3).id,
-            name: themeData(set2, get, ...a3).name,
-            themeColors: themeData(set2, get, ...a3).themeColors,
-            aliasGroups: themeData(set2, get, ...a3).aliasGroups
+            id: themeData(set, get, ...a3).id,
+            name: themeData(set, get, ...a3).name,
+            themeColors: themeData(set, get, ...a3).themeColors,
+            aliasGroups: themeData(set, get, ...a3).aliasGroups
           },
           themeColor: {
             add: (themeColor2 = __spreadProps(__spreadValues({}, defaultThemeColor), {
               id: nanoid(12)
-            })) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            })) => set((state) => __spreadProps(__spreadValues({}, state), {
               themeColors: [...state.themeColors, themeColor2]
             })),
-            duplicate: (id) => set2((state) => {
+            duplicate: (id) => set((state) => {
               const themeColor2 = state.themeColors.find(
                 (c3) => c3.id === id
               );
@@ -69784,20 +69784,20 @@ svg {
               }
               return state;
             }),
-            update: (id, themeColor2) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            update: (id, themeColor2) => set((state) => __spreadProps(__spreadValues({}, state), {
               themeColors: state.themeColors.map(
                 (c3) => c3.id === id ? themeColor2 : c3
               )
             })),
-            remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
               themeColors: state.themeColors.filter((c3) => c3.id !== id)
             }))
           },
           aliasGroup: {
-            add: () => set2((state) => __spreadProps(__spreadValues({}, state), {
+            add: () => set((state) => __spreadProps(__spreadValues({}, state), {
               aliasGroups: [...state.aliasGroups, createAliasGroup()]
             })),
-            duplicate: (id) => set2((state) => {
+            duplicate: (id) => set((state) => {
               const aliasGroup = state.aliasGroups.find(
                 (a4) => a4.id === id
               );
@@ -69809,91 +69809,17 @@ svg {
               }
               return state;
             }),
-            update: (id, aliasGroup) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            update: (id, aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
               aliasGroups: state.aliasGroups.map(
                 (a4) => a4.id === id ? aliasGroup : a4
               )
             })),
-            remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
+            remove: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
               aliasGroups: state.aliasGroups.filter((a4) => a4.id !== id)
             }))
           }
         }))
       );
-    }
-  });
-
-  // src/hooks/useThemeList.ts
-  var defaultThemes, ThemeListDataSchema, ThemeListActionsSchema, themeListData, themeListActions, themeList, useThemeList;
-  var init_useThemeList = __esm({
-    "src/hooks/useThemeList.ts"() {
-      "use strict";
-      init_lib3();
-      init_esm();
-      init_index_browser();
-      init_useTheme();
-      defaultThemes = [
-        createTheme(nanoid(12), "banana"),
-        createTheme(nanoid(12), "Theme 2", defaultThemeColors2)
-      ];
-      ThemeListDataSchema = z4.object({
-        id: z4.string(),
-        themes: z4.array(ThemeDataSchema)
-      });
-      ThemeListActionsSchema = z4.object({
-        set: z4.object({
-          all: z4.function().args(ThemeListDataSchema, z4.void()),
-          id: z4.function().args(z4.string(), z4.void()),
-          themes: z4.function().args(z4.array(ThemeDataSchema), z4.void())
-        }),
-        theme: z4.object({
-          add: z4.function().args(ThemeDataSchema, z4.void()),
-          duplicate: z4.function().args(z4.string(), z4.void()),
-          update: z4.function().args(z4.string(), ThemeDataSchema, z4.void()),
-          remove: z4.function().args(z4.string(), z4.void())
-        }),
-        data: ThemeListDataSchema
-      });
-      themeListData = () => ({
-        id: nanoid(12),
-        themes: defaultThemes
-      });
-      themeListActions = (set2) => ({
-        set: {
-          all: (themeListData2) => set2((state) => __spreadValues(__spreadValues({}, state), themeListData2)),
-          id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          themes: (themes) => set2((state) => __spreadProps(__spreadValues({}, state), { themes }))
-        },
-        theme: {
-          add: (theme2) => set2((state) => __spreadValues({}, state)),
-          duplicate: (id) => set2((state) => __spreadValues({}, state)),
-          update: (id, theme2) => set2((state) => __spreadValues({}, state)),
-          remove: (id) => set2((state) => __spreadValues({}, state))
-        },
-        data: { id: "", themes: [] }
-      });
-      themeList = (set2, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, themeListData(set2, get, ...a3)), themeListActions(set2, get, ...a3)), {
-        data: {
-          id: themeListData(set2, get, ...a3).id,
-          themes: themeListData(set2, get, ...a3).themes
-        },
-        theme: {
-          add: (theme2) => set2((state) => __spreadProps(__spreadValues({}, state), {
-            themes: [...state.themes, theme2]
-          })),
-          duplicate: (id) => set2((state) => {
-            const theme2 = state.themes.find((theme3) => theme3.id === id);
-            return theme2 ? __spreadProps(__spreadValues({}, state), { themes: [...state.themes, theme2] }) : state;
-          }),
-          update: (id, theme2) => set2((state) => __spreadProps(__spreadValues({}, state), {
-            themes: state.themes.map((t3) => t3.id === id ? theme2 : t3)
-          })),
-          remove: (id) => set2((state) => __spreadProps(__spreadValues({}, state), {
-            themes: state.themes.filter((t3) => t3.id !== id)
-          }))
-        }
-      });
-      useThemeList = create((set2, ...a3) => __spreadValues({}, themeList(set2, ...a3)));
     }
   });
 
@@ -70528,16 +70454,16 @@ svg {
           }
           return result;
         }
-        function setToArray(set2) {
-          var index2 = -1, result = Array(set2.size);
-          set2.forEach(function(value2) {
+        function setToArray(set) {
+          var index2 = -1, result = Array(set.size);
+          set.forEach(function(value2) {
             result[++index2] = value2;
           });
           return result;
         }
-        function setToPairs(set2) {
-          var index2 = -1, result = Array(set2.size);
-          set2.forEach(function(value2) {
+        function setToPairs(set) {
+          var index2 = -1, result = Array(set.size);
+          set.forEach(function(value2) {
             result[++index2] = [value2, value2];
           });
           return result;
@@ -70587,7 +70513,7 @@ svg {
           return string2.match(reUnicodeWord) || [];
         }
         var runInContext = function runInContext2(context) {
-          context = context == null ? root : _4.defaults(root.Object(), context, _4.pick(root, contextProps));
+          context = context == null ? root : _3.defaults(root.Object(), context, _3.pick(root, contextProps));
           var Array2 = context.Array, Date2 = context.Date, Error2 = context.Error, Function2 = context.Function, Math2 = context.Math, Object2 = context.Object, RegExp2 = context.RegExp, String2 = context.String, TypeError2 = context.TypeError;
           var arrayProto = Array2.prototype, funcProto = Function2.prototype, objectProto = Object2.prototype;
           var coreJsData = context["__core-js_shared__"];
@@ -71794,9 +71720,9 @@ svg {
               isCommon = false;
               includes2 = arrayIncludesWith;
             } else if (length >= LARGE_ARRAY_SIZE) {
-              var set3 = iteratee2 ? null : createSet(array);
-              if (set3) {
-                return setToArray(set3);
+              var set2 = iteratee2 ? null : createSet(array);
+              if (set2) {
+                return setToArray(set2);
               }
               isCommon = false;
               includes2 = cacheHas;
@@ -73115,7 +73041,7 @@ svg {
             }
             return baseFill(array, value2, start, end);
           }
-          function findIndex(array, predicate, fromIndex) {
+          function findIndex2(array, predicate, fromIndex) {
             var length = array == null ? 0 : array.length;
             if (!length) {
               return -1;
@@ -73523,7 +73449,7 @@ svg {
             var func = isArray2(collection) ? arrayFilter : baseFilter;
             return func(collection, getIteratee(predicate, 3));
           }
-          var find = createFind(findIndex);
+          var find = createFind(findIndex2);
           var findLast = createFind(findLastIndex);
           function flatMap(collection, iteratee2) {
             return baseFlatten(map3(collection, iteratee2), 1);
@@ -74325,7 +74251,7 @@ svg {
             }
             return object;
           }
-          function set2(object, path, value2) {
+          function set(object, path, value2) {
             return object == null ? object : baseSet(object, path, value2);
           }
           function setWith(object, path, value2, customizer) {
@@ -74988,7 +74914,7 @@ svg {
           lodash.rest = rest;
           lodash.reverse = reverse;
           lodash.sampleSize = sampleSize;
-          lodash.set = set2;
+          lodash.set = set;
           lodash.setWith = setWith;
           lodash.shuffle = shuffle;
           lodash.slice = slice;
@@ -75060,7 +74986,7 @@ svg {
           lodash.escapeRegExp = escapeRegExp;
           lodash.every = every;
           lodash.find = find;
-          lodash.findIndex = findIndex;
+          lodash.findIndex = findIndex2;
           lodash.findKey = findKey;
           lodash.findLast = findLast;
           lodash.findLastIndex = findLastIndex;
@@ -75361,24 +75287,1592 @@ svg {
           }
           return lodash;
         };
-        var _4 = runInContext();
+        var _3 = runInContext();
         if (typeof define == "function" && typeof define.amd == "object" && define.amd) {
-          root._ = _4;
+          root._ = _3;
           define(function() {
-            return _4;
+            return _3;
           });
         } else if (freeModule) {
-          (freeModule.exports = _4)._ = _4;
-          freeExports._ = _4;
+          (freeModule.exports = _3)._ = _3;
+          freeExports._ = _3;
         } else {
-          root._ = _4;
+          root._ = _3;
         }
       }).call(exports);
     }
   });
 
+  // src/hooks/useThemeList.ts
+  var import_lodash, defaultThemes, ThemeListDataSchema, AliasActionsSchema2, AliasGroupActionsSchema2, ThemeColorActionsSchema2, ThemeActionsSchema2, ThemeListActionsSchema, themeListData, themeListActions, themeList, useThemeList;
+  var init_useThemeList = __esm({
+    "src/hooks/useThemeList.ts"() {
+      "use strict";
+      init_lib3();
+      init_esm();
+      init_index_browser();
+      init_useTheme();
+      init_useThemeColor();
+      init_useColor();
+      init_useAliasGroup();
+      import_lodash = __toESM(require_lodash());
+      defaultThemes = [
+        createTheme(nanoid(12), "banana"),
+        createTheme(nanoid(12), "Theme 2", defaultThemeColors2)
+      ];
+      ThemeListDataSchema = z4.object({
+        id: z4.string(),
+        themes: z4.array(ThemeDataSchema)
+      });
+      AliasActionsSchema2 = z4.object({
+        add: z4.function().args(AliasDataSchema, z4.void()),
+        update: z4.function().args(z4.string(), AliasDataSchema, z4.void()),
+        remove: z4.function().args(z4.string(), z4.void()),
+        set: z4.object({
+          all: z4.function().args(AliasDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          lightModeTone: z4.function().args(z4.number(), z4.void()),
+          darkModeTone: z4.function().args(z4.number(), z4.void())
+        }),
+        data: AliasDataSchema
+      });
+      AliasGroupActionsSchema2 = z4.object({
+        add: z4.function().args(AliasGroupDataSchema, z4.void()),
+        duplicate: z4.function().args(z4.string(), z4.void()),
+        update: z4.function().args(z4.string(), AliasGroupDataSchema, z4.void()),
+        remove: z4.function().args(z4.string(), z4.void()),
+        set: z4.object({
+          all: z4.function().args(AliasGroupDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          aliases: z4.function().args(z4.array(z4.string()), z4.void()),
+          themeColorIds: z4.function().args(z4.array(z4.string()), z4.void())
+        }),
+        alias: z4.function().args(z4.string(), z4.void()),
+        data: AliasGroupDataSchema
+      });
+      ThemeColorActionsSchema2 = z4.object({
+        add: z4.function().args(ThemeColorDataSchema, z4.void()),
+        duplicate: z4.function().args(z4.string(), z4.void()),
+        update: z4.function().args(z4.string(), ThemeColorDataSchema, z4.void()),
+        remove: z4.function().args(z4.string(), z4.void()),
+        set: z4.object({
+          all: z4.function().args(ThemeColorDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          sourceHex: z4.function().args(z4.string(), z4.void()),
+          sourceColor: z4.function().args(ColorDataSchema, z4.void()),
+          endColor: z4.function().args(ColorDataSchema, z4.void()),
+          tones: z4.function().args(z4.array(z4.number()), z4.void()),
+          hueCalc: z4.function().args(z4.string(), z4.void()),
+          chromaCalc: z4.function().args(z4.string(), z4.void()),
+          aliasGroup: z4.function().args(AliasGroupDataSchema, z4.void())
+        }),
+        aliasGroup: z4.function().args(z4.string(), z4.void()),
+        data: ThemeColorDataSchema
+      });
+      ThemeActionsSchema2 = z4.object({
+        add: z4.function().args(ThemeDataSchema, z4.void()),
+        duplicate: z4.function().args(z4.string(), z4.void()),
+        update: z4.function().args(z4.string(), ThemeDataSchema, z4.void()),
+        remove: z4.function().args(z4.string(), z4.void()),
+        set: z4.object({
+          all: z4.function().args(ThemeDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          name: z4.function().args(z4.string(), z4.void()),
+          themeColors: z4.function().args(z4.array(ThemeColorDataSchema), z4.void()),
+          aliasGroups: z4.function().args(z4.array(AliasGroupDataSchema), z4.void())
+        }),
+        themeColor: z4.function().args(z4.string(), z4.void()),
+        aliasGroup: z4.function().args(z4.string(), z4.void()),
+        data: ThemeDataSchema
+      });
+      ThemeListActionsSchema = z4.object({
+        set: z4.object({
+          all: z4.function().args(ThemeListDataSchema, z4.void()),
+          id: z4.function().args(z4.string(), z4.void()),
+          themes: z4.function().args(z4.array(ThemeDataSchema), z4.void())
+        }),
+        theme: z4.function().args(z4.string(), z4.void()),
+        data: ThemeListDataSchema
+      });
+      themeListData = () => ({
+        id: nanoid(12),
+        themes: defaultThemes
+      });
+      themeListActions = (set) => ({
+        set: {
+          all: (themeListData2) => set((state) => __spreadValues(__spreadValues({}, state), themeListData2)),
+          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+          themes: (themes) => set((state) => __spreadProps(__spreadValues({}, state), { themes }))
+        },
+        theme: (id) => ({
+          add: (theme2 = createTheme()) => set((state) => __spreadValues({}, state)),
+          duplicate: (id2) => set((state) => __spreadValues({}, state)),
+          update: (id2, theme2) => set((state) => __spreadValues({}, state)),
+          remove: (id2) => set((state) => __spreadValues({}, state)),
+          set: {
+            all: (themeData2) => set((state) => __spreadValues({}, state)),
+            id: (id2) => set((state) => __spreadValues({}, state)),
+            name: (name310) => set((state) => __spreadValues({}, state)),
+            themeColors: (themeColors) => set((state) => __spreadValues({}, state)),
+            aliasGroups: (aliasGroups) => set((state) => __spreadValues({}, state))
+          },
+          themeColor: (id2) => ({
+            add: (themeColor2 = createThemeColor()) => set((state) => __spreadValues({}, state)),
+            duplicate: (id3) => set((state) => __spreadValues({}, state)),
+            update: (id3, themeColor2) => set((state) => __spreadValues({}, state)),
+            remove: (id3) => set((state) => __spreadValues({}, state)),
+            set: {
+              all: (themeColor2) => set((state) => __spreadValues({}, state)),
+              id: (id3) => set((state) => __spreadValues({}, state)),
+              name: (name310) => set((state) => __spreadValues({}, state)),
+              sourceHex: (sourceHex2) => set((state) => __spreadValues({}, state)),
+              sourceColor: (sourceColor) => set((state) => __spreadValues({}, state)),
+              endColor: (endColor) => set((state) => __spreadValues({}, state)),
+              tones: (tones) => set((state) => __spreadValues({}, state)),
+              hueCalc: (hueCalc) => set((state) => __spreadValues({}, state)),
+              chromaCalc: (chromaCalc) => set((state) => __spreadValues({}, state)),
+              aliasGroup: (aliasGroup) => set((state) => __spreadValues({}, state))
+            },
+            aliasGroup: (id3) => ({
+              update: (id4, aliasGroup) => set((state) => __spreadValues({}, state)),
+              set: {
+                all: (aliasGroup) => set((state) => __spreadValues({}, state)),
+                id: (id4) => set((state) => __spreadValues({}, state)),
+                name: (name310) => set((state) => __spreadValues({}, state)),
+                aliases: (aliases) => set((state) => __spreadValues({}, state)),
+                themeColorIds: (themeColorIds) => set((state) => __spreadValues({}, state))
+              },
+              alias: (id4) => ({
+                add: (alias) => set((state) => __spreadValues({}, state)),
+                update: (id5, alias) => set((state) => __spreadValues({}, state)),
+                remove: (id5) => set((state) => __spreadValues({}, state)),
+                set: {
+                  all: (alias) => set((state) => __spreadValues({}, state)),
+                  id: (id5) => set((state) => __spreadValues({}, state)),
+                  name: (name310) => set((state) => __spreadValues({}, state)),
+                  lightModeTone: (tone) => set((state) => __spreadValues({}, state)),
+                  darkModeTone: (tone) => set((state) => __spreadValues({}, state))
+                },
+                data: {
+                  id: "",
+                  name: "",
+                  lightModeTone: 0,
+                  darkModeTone: 0
+                }
+              }),
+              data: { id: "", name: "", aliases: [] }
+            }),
+            data: {
+              id: "",
+              name: "",
+              sourceHex: "",
+              sourceColor: {
+                hct: [0, 0, 0],
+                rgb: [0, 0, 0],
+                hex: ""
+              },
+              endColor: {
+                hct: [0, 0, 0],
+                rgb: [0, 0, 0],
+                hex: ""
+              },
+              tones: [],
+              hueCalc: "",
+              chromaCalc: "",
+              aliasGroup: {
+                id: "",
+                name: "",
+                aliases: []
+              }
+            }
+          }),
+          aliasGroup: (id2) => ({
+            add: (aliasGroup = createAliasGroup()) => set((state) => __spreadValues({}, state)),
+            duplicate: (id3) => set((state) => __spreadValues({}, state)),
+            update: (id3, aliasGroup) => set((state) => __spreadValues({}, state)),
+            remove: (id3) => set((state) => __spreadValues({}, state)),
+            set: {
+              all: (aliasGroup) => set((state) => __spreadValues({}, state)),
+              id: (id3) => set((state) => __spreadValues({}, state)),
+              name: (name310) => set((state) => __spreadValues({}, state)),
+              aliases: (aliases) => set((state) => __spreadValues({}, state)),
+              themeColorIds: (themeColorIds) => set((state) => __spreadValues({}, state))
+            },
+            alias: (id3) => ({
+              add: (alias) => set((state) => __spreadValues({}, state)),
+              update: (id4, alias) => set((state) => __spreadValues({}, state)),
+              remove: (id4) => set((state) => __spreadValues({}, state)),
+              set: {
+                all: (alias) => set((state) => __spreadValues({}, state)),
+                id: (id4) => set((state) => __spreadValues({}, state)),
+                name: (name310) => set((state) => __spreadValues({}, state)),
+                lightModeTone: (tone) => set((state) => __spreadValues({}, state)),
+                darkModeTone: (tone) => set((state) => __spreadValues({}, state))
+              },
+              data: {
+                id: "",
+                name: "",
+                lightModeTone: 0,
+                darkModeTone: 0
+              }
+            }),
+            data: { id: "", name: "", aliases: [] }
+          }),
+          data: {
+            id: "",
+            name: "",
+            themeColors: [],
+            aliasGroups: []
+          }
+        }),
+        data: { id: "", themes: [] }
+      });
+      themeList = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, themeListData(set, get, ...a3)), themeListActions(set, get, ...a3)), {
+        data: {
+          id: themeListData(set, get, ...a3).id,
+          themes: themeListData(set, get, ...a3).themes
+        },
+        theme: (themeId = "ADD") => ({
+          add: (theme2 = createTheme()) => {
+            if (themeId === "ADD") {
+              set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: [...state.themes, theme2]
+              }));
+            }
+          },
+          duplicate: (id = themeId) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: [
+              ...state.themes,
+              __spreadProps(__spreadValues({}, state.themes[(0, import_lodash.findIndex)(state.themes, (theme2) => theme2.id === id)]), {
+                id: nanoid(12)
+              })
+            ]
+          })),
+          update: (id = themeId, theme2) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: state.themes.map(
+              (existingTheme) => existingTheme.id === id ? theme2 : existingTheme
+            )
+          })),
+          remove: (id = themeId) => set((state) => __spreadProps(__spreadValues({}, state), {
+            themes: [...state.themes.filter((theme2) => theme2.id !== id)]
+          })),
+          set: {
+            all: (theme2) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((existingTheme) => {
+                if (existingTheme.id === themeId) {
+                  return theme2;
+                }
+                return existingTheme;
+              })
+            })),
+            id: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), { id });
+                }
+                return theme2;
+              })
+            })),
+            name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), { name: name310 });
+                }
+                return theme2;
+              })
+            })),
+            themeColors: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), { themeColors });
+                }
+                return theme2;
+              })
+            })),
+            aliasGroups: (aliasGroups) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), { aliasGroups });
+                }
+                return theme2;
+              })
+            }))
+          },
+          themeColor: (themeColorId = "ADD") => ({
+            add: (themeColor2 = createThemeColor()) => {
+              if (themeColorId === "ADD") {
+                set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: [
+                          ...theme2.themeColors,
+                          themeColor2
+                        ]
+                      });
+                    }
+                    return theme2;
+                  })
+                }));
+              }
+            },
+            duplicate: (id = themeColorId) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  const themeColor2 = theme2.themeColors.find(
+                    (themeColor3) => themeColor3.id === id
+                  );
+                  if (themeColor2) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: [
+                        ...theme2.themeColors,
+                        __spreadProps(__spreadValues({}, themeColor2), { id: nanoid(12) })
+                      ]
+                    });
+                  }
+                }
+                return theme2;
+              })
+            })),
+            update: (id = themeColorId, themeColor2) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), {
+                    themeColors: theme2.themeColors.map(
+                      (existingThemeColor) => existingThemeColor.id === id ? themeColor2 : existingThemeColor
+                    )
+                  });
+                }
+                return theme2;
+              })
+            })),
+            remove: (id = themeColorId) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), {
+                    themeColors: theme2.themeColors.filter(
+                      (themeColor2) => themeColor2.id !== id
+                    )
+                  });
+                }
+                return theme2;
+              })
+            })),
+            set: {
+              all: (themeColor2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (existingThemeColor) => existingThemeColor.id === themeColorId ? themeColor2 : existingThemeColor
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              id: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              id
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              name: name310
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              sourceHex: sourceHex2,
+                              sourceColor: __spreadValues(__spreadValues({}, themeColor2.sourceColor), createColorFrom().hex(
+                                sourceHex2
+                              )),
+                              endColor: __spreadValues(__spreadValues({}, themeColor2.endColor), calculateEndColor(
+                                themeColor2.sourceColor.hct,
+                                themeColor2.hueCalc,
+                                themeColor2.chromaCalc
+                              ))
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              sourceColor,
+                              endColor: __spreadValues(__spreadValues({}, themeColor2.endColor), calculateEndColor(
+                                sourceColor.hct,
+                                themeColor2.hueCalc,
+                                themeColor2.chromaCalc
+                              ))
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              endColor
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              tones
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              hueCalc,
+                              endColor: __spreadValues(__spreadValues({}, themeColor2.endColor), calculateEndColor(
+                                themeColor2.sourceColor.hct,
+                                hueCalc,
+                                themeColor2.chromaCalc
+                              ))
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              chromaCalc,
+                              endColor: __spreadValues(__spreadValues({}, themeColor2.endColor), calculateEndColor(
+                                themeColor2.sourceColor.hct,
+                                themeColor2.hueCalc,
+                                chromaCalc
+                              ))
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              aliasGroup: (aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              aliasGroup
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              }))
+            },
+            aliasGroup: (aliasGroupId = "") => ({
+              update: (id = aliasGroupId, aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      themeColors: theme2.themeColors.map(
+                        (themeColor2) => {
+                          if (themeColor2.id === themeColorId) {
+                            return __spreadProps(__spreadValues({}, themeColor2), {
+                              aliasGroup
+                            });
+                          }
+                          return themeColor2;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              set: {
+                all: (aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                id: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  id
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  name: name310
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  aliases
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                themeColorIds: (themeColorIds) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  themeColorIds
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                }))
+              },
+              alias: (aliasId = "ADD") => ({
+                add: (alias = createAlias()) => {
+                  if (aliasId === "ADD") {
+                    set((state) => __spreadProps(__spreadValues({}, state), {
+                      themes: state.themes.map((theme2) => {
+                        if (theme2.id === themeId) {
+                          return __spreadProps(__spreadValues({}, theme2), {
+                            themeColors: theme2.themeColors.map(
+                              (themeColor2) => {
+                                if (themeColor2.id === themeColorId) {
+                                  return __spreadProps(__spreadValues({}, themeColor2), {
+                                    aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                      aliases: [
+                                        ...themeColor2.aliasGroup.aliases,
+                                        alias
+                                      ]
+                                    })
+                                  });
+                                }
+                                return themeColor2;
+                              }
+                            )
+                          });
+                        }
+                        return theme2;
+                      })
+                    }));
+                  }
+                },
+                update: (id = aliasId, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  aliases: themeColor2.aliasGroup.aliases.map(
+                                    (existingAlias) => existingAlias.id === id ? alias : existingAlias
+                                  )
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                remove: (id = aliasId) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        themeColors: theme2.themeColors.map(
+                          (themeColor2) => {
+                            if (themeColor2.id === themeColorId) {
+                              return __spreadProps(__spreadValues({}, themeColor2), {
+                                aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                  aliases: themeColor2.aliasGroup.aliases.filter(
+                                    (alias) => alias.id !== id
+                                  )
+                                })
+                              });
+                            }
+                            return themeColor2;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                set: {
+                  id: (id = aliasId) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map((theme2) => {
+                      if (theme2.id === themeId) {
+                        return __spreadProps(__spreadValues({}, theme2), {
+                          themeColors: theme2.themeColors.map(
+                            (themeColor2) => {
+                              if (themeColor2.id === themeColorId) {
+                                return __spreadProps(__spreadValues({}, themeColor2), {
+                                  aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                    aliases: themeColor2.aliasGroup.aliases.map(
+                                      (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                        id
+                                      }) : alias
+                                    )
+                                  })
+                                });
+                              }
+                              return themeColor2;
+                            }
+                          )
+                        });
+                      }
+                      return theme2;
+                    })
+                  })),
+                  name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map((theme2) => {
+                      if (theme2.id === themeId) {
+                        return __spreadProps(__spreadValues({}, theme2), {
+                          themeColors: theme2.themeColors.map(
+                            (themeColor2) => {
+                              if (themeColor2.id === themeColorId) {
+                                return __spreadProps(__spreadValues({}, themeColor2), {
+                                  aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                    aliases: themeColor2.aliasGroup.aliases.map(
+                                      (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                        name: name310
+                                      }) : alias
+                                    )
+                                  })
+                                });
+                              }
+                              return themeColor2;
+                            }
+                          )
+                        });
+                      }
+                      return theme2;
+                    })
+                  })),
+                  lightModeTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map((theme2) => {
+                      if (theme2.id === themeId) {
+                        return __spreadProps(__spreadValues({}, theme2), {
+                          themeColors: theme2.themeColors.map(
+                            (themeColor2) => {
+                              if (themeColor2.id === themeColorId) {
+                                return __spreadProps(__spreadValues({}, themeColor2), {
+                                  aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                    aliases: themeColor2.aliasGroup.aliases.map(
+                                      (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                        lightModeTone: tone
+                                      }) : alias
+                                    )
+                                  })
+                                });
+                              }
+                              return themeColor2;
+                            }
+                          )
+                        });
+                      }
+                      return theme2;
+                    })
+                  })),
+                  darkModeTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map((theme2) => {
+                      if (theme2.id === themeId) {
+                        return __spreadProps(__spreadValues({}, theme2), {
+                          themeColors: theme2.themeColors.map(
+                            (themeColor2) => {
+                              if (themeColor2.id === themeColorId) {
+                                return __spreadProps(__spreadValues({}, themeColor2), {
+                                  aliasGroup: __spreadProps(__spreadValues({}, themeColor2.aliasGroup), {
+                                    aliases: themeColor2.aliasGroup.aliases.map(
+                                      (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                        darkModeTone: tone
+                                      }) : alias
+                                    )
+                                  })
+                                });
+                              }
+                              return themeColor2;
+                            }
+                          )
+                        });
+                      }
+                      return theme2;
+                    })
+                  }))
+                },
+                data: {
+                  id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors,
+                    (themeColor2) => themeColor2.id === themeColorId
+                  )].aliasGroup.aliases[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                        themeListData(set, get, ...a3).themes,
+                        (theme2) => theme2.id === themeId
+                      )].themeColors,
+                      (themeColor2) => themeColor2.id === themeColorId
+                    )].aliasGroup.aliases,
+                    (alias) => alias.id === aliasId
+                  )].id,
+                  name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors,
+                    (themeColor2) => themeColor2.id === themeColorId
+                  )].aliasGroup.aliases[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                        themeListData(set, get, ...a3).themes,
+                        (theme2) => theme2.id === themeId
+                      )].themeColors,
+                      (themeColor2) => themeColor2.id === themeColorId
+                    )].aliasGroup.aliases,
+                    (alias) => alias.id === aliasId
+                  )].name,
+                  lightModeTone: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors,
+                    (themeColor2) => themeColor2.id === themeColorId
+                  )].aliasGroup.aliases[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                        themeListData(set, get, ...a3).themes,
+                        (theme2) => theme2.id === themeId
+                      )].themeColors,
+                      (themeColor2) => themeColor2.id === themeColorId
+                    )].aliasGroup.aliases,
+                    (alias) => alias.id === aliasId
+                  )].lightModeTone,
+                  darkModeTone: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors,
+                    (themeColor2) => themeColor2.id === themeColorId
+                  )].aliasGroup.aliases[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].themeColors[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                        themeListData(set, get, ...a3).themes,
+                        (theme2) => theme2.id === themeId
+                      )].themeColors,
+                      (themeColor2) => themeColor2.id === themeColorId
+                    )].aliasGroup.aliases,
+                    (alias) => alias.id === aliasId
+                  )].darkModeTone
+                }
+              }),
+              data: {
+                id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors,
+                  (themeColor2) => themeColor2.id === themeColorId
+                )].aliasGroup.id,
+                name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors,
+                  (themeColor2) => themeColor2.id === themeColorId
+                )].aliasGroup.name,
+                aliases: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors,
+                  (themeColor2) => themeColor2.id === themeColorId
+                )].aliasGroup.aliases,
+                themeColorIds: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].themeColors,
+                  (themeColor2) => themeColor2.id === themeColorId
+                )].aliasGroup.themeColorIds
+              }
+            }),
+            data: {
+              id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].id,
+              name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].name,
+              sourceHex: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].sourceHex,
+              sourceColor: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].sourceColor,
+              endColor: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].endColor,
+              tones: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].tones,
+              hueCalc: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].hueCalc,
+              chromaCalc: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].chromaCalc,
+              aliasGroup: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].themeColors[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].themeColors,
+                (themeColor2) => themeColor2.id === themeColorId
+              )].aliasGroup
+            }
+          }),
+          aliasGroup: (aliasGroupId = "ADD") => ({
+            add: (aliasGroup = createAliasGroup()) => {
+              if (aliasGroupId === "ADD") {
+                set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        aliasGroups: [
+                          ...theme2.aliasGroups,
+                          aliasGroup
+                        ]
+                      });
+                    }
+                    return theme2;
+                  })
+                }));
+              }
+            },
+            duplicate: (id = aliasGroupId) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  const aliasGroup = theme2.aliasGroups.find(
+                    (aliasGroup2) => aliasGroup2.id === id
+                  );
+                  if (aliasGroup) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: [
+                        ...theme2.aliasGroups,
+                        __spreadProps(__spreadValues({}, aliasGroup), { id: nanoid(12) })
+                      ]
+                    });
+                  }
+                }
+                return theme2;
+              })
+            })),
+            update: (id = aliasGroupId, aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), {
+                    aliasGroups: theme2.aliasGroups.map(
+                      (existingAliasGroup) => existingAliasGroup.id === id ? aliasGroup : existingAliasGroup
+                    )
+                  });
+                }
+                return theme2;
+              })
+            })),
+            remove: (id = aliasGroupId) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.map((theme2) => {
+                if (theme2.id === themeId) {
+                  return __spreadProps(__spreadValues({}, theme2), {
+                    aliasGroups: [
+                      ...theme2.aliasGroups.filter(
+                        (aliasGroup) => aliasGroup.id !== id
+                      )
+                    ]
+                  });
+                }
+                return theme2;
+              })
+            })),
+            set: {
+              all: (aliasGroup) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (existingAliasGroup) => existingAliasGroup.id === aliasGroupId ? aliasGroup : existingAliasGroup
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              id: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              id
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              name: name310
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              aliases
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              themeColorIds: (themeColorIds) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              themeColorIds
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              }))
+            },
+            alias: (aliasId = "ADD") => ({
+              add: (alias = createAlias()) => {
+                if (aliasId === "ADD") {
+                  set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map((theme2) => {
+                      if (theme2.id === themeId) {
+                        return __spreadProps(__spreadValues({}, theme2), {
+                          aliasGroups: theme2.aliasGroups.map(
+                            (aliasGroup) => {
+                              if (aliasGroup.id === aliasGroupId) {
+                                return __spreadProps(__spreadValues({}, aliasGroup), {
+                                  aliases: [
+                                    ...aliasGroup.aliases,
+                                    alias
+                                  ]
+                                });
+                              }
+                              return aliasGroup;
+                            }
+                          )
+                        });
+                      }
+                      return theme2;
+                    })
+                  }));
+                }
+              },
+              update: (id = aliasId, alias) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              aliases: aliasGroup.aliases.map(
+                                (existingAlias) => existingAlias.id === id ? alias : existingAlias
+                              )
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              remove: (id = aliasId) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map((theme2) => {
+                  if (theme2.id === themeId) {
+                    return __spreadProps(__spreadValues({}, theme2), {
+                      aliasGroups: theme2.aliasGroups.map(
+                        (aliasGroup) => {
+                          if (aliasGroup.id === aliasGroupId) {
+                            return __spreadProps(__spreadValues({}, aliasGroup), {
+                              aliases: aliasGroup.aliases.filter(
+                                (alias) => alias.id !== id
+                              )
+                            });
+                          }
+                          return aliasGroup;
+                        }
+                      )
+                    });
+                  }
+                  return theme2;
+                })
+              })),
+              set: {
+                id: (id = aliasId) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        aliasGroups: theme2.aliasGroups.map(
+                          (aliasGroup) => {
+                            if (aliasGroup.id === aliasGroupId) {
+                              return __spreadProps(__spreadValues({}, aliasGroup), {
+                                aliases: aliasGroup.aliases.map(
+                                  (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                    id
+                                  }) : alias
+                                )
+                              });
+                            }
+                            return aliasGroup;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        aliasGroups: theme2.aliasGroups.map(
+                          (aliasGroup) => {
+                            if (aliasGroup.id === aliasGroupId) {
+                              return __spreadProps(__spreadValues({}, aliasGroup), {
+                                aliases: aliasGroup.aliases.map(
+                                  (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                    name: name310
+                                  }) : alias
+                                )
+                              });
+                            }
+                            return aliasGroup;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                lightModeTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        aliasGroups: theme2.aliasGroups.map(
+                          (aliasGroup) => {
+                            if (aliasGroup.id === aliasGroupId) {
+                              return __spreadProps(__spreadValues({}, aliasGroup), {
+                                aliases: aliasGroup.aliases.map(
+                                  (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                    lightModeTone: tone
+                                  }) : alias
+                                )
+                              });
+                            }
+                            return aliasGroup;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                })),
+                darkModeTone: (tone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map((theme2) => {
+                    if (theme2.id === themeId) {
+                      return __spreadProps(__spreadValues({}, theme2), {
+                        aliasGroups: theme2.aliasGroups.map(
+                          (aliasGroup) => {
+                            if (aliasGroup.id === aliasGroupId) {
+                              return __spreadProps(__spreadValues({}, aliasGroup), {
+                                aliases: aliasGroup.aliases.map(
+                                  (alias) => alias.id === aliasId ? __spreadProps(__spreadValues({}, alias), {
+                                    darkModeTone: tone
+                                  }) : alias
+                                )
+                              });
+                            }
+                            return aliasGroup;
+                          }
+                        )
+                      });
+                    }
+                    return theme2;
+                  })
+                }))
+              },
+              data: {
+                id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups,
+                  (aliasGroup) => aliasGroup.id === aliasGroupId
+                )].aliases[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].aliasGroups,
+                    (aliasGroup) => aliasGroup.id === aliasGroupId
+                  )].aliases,
+                  (alias) => alias.id === aliasId
+                )].id,
+                name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups,
+                  (aliasGroup) => aliasGroup.id === aliasGroupId
+                )].aliases[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].aliasGroups,
+                    (aliasGroup) => aliasGroup.id === aliasGroupId
+                  )].aliases,
+                  (alias) => alias.id === aliasId
+                )].name,
+                lightModeTone: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups,
+                  (aliasGroup) => aliasGroup.id === aliasGroupId
+                )].aliases[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].aliasGroups,
+                    (aliasGroup) => aliasGroup.id === aliasGroupId
+                  )].aliases,
+                  (alias) => alias.id === aliasId
+                )].lightModeTone,
+                darkModeTone: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups,
+                  (aliasGroup) => aliasGroup.id === aliasGroupId
+                )].aliases[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes,
+                    (theme2) => theme2.id === themeId
+                  )].aliasGroups[(0, import_lodash.findIndex)(
+                    themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                      themeListData(set, get, ...a3).themes,
+                      (theme2) => theme2.id === themeId
+                    )].aliasGroups,
+                    (aliasGroup) => aliasGroup.id === aliasGroupId
+                  )].aliases,
+                  (alias) => alias.id === aliasId
+                )].darkModeTone
+              }
+            }),
+            data: {
+              id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].aliasGroups[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups,
+                (aliasGroup) => aliasGroup.id === aliasGroupId
+              )].id,
+              name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].aliasGroups[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups,
+                (aliasGroup) => aliasGroup.id === aliasGroupId
+              )].name,
+              aliases: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].aliasGroups[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups,
+                (aliasGroup) => aliasGroup.id === aliasGroupId
+              )].aliases,
+              themeColorIds: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes,
+                (theme2) => theme2.id === themeId
+              )].aliasGroups[(0, import_lodash.findIndex)(
+                themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+                  themeListData(set, get, ...a3).themes,
+                  (theme2) => theme2.id === themeId
+                )].aliasGroups,
+                (aliasGroup) => aliasGroup.id === aliasGroupId
+              )].themeColorIds
+            }
+          }),
+          data: {
+            id: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+              themeListData(set, get, ...a3).themes,
+              (theme2) => theme2.id === themeId
+            )].id,
+            name: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+              themeListData(set, get, ...a3).themes,
+              (theme2) => theme2.id === themeId
+            )].name,
+            themeColors: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+              themeListData(set, get, ...a3).themes,
+              (theme2) => theme2.id === themeId
+            )].themeColors,
+            aliasGroups: themeListData(set, get, ...a3).themes[(0, import_lodash.findIndex)(
+              themeListData(set, get, ...a3).themes,
+              (theme2) => theme2.id === themeId
+            )].aliasGroups
+          }
+        })
+      });
+      useThemeList = create((set, ...a3) => __spreadValues({}, themeList(set, ...a3)));
+    }
+  });
+
   // src/components/tabs.tsx
-  var import_lodash, CopyPlusIcon, TabGroup, tabs_default;
+  var CopyPlusIcon, TabGroup, tabs_default;
   var init_tabs2 = __esm({
     "src/components/tabs.tsx"() {
       "use strict";
@@ -75396,7 +76890,6 @@ svg {
       init_theme_color_select();
       init_index_browser();
       init_useThemeList();
-      import_lodash = __toESM(require_lodash());
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ themeData: themeData2, onSetThemeData, className }) => {
         const [tabValue, setTabValue] = h2("Primitives");
@@ -75422,52 +76915,7 @@ svg {
           return theme2;
         };
         const currentThemeColor = findThemeColorById(currentThemeColorId);
-        p2(() => {
-          theme.set.all(themeListStore.getState().themes[0]);
-          console.log(
-            themeListStore.getState().themes[0].id,
-            themeStore.getState().id
-          );
-          themeColor.set.all(themeListStore.getState().themes[0].themeColors[0]);
-          console.log(
-            themeListStore.getState().themes[0].themeColors[0].id,
-            themeColorStore.getState().id
-          );
-        }, []);
-        const themeDataRef = _2(themeStore.getState().data);
-        p2(
-          () => themeStore.subscribe((state) => {
-            const currentThemeData = themeListStore.getState().data.themes.find((theme2) => theme2.id === currentThemeId);
-            if (!import_lodash.default.isEqual(themeDataRef.current, currentThemeData) && currentThemeData) {
-              themeDataRef.current = currentThemeData;
-              themeList2.theme.update(currentThemeId, __spreadProps(__spreadValues({}, state.data), {
-                id: currentThemeId
-              }));
-            }
-          }),
-          []
-        );
-        const themeColorRef = _2(themeColorStore.getState().data);
-        p2(
-          () => themeColorStore.subscribe((state) => {
-            const currentThemeColorData = themeStore.getState().data.themeColors.find(
-              (themeColor2) => themeColor2.id === currentThemeColorId
-            );
-            if (!import_lodash.default.isEqual(themeColorRef.current, currentThemeColorData) && currentThemeColorData) {
-              themeColorRef.current = currentThemeColorData;
-              theme.themeColor.update(currentThemeColorId, __spreadProps(__spreadValues({}, state.data), {
-                id: currentThemeColorId
-              }));
-            }
-          }),
-          []
-        );
-        const sendThemeColorData = () => {
-          theme.themeColor.update(
-            currentThemeColorId,
-            themeColorStore.getState().data
-          );
-          themeList2.theme.update(currentThemeId, themeStore.getState().data);
+        const setThemeColorName = (name310) => {
         };
         const [hexColorInput, setHexColorInput] = h2(
           themeColorStore.getState().sourceColor.sourceHex
