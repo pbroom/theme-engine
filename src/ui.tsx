@@ -22,14 +22,30 @@ import {
 import { useEffect, useState } from 'react';
 import { useThemeList } from './hooks/useThemeList';
 import { useRef } from 'preact/hooks';
+// import { useID } from './hooks/useId';
+import { findIndex, set } from 'lodash';
+import { useCurrentId } from './hooks/useId';
+import { atom, useAtom } from 'jotai';
 
 export const Plugin = () => {
     const themeListStore = useThemeList;
     const themeList = themeListStore();
-    console.log(themeList);
-    const [currentThemeId, setCurrentThemeId] = useState<string>(
-        `${themeList.themes[0].id}`,
-    );
+    const currentThemeId = useCurrentId.getState().currentThemeId;
+    const setCurrentThemeId = (id: string) => {
+        const themeColorId = themeList.theme(id).data.themeColors[0].id;
+        useCurrentId.setState({
+            currentThemeId: id,
+            currentThemeColorId: themeColorId,
+        });
+    };
+    const currentThemeColorId = useCurrentId.getState().currentThemeColorId;
+    const setCurrentThemeColorId = (id: string) =>
+        useCurrentId.setState({ currentThemeColorId: id });
+    const currentTheme: ThemeData = themeList.theme(currentThemeId).data;
+    const currentThemeColor: ThemeColorData = themeList
+        .theme(currentThemeId)
+        .themeColor(currentThemeColorId).data;
+
     const findThemeById = (id: string) => {
         const theme = themeList.themes.find((theme) => theme.id === id);
         if (!theme) {
@@ -37,7 +53,6 @@ export const Plugin = () => {
         }
         return theme;
     };
-    const currentTheme: ThemeData = findThemeById(currentThemeId);
 
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -82,6 +97,7 @@ export const Plugin = () => {
         },
     ];
     console.log(themeListMenuOptions);
+    console.log(currentThemeId);
     const handleOptionSelect = (
         event: h.JSX.TargetedEvent<HTMLInputElement>,
     ) => {
@@ -89,8 +105,9 @@ export const Plugin = () => {
         if (selectedValue === 'New theme...') {
             const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
-            themeListStore.getState().theme('ADD', newTheme);
+            themeList.add.theme(newTheme);
             setCurrentThemeId(newTheme.id);
+            console.log(newTheme);
             console.log(themeList);
         }
         if (selectedValue === 'Rename...') {
@@ -102,7 +119,7 @@ export const Plugin = () => {
                 id: nanoid(12),
                 name: `${currentTheme.name} copy`,
             };
-            themeList.theme.add({ ...newTheme });
+            themeList.add.theme(newTheme);
             setCurrentThemeId(newTheme.id);
         }
         if (selectedValue === 'Delete') {
@@ -113,12 +130,12 @@ export const Plugin = () => {
             )?.id;
             if (!nextThemeId) {
                 const newTheme = createTheme(nanoid(12), 'New theme');
-                themeList.theme.add(newTheme);
+                themeList.add.theme(newTheme);
                 setCurrentThemeId(newTheme.id);
             } else {
                 setCurrentThemeId(nextThemeId);
             }
-            themeList.theme.remove(themeToDelete);
+            themeList.theme(themeToDelete).remove();
         }
         if (
             selectedValue !== 'New theme...' &&
@@ -151,14 +168,14 @@ export const Plugin = () => {
 
     const nameTheNameless = () => {
         if (!currentTheme.name) {
-            themeList.theme.update(currentThemeId, {
+            themeList.theme(currentThemeId).update({
                 ...currentTheme,
                 name: pickRandomName(names),
             });
         }
     };
     const onSetThemeData = (themeData: ThemeData) => {
-        themeList.theme.update(currentThemeId, themeData);
+        themeList.theme(currentThemeId).update(themeData);
     };
     // Rendering the UI
     return (
@@ -175,12 +192,11 @@ export const Plugin = () => {
                         {isEditing ? (
                             <Textbox
                                 ref={inputRef}
-                                value={findThemeById(currentThemeId).name}
+                                value={currentTheme.name}
                                 onChange={(e) =>
-                                    themeList.theme.update(currentThemeId, {
-                                        ...currentTheme,
-                                        name: e.currentTarget.value,
-                                    })
+                                    themeList
+                                        .theme(currentThemeId)
+                                        .setProps.name(e.currentTarget.value)
                                 }
                                 onBlur={handleTextboxBlur}
                                 onKeyDown={handleTextboxKeyDown}
@@ -196,8 +212,8 @@ export const Plugin = () => {
                         )}
                     </div>
                     <TabGroup
-                        themeData={findThemeById(currentThemeId)}
-                        onSetThemeData={onSetThemeData}
+                    // themeData={currentTheme}
+                    // onSetThemeData={onSetThemeData}
                     />
                 </div>
                 <button

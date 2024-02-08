@@ -27,7 +27,10 @@ const GradientPreview = ({
     return (
         <Fragment>
             <div
-                className={twMerge('h-20 w-full rounded', className)}
+                className={twMerge(
+                    'h-20 w-full rounded',
+                    className?.toString(),
+                )}
                 style={{
                     background: `linear-gradient(to right, ${gradient})`,
                 }}

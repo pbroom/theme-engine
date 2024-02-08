@@ -1,5 +1,3 @@
-import { Alias, useAlias } from '../useAlias';
-
 // export const defaultAliases = (colorRole?: string): Alias[] => {
 // 	if (colorRole === 'error') {
 // 		return [colorAlias, onColorAlias, colorConainerAlias, onColorConainerAlias];

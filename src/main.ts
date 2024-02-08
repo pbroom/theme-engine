@@ -1,7 +1,7 @@
 import { showUI } from '@create-figma-plugin/utilities';
-import { paletteTones } from './color';
-import { paletteGroup } from './palette-swatches';
-import { paletteVariableCollection } from './palette-variables';
+// import { paletteTones } from './color';
+// import { paletteGroup } from './palette-swatches';
+// import { paletteVariableCollection } from './palette-variables';
 import VariableCollection from './variable-collection';
 
 const height = (pixelHeight: number) => {
@@ -65,9 +65,9 @@ figma.ui.onmessage = (pluginMessage) => {
         const toneStops = pluginMessage.toneStops;
         const hexColor = pluginMessage.color;
 
-        const palette = paletteTones(hexColor, toneStops);
-        const swatches = paletteGroup(colorName, hexColor, palette);
-        return swatches;
+        // const palette = paletteTones(hexColor, toneStops);
+        // const swatches = paletteGroup(colorName, hexColor, palette);
+        // return swatches;
     }
 
     if (pluginMessage.type === 'createVariables') {
@@ -77,16 +77,16 @@ figma.ui.onmessage = (pluginMessage) => {
         const collectionId = pluginMessage.collectionId;
         const Overwrite = pluginMessage.overwriteVariables;
         const bindStyles = pluginMessage.bindStyles;
-        const palette = paletteTones(hexColor, toneStops);
-        const variables = paletteVariableCollection(
-            collectionId,
-            colorName,
-            hexColor,
-            palette,
-            Overwrite,
-            bindStyles,
-        );
-        console.log(variables);
-        return variables;
+        // const palette = paletteTones(hexColor, toneStops);
+        // const variables = paletteVariableCollection(
+        //     collectionId,
+        //     colorName,
+        //     hexColor,
+        //     palette,
+        //     Overwrite,
+        //     bindStyles,
+        // );
+        // console.log(variables);
+        // return variables;
     }
 };
