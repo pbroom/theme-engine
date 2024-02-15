@@ -11,29 +11,41 @@ import { nanoid } from 'nanoid';
 import { ThemeData, createTheme } from './hooks/useTheme';
 import { useContext, useEffect, useState, useRef } from 'preact/hooks';
 import { defaultThemes, useThemeList } from './hooks/useThemeList';
-import { IdContext } from './hooks/useId';
-import { set } from 'lodash';
+import { IdContext, IdState } from './hooks/useId';
+import { findIndex, set } from 'lodash';
+import { useStore } from 'zustand';
 
 export const Plugin = () => {
     // ID state
     const IdStore = useContext(IdContext);
-    const themeId: string = IdStore?.getState().themeId || 'happiness';
-    const themeColorId: string =
-        IdStore?.getState().themeColorId || 'happiness';
-    const setThemeId = (themeId: string) =>
-        IdStore?.setState({ themeId: themeId });
-    const setThemeColorId = (themeColorId: string) =>
-        IdStore?.setState({ themeColorId: themeColorId });
+    if (!IdStore) {
+        throw new Error('IdStore is undefined');
+    }
+    const themeId = useStore(IdStore, (state: IdState) => state.themeId);
+    const themeColorId: string = useStore(
+        IdStore,
+        (state: IdState) => state.themeColorId,
+    );
+    const themeIndex = findIndex(themeId);
+    const themeColorIndex = findIndex(themeColorId);
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
+    const setThemeColorId = useStore(
+        IdStore,
+        (state: IdState) => state.setThemeColorId,
+    );
 
     // themeList state
     const themeListStore = useThemeList;
     const themeList = themeListStore();
 
     // theme state
-    const theme = themeList.theme(themeId);
+    const theme = themeList.themes[themeIndex];
+    const setTheme = themeList.theme(themeId);
 
     // themeColor state
-    const themeColor = theme.themeColor(themeColorId);
+    const themeColor =
+        themeList.themes[themeIndex].themeColors[themeColorIndex];
+    const setThemeColor = setTheme.themeColor(themeColorId);
 
     // initial theme data
     // useEffect(() => {
@@ -100,7 +112,7 @@ export const Plugin = () => {
             const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList.add.theme(newTheme);
-            setThemeId(newTheme.id);
+            // setThemeId(newTheme.id);
             console.log(newTheme);
             console.log(themeList);
         }
@@ -109,9 +121,9 @@ export const Plugin = () => {
         }
         if (selectedValue === 'Duplicate') {
             const newTheme = {
-                ...theme.data,
+                ...theme,
                 id: nanoid(12),
-                name: `${theme.data.name} copy`,
+                name: `${theme.name} copy`,
             };
             themeList.add.theme(newTheme);
             setThemeId(newTheme.id);
@@ -166,8 +178,8 @@ export const Plugin = () => {
     ];
 
     const nameTheNameless = () => {
-        if (!theme.data.name) {
-            theme.setProps.name(pickRandomName(names));
+        if (!theme.name) {
+            setTheme.setProps.name(pickRandomName(names));
         }
     };
     const onSetThemeData = (themeData: ThemeData) => {
@@ -189,9 +201,11 @@ export const Plugin = () => {
                         {isEditing ? (
                             <Textbox
                                 ref={inputRef}
-                                value={theme.data.name}
+                                value={theme.name}
                                 onChange={(e) =>
-                                    theme.setProps.name(e.currentTarget.value)
+                                    setTheme.setProps.name(
+                                        e.currentTarget.value,
+                                    )
                                 }
                                 onBlur={handleTextboxBlur}
                                 onKeyDown={handleTextboxKeyDown}
