@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { h } from 'preact';
-import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
 import { CopyPlus } from 'lucide-react';
 import {
@@ -39,7 +39,6 @@ import { hexFromHct } from '../hooks/useColor';
 import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
-import { Theme, ThemeActions, ThemeData, useTheme } from '../hooks/useTheme';
 import { nanoid } from 'nanoid';
 import {
     ThemeListActions,
@@ -48,7 +47,9 @@ import {
 } from '../hooks/useThemeList';
 import _, { create, findIndex, set } from 'lodash';
 import { useAtom } from 'jotai';
-import { useCurrentId } from '../hooks/useId';
+import { IdContext } from '../hooks/useId';
+
+import { ThemeActions, ThemeData } from '../hooks/useTheme';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -61,30 +62,25 @@ const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
+    // ID state
+    const IdStore = useContext(IdContext);
+    const themeId: string = IdStore?.getState().themeId || 'happiness';
+    const themeColorId: string =
+        IdStore?.getState().themeColorId || 'happiness';
+    const setThemeId = (themeId: string) =>
+        IdStore?.setState({ themeId: themeId });
+    const setThemeColorId = (themeColorId: string) =>
+        IdStore?.setState({ themeColorId: themeColorId });
 
+    // themeList state
     const themeListStore = useThemeList;
     const themeList = themeListStore();
 
-    const currentThemeId = useCurrentId.getState().currentThemeId;
-    const setCurrentThemeId = (id: string) =>
-        useCurrentId.setState({ currentThemeId: id });
+    // theme state
+    const theme = themeList.theme(themeId);
 
-    const currentThemeColorId = useCurrentId.getState().currentThemeColorId;
-    const setCurrentThemeColorId = (id: string) =>
-        useCurrentId.setState({ currentThemeColorId: id });
-
-    const currentTheme: ThemeData = themeListStore
-        .getState()
-        .theme(currentThemeId).data;
-
-    const currentThemeColor: ThemeColorData = themeList
-        .theme(currentThemeId)
-        .themeColor(currentThemeColorId).data;
-
-    const useTheme = themeListStore.getState().theme(currentThemeId);
-    const useThemeColor = themeList
-        .theme(currentThemeId)
-        .themeColor(currentThemeColorId);
+    // themeColor state
+    const themeColor = theme.themeColor(themeColorId);
 
     // const findThemeById = (id: string) => {
     //     const theme = themeList.themes.find((theme) => theme.id === id);
@@ -94,7 +90,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
     //     return theme;
     // };
     // const findThemeColorById = (id: string): ThemeColorData => {
-    //     const theme = currentTheme.themeColors.find((theme) => theme.id === id);
+    //     const theme = theme.data.themeColors.find(
+    //         (themeColor) => themeColor.id === id,
+    //     );
     //     if (!theme) {
     //         throw new Error(`Theme with id ${id} not found`);
     //     }
@@ -102,32 +100,32 @@ const TabGroup = ({ className }: TabGroupProps) => {
     // };
 
     const [hexColorInput, setHexColorInput] = useState<string>(
-        themeListStore.getState().data.themes[0].themeColors[0].sourceColor.hex,
+        themeColor.data.sourceColor.sourceHex,
     );
     const [tones, setTones] = useState<string>(
-        currentThemeColor.tones.join(', '),
+        themeColor.data.tones.join(', '),
     );
     const hue = () => {
         const hue: number = calculateHue(
-            currentThemeColor.sourceColor.hct.hue,
-            currentThemeColor.hueCalc,
+            themeColor.data.sourceColor.hct.hue,
+            themeColor.data.hueCalc,
         );
         return hue;
     };
     const chroma = () => {
         const chroma: number = calculateChroma(
-            currentThemeColor.sourceColor.hct.chroma,
-            currentThemeColor.chromaCalc,
+            themeColor.data.sourceColor.hct.chroma,
+            themeColor.data.chromaCalc,
         );
         return chroma;
     };
     const [hueSlider, setHueSlider] = useState<number>(hue);
     const [hueCalcInput, setHueCalcInput] = useState<string>(
-        currentThemeColor.hueCalc.toString(),
+        themeColor.data.hueCalc,
     );
     const [chromaSlider, setChromaSlider] = useState<number>(chroma);
     const [chromaCalcInput, setChromaCalcInput] = useState<string>(
-        currentThemeColor.chromaCalc.toString(),
+        themeColor.data.chromaCalc,
     );
 
     const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
@@ -146,9 +144,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
      * @param {string} chromaCalcInput - The chroma calculation input used to set the theme color chroma calculation.
      */
     useEffect(() => {
-        useThemeColor.setProps.tones(getStopsFromString(tones));
-        useThemeColor.setProps.hueCalc(hueCalcInput);
-        useThemeColor.setProps.chromaCalc(chromaCalcInput);
+        themeColor.setProps.tones(getStopsFromString(tones));
+        themeColor.setProps.hueCalc(hueCalcInput);
+        themeColor.setProps.chromaCalc(chromaCalcInput);
     }, [tones, hueCalcInput]);
 
     /**
@@ -156,7 +154,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
      * @param {string} chromaCalcInput - The input value for chroma calculation.
      */
     useEffect(() => {
-        useThemeColor.setProps.chromaCalc(chromaCalcInput);
+        themeColor.setProps.chromaCalc(chromaCalcInput);
     }, [chromaCalcInput]);
 
     /**
@@ -168,65 +166,65 @@ const TabGroup = ({ className }: TabGroupProps) => {
     useEffect(() => {
         const calculatedHue: number = round(
             calculateHue(
-                currentThemeColor.sourceColor.hct.hue,
-                currentThemeColor.hueCalc,
+                themeColor.data.sourceColor.hct.hue,
+                themeColor.data.hueCalc,
             ),
         );
         setHueSlider(calculatedHue);
-        if (!currentThemeColor.hueCalc.toLowerCase().includes('h')) {
-            useThemeColor.setProps.hueCalc(
-                currentThemeColor.sourceColor.hct.hue.toString(),
+        if (!themeColor.data.hueCalc.toLowerCase().includes('h')) {
+            themeColor.setProps.hueCalc(
+                themeColor.data.sourceColor.hct.hue.toString(),
             );
             setHueCalcInput(calculatedHue.toString());
         }
 
         const calculatedChroma: number = round(
             calculateChroma(
-                currentThemeColor.sourceColor.hct.chroma,
-                currentThemeColor.chromaCalc,
+                themeColor.data.sourceColor.hct.chroma,
+                themeColor.data.chromaCalc,
             ),
         );
         setChromaSlider(calculatedChroma);
-        if (!currentThemeColor.chromaCalc.toLowerCase().includes('c')) {
-            useThemeColor.setProps.chromaCalc(
-                currentThemeColor.sourceColor.hct.chroma.toString(),
+        if (!themeColor.data.chromaCalc.toLowerCase().includes('c')) {
+            themeColor.setProps.chromaCalc(
+                themeColor.data.sourceColor.hct.chroma.toString(),
             );
             setChromaCalcInput(calculatedChroma.toString());
         }
     }, [hexColorInput]);
 
     const nameTheNameless = () => {
-        if (!currentThemeColor.name) {
-            useThemeColor.setProps.name('Color');
+        if (!themeColor.data.name) {
+            themeColor.setProps.name('Color');
         }
     };
     const roundedHue: number = round(
         calculateHue(
-            currentThemeColor.sourceColor.hct.hue,
-            currentThemeColor.hueCalc,
+            themeColor.data.sourceColor.hct.hue,
+            themeColor.data.hueCalc,
         ),
     );
     const roundedChroma: number = round(
         calculateChroma(
-            currentThemeColor.sourceColor.hct.chroma,
-            currentThemeColor.chromaCalc,
+            themeColor.data.sourceColor.hct.chroma,
+            themeColor.data.chromaCalc,
         ),
     );
 
     const onSelectThemeColor = (themeColorId: string) => {
-        setCurrentThemeColorId(themeColorId);
-        useThemeColor.setProps.all(currentThemeColor);
-        console.log(currentThemeColorId);
+        setThemeColorId(themeColorId);
+        themeColor.setProps.all(themeColor.data);
+        console.log(themeColor.data.id);
     };
 
     const onAddThemeColor = () => {
         const newThemeColor: ThemeColorData = createThemeColor();
         themeList.theme(0).add.themeColor(newThemeColor);
-        console.log(currentTheme.themeColors);
+        console.log(theme.data.themeColors);
     };
 
     // const onUpdateThemeColor = (themeColor: ThemeColorData) => {
-    //     theme.themeColor.update(currentThemeColorId, themeColor);
+    //     theme.themeColor.update(themeColor.data.id, themeColor);
     //     onSetThemeData({
     //         ...themeData,
     //         themeColors: theme.themeColors,
@@ -236,33 +234,33 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const onHexColorInput = (e: any) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
-        useThemeColor.setProps.sourceHex(newHexColor);
+        themeColor.setProps.sourceHex(newHexColor);
 
         setHueSlider(roundedHue);
         // if the hueCalcInput is an expression, don't update it
-        if (!currentThemeColor.hueCalc.toLowerCase().includes('h')) {
-            useThemeColor.setProps.hueCalc(
-                currentThemeColor.sourceColor.hct.hue.toString(),
+        if (!themeColor.data.hueCalc.toLowerCase().includes('h')) {
+            themeColor.setProps.hueCalc(
+                themeColor.data.sourceColor.hct.hue.toString(),
             );
             setHueCalcInput(roundedHue.toString());
         }
 
         setChromaSlider(roundedChroma);
-        if (!currentThemeColor.chromaCalc.toLowerCase().includes('c')) {
-            useThemeColor.setProps.chromaCalc(
-                currentThemeColor.sourceColor.hct.chroma.toString(),
+        if (!themeColor.data.chromaCalc.toLowerCase().includes('c')) {
+            themeColor.setProps.chromaCalc(
+                themeColor.data.sourceColor.hct.chroma.toString(),
             );
             setChromaCalcInput(roundedChroma.toString());
         }
     };
     const onHueSliderInput = (e: any) => {
         const newHueCalcInput: number = e.currentTarget.value;
-        useThemeColor.setProps.hueCalc(newHueCalcInput.toString());
+        themeColor.setProps.hueCalc(newHueCalcInput.toString());
         setHueSlider(newHueCalcInput);
         setHueCalcInput(newHueCalcInput.toString());
         console.log(
             calculateHue(
-                currentThemeColor.sourceColor.hct.hue,
+                themeColor.data.sourceColor.hct.hue,
                 newHueCalcInput.toString(),
             ),
         );
@@ -270,42 +268,42 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const onHueCalcInput = (e: any) => {
         const newHueCalcInput: string = e.currentTarget.value;
         const calculatedHue: number = calculateHue(
-            currentThemeColor.sourceColor.hct.hue,
+            themeColor.data.sourceColor.hct.hue,
             newHueCalcInput,
         );
-        useThemeColor.setProps.hueCalc(newHueCalcInput);
+        themeColor.setProps.hueCalc(newHueCalcInput);
         setHueCalcInput(newHueCalcInput);
         setHueSlider(calculatedHue);
         if (newHueCalcInput === '') {
-            useThemeColor.setProps.hueCalc(
-                currentThemeColor.sourceColor.hct.hue.toString(),
+            themeColor.setProps.hueCalc(
+                themeColor.data.sourceColor.hct.hue.toString(),
             );
-            setHueSlider(currentThemeColor.sourceColor.hct.hue);
+            setHueSlider(themeColor.data.sourceColor.hct.hue);
         }
     };
     const onChromaSliderInput = (e: any) => {
         const newChromaCalcInput: number = e.currentTarget.value;
-        useThemeColor.setProps.chromaCalc(newChromaCalcInput.toString());
+        themeColor.setProps.chromaCalc(newChromaCalcInput.toString());
         setChromaCalcInput(newChromaCalcInput.toString());
         setChromaSlider(newChromaCalcInput);
-        console.log(currentThemeColor.endColor.hct);
+        console.log(themeColor.data.endColor.hct);
     };
     const onChromaCalcInput = (e: any) => {
         const newChromaCalcInput: string = e.currentTarget.value;
         const calculatedChroma: number = round(
             calculateChroma(
-                currentThemeColor.sourceColor.hct.chroma,
+                themeColor.data.sourceColor.hct.chroma,
                 newChromaCalcInput,
             ),
         );
-        useThemeColor.setProps.chromaCalc(newChromaCalcInput);
+        themeColor.setProps.chromaCalc(newChromaCalcInput);
         setChromaSlider(calculatedChroma);
         setChromaCalcInput(newChromaCalcInput);
         if (newChromaCalcInput === '') {
-            useThemeColor.setProps.chromaCalc(
-                currentThemeColor.sourceColor.hct.chroma.toString(),
+            themeColor.setProps.chromaCalc(
+                themeColor.data.sourceColor.hct.chroma.toString(),
             );
-            setChromaSlider(currentThemeColor.sourceColor.hct.chroma);
+            setChromaSlider(themeColor.data.sourceColor.hct.chroma);
         }
     };
 
@@ -320,7 +318,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const maxChroma = useMemo(
         () => round(findMaxChroma(hue())),
-        [currentThemeColor.endColor.hct.hue],
+        [themeColor.data.endColor.hct.hue],
     );
 
     const options: Array<TabsOption> = [
@@ -329,20 +327,10 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 <div className="tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll">
                     <div className="flex h-full w-10 flex-col items-center overflow-y-scroll pt-2">
                         <ThemeColorSelect
-                            themeColors={currentTheme.themeColors}
-                            selectedThemeColor={currentThemeColorId}
+                            themeColors={theme.data.themeColors}
+                            selectedThemeColor={themeColor.data.id}
                             onSelectThemeColor={(themeColorId) => {
-                                setCurrentThemeColorId(themeColorId);
-                                setHueSlider(
-                                    themeList
-                                        .theme(currentThemeId)
-                                        .themeColor(currentThemeColorId).data
-                                        .endColor.hct.hue,
-                                );
-                                setChromaSlider(
-                                    currentThemeColor.endColor.hct.chroma,
-                                );
-                                console.log(currentThemeColorId, themeColorId);
+                                onSelectThemeColor(themeColorId);
                             }}
                         />
                         <IconButton title="Add color" onClick={onAddThemeColor}>
@@ -358,9 +346,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <div className="flex-1">
                                             <Textbox
                                                 title="Color name"
-                                                value={currentThemeColor.name}
+                                                value={themeColor.data.name}
                                                 onChange={(e) => {
-                                                    useThemeColor.setProps.name(
+                                                    themeColor.setProps.name(
                                                         e.currentTarget.value,
                                                     );
                                                 }}
@@ -376,10 +364,10 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             onClick={() => {
                                                 const newThemeColor: ThemeColorData =
                                                     {
-                                                        ...currentThemeColor,
+                                                        ...themeColor.data,
                                                         id: nanoid(12),
                                                     };
-                                                useTheme.add.themeColor(
+                                                theme.add.themeColor(
                                                     newThemeColor,
                                                 );
                                             }}
@@ -399,7 +387,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <TextboxColor
                                             title="Source color"
                                             hexColor={
-                                                currentThemeColor.sourceColor
+                                                themeColor.data.sourceColor
                                                     .sourceHex
                                             }
                                             onHexColorInput={(e) =>
@@ -419,22 +407,22 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <Muted title="Source color hue, chroma, tone">
                                             H:{' '}
                                             {round(
-                                                currentThemeColor.sourceColor
-                                                    .hct.hue,
+                                                themeColor.data.sourceColor.hct
+                                                    .hue,
                                             )}{' '}
                                             C:{' '}
                                             {round(
-                                                currentThemeColor.sourceColor
-                                                    .hct.chroma,
+                                                themeColor.data.sourceColor.hct
+                                                    .chroma,
                                             )}{' '}
                                             T:{' '}
                                             {round(
-                                                currentThemeColor.sourceColor
-                                                    .hct.tone,
+                                                themeColor.data.sourceColor.hct
+                                                    .tone,
                                             )}
                                         </Muted>
                                         <Muted title="End color hue, chroma, tone">
-                                            {currentTheme.name}
+                                            {theme.data.name}
                                         </Muted>
                                         {/* <Muted title="End color hue, chroma, tone">
                                             H: {round(themeColor.endColor.hct.hue)} C:{' '}
@@ -448,9 +436,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 className="h-full w-32"
                                 style={{
                                     background: `linear-gradient(to right, ${hctTonalGradient(
-                                        currentThemeColor.sourceColor.hct.hue,
-                                        currentThemeColor.sourceColor.hct
-                                            .chroma,
+                                        themeColor.data.sourceColor.hct.hue,
+                                        themeColor.data.sourceColor.hct.chroma,
                                     )})`,
                                 }}
                             ></div>
@@ -471,7 +458,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             maximum={360}
                                             minimum={0}
                                             onInput={(e) => onHueSliderInput(e)}
-                                            value={currentThemeColor.hueCalc}
+                                            value={themeColor.data.hueCalc}
                                         />
                                         <div
                                             className="hue-slider-bar absolute h-2 rounded-full"
@@ -488,8 +475,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <Muted>
                                             Source Hue (h) ={' '}
                                             {round(
-                                                currentThemeColor.sourceColor
-                                                    .hct.hue,
+                                                themeColor.data.sourceColor.hct
+                                                    .hue,
                                             )}
                                         </Muted>
                                     </div>
@@ -500,7 +487,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <span className="p-2">Chroma</span>
                                         <span className="p-2">
                                             {round(
-                                                currentThemeColor.endColor.hct
+                                                themeColor.data.endColor.hct
                                                     .chroma,
                                             )}{' '}
                                             <span className="opacity-40">
@@ -514,15 +501,15 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             maximum={round(
                                                 findMaxChromaForHueAtTone(
                                                     hue(),
-                                                    currentThemeColor.endColor
-                                                        .hct.tone,
+                                                    themeColor.data.endColor.hct
+                                                        .tone,
                                                 ),
                                             )}
                                             minimum={0}
                                             onInput={(e) =>
                                                 onChromaSliderInput(e)
                                             }
-                                            value={currentThemeColor.chromaCalc}
+                                            value={themeColor.data.chromaCalc}
                                         />
                                         <div
                                             className="chroma-slider-bar absolute h-2 rounded-full"
@@ -539,8 +526,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <Muted>
                                             Source Chroma (c) ={' '}
                                             {round(
-                                                currentThemeColor.sourceColor
-                                                    .hct.chroma,
+                                                themeColor.data.sourceColor.hct
+                                                    .chroma,
                                             )}
                                         </Muted>
                                     </div>
@@ -550,8 +537,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 className="h-full w-32"
                                 style={{
                                     background: `linear-gradient(to right, ${hctTonalGradient(
-                                        currentThemeColor.endColor.hct.hue,
-                                        currentThemeColor.endColor.hct.chroma,
+                                        themeColor.data.endColor.hct.hue,
+                                        themeColor.data.endColor.hct.chroma,
                                     )})`,
                                 }}
                             ></div>
@@ -575,9 +562,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 className="h-full w-32"
                                 style={{
                                     background: `linear-gradient(to right, ${hctTonalGradient(
-                                        currentThemeColor.endColor.hct.hue,
-                                        currentThemeColor.endColor.hct.chroma,
-                                        currentThemeColor.tones,
+                                        themeColor.data.endColor.hct.hue,
+                                        themeColor.data.endColor.hct.chroma,
+                                        themeColor.data.tones,
                                     )})`,
                                 }}
                             ></div>
@@ -588,10 +575,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 <IconButton
                                     title="Create alias"
                                     onClick={() => {
-                                        useThemeColor.add.alias(createAlias());
+                                        themeColor.add.alias(createAlias());
                                         console.log(
-                                            currentThemeColor.aliasGroup
-                                                .aliases,
+                                            themeColor.data.aliasGroup.aliases,
                                         );
                                     }}
                                 >
@@ -606,12 +592,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
                         </div>
                         <div>
                             <AliasList
-                                hue={currentThemeColor.endColor.hct.hue}
-                                chroma={currentThemeColor.endColor.hct.chroma}
-                                aliases={currentThemeColor.aliasGroup.aliases}
+                                hue={themeColor.data.endColor.hct.hue}
+                                chroma={themeColor.data.endColor.hct.chroma}
+                                aliases={themeColor.data.aliasGroup.aliases}
                                 onSetAliases={(aliases: AliasData[]) => {
-                                    useThemeColor.setProps.aliasGroup({
-                                        ...currentThemeColor.aliasGroup,
+                                    themeColor.setProps.aliasGroup({
+                                        ...themeColor.data.aliasGroup,
                                         aliases: aliases,
                                     });
                                 }}

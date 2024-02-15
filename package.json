@@ -48,6 +48,7 @@
     "@create-figma-plugin/build": "^2.5.1",
     "@create-figma-plugin/tsconfig": "^2.5.1",
     "@figma/plugin-typings": "^1.72.0",
+    "@types/bun": "^1.0.5",
     "@types/lodash": "^4.14.196",
     "@types/prismjs": "^1.26.0",
     "@types/react": ">=18",

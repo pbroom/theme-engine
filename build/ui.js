@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9f23556a-fe53-4d36-9cfc-1f75424a79da/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a10f4e96-fb62-4c6e-9f4a-a4228bfb6198/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9f23556a-fe53-4d36-9cfc-1f75424a79da/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a10f4e96-fb62-4c6e-9f4a-a4228bfb6198/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2395,10 +2395,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19402c15-510d-45bb-a7a7-6316ee42c4c0/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/153abc47-2323-474f-9ff7-afb6edebbae0/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/19402c15-510d-45bb-a7a7-6316ee42c4c0/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/153abc47-2323-474f-9ff7-afb6edebbae0/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2435,10 +2435,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b63beb05-0af6-4417-8f8f-d5b1c3795ea8/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ab34342-81cb-4222-ad8c-fb0aaec5f418/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b63beb05-0af6-4417-8f8f-d5b1c3795ea8/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ab34342-81cb-4222-ad8c-fb0aaec5f418/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2676,10 +2676,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d5d1f75-4fb3-4a09-9844-c5ad50fac739/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/045fd9c2-b7a0-4c53-9af3-2db2d3a6eb06/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8d5d1f75-4fb3-4a09-9844-c5ad50fac739/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/045fd9c2-b7a0-4c53-9af3-2db2d3a6eb06/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3153,10 +3153,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66d5991f-3982-4367-aeba-fa4f1ea6982e/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd9a20f4-62fe-4be0-8a88-4c52b13dba13/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66d5991f-3982-4367-aeba-fa4f1ea6982e/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fd9a20f4-62fe-4be0-8a88-4c52b13dba13/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3226,10 +3226,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7b60897b-4463-429f-b438-a9d408e10c0e/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/969de6ae-7e8d-4327-94db-d7c7ef8a934c/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7b60897b-4463-429f-b438-a9d408e10c0e/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/969de6ae-7e8d-4327-94db-d7c7ef8a934c/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3333,10 +3333,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1ca7d809-7950-4b7d-9d35-acd9182184eb/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e01f4d1-951d-403a-9213-ab7f605bfdf4/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1ca7d809-7950-4b7d-9d35-acd9182184eb/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e01f4d1-951d-403a-9213-ab7f605bfdf4/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3933,10 +3933,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c0214bc8-0692-4564-91f1-ec74e4d27c15/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa510689-cd1d-411b-8acd-19275186ec1e/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c0214bc8-0692-4564-91f1-ec74e4d27c15/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fa510689-cd1d-411b-8acd-19275186ec1e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4441,10 +4441,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/450162cb-60f8-4613-9a9e-0b0927a2cd0c/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8fc32ce8-9333-43bc-8a12-ed86cba9bf19/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/450162cb-60f8-4613-9a9e-0b0927a2cd0c/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8fc32ce8-9333-43bc-8a12-ed86cba9bf19/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4784,10 +4784,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/507066f2-bb63-4de6-a625-0bc4143118d5/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48c7507b-37a4-48e8-8bd0-eb302f00d06b/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/507066f2-bb63-4de6-a625-0bc4143118d5/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48c7507b-37a4-48e8-8bd0-eb302f00d06b/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4986,10 +4986,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5a2cb7ff-896c-4069-8b65-1dd0173fe019/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c4fb7ec-5f7c-4c39-a337-9b024cf82789/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5a2cb7ff-896c-4069-8b65-1dd0173fe019/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5c4fb7ec-5f7c-4c39-a337-9b024cf82789/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5082,10 +5082,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67e4cd2e-799f-40a7-9ee2-48886fecc924/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0a41275-8ce4-4a73-b95f-c3be411dd986/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67e4cd2e-799f-40a7-9ee2-48886fecc924/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0a41275-8ce4-4a73-b95f-c3be411dd986/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5166,10 +5166,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e20e83e-4ca9-45cf-84a6-76e8fe659a23/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8494c1b1-dc42-4483-a1ce-da259465d554/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e20e83e-4ca9-45cf-84a6-76e8fe659a23/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8494c1b1-dc42-4483-a1ce-da259465d554/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5198,9 +5198,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a135391c-8856-4990-a506-29e178354752/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/793bcaae-6ecb-4ce6-baea-be5c55fca0bb/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a135391c-8856-4990-a506-29e178354752/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/793bcaae-6ecb-4ce6-baea-be5c55fca0bb/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -19316,7 +19316,7 @@ svg {
           return void 0;
         }
         const NOT_TYPED_FUNCTION = "Argument is not a typed-function.";
-        function create2() {
+        function create3() {
           function isPlainObject2(x4) {
             return typeof x4 === "object" && x4 !== null && x4.constructor === Object;
           }
@@ -20418,7 +20418,7 @@ svg {
             }
             return createTypedFunction(name310 || "", allSignatures);
           };
-          typed3.create = create2;
+          typed3.create = create3;
           typed3.createCount = saveTyped.createCount;
           typed3.onMismatch = _onMismatch;
           typed3.throwMismatchError = _onMismatch;
@@ -20494,7 +20494,7 @@ svg {
           };
           return typed3;
         }
-        var typedFunction2 = create2();
+        var typedFunction2 = create3();
         return typedFunction2;
       });
     }
@@ -21573,11 +21573,11 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/factory.js
-  function factory(name310, dependencies310, create2, meta) {
+  function factory(name310, dependencies310, create3, meta) {
     function assertAndCreate(scope) {
       var deps = pickShallow(scope, dependencies310.map(stripOptionalNotation));
       assertDependencies(name310, dependencies310, scope);
-      return create2(deps);
+      return create3(deps);
     }
     assertAndCreate.isFactory = true;
     assertAndCreate.fn = name310;
@@ -64635,8 +64635,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/constants.js
-  function recreateFactory(name310, dependencies310, create2) {
-    return factory(name310, dependencies310, create2, {
+  function recreateFactory(name310, dependencies310, create3) {
+    return factory(name310, dependencies310, create3, {
       recreateOnConfigChange: true
     });
   }
@@ -70671,31 +70671,33 @@ svg {
     }
   });
 
-  // src/hooks/useId.ts
-  var themeListStore, useCurrentId;
+  // src/hooks/useId.tsx
+  var createIdStore, IdContext, IdProvider;
   var init_useId = __esm({
-    "src/hooks/useId.ts"() {
+    "src/hooks/useId.tsx"() {
       "use strict";
       init_esm();
-      init_useThemeList();
-      init_middleware();
-      themeListStore = useThemeList.getState();
-      useCurrentId = create()(
-        subscribeWithSelector((set) => ({
-          currentThemeId: themeListStore.themes[0].id,
-          currentThemeColorId: themeListStore.themes[0].themeColors[0].id,
-          setCurrentThemeId: (themeId) => {
-            var _a;
-            return set({
-              currentThemeId: themeId,
-              currentThemeColorId: (_a = themeListStore.themes.find(
-                (theme) => theme.id === themeId
-              )) == null ? void 0 : _a.themeColors[0].id
-            });
-          },
-          setCurrentThemeColorId: (themeColorId) => set({ currentThemeColorId: themeColorId })
-        }))
-      );
+      init_preact_module();
+      init_hooks_module();
+      createIdStore = (initProps) => {
+        const DEFAULT_PROPS = {
+          themeId: "",
+          themeColorId: ""
+        };
+        return createStore()((set) => __spreadProps(__spreadValues(__spreadValues({}, DEFAULT_PROPS), initProps), {
+          setThemeId: (themeId) => set({ themeId }),
+          setThemeColorId: (themeColorId) => set({ themeColorId })
+        }));
+      };
+      IdContext = F(null);
+      IdProvider = (_a) => {
+        var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
+        const storeRef = _2();
+        if (!storeRef.current) {
+          storeRef.current = createIdStore(props);
+        }
+        return /* @__PURE__ */ y(IdContext.Provider, { value: storeRef.current }, children);
+      };
     }
   });
 
@@ -70723,43 +70725,42 @@ svg {
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ className }) => {
         const [tabValue, setTabValue] = h2("Primitives");
-        const themeListStore2 = useThemeList;
-        const themeList2 = themeListStore2();
-        const currentThemeId = useCurrentId.getState().currentThemeId;
-        const setCurrentThemeId = (id) => useCurrentId.setState({ currentThemeId: id });
-        const currentThemeColorId = useCurrentId.getState().currentThemeColorId;
-        const setCurrentThemeColorId = (id) => useCurrentId.setState({ currentThemeColorId: id });
-        const currentTheme = themeListStore2.getState().theme(currentThemeId).data;
-        const currentThemeColor = themeList2.theme(currentThemeId).themeColor(currentThemeColorId).data;
-        const useTheme3 = themeListStore2.getState().theme(currentThemeId);
-        const useThemeColor3 = themeList2.theme(currentThemeId).themeColor(currentThemeColorId);
+        const IdStore = q2(IdContext);
+        const themeId = (IdStore == null ? void 0 : IdStore.getState().themeId) || "happiness";
+        const themeColorId = (IdStore == null ? void 0 : IdStore.getState().themeColorId) || "happiness";
+        const setThemeId = (themeId2) => IdStore == null ? void 0 : IdStore.setState({ themeId: themeId2 });
+        const setThemeColorId = (themeColorId2) => IdStore == null ? void 0 : IdStore.setState({ themeColorId: themeColorId2 });
+        const themeListStore = useThemeList;
+        const themeList2 = themeListStore();
+        const theme = themeList2.theme(themeId);
+        const themeColor = theme.themeColor(themeColorId);
         const [hexColorInput, setHexColorInput] = h2(
-          themeListStore2.getState().data.themes[0].themeColors[0].sourceColor.hex
+          themeColor.data.sourceColor.sourceHex
         );
         const [tones, setTones] = h2(
-          currentThemeColor.tones.join(", ")
+          themeColor.data.tones.join(", ")
         );
         const hue = () => {
           const hue2 = calculateHue2(
-            currentThemeColor.sourceColor.hct.hue,
-            currentThemeColor.hueCalc
+            themeColor.data.sourceColor.hct.hue,
+            themeColor.data.hueCalc
           );
           return hue2;
         };
         const chroma = () => {
           const chroma2 = calculateChroma2(
-            currentThemeColor.sourceColor.hct.chroma,
-            currentThemeColor.chromaCalc
+            themeColor.data.sourceColor.hct.chroma,
+            themeColor.data.chromaCalc
           );
           return chroma2;
         };
         const [hueSlider, setHueSlider] = h2(hue);
         const [hueCalcInput, setHueCalcInput] = h2(
-          currentThemeColor.hueCalc.toString()
+          themeColor.data.hueCalc
         );
         const [chromaSlider, setChromaSlider] = h2(chroma);
         const [chromaCalcInput, setChromaCalcInput] = h2(
-          currentThemeColor.chromaCalc.toString()
+          themeColor.data.chromaCalc
         );
         const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
         const maxChromaHues = F2(() => {
@@ -70768,95 +70769,95 @@ svg {
           }).join(", ");
         }, []);
         p2(() => {
-          useThemeColor3.setProps.tones(getStopsFromString(tones));
-          useThemeColor3.setProps.hueCalc(hueCalcInput);
-          useThemeColor3.setProps.chromaCalc(chromaCalcInput);
+          themeColor.setProps.tones(getStopsFromString(tones));
+          themeColor.setProps.hueCalc(hueCalcInput);
+          themeColor.setProps.chromaCalc(chromaCalcInput);
         }, [tones, hueCalcInput]);
         p2(() => {
-          useThemeColor3.setProps.chromaCalc(chromaCalcInput);
+          themeColor.setProps.chromaCalc(chromaCalcInput);
         }, [chromaCalcInput]);
         p2(() => {
           const calculatedHue = round2(
             calculateHue2(
-              currentThemeColor.sourceColor.hct.hue,
-              currentThemeColor.hueCalc
+              themeColor.data.sourceColor.hct.hue,
+              themeColor.data.hueCalc
             )
           );
           setHueSlider(calculatedHue);
-          if (!currentThemeColor.hueCalc.toLowerCase().includes("h")) {
-            useThemeColor3.setProps.hueCalc(
-              currentThemeColor.sourceColor.hct.hue.toString()
+          if (!themeColor.data.hueCalc.toLowerCase().includes("h")) {
+            themeColor.setProps.hueCalc(
+              themeColor.data.sourceColor.hct.hue.toString()
             );
             setHueCalcInput(calculatedHue.toString());
           }
           const calculatedChroma = round2(
             calculateChroma2(
-              currentThemeColor.sourceColor.hct.chroma,
-              currentThemeColor.chromaCalc
+              themeColor.data.sourceColor.hct.chroma,
+              themeColor.data.chromaCalc
             )
           );
           setChromaSlider(calculatedChroma);
-          if (!currentThemeColor.chromaCalc.toLowerCase().includes("c")) {
-            useThemeColor3.setProps.chromaCalc(
-              currentThemeColor.sourceColor.hct.chroma.toString()
+          if (!themeColor.data.chromaCalc.toLowerCase().includes("c")) {
+            themeColor.setProps.chromaCalc(
+              themeColor.data.sourceColor.hct.chroma.toString()
             );
             setChromaCalcInput(calculatedChroma.toString());
           }
         }, [hexColorInput]);
         const nameTheNameless = () => {
-          if (!currentThemeColor.name) {
-            useThemeColor3.setProps.name("Color");
+          if (!themeColor.data.name) {
+            themeColor.setProps.name("Color");
           }
         };
         const roundedHue = round2(
           calculateHue2(
-            currentThemeColor.sourceColor.hct.hue,
-            currentThemeColor.hueCalc
+            themeColor.data.sourceColor.hct.hue,
+            themeColor.data.hueCalc
           )
         );
         const roundedChroma = round2(
           calculateChroma2(
-            currentThemeColor.sourceColor.hct.chroma,
-            currentThemeColor.chromaCalc
+            themeColor.data.sourceColor.hct.chroma,
+            themeColor.data.chromaCalc
           )
         );
-        const onSelectThemeColor = (themeColorId) => {
-          setCurrentThemeColorId(themeColorId);
-          useThemeColor3.setProps.all(currentThemeColor);
-          console.log(currentThemeColorId);
+        const onSelectThemeColor = (themeColorId2) => {
+          setThemeColorId(themeColorId2);
+          themeColor.setProps.all(themeColor.data);
+          console.log(themeColor.data.id);
         };
         const onAddThemeColor = () => {
           const newThemeColor = createThemeColor();
           themeList2.theme(0).add.themeColor(newThemeColor);
-          console.log(currentTheme.themeColors);
+          console.log(theme.data.themeColors);
         };
         const onHexColorInput = (e5) => {
           const newHexColor = e5.currentTarget.value;
           setHexColorInput(newHexColor);
-          useThemeColor3.setProps.sourceHex(newHexColor);
+          themeColor.setProps.sourceHex(newHexColor);
           setHueSlider(roundedHue);
-          if (!currentThemeColor.hueCalc.toLowerCase().includes("h")) {
-            useThemeColor3.setProps.hueCalc(
-              currentThemeColor.sourceColor.hct.hue.toString()
+          if (!themeColor.data.hueCalc.toLowerCase().includes("h")) {
+            themeColor.setProps.hueCalc(
+              themeColor.data.sourceColor.hct.hue.toString()
             );
             setHueCalcInput(roundedHue.toString());
           }
           setChromaSlider(roundedChroma);
-          if (!currentThemeColor.chromaCalc.toLowerCase().includes("c")) {
-            useThemeColor3.setProps.chromaCalc(
-              currentThemeColor.sourceColor.hct.chroma.toString()
+          if (!themeColor.data.chromaCalc.toLowerCase().includes("c")) {
+            themeColor.setProps.chromaCalc(
+              themeColor.data.sourceColor.hct.chroma.toString()
             );
             setChromaCalcInput(roundedChroma.toString());
           }
         };
         const onHueSliderInput = (e5) => {
           const newHueCalcInput = e5.currentTarget.value;
-          useThemeColor3.setProps.hueCalc(newHueCalcInput.toString());
+          themeColor.setProps.hueCalc(newHueCalcInput.toString());
           setHueSlider(newHueCalcInput);
           setHueCalcInput(newHueCalcInput.toString());
           console.log(
             calculateHue2(
-              currentThemeColor.sourceColor.hct.hue,
+              themeColor.data.sourceColor.hct.hue,
               newHueCalcInput.toString()
             )
           );
@@ -70864,42 +70865,42 @@ svg {
         const onHueCalcInput = (e5) => {
           const newHueCalcInput = e5.currentTarget.value;
           const calculatedHue = calculateHue2(
-            currentThemeColor.sourceColor.hct.hue,
+            themeColor.data.sourceColor.hct.hue,
             newHueCalcInput
           );
-          useThemeColor3.setProps.hueCalc(newHueCalcInput);
+          themeColor.setProps.hueCalc(newHueCalcInput);
           setHueCalcInput(newHueCalcInput);
           setHueSlider(calculatedHue);
           if (newHueCalcInput === "") {
-            useThemeColor3.setProps.hueCalc(
-              currentThemeColor.sourceColor.hct.hue.toString()
+            themeColor.setProps.hueCalc(
+              themeColor.data.sourceColor.hct.hue.toString()
             );
-            setHueSlider(currentThemeColor.sourceColor.hct.hue);
+            setHueSlider(themeColor.data.sourceColor.hct.hue);
           }
         };
         const onChromaSliderInput = (e5) => {
           const newChromaCalcInput = e5.currentTarget.value;
-          useThemeColor3.setProps.chromaCalc(newChromaCalcInput.toString());
+          themeColor.setProps.chromaCalc(newChromaCalcInput.toString());
           setChromaCalcInput(newChromaCalcInput.toString());
           setChromaSlider(newChromaCalcInput);
-          console.log(currentThemeColor.endColor.hct);
+          console.log(themeColor.data.endColor.hct);
         };
         const onChromaCalcInput = (e5) => {
           const newChromaCalcInput = e5.currentTarget.value;
           const calculatedChroma = round2(
             calculateChroma2(
-              currentThemeColor.sourceColor.hct.chroma,
+              themeColor.data.sourceColor.hct.chroma,
               newChromaCalcInput
             )
           );
-          useThemeColor3.setProps.chromaCalc(newChromaCalcInput);
+          themeColor.setProps.chromaCalc(newChromaCalcInput);
           setChromaSlider(calculatedChroma);
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
-            useThemeColor3.setProps.chromaCalc(
-              currentThemeColor.sourceColor.hct.chroma.toString()
+            themeColor.setProps.chromaCalc(
+              themeColor.data.sourceColor.hct.chroma.toString()
             );
-            setChromaSlider(currentThemeColor.sourceColor.hct.chroma);
+            setChromaSlider(themeColor.data.sourceColor.hct.chroma);
           }
         };
         const themeColorOptions = [
@@ -70912,33 +70913,26 @@ svg {
         ];
         const maxChroma = F2(
           () => round2(findMaxChroma(hue())),
-          [currentThemeColor.endColor.hct.hue]
+          [themeColor.data.endColor.hct.hue]
         );
         const options = [
           {
             children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
               ThemeColorSelect,
               {
-                themeColors: currentTheme.themeColors,
-                selectedThemeColor: currentThemeColorId,
-                onSelectThemeColor: (themeColorId) => {
-                  setCurrentThemeColorId(themeColorId);
-                  setHueSlider(
-                    themeList2.theme(currentThemeId).themeColor(currentThemeColorId).data.endColor.hct.hue
-                  );
-                  setChromaSlider(
-                    currentThemeColor.endColor.hct.chroma
-                  );
-                  console.log(currentThemeColorId, themeColorId);
+                themeColors: theme.data.themeColors,
+                selectedThemeColor: themeColor.data.id,
+                onSelectThemeColor: (themeColorId2) => {
+                  onSelectThemeColor(themeColorId2);
                 }
               }
             ), /* @__PURE__ */ y(IconButton, { title: "Add color", onClick: onAddThemeColor }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 title: "Color name",
-                value: currentThemeColor.name,
+                value: themeColor.data.name,
                 onChange: (e5) => {
-                  useThemeColor3.setProps.name(
+                  themeColor.setProps.name(
                     e5.currentTarget.value
                   );
                 },
@@ -70951,10 +70945,10 @@ svg {
               {
                 title: `Duplicate color`,
                 onClick: () => {
-                  const newThemeColor = __spreadProps(__spreadValues({}, currentThemeColor), {
+                  const newThemeColor = __spreadProps(__spreadValues({}, themeColor.data), {
                     id: nanoid(12)
                   });
-                  useTheme3.add.themeColor(
+                  theme.add.themeColor(
                     newThemeColor
                   );
                 }
@@ -70976,7 +70970,7 @@ svg {
               TextboxColor,
               {
                 title: "Source color",
-                hexColor: currentThemeColor.sourceColor.sourceHex,
+                hexColor: themeColor.data.sourceColor.sourceHex,
                 onHexColorInput: (e5) => onHexColorInput(e5),
                 onOpacityInput: (e5) => "100%",
                 opacity: "100%"
@@ -70990,19 +70984,19 @@ svg {
                 placeholder: "Color options"
               }
             )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
-              currentThemeColor.sourceColor.hct.hue
+              themeColor.data.sourceColor.hct.hue
             ), " ", "C:", " ", round2(
-              currentThemeColor.sourceColor.hct.chroma
+              themeColor.data.sourceColor.hct.chroma
             ), " ", "T:", " ", round2(
-              currentThemeColor.sourceColor.hct.tone
-            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, currentTheme.name)))), /* @__PURE__ */ y(
+              themeColor.data.sourceColor.hct.tone
+            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, theme.data.name)))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    currentThemeColor.sourceColor.hct.hue,
-                    currentThemeColor.sourceColor.hct.chroma
+                    themeColor.data.sourceColor.hct.hue,
+                    themeColor.data.sourceColor.hct.chroma
                   )})`
                 }
               }
@@ -71013,7 +71007,7 @@ svg {
                 maximum: 360,
                 minimum: 0,
                 onInput: (e5) => onHueSliderInput(e5),
-                value: currentThemeColor.hueCalc
+                value: themeColor.data.hueCalc
               }
             ), /* @__PURE__ */ y(
               "div",
@@ -71030,9 +71024,9 @@ svg {
                 placeholder: "Hue value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
-              currentThemeColor.sourceColor.hct.hue
+              themeColor.data.sourceColor.hct.hue
             )))), /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-l border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Chroma"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(
-              currentThemeColor.endColor.hct.chroma
+              themeColor.data.endColor.hct.chroma
             ), " ", /* @__PURE__ */ y("span", { className: "opacity-40" }, "/ ", maxChroma))), /* @__PURE__ */ y("div", { className: "chroma-slider px-2 pb-2" }, /* @__PURE__ */ y(
               RangeSlider,
               {
@@ -71040,12 +71034,12 @@ svg {
                 maximum: round2(
                   findMaxChromaForHueAtTone(
                     hue(),
-                    currentThemeColor.endColor.hct.tone
+                    themeColor.data.endColor.hct.tone
                   )
                 ),
                 minimum: 0,
                 onInput: (e5) => onChromaSliderInput(e5),
-                value: currentThemeColor.chromaCalc
+                value: themeColor.data.chromaCalc
               }
             ), /* @__PURE__ */ y(
               "div",
@@ -71062,15 +71056,15 @@ svg {
                 placeholder: "Chroma value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
-              currentThemeColor.sourceColor.hct.chroma
+              themeColor.data.sourceColor.hct.chroma
             ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    currentThemeColor.endColor.hct.hue,
-                    currentThemeColor.endColor.hct.chroma
+                    themeColor.data.endColor.hct.hue,
+                    themeColor.data.endColor.hct.chroma
                   )})`
                 }
               }
@@ -71088,9 +71082,9 @@ svg {
                 className: "h-full w-32",
                 style: {
                   background: `linear-gradient(to right, ${hctTonalGradient(
-                    currentThemeColor.endColor.hct.hue,
-                    currentThemeColor.endColor.hct.chroma,
-                    currentThemeColor.tones
+                    themeColor.data.endColor.hct.hue,
+                    themeColor.data.endColor.hct.chroma,
+                    themeColor.data.tones
                   )})`
                 }
               }
@@ -71099,9 +71093,9 @@ svg {
               {
                 title: "Create alias",
                 onClick: () => {
-                  useThemeColor3.add.alias(createAlias());
+                  themeColor.add.alias(createAlias());
                   console.log(
-                    currentThemeColor.aliasGroup.aliases
+                    themeColor.data.aliasGroup.aliases
                   );
                 }
               },
@@ -71109,11 +71103,11 @@ svg {
             )), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
               AliasList,
               {
-                hue: currentThemeColor.endColor.hct.hue,
-                chroma: currentThemeColor.endColor.hct.chroma,
-                aliases: currentThemeColor.aliasGroup.aliases,
+                hue: themeColor.data.endColor.hct.hue,
+                chroma: themeColor.data.endColor.hct.chroma,
+                aliases: themeColor.data.aliasGroup.aliases,
                 onSetAliases: (aliases) => {
-                  useThemeColor3.setProps.aliasGroup(__spreadProps(__spreadValues({}, currentThemeColor.aliasGroup), {
+                  themeColor.setProps.aliasGroup(__spreadProps(__spreadValues({}, themeColor.data.aliasGroup), {
                     aliases
                   }));
                 }
@@ -71143,15 +71137,10 @@ svg {
     }
   });
 
-  // src/ui.tsx
-  var ui_exports = {};
-  __export(ui_exports, {
-    Plugin: () => Plugin,
-    default: () => ui_default
-  });
-  var Plugin, ui_default;
-  var init_ui = __esm({
-    "src/ui.tsx"() {
+  // src/app.tsx
+  var Plugin;
+  var init_app = __esm({
+    "src/app.tsx"() {
       "use strict";
       init_tailwind();
       init_lib2();
@@ -71159,31 +71148,25 @@ svg {
       init_tabs2();
       init_index_browser();
       init_useTheme();
-      init_compat_module();
-      init_useThemeList();
       init_hooks_module();
+      init_useThemeList();
       init_useId();
       Plugin = () => {
-        const themeListStore2 = useThemeList;
-        const themeList2 = themeListStore2();
-        const currentThemeId = useCurrentId.getState().currentThemeId;
-        const setCurrentThemeId = (id) => {
-          const themeColorId = themeList2.theme(id).data.themeColors[0].id;
-          useCurrentId.setState({
-            currentThemeId: id,
-            currentThemeColorId: themeColorId
-          });
-        };
-        const currentThemeColorId = useCurrentId.getState().currentThemeColorId;
-        const setCurrentThemeColorId = (id) => useCurrentId.setState({ currentThemeColorId: id });
-        const currentTheme = themeList2.theme(currentThemeId).data;
-        const currentThemeColor = themeList2.theme(currentThemeId).themeColor(currentThemeColorId).data;
+        const IdStore = q2(IdContext);
+        const themeId = (IdStore == null ? void 0 : IdStore.getState().themeId) || "happiness";
+        const themeColorId = (IdStore == null ? void 0 : IdStore.getState().themeColorId) || "happiness";
+        const setThemeId = (themeId2) => IdStore == null ? void 0 : IdStore.setState({ themeId: themeId2 });
+        const setThemeColorId = (themeColorId2) => IdStore == null ? void 0 : IdStore.setState({ themeColorId: themeColorId2 });
+        const themeListStore = useThemeList;
+        const themeList2 = themeListStore();
+        const theme = themeList2.theme(themeId);
+        const themeColor = theme.themeColor(themeColorId);
         const findThemeById = (id) => {
-          const theme = themeList2.themes.find((theme2) => theme2.id === id);
-          if (!theme) {
+          const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
+          if (!theme2) {
             throw new Error(`Theme with id ${id} not found`);
           }
-          return theme;
+          return theme2;
         };
         const [isEditing, setIsEditing] = h2(false);
         const inputRef = _2(null);
@@ -71203,10 +71186,10 @@ svg {
             nameTheNameless();
           }
         };
-        const themeListOptions = themeList2.themes.map((theme) => {
+        const themeListOptions = themeList2.themes.map((theme2) => {
           return {
-            value: theme.id,
-            text: theme.name
+            value: theme2.id,
+            text: theme2.name
           };
         });
         const themeListMenuOptions = [
@@ -71225,8 +71208,6 @@ svg {
             value: "Delete"
           }
         ];
-        console.log(themeListMenuOptions);
-        console.log(currentThemeId);
         const handleOptionSelect = (event) => {
           var _a;
           const selectedValue = event.currentTarget.value;
@@ -71234,7 +71215,7 @@ svg {
             const newThemeName = `Theme ${Object.keys(themeList2.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList2.add.theme(newTheme);
-            setCurrentThemeId(newTheme.id);
+            setThemeId(newTheme.id);
             console.log(newTheme);
             console.log(themeList2);
           }
@@ -71242,29 +71223,30 @@ svg {
             setIsEditing(true);
           }
           if (selectedValue === "Duplicate") {
-            const newTheme = __spreadProps(__spreadValues({}, currentTheme), {
+            const newTheme = __spreadProps(__spreadValues({}, theme.data), {
               id: nanoid(12),
-              name: `${currentTheme.name} copy`
+              name: `${theme.data.name} copy`
             });
             themeList2.add.theme(newTheme);
-            setCurrentThemeId(newTheme.id);
+            setThemeId(newTheme.id);
           }
           if (selectedValue === "Delete") {
-            const themeToDelete = currentThemeId;
+            const themeToDelete = themeId;
             const nextThemeId = (_a = themeList2.themes.find(
-              (theme) => theme.id !== currentThemeId
+              (theme2) => theme2.id !== themeId
             )) == null ? void 0 : _a.id;
             if (!nextThemeId) {
               const newTheme = createTheme(nanoid(12), "New theme");
               themeList2.add.theme(newTheme);
-              setCurrentThemeId(newTheme.id);
+              setThemeId(newTheme.id);
             } else {
-              setCurrentThemeId(nextThemeId);
+              setThemeId(nextThemeId);
             }
             themeList2.theme(themeToDelete).remove();
           }
           if (selectedValue !== "New theme..." && selectedValue !== "Rename..." && selectedValue !== "Duplicate" && selectedValue !== "Delete") {
-            setCurrentThemeId(selectedValue);
+            setThemeId(selectedValue);
+            console.log(selectedValue, themeId);
           }
         };
         function pickRandomName(names2) {
@@ -71289,21 +71271,19 @@ svg {
           "Theme"
         ];
         const nameTheNameless = () => {
-          if (!currentTheme.name) {
-            themeList2.theme(currentThemeId).update(__spreadProps(__spreadValues({}, currentTheme), {
-              name: pickRandomName(names)
-            }));
+          if (!theme.data.name) {
+            theme.setProps.name(pickRandomName(names));
           }
         };
         const onSetThemeData = (themeData2) => {
-          themeList2.theme(currentThemeId).update(themeData2);
+          themeList2.theme(themeId).update(themeData2);
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
           Textbox,
           {
             ref: inputRef,
-            value: currentTheme.name,
-            onChange: (e5) => themeList2.theme(currentThemeId).setProps.name(e5.currentTarget.value),
+            value: theme.data.name,
+            onChange: (e5) => theme.setProps.name(e5.currentTarget.value),
             onBlur: handleTextboxBlur,
             onKeyDown: handleTextboxKeyDown,
             onfocusout: handleTextboxBlur,
@@ -71312,7 +71292,7 @@ svg {
         ) : /* @__PURE__ */ y(
           Dropdown,
           {
-            value: currentThemeId,
+            value: themeId,
             options: themeListMenuOptions,
             onChange: handleOptionSelect
           }
@@ -71329,7 +71309,31 @@ svg {
           "Build Theme"
         )));
       };
-      ui_default = render(Plugin);
+    }
+  });
+
+  // src/ui.tsx
+  var ui_exports = {};
+  __export(ui_exports, {
+    Ui: () => Ui,
+    default: () => ui_default
+  });
+  var Ui, ui_default;
+  var init_ui = __esm({
+    "src/ui.tsx"() {
+      "use strict";
+      init_app();
+      init_preact_module();
+      init_useId();
+      init_useThemeList();
+      init_lib2();
+      Ui = () => {
+        const themeListStore = useThemeList;
+        const themeId = themeListStore().themes[0].id;
+        const themeColorId = themeListStore().themes[0].themeColors[0].id;
+        return /* @__PURE__ */ y(IdProvider, { themeId, themeColorId }, /* @__PURE__ */ y(Plugin, null));
+      };
+      ui_default = render(Ui);
     }
   });
 
