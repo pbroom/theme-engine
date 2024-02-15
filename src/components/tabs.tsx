@@ -255,13 +255,13 @@ const TabGroup = ({ className }: TabGroupProps) => {
     };
     const onHueSliderInput = (e: any) => {
         const newHueCalcInput: number = e.currentTarget.value;
-        themeColor.setProps.hueCalc(newHueCalcInput.toString());
+        themeColor.setProps.hueCalc(`${newHueCalcInput}`);
         setHueSlider(newHueCalcInput);
-        setHueCalcInput(newHueCalcInput.toString());
+        setHueCalcInput(`${newHueCalcInput}`);
         console.log(
             calculateHue(
                 themeColor.data.sourceColor.hct.hue,
-                newHueCalcInput.toString(),
+                `${newHueCalcInput}`,
             ),
         );
     };
@@ -276,15 +276,15 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setHueSlider(calculatedHue);
         if (newHueCalcInput === '') {
             themeColor.setProps.hueCalc(
-                themeColor.data.sourceColor.hct.hue.toString(),
+                `${themeColor.data.sourceColor.hct.hue}`,
             );
             setHueSlider(themeColor.data.sourceColor.hct.hue);
         }
     };
     const onChromaSliderInput = (e: any) => {
         const newChromaCalcInput: number = e.currentTarget.value;
-        themeColor.setProps.chromaCalc(newChromaCalcInput.toString());
-        setChromaCalcInput(newChromaCalcInput.toString());
+        themeColor.setProps.chromaCalc(`${newChromaCalcInput}`);
+        setChromaCalcInput(`${newChromaCalcInput}`);
         setChromaSlider(newChromaCalcInput);
         console.log(themeColor.data.endColor.hct);
     };
@@ -351,6 +351,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                     themeColor.setProps.name(
                                                         e.currentTarget.value,
                                                     );
+                                                    console.log(
+                                                        themeColor.data.name,
+                                                    );
                                                 }}
                                                 onBlur={() => nameTheNameless()}
                                                 onfocusout={() =>
@@ -358,6 +361,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                 }
                                                 placeholder="Color name"
                                             />
+                                            ``
                                         </div>
                                         <IconButton
                                             title={`Duplicate color`}

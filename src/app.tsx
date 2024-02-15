@@ -12,6 +12,7 @@ import { ThemeData, createTheme } from './hooks/useTheme';
 import { useContext, useEffect, useState, useRef } from 'preact/hooks';
 import { defaultThemes, useThemeList } from './hooks/useThemeList';
 import { IdContext } from './hooks/useId';
+import { set } from 'lodash';
 
 export const Plugin = () => {
     // ID state
@@ -137,7 +138,11 @@ export const Plugin = () => {
             selectedValue !== 'Delete'
         ) {
             setThemeId(selectedValue);
-            console.log(selectedValue, themeId);
+            setThemeColorId(
+                themeList.theme(selectedValue).data.themeColors[0].id,
+            );
+            // theme.setProps.all(theme.data);
+            console.log(themeId, selectedValue);
         }
     };
 
