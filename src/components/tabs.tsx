@@ -93,6 +93,10 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeList.themes[themeIndex].themeColors[themeColorIndex];
     const setThemeColor = setTheme.themeColor(themeColorId);
 
+    useEffect(() => {
+        themeList.theme(themeId).themeColor(themeColorId);
+    }, [themeColor]);
+
     // const findThemeById = (id: string) => {
     //     const theme = themeList.themes.find((theme) => theme.id === id);
     //     if (!theme) {
@@ -215,10 +219,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         ),
     );
 
-    const onSelectThemeColor = (themeColorId: string) => {
-        setThemeColorId(themeColorId);
-        // setThemeColor.setProps.all(themeColor);
-        console.log(themeColor.id, themeColorId);
+    const onSelectThemeColor = (newThemeColorId: string) => {
+        setThemeColorId(newThemeColorId);
+        console.log(newThemeColorId);
     };
 
     const onAddThemeColor = () => {
@@ -346,8 +349,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             <Textbox
                                                 title="Color name"
                                                 value={
-                                                    themeList.themes[themeIndex]
-                                                        .themeColors[
+                                                    theme.themeColors[
                                                         themeColorIndex
                                                     ].name
                                                 }

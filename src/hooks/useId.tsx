@@ -24,8 +24,9 @@ export const createIdStore = (initProps?: Partial<IdProps>) => {
     return createStore<IdState>()((set) => ({
         ...DEFAULT_PROPS,
         ...initProps,
-        setThemeId: (themeId: string) => set({ themeId }),
-        setThemeColorId: (themeColorId: string) => set({ themeColorId }),
+        setThemeId: (themeId: string) => set({ themeId: themeId }),
+        setThemeColorId: (themeColorId: string) =>
+            set({ themeColorId: themeColorId }),
     }));
 };
 
