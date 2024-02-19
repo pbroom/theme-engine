@@ -26,21 +26,32 @@ export const Plugin = () => {
         IdStore,
         (state: IdState) => state.themeColorId,
     );
-    const themeIndex = findIndex(themeId);
-    const themeColorIndex = findIndex(themeColorId);
+
+    // themeList state
+    const themeListStore = useThemeList;
+    const themeList = themeListStore();
+
     const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
     const setThemeColorId = useStore(
         IdStore,
         (state: IdState) => state.setThemeColorId,
     );
 
-    // themeList state
-    const themeListStore = useThemeList;
-    const themeList = themeListStore();
+    const themeIndexRef = useRef(
+        themeList.themes.findIndex((theme) => theme.id === themeId),
+    );
+    const themeIndex = themeIndexRef.current;
 
     // theme state
     const theme = themeList.themes[themeIndex];
     const setTheme = themeList.theme(themeId);
+
+    const themeColorIndexRef = useRef(
+        theme.themeColors.findIndex(
+            (themeColor) => themeColor.id === themeColorId,
+        ),
+    );
+    const themeColorIndex = themeColorIndexRef.current;
 
     // themeColor state
     const themeColor =
