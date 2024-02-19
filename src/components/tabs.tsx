@@ -24,7 +24,7 @@ import {
     createThemeColor,
     useThemeColor,
 } from '../hooks/useThemeColor';
-import { round } from 'mathjs';
+import { ceil, round } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -409,8 +409,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
     ];
 
     const maxChroma = useMemo(
-        () => round(findMaxChroma(hue())),
-        [themeColor.endColor.hct.hue],
+        () => Math.max(ceil(findMaxChroma(hue())), 1),
+        [themeColor.endColor.hct.hue, themeColorId],
     );
 
     const options: Array<TabsOption> = [
@@ -511,7 +511,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         />
                                     </div>
                                     <div className="flex gap-4 px-2 pt-2 opacity-60">
-                                        {/* <Muted title="Source color hue, chroma, tone">
+                                        <Muted title="Source color hue, chroma, tone">
                                             H:{' '}
                                             {round(
                                                 themeColor.sourceColor.hct.hue,
@@ -525,10 +525,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             {round(
                                                 themeColor.sourceColor.hct.tone,
                                             )}
-                                        </Muted> */}
+                                        </Muted>
                                         <Muted title="End color hue, chroma, tone">
-                                            {`${themeList.themes[themeIndex].themeColors[themeColorIndex].name} ID: ${themeList.themes[themeIndex].themeColors[themeColorIndex].id} [${themeColorIndexRef.current}] — `}
-                                            <span className="font-bold text-white">{`${themeColorId}`}</span>
+                                            {`${themeList.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`}
                                         </Muted>
                                         {/* <Muted title="End color hue, chroma, tone">
                                             H: {round(themeColor.endColor.hct.hue)} C:{' '}
@@ -564,7 +563,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             maximum={360}
                                             minimum={0}
                                             onInput={(e) => onHueSliderInput(e)}
-                                            value={themeColor.hueCalc}
+                                            value={`${calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc)}`}
                                         />
                                         <div
                                             className="hue-slider-bar absolute h-2 rounded-full"
@@ -573,7 +572,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     </div>
                                     <Textbox
                                         title="Hue expression"
-                                        value={hueCalcInput}
+                                        value={themeColor.hueCalc}
                                         onInput={(e) => onHueCalcInput(e)}
                                         placeholder="Hue value or expression"
                                     />
@@ -592,7 +591,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         <span className="p-2">Chroma</span>
                                         <span className="p-2">
                                             {round(
-                                                themeColor.endColor.hct.chroma,
+                                                calculateChroma(
+                                                    themeColor.sourceColor.hct
+                                                        .chroma,
+                                                    themeColor.chromaCalc,
+                                                ),
                                             )}{' '}
                                             <span className="opacity-40">
                                                 / {maxChroma}
@@ -602,21 +605,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="chroma-slider px-2 pb-2">
                                         <RangeSlider
                                             title="Adjust chroma"
-                                            maximum={Math.max(
-                                                round(
-                                                    findMaxChromaForHueAtTone(
-                                                        hue(),
-                                                        themeColor.endColor.hct
-                                                            .tone,
-                                                    ),
-                                                ),
-                                                1,
-                                            )}
+                                            maximum={Math.max(maxChroma, 1)}
                                             minimum={0}
                                             onInput={(e) =>
                                                 onChromaSliderInput(e)
                                             }
-                                            value={themeColor.chromaCalc}
+                                            value={`${calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)}`}
                                         />
                                         <div
                                             className="chroma-slider-bar absolute h-2 rounded-full"
@@ -625,7 +619,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     </div>
                                     <Textbox
                                         title="Chroma expression"
-                                        value={chromaCalcInput}
+                                        value={themeColor.chromaCalc}
                                         onInput={(e) => onChromaCalcInput(e)}
                                         placeholder="Chroma value or expression"
                                     />

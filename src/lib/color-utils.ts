@@ -330,7 +330,7 @@ const calculateHue = (originalHueValue: number, hueCalcValue: string) => {
     }
     try {
         // Replace 'h' regardless of its case
-        const parsedHueCalc = hueCalc.replace(/h/gi, sourceHue.toString());
+        const parsedHueCalc = hueCalc.replace(/h/gi, `${sourceHue}`);
         // Evaluate parsedHueCalc
         // Hue equals absolute value of hue modulo 360
         const hue = Math.abs((evaluate(parsedHueCalc) as number) % 360);
@@ -348,6 +348,7 @@ const calculateHue = (originalHueValue: number, hueCalcValue: string) => {
                 break; // Stop the loop if we successfully evaluate the expression
             } catch (e) {
                 // Continue truncating
+                continue;
             }
         }
         // Set hue to the last successfully evaluated value, or the default hue if none was successful
