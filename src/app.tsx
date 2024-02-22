@@ -22,20 +22,20 @@ export const Plugin = () => {
         throw new Error('IdStore is undefined');
     }
     const themeId = useStore(IdStore, (state: IdState) => state.themeId);
-    const themeColorId: string = useStore(
-        IdStore,
-        (state: IdState) => state.themeColorId,
-    );
+    // const themeColorId: string = useStore(
+    //     IdStore,
+    //     (state: IdState) => state.themeColorId,
+    // );
 
     // themeList state
     const themeListStore = useThemeList;
     const themeList = themeListStore();
 
     const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
-    const setThemeColorId = useStore(
-        IdStore,
-        (state: IdState) => state.setThemeColorId,
-    );
+    // const setThemeColorId = useStore(
+    //     IdStore,
+    //     (state: IdState) => state.setThemeColorId,
+    // );
 
     const themeIndexRef = useRef(
         themeList.themes.findIndex((theme) => theme.id === themeId),
@@ -46,17 +46,17 @@ export const Plugin = () => {
     const theme = themeList.themes[themeIndex];
     const setTheme = themeList.theme(themeId);
 
-    const themeColorIndexRef = useRef(
-        theme.themeColors.findIndex(
-            (themeColor) => themeColor.id === themeColorId,
-        ),
-    );
-    const themeColorIndex = themeColorIndexRef.current;
+    // const themeColorIndexRef = useRef(
+    //     theme.themeColors.findIndex(
+    //         (themeColor) => themeColor.id === themeColorId,
+    //     ),
+    // );
+    // const themeColorIndex = themeColorIndexRef.current;
 
     // themeColor state
-    const themeColor =
-        themeList.themes[themeIndex].themeColors[themeColorIndex];
-    const setThemeColor = setTheme.themeColor(themeColorId);
+    // const themeColor =
+    //     themeList.themes[themeIndex].themeColors[themeColorIndex];
+    // const setThemeColor = setTheme.themeColor(themeColorId);
 
     // initial theme data
     // useEffect(() => {
@@ -161,9 +161,9 @@ export const Plugin = () => {
             selectedValue !== 'Delete'
         ) {
             setThemeId(selectedValue);
-            setThemeColorId(
-                themeList.theme(selectedValue).data.themeColors[0].id,
-            );
+            // setThemeColorId(
+            //     themeList.theme(selectedValue).data.themeColors[0].id,
+            // );
             // theme.setProps.all(theme.data);
             console.log(themeId, selectedValue);
         }
@@ -239,7 +239,9 @@ export const Plugin = () => {
                 <button
                     title="Build theme"
                     className="build-button z-50 flex h-full w-32 items-center justify-center font-medium"
-                    onClick={(e) => console.log(themeList)}
+                    onClick={(e) =>
+                        console.log('%cthemeList:', 'color: #6DFF6A', themeList)
+                    }
                 >
                     Build Theme
                 </button>

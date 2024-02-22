@@ -1,7 +1,5 @@
-import { StateCreator, create, createStore, useStore } from 'zustand';
-import { useThemeList } from './useThemeList';
-import { subscribeWithSelector } from 'zustand/middleware';
-import { ComponentChildren, createContext, h, PreactConsumer } from 'preact';
+import { createStore, useStore } from 'zustand';
+import { createContext, h } from 'preact';
 import { useContext, useRef } from 'preact/hooks';
 
 export interface IdProps {

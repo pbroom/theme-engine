@@ -105,9 +105,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeIndexRef.current = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
         );
-        themeColorIndexRef.current = theme.themeColors.findIndex(
-            (themeColor) => themeColor.id === themeColorId,
-        );
+        themeColorIndexRef.current = themeList.themes[
+            themeIndex
+        ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
         setThemeIndex(themeIndexRef.current);
         setThemeColorIndex(themeColorIndexRef.current);
         if (themeRef.current !== themeList.themes[themeIndex]) {
@@ -125,7 +125,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     // themeColor state
     const themeColor =
         themeList.themes[themeIndex].themeColors[themeColorIndex];
-    const setThemeColor = setTheme.themeColor;
+    const setThemeColor = themeList.theme(themeId).themeColor;
 
     // Debugging
     const themeIdRef = useRef(themeId);
@@ -145,7 +145,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const logUpdate = (match: boolean) => {
             return !match ? 'Updated' : '-';
         };
-        console.table({
+        const tableLog = {
             themeId: logUpdate(themeId === themeIdRef.current),
             themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
             'themeColor.id': logUpdate(
@@ -180,7 +180,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
             themeList: logUpdate(themeList === themeListRef.current),
             theme: logUpdate(theme === themeRef.current),
             themeColor: logUpdate(themeColor === themeColorRef.current),
-        });
+        };
+        // console.table(tableLog);
     }, [
         themeId,
         themeColorId,
@@ -307,13 +308,22 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const onSelectThemeColor = (newThemeColorId: string) => {
         setThemeColorId(newThemeColorId);
-        console.log(newThemeColorId);
+        console.log('%ctheme.themeColors', 'color: #6AAFFF', theme.themeColors);
     };
 
     const onAddThemeColor = () => {
-        const newThemeColor: ThemeColorData = createThemeColor();
-        themeList.theme(themeId).add.themeColor(newThemeColor);
-        console.log(theme.themeColors);
+        const newId: string = nanoid(12);
+        const newThemeColor: ThemeColorData = {
+            ...createThemeColor(),
+            id: newId,
+        };
+        setTheme.add.themeColor(newThemeColor);
+        console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
+        console.log(
+            '%ctheme.themeColors:',
+            'color: #6AAFFF',
+            theme.themeColors,
+        );
     };
 
     // const onUpdateThemeColor = (themeColor: ThemeColorData) => {
@@ -327,7 +337,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const onHexColorInput = (e: any) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
-        setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
+        themeList
+            .theme(themeId)
+            .themeColor(themeColorId)
+            .setProps.sourceHex(newHexColor);
+        // setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
 
         setHueSlider(roundedHue);
         // if the hueCalcInput is an expression, don't update it
@@ -346,6 +360,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             setChromaCalcInput(roundedChroma.toString());
         }
     };
+
     const onHueSliderInput = (e: any) => {
         const newHueCalcInput: number = e.currentTarget.value;
         setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
@@ -527,7 +542,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             )}
                                         </Muted>
                                         <Muted title="End color hue, chroma, tone">
-                                            {`${themeList.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`}
+                                            {`${themeList.id} ${themeList.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`}
                                         </Muted>
                                         {/* <Muted title="End color hue, chroma, tone">
                                             H: {round(themeColor.endColor.hct.hue)} C:{' '}

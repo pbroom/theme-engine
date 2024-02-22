@@ -179,8 +179,11 @@ type ThemeListActions = {
 
 // type ThemeListActions = z.infer<typeof ThemeListActionsSchema>;
 
+const themeListId = nanoid(12);
+
 const themeListData: StateCreator<ThemeListData> = () => ({
-    id: nanoid(12),
+    // id: themeListId,
+    id: 'THEME_LIST_ID',
     themes: defaultThemes,
 });
 
@@ -199,11 +202,11 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
     add: {
         theme: () => set((state) => ({ ...state })),
     },
-    theme: (id: string | number): ThemeActions => {
+    theme: (themeId: string | number): ThemeActions => {
         const theme: ThemeData | undefined =
-            typeof id === 'number'
-                ? get().data.themes[id]
-                : get().data.themes.find((theme) => theme.id === id);
+            typeof themeId === 'number'
+                ? get().data.themes[themeId]
+                : get().data.themes.find((theme) => theme.id === themeId);
         if (!theme) {
             throw new Error('theme not found');
         }
@@ -224,12 +227,20 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
                 set((state) => ({ ...state })),
         };
         const themeColor = (id: string | number): ThemeColorActions => {
+            const themeIdIndex =
+                typeof themeId === 'number'
+                    ? themeId
+                    : get().data.themes.find((theme) => theme.id === themeId)
+                          ?.id;
+            if (!themeIdIndex) {
+                throw new Error('theme color not found');
+            }
             const themeColor: ThemeColorData | undefined =
                 typeof id === 'number'
-                    ? theme.themeColors[id]
-                    : theme.themeColors.find(
-                          (themeColor) => themeColor.id === id,
-                      );
+                    ? get().data.themes[themeIdIndex as number].themeColors[id]
+                    : get().data.themes[
+                          themeIdIndex as number
+                      ].themeColors.find((themeColor) => themeColor.id === id);
             if (!themeColor) {
                 throw new Error('theme color not found');
             }
@@ -388,153 +399,66 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
 ) => ({
     ...themeListData(set, get, ...a),
     ...themeListActions(set, get, ...a),
-    data: {
-        id: themeListData(set, get, ...a).id,
-        themes: themeListData(set, get, ...a).themes,
-    },
-    setProps: {
-        all: (themeListData) =>
-            set((state) => ({ ...state, ...themeListData })),
-        id: (id) => set((state) => ({ ...state, id: id })),
-        themes: (themes) => set((state) => ({ ...state, themes: themes })),
-    },
-    add: {
-        theme: (theme: ThemeData = createTheme()) =>
-            set((state) => ({
-                ...state,
-                themes: [...state.themes, theme],
-            })),
-    },
-    theme: (id: string | number): ThemeActions => {
-        const theme: ThemeData | undefined =
-            typeof id === 'number'
-                ? get().data.themes[id]
-                : get().data.themes.find((theme) => theme.id === id);
-        if (!theme) {
-            throw new Error('theme not found');
-        }
-        const add = {
-            themeColor: (themeColor: ThemeColorData = createThemeColor()) =>
+});
+
+const useThemeList = create<ThemeListData & ThemeListActions>(
+    (set, get, ...a) => ({
+        ...themeList(set, get, ...a),
+        // id: themeListId,
+        id: 'THEME_LIST_STORE_ID',
+        themes: defaultThemes,
+        data: {
+            id: themeList(set, get, ...a).id,
+            themes: themeList(set, get, ...a).themes,
+        },
+        setProps: {
+            all: (themeListData) =>
+                set((state) => ({ ...state, ...themeListData })),
+            id: (id) => set((state) => ({ ...state, id: id })),
+            themes: (themes) => set((state) => ({ ...state, themes: themes })),
+        },
+        add: {
+            theme: (theme: ThemeData = createTheme()) =>
                 set((state) => ({
                     ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  themeColors: [...t.themeColors, themeColor],
-                              }
-                            : t,
-                    ),
+                    themes: [...state.themes, theme],
                 })),
-            aliasGroup: (aliasGroup: AliasGroupData = createAliasGroup()) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  aliasGroups: [...t.aliasGroups, aliasGroup],
-                              }
-                            : t,
-                    ),
-                })),
-        };
-        const duplicate = () =>
-            set((state) => {
-                const theme = state.themes.find((t) => t.id === id);
-                if (theme) {
-                    const newTheme = { ...theme, id: nanoid(12) };
-                    return {
-                        ...state,
-                        themes: [...state.themes, newTheme],
-                    };
-                }
-                return state;
-            });
-        const update = (themeData: ThemeData) =>
-            set((state) => ({
-                ...state,
-                themes: state.themes.map((t) =>
-                    t.id === theme.id ? themeData : t,
-                ),
-            }));
-        const remove = () =>
-            set((state) => ({
-                ...state,
-                themes: state.themes.filter((t) => t.id !== theme.id),
-            }));
-        const setProps = {
-            all: (themeData: ThemeData) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id ? themeData : t,
-                    ),
-                })),
-            id: (id: string) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id ? { ...t, id } : t,
-                    ),
-                })),
-            name: (name: string) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id ? { ...t, name } : t,
-                    ),
-                })),
-            themeColors: (themeColors: ThemeColorData[]) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id ? { ...t, themeColors } : t,
-                    ),
-                })),
-            aliasGroups: (aliasGroups: AliasGroupData[]) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id ? { ...t, aliasGroups } : t,
-                    ),
-                })),
-        };
-        const themeColor = (id: string | number): ThemeColorActions => {
-            const themeColor: ThemeColorData | undefined =
-                typeof id === 'number'
-                    ? theme.themeColors[id]
-                    : theme.themeColors.find(
-                          (themeColor) => themeColor.id === id,
-                      );
-            if (!themeColor) {
-                console.log(id);
-                console.log(theme.themeColors);
-                throw new Error('themeColor not found');
+        },
+        theme: (themeId: string | number): ThemeActions => {
+            const theme: ThemeData | undefined =
+                typeof themeId === 'number'
+                    ? get().themes[themeId]
+                    : get().themes.find((theme) => theme.id === themeId);
+            if (!theme) {
+                throw new Error('theme not found');
             }
             const add = {
-                alias: (alias: AliasData = createAlias()) =>
+                themeColor: (themeColor: ThemeColorData = createThemeColor()) =>
                     set((state) => ({
                         ...state,
                         themes: state.themes.map((t) =>
                             t.id === theme.id
                                 ? {
                                       ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    aliasGroup: {
-                                                        ...c.aliasGroup,
-                                                        aliases: [
-                                                            ...c.aliasGroup
-                                                                .aliases,
-                                                            alias,
-                                                        ],
-                                                    },
-                                                }
-                                              : c,
-                                      ),
+                                      themeColors: [
+                                          ...t.themeColors,
+                                          themeColor,
+                                      ],
+                                  }
+                                : t,
+                        ),
+                    })),
+                aliasGroup: (aliasGroup: AliasGroupData = createAliasGroup()) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id
+                                ? {
+                                      ...t,
+                                      aliasGroups: [
+                                          ...t.aliasGroups,
+                                          aliasGroup,
+                                      ],
                                   }
                                 : t,
                         ),
@@ -542,61 +466,148 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
             };
             const duplicate = () =>
                 set((state) => {
-                    const themeColor = state.themes
-                        .find((t) => t.id === theme.id)
-                        ?.themeColors.find((c) => c.id === id);
-                    if (themeColor) {
-                        const newThemeColor = {
-                            ...themeColor,
-                            id: nanoid(12),
-                        };
+                    const theme = state.themes.find((t) => t.id === themeId);
+                    if (theme) {
+                        const newTheme = { ...theme, id: nanoid(12) };
                         return {
                             ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          themeColors: [
-                                              ...t.themeColors,
-                                              newThemeColor,
-                                          ],
-                                      }
-                                    : t,
-                            ),
+                            themes: [...state.themes, newTheme],
                         };
                     }
                     return state;
                 });
-            const update = (themeColorData: ThemeColorData) =>
+            const update = (themeData: ThemeData) =>
                 set((state) => ({
                     ...state,
                     themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  themeColors: t.themeColors.map((c) =>
-                                      c.id === id ? themeColorData : c,
-                                  ),
-                              }
-                            : t,
+                        t.id === theme.id ? themeData : t,
                     ),
                 }));
             const remove = () =>
                 set((state) => ({
                     ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  themeColors: t.themeColors.filter(
-                                      (c) => c.id !== id,
-                                  ),
-                              }
-                            : t,
-                    ),
+                    themes: state.themes.filter((t) => t.id !== theme.id),
                 }));
             const setProps = {
-                all: (themeColorData: ThemeColorData) =>
+                all: (themeData: ThemeData) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id ? themeData : t,
+                        ),
+                    })),
+                id: (id: string) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id ? { ...t, id } : t,
+                        ),
+                    })),
+                name: (name: string) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id ? { ...t, name } : t,
+                        ),
+                    })),
+                themeColors: (themeColors: ThemeColorData[]) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id ? { ...t, themeColors } : t,
+                        ),
+                    })),
+                aliasGroups: (aliasGroups: AliasGroupData[]) =>
+                    set((state) => ({
+                        ...state,
+                        themes: state.themes.map((t) =>
+                            t.id === theme.id ? { ...t, aliasGroups } : t,
+                        ),
+                    })),
+            };
+            const themeColor = (id: string | number): ThemeColorActions => {
+                const currentTheme = get().theme(themeId).data;
+                const themeColor: ThemeColorData | undefined =
+                    typeof id === 'number'
+                        ? currentTheme.themeColors[id]
+                        : currentTheme.themeColors.find(
+                              (themeColor) => themeColor.id === id,
+                          );
+                console.log(
+                    '%cPRE-if themeList:',
+                    'color: #FFDE6A',
+                    themeList(set, get, ...a),
+                );
+                if (!themeColor) {
+                    console.log(
+                        '%cCANNOT FIND themeColor',
+                        'color: #FF8585',
+                        id,
+                    );
+                    console.log(
+                        '%cPOST-if themeList:',
+                        'color: #FF8585',
+                        themeList(set, get, ...a),
+                    );
+                    // console.log(theme.themeColors);
+                    throw new Error('COULD NOT FIND themeColor with id: ' + id);
+                }
+                const add = {
+                    alias: (alias: AliasData = createAlias()) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        aliasGroup: {
+                                                            ...c.aliasGroup,
+                                                            aliases: [
+                                                                ...c.aliasGroup
+                                                                    .aliases,
+                                                                alias,
+                                                            ],
+                                                        },
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                };
+                const duplicate = () =>
+                    set((state) => {
+                        const themeColor = state.themes
+                            .find((t) => t.id === theme.id)
+                            ?.themeColors.find((c) => c.id === id);
+                        if (themeColor) {
+                            const newThemeColor = {
+                                ...themeColor,
+                                id: nanoid(12),
+                            };
+                            return {
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: [
+                                                  ...t.themeColors,
+                                                  newThemeColor,
+                                              ],
+                                          }
+                                        : t,
+                                ),
+                            };
+                        }
+                        return state;
+                    });
+                const update = (themeColorData: ThemeColorData) =>
                     set((state) => ({
                         ...state,
                         themes: state.themes.map((t) =>
@@ -609,244 +620,6 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                   }
                                 : t,
                         ),
-                    })),
-                id: (id: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id ? { ...c, id } : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                name: (name: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id ? { ...c, name } : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                sourceHex: (sourceHex: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    sourceHex: sourceHex,
-                                                    sourceColor: {
-                                                        ...c.sourceColor,
-                                                        ...createColorFrom().hex(
-                                                            sourceHex,
-                                                        ),
-                                                    },
-                                                    endColor: {
-                                                        ...c.endColor,
-                                                        ...calculateEndColor(
-                                                            c.sourceColor.hct,
-                                                            c.hueCalc,
-                                                            c.chromaCalc,
-                                                        ),
-                                                    },
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                sourceColor: (sourceColor: ColorData) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    sourceColor,
-                                                    endColor: {
-                                                        ...c.endColor,
-                                                        ...calculateEndColor(
-                                                            sourceColor.hct,
-                                                            c.hueCalc,
-                                                            c.chromaCalc,
-                                                        ),
-                                                    },
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                endColor: (endColor: ColorData) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    endColor: {
-                                                        ...c.endColor,
-                                                        ...calculateEndColor(
-                                                            c.sourceColor.hct,
-                                                            c.hueCalc,
-                                                            c.chromaCalc,
-                                                        ),
-                                                    },
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                tones: (tones: number[]) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id ? { ...c, tones } : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                hueCalc: (hueCalc: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    endColor: {
-                                                        ...c.endColor,
-                                                        ...calculateEndColor(
-                                                            c.sourceColor.hct,
-                                                            hueCalc,
-                                                            c.chromaCalc,
-                                                        ),
-                                                    },
-                                                    hueCalc: hueCalc,
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                chromaCalc: (chromaCalc: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    endColor: {
-                                                        ...c.endColor,
-                                                        ...calculateEndColor(
-                                                            c.sourceColor.hct,
-                                                            c.hueCalc,
-                                                            chromaCalc,
-                                                        ),
-                                                    },
-                                                    chromaCalc: chromaCalc,
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                aliasGroup: (aliasGroup: AliasGroupData) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    aliasGroup,
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-            };
-            const alias = (id: string): AliasActions => {
-                const alias: AliasData | undefined =
-                    themeColor.aliasGroup.aliases.find(
-                        (alias) => alias.id === id,
-                    );
-                if (!alias) {
-                    throw new Error('alias not found');
-                }
-                const update = (aliasData: AliasData) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    aliasGroup: {
-                                                        ...c.aliasGroup,
-                                                        aliases:
-                                                            c.aliasGroup.aliases.map(
-                                                                (a) =>
-                                                                    a.id === id
-                                                                        ? aliasData
-                                                                        : a,
-                                                            ),
-                                                    },
-                                                }
-                                              : c,
-                                      ),
-                                  }
-                                : t,
-                        ),
                     }));
                 const remove = () =>
                     set((state) => ({
@@ -855,27 +628,243 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                             t.id === theme.id
                                 ? {
                                       ...t,
-                                      themeColors: t.themeColors.map((c) =>
-                                          c.id === id
-                                              ? {
-                                                    ...c,
-                                                    aliasGroup: {
-                                                        ...c.aliasGroup,
-                                                        aliases:
-                                                            c.aliasGroup.aliases.filter(
-                                                                (a) =>
-                                                                    a.id !== id,
-                                                            ),
-                                                    },
-                                                }
-                                              : c,
+                                      themeColors: t.themeColors.filter(
+                                          (c) => c.id !== id,
                                       ),
                                   }
                                 : t,
                         ),
                     }));
                 const setProps = {
-                    all: (aliasData: AliasData) =>
+                    all: (themeColorData: ThemeColorData) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id ? themeColorData : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    id: (id: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id ? { ...c, id } : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    name: (name: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id ? { ...c, name } : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    sourceHex: (sourceHex: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        sourceHex: sourceHex,
+                                                        sourceColor: {
+                                                            ...c.sourceColor,
+                                                            ...createColorFrom().hex(
+                                                                sourceHex,
+                                                            ),
+                                                        },
+                                                        endColor: {
+                                                            ...c.endColor,
+                                                            ...calculateEndColor(
+                                                                c.sourceColor
+                                                                    .hct,
+                                                                c.hueCalc,
+                                                                c.chromaCalc,
+                                                            ),
+                                                        },
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    sourceColor: (sourceColor: ColorData) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        sourceColor,
+                                                        endColor: {
+                                                            ...c.endColor,
+                                                            ...calculateEndColor(
+                                                                sourceColor.hct,
+                                                                c.hueCalc,
+                                                                c.chromaCalc,
+                                                            ),
+                                                        },
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    endColor: (endColor: ColorData) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        endColor: {
+                                                            ...c.endColor,
+                                                            ...calculateEndColor(
+                                                                c.sourceColor
+                                                                    .hct,
+                                                                c.hueCalc,
+                                                                c.chromaCalc,
+                                                            ),
+                                                        },
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    tones: (tones: number[]) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id ? { ...c, tones } : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    hueCalc: (hueCalc: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        endColor: {
+                                                            ...c.endColor,
+                                                            ...calculateEndColor(
+                                                                c.sourceColor
+                                                                    .hct,
+                                                                hueCalc,
+                                                                c.chromaCalc,
+                                                            ),
+                                                        },
+                                                        hueCalc: hueCalc,
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    chromaCalc: (chromaCalc: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        endColor: {
+                                                            ...c.endColor,
+                                                            ...calculateEndColor(
+                                                                c.sourceColor
+                                                                    .hct,
+                                                                c.hueCalc,
+                                                                chromaCalc,
+                                                            ),
+                                                        },
+                                                        chromaCalc: chromaCalc,
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    aliasGroup: (aliasGroup: AliasGroupData) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          themeColors: t.themeColors.map((c) =>
+                                              c.id === id
+                                                  ? {
+                                                        ...c,
+                                                        aliasGroup,
+                                                    }
+                                                  : c,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                };
+                const alias = (id: string): AliasActions => {
+                    const alias: AliasData | undefined =
+                        themeColor.aliasGroup.aliases.find(
+                            (alias) => alias.id === id,
+                        );
+                    if (!alias) {
+                        throw new Error('alias not found');
+                    }
+                    const update = (aliasData: AliasData) =>
                         set((state) => ({
                             ...state,
                             themes: state.themes.map((t) =>
@@ -903,8 +892,8 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                       }
                                     : t,
                             ),
-                        })),
-                    id: (id: string) =>
+                        }));
+                    const remove = () =>
                         set((state) => ({
                             ...state,
                             themes: state.themes.map((t) =>
@@ -918,15 +907,10 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                                         aliasGroup: {
                                                             ...c.aliasGroup,
                                                             aliases:
-                                                                c.aliasGroup.aliases.map(
+                                                                c.aliasGroup.aliases.filter(
                                                                     (a) =>
-                                                                        a.id ===
-                                                                        id
-                                                                            ? {
-                                                                                  ...a,
-                                                                                  id,
-                                                                              }
-                                                                            : a,
+                                                                        a.id !==
+                                                                        id,
                                                                 ),
                                                         },
                                                     }
@@ -935,210 +919,260 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                       }
                                     : t,
                             ),
-                        })),
-                    name: (name: string) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          themeColors: t.themeColors.map((c) =>
-                                              c.id === id
-                                                  ? {
-                                                        ...c,
-                                                        aliasGroup: {
-                                                            ...c.aliasGroup,
-                                                            aliases:
-                                                                c.aliasGroup.aliases.map(
-                                                                    (a) =>
-                                                                        a.id ===
-                                                                        id
-                                                                            ? {
-                                                                                  ...a,
-                                                                                  name,
-                                                                              }
-                                                                            : a,
-                                                                ),
-                                                        },
-                                                    }
-                                                  : c,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
-                    lightModeTone: (lightModeTone: number) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          themeColors: t.themeColors.map((c) =>
-                                              c.id === id
-                                                  ? {
-                                                        ...c,
-                                                        aliasGroup: {
-                                                            ...c.aliasGroup,
-                                                            aliases:
-                                                                c.aliasGroup.aliases.map(
-                                                                    (a) =>
-                                                                        a.id ===
-                                                                        id
-                                                                            ? {
-                                                                                  ...a,
-                                                                                  lightModeTone,
-                                                                              }
-                                                                            : a,
-                                                                ),
-                                                        },
-                                                    }
-                                                  : c,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
-                    darkModeTone: (darkModeTone: number) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          themeColors: t.themeColors.map((c) =>
-                                              c.id === id
-                                                  ? {
-                                                        ...c,
-                                                        aliasGroup: {
-                                                            ...c.aliasGroup,
-                                                            aliases:
-                                                                c.aliasGroup.aliases.map(
-                                                                    (a) =>
-                                                                        a.id ===
-                                                                        id
-                                                                            ? {
-                                                                                  ...a,
-                                                                                  darkModeTone,
-                                                                              }
-                                                                            : a,
-                                                                ),
-                                                        },
-                                                    }
-                                                  : c,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
+                        }));
+                    const setProps = {
+                        all: (aliasData: AliasData) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                aliasGroup: {
+                                                                    ...c.aliasGroup,
+                                                                    aliases:
+                                                                        c.aliasGroup.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? aliasData
+                                                                                    : a,
+                                                                        ),
+                                                                },
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        id: (id: string) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                aliasGroup: {
+                                                                    ...c.aliasGroup,
+                                                                    aliases:
+                                                                        c.aliasGroup.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          id,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                },
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        name: (name: string) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                aliasGroup: {
+                                                                    ...c.aliasGroup,
+                                                                    aliases:
+                                                                        c.aliasGroup.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          name,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                },
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        lightModeTone: (lightModeTone: number) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                aliasGroup: {
+                                                                    ...c.aliasGroup,
+                                                                    aliases:
+                                                                        c.aliasGroup.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          lightModeTone,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                },
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        darkModeTone: (darkModeTone: number) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                aliasGroup: {
+                                                                    ...c.aliasGroup,
+                                                                    aliases:
+                                                                        c.aliasGroup.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          darkModeTone,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                },
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                    };
+                    return {
+                        ...alias,
+                        update,
+                        remove,
+                        setProps,
+                        data: alias,
+                    };
                 };
                 return {
-                    ...alias,
+                    ...themeColor,
+                    add,
+                    duplicate,
                     update,
                     remove,
                     setProps,
-                    data: alias,
+                    alias,
+                    data: themeColor,
                 };
             };
-            return {
-                ...themeColor,
-                add,
-                duplicate,
-                update,
-                remove,
-                setProps,
-                alias,
-                data: themeColor,
-            };
-        };
-        const aliasGroup = (id: string): AliasGroupActions => {
-            const aliasGroup: AliasGroupData | undefined =
-                theme.aliasGroups.find((aliasGroup) => aliasGroup.id === id);
-            if (!aliasGroup) {
-                throw new Error('alias group not found');
-            }
-            const add = {
-                alias: (alias: AliasData = createAlias()) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id
-                                              ? {
-                                                    ...a,
-                                                    aliases: [
-                                                        ...a.aliases,
-                                                        alias,
-                                                    ],
-                                                }
-                                              : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-            };
-            const duplicate = () =>
-                set((state) => {
-                    const aliasGroup = state.themes
-                        .find((t) => t.id === theme.id)
-                        ?.aliasGroups.find((a) => a.id === id);
-                    if (aliasGroup) {
-                        const newAliasGroup = {
-                            ...aliasGroup,
-                            id: nanoid(12),
-                        };
-                        return {
+            const aliasGroup = (id: string): AliasGroupActions => {
+                const aliasGroup: AliasGroupData | undefined =
+                    theme.aliasGroups.find(
+                        (aliasGroup) => aliasGroup.id === id,
+                    );
+                if (!aliasGroup) {
+                    throw new Error('alias group not found');
+                }
+                const add = {
+                    alias: (alias: AliasData = createAlias()) =>
+                        set((state) => ({
                             ...state,
                             themes: state.themes.map((t) =>
                                 t.id === theme.id
                                     ? {
                                           ...t,
-                                          aliasGroups: [
-                                              ...t.aliasGroups,
-                                              newAliasGroup,
-                                          ],
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id
+                                                  ? {
+                                                        ...a,
+                                                        aliases: [
+                                                            ...a.aliases,
+                                                            alias,
+                                                        ],
+                                                    }
+                                                  : a,
+                                          ),
                                       }
                                     : t,
                             ),
-                        };
-                    }
-                    return state;
-                });
-            const update = (aliasGroupData: AliasGroupData) =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  aliasGroups: t.aliasGroups.map((a) =>
-                                      a.id === id ? aliasGroupData : a,
-                                  ),
-                              }
-                            : t,
-                    ),
-                }));
-            const remove = () =>
-                set((state) => ({
-                    ...state,
-                    themes: state.themes.map((t) =>
-                        t.id === theme.id
-                            ? {
-                                  ...t,
-                                  aliasGroups: t.aliasGroups.filter(
-                                      (a) => a.id !== id,
-                                  ),
-                              }
-                            : t,
-                    ),
-                }));
-            const setProps = {
-                all: (aliasGroupData: AliasGroupData) =>
+                        })),
+                };
+                const duplicate = () =>
+                    set((state) => {
+                        const aliasGroup = state.themes
+                            .find((t) => t.id === theme.id)
+                            ?.aliasGroups.find((a) => a.id === id);
+                        if (aliasGroup) {
+                            const newAliasGroup = {
+                                ...aliasGroup,
+                                id: nanoid(12),
+                            };
+                            return {
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: [
+                                                  ...t.aliasGroups,
+                                                  newAliasGroup,
+                                              ],
+                                          }
+                                        : t,
+                                ),
+                            };
+                        }
+                        return state;
+                    });
+                const update = (aliasGroupData: AliasGroupData) =>
                     set((state) => ({
                         ...state,
                         themes: state.themes.map((t) =>
@@ -1151,99 +1185,6 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                   }
                                 : t,
                         ),
-                    })),
-                id: (id: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id ? { ...a, id } : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                name: (name: string) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id ? { ...a, name } : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                aliases: (aliases: AliasData[]) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id ? { ...a, aliases } : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-                themeColorIds: (themeColorIds: string[]) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id
-                                              ? {
-                                                    ...a,
-                                                    themeColorIds,
-                                                }
-                                              : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
-                    })),
-            };
-            const alias = (id: string): AliasActions => {
-                const alias: AliasData | undefined = aliasGroup.aliases.find(
-                    (alias) => alias.id === id,
-                );
-                if (!alias) {
-                    throw new Error('alias not found');
-                }
-                const update = (aliasData: AliasData) =>
-                    set((state) => ({
-                        ...state,
-                        themes: state.themes.map((t) =>
-                            t.id === theme.id
-                                ? {
-                                      ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id
-                                              ? {
-                                                    ...a,
-                                                    aliases: a.aliases.map(
-                                                        (a) =>
-                                                            a.id === id
-                                                                ? aliasData
-                                                                : a,
-                                                    ),
-                                                }
-                                              : a,
-                                      ),
-                                  }
-                                : t,
-                        ),
                     }));
                 const remove = () =>
                     set((state) => ({
@@ -1252,22 +1193,99 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                             t.id === theme.id
                                 ? {
                                       ...t,
-                                      aliasGroups: t.aliasGroups.map((a) =>
-                                          a.id === id
-                                              ? {
-                                                    ...a,
-                                                    aliases: a.aliases.filter(
-                                                        (a) => a.id !== id,
-                                                    ),
-                                                }
-                                              : a,
+                                      aliasGroups: t.aliasGroups.filter(
+                                          (a) => a.id !== id,
                                       ),
                                   }
                                 : t,
                         ),
                     }));
                 const setProps = {
-                    all: (aliasData: AliasData) =>
+                    all: (aliasGroupData: AliasGroupData) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id ? aliasGroupData : a,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    id: (id: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id ? { ...a, id } : a,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    name: (name: string) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id ? { ...a, name } : a,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    aliases: (aliases: AliasData[]) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id
+                                                  ? { ...a, aliases }
+                                                  : a,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                    themeColorIds: (themeColorIds: string[]) =>
+                        set((state) => ({
+                            ...state,
+                            themes: state.themes.map((t) =>
+                                t.id === theme.id
+                                    ? {
+                                          ...t,
+                                          aliasGroups: t.aliasGroups.map((a) =>
+                                              a.id === id
+                                                  ? {
+                                                        ...a,
+                                                        themeColorIds,
+                                                    }
+                                                  : a,
+                                          ),
+                                      }
+                                    : t,
+                            ),
+                        })),
+                };
+                const alias = (id: string): AliasActions => {
+                    const alias: AliasData | undefined =
+                        aliasGroup.aliases.find((alias) => alias.id === id);
+                    if (!alias) {
+                        throw new Error('alias not found');
+                    }
+                    const update = (aliasData: AliasData) =>
                         set((state) => ({
                             ...state,
                             themes: state.themes.map((t) =>
@@ -1290,8 +1308,8 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                       }
                                     : t,
                             ),
-                        })),
-                    id: (id: string) =>
+                        }));
+                    const remove = () =>
                         set((state) => ({
                             ...state,
                             themes: state.themes.map((t) =>
@@ -1302,139 +1320,197 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
                                               a.id === id
                                                   ? {
                                                         ...a,
-                                                        aliases: a.aliases.map(
-                                                            (a) =>
-                                                                a.id === id
-                                                                    ? {
-                                                                          ...a,
-                                                                          id,
-                                                                      }
-                                                                    : a,
-                                                        ),
+                                                        aliases:
+                                                            a.aliases.filter(
+                                                                (a) =>
+                                                                    a.id !== id,
+                                                            ),
                                                     }
                                                   : a,
                                           ),
                                       }
                                     : t,
                             ),
-                        })),
-                    name: (name: string) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          aliasGroups: t.aliasGroups.map((a) =>
-                                              a.id === id
-                                                  ? {
-                                                        ...a,
-                                                        aliases: a.aliases.map(
-                                                            (a) =>
-                                                                a.id === id
-                                                                    ? {
-                                                                          ...a,
-                                                                          name,
-                                                                      }
-                                                                    : a,
-                                                        ),
-                                                    }
-                                                  : a,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
-                    lightModeTone: (lightModeTone: number) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          aliasGroups: t.aliasGroups.map((a) =>
-                                              a.id === id
-                                                  ? {
-                                                        ...a,
-                                                        aliases: a.aliases.map(
-                                                            (a) =>
-                                                                a.id === id
-                                                                    ? {
-                                                                          ...a,
-                                                                          lightModeTone,
-                                                                      }
-                                                                    : a,
-                                                        ),
-                                                    }
-                                                  : a,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
-                    darkModeTone: (darkModeTone: number) =>
-                        set((state) => ({
-                            ...state,
-                            themes: state.themes.map((t) =>
-                                t.id === theme.id
-                                    ? {
-                                          ...t,
-                                          aliasGroups: t.aliasGroups.map((a) =>
-                                              a.id === id
-                                                  ? {
-                                                        ...a,
-                                                        aliases: a.aliases.map(
-                                                            (a) =>
-                                                                a.id === id
-                                                                    ? {
-                                                                          ...a,
-                                                                          darkModeTone,
-                                                                      }
-                                                                    : a,
-                                                        ),
-                                                    }
-                                                  : a,
-                                          ),
-                                      }
-                                    : t,
-                            ),
-                        })),
+                        }));
+                    const setProps = {
+                        all: (aliasData: AliasData) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: t.aliasGroups.map(
+                                                  (a) =>
+                                                      a.id === id
+                                                          ? {
+                                                                ...a,
+                                                                aliases:
+                                                                    a.aliases.map(
+                                                                        (a) =>
+                                                                            a.id ===
+                                                                            id
+                                                                                ? aliasData
+                                                                                : a,
+                                                                    ),
+                                                            }
+                                                          : a,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        id: (id: string) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: t.aliasGroups.map(
+                                                  (a) =>
+                                                      a.id === id
+                                                          ? {
+                                                                ...a,
+                                                                aliases:
+                                                                    a.aliases.map(
+                                                                        (a) =>
+                                                                            a.id ===
+                                                                            id
+                                                                                ? {
+                                                                                      ...a,
+                                                                                      id,
+                                                                                  }
+                                                                                : a,
+                                                                    ),
+                                                            }
+                                                          : a,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        name: (name: string) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: t.aliasGroups.map(
+                                                  (a) =>
+                                                      a.id === id
+                                                          ? {
+                                                                ...a,
+                                                                aliases:
+                                                                    a.aliases.map(
+                                                                        (a) =>
+                                                                            a.id ===
+                                                                            id
+                                                                                ? {
+                                                                                      ...a,
+                                                                                      name,
+                                                                                  }
+                                                                                : a,
+                                                                    ),
+                                                            }
+                                                          : a,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        lightModeTone: (lightModeTone: number) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: t.aliasGroups.map(
+                                                  (a) =>
+                                                      a.id === id
+                                                          ? {
+                                                                ...a,
+                                                                aliases:
+                                                                    a.aliases.map(
+                                                                        (a) =>
+                                                                            a.id ===
+                                                                            id
+                                                                                ? {
+                                                                                      ...a,
+                                                                                      lightModeTone,
+                                                                                  }
+                                                                                : a,
+                                                                    ),
+                                                            }
+                                                          : a,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        darkModeTone: (darkModeTone: number) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              aliasGroups: t.aliasGroups.map(
+                                                  (a) =>
+                                                      a.id === id
+                                                          ? {
+                                                                ...a,
+                                                                aliases:
+                                                                    a.aliases.map(
+                                                                        (a) =>
+                                                                            a.id ===
+                                                                            id
+                                                                                ? {
+                                                                                      ...a,
+                                                                                      darkModeTone,
+                                                                                  }
+                                                                                : a,
+                                                                    ),
+                                                            }
+                                                          : a,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                    };
+                    return {
+                        ...alias,
+                        update,
+                        remove,
+                        setProps,
+                        data: alias,
+                    };
                 };
                 return {
-                    ...alias,
+                    ...aliasGroup,
+                    add,
+                    duplicate,
                     update,
                     remove,
                     setProps,
-                    data: alias,
+                    alias,
+                    data: aliasGroup,
                 };
             };
             return {
-                ...aliasGroup,
+                ...theme,
                 add,
                 duplicate,
                 update,
                 remove,
                 setProps,
-                alias,
-                data: aliasGroup,
+                themeColor,
+                aliasGroup,
+                data: theme,
             };
-        };
-        return {
-            ...theme,
-            add,
-            duplicate,
-            update,
-            remove,
-            setProps,
-            themeColor,
-            aliasGroup,
-            data: theme,
-        };
-    },
-});
-
-const useThemeList = create<ThemeListData & ThemeListActions>((set, ...a) => ({
-    ...themeList(set, ...a),
-    id: nanoid(12),
-    themes: defaultThemes,
-}));
+        },
+    }),
+);

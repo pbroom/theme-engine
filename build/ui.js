@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd83a76c-7fc1-467f-b012-ca424023cdab/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f1ec1da-b801-4352-9302-a07c97696c7d/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dd83a76c-7fc1-467f-b012-ca424023cdab/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f1ec1da-b801-4352-9302-a07c97696c7d/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2402,10 +2402,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eacc269b-4e42-47db-84db-63c5f049bf65/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/231c144a-359f-49a8-9314-9a1825aaee6e/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eacc269b-4e42-47db-84db-63c5f049bf65/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/231c144a-359f-49a8-9314-9a1825aaee6e/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2442,10 +2442,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/686d2afa-2d95-49a9-b208-11f988fb0f1f/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0658d308-d54d-46bb-81d3-2f104c965804/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/686d2afa-2d95-49a9-b208-11f988fb0f1f/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0658d308-d54d-46bb-81d3-2f104c965804/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2683,10 +2683,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d943acba-154d-4736-ace3-2a167934181e/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ea007a-053c-439a-98cb-1a723e0f70dd/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d943acba-154d-4736-ace3-2a167934181e/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ea007a-053c-439a-98cb-1a723e0f70dd/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3160,10 +3160,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8fef385-de65-4c5b-bf4b-473c587943c5/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0946f02a-19a8-443e-bfcc-168cd75cf85b/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d8fef385-de65-4c5b-bf4b-473c587943c5/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0946f02a-19a8-443e-bfcc-168cd75cf85b/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3233,10 +3233,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ba434846-19f8-402f-a1e4-88916eacf01a/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9630fae-f292-4dda-b6a1-678f5a8fb6a0/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ba434846-19f8-402f-a1e4-88916eacf01a/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9630fae-f292-4dda-b6a1-678f5a8fb6a0/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3340,10 +3340,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e30c7999-b3b5-407e-808e-a094d741d712/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ace027b-ba84-4202-a494-7b9250e69fb4/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e30c7999-b3b5-407e-808e-a094d741d712/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ace027b-ba84-4202-a494-7b9250e69fb4/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3940,10 +3940,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93b9048e-0e3b-43fb-8a48-c602c7e7f3c0/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22aef488-ef97-4e6d-8c03-37b1c69dd3f3/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93b9048e-0e3b-43fb-8a48-c602c7e7f3c0/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22aef488-ef97-4e6d-8c03-37b1c69dd3f3/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4448,10 +4448,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77013e7f-2f6b-44d9-8bc9-1deec34cba57/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c944c92d-a1e4-49f9-8093-0f44414198e2/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77013e7f-2f6b-44d9-8bc9-1deec34cba57/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c944c92d-a1e4-49f9-8093-0f44414198e2/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4791,10 +4791,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5b0b2b8b-66db-4af8-8a91-f496dc39054f/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0c9de43-e876-4e28-bdbf-b851f0cac5aa/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5b0b2b8b-66db-4af8-8a91-f496dc39054f/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0c9de43-e876-4e28-bdbf-b851f0cac5aa/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4993,10 +4993,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61700f43-4a42-4384-a81b-7a096d9aa4a4/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d90ca80d-b183-4906-8153-88d2ddc6108b/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61700f43-4a42-4384-a81b-7a096d9aa4a4/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d90ca80d-b183-4906-8153-88d2ddc6108b/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5089,10 +5089,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/89ccf51b-0fe3-4ff8-a348-9f336d09814f/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d1c933e4-d2b6-4994-8fd3-f3f5a66d0f19/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/89ccf51b-0fe3-4ff8-a348-9f336d09814f/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d1c933e4-d2b6-4994-8fd3-f3f5a66d0f19/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5173,10 +5173,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/912f10ad-3a1d-48f1-9533-1075bcdd0a29/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b552db9-d34e-4f6f-9608-acf1d2cc4b97/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/912f10ad-3a1d-48f1-9533-1075bcdd0a29/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b552db9-d34e-4f6f-9608-acf1d2cc4b97/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5205,9 +5205,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/531096b6-9494-4b80-9d3f-bc7620987889/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29e83469-12aa-44a0-8e3d-a78f19094aec/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/531096b6-9494-4b80-9d3f-bc7620987889/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29e83469-12aa-44a0-8e3d-a78f19094aec/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -19323,7 +19323,7 @@ svg {
           return void 0;
         }
         const NOT_TYPED_FUNCTION = "Argument is not a typed-function.";
-        function create3() {
+        function create2() {
           function isPlainObject2(x4) {
             return typeof x4 === "object" && x4 !== null && x4.constructor === Object;
           }
@@ -20425,7 +20425,7 @@ svg {
             }
             return createTypedFunction(name310 || "", allSignatures);
           };
-          typed3.create = create3;
+          typed3.create = create2;
           typed3.createCount = saveTyped.createCount;
           typed3.onMismatch = _onMismatch;
           typed3.throwMismatchError = _onMismatch;
@@ -20501,7 +20501,7 @@ svg {
           };
           return typed3;
         }
-        var typedFunction2 = create3();
+        var typedFunction2 = create2();
         return typedFunction2;
       });
     }
@@ -21580,11 +21580,11 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/factory.js
-  function factory(name310, dependencies310, create3, meta) {
+  function factory(name310, dependencies310, create2, meta) {
     function assertAndCreate(scope) {
       var deps = pickShallow(scope, dependencies310.map(stripOptionalNotation));
       assertDependencies(name310, dependencies310, scope);
-      return create3(deps);
+      return create2(deps);
     }
     assertAndCreate.isFactory = true;
     assertAndCreate.fn = name310;
@@ -64642,8 +64642,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/constants.js
-  function recreateFactory(name310, dependencies310, create3) {
-    return factory(name310, dependencies310, create3, {
+  function recreateFactory(name310, dependencies310, create2) {
+    return factory(name310, dependencies310, create2, {
       recreateOnConfigChange: true
     });
   }
@@ -69822,7 +69822,7 @@ svg {
   });
 
   // src/hooks/useThemeList.ts
-  var defaultThemes, ThemeListDataSchema, themeListData, themeListActions, themeList, useThemeList;
+  var defaultThemes, ThemeListDataSchema, themeListId, themeListData, themeListActions, themeList, useThemeList;
   var init_useThemeList = __esm({
     "src/hooks/useThemeList.ts"() {
       "use strict";
@@ -69841,8 +69841,10 @@ svg {
         id: z4.string(),
         themes: z4.array(ThemeDataSchema)
       });
+      themeListId = nanoid(12);
       themeListData = () => ({
-        id: nanoid(12),
+        // id: themeListId,
+        id: "THEME_LIST_ID",
         themes: defaultThemes
       });
       themeListActions = (set, get) => ({
@@ -69854,8 +69856,8 @@ svg {
         add: {
           theme: () => set((state) => __spreadValues({}, state))
         },
-        theme: (id) => {
-          const theme = typeof id === "number" ? get().data.themes[id] : get().data.themes.find((theme2) => theme2.id === id);
+        theme: (themeId) => {
+          const theme = typeof themeId === "number" ? get().data.themes[themeId] : get().data.themes.find((theme2) => theme2.id === themeId);
           if (!theme) {
             throw new Error("theme not found");
           }
@@ -69868,15 +69870,18 @@ svg {
           const remove = () => set((state) => __spreadValues({}, state));
           const setProps = {
             all: (themeData2) => set((state) => __spreadValues({}, state)),
-            id: (id2) => set((state) => __spreadValues({}, state)),
+            id: (id) => set((state) => __spreadValues({}, state)),
             name: (name310) => set((state) => __spreadValues({}, state)),
             themeColors: (themeColors) => set((state) => __spreadValues({}, state)),
             aliasGroups: (aliasGroups) => set((state) => __spreadValues({}, state))
           };
-          const themeColor = (id2) => {
-            const themeColor2 = typeof id2 === "number" ? theme.themeColors[id2] : theme.themeColors.find(
-              (themeColor3) => themeColor3.id === id2
-            );
+          const themeColor = (id) => {
+            var _a;
+            const themeIdIndex = typeof themeId === "number" ? themeId : (_a = get().data.themes.find((theme2) => theme2.id === themeId)) == null ? void 0 : _a.id;
+            if (!themeIdIndex) {
+              throw new Error("theme color not found");
+            }
+            const themeColor2 = typeof id === "number" ? get().data.themes[themeIdIndex].themeColors[id] : get().data.themes[themeIdIndex].themeColors.find((themeColor3) => themeColor3.id === id);
             if (!themeColor2) {
               throw new Error("theme color not found");
             }
@@ -69888,7 +69893,7 @@ svg {
             const remove2 = () => set((state) => __spreadValues({}, state));
             const setProps2 = {
               all: (themeColorData2) => set((state) => __spreadValues({}, state)),
-              id: (id3) => set((state) => __spreadValues({}, state)),
+              id: (id2) => set((state) => __spreadValues({}, state)),
               name: (name310) => set((state) => __spreadValues({}, state)),
               sourceHex: (sourceHex2) => set((state) => __spreadValues({}, state)),
               sourceColor: (sourceColor) => set((state) => __spreadValues({}, state)),
@@ -69898,9 +69903,9 @@ svg {
               chromaCalc: (chromaCalc) => set((state) => __spreadValues({}, state)),
               aliasGroup: (aliasGroup2) => set((state) => __spreadValues({}, state))
             };
-            const alias = (id3) => {
+            const alias = (id2) => {
               const alias2 = themeColor2.aliasGroup.aliases.find(
-                (alias3) => alias3.id === id3
+                (alias3) => alias3.id === id2
               );
               if (!alias2) {
                 throw new Error("alias not found");
@@ -69909,7 +69914,7 @@ svg {
               const remove3 = () => set((state) => __spreadValues({}, state));
               const setProps3 = {
                 all: (aliasData2) => set((state) => __spreadValues({}, state)),
-                id: (id4) => set((state) => __spreadValues({}, state)),
+                id: (id3) => set((state) => __spreadValues({}, state)),
                 name: (name310) => set((state) => __spreadValues({}, state)),
                 lightModeTone: (lightModeTone) => set((state) => __spreadValues({}, state)),
                 darkModeTone: (darkModeTone) => set((state) => __spreadValues({}, state))
@@ -69931,8 +69936,8 @@ svg {
               data: themeColor2
             });
           };
-          const aliasGroup = (id2) => {
-            const aliasGroup2 = theme.aliasGroups.find((aliasGroup3) => aliasGroup3.id === id2);
+          const aliasGroup = (id) => {
+            const aliasGroup2 = theme.aliasGroups.find((aliasGroup3) => aliasGroup3.id === id);
             if (!aliasGroup2) {
               throw new Error("alias group not found");
             }
@@ -69944,14 +69949,14 @@ svg {
             const remove2 = () => set((state) => __spreadValues({}, state));
             const setProps2 = {
               all: (aliasGroupData4) => set((state) => __spreadValues({}, state)),
-              id: (id3) => set((state) => __spreadValues({}, state)),
+              id: (id2) => set((state) => __spreadValues({}, state)),
               name: (name310) => set((state) => __spreadValues({}, state)),
               aliases: (aliases) => set((state) => __spreadValues({}, state)),
               themeColorIds: (themeColorIds) => set((state) => __spreadValues({}, state))
             };
-            const alias = (id3) => {
+            const alias = (id2) => {
               const alias2 = aliasGroup2.aliases.find(
-                (alias3) => alias3.id === id3
+                (alias3) => alias3.id === id2
               );
               if (!alias2) {
                 throw new Error("alias not found");
@@ -69960,7 +69965,7 @@ svg {
               const remove3 = () => set((state) => __spreadValues({}, state));
               const setProps3 = {
                 all: (aliasData2) => set((state) => __spreadValues({}, state)),
-                id: (id4) => set((state) => __spreadValues({}, state)),
+                id: (id3) => set((state) => __spreadValues({}, state)),
                 name: (name310) => set((state) => __spreadValues({}, state)),
                 lightModeTone: (lightModeTone) => set((state) => __spreadValues({}, state)),
                 darkModeTone: (darkModeTone) => set((state) => __spreadValues({}, state))
@@ -70001,588 +70006,523 @@ svg {
         },
         data: { id: "", themes: [] }
       });
-      themeList = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, themeListData(set, get, ...a3)), themeListActions(set, get, ...a3)), {
-        data: {
-          id: themeListData(set, get, ...a3).id,
-          themes: themeListData(set, get, ...a3).themes
-        },
-        setProps: {
-          all: (themeListData2) => set((state) => __spreadValues(__spreadValues({}, state), themeListData2)),
-          id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
-          themes: (themes) => set((state) => __spreadProps(__spreadValues({}, state), { themes }))
-        },
-        add: {
-          theme: (theme = createTheme()) => set((state) => __spreadProps(__spreadValues({}, state), {
-            themes: [...state.themes, theme]
-          }))
-        },
-        theme: (id) => {
-          const theme = typeof id === "number" ? get().data.themes[id] : get().data.themes.find((theme2) => theme2.id === id);
-          if (!theme) {
-            throw new Error("theme not found");
-          }
-          const add3 = {
-            themeColor: (themeColor2 = createThemeColor()) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  themeColors: [...t3.themeColors, themeColor2]
-                }) : t3
-              )
-            })),
-            aliasGroup: (aliasGroup2 = createAliasGroup()) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  aliasGroups: [...t3.aliasGroups, aliasGroup2]
-                }) : t3
-              )
+      themeList = (set, get, ...a3) => __spreadValues(__spreadValues({}, themeListData(set, get, ...a3)), themeListActions(set, get, ...a3));
+      useThemeList = create(
+        (set, get, ...a3) => __spreadProps(__spreadValues({}, themeList(set, get, ...a3)), {
+          // id: themeListId,
+          id: "THEME_LIST_STORE_ID",
+          themes: defaultThemes,
+          data: {
+            id: themeList(set, get, ...a3).id,
+            themes: themeList(set, get, ...a3).themes
+          },
+          setProps: {
+            all: (themeListData2) => set((state) => __spreadValues(__spreadValues({}, state), themeListData2)),
+            id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
+            themes: (themes) => set((state) => __spreadProps(__spreadValues({}, state), { themes }))
+          },
+          add: {
+            theme: (theme = createTheme()) => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: [...state.themes, theme]
             }))
-          };
-          const duplicate = () => set((state) => {
-            const theme2 = state.themes.find((t3) => t3.id === id);
-            if (theme2) {
-              const newTheme = __spreadProps(__spreadValues({}, theme2), { id: nanoid(12) });
-              return __spreadProps(__spreadValues({}, state), {
-                themes: [...state.themes, newTheme]
-              });
+          },
+          theme: (themeId) => {
+            const theme = typeof themeId === "number" ? get().themes[themeId] : get().themes.find((theme2) => theme2.id === themeId);
+            if (!theme) {
+              throw new Error("theme not found");
             }
-            return state;
-          });
-          const update = (themeData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-            themes: state.themes.map(
-              (t3) => t3.id === theme.id ? themeData2 : t3
-            )
-          }));
-          const remove = () => set((state) => __spreadProps(__spreadValues({}, state), {
-            themes: state.themes.filter((t3) => t3.id !== theme.id)
-          }));
-          const setProps = {
-            all: (themeData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+            const add3 = {
+              themeColor: (themeColor2 = createThemeColor()) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                    themeColors: [
+                      ...t3.themeColors,
+                      themeColor2
+                    ]
+                  }) : t3
+                )
+              })),
+              aliasGroup: (aliasGroup2 = createAliasGroup()) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                    aliasGroups: [
+                      ...t3.aliasGroups,
+                      aliasGroup2
+                    ]
+                  }) : t3
+                )
+              }))
+            };
+            const duplicate = () => set((state) => {
+              const theme2 = state.themes.find((t3) => t3.id === themeId);
+              if (theme2) {
+                const newTheme = __spreadProps(__spreadValues({}, theme2), { id: nanoid(12) });
+                return __spreadProps(__spreadValues({}, state), {
+                  themes: [...state.themes, newTheme]
+                });
+              }
+              return state;
+            });
+            const update = (themeData2) => set((state) => __spreadProps(__spreadValues({}, state), {
               themes: state.themes.map(
                 (t3) => t3.id === theme.id ? themeData2 : t3
               )
-            })),
-            id: (id2) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { id: id2 }) : t3
-              )
-            })),
-            name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { name: name310 }) : t3
-              )
-            })),
-            themeColors: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { themeColors }) : t3
-              )
-            })),
-            aliasGroups: (aliasGroups) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { aliasGroups }) : t3
-              )
-            }))
-          };
-          const themeColor = (id2) => {
-            const themeColor2 = typeof id2 === "number" ? theme.themeColors[id2] : theme.themeColors.find(
-              (themeColor3) => themeColor3.id === id2
-            );
-            if (!themeColor2) {
-              console.log(id2);
-              console.log(theme.themeColors);
-              throw new Error("themeColor not found");
-            }
-            const add4 = {
-              alias: (alias2 = createAlias()) => set((state) => __spreadProps(__spreadValues({}, state), {
+            }));
+            const remove = () => set((state) => __spreadProps(__spreadValues({}, state), {
+              themes: state.themes.filter((t3) => t3.id !== theme.id)
+            }));
+            const setProps = {
+              all: (themeData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? themeData2 : t3
+                )
+              })),
+              id: (id) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { id }) : t3
+                )
+              })),
+              name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { name: name310 }) : t3
+                )
+              })),
+              themeColors: (themeColors) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { themeColors }) : t3
+                )
+              })),
+              aliasGroups: (aliasGroups) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { aliasGroups }) : t3
+                )
+              }))
+            };
+            const themeColor = (id) => {
+              const currentTheme = get().theme(themeId).data;
+              const themeColor2 = typeof id === "number" ? currentTheme.themeColors[id] : currentTheme.themeColors.find(
+                (themeColor3) => themeColor3.id === id
+              );
+              console.log(
+                "%cPRE-if themeList:",
+                "color: #FFDE6A",
+                themeList(set, get, ...a3)
+              );
+              if (!themeColor2) {
+                console.log(
+                  "%cCANNOT FIND themeColor",
+                  "color: #FF8585",
+                  id
+                );
+                console.log(
+                  "%cPOST-if themeList:",
+                  "color: #FF8585",
+                  themeList(set, get, ...a3)
+                );
+                throw new Error("COULD NOT FIND themeColor with id: " + id);
+              }
+              const add4 = {
+                alias: (alias2 = createAlias()) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                            aliases: [
+                              ...c3.aliasGroup.aliases,
+                              alias2
+                            ]
+                          })
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                }))
+              };
+              const duplicate2 = () => set((state) => {
+                var _a;
+                const themeColor3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.themeColors.find((c3) => c3.id === id);
+                if (themeColor3) {
+                  const newThemeColor = __spreadProps(__spreadValues({}, themeColor3), {
+                    id: nanoid(12)
+                  });
+                  return __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: [
+                          ...t3.themeColors,
+                          newThemeColor
+                        ]
+                      }) : t3
+                    )
+                  });
+                }
+                return state;
+              });
+              const update2 = (themeColorData2) => set((state) => __spreadProps(__spreadValues({}, state), {
                 themes: state.themes.map(
                   (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                     themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                      (c3) => c3.id === id ? themeColorData2 : c3
+                    )
+                  }) : t3
+                )
+              }));
+              const remove2 = () => set((state) => __spreadProps(__spreadValues({}, state), {
+                themes: state.themes.map(
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                    themeColors: t3.themeColors.filter(
+                      (c3) => c3.id !== id
+                    )
+                  }) : t3
+                )
+              }));
+              const setProps2 = {
+                all: (themeColorData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? themeColorData2 : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                id: (id2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), { id: id2 }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), { name: name310 }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          sourceHex: sourceHex2,
+                          sourceColor: __spreadValues(__spreadValues({}, c3.sourceColor), createColorFrom().hex(
+                            sourceHex2
+                          )),
+                          endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
+                            c3.sourceColor.hct,
+                            c3.hueCalc,
+                            c3.chromaCalc
+                          ))
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          sourceColor,
+                          endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
+                            sourceColor.hct,
+                            c3.hueCalc,
+                            c3.chromaCalc
+                          ))
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
+                            c3.sourceColor.hct,
+                            c3.hueCalc,
+                            c3.chromaCalc
+                          ))
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), { tones }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
+                            c3.sourceColor.hct,
+                            hueCalc,
+                            c3.chromaCalc
+                          )),
+                          hueCalc
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
+                            c3.sourceColor.hct,
+                            c3.hueCalc,
+                            chromaCalc
+                          )),
+                          chromaCalc
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                })),
+                aliasGroup: (aliasGroup2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
+                          aliasGroup: aliasGroup2
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                }))
+              };
+              const alias = (id2) => {
+                const alias2 = themeColor2.aliasGroup.aliases.find(
+                  (alias3) => alias3.id === id2
+                );
+                if (!alias2) {
+                  throw new Error("alias not found");
+                }
+                const update3 = (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                            aliases: c3.aliasGroup.aliases.map(
+                              (a4) => a4.id === id2 ? aliasData2 : a4
+                            )
+                          })
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                }));
+                const remove3 = () => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      themeColors: t3.themeColors.map(
+                        (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                            aliases: c3.aliasGroup.aliases.filter(
+                              (a4) => a4.id !== id2
+                            )
+                          })
+                        }) : c3
+                      )
+                    }) : t3
+                  )
+                }));
+                const setProps3 = {
+                  all: (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: t3.themeColors.map(
+                          (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                            aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                              aliases: c3.aliasGroup.aliases.map(
+                                (a4) => a4.id === id2 ? aliasData2 : a4
+                              )
+                            })
+                          }) : c3
+                        )
+                      }) : t3
+                    )
+                  })),
+                  id: (id3) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: t3.themeColors.map(
+                          (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
+                            aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                              aliases: c3.aliasGroup.aliases.map(
+                                (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
+                                  id: id3
+                                }) : a4
+                              )
+                            })
+                          }) : c3
+                        )
+                      }) : t3
+                    )
+                  })),
+                  name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: t3.themeColors.map(
+                          (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                            aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                              aliases: c3.aliasGroup.aliases.map(
+                                (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                                  name: name310
+                                }) : a4
+                              )
+                            })
+                          }) : c3
+                        )
+                      }) : t3
+                    )
+                  })),
+                  lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: t3.themeColors.map(
+                          (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                            aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                              aliases: c3.aliasGroup.aliases.map(
+                                (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                                  lightModeTone
+                                }) : a4
+                              )
+                            })
+                          }) : c3
+                        )
+                      }) : t3
+                    )
+                  })),
+                  darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        themeColors: t3.themeColors.map(
+                          (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
+                            aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
+                              aliases: c3.aliasGroup.aliases.map(
+                                (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                                  darkModeTone
+                                }) : a4
+                              )
+                            })
+                          }) : c3
+                        )
+                      }) : t3
+                    )
+                  }))
+                };
+                return __spreadProps(__spreadValues({}, alias2), {
+                  update: update3,
+                  remove: remove3,
+                  setProps: setProps3,
+                  data: alias2
+                });
+              };
+              return __spreadProps(__spreadValues({}, themeColor2), {
+                add: add4,
+                duplicate: duplicate2,
+                update: update2,
+                remove: remove2,
+                setProps: setProps2,
+                alias,
+                data: themeColor2
+              });
+            };
+            const aliasGroup = (id) => {
+              const aliasGroup2 = theme.aliasGroups.find(
+                (aliasGroup3) => aliasGroup3.id === id
+              );
+              if (!aliasGroup2) {
+                throw new Error("alias group not found");
+              }
+              const add4 = {
+                alias: (alias2 = createAlias()) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      aliasGroups: t3.aliasGroups.map(
+                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), {
                           aliases: [
-                            ...c3.aliasGroup.aliases,
+                            ...a4.aliases,
                             alias2
                           ]
-                        })
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              }))
-            };
-            const duplicate2 = () => set((state) => {
-              var _a;
-              const themeColor3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.themeColors.find((c3) => c3.id === id2);
-              if (themeColor3) {
-                const newThemeColor = __spreadProps(__spreadValues({}, themeColor3), {
-                  id: nanoid(12)
-                });
-                return __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: [
-                        ...t3.themeColors,
-                        newThemeColor
-                      ]
-                    }) : t3
-                  )
-                });
-              }
-              return state;
-            });
-            const update2 = (themeColorData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  themeColors: t3.themeColors.map(
-                    (c3) => c3.id === id2 ? themeColorData2 : c3
-                  )
-                }) : t3
-              )
-            }));
-            const remove2 = () => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  themeColors: t3.themeColors.filter(
-                    (c3) => c3.id !== id2
-                  )
-                }) : t3
-              )
-            }));
-            const setProps2 = {
-              all: (themeColorData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? themeColorData2 : c3
-                    )
-                  }) : t3
-                )
-              })),
-              id: (id3) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), { id: id3 }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), { name: name310 }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        sourceHex: sourceHex2,
-                        sourceColor: __spreadValues(__spreadValues({}, c3.sourceColor), createColorFrom().hex(
-                          sourceHex2
-                        )),
-                        endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
-                          c3.sourceColor.hct,
-                          c3.hueCalc,
-                          c3.chromaCalc
-                        ))
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        sourceColor,
-                        endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
-                          sourceColor.hct,
-                          c3.hueCalc,
-                          c3.chromaCalc
-                        ))
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
-                          c3.sourceColor.hct,
-                          c3.hueCalc,
-                          c3.chromaCalc
-                        ))
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              tones: (tones) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), { tones }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              hueCalc: (hueCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
-                          c3.sourceColor.hct,
-                          hueCalc,
-                          c3.chromaCalc
-                        )),
-                        hueCalc
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              chromaCalc: (chromaCalc) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
-                          c3.sourceColor.hct,
-                          c3.hueCalc,
-                          chromaCalc
-                        )),
-                        chromaCalc
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              })),
-              aliasGroup: (aliasGroup2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id2 ? __spreadProps(__spreadValues({}, c3), {
-                        aliasGroup: aliasGroup2
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              }))
-            };
-            const alias = (id3) => {
-              const alias2 = themeColor2.aliasGroup.aliases.find(
-                (alias3) => alias3.id === id3
-              );
-              if (!alias2) {
-                throw new Error("alias not found");
-              }
-              const update3 = (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                        aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                          aliases: c3.aliasGroup.aliases.map(
-                            (a4) => a4.id === id3 ? aliasData2 : a4
-                          )
-                        })
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              }));
-              const remove3 = () => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    themeColors: t3.themeColors.map(
-                      (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                        aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                          aliases: c3.aliasGroup.aliases.filter(
-                            (a4) => a4.id !== id3
-                          )
-                        })
-                      }) : c3
-                    )
-                  }) : t3
-                )
-              }));
-              const setProps3 = {
-                all: (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                            aliases: c3.aliasGroup.aliases.map(
-                              (a4) => a4.id === id3 ? aliasData2 : a4
-                            )
-                          })
-                        }) : c3
-                      )
-                    }) : t3
-                  )
-                })),
-                id: (id4) => set((state) => __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id4 ? __spreadProps(__spreadValues({}, c3), {
-                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                            aliases: c3.aliasGroup.aliases.map(
-                              (a4) => a4.id === id4 ? __spreadProps(__spreadValues({}, a4), {
-                                id: id4
-                              }) : a4
-                            )
-                          })
-                        }) : c3
-                      )
-                    }) : t3
-                  )
-                })),
-                name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                            aliases: c3.aliasGroup.aliases.map(
-                              (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                                name: name310
-                              }) : a4
-                            )
-                          })
-                        }) : c3
-                      )
-                    }) : t3
-                  )
-                })),
-                lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                            aliases: c3.aliasGroup.aliases.map(
-                              (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                                lightModeTone
-                              }) : a4
-                            )
-                          })
-                        }) : c3
-                      )
-                    }) : t3
-                  )
-                })),
-                darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id3 ? __spreadProps(__spreadValues({}, c3), {
-                          aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
-                            aliases: c3.aliasGroup.aliases.map(
-                              (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                                darkModeTone
-                              }) : a4
-                            )
-                          })
-                        }) : c3
+                        }) : a4
                       )
                     }) : t3
                   )
                 }))
               };
-              return __spreadProps(__spreadValues({}, alias2), {
-                update: update3,
-                remove: remove3,
-                setProps: setProps3,
-                data: alias2
-              });
-            };
-            return __spreadProps(__spreadValues({}, themeColor2), {
-              add: add4,
-              duplicate: duplicate2,
-              update: update2,
-              remove: remove2,
-              setProps: setProps2,
-              alias,
-              data: themeColor2
-            });
-          };
-          const aliasGroup = (id2) => {
-            const aliasGroup2 = theme.aliasGroups.find((aliasGroup3) => aliasGroup3.id === id2);
-            if (!aliasGroup2) {
-              throw new Error("alias group not found");
-            }
-            const add4 = {
-              alias: (alias2 = createAlias()) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
-                        aliases: [
-                          ...a4.aliases,
-                          alias2
+              const duplicate2 = () => set((state) => {
+                var _a;
+                const aliasGroup3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.aliasGroups.find((a4) => a4.id === id);
+                if (aliasGroup3) {
+                  const newAliasGroup = __spreadProps(__spreadValues({}, aliasGroup3), {
+                    id: nanoid(12)
+                  });
+                  return __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: [
+                          ...t3.aliasGroups,
+                          newAliasGroup
                         ]
-                      }) : a4
+                      }) : t3
                     )
-                  }) : t3
-                )
-              }))
-            };
-            const duplicate2 = () => set((state) => {
-              var _a;
-              const aliasGroup3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.aliasGroups.find((a4) => a4.id === id2);
-              if (aliasGroup3) {
-                const newAliasGroup = __spreadProps(__spreadValues({}, aliasGroup3), {
-                  id: nanoid(12)
-                });
-                return __spreadProps(__spreadValues({}, state), {
-                  themes: state.themes.map(
-                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                      aliasGroups: [
-                        ...t3.aliasGroups,
-                        newAliasGroup
-                      ]
-                    }) : t3
-                  )
-                });
-              }
-              return state;
-            });
-            const update2 = (aliasGroupData4) => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  aliasGroups: t3.aliasGroups.map(
-                    (a4) => a4.id === id2 ? aliasGroupData4 : a4
-                  )
-                }) : t3
-              )
-            }));
-            const remove2 = () => set((state) => __spreadProps(__spreadValues({}, state), {
-              themes: state.themes.map(
-                (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                  aliasGroups: t3.aliasGroups.filter(
-                    (a4) => a4.id !== id2
-                  )
-                }) : t3
-              )
-            }));
-            const setProps2 = {
-              all: (aliasGroupData4) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  });
+                }
+                return state;
+              });
+              const update2 = (aliasGroupData4) => set((state) => __spreadProps(__spreadValues({}, state), {
                 themes: state.themes.map(
                   (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                     aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id2 ? aliasGroupData4 : a4
-                    )
-                  }) : t3
-                )
-              })),
-              id: (id3) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), { id: id3 }) : a4
-                    )
-                  }) : t3
-                )
-              })),
-              name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), { name: name310 }) : a4
-                    )
-                  }) : t3
-                )
-              })),
-              aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), { aliases }) : a4
-                    )
-                  }) : t3
-                )
-              })),
-              themeColorIds: (themeColorIds) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
-                        themeColorIds
-                      }) : a4
-                    )
-                  }) : t3
-                )
-              }))
-            };
-            const alias = (id3) => {
-              const alias2 = aliasGroup2.aliases.find(
-                (alias3) => alias3.id === id3
-              );
-              if (!alias2) {
-                throw new Error("alias not found");
-              }
-              const update3 = (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
-                themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                        aliases: a4.aliases.map(
-                          (a5) => a5.id === id3 ? aliasData2 : a5
-                        )
-                      }) : a4
+                      (a4) => a4.id === id ? aliasGroupData4 : a4
                     )
                   }) : t3
                 )
               }));
-              const remove3 = () => set((state) => __spreadProps(__spreadValues({}, state), {
+              const remove2 = () => set((state) => __spreadProps(__spreadValues({}, state), {
                 themes: state.themes.map(
                   (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
-                    aliasGroups: t3.aliasGroups.map(
-                      (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                        aliases: a4.aliases.filter(
-                          (a5) => a5.id !== id3
-                        )
-                      }) : a4
+                    aliasGroups: t3.aliasGroups.filter(
+                      (a4) => a4.id !== id
                     )
                   }) : t3
                 )
               }));
-              const setProps3 = {
-                all: (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+              const setProps2 = {
+                all: (aliasGroupData4) => set((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                          aliases: a4.aliases.map(
-                            (a5) => a5.id === id3 ? aliasData2 : a5
-                          )
-                        }) : a4
+                        (a4) => a4.id === id ? aliasGroupData4 : a4
                       )
                     }) : t3
                   )
                 })),
-                id: (id4) => set((state) => __spreadProps(__spreadValues({}, state), {
+                id: (id2) => set((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id4 ? __spreadProps(__spreadValues({}, a4), {
-                          aliases: a4.aliases.map(
-                            (a5) => a5.id === id4 ? __spreadProps(__spreadValues({}, a5), {
-                              id: id4
-                            }) : a5
-                          )
-                        }) : a4
+                        (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), { id: id2 }) : a4
                       )
                     }) : t3
                   )
@@ -70591,81 +70531,168 @@ svg {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                          aliases: a4.aliases.map(
-                            (a5) => a5.id === id3 ? __spreadProps(__spreadValues({}, a5), {
-                              name: name310
-                            }) : a5
-                          )
-                        }) : a4
+                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), { name: name310 }) : a4
                       )
                     }) : t3
                   )
                 })),
-                lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                aliases: (aliases) => set((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                          aliases: a4.aliases.map(
-                            (a5) => a5.id === id3 ? __spreadProps(__spreadValues({}, a5), {
-                              lightModeTone
-                            }) : a5
-                          )
-                        }) : a4
+                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), { aliases }) : a4
                       )
                     }) : t3
                   )
                 })),
-                darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                themeColorIds: (themeColorIds) => set((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
-                          aliases: a4.aliases.map(
-                            (a5) => a5.id === id3 ? __spreadProps(__spreadValues({}, a5), {
-                              darkModeTone
-                            }) : a5
-                          )
+                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), {
+                          themeColorIds
                         }) : a4
                       )
                     }) : t3
                   )
                 }))
               };
-              return __spreadProps(__spreadValues({}, alias2), {
-                update: update3,
-                remove: remove3,
-                setProps: setProps3,
-                data: alias2
+              const alias = (id2) => {
+                const alias2 = aliasGroup2.aliases.find((alias3) => alias3.id === id2);
+                if (!alias2) {
+                  throw new Error("alias not found");
+                }
+                const update3 = (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      aliasGroups: t3.aliasGroups.map(
+                        (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                          aliases: a4.aliases.map(
+                            (a5) => a5.id === id2 ? aliasData2 : a5
+                          )
+                        }) : a4
+                      )
+                    }) : t3
+                  )
+                }));
+                const remove3 = () => set((state) => __spreadProps(__spreadValues({}, state), {
+                  themes: state.themes.map(
+                    (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                      aliasGroups: t3.aliasGroups.map(
+                        (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                          aliases: a4.aliases.filter(
+                            (a5) => a5.id !== id2
+                          )
+                        }) : a4
+                      )
+                    }) : t3
+                  )
+                }));
+                const setProps3 = {
+                  all: (aliasData2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: t3.aliasGroups.map(
+                          (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                            aliases: a4.aliases.map(
+                              (a5) => a5.id === id2 ? aliasData2 : a5
+                            )
+                          }) : a4
+                        )
+                      }) : t3
+                    )
+                  })),
+                  id: (id3) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: t3.aliasGroups.map(
+                          (a4) => a4.id === id3 ? __spreadProps(__spreadValues({}, a4), {
+                            aliases: a4.aliases.map(
+                              (a5) => a5.id === id3 ? __spreadProps(__spreadValues({}, a5), {
+                                id: id3
+                              }) : a5
+                            )
+                          }) : a4
+                        )
+                      }) : t3
+                    )
+                  })),
+                  name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: t3.aliasGroups.map(
+                          (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                            aliases: a4.aliases.map(
+                              (a5) => a5.id === id2 ? __spreadProps(__spreadValues({}, a5), {
+                                name: name310
+                              }) : a5
+                            )
+                          }) : a4
+                        )
+                      }) : t3
+                    )
+                  })),
+                  lightModeTone: (lightModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: t3.aliasGroups.map(
+                          (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                            aliases: a4.aliases.map(
+                              (a5) => a5.id === id2 ? __spreadProps(__spreadValues({}, a5), {
+                                lightModeTone
+                              }) : a5
+                            )
+                          }) : a4
+                        )
+                      }) : t3
+                    )
+                  })),
+                  darkModeTone: (darkModeTone) => set((state) => __spreadProps(__spreadValues({}, state), {
+                    themes: state.themes.map(
+                      (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
+                        aliasGroups: t3.aliasGroups.map(
+                          (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
+                            aliases: a4.aliases.map(
+                              (a5) => a5.id === id2 ? __spreadProps(__spreadValues({}, a5), {
+                                darkModeTone
+                              }) : a5
+                            )
+                          }) : a4
+                        )
+                      }) : t3
+                    )
+                  }))
+                };
+                return __spreadProps(__spreadValues({}, alias2), {
+                  update: update3,
+                  remove: remove3,
+                  setProps: setProps3,
+                  data: alias2
+                });
+              };
+              return __spreadProps(__spreadValues({}, aliasGroup2), {
+                add: add4,
+                duplicate: duplicate2,
+                update: update2,
+                remove: remove2,
+                setProps: setProps2,
+                alias,
+                data: aliasGroup2
               });
             };
-            return __spreadProps(__spreadValues({}, aliasGroup2), {
-              add: add4,
-              duplicate: duplicate2,
-              update: update2,
-              remove: remove2,
-              setProps: setProps2,
-              alias,
-              data: aliasGroup2
+            return __spreadProps(__spreadValues({}, theme), {
+              add: add3,
+              duplicate,
+              update,
+              remove,
+              setProps,
+              themeColor,
+              aliasGroup,
+              data: theme
             });
-          };
-          return __spreadProps(__spreadValues({}, theme), {
-            add: add3,
-            duplicate,
-            update,
-            remove,
-            setProps,
-            themeColor,
-            aliasGroup,
-            data: theme
-          });
-        }
-      });
-      useThemeList = create((set, ...a3) => __spreadProps(__spreadValues({}, themeList(set, ...a3)), {
-        id: nanoid(12),
-        themes: defaultThemes
-      }));
+          }
+        })
+      );
     }
   });
 
@@ -70758,9 +70785,7 @@ svg {
           themeIndexRef.current = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
           );
-          themeColorIndexRef.current = theme.themeColors.findIndex(
-            (themeColor2) => themeColor2.id === themeColorId
-          );
+          themeColorIndexRef.current = themeList2.themes[themeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
           setThemeIndex(themeIndexRef.current);
           setThemeColorIndex(themeColorIndexRef.current);
           if (themeRef.current !== themeList2.themes[themeIndex]) {
@@ -70771,7 +70796,7 @@ svg {
           }
         }, [themeId, themeColorId]);
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
-        const setThemeColor = setTheme.themeColor;
+        const setThemeColor = themeList2.theme(themeId).themeColor;
         const themeIdRef = _2(themeId);
         const themeColorIdRef = _2(themeColorId);
         const themeColorIdRef2 = _2(themeColor.id);
@@ -70789,7 +70814,7 @@ svg {
           const logUpdate = (match) => {
             return !match ? "Updated" : "-";
           };
-          console.table({
+          const tableLog = {
             themeId: logUpdate(themeId === themeIdRef.current),
             themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
             "themeColor.id": logUpdate(
@@ -70823,7 +70848,7 @@ svg {
             themeList: logUpdate(themeList2 === themeListRef.current),
             theme: logUpdate(theme === themeRef.current),
             themeColor: logUpdate(themeColor === themeColorRef.current)
-          });
+          };
         }, [
           themeId,
           themeColorId,
@@ -70922,17 +70947,25 @@ svg {
         );
         const onSelectThemeColor = (newThemeColorId) => {
           setThemeColorId(newThemeColorId);
-          console.log(newThemeColorId);
+          console.log("%ctheme.themeColors", "color: #6AAFFF", theme.themeColors);
         };
         const onAddThemeColor = () => {
-          const newThemeColor = createThemeColor();
-          themeList2.theme(themeId).add.themeColor(newThemeColor);
-          console.log(theme.themeColors);
+          const newId = nanoid(12);
+          const newThemeColor = __spreadProps(__spreadValues({}, createThemeColor()), {
+            id: newId
+          });
+          setTheme.add.themeColor(newThemeColor);
+          console.log("%cNEW themeColor ID:", "color: #6AAFFF", newId);
+          console.log(
+            "%ctheme.themeColors:",
+            "color: #6AAFFF",
+            theme.themeColors
+          );
         };
         const onHexColorInput = (e5) => {
           const newHexColor = e5.currentTarget.value;
           setHexColorInput(newHexColor);
-          setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
+          themeList2.theme(themeId).themeColor(themeColorId).setProps.sourceHex(newHexColor);
           setHueSlider(roundedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             setThemeColor(themeColorId).setProps.hueCalc(
@@ -71091,7 +71124,7 @@ svg {
               themeColor.sourceColor.hct.chroma
             ), " ", "T:", " ", round2(
               themeColor.sourceColor.hct.tone
-            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, `${themeList2.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`)))), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, `${themeList2.id} ${themeList2.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`)))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -71262,31 +71295,15 @@ svg {
           throw new Error("IdStore is undefined");
         }
         const themeId = useStore(IdStore, (state) => state.themeId);
-        const themeColorId = useStore(
-          IdStore,
-          (state) => state.themeColorId
-        );
         const themeListStore = useThemeList;
         const themeList2 = themeListStore();
         const setThemeId = useStore(IdStore, (state) => state.setThemeId);
-        const setThemeColorId = useStore(
-          IdStore,
-          (state) => state.setThemeColorId
-        );
         const themeIndexRef = _2(
           themeList2.themes.findIndex((theme2) => theme2.id === themeId)
         );
         const themeIndex = themeIndexRef.current;
         const theme = themeList2.themes[themeIndex];
         const setTheme = themeList2.theme(themeId);
-        const themeColorIndexRef = _2(
-          theme.themeColors.findIndex(
-            (themeColor2) => themeColor2.id === themeColorId
-          )
-        );
-        const themeColorIndex = themeColorIndexRef.current;
-        const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
-        const setThemeColor = setTheme.themeColor(themeColorId);
         const findThemeById = (id) => {
           const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
           if (!theme2) {
@@ -71371,9 +71388,6 @@ svg {
           }
           if (selectedValue !== "New theme..." && selectedValue !== "Rename..." && selectedValue !== "Duplicate" && selectedValue !== "Delete") {
             setThemeId(selectedValue);
-            setThemeColorId(
-              themeList2.theme(selectedValue).data.themeColors[0].id
-            );
             console.log(themeId, selectedValue);
           }
         };
@@ -71434,7 +71448,7 @@ svg {
           {
             title: "Build theme",
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
-            onClick: (e5) => console.log(themeList2)
+            onClick: (e5) => console.log("%cthemeList:", "color: #6DFF6A", themeList2)
           },
           "Build Theme"
         )));
@@ -71458,9 +71472,10 @@ svg {
       init_useThemeList();
       init_lib2();
       Ui = () => {
-        const themeListStore = useThemeList;
-        const themeId = themeListStore().themes[0].id;
-        const themeColorId = themeListStore().themes[0].themeColors[0].id;
+        const themeListStore = useThemeList();
+        const themeId = themeListStore.themes[0].id;
+        const themeColorId = themeListStore.themes[0].themeColors[0].id;
+        console.log("%cthemeList:", "color: #6DFF6A", themeListStore);
         return /* @__PURE__ */ y(IdProvider, { themeId, themeColorId }, /* @__PURE__ */ y(Plugin, null));
       };
       ui_default = render(Ui);
