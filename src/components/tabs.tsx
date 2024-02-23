@@ -127,79 +127,80 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeList.themes[themeIndex].themeColors[themeColorIndex];
     const setThemeColor = themeList.theme(themeId).themeColor;
 
-    // Debugging
-    const themeIdRef = useRef(themeId);
-    const themeColorIdRef = useRef(themeColorId);
-    const themeColorIdRef2 = useRef(themeColor.id);
-    const themeColorNameRef = useRef(themeColor.name);
-    const themeColorHexRef = useRef(themeColor.sourceColor.sourceHex);
-    const themeColorHueRef = useRef(themeColor.sourceColor.hct.hue);
-    const themeColorChromaRef = useRef(themeColor.sourceColor.hct.chroma);
-    const themeColorTonesRef = useRef(themeColor.tones);
-    const themeColorHueCalcRef = useRef(themeColor.hueCalc);
-    const themeColorChromaCalcRef = useRef(themeColor.chromaCalc);
-    const themeListRef = useRef(themeList);
     const themeRef = useRef(theme);
     const themeColorRef = useRef(themeColor);
-    useEffect(() => {
-        const logUpdate = (match: boolean) => {
-            return !match ? 'Updated' : '-';
-        };
-        const tableLog = {
-            themeId: logUpdate(themeId === themeIdRef.current),
-            themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
-            'themeColor.id': logUpdate(
-                themeColor.id === themeColorIdRef2.current,
-            ),
-            'themeColor.name': logUpdate(
-                themeColor.name === themeColorNameRef.current,
-            ),
-            'themeColor.sourceColor.sourceHex': logUpdate(
-                themeColor.sourceColor.sourceHex === themeColorHexRef.current,
-            ),
-            'themeColor.sourceColor.hct.hue': logUpdate(
-                themeColor.sourceColor.hct.hue === themeColorHueRef.current,
-            ),
-            'themeColor.sourceColor.hct.chroma': logUpdate(
-                themeColor.sourceColor.hct.chroma ===
-                    themeColorChromaRef.current,
-            ),
-            'themeColor.tones': logUpdate(
-                themeColor.tones === themeColorTonesRef.current,
-            ),
-            'themeColor.hueCalc': logUpdate(
-                themeColor.hueCalc === themeColorHueCalcRef.current,
-            ),
-            'themeColor.chromaCalc': logUpdate(
-                themeColor.chromaCalc === themeColorChromaCalcRef.current,
-            ),
-            themeIndex: logUpdate(themeIndex === themeIndexRef.current),
-            themeColorIndex: logUpdate(
-                themeColorIndex === themeColorIndexRef.current,
-            ),
-            themeList: logUpdate(themeList === themeListRef.current),
-            theme: logUpdate(theme === themeRef.current),
-            themeColor: logUpdate(themeColor === themeColorRef.current),
-        };
-        // console.table(tableLog);
-    }, [
-        themeId,
-        themeColorId,
-        themeColor.id,
-        themeColor.name,
-        themeColor.sourceColor.sourceHex,
-        themeColor.sourceColor.hct.hue,
-        themeColor.sourceColor.hct.chroma,
-        themeColor.tones,
-        themeColor.hueCalc,
-        themeColor.chromaCalc,
-        themeIndex,
-        themeColorIndex,
-        themeList,
-        theme,
-        themeColor,
-    ]);
-    // End debugging
+
+    // // Debugging
+    // const themeIdRef = useRef(themeId);
+    // const themeColorIdRef = useRef(themeColorId);
+    // const themeColorIdRef2 = useRef(themeColor.id);
+    // const themeColorNameRef = useRef(themeColor.name);
+    // const themeColorHexRef = useRef(themeColor.sourceColor.sourceHex);
+    // const themeColorHueRef = useRef(themeColor.sourceColor.hct.hue);
+    // const themeColorChromaRef = useRef(themeColor.sourceColor.hct.chroma);
+    // const themeColorTonesRef = useRef(themeColor.tones);
+    // const themeColorHueCalcRef = useRef(themeColor.hueCalc);
+    // const themeColorChromaCalcRef = useRef(themeColor.chromaCalc);
+    // const themeListRef = useRef(themeList);
+    // useEffect(() => {
+    //     const logUpdate = (match: boolean) => {
+    //         return !match ? 'Updated' : '-';
+    //     };
+    //     const tableLog = {
+    //         themeId: logUpdate(themeId === themeIdRef.current),
+    //         themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
+    //         'themeColor.id': logUpdate(
+    //             themeColor.id === themeColorIdRef2.current,
+    //         ),
+    //         'themeColor.name': logUpdate(
+    //             themeColor.name === themeColorNameRef.current,
+    //         ),
+    //         'themeColor.sourceColor.sourceHex': logUpdate(
+    //             themeColor.sourceColor.sourceHex === themeColorHexRef.current,
+    //         ),
+    //         'themeColor.sourceColor.hct.hue': logUpdate(
+    //             themeColor.sourceColor.hct.hue === themeColorHueRef.current,
+    //         ),
+    //         'themeColor.sourceColor.hct.chroma': logUpdate(
+    //             themeColor.sourceColor.hct.chroma ===
+    //                 themeColorChromaRef.current,
+    //         ),
+    //         'themeColor.tones': logUpdate(
+    //             themeColor.tones === themeColorTonesRef.current,
+    //         ),
+    //         'themeColor.hueCalc': logUpdate(
+    //             themeColor.hueCalc === themeColorHueCalcRef.current,
+    //         ),
+    //         'themeColor.chromaCalc': logUpdate(
+    //             themeColor.chromaCalc === themeColorChromaCalcRef.current,
+    //         ),
+    //         themeIndex: logUpdate(themeIndex === themeIndexRef.current),
+    //         themeColorIndex: logUpdate(
+    //             themeColorIndex === themeColorIndexRef.current,
+    //         ),
+    //         themeList: logUpdate(themeList === themeListRef.current),
+    //         theme: logUpdate(theme === themeRef.current),
+    //         themeColor: logUpdate(themeColor === themeColorRef.current),
+    //     };
+    //     // console.table(tableLog);
+    // }, [
+    //     themeId,
+    //     themeColorId,
+    //     themeColor.id,
+    //     themeColor.name,
+    //     themeColor.sourceColor.sourceHex,
+    //     themeColor.sourceColor.hct.hue,
+    //     themeColor.sourceColor.hct.chroma,
+    //     themeColor.tones,
+    //     themeColor.hueCalc,
+    //     themeColor.chromaCalc,
+    //     themeIndex,
+    //     themeColorIndex,
+    //     themeList,
+    //     theme,
+    //     themeColor,
+    // ]);
+    // // End debugging
 
     const [hexColorInput, setHexColorInput] = useState<string>(
         themeColor.sourceColor.sourceHex,
@@ -316,6 +317,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const newThemeColor: ThemeColorData = {
             ...createThemeColor(),
             id: newId,
+            name: `Color ${theme.themeColors.length + 1}`,
         };
         setTheme.add.themeColor(newThemeColor);
         console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
@@ -428,6 +430,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
         [themeColor.endColor.hct.hue, themeColorId],
     );
 
+    const [themeColorToDelete, setThemeColorToDelete] = useState<string>('');
+    useEffect(() => {
+        const themeColorToDeleteExists = theme.themeColors.some(
+            (themeColor) => themeColor.id === themeColorToDelete,
+        );
+        if (themeColorToDeleteExists) {
+            setThemeColor(themeColorToDelete).remove();
+        }
+    }, [themeColorToDelete]);
+
     const options: Array<TabsOption> = [
         {
             children: (
@@ -467,13 +479,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                     ).setProps.name(
                                                         e.currentTarget.value,
                                                     );
-                                                    console.log(
-                                                        themeList.themes[
-                                                            themeIndex
-                                                        ].themeColors[
-                                                            themeColorIndex
-                                                        ].name,
-                                                    );
                                                 }}
                                                 onBlur={() => nameTheNameless()}
                                                 onfocusout={() =>
@@ -489,9 +494,13 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                     {
                                                         ...themeColor,
                                                         id: nanoid(12),
+                                                        name: `${themeColor.name} copy`,
                                                     };
                                                 setTheme.add.themeColor(
                                                     newThemeColor,
+                                                );
+                                                setThemeColorId(
+                                                    newThemeColor.id,
                                                 );
                                             }}
                                         >
@@ -502,6 +511,31 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         </IconButton>
                                         <IconButton
                                             title={`Remove color from theme`}
+                                            disabled={
+                                                theme.themeColors.length === 1
+                                                    ? true
+                                                    : false
+                                            }
+                                            onClick={() => {
+                                                if (
+                                                    theme.themeColors.length ===
+                                                    1
+                                                ) {
+                                                    return;
+                                                }
+                                                const newThemeColorIndex: number =
+                                                    Math.abs(
+                                                        themeColorIndex - 1,
+                                                    );
+                                                setThemeColorId(
+                                                    theme.themeColors[
+                                                        newThemeColorIndex
+                                                    ].id,
+                                                );
+                                                setThemeColorToDelete(
+                                                    themeColorId,
+                                                );
+                                            }}
                                         >
                                             <IconMinus32 />
                                         </IconButton>

@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f1ec1da-b801-4352-9302-a07c97696c7d/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/97f8fbfc-ec22-453f-b3f5-a0c882d26cd8/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f1ec1da-b801-4352-9302-a07c97696c7d/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/97f8fbfc-ec22-453f-b3f5-a0c882d26cd8/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2402,10 +2402,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/231c144a-359f-49a8-9314-9a1825aaee6e/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b34d715f-0f7e-4fd9-900f-f4250eed4bf5/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/231c144a-359f-49a8-9314-9a1825aaee6e/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b34d715f-0f7e-4fd9-900f-f4250eed4bf5/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2442,10 +2442,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0658d308-d54d-46bb-81d3-2f104c965804/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9312849-c7fb-4802-bfa8-3a15cb6365fd/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0658d308-d54d-46bb-81d3-2f104c965804/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9312849-c7fb-4802-bfa8-3a15cb6365fd/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2683,10 +2683,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ea007a-053c-439a-98cb-1a723e0f70dd/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/32c2d047-7ea7-4c2c-a500-3149cf425ca2/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/08ea007a-053c-439a-98cb-1a723e0f70dd/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/32c2d047-7ea7-4c2c-a500-3149cf425ca2/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3160,10 +3160,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0946f02a-19a8-443e-bfcc-168cd75cf85b/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bfa9c33e-5e16-4f49-b3d9-ca43e514dd52/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0946f02a-19a8-443e-bfcc-168cd75cf85b/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/bfa9c33e-5e16-4f49-b3d9-ca43e514dd52/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3233,10 +3233,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9630fae-f292-4dda-b6a1-678f5a8fb6a0/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a97ac957-1b1e-4341-9899-af3d291455b3/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d9630fae-f292-4dda-b6a1-678f5a8fb6a0/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a97ac957-1b1e-4341-9899-af3d291455b3/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3340,10 +3340,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ace027b-ba84-4202-a494-7b9250e69fb4/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a51b02b-3c6d-4c60-8691-7dfe09100135/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ace027b-ba84-4202-a494-7b9250e69fb4/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a51b02b-3c6d-4c60-8691-7dfe09100135/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3940,10 +3940,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22aef488-ef97-4e6d-8c03-37b1c69dd3f3/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc2c6d82-62ed-43d4-a678-c832ec743859/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22aef488-ef97-4e6d-8c03-37b1c69dd3f3/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc2c6d82-62ed-43d4-a678-c832ec743859/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4448,10 +4448,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c944c92d-a1e4-49f9-8093-0f44414198e2/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3c17615-b018-4a74-83fe-f133021133b0/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c944c92d-a1e4-49f9-8093-0f44414198e2/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e3c17615-b018-4a74-83fe-f133021133b0/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4791,10 +4791,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0c9de43-e876-4e28-bdbf-b851f0cac5aa/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73b23fa-1c91-4d86-b6d5-bbc4442bf63f/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a0c9de43-e876-4e28-bdbf-b851f0cac5aa/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b73b23fa-1c91-4d86-b6d5-bbc4442bf63f/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -4993,10 +4993,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d90ca80d-b183-4906-8153-88d2ddc6108b/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/59378240-b0c1-4dc9-9a91-6fa0bde4eb34/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d90ca80d-b183-4906-8153-88d2ddc6108b/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/59378240-b0c1-4dc9-9a91-6fa0bde4eb34/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5089,10 +5089,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d1c933e4-d2b6-4994-8fd3-f3f5a66d0f19/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b96b7c44-484d-40b9-9718-ca5b542be60f/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d1c933e4-d2b6-4994-8fd3-f3f5a66d0f19/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b96b7c44-484d-40b9-9718-ca5b542be60f/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5173,10 +5173,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b552db9-d34e-4f6f-9608-acf1d2cc4b97/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6873c709-1a4e-4405-b13e-42df1ed0bc82/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b552db9-d34e-4f6f-9608-acf1d2cc4b97/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6873c709-1a4e-4405-b13e-42df1ed0bc82/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5205,9 +5205,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29e83469-12aa-44a0-8e3d-a78f19094aec/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/32e8cbec-aeb4-43d7-8344-d05b0526d9aa/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/29e83469-12aa-44a0-8e3d-a78f19094aec/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/32e8cbec-aeb4-43d7-8344-d05b0526d9aa/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -70797,75 +70797,8 @@ svg {
         }, [themeId, themeColorId]);
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
         const setThemeColor = themeList2.theme(themeId).themeColor;
-        const themeIdRef = _2(themeId);
-        const themeColorIdRef = _2(themeColorId);
-        const themeColorIdRef2 = _2(themeColor.id);
-        const themeColorNameRef = _2(themeColor.name);
-        const themeColorHexRef = _2(themeColor.sourceColor.sourceHex);
-        const themeColorHueRef = _2(themeColor.sourceColor.hct.hue);
-        const themeColorChromaRef = _2(themeColor.sourceColor.hct.chroma);
-        const themeColorTonesRef = _2(themeColor.tones);
-        const themeColorHueCalcRef = _2(themeColor.hueCalc);
-        const themeColorChromaCalcRef = _2(themeColor.chromaCalc);
-        const themeListRef = _2(themeList2);
         const themeRef = _2(theme);
         const themeColorRef = _2(themeColor);
-        p2(() => {
-          const logUpdate = (match) => {
-            return !match ? "Updated" : "-";
-          };
-          const tableLog = {
-            themeId: logUpdate(themeId === themeIdRef.current),
-            themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
-            "themeColor.id": logUpdate(
-              themeColor.id === themeColorIdRef2.current
-            ),
-            "themeColor.name": logUpdate(
-              themeColor.name === themeColorNameRef.current
-            ),
-            "themeColor.sourceColor.sourceHex": logUpdate(
-              themeColor.sourceColor.sourceHex === themeColorHexRef.current
-            ),
-            "themeColor.sourceColor.hct.hue": logUpdate(
-              themeColor.sourceColor.hct.hue === themeColorHueRef.current
-            ),
-            "themeColor.sourceColor.hct.chroma": logUpdate(
-              themeColor.sourceColor.hct.chroma === themeColorChromaRef.current
-            ),
-            "themeColor.tones": logUpdate(
-              themeColor.tones === themeColorTonesRef.current
-            ),
-            "themeColor.hueCalc": logUpdate(
-              themeColor.hueCalc === themeColorHueCalcRef.current
-            ),
-            "themeColor.chromaCalc": logUpdate(
-              themeColor.chromaCalc === themeColorChromaCalcRef.current
-            ),
-            themeIndex: logUpdate(themeIndex === themeIndexRef.current),
-            themeColorIndex: logUpdate(
-              themeColorIndex === themeColorIndexRef.current
-            ),
-            themeList: logUpdate(themeList2 === themeListRef.current),
-            theme: logUpdate(theme === themeRef.current),
-            themeColor: logUpdate(themeColor === themeColorRef.current)
-          };
-        }, [
-          themeId,
-          themeColorId,
-          themeColor.id,
-          themeColor.name,
-          themeColor.sourceColor.sourceHex,
-          themeColor.sourceColor.hct.hue,
-          themeColor.sourceColor.hct.chroma,
-          themeColor.tones,
-          themeColor.hueCalc,
-          themeColor.chromaCalc,
-          themeIndex,
-          themeColorIndex,
-          themeList2,
-          theme,
-          themeColor
-        ]);
         const [hexColorInput, setHexColorInput] = h2(
           themeColor.sourceColor.sourceHex
         );
@@ -70952,7 +70885,8 @@ svg {
         const onAddThemeColor = () => {
           const newId = nanoid(12);
           const newThemeColor = __spreadProps(__spreadValues({}, createThemeColor()), {
-            id: newId
+            id: newId,
+            name: `Color ${theme.themeColors.length + 1}`
           });
           setTheme.add.themeColor(newThemeColor);
           console.log("%cNEW themeColor ID:", "color: #6AAFFF", newId);
@@ -71045,6 +70979,15 @@ svg {
           () => Math.max(ceil2(findMaxChroma(hue())), 1),
           [themeColor.endColor.hct.hue, themeColorId]
         );
+        const [themeColorToDelete, setThemeColorToDelete] = h2("");
+        p2(() => {
+          const themeColorToDeleteExists = theme.themeColors.some(
+            (themeColor2) => themeColor2.id === themeColorToDelete
+          );
+          if (themeColorToDeleteExists) {
+            setThemeColor(themeColorToDelete).remove();
+          }
+        }, [themeColorToDelete]);
         const options = [
           {
             children: /* @__PURE__ */ y("div", { className: "tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex h-full w-10 flex-col items-center overflow-y-scroll pt-2" }, /* @__PURE__ */ y(
@@ -71067,9 +71010,6 @@ svg {
                   ).setProps.name(
                     e5.currentTarget.value
                   );
-                  console.log(
-                    themeList2.themes[themeIndex].themeColors[themeColorIndex].name
-                  );
                 },
                 onBlur: () => nameTheNameless(),
                 onfocusout: () => nameTheNameless(),
@@ -71081,10 +71021,14 @@ svg {
                 title: `Duplicate color`,
                 onClick: () => {
                   const newThemeColor = __spreadProps(__spreadValues({}, themeColor), {
-                    id: nanoid(12)
+                    id: nanoid(12),
+                    name: `${themeColor.name} copy`
                   });
                   setTheme.add.themeColor(
                     newThemeColor
+                  );
+                  setThemeColorId(
+                    newThemeColor.id
                   );
                 }
               },
@@ -71098,7 +71042,22 @@ svg {
             ), /* @__PURE__ */ y(
               IconButton,
               {
-                title: `Remove color from theme`
+                title: `Remove color from theme`,
+                disabled: theme.themeColors.length === 1 ? true : false,
+                onClick: () => {
+                  if (theme.themeColors.length === 1) {
+                    return;
+                  }
+                  const newThemeColorIndex = Math.abs(
+                    themeColorIndex - 1
+                  );
+                  setThemeColorId(
+                    theme.themeColors[newThemeColorIndex].id
+                  );
+                  setThemeColorToDelete(
+                    themeColorId
+                  );
+                }
               },
               /* @__PURE__ */ y(IconMinus32, null)
             )), /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y(
@@ -71370,7 +71329,6 @@ svg {
               name: `${theme.name} copy`
             });
             themeList2.add.theme(newTheme);
-            setThemeId(newTheme.id);
           }
           if (selectedValue === "Delete") {
             const themeToDelete = themeId;

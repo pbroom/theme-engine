@@ -137,7 +137,7 @@ export const Plugin = () => {
                 name: `${theme.name} copy`,
             };
             themeList.add.theme(newTheme);
-            setThemeId(newTheme.id);
+            // setThemeId(newTheme.id);
         }
         if (selectedValue === 'Delete') {
             const themeToDelete = themeId;
