@@ -10,6 +10,8 @@ declare const styles: {
   readonly "build-button": string;
   readonly "gradientMove": string;
   readonly "input": string;
+  readonly "selected-theme-color": string;
+  readonly "swatch-li": string;
 };
 export = styles;
 

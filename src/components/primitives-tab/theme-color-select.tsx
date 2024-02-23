@@ -3,6 +3,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { quickHexFromHct } from '@/src/lib/color-utils';
 import { ThemeColorData } from '@/src/hooks/useThemeColor';
 import { IconButton } from '@create-figma-plugin/ui';
+import { set } from 'lodash';
 
 export { ThemeColorSelect };
 
@@ -62,7 +63,7 @@ const ThemeColorSelect = ({
     useEffect(() => {
         const newThemeColorSwatches = themeColors.map((themeColor) => {
             return (
-                <li key={themeColor.id}>
+                <li key={themeColor.id} className="swatch-li">
                     <ThemeColorSwatch
                         themeColorId={themeColor.id}
                         name={themeColor.name}
@@ -75,7 +76,7 @@ const ThemeColorSelect = ({
             );
         });
         setThemeColorSwatches(newThemeColorSwatches);
-    }, [themeColors]);
+    }, [themeColors, selectedThemeColor]);
 
     return <ul className="flex flex-col gap-1">{themeColorSwatches}</ul>;
 };
