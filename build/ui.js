@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43e93b34-113b-4050-90d8-710419700064/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34cd8c13-b404-44d1-958f-f397c1f10a81/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43e93b34-113b-4050-90d8-710419700064/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34cd8c13-b404-44d1-958f-f397c1f10a81/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -723,6 +723,21 @@ video {
 .h-px {
   height: 1px;
 }
+.h-80 {
+  height: 20rem;
+}
+.max-h-min {
+  max-height: -moz-min-content;
+  max-height: min-content;
+}
+.min-h-max {
+  min-height: -moz-max-content;
+  min-height: max-content;
+}
+.min-h-min {
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
 .w-1 {
   width: 0.25rem;
 }
@@ -801,6 +816,9 @@ video {
 .flex-1 {
   flex: 1 1 0%;
 }
+.shrink-0 {
+  flex-shrink: 0;
+}
 .flex-grow {
   flex-grow: 1;
 }
@@ -863,6 +881,9 @@ video {
 }
 .place-self-end {
   place-self: end;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-clip {
   overflow: clip;
@@ -1128,6 +1149,18 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .text-center {
   text-align: center;
@@ -2414,10 +2447,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7b98718-0bf9-4f20-aab0-5520f3539306/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/099e987c-9dac-4e62-aa62-40e18ef04262/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7b98718-0bf9-4f20-aab0-5520f3539306/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/099e987c-9dac-4e62-aa62-40e18ef04262/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2454,10 +2487,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c621aaf8-6b05-42b7-b24c-aa10f68f0a94/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3fd7796-28cc-4cb4-93c9-a9bfd5d45109/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c621aaf8-6b05-42b7-b24c-aa10f68f0a94/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b3fd7796-28cc-4cb4-93c9-a9bfd5d45109/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2695,10 +2728,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d421f7a2-122c-416c-a987-e8750206b6c5/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a5b7adc5-47ad-4d97-8da2-a4f4a5180b23/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d421f7a2-122c-416c-a987-e8750206b6c5/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a5b7adc5-47ad-4d97-8da2-a4f4a5180b23/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3172,10 +3205,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/df669c84-96c7-4d11-8556-9c29711c544d/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b169d75-e75d-4bf1-af04-299f5b576182/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/df669c84-96c7-4d11-8556-9c29711c544d/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b169d75-e75d-4bf1-af04-299f5b576182/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3245,10 +3278,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ffc9e59-bc7c-4fb2-bf6b-de7594b4128e/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d594f32f-765d-49a6-b3c1-89faf7c82947/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9ffc9e59-bc7c-4fb2-bf6b-de7594b4128e/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d594f32f-765d-49a6-b3c1-89faf7c82947/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3352,10 +3385,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ed0d63b-ab04-4bb3-9995-d6fd49d68c54/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbd3b34b-1b18-44f2-9f86-20a8a4570f85/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ed0d63b-ab04-4bb3-9995-d6fd49d68c54/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbd3b34b-1b18-44f2-9f86-20a8a4570f85/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3952,10 +3985,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/866aea55-69a4-4133-b062-5223b13600ff/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1779991c-a11e-4570-aac0-32dbeb8eae94/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/866aea55-69a4-4133-b062-5223b13600ff/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1779991c-a11e-4570-aac0-32dbeb8eae94/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4460,10 +4493,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c7666b06-bc10-475b-b903-f8985bc45b76/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0883d272-0d63-492b-8465-28b3f263c340/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c7666b06-bc10-475b-b903-f8985bc45b76/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/0883d272-0d63-492b-8465-28b3f263c340/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4803,10 +4836,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/95ad181e-aefd-4e28-a7b6-2905758f785d/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/832737b7-ed39-4d9c-9446-20050ca8c51f/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/95ad181e-aefd-4e28-a7b6-2905758f785d/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/832737b7-ed39-4d9c-9446-20050ca8c51f/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5005,10 +5038,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c7b1b4a-a5ab-4d89-9638-5919a9bec3b4/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f7c6e52-3d65-4da6-9a43-cace3edd00e5/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3c7b1b4a-a5ab-4d89-9638-5919a9bec3b4/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f7c6e52-3d65-4da6-9a43-cace3edd00e5/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5101,10 +5134,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12c588fc-e742-436a-b308-d46f159e3096/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40cf927d-72e2-4cf4-ad63-ac2a33383249/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12c588fc-e742-436a-b308-d46f159e3096/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/40cf927d-72e2-4cf4-ad63-ac2a33383249/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5185,10 +5218,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8089eb7-cfde-4c90-be64-f99a3a026536/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e9aeeab4-2678-4590-8d1d-7997bec82139/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8089eb7-cfde-4c90-be64-f99a3a026536/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e9aeeab4-2678-4590-8d1d-7997bec82139/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5217,9 +5250,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b1c1e9ca-6f17-486d-bf5f-581cc8e2284c/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a4d3b06-73bd-4ec3-b1b9-f81d953ce6ed/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b1c1e9ca-6f17-486d-bf5f-581cc8e2284c/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4a4d3b06-73bd-4ec3-b1b9-f81d953ce6ed/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -68700,7 +68733,7 @@ svg {
       });
       colorActions = (set) => ({
         setAll: (colorData2) => set((state) => __spreadValues(__spreadValues({}, state), colorData2)),
-        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), { sourceHex: sourceHex2 })),
+        setSourceHex: (sourceHex3) => set((state) => __spreadProps(__spreadValues({}, state), { sourceHex: sourceHex3 })),
         setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), { hct })),
         setRgba: (rgba) => set((state) => __spreadProps(__spreadValues({}, state), { rgba })),
         setHex: (hex2) => set((state) => __spreadProps(__spreadValues({}, state), { hex: hex2 })),
@@ -68802,12 +68835,12 @@ svg {
         return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
       };
       color = (set, get, ...a3) => __spreadProps(__spreadValues(__spreadValues({}, colorData(set, get, ...a3)), colorActions(set, get, ...a3)), {
-        setSourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
-          sourceHex: sourceHex2,
-          hct: HctFromHex(sourceHex2),
-          rgba: rgbaFromHct(HctFromHex(sourceHex2)),
-          hex: sourceHex2,
-          figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(sourceHex2))
+        setSourceHex: (sourceHex3) => set((state) => __spreadProps(__spreadValues({}, state), {
+          sourceHex: sourceHex3,
+          hct: HctFromHex(sourceHex3),
+          rgba: rgbaFromHct(HctFromHex(sourceHex3)),
+          hex: sourceHex3,
+          figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(sourceHex3))
         })),
         setHct: (hct) => set((state) => __spreadProps(__spreadValues({}, state), {
           hct,
@@ -69125,16 +69158,16 @@ svg {
         98
       ];
       defaultAliasGroup = createAliasGroup();
-      createThemeColor = (sourceHex2 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, aliasGroup = defaultAliasGroup) => {
+      createThemeColor = (sourceHex3 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, aliasGroup = defaultAliasGroup) => {
         return {
           id: nanoid(12),
           name: name310,
-          sourceHex: sourceHex2,
-          sourceColor: createColorFrom().hex(sourceHex2),
+          sourceHex: sourceHex3,
+          sourceColor: createColorFrom().hex(sourceHex3),
           endColor: calculateEndColor(
-            createColorFrom().hex(sourceHex2).hct,
-            defaultHueCalc,
-            defaultChromaCalc
+            createColorFrom().hex(sourceHex3).hct,
+            hueCalc,
+            chromaCalc
           ),
           tones: defaultTones,
           hueCalc,
@@ -69189,8 +69222,8 @@ svg {
           all: (themeColor) => set((state) => __spreadValues(__spreadValues({}, state), themeColor)),
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
           name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
-            sourceHex: sourceHex2
+          sourceHex: (sourceHex3) => set((state) => __spreadProps(__spreadValues({}, state), {
+            sourceHex: sourceHex3
           })),
           sourceColor: (sourceColor) => set((state) => __spreadProps(__spreadValues({}, state), { sourceColor })),
           endColor: (endColor) => set((state) => __spreadProps(__spreadValues({}, state), { endColor })),
@@ -69227,9 +69260,9 @@ svg {
         set: __spreadProps(__spreadValues({}, themeColorActions(set, get, ...a3).set), {
           id: (id) => set((state) => __spreadProps(__spreadValues({}, state), { id })),
           name: (name310) => set((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
-          sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
-            sourceHex: sourceHex2,
-            sourceColor: __spreadValues(__spreadValues({}, state.sourceColor), createColorFrom().hex(sourceHex2)),
+          sourceHex: (sourceHex3) => set((state) => __spreadProps(__spreadValues({}, state), {
+            sourceHex: sourceHex3,
+            sourceColor: __spreadValues(__spreadValues({}, state.sourceColor), createColorFrom().hex(sourceHex3)),
             endColor: __spreadValues(__spreadValues({}, state.endColor), calculateEndColor(
               state.sourceColor.hct,
               state.hueCalc,
@@ -69576,7 +69609,7 @@ svg {
             }
           );
         });
-        return /* @__PURE__ */ y("div", { className: "flex h-8 flex-row items-center" }, /* @__PURE__ */ y("div", { className: "h-8 grow" }, aliasList), /* @__PURE__ */ y("div", { className: "h-8 w-32" }, aliasPreview));
+        return /* @__PURE__ */ y("div", { className: "flex flex-row pb-2" }, /* @__PURE__ */ y("div", { className: "grow" }, aliasList), /* @__PURE__ */ y("div", { className: "w-32" }, aliasPreview));
       };
       AliasTonePreview = ({
         hue,
@@ -69667,7 +69700,7 @@ svg {
   });
 
   // src/hooks/useTheme.ts
-  var sourceHex, defaultThemeColors, defaultThemeColors2, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
+  var sourceHex, sourceHex2, defaultThemeColors, defaultThemeColors2, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
   var init_useTheme = __esm({
     "src/hooks/useTheme.ts"() {
       "use strict";
@@ -69678,21 +69711,22 @@ svg {
       init_useAliasGroup();
       init_middleware();
       sourceHex = "397456";
+      sourceHex2 = "0055FF";
       defaultThemeColors = [
-        createThemeColor(sourceHex, "Primary", "h", "c"),
-        createThemeColor("ffff00", "Secondary", "", "c/4"),
-        createThemeColor("00ff00", "Tertiary", "h+60", "c*0.6"),
-        createThemeColor("00ffff", "neutral", "", "c/12"),
-        createThemeColor("ff00ff", "neutralVariant", "", "c/8"),
-        createThemeColor("ff0000", "error", "25", "89")
+        createThemeColor(sourceHex, "Primary 1", "h", "c"),
+        createThemeColor(sourceHex, "Secondary", "", "c/3"),
+        createThemeColor(sourceHex, "Tertiary", "h+60", "c/2"),
+        createThemeColor(sourceHex, "neutral", "", "c/12"),
+        createThemeColor(sourceHex, "neutralVariant", "", "c/8"),
+        createThemeColor(sourceHex, "error", "25", "89")
       ];
       defaultThemeColors2 = [
-        createThemeColor("f0000f", "Primary", "h", "c"),
-        createThemeColor("ff00ff", "Secondary", "", "c/4"),
-        createThemeColor("00ff00", "Tertiary", "h+60", "c*0.6"),
-        createThemeColor("00ffff", "neutral", "", "c/12"),
-        createThemeColor("ffff00", "neutralVariant", "", "c/8"),
-        createThemeColor("0ff000", "error", "25", "89")
+        createThemeColor(sourceHex2, "Primary 2", "h", "c"),
+        createThemeColor(sourceHex2, "Secondary", "", "c/3"),
+        createThemeColor(sourceHex2, "Tertiary", "h+60", "c/2"),
+        createThemeColor(sourceHex2, "neutral", "", "c/12"),
+        createThemeColor(sourceHex2, "neutralVariant", "", "c/8"),
+        createThemeColor(sourceHex2, "error", "25", "89")
       ];
       defaultAliasGroups = [createAliasGroup()];
       createTheme = (id = nanoid(12), name310 = "Theme", themeColors = defaultThemeColors, aliasGroups = defaultAliasGroups) => {
@@ -69846,7 +69880,7 @@ svg {
       init_useColor();
       init_useAliasGroup();
       defaultThemes = [
-        createTheme(nanoid(12), "banana"),
+        createTheme(nanoid(12), "Theme 1"),
         createTheme(nanoid(12), "Theme 2", defaultThemeColors2)
       ];
       ThemeListDataSchema = z4.object({
@@ -69907,7 +69941,7 @@ svg {
               all: (themeColorData2) => set((state) => __spreadValues({}, state)),
               id: (id2) => set((state) => __spreadValues({}, state)),
               name: (name310) => set((state) => __spreadValues({}, state)),
-              sourceHex: (sourceHex2) => set((state) => __spreadValues({}, state)),
+              sourceHex: (sourceHex3) => set((state) => __spreadValues({}, state)),
               sourceColor: (sourceColor) => set((state) => __spreadValues({}, state)),
               endColor: (endColor) => set((state) => __spreadValues({}, state)),
               tones: (tones) => set((state) => __spreadValues({}, state)),
@@ -70111,6 +70145,7 @@ svg {
               }))
             };
             const themeColor = (id) => {
+              var _a, _b;
               const currentTheme = get().theme(themeId).data;
               const themeColor2 = typeof id === "number" ? currentTheme.themeColors[id] : currentTheme.themeColors.find(
                 (themeColor3) => themeColor3.id === id
@@ -70124,7 +70159,13 @@ svg {
                 console.log(
                   "%cCANNOT FIND themeColor",
                   "color: #FF8585",
-                  id
+                  id,
+                  (_a = get().theme(themeId).data.themeColors.find((c3) => c3.id === id)) == null ? void 0 : _a.name
+                );
+                console.log(
+                  "%cINSIDE OF theme",
+                  "color: #FF8585",
+                  (_b = get().themes.find((t3) => t3.id === themeId)) == null ? void 0 : _b.name
                 );
                 console.log(
                   "%cPOST-if themeList:",
@@ -70152,8 +70193,8 @@ svg {
                 }))
               };
               const duplicate2 = () => set((state) => {
-                var _a;
-                const themeColor3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.themeColors.find((c3) => c3.id === id);
+                var _a2;
+                const themeColor3 = (_a2 = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a2.themeColors.find((c3) => c3.id === id);
                 if (themeColor3) {
                   const newThemeColor = __spreadProps(__spreadValues({}, themeColor3), {
                     id: nanoid(12)
@@ -70217,14 +70258,14 @@ svg {
                     }) : t3
                   )
                 })),
-                sourceHex: (sourceHex2) => set((state) => __spreadProps(__spreadValues({}, state), {
+                sourceHex: (sourceHex3) => set((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       themeColors: t3.themeColors.map(
                         (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), {
-                          sourceHex: sourceHex2,
+                          sourceHex: sourceHex3,
                           sourceColor: __spreadValues(__spreadValues({}, c3.sourceColor), createColorFrom().hex(
-                            sourceHex2
+                            sourceHex3
                           )),
                           endColor: __spreadValues(__spreadValues({}, c3.endColor), calculateEndColor(
                             c3.sourceColor.hct,
@@ -70772,7 +70813,6 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
-        const setThemeId = useStore(IdStore, (state) => state.setThemeId);
         const setThemeColorId = useStore(
           IdStore,
           (state) => state.setThemeColorId
@@ -70800,6 +70840,9 @@ svg {
           themeColorIndexRef.current = themeList2.themes[themeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
           setThemeIndex(themeIndexRef.current);
           setThemeColorIndex(themeColorIndexRef.current);
+          setThemeColor(themeColorId).setProps.endColor(__spreadProps(__spreadValues({}, themeColor.endColor), {
+            hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone)
+          }));
           if (themeRef.current !== themeList2.themes[themeIndex]) {
             themeRef.current = themeList2.themes[themeIndex];
           }
@@ -70811,6 +70854,74 @@ svg {
         const setThemeColor = themeList2.theme(themeId).themeColor;
         const themeRef = _2(theme);
         const themeColorRef = _2(themeColor);
+        const themeIdRef = _2(themeId);
+        const themeColorIdRef = _2(themeColorId);
+        const themeColorIdRef2 = _2(themeColor.id);
+        const themeColorNameRef = _2(themeColor.name);
+        const themeColorHexRef = _2(themeColor.sourceColor.sourceHex);
+        const themeColorHueRef = _2(themeColor.sourceColor.hct.hue);
+        const themeColorChromaRef = _2(themeColor.sourceColor.hct.chroma);
+        const themeColorTonesRef = _2(themeColor.tones);
+        const themeColorHueCalcRef = _2(themeColor.hueCalc);
+        const themeColorChromaCalcRef = _2(themeColor.chromaCalc);
+        const themeListRef = _2(themeList2);
+        p2(() => {
+          const logUpdate = (match) => {
+            return !match ? "Updated" : "-";
+          };
+          const tableLog = {
+            themeId: logUpdate(themeId === themeIdRef.current),
+            themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
+            "themeColor.id": logUpdate(
+              themeColor.id === themeColorIdRef2.current
+            ),
+            "themeColor.name": logUpdate(
+              themeColor.name === themeColorNameRef.current
+            ),
+            "themeColor.sourceColor.sourceHex": logUpdate(
+              themeColor.sourceColor.sourceHex === themeColorHexRef.current
+            ),
+            "themeColor.sourceColor.hct.hue": logUpdate(
+              themeColor.sourceColor.hct.hue === themeColorHueRef.current
+            ),
+            "themeColor.sourceColor.hct.chroma": logUpdate(
+              themeColor.sourceColor.hct.chroma === themeColorChromaRef.current
+            ),
+            "themeColor.tones": logUpdate(
+              themeColor.tones === themeColorTonesRef.current
+            ),
+            "themeColor.hueCalc": logUpdate(
+              themeColor.hueCalc === themeColorHueCalcRef.current
+            ),
+            "themeColor.chromaCalc": logUpdate(
+              themeColor.chromaCalc === themeColorChromaCalcRef.current
+            ),
+            themeIndex: logUpdate(themeIndex === themeIndexRef.current),
+            themeColorIndex: logUpdate(
+              themeColorIndex === themeColorIndexRef.current
+            ),
+            themeList: logUpdate(themeList2 === themeListRef.current),
+            theme: logUpdate(theme === themeRef.current),
+            themeColor: logUpdate(themeColor === themeColorRef.current)
+          };
+          console.table(tableLog);
+        }, [
+          themeId,
+          themeColorId,
+          themeColor.id,
+          themeColor.name,
+          themeColor.sourceColor.sourceHex,
+          themeColor.sourceColor.hct.hue,
+          themeColor.sourceColor.hct.chroma,
+          themeColor.tones,
+          themeColor.hueCalc,
+          themeColor.chromaCalc,
+          themeIndex,
+          themeColorIndex,
+          themeList2,
+          theme,
+          themeColor
+        ]);
         const [hexColorInput, setHexColorInput] = h2(
           themeColor.sourceColor.sourceHex
         );
@@ -70858,9 +70969,9 @@ svg {
           setHueSlider(calculatedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             setThemeColor(themeColorId).setProps.hueCalc(
-              themeColor.sourceColor.hct.hue.toString()
+              `${themeColor.sourceColor.hct.hue}`
             );
-            setHueCalcInput(calculatedHue.toString());
+            setHueCalcInput(`${calculatedHue}`);
           }
           const calculatedChroma = round2(
             calculateChroma2(
@@ -70871,9 +70982,9 @@ svg {
           setChromaSlider(calculatedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
             setThemeColor(themeColorId).setProps.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
+              `${themeColor.sourceColor.hct.chroma}`
             );
-            setChromaCalcInput(calculatedChroma.toString());
+            setChromaCalcInput(`${calculatedChroma}`);
           }
         }, [hexColorInput]);
         const nameTheNameless = () => {
@@ -70881,10 +70992,10 @@ svg {
             setThemeColor(themeColorId).setProps.name("Color");
           }
         };
-        const roundedHue = round2(
+        const roundedHue = Math.round(
           calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
         );
-        const roundedChroma = round2(
+        const roundedChroma = Math.round(
           calculateChroma2(
             themeColor.sourceColor.hct.chroma,
             themeColor.chromaCalc
@@ -70901,6 +71012,7 @@ svg {
             name: `Color ${theme.themeColors.length + 1}`
           });
           setTheme.add.themeColor(newThemeColor);
+          setThemeColorId(newThemeColor.id);
           console.log("%cNEW themeColor ID:", "color: #6AAFFF", newId);
           console.log(
             "%ctheme.themeColors:",
@@ -70911,20 +71023,20 @@ svg {
         const onHexColorInput = (e5) => {
           const newHexColor = e5.currentTarget.value;
           setHexColorInput(newHexColor);
-          themeList2.theme(themeId).themeColor(themeColorId).setProps.sourceHex(newHexColor);
+          setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
           setHueSlider(roundedHue);
           if (!themeColor.hueCalc.toLowerCase().includes("h")) {
             setThemeColor(themeColorId).setProps.hueCalc(
-              themeColor.sourceColor.hct.hue.toString()
+              `${themeColor.sourceColor.hct.hue}`
             );
-            setHueCalcInput(roundedHue.toString());
+            setHueCalcInput(`${roundedHue}`);
           }
           setChromaSlider(roundedChroma);
           if (!themeColor.chromaCalc.toLowerCase().includes("c")) {
             setThemeColor(themeColorId).setProps.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
+              `${themeColor.sourceColor.hct.chroma}`
             );
-            setChromaCalcInput(roundedChroma.toString());
+            setChromaCalcInput(`${roundedChroma}`);
           }
         };
         const onHueSliderInput = (e5) => {
@@ -70974,14 +71086,18 @@ svg {
           setChromaCalcInput(newChromaCalcInput);
           if (newChromaCalcInput === "") {
             setThemeColor(themeColorId).setProps.chromaCalc(
-              themeColor.sourceColor.hct.chroma.toString()
+              `${themeColor.sourceColor.hct.chroma}`
             );
             setChromaSlider(themeColor.sourceColor.hct.chroma);
           }
         };
         const themeColorOptions = [
           {
-            value: "Duplicate theme color"
+            value: "Custom source"
+          },
+          "-",
+          {
+            header: "Drive via"
           },
           {
             value: "Delete theme color"
@@ -71011,11 +71127,18 @@ svg {
                   onSelectThemeColor(themeColorId2);
                 }
               }
-            ), /* @__PURE__ */ y(IconButton, { title: "Add color", onClick: onAddThemeColor }, /* @__PURE__ */ y(IconPlus32, null))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
+            ), /* @__PURE__ */ y("div", { className: "min-h-max pb-10 pt-1" }, /* @__PURE__ */ y(
+              IconButton,
+              {
+                title: "Add color",
+                onClick: onAddThemeColor
+              },
+              /* @__PURE__ */ y(IconPlus32, null)
+            ))), /* @__PURE__ */ y("div", { className: "flex h-full flex-col overflow-hidden" }, /* @__PURE__ */ y("div", { className: "flex h-24 shrink-0 flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-344 pt-1" }, /* @__PURE__ */ y("div", { className: "flex flex-row" }, /* @__PURE__ */ y("div", { className: "flex-1" }, /* @__PURE__ */ y(
               Textbox,
               {
                 title: "Color name",
-                value: themeList2.themes[themeIndex].themeColors[themeColorIndex].name,
+                value: themeColor.name,
                 onChange: (e5) => {
                   setThemeColor(
                     themeColorId
@@ -71081,21 +71204,13 @@ svg {
                 onOpacityInput: (e5) => "100%",
                 opacity: "100%"
               }
-            ), /* @__PURE__ */ y(
-              Dropdown,
-              {
-                title: "Source color options",
-                options: themeColorOptions,
-                value: null,
-                placeholder: "Color options"
-              }
             )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
               themeColor.sourceColor.hct.hue
             ), " ", "C:", " ", round2(
               themeColor.sourceColor.hct.chroma
             ), " ", "T:", " ", round2(
               themeColor.sourceColor.hct.tone
-            )), /* @__PURE__ */ y(Muted, { title: "End color hue, chroma, tone" }, `${themeList2.id} ${themeList2.themes[themeIndex].name} ${themeColor.hueCalc} ${themeColor.chromaCalc}`)))), /* @__PURE__ */ y(
+            ))))), /* @__PURE__ */ y(
               "div",
               {
                 className: "h-full w-32",
@@ -71106,14 +71221,14 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-2" }, /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 shrink-0 flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }, /* @__PURE__ */ y("div", { className: "h-full w-172 grow border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex flex-row justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Hue"), /* @__PURE__ */ y("span", { className: "p-2" }, round2(hue()))), /* @__PURE__ */ y("div", { className: "hue-slider px-2 pb-2" }, /* @__PURE__ */ y(
               RangeSlider,
               {
                 title: "Adjust hue",
                 maximum: 360,
                 minimum: 0,
                 onInput: (e5) => onHueSliderInput(e5),
-                value: `${calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)}`
+                value: `${Math.round(calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc))}`
               }
             ), /* @__PURE__ */ y(
               "div",
@@ -71172,7 +71287,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex h-24 shrink-0 flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("p", { className: "p-2" }, "Tones"), /* @__PURE__ */ y(
               TextboxMultiline,
               {
                 title: "Tones",
@@ -71192,7 +71307,7 @@ svg {
                   )})`
                 }
               }
-            )), /* @__PURE__ */ y("div", { className: "flex grow flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(
+            )), /* @__PURE__ */ y("div", { className: "flex flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex grow justify-between" }, /* @__PURE__ */ y("span", { className: "p-2" }, "Aliases"), /* @__PURE__ */ y(
               IconButton,
               {
                 title: "Create alias",
@@ -71206,21 +71321,28 @@ svg {
                 }
               },
               /* @__PURE__ */ y(IconPlus32, null)
-            )), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(
-              AliasList,
+            )), /* @__PURE__ */ y("div", { className: "flex h-8 w-32 items-center justify-around" }, /* @__PURE__ */ y("span", null, "Light"), /* @__PURE__ */ y("span", null, "Dark"))), /* @__PURE__ */ y(
+              "div",
               {
-                hue: themeColor.endColor.hct.hue,
-                chroma: themeColor.endColor.hct.chroma,
-                aliases: themeColor.aliasGroup.aliases,
-                onSetAliases: (aliases) => {
-                  setThemeColor(
-                    themeColorId
-                  ).setProps.aliasGroup(__spreadProps(__spreadValues({}, themeColor.aliasGroup), {
-                    aliases
-                  }));
+                id: "alias-list-container",
+                className: "flex grow flex-col overflow-y-scroll"
+              },
+              /* @__PURE__ */ y(
+                AliasList,
+                {
+                  hue: themeColor.endColor.hct.hue,
+                  chroma: themeColor.endColor.hct.chroma,
+                  aliases: themeColor.aliasGroup.aliases,
+                  onSetAliases: (aliases) => {
+                    setThemeColor(
+                      themeColorId
+                    ).setProps.aliasGroup(__spreadProps(__spreadValues({}, themeColor.aliasGroup), {
+                      aliases
+                    }));
+                  }
                 }
-              }
-            )))),
+              )
+            ))),
             value: "Primitives"
           },
           {
@@ -71266,15 +71388,49 @@ svg {
           throw new Error("IdStore is undefined");
         }
         const themeId = useStore(IdStore, (state) => state.themeId);
+        const themeColorId = useStore(
+          IdStore,
+          (state) => state.themeColorId
+        );
+        const setThemeId = useStore(IdStore, (state) => state.setThemeId);
+        const setThemeColorId = useStore(
+          IdStore,
+          (state) => state.setThemeColorId
+        );
         const themeListStore = useThemeList;
         const themeList2 = themeListStore();
-        const setThemeId = useStore(IdStore, (state) => state.setThemeId);
         const themeIndexRef = _2(
           themeList2.themes.findIndex((theme2) => theme2.id === themeId)
         );
-        const themeIndex = themeIndexRef.current;
-        const theme = themeList2.themes[themeIndex];
+        const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
+        const theme = themeListStore((state) => state.themes[themeIndex]);
         const setTheme = themeList2.theme(themeId);
+        const themeColorIndexRef = _2(
+          theme.themeColors.findIndex(
+            (themeColor2) => themeColor2.id === themeColorId
+          )
+        );
+        const [themeColorIndex, setThemeColorIndex] = h2(
+          themeColorIndexRef.current
+        );
+        p2(() => {
+          themeIndexRef.current = themeList2.themes.findIndex(
+            (theme2) => theme2.id === themeId
+          );
+          themeColorIndexRef.current = themeList2.themes[themeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
+          setThemeIndex(themeIndexRef.current);
+          setThemeColorIndex(themeColorIndexRef.current);
+          if (themeRef.current !== themeList2.themes[themeIndex]) {
+            themeRef.current = themeList2.themes[themeIndex];
+          }
+          if (themeColorRef.current !== themeList2.themes[themeIndex].themeColors[themeColorIndex]) {
+            themeColorRef.current = themeList2.themes[themeIndex].themeColors[themeColorIndex];
+          }
+        }, [themeId, themeColorId]);
+        const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
+        const setThemeColor = themeList2.theme(themeId).themeColor;
+        const themeRef = _2(theme);
+        const themeColorRef = _2(themeColor);
         const findThemeById = (id) => {
           const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
           if (!theme2) {
@@ -71358,7 +71514,7 @@ svg {
           }
           if (selectedValue !== "New theme..." && selectedValue !== "Rename..." && selectedValue !== "Duplicate" && selectedValue !== "Delete") {
             setThemeId(selectedValue);
-            console.log(themeId, selectedValue);
+            console.log(themeList2, themeId, selectedValue);
           }
         };
         function pickRandomName(names2) {

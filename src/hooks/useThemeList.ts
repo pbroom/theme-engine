@@ -40,7 +40,7 @@ export {
 };
 
 export const defaultThemes: ThemeData[] = [
-    createTheme(nanoid(12), 'banana'),
+    createTheme(nanoid(12), 'Theme 1'),
     createTheme(nanoid(12), 'Theme 2', defaultThemeColors2),
 ];
 
@@ -543,6 +543,14 @@ const useThemeList = create<ThemeListData & ThemeListActions>(
                         '%cCANNOT FIND themeColor',
                         'color: #FF8585',
                         id,
+                        get()
+                            .theme(themeId)
+                            .data.themeColors.find((c) => c.id === id)?.name,
+                    );
+                    console.log(
+                        '%cINSIDE OF theme',
+                        'color: #FF8585',
+                        get().themes.find((t) => t.id === themeId)?.name,
                     );
                     console.log(
                         '%cPOST-if themeList:',

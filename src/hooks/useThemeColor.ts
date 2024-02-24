@@ -67,8 +67,8 @@ const createThemeColor = (
         sourceColor: createColorFrom().hex(sourceHex),
         endColor: calculateEndColor(
             createColorFrom().hex(sourceHex).hct,
-            defaultHueCalc,
-            defaultChromaCalc,
+            hueCalc,
+            chromaCalc,
         ),
         tones: defaultTones,
         hueCalc: hueCalc,

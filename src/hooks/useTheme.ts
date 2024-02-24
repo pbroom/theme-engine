@@ -34,22 +34,23 @@ export {
 };
 
 const sourceHex = '397456';
+const sourceHex2 = '0055FF';
 
 const defaultThemeColors: ThemeColorData[] = [
-    createThemeColor(sourceHex, 'Primary', 'h', 'c'),
-    createThemeColor('ffff00', 'Secondary', '', 'c/4'),
-    createThemeColor('00ff00', 'Tertiary', 'h+60', 'c*0.6'),
-    createThemeColor('00ffff', 'neutral', '', 'c/12'),
-    createThemeColor('ff00ff', 'neutralVariant', '', 'c/8'),
-    createThemeColor('ff0000', 'error', '25', '89'),
+    createThemeColor(sourceHex, 'Primary 1', 'h', 'c'),
+    createThemeColor(sourceHex, 'Secondary', '', 'c/3'),
+    createThemeColor(sourceHex, 'Tertiary', 'h+60', 'c/2'),
+    createThemeColor(sourceHex, 'neutral', '', 'c/12'),
+    createThemeColor(sourceHex, 'neutralVariant', '', 'c/8'),
+    createThemeColor(sourceHex, 'error', '25', '89'),
 ];
 const defaultThemeColors2: ThemeColorData[] = [
-    createThemeColor('f0000f', 'Primary', 'h', 'c'),
-    createThemeColor('ff00ff', 'Secondary', '', 'c/4'),
-    createThemeColor('00ff00', 'Tertiary', 'h+60', 'c*0.6'),
-    createThemeColor('00ffff', 'neutral', '', 'c/12'),
-    createThemeColor('ffff00', 'neutralVariant', '', 'c/8'),
-    createThemeColor('0ff000', 'error', '25', '89'),
+    createThemeColor(sourceHex2, 'Primary 2', 'h', 'c'),
+    createThemeColor(sourceHex2, 'Secondary', '', 'c/3'),
+    createThemeColor(sourceHex2, 'Tertiary', 'h+60', 'c/2'),
+    createThemeColor(sourceHex2, 'neutral', '', 'c/12'),
+    createThemeColor(sourceHex2, 'neutralVariant', '', 'c/8'),
+    createThemeColor(sourceHex2, 'error', '25', '89'),
 ];
 const defaultAliasGroups: AliasGroupData[] = [createAliasGroup()];
 

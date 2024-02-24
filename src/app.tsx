@@ -22,48 +22,66 @@ export const Plugin = () => {
         throw new Error('IdStore is undefined');
     }
     const themeId = useStore(IdStore, (state: IdState) => state.themeId);
-    // const themeColorId: string = useStore(
-    //     IdStore,
-    //     (state: IdState) => state.themeColorId,
-    // );
+    const themeColorId: string = useStore(
+        IdStore,
+        (state: IdState) => state.themeColorId,
+    );
 
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
+    const setThemeColorId = useStore(
+        IdStore,
+        (state: IdState) => state.setThemeColorId,
+    );
     // themeList state
     const themeListStore = useThemeList;
     const themeList = themeListStore();
 
-    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
-    // const setThemeColorId = useStore(
-    //     IdStore,
-    //     (state: IdState) => state.setThemeColorId,
-    // );
-
     const themeIndexRef = useRef(
         themeList.themes.findIndex((theme) => theme.id === themeId),
     );
-    const themeIndex = themeIndexRef.current;
+    const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
 
     // theme state
-    const theme = themeList.themes[themeIndex];
+    const theme = themeListStore((state) => state.themes[themeIndex]);
     const setTheme = themeList.theme(themeId);
 
-    // const themeColorIndexRef = useRef(
-    //     theme.themeColors.findIndex(
-    //         (themeColor) => themeColor.id === themeColorId,
-    //     ),
-    // );
-    // const themeColorIndex = themeColorIndexRef.current;
+    const themeColorIndexRef = useRef(
+        theme.themeColors.findIndex(
+            (themeColor) => themeColor.id === themeColorId,
+        ),
+    );
+    const [themeColorIndex, setThemeColorIndex] = useState<number>(
+        themeColorIndexRef.current,
+    );
+
+    useEffect(() => {
+        themeIndexRef.current = themeList.themes.findIndex(
+            (theme) => theme.id === themeId,
+        );
+        themeColorIndexRef.current = themeList.themes[
+            themeIndex
+        ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
+        setThemeIndex(themeIndexRef.current);
+        setThemeColorIndex(themeColorIndexRef.current);
+        if (themeRef.current !== themeList.themes[themeIndex]) {
+            themeRef.current = themeList.themes[themeIndex];
+        }
+        if (
+            themeColorRef.current !==
+            themeList.themes[themeIndex].themeColors[themeColorIndex]
+        ) {
+            themeColorRef.current =
+                themeList.themes[themeIndex].themeColors[themeColorIndex];
+        }
+    }, [themeId, themeColorId]);
 
     // themeColor state
-    // const themeColor =
-    //     themeList.themes[themeIndex].themeColors[themeColorIndex];
-    // const setThemeColor = setTheme.themeColor(themeColorId);
+    const themeColor =
+        themeList.themes[themeIndex].themeColors[themeColorIndex];
+    const setThemeColor = themeList.theme(themeId).themeColor;
 
-    // initial theme data
-    // useEffect(() => {
-    //     const newThemeId = themeList.themes[0].id;
-    //     setThemeId(newThemeId);
-    //     setThemeColorId(themeList.themes[0].themeColors[0].id);
-    // }, []);
+    const themeRef = useRef(theme);
+    const themeColorRef = useRef(themeColor);
 
     const findThemeById = (id: string) => {
         const theme = themeList.themes.find((theme) => theme.id === id);
@@ -161,11 +179,7 @@ export const Plugin = () => {
             selectedValue !== 'Delete'
         ) {
             setThemeId(selectedValue);
-            // setThemeColorId(
-            //     themeList.theme(selectedValue).data.themeColors[0].id,
-            // );
-            // theme.setProps.all(theme.data);
-            console.log(themeId, selectedValue);
+            console.log(themeList, themeId, selectedValue);
         }
     };
 
