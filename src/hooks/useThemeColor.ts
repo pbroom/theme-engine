@@ -58,6 +58,7 @@ const createThemeColor = (
     name: string = defaultName,
     hueCalc: string = defaultHueCalc,
     chromaCalc: string = defaultChromaCalc,
+    tones: number[] = defaultTones,
     aliasGroup: AliasGroupData = defaultAliasGroup,
 ): ThemeColorData => {
     return {
@@ -70,7 +71,7 @@ const createThemeColor = (
             hueCalc,
             chromaCalc,
         ),
-        tones: defaultTones,
+        tones: tones,
         hueCalc: hueCalc,
         chromaCalc: chromaCalc,
         aliasGroup: aliasGroup,

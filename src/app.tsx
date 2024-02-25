@@ -179,7 +179,16 @@ export const Plugin = () => {
             selectedValue !== 'Delete'
         ) {
             setThemeId(selectedValue);
-            console.log(themeList, themeId, selectedValue);
+            const newThemeIndex = findIndex(
+                themeList.themes,
+                (theme) => theme.id === selectedValue,
+            );
+            setThemeIndex(newThemeIndex);
+            setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
+            setThemeColorIndex(0);
+            console.log('%cTHEME_CHANGE', 'color: #FF0000');
+            console.log('%cCURRENT_THEME_ID', 'color: #FF0000', themeId);
+            console.log('%cSELECTED_THEME_ID', 'color: #FF0000', selectedValue);
         }
     };
 

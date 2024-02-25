@@ -40,8 +40,8 @@ export {
 };
 
 export const defaultThemes: ThemeData[] = [
-    createTheme(nanoid(12), 'Theme 1'),
-    createTheme(nanoid(12), 'Theme 2', defaultThemeColors2),
+    createTheme(nanoid(12), 'Material 3'),
+    createTheme(nanoid(12), 'Tailwind', defaultThemeColors2),
 ];
 
 /**

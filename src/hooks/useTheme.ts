@@ -14,6 +14,7 @@ import {
     type AliasGroupActions,
     createAliasGroup,
     AliasCrud,
+    createAlias,
 } from './useAliasGroup';
 import { subscribeWithSelector } from 'zustand/middleware';
 
@@ -34,7 +35,50 @@ export {
 };
 
 const sourceHex = '397456';
-const sourceHex2 = '0055FF';
+const slate = '475569';
+const gray = '4b5563';
+const zinc = '52525b';
+const neutral = 'a3a3a3';
+const stone = '78716c';
+const red = 'dc2626';
+const orange = 'f97316';
+const amber = 'f59e0b';
+const yellow = 'fde047';
+const lime = 'a3e635';
+const green = '22c55e';
+const emerald = '10b981';
+const teal = '14b8a6';
+const cyan = '22d3ee';
+const sky = '38bdf8';
+const blue = '2563eb';
+const indigo = '4f46e5';
+const violet = '7c3aed';
+const purple = 'a855f7';
+const fuchsia = 'd946ef';
+const pink = 'ec4899';
+const rose = 'f43f5e';
+
+const tailwindTones = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
+
+const tailwindAliases = [
+    createAlias(nanoid(12), '50', 95, 95),
+    createAlias(nanoid(12), '100', 90, 90),
+    createAlias(nanoid(12), '200', 80, 80),
+    createAlias(nanoid(12), '300', 70, 70),
+    createAlias(nanoid(12), '400', 60, 60),
+    createAlias(nanoid(12), '500', 50, 50),
+    createAlias(nanoid(12), '600', 40, 40),
+    createAlias(nanoid(12), '700', 30, 30),
+    createAlias(nanoid(12), '800', 20, 20),
+    createAlias(nanoid(12), '900', 10, 10),
+    createAlias(nanoid(12), '950', 5, 5),
+];
+
+const tailwindAliasGroup = {
+    ...createAliasGroup(),
+    name: 'Tailwind',
+    aliases: tailwindAliases,
+};
 
 const defaultThemeColors: ThemeColorData[] = [
     createThemeColor(sourceHex, 'Primary 1', 'h', 'c'),
@@ -45,12 +89,84 @@ const defaultThemeColors: ThemeColorData[] = [
     createThemeColor(sourceHex, 'error', '25', '89'),
 ];
 const defaultThemeColors2: ThemeColorData[] = [
-    createThemeColor(sourceHex2, 'Primary 2', 'h', 'c'),
-    createThemeColor(sourceHex2, 'Secondary', '', 'c/3'),
-    createThemeColor(sourceHex2, 'Tertiary', 'h+60', 'c/2'),
-    createThemeColor(sourceHex2, 'neutral', '', 'c/12'),
-    createThemeColor(sourceHex2, 'neutralVariant', '', 'c/8'),
-    createThemeColor(sourceHex2, 'error', '25', '89'),
+    createThemeColor(slate, 'Slate', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(gray, 'Gray', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(zinc, 'Zinc', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(
+        neutral,
+        'Neutral',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(stone, 'Stone', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(red, 'Red', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(
+        orange,
+        'Orange',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(amber, 'Amber', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(
+        yellow,
+        'Yellow',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(lime, 'Lime', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(green, 'Green', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(
+        emerald,
+        'Emerald',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(teal, 'Teal', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(cyan, 'Cyan', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(sky, 'Sky', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(blue, 'Blue', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(
+        indigo,
+        'Indigo',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(
+        violet,
+        'Violet',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(
+        purple,
+        'Purple',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(
+        fuchsia,
+        'Fuchsia',
+        '',
+        '',
+        tailwindTones,
+        tailwindAliasGroup,
+    ),
+    createThemeColor(pink, 'Pink', '', '', tailwindTones, tailwindAliasGroup),
+    createThemeColor(rose, 'Rose', '', '', tailwindTones, tailwindAliasGroup),
 ];
 const defaultAliasGroups: AliasGroupData[] = [createAliasGroup()];
 

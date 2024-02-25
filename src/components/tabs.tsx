@@ -91,7 +91,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     // theme state
     const theme = themeListStore((state) => state.themes[themeIndex]);
-    const setTheme = themeList.theme(themeId);
+    const setTheme = themeList.theme;
 
     const themeColorIndexRef = useRef(
         theme.themeColors.findIndex(
@@ -104,27 +104,65 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     useEffect(() => {
         // TODO: update themeColorId when themeId changes
-        themeIndexRef.current = themeList.themes.findIndex(
+        const newThemeIndex = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
         );
-        themeColorIndexRef.current = themeList.themes[
-            themeIndex
+        themeIndexRef.current = newThemeIndex;
+        const newThemeColorIndex = themeList.themes[
+            newThemeIndex
         ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
-        setThemeIndex(themeIndexRef.current);
-        setThemeColorIndex(themeColorIndexRef.current);
+        themeColorIndexRef.current = newThemeColorIndex;
+
+        setThemeIndex(newThemeIndex);
+        setThemeColorIndex(newThemeColorIndex);
         setThemeColor(themeColorId).setProps.endColor({
             ...themeColor.endColor,
             hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone),
         });
-        if (themeRef.current !== themeList.themes[themeIndex]) {
-            themeRef.current = themeList.themes[themeIndex];
+        if (themeRef.current !== themeList.themes[newThemeIndex]) {
+            console.log(
+                '%cthemeRef.current:',
+                'color: #FF0000',
+                themeRef.current,
+            );
+            console.log(
+                '%cthemes[themeId]:',
+                'color: #FF0000',
+                themeList.themes[newThemeIndex],
+            );
+            themeRef.current = themeList.themes[newThemeIndex];
+            // setTheme(themeId).setProps.themeColors(
+            //     themeList.themes[newThemeIndex].themeColors,
+            // );
+            const newThemeColorId =
+                themeList.themes[newThemeIndex].themeColors[0].id;
+            // setThemeColorId(newThemeColorId);
+            const newThemeColor = themeList.themes[
+                newThemeIndex
+            ].themeColors.find(
+                (themeColor) => themeColor.id === newThemeColorId,
+            );
+            if (!newThemeColor) {
+                throw new Error('Theme color not found');
+            }
+            setThemeColor(newThemeColorId).setProps.all({
+                ...newThemeColor,
+                endColor: {
+                    ...newThemeColor.endColor,
+                    hct: Hct.from(
+                        hue(),
+                        chroma(),
+                        newThemeColor.sourceColor.hct.tone,
+                    ),
+                },
+            });
         }
         if (
             themeColorRef.current !==
-            themeList.themes[themeIndex].themeColors[themeColorIndex]
+            themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
         ) {
             themeColorRef.current =
-                themeList.themes[themeIndex].themeColors[themeColorIndex];
+                themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
         }
     }, [themeId, themeColorId]);
 
@@ -137,75 +175,75 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const themeColorRef = useRef(themeColor);
 
     // // Debugging
-    const themeIdRef = useRef(themeId);
-    const themeColorIdRef = useRef(themeColorId);
-    const themeColorIdRef2 = useRef(themeColor.id);
-    const themeColorNameRef = useRef(themeColor.name);
-    const themeColorHexRef = useRef(themeColor.sourceColor.sourceHex);
-    const themeColorHueRef = useRef(themeColor.sourceColor.hct.hue);
-    const themeColorChromaRef = useRef(themeColor.sourceColor.hct.chroma);
-    const themeColorTonesRef = useRef(themeColor.tones);
-    const themeColorHueCalcRef = useRef(themeColor.hueCalc);
-    const themeColorChromaCalcRef = useRef(themeColor.chromaCalc);
-    const themeListRef = useRef(themeList);
-    useEffect(() => {
-        const logUpdate = (match: boolean) => {
-            return !match ? 'Updated' : '-';
-        };
-        const tableLog = {
-            themeId: logUpdate(themeId === themeIdRef.current),
-            themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
-            'themeColor.id': logUpdate(
-                themeColor.id === themeColorIdRef2.current,
-            ),
-            'themeColor.name': logUpdate(
-                themeColor.name === themeColorNameRef.current,
-            ),
-            'themeColor.sourceColor.sourceHex': logUpdate(
-                themeColor.sourceColor.sourceHex === themeColorHexRef.current,
-            ),
-            'themeColor.sourceColor.hct.hue': logUpdate(
-                themeColor.sourceColor.hct.hue === themeColorHueRef.current,
-            ),
-            'themeColor.sourceColor.hct.chroma': logUpdate(
-                themeColor.sourceColor.hct.chroma ===
-                    themeColorChromaRef.current,
-            ),
-            'themeColor.tones': logUpdate(
-                themeColor.tones === themeColorTonesRef.current,
-            ),
-            'themeColor.hueCalc': logUpdate(
-                themeColor.hueCalc === themeColorHueCalcRef.current,
-            ),
-            'themeColor.chromaCalc': logUpdate(
-                themeColor.chromaCalc === themeColorChromaCalcRef.current,
-            ),
-            themeIndex: logUpdate(themeIndex === themeIndexRef.current),
-            themeColorIndex: logUpdate(
-                themeColorIndex === themeColorIndexRef.current,
-            ),
-            themeList: logUpdate(themeList === themeListRef.current),
-            theme: logUpdate(theme === themeRef.current),
-            themeColor: logUpdate(themeColor === themeColorRef.current),
-        };
-        console.table(tableLog);
-    }, [
-        themeId,
-        themeColorId,
-        themeColor.id,
-        themeColor.name,
-        themeColor.sourceColor.sourceHex,
-        themeColor.sourceColor.hct.hue,
-        themeColor.sourceColor.hct.chroma,
-        themeColor.tones,
-        themeColor.hueCalc,
-        themeColor.chromaCalc,
-        themeIndex,
-        themeColorIndex,
-        themeList,
-        theme,
-        themeColor,
-    ]);
+    // const themeIdRef = useRef(themeId);
+    // const themeColorIdRef = useRef(themeColorId);
+    // const themeColorIdRef2 = useRef(themeColor.id);
+    // const themeColorNameRef = useRef(themeColor.name);
+    // const themeColorHexRef = useRef(themeColor.sourceColor.sourceHex);
+    // const themeColorHueRef = useRef(themeColor.sourceColor.hct.hue);
+    // const themeColorChromaRef = useRef(themeColor.sourceColor.hct.chroma);
+    // const themeColorTonesRef = useRef(themeColor.tones);
+    // const themeColorHueCalcRef = useRef(themeColor.hueCalc);
+    // const themeColorChromaCalcRef = useRef(themeColor.chromaCalc);
+    // const themeListRef = useRef(themeList);
+    // useEffect(() => {
+    //     const logUpdate = (match: boolean) => {
+    //         return !match ? 'Updated' : '-';
+    //     };
+    //     const tableLog = {
+    //         themeId: logUpdate(themeId === themeIdRef.current),
+    //         themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
+    //         'themeColor.id': logUpdate(
+    //             themeColor.id === themeColorIdRef2.current,
+    //         ),
+    //         'themeColor.name': logUpdate(
+    //             themeColor.name === themeColorNameRef.current,
+    //         ),
+    //         'themeColor.sourceColor.sourceHex': logUpdate(
+    //             themeColor.sourceColor.sourceHex === themeColorHexRef.current,
+    //         ),
+    //         'themeColor.sourceColor.hct.hue': logUpdate(
+    //             themeColor.sourceColor.hct.hue === themeColorHueRef.current,
+    //         ),
+    //         'themeColor.sourceColor.hct.chroma': logUpdate(
+    //             themeColor.sourceColor.hct.chroma ===
+    //                 themeColorChromaRef.current,
+    //         ),
+    //         'themeColor.tones': logUpdate(
+    //             themeColor.tones === themeColorTonesRef.current,
+    //         ),
+    //         'themeColor.hueCalc': logUpdate(
+    //             themeColor.hueCalc === themeColorHueCalcRef.current,
+    //         ),
+    //         'themeColor.chromaCalc': logUpdate(
+    //             themeColor.chromaCalc === themeColorChromaCalcRef.current,
+    //         ),
+    //         themeIndex: logUpdate(themeIndex === themeIndexRef.current),
+    //         themeColorIndex: logUpdate(
+    //             themeColorIndex === themeColorIndexRef.current,
+    //         ),
+    //         themeList: logUpdate(themeList === themeListRef.current),
+    //         theme: logUpdate(theme === themeRef.current),
+    //         themeColor: logUpdate(themeColor === themeColorRef.current),
+    //     };
+    //     console.table(tableLog);
+    // }, [
+    //     themeId,
+    //     themeColorId,
+    //     themeColor.id,
+    //     themeColor.name,
+    //     themeColor.sourceColor.sourceHex,
+    //     themeColor.sourceColor.hct.hue,
+    //     themeColor.sourceColor.hct.chroma,
+    //     themeColor.tones,
+    //     themeColor.hueCalc,
+    //     themeColor.chromaCalc,
+    //     themeIndex,
+    //     themeColorIndex,
+    //     themeList,
+    //     theme,
+    //     themeColor,
+    // ]);
     // // End debugging
 
     const [hexColorInput, setHexColorInput] = useState<string>(
@@ -325,7 +363,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             id: newId,
             name: `Color ${theme.themeColors.length + 1}`,
         };
-        setTheme.add.themeColor(newThemeColor);
+        setTheme(themeId).add.themeColor(newThemeColor);
         setThemeColorId(newThemeColor.id);
         console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
         console.log(
@@ -495,9 +533,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                         id: nanoid(12),
                                                         name: `${themeColor.name} copy`,
                                                     };
-                                                setTheme.add.themeColor(
-                                                    newThemeColor,
-                                                );
+                                                setTheme(
+                                                    themeId,
+                                                ).add.themeColor(newThemeColor);
                                                 setThemeColorId(
                                                     newThemeColor.id,
                                                 );
@@ -694,11 +732,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <p className="p-2">Tones</p>
                                     <TextboxMultiline
                                         title="Tones"
-                                        value={themeList.themes[
-                                            themeIndex
-                                        ].themeColors[
-                                            themeColorIndex
-                                        ].tones.join(', ')}
+                                        value={tones}
                                         onInput={(e) =>
                                             setTones(e.currentTarget.value)
                                         }
@@ -710,11 +744,25 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 className="h-full w-32"
                                 // TODO: Fix late state update for endColor
                                 style={{
-                                    background: `linear-gradient(to right, ${hctTonalGradient(
-                                        themeColor.endColor.hct.hue,
-                                        themeColor.endColor.hct.chroma,
-                                        themeColor.tones,
-                                    )})`,
+                                    background: `linear-gradient(to right, ${
+                                        themeColor.tones.length >= 1
+                                            ? hctTonalGradient(
+                                                  themeColor.endColor.hct.hue,
+                                                  themeColor.endColor.hct
+                                                      .chroma,
+                                                  themeColor.tones,
+                                              )
+                                            : hctTonalGradient(
+                                                  themeColor.endColor.hct.hue,
+                                                  themeColor.endColor.hct
+                                                      .chroma,
+                                                  // an array of 0-100
+                                                  Array.from(
+                                                      { length: 101 },
+                                                      (_, i) => i * 1,
+                                                  ),
+                                              )
+                                    })`,
                                 }}
                             ></div>
                         </div>
