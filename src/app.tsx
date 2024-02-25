@@ -73,7 +73,6 @@ export const Plugin = () => {
     };
 
     useEffect(() => {
-        // TODO: update themeColorId when themeId changes
         const newThemeIndex = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
         );

@@ -89,16 +89,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeIndex(newThemeIndex);
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
-            console.log(
-                '%cthemeRef.current:',
-                'color: #FF0000',
-                themeRef.current.id,
-            );
-            console.log(
-                '%cthemes[themeId]:',
-                'color: #FF0000',
-                themeList.themes[newThemeIndex].id,
-            );
             themeRef.current = themeList.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor({
                 ...themeColor.endColor,
@@ -469,10 +459,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const [themeColorToDelete, setThemeColorToDelete] = useState<string>('');
     useEffect(() => {
+        const newThemeColorIndex: number = Math.abs(themeColorIndex - 1);
         const themeColorToDeleteExists = theme.themeColors.some(
             (themeColor) => themeColor.id === themeColorToDelete,
         );
         if (themeColorToDeleteExists) {
+            setThemeColorId(theme.themeColors[newThemeColorIndex].id);
             setThemeColor(themeColorToDelete).remove();
         }
     }, [themeColorToDelete]);
@@ -560,15 +552,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                 ) {
                                                     return;
                                                 }
-                                                const newThemeColorIndex: number =
-                                                    Math.abs(
-                                                        themeColorIndex - 1,
-                                                    );
-                                                setThemeColorId(
-                                                    theme.themeColors[
-                                                        newThemeColorIndex
-                                                    ].id,
-                                                );
                                                 setThemeColorToDelete(
                                                     themeColorId,
                                                 );
