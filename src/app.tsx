@@ -14,6 +14,8 @@ import { defaultThemes, useThemeList } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
 import { findIndex, set } from 'lodash';
 import { useStore } from 'zustand';
+import { Hct } from '@material/material-color-utilities';
+import { calculateChroma, calculateHue } from './lib/color-utils';
 
 export const Plugin = () => {
     // ID state
@@ -54,24 +56,83 @@ export const Plugin = () => {
         themeColorIndexRef.current,
     );
 
+    const hue = () => {
+        const hue: number = calculateHue(
+            themeList.themes[themeIndex].themeColors[themeColorIndex]
+                .sourceColor.hct.hue,
+            themeColor.hueCalc,
+        );
+        return hue;
+    };
+    const chroma = () => {
+        const chroma: number = calculateChroma(
+            themeColor.sourceColor.hct.chroma,
+            themeColor.chromaCalc,
+        );
+        return chroma;
+    };
+
     useEffect(() => {
-        themeIndexRef.current = themeList.themes.findIndex(
+        // TODO: update themeColorId when themeId changes
+        const newThemeIndex = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
         );
-        themeColorIndexRef.current = themeList.themes[
-            themeIndex
+        themeIndexRef.current = newThemeIndex;
+        const newThemeColorIndex = themeList.themes[
+            newThemeIndex
         ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
-        setThemeIndex(themeIndexRef.current);
-        setThemeColorIndex(themeColorIndexRef.current);
-        if (themeRef.current !== themeList.themes[themeIndex]) {
-            themeRef.current = themeList.themes[themeIndex];
+        themeColorIndexRef.current = newThemeColorIndex;
+
+        console.log(
+            '%cthemeRef.current:',
+            'color: #FF0000',
+            themeRef.current.id,
+        );
+        console.log(
+            '%cthemes[themeId]:',
+            'color: #FF0000',
+            themeList.themes[newThemeIndex].id,
+        );
+        setThemeIndex(newThemeIndex);
+        setThemeColorIndex(newThemeColorIndex);
+        if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
+            themeRef.current = themeList.themes[newThemeIndex];
+            console.log(
+                '%cthemeRef.current:',
+                'color: #FF0000',
+                themeRef.current.id,
+            );
+            console.log(
+                '%cthemes[themeId]:',
+                'color: #FF0000',
+                themeList.themes[newThemeIndex].id,
+            );
+            const newThemeColorId =
+                themeList.themes[newThemeIndex].themeColors[0].id;
+            const newThemeColor =
+                themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
+            if (!newThemeColor) {
+                throw new Error('Theme color not found');
+            }
+            setThemeColor(newThemeColorId).setProps.all({
+                ...newThemeColor,
+                endColor: {
+                    ...newThemeColor.endColor,
+                    hct: Hct.from(
+                        hue(),
+                        chroma(),
+                        newThemeColor.sourceColor.hct.tone,
+                    ),
+                },
+                hueCalc: newThemeColor.hueCalc,
+            });
         }
         if (
             themeColorRef.current !==
-            themeList.themes[themeIndex].themeColors[themeColorIndex]
+            themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
         ) {
             themeColorRef.current =
-                themeList.themes[themeIndex].themeColors[themeColorIndex];
+                themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
         }
     }, [themeId, themeColorId]);
 
@@ -131,6 +192,7 @@ export const Plugin = () => {
         },
         {
             value: 'Delete',
+            disabled: themeList.themes.length === 1,
         },
     ];
     const handleOptionSelect = (
@@ -167,8 +229,26 @@ export const Plugin = () => {
                 const newTheme = createTheme(nanoid(12), 'New theme');
                 themeList.add.theme(newTheme);
                 setThemeId(newTheme.id);
+                const newThemeIndex = findIndex(
+                    themeList.themes,
+                    (theme) => theme.id === newTheme.id,
+                );
+                setThemeIndex(newThemeIndex);
+                setThemeColorId(
+                    themeList.themes[newThemeIndex].themeColors[0].id,
+                );
+                setThemeColorIndex(0);
             } else {
                 setThemeId(nextThemeId);
+                const newThemeIndex = findIndex(
+                    themeList.themes,
+                    (theme) => theme.id === nextThemeId,
+                );
+                setThemeIndex(newThemeIndex);
+                setThemeColorId(
+                    themeList.themes[newThemeIndex].themeColors[0].id,
+                );
+                setThemeColorIndex(0);
             }
             themeList.theme(themeToDelete).remove();
         }

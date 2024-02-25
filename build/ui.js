@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad4b4455-9043-4dd2-94eb-b8b1776f7bd0/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ad47934-a74f-4359-be69-b65d70ba764c/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ad4b4455-9043-4dd2-94eb-b8b1776f7bd0/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ad47934-a74f-4359-be69-b65d70ba764c/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2447,10 +2447,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/889820f4-effb-4416-a077-5c450942a955/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6d813433-3b08-4cc1-8177-ac78dbbd6963/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/889820f4-effb-4416-a077-5c450942a955/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6d813433-3b08-4cc1-8177-ac78dbbd6963/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2487,10 +2487,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d48470-fe97-483f-a7ba-b3b9d40969b7/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8c1e4a4-5de1-4c58-8f4e-8a7baab837dd/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/41d48470-fe97-483f-a7ba-b3b9d40969b7/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e8c1e4a4-5de1-4c58-8f4e-8a7baab837dd/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2728,10 +2728,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/febcab3e-52bf-4ab7-925c-10a162a49e92/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61222f66-3de6-40f4-96d6-fec6723b963e/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/febcab3e-52bf-4ab7-925c-10a162a49e92/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61222f66-3de6-40f4-96d6-fec6723b963e/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3205,10 +3205,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/87312567-43ea-4904-9044-ba88cdfb84aa/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4ef89323-7ec4-4570-90d3-4960eed83c9c/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/87312567-43ea-4904-9044-ba88cdfb84aa/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4ef89323-7ec4-4570-90d3-4960eed83c9c/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3278,10 +3278,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/78eee4d8-f4de-4f5c-92db-caeb6fb4e879/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d29d48a7-7841-442c-9eb3-e49bf9a02587/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/78eee4d8-f4de-4f5c-92db-caeb6fb4e879/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d29d48a7-7841-442c-9eb3-e49bf9a02587/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3385,10 +3385,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/182a2b97-8acc-4280-85b5-4db3194d6167/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3284e76e-7382-4e4c-bf70-f26a2697b533/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/182a2b97-8acc-4280-85b5-4db3194d6167/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3284e76e-7382-4e4c-bf70-f26a2697b533/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3985,10 +3985,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/839d0132-2980-418a-8e6a-7549d982caa0/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fab8141b-3e94-4439-b05e-a78d559118b0/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/839d0132-2980-418a-8e6a-7549d982caa0/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fab8141b-3e94-4439-b05e-a78d559118b0/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4493,10 +4493,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4813d00e-ca66-44f4-ac6d-a7152be58aef/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d2aca331-555c-4229-9021-8481ac0c3061/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4813d00e-ca66-44f4-ac6d-a7152be58aef/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d2aca331-555c-4229-9021-8481ac0c3061/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4836,10 +4836,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12b4ce6d-f0f3-48ee-902c-5094b1f5cff3/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3604e921-c009-42b8-a5e4-03619b452cc0/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/12b4ce6d-f0f3-48ee-902c-5094b1f5cff3/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3604e921-c009-42b8-a5e4-03619b452cc0/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5038,10 +5038,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a98730ca-f43d-4a42-9e2f-cbc644a2deca/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/146c1bb7-9361-4248-aed6-3c3cb1348f4b/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a98730ca-f43d-4a42-9e2f-cbc644a2deca/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/146c1bb7-9361-4248-aed6-3c3cb1348f4b/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5134,10 +5134,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b5f90446-9922-4ec5-ac49-f2f11bb78090/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/528099c4-b08c-4c08-a8d1-e1facd5b51c9/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b5f90446-9922-4ec5-ac49-f2f11bb78090/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/528099c4-b08c-4c08-a8d1-e1facd5b51c9/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5218,10 +5218,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/395f7421-839b-4c93-be8a-d71d1c96a645/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98b83cf6-2b97-44aa-8255-59a3ab2bf986/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/395f7421-839b-4c93-be8a-d71d1c96a645/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98b83cf6-2b97-44aa-8255-59a3ab2bf986/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5250,9 +5250,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff3861ba-4315-4f7a-a62d-7eea13bebee8/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91540459-0c3c-45aa-9ff9-e930fa70d52c/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ff3861ba-4315-4f7a-a62d-7eea13bebee8/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91540459-0c3c-45aa-9ff9-e930fa70d52c/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -70924,6 +70924,62 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
+        p2(() => {
+          const newThemeIndex = themeList2.themes.findIndex(
+            (theme2) => theme2.id === themeId
+          );
+          themeIndexRef.current = newThemeIndex;
+          const newThemeColorIndex = themeList2.themes[newThemeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
+          themeColorIndexRef.current = newThemeColorIndex;
+          setThemeIndex(newThemeIndex);
+          setThemeColorIndex(newThemeColorIndex);
+          if (themeRef.current.id !== themeList2.themes[newThemeIndex].id) {
+            console.log(
+              "%cthemeRef.current:",
+              "color: #FF0000",
+              themeRef.current.id
+            );
+            console.log(
+              "%cthemes[themeId]:",
+              "color: #FF0000",
+              themeList2.themes[newThemeIndex].id
+            );
+            themeRef.current = themeList2.themes[newThemeIndex];
+            setThemeColor(themeColorId).setProps.endColor(__spreadProps(__spreadValues({}, themeColor.endColor), {
+              hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone)
+            }));
+            setThemeColor(themeColorId).setProps.tones(
+              themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex].tones
+            );
+            setThemeColor(themeColorId).setProps.hueCalc(
+              themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex].hueCalc
+            );
+            setThemeColor(themeColorId).setProps.chromaCalc(
+              themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex].chromaCalc
+            );
+            setTones(
+              themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex].tones.join(", ")
+            );
+            const newThemeColorId = themeList2.themes[newThemeIndex].themeColors[0].id;
+            const newThemeColor = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
+            if (!newThemeColor) {
+              throw new Error("Theme color not found");
+            }
+            setThemeColor(newThemeColorId).setProps.all(__spreadProps(__spreadValues({}, newThemeColor), {
+              endColor: __spreadProps(__spreadValues({}, newThemeColor.endColor), {
+                hct: Hct.from(
+                  hue(),
+                  chroma(),
+                  newThemeColor.sourceColor.hct.tone
+                )
+              }),
+              hueCalc: newThemeColor.hueCalc
+            }));
+          }
+          if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
+            themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
+          }
+        }, [themeId, themeColorId]);
         const setThemeColorId = useStore(
           IdStore,
           (state) => state.setThemeColorId
@@ -70944,59 +71000,8 @@ svg {
         const [themeColorIndex, setThemeColorIndex] = h2(
           themeColorIndexRef.current
         );
-        p2(() => {
-          const newThemeIndex = themeList2.themes.findIndex(
-            (theme2) => theme2.id === themeId
-          );
-          themeIndexRef.current = newThemeIndex;
-          const newThemeColorIndex = themeList2.themes[newThemeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
-          themeColorIndexRef.current = newThemeColorIndex;
-          setThemeIndex(newThemeIndex);
-          setThemeColorIndex(newThemeColorIndex);
-          setThemeColor(themeColorId).setProps.endColor(__spreadProps(__spreadValues({}, themeColor.endColor), {
-            hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone)
-          }));
-          if (themeRef.current !== themeList2.themes[newThemeIndex]) {
-            console.log(
-              "%cthemeRef.current:",
-              "color: #FF0000",
-              themeRef.current
-            );
-            console.log(
-              "%cthemes[themeId]:",
-              "color: #FF0000",
-              themeList2.themes[newThemeIndex]
-            );
-            themeRef.current = themeList2.themes[newThemeIndex];
-            const newThemeColorId = themeList2.themes[newThemeIndex].themeColors[0].id;
-            const newThemeColor = themeList2.themes[newThemeIndex].themeColors.find(
-              (themeColor2) => themeColor2.id === newThemeColorId
-            );
-            if (!newThemeColor) {
-              throw new Error("Theme color not found");
-            }
-            setThemeColor(newThemeColorId).setProps.all(__spreadProps(__spreadValues({}, newThemeColor), {
-              endColor: __spreadProps(__spreadValues({}, newThemeColor.endColor), {
-                hct: Hct.from(
-                  hue(),
-                  chroma(),
-                  newThemeColor.sourceColor.hct.tone
-                )
-              })
-            }));
-          }
-          if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
-            themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
-          }
-        }, [themeId, themeColorId]);
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
         const setThemeColor = themeList2.theme(themeId).themeColor;
-        const themeRef = _2(theme);
-        const themeColorRef = _2(themeColor);
-        const [hexColorInput, setHexColorInput] = h2(
-          themeColor.sourceColor.sourceHex
-        );
-        const [tones, setTones] = h2(themeColor.tones.join(", "));
         const hue = () => {
           const hue2 = calculateHue2(
             themeList2.themes[themeIndex].themeColors[themeColorIndex].sourceColor.hct.hue,
@@ -71011,28 +71016,11 @@ svg {
           );
           return chroma2;
         };
-        const [hueSlider, setHueSlider] = h2(hue);
-        const [hueCalcInput, setHueCalcInput] = h2(
-          themeColor.hueCalc
+        const themeRef = _2(theme);
+        const themeColorRef = _2(themeColor);
+        const [hexColorInput, setHexColorInput] = h2(
+          themeColor.sourceColor.sourceHex
         );
-        const [chromaSlider, setChromaSlider] = h2(chroma);
-        const [chromaCalcInput, setChromaCalcInput] = h2(
-          themeColor.chromaCalc
-        );
-        const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
-        const maxChromaHues = F2(() => {
-          return findHighestChromaPerHue().map(({ hue: hue2, chroma: chroma2, tone }) => {
-            return hexFromHct(Hct.from(hue2, chroma2, tone));
-          }).join(", ");
-        }, []);
-        p2(() => {
-          setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
-          setThemeColor(themeColorId).setProps.hueCalc(hueCalcInput);
-          setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
-        }, [tones, hueCalcInput]);
-        p2(() => {
-          setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
-        }, [chromaCalcInput]);
         p2(() => {
           const calculatedHue = round2(
             calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
@@ -71058,6 +71046,32 @@ svg {
             setChromaCalcInput(`${calculatedChroma}`);
           }
         }, [hexColorInput]);
+        const [tones, setTones] = h2(themeColor.tones.join(", "));
+        p2(() => {
+          setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
+        }, [tones]);
+        const [hueSlider, setHueSlider] = h2(hue);
+        const [hueCalcInput, setHueCalcInput] = h2(
+          themeColor.hueCalc
+        );
+        p2(() => {
+          setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
+          setThemeColor(themeColorId).setProps.hueCalc(hueCalcInput);
+          setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
+        }, [hueCalcInput]);
+        const [chromaSlider, setChromaSlider] = h2(chroma);
+        const [chromaCalcInput, setChromaCalcInput] = h2(
+          themeColor.chromaCalc
+        );
+        p2(() => {
+          setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
+        }, [chromaCalcInput]);
+        const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
+        const maxChromaHues = F2(() => {
+          return findHighestChromaPerHue().map(({ hue: hue2, chroma: chroma2, tone }) => {
+            return hexFromHct(Hct.from(hue2, chroma2, tone));
+          }).join(", ");
+        }, []);
         const nameTheNameless = () => {
           if (!themeColor.name) {
             setThemeColor(themeColorId).setProps.name("Color");
@@ -76942,6 +76956,8 @@ svg {
       init_useId();
       import_lodash = __toESM(require_lodash());
       init_esm();
+      init_material_color_utilities();
+      init_color_utils2();
       Plugin = () => {
         const IdStore = q2(IdContext);
         if (!IdStore) {
@@ -76973,18 +76989,69 @@ svg {
         const [themeColorIndex, setThemeColorIndex] = h2(
           themeColorIndexRef.current
         );
+        const hue = () => {
+          const hue2 = calculateHue2(
+            themeList2.themes[themeIndex].themeColors[themeColorIndex].sourceColor.hct.hue,
+            themeColor.hueCalc
+          );
+          return hue2;
+        };
+        const chroma = () => {
+          const chroma2 = calculateChroma2(
+            themeColor.sourceColor.hct.chroma,
+            themeColor.chromaCalc
+          );
+          return chroma2;
+        };
         p2(() => {
-          themeIndexRef.current = themeList2.themes.findIndex(
+          const newThemeIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
           );
-          themeColorIndexRef.current = themeList2.themes[themeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
-          setThemeIndex(themeIndexRef.current);
-          setThemeColorIndex(themeColorIndexRef.current);
-          if (themeRef.current !== themeList2.themes[themeIndex]) {
-            themeRef.current = themeList2.themes[themeIndex];
+          themeIndexRef.current = newThemeIndex;
+          const newThemeColorIndex = themeList2.themes[newThemeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
+          themeColorIndexRef.current = newThemeColorIndex;
+          console.log(
+            "%cthemeRef.current:",
+            "color: #FF0000",
+            themeRef.current.id
+          );
+          console.log(
+            "%cthemes[themeId]:",
+            "color: #FF0000",
+            themeList2.themes[newThemeIndex].id
+          );
+          setThemeIndex(newThemeIndex);
+          setThemeColorIndex(newThemeColorIndex);
+          if (themeRef.current.id !== themeList2.themes[newThemeIndex].id) {
+            themeRef.current = themeList2.themes[newThemeIndex];
+            console.log(
+              "%cthemeRef.current:",
+              "color: #FF0000",
+              themeRef.current.id
+            );
+            console.log(
+              "%cthemes[themeId]:",
+              "color: #FF0000",
+              themeList2.themes[newThemeIndex].id
+            );
+            const newThemeColorId = themeList2.themes[newThemeIndex].themeColors[0].id;
+            const newThemeColor = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
+            if (!newThemeColor) {
+              throw new Error("Theme color not found");
+            }
+            setThemeColor(newThemeColorId).setProps.all(__spreadProps(__spreadValues({}, newThemeColor), {
+              endColor: __spreadProps(__spreadValues({}, newThemeColor.endColor), {
+                hct: Hct.from(
+                  hue(),
+                  chroma(),
+                  newThemeColor.sourceColor.hct.tone
+                )
+              }),
+              hueCalc: newThemeColor.hueCalc
+            }));
           }
-          if (themeColorRef.current !== themeList2.themes[themeIndex].themeColors[themeColorIndex]) {
-            themeColorRef.current = themeList2.themes[themeIndex].themeColors[themeColorIndex];
+          if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
+            themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
           }
         }, [themeId, themeColorId]);
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
@@ -77035,7 +77102,8 @@ svg {
             value: "Duplicate"
           },
           {
-            value: "Delete"
+            value: "Delete",
+            disabled: themeList2.themes.length === 1
           }
         ];
         const handleOptionSelect = (event) => {
@@ -77067,8 +77135,26 @@ svg {
               const newTheme = createTheme(nanoid(12), "New theme");
               themeList2.add.theme(newTheme);
               setThemeId(newTheme.id);
+              const newThemeIndex = (0, import_lodash.findIndex)(
+                themeList2.themes,
+                (theme2) => theme2.id === newTheme.id
+              );
+              setThemeIndex(newThemeIndex);
+              setThemeColorId(
+                themeList2.themes[newThemeIndex].themeColors[0].id
+              );
+              setThemeColorIndex(0);
             } else {
               setThemeId(nextThemeId);
+              const newThemeIndex = (0, import_lodash.findIndex)(
+                themeList2.themes,
+                (theme2) => theme2.id === nextThemeId
+              );
+              setThemeIndex(newThemeIndex);
+              setThemeColorId(
+                themeList2.themes[newThemeIndex].themeColors[0].id
+              );
+              setThemeColorIndex(0);
             }
             themeList2.theme(themeToDelete).remove();
           }
