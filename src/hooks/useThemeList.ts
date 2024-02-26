@@ -533,11 +533,11 @@ const useThemeList = create<ThemeListData & ThemeListActions>(
                         : currentTheme.themeColors.find(
                               (themeColor) => themeColor.id === id,
                           );
-                console.log(
-                    '%cPRE-if themeList:',
-                    'color: #FFDE6A',
-                    themeList(set, get, ...a),
-                );
+                // console.log(
+                //     '%cPRE-if themeList:',
+                //     'color: #FFDE6A',
+                //     themeList(set, get, ...a),
+                // );
                 if (!themeColor) {
                     console.log(
                         '%cCANNOT FIND themeColor',

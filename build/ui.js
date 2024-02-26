@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be02571b-44b4-476b-9543-4ce6528185a1/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06c59056-e579-49b7-8ffc-302cf09cc5c8/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/be02571b-44b4-476b-9543-4ce6528185a1/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06c59056-e579-49b7-8ffc-302cf09cc5c8/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1161,6 +1161,9 @@ video {
 }
 .pb-4 {
   padding-bottom: 1rem;
+}
+.pb-px {
+  padding-bottom: 1px;
 }
 .text-center {
   text-align: center;
@@ -2447,10 +2450,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50ccc729-2b62-4e2c-929f-ef2584ecc3d2/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50126e93-6875-47ef-8c38-90228557b6b2/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50ccc729-2b62-4e2c-929f-ef2584ecc3d2/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50126e93-6875-47ef-8c38-90228557b6b2/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2487,10 +2490,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/089c63ab-d083-4b64-a4d3-9087f541c151/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98d515c2-fe82-479f-9f86-a09b0bfc7e0e/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/089c63ab-d083-4b64-a4d3-9087f541c151/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98d515c2-fe82-479f-9f86-a09b0bfc7e0e/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2728,10 +2731,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c239fae5-fee6-4088-88e8-812fb72438c1/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6c997ef-976e-4c54-97ee-5dddd49c0178/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c239fae5-fee6-4088-88e8-812fb72438c1/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6c997ef-976e-4c54-97ee-5dddd49c0178/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3205,10 +3208,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d3c9fe9-b642-4764-b340-8db65a0492ab/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/769b061c-249d-45ee-86a6-24ee9ec34c3b/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d3c9fe9-b642-4764-b340-8db65a0492ab/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/769b061c-249d-45ee-86a6-24ee9ec34c3b/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3278,10 +3281,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/84d3e607-2608-4954-a213-b1f60b5603e7/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/757b26ba-e3ad-4d36-8c06-d9278dff67d7/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/84d3e607-2608-4954-a213-b1f60b5603e7/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/757b26ba-e3ad-4d36-8c06-d9278dff67d7/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3385,10 +3388,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e449ff5-3be8-46da-bead-fe84a45e137f/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3180fa17-c137-4b25-93f9-e3778974bf49/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7e449ff5-3be8-46da-bead-fe84a45e137f/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3180fa17-c137-4b25-93f9-e3778974bf49/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3985,10 +3988,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/47372ff3-b316-48c3-a7b6-be47ee8cec63/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ba3b53f-560b-4db1-9ef1-d5cb729cd70a/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/47372ff3-b316-48c3-a7b6-be47ee8cec63/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ba3b53f-560b-4db1-9ef1-d5cb729cd70a/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4493,10 +4496,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/737e1806-85b1-4be9-a73c-2540c15d37aa/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f5b4121-ebaa-4584-8b63-ee87b5274045/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/737e1806-85b1-4be9-a73c-2540c15d37aa/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f5b4121-ebaa-4584-8b63-ee87b5274045/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4836,10 +4839,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc7cfaa0-53a9-400c-9268-3c2433324376/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1a252f50-1ef3-426c-9986-55d2a9b98277/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc7cfaa0-53a9-400c-9268-3c2433324376/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1a252f50-1ef3-426c-9986-55d2a9b98277/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5038,10 +5041,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/02051084-5c3c-4c2b-85b7-9d3336fc14ca/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbaa831b-a9e3-4d91-9055-464a1c782c9e/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/02051084-5c3c-4c2b-85b7-9d3336fc14ca/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbaa831b-a9e3-4d91-9055-464a1c782c9e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5134,10 +5137,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5442f785-5c9a-49b8-bf05-736532774ebd/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cebc2d0-886f-432f-81a7-a366ea3ba838/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5442f785-5c9a-49b8-bf05-736532774ebd/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cebc2d0-886f-432f-81a7-a366ea3ba838/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5218,10 +5221,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d89e9d2-f468-4160-9f26-e0a10ced372c/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d940405-9c9f-42b4-bd8a-9d130aff2226/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d89e9d2-f468-4160-9f26-e0a10ced372c/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d940405-9c9f-42b4-bd8a-9d130aff2226/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5250,9 +5253,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61bfc755-bc24-4b7f-a783-6de849541beb/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2242a1e-a8c8-4e0f-818d-b2948bb6ad8b/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/61bfc755-bc24-4b7f-a783-6de849541beb/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2242a1e-a8c8-4e0f-818d-b2948bb6ad8b/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -68913,7 +68916,7 @@ svg {
   });
 
   // src/hooks/useAliasGroup.ts
-  var createAlias, createAliasList, createAliasGroup, AliasDataSchema, AliasActionsSchema, aliasData, aliasActions, useAlias, AliasGroupDataSchema, aliasGroupData, AliasGroupActionsSchema, aliasGroupActions, AliasCrudSchema, aliasCrud, useAliasGroup;
+  var createAlias, createAliasList, capitalizeFirstLetter, createAliasGroup, AliasDataSchema, AliasActionsSchema, aliasData, aliasActions, useAlias, AliasGroupDataSchema, aliasGroupData, AliasGroupActionsSchema, aliasGroupActions, AliasCrudSchema, aliasCrud, useAliasGroup;
   var init_useAliasGroup = __esm({
     "src/hooks/useAliasGroup.ts"() {
       "use strict";
@@ -68938,11 +68941,19 @@ svg {
           )
         );
       };
+      capitalizeFirstLetter = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      };
       createAliasGroup = (id = nanoid(12), name310 = "Alias group", aliases = [
-        createAlias(nanoid(12), "color", 40, 80),
-        createAlias(nanoid(12), "onColor", 100, 20),
-        createAlias(nanoid(12), "colorContainer", 90, 30),
-        createAlias(nanoid(12), "onColorContainer", 10, 90)
+        createAlias(nanoid(12), `${name310.toLowerCase()}`, 40, 80),
+        createAlias(nanoid(12), `on${capitalizeFirstLetter(name310)}`, 100, 20),
+        createAlias(nanoid(12), `${name310}Container`, 90, 30),
+        createAlias(
+          nanoid(12),
+          `on${capitalizeFirstLetter(name310.toLowerCase())}Container`,
+          10,
+          90
+        )
       ], themeColorIds = []) => {
         return {
           id,
@@ -69157,8 +69168,8 @@ svg {
         96,
         98
       ];
-      defaultAliasGroup = createAliasGroup();
-      createThemeColor = (sourceHex2 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, tones = defaultTones, aliasGroup = defaultAliasGroup) => {
+      defaultAliasGroup = createAliasGroup(nanoid(12), "Alias group");
+      createThemeColor = (sourceHex2 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, tones = defaultTones, aliasGroup = createAliasGroup(nanoid(12), `${name310}`)) => {
         return {
           id: nanoid(12),
           name: name310,
@@ -69609,7 +69620,7 @@ svg {
             }
           );
         });
-        return /* @__PURE__ */ y("div", { className: "flex flex-row pb-2" }, /* @__PURE__ */ y("div", { className: "grow" }, aliasList), /* @__PURE__ */ y("div", { className: "w-32" }, aliasPreview));
+        return /* @__PURE__ */ y("div", { className: "flex flex-row pb-px" }, /* @__PURE__ */ y("div", { className: "grow" }, aliasList), /* @__PURE__ */ y("div", { className: "w-32" }, aliasPreview));
       };
       AliasTonePreview = ({
         hue,
@@ -69700,7 +69711,7 @@ svg {
   });
 
   // src/hooks/useTheme.ts
-  var sourceHex, slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose, tailwindTones, tailwindAliases, tailwindAliasGroup, defaultThemeColors, defaultThemeColors2, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
+  var sourceHex, materialNeutralAliases, materialNeutralAliasGroup, materialNeutralVariantAliases, materialNeutralVariantAliasGroup, defaultThemeColors, slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose, tailwindTones, tailwindAliases, tailwindAliasGroup, defaultThemeColors2, defaultAliasGroups, createTheme, defaultThemeColor, ThemeDataSchema, ThemeActionsSchema, themeData, themeActions, ThemeColorCrudSchema, themeColorCrud, AliasGroupCrudSchema, aliasGroupCrud, useTheme;
   var init_useTheme = __esm({
     "src/hooks/useTheme.ts"() {
       "use strict";
@@ -69711,6 +69722,56 @@ svg {
       init_useAliasGroup();
       init_middleware();
       sourceHex = "397456";
+      materialNeutralAliases = [
+        createAlias(nanoid(12), "surface", 98, 6),
+        createAlias(nanoid(12), "onSurface", 10, 90),
+        createAlias(nanoid(12), "surfaceContainerLowest", 100, 4),
+        createAlias(nanoid(12), "surfaceContainerLow", 96, 10),
+        createAlias(nanoid(12), "surfaceContainer", 94, 12),
+        createAlias(nanoid(12), "surfaceContainerHigh", 92, 17),
+        createAlias(nanoid(12), "surfaceContainerHighest", 90, 22),
+        createAlias(nanoid(12), "surfaceDim", 87, 6),
+        createAlias(nanoid(12), "surfaceBright", 98, 24),
+        createAlias(nanoid(12), "inverseSurface", 20, 90),
+        createAlias(nanoid(12), "inverseOnSurface", 95, 20),
+        createAlias(nanoid(12), "srim", 0, 0),
+        createAlias(nanoid(12), "shadow", 0, 0)
+      ];
+      materialNeutralAliasGroup = __spreadProps(__spreadValues({}, createAliasGroup()), {
+        name: "Neutral",
+        aliases: materialNeutralAliases
+      });
+      materialNeutralVariantAliases = [
+        createAlias(nanoid(12), "outline", 50, 60),
+        createAlias(nanoid(12), "outlineVariant", 80, 30),
+        createAlias(nanoid(12), "onSurfaceVariant", 30, 80)
+      ];
+      materialNeutralVariantAliasGroup = __spreadProps(__spreadValues({}, createAliasGroup()), {
+        name: "Neutral",
+        aliases: materialNeutralVariantAliases
+      });
+      defaultThemeColors = [
+        createThemeColor(sourceHex, "primary", "", ""),
+        createThemeColor(sourceHex, "secondary", "", "c/3"),
+        createThemeColor(sourceHex, "tertiary", "h+60", "c/2"),
+        createThemeColor(
+          sourceHex,
+          "neutral",
+          "",
+          "c/12",
+          defaultTones,
+          materialNeutralAliasGroup
+        ),
+        createThemeColor(
+          sourceHex,
+          "neutralVariant",
+          "",
+          "c/8",
+          defaultTones,
+          materialNeutralVariantAliasGroup
+        ),
+        createThemeColor(sourceHex, "error", "25", "89")
+      ];
       slate = "475569";
       gray = "4b5563";
       zinc = "52525b";
@@ -69751,14 +69812,6 @@ svg {
         name: "Tailwind",
         aliases: tailwindAliases
       });
-      defaultThemeColors = [
-        createThemeColor(sourceHex, "Primary 1", "h", "c"),
-        createThemeColor(sourceHex, "Secondary", "", "c/3"),
-        createThemeColor(sourceHex, "Tertiary", "h+60", "c/2"),
-        createThemeColor(sourceHex, "neutral", "", "c/12"),
-        createThemeColor(sourceHex, "neutralVariant", "", "c/8"),
-        createThemeColor(sourceHex, "error", "25", "89")
-      ];
       defaultThemeColors2 = [
         createThemeColor(slate, "Slate", "", "", tailwindTones, tailwindAliasGroup),
         createThemeColor(gray, "Gray", "", "", tailwindTones, tailwindAliasGroup),
@@ -70260,11 +70313,6 @@ svg {
               const currentTheme = get().theme(themeId).data;
               const themeColor2 = typeof id === "number" ? currentTheme.themeColors[id] : currentTheme.themeColors.find(
                 (themeColor3) => themeColor3.id === id
-              );
-              console.log(
-                "%cPRE-if themeList:",
-                "color: #FFDE6A",
-                themeList(set2, get, ...a3)
               );
               if (!themeColor2) {
                 console.log(
@@ -76954,41 +77002,6 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
-        const setThemeId = useStore(IdStore, (state) => state.setThemeId);
-        const setThemeColorId = useStore(
-          IdStore,
-          (state) => state.setThemeColorId
-        );
-        const themeListStore = useThemeList;
-        const themeList2 = themeListStore();
-        const themeIndexRef = _2(
-          themeList2.themes.findIndex((theme2) => theme2.id === themeId)
-        );
-        const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
-        const theme = themeListStore((state) => state.themes[themeIndex]);
-        const setTheme = themeList2.theme(themeId);
-        const themeColorIndexRef = _2(
-          theme.themeColors.findIndex(
-            (themeColor2) => themeColor2.id === themeColorId
-          )
-        );
-        const [themeColorIndex, setThemeColorIndex] = h2(
-          themeColorIndexRef.current
-        );
-        const hue = () => {
-          const hue2 = calculateHue2(
-            themeList2.themes[themeIndex].themeColors[themeColorIndex].sourceColor.hct.hue,
-            themeColor.hueCalc
-          );
-          return hue2;
-        };
-        const chroma = () => {
-          const chroma2 = calculateChroma2(
-            themeColor.sourceColor.hct.chroma,
-            themeColor.chromaCalc
-          );
-          return chroma2;
-        };
         p2(() => {
           const newThemeIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
@@ -77040,6 +77053,53 @@ svg {
             themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
           }
         }, [themeId, themeColorId]);
+        const setThemeId = useStore(IdStore, (state) => state.setThemeId);
+        const setThemeColorId = useStore(
+          IdStore,
+          (state) => state.setThemeColorId
+        );
+        const themeListStore = useThemeList;
+        const themeList2 = themeListStore();
+        const themeIndexRef = _2(
+          themeList2.themes.findIndex((theme2) => theme2.id === themeId)
+        );
+        const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
+        const theme = themeListStore((state) => state.themes[themeIndex]);
+        const setTheme = themeList2.theme(themeId);
+        const themeColorIndexRef = _2(
+          themeList2.themes[themeIndex].themeColors.findIndex(
+            (themeColor2) => themeColor2.id === themeColorId
+          )
+        );
+        const [themeColorIndex, setThemeColorIndex] = h2(
+          themeColorIndexRef.current
+        );
+        const [themeToDelete, setThemeToDelete] = h2("");
+        p2(() => {
+          const newThemeIndex = Math.abs(themeIndex - 1);
+          const themeToDeleteExists = themeList2.themes.some(
+            (theme2) => theme2.id === themeToDelete
+          );
+          if (themeToDeleteExists) {
+            setThemeId(themeList2.themes[newThemeIndex].id);
+            setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
+            themeList2.theme(themeToDelete).remove();
+          }
+        }, [themeToDelete]);
+        const hue = () => {
+          const hue2 = calculateHue2(
+            themeList2.themes[themeIndex].themeColors[themeColorIndex].sourceColor.hct.hue,
+            themeColor.hueCalc
+          );
+          return hue2;
+        };
+        const chroma = () => {
+          const chroma2 = calculateChroma2(
+            themeColor.sourceColor.hct.chroma,
+            themeColor.chromaCalc
+          );
+          return chroma2;
+        };
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
         const setThemeColor = themeList2.theme(themeId).themeColor;
         const themeRef = _2(theme);
@@ -77093,7 +77153,6 @@ svg {
           }
         ];
         const handleOptionSelect = (event) => {
-          var _a;
           const selectedValue = event.currentTarget.value;
           if (selectedValue === "New theme...") {
             const newThemeName = `Theme ${Object.keys(themeList2.themes).length + 1}`;
@@ -77113,36 +77172,8 @@ svg {
             themeList2.add.theme(newTheme);
           }
           if (selectedValue === "Delete") {
-            const themeToDelete = themeId;
-            const nextThemeId = (_a = themeList2.themes.find(
-              (theme2) => theme2.id !== themeId
-            )) == null ? void 0 : _a.id;
-            if (!nextThemeId) {
-              const newTheme = createTheme(nanoid(12), "New theme");
-              themeList2.add.theme(newTheme);
-              setThemeId(newTheme.id);
-              const newThemeIndex = (0, import_lodash.findIndex)(
-                themeList2.themes,
-                (theme2) => theme2.id === newTheme.id
-              );
-              setThemeIndex(newThemeIndex);
-              setThemeColorId(
-                themeList2.themes[newThemeIndex].themeColors[0].id
-              );
-              setThemeColorIndex(0);
-            } else {
-              setThemeId(nextThemeId);
-              const newThemeIndex = (0, import_lodash.findIndex)(
-                themeList2.themes,
-                (theme2) => theme2.id === nextThemeId
-              );
-              setThemeIndex(newThemeIndex);
-              setThemeColorId(
-                themeList2.themes[newThemeIndex].themeColors[0].id
-              );
-              setThemeColorIndex(0);
-            }
-            themeList2.theme(themeToDelete).remove();
+            const themeToDelete2 = themeId;
+            setThemeToDelete(themeToDelete2);
           }
           if (selectedValue !== "New theme..." && selectedValue !== "Rename..." && selectedValue !== "Duplicate" && selectedValue !== "Delete") {
             setThemeId(selectedValue);
@@ -77183,9 +77214,6 @@ svg {
           if (!theme.name) {
             setTheme.setProps.name(pickRandomName(names));
           }
-        };
-        const onSetThemeData = (themeData2) => {
-          themeList2.theme(themeId).update(themeData2);
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
           Textbox,

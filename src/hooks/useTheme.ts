@@ -3,6 +3,7 @@ import { create, StateCreator } from 'zustand';
 import { nanoid } from 'nanoid';
 import {
     createThemeColor,
+    defaultTones,
     ThemeColorData,
     ThemeColorDataSchema,
 } from './useThemeColor';
@@ -35,6 +36,64 @@ export {
 };
 
 const sourceHex = '397456';
+
+const materialNeutralAliases = [
+    createAlias(nanoid(12), 'surface', 98, 6),
+    createAlias(nanoid(12), 'onSurface', 10, 90),
+    createAlias(nanoid(12), 'surfaceContainerLowest', 100, 4),
+    createAlias(nanoid(12), 'surfaceContainerLow', 96, 10),
+    createAlias(nanoid(12), 'surfaceContainer', 94, 12),
+    createAlias(nanoid(12), 'surfaceContainerHigh', 92, 17),
+    createAlias(nanoid(12), 'surfaceContainerHighest', 90, 22),
+    createAlias(nanoid(12), 'surfaceDim', 87, 6),
+    createAlias(nanoid(12), 'surfaceBright', 98, 24),
+    createAlias(nanoid(12), 'inverseSurface', 20, 90),
+    createAlias(nanoid(12), 'inverseOnSurface', 95, 20),
+    createAlias(nanoid(12), 'srim', 0, 0),
+    createAlias(nanoid(12), 'shadow', 0, 0),
+];
+
+const materialNeutralAliasGroup = {
+    ...createAliasGroup(),
+    name: 'Neutral',
+    aliases: materialNeutralAliases,
+};
+
+const materialNeutralVariantAliases = [
+    createAlias(nanoid(12), 'outline', 50, 60),
+    createAlias(nanoid(12), 'outlineVariant', 80, 30),
+    createAlias(nanoid(12), 'onSurfaceVariant', 30, 80),
+];
+
+const materialNeutralVariantAliasGroup = {
+    ...createAliasGroup(),
+    name: 'Neutral',
+    aliases: materialNeutralVariantAliases,
+};
+
+const defaultThemeColors: ThemeColorData[] = [
+    createThemeColor(sourceHex, 'primary', '', ''),
+    createThemeColor(sourceHex, 'secondary', '', 'c/3'),
+    createThemeColor(sourceHex, 'tertiary', 'h+60', 'c/2'),
+    createThemeColor(
+        sourceHex,
+        'neutral',
+        '',
+        'c/12',
+        defaultTones,
+        materialNeutralAliasGroup,
+    ),
+    createThemeColor(
+        sourceHex,
+        'neutralVariant',
+        '',
+        'c/8',
+        defaultTones,
+        materialNeutralVariantAliasGroup,
+    ),
+    createThemeColor(sourceHex, 'error', '25', '89'),
+];
+
 const slate = '475569';
 const gray = '4b5563';
 const zinc = '52525b';
@@ -80,14 +139,6 @@ const tailwindAliasGroup = {
     aliases: tailwindAliases,
 };
 
-const defaultThemeColors: ThemeColorData[] = [
-    createThemeColor(sourceHex, 'Primary 1', 'h', 'c'),
-    createThemeColor(sourceHex, 'Secondary', '', 'c/3'),
-    createThemeColor(sourceHex, 'Tertiary', 'h+60', 'c/2'),
-    createThemeColor(sourceHex, 'neutral', '', 'c/12'),
-    createThemeColor(sourceHex, 'neutralVariant', '', 'c/8'),
-    createThemeColor(sourceHex, 'error', '25', '89'),
-];
 const defaultThemeColors2: ThemeColorData[] = [
     createThemeColor(slate, 'Slate', '', '', tailwindTones, tailwindAliasGroup),
     createThemeColor(gray, 'Gray', '', '', tailwindTones, tailwindAliasGroup),

@@ -62,6 +62,10 @@ const createAliasList = (aliases: AliasData[] = []): AliasData[] => {
     );
 };
 
+const capitalizeFirstLetter = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 /**
  * Creates an alias group with the specified parameters.
  *
@@ -75,10 +79,15 @@ const createAliasGroup = (
     id: string = nanoid(12),
     name: string = 'Alias group',
     aliases: AliasData[] = [
-        createAlias(nanoid(12), 'color', 40, 80),
-        createAlias(nanoid(12), 'onColor', 100, 20),
-        createAlias(nanoid(12), 'colorContainer', 90, 30),
-        createAlias(nanoid(12), 'onColorContainer', 10, 90),
+        createAlias(nanoid(12), `${name.toLowerCase()}`, 40, 80),
+        createAlias(nanoid(12), `on${capitalizeFirstLetter(name)}`, 100, 20),
+        createAlias(nanoid(12), `${name}Container`, 90, 30),
+        createAlias(
+            nanoid(12),
+            `on${capitalizeFirstLetter(name.toLowerCase())}Container`,
+            10,
+            90,
+        ),
     ],
     themeColorIds: string[] = [],
 ): AliasGroupData => {

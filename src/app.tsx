@@ -16,6 +16,7 @@ import { findIndex, set } from 'lodash';
 import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
+import { re } from 'mathjs';
 
 export const Plugin = () => {
     // ID state
@@ -28,49 +29,6 @@ export const Plugin = () => {
         IdStore,
         (state: IdState) => state.themeColorId,
     );
-
-    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
-    const setThemeColorId = useStore(
-        IdStore,
-        (state: IdState) => state.setThemeColorId,
-    );
-    // themeList state
-    const themeListStore = useThemeList;
-    const themeList = themeListStore();
-
-    const themeIndexRef = useRef(
-        themeList.themes.findIndex((theme) => theme.id === themeId),
-    );
-    const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
-
-    // theme state
-    const theme = themeListStore((state) => state.themes[themeIndex]);
-    const setTheme = themeList.theme(themeId);
-
-    const themeColorIndexRef = useRef(
-        theme.themeColors.findIndex(
-            (themeColor) => themeColor.id === themeColorId,
-        ),
-    );
-    const [themeColorIndex, setThemeColorIndex] = useState<number>(
-        themeColorIndexRef.current,
-    );
-
-    const hue = () => {
-        const hue: number = calculateHue(
-            themeList.themes[themeIndex].themeColors[themeColorIndex]
-                .sourceColor.hct.hue,
-            themeColor.hueCalc,
-        );
-        return hue;
-    };
-    const chroma = () => {
-        const chroma: number = calculateChroma(
-            themeColor.sourceColor.hct.chroma,
-            themeColor.chromaCalc,
-        );
-        return chroma;
-    };
 
     useEffect(() => {
         const newThemeIndex = themeList.themes.findIndex(
@@ -134,6 +92,62 @@ export const Plugin = () => {
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
         }
     }, [themeId, themeColorId]);
+
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
+    const setThemeColorId = useStore(
+        IdStore,
+        (state: IdState) => state.setThemeColorId,
+    );
+    // themeList state
+    const themeListStore = useThemeList;
+    const themeList = themeListStore();
+
+    const themeIndexRef = useRef(
+        themeList.themes.findIndex((theme) => theme.id === themeId),
+    );
+    const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
+
+    // theme state
+    const theme = themeListStore((state) => state.themes[themeIndex]);
+    const setTheme = themeList.theme(themeId);
+
+    const themeColorIndexRef = useRef(
+        themeList.themes[themeIndex].themeColors.findIndex(
+            (themeColor) => themeColor.id === themeColorId,
+        ),
+    );
+    const [themeColorIndex, setThemeColorIndex] = useState<number>(
+        themeColorIndexRef.current,
+    );
+
+    const [themeToDelete, setThemeToDelete] = useState<string>('');
+    useEffect(() => {
+        const newThemeIndex: number = Math.abs(themeIndex - 1);
+        const themeToDeleteExists = themeList.themes.some(
+            (theme) => theme.id === themeToDelete,
+        );
+        if (themeToDeleteExists) {
+            setThemeId(themeList.themes[newThemeIndex].id);
+            setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
+            themeList.theme(themeToDelete).remove();
+        }
+    }, [themeToDelete]);
+
+    const hue = () => {
+        const hue: number = calculateHue(
+            themeList.themes[themeIndex].themeColors[themeColorIndex]
+                .sourceColor.hct.hue,
+            themeColor.hueCalc,
+        );
+        return hue;
+    };
+    const chroma = () => {
+        const chroma: number = calculateChroma(
+            themeColor.sourceColor.hct.chroma,
+            themeColor.chromaCalc,
+        );
+        return chroma;
+    };
 
     // themeColor state
     const themeColor =
@@ -221,35 +235,8 @@ export const Plugin = () => {
         if (selectedValue === 'Delete') {
             const themeToDelete = themeId;
             // find the id of the next theme in the list that doesn't match the current theme
-            const nextThemeId = themeList.themes.find(
-                (theme) => theme.id !== themeId,
-            )?.id;
-            if (!nextThemeId) {
-                const newTheme = createTheme(nanoid(12), 'New theme');
-                themeList.add.theme(newTheme);
-                setThemeId(newTheme.id);
-                const newThemeIndex = findIndex(
-                    themeList.themes,
-                    (theme) => theme.id === newTheme.id,
-                );
-                setThemeIndex(newThemeIndex);
-                setThemeColorId(
-                    themeList.themes[newThemeIndex].themeColors[0].id,
-                );
-                setThemeColorIndex(0);
-            } else {
-                setThemeId(nextThemeId);
-                const newThemeIndex = findIndex(
-                    themeList.themes,
-                    (theme) => theme.id === nextThemeId,
-                );
-                setThemeIndex(newThemeIndex);
-                setThemeColorId(
-                    themeList.themes[newThemeIndex].themeColors[0].id,
-                );
-                setThemeColorIndex(0);
-            }
-            themeList.theme(themeToDelete).remove();
+
+            setThemeToDelete(themeToDelete);
         }
         if (
             selectedValue !== 'New theme...' &&
@@ -294,9 +281,6 @@ export const Plugin = () => {
         if (!theme.name) {
             setTheme.setProps.name(pickRandomName(names));
         }
-    };
-    const onSetThemeData = (themeData: ThemeData) => {
-        themeList.theme(themeId).update(themeData);
     };
 
     // Rendering the UI

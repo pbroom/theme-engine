@@ -175,7 +175,7 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
         );
     });
     return (
-        <div className="flex flex-row pb-2">
+        <div className="flex flex-row pb-px">
             <div className="grow">{aliasList}</div>
             <div className="w-32">{aliasPreview}</div>
         </div>

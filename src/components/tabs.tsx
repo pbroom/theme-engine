@@ -137,7 +137,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
         ) {
             themeColorRef.current =
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
-            // setThemeColorIndex(newThemeColorIndex);
         }
     }, [themeId, themeColorId]);
 

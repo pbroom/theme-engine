@@ -37,11 +37,11 @@ const defaultSourceHex = '397456';
 const defaultName = 'Color';
 const defaultHueCalc = '';
 const defaultChromaCalc = '';
-const defaultTones = [
+export const defaultTones = [
     0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100, 4, 5, 6, 12, 17, 22, 24,
     25, 35, 87, 92, 94, 96, 98,
 ];
-const defaultAliasGroup = createAliasGroup();
+const defaultAliasGroup = createAliasGroup(nanoid(12), 'Alias group');
 
 /**
  * Creates a theme color object.
@@ -59,7 +59,7 @@ const createThemeColor = (
     hueCalc: string = defaultHueCalc,
     chromaCalc: string = defaultChromaCalc,
     tones: number[] = defaultTones,
-    aliasGroup: AliasGroupData = defaultAliasGroup,
+    aliasGroup: AliasGroupData = createAliasGroup(nanoid(12), `${name}`),
 ): ThemeColorData => {
     return {
         id: nanoid(12),
