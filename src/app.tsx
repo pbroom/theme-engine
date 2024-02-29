@@ -30,6 +30,32 @@ export const Plugin = () => {
         (state: IdState) => state.themeColorId,
     );
 
+    const [themeToDelete, setThemeToDelete] = useState<string>('');
+    useEffect(() => {
+        const themeToDeleteIndex: number = themeList.themes.findIndex(
+            (theme) => theme.id === themeToDelete,
+        );
+        const newThemeIndex: number = Math.abs(themeIndex - 1);
+        const themeToDeleteExists = themeList.themes.some(
+            (theme) => theme.id === themeToDelete,
+        );
+        if (
+            themeToDeleteExists &&
+            themeToDeleteIndex !== themeList.themes.length - 1
+        ) {
+            setThemeId(themeList.themes[newThemeIndex].id);
+            setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
+            themeList.theme(themeToDelete).remove();
+        }
+        if (
+            themeToDeleteExists &&
+            themeToDeleteIndex === themeList.themes.length - 1
+        ) {
+            setThemeId(themeList.themes[newThemeIndex].id);
+            setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
+        }
+    }, [themeToDelete]);
+
     useEffect(() => {
         const newThemeIndex = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
@@ -83,6 +109,17 @@ export const Plugin = () => {
                 },
                 hueCalc: newThemeColor.hueCalc,
             });
+            if (
+                themeToDelete &&
+                themeToDelete !== themeId &&
+                themeList.themes.length ===
+                    themeList.themes.findIndex(
+                        (theme) => theme.id === themeToDelete,
+                    ) +
+                        1
+            ) {
+                themeList.theme(themeToDelete).remove();
+            }
         }
         if (
             themeColorRef.current !==
@@ -119,19 +156,6 @@ export const Plugin = () => {
     const [themeColorIndex, setThemeColorIndex] = useState<number>(
         themeColorIndexRef.current,
     );
-
-    const [themeToDelete, setThemeToDelete] = useState<string>('');
-    useEffect(() => {
-        const newThemeIndex: number = Math.abs(themeIndex - 1);
-        const themeToDeleteExists = themeList.themes.some(
-            (theme) => theme.id === themeToDelete,
-        );
-        if (themeToDeleteExists) {
-            setThemeId(themeList.themes[newThemeIndex].id);
-            setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
-            themeList.theme(themeToDelete).remove();
-        }
-    }, [themeToDelete]);
 
     const hue = () => {
         const hue: number = calculateHue(
@@ -234,7 +258,6 @@ export const Plugin = () => {
         }
         if (selectedValue === 'Delete') {
             const themeToDelete = themeId;
-            // find the id of the next theme in the list that doesn't match the current theme
 
             setThemeToDelete(themeToDelete);
         }

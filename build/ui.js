@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06c59056-e579-49b7-8ffc-302cf09cc5c8/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b124cd75-f648-4405-a3a4-e306b2a6c8c1/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06c59056-e579-49b7-8ffc-302cf09cc5c8/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b124cd75-f648-4405-a3a4-e306b2a6c8c1/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -714,6 +714,9 @@ video {
 .h-8 {
   height: 2rem;
 }
+.h-80 {
+  height: 20rem;
+}
 .h-9 {
   height: 2.25rem;
 }
@@ -722,9 +725,6 @@ video {
 }
 .h-px {
   height: 1px;
-}
-.h-80 {
-  height: 20rem;
 }
 .max-h-min {
   max-height: -moz-min-content;
@@ -1120,8 +1120,23 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pb-px {
+  padding-bottom: 1px;
 }
 .pl-2 {
   padding-left: 0.5rem;
@@ -1149,21 +1164,6 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
-}
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-.pb-20 {
-  padding-bottom: 5rem;
-}
-.pb-8 {
-  padding-bottom: 2rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
-}
-.pb-px {
-  padding-bottom: 1px;
 }
 .text-center {
   text-align: center;
@@ -2450,10 +2450,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50126e93-6875-47ef-8c38-90228557b6b2/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48fd531f-a66f-44b4-95ee-4305a1ce4a45/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/50126e93-6875-47ef-8c38-90228557b6b2/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48fd531f-a66f-44b4-95ee-4305a1ce4a45/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2490,10 +2490,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98d515c2-fe82-479f-9f86-a09b0bfc7e0e/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc088197-9d97-4f1d-8146-09aa3232ee24/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98d515c2-fe82-479f-9f86-a09b0bfc7e0e/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc088197-9d97-4f1d-8146-09aa3232ee24/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2731,10 +2731,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6c997ef-976e-4c54-97ee-5dddd49c0178/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a47735dd-68a6-4cd3-9a66-5b58af198220/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6c997ef-976e-4c54-97ee-5dddd49c0178/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a47735dd-68a6-4cd3-9a66-5b58af198220/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3208,10 +3208,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/769b061c-249d-45ee-86a6-24ee9ec34c3b/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a3778db-19b0-4dcc-9e9c-9525f1f5f2a0/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/769b061c-249d-45ee-86a6-24ee9ec34c3b/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a3778db-19b0-4dcc-9e9c-9525f1f5f2a0/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3281,10 +3281,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/757b26ba-e3ad-4d36-8c06-d9278dff67d7/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ff5de90-d0b9-493d-8129-c5080dca96d7/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/757b26ba-e3ad-4d36-8c06-d9278dff67d7/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ff5de90-d0b9-493d-8129-c5080dca96d7/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3388,10 +3388,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3180fa17-c137-4b25-93f9-e3778974bf49/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64f37176-5e37-4912-b834-d49de248dc07/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3180fa17-c137-4b25-93f9-e3778974bf49/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64f37176-5e37-4912-b834-d49de248dc07/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3988,10 +3988,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ba3b53f-560b-4db1-9ef1-d5cb729cd70a/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7fd62348-505c-4490-a312-5ddd39f27f62/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6ba3b53f-560b-4db1-9ef1-d5cb729cd70a/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7fd62348-505c-4490-a312-5ddd39f27f62/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4496,10 +4496,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f5b4121-ebaa-4584-8b63-ee87b5274045/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db0c0dbd-c59f-4fe8-9634-688fe3504a8d/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5f5b4121-ebaa-4584-8b63-ee87b5274045/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db0c0dbd-c59f-4fe8-9634-688fe3504a8d/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4839,10 +4839,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1a252f50-1ef3-426c-9986-55d2a9b98277/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b435981-a130-4a50-babc-d056303c59c1/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1a252f50-1ef3-426c-9986-55d2a9b98277/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b435981-a130-4a50-babc-d056303c59c1/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5041,10 +5041,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbaa831b-a9e3-4d91-9055-464a1c782c9e/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7651da44-022d-423e-bcd8-cdcd693e7732/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dbaa831b-a9e3-4d91-9055-464a1c782c9e/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7651da44-022d-423e-bcd8-cdcd693e7732/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5137,10 +5137,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cebc2d0-886f-432f-81a7-a366ea3ba838/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/324b862c-c6a7-4d2a-b61f-0b1268bfa3bf/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cebc2d0-886f-432f-81a7-a366ea3ba838/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/324b862c-c6a7-4d2a-b61f-0b1268bfa3bf/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5221,10 +5221,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d940405-9c9f-42b4-bd8a-9d130aff2226/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67544fab-ffc9-4244-bc9b-3f9aadda2d9d/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9d940405-9c9f-42b4-bd8a-9d130aff2226/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67544fab-ffc9-4244-bc9b-3f9aadda2d9d/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5253,9 +5253,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2242a1e-a8c8-4e0f-818d-b2948bb6ad8b/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/53cab864-1f0f-44bb-90c5-07476567b6c6/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f2242a1e-a8c8-4e0f-818d-b2948bb6ad8b/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/53cab864-1f0f-44bb-90c5-07476567b6c6/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -70982,6 +70982,7 @@ svg {
           setThemeIndex(newThemeIndex);
           setThemeColorIndex(newThemeColorIndex);
           if (themeRef.current.id !== themeList2.themes[newThemeIndex].id) {
+            console.log("%cNew theme ID", "color: #6AAFFF", newThemeIndex);
             themeRef.current = themeList2.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor(__spreadProps(__spreadValues({}, themeColor.endColor), {
               hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone)
@@ -71016,6 +71017,22 @@ svg {
           }
           if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
             themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
+            console.log(
+              "%cNew themeColor ID",
+              "color: #6AAFFF",
+              newThemeColorIndex
+            );
+            const themeColorToDeleteExists = theme.themeColors.some(
+              (themeColor2) => themeColor2.id === themeColorToDelete
+            );
+            if (themeColorToDeleteExists && themeColorToDelete !== themeColorId) {
+              console.log(
+                "%cRemoving themeColor",
+                "color: #e9590c",
+                themeColorToDelete
+              );
+              setTheme(themeId).themeColor(themeColorToDelete).remove();
+            }
           }
         }, [themeId, themeColorId]);
         const setThemeColorId = useStore(
@@ -71030,6 +71047,14 @@ svg {
         const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
         const theme = themeListStore((state) => state.themes[themeIndex]);
         const setTheme = themeList2.theme;
+        const themeColorsRef = _2(theme.themeColors.length);
+        p2(() => {
+          if (themeColorsRef.current > theme.themeColors.length && themeColorIndex === 0) {
+            console.log(themeColorsRef.current, theme.themeColors.length);
+            setThemeColorId(theme.themeColors[0].id);
+          }
+          themeColorsRef.current = theme.themeColors.length;
+        }, [theme.themeColors]);
         const themeColorIndexRef = _2(
           theme.themeColors.findIndex(
             (themeColor2) => themeColor2.id === themeColorId
@@ -71232,13 +71257,31 @@ svg {
         );
         const [themeColorToDelete, setThemeColorToDelete] = h2("");
         p2(() => {
-          const newThemeColorIndex = Math.abs(themeColorIndex - 1);
           const themeColorToDeleteExists = theme.themeColors.some(
             (themeColor2) => themeColor2.id === themeColorToDelete
           );
-          if (themeColorToDeleteExists) {
+          const themeColorToDeleteIndex = theme.themeColors.findIndex(
+            (themeColor2) => themeColor2.id === themeColorToDelete
+          );
+          if (themeColorToDeleteExists && theme.themeColors.length > 1 && theme.themeColors.length > themeColorToDeleteIndex + 1) {
+            const newThemeColorIndex = Math.max(
+              0,
+              theme.themeColors.findIndex(
+                (themeColor2) => themeColor2.id === themeColorToDelete
+              ) - 1
+            );
+            const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+            setThemeColorId(newThemeColorId);
+            setTheme(themeId).themeColor(themeColorToDelete).remove();
+          }
+          if (themeColorToDeleteExists && theme.themeColors.length > 1 && theme.themeColors.length === themeColorToDeleteIndex + 1) {
+            const newThemeColorIndex = Math.max(
+              0,
+              theme.themeColors.findIndex(
+                (themeColor2) => themeColor2.id === themeColorToDelete
+              ) - 1
+            );
             setThemeColorId(theme.themeColors[newThemeColorIndex].id);
-            setThemeColor(themeColorToDelete).remove();
           }
         }, [themeColorToDelete]);
         const options = [
@@ -77002,6 +77045,25 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
+        const [themeToDelete, setThemeToDelete] = h2("");
+        p2(() => {
+          const themeToDeleteIndex = themeList2.themes.findIndex(
+            (theme2) => theme2.id === themeToDelete
+          );
+          const newThemeIndex = Math.abs(themeIndex - 1);
+          const themeToDeleteExists = themeList2.themes.some(
+            (theme2) => theme2.id === themeToDelete
+          );
+          if (themeToDeleteExists && themeToDeleteIndex !== themeList2.themes.length - 1) {
+            setThemeId(themeList2.themes[newThemeIndex].id);
+            setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
+            themeList2.theme(themeToDelete).remove();
+          }
+          if (themeToDeleteExists && themeToDeleteIndex === themeList2.themes.length - 1) {
+            setThemeId(themeList2.themes[newThemeIndex].id);
+            setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
+          }
+        }, [themeToDelete]);
         p2(() => {
           const newThemeIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
@@ -77048,6 +77110,11 @@ svg {
               }),
               hueCalc: newThemeColor.hueCalc
             }));
+            if (themeToDelete && themeToDelete !== themeId && themeList2.themes.length === themeList2.themes.findIndex(
+              (theme2) => theme2.id === themeToDelete
+            ) + 1) {
+              themeList2.theme(themeToDelete).remove();
+            }
           }
           if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
             themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
@@ -77074,18 +77141,6 @@ svg {
         const [themeColorIndex, setThemeColorIndex] = h2(
           themeColorIndexRef.current
         );
-        const [themeToDelete, setThemeToDelete] = h2("");
-        p2(() => {
-          const newThemeIndex = Math.abs(themeIndex - 1);
-          const themeToDeleteExists = themeList2.themes.some(
-            (theme2) => theme2.id === themeToDelete
-          );
-          if (themeToDeleteExists) {
-            setThemeId(themeList2.themes[newThemeIndex].id);
-            setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
-            themeList2.theme(themeToDelete).remove();
-          }
-        }, [themeToDelete]);
         const hue = () => {
           const hue2 = calculateHue2(
             themeList2.themes[themeIndex].themeColors[themeColorIndex].sourceColor.hct.hue,

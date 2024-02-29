@@ -89,6 +89,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeIndex(newThemeIndex);
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
+            console.log('%cNew theme ID', 'color: #6AAFFF', newThemeIndex);
             themeRef.current = themeList.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor({
                 ...themeColor.endColor,
@@ -137,6 +138,25 @@ const TabGroup = ({ className }: TabGroupProps) => {
         ) {
             themeColorRef.current =
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
+            console.log(
+                '%cNew themeColor ID',
+                'color: #6AAFFF',
+                newThemeColorIndex,
+            );
+            const themeColorToDeleteExists = theme.themeColors.some(
+                (themeColor) => themeColor.id === themeColorToDelete,
+            );
+            if (
+                themeColorToDeleteExists &&
+                themeColorToDelete !== themeColorId
+            ) {
+                console.log(
+                    '%cRemoving themeColor',
+                    'color: #e9590c',
+                    themeColorToDelete,
+                );
+                setTheme(themeId).themeColor(themeColorToDelete).remove();
+            }
         }
     }, [themeId, themeColorId]);
 
@@ -157,6 +177,20 @@ const TabGroup = ({ className }: TabGroupProps) => {
     // theme state
     const theme = themeListStore((state) => state.themes[themeIndex]);
     const setTheme = themeList.theme;
+
+    // This useEffect is to handle the case where the first themeColor is
+    // deleted. The themeColor index is 0 so it doesn't update otherwise.
+    const themeColorsRef = useRef(theme.themeColors.length);
+    useEffect(() => {
+        if (
+            themeColorsRef.current > theme.themeColors.length &&
+            themeColorIndex === 0
+        ) {
+            console.log(themeColorsRef.current, theme.themeColors.length);
+            setThemeColorId(theme.themeColors[0].id);
+        }
+        themeColorsRef.current = theme.themeColors.length;
+    }, [theme.themeColors]);
 
     const themeColorIndexRef = useRef(
         theme.themeColors.findIndex(
@@ -458,13 +492,41 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const [themeColorToDelete, setThemeColorToDelete] = useState<string>('');
     useEffect(() => {
-        const newThemeColorIndex: number = Math.abs(themeColorIndex - 1);
         const themeColorToDeleteExists = theme.themeColors.some(
             (themeColor) => themeColor.id === themeColorToDelete,
         );
-        if (themeColorToDeleteExists) {
+        const themeColorToDeleteIndex = theme.themeColors.findIndex(
+            (themeColor) => themeColor.id === themeColorToDelete,
+        );
+        if (
+            themeColorToDeleteExists &&
+            theme.themeColors.length > 1 &&
+            theme.themeColors.length > themeColorToDeleteIndex + 1
+        ) {
+            const newThemeColorIndex: number = Math.max(
+                0,
+                theme.themeColors.findIndex(
+                    (themeColor) => themeColor.id === themeColorToDelete,
+                ) - 1,
+            );
+            const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+
+            setThemeColorId(newThemeColorId);
+            setTheme(themeId).themeColor(themeColorToDelete).remove();
+            // setFire(true);
+        }
+        if (
+            themeColorToDeleteExists &&
+            theme.themeColors.length > 1 &&
+            theme.themeColors.length === themeColorToDeleteIndex + 1
+        ) {
+            const newThemeColorIndex: number = Math.max(
+                0,
+                theme.themeColors.findIndex(
+                    (themeColor) => themeColor.id === themeColorToDelete,
+                ) - 1,
+            );
             setThemeColorId(theme.themeColors[newThemeColorIndex].id);
-            setThemeColor(themeColorToDelete).remove();
         }
     }, [themeColorToDelete]);
 
