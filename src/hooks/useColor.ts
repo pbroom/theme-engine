@@ -55,14 +55,14 @@ const HctSchema = z.object({
 });
 
 const SolidColorSchema = z.object({
-    type: z.literal('SOLID'),
     color: z.object({
-        r: z.number().min(0).max(255),
-        g: z.number().min(0).max(255),
-        b: z.number().min(0).max(255),
+        r: z.number(),
+        g: z.number(),
+        b: z.number(),
     }),
+    type: z.literal('SOLID'),
 });
-type SolidColor = z.infer<typeof SolidColorSchema>;
+export type SolidColor = z.infer<typeof SolidColorSchema>;
 
 const ColorDataSchema = z.object({
     sourceHex: z.string(),

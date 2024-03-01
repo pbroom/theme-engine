@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b124cd75-f648-4405-a3a4-e306b2a6c8c1/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0373fc-d311-4887-9e1d-489a4dcab0b4/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b124cd75-f648-4405-a3a4-e306b2a6c8c1/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6b0373fc-d311-4887-9e1d-489a4dcab0b4/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2450,10 +2450,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48fd531f-a66f-44b4-95ee-4305a1ce4a45/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ebacbf42-d2a6-4442-8637-73df11b45281/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48fd531f-a66f-44b4-95ee-4305a1ce4a45/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ebacbf42-d2a6-4442-8637-73df11b45281/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2490,10 +2490,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc088197-9d97-4f1d-8146-09aa3232ee24/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d21bffaf-7cbe-47ed-96b2-9cfc7490b5d9/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc088197-9d97-4f1d-8146-09aa3232ee24/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d21bffaf-7cbe-47ed-96b2-9cfc7490b5d9/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2731,10 +2731,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a47735dd-68a6-4cd3-9a66-5b58af198220/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/952a766e-d3ea-4eed-9d0b-a15f5dc78db3/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a47735dd-68a6-4cd3-9a66-5b58af198220/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/952a766e-d3ea-4eed-9d0b-a15f5dc78db3/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3208,10 +3208,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a3778db-19b0-4dcc-9e9c-9525f1f5f2a0/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/80fd5877-e4b9-4730-97f4-d99d7a5385c8/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3a3778db-19b0-4dcc-9e9c-9525f1f5f2a0/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/80fd5877-e4b9-4730-97f4-d99d7a5385c8/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3281,10 +3281,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ff5de90-d0b9-493d-8129-c5080dca96d7/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c83c74a2-631e-400a-81fb-0f2cf84144b8/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5ff5de90-d0b9-493d-8129-c5080dca96d7/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c83c74a2-631e-400a-81fb-0f2cf84144b8/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3388,10 +3388,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64f37176-5e37-4912-b834-d49de248dc07/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e47390b-6518-4f25-8424-a41b69bc907c/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64f37176-5e37-4912-b834-d49de248dc07/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5e47390b-6518-4f25-8424-a41b69bc907c/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3988,10 +3988,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7fd62348-505c-4490-a312-5ddd39f27f62/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4f761d87-7896-4a3d-99c0-427f99544061/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7fd62348-505c-4490-a312-5ddd39f27f62/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4f761d87-7896-4a3d-99c0-427f99544061/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4496,10 +4496,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db0c0dbd-c59f-4fe8-9634-688fe3504a8d/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/86a38709-033d-4247-9760-91df22f53298/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/db0c0dbd-c59f-4fe8-9634-688fe3504a8d/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/86a38709-033d-4247-9760-91df22f53298/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4839,10 +4839,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b435981-a130-4a50-babc-d056303c59c1/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e78a220a-20d7-4b03-8132-d00c358baa41/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9b435981-a130-4a50-babc-d056303c59c1/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e78a220a-20d7-4b03-8132-d00c358baa41/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5041,10 +5041,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7651da44-022d-423e-bcd8-cdcd693e7732/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0764b52-2185-468a-9f17-d74980b5f168/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7651da44-022d-423e-bcd8-cdcd693e7732/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d0764b52-2185-468a-9f17-d74980b5f168/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5137,10 +5137,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/324b862c-c6a7-4d2a-b61f-0b1268bfa3bf/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b6106d1-23a4-4f05-9c74-06f0697d557a/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/324b862c-c6a7-4d2a-b61f-0b1268bfa3bf/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4b6106d1-23a4-4f05-9c74-06f0697d557a/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5221,10 +5221,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67544fab-ffc9-4244-bc9b-3f9aadda2d9d/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77912a47-1d8c-47d9-9b85-68f0ef0cf4f2/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67544fab-ffc9-4244-bc9b-3f9aadda2d9d/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/77912a47-1d8c-47d9-9b85-68f0ef0cf4f2/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5253,9 +5253,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/53cab864-1f0f-44bb-90c5-07476567b6c6/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e5b6865-c48d-460d-b4f5-81ff27315e09/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/53cab864-1f0f-44bb-90c5-07476567b6c6/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e5b6865-c48d-460d-b4f5-81ff27315e09/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -8970,9 +8970,9 @@ svg {
         errorUtil2.toString = (message) => typeof message === "string" ? message : message === null || message === void 0 ? void 0 : message.message;
       })(errorUtil || (errorUtil = {}));
       ParseInputLazyPath = class {
-        constructor(parent, value2, path, key) {
+        constructor(parent2, value2, path, key) {
           this._cachedPath = [];
-          this.parent = parent;
+          this.parent = parent2;
           this.data = value2;
           this._path = path;
           this._key = key;
@@ -39540,25 +39540,25 @@ svg {
         };
         function _decreaseKey(minimum, node, key) {
           node.key = key;
-          var parent = node.parent;
-          if (parent && smaller2(node.key, parent.key)) {
-            _cut(minimum, node, parent);
-            _cascadingCut(minimum, parent);
+          var parent2 = node.parent;
+          if (parent2 && smaller2(node.key, parent2.key)) {
+            _cut(minimum, node, parent2);
+            _cascadingCut(minimum, parent2);
           }
           if (smaller2(node.key, minimum.key)) {
             minimum = node;
           }
           return minimum;
         }
-        function _cut(minimum, node, parent) {
+        function _cut(minimum, node, parent2) {
           node.left.right = node.right;
           node.right.left = node.left;
-          parent.degree--;
-          if (parent.child === node) {
-            parent.child = node.right;
+          parent2.degree--;
+          if (parent2.child === node) {
+            parent2.child = node.right;
           }
-          if (parent.degree === 0) {
-            parent.child = null;
+          if (parent2.degree === 0) {
+            parent2.child = null;
           }
           node.left = minimum;
           node.right = minimum.right;
@@ -39568,32 +39568,32 @@ svg {
           node.mark = false;
         }
         function _cascadingCut(minimum, node) {
-          var parent = node.parent;
-          if (!parent) {
+          var parent2 = node.parent;
+          if (!parent2) {
             return;
           }
           if (!node.mark) {
             node.mark = true;
           } else {
-            _cut(minimum, node, parent);
-            _cascadingCut(parent);
+            _cut(minimum, node, parent2);
+            _cascadingCut(parent2);
           }
         }
-        var _linkNodes = function _linkNodes2(node, parent) {
+        var _linkNodes = function _linkNodes2(node, parent2) {
           node.left.right = node.right;
           node.right.left = node.left;
-          node.parent = parent;
-          if (!parent.child) {
-            parent.child = node;
+          node.parent = parent2;
+          if (!parent2.child) {
+            parent2.child = node;
             node.right = node;
             node.left = node;
           } else {
-            node.left = parent.child;
-            node.right = parent.child.right;
-            parent.child.right = node;
+            node.left = parent2.child;
+            node.right = parent2.child.right;
+            parent2.child.right = node;
             node.right.left = node;
           }
-          parent.degree++;
+          parent2.degree++;
           node.mark = false;
         };
         function _findMinimumNode(minimum, size2) {
@@ -44979,8 +44979,8 @@ svg {
           traverse(callback) {
             callback(this, null, null);
             function _traverse(node, callback2) {
-              node.forEach(function(child, path, parent) {
-                callback2(child, path, parent);
+              node.forEach(function(child, path, parent2) {
+                callback2(child, path, parent2);
                 _traverse(child, callback2);
               });
             }
@@ -45009,8 +45009,8 @@ svg {
            * @return {Node} Returns the original node or its replacement
            */
           transform(callback) {
-            function _transform(child, path, parent) {
-              var replacement = callback(child, path, parent);
+            function _transform(child, path, parent2) {
+              var replacement = callback(child, path, parent2);
               if (replacement !== child) {
                 return replacement;
               }
@@ -45035,8 +45035,8 @@ svg {
            */
           filter(callback) {
             var nodes = [];
-            this.traverse(function(node, path, parent) {
-              if (callback(node, path, parent)) {
+            this.traverse(function(node, path, parent2) {
+              if (callback(node, path, parent2)) {
                 nodes.push(node);
               }
             });
@@ -45644,7 +45644,7 @@ svg {
       node = node.content;
     return node;
   }
-  function getPrecedence(_node, parenthesis, implicit, parent) {
+  function getPrecedence(_node, parenthesis, implicit, parent2) {
     var node = _node;
     if (parenthesis !== "keep") {
       node = _node.getContent();
@@ -45659,7 +45659,7 @@ svg {
     }
     if (identifier === "OperatorNode:multiply" && node.implicit && implicit !== "show") {
       var leftArg = unwrapParen(node.args[0], parenthesis);
-      if (!(isConstantNode(leftArg) && parent && parent.getIdentifier() === "OperatorNode:divide" && rule2Node(unwrapParen(parent.args[0], parenthesis))) && !(leftArg.getIdentifier() === "OperatorNode:divide" && rule2Node(unwrapParen(leftArg.args[0], parenthesis)) && isConstantNode(unwrapParen(leftArg.args[1])))) {
+      if (!(isConstantNode(leftArg) && parent2 && parent2.getIdentifier() === "OperatorNode:divide" && rule2Node(unwrapParen(parent2.args[0], parenthesis))) && !(leftArg.getIdentifier() === "OperatorNode:divide" && rule2Node(unwrapParen(leftArg.args[0], parenthesis)) && isConstantNode(unwrapParen(leftArg.args[1])))) {
         precedence += 1;
       }
     }
@@ -46092,22 +46092,22 @@ svg {
               if (this.object.index.isObjectProperty()) {
                 var parentProp = this.object.index.getObjectProperty();
                 return function evalAssignmentNode(scope, args, context) {
-                  var parent = evalParentObject(scope, args, context);
-                  var childObject = getSafeProperty(parent, parentProp);
+                  var parent2 = evalParentObject(scope, args, context);
+                  var childObject = getSafeProperty(parent2, parentProp);
                   var index2 = evalIndex(scope, args, childObject);
                   var value2 = evalValue(scope, args, context);
-                  setSafeProperty(parent, parentProp, assign2(childObject, index2, value2));
+                  setSafeProperty(parent2, parentProp, assign2(childObject, index2, value2));
                   return value2;
                 };
               } else {
                 var evalParentIndex = this.object.index._compile(math2, argNames);
                 return function evalAssignmentNode(scope, args, context) {
-                  var parent = evalParentObject(scope, args, context);
-                  var parentIndex = evalParentIndex(scope, args, parent);
-                  var childObject = access(parent, parentIndex);
+                  var parent2 = evalParentObject(scope, args, context);
+                  var parentIndex = evalParentIndex(scope, args, parent2);
+                  var childObject = access(parent2, parentIndex);
                   var index2 = evalIndex(scope, args, childObject);
                   var value2 = evalValue(scope, args, context);
-                  assign2(parent, parentIndex, assign2(childObject, index2, value2));
+                  assign2(parent2, parentIndex, assign2(childObject, index2, value2));
                   return value2;
                 };
               }
@@ -51271,8 +51271,8 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/sparse/csPost.js
-  function csPost(parent, n3) {
-    if (!parent) {
+  function csPost(parent2, n3) {
+    if (!parent2) {
       return null;
     }
     var k4 = 0;
@@ -51286,14 +51286,14 @@ svg {
       w4[head + j4] = -1;
     }
     for (j4 = n3 - 1; j4 >= 0; j4--) {
-      if (parent[j4] === -1) {
+      if (parent2[j4] === -1) {
         continue;
       }
-      w4[next + j4] = w4[head + parent[j4]];
-      w4[head + parent[j4]] = j4;
+      w4[next + j4] = w4[head + parent2[j4]];
+      w4[head + parent2[j4]] = j4;
     }
     for (j4 = 0; j4 < n3; j4++) {
-      if (parent[j4] !== -1) {
+      if (parent2[j4] !== -1) {
         continue;
       }
       k4 = csTdfs(j4, k4, w4, head, next, post, stack);
@@ -51316,7 +51316,7 @@ svg {
     var asize = a3._size;
     var m3 = asize[0];
     var n3 = asize[1];
-    var parent = [];
+    var parent2 = [];
     var w4 = [];
     var ancestor = 0;
     var prev = n3;
@@ -51327,7 +51327,7 @@ svg {
       }
     }
     for (var k4 = 0; k4 < n3; k4++) {
-      parent[k4] = -1;
+      parent2[k4] = -1;
       w4[ancestor + k4] = -1;
       for (var p0 = aptr[k4], p1 = aptr[k4 + 1], p3 = p0; p3 < p1; p3++) {
         var r3 = aindex[p3];
@@ -51336,7 +51336,7 @@ svg {
           inext = w4[ancestor + i4];
           w4[ancestor + i4] = k4;
           if (inext === -1) {
-            parent[i4] = k4;
+            parent2[i4] = k4;
           }
         }
         if (ata) {
@@ -51344,7 +51344,7 @@ svg {
         }
       }
     }
-    return parent;
+    return parent2;
   }
   var init_csEtree = __esm({
     "node_modules/mathjs/lib/esm/function/algebra/sparse/csEtree.js"() {
@@ -51793,8 +51793,8 @@ svg {
         var {
           transpose: transpose2
         } = _ref;
-        return function(a3, parent, post, ata) {
-          if (!a3 || !parent || !post) {
+        return function(a3, parent2, post, ata) {
+          if (!a3 || !parent2 || !post) {
             return null;
           }
           var asize = a3._size;
@@ -51819,7 +51819,7 @@ svg {
           for (k4 = 0; k4 < n3; k4++) {
             j4 = post[k4];
             colcount[j4] = w4[first + j4] === -1 ? 1 : 0;
-            for (; j4 !== -1 && w4[first + j4] === -1; j4 = parent[j4]) {
+            for (; j4 !== -1 && w4[first + j4] === -1; j4 = parent2[j4]) {
               w4[first + j4] = k4;
             }
           }
@@ -51840,8 +51840,8 @@ svg {
           }
           for (k4 = 0; k4 < n3; k4++) {
             j4 = post[k4];
-            if (parent[j4] !== -1) {
-              colcount[parent[j4]]--;
+            if (parent2[j4] !== -1) {
+              colcount[parent2[j4]]--;
             }
             for (J2 = ata ? w4[head + k4] : j4; J2 !== -1; J2 = ata ? w4[next + J2] : -1) {
               for (p3 = tptr[J2]; p3 < tptr[J2 + 1]; p3++) {
@@ -51855,13 +51855,13 @@ svg {
                 }
               }
             }
-            if (parent[j4] !== -1) {
-              w4[ancestor + j4] = parent[j4];
+            if (parent2[j4] !== -1) {
+              w4[ancestor + j4] = parent2[j4];
             }
           }
           for (j4 = 0; j4 < n3; j4++) {
-            if (parent[j4] !== -1) {
-              colcount[parent[j4]] += colcount[j4];
+            if (parent2[j4] !== -1) {
+              colcount[parent2[j4]] += colcount[j4];
             }
           }
           return colcount;
@@ -51930,7 +51930,7 @@ svg {
           var n3 = asize[1];
           s3.pinv = [];
           s3.leftmost = [];
-          var parent = s3.parent;
+          var parent2 = s3.parent;
           var pinv2 = s3.pinv;
           var leftmost = s3.leftmost;
           var w4 = [];
@@ -51977,7 +51977,7 @@ svg {
               continue;
             }
             s3.lnz += w4[nque + k4];
-            var pa = parent[k4];
+            var pa = parent2[k4];
             if (pa !== -1) {
               if (w4[nque + pa] === 0) {
                 w4[tail + pa] = w4[tail + k4];
@@ -61823,7 +61823,7 @@ svg {
         simplify2.realContext = realContext;
         simplify2.positiveContext = positiveContext;
         function removeParens(node) {
-          return node.transform(function(node2, path, parent) {
+          return node.transform(function(node2, path, parent2) {
             return isParenthesisNode(node2) ? removeParens(node2.content) : node2;
           });
         }
@@ -64293,7 +64293,7 @@ svg {
           ];
           return setRules;
         }
-        function expandPower(node, parent, indParent) {
+        function expandPower(node, parent2, indParent) {
           var tp = node.type;
           var internal = arguments.length > 1;
           if (tp === "OperatorNode" && node.isBinary()) {
@@ -64315,9 +64315,9 @@ svg {
               }
               if (internal) {
                 if (indParent === "content") {
-                  parent.content = node;
+                  parent2.content = node;
                 } else {
-                  parent.args[indParent] = node;
+                  parent2.args[indParent] = node;
                 }
               }
             }
@@ -68675,12 +68675,12 @@ svg {
         tone: z4.number().min(0).max(100)
       });
       SolidColorSchema = z4.object({
-        type: z4.literal("SOLID"),
         color: z4.object({
-          r: z4.number().min(0).max(255),
-          g: z4.number().min(0).max(255),
-          b: z4.number().min(0).max(255)
-        })
+          r: z4.number(),
+          g: z4.number(),
+          b: z4.number()
+        }),
+        type: z4.literal("SOLID")
       });
       ColorDataSchema = z4.object({
         sourceHex: z4.string(),
@@ -70309,28 +70309,11 @@ svg {
               }))
             };
             const themeColor = (id) => {
-              var _a, _b;
               const currentTheme = get().theme(themeId).data;
               const themeColor2 = typeof id === "number" ? currentTheme.themeColors[id] : currentTheme.themeColors.find(
                 (themeColor3) => themeColor3.id === id
               );
               if (!themeColor2) {
-                console.log(
-                  "%cCANNOT FIND themeColor",
-                  "color: #FF8585",
-                  id,
-                  (_a = get().theme(themeId).data.themeColors.find((c3) => c3.id === id)) == null ? void 0 : _a.name
-                );
-                console.log(
-                  "%cINSIDE OF theme",
-                  "color: #FF8585",
-                  (_b = get().themes.find((t3) => t3.id === themeId)) == null ? void 0 : _b.name
-                );
-                console.log(
-                  "%cPOST-if themeList:",
-                  "color: #FF8585",
-                  themeList(set2, get, ...a3)
-                );
                 throw new Error("COULD NOT FIND themeColor with id: " + id);
               }
               const add4 = {
@@ -70352,8 +70335,8 @@ svg {
                 }))
               };
               const duplicate2 = () => set2((state) => {
-                var _a2;
-                const themeColor3 = (_a2 = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a2.themeColors.find((c3) => c3.id === id);
+                var _a;
+                const themeColor3 = (_a = state.themes.find((t3) => t3.id === theme.id)) == null ? void 0 : _a.themeColors.find((c3) => c3.id === id);
                 if (themeColor3) {
                   const newThemeColor = __spreadProps(__spreadValues({}, themeColor3), {
                     id: nanoid(12)
@@ -70982,7 +70965,6 @@ svg {
           setThemeIndex(newThemeIndex);
           setThemeColorIndex(newThemeColorIndex);
           if (themeRef.current.id !== themeList2.themes[newThemeIndex].id) {
-            console.log("%cNew theme ID", "color: #6AAFFF", newThemeIndex);
             themeRef.current = themeList2.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor(__spreadProps(__spreadValues({}, themeColor.endColor), {
               hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone)
@@ -71017,20 +70999,10 @@ svg {
           }
           if (themeColorRef.current !== themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex]) {
             themeColorRef.current = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
-            console.log(
-              "%cNew themeColor ID",
-              "color: #6AAFFF",
-              newThemeColorIndex
-            );
             const themeColorToDeleteExists = theme.themeColors.some(
               (themeColor2) => themeColor2.id === themeColorToDelete
             );
             if (themeColorToDeleteExists && themeColorToDelete !== themeColorId) {
-              console.log(
-                "%cRemoving themeColor",
-                "color: #e9590c",
-                themeColorToDelete
-              );
               setTheme(themeId).themeColor(themeColorToDelete).remove();
             }
           }
@@ -71050,7 +71022,6 @@ svg {
         const themeColorsRef = _2(theme.themeColors.length);
         p2(() => {
           if (themeColorsRef.current > theme.themeColors.length && themeColorIndex === 0) {
-            console.log(themeColorsRef.current, theme.themeColors.length);
             setThemeColorId(theme.themeColors[0].id);
           }
           themeColorsRef.current = theme.themeColors.length;
@@ -71151,7 +71122,6 @@ svg {
         );
         const onSelectThemeColor = (newThemeColorId) => {
           setThemeColorId(newThemeColorId);
-          console.log("%ctheme.themeColors", "color: #6AAFFF", theme.themeColors);
         };
         const onAddThemeColor = () => {
           const newId = nanoid(12);
@@ -71161,12 +71131,6 @@ svg {
           });
           setTheme(themeId).add.themeColor(newThemeColor);
           setThemeColorId(newThemeColor.id);
-          console.log("%cNEW themeColor ID:", "color: #6AAFFF", newId);
-          console.log(
-            "%ctheme.themeColors:",
-            "color: #6AAFFF",
-            theme.themeColors
-          );
         };
         const onHexColorInput = (e5) => {
           const newHexColor = e5.currentTarget.value;
@@ -71192,9 +71156,6 @@ svg {
           setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
           setHueSlider(newHueCalcInput);
           setHueCalcInput(`${newHueCalcInput}`);
-          console.log(
-            calculateHue2(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`)
-          );
         };
         const onHueCalcInput = (e5) => {
           const newHueCalcInput = e5.currentTarget.value;
@@ -71219,7 +71180,6 @@ svg {
           );
           setChromaCalcInput(`${newChromaCalcInput}`);
           setChromaSlider(newChromaCalcInput);
-          console.log(themeColor.endColor.hct);
         };
         const onChromaCalcInput = (e5) => {
           const newChromaCalcInput = e5.currentTarget.value;
@@ -71485,9 +71445,6 @@ svg {
                   setThemeColor(themeColorId).add.alias(
                     createAlias()
                   );
-                  console.log(
-                    themeColor.aliasGroup.aliases
-                  );
                 }
               },
               /* @__PURE__ */ y(IconPlus32, null)
@@ -71521,7 +71478,6 @@ svg {
           }
         ];
         function handleValueChange(newValue) {
-          console.log(newValue);
           setTabValue(newValue);
         }
         return /* @__PURE__ */ y("div", { className }, /* @__PURE__ */ y(
@@ -72937,7 +72893,7 @@ svg {
           }
           function baseInvoke(object, path, args) {
             path = castPath(path, object);
-            object = parent(object, path);
+            object = parent2(object, path);
             var func = object == null ? object : object[toKey(last(path))];
             return func == null ? undefined2 : apply2(func, object, args);
           }
@@ -73470,7 +73426,7 @@ svg {
           }
           function baseUnset(object, path) {
             path = castPath(path, object);
-            object = parent(object, path);
+            object = parent2(object, path);
             return object == null || delete object[toKey(last(path))];
           }
           function baseUpdate(object, path, updater, customizer) {
@@ -74563,7 +74519,7 @@ svg {
               return apply2(func, this, otherArgs);
             };
           }
-          function parent(object, path) {
+          function parent2(object, path) {
             return path.length < 2 ? object : baseGet(object, baseSlice(path, 0, -1));
           }
           function reorder(array, indexes) {
@@ -75109,9 +75065,9 @@ svg {
             return this;
           }
           function wrapperPlant(value2) {
-            var result2, parent2 = this;
-            while (parent2 instanceof baseLodash) {
-              var clone6 = wrapperClone(parent2);
+            var result2, parent3 = this;
+            while (parent3 instanceof baseLodash) {
+              var clone6 = wrapperClone(parent3);
               clone6.__index__ = 0;
               clone6.__values__ = undefined2;
               if (result2) {
@@ -75120,7 +75076,7 @@ svg {
                 result2 = clone6;
               }
               var previous = clone6;
-              parent2 = parent2.__wrapped__;
+              parent3 = parent3.__wrapped__;
             }
             previous.__wrapped__ = value2;
             return result2;
@@ -77071,30 +77027,10 @@ svg {
           themeIndexRef.current = newThemeIndex;
           const newThemeColorIndex = themeList2.themes[newThemeIndex].themeColors.findIndex((themeColor2) => themeColor2.id === themeColorId);
           themeColorIndexRef.current = newThemeColorIndex;
-          console.log(
-            "%cthemeRef.current:",
-            "color: #FF0000",
-            themeRef.current.id
-          );
-          console.log(
-            "%cthemes[themeId]:",
-            "color: #FF0000",
-            themeList2.themes[newThemeIndex].id
-          );
           setThemeIndex(newThemeIndex);
           setThemeColorIndex(newThemeColorIndex);
           if (themeRef.current.id !== themeList2.themes[newThemeIndex].id) {
             themeRef.current = themeList2.themes[newThemeIndex];
-            console.log(
-              "%cthemeRef.current:",
-              "color: #FF0000",
-              themeRef.current.id
-            );
-            console.log(
-              "%cthemes[themeId]:",
-              "color: #FF0000",
-              themeList2.themes[newThemeIndex].id
-            );
             const newThemeColorId = themeList2.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor = themeList2.themes[newThemeIndex].themeColors[newThemeColorIndex];
             if (!newThemeColor) {
@@ -77213,8 +77149,6 @@ svg {
             const newThemeName = `Theme ${Object.keys(themeList2.themes).length + 1}`;
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList2.add.theme(newTheme);
-            console.log(newTheme);
-            console.log(themeList2);
           }
           if (selectedValue === "Rename...") {
             setIsEditing(true);
@@ -77239,9 +77173,6 @@ svg {
             setThemeIndex(newThemeIndex);
             setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
             setThemeColorIndex(0);
-            console.log("%cTHEME_CHANGE", "color: #FF0000");
-            console.log("%cCURRENT_THEME_ID", "color: #FF0000", themeId);
-            console.log("%cSELECTED_THEME_ID", "color: #FF0000", selectedValue);
           }
         };
         function pickRandomName(names2) {
@@ -77269,6 +77200,21 @@ svg {
           if (!theme.name) {
             setTheme.setProps.name(pickRandomName(names));
           }
+        };
+        const handleBuildTheme = () => {
+          console.log("Build theme");
+          parent.postMessage(
+            {
+              pluginMessage: {
+                type: "build",
+                name: theme.name,
+                color: themeColor.sourceColor.hex,
+                toneStops: themeColor.tones
+                // collectionId: collectionId,
+              }
+            },
+            "*"
+          );
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
           Textbox,
@@ -77298,7 +77244,7 @@ svg {
           {
             title: "Build theme",
             className: "build-button z-50 flex h-full w-32 items-center justify-center font-medium",
-            onClick: (e5) => console.log("%cthemeList:", "color: #6DFF6A", themeList2)
+            onClick: () => handleBuildTheme()
           },
           "Build Theme"
         )));
@@ -77325,7 +77271,6 @@ svg {
         const themeListStore = useThemeList();
         const themeId = themeListStore.themes[0].id;
         const themeColorId = themeListStore.themes[0].themeColors[0].id;
-        console.log("%cthemeList:", "color: #6DFF6A", themeListStore);
         return /* @__PURE__ */ y(IdProvider, { themeId, themeColorId }, /* @__PURE__ */ y(Plugin, null));
       };
       ui_default = render(Ui);

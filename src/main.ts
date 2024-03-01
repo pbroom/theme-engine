@@ -3,6 +3,9 @@ import { showUI } from '@create-figma-plugin/utilities';
 // import { paletteGroup } from './palette-swatches';
 // import { paletteVariableCollection } from './palette-variables';
 import VariableCollection from './variable-collection';
+import { useThemeList } from './hooks/useThemeList';
+import { IdContext, IdState } from './hooks/useId';
+import { ThemeData } from './hooks/useTheme';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
@@ -37,8 +40,12 @@ figma.on('run', () => {
     }
     const message = { type, options, collections, modes };
     figma.ui.postMessage(message);
-    // console.log(findMaxChromasForHue(163));
+    console.log('sent this to the UI');
 });
+
+const buildTheme = (theme: ThemeData) => {
+    const collectionId = theme.collectionId;
+};
 
 /**
  * This code block listens for messages from the UI and performs actions based on the message type.
@@ -53,40 +60,14 @@ figma.on('run', () => {
  * @param {boolean} [pluginMessage.overwriteVariables=false] - Whether to overwrite existing variables in the collection.
  * @returns {Object} - The swatches or variables generated based on the message type.
  */
-figma.ui.onmessage = (pluginMessage) => {
-    if (pluginMessage.type === 'windowResize') {
-        const windowSize = pluginMessage.windowSize;
-        console.log(windowSize);
-        figma.ui.resize(280, height(windowSize.height));
-    }
 
-    if (pluginMessage.type === 'build') {
-        const colorName = pluginMessage.name ? pluginMessage.name : 'color';
-        const toneStops = pluginMessage.toneStops;
-        const hexColor = pluginMessage.color;
-
-        // const palette = paletteTones(hexColor, toneStops);
-        // const swatches = paletteGroup(colorName, hexColor, palette);
-        // return swatches;
-    }
-
-    if (pluginMessage.type === 'createVariables') {
-        const colorName = pluginMessage.name ? pluginMessage.name : 'color';
-        const toneStops = pluginMessage.toneStops;
-        const hexColor = pluginMessage.color;
-        const collectionId = pluginMessage.collectionId;
-        const Overwrite = pluginMessage.overwriteVariables;
-        const bindStyles = pluginMessage.bindStyles;
-        // const palette = paletteTones(hexColor, toneStops);
-        // const variables = paletteVariableCollection(
-        //     collectionId,
-        //     colorName,
-        //     hexColor,
-        //     palette,
-        //     Overwrite,
-        //     bindStyles,
-        // );
-        // console.log(variables);
-        // return variables;
-    }
+export type PluginMessage = {
+    theme: ThemeData;
+    collectionId: string;
+};
+figma.ui.onmessage = (pluginMessage: PluginMessage) => {
+    const collectionId = pluginMessage.collectionId;
+    const Overwrite = true;
+    // const colorName = pluginMessage.name ? pluginMessage.name : 'color';
+    console.log(pluginMessage);
 };

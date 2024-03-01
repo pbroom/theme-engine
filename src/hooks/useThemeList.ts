@@ -539,24 +539,24 @@ const useThemeList = create<ThemeListData & ThemeListActions>(
                 //     themeList(set, get, ...a),
                 // );
                 if (!themeColor) {
-                    console.log(
-                        '%cCANNOT FIND themeColor',
-                        'color: #FF8585',
-                        id,
-                        get()
-                            .theme(themeId)
-                            .data.themeColors.find((c) => c.id === id)?.name,
-                    );
-                    console.log(
-                        '%cINSIDE OF theme',
-                        'color: #FF8585',
-                        get().themes.find((t) => t.id === themeId)?.name,
-                    );
-                    console.log(
-                        '%cPOST-if themeList:',
-                        'color: #FF8585',
-                        themeList(set, get, ...a),
-                    );
+                    // console.log(
+                    //     '%cCANNOT FIND themeColor',
+                    //     'color: #FF8585',
+                    //     id,
+                    //     get()
+                    //         .theme(themeId)
+                    //         .data.themeColors.find((c) => c.id === id)?.name,
+                    // );
+                    // console.log(
+                    //     '%cINSIDE OF theme',
+                    //     'color: #FF8585',
+                    //     get().themes.find((t) => t.id === themeId)?.name,
+                    // );
+                    // console.log(
+                    //     '%cPOST-if themeList:',
+                    //     'color: #FF8585',
+                    //     themeList(set, get, ...a),
+                    // );
                     // console.log(theme.themeColors);
                     throw new Error('COULD NOT FIND themeColor with id: ' + id);
                 }

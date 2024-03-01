@@ -89,7 +89,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeIndex(newThemeIndex);
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
-            console.log('%cNew theme ID', 'color: #6AAFFF', newThemeIndex);
+            // console.log('%cNew theme ID', 'color: #6AAFFF', newThemeIndex);
             themeRef.current = themeList.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor({
                 ...themeColor.endColor,
@@ -138,11 +138,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
         ) {
             themeColorRef.current =
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex];
-            console.log(
-                '%cNew themeColor ID',
-                'color: #6AAFFF',
-                newThemeColorIndex,
-            );
+            // console.log(
+            //     '%cNew themeColor ID',
+            //     'color: #6AAFFF',
+            //     newThemeColorIndex,
+            // );
             const themeColorToDeleteExists = theme.themeColors.some(
                 (themeColor) => themeColor.id === themeColorToDelete,
             );
@@ -150,11 +150,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 themeColorToDeleteExists &&
                 themeColorToDelete !== themeColorId
             ) {
-                console.log(
-                    '%cRemoving themeColor',
-                    'color: #e9590c',
-                    themeColorToDelete,
-                );
+                // console.log(
+                //     '%cRemoving themeColor',
+                //     'color: #e9590c',
+                //     themeColorToDelete,
+                // );
                 setTheme(themeId).themeColor(themeColorToDelete).remove();
             }
         }
@@ -186,7 +186,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             themeColorsRef.current > theme.themeColors.length &&
             themeColorIndex === 0
         ) {
-            console.log(themeColorsRef.current, theme.themeColors.length);
+            // console.log(themeColorsRef.current, theme.themeColors.length);
             setThemeColorId(theme.themeColors[0].id);
         }
         themeColorsRef.current = theme.themeColors.length;
@@ -376,7 +376,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const onSelectThemeColor = (newThemeColorId: string) => {
         setThemeColorId(newThemeColorId);
-        console.log('%ctheme.themeColors', 'color: #6AAFFF', theme.themeColors);
+        // console.log('%ctheme.themeColors', 'color: #6AAFFF', theme.themeColors);
     };
 
     const onAddThemeColor = () => {
@@ -388,12 +388,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
         };
         setTheme(themeId).add.themeColor(newThemeColor);
         setThemeColorId(newThemeColor.id);
-        console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
-        console.log(
-            '%ctheme.themeColors:',
-            'color: #6AAFFF',
-            theme.themeColors,
-        );
+        // console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
+        // console.log(
+        //     '%ctheme.themeColors:',
+        //     'color: #6AAFFF',
+        //     theme.themeColors,
+        // );
     };
 
     const onHexColorInput = (e: any) => {
@@ -424,9 +424,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
         setHueSlider(newHueCalcInput);
         setHueCalcInput(`${newHueCalcInput}`);
-        console.log(
-            calculateHue(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`),
-        );
+        // console.log(
+        //     calculateHue(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`),
+        // );
     };
     const onHueCalcInput = (e: any) => {
         const newHueCalcInput: string = e.currentTarget.value;
@@ -451,7 +451,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         );
         setChromaCalcInput(`${newChromaCalcInput}`);
         setChromaSlider(newChromaCalcInput);
-        console.log(themeColor.endColor.hct);
+        // console.log(themeColor.endColor.hct);
     };
     const onChromaCalcInput = (e: any) => {
         const newChromaCalcInput: string = e.currentTarget.value;
@@ -819,9 +819,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         setThemeColor(themeColorId).add.alias(
                                             createAlias(),
                                         );
-                                        console.log(
-                                            themeColor.aliasGroup.aliases,
-                                        );
+                                        // console.log(
+                                        //     themeColor.aliasGroup.aliases,
+                                        // );
                                     }}
                                 >
                                     <IconPlus32 />
@@ -907,7 +907,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
     ];
     function handleValueChange(newValue: string) {
-        console.log(newValue);
+        // console.log(newValue);
         setTabValue(newValue);
     }
     return (

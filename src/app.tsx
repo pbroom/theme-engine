@@ -16,7 +16,7 @@ import { findIndex, set } from 'lodash';
 import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
-import { re } from 'mathjs';
+import { PluginMessage } from './main';
 
 export const Plugin = () => {
     // ID state
@@ -66,30 +66,30 @@ export const Plugin = () => {
         ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
         themeColorIndexRef.current = newThemeColorIndex;
 
-        console.log(
-            '%cthemeRef.current:',
-            'color: #FF0000',
-            themeRef.current.id,
-        );
-        console.log(
-            '%cthemes[themeId]:',
-            'color: #FF0000',
-            themeList.themes[newThemeIndex].id,
-        );
+        // console.log(
+        //     '%cthemeRef.current:',
+        //     'color: #FF0000',
+        //     themeRef.current.id,
+        // );
+        // console.log(
+        //     '%cthemes[themeId]:',
+        //     'color: #FF0000',
+        //     themeList.themes[newThemeIndex].id,
+        // );
         setThemeIndex(newThemeIndex);
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
             themeRef.current = themeList.themes[newThemeIndex];
-            console.log(
-                '%cthemeRef.current:',
-                'color: #FF0000',
-                themeRef.current.id,
-            );
-            console.log(
-                '%cthemes[themeId]:',
-                'color: #FF0000',
-                themeList.themes[newThemeIndex].id,
-            );
+            // console.log(
+            //     '%cthemeRef.current:',
+            //     'color: #FF0000',
+            //     themeRef.current.id,
+            // );
+            // console.log(
+            //     '%cthemes[themeId]:',
+            //     'color: #FF0000',
+            //     themeList.themes[newThemeIndex].id,
+            // );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor =
@@ -241,8 +241,8 @@ export const Plugin = () => {
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList.add.theme(newTheme);
             // setThemeId(newTheme.id);
-            console.log(newTheme);
-            console.log(themeList);
+            // console.log(newTheme);
+            // console.log(themeList);
         }
         if (selectedValue === 'Rename...') {
             setIsEditing(true);
@@ -275,9 +275,9 @@ export const Plugin = () => {
             setThemeIndex(newThemeIndex);
             setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
             setThemeColorIndex(0);
-            console.log('%cTHEME_CHANGE', 'color: #FF0000');
-            console.log('%cCURRENT_THEME_ID', 'color: #FF0000', themeId);
-            console.log('%cSELECTED_THEME_ID', 'color: #FF0000', selectedValue);
+            // console.log('%cTHEME_CHANGE', 'color: #FF0000');
+            // console.log('%cCURRENT_THEME_ID', 'color: #FF0000', themeId);
+            // console.log('%cSELECTED_THEME_ID', 'color: #FF0000', selectedValue);
         }
     };
 
@@ -303,6 +303,34 @@ export const Plugin = () => {
     const nameTheNameless = () => {
         if (!theme.name) {
             setTheme.setProps.name(pickRandomName(names));
+        }
+    };
+
+    const handleBuildTheme = () => {
+        console.log('Build theme');
+        const pluginMessage: PluginMessage = {
+            theme: theme,
+            collectionId: '',
+        };
+        parent.postMessage(
+            {
+                pluginMessage: {
+                    type: 'build',
+                    name: theme.name,
+                    color: themeColor.sourceColor.hex,
+                    toneStops: themeColor.tones,
+                    // collectionId: collectionId,
+                },
+            },
+            '*',
+        );
+    };
+    const [collections, setCollections] = useState<VariableCollection[]>([]);
+    onmessage = (event) => {
+        const message = event.data.pluginMessage;
+        if (message.type === 'localCollections') {
+            const collections = message.collections;
+            setCollections(collections);
         }
     };
 
@@ -348,9 +376,7 @@ export const Plugin = () => {
                 <button
                     title="Build theme"
                     className="build-button z-50 flex h-full w-32 items-center justify-center font-medium"
-                    onClick={(e) =>
-                        console.log('%cthemeList:', 'color: #6DFF6A', themeList)
-                    }
+                    onClick={() => handleBuildTheme()}
                 >
                     Build Theme
                 </button>

@@ -154,26 +154,12 @@ var init_main = __esm({
       }
       const message = { type, options, collections, modes };
       figma.ui.postMessage(message);
+      console.log("sent this to the UI");
     });
     figma.ui.onmessage = (pluginMessage) => {
-      if (pluginMessage.type === "windowResize") {
-        const windowSize = pluginMessage.windowSize;
-        console.log(windowSize);
-        figma.ui.resize(280, height(windowSize.height));
-      }
-      if (pluginMessage.type === "build") {
-        const colorName = pluginMessage.name ? pluginMessage.name : "color";
-        const toneStops = pluginMessage.toneStops;
-        const hexColor = pluginMessage.color;
-      }
-      if (pluginMessage.type === "createVariables") {
-        const colorName = pluginMessage.name ? pluginMessage.name : "color";
-        const toneStops = pluginMessage.toneStops;
-        const hexColor = pluginMessage.color;
-        const collectionId = pluginMessage.collectionId;
-        const Overwrite = pluginMessage.overwriteVariables;
-        const bindStyles = pluginMessage.bindStyles;
-      }
+      const collectionId = pluginMessage.collectionId;
+      const Overwrite = true;
+      console.log(pluginMessage);
     };
   }
 });
