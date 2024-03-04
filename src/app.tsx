@@ -17,6 +17,7 @@ import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
 import { PluginMessage } from './main';
+import React from 'preact/compat';
 
 export const Plugin = () => {
     // ID state

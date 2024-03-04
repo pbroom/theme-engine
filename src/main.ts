@@ -6,6 +6,7 @@ import VariableCollection from './variable-collection';
 import { useThemeList } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
 import { ThemeData } from './hooks/useTheme';
+import { re } from 'mathjs';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
@@ -14,38 +15,47 @@ export default function () {
     showUI({ height: height(640), width: 512, title: 'Theme Engine' });
 }
 
+const localCollectionsIds = async () => {
+    const localCollectionsIds =
+        await figma.variables.getLocalVariableCollectionsAsync();
+    // console.log(localCollections);
+    return localCollectionsIds;
+};
+
+const getCollectionById = async (collectionId: string) => {
+    const collection =
+        await figma.variables.getVariableCollectionByIdAsync(collectionId);
+    return collection;
+};
+
 /**
  * This function is triggered when the plugin is run. It retrieves all local variable collections and sends a message to the UI with the collections and their names as options.
  */
-figma.on('run', () => {
-    const localCollections = figma.variables.getLocalVariableCollections();
+figma.on('run', async () => {
     const type = 'localCollections';
-    const options = [];
-    const collections = [];
-    const modes = [];
-    for (let i = 0; i < localCollections.length; i++) {
-        const newCollection = new VariableCollection(
-            localCollections[i].id,
-            localCollections[i].name,
-            localCollections[i].variableIds,
-            localCollections[i].defaultModeId,
-            localCollections[i].modes,
-            localCollections[i].remote,
-            localCollections[i].key,
-        );
-        const collectionName = newCollection.name;
-        collections.push(newCollection);
-        options.push({ value: collectionName });
-        modes.push(newCollection.modes);
-    }
-    const message = { type, options, collections, modes };
+    const collectionIds = await localCollectionsIds();
+    const collections = collectionIds.map(async (collectionId) => {
+        const collection = await getCollectionById(collectionId.id);
+        return {
+            id: collection?.id,
+            name: collection?.name,
+            modes: collection?.modes.map((mode) => {
+                return { modeId: mode.modeId, name: mode.name };
+            }),
+            defaultMode: collection?.defaultModeId,
+        };
+    });
+    const data = await Promise.all(collections);
+    // map data to: { id: string, name: string, modes: Array<{modeId: string, name: string}>, defaultMode: string }
+
+    const message = { type: type, data: data };
+    console.log('PLUGIN SENT:', message);
     figma.ui.postMessage(message);
-    console.log('sent this to the UI');
 });
 
-const buildTheme = (theme: ThemeData) => {
-    const collectionId = theme.collectionId;
-};
+// const buildTheme = (theme: ThemeData) => {
+//     const collectionId = theme.collectionId;
+// };
 
 /**
  * This code block listens for messages from the UI and performs actions based on the message type.

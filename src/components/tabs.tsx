@@ -11,12 +11,15 @@ import {
     RangeSlider,
     Tabs,
     TabsOption,
+    Text,
     Textbox,
     TextboxColor,
     TextboxMultiline,
     DropdownOption,
     createClassName,
     Divider,
+    Checkbox,
+    VerticalSpace,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 import {
@@ -52,6 +55,8 @@ import { IdContext, IdState } from '../hooks/useId';
 
 import { ThemeActions, ThemeData } from '../hooks/useTheme';
 import { useStore } from 'zustand';
+import React from 'preact/compat';
+import { on } from '@create-figma-plugin/utilities';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -63,7 +68,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Primitives');
+    const [tabValue, setTabValue] = useState<string>('Settings');
 
     // ID state
     const IdStore = useContext(IdContext);
@@ -530,6 +535,48 @@ const TabGroup = ({ className }: TabGroupProps) => {
         }
     }, [themeColorToDelete]);
 
+    const [overwrite, setOverwrite] = useState<boolean>(true);
+    const [bindStyles, setBindStyles] = useState<boolean>(false);
+    const [collectionOptions, setCollectionOptions] = useState<
+        Array<DropdownOption>
+    >([
+        {
+            value: 'Collection 1 ID',
+            text: 'Collection 1',
+        },
+        {
+            value: 'Collection 2 ID',
+            text: 'Collection 2',
+        },
+        {
+            value: 'Collection 3 ID',
+            text: 'Collection 3',
+        },
+    ]);
+    const [collectionId, setCollectionId] = useState<string>('Collection 1 ID');
+
+    onmessage = async (event) => {
+        const message = await event.data.pluginMessage;
+        console.log('UI RECEIVED:', message);
+        if (message.type === 'localCollections') {
+            const collectionOptions: Array<DropdownOption> = message.data.map(
+                (collection: VariableCollection) => {
+                    return {
+                        value: collection.id,
+                        text: collection.name,
+                    };
+                },
+            );
+            setCollectionOptions(collectionOptions);
+            setCollectionId(message.data[0].id);
+        }
+    };
+    const handleChange = (event: h.JSX.TargetedEvent<HTMLInputElement>) => {
+        const newValue = event.currentTarget.value;
+        console.log(newValue);
+        setCollectionId(newValue);
+    };
+
     const options: Array<TabsOption> = [
         {
             children: (
@@ -904,6 +951,51 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 </div>
             ),
             value: 'Aliases',
+        },
+        {
+            children: (
+                <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
+                    <div className="flex w-full flex-row border-t border-gridlines"></div>
+                    <div className="h-full grow">
+                        <div className="flex h-24 grow flex-row pl-10">
+                            <div className="flex grow flex-col gap-4 p-4">
+                                <div>
+                                    <Text>Variable Collection</Text>
+                                    <VerticalSpace space="extraSmall" />
+                                    <Dropdown
+                                        onChange={handleChange}
+                                        options={collectionOptions}
+                                        value={collectionId}
+                                    />
+                                </div>
+                                <Checkbox
+                                    onChange={(e) => {
+                                        setOverwrite(!overwrite);
+                                    }}
+                                    value={overwrite}
+                                >
+                                    <Text>
+                                        Overwrite variables with matching names
+                                    </Text>
+                                </Checkbox>
+                                <Checkbox
+                                    onChange={() => {
+                                        setBindStyles(!bindStyles);
+                                    }}
+                                    value={bindStyles}
+                                >
+                                    <Text>
+                                        Bind styles to variables with matching
+                                        names
+                                    </Text>
+                                </Checkbox>
+                            </div>
+                            <div className="h-full w-32"></div>
+                        </div>
+                    </div>
+                </div>
+            ),
+            value: `Settings`,
         },
     ];
     function handleValueChange(newValue: string) {

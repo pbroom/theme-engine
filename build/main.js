@@ -35,10 +35,6 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
 
 // node_modules/@create-figma-plugin/utilities/lib/ui.js
 function showUI(options, data) {
@@ -62,58 +58,6 @@ var init_lib = __esm({
   }
 });
 
-// src/variable-collection.ts
-var VariableCollection, variable_collection_default;
-var init_variable_collection = __esm({
-  "src/variable-collection.ts"() {
-    "use strict";
-    VariableCollection = class {
-      /**
-       * Creates a new instance of VariableCollection.
-       * @param id The ID of the collection.
-       * @param name The name of the collection.
-       * @param variableIds The list of variables contained in this variable collection.
-       * @param defaultModeId The default mode ID for this collection.
-       * @param modes The modes defined for this collection.
-       * @param remote Whether the collection is remote or local.
-       * @param key The key to use with getVariablesInLibraryCollectionAsync.
-       */
-      constructor(id, name, variableIds, defaultModeId, modes, remote, key) {
-        __publicField(this, "id");
-        __publicField(this, "name");
-        __publicField(this, "variableIds");
-        __publicField(this, "defaultModeId");
-        __publicField(this, "modes");
-        __publicField(this, "remote");
-        __publicField(this, "key");
-        this.id = id;
-        this.name = name;
-        this.variableIds = variableIds;
-        this.defaultModeId = defaultModeId;
-        this.modes = modes;
-        this.remote = remote;
-        this.key = key;
-      }
-      /**
-       * Returns a JSON representation of the VariableCollection instance.
-       * @returns A JSON object representing the VariableCollection instance.
-       */
-      toJSON() {
-        return {
-          id: this.id,
-          name: this.name,
-          variableIds: this.variableIds,
-          defaultModeId: this.defaultModeId,
-          modes: this.modes,
-          remote: this.remote,
-          key: this.key
-        };
-      }
-    };
-    variable_collection_default = VariableCollection;
-  }
-});
-
 // src/main.ts
 var main_exports = {};
 __export(main_exports, {
@@ -122,39 +66,40 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: height(640), width: 512, title: "Theme Engine" });
 }
-var height;
+var height, localCollectionsIds, getCollectionById;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
     init_lib();
-    init_variable_collection();
     height = (pixelHeight) => {
       return pixelHeight;
     };
-    figma.on("run", () => {
-      const localCollections = figma.variables.getLocalVariableCollections();
+    localCollectionsIds = async () => {
+      const localCollectionsIds2 = await figma.variables.getLocalVariableCollectionsAsync();
+      return localCollectionsIds2;
+    };
+    getCollectionById = async (collectionId) => {
+      const collection = await figma.variables.getVariableCollectionByIdAsync(collectionId);
+      return collection;
+    };
+    figma.on("run", async () => {
       const type = "localCollections";
-      const options = [];
-      const collections = [];
-      const modes = [];
-      for (let i = 0; i < localCollections.length; i++) {
-        const newCollection = new variable_collection_default(
-          localCollections[i].id,
-          localCollections[i].name,
-          localCollections[i].variableIds,
-          localCollections[i].defaultModeId,
-          localCollections[i].modes,
-          localCollections[i].remote,
-          localCollections[i].key
-        );
-        const collectionName = newCollection.name;
-        collections.push(newCollection);
-        options.push({ value: collectionName });
-        modes.push(newCollection.modes);
-      }
-      const message = { type, options, collections, modes };
+      const collectionIds = await localCollectionsIds();
+      const collections = collectionIds.map(async (collectionId) => {
+        const collection = await getCollectionById(collectionId.id);
+        return {
+          id: collection == null ? void 0 : collection.id,
+          name: collection == null ? void 0 : collection.name,
+          modes: collection == null ? void 0 : collection.modes.map((mode) => {
+            return { modeId: mode.modeId, name: mode.name };
+          }),
+          defaultMode: collection == null ? void 0 : collection.defaultModeId
+        };
+      });
+      const data = await Promise.all(collections);
+      const message = { type, data };
+      console.log("PLUGIN SENT:", message);
       figma.ui.postMessage(message);
-      console.log("sent this to the UI");
     });
     figma.ui.onmessage = (pluginMessage) => {
       const collectionId = pluginMessage.collectionId;
