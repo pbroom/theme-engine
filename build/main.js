@@ -103,46 +103,6 @@ var init_main = __esm({
     figma.on("run", async () => {
       sendLocalCollections();
     });
-    figma.on("documentchange", async (event) => {
-      for (const change of event.documentChanges) {
-        switch (change.type) {
-          case "CREATE":
-            console.log(
-              `Node ${change.id} created by a ${change.origin.toLowerCase()} user`
-            );
-            break;
-          case "DELETE":
-            console.log(
-              `Node ${change.id} deleted by a ${change.origin.toLowerCase()} user`
-            );
-            break;
-          case "PROPERTY_CHANGE":
-            for (const prop of change.properties) {
-              console.log(
-                `Node ${change.id} had ${prop} changed by a ${change.origin.toLowerCase()} user`
-              );
-            }
-            break;
-          case "STYLE_CREATE":
-            console.log(
-              `Style ${change.id} created by a ${change.origin.toLowerCase()} user`
-            );
-            break;
-          case "STYLE_DELETE":
-            console.log(
-              `Style ${change.id} deleted by a ${change.origin.toLowerCase()} user`
-            );
-            break;
-          case "STYLE_PROPERTY_CHANGE":
-            for (const prop of change.properties) {
-              console.log(
-                `Style ${change.id} had ${prop} changed by a ${change.origin.toLowerCase()} user`
-              );
-            }
-            break;
-        }
-      }
-    });
     figma.ui.onmessage = async (pluginMessage) => {
       if (pluginMessage.type === "localCollections") {
         await sendLocalCollections();
@@ -151,15 +111,22 @@ var init_main = __esm({
         await sendLocalCollections("preBuild");
       }
       if (pluginMessage.type === "build") {
-        console.log(`build: ${pluginMessage}`);
+        console.log(`PLUGIN RECEIVED: `, pluginMessage);
         const theme = pluginMessage.data.theme;
-        const collectionId2 = pluginMessage.data.collectionId;
+        const collectionId = pluginMessage.data.collectionId;
         const collectionName = pluginMessage.data.collectionName;
         const overwriteVariables = pluginMessage.data.overwriteVariables;
         const bindVariables = pluginMessage.data.bindVariables;
+        const collection = collectionId && collectionId !== "" ? await getCollectionById(collectionId) : figma.variables.createVariableCollection(collectionName);
+        if (collection) {
+          const lightModeId = collection.modes[0].modeId;
+          if (collection.modes.length === 1 && (collection.modes[0].name === "Value" || collection.modes[0].name === "Mode 1")) {
+            collection.renameMode(collection.modes[0].modeId, "light");
+          }
+          const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
+          console.log("%cTHEME", "color: #FF0000", theme);
+        }
       }
-      const collectionId = pluginMessage.collectionId;
-      const Overwrite = true;
     };
   }
 });

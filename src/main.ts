@@ -7,6 +7,8 @@ import { useThemeList } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
 import { ThemeData } from './hooks/useTheme';
 import { re } from 'mathjs';
+import { SolidColorFromRgbColor, rgbaFromHct } from './hooks/useColor';
+import { Hct } from '@material/material-color-utilities';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
@@ -56,55 +58,55 @@ figma.on('run', async () => {
     sendLocalCollections();
 });
 
-figma.on('documentchange', async (event) => {
-    for (const change of event.documentChanges) {
-        switch (change.type) {
-            case 'CREATE':
-                console.log(
-                    `Node ${change.id} created by a ${change.origin.toLowerCase()} user`,
-                );
-                break;
+// figma.on('documentchange', async (event) => {
+//     for (const change of event.documentChanges) {
+//         switch (change.type) {
+//             case 'CREATE':
+//                 console.log(
+//                     `Node ${change.id} created by a ${change.origin.toLowerCase()} user`,
+//                 );
+//                 break;
 
-            case 'DELETE':
-                console.log(
-                    `Node ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
-                );
-                break;
+//             case 'DELETE':
+//                 console.log(
+//                     `Node ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
+//                 );
+//                 break;
 
-            case 'PROPERTY_CHANGE':
-                for (const prop of change.properties) {
-                    console.log(
-                        `Node ${
-                            change.id
-                        } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
-                    );
-                }
-                break;
+//             case 'PROPERTY_CHANGE':
+//                 for (const prop of change.properties) {
+//                     console.log(
+//                         `Node ${
+//                             change.id
+//                         } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
+//                     );
+//                 }
+//                 break;
 
-            case 'STYLE_CREATE':
-                console.log(
-                    `Style ${change.id} created by a ${change.origin.toLowerCase()} user`,
-                );
-                break;
+//             case 'STYLE_CREATE':
+//                 console.log(
+//                     `Style ${change.id} created by a ${change.origin.toLowerCase()} user`,
+//                 );
+//                 break;
 
-            case 'STYLE_DELETE':
-                console.log(
-                    `Style ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
-                );
-                break;
+//             case 'STYLE_DELETE':
+//                 console.log(
+//                     `Style ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
+//                 );
+//                 break;
 
-            case 'STYLE_PROPERTY_CHANGE':
-                for (const prop of change.properties) {
-                    console.log(
-                        `Style ${
-                            change.id
-                        } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
-                    );
-                }
-                break;
-        }
-    }
-});
+//             case 'STYLE_PROPERTY_CHANGE':
+//                 for (const prop of change.properties) {
+//                     console.log(
+//                         `Style ${
+//                             change.id
+//                         } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
+//                     );
+//                 }
+//                 break;
+//         }
+//     }
+// });
 
 // const buildTheme = (theme: ThemeData) => {
 //     const collectionId = theme.collectionId;
@@ -134,6 +136,15 @@ export type PluginMessage = {
         bindVariables: boolean;
     };
 };
+
+type VariableData = {
+    name: string;
+    variableCollectionId: string;
+    resolvedType: VariableResolvedDataType;
+    value: VariableValue;
+    darkValue?: VariableValue;
+};
+
 figma.ui.onmessage = async (pluginMessage: any) => {
     if (pluginMessage.type === 'localCollections') {
         await sendLocalCollections();
@@ -142,15 +153,57 @@ figma.ui.onmessage = async (pluginMessage: any) => {
         await sendLocalCollections('preBuild');
     }
     if (pluginMessage.type === 'build') {
-        console.log(`build: ${pluginMessage}`);
-        const theme = pluginMessage.data.theme;
+        console.log(`PLUGIN RECEIVED: `, pluginMessage);
+        const theme: ThemeData = pluginMessage.data.theme;
         const collectionId = pluginMessage.data.collectionId;
         const collectionName = pluginMessage.data.collectionName;
         const overwriteVariables = pluginMessage.data.overwriteVariables;
         const bindVariables = pluginMessage.data.bindVariables;
+        const collection =
+            collectionId && collectionId !== ''
+                ? await getCollectionById(collectionId)
+                : figma.variables.createVariableCollection(collectionName);
+        // Mode setup
+        if (collection) {
+            const lightModeId = collection.modes[0].modeId;
+            if (
+                collection.modes.length === 1 &&
+                (collection.modes[0].name === 'Value' ||
+                    collection.modes[0].name === 'Mode 1')
+            ) {
+                collection.renameMode(collection.modes[0].modeId, 'light');
+            }
+            const darkModeId = collection.modes[1]
+                ? collection.modes[1].modeId
+                : collection.addMode('dark');
+            console.log('%cTHEME', 'color: #FF0000', theme);
+
+            const variables = theme.themeColors.map((themeColor) => {
+                const primitives = themeColor.tones.map((tone) => {
+                    const primitiveName = `${theme.name}/${themeColor.name}/${themeColor.name}${tone}`;
+                    const toneColor = SolidColorFromRgbColor(
+                        rgbaFromHct(
+                            Hct.from(
+                                themeColor.endColor.hct.hue,
+                                tone,
+                                themeColor.endColor.hct.chroma,
+                            ),
+                        ),
+                    );
+                    const variable = {
+                        name: primitiveName,
+                        variableCollectionId: collection.id,
+                        resolvedType: 'COLOR',
+                        value: toneColor,
+                        darkValue: toneColor,
+                    };
+                    return variable;
+                });
+                return primitives;
+            });
+            const variablesFlat = variables.flat();
+            console.log('%cVARIABLES', 'color: #FF0000', variables);
+        }
     }
-    const collectionId = pluginMessage.collectionId;
-    const Overwrite = true;
-    // const colorName = pluginMessage.name ? pluginMessage.name : 'color';
     // console.log(pluginMessage);
 };
