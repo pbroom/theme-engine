@@ -20,6 +20,8 @@ import {
     Divider,
     Checkbox,
     VerticalSpace,
+    TextboxAutocomplete,
+    TextboxAutocompleteOption,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
 import {
@@ -28,7 +30,7 @@ import {
     createThemeColor,
     useThemeColor,
 } from '../hooks/useThemeColor';
-import { ceil, round } from 'mathjs';
+import { ceil, e, round } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -49,7 +51,7 @@ import {
     ThemeListData,
     useThemeList,
 } from '../hooks/useThemeList';
-import _, { create, findIndex, set } from 'lodash';
+import _, { create, findIndex, get, set } from 'lodash';
 import { useAtom } from 'jotai';
 import { IdContext, IdState } from '../hooks/useId';
 
@@ -57,6 +59,8 @@ import { ThemeActions, ThemeData } from '../hooks/useTheme';
 import { useStore } from 'zustand';
 import React from 'preact/compat';
 import { on } from '@create-figma-plugin/utilities';
+import { useSettings } from './settings-tab/useSettings';
+import { PluginMessage } from '../main';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -535,46 +539,155 @@ const TabGroup = ({ className }: TabGroupProps) => {
         }
     }, [themeColorToDelete]);
 
-    const [overwrite, setOverwrite] = useState<boolean>(true);
-    const [bindStyles, setBindStyles] = useState<boolean>(false);
+    const settings = useSettings();
+    const overwrite = settings.overwriteVariables;
+    const setOverwrite = settings.setOverwriteVariables;
+    const bindStyles = settings.bindVariables;
+    const setBindStyles = settings.setBindVariables;
+    const collectionName = settings.collectionName;
+    const setCollectionName = settings.setCollectionName;
+
     const [collectionOptions, setCollectionOptions] = useState<
         Array<DropdownOption>
     >([
         {
-            value: 'Collection 1 ID',
-            text: 'Collection 1',
+            value: 'Collection 1',
+            text: 'Collection 1 ID',
         },
         {
-            value: 'Collection 2 ID',
-            text: 'Collection 2',
+            value: 'Collection 2',
+            text: 'Collection 2 ID',
         },
         {
-            value: 'Collection 3 ID',
-            text: 'Collection 3',
+            value: 'Collection 3',
+            text: 'Collection 3 ID',
         },
     ]);
-    const [collectionId, setCollectionId] = useState<string>('Collection 1 ID');
+
+    const buildCollections = async (
+        data: any,
+    ): Promise<
+        Array<{
+            id: string;
+            name: string;
+            defaultMode: string;
+            modes: Array<{ modeId: string; name: string }>;
+        }>
+    > => {
+        const collections = data.reduce(
+            (
+                items: Array<{ id: string; name: string }>,
+                collection: VariableCollection,
+            ) => {
+                const existingOption = items.find(
+                    (item) => item.name === collection.name,
+                );
+                if (existingOption) {
+                    const count = items.filter(
+                        (item) => item.name === collection.name,
+                    ).length;
+                    items.push({
+                        id: collection.id,
+                        name: `${collection.name} (${count + 1})`,
+                    });
+                } else {
+                    items.push({
+                        id: collection.id,
+                        name: collection.name,
+                    });
+                }
+                return items;
+            },
+            [],
+        );
+        console.log('Build Collections:', collections);
+        return collections;
+    };
+
+    const [collections, setCollections] = useState<VariableCollection[]>([]);
 
     onmessage = async (event) => {
         const message = await event.data.pluginMessage;
-        console.log('UI RECEIVED:', message);
+        console.log('TAB UI RECEIVED:', message);
         if (message.type === 'localCollections') {
-            const collectionOptions: Array<DropdownOption> = message.data.map(
-                (collection: VariableCollection) => {
-                    return {
-                        value: collection.id,
-                        text: collection.name,
-                    };
+            const localCollections = message.collections;
+            setCollections(localCollections);
+
+            console.log('Collections:', message.data);
+            const collectionOptions: Array<DropdownOption> =
+                message.data.reduce(
+                    (
+                        options: Array<{ value: string; text: string }>,
+                        collection: VariableCollection,
+                    ) => {
+                        const existingOption = options.find(
+                            (option) => option.value === collection.name,
+                        );
+                        if (existingOption) {
+                            const count = options.filter(
+                                (option) => option.value === collection.name,
+                            ).length;
+                            options.push({
+                                value: `${collection.name} (${count + 1})`,
+                                text: collection.id,
+                            });
+                        } else {
+                            options.push({
+                                value: collection.name,
+                                text: collection.id,
+                            });
+                        }
+                        return options;
+                    },
+                    [],
+                );
+            const dropdownOptions: Array<DropdownOption> = [
+                {
+                    header: 'Existing collections',
                 },
-            );
-            setCollectionOptions(collectionOptions);
-            setCollectionId(message.data[0].id);
+                ...collectionOptions,
+            ];
+            setCollectionOptions(dropdownOptions);
+        }
+        if (message.type === 'preBuild') {
+            const localCollections = message.collections;
+            setCollections(localCollections);
+
+            const collections = await buildCollections(message.data);
+            console.log('Collections:', collections);
+            const collectionId = collections.find(
+                (collection) => collection.name === collectionName,
+            )?.id;
+            console.log('collectionName:', collectionName);
+            console.log('CollectionID:', collectionId);
+            const pluginMessage: PluginMessage = {
+                type: 'build',
+                data: {
+                    theme: theme,
+                    collectionId: collectionId ? collectionId : '',
+                    collectionName: collectionName,
+                    overwriteVariables: overwrite,
+                    bindVariables: bindStyles,
+                },
+            };
+            parent.postMessage({ pluginMessage }, '*');
+            console.log('TAB UI SENT:', pluginMessage);
         }
     };
-    const handleChange = (event: h.JSX.TargetedEvent<HTMLInputElement>) => {
+    // TODO: account for starter plans with one mode
+    const getLocalCollections = async () => {
+        parent.postMessage(
+            { pluginMessage: { type: 'localCollections' } },
+            '*',
+        );
+    };
+
+    const handleCollectionNameInput = (
+        event: h.JSX.TargetedEvent<HTMLInputElement>,
+    ) => {
         const newValue = event.currentTarget.value;
         console.log(newValue);
-        setCollectionId(newValue);
+        setCollectionName(newValue);
     };
 
     const options: Array<TabsOption> = [
@@ -960,12 +1073,41 @@ const TabGroup = ({ className }: TabGroupProps) => {
                         <div className="flex h-24 grow flex-row pl-10">
                             <div className="flex grow flex-col gap-4 p-4">
                                 <div>
-                                    <Text>Variable Collection</Text>
+                                    <Text>Variable collection name</Text>
                                     <VerticalSpace space="extraSmall" />
-                                    <Dropdown
-                                        onChange={handleChange}
+                                    <TextboxAutocomplete
+                                        onFocus={getLocalCollections}
+                                        onInput={handleCollectionNameInput}
+                                        onBlur={() => {
+                                            if (collectionName === '') {
+                                                setCollectionName(
+                                                    'Theme Engine',
+                                                );
+                                            }
+                                        }}
+                                        onfocusout={() => {
+                                            if (collectionName === '') {
+                                                setCollectionName(
+                                                    'Theme Engine',
+                                                );
+                                            }
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (
+                                                e.key === 'Enter' ||
+                                                e.key === 'Escape'
+                                            ) {
+                                                if (collectionName === '') {
+                                                    setCollectionName(
+                                                        'Theme Engine',
+                                                    );
+                                                }
+                                            }
+                                        }}
                                         options={collectionOptions}
-                                        value={collectionId}
+                                        value={collectionName}
+                                        placeholder="Collection name"
+                                        variant="border"
                                     />
                                 </div>
                                 <Checkbox
@@ -975,7 +1117,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     value={overwrite}
                                 >
                                     <Text>
-                                        Overwrite variables with matching names
+                                        Overwrite variables with conflicting
+                                        names
                                     </Text>
                                 </Checkbox>
                                 <Checkbox

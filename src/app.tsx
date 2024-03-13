@@ -18,6 +18,8 @@ import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
 import { PluginMessage } from './main';
 import React from 'preact/compat';
+import { useSettings } from './components/settings-tab/useSettings';
+import { re } from 'mathjs';
 
 export const Plugin = () => {
     // ID state
@@ -286,7 +288,7 @@ export const Plugin = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
         return names[randomIndex];
     }
-    const names = [
+    const themeNames = [
         'Themey McThemeFace', // 8%
         'Mr. Theme', // 8%
         'Theme', // 84%
@@ -303,36 +305,31 @@ export const Plugin = () => {
 
     const nameTheNameless = () => {
         if (!theme.name) {
-            setTheme.setProps.name(pickRandomName(names));
+            setTheme.setProps.name(pickRandomName(themeNames));
         }
+    };
+    const getLocalCollections = async (type: string = 'localCollections') => {
+        parent.postMessage({ pluginMessage: { type: type } }, '*');
+        console.log('APP UI SENT:', type);
     };
 
-    const handleBuildTheme = () => {
-        console.log('Build theme');
-        const pluginMessage: PluginMessage = {
-            theme: theme,
-            collectionId: '',
-        };
-        parent.postMessage(
-            {
-                pluginMessage: {
-                    type: 'build',
-                    name: theme.name,
-                    color: themeColor.sourceColor.hex,
-                    toneStops: themeColor.tones,
-                    // collectionId: collectionId,
-                },
-            },
-            '*',
-        );
-    };
-    const [collections, setCollections] = useState<VariableCollection[]>([]);
-    onmessage = (event) => {
-        const message = event.data.pluginMessage;
-        if (message.type === 'localCollections') {
-            const collections = message.collections;
-            setCollections(collections);
-        }
+    const settings = useSettings();
+    const overwrite = settings.overwriteVariables;
+    const bindStyles = settings.bindVariables;
+    const collectionName = settings.collectionName;
+
+    // const getCollectionId = async () => {
+    //     const collection = collections.find(
+    //         (collection) => collection.name === collectionName,
+    //     );
+    //     if (collection) {
+    //         return collection.id;
+    //     }
+    //     return '';
+    // };
+
+    const handleBuildTheme = async () => {
+        await getLocalCollections('preBuild');
     };
 
     // Rendering the UI

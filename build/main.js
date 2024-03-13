@@ -66,7 +66,7 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: height(640), width: 512, title: "Theme Engine" });
 }
-var height, localCollectionsIds, getCollectionById;
+var height, localCollectionsIds, getCollectionById, sendLocalCollections;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -82,8 +82,7 @@ var init_main = __esm({
       const collection = await figma.variables.getVariableCollectionByIdAsync(collectionId);
       return collection;
     };
-    figma.on("run", async () => {
-      const type = "localCollections";
+    sendLocalCollections = async (type = "localCollections") => {
       const collectionIds = await localCollectionsIds();
       const collections = collectionIds.map(async (collectionId) => {
         const collection = await getCollectionById(collectionId.id);
@@ -100,11 +99,67 @@ var init_main = __esm({
       const message = { type, data };
       console.log("PLUGIN SENT:", message);
       figma.ui.postMessage(message);
+    };
+    figma.on("run", async () => {
+      sendLocalCollections();
     });
-    figma.ui.onmessage = (pluginMessage) => {
+    figma.on("documentchange", async (event) => {
+      for (const change of event.documentChanges) {
+        switch (change.type) {
+          case "CREATE":
+            console.log(
+              `Node ${change.id} created by a ${change.origin.toLowerCase()} user`
+            );
+            break;
+          case "DELETE":
+            console.log(
+              `Node ${change.id} deleted by a ${change.origin.toLowerCase()} user`
+            );
+            break;
+          case "PROPERTY_CHANGE":
+            for (const prop of change.properties) {
+              console.log(
+                `Node ${change.id} had ${prop} changed by a ${change.origin.toLowerCase()} user`
+              );
+            }
+            break;
+          case "STYLE_CREATE":
+            console.log(
+              `Style ${change.id} created by a ${change.origin.toLowerCase()} user`
+            );
+            break;
+          case "STYLE_DELETE":
+            console.log(
+              `Style ${change.id} deleted by a ${change.origin.toLowerCase()} user`
+            );
+            break;
+          case "STYLE_PROPERTY_CHANGE":
+            for (const prop of change.properties) {
+              console.log(
+                `Style ${change.id} had ${prop} changed by a ${change.origin.toLowerCase()} user`
+              );
+            }
+            break;
+        }
+      }
+    });
+    figma.ui.onmessage = async (pluginMessage) => {
+      if (pluginMessage.type === "localCollections") {
+        await sendLocalCollections();
+      }
+      if (pluginMessage.type === "preBuild") {
+        await sendLocalCollections("preBuild");
+      }
+      if (pluginMessage.type === "build") {
+        console.log(`build: ${pluginMessage}`);
+        const theme = pluginMessage.data.theme;
+        const collectionId2 = pluginMessage.data.collectionId;
+        const collectionName = pluginMessage.data.collectionName;
+        const overwriteVariables = pluginMessage.data.overwriteVariables;
+        const bindVariables = pluginMessage.data.bindVariables;
+      }
       const collectionId = pluginMessage.collectionId;
       const Overwrite = true;
-      console.log(pluginMessage);
     };
   }
 });

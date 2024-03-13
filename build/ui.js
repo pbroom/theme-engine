@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/18114869-76b3-4c9d-9f96-41b8ac6cffa1/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9623140-04f9-42b4-9dec-96c745283dac/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/18114869-76b3-4c9d-9f96-41b8ac6cffa1/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9623140-04f9-42b4-9dec-96c745283dac/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1601,21 +1601,21 @@ video {
     (!n3.__d && (n3.__d = true) && i.push(n3) && !x.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(x);
   }
   function x() {
-    var n3, u3, t3, o3, r3, e5, c3, s3, a3;
+    var n3, u3, t3, o3, r3, e6, c3, s3, a3;
     for (i.sort(f); n3 = i.shift(); )
-      n3.__d && (u3 = i.length, o3 = void 0, e5 = (r3 = (t3 = n3).__v).__e, s3 = [], a3 = [], (c3 = t3.__P) && ((o3 = v({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(o3), L(c3, o3, r3, t3.__n, void 0 !== c3.ownerSVGElement, 32 & r3.__u ? [e5] : null, s3, null == e5 ? m(r3) : e5, !!(32 & r3.__u), a3), o3.__.__k[o3.__i] = o3, M(s3, o3, a3), o3.__e != e5 && k(o3)), i.length > u3 && i.sort(f));
+      n3.__d && (u3 = i.length, o3 = void 0, e6 = (r3 = (t3 = n3).__v).__e, s3 = [], a3 = [], (c3 = t3.__P) && ((o3 = v({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(o3), L(c3, o3, r3, t3.__n, void 0 !== c3.ownerSVGElement, 32 & r3.__u ? [e6] : null, s3, null == e6 ? m(r3) : e6, !!(32 & r3.__u), a3), o3.__.__k[o3.__i] = o3, M(s3, o3, a3), o3.__e != e6 && k(o3)), i.length > u3 && i.sort(f));
     x.__r = 0;
   }
-  function C(n3, l3, u3, t3, i4, o3, r3, f3, e5, a3, h3) {
+  function C(n3, l3, u3, t3, i4, o3, r3, f3, e6, a3, h3) {
     var v3, p3, y3, d3, _3, g4 = t3 && t3.__k || s, b3 = l3.length;
-    for (u3.__d = e5, P(u3, l3, g4), e5 = u3.__d, v3 = 0; v3 < b3; v3++)
-      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e5, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e5 = S(y3, e5, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e5 = y3.__d : d3 && (e5 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
-    u3.__d = e5, u3.__e = _3;
+    for (u3.__d = e6, P(u3, l3, g4), e6 = u3.__d, v3 = 0; v3 < b3; v3++)
+      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e6, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e6 = S(y3, e6, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e6 = y3.__d : d3 && (e6 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
+    u3.__d = e6, u3.__e = _3;
   }
   function P(n3, l3, u3) {
-    var t3, i4, o3, r3, f3, e5 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
-    for (n3.__k = [], t3 = 0; t3 < e5; t3++)
-      null != (i4 = n3.__k[t3] = null == (i4 = l3[t3]) || "boolean" == typeof i4 || "function" == typeof i4 ? null : "string" == typeof i4 || "number" == typeof i4 || "bigint" == typeof i4 || i4.constructor == String ? d(null, i4, null, null, i4) : h(i4) ? d(g, { children: i4 }, null, null, null) : void 0 === i4.constructor && i4.__b > 0 ? d(i4.type, i4.props, i4.key, i4.ref ? i4.ref : null, i4.__v) : i4) ? (i4.__ = n3, i4.__b = n3.__b + 1, f3 = H(i4, u3, r3 = t3 + a3, s3), i4.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i4.type && (i4.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e5 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i4.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
+    var t3, i4, o3, r3, f3, e6 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
+    for (n3.__k = [], t3 = 0; t3 < e6; t3++)
+      null != (i4 = n3.__k[t3] = null == (i4 = l3[t3]) || "boolean" == typeof i4 || "function" == typeof i4 ? null : "string" == typeof i4 || "number" == typeof i4 || "bigint" == typeof i4 || i4.constructor == String ? d(null, i4, null, null, i4) : h(i4) ? d(g, { children: i4 }, null, null, null) : void 0 === i4.constructor && i4.__b > 0 ? d(i4.type, i4.props, i4.key, i4.ref ? i4.ref : null, i4.__v) : i4) ? (i4.__ = n3, i4.__b = n3.__b + 1, f3 = H(i4, u3, r3 = t3 + a3, s3), i4.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i4.type && (i4.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e6 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i4.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
     if (s3)
       for (t3 = 0; t3 < c3; t3++)
         null != (o3 = u3[t3]) && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3));
@@ -1635,18 +1635,18 @@ video {
     }) : l3.push(n3)), l3;
   }
   function H(n3, l3, u3, t3) {
-    var i4 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e5 = l3[u3];
-    if (null === e5 || e5 && i4 == e5.key && o3 === e5.type)
+    var i4 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e6 = l3[u3];
+    if (null === e6 || e6 && i4 == e6.key && o3 === e6.type)
       return u3;
-    if (t3 > (null != e5 && 0 == (131072 & e5.__u) ? 1 : 0))
+    if (t3 > (null != e6 && 0 == (131072 & e6.__u) ? 1 : 0))
       for (; r3 >= 0 || f3 < l3.length; ) {
         if (r3 >= 0) {
-          if ((e5 = l3[r3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
+          if ((e6 = l3[r3]) && 0 == (131072 & e6.__u) && i4 == e6.key && o3 === e6.type)
             return r3;
           r3--;
         }
         if (f3 < l3.length) {
-          if ((e5 = l3[f3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
+          if ((e6 = l3[f3]) && 0 == (131072 & e6.__u) && i4 == e6.key && o3 === e6.type)
             return f3;
           f3++;
         }
@@ -1696,11 +1696,11 @@ video {
   function D(n3) {
     return this.l[n3.type + true](l.event ? l.event(n3) : n3);
   }
-  function L(n3, u3, t3, i4, o3, r3, f3, e5, c3, s3) {
+  function L(n3, u3, t3, i4, o3, r3, f3, e6, c3, s3) {
     var a3, p3, y3, d3, _3, m3, k4, w4, x4, P6, S2, $3, H3, I3, T4, A4 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
-    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e5 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
+    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e6 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
     n:
       if ("function" == typeof A4)
         try {
@@ -1727,9 +1727,9 @@ video {
             do {
               p3.__d = false, $3 && $3(u3), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
             } while (p3.__d && ++H3 < 25);
-          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e5, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
+          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e6, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
         } catch (n4) {
-          u3.__v = null, c3 || null != r3 ? (u3.__e = e5, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e5)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
+          u3.__v = null, c3 || null != r3 ? (u3.__e = e6, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e6)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
         }
       else
         null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = j(t3.__e, u3, t3, i4, o3, r3, f3, c3, s3);
@@ -1749,7 +1749,7 @@ video {
       }
     });
   }
-  function j(l3, u3, t3, i4, o3, r3, f3, e5, s3) {
+  function j(l3, u3, t3, i4, o3, r3, f3, e6, s3) {
     var a3, v3, y3, d3, _3, g4, b3, k4 = t3.props, w4 = u3.props, x4 = u3.type;
     if ("svg" === x4 && (o3 = true), null != r3) {
       for (a3 = 0; a3 < r3.length; a3++)
@@ -1761,24 +1761,24 @@ video {
     if (null == l3) {
       if (null === x4)
         return document.createTextNode(w4);
-      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, w4.is && w4), r3 = null, e5 = false;
+      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, w4.is && w4), r3 = null, e6 = false;
     }
     if (null === x4)
-      k4 === w4 || e5 && l3.data === w4 || (l3.data = w4);
+      k4 === w4 || e6 && l3.data === w4 || (l3.data = w4);
     else {
-      if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e5 && null != r3)
+      if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e6 && null != r3)
         for (k4 = {}, a3 = 0; a3 < l3.attributes.length; a3++)
           k4[(_3 = l3.attributes[a3]).name] = _3.value;
       for (a3 in k4)
         _3 = k4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _3 : "key" === a3 || a3 in w4 || T(l3, a3, null, _3, o3));
       for (a3 in w4)
-        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e5 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
+        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e6 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
       if (v3)
-        e5 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
-      else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e5, s3), null != r3)
+        e6 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
+      else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e6, s3), null != r3)
         for (a3 = r3.length; a3--; )
           null != r3[a3] && p(r3[a3]);
-      e5 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== k4[a3]) && T(l3, a3, g4, k4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && T(l3, a3, b3, k4[a3], false));
+      e6 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== k4[a3]) && T(l3, a3, g4, k4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && T(l3, a3, b3, k4[a3], false));
     }
     return l3;
   }
@@ -1809,17 +1809,17 @@ video {
     return this.constructor(n3, u3);
   }
   function q(u3, t3, i4) {
-    var o3, r3, f3, e5;
-    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f3 = [], e5 = [], L(t3, u3 = (!o3 && i4 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e5), M(f3, u3, e5);
+    var o3, r3, f3, e6;
+    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f3 = [], e6 = [], L(t3, u3 = (!o3 && i4 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e6), M(f3, u3, e6);
   }
   function B(n3, l3) {
     q(n3, l3, B);
   }
   function E(l3, u3, t3) {
-    var i4, o3, r3, f3, e5 = v({}, l3.props);
+    var i4, o3, r3, f3, e6 = v({}, l3.props);
     for (r3 in l3.type && l3.type.defaultProps && (f3 = l3.type.defaultProps), u3)
-      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e5[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
-    return arguments.length > 2 && (e5.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e5, i4 || l3.key, o3 || l3.ref, null);
+      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e6[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
+    return arguments.length > 2 && (e6.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e6, i4 || l3.key, o3 || l3.ref, null);
   }
   function F(n3, l3) {
     var u3 = { __c: l3 = "__cC" + e++, __: n3, Consumer: function(n4, l4) {
@@ -1917,13 +1917,13 @@ video {
         }), !(!i5 && o3.__c.props === n4) && (!c3 || c3.call(this, n4, t3, r3));
       };
       r2.u = true;
-      var c3 = r2.shouldComponentUpdate, e5 = r2.componentWillUpdate;
+      var c3 = r2.shouldComponentUpdate, e6 = r2.componentWillUpdate;
       r2.componentWillUpdate = function(n4, t3, r3) {
         if (this.__e) {
           var u4 = c3;
           c3 = void 0, f3(n4, t3, r3), c3 = u4;
         }
-        e5 && e5.call(this, n4, t3, r3);
+        e6 && e6.call(this, n4, t3, r3);
       }, r2.shouldComponentUpdate = f3;
     }
     return o3.__N || o3.__;
@@ -2118,13 +2118,13 @@ video {
     version: () => ln
   });
   function g3(n3, t3) {
-    for (var e5 in t3)
-      n3[e5] = t3[e5];
+    for (var e6 in t3)
+      n3[e6] = t3[e6];
     return n3;
   }
   function C2(n3, t3) {
-    for (var e5 in n3)
-      if ("__source" !== e5 && !(e5 in t3))
+    for (var e6 in n3)
+      if ("__source" !== e6 && !(e6 in t3))
         return true;
     for (var r3 in t3)
       if ("__source" !== r3 && n3[r3] !== t3[r3])
@@ -2134,34 +2134,34 @@ video {
   function E2(n3) {
     this.props = n3;
   }
-  function w3(n3, e5) {
+  function w3(n3, e6) {
     function r3(n4) {
       var t3 = this.props.ref, r4 = t3 == n4.ref;
-      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e5 ? !e5(this.props, n4) || !r4 : C2(this.props, n4);
+      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e6 ? !e6(this.props, n4) || !r4 : C2(this.props, n4);
     }
-    function u3(e6) {
-      return this.shouldComponentUpdate = r3, y(n3, e6);
+    function u3(e7) {
+      return this.shouldComponentUpdate = r3, y(n3, e7);
     }
     return u3.displayName = "Memo(" + (n3.displayName || n3.name) + ")", u3.prototype.isReactComponent = true, u3.__f = true, u3;
   }
   function N2(n3) {
     function t3(t4) {
-      var e5 = g3({}, t4);
-      return delete e5.ref, n3(e5, t4.ref || null);
+      var e6 = g3({}, t4);
+      return delete e6.ref, n3(e6, t4.ref || null);
     }
     return t3.$$typeof = R, t3.render = t3, t3.prototype.isReactComponent = t3.__f = true, t3.displayName = "ForwardRef(" + (n3.displayName || n3.name) + ")", t3;
   }
-  function F3(n3, t3, e5) {
+  function F3(n3, t3, e6) {
     return n3 && (n3.__c && n3.__c.__H && (n3.__c.__H.__.forEach(function(n4) {
       "function" == typeof n4.__c && n4.__c();
-    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e5 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return F3(n4, t3, e5);
+    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e6 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return F3(n4, t3, e6);
     })), n3;
   }
-  function I2(n3, t3, e5) {
-    return n3 && e5 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return I2(n4, t3, e5);
-    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e5.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e5)), n3;
+  function I2(n3, t3, e6) {
+    return n3 && e6 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return I2(n4, t3, e6);
+    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e6.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e6)), n3;
   }
   function L2() {
     this.__u = 0, this.t = null, this.__b = null;
@@ -2171,16 +2171,16 @@ video {
     return t3 && t3.__a && t3.__a(n3);
   }
   function D2(n3) {
-    var e5, r3, u3;
+    var e6, r3, u3;
     function o3(o4) {
-      if (e5 || (e5 = n3()).then(function(n4) {
+      if (e6 || (e6 = n3()).then(function(n4) {
         r3 = n4.default || n4;
       }, function(n4) {
         u3 = n4;
       }), u3)
         throw u3;
       if (!r3)
-        throw e5;
+        throw e6;
       return y(r3, o4);
     }
     return o3.displayName = "Lazy", o3.__f = true, o3;
@@ -2194,26 +2194,26 @@ video {
     }, n3.children;
   }
   function P3(n3) {
-    var e5 = this, r3 = n3.i;
-    e5.componentWillUnmount = function() {
-      q(null, e5.l), e5.l = null, e5.i = null;
-    }, e5.i && e5.i !== r3 && e5.componentWillUnmount(), e5.l || (e5.i = r3, e5.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
-      this.childNodes.push(n4), e5.i.appendChild(n4);
+    var e6 = this, r3 = n3.i;
+    e6.componentWillUnmount = function() {
+      q(null, e6.l), e6.l = null, e6.i = null;
+    }, e6.i && e6.i !== r3 && e6.componentWillUnmount(), e6.l || (e6.i = r3, e6.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
+      this.childNodes.push(n4), e6.i.appendChild(n4);
     }, insertBefore: function(n4, t3) {
-      this.childNodes.push(n4), e5.i.appendChild(n4);
+      this.childNodes.push(n4), e6.i.appendChild(n4);
     }, removeChild: function(n4) {
-      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e5.i.removeChild(n4);
-    } }), q(y(W, { context: e5.context }, n3.__v), e5.l);
+      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
+    } }), q(y(W, { context: e6.context }, n3.__v), e6.l);
   }
-  function j3(n3, e5) {
-    var r3 = y(P3, { __v: n3, i: e5 });
-    return r3.containerInfo = e5, r3;
+  function j3(n3, e6) {
+    var r3 = y(P3, { __v: n3, i: e6 });
+    return r3.containerInfo = e6, r3;
   }
-  function q3(n3, t3, e5) {
-    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
+  function q3(n3, t3, e6) {
+    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
   }
-  function G(n3, t3, e5) {
-    return B(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
+  function G(n3, t3, e6) {
+    return B(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
   }
   function K() {
   }
@@ -2251,20 +2251,20 @@ video {
     return [false, yn];
   }
   function Cn(n3, t3) {
-    var e5 = t3(), r3 = h2({ h: { __: e5, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
+    var e6 = t3(), r3 = h2({ h: { __: e6, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
     return y2(function() {
-      u3.__ = e5, u3.v = t3, En(u3) && o3({ h: u3 });
-    }, [n3, e5, t3]), p2(function() {
+      u3.__ = e6, u3.v = t3, En(u3) && o3({ h: u3 });
+    }, [n3, e6, t3]), p2(function() {
       return En(u3) && o3({ h: u3 }), n3(function() {
         En(u3) && o3({ h: u3 });
       });
-    }, [n3]), e5;
+    }, [n3]), e6;
   }
   function En(n3) {
-    var t3, e5, r3 = n3.v, u3 = n3.__;
+    var t3, e6, r3 = n3.v, u3 = n3.__;
     try {
       var o3 = r3();
-      return !((t3 = u3) === (e5 = o3) && (0 !== t3 || 1 / t3 == 1 / e5) || t3 != t3 && e5 != e5);
+      return !((t3 = u3) === (e6 = o3) && (0 !== t3 || 1 / t3 == 1 / e6) || t3 != t3 && e6 != e6);
     } catch (n4) {
       return true;
     }
@@ -2296,25 +2296,25 @@ video {
         return t3[0];
       }, toArray: $ };
       O2 = l.__e;
-      l.__e = function(n3, t3, e5, r3) {
+      l.__e = function(n3, t3, e6, r3) {
         if (n3.then) {
           for (var u3, o3 = t3; o3 = o3.__; )
             if ((u3 = o3.__c) && u3.__c)
-              return null == t3.__e && (t3.__e = e5.__e, t3.__k = e5.__k), u3.__c(n3, t3);
+              return null == t3.__e && (t3.__e = e6.__e, t3.__k = e6.__k), u3.__c(n3, t3);
         }
-        O2(n3, t3, e5, r3);
+        O2(n3, t3, e6, r3);
       };
       T3 = l.unmount;
       l.unmount = function(n3) {
         var t3 = n3.__c;
         t3 && t3.__R && t3.__R(), t3 && 32 & n3.__u && (n3.type = null), T3 && T3(n3);
       }, (L2.prototype = new b()).__c = function(n3, t3) {
-        var e5 = t3.__c, r3 = this;
-        null == r3.t && (r3.t = []), r3.t.push(e5);
+        var e6 = t3.__c, r3 = this;
+        null == r3.t && (r3.t = []), r3.t.push(e6);
         var u3 = U(r3.__v), o3 = false, i4 = function() {
-          o3 || (o3 = true, e5.__R = null, u3 ? u3(l3) : l3());
+          o3 || (o3 = true, e6.__R = null, u3 ? u3(l3) : l3());
         };
-        e5.__R = i4;
+        e6.__R = i4;
         var l3 = function() {
           if (!--r3.__u) {
             if (r3.state.__a) {
@@ -2329,7 +2329,7 @@ video {
         r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i4, i4);
       }, L2.prototype.componentWillUnmount = function() {
         this.t = [];
-      }, L2.prototype.render = function(n3, e5) {
+      }, L2.prototype.render = function(n3, e6) {
         if (this.__b) {
           if (this.__v.__k) {
             var r3 = document.createElement("div"), o3 = this.__v.__k[0].__c;
@@ -2337,38 +2337,38 @@ video {
           }
           this.__b = null;
         }
-        var i4 = e5.__a && y(g, null, n3.fallback);
-        return i4 && (i4.__u &= -33), [y(g, null, e5.__a ? null : n3.children), i4];
+        var i4 = e6.__a && y(g, null, n3.fallback);
+        return i4 && (i4.__u &= -33), [y(g, null, e6.__a ? null : n3.children), i4];
       };
-      V2 = function(n3, t3, e5) {
-        if (++e5[1] === e5[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
-          for (e5 = n3.u; e5; ) {
-            for (; e5.length > 3; )
-              e5.pop()();
-            if (e5[1] < e5[0])
+      V2 = function(n3, t3, e6) {
+        if (++e6[1] === e6[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
+          for (e6 = n3.u; e6; ) {
+            for (; e6.length > 3; )
+              e6.pop()();
+            if (e6[1] < e6[0])
               break;
-            n3.u = e5 = e5[2];
+            n3.u = e6 = e6[2];
           }
       };
       (M2.prototype = new b()).__a = function(n3) {
-        var t3 = this, e5 = U(t3.__v), r3 = t3.o.get(n3);
+        var t3 = this, e6 = U(t3.__v), r3 = t3.o.get(n3);
         return r3[0]++, function(u3) {
           var o3 = function() {
             t3.props.revealOrder ? (r3.push(u3), V2(t3, n3, r3)) : u3();
           };
-          e5 ? e5(o3) : o3();
+          e6 ? e6(o3) : o3();
         };
       }, M2.prototype.render = function(n3) {
         this.u = null, this.o = /* @__PURE__ */ new Map();
         var t3 = $(n3.children);
         n3.revealOrder && "b" === n3.revealOrder[0] && t3.reverse();
-        for (var e5 = t3.length; e5--; )
-          this.o.set(t3[e5], this.u = [1, 0, this.u]);
+        for (var e6 = t3.length; e6--; )
+          this.o.set(t3[e6], this.u = [1, 0, this.u]);
         return n3.children;
       }, M2.prototype.componentDidUpdate = M2.prototype.componentDidMount = function() {
         var n3 = this;
-        this.o.forEach(function(t3, e5) {
-          V2(n3, e5, t3);
+        this.o.forEach(function(t3, e6) {
+          V2(n3, e6, t3);
         });
       };
       z3 = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103;
@@ -2396,17 +2396,17 @@ video {
       en = l.vnode;
       l.vnode = function(n3) {
         "string" == typeof n3.type && function(n4) {
-          var t3 = n4.props, e5 = n4.type, u3 = {};
+          var t3 = n4.props, e6 = n4.type, u3 = {};
           for (var o3 in t3) {
             var i4 = t3[o3];
-            if (!("value" === o3 && "defaultValue" in t3 && null == i4 || Y && "children" === o3 && "noscript" === e5 || "class" === o3 || "className" === o3)) {
+            if (!("value" === o3 && "defaultValue" in t3 && null == i4 || Y && "children" === o3 && "noscript" === e6 || "class" === o3 || "className" === o3)) {
               var l3 = o3.toLowerCase();
-              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i4 ? i4 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e5 && "textarea" !== e5 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e5.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i4 && (i4 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i4;
+              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i4 ? i4 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e6 && "textarea" !== e6 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e6.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i4 && (i4 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i4;
             }
           }
-          "select" == e5 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
+          "select" == e6 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
             n5.props.selected = -1 != u3.value.indexOf(n5.props.value);
-          })), "select" == e5 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
+          })), "select" == e6 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
             n5.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n5.props.value) : u3.defaultValue == n5.props.value;
           })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", tn)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n4.props = u3;
         }(n3), n3.$$typeof = z3, en && en(n3);
@@ -2418,8 +2418,8 @@ video {
       un = l.diffed;
       l.diffed = function(n3) {
         un && un(n3);
-        var t3 = n3.props, e5 = n3.__e;
-        null != e5 && "textarea" === n3.type && "value" in t3 && t3.value !== e5.value && (e5.value = null == t3.value ? "" : t3.value), nn = null;
+        var t3 = n3.props, e6 = n3.__e;
+        null != e6 && "textarea" === n3.type && "value" in t3 && t3.value !== e6.value && (e6.value = null == t3.value ? "" : t3.value), nn = null;
       };
       on = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
         return nn.__n[n3.__c].props.value;
@@ -2456,10 +2456,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82cce089-cdff-486f-9fbb-f430c72b911f/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64cd740b-33d1-4f56-8818-e0526f9865cd/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/82cce089-cdff-486f-9fbb-f430c72b911f/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/64cd740b-33d1-4f56-8818-e0526f9865cd/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2505,10 +2505,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/195aa740-baed-4e9f-afde-17af90e9daf8/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a367f792-ccd7-4901-b181-7d383a74ccac/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/195aa740-baed-4e9f-afde-17af90e9daf8/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a367f792-ccd7-4901-b181-7d383a74ccac/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -2641,10 +2641,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a94dcb2b-d27c-4817-8e77-5fb2007ba052/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/36deb13a-c184-4b86-a6aa-a7dce79111d1/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a94dcb2b-d27c-4817-8e77-5fb2007ba052/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/36deb13a-c184-4b86-a6aa-a7dce79111d1/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2882,10 +2882,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66b6833c-d637-499d-9a5c-7972fd866da2/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c50515f5-077b-4be8-8f4f-27422ac954bd/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/66b6833c-d637-499d-9a5c-7972fd866da2/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c50515f5-077b-4be8-8f4f-27422ac954bd/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3359,10 +3359,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98623101-8b25-4de6-aadf-b360881f9453/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f27af82-b2ee-42e3-a412-0951857aa082/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/98623101-8b25-4de6-aadf-b360881f9453/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6f27af82-b2ee-42e3-a412-0951857aa082/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3432,10 +3432,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a387cc44-6957-41ad-aa0f-ba762a8fb130/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fab9f8a1-a396-4d9e-b3f9-6c35c5f2d128/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a387cc44-6957-41ad-aa0f-ba762a8fb130/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fab9f8a1-a396-4d9e-b3f9-6c35c5f2d128/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -3493,10 +3493,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22ab299a-7d60-4356-a162-1b72b7f8a8d3/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c4fc0f6a-1fa3-4724-a1ae-88c4de8c1f34/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/22ab299a-7d60-4356-a162-1b72b7f8a8d3/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c4fc0f6a-1fa3-4724-a1ae-88c4de8c1f34/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3600,10 +3600,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e383f322-8aa9-44d2-9eba-edd419911619/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/00be2d45-7790-4951-b5c3-1a13cbd1c618/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e383f322-8aa9-44d2-9eba-edd419911619/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/00be2d45-7790-4951-b5c3-1a13cbd1c618/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3750,7 +3750,7 @@ video {
         g: green2 / 255,
         r: red2 / 255
       };
-    } catch (e5) {
+    } catch (e6) {
       return null;
     }
   }
@@ -3997,7 +3997,7 @@ video {
     }
     try {
       return rgbHex(Math.round(r3 * 255), Math.round(g4 * 255), Math.round(b3 * 255)).toUpperCase();
-    } catch (e5) {
+    } catch (e6) {
       return null;
     }
   }
@@ -4200,10 +4200,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/950613a4-d036-489d-869e-817321c8f658/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cae63e0-d79a-40b4-9218-9c86d14b8f15/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/950613a4-d036-489d-869e-817321c8f658/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5cae63e0-d79a-40b4-9218-9c86d14b8f15/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4327,6 +4327,100 @@ video {
     }
   });
 
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b664f9a5-bfbe-4193-a0cf-71e0eeb4fb46/menu.module.js
+  var menu_module_default2;
+  var init_menu_module2 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b664f9a5-bfbe-4193-a0cf-71e0eeb4fb46/menu.module.js"() {
+      if (document.getElementById("4fc51b39c8") === null) {
+        const element = document.createElement("style");
+        element.id = "4fc51b39c8";
+        element.textContent = `._menu_c5se2_1 {
+  position: absolute;
+  z-index: var(--z-index-2);
+  left: 0;
+  min-width: 100%;
+  padding: var(--space-extra-small) 0;
+  border-radius: var(--border-radius-2);
+  background-color: #1e1e1e; /* FIXME */
+  box-shadow: var(--box-shadow-menu);
+  color: rgba(255, 255, 255, 1); /* FIXME */
+  font-size: var(--font-size-12);
+  overflow-y: auto;
+}
+._menu_c5se2_1::-webkit-scrollbar {
+  display: none;
+}
+._menu_c5se2_1:empty {
+  display: none;
+}
+
+._hidden_c5se2_21 {
+  position: fixed;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5),
+  screen and (min-resolution: 1.5dppx) {
+  ._menu_c5se2_1 {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+._optionHeader_c5se2_34,
+._optionValue_c5se2_35 {
+  overflow: hidden;
+  padding: 4px var(--space-medium) 4px 32px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+._optionHeader_c5se2_34 {
+  color: rgba(255, 255, 255, 0.7); /* FIXME */
+  font-size: var(--font-size-12);
+}
+
+._optionValue_c5se2_35 {
+  position: relative;
+}
+._optionValueSelected_c5se2_50 {
+  background-color: var(--figma-color-bg-brand);
+}
+._optionValueDisabled_c5se2_53 {
+  color: rgba(255, 255, 255, 0.4); /* FIXME */
+}
+
+._optionSeparator_c5se2_57 {
+  width: 100%;
+  height: 1px;
+  margin: var(--space-extra-small) 0;
+  background-color: #444444; /* FIXME */
+}
+
+._input_c5se2_64 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+._checkIcon_c5se2_75 {
+  position: absolute;
+  top: 5px;
+  left: var(--space-extra-small);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY3NzL21lbnUubW9kdWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsT0FBTztFQUNQLGVBQWU7RUFDZixtQ0FBbUM7RUFDbkMscUNBQXFDO0VBQ3JDLHlCQUF5QixFQUFFLFVBQVU7RUFDckMsa0NBQWtDO0VBQ2xDLDZCQUE2QixFQUFFLFVBQVU7RUFDekMsOEJBQThCO0VBQzlCLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGtCQUFrQjtBQUNwQjs7QUFFQTs7RUFFRTtJQUNFLG1DQUFtQztFQUNyQztBQUNGOztBQUVBOztFQUVFLGdCQUFnQjtFQUNoQix5Q0FBeUM7RUFDekMsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLCtCQUErQixFQUFFLFVBQVU7RUFDM0MsOEJBQThCO0FBQ2hDOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSw2Q0FBNkM7QUFDL0M7QUFDQTtFQUNFLCtCQUErQixFQUFFLFVBQVU7QUFDN0M7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsV0FBVztFQUNYLGtDQUFrQztFQUNsQyx5QkFBeUIsRUFBRSxVQUFVO0FBQ3ZDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixRQUFRO0VBQ1IsU0FBUztFQUNULE9BQU87RUFDUCxjQUFjO0VBQ2QsV0FBVztFQUNYLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsOEJBQThCO0FBQ2hDIiwiZmlsZSI6Im5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY3NzL21lbnUubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tZW51IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTIpO1xuICBsZWZ0OiAwO1xuICBtaW4td2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKSAwO1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzLTIpO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWUxZTFlOyAvKiBGSVhNRSAqL1xuICBib3gtc2hhZG93OiB2YXIoLS1ib3gtc2hhZG93LW1lbnUpO1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAxKTsgLyogRklYTUUgKi9cbiAgZm9udC1zaXplOiB2YXIoLS1mb250LXNpemUtMTIpO1xuICBvdmVyZmxvdy15OiBhdXRvO1xufVxuLm1lbnU6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5tZW51OmVtcHR5IHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmhpZGRlbiB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKC13ZWJraXQtbWluLWRldmljZS1waXhlbC1yYXRpbzogMS41KSxcbiAgc2NyZWVuIGFuZCAobWluLXJlc29sdXRpb246IDEuNWRwcHgpIHtcbiAgLm1lbnUge1xuICAgIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICB9XG59XG5cbi5vcHRpb25IZWFkZXIsXG4ub3B0aW9uVmFsdWUge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nOiA0cHggdmFyKC0tc3BhY2UtbWVkaXVtKSA0cHggMzJweDtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5vcHRpb25IZWFkZXIge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpOyAvKiBGSVhNRSAqL1xuICBmb250LXNpemU6IHZhcigtLWZvbnQtc2l6ZS0xMik7XG59XG5cbi5vcHRpb25WYWx1ZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5vcHRpb25WYWx1ZVNlbGVjdGVkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctYnJhbmQpO1xufVxuLm9wdGlvblZhbHVlRGlzYWJsZWQge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpOyAvKiBGSVhNRSAqL1xufVxuXG4ub3B0aW9uU2VwYXJhdG9yIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMXB4O1xuICBtYXJnaW46IHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKSAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDQ0NDQ0OyAvKiBGSVhNRSAqL1xufVxuXG4uaW5wdXQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5jaGVja0ljb24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNXB4O1xuICBsZWZ0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      menu_module_default2 = { "menu": "_menu_c5se2_1", "hidden": "_hidden_c5se2_21", "optionHeader": "_optionHeader_c5se2_34", "optionValue": "_optionValue_c5se2_35", "optionValueSelected": "_optionValueSelected_c5se2_50", "optionValueDisabled": "_optionValueDisabled_c5se2_53", "optionSeparator": "_optionSeparator_c5se2_57", "input": "_input_c5se2_64", "checkIcon": "_checkIcon_c5se2_75" };
+    }
+  });
+
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/private/compute-next-value.js
   function computeNextValue(inputElement, insertedString) {
     const value2 = inputElement.value;
@@ -4339,10 +4433,597 @@ video {
     }
   });
 
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6e9f055-676d-466c-82ce-07e03012d6df/textbox.module.js
+  var textbox_module_default2;
+  var init_textbox_module2 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6e9f055-676d-466c-82ce-07e03012d6df/textbox.module.js"() {
+      if (document.getElementById("d6f1162d61") === null) {
+        const element = document.createElement("style");
+        element.id = "d6f1162d61";
+        element.textContent = `._textbox_sir3b_1 {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+._textbox_sir3b_1:focus-within {
+  z-index: var(--z-index-2); /* Stack \`.textbox\` over its sibling elements */
+}
+
+._input_sir3b_9 {
+  display: block;
+  width: 100%;
+  height: 28px;
+  padding: 0 var(--space-extra-small);
+  background-color: transparent;
+  color: var(--figma-color-text);
+}
+._disabled_sir3b_17 ._input_sir3b_9 {
+  color: var(--figma-color-text-disabled);
+  cursor: not-allowed;
+}
+._hasIcon_sir3b_21 ._input_sir3b_9 {
+  padding-left: 32px;
+}
+
+._input_sir3b_9::placeholder {
+  color: var(--figma-color-text-tertiary);
+}
+
+._icon_sir3b_29 {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: var(--figma-color-icon-secondary);
+  pointer-events: none; /* so that clicking the icon focuses the textbox */
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._icon_sir3b_29 {
+  color: var(--figma-color-icon-brand);
+}
+._disabled_sir3b_17 ._icon_sir3b_29 {
+  color: var(--figma-color-icon-disabled);
+}
+
+._icon_sir3b_29 svg {
+  fill: currentColor;
+}
+
+._border_sir3b_49 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-2);
+  pointer-events: none;
+}
+._hasBorder_sir3b_59 ._border_sir3b_49,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._border_sir3b_49 {
+  border-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._border_sir3b_49 {
+  top: -1px;
+  bottom: -1px;
+  border-width: 2px;
+  border-color: var(--figma-color-border-brand-strong);
+}
+
+._underline_sir3b_70 {
+  position: absolute;
+  right: var(--space-extra-small);
+  bottom: 0;
+  left: var(--space-extra-small);
+  height: 1px;
+  background-color: var(--figma-color-border);
+}
+._textbox_sir3b_1:not(._disabled_sir3b_17) ._input_sir3b_9:focus ~ ._underline_sir3b_70,
+._textbox_sir3b_1:not(._disabled_sir3b_17):hover ._underline_sir3b_70 {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gvdGV4dGJveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUNBO0VBQ0UseUJBQXlCLEVBQUUsK0NBQStDO0FBQzVFOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUNBQW1DO0VBQ25DLDZCQUE2QjtFQUM3Qiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7QUFDQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxvQkFBb0IsRUFBRSxrREFBa0Q7RUFDeEUsa0JBQWtCO0VBQ2xCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0Usb0NBQW9DO0FBQ3RDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94L3RleHRib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xufVxuLnRleHRib3g6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0yKTsgLyogU3RhY2sgYC50ZXh0Ym94YCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBwYWRkaW5nOiAwIHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uaGFzSWNvbiAuaW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG5cbi5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC10ZXJ0aWFyeSk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lOyAvKiBzbyB0aGF0IGNsaWNraW5nIHRoZSBpY29uIGZvY3VzZXMgdGhlIHRleHRib3ggKi9cbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tYnJhbmQpO1xufVxuLmRpc2FibGVkIC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uaWNvbiBzdmcge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3g6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveDpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_module_default2 = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
+    }
+  });
+
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d4cb802-5dcc-4889-90ba-33337eca8d81/textbox-autocomplete.module.js
+  var textbox_autocomplete_module_default;
+  var init_textbox_autocomplete_module = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/5d4cb802-5dcc-4889-90ba-33337eca8d81/textbox-autocomplete.module.js"() {
+      if (document.getElementById("b1ea8b97d3") === null) {
+        const element = document.createElement("style");
+        element.id = "b1ea8b97d3";
+        element.textContent = `._top_3lpap_1 {
+  bottom: calc(100% + 1px);
+}
+
+._bottom_3lpap_5 {
+  top: calc(100% + 1px);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gtYXV0b2NvbXBsZXRlL3RleHRib3gtYXV0b2NvbXBsZXRlLm1vZHVsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxxQkFBcUI7QUFDdkIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL3RleHRib3gvdGV4dGJveC1hdXRvY29tcGxldGUvdGV4dGJveC1hdXRvY29tcGxldGUubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3Age1xuICBib3R0b206IGNhbGMoMTAwJSArIDFweCk7XG59XG5cbi5ib3R0b20ge1xuICB0b3A6IGNhbGMoMTAwJSArIDFweCk7XG59XG4iXX0= */`;
+        document.head.append(element);
+      }
+      textbox_autocomplete_module_default = { "top": "_top_3lpap_1", "bottom": "_bottom_3lpap_5" };
+    }
+  });
+
+  // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-autocomplete/textbox-autocomplete.js
+  function createOptions(options) {
+    return options.map(function(option, index2) {
+      if (typeof option !== "string" && "value" in option) {
+        const optionValueWithId = __spreadProps(__spreadValues({}, option), {
+          id: `${index2}`
+        });
+        return optionValueWithId;
+      }
+      return option;
+    });
+  }
+  function filterOptions(options, value2, editedValue) {
+    if (value2 === EMPTY_STRING2) {
+      return options;
+    }
+    const id = getIdByValue(options, value2);
+    if (id === INVALID_ID) {
+      return options.filter(function(option) {
+        if (typeof option !== "string" && "value" in option) {
+          return doesStringContainSubstring(option.value, value2) === true;
+        }
+        return false;
+      });
+    }
+    if (editedValue === EMPTY_STRING2) {
+      return options;
+    }
+    return options.filter(function(option) {
+      if (typeof option !== "string" && "value" in option) {
+        return doesStringContainSubstring(option.value, editedValue) === true;
+      }
+      return false;
+    });
+  }
+  function doesStringContainSubstring(string2, substring) {
+    return string2.toLowerCase().indexOf(substring.toLowerCase()) !== -1;
+  }
+  function getIdByValue(options, value2) {
+    for (const option of options) {
+      if (typeof option !== "string" && "value" in option) {
+        if (option.value === value2) {
+          return option.id;
+        }
+      }
+    }
+    return INVALID_ID;
+  }
+  function isValidValue(options, value2) {
+    if (value2 === EMPTY_STRING2) {
+      return true;
+    }
+    for (const option of options) {
+      if (typeof option !== "string" && "value" in option) {
+        if (option.value.toLowerCase().indexOf(value2.toLowerCase()) === 0) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  function findOptionValueById(options, id) {
+    for (const option of options) {
+      if (typeof option !== "string" && "id" in option && option.id === id) {
+        return option;
+      }
+    }
+    return null;
+  }
+  function getIndexById(options, id) {
+    let index2 = 0;
+    for (const option of options) {
+      if (typeof option !== "string" && "id" in option && option.id === id) {
+        return index2;
+      }
+      index2 += 1;
+    }
+    return -1;
+  }
+  function computePreviousId(options, id) {
+    if (id === INVALID_ID) {
+      const result2 = findOptionValueAtOrBeforeIndex(options, options.length - 1);
+      return result2 === null ? null : result2.id;
+    }
+    const index2 = getIndexById(options, id);
+    if (index2 === -1) {
+      throw new Error(`No option with \`id\` ${id}`);
+    }
+    if (index2 === 0) {
+      return null;
+    }
+    const result = findOptionValueAtOrBeforeIndex(options, index2 - 1);
+    return result === null ? null : result.id;
+  }
+  function computeNextId(options, id) {
+    if (id === INVALID_ID) {
+      const result2 = findOptionValueAtOrAfterIndex(options, 0);
+      return result2 === null ? null : result2.id;
+    }
+    const index2 = getIndexById(options, id);
+    if (index2 === -1) {
+      throw new Error(`No option with \`id\` ${id}`);
+    }
+    if (index2 === options.length - 1) {
+      return null;
+    }
+    const result = findOptionValueAtOrAfterIndex(options, index2 + 1);
+    return result === null ? null : result.id;
+  }
+  function findOptionValueAtOrBeforeIndex(options, index2) {
+    if (index2 < 0) {
+      throw new Error("`index` < 0");
+    }
+    if (index2 > options.length - 1) {
+      throw new Error("`index` > `options.length` - 1");
+    }
+    return findLastOptionValue(options.slice(0, index2 + 1));
+  }
+  function findOptionValueAtOrAfterIndex(options, index2) {
+    if (index2 < 0) {
+      throw new Error("`index` < 0");
+    }
+    if (index2 > options.length - 1) {
+      throw new Error("`index` > `options.length` - 1");
+    }
+    return findFirstOptionValue(options.slice(index2));
+  }
+  function findFirstOptionValue(options) {
+    for (const option of options) {
+      if (typeof option !== "string" && "id" in option && option.disabled !== true) {
+        return option;
+      }
+    }
+    return null;
+  }
+  function findLastOptionValue(options) {
+    return findFirstOptionValue(options.slice().reverse());
+  }
+  function updateMenuElementMaxHeight(rootElement, menuElement, top) {
+    const rootElementTop = rootElement.getBoundingClientRect().top;
+    const maxHeight = top === true ? rootElementTop - VIEWPORT_MARGIN : window.innerHeight - rootElementTop - rootElement.offsetHeight - VIEWPORT_MARGIN;
+    menuElement.style.maxHeight = `${maxHeight}px`;
+  }
+  var EMPTY_STRING2, TextboxAutocomplete;
+  var init_textbox_autocomplete = __esm({
+    "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-autocomplete/textbox-autocomplete.js"() {
+      init_preact_module();
+      init_hooks_module();
+      init_menu_module2();
+      init_use_mouse_down_outside();
+      init_icon_menu_checkmark_checked_16();
+      init_create_class_name();
+      init_create_component();
+      init_get_current_from_ref();
+      init_no_op();
+      init_constants();
+      init_compute_next_value();
+      init_is_keycode_character_generating();
+      init_textbox_module2();
+      init_textbox_autocomplete_module();
+      EMPTY_STRING2 = "";
+      TextboxAutocomplete = createComponent(function(_a, ref) {
+        var _b = _a, { disabled = false, filter: filter3 = false, icon, onChange = noop, onInput = noop, onKeyDown = noop, onMouseDown = noop, onPaste = noop, onValueInput = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, strict = false, top = false, value: value2, variant } = _b, rest = __objRest(_b, ["disabled", "filter", "icon", "onChange", "onInput", "onKeyDown", "onMouseDown", "onPaste", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "strict", "top", "value", "variant"]);
+        if (typeof icon === "string" && icon.length !== 1) {
+          throw new Error(`String \`icon\` must be a single character: ${icon}`);
+        }
+        const rootElementRef = _2(null);
+        const inputElementRef = _2(null);
+        const menuElementRef = _2(null);
+        const revertOnEscapeKeyDownRef = _2(false);
+        const [originalValue, setOriginalValue] = h2(value2);
+        const [editedValue, setEditedValue] = h2(EMPTY_STRING2);
+        const [isMenuVisible, setIsMenuVisible] = h2(false);
+        const [selectedId, setSelectedId] = h2(INVALID_ID);
+        const options = filter3 === true ? filterOptions(createOptions(rest.options), value2, editedValue) : createOptions(rest.options);
+        const triggerTextboxSelect = T2(function() {
+          getCurrentFromRef(inputElementRef).select();
+        }, []);
+        const triggerTextboxBlur = T2(function() {
+          getCurrentFromRef(inputElementRef).blur();
+        }, []);
+        const triggerMenuUpdateScrollPosition = T2(function(id) {
+          const menuElement = getCurrentFromRef(menuElementRef);
+          if (id === INVALID_ID) {
+            menuElement.scrollTop = 0;
+            return;
+          }
+          const selectedElement = menuElement.querySelector(`[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${id}']`);
+          if (selectedElement === null) {
+            throw new Error("`selectedElement` is `null`");
+          }
+          const y3 = selectedElement.getBoundingClientRect().y - menuElement.getBoundingClientRect().y;
+          if (y3 < menuElement.scrollTop) {
+            menuElement.scrollTop = y3;
+            return;
+          }
+          const offsetBottom = y3 + selectedElement.offsetHeight;
+          if (offsetBottom > menuElement.scrollTop + menuElement.offsetHeight) {
+            menuElement.scrollTop = offsetBottom - menuElement.offsetHeight;
+          }
+        }, []);
+        const updateSelectedId = T2(function(value3) {
+          const id = getIdByValue(options, value3);
+          if (id === INVALID_ID) {
+            setEditedValue(value3);
+          }
+          setSelectedId(id);
+          triggerMenuUpdateScrollPosition(id);
+        }, [options, triggerMenuUpdateScrollPosition]);
+        const updateTextboxValue = T2(function(value3) {
+          const inputElement = getCurrentFromRef(inputElementRef);
+          inputElement.value = value3;
+          const inputEvent = new window.Event("input", {
+            bubbles: true,
+            cancelable: true
+          });
+          inputElement.dispatchEvent(inputEvent);
+        }, []);
+        const triggerMenuHide = T2(function() {
+          setIsMenuVisible(false);
+        }, []);
+        const triggerMenuShow = T2(function() {
+          updateMenuElementMaxHeight(getCurrentFromRef(rootElementRef), getCurrentFromRef(menuElementRef), top);
+          setOriginalValue(value2);
+          updateSelectedId(value2);
+          setIsMenuVisible(true);
+        }, [top, updateSelectedId, value2]);
+        const handleTextboxInput = T2(function(event) {
+          onInput(event);
+          const newValue = event.currentTarget.value;
+          updateSelectedId(newValue);
+          onValueInput(newValue);
+          if (isMenuVisible === true) {
+            return;
+          }
+          if (revertOnEscapeKeyDownRef.current === true) {
+            revertOnEscapeKeyDownRef.current = false;
+            return;
+          }
+          triggerMenuShow();
+        }, [isMenuVisible, onInput, onValueInput, triggerMenuShow, updateSelectedId]);
+        const handleTextboxKeyDown = T2(function(event) {
+          onKeyDown(event);
+          const inputElement = event.currentTarget;
+          const key = event.key;
+          if (key === "ArrowUp" || key === "ArrowDown") {
+            event.preventDefault();
+            if (isMenuVisible === false) {
+              triggerMenuShow();
+              return;
+            }
+            if (options.length === 0) {
+              return;
+            }
+            const id = key === "ArrowUp" ? computePreviousId(options, selectedId) : computeNextId(options, selectedId);
+            if (id === INVALID_ID) {
+              setSelectedId(INVALID_ID);
+              updateTextboxValue(editedValue);
+              triggerTextboxSelect();
+              triggerMenuUpdateScrollPosition(INVALID_ID);
+              return;
+            }
+            setSelectedId(id);
+            const optionValue = findOptionValueById(options, id);
+            if (optionValue === null) {
+              throw new Error("`optionValue` is `null`");
+            }
+            updateTextboxValue(optionValue.value);
+            triggerTextboxSelect();
+            triggerMenuUpdateScrollPosition(id);
+            return;
+          }
+          if (key === "Escape") {
+            event.preventDefault();
+            if (propagateEscapeKeyDown === false) {
+              event.stopPropagation();
+            }
+            if (revertOnEscapeKeyDown === true) {
+              revertOnEscapeKeyDownRef.current = true;
+              updateTextboxValue(originalValue);
+            }
+            if (isMenuVisible === true) {
+              triggerMenuHide();
+              return;
+            }
+            triggerTextboxBlur();
+            return;
+          }
+          if (key === "Enter") {
+            event.preventDefault();
+            triggerTextboxSelect();
+            if (isMenuVisible === true) {
+              triggerMenuHide();
+              return;
+            }
+            triggerMenuShow();
+            return;
+          }
+          if (key === "Tab") {
+            triggerMenuHide();
+            return;
+          }
+          if (strict === false) {
+            return;
+          }
+          if (event.ctrlKey === true || event.metaKey === true) {
+            return;
+          }
+          if (isKeyCodeCharacterGenerating(event.keyCode) === true) {
+            const nextValue = computeNextValue(inputElement, event.key);
+            if (isValidValue(options, nextValue) === true) {
+              return;
+            }
+            event.preventDefault();
+          }
+        }, [
+          editedValue,
+          isMenuVisible,
+          onKeyDown,
+          options,
+          originalValue,
+          propagateEscapeKeyDown,
+          revertOnEscapeKeyDown,
+          selectedId,
+          strict,
+          triggerMenuHide,
+          triggerMenuShow,
+          triggerMenuUpdateScrollPosition,
+          triggerTextboxBlur,
+          triggerTextboxSelect,
+          updateTextboxValue
+        ]);
+        const handleTextboxMouseDown = T2(function(event) {
+          onMouseDown(event);
+          if (isMenuVisible === true) {
+            return;
+          }
+          event.preventDefault();
+          triggerTextboxSelect();
+          triggerMenuShow();
+        }, [isMenuVisible, onMouseDown, triggerTextboxSelect, triggerMenuShow]);
+        const handleTextboxPaste = T2(function(event) {
+          onPaste(event);
+          if (strict === false) {
+            return;
+          }
+          if (event.clipboardData === null) {
+            throw new Error("`event.clipboardData` is `null`");
+          }
+          const nextValue = computeNextValue(event.currentTarget, event.clipboardData.getData("Text"));
+          if (isValidValue(options, nextValue) === true) {
+            return;
+          }
+          event.preventDefault();
+        }, [onPaste, options, strict]);
+        const handleOptionChange = T2(function(event) {
+          onChange(event);
+          const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
+          if (id === null) {
+            throw new Error("`id` is `null`");
+          }
+          setSelectedId(id);
+          const optionValue = findOptionValueById(options, id);
+          if (optionValue === null) {
+            throw new Error("`optionValue` is `null`");
+          }
+          updateTextboxValue(optionValue.value);
+          triggerTextboxSelect();
+          triggerMenuHide();
+        }, [
+          onChange,
+          options,
+          triggerMenuHide,
+          triggerTextboxSelect,
+          updateTextboxValue
+        ]);
+        const handleOptionMouseMove = T2(function(event) {
+          const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
+          if (id === null) {
+            throw new Error("`id` is `null`");
+          }
+          if (id === selectedId) {
+            return;
+          }
+          setSelectedId(id);
+        }, [selectedId]);
+        const handleMouseDownOutside = T2(function() {
+          if (isMenuVisible === false) {
+            return;
+          }
+          triggerMenuHide();
+          triggerTextboxBlur();
+        }, [isMenuVisible, triggerTextboxBlur, triggerMenuHide]);
+        useMouseDownOutside({
+          onMouseDownOutside: handleMouseDownOutside,
+          ref: rootElementRef
+        });
+        p2(function() {
+          function handleWindowScroll() {
+            if (isMenuVisible === false) {
+              return;
+            }
+            triggerMenuHide();
+            triggerTextboxSelect();
+          }
+          window.addEventListener("scroll", handleWindowScroll);
+          return function() {
+            window.removeEventListener("scroll", handleWindowScroll);
+          };
+        }, [isMenuVisible, triggerMenuHide, triggerTextboxSelect]);
+        const refCallback = T2(function(inputElement) {
+          inputElementRef.current = inputElement;
+          if (ref === null) {
+            return;
+          }
+          if (typeof ref === "function") {
+            ref(inputElement);
+            return;
+          }
+          ref.current = inputElement;
+        }, [ref]);
+        return y(
+          "div",
+          { ref: rootElementRef, class: createClassName([
+            textbox_module_default2.textbox,
+            typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default2.hasBorder : null,
+            typeof icon === "undefined" ? null : textbox_module_default2.hasIcon,
+            disabled === true ? textbox_module_default2.disabled : null
+          ]) },
+          y(
+            "div",
+            { class: textbox_module_default2.inner },
+            y("input", __spreadProps(__spreadValues({}, rest), { ref: refCallback, class: textbox_module_default2.input, disabled: disabled === true, onInput: handleTextboxInput, onKeyDown: handleTextboxKeyDown, onMouseDown: handleTextboxMouseDown, onPaste: handleTextboxPaste, placeholder, spellcheck: spellCheck, tabIndex: 0, type: "text", value: value2 })),
+            typeof icon === "undefined" ? null : y("div", { class: textbox_module_default2.icon }, icon),
+            y("div", { class: textbox_module_default2.border }),
+            variant === "underline" ? y("div", { class: textbox_module_default2.underline }) : null,
+            y("div", { ref: menuElementRef, class: createClassName([
+              menu_module_default2.menu,
+              disabled === true || isMenuVisible === false ? menu_module_default2.hidden : null,
+              top === true ? textbox_autocomplete_module_default.top : textbox_autocomplete_module_default.bottom
+            ]) }, options.map(function(option, index2) {
+              if (typeof option === "string") {
+                return y("hr", { key: index2, class: menu_module_default2.optionSeparator });
+              }
+              if ("header" in option) {
+                return y("h1", { key: index2, class: menu_module_default2.optionHeader }, option.header);
+              }
+              return y(
+                "label",
+                { key: index2, class: createClassName([
+                  menu_module_default2.optionValue,
+                  option.disabled === true ? menu_module_default2.optionValueDisabled : null,
+                  option.disabled !== true && option.id === selectedId ? menu_module_default2.optionValueSelected : null
+                ]) },
+                y("input", { checked: value2 === option.value, class: menu_module_default2.input, disabled: option.disabled === true, onChange: value2 === option.value ? void 0 : handleOptionChange, onClick: value2 === option.value ? triggerMenuHide : void 0, onMouseMove: handleOptionMouseMove, tabIndex: -1, type: "radio", value: `${option.value}`, [ITEM_ID_DATA_ATTRIBUTE_NAME]: option.id }),
+                option.value === originalValue ? y(
+                  "div",
+                  { class: menu_module_default2.checkIcon },
+                  y(IconMenuCheckmarkChecked16, null)
+                ) : null,
+                option.value
+              );
+            }))
+          )
+        );
+      });
+    }
+  });
+
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/format-evaluated-value.js
   function formatEvaluatedValue(evaluatedValue, value2, suffix) {
     if (evaluatedValue === null) {
-      return EMPTY_STRING2;
+      return EMPTY_STRING3;
     }
     const significantFiguresCount = countSignificantFigures(nonDigitRegex.test(value2) === true ? `${evaluatedValue}` : value2);
     return appendSuffix(formatSignificantFigures(evaluatedValue, significantFiguresCount), suffix);
@@ -4370,15 +5051,15 @@ video {
     if (typeof suffix === "undefined") {
       return string2;
     }
-    if (string2 === EMPTY_STRING2) {
-      return EMPTY_STRING2;
+    if (string2 === EMPTY_STRING3) {
+      return EMPTY_STRING3;
     }
     return `${string2}${suffix}`;
   }
-  var EMPTY_STRING2, fractionalPartRegex, nonDigitRegex;
+  var EMPTY_STRING3, fractionalPartRegex, nonDigitRegex;
   var init_format_evaluated_value = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/format-evaluated-value.js"() {
-      EMPTY_STRING2 = "";
+      EMPTY_STRING3 = "";
       fractionalPartRegex = /\.([^.]+)/;
       nonDigitRegex = /[^\d.]/;
     }
@@ -4401,7 +5082,7 @@ video {
     if (value2 === MIXED_STRING) {
       return MIXED_NUMBER;
     }
-    if (value2 === EMPTY_STRING3) {
+    if (value2 === EMPTY_STRING4) {
       return null;
     }
     return evaluateNumericExpression(trimSuffix(value2, suffix));
@@ -4413,9 +5094,9 @@ video {
     if (typeof suffix === "undefined") {
       return string2;
     }
-    return string2.replace(new RegExp(`${suffix}$`), EMPTY_STRING3);
+    return string2.replace(new RegExp(`${suffix}$`), EMPTY_STRING4);
   }
-  var FRACTION_DIGITS, EMPTY_STRING3, RawTextboxNumeric;
+  var FRACTION_DIGITS, EMPTY_STRING4, RawTextboxNumeric;
   var init_raw_textbox_numeric = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-numeric/private/raw-textbox-numeric.js"() {
       init_lib();
@@ -4428,7 +5109,7 @@ video {
       init_is_keycode_character_generating();
       init_format_evaluated_value();
       FRACTION_DIGITS = 3;
-      EMPTY_STRING3 = "";
+      EMPTY_STRING4 = "";
       RawTextboxNumeric = createComponent(function(_a, ref) {
         var _b = _a, { disabled = false, incrementBig = 10, incrementSmall = 1, integer = false, maximum, minimum, onBlur = noop, onFocus = noop, onInput = noop, onMouseDown = noop, onKeyDown = noop, onNumericValueInput = noop, onValueInput = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, suffix, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "incrementBig", "incrementSmall", "integer", "maximum", "minimum", "onBlur", "onFocus", "onInput", "onMouseDown", "onKeyDown", "onNumericValueInput", "onValueInput", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "suffix", "validateOnBlur", "value"]);
         if (typeof minimum !== "undefined" && typeof maximum !== "undefined" && minimum >= maximum) {
@@ -4436,7 +5117,7 @@ video {
         }
         const inputElementRef = _2(null);
         const revertOnEscapeKeyDownRef = _2(false);
-        const [originalValue, setOriginalValue] = h2(EMPTY_STRING3);
+        const [originalValue, setOriginalValue] = h2(EMPTY_STRING4);
         const setInputElementValue = T2(function(value3) {
           const inputElement = getCurrentFromRef(inputElementRef);
           inputElement.value = value3;
@@ -4457,35 +5138,35 @@ video {
             const result = validateOnBlur(evaluatedValue);
             if (typeof result === "number") {
               setInputElementValue(formatEvaluatedValue(result, value2, suffix));
-              setOriginalValue(EMPTY_STRING3);
+              setOriginalValue(EMPTY_STRING4);
               return;
             }
             if (result === null) {
-              setInputElementValue(EMPTY_STRING3);
-              setOriginalValue(EMPTY_STRING3);
+              setInputElementValue(EMPTY_STRING4);
+              setOriginalValue(EMPTY_STRING4);
               return;
             }
             if (result === false) {
               if (value2 !== originalValue) {
                 setInputElementValue(originalValue);
               }
-              setOriginalValue(EMPTY_STRING3);
+              setOriginalValue(EMPTY_STRING4);
               return;
             }
           }
           if (typeof suffix !== "undefined" && value2 === suffix) {
-            setInputElementValue(EMPTY_STRING3);
-            setOriginalValue(EMPTY_STRING3);
+            setInputElementValue(EMPTY_STRING4);
+            setOriginalValue(EMPTY_STRING4);
             return;
           }
-          if (value2 !== EMPTY_STRING3 && value2 !== MIXED_STRING) {
+          if (value2 !== EMPTY_STRING4 && value2 !== MIXED_STRING) {
             const evaluatedValue = evaluateValue(value2, suffix);
             const formattedValue = formatEvaluatedValue(evaluatedValue, value2, suffix);
             if (value2 !== formattedValue) {
               setInputElementValue(formattedValue);
             }
           }
-          setOriginalValue(EMPTY_STRING3);
+          setOriginalValue(EMPTY_STRING4);
         }, [onBlur, originalValue, setInputElementValue, suffix, validateOnBlur, value2]);
         const handleFocus = T2(function(event) {
           onFocus(event);
@@ -4506,7 +5187,7 @@ video {
             if (revertOnEscapeKeyDown === true) {
               revertOnEscapeKeyDownRef.current = true;
               setInputElementValue(originalValue);
-              setOriginalValue(EMPTY_STRING3);
+              setOriginalValue(EMPTY_STRING4);
             }
             if (propagateEscapeKeyDown === false) {
               event.stopPropagation();
@@ -4518,7 +5199,7 @@ video {
           if (key === "ArrowDown" || key === "ArrowUp") {
             const delta = event.shiftKey === true ? incrementBig : incrementSmall;
             event.preventDefault();
-            if (value2 === EMPTY_STRING3 || value2 === MIXED_STRING) {
+            if (value2 === EMPTY_STRING4 || value2 === MIXED_STRING) {
               const startingValue = function() {
                 if (typeof minimum !== "undefined" && minimum > 0) {
                   return minimum;
@@ -4708,10 +5389,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/586badad-639a-4af9-a140-0e3358338743/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f7a2b9a9-0b47-47bd-9b59-ddd4c4aca341/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/586badad-639a-4af9-a140-0e3358338743/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f7a2b9a9-0b47-47bd-9b59-ddd4c4aca341/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -4861,12 +5542,12 @@ video {
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js
   function parseOpacity(opacity) {
-    if (opacity === MIXED_STRING || opacity === EMPTY_STRING4) {
+    if (opacity === MIXED_STRING || opacity === EMPTY_STRING5) {
       return 1;
     }
     return parseInt(opacity, 10) / 100;
   }
-  var EMPTY_STRING4, TextboxColor;
+  var EMPTY_STRING5, TextboxColor;
   var init_textbox_color = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-color/textbox-color.js"() {
       init_lib();
@@ -4881,13 +5562,13 @@ video {
       init_normalize_hex_color();
       init_update_hex_color();
       init_textbox_color_module();
-      EMPTY_STRING4 = "";
+      EMPTY_STRING5 = "";
       TextboxColor = createComponent(function(_a, ref) {
         var _b = _a, { disabled = false, hexColor: hexColor2, hexColorPlaceholder, onHexColorInput = noop, onHexColorKeyDown = noop, onHexColorValueInput = noop, onOpacityInput = noop, onOpacityKeyDown = noop, onOpacityNumericValueInput = noop, onOpacityValueInput = noop, onRgbaColorValueInput = noop, opacity, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorPlaceholder", "onHexColorInput", "onHexColorKeyDown", "onHexColorValueInput", "onOpacityInput", "onOpacityKeyDown", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
         const hexColorInputElementRef = _2(null);
         const opacityInputElementRef = _2(null);
         const revertOnEscapeKeyDownRef = _2(false);
-        const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING4);
+        const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING5);
         const setHexColorInputElementValue = T2(function(value2) {
           const inputElement = getCurrentFromRef(hexColorInputElementRef);
           inputElement.value = value2;
@@ -4912,7 +5593,7 @@ video {
           if (revertOnEscapeKeyDown === true) {
             revertOnEscapeKeyDownRef.current = true;
             setHexColorInputElementValue(originalHexColor);
-            setOriginalHexColor(EMPTY_STRING4);
+            setOriginalHexColor(EMPTY_STRING5);
           }
           if (propagateEscapeKeyDown === false) {
             event.stopPropagation();
@@ -4929,11 +5610,11 @@ video {
             revertOnEscapeKeyDownRef.current = false;
             return;
           }
-          if (hexColor2 === EMPTY_STRING4) {
-            if (originalHexColor !== EMPTY_STRING4) {
+          if (hexColor2 === EMPTY_STRING5) {
+            if (originalHexColor !== EMPTY_STRING5) {
               setHexColorInputElementValue(originalHexColor);
             }
-            setOriginalHexColor(EMPTY_STRING4);
+            setOriginalHexColor(EMPTY_STRING5);
             return;
           }
           if (hexColor2 !== MIXED_STRING) {
@@ -4943,7 +5624,7 @@ video {
               setHexColorInputElementValue(newHexColor);
             }
           }
-          setOriginalHexColor(EMPTY_STRING4);
+          setOriginalHexColor(EMPTY_STRING5);
         }, [hexColor2, originalHexColor, setHexColorInputElementValue]);
         const handleHexColorFocus = T2(function(event) {
           setOriginalHexColor(hexColor2);
@@ -4953,7 +5634,7 @@ video {
           onHexColorInput(event);
           const newHexColor = event.currentTarget.value;
           onHexColorValueInput(newHexColor);
-          if (newHexColor === EMPTY_STRING4) {
+          if (newHexColor === EMPTY_STRING5) {
             onRgbaColorValueInput(null);
             return;
           }
@@ -4972,7 +5653,7 @@ video {
             if (revertOnEscapeKeyDown === true) {
               revertOnEscapeKeyDownRef.current = true;
               setHexColorInputElementValue(originalHexColor);
-              setOriginalHexColor(EMPTY_STRING4);
+              setOriginalHexColor(EMPTY_STRING5);
             }
             if (propagateEscapeKeyDown === false) {
               event.stopPropagation();
@@ -4984,7 +5665,7 @@ video {
           if (key === "ArrowDown" || key === "ArrowUp") {
             event.preventDefault();
             const delta = event.shiftKey === true ? 10 : 1;
-            const startingHexColor = hexColor2 === EMPTY_STRING4 || hexColor2 === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor2;
+            const startingHexColor = hexColor2 === EMPTY_STRING5 || hexColor2 === MIXED_STRING ? key === "ArrowDown" ? "FFFFFF" : "000000" : hexColor2;
             const newHexColor = updateHexColor(startingHexColor, key === "ArrowDown" ? -1 * delta : delta);
             setHexColorInputElementValue(newHexColor);
             element.select();
@@ -5020,7 +5701,7 @@ video {
           return opacity2 !== null;
         }, []);
         const parsedOpacity = parseOpacity(opacity);
-        const isHexColorValid = hexColor2 !== EMPTY_STRING4 && hexColor2 !== MIXED_STRING;
+        const isHexColorValid = hexColor2 !== EMPTY_STRING5 && hexColor2 !== MIXED_STRING;
         const normalizedHexColor = isHexColorValid === true ? normalizeUserInputColor(hexColor2) : "FFFFFF";
         const renderedHexColor = normalizedHexColor === null ? originalHexColor : normalizedHexColor;
         return y(
@@ -5051,10 +5732,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/608d6115-8c6b-4bd1-a0b5-d9a976c41ce1/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/544c7107-4a6b-4e73-8fb6-7aa5ed382a9c/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/608d6115-8c6b-4bd1-a0b5-d9a976c41ce1/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/544c7107-4a6b-4e73-8fb6-7aa5ed382a9c/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5138,7 +5819,7 @@ video {
   });
 
   // node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js
-  var EMPTY_STRING5, TextboxMultiline;
+  var EMPTY_STRING6, TextboxMultiline;
   var init_textbox_multiline = __esm({
     "node_modules/@create-figma-plugin/ui/lib/components/textbox/textbox-multiline/textbox-multiline.js"() {
       init_lib();
@@ -5150,11 +5831,11 @@ video {
       init_no_op();
       init_is_keycode_character_generating();
       init_textbox_multiline_module();
-      EMPTY_STRING5 = "";
+      EMPTY_STRING6 = "";
       TextboxMultiline = createComponent(function(_a, ref) {
         var _b = _a, { grow = false, disabled = false, onBlur = noop, onFocus = noop, onInput = noop, onKeyDown = noop, onValueInput = noop, onMouseDown = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, rows = 3, spellCheck = false, validateOnBlur, variant, value: value2 } = _b, rest = __objRest(_b, ["grow", "disabled", "onBlur", "onFocus", "onInput", "onKeyDown", "onValueInput", "onMouseDown", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "rows", "spellCheck", "validateOnBlur", "variant", "value"]);
         const textAreaElementRef = _2(null);
-        const [originalValue, setOriginalValue] = h2(EMPTY_STRING5);
+        const [originalValue, setOriginalValue] = h2(EMPTY_STRING6);
         const setTextAreaElementValue = T2(function(value3) {
           const textAreaElement = getCurrentFromRef(textAreaElementRef);
           textAreaElement.value = value3;
@@ -5170,18 +5851,18 @@ video {
             const result = validateOnBlur(value2);
             if (typeof result === "string") {
               setTextAreaElementValue(result);
-              setOriginalValue(EMPTY_STRING5);
+              setOriginalValue(EMPTY_STRING6);
               return;
             }
             if (result === false) {
               if (value2 !== originalValue) {
                 setTextAreaElementValue(originalValue);
               }
-              setOriginalValue(EMPTY_STRING5);
+              setOriginalValue(EMPTY_STRING6);
               return;
             }
           }
-          setOriginalValue(EMPTY_STRING5);
+          setOriginalValue(EMPTY_STRING6);
         }, [onBlur, originalValue, setTextAreaElementValue, validateOnBlur, value2]);
         const handleFocus = T2(function(event) {
           onFocus(event);
@@ -5198,7 +5879,7 @@ video {
           if (event.key === "Escape") {
             if (revertOnEscapeKeyDown === true) {
               setTextAreaElementValue(originalValue);
-              setOriginalValue(EMPTY_STRING5);
+              setOriginalValue(EMPTY_STRING6);
             }
             if (propagateEscapeKeyDown === false) {
               event.stopPropagation();
@@ -5253,10 +5934,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/85e9f06a-631d-494d-9ced-c3fc2b6edfbd/textbox.module.js
-  var textbox_module_default2;
-  var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/85e9f06a-631d-494d-9ced-c3fc2b6edfbd/textbox.module.js"() {
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/abb17185-9913-4454-aae8-680622cfde2e/textbox.module.js
+  var textbox_module_default3;
+  var init_textbox_module3 = __esm({
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/abb17185-9913-4454-aae8-680622cfde2e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -5345,14 +6026,14 @@ video {
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy90ZXh0Ym94L3RleHRib3gvdGV4dGJveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjtBQUNBO0VBQ0UseUJBQXlCLEVBQUUsK0NBQStDO0FBQzVFOztBQUVBO0VBQ0UsY0FBYztFQUNkLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUNBQW1DO0VBQ25DLDZCQUE2QjtFQUM3Qiw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7QUFDQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHVDQUF1QztBQUN6Qzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLHdDQUF3QztFQUN4QyxvQkFBb0IsRUFBRSxrREFBa0Q7RUFDeEUsa0JBQWtCO0VBQ2xCLGdDQUFnQztBQUNsQztBQUNBO0VBQ0Usb0NBQW9DO0FBQ3RDO0FBQ0E7RUFDRSx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLFFBQVE7RUFDUixTQUFTO0VBQ1QsT0FBTztFQUNQLDZCQUE2QjtFQUM3QixxQ0FBcUM7RUFDckMsb0JBQW9CO0FBQ3RCO0FBQ0E7O0VBRUUsdUNBQXVDO0FBQ3pDO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixvREFBb0Q7QUFDdEQ7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLFNBQVM7RUFDVCw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLDJDQUEyQztBQUM3QztBQUNBOztFQUVFLDZCQUE2QjtBQUMvQiIsImZpbGUiOiJub2RlX21vZHVsZXMvQGNyZWF0ZS1maWdtYS1wbHVnaW4vdWkvbGliL2NvbXBvbmVudHMvdGV4dGJveC90ZXh0Ym94L3RleHRib3gubW9kdWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZXh0Ym94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiB2YXIoLS16LWluZGV4LTEpO1xufVxuLnRleHRib3g6Zm9jdXMtd2l0aGluIHtcbiAgei1pbmRleDogdmFyKC0tei1pbmRleC0yKTsgLyogU3RhY2sgYC50ZXh0Ym94YCBvdmVyIGl0cyBzaWJsaW5nIGVsZW1lbnRzICovXG59XG5cbi5pbnB1dCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyOHB4O1xuICBwYWRkaW5nOiAwIHZhcigtLXNwYWNlLWV4dHJhLXNtYWxsKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uaGFzSWNvbiAuaW5wdXQge1xuICBwYWRkaW5nLWxlZnQ6IDMycHg7XG59XG5cbi5pbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItdGV4dC10ZXJ0aWFyeSk7XG59XG5cbi5pY29uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE0cHg7XG4gIGxlZnQ6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLXNlY29uZGFyeSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lOyAvKiBzbyB0aGF0IGNsaWNraW5nIHRoZSBpY29uIGZvY3VzZXMgdGhlIHRleHRib3ggKi9cbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tYnJhbmQpO1xufVxuLmRpc2FibGVkIC5pY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tZGlzYWJsZWQpO1xufVxuXG4uaWNvbiBzdmcge1xuICBmaWxsOiBjdXJyZW50Q29sb3I7XG59XG5cbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMtMik7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuLmhhc0JvcmRlciAuYm9yZGVyLFxuLnRleHRib3g6bm90KC5kaXNhYmxlZCk6aG92ZXIgLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICB0b3A6IC0xcHg7XG4gIGJvdHRvbTogLTFweDtcbiAgYm9yZGVyLXdpZHRoOiAycHg7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG5cbi51bmRlcmxpbmUge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiB2YXIoLS1zcGFjZS1leHRyYS1zbWFsbCk7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogdmFyKC0tc3BhY2UtZXh0cmEtc21hbGwpO1xuICBoZWlnaHQ6IDFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyKTtcbn1cbi50ZXh0Ym94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC51bmRlcmxpbmUsXG4udGV4dGJveDpub3QoLmRpc2FibGVkKTpob3ZlciAudW5kZXJsaW5lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG4iXX0= */`;
         document.head.append(element);
       }
-      textbox_module_default2 = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
+      textbox_module_default3 = { "textbox": "_textbox_sir3b_1", "input": "_input_sir3b_9", "disabled": "_disabled_sir3b_17", "hasIcon": "_hasIcon_sir3b_21", "icon": "_icon_sir3b_29", "border": "_border_sir3b_49", "hasBorder": "_hasBorder_sir3b_59", "underline": "_underline_sir3b_70" };
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93bad842-345f-44dc-b149-1fe0d7165798/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/14a83546-95ea-4741-a19a-825b9004e0c7/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/93bad842-345f-44dc-b149-1fe0d7165798/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/14a83546-95ea-4741-a19a-825b9004e0c7/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -5375,7 +6056,7 @@ video {
       init_preact_module();
       init_create_class_name();
       init_create_component();
-      init_textbox_module2();
+      init_textbox_module3();
       init_raw_textbox_numeric();
       init_textbox_numeric_module();
       TextboxNumeric = createComponent(function(_a, ref) {
@@ -5386,18 +6067,18 @@ video {
         return y(
           "div",
           { class: createClassName([
-            textbox_module_default2.textbox,
-            typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default2.hasBorder : null,
-            typeof icon === "undefined" ? null : textbox_module_default2.hasIcon,
-            rest.disabled === true ? textbox_module_default2.disabled : null
+            textbox_module_default3.textbox,
+            typeof variant === "undefined" ? null : variant === "border" ? textbox_module_default3.hasBorder : null,
+            typeof icon === "undefined" ? null : textbox_module_default3.hasIcon,
+            rest.disabled === true ? textbox_module_default3.disabled : null
           ]) },
           y(RawTextboxNumeric, __spreadProps(__spreadValues({}, rest), { ref, class: createClassName([
-            textbox_module_default2.input,
+            textbox_module_default3.input,
             textbox_numeric_module_default.input
           ]) })),
-          typeof icon === "undefined" ? null : y("div", { class: textbox_module_default2.icon }, icon),
-          y("div", { class: textbox_module_default2.border }),
-          variant === "underline" ? y("div", { class: textbox_module_default2.underline }) : null
+          typeof icon === "undefined" ? null : y("div", { class: textbox_module_default3.icon }, icon),
+          y("div", { class: textbox_module_default3.border }),
+          variant === "underline" ? y("div", { class: textbox_module_default3.underline }) : null
         );
       });
     }
@@ -5433,10 +6114,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96c3ef7f-1b9e-4bef-8c11-7f860bba41eb/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ccae888d-1e54-4eb7-b73f-fb24d4161070/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/96c3ef7f-1b9e-4bef-8c11-7f860bba41eb/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ccae888d-1e54-4eb7-b73f-fb24d4161070/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -5465,10 +6146,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/74a04df8-e014-4f1e-990d-f936f2aec542/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/081815ab-8e90-4e29-a333-7b7a5675718d/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/74a04df8-e014-4f1e-990d-f936f2aec542/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/081815ab-8e90-4e29-a333-7b7a5675718d/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -5509,9 +6190,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2abf11a1-5b3f-4fd9-bd1a-f4e7e38ab584/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4044ffa-2ea1-4b9f-95b8-473278b381c9/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2abf11a1-5b3f-4fd9-bd1a-f4e7e38ab584/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b4044ffa-2ea1-4b9f-95b8-473278b381c9/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -5641,6 +6322,7 @@ svg {
       init_tabs();
       init_text();
       init_textbox();
+      init_textbox_autocomplete();
       init_textbox_color();
       init_textbox_multiline();
       init_textbox_numeric();
@@ -5792,19 +6474,19 @@ svg {
     return { r: r3, g: g4, b: b3, a: a3 };
   }
   function labF(t3) {
-    const e5 = 216 / 24389;
+    const e6 = 216 / 24389;
     const kappa = 24389 / 27;
-    if (t3 > e5) {
+    if (t3 > e6) {
       return Math.pow(t3, 1 / 3);
     } else {
       return (kappa * t3 + 16) / 116;
     }
   }
   function labInvf(ft) {
-    const e5 = 216 / 24389;
+    const e6 = 216 / 24389;
     const kappa = 24389 / 27;
     const ft3 = ft * ft * ft;
-    if (ft3 > e5) {
+    if (ft3 > e6) {
       return ft3;
     } else {
       return (116 * ft - 16) / kappa;
@@ -8837,8 +9519,8 @@ svg {
           return util2.objectValues(filtered);
         };
         util2.objectValues = (obj) => {
-          return util2.objectKeys(obj).map(function(e5) {
-            return obj[e5];
+          return util2.objectKeys(obj).map(function(e6) {
+            return obj[e6];
           });
         };
         util2.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object) => {
@@ -11539,13 +12221,13 @@ svg {
             const me = this;
             return OK(async function(...args) {
               const error = new ZodError([]);
-              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e5) => {
-                error.addIssue(makeArgsIssue(args, e5));
+              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e6) => {
+                error.addIssue(makeArgsIssue(args, e6));
                 throw error;
               });
               const result = await Reflect.apply(fn2, this, parsedArgs);
-              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e5) => {
-                error.addIssue(makeReturnsIssue(result, e5));
+              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e6) => {
+                error.addIssue(makeReturnsIssue(result, e6));
                 throw error;
               });
               return parsedReturns;
@@ -13426,7 +14108,7 @@ svg {
               if (i4 >= o3.length)
                 return { done: true };
               return { done: false, value: o3[i4++] };
-            }, e: function e5(_e2) {
+            }, e: function e6(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -13439,7 +14121,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e5(_e3) {
+        }, e: function e6(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -14794,7 +15476,7 @@ svg {
           }
           var obj = JSON.parse(str);
           return primitives.includes(obj) || !!obj && _typeof2(obj) === "object";
-        } catch (e5) {
+        } catch (e6) {
         }
         return false;
       }
@@ -17648,7 +18330,7 @@ svg {
               if (i4 >= o3.length)
                 return { done: true };
               return { done: false, value: o3[i4++] };
-            }, e: function e5(_e2) {
+            }, e: function e6(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -17661,7 +18343,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e5(_e3) {
+        }, e: function e6(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -20900,8 +21582,8 @@ svg {
       case "auto":
         return toPrecision(value2, precision, options && options).replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e5 = arguments[4];
-          return digits2 !== "." ? digits2 + e5 : e5;
+          var e6 = arguments[4];
+          return digits2 !== "." ? digits2 + e6 : e6;
         });
       default:
         throw new Error('Unknown notation "' + notation + '". Choose "auto", "exponential", "fixed", "bin", "oct", or "hex.');
@@ -20939,20 +21621,20 @@ svg {
     }
     var split = splitNumber(value2);
     var rounded = roundDigits(split, precision);
-    var e5 = rounded.exponent;
+    var e6 = rounded.exponent;
     var c3 = rounded.coefficients;
-    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
+    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
     if (isNumber(precision)) {
-      while (precision > c3.length || e5 - newExp + 1 > c3.length) {
+      while (precision > c3.length || e6 - newExp + 1 > c3.length) {
         c3.push(0);
       }
     } else {
-      var missingZeros = Math.abs(e5 - newExp) - (c3.length - 1);
+      var missingZeros = Math.abs(e6 - newExp) - (c3.length - 1);
       for (var i4 = 0; i4 < missingZeros; i4++) {
         c3.push(0);
       }
     }
-    var expDiff = Math.abs(e5 - newExp);
+    var expDiff = Math.abs(e6 - newExp);
     var decimalIdx = 1;
     while (expDiff > 0) {
       decimalIdx++;
@@ -20960,7 +21642,7 @@ svg {
     }
     var decimals = c3.slice(decimalIdx).join("");
     var decimalVal = isNumber(precision) && decimals.length || decimals.match(/[1-9]/) ? "." + decimals : "";
-    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
+    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
     return rounded.sign + str;
   }
   function toFixed(value2, precision) {
@@ -20991,12 +21673,12 @@ svg {
     var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     var c3 = rounded.coefficients;
-    var e5 = rounded.exponent;
+    var e6 = rounded.exponent;
     if (c3.length < precision) {
       c3 = c3.concat(zeros(precision - c3.length));
     }
     var first = c3.shift();
-    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e5 >= 0 ? "+" : "") + e5;
+    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e6 >= 0 ? "+" : "") + e6;
   }
   function toPrecision(value2, precision, options) {
     if (isNaN(value2) || !isFinite(value2)) {
@@ -21010,13 +21692,13 @@ svg {
       return toExponential(value2, precision);
     } else {
       var c3 = rounded.coefficients;
-      var e5 = rounded.exponent;
+      var e6 = rounded.exponent;
       if (c3.length < precision) {
         c3 = c3.concat(zeros(precision - c3.length));
       }
-      c3 = c3.concat(zeros(e5 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
-      c3 = zeros(-e5).concat(c3);
-      var dot2 = e5 > 0 ? e5 : 0;
+      c3 = c3.concat(zeros(e6 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
+      c3 = zeros(-e6).concat(c3);
+      var dot2 = e6 > 0 ? e6 : 0;
       if (dot2 < c3.length - 1) {
         c3.splice(dot2 + 1, 0, ".");
       }
@@ -21148,8 +21830,8 @@ svg {
         return (Math.exp(x4) - Math.exp(-x4)) / 2;
       };
       tanh = Math.tanh || function(x4) {
-        var e5 = Math.exp(2 * x4);
-        return (e5 - 1) / (e5 + 1);
+        var e6 = Math.exp(2 * x4);
+        return (e6 - 1) / (e6 + 1);
       };
     }
   });
@@ -21242,8 +21924,8 @@ svg {
         }
         return str.replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e5 = arguments[4];
-          return digits2 !== "." ? digits2 + e5 : e5;
+          var e6 = arguments[4];
+          return digits2 !== "." ? digits2 + e6 : e6;
         });
       }
       default:
@@ -21251,15 +21933,15 @@ svg {
     }
   }
   function toEngineering2(value2, precision) {
-    var e5 = value2.e;
-    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
+    var e6 = value2.e;
+    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
     var valueWithoutExp = value2.mul(Math.pow(10, -newExp));
     var valueStr = valueWithoutExp.toPrecision(precision);
     if (valueStr.indexOf("e") !== -1) {
       var BigNumber2 = value2.constructor;
       valueStr = new BigNumber2(valueStr).toFixed();
     }
-    return valueStr + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
+    return valueStr + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
   }
   function toExponential2(value2, precision) {
     if (precision !== void 0) {
@@ -21588,11 +22270,11 @@ svg {
     }
     try {
       return _reshape(flatArray, sizes);
-    } catch (e5) {
-      if (e5 instanceof DimensionError) {
+    } catch (e6) {
+      if (e6 instanceof DimensionError) {
         throw new DimensionError(newLength, currentLength, "!=");
       }
-      throw e5;
+      throw e6;
     }
   }
   function processSizesWildcard(sizes, currentLength) {
@@ -22708,7 +23390,7 @@ svg {
   function finiteToString(x4, isExp, sd) {
     if (!x4.isFinite())
       return nonFiniteToString(x4);
-    var k4, e5 = x4.e, str = digitsToString(x4.d), len = str.length;
+    var k4, e6 = x4.e, str = digitsToString(x4.d), len = str.length;
     if (isExp) {
       if (sd && (k4 = sd - len) > 0) {
         str = str.charAt(0) + "." + str.slice(1) + getZeroString(k4);
@@ -22716,30 +23398,30 @@ svg {
         str = str.charAt(0) + "." + str.slice(1);
       }
       str = str + (x4.e < 0 ? "e" : "e+") + x4.e;
-    } else if (e5 < 0) {
-      str = "0." + getZeroString(-e5 - 1) + str;
+    } else if (e6 < 0) {
+      str = "0." + getZeroString(-e6 - 1) + str;
       if (sd && (k4 = sd - len) > 0)
         str += getZeroString(k4);
-    } else if (e5 >= len) {
-      str += getZeroString(e5 + 1 - len);
-      if (sd && (k4 = sd - e5 - 1) > 0)
+    } else if (e6 >= len) {
+      str += getZeroString(e6 + 1 - len);
+      if (sd && (k4 = sd - e6 - 1) > 0)
         str = str + "." + getZeroString(k4);
     } else {
-      if ((k4 = e5 + 1) < len)
+      if ((k4 = e6 + 1) < len)
         str = str.slice(0, k4) + "." + str.slice(k4);
       if (sd && (k4 = sd - len) > 0) {
-        if (e5 + 1 === len)
+        if (e6 + 1 === len)
           str += ".";
         str += getZeroString(k4);
       }
     }
     return str;
   }
-  function getBase10Exponent(digits2, e5) {
+  function getBase10Exponent(digits2, e6) {
     var w4 = digits2[0];
-    for (e5 *= LOG_BASE; w4 >= 10; w4 /= 10)
-      e5++;
-    return e5;
+    for (e6 *= LOG_BASE; w4 >= 10; w4 /= 10)
+      e6++;
+    return e6;
   }
   function getLn10(Ctor, sd, pr) {
     if (sd > LN10_PRECISION) {
@@ -22856,7 +23538,7 @@ svg {
     }
   }
   function naturalLogarithm(y3, sd) {
-    var c3, c0, denominator, e5, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
+    var c3, c0, denominator, e6, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
     if (x4.s < 0 || !xd || !xd[0] || !x4.e && xd[0] == 1 && xd.length == 1) {
       return new Ctor(xd && !xd[0] ? -1 / 0 : x4.s != 1 ? NaN : xd ? 0 : x4);
     }
@@ -22869,22 +23551,22 @@ svg {
     Ctor.precision = wpr += guard;
     c3 = digitsToString(xd);
     c0 = c3.charAt(0);
-    if (Math.abs(e5 = x4.e) < 15e14) {
+    if (Math.abs(e6 = x4.e) < 15e14) {
       while (c0 < 7 && c0 != 1 || c0 == 1 && c3.charAt(1) > 3) {
         x4 = x4.times(y3);
         c3 = digitsToString(x4.d);
         c0 = c3.charAt(0);
         n3++;
       }
-      e5 = x4.e;
+      e6 = x4.e;
       if (c0 > 1) {
         x4 = new Ctor("0." + c3);
-        e5++;
+        e6++;
       } else {
         x4 = new Ctor(c0 + "." + c3.slice(1));
       }
     } else {
-      t3 = getLn10(Ctor, wpr + 2, pr).times(e5 + "");
+      t3 = getLn10(Ctor, wpr + 2, pr).times(e6 + "");
       x4 = naturalLogarithm(new Ctor(c0 + "." + c3.slice(1)), wpr - guard).plus(t3);
       Ctor.precision = pr;
       return sd == null ? finalise(x4, pr, rm, external = true) : x4;
@@ -22898,8 +23580,8 @@ svg {
       t3 = sum3.plus(divide(numerator, new Ctor(denominator), wpr, 1));
       if (digitsToString(t3.d).slice(0, wpr) === digitsToString(sum3.d).slice(0, wpr)) {
         sum3 = sum3.times(2);
-        if (e5 !== 0)
-          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e5 + ""));
+        if (e6 !== 0)
+          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e6 + ""));
         sum3 = divide(sum3, new Ctor(n3), wpr, 1);
         if (sd == null) {
           if (checkRoundingDigits(sum3.d, wpr - guard, rm, rep)) {
@@ -22923,16 +23605,16 @@ svg {
     return String(x4.s * x4.s / 0);
   }
   function parseDecimal(x4, str) {
-    var e5, i4, len;
-    if ((e5 = str.indexOf(".")) > -1)
+    var e6, i4, len;
+    if ((e6 = str.indexOf(".")) > -1)
       str = str.replace(".", "");
     if ((i4 = str.search(/e/i)) > 0) {
-      if (e5 < 0)
-        e5 = i4;
-      e5 += +str.slice(i4 + 1);
+      if (e6 < 0)
+        e6 = i4;
+      e6 += +str.slice(i4 + 1);
       str = str.substring(0, i4);
-    } else if (e5 < 0) {
-      e5 = str.length;
+    } else if (e6 < 0) {
+      e6 = str.length;
     }
     for (i4 = 0; str.charCodeAt(i4) === 48; i4++)
       ;
@@ -22941,10 +23623,10 @@ svg {
     str = str.slice(i4, len);
     if (str) {
       len -= i4;
-      x4.e = e5 = e5 - i4 - 1;
+      x4.e = e6 = e6 - i4 - 1;
       x4.d = [];
-      i4 = (e5 + 1) % LOG_BASE;
-      if (e5 < 0)
+      i4 = (e6 + 1) % LOG_BASE;
+      if (e6 < 0)
         i4 += LOG_BASE;
       if (i4 < len) {
         if (i4)
@@ -23071,9 +23753,9 @@ svg {
     t3.d.length = k4 + 1;
     return t3;
   }
-  function tinyPow(b3, e5) {
+  function tinyPow(b3, e6) {
     var n3 = b3;
-    while (--e5)
+    while (--e6)
       n3 *= b3;
     return n3;
   }
@@ -23098,7 +23780,7 @@ svg {
     return x4.minus(pi3).abs();
   }
   function toStringBinary(x4, baseOut, sd, rm) {
-    var base, e5, i4, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
+    var base, e6, i4, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
     if (isExp) {
       checkInt32(sd, 1, MAX_DIGITS);
       if (rm === void 0)
@@ -23132,21 +23814,21 @@ svg {
         y3.e = y3.d.length;
       }
       xd = convertBase(str, 10, base);
-      e5 = len = xd.length;
+      e6 = len = xd.length;
       for (; xd[--len] == 0; )
         xd.pop();
       if (!xd[0]) {
         str = isExp ? "0p+0" : "0";
       } else {
         if (i4 < 0) {
-          e5--;
+          e6--;
         } else {
           x4 = new Ctor(x4);
           x4.d = xd;
-          x4.e = e5;
+          x4.e = e6;
           x4 = divide(x4, y3, sd, rm, 0, base);
           xd = x4.d;
-          e5 = x4.e;
+          e6 = x4.e;
           roundUp = inexact;
         }
         i4 = xd[sd];
@@ -23158,7 +23840,7 @@ svg {
           for (; ++xd[--sd] > base - 1; ) {
             xd[sd] = 0;
             if (!sd) {
-              ++e5;
+              ++e6;
               xd.unshift(1);
             }
           }
@@ -23182,17 +23864,17 @@ svg {
               str = str.charAt(0) + "." + str.slice(1);
             }
           }
-          str = str + (e5 < 0 ? "p" : "p+") + e5;
-        } else if (e5 < 0) {
-          for (; ++e5; )
+          str = str + (e6 < 0 ? "p" : "p+") + e6;
+        } else if (e6 < 0) {
+          for (; ++e6; )
             str = "0" + str;
           str = "0." + str;
         } else {
-          if (++e5 > len)
-            for (e5 -= len; e5--; )
+          if (++e6 > len)
+            for (e6 -= len; e6--; )
               str += "0";
-          else if (e5 < len)
-            str = str.slice(0, e5) + "." + str.slice(e5);
+          else if (e6 < len)
+            str = str.slice(0, e6) + "." + str.slice(e6);
         }
       }
       str = (baseOut == 16 ? "0x" : baseOut == 2 ? "0b" : baseOut == 8 ? "0o" : "") + str;
@@ -23330,7 +24012,7 @@ svg {
   function clone3(obj) {
     var i4, p3, ps;
     function Decimal2(v3) {
-      var e5, i5, t3, x4 = this;
+      var e6, i5, t3, x4 = this;
       if (!(x4 instanceof Decimal2))
         return new Decimal2(v3);
       x4.constructor = Decimal2;
@@ -23368,21 +24050,21 @@ svg {
           x4.s = 1;
         }
         if (v3 === ~~v3 && v3 < 1e7) {
-          for (e5 = 0, i5 = v3; i5 >= 10; i5 /= 10)
-            e5++;
+          for (e6 = 0, i5 = v3; i5 >= 10; i5 /= 10)
+            e6++;
           if (external) {
-            if (e5 > Decimal2.maxE) {
+            if (e6 > Decimal2.maxE) {
               x4.e = NaN;
               x4.d = null;
-            } else if (e5 < Decimal2.minE) {
+            } else if (e6 < Decimal2.minE) {
               x4.e = 0;
               x4.d = [0];
             } else {
-              x4.e = e5;
+              x4.e = e6;
               x4.d = [v3];
             }
           } else {
-            x4.e = e5;
+            x4.e = e6;
             x4.d = [v3];
           }
           return;
@@ -23530,7 +24212,7 @@ svg {
     return new this(x4).pow(y3);
   }
   function random(sd) {
-    var d3, e5, k4, n3, i4 = 0, r3 = new this(1), rd = [];
+    var d3, e6, k4, n3, i4 = 0, r3 = new this(1), rd = [];
     if (sd === void 0)
       sd = this.precision;
     else
@@ -23573,18 +24255,18 @@ svg {
     for (; rd[i4] === 0; i4--)
       rd.pop();
     if (i4 < 0) {
-      e5 = 0;
+      e6 = 0;
       rd = [0];
     } else {
-      e5 = -1;
-      for (; rd[0] === 0; e5 -= LOG_BASE)
+      e6 = -1;
+      for (; rd[0] === 0; e6 -= LOG_BASE)
         rd.shift();
       for (k4 = 1, n3 = rd[0]; n3 >= 10; n3 /= 10)
         k4++;
       if (k4 < LOG_BASE)
-        e5 -= LOG_BASE - k4;
+        e6 -= LOG_BASE - k4;
     }
-    r3.e = e5;
+    r3.e = e6;
     r3.d = rd;
     return r3;
   }
@@ -23764,30 +24446,30 @@ svg {
         return finalise(quadrant == 2 || quadrant == 3 ? x4.neg() : x4, pr, rm, true);
       };
       P4.cubeRoot = P4.cbrt = function() {
-        var e5, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
+        var e6, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
         external = false;
         s3 = x4.s * mathpow(x4.s * x4, 1 / 3);
         if (!s3 || Math.abs(s3) == 1 / 0) {
           n3 = digitsToString(x4.d);
-          e5 = x4.e;
-          if (s3 = (e5 - n3.length + 1) % 3)
+          e6 = x4.e;
+          if (s3 = (e6 - n3.length + 1) % 3)
             n3 += s3 == 1 || s3 == -2 ? "0" : "00";
           s3 = mathpow(n3, 1 / 3);
-          e5 = mathfloor((e5 + 1) / 3) - (e5 % 3 == (e5 < 0 ? -1 : 2));
+          e6 = mathfloor((e6 + 1) / 3) - (e6 % 3 == (e6 < 0 ? -1 : 2));
           if (s3 == 1 / 0) {
-            n3 = "5e" + e5;
+            n3 = "5e" + e6;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
           }
           r3 = new Ctor(n3);
           r3.s = x4.s;
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e5 = Ctor.precision) + 3;
+        sd = (e6 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           t32 = t3.times(t3).times(t3);
@@ -23797,7 +24479,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e5 + 1, 0);
+                finalise(t3, e6 + 1, 0);
                 if (t3.times(t3).times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -23807,7 +24489,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e5 + 1, 1);
+                finalise(r3, e6 + 1, 1);
                 m3 = !r3.times(r3).times(r3).eq(x4);
               }
               break;
@@ -23815,7 +24497,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e5, Ctor.rounding, m3);
+        return finalise(r3, e6, Ctor.rounding, m3);
       };
       P4.decimalPlaces = P4.dp = function() {
         var w4, d3 = this.d, n3 = NaN;
@@ -24118,7 +24800,7 @@ svg {
         return finalise(r3, pr, rm);
       };
       P4.minus = P4.sub = function(y3) {
-        var d3, e5, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
+        var d3, e6, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24146,10 +24828,10 @@ svg {
             return new Ctor(rm === 3 ? -0 : 0);
           return external ? finalise(y3, pr, rm) : y3;
         }
-        e5 = mathfloor(y3.e / LOG_BASE);
+        e6 = mathfloor(y3.e / LOG_BASE);
         xe = mathfloor(x4.e / LOG_BASE);
         xd = xd.slice();
-        k4 = xe - e5;
+        k4 = xe - e6;
         if (k4) {
           xLTy = k4 < 0;
           if (xLTy) {
@@ -24158,7 +24840,7 @@ svg {
             len = yd.length;
           } else {
             d3 = yd;
-            e5 = xe;
+            e6 = xe;
             len = xd.length;
           }
           i4 = Math.max(Math.ceil(pr / LOG_BASE), len) + 2;
@@ -24205,11 +24887,11 @@ svg {
         for (; xd[--len] === 0; )
           xd.pop();
         for (; xd[0] === 0; xd.shift())
-          --e5;
+          --e6;
         if (!xd[0])
           return new Ctor(rm === 3 ? -0 : 0);
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e5);
+        y3.e = getBase10Exponent(xd, e6);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.modulo = P4.mod = function(y3) {
@@ -24243,7 +24925,7 @@ svg {
         return finalise(x4);
       };
       P4.plus = P4.add = function(y3) {
-        var carry, d3, e5, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
+        var carry, d3, e6, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24266,9 +24948,9 @@ svg {
           return external ? finalise(y3, pr, rm) : y3;
         }
         k4 = mathfloor(x4.e / LOG_BASE);
-        e5 = mathfloor(y3.e / LOG_BASE);
+        e6 = mathfloor(y3.e / LOG_BASE);
         xd = xd.slice();
-        i4 = k4 - e5;
+        i4 = k4 - e6;
         if (i4) {
           if (i4 < 0) {
             d3 = xd;
@@ -24276,7 +24958,7 @@ svg {
             len = yd.length;
           } else {
             d3 = yd;
-            e5 = k4;
+            e6 = k4;
             len = xd.length;
           }
           k4 = Math.ceil(pr / LOG_BASE);
@@ -24304,12 +24986,12 @@ svg {
         }
         if (carry) {
           xd.unshift(carry);
-          ++e5;
+          ++e6;
         }
         for (len = xd.length; xd[--len] == 0; )
           xd.pop();
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e5);
+        y3.e = getBase10Exponent(xd, e6);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.precision = P4.sd = function(z5) {
@@ -24345,7 +25027,7 @@ svg {
         return finalise(quadrant > 2 ? x4.neg() : x4, pr, rm, true);
       };
       P4.squareRoot = P4.sqrt = function() {
-        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e5 = x4.e, s3 = x4.s, Ctor = x4.constructor;
+        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e6 = x4.e, s3 = x4.s, Ctor = x4.constructor;
         if (s3 !== 1 || !d3 || !d3[0]) {
           return new Ctor(!s3 || s3 < 0 && (!d3 || d3[0]) ? NaN : d3 ? x4 : 1 / 0);
         }
@@ -24353,21 +25035,21 @@ svg {
         s3 = Math.sqrt(+x4);
         if (s3 == 0 || s3 == 1 / 0) {
           n3 = digitsToString(d3);
-          if ((n3.length + e5) % 2 == 0)
+          if ((n3.length + e6) % 2 == 0)
             n3 += "0";
           s3 = Math.sqrt(n3);
-          e5 = mathfloor((e5 + 1) / 2) - (e5 < 0 || e5 % 2);
+          e6 = mathfloor((e6 + 1) / 2) - (e6 < 0 || e6 % 2);
           if (s3 == 1 / 0) {
-            n3 = "5e" + e5;
+            n3 = "5e" + e6;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
           }
           r3 = new Ctor(n3);
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e5 = Ctor.precision) + 3;
+        sd = (e6 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           r3 = t3.plus(divide(x4, t3, sd + 2, 1)).times(0.5);
@@ -24375,7 +25057,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e5 + 1, 0);
+                finalise(t3, e6 + 1, 0);
                 if (t3.times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -24385,7 +25067,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e5 + 1, 1);
+                finalise(r3, e6 + 1, 1);
                 m3 = !r3.times(r3).eq(x4);
               }
               break;
@@ -24393,7 +25075,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e5, Ctor.rounding, m3);
+        return finalise(r3, e6, Ctor.rounding, m3);
       };
       P4.tangent = P4.tan = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
@@ -24413,12 +25095,12 @@ svg {
         return finalise(quadrant == 2 || quadrant == 4 ? x4.neg() : x4, pr, rm, true);
       };
       P4.times = P4.mul = function(y3) {
-        var carry, e5, i4, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
+        var carry, e6, i4, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
         y3.s *= x4.s;
         if (!xd || !xd[0] || !yd || !yd[0]) {
           return new Ctor(!y3.s || xd && !xd[0] && !yd || yd && !yd[0] && !xd ? NaN : !xd || !yd ? y3.s / 0 : y3.s * 0);
         }
-        e5 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
+        e6 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
         xdL = xd.length;
         ydL = yd.length;
         if (xdL < ydL) {
@@ -24445,11 +25127,11 @@ svg {
         for (; !r3[--rL]; )
           r3.pop();
         if (carry)
-          ++e5;
+          ++e6;
         else
           r3.shift();
         y3.d = r3;
-        y3.e = getBase10Exponent(r3, e5);
+        y3.e = getBase10Exponent(r3, e6);
         return external ? finalise(y3, Ctor.precision, Ctor.rounding) : y3;
       };
       P4.toBinary = function(sd, rm) {
@@ -24498,27 +25180,27 @@ svg {
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
       P4.toFraction = function(maxD) {
-        var d3, d0, d1, d22, e5, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
+        var d3, d0, d1, d22, e6, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
         if (!xd)
           return new Ctor(x4);
         n16 = d0 = new Ctor(1);
         d1 = n0 = new Ctor(0);
         d3 = new Ctor(d1);
-        e5 = d3.e = getPrecision(xd) - x4.e - 1;
-        k4 = e5 % LOG_BASE;
+        e6 = d3.e = getPrecision(xd) - x4.e - 1;
+        k4 = e6 % LOG_BASE;
         d3.d[0] = mathpow(10, k4 < 0 ? LOG_BASE + k4 : k4);
         if (maxD == null) {
-          maxD = e5 > 0 ? d3 : n16;
+          maxD = e6 > 0 ? d3 : n16;
         } else {
           n3 = new Ctor(maxD);
           if (!n3.isInt() || n3.lt(n16))
             throw Error(invalidArgument + n3);
-          maxD = n3.gt(d3) ? e5 > 0 ? d3 : n16 : n3;
+          maxD = n3.gt(d3) ? e6 > 0 ? d3 : n16 : n3;
         }
         external = false;
         n3 = new Ctor(digitsToString(xd));
         pr = Ctor.precision;
-        Ctor.precision = e5 = xd.length * LOG_BASE * 2;
+        Ctor.precision = e6 = xd.length * LOG_BASE * 2;
         for (; ; ) {
           q4 = divide(n3, d3, 0, 1, 1);
           d22 = d0.plus(q4.times(d1));
@@ -24537,7 +25219,7 @@ svg {
         n0 = n0.plus(d22.times(n16));
         d0 = d0.plus(d22.times(d1));
         n0.s = n16.s = x4.s;
-        r3 = divide(n16, d1, e5, 1).minus(x4).abs().cmp(divide(n0, d0, e5, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
+        r3 = divide(n16, d1, e6, 1).minus(x4).abs().cmp(divide(n0, d0, e6, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
         Ctor.precision = pr;
         external = true;
         return r3;
@@ -24586,7 +25268,7 @@ svg {
         return toStringBinary(this, 8, sd, rm);
       };
       P4.toPower = P4.pow = function(y3) {
-        var e5, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
+        var e6, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
         if (!x4.d || !y3.d || !x4.d[0] || !y3.d[0])
           return new Ctor(mathpow(+x4, yn2));
         x4 = new Ctor(x4);
@@ -24596,16 +25278,16 @@ svg {
         rm = Ctor.rounding;
         if (y3.eq(1))
           return finalise(x4, pr, rm);
-        e5 = mathfloor(y3.e / LOG_BASE);
-        if (e5 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
+        e6 = mathfloor(y3.e / LOG_BASE);
+        if (e6 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
           r3 = intPow(Ctor, x4, k4, pr);
           return y3.s < 0 ? new Ctor(1).div(r3) : finalise(r3, pr, rm);
         }
         s3 = x4.s;
         if (s3 < 0) {
-          if (e5 < y3.d.length - 1)
+          if (e6 < y3.d.length - 1)
             return new Ctor(NaN);
-          if ((y3.d[e5] & 1) == 0)
+          if ((y3.d[e6] & 1) == 0)
             s3 = 1;
           if (x4.e == 0 && x4.d[0] == 1 && x4.d.length == 1) {
             x4.s = s3;
@@ -24613,18 +25295,18 @@ svg {
           }
         }
         k4 = mathpow(+x4, yn2);
-        e5 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
-        if (e5 > Ctor.maxE + 1 || e5 < Ctor.minE - 1)
-          return new Ctor(e5 > 0 ? s3 / 0 : 0);
+        e6 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
+        if (e6 > Ctor.maxE + 1 || e6 < Ctor.minE - 1)
+          return new Ctor(e6 > 0 ? s3 / 0 : 0);
         external = false;
         Ctor.rounding = x4.s = 1;
-        k4 = Math.min(12, (e5 + "").length);
+        k4 = Math.min(12, (e6 + "").length);
         r3 = naturalExponential(y3.times(naturalLogarithm(x4, pr + k4)), pr);
         if (r3.d) {
           r3 = finalise(r3, pr + 5, 1);
           if (checkRoundingDigits(r3.d, pr, rm)) {
-            e5 = pr + 10;
-            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e5 + k4)), e5), e5 + 5, 1);
+            e6 = pr + 10;
+            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e6 + k4)), e6), e6 + 5, 1);
             if (+digitsToString(r3.d).slice(pr + 1, pr + 15) + 1 == 1e14) {
               r3 = finalise(r3, pr + 1, 0);
             }
@@ -24712,7 +25394,7 @@ svg {
             a3.shift();
         }
         return function(x4, y3, pr, rm, dp, base) {
-          var cmp, e5, i4, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
+          var cmp, e6, i4, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
           if (!xd || !xd[0] || !yd || !yd[0]) {
             return new Ctor(
               // Return NaN if either NaN, or both Infinity or 0.
@@ -24724,11 +25406,11 @@ svg {
           }
           if (base) {
             logBase = 1;
-            e5 = x4.e - y3.e;
+            e6 = x4.e - y3.e;
           } else {
             base = BASE;
             logBase = LOG_BASE;
-            e5 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
+            e6 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
           }
           yL = yd.length;
           xL = xd.length;
@@ -24737,7 +25419,7 @@ svg {
           for (i4 = 0; yd[i4] == (xd[i4] || 0); i4++)
             ;
           if (yd[i4] > (xd[i4] || 0))
-            e5--;
+            e6--;
           if (pr == null) {
             sd = pr = Ctor.precision;
             rm = Ctor.rounding;
@@ -24835,12 +25517,12 @@ svg {
               qd.shift();
           }
           if (logBase == 1) {
-            q4.e = e5;
+            q4.e = e6;
             inexact = more;
           } else {
             for (i4 = 1, k4 = qd[0]; k4 >= 10; k4 /= 10)
               i4++;
-            q4.e = i4 + e5 * logBase - 1;
+            q4.e = i4 + e6 * logBase - 1;
             finalise(q4, dp ? pr + q4.e + 1 : pr, rm, more);
           }
           return q4;
@@ -26219,10 +26901,10 @@ svg {
           P6["n"] = Math.abs(n3);
           P6["d"] = Math.abs(d3);
         };
-        function modpow(b3, e5, m3) {
+        function modpow(b3, e6, m3) {
           var r3 = 1;
-          for (; e5 > 0; b3 = b3 * b3 % m3, e5 >>= 1) {
-            if (e5 & 1) {
+          for (; e6 > 0; b3 = b3 * b3 % m3, e6 >>= 1) {
+            if (e6 & 1) {
               r3 = r3 * b3 % m3;
             }
           }
@@ -28228,8 +28910,8 @@ svg {
     return 1 / Math.tan(x4);
   }
   function cothNumber(x4) {
-    var e5 = Math.exp(2 * x4);
-    return (e5 + 1) / (e5 - 1);
+    var e6 = Math.exp(2 * x4);
+    return (e6 + 1) / (e6 - 1);
   }
   function cscNumber(x4) {
     return 1 / Math.sin(x4);
@@ -35830,9 +36512,9 @@ svg {
   function toPrimitive(t3, r3) {
     if ("object" != _typeof(t3) || !t3)
       return t3;
-    var e5 = t3[Symbol.toPrimitive];
-    if (void 0 !== e5) {
-      var i4 = e5.call(t3, r3 || "default");
+    var e6 = t3[Symbol.toPrimitive];
+    if (void 0 !== e6) {
+      var i4 = e6.call(t3, r3 || "default");
       if ("object" != _typeof(i4))
         return i4;
       throw new TypeError("@@toPrimitive must return a primitive value.");
@@ -35879,26 +36561,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/numeric/solveODE.js
-  function ownKeys(e5, r3) {
-    var t3 = Object.keys(e5);
+  function ownKeys(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e5);
+      var o3 = Object.getOwnPropertySymbols(e6);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread(e5) {
+  function _objectSpread(e6) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e5, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e5;
+    return e6;
   }
   var name112, dependencies112, createSolveODE;
   var init_solveODE = __esm({
@@ -37635,7 +38317,7 @@ svg {
           }
         });
         function _denseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
@@ -37667,12 +38349,12 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e5) => [e5]),
+            data: x4.map((e6) => [e6]),
             size: [rows, 1]
           }));
         }
         function _sparseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
@@ -37722,7 +38404,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e5) => [e5]),
+            data: x4.map((e6) => [e6]),
             size: [rows, 1]
           }));
         }
@@ -37765,7 +38447,7 @@ svg {
           }
         });
         function _denseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
@@ -37797,12 +38479,12 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e5) => [e5]),
+            data: x4.map((e6) => [e6]),
             size: [rows, 1]
           }));
         }
         function _sparseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
@@ -37852,7 +38534,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e5) => [e5]),
+            data: x4.map((e6) => [e6]),
             size: [rows, 1]
           }));
         }
@@ -40048,26 +40730,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/Unit.js
-  function ownKeys2(e5, r3) {
-    var t3 = Object.keys(e5);
+  function ownKeys2(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e5);
+      var o3 = Object.getOwnPropertySymbols(e6);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread2(e5) {
+  function _objectSpread2(e6) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys2(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e5, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e5;
+    return e6;
   }
   var name161, dependencies161, createUnitClass;
   var init_Unit = __esm({
@@ -44431,14 +45113,14 @@ svg {
           Index: Index2
         } = _ref;
         return typed3(name195, {
-          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e5, a3) {
+          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e6, a3) {
             if (subset2(size2(a3), new Index2(0)) === 0) {
               return 0;
             }
             var b3 = flatten(Array.isArray(a3) ? a3 : a3.toArray());
             var count2 = 0;
             for (var i4 = 0; i4 < b3.length; i4++) {
-              if (compareNatural2(b3[i4], e5) === 0) {
+              if (compareNatural2(b3[i4], e6) === 0) {
                 count2++;
               }
             }
@@ -51697,7 +52379,7 @@ svg {
           var mark = _initializeQuotientGraph(n3, cptr, W2, len, head, last, next, hhead, nv, w4, elen, degree);
           var nel = _initializeDegreeLists(n3, cptr, W2, degree, elen, w4, dense, nv, head, last, next);
           var mindeg = 0;
-          var i4, j4, k4, k1, k22, e5, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
+          var i4, j4, k4, k1, k22, e6, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
           while (nel < n3) {
             for (k4 = -1; mindeg < n3 && (k4 = W2[head + mindeg]) === -1; mindeg++)
               ;
@@ -51715,13 +52397,13 @@ svg {
             var pk2 = pk1;
             for (k1 = 1; k1 <= elenk + 1; k1++) {
               if (k1 > elenk) {
-                e5 = k4;
+                e6 = k4;
                 pj = p3;
                 ln3 = W2[len + k4] - elenk;
               } else {
-                e5 = cindex[p3++];
-                pj = cptr[e5];
-                ln3 = W2[len + e5];
+                e6 = cindex[p3++];
+                pj = cptr[e6];
+                ln3 = W2[len + e6];
               }
               for (k22 = 1; k22 <= ln3; k22++) {
                 i4 = cindex[pj++];
@@ -51740,9 +52422,9 @@ svg {
                   W2[head + W2[degree + i4]] = W2[next + i4];
                 }
               }
-              if (e5 !== k4) {
-                cptr[e5] = csFlip(k4);
-                W2[w4 + e5] = 0;
+              if (e6 !== k4) {
+                cptr[e6] = csFlip(k4);
+                W2[w4 + e6] = 0;
               }
             }
             if (elenk !== 0) {
@@ -51761,11 +52443,11 @@ svg {
               nvi = -W2[nv + i4];
               var wnvi = mark - nvi;
               for (p3 = cptr[i4], p1 = cptr[i4] + eln - 1; p3 <= p1; p3++) {
-                e5 = cindex[p3];
-                if (W2[w4 + e5] >= mark) {
-                  W2[w4 + e5] -= nvi;
-                } else if (W2[w4 + e5] !== 0) {
-                  W2[w4 + e5] = W2[degree + e5] + wnvi;
+                e6 = cindex[p3];
+                if (W2[w4 + e6] >= mark) {
+                  W2[w4 + e6] -= nvi;
+                } else if (W2[w4 + e6] !== 0) {
+                  W2[w4 + e6] = W2[degree + e6] + wnvi;
                 }
               }
             }
@@ -51775,16 +52457,16 @@ svg {
               p22 = p1 + W2[elen + i4] - 1;
               pn2 = p1;
               for (h3 = 0, d3 = 0, p3 = p1; p3 <= p22; p3++) {
-                e5 = cindex[p3];
-                if (W2[w4 + e5] !== 0) {
-                  var dext = W2[w4 + e5] - mark;
+                e6 = cindex[p3];
+                if (W2[w4 + e6] !== 0) {
+                  var dext = W2[w4 + e6] - mark;
                   if (dext > 0) {
                     d3 += dext;
-                    cindex[pn2++] = e5;
-                    h3 += e5;
+                    cindex[pn2++] = e6;
+                    h3 += e6;
                   } else {
-                    cptr[e5] = csFlip(k4);
-                    W2[w4 + e5] = 0;
+                    cptr[e6] = csFlip(k4);
+                    W2[w4 + e6] = 0;
                   }
                 }
               }
@@ -51900,13 +52582,13 @@ svg {
             W2[next + j4] = W2[head + cptr[j4]];
             W2[head + cptr[j4]] = j4;
           }
-          for (e5 = n3; e5 >= 0; e5--) {
-            if (W2[nv + e5] <= 0) {
+          for (e6 = n3; e6 >= 0; e6--) {
+            if (W2[nv + e6] <= 0) {
               continue;
             }
-            if (cptr[e5] !== -1) {
-              W2[next + e5] = W2[head + cptr[e5]];
-              W2[head + cptr[e5]] = e5;
+            if (cptr[e6] !== -1) {
+              W2[next + e6] = W2[head + cptr[e6]];
+              W2[head + cptr[e6]] = e6;
             }
           }
           for (k4 = 0, i4 = 0; i4 <= n3; i4++) {
@@ -52830,8 +53512,8 @@ svg {
               var res = void 0;
               try {
                 res = parse2(expr).compile().evaluate(scope);
-              } catch (e5) {
-                res = e5;
+              } catch (e6) {
+                res = e6;
               }
               if (res !== void 0 && !isHelp(res)) {
                 desc += "        " + format3(res, {
@@ -59447,9 +60129,9 @@ svg {
           var t3 = divideScalar2(addScalar2(subtract2(subtract2(d20o11, d21o10), d20o21), d21o20), det2);
           return add3(multiply2(d1, t3), o1);
         }
-        function _intersect3dHelper(a3, b3, c3, d3, e5, f3, g4, h3, i4, j4, k4, l3) {
+        function _intersect3dHelper(a3, b3, c3, d3, e6, f3, g4, h3, i4, j4, k4, l3) {
           var add1 = multiplyScalar2(subtract2(a3, b3), subtract2(c3, d3));
-          var add22 = multiplyScalar2(subtract2(e5, f3), subtract2(g4, h3));
+          var add22 = multiplyScalar2(subtract2(e6, f3), subtract2(g4, h3));
           var add32 = multiplyScalar2(subtract2(i4, j4), subtract2(k4, l3));
           return addScalar2(addScalar2(add1, add22), add32);
         }
@@ -61221,7 +61903,7 @@ svg {
             for (prop in obj) {
               try {
                 result.push(flatten3(obj[prop], depth - 1));
-              } catch (e5) {
+              } catch (e6) {
               }
             }
           }
@@ -61244,7 +61926,7 @@ svg {
               (global2.crypto || global2.msCrypto).getRandomValues(out);
             }
             return tostring(out);
-          } catch (e5) {
+          } catch (e6) {
             var browser = global2.navigator, plugins = browser && browser.plugins;
             return [+/* @__PURE__ */ new Date(), global2, plugins, global2.screen, tostring(pool)];
           }
@@ -61740,26 +62422,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplify/util.js
-  function ownKeys3(e5, r3) {
-    var t3 = Object.keys(e5);
+  function ownKeys3(e6, r3) {
+    var t3 = Object.keys(e6);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e5);
+      var o3 = Object.getOwnPropertySymbols(e6);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread3(e5) {
+  function _objectSpread3(e6) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys3(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e5, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e6, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e5;
+    return e6;
   }
   var name278, dependencies278, createUtil;
   var init_util = __esm({
@@ -63094,7 +63776,7 @@ svg {
             return new ConstantNode2(s3);
           },
           Matrix: function Matrix2(m3) {
-            return new ArrayNode2(m3.valueOf().map((e5) => _toNode(e5)));
+            return new ArrayNode2(m3.valueOf().map((e6) => _toNode(e6)));
           }
         });
         function _ensureNode(thing) {
@@ -69054,7 +69736,7 @@ svg {
                 truncatedExpression.replace(/h/gi, sourceHue.toString())
               );
               break;
-            } catch (e5) {
+            } catch (e6) {
             }
           }
           const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
@@ -69697,7 +70379,7 @@ svg {
                 truncatedExpression.replace(/h/gi, sourceHue.toString())
               );
               break;
-            } catch (e5) {
+            } catch (e6) {
               continue;
             }
           }
@@ -69784,7 +70466,7 @@ svg {
             Textbox,
             {
               value: aliasName,
-              onChange: (e5) => onSetAliasName(alias.id, e5.currentTarget.value),
+              onChange: (e6) => onSetAliasName(alias.id, e6.currentTarget.value),
               placeholder: "Alias name"
             }
           )),
@@ -69792,9 +70474,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[0].toString(),
-              onInput: (e5) => onSetAliasLightTone(
+              onInput: (e6) => onSetAliasLightTone(
                 alias.id,
-                parseInt(e5.currentTarget.value)
+                parseInt(e6.currentTarget.value)
               ),
               placeholder: "light"
             }
@@ -69803,9 +70485,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[1].toString(),
-              onInput: (e5) => onSetAliasDarkTone(
+              onInput: (e6) => onSetAliasDarkTone(
                 alias.id,
-                parseInt(e5.currentTarget.value)
+                parseInt(e6.currentTarget.value)
               ),
               placeholder: "dark"
             }
@@ -71180,6 +71862,26 @@ svg {
     }
   });
 
+  // src/components/settings-tab/useSettings.tsx
+  var settingsStore, useSettings;
+  var init_useSettings = __esm({
+    "src/components/settings-tab/useSettings.tsx"() {
+      "use strict";
+      init_esm();
+      settingsStore = (set2) => ({
+        overwriteVariables: true,
+        bindVariables: false,
+        collectionName: "Theme Engine",
+        setOverwriteVariables: (overwriteVariables) => set2({ overwriteVariables }),
+        setBindVariables: (bindVariables) => set2({ bindVariables }),
+        setCollectionName: (collectionName) => set2({ collectionName })
+      });
+      useSettings = create(
+        (set2, ...a3) => settingsStore(set2, ...a3)
+      );
+    }
+  });
+
   // src/components/tabs.tsx
   var CopyPlusIcon, TabGroup, tabs_default;
   var init_tabs2 = __esm({
@@ -71202,6 +71904,7 @@ svg {
       init_useThemeList();
       init_useId();
       init_esm();
+      init_useSettings();
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ className }) => {
         const [tabValue, setTabValue] = h2("Settings");
@@ -71391,8 +72094,8 @@ svg {
           setTheme(themeId).add.themeColor(newThemeColor);
           setThemeColorId(newThemeColor.id);
         };
-        const onHexColorInput = (e5) => {
-          const newHexColor = e5.currentTarget.value;
+        const onHexColorInput = (e6) => {
+          const newHexColor = e6.currentTarget.value;
           setHexColorInput(newHexColor);
           setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
           setHueSlider(roundedHue);
@@ -71410,14 +72113,14 @@ svg {
             setChromaCalcInput(`${roundedChroma}`);
           }
         };
-        const onHueSliderInput = (e5) => {
-          const newHueCalcInput = e5.currentTarget.value;
+        const onHueSliderInput = (e6) => {
+          const newHueCalcInput = e6.currentTarget.value;
           setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
           setHueSlider(newHueCalcInput);
           setHueCalcInput(`${newHueCalcInput}`);
         };
-        const onHueCalcInput = (e5) => {
-          const newHueCalcInput = e5.currentTarget.value;
+        const onHueCalcInput = (e6) => {
+          const newHueCalcInput = e6.currentTarget.value;
           const calculatedHue = calculateHue2(
             themeColor.sourceColor.hct.hue,
             newHueCalcInput
@@ -71432,16 +72135,16 @@ svg {
             setHueSlider(themeColor.sourceColor.hct.hue);
           }
         };
-        const onChromaSliderInput = (e5) => {
-          const newChromaCalcInput = e5.currentTarget.value;
+        const onChromaSliderInput = (e6) => {
+          const newChromaCalcInput = e6.currentTarget.value;
           setThemeColor(themeColorId).setProps.chromaCalc(
             `${newChromaCalcInput}`
           );
           setChromaCalcInput(`${newChromaCalcInput}`);
           setChromaSlider(newChromaCalcInput);
         };
-        const onChromaCalcInput = (e5) => {
-          const newChromaCalcInput = e5.currentTarget.value;
+        const onChromaCalcInput = (e6) => {
+          const newChromaCalcInput = e6.currentTarget.value;
           const calculatedChroma = round2(
             calculateChroma2(
               themeColor.sourceColor.hct.chroma,
@@ -71503,43 +72206,128 @@ svg {
             setThemeColorId(theme.themeColors[newThemeColorIndex].id);
           }
         }, [themeColorToDelete]);
-        const [overwrite, setOverwrite] = h2(true);
-        const [bindStyles, setBindStyles] = h2(false);
+        const settings = useSettings();
+        const overwrite = settings.overwriteVariables;
+        const setOverwrite = settings.setOverwriteVariables;
+        const bindStyles = settings.bindVariables;
+        const setBindStyles = settings.setBindVariables;
+        const collectionName = settings.collectionName;
+        const setCollectionName = settings.setCollectionName;
         const [collectionOptions, setCollectionOptions] = h2([
           {
-            value: "Collection 1 ID",
-            text: "Collection 1"
+            value: "Collection 1",
+            text: "Collection 1 ID"
           },
           {
-            value: "Collection 2 ID",
-            text: "Collection 2"
+            value: "Collection 2",
+            text: "Collection 2 ID"
           },
           {
-            value: "Collection 3 ID",
-            text: "Collection 3"
+            value: "Collection 3",
+            text: "Collection 3 ID"
           }
         ]);
-        const [collectionId, setCollectionId] = h2("Collection 1 ID");
-        onmessage = async (event) => {
-          const message = await event.data.pluginMessage;
-          console.log("UI RECEIVED:", message);
-          if (message.type === "localCollections") {
-            const collectionOptions2 = message.data.map(
-              (collection) => {
-                return {
-                  value: collection.id,
-                  text: collection.name
-                };
+        const buildCollections = async (data) => {
+          const collections2 = data.reduce(
+            (items, collection) => {
+              const existingOption = items.find(
+                (item) => item.name === collection.name
+              );
+              if (existingOption) {
+                const count2 = items.filter(
+                  (item) => item.name === collection.name
+                ).length;
+                items.push({
+                  id: collection.id,
+                  name: `${collection.name} (${count2 + 1})`
+                });
+              } else {
+                items.push({
+                  id: collection.id,
+                  name: collection.name
+                });
               }
+              return items;
+            },
+            []
+          );
+          console.log("Build Collections:", collections2);
+          return collections2;
+        };
+        const [collections, setCollections] = h2([]);
+        onmessage = async (event) => {
+          var _a;
+          const message = await event.data.pluginMessage;
+          console.log("TAB UI RECEIVED:", message);
+          if (message.type === "localCollections") {
+            const localCollections = message.collections;
+            setCollections(localCollections);
+            console.log("Collections:", message.data);
+            const collectionOptions2 = message.data.reduce(
+              (options2, collection) => {
+                const existingOption = options2.find(
+                  (option) => option.value === collection.name
+                );
+                if (existingOption) {
+                  const count2 = options2.filter(
+                    (option) => option.value === collection.name
+                  ).length;
+                  options2.push({
+                    value: `${collection.name} (${count2 + 1})`,
+                    text: collection.id
+                  });
+                } else {
+                  options2.push({
+                    value: collection.name,
+                    text: collection.id
+                  });
+                }
+                return options2;
+              },
+              []
             );
-            setCollectionOptions(collectionOptions2);
-            setCollectionId(message.data[0].id);
+            const dropdownOptions = [
+              {
+                header: "Existing collections"
+              },
+              ...collectionOptions2
+            ];
+            setCollectionOptions(dropdownOptions);
+          }
+          if (message.type === "preBuild") {
+            const localCollections = message.collections;
+            setCollections(localCollections);
+            const collections2 = await buildCollections(message.data);
+            console.log("Collections:", collections2);
+            const collectionId = (_a = collections2.find(
+              (collection) => collection.name === collectionName
+            )) == null ? void 0 : _a.id;
+            console.log("collectionName:", collectionName);
+            console.log("CollectionID:", collectionId);
+            const pluginMessage = {
+              type: "build",
+              data: {
+                theme,
+                collectionId: collectionId ? collectionId : "",
+                collectionName,
+                overwriteVariables: overwrite,
+                bindVariables: bindStyles
+              }
+            };
+            parent.postMessage({ pluginMessage }, "*");
+            console.log("TAB UI SENT:", pluginMessage);
           }
         };
-        const handleChange = (event) => {
+        const getLocalCollections = async () => {
+          parent.postMessage(
+            { pluginMessage: { type: "localCollections" } },
+            "*"
+          );
+        };
+        const handleCollectionNameInput = (event) => {
           const newValue = event.currentTarget.value;
           console.log(newValue);
-          setCollectionId(newValue);
+          setCollectionName(newValue);
         };
         const options = [
           {
@@ -71564,11 +72352,11 @@ svg {
               {
                 title: "Color name",
                 value: themeColor.name,
-                onChange: (e5) => {
+                onChange: (e6) => {
                   setThemeColor(
                     themeColorId
                   ).setProps.name(
-                    e5.currentTarget.value
+                    e6.currentTarget.value
                   );
                 },
                 onBlur: () => nameTheNameless(),
@@ -71619,8 +72407,8 @@ svg {
               {
                 title: "Source color",
                 hexColor: themeColor.sourceColor.sourceHex,
-                onHexColorInput: (e5) => onHexColorInput(e5),
-                onOpacityInput: (e5) => "100%",
+                onHexColorInput: (e6) => onHexColorInput(e6),
+                onOpacityInput: (e6) => "100%",
                 opacity: "100%"
               }
             )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
@@ -71646,7 +72434,7 @@ svg {
                 title: "Adjust hue",
                 maximum: 360,
                 minimum: 0,
-                onInput: (e5) => onHueSliderInput(e5),
+                onInput: (e6) => onHueSliderInput(e6),
                 value: `${Math.round(calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc))}`
               }
             ), /* @__PURE__ */ y(
@@ -71660,7 +72448,7 @@ svg {
               {
                 title: "Hue expression",
                 value: themeColor.hueCalc,
-                onInput: (e5) => onHueCalcInput(e5),
+                onInput: (e6) => onHueCalcInput(e6),
                 placeholder: "Hue value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
@@ -71676,7 +72464,7 @@ svg {
                 title: "Adjust chroma",
                 maximum: Math.max(maxChroma, 1),
                 minimum: 0,
-                onInput: (e5) => onChromaSliderInput(e5),
+                onInput: (e6) => onChromaSliderInput(e6),
                 value: `${calculateChroma2(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)}`
               }
             ), /* @__PURE__ */ y(
@@ -71690,7 +72478,7 @@ svg {
               {
                 title: "Chroma expression",
                 value: themeColor.chromaCalc,
-                onInput: (e5) => onChromaCalcInput(e5),
+                onInput: (e6) => onChromaCalcInput(e6),
                 placeholder: "Chroma value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
@@ -71711,7 +72499,7 @@ svg {
               {
                 title: "Tones",
                 value: tones,
-                onInput: (e5) => setTones(e5.currentTarget.value),
+                onInput: (e6) => setTones(e6.currentTarget.value),
                 placeholder: "Return tones 0-100"
               }
             ))), /* @__PURE__ */ y(
@@ -71774,22 +72562,48 @@ svg {
             value: "Aliases"
           },
           {
-            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row pl-10" }, /* @__PURE__ */ y("div", { className: "flex grow flex-col gap-4 p-4" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(Text, null, "Variable Collection"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
-              Dropdown,
+            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row pl-10" }, /* @__PURE__ */ y("div", { className: "flex grow flex-col gap-4 p-4" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(Text, null, "Variable collection name"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
+              TextboxAutocomplete,
               {
-                onChange: handleChange,
+                onFocus: getLocalCollections,
+                onInput: handleCollectionNameInput,
+                onBlur: () => {
+                  if (collectionName === "") {
+                    setCollectionName(
+                      "Theme Engine"
+                    );
+                  }
+                },
+                onfocusout: () => {
+                  if (collectionName === "") {
+                    setCollectionName(
+                      "Theme Engine"
+                    );
+                  }
+                },
+                onKeyDown: (e6) => {
+                  if (e6.key === "Enter" || e6.key === "Escape") {
+                    if (collectionName === "") {
+                      setCollectionName(
+                        "Theme Engine"
+                      );
+                    }
+                  }
+                },
                 options: collectionOptions,
-                value: collectionId
+                value: collectionName,
+                placeholder: "Collection name",
+                variant: "border"
               }
             )), /* @__PURE__ */ y(
               Checkbox,
               {
-                onChange: (e5) => {
+                onChange: (e6) => {
                   setOverwrite(!overwrite);
                 },
                 value: overwrite
               },
-              /* @__PURE__ */ y(Text, null, "Overwrite variables with matching names")
+              /* @__PURE__ */ y(Text, null, "Overwrite variables with conflicting names")
             ), /* @__PURE__ */ y(
               Checkbox,
               {
@@ -72160,7 +72974,7 @@ svg {
               return types;
             }
             return freeProcess && freeProcess.binding && freeProcess.binding("util");
-          } catch (e5) {
+          } catch (e6) {
           }
         }();
         var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer, nodeIsDate = nodeUtil && nodeUtil.isDate, nodeIsMap = nodeUtil && nodeUtil.isMap, nodeIsRegExp = nodeUtil && nodeUtil.isRegExp, nodeIsSet = nodeUtil && nodeUtil.isSet, nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -72532,7 +73346,7 @@ svg {
               var func = getNative(Object2, "defineProperty");
               func({}, "", {});
               return func;
-            } catch (e5) {
+            } catch (e6) {
             }
           }();
           var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout, ctxNow = Date2 && Date2.now !== root.Date.now && Date2.now, ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
@@ -74564,7 +75378,7 @@ svg {
             try {
               value2[symToStringTag] = undefined2;
               var unmasked = true;
-            } catch (e5) {
+            } catch (e6) {
             }
             var result2 = nativeObjectToString.call(value2);
             if (unmasked) {
@@ -74921,11 +75735,11 @@ svg {
             if (func != null) {
               try {
                 return funcToString.call(func);
-              } catch (e5) {
+              } catch (e6) {
               }
               try {
                 return func + "";
-              } catch (e5) {
+              } catch (e6) {
               }
             }
             return "";
@@ -76612,8 +77426,8 @@ svg {
           var attempt = baseRest(function(func, args) {
             try {
               return apply2(func, undefined2, args);
-            } catch (e5) {
-              return isError(e5) ? e5 : new Error2(e5);
+            } catch (e6) {
+              return isError(e6) ? e6 : new Error2(e6);
             }
           });
           var bindAll = flatRest(function(object, methodNames) {
@@ -77317,6 +78131,7 @@ svg {
       init_esm();
       init_material_color_utilities();
       init_color_utils2();
+      init_useSettings();
       Plugin = () => {
         const IdStore = q2(IdContext);
         if (!IdStore) {
@@ -77501,11 +78316,11 @@ svg {
             setThemeColorIndex(0);
           }
         };
-        function pickRandomName(names2) {
-          const randomIndex = Math.floor(Math.random() * names2.length);
-          return names2[randomIndex];
+        function pickRandomName(names) {
+          const randomIndex = Math.floor(Math.random() * names.length);
+          return names[randomIndex];
         }
-        const names = [
+        const themeNames = [
           "Themey McThemeFace",
           // 8%
           "Mr. Theme",
@@ -77524,43 +78339,27 @@ svg {
         ];
         const nameTheNameless = () => {
           if (!theme.name) {
-            setTheme.setProps.name(pickRandomName(names));
+            setTheme.setProps.name(pickRandomName(themeNames));
           }
         };
-        const handleBuildTheme = () => {
-          console.log("Build theme");
-          const pluginMessage = {
-            theme,
-            collectionId: ""
-          };
-          parent.postMessage(
-            {
-              pluginMessage: {
-                type: "build",
-                name: theme.name,
-                color: themeColor.sourceColor.hex,
-                toneStops: themeColor.tones
-                // collectionId: collectionId,
-              }
-            },
-            "*"
-          );
+        const getLocalCollections = async (type = "localCollections") => {
+          parent.postMessage({ pluginMessage: { type } }, "*");
+          console.log("APP UI SENT:", type);
         };
-        const [collections, setCollections] = h2([]);
-        onmessage = (event) => {
-          const message = event.data.pluginMessage;
-          if (message.type === "localCollections") {
-            const collections2 = message.collections;
-            setCollections(collections2);
-          }
+        const settings = useSettings();
+        const overwrite = settings.overwriteVariables;
+        const bindStyles = settings.bindVariables;
+        const collectionName = settings.collectionName;
+        const handleBuildTheme = async () => {
+          await getLocalCollections("preBuild");
         };
         return /* @__PURE__ */ y("div", { id: "container-wrap", className: "h-full overflow-y-auto" }, /* @__PURE__ */ y("div", { id: "grid-lines", className: "absolute inset-0" }, /* @__PURE__ */ y("div", { className: "absolute top-10 h-px w-full bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute left-10 h-full w-px bg-gridlines" }), /* @__PURE__ */ y("div", { className: "absolute right-32 h-full w-px bg-gridlines" })), /* @__PURE__ */ y("div", { className: "flex h-10 w-full" }, /* @__PURE__ */ y("div", { className: "h-full w-10" }), /* @__PURE__ */ y("div", { className: "flex grow flex-row justify-between pr-2" }, /* @__PURE__ */ y("div", { className: "flex h-full items-center px-2" }, isEditing ? /* @__PURE__ */ y(
           Textbox,
           {
             ref: inputRef,
             value: theme.name,
-            onChange: (e5) => setTheme.setProps.name(
-              e5.currentTarget.value
+            onChange: (e6) => setTheme.setProps.name(
+              e6.currentTarget.value
             ),
             onBlur: handleTextboxBlur,
             onKeyDown: handleTextboxKeyDown,
