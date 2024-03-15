@@ -9,8 +9,8 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
-  var __knownSymbol = (name310, symbol) => {
-    return (symbol = Symbol[name310]) ? symbol : Symbol.for("Symbol." + name310);
+  var __knownSymbol = (name314, symbol) => {
+    return (symbol = Symbol[name314]) ? symbol : Symbol.for("Symbol." + name314);
   };
   var __defNormalProp = (obj, key, value2) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value2 }) : obj[key] = value2;
   var __spreadValues = (a3, b3) => {
@@ -44,8 +44,8 @@
     return mod3 || (0, cb[__getOwnPropNames(cb)[0]])((mod3 = { exports: {} }).exports, mod3), mod3.exports;
   };
   var __export = (target, all) => {
-    for (var name310 in all)
-      __defProp(target, name310, { get: all[name310], enumerable: true });
+    for (var name314 in all)
+      __defProp(target, name314, { get: all[name314], enumerable: true });
   };
   var __copyProps = (to2, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31d70cc6-f2d7-4154-a0d6-69fc420728fb/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57aa50a4-ef4d-45a8-8d13-c9129b381d3d/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/31d70cc6-f2d7-4154-a0d6-69fc420728fb/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57aa50a4-ef4d-45a8-8d13-c9129b381d3d/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -1586,6 +1586,11 @@ video {
         return u3.__e;
     return "function" == typeof n3.type ? m(n3) : null;
   }
+  function w(n3, u3, t3) {
+    var i4, o3 = n3.__v, r3 = o3.__e, f3 = n3.__P;
+    if (f3)
+      return (i4 = v({}, o3)).__v = o3.__v + 1, l.vnode && l.vnode(i4), M(f3, i4, o3, n3.__n, void 0 !== f3.ownerSVGElement, 32 & o3.__u ? [r3] : null, u3, null == r3 ? m(o3) : r3, !!(32 & o3.__u), t3), i4.__v = o3.__v, i4.__.__k[i4.__i] = i4, i4.__d = void 0, i4.__e != r3 && k(i4), i4;
+  }
   function k(n3) {
     var l3, u3;
     if (null != (n3 = n3.__) && null != n3.__c) {
@@ -1597,66 +1602,70 @@ video {
       return k(n3);
     }
   }
-  function w(n3) {
-    (!n3.__d && (n3.__d = true) && i.push(n3) && !x.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(x);
+  function x(n3) {
+    (!n3.__d && (n3.__d = true) && i.push(n3) && !C.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(C);
   }
-  function x() {
-    var n3, u3, t3, o3, r3, e6, c3, s3, a3;
+  function C() {
+    var n3, u3, t3, o3 = [], r3 = [];
     for (i.sort(f); n3 = i.shift(); )
-      n3.__d && (u3 = i.length, o3 = void 0, e6 = (r3 = (t3 = n3).__v).__e, s3 = [], a3 = [], (c3 = t3.__P) && ((o3 = v({}, r3)).__v = r3.__v + 1, l.vnode && l.vnode(o3), L(c3, o3, r3, t3.__n, void 0 !== c3.ownerSVGElement, 32 & r3.__u ? [e6] : null, s3, null == e6 ? m(r3) : e6, !!(32 & r3.__u), a3), o3.__.__k[o3.__i] = o3, M(s3, o3, a3), o3.__e != e6 && k(o3)), i.length > u3 && i.sort(f));
-    x.__r = 0;
+      n3.__d && (t3 = i.length, u3 = w(n3, o3, r3) || u3, 0 === t3 || i.length > t3 ? (j(o3, u3, r3), r3.length = o3.length = 0, u3 = void 0, i.sort(f)) : u3 && l.__c && l.__c(u3, s));
+    u3 && j(o3, u3, r3), C.__r = 0;
   }
-  function C(n3, l3, u3, t3, i4, o3, r3, f3, e6, a3, h3) {
+  function P(n3, l3, u3, t3, i4, o3, r3, f3, e5, a3, h3) {
     var v3, p3, y3, d3, _3, g4 = t3 && t3.__k || s, b3 = l3.length;
-    for (u3.__d = e6, P(u3, l3, g4), e6 = u3.__d, v3 = 0; v3 < b3; v3++)
-      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, L(n3, y3, p3, i4, o3, r3, f3, e6, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && z(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e6 = S(y3, e6, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e6 = y3.__d : d3 && (e6 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
-    u3.__d = e6, u3.__e = _3;
-  }
-  function P(n3, l3, u3) {
-    var t3, i4, o3, r3, f3, e6 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
-    for (n3.__k = [], t3 = 0; t3 < e6; t3++)
-      null != (i4 = n3.__k[t3] = null == (i4 = l3[t3]) || "boolean" == typeof i4 || "function" == typeof i4 ? null : "string" == typeof i4 || "number" == typeof i4 || "bigint" == typeof i4 || i4.constructor == String ? d(null, i4, null, null, i4) : h(i4) ? d(g, { children: i4 }, null, null, null) : void 0 === i4.constructor && i4.__b > 0 ? d(i4.type, i4.props, i4.key, i4.ref ? i4.ref : null, i4.__v) : i4) ? (i4.__ = n3, i4.__b = n3.__b + 1, f3 = H(i4, u3, r3 = t3 + a3, s3), i4.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i4.type && (i4.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e6 - r3 ? a3 += f3 - r3 : a3-- : a3 = f3 < r3 && f3 == r3 - 1 ? f3 - r3 : 0, f3 !== t3 + a3 && (i4.__u |= 65536))) : (o3 = u3[t3]) && null == o3.key && o3.__e && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3, false), u3[t3] = null, s3--);
-    if (s3)
-      for (t3 = 0; t3 < c3; t3++)
-        null != (o3 = u3[t3]) && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), N(o3, o3));
+    for (u3.__d = e5, S(u3, l3, g4), e5 = u3.__d, v3 = 0; v3 < b3; v3++)
+      null != (y3 = u3.__k[v3]) && "boolean" != typeof y3 && "function" != typeof y3 && (p3 = -1 === y3.__i ? c : g4[y3.__i] || c, y3.__i = v3, M(n3, y3, p3, i4, o3, r3, f3, e5, a3, h3), d3 = y3.__e, y3.ref && p3.ref != y3.ref && (p3.ref && N(p3.ref, null, y3), h3.push(y3.ref, y3.__c || d3, y3)), null == _3 && null != d3 && (_3 = d3), 65536 & y3.__u || p3.__k === y3.__k ? e5 = $(y3, e5, n3) : "function" == typeof y3.type && void 0 !== y3.__d ? e5 = y3.__d : d3 && (e5 = d3.nextSibling), y3.__d = void 0, y3.__u &= -196609);
+    u3.__d = e5, u3.__e = _3;
   }
   function S(n3, l3, u3) {
+    var t3, i4, o3, r3, f3, e5 = l3.length, c3 = u3.length, s3 = c3, a3 = 0;
+    for (n3.__k = [], t3 = 0; t3 < e5; t3++)
+      r3 = t3 + a3, null != (i4 = n3.__k[t3] = null == (i4 = l3[t3]) || "boolean" == typeof i4 || "function" == typeof i4 ? null : "string" == typeof i4 || "number" == typeof i4 || "bigint" == typeof i4 || i4.constructor == String ? d(null, i4, null, null, null) : h(i4) ? d(g, { children: i4 }, null, null, null) : void 0 === i4.constructor && i4.__b > 0 ? d(i4.type, i4.props, i4.key, i4.ref ? i4.ref : null, i4.__v) : i4) ? (i4.__ = n3, i4.__b = n3.__b + 1, f3 = I(i4, u3, r3, s3), i4.__i = f3, o3 = null, -1 !== f3 && (s3--, (o3 = u3[f3]) && (o3.__u |= 131072)), null == o3 || null === o3.__v ? (-1 == f3 && a3--, "function" != typeof i4.type && (i4.__u |= 65536)) : f3 !== r3 && (f3 === r3 + 1 ? a3++ : f3 > r3 ? s3 > e5 - r3 ? a3 += f3 - r3 : a3-- : f3 < r3 ? f3 == r3 - 1 && (a3 = f3 - r3) : a3 = 0, f3 !== t3 + a3 && (i4.__u |= 65536))) : (o3 = u3[r3]) && null == o3.key && o3.__e && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), O(o3, o3, false), u3[r3] = null, s3--);
+    if (s3)
+      for (t3 = 0; t3 < c3; t3++)
+        null != (o3 = u3[t3]) && 0 == (131072 & o3.__u) && (o3.__e == n3.__d && (n3.__d = m(o3)), O(o3, o3));
+  }
+  function $(n3, l3, u3) {
     var t3, i4;
     if ("function" == typeof n3.type) {
       for (t3 = n3.__k, i4 = 0; t3 && i4 < t3.length; i4++)
-        t3[i4] && (t3[i4].__ = n3, l3 = S(t3[i4], l3, u3));
+        t3[i4] && (t3[i4].__ = n3, l3 = $(t3[i4], l3, u3));
       return l3;
     }
-    return n3.__e != l3 && (u3.insertBefore(n3.__e, l3 || null), l3 = n3.__e), l3 && l3.nextSibling;
+    n3.__e != l3 && (u3.insertBefore(n3.__e, l3 || null), l3 = n3.__e);
+    do {
+      l3 = l3 && l3.nextSibling;
+    } while (null != l3 && 8 === l3.nodeType);
+    return l3;
   }
-  function $(n3, l3) {
+  function H(n3, l3) {
     return l3 = l3 || [], null == n3 || "boolean" == typeof n3 || (h(n3) ? n3.some(function(n4) {
-      $(n4, l3);
+      H(n4, l3);
     }) : l3.push(n3)), l3;
   }
-  function H(n3, l3, u3, t3) {
-    var i4 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e6 = l3[u3];
-    if (null === e6 || e6 && i4 == e6.key && o3 === e6.type)
+  function I(n3, l3, u3, t3) {
+    var i4 = n3.key, o3 = n3.type, r3 = u3 - 1, f3 = u3 + 1, e5 = l3[u3];
+    if (null === e5 || e5 && i4 == e5.key && o3 === e5.type && 0 == (131072 & e5.__u))
       return u3;
-    if (t3 > (null != e6 && 0 == (131072 & e6.__u) ? 1 : 0))
+    if (t3 > (null != e5 && 0 == (131072 & e5.__u) ? 1 : 0))
       for (; r3 >= 0 || f3 < l3.length; ) {
         if (r3 >= 0) {
-          if ((e6 = l3[r3]) && 0 == (131072 & e6.__u) && i4 == e6.key && o3 === e6.type)
+          if ((e5 = l3[r3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
             return r3;
           r3--;
         }
         if (f3 < l3.length) {
-          if ((e6 = l3[f3]) && 0 == (131072 & e6.__u) && i4 == e6.key && o3 === e6.type)
+          if ((e5 = l3[f3]) && 0 == (131072 & e5.__u) && i4 == e5.key && o3 === e5.type)
             return f3;
           f3++;
         }
       }
     return -1;
   }
-  function I(n3, l3, u3) {
+  function T(n3, l3, u3) {
     "-" === l3[0] ? n3.setProperty(l3, null == u3 ? "" : u3) : n3[l3] = null == u3 ? "" : "number" != typeof u3 || a.test(l3) ? u3 : u3 + "px";
   }
-  function T(n3, l3, u3, t3, i4) {
+  function A(n3, l3, u3, t3, i4) {
     var o3;
     n:
       if ("style" === l3)
@@ -1665,13 +1674,13 @@ video {
         else {
           if ("string" == typeof t3 && (n3.style.cssText = t3 = ""), t3)
             for (l3 in t3)
-              u3 && l3 in u3 || I(n3.style, l3, "");
+              u3 && l3 in u3 || T(n3.style, l3, "");
           if (u3)
             for (l3 in u3)
-              t3 && u3[l3] === t3[l3] || I(n3.style, l3, u3[l3]);
+              t3 && u3[l3] === t3[l3] || T(n3.style, l3, u3[l3]);
         }
       else if ("o" === l3[0] && "n" === l3[1])
-        o3 = l3 !== (l3 = l3.replace(/(PointerCapture)$|Capture$/, "$1")), l3 = l3.toLowerCase() in n3 ? l3.toLowerCase().slice(2) : l3.slice(2), n3.l || (n3.l = {}), n3.l[l3 + o3] = u3, u3 ? t3 ? u3.u = t3.u : (u3.u = Date.now(), n3.addEventListener(l3, o3 ? D : A, o3)) : n3.removeEventListener(l3, o3 ? D : A, o3);
+        o3 = l3 !== (l3 = l3.replace(/(PointerCapture)$|Capture$/i, "$1")), l3 = l3.toLowerCase() in n3 ? l3.toLowerCase().slice(2) : l3.slice(2), n3.l || (n3.l = {}), n3.l[l3 + o3] = u3, u3 ? t3 ? u3.u = t3.u : (u3.u = Date.now(), n3.addEventListener(l3, o3 ? L : D, o3)) : n3.removeEventListener(l3, o3 ? L : D, o3);
       else {
         if (i4)
           l3 = l3.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
@@ -1684,42 +1693,45 @@ video {
         "function" == typeof u3 || (null == u3 || false === u3 && "-" !== l3[4] ? n3.removeAttribute(l3) : n3.setAttribute(l3, u3));
       }
   }
-  function A(n3) {
-    var u3 = this.l[n3.type + false];
-    if (n3.t) {
-      if (n3.t <= u3.u)
-        return;
-    } else
-      n3.t = Date.now();
-    return u3(l.event ? l.event(n3) : n3);
-  }
   function D(n3) {
-    return this.l[n3.type + true](l.event ? l.event(n3) : n3);
+    if (this.l) {
+      var u3 = this.l[n3.type + false];
+      if (n3.t) {
+        if (n3.t <= u3.u)
+          return;
+      } else
+        n3.t = Date.now();
+      return u3(l.event ? l.event(n3) : n3);
+    }
   }
-  function L(n3, u3, t3, i4, o3, r3, f3, e6, c3, s3) {
-    var a3, p3, y3, d3, _3, m3, k4, w4, x4, P6, S2, $3, H3, I3, T4, A4 = u3.type;
+  function L(n3) {
+    if (this.l)
+      return this.l[n3.type + true](l.event ? l.event(n3) : n3);
+  }
+  function M(n3, u3, t3, i4, o3, r3, f3, e5, c3, s3) {
+    var a3, p3, y3, d3, _3, m3, w4, k4, x4, C4, S2, $3, H3, I3, T4, A4 = u3.type;
     if (void 0 !== u3.constructor)
       return null;
-    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e6 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
+    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [e5 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
     n:
       if ("function" == typeof A4)
         try {
-          if (w4 = u3.props, x4 = (a3 = A4.contextType) && i4[a3.__c], P6 = a3 ? x4 ? x4.props.value : a3.__ : i4, t3.__c ? k4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(w4, P6) : (u3.__c = p3 = new b(w4, P6), p3.constructor = A4, p3.render = O), x4 && x4.sub(p3), p3.props = w4, p3.state || (p3.state = {}), p3.context = P6, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(w4, p3.__s))), d3 = p3.props, _3 = p3.state, p3.__v = u3, y3)
+          if (k4 = u3.props, x4 = (a3 = A4.contextType) && i4[a3.__c], C4 = a3 ? x4 ? x4.props.value : a3.__ : i4, t3.__c ? w4 = (p3 = u3.__c = t3.__c).__ = p3.__E : ("prototype" in A4 && A4.prototype.render ? u3.__c = p3 = new A4(k4, C4) : (u3.__c = p3 = new b(k4, C4), p3.constructor = A4, p3.render = q), x4 && x4.sub(p3), p3.props = k4, p3.state || (p3.state = {}), p3.context = C4, p3.__n = i4, y3 = p3.__d = true, p3.__h = [], p3._sb = []), null == p3.__s && (p3.__s = p3.state), null != A4.getDerivedStateFromProps && (p3.__s == p3.state && (p3.__s = v({}, p3.__s)), v(p3.__s, A4.getDerivedStateFromProps(k4, p3.__s))), d3 = p3.props, _3 = p3.state, p3.__v = u3, y3)
             null == A4.getDerivedStateFromProps && null != p3.componentWillMount && p3.componentWillMount(), null != p3.componentDidMount && p3.__h.push(p3.componentDidMount);
           else {
-            if (null == A4.getDerivedStateFromProps && w4 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(w4, P6), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(w4, p3.__s, P6) || u3.__v === t3.__v)) {
-              for (u3.__v !== t3.__v && (p3.props = w4, p3.state = p3.__s, p3.__d = false), u3.__e = t3.__e, u3.__k = t3.__k, u3.__k.forEach(function(n4) {
+            if (null == A4.getDerivedStateFromProps && k4 !== d3 && null != p3.componentWillReceiveProps && p3.componentWillReceiveProps(k4, C4), !p3.__e && (null != p3.shouldComponentUpdate && false === p3.shouldComponentUpdate(k4, p3.__s, C4) || u3.__v === t3.__v)) {
+              for (u3.__v !== t3.__v && (p3.props = k4, p3.state = p3.__s, p3.__d = false), u3.__e = t3.__e, u3.__k = t3.__k, u3.__k.forEach(function(n4) {
                 n4 && (n4.__ = u3);
               }), S2 = 0; S2 < p3._sb.length; S2++)
                 p3.__h.push(p3._sb[S2]);
               p3._sb = [], p3.__h.length && f3.push(p3);
               break n;
             }
-            null != p3.componentWillUpdate && p3.componentWillUpdate(w4, p3.__s, P6), null != p3.componentDidUpdate && p3.__h.push(function() {
+            null != p3.componentWillUpdate && p3.componentWillUpdate(k4, p3.__s, C4), null != p3.componentDidUpdate && p3.__h.push(function() {
               p3.componentDidUpdate(d3, _3, m3);
             });
           }
-          if (p3.context = P6, p3.props = w4, p3.__P = n3, p3.__e = false, $3 = l.__r, H3 = 0, "prototype" in A4 && A4.prototype.render) {
+          if (p3.context = C4, p3.props = k4, p3.__P = n3, p3.__e = false, $3 = l.__r, H3 = 0, "prototype" in A4 && A4.prototype.render) {
             for (p3.state = p3.__s, p3.__d = false, $3 && $3(u3), a3 = p3.render(p3.props, p3.state, p3.context), I3 = 0; I3 < p3._sb.length; I3++)
               p3.__h.push(p3._sb[I3]);
             p3._sb = [];
@@ -1727,18 +1739,17 @@ video {
             do {
               p3.__d = false, $3 && $3(u3), a3 = p3.render(p3.props, p3.state, p3.context), p3.state = p3.__s;
             } while (p3.__d && ++H3 < 25);
-          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), C(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e6, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), k4 && (p3.__E = p3.__ = null);
+          p3.state = p3.__s, null != p3.getChildContext && (i4 = v(v({}, i4), p3.getChildContext())), y3 || null == p3.getSnapshotBeforeUpdate || (m3 = p3.getSnapshotBeforeUpdate(d3, _3)), P(n3, h(T4 = null != a3 && a3.type === g && null == a3.key ? a3.props.children : a3) ? T4 : [T4], u3, t3, i4, o3, r3, f3, e5, c3, s3), p3.base = u3.__e, u3.__u &= -161, p3.__h.length && f3.push(p3), w4 && (p3.__E = p3.__ = null);
         } catch (n4) {
-          u3.__v = null, c3 || null != r3 ? (u3.__e = e6, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e6)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
+          u3.__v = null, c3 || null != r3 ? (u3.__e = e5, u3.__u |= c3 ? 160 : 32, r3[r3.indexOf(e5)] = null) : (u3.__e = t3.__e, u3.__k = t3.__k), l.__e(n4, u3, t3);
         }
       else
-        null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = j(t3.__e, u3, t3, i4, o3, r3, f3, c3, s3);
+        null == r3 && u3.__v === t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : u3.__e = z(t3.__e, u3, t3, i4, o3, r3, f3, c3, s3);
     (a3 = l.diffed) && a3(u3);
   }
-  function M(n3, u3, t3) {
-    u3.__d = void 0;
+  function j(n3, u3, t3) {
     for (var i4 = 0; i4 < t3.length; i4++)
-      z(t3[i4], t3[++i4], t3[++i4]);
+      N(t3[i4], t3[++i4], t3[++i4]);
     l.__c && l.__c(u3, n3), n3.some(function(u4) {
       try {
         n3 = u4.__h, u4.__h = [], n3.some(function(n4) {
@@ -1749,8 +1760,8 @@ video {
       }
     });
   }
-  function j(l3, u3, t3, i4, o3, r3, f3, e6, s3) {
-    var a3, v3, y3, d3, _3, g4, b3, k4 = t3.props, w4 = u3.props, x4 = u3.type;
+  function z(l3, u3, t3, i4, o3, r3, f3, e5, s3) {
+    var a3, v3, y3, d3, _3, g4, b3, w4 = t3.props, k4 = u3.props, x4 = u3.type;
     if ("svg" === x4 && (o3 = true), null != r3) {
       for (a3 = 0; a3 < r3.length; a3++)
         if ((_3 = r3[a3]) && "setAttribute" in _3 == !!x4 && (x4 ? _3.localName === x4 : 3 === _3.nodeType)) {
@@ -1760,38 +1771,38 @@ video {
     }
     if (null == l3) {
       if (null === x4)
-        return document.createTextNode(w4);
-      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, w4.is && w4), r3 = null, e6 = false;
+        return document.createTextNode(k4);
+      l3 = o3 ? document.createElementNS("http://www.w3.org/2000/svg", x4) : document.createElement(x4, k4.is && k4), r3 = null, e5 = false;
     }
     if (null === x4)
-      k4 === w4 || e6 && l3.data === w4 || (l3.data = w4);
+      w4 === k4 || e5 && l3.data === k4 || (l3.data = k4);
     else {
-      if (r3 = r3 && n.call(l3.childNodes), k4 = t3.props || c, !e6 && null != r3)
-        for (k4 = {}, a3 = 0; a3 < l3.attributes.length; a3++)
-          k4[(_3 = l3.attributes[a3]).name] = _3.value;
-      for (a3 in k4)
-        _3 = k4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _3 : "key" === a3 || a3 in w4 || T(l3, a3, null, _3, o3));
+      if (r3 = r3 && n.call(l3.childNodes), w4 = t3.props || c, !e5 && null != r3)
+        for (w4 = {}, a3 = 0; a3 < l3.attributes.length; a3++)
+          w4[(_3 = l3.attributes[a3]).name] = _3.value;
       for (a3 in w4)
-        _3 = w4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e6 && "function" != typeof _3 || k4[a3] === _3 || T(l3, a3, _3, k4[a3], o3);
+        _3 = w4[a3], "children" == a3 || ("dangerouslySetInnerHTML" == a3 ? y3 = _3 : "key" === a3 || a3 in k4 || A(l3, a3, null, _3, o3));
+      for (a3 in k4)
+        _3 = k4[a3], "children" == a3 ? d3 = _3 : "dangerouslySetInnerHTML" == a3 ? v3 = _3 : "value" == a3 ? g4 = _3 : "checked" == a3 ? b3 = _3 : "key" === a3 || e5 && "function" != typeof _3 || w4[a3] === _3 || A(l3, a3, _3, w4[a3], o3);
       if (v3)
-        e6 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
-      else if (y3 && (l3.innerHTML = ""), C(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e6, s3), null != r3)
+        e5 || y3 && (v3.__html === y3.__html || v3.__html === l3.innerHTML) || (l3.innerHTML = v3.__html), u3.__k = [];
+      else if (y3 && (l3.innerHTML = ""), P(l3, h(d3) ? d3 : [d3], u3, t3, i4, o3 && "foreignObject" !== x4, r3, f3, r3 ? r3[0] : t3.__k && m(t3, 0), e5, s3), null != r3)
         for (a3 = r3.length; a3--; )
           null != r3[a3] && p(r3[a3]);
-      e6 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== k4[a3]) && T(l3, a3, g4, k4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && T(l3, a3, b3, k4[a3], false));
+      e5 || (a3 = "value", void 0 !== g4 && (g4 !== l3[a3] || "progress" === x4 && !g4 || "option" === x4 && g4 !== w4[a3]) && A(l3, a3, g4, w4[a3], false), a3 = "checked", void 0 !== b3 && b3 !== l3[a3] && A(l3, a3, b3, w4[a3], false));
     }
     return l3;
   }
-  function z(n3, u3, t3) {
+  function N(n3, u3, t3) {
     try {
       "function" == typeof n3 ? n3(u3) : n3.current = u3;
     } catch (n4) {
       l.__e(n4, t3);
     }
   }
-  function N(n3, u3, t3) {
+  function O(n3, u3, t3) {
     var i4, o3;
-    if (l.unmount && l.unmount(n3), (i4 = n3.ref) && (i4.current && i4.current !== n3.__e || z(i4, null, u3)), null != (i4 = n3.__c)) {
+    if (l.unmount && l.unmount(n3), (i4 = n3.ref) && (i4.current && i4.current !== n3.__e || N(i4, null, u3)), null != (i4 = n3.__c)) {
       if (i4.componentWillUnmount)
         try {
           i4.componentWillUnmount();
@@ -1802,26 +1813,26 @@ video {
     }
     if (i4 = n3.__k)
       for (o3 = 0; o3 < i4.length; o3++)
-        i4[o3] && N(i4[o3], u3, t3 || "function" != typeof n3.type);
+        i4[o3] && O(i4[o3], u3, t3 || "function" != typeof n3.type);
     t3 || null == n3.__e || p(n3.__e), n3.__ = n3.__e = n3.__d = void 0;
   }
-  function O(n3, l3, u3) {
+  function q(n3, l3, u3) {
     return this.constructor(n3, u3);
   }
-  function q(u3, t3, i4) {
-    var o3, r3, f3, e6;
-    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f3 = [], e6 = [], L(t3, u3 = (!o3 && i4 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e6), M(f3, u3, e6);
+  function B(u3, t3, i4) {
+    var o3, r3, f3, e5;
+    l.__ && l.__(u3, t3), r3 = (o3 = "function" == typeof i4) ? null : i4 && i4.__k || t3.__k, f3 = [], e5 = [], M(t3, u3 = (!o3 && i4 || t3).__k = y(g, null, [u3]), r3 || c, c, void 0 !== t3.ownerSVGElement, !o3 && i4 ? [i4] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, f3, !o3 && i4 ? i4 : r3 ? r3.__e : t3.firstChild, o3, e5), u3.__d = void 0, j(f3, u3, e5);
   }
-  function B(n3, l3) {
-    q(n3, l3, B);
+  function E(n3, l3) {
+    B(n3, l3, E);
   }
-  function E(l3, u3, t3) {
-    var i4, o3, r3, f3, e6 = v({}, l3.props);
+  function F(l3, u3, t3) {
+    var i4, o3, r3, f3, e5 = v({}, l3.props);
     for (r3 in l3.type && l3.type.defaultProps && (f3 = l3.type.defaultProps), u3)
-      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e6[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
-    return arguments.length > 2 && (e6.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e6, i4 || l3.key, o3 || l3.ref, null);
+      "key" == r3 ? i4 = u3[r3] : "ref" == r3 ? o3 = u3[r3] : e5[r3] = void 0 === u3[r3] && void 0 !== f3 ? f3[r3] : u3[r3];
+    return arguments.length > 2 && (e5.children = arguments.length > 3 ? n.call(arguments, 2) : t3), d(l3.type, e5, i4 || l3.key, o3 || l3.ref, null);
   }
-  function F(n3, l3) {
+  function G(n3, l3) {
     var u3 = { __c: l3 = "__cC" + e++, __: n3, Consumer: function(n4, l4) {
       return n4.children(l4);
     }, Provider: function(n4) {
@@ -1830,7 +1841,7 @@ video {
         return t3;
       }, this.shouldComponentUpdate = function(n5) {
         this.props.value !== n5.value && u4.some(function(n6) {
-          n6.__e = true, w(n6);
+          n6.__e = true, x(n6);
         });
       }, this.sub = function(n5) {
         u4.push(n5);
@@ -1863,12 +1874,12 @@ video {
         return null != n3 && null == n3.constructor;
       }, b.prototype.setState = function(n3, l3) {
         var u3;
-        u3 = null != this.__s && this.__s !== this.state ? this.__s : this.__s = v({}, this.state), "function" == typeof n3 && (n3 = n3(v({}, u3), this.props)), n3 && v(u3, n3), null != n3 && this.__v && (l3 && this._sb.push(l3), w(this));
+        u3 = null != this.__s && this.__s !== this.state ? this.__s : this.__s = v({}, this.state), "function" == typeof n3 && (n3 = n3(v({}, u3), this.props)), n3 && v(u3, n3), null != n3 && this.__v && (l3 && this._sb.push(l3), x(this));
       }, b.prototype.forceUpdate = function(n3) {
-        this.__v && (this.__e = true, n3 && this.__h.push(n3), w(this));
+        this.__v && (this.__e = true, n3 && this.__h.push(n3), x(this));
       }, b.prototype.render = g, i = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, f = function(n3, l3) {
         return n3.__v.__b - l3.__v.__b;
-      }, x.__r = 0, e = 0;
+      }, C.__r = 0, e = 0;
     }
   });
 
@@ -1884,17 +1895,17 @@ video {
   });
 
   // node_modules/preact/hooks/dist/hooks.module.js
-  function d2(t3, u3) {
-    l.__h && l.__h(r2, t3, o2 || u3), o2 = 0;
-    var i4 = r2.__H || (r2.__H = { __: [], __h: [] });
-    return t3 >= i4.__.length && i4.__.push({ __V: c2 }), i4.__[t3];
+  function h2(n3, t3) {
+    e2.__h && e2.__h(r2, n3, o2 || t3), o2 = 0;
+    var u3 = r2.__H || (r2.__H = { __: [], __h: [] });
+    return n3 >= u3.__.length && u3.__.push({ __V: c2 }), u3.__[n3];
   }
-  function h2(n3) {
-    return o2 = 1, s2(B2, n3);
+  function p2(n3) {
+    return o2 = 1, y2(D2, n3);
   }
-  function s2(n3, u3, i4) {
-    var o3 = d2(t2++, 2);
-    if (o3.t = n3, !o3.__c && (o3.__ = [i4 ? i4(u3) : B2(void 0, u3), function(n4) {
+  function y2(n3, u3, i4) {
+    var o3 = h2(t2++, 2);
+    if (o3.t = n3, !o3.__c && (o3.__ = [i4 ? i4(u3) : D2(void 0, u3), function(n4) {
       var t3 = o3.__N ? o3.__N[0] : o3.__[0], r3 = o3.t(t3, n4);
       t3 !== r3 && (o3.__N = [r3, o3.__[1]], o3.__c.setState({}));
     }], o3.__c = r2, !r2.u)) {
@@ -1902,7 +1913,7 @@ video {
         if (!o3.__c.__H)
           return true;
         var u4 = o3.__c.__H.__.filter(function(n5) {
-          return n5.__c;
+          return !!n5.__c;
         });
         if (u4.every(function(n5) {
           return !n5.__N;
@@ -1917,32 +1928,32 @@ video {
         }), !(!i5 && o3.__c.props === n4) && (!c3 || c3.call(this, n4, t3, r3));
       };
       r2.u = true;
-      var c3 = r2.shouldComponentUpdate, e6 = r2.componentWillUpdate;
+      var c3 = r2.shouldComponentUpdate, e5 = r2.componentWillUpdate;
       r2.componentWillUpdate = function(n4, t3, r3) {
         if (this.__e) {
           var u4 = c3;
           c3 = void 0, f3(n4, t3, r3), c3 = u4;
         }
-        e6 && e6.call(this, n4, t3, r3);
+        e5 && e5.call(this, n4, t3, r3);
       }, r2.shouldComponentUpdate = f3;
     }
     return o3.__N || o3.__;
   }
-  function p2(u3, i4) {
-    var o3 = d2(t2++, 3);
-    !l.__s && z2(o3.__H, i4) && (o3.__ = u3, o3.i = i4, r2.__H.__h.push(o3));
+  function _2(n3, u3) {
+    var i4 = h2(t2++, 3);
+    !e2.__s && C2(i4.__H, u3) && (i4.__ = n3, i4.i = u3, r2.__H.__h.push(i4));
   }
-  function y2(u3, i4) {
-    var o3 = d2(t2++, 4);
-    !l.__s && z2(o3.__H, i4) && (o3.__ = u3, o3.i = i4, r2.__h.push(o3));
+  function A2(n3, u3) {
+    var i4 = h2(t2++, 4);
+    !e2.__s && C2(i4.__H, u3) && (i4.__ = n3, i4.i = u3, r2.__h.push(i4));
   }
-  function _2(n3) {
-    return o2 = 5, F2(function() {
+  function F2(n3) {
+    return o2 = 5, q2(function() {
       return { current: n3 };
     }, []);
   }
-  function A2(n3, t3, r3) {
-    o2 = 6, y2(function() {
+  function T2(n3, t3, r3) {
+    o2 = 6, A2(function() {
       return "function" == typeof n3 ? (n3(t3()), function() {
         return n3(null);
       }) : n3 ? (n3.current = t3(), function() {
@@ -1950,32 +1961,32 @@ video {
       }) : void 0;
     }, null == r3 ? r3 : r3.concat(n3));
   }
-  function F2(n3, r3) {
-    var u3 = d2(t2++, 7);
-    return z2(u3.__H, r3) ? (u3.__V = n3(), u3.i = r3, u3.__h = n3, u3.__V) : u3.__;
+  function q2(n3, r3) {
+    var u3 = h2(t2++, 7);
+    return C2(u3.__H, r3) ? (u3.__V = n3(), u3.i = r3, u3.__h = n3, u3.__V) : u3.__;
   }
-  function T2(n3, t3) {
-    return o2 = 8, F2(function() {
+  function x2(n3, t3) {
+    return o2 = 8, q2(function() {
       return n3;
     }, t3);
   }
-  function q2(n3) {
-    var u3 = r2.context[n3.__c], i4 = d2(t2++, 9);
+  function P2(n3) {
+    var u3 = r2.context[n3.__c], i4 = h2(t2++, 9);
     return i4.c = n3, u3 ? (null == i4.__ && (i4.__ = true, u3.sub(r2)), u3.props.value) : n3.__;
   }
-  function x2(t3, r3) {
-    l.useDebugValue && l.useDebugValue(r3 ? r3(t3) : t3);
+  function V(n3, t3) {
+    e2.useDebugValue && e2.useDebugValue(t3 ? t3(n3) : n3);
   }
-  function P2(n3) {
-    var u3 = d2(t2++, 10), i4 = h2();
+  function b2(n3) {
+    var u3 = h2(t2++, 10), i4 = p2();
     return u3.__ = n3, r2.componentDidCatch || (r2.componentDidCatch = function(n4, t3) {
       u3.__ && u3.__(n4, t3), i4[1](n4);
     }), [i4[0], function() {
       i4[1](void 0);
     }];
   }
-  function V() {
-    var n3 = d2(t2++, 11);
+  function g2() {
+    var n3 = h2(t2++, 11);
     if (!n3.__) {
       for (var u3 = r2.__v; null !== u3 && !u3.__m && null !== u3.__; )
         u3 = u3.__;
@@ -1984,87 +1995,91 @@ video {
     }
     return n3.__;
   }
-  function b2() {
-    for (var t3; t3 = f2.shift(); )
-      if (t3.__P && t3.__H)
+  function j2() {
+    for (var n3; n3 = f2.shift(); )
+      if (n3.__P && n3.__H)
         try {
-          t3.__H.__h.forEach(k2), t3.__H.__h.forEach(w2), t3.__H.__h = [];
-        } catch (r3) {
-          t3.__H.__h = [], l.__e(r3, t3.__v);
+          n3.__H.__h.forEach(z2), n3.__H.__h.forEach(B2), n3.__H.__h = [];
+        } catch (t3) {
+          n3.__H.__h = [], e2.__e(t3, n3.__v);
         }
   }
-  function j2(n3) {
+  function w2(n3) {
     var t3, r3 = function() {
-      clearTimeout(u3), g2 && cancelAnimationFrame(t3), setTimeout(n3);
+      clearTimeout(u3), k2 && cancelAnimationFrame(t3), setTimeout(n3);
     }, u3 = setTimeout(r3, 100);
-    g2 && (t3 = requestAnimationFrame(r3));
+    k2 && (t3 = requestAnimationFrame(r3));
   }
-  function k2(n3) {
+  function z2(n3) {
     var t3 = r2, u3 = n3.__c;
     "function" == typeof u3 && (n3.__c = void 0, u3()), r2 = t3;
   }
-  function w2(n3) {
+  function B2(n3) {
     var t3 = r2;
     n3.__c = n3.__(), r2 = t3;
   }
-  function z2(n3, t3) {
+  function C2(n3, t3) {
     return !n3 || n3.length !== t3.length || t3.some(function(t4, r3) {
       return t4 !== n3[r3];
     });
   }
-  function B2(n3, t3) {
+  function D2(n3, t3) {
     return "function" == typeof t3 ? t3(n3) : t3;
   }
-  var t2, r2, u2, i2, o2, f2, c2, e2, a2, v2, l2, m2, g2;
+  var t2, r2, u2, i2, o2, f2, c2, e2, a2, v2, l2, m2, s2, d2, k2;
   var init_hooks_module = __esm({
     "node_modules/preact/hooks/dist/hooks.module.js"() {
       init_preact_module();
       o2 = 0;
       f2 = [];
       c2 = [];
-      e2 = l.__b;
-      a2 = l.__r;
-      v2 = l.diffed;
-      l2 = l.__c;
-      m2 = l.unmount;
-      l.__b = function(n3) {
-        r2 = null, e2 && e2(n3);
-      }, l.__r = function(n3) {
-        a2 && a2(n3), t2 = 0;
+      e2 = l;
+      a2 = e2.__b;
+      v2 = e2.__r;
+      l2 = e2.diffed;
+      m2 = e2.__c;
+      s2 = e2.unmount;
+      d2 = e2.__;
+      e2.__b = function(n3) {
+        r2 = null, a2 && a2(n3);
+      }, e2.__ = function(n3, t3) {
+        n3 && t3.__k && t3.__k.__m && (n3.__m = t3.__k.__m), d2 && d2(n3, t3);
+      }, e2.__r = function(n3) {
+        v2 && v2(n3), t2 = 0;
         var i4 = (r2 = n3.__c).__H;
         i4 && (u2 === r2 ? (i4.__h = [], r2.__h = [], i4.__.forEach(function(n4) {
           n4.__N && (n4.__ = n4.__N), n4.__V = c2, n4.__N = n4.i = void 0;
-        })) : (i4.__h.forEach(k2), i4.__h.forEach(w2), i4.__h = [], t2 = 0)), u2 = r2;
-      }, l.diffed = function(t3) {
-        v2 && v2(t3);
-        var o3 = t3.__c;
-        o3 && o3.__H && (o3.__H.__h.length && (1 !== f2.push(o3) && i2 === l.requestAnimationFrame || ((i2 = l.requestAnimationFrame) || j2)(b2)), o3.__H.__.forEach(function(n3) {
-          n3.i && (n3.__H = n3.i), n3.__V !== c2 && (n3.__ = n3.__V), n3.i = void 0, n3.__V = c2;
+        })) : (i4.__h.forEach(z2), i4.__h.forEach(B2), i4.__h = [], t2 = 0)), u2 = r2;
+      }, e2.diffed = function(n3) {
+        l2 && l2(n3);
+        var t3 = n3.__c;
+        t3 && t3.__H && (t3.__H.__h.length && (1 !== f2.push(t3) && i2 === e2.requestAnimationFrame || ((i2 = e2.requestAnimationFrame) || w2)(j2)), t3.__H.__.forEach(function(n4) {
+          n4.i && (n4.__H = n4.i), n4.__V !== c2 && (n4.__ = n4.__V), n4.i = void 0, n4.__V = c2;
         })), u2 = r2 = null;
-      }, l.__c = function(t3, r3) {
-        r3.some(function(t4) {
+      }, e2.__c = function(n3, t3) {
+        t3.some(function(n4) {
           try {
-            t4.__h.forEach(k2), t4.__h = t4.__h.filter(function(n3) {
-              return !n3.__ || w2(n3);
+            n4.__h.forEach(z2), n4.__h = n4.__h.filter(function(n5) {
+              return !n5.__ || B2(n5);
             });
-          } catch (u3) {
-            r3.some(function(n3) {
-              n3.__h && (n3.__h = []);
-            }), r3 = [], l.__e(u3, t4.__v);
+          } catch (r3) {
+            t3.some(function(n5) {
+              n5.__h && (n5.__h = []);
+            }), t3 = [], e2.__e(r3, n4.__v);
           }
-        }), l2 && l2(t3, r3);
-      }, l.unmount = function(t3) {
-        m2 && m2(t3);
-        var r3, u3 = t3.__c;
-        u3 && u3.__H && (u3.__H.__.forEach(function(n3) {
+        }), m2 && m2(n3, t3);
+      }, e2.unmount = function(n3) {
+        s2 && s2(n3);
+        var t3, r3 = n3.__c;
+        r3 && r3.__H && (r3.__H.__.forEach(function(n4) {
           try {
-            k2(n3);
-          } catch (n4) {
-            r3 = n4;
+            z2(n4);
+          } catch (n5) {
+            t3 = n5;
           }
-        }), u3.__H = void 0, r3 && l.__e(r3, u3.__v));
+        }), r3.__H = void 0, t3 && e2.__e(t3, r3.__v));
       };
-      g2 = "function" == typeof requestAnimationFrame;
+      k2 = "function" == typeof requestAnimationFrame;
     }
   });
 
@@ -2080,7 +2095,7 @@ video {
     SuspenseList: () => M2,
     __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: () => on,
     cloneElement: () => sn,
-    createContext: () => F,
+    createContext: () => G,
     createElement: () => y,
     createFactory: () => cn,
     createPortal: () => j3,
@@ -2089,79 +2104,79 @@ video {
     findDOMNode: () => vn,
     flushSync: () => pn,
     forwardRef: () => N2,
-    hydrate: () => G,
+    hydrate: () => G2,
     isElement: () => gn,
     isFragment: () => an,
     isValidElement: () => fn,
-    lazy: () => D2,
+    lazy: () => D3,
     memo: () => w3,
     render: () => q3,
     startTransition: () => yn,
     unmountComponentAtNode: () => hn,
     unstable_batchedUpdates: () => dn,
-    useCallback: () => T2,
-    useContext: () => q2,
-    useDebugValue: () => x2,
+    useCallback: () => x2,
+    useContext: () => P2,
+    useDebugValue: () => V,
     useDeferredValue: () => _n,
-    useEffect: () => p2,
-    useErrorBoundary: () => P2,
-    useId: () => V,
-    useImperativeHandle: () => A2,
+    useEffect: () => _2,
+    useErrorBoundary: () => b2,
+    useId: () => g2,
+    useImperativeHandle: () => T2,
     useInsertionEffect: () => Sn,
-    useLayoutEffect: () => y2,
-    useMemo: () => F2,
-    useReducer: () => s2,
-    useRef: () => _2,
-    useState: () => h2,
+    useLayoutEffect: () => A2,
+    useMemo: () => q2,
+    useReducer: () => y2,
+    useRef: () => F2,
+    useState: () => p2,
     useSyncExternalStore: () => Cn,
     useTransition: () => bn,
     version: () => ln
   });
   function g3(n3, t3) {
-    for (var e6 in t3)
-      n3[e6] = t3[e6];
+    for (var e5 in t3)
+      n3[e5] = t3[e5];
     return n3;
   }
-  function C2(n3, t3) {
-    for (var e6 in n3)
-      if ("__source" !== e6 && !(e6 in t3))
+  function C3(n3, t3) {
+    for (var e5 in n3)
+      if ("__source" !== e5 && !(e5 in t3))
         return true;
     for (var r3 in t3)
       if ("__source" !== r3 && n3[r3] !== t3[r3])
         return true;
     return false;
   }
-  function E2(n3) {
-    this.props = n3;
+  function E2(n3, t3) {
+    this.props = n3, this.context = t3;
   }
-  function w3(n3, e6) {
+  function w3(n3, e5) {
     function r3(n4) {
       var t3 = this.props.ref, r4 = t3 == n4.ref;
-      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e6 ? !e6(this.props, n4) || !r4 : C2(this.props, n4);
+      return !r4 && t3 && (t3.call ? t3(null) : t3.current = null), e5 ? !e5(this.props, n4) || !r4 : C3(this.props, n4);
     }
-    function u3(e7) {
-      return this.shouldComponentUpdate = r3, y(n3, e7);
+    function u3(e6) {
+      return this.shouldComponentUpdate = r3, y(n3, e6);
     }
     return u3.displayName = "Memo(" + (n3.displayName || n3.name) + ")", u3.prototype.isReactComponent = true, u3.__f = true, u3;
   }
   function N2(n3) {
     function t3(t4) {
-      var e6 = g3({}, t4);
-      return delete e6.ref, n3(e6, t4.ref || null);
+      var e5 = g3({}, t4);
+      return delete e5.ref, n3(e5, t4.ref || null);
     }
     return t3.$$typeof = R, t3.render = t3, t3.prototype.isReactComponent = t3.__f = true, t3.displayName = "ForwardRef(" + (n3.displayName || n3.name) + ")", t3;
   }
-  function F3(n3, t3, e6) {
+  function F3(n3, t3, e5) {
     return n3 && (n3.__c && n3.__c.__H && (n3.__c.__H.__.forEach(function(n4) {
       "function" == typeof n4.__c && n4.__c();
-    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e6 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return F3(n4, t3, e6);
+    }), n3.__c.__H = null), null != (n3 = g3({}, n3)).__c && (n3.__c.__P === e5 && (n3.__c.__P = t3), n3.__c = null), n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return F3(n4, t3, e5);
     })), n3;
   }
-  function I2(n3, t3, e6) {
-    return n3 && e6 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
-      return I2(n4, t3, e6);
-    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e6.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e6)), n3;
+  function I2(n3, t3, e5) {
+    return n3 && e5 && (n3.__v = null, n3.__k = n3.__k && n3.__k.map(function(n4) {
+      return I2(n4, t3, e5);
+    }), n3.__c && n3.__c.__P === t3 && (n3.__e && e5.appendChild(n3.__e), n3.__c.__e = true, n3.__c.__P = e5)), n3;
   }
   function L2() {
     this.__u = 0, this.t = null, this.__b = null;
@@ -2170,17 +2185,17 @@ video {
     var t3 = n3.__.__c;
     return t3 && t3.__a && t3.__a(n3);
   }
-  function D2(n3) {
-    var e6, r3, u3;
+  function D3(n3) {
+    var e5, r3, u3;
     function o3(o4) {
-      if (e6 || (e6 = n3()).then(function(n4) {
+      if (e5 || (e5 = n3()).then(function(n4) {
         r3 = n4.default || n4;
       }, function(n4) {
         u3 = n4;
       }), u3)
         throw u3;
       if (!r3)
-        throw e6;
+        throw e5;
       return y(r3, o4);
     }
     return o3.displayName = "Lazy", o3.__f = true, o3;
@@ -2194,26 +2209,26 @@ video {
     }, n3.children;
   }
   function P3(n3) {
-    var e6 = this, r3 = n3.i;
-    e6.componentWillUnmount = function() {
-      q(null, e6.l), e6.l = null, e6.i = null;
-    }, e6.i && e6.i !== r3 && e6.componentWillUnmount(), e6.l || (e6.i = r3, e6.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
+    var e5 = this, r3 = n3.i;
+    e5.componentWillUnmount = function() {
+      B(null, e5.l), e5.l = null, e5.i = null;
+    }, e5.i && e5.i !== r3 && e5.componentWillUnmount(), e5.l || (e5.i = r3, e5.l = { nodeType: 1, parentNode: r3, childNodes: [], appendChild: function(n4) {
+      this.childNodes.push(n4), e5.i.appendChild(n4);
     }, insertBefore: function(n4, t3) {
-      this.childNodes.push(n4), e6.i.appendChild(n4);
+      this.childNodes.push(n4), e5.i.appendChild(n4);
     }, removeChild: function(n4) {
-      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e6.i.removeChild(n4);
-    } }), q(y(W, { context: e6.context }, n3.__v), e6.l);
+      this.childNodes.splice(this.childNodes.indexOf(n4) >>> 1, 1), e5.i.removeChild(n4);
+    } }), B(y(W, { context: e5.context }, n3.__v), e5.l);
   }
-  function j3(n3, e6) {
-    var r3 = y(P3, { __v: n3, i: e6 });
-    return r3.containerInfo = e6, r3;
+  function j3(n3, e5) {
+    var r3 = y(P3, { __v: n3, i: e5 });
+    return r3.containerInfo = e5, r3;
   }
-  function q3(n3, t3, e6) {
-    return null == t3.__k && (t3.textContent = ""), q(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  function q3(n3, t3, e5) {
+    return null == t3.__k && (t3.textContent = ""), B(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
   }
-  function G(n3, t3, e6) {
-    return B(n3, t3), "function" == typeof e6 && e6(), n3 ? n3.__c : null;
+  function G2(n3, t3, e5) {
+    return E(n3, t3), "function" == typeof e5 && e5(), n3 ? n3.__c : null;
   }
   function K() {
   }
@@ -2233,10 +2248,10 @@ video {
     return fn(n3) && n3.type === g;
   }
   function sn(n3) {
-    return fn(n3) ? E.apply(null, arguments) : n3;
+    return fn(n3) ? F.apply(null, arguments) : n3;
   }
   function hn(n3) {
-    return !!n3.__k && (q(null, n3), true);
+    return !!n3.__k && (B(null, n3), true);
   }
   function vn(n3) {
     return n3 && (n3.base || 1 === n3.nodeType && n3) || null;
@@ -2251,20 +2266,20 @@ video {
     return [false, yn];
   }
   function Cn(n3, t3) {
-    var e6 = t3(), r3 = h2({ h: { __: e6, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
-    return y2(function() {
-      u3.__ = e6, u3.v = t3, En(u3) && o3({ h: u3 });
-    }, [n3, e6, t3]), p2(function() {
+    var e5 = t3(), r3 = p2({ h: { __: e5, v: t3 } }), u3 = r3[0].h, o3 = r3[1];
+    return A2(function() {
+      u3.__ = e5, u3.v = t3, En(u3) && o3({ h: u3 });
+    }, [n3, e5, t3]), _2(function() {
       return En(u3) && o3({ h: u3 }), n3(function() {
         En(u3) && o3({ h: u3 });
       });
-    }, [n3]), e6;
+    }, [n3]), e5;
   }
   function En(n3) {
-    var t3, e6, r3 = n3.v, u3 = n3.__;
+    var t3, e5, r3 = n3.v, u3 = n3.__;
     try {
       var o3 = r3();
-      return !((t3 = u3) === (e6 = o3) && (0 !== t3 || 1 / t3 == 1 / e6) || t3 != t3 && e6 != e6);
+      return !((t3 = u3) === (e5 = o3) && (0 !== t3 || 1 / t3 == 1 / e5) || t3 != t3 && e5 != e5);
     } catch (n4) {
       return true;
     }
@@ -2277,7 +2292,7 @@ video {
       init_hooks_module();
       init_hooks_module();
       (E2.prototype = new b()).isPureReactComponent = true, E2.prototype.shouldComponentUpdate = function(n3, t3) {
-        return C2(this.props, n3) || C2(this.state, t3);
+        return C3(this.props, n3) || C3(this.state, t3);
       };
       x3 = l.__b;
       l.__b = function(n3) {
@@ -2285,36 +2300,36 @@ video {
       };
       R = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.forward_ref") || 3911;
       k3 = function(n3, t3) {
-        return null == n3 ? null : $($(n3).map(t3));
+        return null == n3 ? null : H(H(n3).map(t3));
       };
       A3 = { map: k3, forEach: k3, count: function(n3) {
-        return n3 ? $(n3).length : 0;
+        return n3 ? H(n3).length : 0;
       }, only: function(n3) {
-        var t3 = $(n3);
+        var t3 = H(n3);
         if (1 !== t3.length)
           throw "Children.only";
         return t3[0];
-      }, toArray: $ };
+      }, toArray: H };
       O2 = l.__e;
-      l.__e = function(n3, t3, e6, r3) {
+      l.__e = function(n3, t3, e5, r3) {
         if (n3.then) {
           for (var u3, o3 = t3; o3 = o3.__; )
             if ((u3 = o3.__c) && u3.__c)
-              return null == t3.__e && (t3.__e = e6.__e, t3.__k = e6.__k), u3.__c(n3, t3);
+              return null == t3.__e && (t3.__e = e5.__e, t3.__k = e5.__k), u3.__c(n3, t3);
         }
-        O2(n3, t3, e6, r3);
+        O2(n3, t3, e5, r3);
       };
       T3 = l.unmount;
       l.unmount = function(n3) {
         var t3 = n3.__c;
         t3 && t3.__R && t3.__R(), t3 && 32 & n3.__u && (n3.type = null), T3 && T3(n3);
       }, (L2.prototype = new b()).__c = function(n3, t3) {
-        var e6 = t3.__c, r3 = this;
-        null == r3.t && (r3.t = []), r3.t.push(e6);
+        var e5 = t3.__c, r3 = this;
+        null == r3.t && (r3.t = []), r3.t.push(e5);
         var u3 = U(r3.__v), o3 = false, i4 = function() {
-          o3 || (o3 = true, e6.__R = null, u3 ? u3(l3) : l3());
+          o3 || (o3 = true, e5.__R = null, u3 ? u3(l3) : l3());
         };
-        e6.__R = i4;
+        e5.__R = i4;
         var l3 = function() {
           if (!--r3.__u) {
             if (r3.state.__a) {
@@ -2329,7 +2344,7 @@ video {
         r3.__u++ || 32 & t3.__u || r3.setState({ __a: r3.__b = r3.__v.__k[0] }), n3.then(i4, i4);
       }, L2.prototype.componentWillUnmount = function() {
         this.t = [];
-      }, L2.prototype.render = function(n3, e6) {
+      }, L2.prototype.render = function(n3, e5) {
         if (this.__b) {
           if (this.__v.__k) {
             var r3 = document.createElement("div"), o3 = this.__v.__k[0].__c;
@@ -2337,38 +2352,38 @@ video {
           }
           this.__b = null;
         }
-        var i4 = e6.__a && y(g, null, n3.fallback);
-        return i4 && (i4.__u &= -33), [y(g, null, e6.__a ? null : n3.children), i4];
+        var i4 = e5.__a && y(g, null, n3.fallback);
+        return i4 && (i4.__u &= -33), [y(g, null, e5.__a ? null : n3.children), i4];
       };
-      V2 = function(n3, t3, e6) {
-        if (++e6[1] === e6[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
-          for (e6 = n3.u; e6; ) {
-            for (; e6.length > 3; )
-              e6.pop()();
-            if (e6[1] < e6[0])
+      V2 = function(n3, t3, e5) {
+        if (++e5[1] === e5[0] && n3.o.delete(t3), n3.props.revealOrder && ("t" !== n3.props.revealOrder[0] || !n3.o.size))
+          for (e5 = n3.u; e5; ) {
+            for (; e5.length > 3; )
+              e5.pop()();
+            if (e5[1] < e5[0])
               break;
-            n3.u = e6 = e6[2];
+            n3.u = e5 = e5[2];
           }
       };
       (M2.prototype = new b()).__a = function(n3) {
-        var t3 = this, e6 = U(t3.__v), r3 = t3.o.get(n3);
+        var t3 = this, e5 = U(t3.__v), r3 = t3.o.get(n3);
         return r3[0]++, function(u3) {
           var o3 = function() {
             t3.props.revealOrder ? (r3.push(u3), V2(t3, n3, r3)) : u3();
           };
-          e6 ? e6(o3) : o3();
+          e5 ? e5(o3) : o3();
         };
       }, M2.prototype.render = function(n3) {
         this.u = null, this.o = /* @__PURE__ */ new Map();
-        var t3 = $(n3.children);
+        var t3 = H(n3.children);
         n3.revealOrder && "b" === n3.revealOrder[0] && t3.reverse();
-        for (var e6 = t3.length; e6--; )
-          this.o.set(t3[e6], this.u = [1, 0, this.u]);
+        for (var e5 = t3.length; e5--; )
+          this.o.set(t3[e5], this.u = [1, 0, this.u]);
         return n3.children;
       }, M2.prototype.componentDidUpdate = M2.prototype.componentDidMount = function() {
         var n3 = this;
-        this.o.forEach(function(t3, e6) {
-          V2(n3, e6, t3);
+        this.o.forEach(function(t3, e5) {
+          V2(n3, e5, t3);
         });
       };
       z3 = "undefined" != typeof Symbol && Symbol.for && Symbol.for("react.element") || 60103;
@@ -2396,17 +2411,17 @@ video {
       en = l.vnode;
       l.vnode = function(n3) {
         "string" == typeof n3.type && function(n4) {
-          var t3 = n4.props, e6 = n4.type, u3 = {};
+          var t3 = n4.props, e5 = n4.type, u3 = {};
           for (var o3 in t3) {
             var i4 = t3[o3];
-            if (!("value" === o3 && "defaultValue" in t3 && null == i4 || Y && "children" === o3 && "noscript" === e6 || "class" === o3 || "className" === o3)) {
+            if (!("value" === o3 && "defaultValue" in t3 && null == i4 || Y && "children" === o3 && "noscript" === e5 || "class" === o3 || "className" === o3)) {
               var l3 = o3.toLowerCase();
-              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i4 ? i4 = "" : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e6 && "textarea" !== e6 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e6.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i4 && (i4 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i4;
+              "defaultValue" === o3 && "value" in t3 && null == t3.value ? o3 = "value" : "download" === o3 && true === i4 ? i4 = "" : "translate" === l3 && "no" === i4 ? i4 = false : "ondoubleclick" === l3 ? o3 = "ondblclick" : "onchange" !== l3 || "input" !== e5 && "textarea" !== e5 || $2(t3.type) ? "onfocus" === l3 ? o3 = "onfocusin" : "onblur" === l3 ? o3 = "onfocusout" : H2.test(o3) ? o3 = l3 : -1 === e5.indexOf("-") && B3.test(o3) ? o3 = o3.replace(Z, "-$&").toLowerCase() : null === i4 && (i4 = void 0) : l3 = o3 = "oninput", "oninput" === l3 && u3[o3 = l3] && (o3 = "oninputCapture"), u3[o3] = i4;
             }
           }
-          "select" == e6 && u3.multiple && Array.isArray(u3.value) && (u3.value = $(t3.children).forEach(function(n5) {
+          "select" == e5 && u3.multiple && Array.isArray(u3.value) && (u3.value = H(t3.children).forEach(function(n5) {
             n5.props.selected = -1 != u3.value.indexOf(n5.props.value);
-          })), "select" == e6 && null != u3.defaultValue && (u3.value = $(t3.children).forEach(function(n5) {
+          })), "select" == e5 && null != u3.defaultValue && (u3.value = H(t3.children).forEach(function(n5) {
             n5.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n5.props.value) : u3.defaultValue == n5.props.value;
           })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", tn)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n4.props = u3;
         }(n3), n3.$$typeof = z3, en && en(n3);
@@ -2418,8 +2433,8 @@ video {
       un = l.diffed;
       l.diffed = function(n3) {
         un && un(n3);
-        var t3 = n3.props, e6 = n3.__e;
-        null != e6 && "textarea" === n3.type && "value" in t3 && t3.value !== e6.value && (e6.value = null == t3.value ? "" : t3.value), nn = null;
+        var t3 = n3.props, e5 = n3.__e;
+        null != e5 && "textarea" === n3.type && "value" in t3 && t3.value !== e5.value && (e5.value = null == t3.value ? "" : t3.value), nn = null;
       };
       on = { ReactCurrentDispatcher: { current: { readContext: function(n3) {
         return nn.__n[n3.__c].props.value;
@@ -2432,9 +2447,9 @@ video {
         return n3(t3);
       };
       mn = g;
-      Sn = y2;
+      Sn = A2;
       gn = fn;
-      wn = { useState: h2, useId: V, useReducer: s2, useEffect: p2, useLayoutEffect: y2, useInsertionEffect: Sn, useTransition: bn, useDeferredValue: _n, useSyncExternalStore: Cn, startTransition: yn, useRef: _2, useImperativeHandle: A2, useMemo: F2, useCallback: T2, useContext: q2, useDebugValue: x2, version: "17.0.2", Children: A3, render: q3, hydrate: G, unmountComponentAtNode: hn, createPortal: j3, createElement: y, createContext: F, createFactory: cn, cloneElement: sn, createRef: _, Fragment: g, isValidElement: fn, isElement: gn, isFragment: an, findDOMNode: vn, Component: b, PureComponent: E2, memo: w3, forwardRef: N2, flushSync: pn, unstable_batchedUpdates: dn, StrictMode: mn, Suspense: L2, SuspenseList: M2, lazy: D2, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: on };
+      wn = { useState: p2, useId: g2, useReducer: y2, useEffect: _2, useLayoutEffect: A2, useInsertionEffect: Sn, useTransition: bn, useDeferredValue: _n, useSyncExternalStore: Cn, startTransition: yn, useRef: F2, useImperativeHandle: T2, useMemo: q2, useCallback: x2, useContext: P2, useDebugValue: V, version: "17.0.2", Children: A3, render: q3, hydrate: G2, unmountComponentAtNode: hn, createPortal: j3, createElement: y, createContext: G, createFactory: cn, cloneElement: sn, createRef: _, Fragment: g, isValidElement: fn, isElement: gn, isFragment: an, findDOMNode: vn, Component: b, PureComponent: E2, memo: w3, forwardRef: N2, flushSync: pn, unstable_batchedUpdates: dn, StrictMode: mn, Suspense: L2, SuspenseList: M2, lazy: D3, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: on };
     }
   });
 
@@ -2456,10 +2471,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91be9384-6fc1-4da5-bbbb-a78d7436b793/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b42120-940f-4d80-840b-cb2dde6ff733/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91be9384-6fc1-4da5-bbbb-a78d7436b793/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b42120-940f-4d80-840b-cb2dde6ff733/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2505,10 +2520,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/09177e92-22b7-4cdc-95e7-78321862f675/checkbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34c68466-5150-4db1-b8fb-8608a6dda9f2/checkbox.module.js
   var checkbox_module_default;
   var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/09177e92-22b7-4cdc-95e7-78321862f675/checkbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34c68466-5150-4db1-b8fb-8608a6dda9f2/checkbox.module.js"() {
       if (document.getElementById("e671155e7e") === null) {
         const element = document.createElement("style");
         element.id = "e671155e7e";
@@ -2608,12 +2623,12 @@ video {
       init_checkbox_module();
       Checkbox = createComponent(function(_a, ref) {
         var _b = _a, { children, disabled = false, onChange = noop, onKeyDown = noop, onValueChange = noop, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["children", "disabled", "onChange", "onKeyDown", "onValueChange", "propagateEscapeKeyDown", "value"]);
-        const handleChange = T2(function(event) {
+        const handleChange = x2(function(event) {
           onChange(event);
           const newValue = event.currentTarget.checked === true;
           onValueChange(newValue);
         }, [onChange, onValueChange]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (propagateEscapeKeyDown === false) {
@@ -2641,10 +2656,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/18691402-f158-4596-92dc-2c1fdcb0c0d5/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48235073-ffae-4f6a-a7ac-9169473fbc1a/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/18691402-f158-4596-92dc-2c1fdcb0c0d5/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48235073-ffae-4f6a-a7ac-9169473fbc1a/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2750,7 +2765,7 @@ video {
   // node_modules/@create-figma-plugin/ui/lib/hooks/use-mouse-down-outside.js
   function useMouseDownOutside(options) {
     const { ref, onMouseDownOutside } = options;
-    p2(function() {
+    _2(function() {
       function handleBlur() {
         onMouseDownOutside();
       }
@@ -2779,12 +2794,12 @@ video {
   // node_modules/@create-figma-plugin/ui/lib/hooks/use-scrollable-menu.js
   function useScrollableMenu(options) {
     const { itemIdDataAttributeName, menuElementRef, selectedId, setSelectedId } = options;
-    const getItemElements = T2(function() {
+    const getItemElements = x2(function() {
       return Array.from(getCurrentFromRef(menuElementRef).querySelectorAll(`[${itemIdDataAttributeName}]`)).filter(function(element) {
         return element.hasAttribute("disabled") === false;
       });
     }, [itemIdDataAttributeName, menuElementRef]);
-    const findIndexByItemId = T2(function(id) {
+    const findIndexByItemId = x2(function(id) {
       if (id === null) {
         return -1;
       }
@@ -2796,7 +2811,7 @@ video {
       }
       return index2;
     }, [getItemElements, itemIdDataAttributeName]);
-    const updateScrollPosition = T2(function(id) {
+    const updateScrollPosition = x2(function(id) {
       const itemElements = getItemElements();
       const index2 = findIndexByItemId(id);
       const selectedElement = itemElements[index2];
@@ -2812,7 +2827,7 @@ video {
         selectedElement.scrollIntoView();
       }
     }, [findIndexByItemId, getItemElements, menuElementRef]);
-    const handleScrollableMenuKeyDown = T2(function(event) {
+    const handleScrollableMenuKeyDown = x2(function(event) {
       const key = event.key;
       if (key === "ArrowDown" || key === "ArrowUp") {
         const itemElements = getItemElements();
@@ -2836,7 +2851,7 @@ video {
       selectedId,
       updateScrollPosition
     ]);
-    const handleScrollableMenuItemMouseMove = T2(function(event) {
+    const handleScrollableMenuItemMouseMove = x2(function(event) {
       const id = event.currentTarget.getAttribute(itemIdDataAttributeName);
       if (id !== selectedId) {
         setSelectedId(id);
@@ -2882,10 +2897,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ba4b613-7745-4328-83d2-0a4d2dd87db6/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ddf0be0-72da-4c17-b673-6c6ff41c845a/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7ba4b613-7745-4328-83d2-0a4d2dd87db6/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ddf0be0-72da-4c17-b673-6c6ff41c845a/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3141,14 +3156,14 @@ video {
         if (typeof icon === "string" && icon.length !== 1) {
           throw new Error(`String \`icon\` must be a single character: "${icon}"`);
         }
-        const rootElementRef = _2(null);
-        const menuElementRef = _2(null);
-        const [isMenuVisible, setIsMenuVisible] = h2(false);
+        const rootElementRef = F2(null);
+        const menuElementRef = F2(null);
+        const [isMenuVisible, setIsMenuVisible] = p2(false);
         const index2 = findOptionIndexByValue(options, value2);
         if (value2 !== null && index2 === -1) {
           throw new Error(`Invalid \`value\`: ${value2}`);
         }
-        const [selectedId, setSelectedId] = h2(index2 === -1 ? INVALID_ID : `${index2}`);
+        const [selectedId, setSelectedId] = p2(index2 === -1 ? INVALID_ID : `${index2}`);
         const children = typeof options[index2] === "undefined" ? "" : getDropdownOptionValue(options[index2]);
         const { handleScrollableMenuKeyDown, handleScrollableMenuItemMouseMove } = useScrollableMenu({
           itemIdDataAttributeName: ITEM_ID_DATA_ATTRIBUTE_NAME,
@@ -3156,22 +3171,22 @@ video {
           selectedId,
           setSelectedId
         });
-        const triggerRootBlur = T2(function() {
+        const triggerRootBlur = x2(function() {
           getCurrentFromRef(rootElementRef).blur();
         }, []);
-        const triggerRootFocus = T2(function() {
+        const triggerRootFocus = x2(function() {
           getCurrentFromRef(rootElementRef).focus();
         }, []);
-        const triggerMenuUpdateLayout = T2(function(selectedId2) {
+        const triggerMenuUpdateLayout = x2(function(selectedId2) {
           const rootElement = getCurrentFromRef(rootElementRef);
           const menuElement = getCurrentFromRef(menuElementRef);
           updateMenuElementLayout(rootElement, menuElement, selectedId2);
         }, []);
-        const triggerMenuHide = T2(function() {
+        const triggerMenuHide = x2(function() {
           setIsMenuVisible(false);
           setSelectedId(INVALID_ID);
         }, []);
-        const triggerMenuShow = T2(function() {
+        const triggerMenuShow = x2(function() {
           if (isMenuVisible === true) {
             return;
           }
@@ -3188,7 +3203,7 @@ video {
           setSelectedId(newSelectedId);
           triggerMenuUpdateLayout(newSelectedId);
         }, [isMenuVisible, options, selectedId, triggerMenuUpdateLayout, value2]);
-        const handleRootKeyDown = T2(function(event) {
+        const handleRootKeyDown = x2(function(event) {
           onKeyDown(event);
           const key = event.key;
           if (key === "ArrowUp" || key === "ArrowDown") {
@@ -3247,16 +3262,16 @@ video {
           triggerMenuShow,
           triggerRootBlur
         ]);
-        const handleRootMouseDown = T2(function(event) {
+        const handleRootMouseDown = x2(function(event) {
           onMouseDown(event);
           if (isMenuVisible === false) {
             triggerMenuShow();
           }
         }, [isMenuVisible, onMouseDown, triggerMenuShow]);
-        const handleMenuMouseDown = T2(function(event) {
+        const handleMenuMouseDown = x2(function(event) {
           event.stopPropagation();
         }, []);
-        const handleOptionChange = T2(function(event) {
+        const handleOptionChange = x2(function(event) {
           onChange(event);
           const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
           if (id === null) {
@@ -3268,11 +3283,11 @@ video {
           triggerRootFocus();
           triggerMenuHide();
         }, [onChange, onValueChange, options, triggerMenuHide, triggerRootFocus]);
-        const handleSelectedOptionClick = T2(function() {
+        const handleSelectedOptionClick = x2(function() {
           triggerRootFocus();
           triggerMenuHide();
         }, [triggerMenuHide, triggerRootFocus]);
-        const handleMouseDownOutside = T2(function() {
+        const handleMouseDownOutside = x2(function() {
           if (isMenuVisible === false) {
             return;
           }
@@ -3283,7 +3298,7 @@ video {
           onMouseDownOutside: handleMouseDownOutside,
           ref: rootElementRef
         });
-        p2(function() {
+        _2(function() {
           function handleWindowScroll() {
             if (isMenuVisible === false) {
               return;
@@ -3296,7 +3311,7 @@ video {
             window.removeEventListener("scroll", handleWindowScroll);
           };
         }, [isMenuVisible, triggerMenuHide, triggerRootFocus]);
-        const refCallback = T2(function(rootElement) {
+        const refCallback = x2(function(rootElement) {
           rootElementRef.current = rootElement;
           if (ref === null) {
             return;
@@ -3359,10 +3374,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9412a9d-ad86-447e-84cb-fa8678a4527f/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b9e787c-f61a-4543-90bf-a4e1ff578b87/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c9412a9d-ad86-447e-84cb-fa8678a4527f/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b9e787c-f61a-4543-90bf-a4e1ff578b87/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3414,7 +3429,7 @@ video {
       init_icon_button_module();
       IconButton = createComponent(function(_a, ref) {
         var _b = _a, { children, disabled = false, onClick, onKeyDown = noop, propagateEscapeKeyDown = true } = _b, rest = __objRest(_b, ["children", "disabled", "onClick", "onKeyDown", "propagateEscapeKeyDown"]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (propagateEscapeKeyDown === false) {
@@ -3432,10 +3447,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec1ccbb7-2a87-4926-a905-111e7c5dee30/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d7f22592-eecd-47b3-aeaf-fdee87a79935/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ec1ccbb7-2a87-4926-a905-111e7c5dee30/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d7f22592-eecd-47b3-aeaf-fdee87a79935/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -3493,10 +3508,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9046875d-06dc-4261-9002-68fece5aa7b8/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3034dc0b-3ddb-463e-864c-e656353acdbb/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9046875d-06dc-4261-9002-68fece5aa7b8/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3034dc0b-3ddb-463e-864c-e656353acdbb/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3572,13 +3587,13 @@ video {
         if (minimum >= maximum) {
           throw new Error("`minimum` must be less than `maximum`");
         }
-        const handleInput = T2(function(event) {
+        const handleInput = x2(function(event) {
           onInput(event);
           const value3 = event.currentTarget.value;
           onValueInput(value3);
           onNumericValueInput(parseFloat(value3));
         }, [onInput, onNumericValueInput, onValueInput]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (propagateEscapeKeyDown === false) {
@@ -3600,10 +3615,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4acf464c-4ee4-4de9-9c06-ed8337de1ae2/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a81b9e52-c2b9-4139-aeec-411d9370ad0f/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4acf464c-4ee4-4de9-9c06-ed8337de1ae2/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a81b9e52-c2b9-4139-aeec-411d9370ad0f/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -3657,7 +3672,7 @@ video {
       init_tabs_module();
       Tabs = createComponent(function(_a, ref) {
         var _b = _a, { onChange = noop, onKeyDown = noop, onValueChange = noop, options, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["onChange", "onKeyDown", "onValueChange", "options", "propagateEscapeKeyDown", "value"]);
-        const handleChange = T2(function(event) {
+        const handleChange = x2(function(event) {
           onChange(event);
           const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
           if (id === null) {
@@ -3666,7 +3681,7 @@ video {
           const newValue = options[parseInt(id, 10)].value;
           onValueChange(newValue);
         }, [onChange, onValueChange, options]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (propagateEscapeKeyDown === false) {
@@ -3750,7 +3765,7 @@ video {
         g: green2 / 255,
         r: red2 / 255
       };
-    } catch (e6) {
+    } catch (e5) {
       return null;
     }
   }
@@ -3997,7 +4012,7 @@ video {
     }
     try {
       return rgbHex(Math.round(r3 * 255), Math.round(g4 * 255), Math.round(b3 * 255)).toUpperCase();
-    } catch (e6) {
+    } catch (e5) {
       return null;
     }
   }
@@ -4112,9 +4127,9 @@ video {
       EMPTY_STRING = "";
       RawTextbox = createComponent(function(_a, ref) {
         var _b = _a, { disabled = false, onBlur = noop, onFocus = noop, onInput = noop, onKeyDown = noop, onMouseDown = noop, onValueInput = noop, password = false, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, spellCheck = false, validateOnBlur, value: value2 } = _b, rest = __objRest(_b, ["disabled", "onBlur", "onFocus", "onInput", "onKeyDown", "onMouseDown", "onValueInput", "password", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "spellCheck", "validateOnBlur", "value"]);
-        const inputElementRef = _2(null);
-        const [originalValue, setOriginalValue] = h2(EMPTY_STRING);
-        const setTextboxValue = T2(function(value3) {
+        const inputElementRef = F2(null);
+        const [originalValue, setOriginalValue] = p2(EMPTY_STRING);
+        const setTextboxValue = x2(function(value3) {
           const inputElement = getCurrentFromRef(inputElementRef);
           inputElement.value = value3;
           const inputEvent = new window.Event("input", {
@@ -4123,7 +4138,7 @@ video {
           });
           inputElement.dispatchEvent(inputEvent);
         }, []);
-        const handleBlur = T2(function(event) {
+        const handleBlur = x2(function(event) {
           onBlur(event);
           if (typeof validateOnBlur !== "undefined") {
             const result = validateOnBlur(value2);
@@ -4142,17 +4157,17 @@ video {
           }
           setOriginalValue(EMPTY_STRING);
         }, [onBlur, originalValue, setTextboxValue, validateOnBlur, value2]);
-        const handleFocus = T2(function(event) {
+        const handleFocus = x2(function(event) {
           onFocus(event);
           setOriginalValue(value2);
           event.currentTarget.select();
         }, [onFocus, value2]);
-        const handleInput = T2(function(event) {
+        const handleInput = x2(function(event) {
           onInput(event);
           const newValue = event.currentTarget.value;
           onValueInput(newValue);
         }, [onInput, onValueInput]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (revertOnEscapeKeyDown === true) {
@@ -4177,14 +4192,14 @@ video {
           setTextboxValue,
           value2
         ]);
-        const handleMouseDown = T2(function(event) {
+        const handleMouseDown = x2(function(event) {
           onMouseDown(event);
           if (value2 === MIXED_STRING) {
             event.preventDefault();
             event.currentTarget.select();
           }
         }, [onMouseDown, value2]);
-        const refCallback = T2(function(inputElement) {
+        const refCallback = x2(function(inputElement) {
           inputElementRef.current = inputElement;
           if (ref === null) {
             return;
@@ -4200,10 +4215,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b5b0522-b1d3-48f7-abbb-1ba10850092d/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/37f5477b-666c-4fb0-b23c-f29197893b12/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b5b0522-b1d3-48f7-abbb-1ba10850092d/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/37f5477b-666c-4fb0-b23c-f29197893b12/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4327,10 +4342,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91a1e403-3e73-45b2-8089-0685b66e17e7/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6220cf71-015d-4952-8c43-afea735471f7/menu.module.js
   var menu_module_default2;
   var init_menu_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/91a1e403-3e73-45b2-8089-0685b66e17e7/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6220cf71-015d-4952-8c43-afea735471f7/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -4433,10 +4448,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fce91c88-964e-470d-8328-295a912134d4/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f3b3e3d-fb92-4a5e-8918-b8cb5c5ca0c4/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fce91c88-964e-470d-8328-295a912134d4/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f3b3e3d-fb92-4a5e-8918-b8cb5c5ca0c4/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4529,10 +4544,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0605e8-2505-4764-b844-0881c0345719/textbox-autocomplete.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7c53a64-305d-4815-8114-b48049fd8270/textbox-autocomplete.module.js
   var textbox_autocomplete_module_default;
   var init_textbox_autocomplete_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/1e0605e8-2505-4764-b844-0881c0345719/textbox-autocomplete.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7c53a64-305d-4815-8114-b48049fd8270/textbox-autocomplete.module.js"() {
       if (document.getElementById("b1ea8b97d3") === null) {
         const element = document.createElement("style");
         element.id = "b1ea8b97d3";
@@ -4717,22 +4732,22 @@ video {
         if (typeof icon === "string" && icon.length !== 1) {
           throw new Error(`String \`icon\` must be a single character: ${icon}`);
         }
-        const rootElementRef = _2(null);
-        const inputElementRef = _2(null);
-        const menuElementRef = _2(null);
-        const revertOnEscapeKeyDownRef = _2(false);
-        const [originalValue, setOriginalValue] = h2(value2);
-        const [editedValue, setEditedValue] = h2(EMPTY_STRING2);
-        const [isMenuVisible, setIsMenuVisible] = h2(false);
-        const [selectedId, setSelectedId] = h2(INVALID_ID);
+        const rootElementRef = F2(null);
+        const inputElementRef = F2(null);
+        const menuElementRef = F2(null);
+        const revertOnEscapeKeyDownRef = F2(false);
+        const [originalValue, setOriginalValue] = p2(value2);
+        const [editedValue, setEditedValue] = p2(EMPTY_STRING2);
+        const [isMenuVisible, setIsMenuVisible] = p2(false);
+        const [selectedId, setSelectedId] = p2(INVALID_ID);
         const options = filter3 === true ? filterOptions(createOptions(rest.options), value2, editedValue) : createOptions(rest.options);
-        const triggerTextboxSelect = T2(function() {
+        const triggerTextboxSelect = x2(function() {
           getCurrentFromRef(inputElementRef).select();
         }, []);
-        const triggerTextboxBlur = T2(function() {
+        const triggerTextboxBlur = x2(function() {
           getCurrentFromRef(inputElementRef).blur();
         }, []);
-        const triggerMenuUpdateScrollPosition = T2(function(id) {
+        const triggerMenuUpdateScrollPosition = x2(function(id) {
           const menuElement = getCurrentFromRef(menuElementRef);
           if (id === INVALID_ID) {
             menuElement.scrollTop = 0;
@@ -4752,7 +4767,7 @@ video {
             menuElement.scrollTop = offsetBottom - menuElement.offsetHeight;
           }
         }, []);
-        const updateSelectedId = T2(function(value3) {
+        const updateSelectedId = x2(function(value3) {
           const id = getIdByValue(options, value3);
           if (id === INVALID_ID) {
             setEditedValue(value3);
@@ -4760,7 +4775,7 @@ video {
           setSelectedId(id);
           triggerMenuUpdateScrollPosition(id);
         }, [options, triggerMenuUpdateScrollPosition]);
-        const updateTextboxValue = T2(function(value3) {
+        const updateTextboxValue = x2(function(value3) {
           const inputElement = getCurrentFromRef(inputElementRef);
           inputElement.value = value3;
           const inputEvent = new window.Event("input", {
@@ -4769,16 +4784,16 @@ video {
           });
           inputElement.dispatchEvent(inputEvent);
         }, []);
-        const triggerMenuHide = T2(function() {
+        const triggerMenuHide = x2(function() {
           setIsMenuVisible(false);
         }, []);
-        const triggerMenuShow = T2(function() {
+        const triggerMenuShow = x2(function() {
           updateMenuElementMaxHeight(getCurrentFromRef(rootElementRef), getCurrentFromRef(menuElementRef), top);
           setOriginalValue(value2);
           updateSelectedId(value2);
           setIsMenuVisible(true);
         }, [top, updateSelectedId, value2]);
-        const handleTextboxInput = T2(function(event) {
+        const handleTextboxInput = x2(function(event) {
           onInput(event);
           const newValue = event.currentTarget.value;
           updateSelectedId(newValue);
@@ -4792,7 +4807,7 @@ video {
           }
           triggerMenuShow();
         }, [isMenuVisible, onInput, onValueInput, triggerMenuShow, updateSelectedId]);
-        const handleTextboxKeyDown = T2(function(event) {
+        const handleTextboxKeyDown = x2(function(event) {
           onKeyDown(event);
           const inputElement = event.currentTarget;
           const key = event.key;
@@ -4883,7 +4898,7 @@ video {
           triggerTextboxSelect,
           updateTextboxValue
         ]);
-        const handleTextboxMouseDown = T2(function(event) {
+        const handleTextboxMouseDown = x2(function(event) {
           onMouseDown(event);
           if (isMenuVisible === true) {
             return;
@@ -4892,7 +4907,7 @@ video {
           triggerTextboxSelect();
           triggerMenuShow();
         }, [isMenuVisible, onMouseDown, triggerTextboxSelect, triggerMenuShow]);
-        const handleTextboxPaste = T2(function(event) {
+        const handleTextboxPaste = x2(function(event) {
           onPaste(event);
           if (strict === false) {
             return;
@@ -4906,7 +4921,7 @@ video {
           }
           event.preventDefault();
         }, [onPaste, options, strict]);
-        const handleOptionChange = T2(function(event) {
+        const handleOptionChange = x2(function(event) {
           onChange(event);
           const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
           if (id === null) {
@@ -4927,7 +4942,7 @@ video {
           triggerTextboxSelect,
           updateTextboxValue
         ]);
-        const handleOptionMouseMove = T2(function(event) {
+        const handleOptionMouseMove = x2(function(event) {
           const id = event.currentTarget.getAttribute(ITEM_ID_DATA_ATTRIBUTE_NAME);
           if (id === null) {
             throw new Error("`id` is `null`");
@@ -4937,7 +4952,7 @@ video {
           }
           setSelectedId(id);
         }, [selectedId]);
-        const handleMouseDownOutside = T2(function() {
+        const handleMouseDownOutside = x2(function() {
           if (isMenuVisible === false) {
             return;
           }
@@ -4948,7 +4963,7 @@ video {
           onMouseDownOutside: handleMouseDownOutside,
           ref: rootElementRef
         });
-        p2(function() {
+        _2(function() {
           function handleWindowScroll() {
             if (isMenuVisible === false) {
               return;
@@ -4961,7 +4976,7 @@ video {
             window.removeEventListener("scroll", handleWindowScroll);
           };
         }, [isMenuVisible, triggerMenuHide, triggerTextboxSelect]);
-        const refCallback = T2(function(inputElement) {
+        const refCallback = x2(function(inputElement) {
           inputElementRef.current = inputElement;
           if (ref === null) {
             return;
@@ -5115,10 +5130,10 @@ video {
         if (typeof minimum !== "undefined" && typeof maximum !== "undefined" && minimum >= maximum) {
           throw new Error("`minimum` must be less than `maximum`");
         }
-        const inputElementRef = _2(null);
-        const revertOnEscapeKeyDownRef = _2(false);
-        const [originalValue, setOriginalValue] = h2(EMPTY_STRING4);
-        const setInputElementValue = T2(function(value3) {
+        const inputElementRef = F2(null);
+        const revertOnEscapeKeyDownRef = F2(false);
+        const [originalValue, setOriginalValue] = p2(EMPTY_STRING4);
+        const setInputElementValue = x2(function(value3) {
           const inputElement = getCurrentFromRef(inputElementRef);
           inputElement.value = value3;
           const inputEvent = new window.Event("input", {
@@ -5127,7 +5142,7 @@ video {
           });
           inputElement.dispatchEvent(inputEvent);
         }, []);
-        const handleBlur = T2(function(event) {
+        const handleBlur = x2(function(event) {
           onBlur(event);
           if (revertOnEscapeKeyDownRef.current === true) {
             revertOnEscapeKeyDownRef.current = false;
@@ -5168,19 +5183,19 @@ video {
           }
           setOriginalValue(EMPTY_STRING4);
         }, [onBlur, originalValue, setInputElementValue, suffix, validateOnBlur, value2]);
-        const handleFocus = T2(function(event) {
+        const handleFocus = x2(function(event) {
           onFocus(event);
           setOriginalValue(value2);
           event.currentTarget.select();
         }, [onFocus, value2]);
-        const handleInput = T2(function(event) {
+        const handleInput = x2(function(event) {
           onInput(event);
           const newValue = event.currentTarget.value;
           onValueInput(newValue);
           const evaluatedValue = evaluateValue(newValue, suffix);
           onNumericValueInput(evaluatedValue);
         }, [onInput, onNumericValueInput, onValueInput, suffix]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           const key = event.key;
           if (key === "Escape") {
@@ -5267,14 +5282,14 @@ video {
           suffix,
           value2
         ]);
-        const handleMouseDown = T2(function(event) {
+        const handleMouseDown = x2(function(event) {
           onMouseDown(event);
           if (value2 === MIXED_STRING) {
             event.preventDefault();
             event.currentTarget.select();
           }
         }, [onMouseDown, value2]);
-        const handlePaste = T2(function(event) {
+        const handlePaste = x2(function(event) {
           if (event.clipboardData === null) {
             throw new Error("`event.clipboardData` is `null`");
           }
@@ -5285,7 +5300,7 @@ video {
             event.preventDefault();
           }
         }, [integer, suffix]);
-        const refCallback = T2(function(inputElement) {
+        const refCallback = x2(function(inputElement) {
           inputElementRef.current = inputElement;
           if (ref === null) {
             return;
@@ -5389,10 +5404,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3146bc71-0b8d-455e-b8f8-67bade83f8df/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fd4762-9f8b-4050-87d0-87759c95861d/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3146bc71-0b8d-455e-b8f8-67bade83f8df/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fd4762-9f8b-4050-87d0-87759c95861d/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -5565,11 +5580,11 @@ video {
       EMPTY_STRING5 = "";
       TextboxColor = createComponent(function(_a, ref) {
         var _b = _a, { disabled = false, hexColor: hexColor2, hexColorPlaceholder, onHexColorInput = noop, onHexColorKeyDown = noop, onHexColorValueInput = noop, onOpacityInput = noop, onOpacityKeyDown = noop, onOpacityNumericValueInput = noop, onOpacityValueInput = noop, onRgbaColorValueInput = noop, opacity, opacityPlaceholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, variant } = _b, rest = __objRest(_b, ["disabled", "hexColor", "hexColorPlaceholder", "onHexColorInput", "onHexColorKeyDown", "onHexColorValueInput", "onOpacityInput", "onOpacityKeyDown", "onOpacityNumericValueInput", "onOpacityValueInput", "onRgbaColorValueInput", "opacity", "opacityPlaceholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "variant"]);
-        const hexColorInputElementRef = _2(null);
-        const opacityInputElementRef = _2(null);
-        const revertOnEscapeKeyDownRef = _2(false);
-        const [originalHexColor, setOriginalHexColor] = h2(EMPTY_STRING5);
-        const setHexColorInputElementValue = T2(function(value2) {
+        const hexColorInputElementRef = F2(null);
+        const opacityInputElementRef = F2(null);
+        const revertOnEscapeKeyDownRef = F2(false);
+        const [originalHexColor, setOriginalHexColor] = p2(EMPTY_STRING5);
+        const setHexColorInputElementValue = x2(function(value2) {
           const inputElement = getCurrentFromRef(hexColorInputElementRef);
           inputElement.value = value2;
           const inputEvent = new window.Event("input", {
@@ -5578,15 +5593,15 @@ video {
           });
           inputElement.dispatchEvent(inputEvent);
         }, []);
-        const handleHexColorSelectorFocus = T2(function(event) {
+        const handleHexColorSelectorFocus = x2(function(event) {
           const hexColor3 = event.currentTarget.value.slice(1).toUpperCase();
           setOriginalHexColor(hexColor3);
         }, []);
-        const handleHexColorSelectorInput = T2(function(event) {
+        const handleHexColorSelectorInput = x2(function(event) {
           const hexColor3 = event.currentTarget.value.slice(1).toUpperCase();
           setHexColorInputElementValue(hexColor3);
         }, [setHexColorInputElementValue]);
-        const handleHexColorSelectorKeyDown = T2(function(event) {
+        const handleHexColorSelectorKeyDown = x2(function(event) {
           if (event.key !== "Escape") {
             return;
           }
@@ -5605,7 +5620,7 @@ video {
           revertOnEscapeKeyDown,
           setHexColorInputElementValue
         ]);
-        const handleHexColorBlur = T2(function() {
+        const handleHexColorBlur = x2(function() {
           if (revertOnEscapeKeyDownRef.current === true) {
             revertOnEscapeKeyDownRef.current = false;
             return;
@@ -5626,11 +5641,11 @@ video {
           }
           setOriginalHexColor(EMPTY_STRING5);
         }, [hexColor2, originalHexColor, setHexColorInputElementValue]);
-        const handleHexColorFocus = T2(function(event) {
+        const handleHexColorFocus = x2(function(event) {
           setOriginalHexColor(hexColor2);
           event.currentTarget.select();
         }, [hexColor2]);
-        const handleHexColorInput = T2(function(event) {
+        const handleHexColorInput = x2(function(event) {
           onHexColorInput(event);
           const newHexColor = event.currentTarget.value;
           onHexColorValueInput(newHexColor);
@@ -5646,7 +5661,7 @@ video {
           const rgba = createRgbaColor(normalizedHexColor2, opacity);
           onRgbaColorValueInput(rgba);
         }, [onHexColorInput, onHexColorValueInput, onRgbaColorValueInput, opacity]);
-        const handleHexColorKeyDown = T2(function(event) {
+        const handleHexColorKeyDown = x2(function(event) {
           onHexColorKeyDown(event);
           const key = event.key;
           if (key === "Escape") {
@@ -5682,22 +5697,22 @@ video {
           revertOnEscapeKeyDown,
           setHexColorInputElementValue
         ]);
-        const handleHexColorMouseUp = T2(function(event) {
+        const handleHexColorMouseUp = x2(function(event) {
           if (hexColor2 !== MIXED_STRING) {
             return;
           }
           event.preventDefault();
         }, [hexColor2]);
-        const handleOpacityInput = T2(function(event) {
+        const handleOpacityInput = x2(function(event) {
           onOpacityInput(event);
           const newOpacity = event.currentTarget.value;
           const rgba = createRgbaColor(hexColor2, newOpacity);
           onRgbaColorValueInput(rgba);
         }, [hexColor2, onOpacityInput, onRgbaColorValueInput]);
-        const handleOpacityNumericValueInput = T2(function(opacity2) {
+        const handleOpacityNumericValueInput = x2(function(opacity2) {
           onOpacityNumericValueInput(opacity2 === null || opacity2 === MIXED_NUMBER ? opacity2 : opacity2 / 100);
         }, [onOpacityNumericValueInput]);
-        const validateOpacityOnBlur = T2(function(opacity2) {
+        const validateOpacityOnBlur = x2(function(opacity2) {
           return opacity2 !== null;
         }, []);
         const parsedOpacity = parseOpacity(opacity);
@@ -5732,10 +5747,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68ec7756-bb31-4758-9f5e-e859dd237793/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7563c8f8-1003-4d11-aaf7-6f572bb41603/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/68ec7756-bb31-4758-9f5e-e859dd237793/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7563c8f8-1003-4d11-aaf7-6f572bb41603/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5834,9 +5849,9 @@ video {
       EMPTY_STRING6 = "";
       TextboxMultiline = createComponent(function(_a, ref) {
         var _b = _a, { grow = false, disabled = false, onBlur = noop, onFocus = noop, onInput = noop, onKeyDown = noop, onValueInput = noop, onMouseDown = noop, placeholder, propagateEscapeKeyDown = true, revertOnEscapeKeyDown = false, rows = 3, spellCheck = false, validateOnBlur, variant, value: value2 } = _b, rest = __objRest(_b, ["grow", "disabled", "onBlur", "onFocus", "onInput", "onKeyDown", "onValueInput", "onMouseDown", "placeholder", "propagateEscapeKeyDown", "revertOnEscapeKeyDown", "rows", "spellCheck", "validateOnBlur", "variant", "value"]);
-        const textAreaElementRef = _2(null);
-        const [originalValue, setOriginalValue] = h2(EMPTY_STRING6);
-        const setTextAreaElementValue = T2(function(value3) {
+        const textAreaElementRef = F2(null);
+        const [originalValue, setOriginalValue] = p2(EMPTY_STRING6);
+        const setTextAreaElementValue = x2(function(value3) {
           const textAreaElement = getCurrentFromRef(textAreaElementRef);
           textAreaElement.value = value3;
           const inputEvent = new window.Event("input", {
@@ -5845,7 +5860,7 @@ video {
           });
           textAreaElement.dispatchEvent(inputEvent);
         }, []);
-        const handleBlur = T2(function(event) {
+        const handleBlur = x2(function(event) {
           onBlur(event);
           if (typeof validateOnBlur !== "undefined") {
             const result = validateOnBlur(value2);
@@ -5864,17 +5879,17 @@ video {
           }
           setOriginalValue(EMPTY_STRING6);
         }, [onBlur, originalValue, setTextAreaElementValue, validateOnBlur, value2]);
-        const handleFocus = T2(function(event) {
+        const handleFocus = x2(function(event) {
           onFocus(event);
           setOriginalValue(value2);
           event.currentTarget.select();
         }, [onFocus, value2]);
-        const handleInput = T2(function(event) {
+        const handleInput = x2(function(event) {
           onInput(event);
           const newValue = event.currentTarget.value;
           onValueInput(newValue);
         }, [onInput, onValueInput]);
-        const handleKeyDown = T2(function(event) {
+        const handleKeyDown = x2(function(event) {
           onKeyDown(event);
           if (event.key === "Escape") {
             if (revertOnEscapeKeyDown === true) {
@@ -5899,14 +5914,14 @@ video {
           setTextAreaElementValue,
           value2
         ]);
-        const handleMouseDown = T2(function(event) {
+        const handleMouseDown = x2(function(event) {
           onMouseDown(event);
           if (value2 === MIXED_STRING) {
             event.preventDefault();
             event.currentTarget.select();
           }
         }, [onMouseDown, value2]);
-        const refCallback = T2(function(textAreaElement) {
+        const refCallback = x2(function(textAreaElement) {
           textAreaElementRef.current = textAreaElement;
           if (ref === null) {
             return;
@@ -5934,10 +5949,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6ea4e25-5680-4961-a2ec-050e13d4d9bd/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef52ea50-a037-4c70-aa9a-aaf2a57e9cf9/textbox.module.js
   var textbox_module_default3;
   var init_textbox_module3 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b6ea4e25-5680-4961-a2ec-050e13d4d9bd/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef52ea50-a037-4c70-aa9a-aaf2a57e9cf9/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6030,10 +6045,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55eebcfb-b13c-4c5f-b2c3-ecc91f21146c/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb92b76b-8fb7-4105-bb52-f2f504a5dfd5/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/55eebcfb-b13c-4c5f-b2c3-ecc91f21146c/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb92b76b-8fb7-4105-bb52-f2f504a5dfd5/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -6114,10 +6129,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6ed720d-43d3-4802-83f1-7edc2ed80e9c/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9de7c4a9-1514-4509-9bb0-b43c50200419/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/c6ed720d-43d3-4802-83f1-7edc2ed80e9c/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9de7c4a9-1514-4509-9bb0-b43c50200419/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -6146,10 +6161,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7697a9b2-be68-4bd4-a824-dae17e581281/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01e7e961-7174-4861-ba82-417f5bc404a0/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7697a9b2-be68-4bd4-a824-dae17e581281/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01e7e961-7174-4861-ba82-417f5bc404a0/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -6190,9 +6205,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc081b69-a5bf-491a-855b-d80018e2b805/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5da9825-eaaa-4162-97db-dd82d83852b7/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/fc081b69-a5bf-491a-855b-d80018e2b805/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5da9825-eaaa-4162-97db-dd82d83852b7/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -6302,7 +6317,7 @@ svg {
   // node_modules/@create-figma-plugin/ui/lib/utilities/render.js
   function render(Plugin2) {
     return function(rootNode2, props) {
-      q(y(Plugin2, __spreadValues({}, props)), rootNode2);
+      B(y(Plugin2, __spreadValues({}, props)), rootNode2);
     };
   }
   var init_render = __esm({
@@ -6474,19 +6489,19 @@ svg {
     return { r: r3, g: g4, b: b3, a: a3 };
   }
   function labF(t3) {
-    const e6 = 216 / 24389;
+    const e5 = 216 / 24389;
     const kappa = 24389 / 27;
-    if (t3 > e6) {
+    if (t3 > e5) {
       return Math.pow(t3, 1 / 3);
     } else {
       return (kappa * t3 + 16) / 116;
     }
   }
   function labInvf(ft) {
-    const e6 = 216 / 24389;
+    const e5 = 216 / 24389;
     const kappa = 24389 / 27;
     const ft3 = ft * ft * ft;
-    if (ft3 > e6) {
+    if (ft3 > e5) {
       return ft3;
     } else {
       return (116 * ft - 16) / kappa;
@@ -6858,14 +6873,14 @@ svg {
           const p1 = 5e4 / 13 * eHue * viewingConditions.nc * viewingConditions.ncb;
           const t3 = p1 * Math.sqrt(a3 * a3 + b3 * b3) / (u3 + 0.305);
           const alpha = Math.pow(t3, 0.9) * Math.pow(1.64 - Math.pow(0.29, viewingConditions.n), 0.73);
-          const C3 = alpha * Math.sqrt(J2 / 100);
-          const M3 = C3 * viewingConditions.fLRoot;
+          const C4 = alpha * Math.sqrt(J2 / 100);
+          const M3 = C4 * viewingConditions.fLRoot;
           const s3 = 50 * Math.sqrt(alpha * viewingConditions.c / (viewingConditions.aw + 4));
           const jstar = (1 + 100 * 7e-3) * J2 / (1 + 7e-3 * J2);
           const mstar = Math.log(1 + 0.0228 * M3) / 0.0228;
           const astar = mstar * Math.cos(hueRadians);
           const bstar = mstar * Math.sin(hueRadians);
-          return new _Cam16(hue, C3, J2, Q3, M3, s3, jstar, astar, bstar);
+          return new _Cam16(hue, C4, J2, Q3, M3, s3, jstar, astar, bstar);
         }
         /// XYZ representation of CAM16 seen in [viewingConditions].
         xyzInViewingConditions(viewingConditions) {
@@ -7855,8 +7870,8 @@ svg {
          * constraint between two colors. One of them must be the color being
          * constructed.
          */
-        constructor(name310, palette, tone, isBackground, background, secondBackground, contrastCurve, toneDeltaPair) {
-          this.name = name310;
+        constructor(name314, palette, tone, isBackground, background, secondBackground, contrastCurve, toneDeltaPair) {
+          this.name = name314;
           this.palette = palette;
           this.tone = tone;
           this.isBackground = isBackground;
@@ -7866,13 +7881,13 @@ svg {
           this.toneDeltaPair = toneDeltaPair;
           this.hctCache = /* @__PURE__ */ new Map();
           if (!background && secondBackground) {
-            throw new Error(`Color ${name310} has secondBackgrounddefined, but background is not defined.`);
+            throw new Error(`Color ${name314} has secondBackgrounddefined, but background is not defined.`);
           }
           if (!background && contrastCurve) {
-            throw new Error(`Color ${name310} has contrastCurvedefined, but background is not defined.`);
+            throw new Error(`Color ${name314} has contrastCurvedefined, but background is not defined.`);
           }
           if (background && !contrastCurve) {
-            throw new Error(`Color ${name310} has backgrounddefined, but contrastCurve is not defined.`);
+            throw new Error(`Color ${name314} has backgrounddefined, but contrastCurve is not defined.`);
           }
         }
         /**
@@ -9519,8 +9534,8 @@ svg {
           return util2.objectValues(filtered);
         };
         util2.objectValues = (obj) => {
-          return util2.objectKeys(obj).map(function(e6) {
-            return obj[e6];
+          return util2.objectKeys(obj).map(function(e5) {
+            return obj[e5];
           });
         };
         util2.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object) => {
@@ -12221,13 +12236,13 @@ svg {
             const me = this;
             return OK(async function(...args) {
               const error = new ZodError([]);
-              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e6) => {
-                error.addIssue(makeArgsIssue(args, e6));
+              const parsedArgs = await me._def.args.parseAsync(args, params).catch((e5) => {
+                error.addIssue(makeArgsIssue(args, e5));
                 throw error;
               });
               const result = await Reflect.apply(fn2, this, parsedArgs);
-              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e6) => {
-                error.addIssue(makeReturnsIssue(result, e6));
+              const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e5) => {
+                error.addIssue(makeReturnsIssue(result, e5));
                 throw error;
               });
               return parsedReturns;
@@ -14108,7 +14123,7 @@ svg {
               if (i4 >= o3.length)
                 return { done: true };
               return { done: false, value: o3[i4++] };
-            }, e: function e6(_e2) {
+            }, e: function e5(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -14121,7 +14136,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e6(_e3) {
+        }, e: function e5(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -15476,7 +15491,7 @@ svg {
           }
           var obj = JSON.parse(str);
           return primitives.includes(obj) || !!obj && _typeof2(obj) === "object";
-        } catch (e6) {
+        } catch (e5) {
         }
         return false;
       }
@@ -16975,22 +16990,22 @@ svg {
         }
         return checksum % 11 === digits2[9];
       }
-      function itItNameCheck(name310) {
+      function itItNameCheck(name314) {
         var vowelflag = false;
         var xflag = false;
         for (var i4 = 0; i4 < 3; i4++) {
-          if (!vowelflag && /[AEIOU]/.test(name310[i4])) {
+          if (!vowelflag && /[AEIOU]/.test(name314[i4])) {
             vowelflag = true;
-          } else if (!xflag && vowelflag && name310[i4] === "X") {
+          } else if (!xflag && vowelflag && name314[i4] === "X") {
             xflag = true;
           } else if (i4 > 0) {
             if (vowelflag && !xflag) {
-              if (!/[AEIOU]/.test(name310[i4])) {
+              if (!/[AEIOU]/.test(name314[i4])) {
                 return false;
               }
             }
             if (xflag) {
-              if (!/X/.test(name310[i4])) {
+              if (!/X/.test(name314[i4])) {
                 return false;
               }
             }
@@ -18330,7 +18345,7 @@ svg {
               if (i4 >= o3.length)
                 return { done: true };
               return { done: false, value: o3[i4++] };
-            }, e: function e6(_e2) {
+            }, e: function e5(_e2) {
               throw _e2;
             }, f: F4 };
           }
@@ -18343,7 +18358,7 @@ svg {
           var step = it.next();
           normalCompletion = step.done;
           return step;
-        }, e: function e6(_e3) {
+        }, e: function e5(_e3) {
           didErr = true;
           err = _e3;
         }, f: function f3() {
@@ -19658,6 +19673,7 @@ svg {
           }
         };
         const getState = () => state;
+        const getInitialState = () => initialState;
         const subscribe = (listener) => {
           listeners.add(listener);
           return () => listeners.delete(listener);
@@ -19670,8 +19686,8 @@ svg {
           }
           listeners.clear();
         };
-        const api = { setState, getState, subscribe, destroy };
-        state = createState(setState, getState, api);
+        const api = { setState, getState, getInitialState, subscribe, destroy };
+        const initialState = state = createState(setState, getState, api);
         return api;
       };
       createStore = (createState) => createState ? createStoreImpl(createState) : createStoreImpl;
@@ -19915,7 +19931,7 @@ svg {
   });
 
   // node_modules/zustand/esm/index.mjs
-  function useStore(api, selector = api.getState, equalityFn) {
+  function useStore(api, selector = identity, equalityFn) {
     if ((import_meta2.env ? import_meta2.env.MODE : void 0) !== "production" && equalityFn && !didWarnAboutEqualityFn) {
       console.warn(
         "[DEPRECATED] Use `createWithEqualityFn` instead of `create` or use `useStoreWithEqualityFn` instead of `useStore`. They can be imported from 'zustand/traditional'. https://github.com/pmndrs/zustand/discussions/1937"
@@ -19925,14 +19941,14 @@ svg {
     const slice = useSyncExternalStoreWithSelector(
       api.subscribe,
       api.getState,
-      api.getServerState || api.getState,
+      api.getServerState || api.getInitialState,
       selector,
       equalityFn
     );
     useDebugValue(slice);
     return slice;
   }
-  var import_with_selector, import_meta2, useDebugValue, useSyncExternalStoreWithSelector, didWarnAboutEqualityFn, createImpl, create;
+  var import_with_selector, import_meta2, useDebugValue, useSyncExternalStoreWithSelector, didWarnAboutEqualityFn, identity, createImpl, create;
   var init_esm = __esm({
     "node_modules/zustand/esm/index.mjs"() {
       init_vanilla();
@@ -19943,6 +19959,7 @@ svg {
       ({ useDebugValue } = wn);
       ({ useSyncExternalStoreWithSelector } = import_with_selector.default);
       didWarnAboutEqualityFn = false;
+      identity = (arg2) => arg2;
       createImpl = (createState) => {
         if ((import_meta2.env ? import_meta2.env.MODE : void 0) !== "production" && typeof createState !== "function") {
           console.warn(
@@ -19958,7 +19975,7 @@ svg {
     }
   });
 
-  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/extends.js
+  // node_modules/@babel/runtime/helpers/esm/extends.js
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
       for (var i4 = 1; i4 < arguments.length; i4++) {
@@ -19974,7 +19991,7 @@ svg {
     return _extends.apply(this, arguments);
   }
   var init_extends = __esm({
-    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/extends.js"() {
+    "node_modules/@babel/runtime/helpers/esm/extends.js"() {
     }
   });
 
@@ -20380,10 +20397,10 @@ svg {
               return type;
             }
             let message = 'Unknown type "' + typeName + '"';
-            const name310 = typeName.toLowerCase();
+            const name314 = typeName.toLowerCase();
             let otherName;
             for (otherName of typeList) {
-              if (otherName.toLowerCase() === name310) {
+              if (otherName.toLowerCase() === name314) {
                 message += '. Did you mean "' + otherName + '" ?';
                 break;
               }
@@ -20434,8 +20451,8 @@ svg {
             nConversions = 0;
           }
           function findTypeNames(value2) {
-            const matches = typeList.filter((name310) => {
-              const type = typeMap.get(name310);
+            const matches = typeList.filter((name314) => {
+              const type = typeMap.get(name314);
               return !type.isAny && type.test(value2);
             });
             if (matches.length) {
@@ -20464,9 +20481,9 @@ svg {
             let remainingSignatures;
             if (exact) {
               remainingSignatures = [];
-              let name310;
-              for (name310 in fn2.signatures) {
-                remainingSignatures.push(fn2._typedFunctionData.signatureMap.get(name310));
+              let name314;
+              for (name314 in fn2.signatures) {
+                remainingSignatures.push(fn2._typedFunctionData.signatureMap.get(name314));
               }
             } else {
               remainingSignatures = fn2._typedFunctionData.signatures;
@@ -20703,16 +20720,16 @@ svg {
             const typeSet = /* @__PURE__ */ new Set();
             signatures.forEach((signature) => {
               const paramSet = getTypeSetAtIndex(signature.params, index2);
-              let name310;
-              for (name310 of paramSet) {
-                typeSet.add(name310);
+              let name314;
+              for (name314 of paramSet) {
+                typeSet.add(name314);
               }
             });
             return typeSet.has("any") ? ["any"] : Array.from(typeSet);
           }
-          function createError(name310, args, signatures) {
+          function createError(name314, args, signatures) {
             let err, expected;
-            const _name = name310 || "unnamed";
+            const _name = name314 || "unnamed";
             let matchingSignatures = signatures;
             let index2;
             for (index2 = 0; index2 < args.length; index2++) {
@@ -21050,9 +21067,9 @@ svg {
               const typeSet1 = getTypeSetAtIndex(params1, i4);
               const typeSet2 = getTypeSetAtIndex(params2, i4);
               let overlap = false;
-              let name310;
-              for (name310 of typeSet2) {
-                if (typeSet1.has(name310)) {
+              let name314;
+              for (name314 of typeSet2) {
+                if (typeSet1.has(name314)) {
                   overlap = true;
                   break;
                 }
@@ -21137,7 +21154,7 @@ svg {
               }
             });
           }
-          function createTypedFunction(name310, rawSignaturesMap) {
+          function createTypedFunction(name314, rawSignaturesMap) {
             typed3.createCount++;
             if (Object.keys(rawSignaturesMap).length === 0) {
               throw new SyntaxError("No signatures provided");
@@ -21243,7 +21260,7 @@ svg {
                   return fns[i4].apply(this, arguments);
                 }
               }
-              return typed3.onMismatch(name310, arguments, signatures);
+              return typed3.onMismatch(name314, arguments, signatures);
             };
             function theTypedFn(arg0, arg1) {
               if (arguments.length === len0 && test00(arg0) && test01(arg1)) {
@@ -21268,7 +21285,7 @@ svg {
             }
             try {
               Object.defineProperty(theTypedFn, "name", {
-                value: name310
+                value: name314
               });
             } catch (err) {
             }
@@ -21279,8 +21296,8 @@ svg {
             };
             return theTypedFn;
           }
-          function _onMismatch(name310, args, signatures) {
-            throw createError(name310, args, signatures);
+          function _onMismatch(name314, args, signatures) {
+            throw createError(name314, args, signatures);
           }
           function initial(arr) {
             return slice(arr, 0, arr.length - 1);
@@ -21349,13 +21366,13 @@ svg {
             return nameSoFar;
           }
           function getObjectName(obj) {
-            let name310;
+            let name314;
             for (const key in obj) {
               if (Object.prototype.hasOwnProperty.call(obj, key) && (isTypedFunction(obj[key]) || typeof obj[key].signature === "string")) {
-                name310 = checkName(name310, obj[key].name);
+                name314 = checkName(name314, obj[key].name);
               }
             }
-            return name310;
+            return name314;
           }
           function mergeSignatures(dest, source) {
             let key;
@@ -21380,7 +21397,7 @@ svg {
           typed3 = function(maybeName) {
             const named = typeof maybeName === "string";
             const start = named ? 1 : 0;
-            let name310 = named ? maybeName : "";
+            let name314 = named ? maybeName : "";
             const allSignatures = {};
             for (let i4 = start; i4 < arguments.length; ++i4) {
               const item = arguments[i4];
@@ -21408,11 +21425,11 @@ svg {
                 throw err;
               }
               if (!named) {
-                name310 = checkName(name310, thisName);
+                name314 = checkName(name314, thisName);
               }
               mergeSignatures(allSignatures, theseSignatures);
             }
-            return createTypedFunction(name310 || "", allSignatures);
+            return createTypedFunction(name314 || "", allSignatures);
           };
           typed3.create = create2;
           typed3.createCount = saveTyped.createCount;
@@ -21547,25 +21564,11 @@ svg {
     } else if (isNaN(value2)) {
       return "NaN";
     }
-    var notation = "auto";
-    var precision;
-    var wordSize;
-    if (options) {
-      if (options.notation) {
-        notation = options.notation;
-      }
-      if (isNumber(options)) {
-        precision = options;
-      } else if (isNumber(options.precision)) {
-        precision = options.precision;
-      }
-      if (options.wordSize) {
-        wordSize = options.wordSize;
-        if (typeof wordSize !== "number") {
-          throw new Error('Option "wordSize" must be a number');
-        }
-      }
-    }
+    var {
+      notation,
+      precision,
+      wordSize
+    } = normalizeFormatOptions(options);
     switch (notation) {
       case "fixed":
         return toFixed(value2, precision);
@@ -21580,14 +21583,47 @@ svg {
       case "hex":
         return formatNumberToBase(value2, 16, wordSize);
       case "auto":
-        return toPrecision(value2, precision, options && options).replace(/((\.\d*?)(0+))($|e)/, function() {
+        return toPrecision(value2, precision, options).replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e6 = arguments[4];
-          return digits2 !== "." ? digits2 + e6 : e6;
+          var e5 = arguments[4];
+          return digits2 !== "." ? digits2 + e5 : e5;
         });
       default:
         throw new Error('Unknown notation "' + notation + '". Choose "auto", "exponential", "fixed", "bin", "oct", or "hex.');
     }
+  }
+  function normalizeFormatOptions(options) {
+    var notation = "auto";
+    var precision;
+    var wordSize;
+    if (options !== void 0) {
+      if (isNumber(options)) {
+        precision = options;
+      } else if (isBigNumber(options)) {
+        precision = options.toNumber();
+      } else if (isObject(options)) {
+        if (options.precision !== void 0) {
+          precision = _toNumberOrThrow(options.precision, () => {
+            throw new Error('Option "precision" must be a number or BigNumber');
+          });
+        }
+        if (options.wordSize !== void 0) {
+          wordSize = _toNumberOrThrow(options.wordSize, () => {
+            throw new Error('Option "wordSize" must be a number or BigNumber');
+          });
+        }
+        if (options.notation) {
+          notation = options.notation;
+        }
+      } else {
+        throw new Error("Unsupported type of options, number, BigNumber, or object expected");
+      }
+    }
+    return {
+      notation,
+      precision,
+      wordSize
+    };
   }
   function splitNumber(value2) {
     var match = String(value2).toLowerCase().match(/^(-?)(\d+\.?\d*)(e([+-]?\d+))?$/);
@@ -21621,20 +21657,20 @@ svg {
     }
     var split = splitNumber(value2);
     var rounded = roundDigits(split, precision);
-    var e6 = rounded.exponent;
+    var e5 = rounded.exponent;
     var c3 = rounded.coefficients;
-    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
+    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
     if (isNumber(precision)) {
-      while (precision > c3.length || e6 - newExp + 1 > c3.length) {
+      while (precision > c3.length || e5 - newExp + 1 > c3.length) {
         c3.push(0);
       }
     } else {
-      var missingZeros = Math.abs(e6 - newExp) - (c3.length - 1);
+      var missingZeros = Math.abs(e5 - newExp) - (c3.length - 1);
       for (var i4 = 0; i4 < missingZeros; i4++) {
         c3.push(0);
       }
     }
-    var expDiff = Math.abs(e6 - newExp);
+    var expDiff = Math.abs(e5 - newExp);
     var decimalIdx = 1;
     while (expDiff > 0) {
       decimalIdx++;
@@ -21642,7 +21678,7 @@ svg {
     }
     var decimals = c3.slice(decimalIdx).join("");
     var decimalVal = isNumber(precision) && decimals.length || decimals.match(/[1-9]/) ? "." + decimals : "";
-    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
+    var str = c3.slice(0, decimalIdx).join("") + decimalVal + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
     return rounded.sign + str;
   }
   function toFixed(value2, precision) {
@@ -21673,32 +21709,32 @@ svg {
     var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     var c3 = rounded.coefficients;
-    var e6 = rounded.exponent;
+    var e5 = rounded.exponent;
     if (c3.length < precision) {
       c3 = c3.concat(zeros(precision - c3.length));
     }
     var first = c3.shift();
-    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e6 >= 0 ? "+" : "") + e6;
+    return rounded.sign + first + (c3.length > 0 ? "." + c3.join("") : "") + "e" + (e5 >= 0 ? "+" : "") + e5;
   }
   function toPrecision(value2, precision, options) {
     if (isNaN(value2) || !isFinite(value2)) {
       return String(value2);
     }
-    var lowerExp = options && options.lowerExp !== void 0 ? options.lowerExp : -3;
-    var upperExp = options && options.upperExp !== void 0 ? options.upperExp : 5;
+    var lowerExp = _toNumberOrDefault(options === null || options === void 0 ? void 0 : options.lowerExp, -3);
+    var upperExp = _toNumberOrDefault(options === null || options === void 0 ? void 0 : options.upperExp, 5);
     var split = splitNumber(value2);
     var rounded = precision ? roundDigits(split, precision) : split;
     if (rounded.exponent < lowerExp || rounded.exponent >= upperExp) {
       return toExponential(value2, precision);
     } else {
       var c3 = rounded.coefficients;
-      var e6 = rounded.exponent;
+      var e5 = rounded.exponent;
       if (c3.length < precision) {
         c3 = c3.concat(zeros(precision - c3.length));
       }
-      c3 = c3.concat(zeros(e6 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
-      c3 = zeros(-e6).concat(c3);
-      var dot2 = e6 > 0 ? e6 : 0;
+      c3 = c3.concat(zeros(e5 - c3.length + 1 + (c3.length < precision ? precision - c3.length : 0)));
+      c3 = zeros(-e5).concat(c3);
+      var dot2 = e5 > 0 ? e5 : 0;
       if (dot2 < c3.length - 1) {
         c3.splice(dot2 + 1, 0, ".");
       }
@@ -21758,7 +21794,7 @@ svg {
     }
     if (isFinite(x4) && isFinite(y3)) {
       var diff2 = Math.abs(x4 - y3);
-      if (diff2 < DBL_EPSILON) {
+      if (diff2 <= DBL_EPSILON) {
         return true;
       } else {
         return diff2 <= Math.max(Math.abs(x4), Math.abs(y3)) * epsilon;
@@ -21770,6 +21806,24 @@ svg {
     var signx = x4 > 0 ? true : x4 < 0 ? false : 1 / x4 === Infinity;
     var signy = y3 > 0 ? true : y3 < 0 ? false : 1 / y3 === Infinity;
     return signx ^ signy ? -x4 : x4;
+  }
+  function _toNumberOrThrow(value2, onError) {
+    if (isNumber(value2)) {
+      return value2;
+    } else if (isBigNumber(value2)) {
+      return value2.toNumber();
+    } else {
+      onError();
+    }
+  }
+  function _toNumberOrDefault(value2, defaultValue) {
+    if (isNumber(value2)) {
+      return value2;
+    } else if (isBigNumber(value2)) {
+      return value2.toNumber();
+    } else {
+      return defaultValue;
+    }
   }
   var sign, log2, log10, log1p, cbrt, expm1, DBL_EPSILON, acosh, asinh, atanh, cosh, sinh, tanh;
   var init_number = __esm({
@@ -21830,8 +21884,8 @@ svg {
         return (Math.exp(x4) - Math.exp(-x4)) / 2;
       };
       tanh = Math.tanh || function(x4) {
-        var e6 = Math.exp(2 * x4);
-        return (e6 - 1) / (e6 + 1);
+        var e5 = Math.exp(2 * x4);
+        return (e5 - 1) / (e5 + 1);
       };
     }
   });
@@ -21877,25 +21931,11 @@ svg {
     if (!value2.isFinite()) {
       return value2.isNaN() ? "NaN" : value2.gt(0) ? "Infinity" : "-Infinity";
     }
-    var notation = "auto";
-    var precision;
-    var wordSize;
-    if (options !== void 0) {
-      if (options.notation) {
-        notation = options.notation;
-      }
-      if (typeof options === "number") {
-        precision = options;
-      } else if (options.precision !== void 0) {
-        precision = options.precision;
-      }
-      if (options.wordSize) {
-        wordSize = options.wordSize;
-        if (typeof wordSize !== "number") {
-          throw new Error('Option "wordSize" must be a number');
-        }
-      }
-    }
+    var {
+      notation,
+      precision,
+      wordSize
+    } = normalizeFormatOptions(options);
     switch (notation) {
       case "fixed":
         return toFixed2(value2, precision);
@@ -21910,8 +21950,8 @@ svg {
       case "hex":
         return formatBigNumberToBase(value2, 16, wordSize);
       case "auto": {
-        var lowerExp = options && options.lowerExp !== void 0 ? options.lowerExp : -3;
-        var upperExp = options && options.upperExp !== void 0 ? options.upperExp : 5;
+        var lowerExp = _toNumberOrDefault2(options === null || options === void 0 ? void 0 : options.lowerExp, -3);
+        var upperExp = _toNumberOrDefault2(options === null || options === void 0 ? void 0 : options.upperExp, 5);
         if (value2.isZero())
           return "0";
         var str;
@@ -21924,8 +21964,8 @@ svg {
         }
         return str.replace(/((\.\d*?)(0+))($|e)/, function() {
           var digits2 = arguments[2];
-          var e6 = arguments[4];
-          return digits2 !== "." ? digits2 + e6 : e6;
+          var e5 = arguments[4];
+          return digits2 !== "." ? digits2 + e5 : e5;
         });
       }
       default:
@@ -21933,15 +21973,15 @@ svg {
     }
   }
   function toEngineering2(value2, precision) {
-    var e6 = value2.e;
-    var newExp = e6 % 3 === 0 ? e6 : e6 < 0 ? e6 - 3 - e6 % 3 : e6 - e6 % 3;
+    var e5 = value2.e;
+    var newExp = e5 % 3 === 0 ? e5 : e5 < 0 ? e5 - 3 - e5 % 3 : e5 - e5 % 3;
     var valueWithoutExp = value2.mul(Math.pow(10, -newExp));
     var valueStr = valueWithoutExp.toPrecision(precision);
     if (valueStr.indexOf("e") !== -1) {
       var BigNumber2 = value2.constructor;
       valueStr = new BigNumber2(valueStr).toFixed();
     }
-    return valueStr + "e" + (e6 >= 0 ? "+" : "") + newExp.toString();
+    return valueStr + "e" + (e5 >= 0 ? "+" : "") + newExp.toString();
   }
   function toExponential2(value2, precision) {
     if (precision !== void 0) {
@@ -21953,8 +21993,18 @@ svg {
   function toFixed2(value2, precision) {
     return value2.toFixed(precision);
   }
+  function _toNumberOrDefault2(value2, defaultValue) {
+    if (isNumber(value2)) {
+      return value2;
+    } else if (isBigNumber(value2)) {
+      return value2.toNumber();
+    } else {
+      return defaultValue;
+    }
+  }
   var init_formatter = __esm({
     "node_modules/mathjs/lib/esm/utils/bignumber/formatter.js"() {
+      init_is();
       init_number();
     }
   });
@@ -22270,11 +22320,11 @@ svg {
     }
     try {
       return _reshape(flatArray, sizes);
-    } catch (e6) {
-      if (e6 instanceof DimensionError) {
+    } catch (e5) {
+      if (e5 instanceof DimensionError) {
         throw new DimensionError(newLength, currentLength, "!=");
       }
-      throw e6;
+      throw e5;
     }
   }
   function processSizesWildcard(sizes, currentLength) {
@@ -22569,25 +22619,25 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/factory.js
-  function factory(name310, dependencies310, create2, meta) {
+  function factory(name314, dependencies314, create2, meta) {
     function assertAndCreate(scope) {
-      var deps = pickShallow(scope, dependencies310.map(stripOptionalNotation));
-      assertDependencies(name310, dependencies310, scope);
+      var deps = pickShallow(scope, dependencies314.map(stripOptionalNotation));
+      assertDependencies(name314, dependencies314, scope);
       return create2(deps);
     }
     assertAndCreate.isFactory = true;
-    assertAndCreate.fn = name310;
-    assertAndCreate.dependencies = dependencies310.slice().sort();
+    assertAndCreate.fn = name314;
+    assertAndCreate.dependencies = dependencies314.slice().sort();
     if (meta) {
       assertAndCreate.meta = meta;
     }
     return assertAndCreate;
   }
-  function assertDependencies(name310, dependencies310, scope) {
-    var allDefined = dependencies310.filter((dependency) => !isOptionalDependency(dependency)).every((dependency) => scope[dependency] !== void 0);
+  function assertDependencies(name314, dependencies314, scope) {
+    var allDefined = dependencies314.filter((dependency) => !isOptionalDependency(dependency)).every((dependency) => scope[dependency] !== void 0);
     if (!allDefined) {
-      var missingDependencies = dependencies310.filter((dependency) => scope[dependency] === void 0);
-      throw new Error('Cannot create function "'.concat(name310, '", ') + "some dependencies are missing: ".concat(missingDependencies.map((d3) => '"'.concat(d3, '"')).join(", "), "."));
+      var missingDependencies = dependencies314.filter((dependency) => scope[dependency] === void 0);
+      throw new Error('Cannot create function "'.concat(name314, '", ') + "some dependencies are missing: ".concat(missingDependencies.map((d3) => '"'.concat(d3, '"')).join(", "), "."));
     }
   }
   function isOptionalDependency(dependency) {
@@ -22681,6 +22731,17 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/utils/map.js
+  function mapIterator(it, callback) {
+    return {
+      next: () => {
+        var n3 = it.next();
+        return n3.done ? n3 : {
+          value: callback(n3.value),
+          done: false
+        };
+      }
+    };
+  }
   function createEmptyMap() {
     return /* @__PURE__ */ new Map();
   }
@@ -22713,27 +22774,7 @@ svg {
     }
     return object instanceof Map || object instanceof ObjectWrappingMap || typeof object.set === "function" && typeof object.get === "function" && typeof object.keys === "function" && typeof object.has === "function";
   }
-  function assign(map3) {
-    for (var _len = arguments.length, objects = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      objects[_key - 1] = arguments[_key];
-    }
-    for (var args of objects) {
-      if (!args) {
-        continue;
-      }
-      if (isMap(args)) {
-        for (var key of args.keys()) {
-          map3.set(key, args.get(key));
-        }
-      } else if (isObject(args)) {
-        for (var _key2 of Object.keys(args)) {
-          map3.set(_key2, args[_key2]);
-        }
-      }
-    }
-    return map3;
-  }
-  var ObjectWrappingMap;
+  var ObjectWrappingMap, PartitionedMap;
   var init_map = __esm({
     "node_modules/mathjs/lib/esm/utils/map.js"() {
       init_customs();
@@ -22741,9 +22782,10 @@ svg {
       ObjectWrappingMap = class {
         constructor(object) {
           this.wrappedObject = object;
+          this[Symbol.iterator] = this.entries;
         }
         keys() {
-          return Object.keys(this.wrappedObject);
+          return Object.keys(this.wrappedObject).values();
         }
         get(key) {
           return getSafeProperty(this.wrappedObject, key);
@@ -22754,6 +22796,73 @@ svg {
         }
         has(key) {
           return hasSafeProperty(this.wrappedObject, key);
+        }
+        entries() {
+          return mapIterator(this.keys(), (key) => [key, this.get(key)]);
+        }
+        forEach(callback) {
+          for (var key of this.keys()) {
+            callback(this.get(key), key, this);
+          }
+        }
+        delete(key) {
+          delete this.wrappedObject[key];
+        }
+        clear() {
+          for (var key of this.keys()) {
+            this.delete(key);
+          }
+        }
+        get size() {
+          return Object.keys(this.wrappedObject).length;
+        }
+      };
+      PartitionedMap = class {
+        /**
+         * @param {Map} a
+         * @param {Map} b
+         * @param {Set} bKeys
+         */
+        constructor(a3, b3, bKeys) {
+          this.a = a3;
+          this.b = b3;
+          this.bKeys = bKeys;
+          this[Symbol.iterator] = this.entries;
+        }
+        get(key) {
+          return this.bKeys.has(key) ? this.b.get(key) : this.a.get(key);
+        }
+        set(key, value2) {
+          if (this.bKeys.has(key)) {
+            this.b.set(key, value2);
+          } else {
+            this.a.set(key, value2);
+          }
+          return this;
+        }
+        has(key) {
+          return this.b.has(key) || this.a.has(key);
+        }
+        keys() {
+          return (/* @__PURE__ */ new Set([...this.a.keys(), ...this.b.keys()]))[Symbol.iterator]();
+        }
+        entries() {
+          return mapIterator(this.keys(), (key) => [key, this.get(key)]);
+        }
+        forEach(callback) {
+          for (var key of this.keys()) {
+            callback(this.get(key), key, this);
+          }
+        }
+        delete(key) {
+          return this.bKeys.has(key) ? this.b.delete(key) : this.a.delete(key);
+        }
+        clear() {
+          this.a.clear();
+          this.b.clear();
+        }
+        get size() {
+          return [...this.keys()].length;
         }
       };
     }
@@ -23121,21 +23230,21 @@ svg {
             return matrix2.valueOf();
           }
         }]);
-        typed3.onMismatch = (name310, args, signatures) => {
-          var usualError = typed3.createError(name310, args, signatures);
+        typed3.onMismatch = (name314, args, signatures) => {
+          var usualError = typed3.createError(name314, args, signatures);
           if (["wrongType", "mismatch"].includes(usualError.data.category) && args.length === 1 && isCollection(args[0]) && // check if the function can be unary:
           signatures.some((sig) => !sig.params.includes(","))) {
-            var err = new TypeError("Function '".concat(name310, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name310, ")'."));
+            var err = new TypeError("Function '".concat(name314, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name314, ")'."));
             err.data = usualError.data;
             throw err;
           }
           throw usualError;
         };
-        typed3.onMismatch = (name310, args, signatures) => {
-          var usualError = typed3.createError(name310, args, signatures);
+        typed3.onMismatch = (name314, args, signatures) => {
+          var usualError = typed3.createError(name314, args, signatures);
           if (["wrongType", "mismatch"].includes(usualError.data.category) && args.length === 1 && isCollection(args[0]) && // check if the function can be unary:
           signatures.some((sig) => !sig.params.includes(","))) {
-            var err = new TypeError("Function '".concat(name310, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name310, ")'."));
+            var err = new TypeError("Function '".concat(name314, "' doesn't apply to matrices. To call it ") + "elementwise on a matrix 'M', try 'map(M, ".concat(name314, ")'."));
             err.data = usualError.data;
             throw err;
           }
@@ -23390,7 +23499,7 @@ svg {
   function finiteToString(x4, isExp, sd) {
     if (!x4.isFinite())
       return nonFiniteToString(x4);
-    var k4, e6 = x4.e, str = digitsToString(x4.d), len = str.length;
+    var k4, e5 = x4.e, str = digitsToString(x4.d), len = str.length;
     if (isExp) {
       if (sd && (k4 = sd - len) > 0) {
         str = str.charAt(0) + "." + str.slice(1) + getZeroString(k4);
@@ -23398,30 +23507,30 @@ svg {
         str = str.charAt(0) + "." + str.slice(1);
       }
       str = str + (x4.e < 0 ? "e" : "e+") + x4.e;
-    } else if (e6 < 0) {
-      str = "0." + getZeroString(-e6 - 1) + str;
+    } else if (e5 < 0) {
+      str = "0." + getZeroString(-e5 - 1) + str;
       if (sd && (k4 = sd - len) > 0)
         str += getZeroString(k4);
-    } else if (e6 >= len) {
-      str += getZeroString(e6 + 1 - len);
-      if (sd && (k4 = sd - e6 - 1) > 0)
+    } else if (e5 >= len) {
+      str += getZeroString(e5 + 1 - len);
+      if (sd && (k4 = sd - e5 - 1) > 0)
         str = str + "." + getZeroString(k4);
     } else {
-      if ((k4 = e6 + 1) < len)
+      if ((k4 = e5 + 1) < len)
         str = str.slice(0, k4) + "." + str.slice(k4);
       if (sd && (k4 = sd - len) > 0) {
-        if (e6 + 1 === len)
+        if (e5 + 1 === len)
           str += ".";
         str += getZeroString(k4);
       }
     }
     return str;
   }
-  function getBase10Exponent(digits2, e6) {
+  function getBase10Exponent(digits2, e5) {
     var w4 = digits2[0];
-    for (e6 *= LOG_BASE; w4 >= 10; w4 /= 10)
-      e6++;
-    return e6;
+    for (e5 *= LOG_BASE; w4 >= 10; w4 /= 10)
+      e5++;
+    return e5;
   }
   function getLn10(Ctor, sd, pr) {
     if (sd > LN10_PRECISION) {
@@ -23538,7 +23647,7 @@ svg {
     }
   }
   function naturalLogarithm(y3, sd) {
-    var c3, c0, denominator, e6, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
+    var c3, c0, denominator, e5, numerator, rep, sum3, t3, wpr, x1, x22, n3 = 1, guard = 10, x4 = y3, xd = x4.d, Ctor = x4.constructor, rm = Ctor.rounding, pr = Ctor.precision;
     if (x4.s < 0 || !xd || !xd[0] || !x4.e && xd[0] == 1 && xd.length == 1) {
       return new Ctor(xd && !xd[0] ? -1 / 0 : x4.s != 1 ? NaN : xd ? 0 : x4);
     }
@@ -23551,22 +23660,22 @@ svg {
     Ctor.precision = wpr += guard;
     c3 = digitsToString(xd);
     c0 = c3.charAt(0);
-    if (Math.abs(e6 = x4.e) < 15e14) {
+    if (Math.abs(e5 = x4.e) < 15e14) {
       while (c0 < 7 && c0 != 1 || c0 == 1 && c3.charAt(1) > 3) {
         x4 = x4.times(y3);
         c3 = digitsToString(x4.d);
         c0 = c3.charAt(0);
         n3++;
       }
-      e6 = x4.e;
+      e5 = x4.e;
       if (c0 > 1) {
         x4 = new Ctor("0." + c3);
-        e6++;
+        e5++;
       } else {
         x4 = new Ctor(c0 + "." + c3.slice(1));
       }
     } else {
-      t3 = getLn10(Ctor, wpr + 2, pr).times(e6 + "");
+      t3 = getLn10(Ctor, wpr + 2, pr).times(e5 + "");
       x4 = naturalLogarithm(new Ctor(c0 + "." + c3.slice(1)), wpr - guard).plus(t3);
       Ctor.precision = pr;
       return sd == null ? finalise(x4, pr, rm, external = true) : x4;
@@ -23580,8 +23689,8 @@ svg {
       t3 = sum3.plus(divide(numerator, new Ctor(denominator), wpr, 1));
       if (digitsToString(t3.d).slice(0, wpr) === digitsToString(sum3.d).slice(0, wpr)) {
         sum3 = sum3.times(2);
-        if (e6 !== 0)
-          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e6 + ""));
+        if (e5 !== 0)
+          sum3 = sum3.plus(getLn10(Ctor, wpr + 2, pr).times(e5 + ""));
         sum3 = divide(sum3, new Ctor(n3), wpr, 1);
         if (sd == null) {
           if (checkRoundingDigits(sum3.d, wpr - guard, rm, rep)) {
@@ -23605,16 +23714,16 @@ svg {
     return String(x4.s * x4.s / 0);
   }
   function parseDecimal(x4, str) {
-    var e6, i4, len;
-    if ((e6 = str.indexOf(".")) > -1)
+    var e5, i4, len;
+    if ((e5 = str.indexOf(".")) > -1)
       str = str.replace(".", "");
     if ((i4 = str.search(/e/i)) > 0) {
-      if (e6 < 0)
-        e6 = i4;
-      e6 += +str.slice(i4 + 1);
+      if (e5 < 0)
+        e5 = i4;
+      e5 += +str.slice(i4 + 1);
       str = str.substring(0, i4);
-    } else if (e6 < 0) {
-      e6 = str.length;
+    } else if (e5 < 0) {
+      e5 = str.length;
     }
     for (i4 = 0; str.charCodeAt(i4) === 48; i4++)
       ;
@@ -23623,10 +23732,10 @@ svg {
     str = str.slice(i4, len);
     if (str) {
       len -= i4;
-      x4.e = e6 = e6 - i4 - 1;
+      x4.e = e5 = e5 - i4 - 1;
       x4.d = [];
-      i4 = (e6 + 1) % LOG_BASE;
-      if (e6 < 0)
+      i4 = (e5 + 1) % LOG_BASE;
+      if (e5 < 0)
         i4 += LOG_BASE;
       if (i4 < len) {
         if (i4)
@@ -23753,9 +23862,9 @@ svg {
     t3.d.length = k4 + 1;
     return t3;
   }
-  function tinyPow(b3, e6) {
+  function tinyPow(b3, e5) {
     var n3 = b3;
-    while (--e6)
+    while (--e5)
       n3 *= b3;
     return n3;
   }
@@ -23780,7 +23889,7 @@ svg {
     return x4.minus(pi3).abs();
   }
   function toStringBinary(x4, baseOut, sd, rm) {
-    var base, e6, i4, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
+    var base, e5, i4, k4, len, roundUp, str, xd, y3, Ctor = x4.constructor, isExp = sd !== void 0;
     if (isExp) {
       checkInt32(sd, 1, MAX_DIGITS);
       if (rm === void 0)
@@ -23814,21 +23923,21 @@ svg {
         y3.e = y3.d.length;
       }
       xd = convertBase(str, 10, base);
-      e6 = len = xd.length;
+      e5 = len = xd.length;
       for (; xd[--len] == 0; )
         xd.pop();
       if (!xd[0]) {
         str = isExp ? "0p+0" : "0";
       } else {
         if (i4 < 0) {
-          e6--;
+          e5--;
         } else {
           x4 = new Ctor(x4);
           x4.d = xd;
-          x4.e = e6;
+          x4.e = e5;
           x4 = divide(x4, y3, sd, rm, 0, base);
           xd = x4.d;
-          e6 = x4.e;
+          e5 = x4.e;
           roundUp = inexact;
         }
         i4 = xd[sd];
@@ -23840,7 +23949,7 @@ svg {
           for (; ++xd[--sd] > base - 1; ) {
             xd[sd] = 0;
             if (!sd) {
-              ++e6;
+              ++e5;
               xd.unshift(1);
             }
           }
@@ -23864,17 +23973,17 @@ svg {
               str = str.charAt(0) + "." + str.slice(1);
             }
           }
-          str = str + (e6 < 0 ? "p" : "p+") + e6;
-        } else if (e6 < 0) {
-          for (; ++e6; )
+          str = str + (e5 < 0 ? "p" : "p+") + e5;
+        } else if (e5 < 0) {
+          for (; ++e5; )
             str = "0" + str;
           str = "0." + str;
         } else {
-          if (++e6 > len)
-            for (e6 -= len; e6--; )
+          if (++e5 > len)
+            for (e5 -= len; e5--; )
               str += "0";
-          else if (e6 < len)
-            str = str.slice(0, e6) + "." + str.slice(e6);
+          else if (e5 < len)
+            str = str.slice(0, e5) + "." + str.slice(e5);
         }
       }
       str = (baseOut == 16 ? "0x" : baseOut == 2 ? "0b" : baseOut == 8 ? "0o" : "") + str;
@@ -24012,7 +24121,7 @@ svg {
   function clone3(obj) {
     var i4, p3, ps;
     function Decimal2(v3) {
-      var e6, i5, t3, x4 = this;
+      var e5, i5, t3, x4 = this;
       if (!(x4 instanceof Decimal2))
         return new Decimal2(v3);
       x4.constructor = Decimal2;
@@ -24050,21 +24159,21 @@ svg {
           x4.s = 1;
         }
         if (v3 === ~~v3 && v3 < 1e7) {
-          for (e6 = 0, i5 = v3; i5 >= 10; i5 /= 10)
-            e6++;
+          for (e5 = 0, i5 = v3; i5 >= 10; i5 /= 10)
+            e5++;
           if (external) {
-            if (e6 > Decimal2.maxE) {
+            if (e5 > Decimal2.maxE) {
               x4.e = NaN;
               x4.d = null;
-            } else if (e6 < Decimal2.minE) {
+            } else if (e5 < Decimal2.minE) {
               x4.e = 0;
               x4.d = [0];
             } else {
-              x4.e = e6;
+              x4.e = e5;
               x4.d = [v3];
             }
           } else {
-            x4.e = e6;
+            x4.e = e5;
             x4.d = [v3];
           }
           return;
@@ -24212,7 +24321,7 @@ svg {
     return new this(x4).pow(y3);
   }
   function random(sd) {
-    var d3, e6, k4, n3, i4 = 0, r3 = new this(1), rd = [];
+    var d3, e5, k4, n3, i4 = 0, r3 = new this(1), rd = [];
     if (sd === void 0)
       sd = this.precision;
     else
@@ -24255,18 +24364,18 @@ svg {
     for (; rd[i4] === 0; i4--)
       rd.pop();
     if (i4 < 0) {
-      e6 = 0;
+      e5 = 0;
       rd = [0];
     } else {
-      e6 = -1;
-      for (; rd[0] === 0; e6 -= LOG_BASE)
+      e5 = -1;
+      for (; rd[0] === 0; e5 -= LOG_BASE)
         rd.shift();
       for (k4 = 1, n3 = rd[0]; n3 >= 10; n3 /= 10)
         k4++;
       if (k4 < LOG_BASE)
-        e6 -= LOG_BASE - k4;
+        e5 -= LOG_BASE - k4;
     }
-    r3.e = e6;
+    r3.e = e5;
     r3.d = rd;
     return r3;
   }
@@ -24446,30 +24555,30 @@ svg {
         return finalise(quadrant == 2 || quadrant == 3 ? x4.neg() : x4, pr, rm, true);
       };
       P4.cubeRoot = P4.cbrt = function() {
-        var e6, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
+        var e5, m3, n3, r3, rep, s3, sd, t3, t32, t3plusx, x4 = this, Ctor = x4.constructor;
         if (!x4.isFinite() || x4.isZero())
           return new Ctor(x4);
         external = false;
         s3 = x4.s * mathpow(x4.s * x4, 1 / 3);
         if (!s3 || Math.abs(s3) == 1 / 0) {
           n3 = digitsToString(x4.d);
-          e6 = x4.e;
-          if (s3 = (e6 - n3.length + 1) % 3)
+          e5 = x4.e;
+          if (s3 = (e5 - n3.length + 1) % 3)
             n3 += s3 == 1 || s3 == -2 ? "0" : "00";
           s3 = mathpow(n3, 1 / 3);
-          e6 = mathfloor((e6 + 1) / 3) - (e6 % 3 == (e6 < 0 ? -1 : 2));
+          e5 = mathfloor((e5 + 1) / 3) - (e5 % 3 == (e5 < 0 ? -1 : 2));
           if (s3 == 1 / 0) {
-            n3 = "5e" + e6;
+            n3 = "5e" + e5;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
           }
           r3 = new Ctor(n3);
           r3.s = x4.s;
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e6 = Ctor.precision) + 3;
+        sd = (e5 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           t32 = t3.times(t3).times(t3);
@@ -24479,7 +24588,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e6 + 1, 0);
+                finalise(t3, e5 + 1, 0);
                 if (t3.times(t3).times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -24489,7 +24598,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e6 + 1, 1);
+                finalise(r3, e5 + 1, 1);
                 m3 = !r3.times(r3).times(r3).eq(x4);
               }
               break;
@@ -24497,7 +24606,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e6, Ctor.rounding, m3);
+        return finalise(r3, e5, Ctor.rounding, m3);
       };
       P4.decimalPlaces = P4.dp = function() {
         var w4, d3 = this.d, n3 = NaN;
@@ -24800,7 +24909,7 @@ svg {
         return finalise(r3, pr, rm);
       };
       P4.minus = P4.sub = function(y3) {
-        var d3, e6, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
+        var d3, e5, i4, j4, k4, len, pr, rm, xd, xe, xLTy, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24828,10 +24937,10 @@ svg {
             return new Ctor(rm === 3 ? -0 : 0);
           return external ? finalise(y3, pr, rm) : y3;
         }
-        e6 = mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(y3.e / LOG_BASE);
         xe = mathfloor(x4.e / LOG_BASE);
         xd = xd.slice();
-        k4 = xe - e6;
+        k4 = xe - e5;
         if (k4) {
           xLTy = k4 < 0;
           if (xLTy) {
@@ -24840,7 +24949,7 @@ svg {
             len = yd.length;
           } else {
             d3 = yd;
-            e6 = xe;
+            e5 = xe;
             len = xd.length;
           }
           i4 = Math.max(Math.ceil(pr / LOG_BASE), len) + 2;
@@ -24887,11 +24996,11 @@ svg {
         for (; xd[--len] === 0; )
           xd.pop();
         for (; xd[0] === 0; xd.shift())
-          --e6;
+          --e5;
         if (!xd[0])
           return new Ctor(rm === 3 ? -0 : 0);
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e6);
+        y3.e = getBase10Exponent(xd, e5);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.modulo = P4.mod = function(y3) {
@@ -24925,7 +25034,7 @@ svg {
         return finalise(x4);
       };
       P4.plus = P4.add = function(y3) {
-        var carry, d3, e6, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
+        var carry, d3, e5, i4, k4, len, pr, rm, xd, yd, x4 = this, Ctor = x4.constructor;
         y3 = new Ctor(y3);
         if (!x4.d || !y3.d) {
           if (!x4.s || !y3.s)
@@ -24948,9 +25057,9 @@ svg {
           return external ? finalise(y3, pr, rm) : y3;
         }
         k4 = mathfloor(x4.e / LOG_BASE);
-        e6 = mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(y3.e / LOG_BASE);
         xd = xd.slice();
-        i4 = k4 - e6;
+        i4 = k4 - e5;
         if (i4) {
           if (i4 < 0) {
             d3 = xd;
@@ -24958,7 +25067,7 @@ svg {
             len = yd.length;
           } else {
             d3 = yd;
-            e6 = k4;
+            e5 = k4;
             len = xd.length;
           }
           k4 = Math.ceil(pr / LOG_BASE);
@@ -24986,12 +25095,12 @@ svg {
         }
         if (carry) {
           xd.unshift(carry);
-          ++e6;
+          ++e5;
         }
         for (len = xd.length; xd[--len] == 0; )
           xd.pop();
         y3.d = xd;
-        y3.e = getBase10Exponent(xd, e6);
+        y3.e = getBase10Exponent(xd, e5);
         return external ? finalise(y3, pr, rm) : y3;
       };
       P4.precision = P4.sd = function(z5) {
@@ -25027,7 +25136,7 @@ svg {
         return finalise(quadrant > 2 ? x4.neg() : x4, pr, rm, true);
       };
       P4.squareRoot = P4.sqrt = function() {
-        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e6 = x4.e, s3 = x4.s, Ctor = x4.constructor;
+        var m3, n3, sd, r3, rep, t3, x4 = this, d3 = x4.d, e5 = x4.e, s3 = x4.s, Ctor = x4.constructor;
         if (s3 !== 1 || !d3 || !d3[0]) {
           return new Ctor(!s3 || s3 < 0 && (!d3 || d3[0]) ? NaN : d3 ? x4 : 1 / 0);
         }
@@ -25035,21 +25144,21 @@ svg {
         s3 = Math.sqrt(+x4);
         if (s3 == 0 || s3 == 1 / 0) {
           n3 = digitsToString(d3);
-          if ((n3.length + e6) % 2 == 0)
+          if ((n3.length + e5) % 2 == 0)
             n3 += "0";
           s3 = Math.sqrt(n3);
-          e6 = mathfloor((e6 + 1) / 2) - (e6 < 0 || e6 % 2);
+          e5 = mathfloor((e5 + 1) / 2) - (e5 < 0 || e5 % 2);
           if (s3 == 1 / 0) {
-            n3 = "5e" + e6;
+            n3 = "5e" + e5;
           } else {
             n3 = s3.toExponential();
-            n3 = n3.slice(0, n3.indexOf("e") + 1) + e6;
+            n3 = n3.slice(0, n3.indexOf("e") + 1) + e5;
           }
           r3 = new Ctor(n3);
         } else {
           r3 = new Ctor(s3.toString());
         }
-        sd = (e6 = Ctor.precision) + 3;
+        sd = (e5 = Ctor.precision) + 3;
         for (; ; ) {
           t3 = r3;
           r3 = t3.plus(divide(x4, t3, sd + 2, 1)).times(0.5);
@@ -25057,7 +25166,7 @@ svg {
             n3 = n3.slice(sd - 3, sd + 1);
             if (n3 == "9999" || !rep && n3 == "4999") {
               if (!rep) {
-                finalise(t3, e6 + 1, 0);
+                finalise(t3, e5 + 1, 0);
                 if (t3.times(t3).eq(x4)) {
                   r3 = t3;
                   break;
@@ -25067,7 +25176,7 @@ svg {
               rep = 1;
             } else {
               if (!+n3 || !+n3.slice(1) && n3.charAt(0) == "5") {
-                finalise(r3, e6 + 1, 1);
+                finalise(r3, e5 + 1, 1);
                 m3 = !r3.times(r3).eq(x4);
               }
               break;
@@ -25075,7 +25184,7 @@ svg {
           }
         }
         external = true;
-        return finalise(r3, e6, Ctor.rounding, m3);
+        return finalise(r3, e5, Ctor.rounding, m3);
       };
       P4.tangent = P4.tan = function() {
         var pr, rm, x4 = this, Ctor = x4.constructor;
@@ -25095,12 +25204,12 @@ svg {
         return finalise(quadrant == 2 || quadrant == 4 ? x4.neg() : x4, pr, rm, true);
       };
       P4.times = P4.mul = function(y3) {
-        var carry, e6, i4, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
+        var carry, e5, i4, k4, r3, rL, t3, xdL, ydL, x4 = this, Ctor = x4.constructor, xd = x4.d, yd = (y3 = new Ctor(y3)).d;
         y3.s *= x4.s;
         if (!xd || !xd[0] || !yd || !yd[0]) {
           return new Ctor(!y3.s || xd && !xd[0] && !yd || yd && !yd[0] && !xd ? NaN : !xd || !yd ? y3.s / 0 : y3.s * 0);
         }
-        e6 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
+        e5 = mathfloor(x4.e / LOG_BASE) + mathfloor(y3.e / LOG_BASE);
         xdL = xd.length;
         ydL = yd.length;
         if (xdL < ydL) {
@@ -25127,11 +25236,11 @@ svg {
         for (; !r3[--rL]; )
           r3.pop();
         if (carry)
-          ++e6;
+          ++e5;
         else
           r3.shift();
         y3.d = r3;
-        y3.e = getBase10Exponent(r3, e6);
+        y3.e = getBase10Exponent(r3, e5);
         return external ? finalise(y3, Ctor.precision, Ctor.rounding) : y3;
       };
       P4.toBinary = function(sd, rm) {
@@ -25180,27 +25289,27 @@ svg {
         return x4.isNeg() && !x4.isZero() ? "-" + str : str;
       };
       P4.toFraction = function(maxD) {
-        var d3, d0, d1, d22, e6, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
+        var d3, d0, d1, d22, e5, k4, n3, n0, n16, pr, q4, r3, x4 = this, xd = x4.d, Ctor = x4.constructor;
         if (!xd)
           return new Ctor(x4);
         n16 = d0 = new Ctor(1);
         d1 = n0 = new Ctor(0);
         d3 = new Ctor(d1);
-        e6 = d3.e = getPrecision(xd) - x4.e - 1;
-        k4 = e6 % LOG_BASE;
+        e5 = d3.e = getPrecision(xd) - x4.e - 1;
+        k4 = e5 % LOG_BASE;
         d3.d[0] = mathpow(10, k4 < 0 ? LOG_BASE + k4 : k4);
         if (maxD == null) {
-          maxD = e6 > 0 ? d3 : n16;
+          maxD = e5 > 0 ? d3 : n16;
         } else {
           n3 = new Ctor(maxD);
           if (!n3.isInt() || n3.lt(n16))
             throw Error(invalidArgument + n3);
-          maxD = n3.gt(d3) ? e6 > 0 ? d3 : n16 : n3;
+          maxD = n3.gt(d3) ? e5 > 0 ? d3 : n16 : n3;
         }
         external = false;
         n3 = new Ctor(digitsToString(xd));
         pr = Ctor.precision;
-        Ctor.precision = e6 = xd.length * LOG_BASE * 2;
+        Ctor.precision = e5 = xd.length * LOG_BASE * 2;
         for (; ; ) {
           q4 = divide(n3, d3, 0, 1, 1);
           d22 = d0.plus(q4.times(d1));
@@ -25219,7 +25328,7 @@ svg {
         n0 = n0.plus(d22.times(n16));
         d0 = d0.plus(d22.times(d1));
         n0.s = n16.s = x4.s;
-        r3 = divide(n16, d1, e6, 1).minus(x4).abs().cmp(divide(n0, d0, e6, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
+        r3 = divide(n16, d1, e5, 1).minus(x4).abs().cmp(divide(n0, d0, e5, 1).minus(x4).abs()) < 1 ? [n16, d1] : [n0, d0];
         Ctor.precision = pr;
         external = true;
         return r3;
@@ -25268,7 +25377,7 @@ svg {
         return toStringBinary(this, 8, sd, rm);
       };
       P4.toPower = P4.pow = function(y3) {
-        var e6, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
+        var e5, k4, pr, r3, rm, s3, x4 = this, Ctor = x4.constructor, yn2 = +(y3 = new Ctor(y3));
         if (!x4.d || !y3.d || !x4.d[0] || !y3.d[0])
           return new Ctor(mathpow(+x4, yn2));
         x4 = new Ctor(x4);
@@ -25278,16 +25387,16 @@ svg {
         rm = Ctor.rounding;
         if (y3.eq(1))
           return finalise(x4, pr, rm);
-        e6 = mathfloor(y3.e / LOG_BASE);
-        if (e6 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
+        e5 = mathfloor(y3.e / LOG_BASE);
+        if (e5 >= y3.d.length - 1 && (k4 = yn2 < 0 ? -yn2 : yn2) <= MAX_SAFE_INTEGER) {
           r3 = intPow(Ctor, x4, k4, pr);
           return y3.s < 0 ? new Ctor(1).div(r3) : finalise(r3, pr, rm);
         }
         s3 = x4.s;
         if (s3 < 0) {
-          if (e6 < y3.d.length - 1)
+          if (e5 < y3.d.length - 1)
             return new Ctor(NaN);
-          if ((y3.d[e6] & 1) == 0)
+          if ((y3.d[e5] & 1) == 0)
             s3 = 1;
           if (x4.e == 0 && x4.d[0] == 1 && x4.d.length == 1) {
             x4.s = s3;
@@ -25295,18 +25404,18 @@ svg {
           }
         }
         k4 = mathpow(+x4, yn2);
-        e6 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
-        if (e6 > Ctor.maxE + 1 || e6 < Ctor.minE - 1)
-          return new Ctor(e6 > 0 ? s3 / 0 : 0);
+        e5 = k4 == 0 || !isFinite(k4) ? mathfloor(yn2 * (Math.log("0." + digitsToString(x4.d)) / Math.LN10 + x4.e + 1)) : new Ctor(k4 + "").e;
+        if (e5 > Ctor.maxE + 1 || e5 < Ctor.minE - 1)
+          return new Ctor(e5 > 0 ? s3 / 0 : 0);
         external = false;
         Ctor.rounding = x4.s = 1;
-        k4 = Math.min(12, (e6 + "").length);
+        k4 = Math.min(12, (e5 + "").length);
         r3 = naturalExponential(y3.times(naturalLogarithm(x4, pr + k4)), pr);
         if (r3.d) {
           r3 = finalise(r3, pr + 5, 1);
           if (checkRoundingDigits(r3.d, pr, rm)) {
-            e6 = pr + 10;
-            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e6 + k4)), e6), e6 + 5, 1);
+            e5 = pr + 10;
+            r3 = finalise(naturalExponential(y3.times(naturalLogarithm(x4, e5 + k4)), e5), e5 + 5, 1);
             if (+digitsToString(r3.d).slice(pr + 1, pr + 15) + 1 == 1e14) {
               r3 = finalise(r3, pr + 1, 0);
             }
@@ -25394,7 +25503,7 @@ svg {
             a3.shift();
         }
         return function(x4, y3, pr, rm, dp, base) {
-          var cmp, e6, i4, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
+          var cmp, e5, i4, k4, logBase, more, prod2, prodL, q4, qd, rem, remL, rem0, sd, t3, xi, xL, yd0, yL, yz, Ctor = x4.constructor, sign4 = x4.s == y3.s ? 1 : -1, xd = x4.d, yd = y3.d;
           if (!xd || !xd[0] || !yd || !yd[0]) {
             return new Ctor(
               // Return NaN if either NaN, or both Infinity or 0.
@@ -25406,11 +25515,11 @@ svg {
           }
           if (base) {
             logBase = 1;
-            e6 = x4.e - y3.e;
+            e5 = x4.e - y3.e;
           } else {
             base = BASE;
             logBase = LOG_BASE;
-            e6 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
+            e5 = mathfloor(x4.e / logBase) - mathfloor(y3.e / logBase);
           }
           yL = yd.length;
           xL = xd.length;
@@ -25419,7 +25528,7 @@ svg {
           for (i4 = 0; yd[i4] == (xd[i4] || 0); i4++)
             ;
           if (yd[i4] > (xd[i4] || 0))
-            e6--;
+            e5--;
           if (pr == null) {
             sd = pr = Ctor.precision;
             rm = Ctor.rounding;
@@ -25517,12 +25626,12 @@ svg {
               qd.shift();
           }
           if (logBase == 1) {
-            q4.e = e6;
+            q4.e = e5;
             inexact = more;
           } else {
             for (i4 = 1, k4 = qd[0]; k4 >= 10; k4 /= 10)
               i4++;
-            q4.e = i4 + e6 * logBase - 1;
+            q4.e = i4 + e5 * logBase - 1;
             finalise(q4, dp ? pr + q4.e + 1 : pr, rm, more);
           }
           return q4;
@@ -26727,7 +26836,7 @@ svg {
           "n": 0,
           "d": 1
         };
-        function assign2(n3, s3) {
+        function assign(n3, s3) {
           if (isNaN(n3 = parseInt(n3, 10))) {
             throw InvalidParameter();
           }
@@ -26769,7 +26878,7 @@ svg {
           var n3 = 0, d3 = 1, s3 = 1;
           var v3 = 0, w4 = 0, x4 = 0, y3 = 1, z5 = 1;
           var A4 = 0, B4 = 1;
-          var C3 = 1, D3 = 1;
+          var C4 = 1, D4 = 1;
           var N3 = 1e7;
           var M3;
           if (p1 === void 0 || p1 === null) {
@@ -26810,15 +26919,15 @@ svg {
                     z5 = Math.pow(10, Math.floor(1 + Math.log(p1) / Math.LN10));
                     p1 /= z5;
                   }
-                  while (B4 <= N3 && D3 <= N3) {
-                    M3 = (A4 + C3) / (B4 + D3);
+                  while (B4 <= N3 && D4 <= N3) {
+                    M3 = (A4 + C4) / (B4 + D4);
                     if (p1 === M3) {
-                      if (B4 + D3 <= N3) {
-                        n3 = A4 + C3;
-                        d3 = B4 + D3;
-                      } else if (D3 > B4) {
-                        n3 = C3;
-                        d3 = D3;
+                      if (B4 + D4 <= N3) {
+                        n3 = A4 + C4;
+                        d3 = B4 + D4;
+                      } else if (D4 > B4) {
+                        n3 = C4;
+                        d3 = D4;
                       } else {
                         n3 = A4;
                         d3 = B4;
@@ -26826,15 +26935,15 @@ svg {
                       break;
                     } else {
                       if (p1 > M3) {
-                        A4 += C3;
-                        B4 += D3;
+                        A4 += C4;
+                        B4 += D4;
                       } else {
-                        C3 += A4;
-                        D3 += B4;
+                        C4 += A4;
+                        D4 += B4;
                       }
                       if (B4 > N3) {
-                        n3 = C3;
-                        d3 = D3;
+                        n3 = C4;
+                        d3 = D4;
                       } else {
                         n3 = A4;
                         d3 = B4;
@@ -26858,30 +26967,30 @@ svg {
                   A4++;
                 }
                 if (B4.length === A4 + 1) {
-                  w4 = assign2(B4[A4++], s3);
+                  w4 = assign(B4[A4++], s3);
                 } else if (B4[A4 + 1] === "." || B4[A4] === ".") {
                   if (B4[A4] !== ".") {
-                    v3 = assign2(B4[A4++], s3);
+                    v3 = assign(B4[A4++], s3);
                   }
                   A4++;
                   if (A4 + 1 === B4.length || B4[A4 + 1] === "(" && B4[A4 + 3] === ")" || B4[A4 + 1] === "'" && B4[A4 + 3] === "'") {
-                    w4 = assign2(B4[A4], s3);
+                    w4 = assign(B4[A4], s3);
                     y3 = Math.pow(10, B4[A4].length);
                     A4++;
                   }
                   if (B4[A4] === "(" && B4[A4 + 2] === ")" || B4[A4] === "'" && B4[A4 + 2] === "'") {
-                    x4 = assign2(B4[A4 + 1], s3);
+                    x4 = assign(B4[A4 + 1], s3);
                     z5 = Math.pow(10, B4[A4 + 1].length) - 1;
                     A4 += 3;
                   }
                 } else if (B4[A4 + 1] === "/" || B4[A4 + 1] === ":") {
-                  w4 = assign2(B4[A4], s3);
-                  y3 = assign2(B4[A4 + 2], 1);
+                  w4 = assign(B4[A4], s3);
+                  y3 = assign(B4[A4 + 2], 1);
                   A4 += 3;
                 } else if (B4[A4 + 3] === "/" && B4[A4 + 1] === " ") {
-                  v3 = assign2(B4[A4], s3);
-                  w4 = assign2(B4[A4 + 2], s3);
-                  y3 = assign2(B4[A4 + 4], 1);
+                  v3 = assign(B4[A4], s3);
+                  w4 = assign(B4[A4 + 2], s3);
+                  y3 = assign(B4[A4 + 4], 1);
                   A4 += 5;
                 }
                 if (B4.length <= A4) {
@@ -26901,10 +27010,10 @@ svg {
           P6["n"] = Math.abs(n3);
           P6["d"] = Math.abs(d3);
         };
-        function modpow(b3, e6, m3) {
+        function modpow(b3, e5, m3) {
           var r3 = 1;
-          for (; e6 > 0; b3 = b3 * b3 % m3, e6 >>= 1) {
-            if (e6 & 1) {
+          for (; e5 > 0; b3 = b3 * b3 % m3, e5 >>= 1) {
+            if (e5 & 1) {
               r3 = r3 * b3 % m3;
             }
           }
@@ -27151,7 +27260,7 @@ svg {
             if (this["s"] < 0)
               return null;
             var N3 = factorize(this["n"]);
-            var D3 = factorize(this["d"]);
+            var D4 = factorize(this["d"]);
             var n3 = 1;
             var d3 = 1;
             for (var k4 in N3) {
@@ -27168,15 +27277,15 @@ svg {
                 return null;
               n3 *= Math.pow(k4, N3[k4]);
             }
-            for (var k4 in D3) {
+            for (var k4 in D4) {
               if (k4 === "1")
                 continue;
-              D3[k4] *= P6["n"];
-              if (D3[k4] % P6["d"] === 0) {
-                D3[k4] /= P6["d"];
+              D4[k4] *= P6["n"];
+              if (D4[k4] % P6["d"] === 0) {
+                D4[k4] /= P6["d"];
               } else
                 return null;
-              d3 *= Math.pow(k4, D3[k4]);
+              d3 *= Math.pow(k4, D4[k4]);
             }
             if (P6["s"] < 0) {
               return newFraction(d3, n3);
@@ -27318,36 +27427,36 @@ svg {
            **/
           "toString": function(dec) {
             var N3 = this["n"];
-            var D3 = this["d"];
-            if (isNaN(N3) || isNaN(D3)) {
+            var D4 = this["d"];
+            if (isNaN(N3) || isNaN(D4)) {
               return "NaN";
             }
             dec = dec || 15;
-            var cycLen = cycleLen(N3, D3);
-            var cycOff = cycleStart(N3, D3, cycLen);
+            var cycLen = cycleLen(N3, D4);
+            var cycOff = cycleStart(N3, D4, cycLen);
             var str = this["s"] < 0 ? "-" : "";
-            str += N3 / D3 | 0;
-            N3 %= D3;
+            str += N3 / D4 | 0;
+            N3 %= D4;
             N3 *= 10;
             if (N3)
               str += ".";
             if (cycLen) {
               for (var i4 = cycOff; i4--; ) {
-                str += N3 / D3 | 0;
-                N3 %= D3;
+                str += N3 / D4 | 0;
+                N3 %= D4;
                 N3 *= 10;
               }
               str += "(";
               for (var i4 = cycLen; i4--; ) {
-                str += N3 / D3 | 0;
-                N3 %= D3;
+                str += N3 / D4 | 0;
+                N3 %= D4;
                 N3 *= 10;
               }
               str += ")";
             } else {
               for (var i4 = dec; N3 && i4--; ) {
-                str += N3 / D3 | 0;
-                N3 %= D3;
+                str += N3 / D4 | 0;
+                N3 %= D4;
                 N3 *= 10;
               }
             }
@@ -28910,8 +29019,8 @@ svg {
     return 1 / Math.tan(x4);
   }
   function cothNumber(x4) {
-    var e6 = Math.exp(2 * x4);
-    return (e6 + 1) / (e6 - 1);
+    var e5 = Math.exp(2 * x4);
+    return (e5 + 1) / (e5 - 1);
   }
   function cscNumber(x4) {
     return 1 / Math.sin(x4);
@@ -30190,7 +30299,7 @@ svg {
     }
     var result = n3 + f3;
     if (isNaN(result)) {
-      throw new SyntaxError('String "' + parts.input + '" is no valid number');
+      throw new SyntaxError('String "' + parts.input + '" is not a valid number');
     }
     return result;
   }
@@ -30227,7 +30336,7 @@ svg {
             }
             var num = Number(x4);
             if (isNaN(num)) {
-              throw new SyntaxError('String "' + x4 + '" is no valid number');
+              throw new SyntaxError('String "' + x4 + '" is not a valid number');
             }
             if (wordSizeSuffixMatch) {
               if (num > 2 ** size2 - 1) {
@@ -31688,12 +31797,12 @@ svg {
         return function matAlgo02xDS0(denseMatrix, sparseMatrix, callback, inverse) {
           var adata = denseMatrix._data;
           var asize = denseMatrix._size;
-          var adt = denseMatrix._datatype;
+          var adt = denseMatrix._datatype || denseMatrix.getDataType();
           var bvalues = sparseMatrix._values;
           var bindex = sparseMatrix._index;
           var bptr = sparseMatrix._ptr;
           var bsize = sparseMatrix._size;
-          var bdt = sparseMatrix._datatype;
+          var bdt = sparseMatrix._datatype || sparseMatrix._data === void 0 ? sparseMatrix._datatype : sparseMatrix.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -31709,7 +31818,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -31735,7 +31844,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === denseMatrix._datatype && bdt === sparseMatrix._datatype ? dt : void 0
           });
         };
       });
@@ -31757,12 +31866,12 @@ svg {
         return function matAlgo03xDSf(denseMatrix, sparseMatrix, callback, inverse) {
           var adata = denseMatrix._data;
           var asize = denseMatrix._size;
-          var adt = denseMatrix._datatype;
+          var adt = denseMatrix._datatype || denseMatrix.getDataType();
           var bvalues = sparseMatrix._values;
           var bindex = sparseMatrix._index;
           var bptr = sparseMatrix._ptr;
           var bsize = sparseMatrix._size;
-          var bdt = sparseMatrix._datatype;
+          var bdt = sparseMatrix._datatype || sparseMatrix._data === void 0 ? sparseMatrix._datatype : sparseMatrix.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -31777,7 +31886,7 @@ svg {
           var dt;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             zero = typed3.convert(0, dt);
             cf = typed3.find(callback, [dt, dt]);
@@ -31806,7 +31915,7 @@ svg {
           return denseMatrix.createDenseMatrix({
             data: cdata,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === denseMatrix._datatype && bdt === sparseMatrix._datatype ? dt : void 0
           });
         };
       });
@@ -31831,12 +31940,12 @@ svg {
           var aindex = a3._index;
           var aptr = a3._ptr;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -31849,7 +31958,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -31910,7 +32019,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
       });
@@ -32228,16 +32337,10 @@ svg {
         return typed3(name52, {
           "number, number": _modNumber,
           "BigNumber, BigNumber": function BigNumberBigNumber(x4, y3) {
-            if (y3.isNeg()) {
-              throw new Error("Cannot calculate mod for a negative divisor");
-            }
-            return y3.isZero() ? x4 : x4.mod(y3);
+            return y3.isZero() ? x4 : x4.sub(y3.mul(floor3(x4.div(y3))));
           },
           "Fraction, Fraction": function FractionFraction(x4, y3) {
-            if (y3.compare(0) < 0) {
-              throw new Error("Cannot calculate mod for a negative divisor");
-            }
-            return x4.compare(0) >= 0 ? x4.mod(y3) : x4.mod(y3).add(y3).mod(y3);
+            return y3.equals(0) ? x4 : x4.sub(y3.mul(floor3(x4.div(y3))));
           }
         }, matrixAlgorithmSuite({
           SS: matAlgo05xSfSf,
@@ -32268,12 +32371,12 @@ svg {
         return function algorithm1(denseMatrix, sparseMatrix, callback, inverse) {
           var adata = denseMatrix._data;
           var asize = denseMatrix._size;
-          var adt = denseMatrix._datatype;
+          var adt = denseMatrix._datatype || denseMatrix.getDataType();
           var bvalues = sparseMatrix._values;
           var bindex = sparseMatrix._index;
           var bptr = sparseMatrix._ptr;
           var bsize = sparseMatrix._size;
-          var bdt = sparseMatrix._datatype;
+          var bdt = sparseMatrix._datatype || sparseMatrix._data === void 0 ? sparseMatrix._datatype : sparseMatrix.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -32285,7 +32388,7 @@ svg {
           }
           var rows = asize[0];
           var columns = asize[1];
-          var dt = typeof adt === "string" && adt === bdt ? adt : void 0;
+          var dt = typeof adt === "string" && adt !== "mixed" && adt === bdt ? adt : void 0;
           var cf = dt ? typed3.find(callback, [dt, dt]) : callback;
           var i4, j4;
           var cdata = [];
@@ -32312,7 +32415,7 @@ svg {
           return denseMatrix.createDenseMatrix({
             data: cdata,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === denseMatrix._datatype && bdt === sparseMatrix._datatype ? dt : void 0
           });
         };
       });
@@ -32337,12 +32440,12 @@ svg {
           var aindex = a3._index;
           var aptr = a3._ptr;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -32355,7 +32458,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -32421,7 +32524,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
       });
@@ -32641,10 +32744,10 @@ svg {
         return function matAlgo06xS0S0(a3, b3, callback) {
           var avalues = a3._values;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -32657,7 +32760,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -32708,7 +32811,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
       });
@@ -32981,16 +33084,16 @@ svg {
         function _multiplyVectorDenseMatrix(a3, b3) {
           var adata = a3._data;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3.getDataType();
           var bdata = b3._data;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3.getDataType();
           var alength = asize[0];
           var bcolumns = bsize[1];
           var dt;
           var af = addScalar2;
           var mf = multiplyScalar2;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33006,7 +33109,7 @@ svg {
           return a3.createDenseMatrix({
             data: c3,
             size: [bcolumns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         }
         var _multiplyMatrixVector = typed3("_multiplyMatrixVector", {
@@ -33022,15 +33125,15 @@ svg {
         function _multiplyDenseMatrixVector(a3, b3) {
           var adata = a3._data;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3.getDataType();
           var bdata = b3._data;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3.getDataType();
           var arows = asize[0];
           var acolumns = asize[1];
           var dt;
           var af = addScalar2;
           var mf = multiplyScalar2;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33047,23 +33150,23 @@ svg {
           return a3.createDenseMatrix({
             data: c3,
             size: [arows],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         }
         function _multiplyDenseMatrixDenseMatrix(a3, b3) {
           var adata = a3._data;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3.getDataType();
           var bdata = b3._data;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3.getDataType();
           var arows = asize[0];
           var acolumns = asize[1];
           var bcolumns = bsize[1];
           var dt;
           var af = addScalar2;
           var mf = multiplyScalar2;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33083,18 +33186,18 @@ svg {
           return a3.createDenseMatrix({
             data: c3,
             size: [arows, bcolumns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         }
         function _multiplyDenseMatrixSparseMatrix(a3, b3) {
           var adata = a3._data;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (!bvalues) {
             throw new Error("Cannot multiply Dense Matrix times Pattern only Matrix");
           }
@@ -33105,7 +33208,7 @@ svg {
           var mf = multiplyScalar2;
           var eq = equalScalar2;
           var zero = 0;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33120,7 +33223,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [arows, bcolumns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
           for (var jb = 0; jb < bcolumns; jb++) {
             cptr[jb] = cindex.length;
@@ -33154,12 +33257,12 @@ svg {
           var avalues = a3._values;
           var aindex = a3._index;
           var aptr = a3._ptr;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           if (!avalues) {
             throw new Error("Cannot multiply Pattern only Matrix times Dense Matrix");
           }
           var bdata = b3._data;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3.getDataType();
           var arows = a3._size[0];
           var brows = b3._size[0];
           var cvalues = [];
@@ -33170,7 +33273,7 @@ svg {
           var mf = multiplyScalar2;
           var eq = equalScalar2;
           var zero = 0;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33205,19 +33308,19 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [arows, 1],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         }
         function _multiplySparseMatrixDenseMatrix(a3, b3) {
           var avalues = a3._values;
           var aindex = a3._index;
           var aptr = a3._ptr;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           if (!avalues) {
             throw new Error("Cannot multiply Pattern only Matrix times Dense Matrix");
           }
           var bdata = b3._data;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3.getDataType();
           var arows = a3._size[0];
           var brows = b3._size[0];
           var bcolumns = b3._size[1];
@@ -33226,7 +33329,7 @@ svg {
           var mf = multiplyScalar2;
           var eq = equalScalar2;
           var zero = 0;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33241,7 +33344,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [arows, bcolumns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
           var x4 = [];
           var w4 = [];
@@ -33275,18 +33378,18 @@ svg {
           var avalues = a3._values;
           var aindex = a3._index;
           var aptr = a3._ptr;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           var arows = a3._size[0];
           var bcolumns = b3._size[1];
           var values = avalues && bvalues;
           var dt;
           var af = addScalar2;
           var mf = multiplyScalar2;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             dt = adt;
             af = typed3.find(addScalar2, [dt, dt]);
             mf = typed3.find(multiplyScalar2, [dt, dt]);
@@ -33299,7 +33402,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [arows, bcolumns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
           var x4 = values ? [] : void 0;
           var w4 = [];
@@ -33804,12 +33907,12 @@ svg {
           var aindex = a3._index;
           var aptr = a3._ptr;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -33822,7 +33925,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -33864,7 +33967,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
       });
@@ -34332,9 +34435,9 @@ svg {
         } = _ref;
         return function matAlgo07xSSf(a3, b3, callback) {
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -34346,7 +34449,7 @@ svg {
           var dt;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             zero = typed3.convert(0, dt);
             cf = typed3.find(callback, [dt, dt]);
@@ -34373,7 +34476,7 @@ svg {
           return new DenseMatrix2({
             data: cdata,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
         function _scatter(m3, j4, w4, x4, mark) {
@@ -36494,7 +36597,7 @@ svg {
     }
   });
 
-  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js
+  // node_modules/@babel/runtime/helpers/esm/typeof.js
   function _typeof(o3) {
     "@babel/helpers - typeof";
     return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o4) {
@@ -36504,17 +36607,17 @@ svg {
     }, _typeof(o3);
   }
   var init_typeof = __esm({
-    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/typeof.js"() {
+    "node_modules/@babel/runtime/helpers/esm/typeof.js"() {
     }
   });
 
-  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+  // node_modules/@babel/runtime/helpers/esm/toPrimitive.js
   function toPrimitive(t3, r3) {
     if ("object" != _typeof(t3) || !t3)
       return t3;
-    var e6 = t3[Symbol.toPrimitive];
-    if (void 0 !== e6) {
-      var i4 = e6.call(t3, r3 || "default");
+    var e5 = t3[Symbol.toPrimitive];
+    if (void 0 !== e5) {
+      var i4 = e5.call(t3, r3 || "default");
       if ("object" != _typeof(i4))
         return i4;
       throw new TypeError("@@toPrimitive must return a primitive value.");
@@ -36522,24 +36625,24 @@ svg {
     return ("string" === r3 ? String : Number)(t3);
   }
   var init_toPrimitive = __esm({
-    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPrimitive.js"() {
+    "node_modules/@babel/runtime/helpers/esm/toPrimitive.js"() {
       init_typeof();
     }
   });
 
-  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+  // node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
   function toPropertyKey(t3) {
     var i4 = toPrimitive(t3, "string");
     return "symbol" == _typeof(i4) ? i4 : String(i4);
   }
   var init_toPropertyKey = __esm({
-    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
+    "node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"() {
       init_typeof();
       init_toPrimitive();
     }
   });
 
-  // node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+  // node_modules/@babel/runtime/helpers/esm/defineProperty.js
   function _defineProperty(obj, key, value2) {
     key = toPropertyKey(key);
     if (key in obj) {
@@ -36555,32 +36658,32 @@ svg {
     return obj;
   }
   var init_defineProperty = __esm({
-    "node_modules/mathjs/node_modules/@babel/runtime/helpers/esm/defineProperty.js"() {
+    "node_modules/@babel/runtime/helpers/esm/defineProperty.js"() {
       init_toPropertyKey();
     }
   });
 
   // node_modules/mathjs/lib/esm/function/numeric/solveODE.js
-  function ownKeys(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread(e6) {
+  function _objectSpread(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name112, dependencies112, createSolveODE;
   var init_solveODE = __esm({
@@ -37088,7 +37191,7 @@ svg {
         } = _ref;
         return typed3(name117, {
           any: format3,
-          "any, Object | function | number": format3
+          "any, Object | function | number | BigNumber": format3
         });
       });
     }
@@ -37112,7 +37215,7 @@ svg {
               notation: "bin"
             });
           },
-          "number | BigNumber, number": function numberBigNumberNumber(n3, wordSize) {
+          "number | BigNumber, number | BigNumber": function numberBigNumberNumberBigNumber(n3, wordSize) {
             return format5(n3, {
               notation: "bin",
               wordSize
@@ -37141,7 +37244,7 @@ svg {
               notation: "oct"
             });
           },
-          "number | BigNumber, number": function numberBigNumberNumber(n3, wordSize) {
+          "number | BigNumber, number | BigNumber": function numberBigNumberNumberBigNumber(n3, wordSize) {
             return format5(n3, {
               notation: "oct",
               wordSize
@@ -37170,7 +37273,7 @@ svg {
               notation: "hex"
             });
           },
-          "number | BigNumber, number": function numberBigNumberNumber(n3, wordSize) {
+          "number | BigNumber, number | BigNumber": function numberBigNumberNumberBigNumber(n3, wordSize) {
             return format5(n3, {
               notation: "hex",
               wordSize
@@ -37455,7 +37558,7 @@ svg {
         var {
           typed: typed3,
           config: config4,
-          identity: identity2,
+          identity: identity3,
           multiply: multiply2,
           matrix: matrix2,
           inv: inv2,
@@ -37544,7 +37647,7 @@ svg {
               throw error;
             }
           }
-          var res = identity2(s3[0]).valueOf();
+          var res = identity3(s3[0]).valueOf();
           var px = x4;
           while (y3 >= 1) {
             if ((y3 & 1) === 1) {
@@ -37568,20 +37671,23 @@ svg {
     "node_modules/mathjs/lib/esm/function/arithmetic/round.js"() {
       init_factory();
       init_collection();
+      init_number();
+      init_nearlyEqual();
       init_matAlgo11xS0s();
       init_matAlgo12xSfs();
       init_matAlgo14xDs();
       init_number2();
       NO_INT = "Number of decimals in function round must be an integer";
       name127 = "round";
-      dependencies127 = ["typed", "matrix", "equalScalar", "zeros", "BigNumber", "DenseMatrix"];
+      dependencies127 = ["typed", "config", "matrix", "equalScalar", "zeros", "BigNumber", "DenseMatrix"];
       createRound = /* @__PURE__ */ factory(name127, dependencies127, (_ref) => {
         var {
           typed: typed3,
+          config: config4,
           matrix: matrix2,
           equalScalar: equalScalar2,
           zeros: zeros3,
-          BigNumber: BigNumber2,
+          BigNumber: _BigNumber,
           DenseMatrix: DenseMatrix2
         } = _ref;
         var matAlgo11xS0s = createMatAlgo11xS0s({
@@ -37595,14 +37701,29 @@ svg {
         var matAlgo14xDs = createMatAlgo14xDs({
           typed: typed3
         });
+        function toExponent(epsilon) {
+          return Math.abs(splitNumber(epsilon).exponent);
+        }
         return typed3(name127, {
-          number: roundNumber,
-          "number, number": roundNumber,
+          number: function number2(x4) {
+            var xEpsilon = roundNumber(x4, toExponent(config4.epsilon));
+            var xSelected = nearlyEqual(x4, xEpsilon, config4.epsilon) ? xEpsilon : x4;
+            return roundNumber(xSelected);
+          },
+          "number, number": function numberNumber(x4, n3) {
+            var epsilonExponent = toExponent(config4.epsilon);
+            if (n3 >= epsilonExponent) {
+              return roundNumber(x4, n3);
+            }
+            var xEpsilon = roundNumber(x4, epsilonExponent);
+            var xSelected = nearlyEqual(x4, xEpsilon, config4.epsilon) ? xEpsilon : x4;
+            return roundNumber(xSelected, n3);
+          },
           "number, BigNumber": function numberBigNumber(x4, n3) {
             if (!n3.isInteger()) {
               throw new TypeError(NO_INT);
             }
-            return new BigNumber2(x4).toDecimalPlaces(n3.toNumber());
+            return new _BigNumber(x4).toDecimalPlaces(n3.toNumber());
           },
           Complex: function Complex3(x4) {
             return x4.round();
@@ -37620,14 +37741,22 @@ svg {
             var _n2 = n3.toNumber();
             return x4.round(_n2);
           },
-          BigNumber: function BigNumber3(x4) {
-            return x4.toDecimalPlaces(0);
+          BigNumber: function BigNumber2(x4) {
+            var xEpsilon = new _BigNumber(x4).toDecimalPlaces(toExponent(config4.epsilon));
+            var xSelected = nearlyEqual2(x4, xEpsilon, config4.epsilon) ? xEpsilon : x4;
+            return xSelected.toDecimalPlaces(0);
           },
           "BigNumber, BigNumber": function BigNumberBigNumber(x4, n3) {
             if (!n3.isInteger()) {
               throw new TypeError(NO_INT);
             }
-            return x4.toDecimalPlaces(n3.toNumber());
+            var epsilonExponent = toExponent(config4.epsilon);
+            if (n3 >= epsilonExponent) {
+              return x4.toDecimalPlaces(n3.toNumber());
+            }
+            var xEpsilon = x4.toDecimalPlaces(epsilonExponent);
+            var xSelected = nearlyEqual2(x4, xEpsilon, config4.epsilon) ? xEpsilon : x4;
+            return xSelected.toDecimalPlaces(n3.toNumber());
           },
           Fraction: function Fraction3(x4) {
             return x4.round();
@@ -37644,31 +37773,43 @@ svg {
             }
             return x4.round(n3.toNumber());
           },
-          // deep map collection, skip zeros since round(0) = 0
-          "Array | Matrix": typed3.referToSelf((self2) => (x4) => deepMap(x4, self2, true)),
-          "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
-            return matAlgo11xS0s(x4, y3, self2, false);
+          "Unit, number, Unit": typed3.referToSelf((self2) => function(x4, n3, unit2) {
+            var valueless = x4.toNumeric(unit2);
+            return unit2.multiply(self2(valueless, n3));
           }),
-          "DenseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
-            return matAlgo14xDs(x4, y3, self2, false);
+          "Unit, BigNumber, Unit": typed3.referToSelf((self2) => (x4, n3, unit2) => self2(x4, n3.toNumber(), unit2)),
+          "Unit, Unit": typed3.referToSelf((self2) => (x4, unit2) => self2(x4, 0, unit2)),
+          "Array | Matrix, number, Unit": typed3.referToSelf((self2) => (x4, n3, unit2) => {
+            return deepMap(x4, (value2) => self2(value2, n3, unit2), true);
           }),
-          "Array, number | BigNumber": typed3.referToSelf((self2) => (x4, y3) => {
-            return matAlgo14xDs(matrix2(x4), y3, self2, false).valueOf();
+          "Array | Matrix, BigNumber, Unit": typed3.referToSelf((self2) => (x4, n3, unit2) => self2(x4, n3.toNumber(), unit2)),
+          "Array | Matrix, Unit": typed3.referToSelf((self2) => (x4, unit2) => self2(x4, 0, unit2)),
+          "Array | Matrix": typed3.referToSelf((self2) => (x4) => {
+            return deepMap(x4, self2, true);
           }),
-          "number | Complex | BigNumber | Fraction, SparseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
+          "SparseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
+            return matAlgo11xS0s(x4, n3, self2, false);
+          }),
+          "DenseMatrix, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
+            return matAlgo14xDs(x4, n3, self2, false);
+          }),
+          "Array, number | BigNumber": typed3.referToSelf((self2) => (x4, n3) => {
+            return matAlgo14xDs(matrix2(x4), n3, self2, false).valueOf();
+          }),
+          "number | Complex | BigNumber | Fraction, SparseMatrix": typed3.referToSelf((self2) => (x4, n3) => {
             if (equalScalar2(x4, 0)) {
-              return zeros3(y3.size(), y3.storage());
+              return zeros3(n3.size(), n3.storage());
             }
-            return matAlgo12xSfs(y3, x4, self2, true);
+            return matAlgo12xSfs(n3, x4, self2, true);
           }),
-          "number | Complex | BigNumber | Fraction, DenseMatrix": typed3.referToSelf((self2) => (x4, y3) => {
+          "number | Complex | BigNumber | Fraction, DenseMatrix": typed3.referToSelf((self2) => (x4, n3) => {
             if (equalScalar2(x4, 0)) {
-              return zeros3(y3.size(), y3.storage());
+              return zeros3(n3.size(), n3.storage());
             }
-            return matAlgo14xDs(y3, x4, self2, true);
+            return matAlgo14xDs(n3, x4, self2, true);
           }),
-          "number | Complex | BigNumber | Fraction, Array": typed3.referToSelf((self2) => (x4, y3) => {
-            return matAlgo14xDs(matrix2(y3), x4, self2, true).valueOf();
+          "number | Complex | BigNumber | Fraction, Array": typed3.referToSelf((self2) => (x4, n3) => {
+            return matAlgo14xDs(matrix2(n3), x4, self2, true).valueOf();
           })
         });
       });
@@ -38317,7 +38458,7 @@ svg {
           }
         });
         function _denseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
@@ -38349,12 +38490,12 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
         function _sparseForwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
@@ -38404,7 +38545,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
@@ -38447,7 +38588,7 @@ svg {
           }
         });
         function _denseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var M3 = m3._data;
           var rows = m3._size[0];
           var columns = m3._size[1];
@@ -38479,12 +38620,12 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
         function _sparseBackwardSubstitution(m3, b_) {
-          var B4 = [solveValidation(m3, b_, true)._data.map((e6) => e6[0])];
+          var B4 = [solveValidation(m3, b_, true)._data.map((e5) => e5[0])];
           var rows = m3._size[0];
           var columns = m3._size[1];
           var values = m3._values;
@@ -38534,7 +38675,7 @@ svg {
             }
           }
           return B4.map((x4) => new DenseMatrix2({
-            data: x4.map((e6) => [e6]),
+            data: x4.map((e5) => [e5]),
             size: [rows, 1]
           }));
         }
@@ -38560,12 +38701,12 @@ svg {
           var aindex = a3._index;
           var aptr = a3._ptr;
           var asize = a3._size;
-          var adt = a3._datatype;
+          var adt = a3._datatype || a3._data === void 0 ? a3._datatype : a3.getDataType();
           var bvalues = b3._values;
           var bindex = b3._index;
           var bptr = b3._ptr;
           var bsize = b3._size;
-          var bdt = b3._datatype;
+          var bdt = b3._datatype || b3._data === void 0 ? b3._datatype : b3.getDataType();
           if (asize.length !== bsize.length) {
             throw new DimensionError(asize.length, bsize.length);
           }
@@ -38581,7 +38722,7 @@ svg {
           var eq = equalScalar2;
           var zero = 0;
           var cf = callback;
-          if (typeof adt === "string" && adt === bdt) {
+          if (typeof adt === "string" && adt === bdt && adt !== "mixed") {
             dt = adt;
             eq = typed3.find(equalScalar2, [dt, dt]);
             zero = typed3.convert(0, dt);
@@ -38626,7 +38767,7 @@ svg {
             index: cindex,
             ptr: cptr,
             size: [rows, columns],
-            datatype: dt
+            datatype: adt === a3._datatype && bdt === b3._datatype ? dt : void 0
           });
         };
       });
@@ -40730,26 +40871,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/Unit.js
-  function ownKeys2(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys2(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread2(e6) {
+  function _objectSpread2(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys2(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys2(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name161, dependencies161, createUnitClass;
   var init_Unit = __esm({
@@ -41120,8 +41261,8 @@ svg {
           hasher: (args) => args[0],
           limit: 100
         });
-        Unit2.isValuelessUnit = function(name310) {
-          return _findUnit(name310) !== null;
+        Unit2.isValuelessUnit = function(name314) {
+          return _findUnit(name314) !== null;
         };
         Unit2.prototype.hasBase = function(base) {
           if (typeof base === "string") {
@@ -41223,7 +41364,7 @@ svg {
         Unit2.prototype.abs = function() {
           var ret = this.clone();
           if (ret.value !== null) {
-            if (ret._isDerived() || ret.units[0].unit.offset === 0) {
+            if (ret._isDerived() || ret.units.length === 0 || ret.units[0].unit.offset === 0) {
               ret.value = abs3(ret.value);
             } else {
               var convert = ret._numberConverter();
@@ -41256,7 +41397,7 @@ svg {
           if (other.value !== null) {
             throw new Error("Cannot convert to a unit with a value");
           }
-          if (this.value === null || this._isDerived() || this.units[0].unit.offset === other.units[0].unit.offset) {
+          if (this.value === null || this._isDerived() || this.units.length === 0 || other.units.length === 0 || this.units[0].unit.offset === other.units[0].unit.offset) {
             other.value = clone(value2);
           } else {
             var convert = Unit2._getNumberConverter(typeOf(value2));
@@ -41375,6 +41516,10 @@ svg {
           ret.units = proposedUnitList;
           ret.fixPrefix = true;
           ret.skipAutomaticSimplification = true;
+          if (this.value !== null) {
+            ret.value = null;
+            return this.to(ret);
+          }
           return ret;
         };
         Unit2.prototype.formatUnits = function() {
@@ -41584,6 +41729,16 @@ svg {
               value: 1e24,
               scientific: true
             },
+            R: {
+              name: "R",
+              value: 1e27,
+              scientific: true
+            },
+            Q: {
+              name: "Q",
+              value: 1e30,
+              scientific: true
+            },
             d: {
               name: "d",
               value: 0.1,
@@ -41632,6 +41787,16 @@ svg {
             y: {
               name: "y",
               value: 1e-24,
+              scientific: true
+            },
+            r: {
+              name: "r",
+              value: 1e-27,
+              scientific: true
+            },
+            q: {
+              name: "q",
+              value: 1e-30,
               scientific: true
             }
           },
@@ -41691,6 +41856,16 @@ svg {
               value: 1e24,
               scientific: true
             },
+            ronna: {
+              name: "ronna",
+              value: 1e27,
+              scientific: true
+            },
+            quetta: {
+              name: "quetta",
+              value: 1e30,
+              scientific: true
+            },
             deci: {
               name: "deci",
               value: 0.1,
@@ -41739,6 +41914,16 @@ svg {
             yocto: {
               name: "yocto",
               value: 1e-24,
+              scientific: true
+            },
+            ronto: {
+              name: "ronto",
+              value: 1e-27,
+              scientific: true
+            },
+            quecto: {
+              name: "quecto",
+              value: 1e-30,
               scientific: true
             }
           },
@@ -41798,6 +41983,16 @@ svg {
               value: 1e48,
               scientific: true
             },
+            R: {
+              name: "R",
+              value: 1e54,
+              scientific: true
+            },
+            Q: {
+              name: "Q",
+              value: 1e60,
+              scientific: true
+            },
             d: {
               name: "d",
               value: 0.01,
@@ -41846,6 +42041,16 @@ svg {
             y: {
               name: "y",
               value: 1e-48,
+              scientific: true
+            },
+            r: {
+              name: "r",
+              value: 1e-54,
+              scientific: true
+            },
+            q: {
+              name: "q",
+              value: 1e-60,
               scientific: true
             }
           },
@@ -41905,6 +42110,16 @@ svg {
               value: 1e72,
               scientific: true
             },
+            R: {
+              name: "R",
+              value: 1e81,
+              scientific: true
+            },
+            Q: {
+              name: "Q",
+              value: 1e90,
+              scientific: true
+            },
             d: {
               name: "d",
               value: 1e-3,
@@ -41953,6 +42168,16 @@ svg {
             y: {
               name: "y",
               value: 1e-72,
+              scientific: true
+            },
+            r: {
+              name: "r",
+              value: 1e-81,
+              scientific: true
+            },
+            q: {
+              name: "q",
+              value: 1e-90,
               scientific: true
             }
           },
@@ -43765,11 +43990,11 @@ svg {
         };
         UNIT_SYSTEMS.auto = JSON.parse(JSON.stringify(UNIT_SYSTEMS.si));
         var currentUnitSystem = UNIT_SYSTEMS.auto;
-        Unit2.setUnitSystem = function(name310) {
-          if (hasOwnProperty(UNIT_SYSTEMS, name310)) {
-            currentUnitSystem = UNIT_SYSTEMS[name310];
+        Unit2.setUnitSystem = function(name314) {
+          if (hasOwnProperty(UNIT_SYSTEMS, name314)) {
+            currentUnitSystem = UNIT_SYSTEMS[name314];
           } else {
-            throw new Error("Unit system " + name310 + " does not exist. Choices are: " + Object.keys(UNIT_SYSTEMS).join(", "));
+            throw new Error("Unit system " + name314 + " does not exist. Choices are: " + Object.keys(UNIT_SYSTEMS).join(", "));
           }
         };
         Unit2.getUnitSystem = function() {
@@ -43834,14 +44059,14 @@ svg {
         Unit2.isValidAlpha = function isValidAlpha(c4) {
           return /^[a-zA-Z]$/.test(c4);
         };
-        function assertUnitNameIsValid(name310) {
-          for (var i4 = 0; i4 < name310.length; i4++) {
-            c3 = name310.charAt(i4);
+        function assertUnitNameIsValid(name314) {
+          for (var i4 = 0; i4 < name314.length; i4++) {
+            c3 = name314.charAt(i4);
             if (i4 === 0 && !Unit2.isValidAlpha(c3)) {
-              throw new Error('Invalid unit name (must begin with alpha character): "' + name310 + '"');
+              throw new Error('Invalid unit name (must begin with alpha character): "' + name314 + '"');
             }
             if (i4 > 0 && !(Unit2.isValidAlpha(c3) || isDigit(c3))) {
-              throw new Error('Invalid unit name (only alphanumeric characters are allowed): "' + name310 + '"');
+              throw new Error('Invalid unit name (only alphanumeric characters are allowed): "' + name314 + '"');
             }
           }
         }
@@ -43869,17 +44094,17 @@ svg {
           }
           return lastUnit;
         };
-        Unit2.createUnitSingle = function(name310, obj) {
+        Unit2.createUnitSingle = function(name314, obj) {
           if (typeof obj === "undefined" || obj === null) {
             obj = {};
           }
-          if (typeof name310 !== "string") {
+          if (typeof name314 !== "string") {
             throw new TypeError("createUnitSingle expects first parameter to be of type 'string'");
           }
-          if (hasOwnProperty(UNITS, name310)) {
-            throw new Error('Cannot create unit "' + name310 + '": a unit with that name already exists');
+          if (hasOwnProperty(UNITS, name314)) {
+            throw new Error('Cannot create unit "' + name314 + '": a unit with that name already exists');
           }
-          assertUnitNameIsValid(name310);
+          assertUnitNameIsValid(name314);
           var defUnit = null;
           var aliases = [];
           var offset = 0;
@@ -43901,7 +44126,7 @@ svg {
               aliases = obj.aliases.valueOf();
             }
           } else {
-            throw new TypeError('Cannot create unit "' + name310 + '" from "' + obj.toString() + '": expecting "string" or "Unit" or "Object"');
+            throw new TypeError('Cannot create unit "' + name314 + '" from "' + obj.toString() + '": expecting "string" or "Unit" or "Object"');
           }
           if (aliases) {
             for (var i4 = 0; i4 < aliases.length; i4++) {
@@ -43916,7 +44141,7 @@ svg {
                 allowNoUnits: true
               });
             } catch (ex) {
-              ex.message = 'Could not create unit "' + name310 + '" from "' + definition + '": ' + ex.message;
+              ex.message = 'Could not create unit "' + name314 + '" from "' + definition + '": ' + ex.message;
               throw ex;
             }
           } else if (definition && definition.type === "Unit") {
@@ -43931,9 +44156,9 @@ svg {
           }
           var newUnit = {};
           if (!defUnit) {
-            baseName = baseName || name310 + "_STUFF";
+            baseName = baseName || name314 + "_STUFF";
             if (BASE_DIMENSIONS.indexOf(baseName) >= 0) {
-              throw new Error('Cannot create new base unit "' + name310 + '": a base unit with that name already exists (and cannot be overridden)');
+              throw new Error('Cannot create new base unit "' + name314 + '": a base unit with that name already exists (and cannot be overridden)');
             }
             BASE_DIMENSIONS.push(baseName);
             for (var b3 in BASE_UNITS) {
@@ -43951,7 +44176,7 @@ svg {
             newBaseUnit.key = baseName;
             BASE_UNITS[baseName] = newBaseUnit;
             newUnit = {
-              name: name310,
+              name: name314,
               value: 1,
               dimensions: BASE_UNITS[baseName].dimensions.slice(0),
               prefixes,
@@ -43964,7 +44189,7 @@ svg {
             };
           } else {
             newUnit = {
-              name: name310,
+              name: name314,
               value: defUnit.value,
               dimensions: defUnit.dimensions.slice(0),
               prefixes,
@@ -43988,7 +44213,7 @@ svg {
               }
             }
             if (!anyMatch) {
-              baseName = baseName || name310 + "_STUFF";
+              baseName = baseName || name314 + "_STUFF";
               var _newBaseUnit = {
                 dimensions: defUnit.dimensions.slice(0)
               };
@@ -44001,7 +44226,7 @@ svg {
               newUnit.base = BASE_UNITS[baseName];
             }
           }
-          Unit2.UNITS[name310] = newUnit;
+          Unit2.UNITS[name314] = newUnit;
           for (var _i8 = 0; _i8 < aliases.length; _i8++) {
             var aliasName = aliases[_i8];
             var _alias = {};
@@ -44014,10 +44239,11 @@ svg {
             Unit2.UNITS[aliasName] = _alias;
           }
           delete _findUnit.cache;
-          return new Unit2(null, name310);
+          return new Unit2(null, name314);
         };
-        Unit2.deleteUnit = function(name310) {
-          delete Unit2.UNITS[name310];
+        Unit2.deleteUnit = function(name314) {
+          delete Unit2.UNITS[name314];
+          delete _findUnit.cache;
         };
         Unit2.PREFIXES = PREFIXES;
         Unit2.BASE_DIMENSIONS = BASE_DIMENSIONS;
@@ -44120,21 +44346,21 @@ svg {
             return Unit2.createUnit(obj, {});
           },
           // Shortcut method for creating one unit.
-          "string, Unit | string | Object, Object": function stringUnitStringObjectObject(name310, def, options) {
+          "string, Unit | string | Object, Object": function stringUnitStringObjectObject(name314, def, options) {
             var obj = {};
-            obj[name310] = def;
+            obj[name314] = def;
             return Unit2.createUnit(obj, options);
           },
           // Same as above but without the options.
-          "string, Unit | string | Object": function stringUnitStringObject(name310, def) {
+          "string, Unit | string | Object": function stringUnitStringObject(name314, def) {
             var obj = {};
-            obj[name310] = def;
+            obj[name314] = def;
             return Unit2.createUnit(obj, {});
           },
           // Without a definition, creates a base unit.
-          string: function string2(name310) {
+          string: function string2(name314) {
             var obj = {};
-            obj[name310] = {};
+            obj[name314] = {};
             return Unit2.createUnit(obj, {});
           }
         });
@@ -45113,14 +45339,14 @@ svg {
           Index: Index2
         } = _ref;
         return typed3(name195, {
-          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e6, a3) {
+          "number | BigNumber | Fraction | Complex, Array | Matrix": function numberBigNumberFractionComplexArrayMatrix(e5, a3) {
             if (subset2(size2(a3), new Index2(0)) === 0) {
               return 0;
             }
             var b3 = flatten(Array.isArray(a3) ? a3 : a3.toArray());
             var count2 = 0;
             for (var i4 = 0; i4 < b3.length; i4++) {
-              if (compareNatural2(b3[i4], e6) === 0) {
+              if (compareNatural2(b3[i4], e5) === 0) {
                 count2++;
               }
             }
@@ -45606,14 +45832,14 @@ svg {
         function _denseDot(a3, b3) {
           var N3 = _validateDim(a3, b3);
           var adata = isMatrix(a3) ? a3._data : a3;
-          var adt = isMatrix(a3) ? a3._datatype : void 0;
+          var adt = isMatrix(a3) ? a3._datatype || a3.getDataType() : void 0;
           var bdata = isMatrix(b3) ? b3._data : b3;
-          var bdt = isMatrix(b3) ? b3._datatype : void 0;
+          var bdt = isMatrix(b3) ? b3._datatype || b3.getDataType() : void 0;
           var aIsColumn = _size(a3).length === 2;
           var bIsColumn = _size(b3).length === 2;
           var add3 = addScalar2;
           var mul2 = multiplyScalar2;
-          if (adt && bdt && adt === bdt && typeof adt === "string") {
+          if (adt && bdt && adt === bdt && typeof adt === "string" && adt !== "mixed") {
             var dt = adt;
             add3 = typed3.find(addScalar2, [dt, dt]);
             mul2 = typed3.find(multiplyScalar2, [dt, dt]);
@@ -46031,6 +46257,15 @@ svg {
             return this._toString(options);
           }
           /**
+           * Internal function to generate the string output.
+           * This has to be implemented by every Node
+           *
+           * @throws {Error}
+           */
+          _toString() {
+            throw new Error("_toString not implemented for " + this.type);
+          }
+          /**
            * Get a JSON representation of the node
            * Both .toJSON() and the static .fromJSON(json) should be implemented by all
            * implementations of Node
@@ -46059,16 +46294,16 @@ svg {
             if (typeof customString !== "undefined") {
               return customString;
             }
-            return this.toHTML(options);
+            return this._toHTML(options);
           }
           /**
-           * Internal function to generate the string output.
+           * Internal function to generate the HTML output.
            * This has to be implemented by every Node
            *
            * @throws {Error}
            */
-          _toString() {
-            throw new Error("_toString not implemented for " + this.type);
+          _toHTML() {
+            throw new Error("_toHTML not implemented for " + this.type);
           }
           /**
            * Get LaTeX representation. (wrapper function)
@@ -46314,7 +46549,7 @@ svg {
            * @param {Object} options
            * @return {string}
            */
-          toHTML(options) {
+          _toHTML(options) {
             var object = this.object.toHTML(options);
             if (needParenthesis(this.object)) {
               object = '<span class="math-parenthesis math-round-parenthesis">(</span>' + object + '<span class="math-parenthesis math-round-parenthesis">)</span>';
@@ -46500,7 +46735,7 @@ svg {
            * @return {string} str
            * @override
            */
-          toHTML(options) {
+          _toHTML(options) {
             var items = this.items.map(function(node) {
               return node.toHTML(options);
             });
@@ -46543,7 +46778,7 @@ svg {
       subset: subset2,
       matrix: matrix2
     } = _ref;
-    return function assign2(object, index2, value2) {
+    return function assign(object, index2, value2) {
       try {
         if (Array.isArray(object)) {
           var result = matrix2(object).subset(index2, value2).valueOf();
@@ -46908,7 +47143,7 @@ svg {
         var access = accessFactory({
           subset: subset2
         });
-        var assign2 = assignFactory({
+        var assign = assignFactory({
           subset: subset2,
           matrix: matrix2
         });
@@ -47002,14 +47237,14 @@ svg {
             var evalObject = this.object._compile(math2, argNames);
             var evalIndex = this.index ? this.index._compile(math2, argNames) : null;
             var evalValue = this.value._compile(math2, argNames);
-            var name310 = this.object.name;
+            var name314 = this.object.name;
             if (!this.index) {
               if (!isSymbolNode(this.object)) {
                 throw new TypeError("SymbolNode expected as object");
               }
               return function evalAssignmentNode(scope, args, context) {
                 var value2 = evalValue(scope, args, context);
-                scope.set(name310, value2);
+                scope.set(name314, value2);
                 return value2;
               };
             } else if (this.index.isObjectProperty()) {
@@ -47025,7 +47260,7 @@ svg {
                 var childObject = evalObject(scope, args, context);
                 var value2 = evalValue(scope, args, context);
                 var index2 = evalIndex(scope, args, childObject);
-                scope.set(name310, assign2(childObject, index2, value2));
+                scope.set(name314, assign(childObject, index2, value2));
                 return value2;
               };
             } else {
@@ -47037,7 +47272,7 @@ svg {
                   var childObject = getSafeProperty(parent2, parentProp);
                   var index2 = evalIndex(scope, args, childObject);
                   var value2 = evalValue(scope, args, context);
-                  setSafeProperty(parent2, parentProp, assign2(childObject, index2, value2));
+                  setSafeProperty(parent2, parentProp, assign(childObject, index2, value2));
                   return value2;
                 };
               } else {
@@ -47048,7 +47283,7 @@ svg {
                   var childObject = access(parent2, parentIndex);
                   var index2 = evalIndex(scope, args, childObject);
                   var value2 = evalValue(scope, args, context);
-                  assign2(parent2, parentIndex, assign2(childObject, index2, value2));
+                  assign(parent2, parentIndex, assign(childObject, index2, value2));
                   return value2;
                 };
               }
@@ -47126,7 +47361,7 @@ svg {
            * @param {Object} options
            * @return {string}
            */
-          toHTML(options) {
+          _toHTML(options) {
             var object = this.object.toHTML(options);
             var index2 = this.index ? this.index.toHTML(options) : "";
             var value2 = this.value.toHTML(options);
@@ -47147,7 +47382,7 @@ svg {
             if (needParenthesis(this, options && options.parenthesis, options && options.implicit)) {
               value2 = "\\left(".concat(value2, "\\right)");
             }
-            return object + index2 + ":=" + value2;
+            return object + index2 + "=" + value2;
           }
         }
         _defineProperty(AssignmentNode2, "name", name209);
@@ -47318,7 +47553,7 @@ svg {
            * @return {string} str
            * @override
            */
-          toHTML(options) {
+          _toHTML(options) {
             return this.blocks.map(function(param) {
               return param.node.toHTML(options) + (param.visible ? "" : '<span class="math-separator">;</span>');
             }).join('<span class="math-separator"><br /></span>');
@@ -47513,7 +47748,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var precedence = getPrecedence(this, parenthesis, options && options.implicit);
             var condition = this.condition.toHTML(options);
@@ -47626,18 +47861,18 @@ svg {
       preserveFormatting: true
     });
   }
-  function toSymbol(name310, isUnit2) {
+  function toSymbol(name314, isUnit2) {
     isUnit2 = typeof isUnit2 === "undefined" ? false : isUnit2;
     if (isUnit2) {
-      if (hasOwnProperty(latexUnits, name310)) {
-        return latexUnits[name310];
+      if (hasOwnProperty(latexUnits, name314)) {
+        return latexUnits[name314];
       }
-      return "\\mathrm{" + escapeLatex(name310) + "}";
+      return "\\mathrm{" + escapeLatex(name314) + "}";
     }
-    if (hasOwnProperty(latexSymbols, name310)) {
-      return latexSymbols[name310];
+    if (hasOwnProperty(latexSymbols, name314)) {
+      return latexSymbols[name314];
     }
-    return escapeLatex(name310);
+    return escapeLatex(name314);
   }
   var import_escape_latex, latexSymbols, latexOperators, latexFunctions, defaultTemplate, latexUnits;
   var init_latex = __esm({
@@ -48198,7 +48433,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var value2 = this._toString(options);
             switch (typeOf(this.value)) {
               case "number":
@@ -48244,21 +48479,22 @@ svg {
            */
           _toTex(options) {
             var value2 = this._toString(options);
-            switch (typeOf(this.value)) {
+            var type = typeOf(this.value);
+            switch (type) {
               case "string":
                 return "\\mathtt{" + escapeLatex(value2) + "}";
               case "number":
-              case "BigNumber":
-                {
-                  if (!isFinite(this.value)) {
-                    return this.value.valueOf() < 0 ? "-\\infty" : "\\infty";
-                  }
-                  var index2 = value2.toLowerCase().indexOf("e");
-                  if (index2 !== -1) {
-                    return value2.substring(0, index2) + "\\cdot10^{" + value2.substring(index2 + 1) + "}";
-                  }
+              case "BigNumber": {
+                var finite = type === "BigNumber" ? this.value.isFinite() : isFinite(this.value);
+                if (!finite) {
+                  return this.value.valueOf() < 0 ? "-\\infty" : "\\infty";
+                }
+                var index2 = value2.toLowerCase().indexOf("e");
+                if (index2 !== -1) {
+                  return value2.substring(0, index2) + "\\cdot10^{" + value2.substring(index2 + 1) + "}";
                 }
                 return value2;
+              }
               case "Fraction":
                 return this.value.toLatex();
               default:
@@ -48312,9 +48548,9 @@ svg {
            *                                and type of the parameter
            * @param {Node} expr             The function expression
            */
-          constructor(name310, params, expr) {
+          constructor(name314, params, expr) {
             super();
-            if (typeof name310 !== "string") {
+            if (typeof name314 !== "string") {
               throw new TypeError('String expected for parameter "name"');
             }
             if (!Array.isArray(params)) {
@@ -48323,8 +48559,8 @@ svg {
             if (!isNode(expr)) {
               throw new TypeError('Node expected for parameter "expr"');
             }
-            if (keywords.has(name310)) {
-              throw new Error('Illegal function name, "' + name310 + '" is a reserved keyword');
+            if (keywords.has(name314)) {
+              throw new Error('Illegal function name, "' + name314 + '" is a reserved keyword');
             }
             var paramNames = /* @__PURE__ */ new Set();
             for (var param of params) {
@@ -48335,7 +48571,7 @@ svg {
                 paramNames.add(_name);
               }
             }
-            this.name = name310;
+            this.name = name314;
             this.params = params.map(function(param2) {
               return param2 && param2.name || param2;
             });
@@ -48369,10 +48605,10 @@ svg {
               childArgNames[param] = true;
             });
             var evalExpr = this.expr._compile(math2, childArgNames);
-            var name310 = this.name;
+            var name314 = this.name;
             var params = this.params;
             var signature = join(this.types, ",");
-            var syntax = name310 + "(" + join(this.params, ", ") + ")";
+            var syntax = name314 + "(" + join(this.params, ", ") + ")";
             return function evalFunctionAssignmentNode(scope, args, context) {
               var signatures = {};
               signatures[signature] = function() {
@@ -48382,9 +48618,9 @@ svg {
                 }
                 return evalExpr(scope, childArgs, context);
               };
-              var fn2 = typed3(name310, signatures);
+              var fn2 = typed3(name314, signatures);
               fn2.syntax = syntax;
-              scope.set(name310, fn2);
+              scope.set(name314, fn2);
               return fn2;
             };
           }
@@ -48463,7 +48699,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var params = [];
             for (var i4 = 0; i4 < this.params.length; i4++) {
@@ -48486,7 +48722,7 @@ svg {
             if (needParenthesis(this, parenthesis, options && options.implicit)) {
               expr = "\\left(".concat(expr, "\\right)");
             }
-            return "\\mathrm{" + this.name + "}\\left(" + this.params.map(toSymbol).join(",") + "\\right):=" + expr;
+            return "\\mathrm{" + this.name + "}\\left(" + this.params.map(toSymbol).join(",") + "\\right)=" + expr;
           }
         }
         _defineProperty(FunctionAssignmentNode2, "name", name213);
@@ -48667,7 +48903,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var dimensions = [];
             for (var i4 = 0; i4 < this.dimensions.length; i4++) {
               dimensions[i4] = this.dimensions[i4].toHTML();
@@ -48852,7 +49088,7 @@ svg {
            * @return {string} str
            * @override
            */
-          toHTML(options) {
+          _toHTML(options) {
             var entries = [];
             for (var key in this.properties) {
               if (hasOwnProperty(this.properties, key)) {
@@ -48886,6 +49122,16 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/utils/scope.js
+  function createSubScope(parentScope, args) {
+    return new PartitionedMap(parentScope, new ObjectWrappingMap(args), new Set(Object.keys(args)));
+  }
+  var init_scope = __esm({
+    "node_modules/mathjs/lib/esm/utils/scope.js"() {
+      init_map();
+    }
+  });
+
   // node_modules/mathjs/lib/esm/expression/node/OperatorNode.js
   var name216, dependencies216, createOperatorNode;
   var init_OperatorNode = __esm({
@@ -48893,6 +49139,7 @@ svg {
       init_defineProperty();
       init_is();
       init_array();
+      init_scope();
       init_string();
       init_customs();
       init_operators();
@@ -49117,7 +49364,12 @@ svg {
             var evalArgs = map(this.args, function(arg2) {
               return arg2._compile(math2, argNames);
             });
-            if (evalArgs.length === 1) {
+            if (typeof fn2 === "function" && fn2.rawArgs === true) {
+              var rawArgs = this.args;
+              return function evalOperatorNode(scope, args, context) {
+                return fn2(rawArgs, math2, createSubScope(scope, args));
+              };
+            } else if (evalArgs.length === 1) {
               var evalArg0 = evalArgs[0];
               return function evalOperatorNode(scope, args, context) {
                 return fn2(evalArg0(scope, args, context));
@@ -49270,7 +49522,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var implicit = options && options.implicit ? options.implicit : "hide";
             var args = this.args;
@@ -49531,7 +49783,7 @@ svg {
            * @return {string} str
            * @override
            */
-          toHTML(options) {
+          _toHTML(options) {
             if (!options || options && !options.parenthesis || options && options.parenthesis === "keep") {
               return '<span class="math-parenthesis math-round-parenthesis">(</span>' + this.content.toHTML(options) + '<span class="math-parenthesis math-round-parenthesis">)</span>';
             }
@@ -49737,7 +49989,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var parens = calculateNecessaryParentheses(this, parenthesis, options && options.implicit);
             var str;
@@ -49951,7 +50203,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var parenthesis = options && options.parenthesis ? options.parenthesis : "keep";
             var precedence = getPrecedence(this, parenthesis, options && options.implicit);
             var paramStrings = this.params.map(function(p3, index2) {
@@ -50008,8 +50260,8 @@ svg {
           Unit: Unit2,
           Node: Node2
         } = _ref;
-        function isValuelessUnit(name310) {
-          return Unit2 ? Unit2.isValuelessUnit(name310) : false;
+        function isValuelessUnit(name314) {
+          return Unit2 ? Unit2.isValuelessUnit(name314) : false;
         }
         class SymbolNode2 extends Node2 {
           /**
@@ -50019,12 +50271,12 @@ svg {
            * @param {string} name
            * @extends {Node}
            */
-          constructor(name310) {
+          constructor(name314) {
             super();
-            if (typeof name310 !== "string") {
+            if (typeof name314 !== "string") {
               throw new TypeError('String expected for parameter "name"');
             }
-            this.name = name310;
+            this.name = name314;
           }
           get type() {
             return "SymbolNode";
@@ -50046,19 +50298,19 @@ svg {
            *                        evalNode(scope: Object, args: Object, context: *)
            */
           _compile(math3, argNames) {
-            var name310 = this.name;
-            if (argNames[name310] === true) {
+            var name314 = this.name;
+            if (argNames[name314] === true) {
               return function(scope, args, context) {
-                return getSafeProperty(args, name310);
+                return getSafeProperty(args, name314);
               };
-            } else if (name310 in math3) {
+            } else if (name314 in math3) {
               return function(scope, args, context) {
-                return scope.has(name310) ? scope.get(name310) : getSafeProperty(math3, name310);
+                return scope.has(name314) ? scope.get(name314) : getSafeProperty(math3, name314);
               };
             } else {
-              var isUnit2 = isValuelessUnit(name310);
+              var isUnit2 = isValuelessUnit(name314);
               return function(scope, args, context) {
-                return scope.has(name310) ? scope.get(name310) : isUnit2 ? new Unit2(null, name310) : SymbolNode2.onUndefinedSymbol(name310);
+                return scope.has(name314) ? scope.get(name314) : isUnit2 ? new Unit2(null, name314) : SymbolNode2.onUndefinedSymbol(name314);
               };
             }
           }
@@ -50081,8 +50333,8 @@ svg {
            * Throws an error 'Undefined symbol {name}'
            * @param {string} name
            */
-          static onUndefinedSymbol(name310) {
-            throw new Error("Undefined symbol " + name310);
+          static onUndefinedSymbol(name314) {
+            throw new Error("Undefined symbol " + name314);
           }
           /**
            * Create a clone of this node, a shallow copy
@@ -50106,22 +50358,22 @@ svg {
            * @return {string} str
            * @override
            */
-          toHTML(options) {
-            var name310 = escape(this.name);
-            if (name310 === "true" || name310 === "false") {
-              return '<span class="math-symbol math-boolean">' + name310 + "</span>";
-            } else if (name310 === "i") {
-              return '<span class="math-symbol math-imaginary-symbol">' + name310 + "</span>";
-            } else if (name310 === "Infinity") {
-              return '<span class="math-symbol math-infinity-symbol">' + name310 + "</span>";
-            } else if (name310 === "NaN") {
-              return '<span class="math-symbol math-nan-symbol">' + name310 + "</span>";
-            } else if (name310 === "null") {
-              return '<span class="math-symbol math-null-symbol">' + name310 + "</span>";
-            } else if (name310 === "undefined") {
-              return '<span class="math-symbol math-undefined-symbol">' + name310 + "</span>";
+          _toHTML(options) {
+            var name314 = escape(this.name);
+            if (name314 === "true" || name314 === "false") {
+              return '<span class="math-symbol math-boolean">' + name314 + "</span>";
+            } else if (name314 === "i") {
+              return '<span class="math-symbol math-imaginary-symbol">' + name314 + "</span>";
+            } else if (name314 === "Infinity") {
+              return '<span class="math-symbol math-infinity-symbol">' + name314 + "</span>";
+            } else if (name314 === "NaN") {
+              return '<span class="math-symbol math-nan-symbol">' + name314 + "</span>";
+            } else if (name314 === "null") {
+              return '<span class="math-symbol math-null-symbol">' + name314 + "</span>";
+            } else if (name314 === "undefined") {
+              return '<span class="math-symbol math-undefined-symbol">' + name314 + "</span>";
             }
-            return '<span class="math-symbol">' + name310 + "</span>";
+            return '<span class="math-symbol">' + name314 + "</span>";
           }
           /**
            * Get a JSON representation of the node
@@ -50166,22 +50418,6 @@ svg {
         isClass: true,
         isNode: true
       });
-    }
-  });
-
-  // node_modules/mathjs/lib/esm/utils/scope.js
-  function createSubScope(parentScope) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-    if (typeof parentScope.createSubScope === "function") {
-      return assign(parentScope.createSubScope(), ...args);
-    }
-    return assign(createEmptyMap(), parentScope, ...args);
-  }
-  var init_scope = __esm({
-    "node_modules/mathjs/lib/esm/utils/scope.js"() {
-      init_map();
     }
   });
 
@@ -50331,7 +50567,7 @@ svg {
                   var rawArgs = this.args;
                   return function evalFunctionNode(scope, args, context) {
                     var fn3 = resolveFn(scope);
-                    return fn3(rawArgs, math3, createSubScope(scope, args), scope);
+                    return fn3(rawArgs, math3, createSubScope(scope, args));
                   };
                 } else {
                   switch (evalArgs.length) {
@@ -50369,7 +50605,7 @@ svg {
                     throw new TypeError("Argument '".concat(_name, "' was not a function; received: ").concat(strin(fn3)));
                   }
                   if (fn3.rawArgs) {
-                    return fn3(_rawArgs, math3, createSubScope(scope, args), scope);
+                    return fn3(_rawArgs, math3, createSubScope(scope, args));
                   } else {
                     var values = evalArgs.map((evalArg) => evalArg(scope, args, context));
                     return fn3.apply(fn3, values);
@@ -50384,7 +50620,7 @@ svg {
                 var object = evalObject(scope, args, context);
                 var fn3 = getSafeMethod(object, prop);
                 if (fn3 !== null && fn3 !== void 0 && fn3.rawArgs) {
-                  return fn3(_rawArgs2, math3, createSubScope(scope, args), scope);
+                  return fn3(_rawArgs2, math3, createSubScope(scope, args));
                 } else {
                   var values = evalArgs.map((evalArg) => evalArg(scope, args, context));
                   return fn3.apply(object, values);
@@ -50400,7 +50636,7 @@ svg {
                   throw new TypeError("Expression '".concat(fnExpr, "' did not evaluate to a function; value is:") + "\n  ".concat(strin(fn3)));
                 }
                 if (fn3.rawArgs) {
-                  return fn3(_rawArgs3, math3, createSubScope(scope, args), scope);
+                  return fn3(_rawArgs3, math3, createSubScope(scope, args));
                 } else {
                   var values = evalArgs.map((evalArg) => evalArg(scope, args, context));
                   return fn3.apply(fn3, values);
@@ -50457,9 +50693,9 @@ svg {
            */
           toString(options) {
             var customString;
-            var name310 = this.fn.toString(options);
-            if (options && typeof options.handler === "object" && hasOwnProperty(options.handler, name310)) {
-              customString = options.handler[name310](this, options);
+            var name314 = this.fn.toString(options);
+            if (options && typeof options.handler === "object" && hasOwnProperty(options.handler, name314)) {
+              customString = options.handler[name314](this, options);
             }
             if (typeof customString !== "undefined") {
               return customString;
@@ -50501,7 +50737,7 @@ svg {
            * @param {Object} options
            * @return {string} str
            */
-          toHTML(options) {
+          _toHTML(options) {
             var args = this.args.map(function(arg2) {
               return arg2.toHTML(options);
             });
@@ -50577,8 +50813,8 @@ svg {
         }
         _class = FunctionNode2;
         _defineProperty(FunctionNode2, "name", name221);
-        _defineProperty(FunctionNode2, "onUndefinedFunction", function(name310) {
-          throw new Error("Undefined function " + name310);
+        _defineProperty(FunctionNode2, "onUndefinedFunction", function(name314) {
+          throw new Error("Undefined function " + name314);
         });
         _defineProperty(FunctionNode2, "fromJSON", function(json) {
           return new _class(json.fn, json.args);
@@ -50994,14 +51230,14 @@ svg {
           }
         }
         function parseAssignment(state) {
-          var name310, args, value2, valid;
+          var name314, args, value2, valid;
           var node = parseConditional(state);
           if (state.token === "=") {
             if (isSymbolNode(node)) {
-              name310 = node.name;
+              name314 = node.name;
               getTokenSkipNewline(state);
               value2 = parseAssignment(state);
-              return new AssignmentNode2(new SymbolNode2(name310), value2);
+              return new AssignmentNode2(new SymbolNode2(name314), value2);
             } else if (isAccessorNode(node)) {
               getTokenSkipNewline(state);
               value2 = parseAssignment(state);
@@ -51009,7 +51245,7 @@ svg {
             } else if (isFunctionNode(node) && isSymbolNode(node.fn)) {
               valid = true;
               args = [];
-              name310 = node.name;
+              name314 = node.name;
               node.args.forEach(function(arg2, index2) {
                 if (isSymbolNode(arg2)) {
                   args[index2] = arg2.name;
@@ -51020,7 +51256,7 @@ svg {
               if (valid) {
                 getTokenSkipNewline(state);
                 value2 = parseAssignment(state);
-                return new FunctionAssignmentNode2(name310, args, value2);
+                return new FunctionAssignmentNode2(name314, args, value2);
               }
             }
             throw createSyntaxError(state, "Invalid left hand side of assignment operator =");
@@ -51122,7 +51358,7 @@ svg {
           }
         }
         function parseShift(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseConversion(state);
           var operators = {
             "<<": "leftShift",
@@ -51130,16 +51366,16 @@ svg {
             ">>>": "rightLogShift"
           };
           while (hasOwnProperty(operators, state.token)) {
-            name310 = state.token;
-            fn2 = operators[name310];
+            name314 = state.token;
+            fn2 = operators[name314];
             getTokenSkipNewline(state);
             params = [node, parseConversion(state)];
-            node = new OperatorNode2(name310, fn2, params);
+            node = new OperatorNode2(name314, fn2, params);
           }
           return node;
         }
         function parseConversion(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseRange(state);
           var operators = {
             to: "to",
@@ -51147,14 +51383,14 @@ svg {
             // alias of 'to'
           };
           while (hasOwnProperty(operators, state.token)) {
-            name310 = state.token;
-            fn2 = operators[name310];
+            name314 = state.token;
+            fn2 = operators[name314];
             getTokenSkipNewline(state);
-            if (name310 === "in" && state.token === "") {
+            if (name314 === "in" && state.token === "") {
               node = new OperatorNode2("*", "multiply", [node, new SymbolNode2("in")], true);
             } else {
               params = [node, parseRange(state)];
-              node = new OperatorNode2(name310, fn2, params);
+              node = new OperatorNode2(name314, fn2, params);
             }
           }
           return node;
@@ -51186,15 +51422,15 @@ svg {
           return node;
         }
         function parseAddSubtract(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseMultiplyDivide(state);
           var operators = {
             "+": "add",
             "-": "subtract"
           };
           while (hasOwnProperty(operators, state.token)) {
-            name310 = state.token;
-            fn2 = operators[name310];
+            name314 = state.token;
+            fn2 = operators[name314];
             getTokenSkipNewline(state);
             var rightNode = parseMultiplyDivide(state);
             if (rightNode.isPercentage) {
@@ -51202,12 +51438,12 @@ svg {
             } else {
               params = [node, rightNode];
             }
-            node = new OperatorNode2(name310, fn2, params);
+            node = new OperatorNode2(name314, fn2, params);
           }
           return node;
         }
         function parseMultiplyDivide(state) {
-          var node, last, name310, fn2;
+          var node, last, name314, fn2;
           node = parseImplicitMultiplication(state);
           last = node;
           var operators = {
@@ -51218,11 +51454,11 @@ svg {
           };
           while (true) {
             if (hasOwnProperty(operators, state.token)) {
-              name310 = state.token;
-              fn2 = operators[name310];
+              name314 = state.token;
+              fn2 = operators[name314];
               getTokenSkipNewline(state);
               last = parseImplicitMultiplication(state);
-              node = new OperatorNode2(name310, fn2, [node, last]);
+              node = new OperatorNode2(name314, fn2, [node, last]);
             } else {
               break;
             }
@@ -51281,27 +51517,27 @@ svg {
           return node;
         }
         function parsePercentage(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseUnary(state);
           var operators = {
             "%": "mod",
             mod: "mod"
           };
           while (hasOwnProperty(operators, state.token)) {
-            name310 = state.token;
-            fn2 = operators[name310];
+            name314 = state.token;
+            fn2 = operators[name314];
             getTokenSkipNewline(state);
-            if (name310 === "%" && state.tokenType === TOKENTYPE.DELIMITER && state.token !== "(") {
+            if (name314 === "%" && state.tokenType === TOKENTYPE.DELIMITER && state.token !== "(") {
               node = new OperatorNode2("/", "divide", [node, new ConstantNode2(100)], false, true);
             } else {
               params = [node, parseUnary(state)];
-              node = new OperatorNode2(name310, fn2, params);
+              node = new OperatorNode2(name314, fn2, params);
             }
           }
           return node;
         }
         function parseUnary(state) {
-          var name310, params, fn2;
+          var name314, params, fn2;
           var operators = {
             "-": "unaryMinus",
             "+": "unaryPlus",
@@ -51310,38 +51546,38 @@ svg {
           };
           if (hasOwnProperty(operators, state.token)) {
             fn2 = operators[state.token];
-            name310 = state.token;
+            name314 = state.token;
             getTokenSkipNewline(state);
             params = [parseUnary(state)];
-            return new OperatorNode2(name310, fn2, params);
+            return new OperatorNode2(name314, fn2, params);
           }
           return parsePow(state);
         }
         function parsePow(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseLeftHandOperators(state);
           if (state.token === "^" || state.token === ".^") {
-            name310 = state.token;
-            fn2 = name310 === "^" ? "pow" : "dotPow";
+            name314 = state.token;
+            fn2 = name314 === "^" ? "pow" : "dotPow";
             getTokenSkipNewline(state);
             params = [node, parseUnary(state)];
-            node = new OperatorNode2(name310, fn2, params);
+            node = new OperatorNode2(name314, fn2, params);
           }
           return node;
         }
         function parseLeftHandOperators(state) {
-          var node, name310, fn2, params;
+          var node, name314, fn2, params;
           node = parseCustomNodes(state);
           var operators = {
             "!": "factorial",
             "'": "ctranspose"
           };
           while (hasOwnProperty(operators, state.token)) {
-            name310 = state.token;
-            fn2 = operators[name310];
+            name314 = state.token;
+            fn2 = operators[name314];
             getToken(state);
             params = [node];
-            node = new OperatorNode2(name310, fn2, params);
+            node = new OperatorNode2(name314, fn2, params);
             node = parseAccessors(state, node);
           }
           return node;
@@ -51373,16 +51609,16 @@ svg {
           return parseSymbol(state);
         }
         function parseSymbol(state) {
-          var node, name310;
+          var node, name314;
           if (state.tokenType === TOKENTYPE.SYMBOL || state.tokenType === TOKENTYPE.DELIMITER && state.token in NAMED_DELIMITERS) {
-            name310 = state.token;
+            name314 = state.token;
             getToken(state);
-            if (hasOwnProperty(CONSTANTS, name310)) {
-              node = new ConstantNode2(CONSTANTS[name310]);
-            } else if (NUMERIC_CONSTANTS.indexOf(name310) !== -1) {
-              node = new ConstantNode2(numeric3(name310, "number"));
+            if (hasOwnProperty(CONSTANTS, name314)) {
+              node = new ConstantNode2(CONSTANTS[name314]);
+            } else if (NUMERIC_CONSTANTS.indexOf(name314) !== -1) {
+              node = new ConstantNode2(numeric3(name314, "number"));
             } else {
-              node = new SymbolNode2(name310);
+              node = new SymbolNode2(name314);
             }
             node = parseAccessors(state, node);
             return node;
@@ -51498,8 +51734,10 @@ svg {
                 params = [row2];
                 while (state.token === ";") {
                   getToken(state);
-                  params[rows] = parseRow(state);
-                  rows++;
+                  if (state.token !== "]") {
+                    params[rows] = parseRow(state);
+                    rows++;
+                  }
                 }
                 if (state.token !== "]") {
                   throw createSyntaxError(state, "End of matrix ] expected");
@@ -51535,8 +51773,10 @@ svg {
           var len = 1;
           while (state.token === ",") {
             getToken(state);
-            params[len] = parseAssignment(state);
-            len++;
+            if (state.token !== "]" && state.token !== ";") {
+              params[len] = parseAssignment(state);
+              len++;
+            }
           }
           return new ArrayNode2(params);
         }
@@ -51723,9 +51963,9 @@ svg {
         Parser2.prototype.evaluate = function(expr) {
           return evaluate2(expr, this.scope);
         };
-        Parser2.prototype.get = function(name310) {
-          if (this.scope.has(name310)) {
-            return this.scope.get(name310);
+        Parser2.prototype.get = function(name314) {
+          if (this.scope.has(name314)) {
+            return this.scope.get(name314);
           }
         };
         Parser2.prototype.getAll = function() {
@@ -51734,12 +51974,12 @@ svg {
         Parser2.prototype.getAllAsMap = function() {
           return this.scope;
         };
-        Parser2.prototype.set = function(name310, value2) {
-          this.scope.set(name310, value2);
+        Parser2.prototype.set = function(name314, value2) {
+          this.scope.set(name314, value2);
           return value2;
         };
-        Parser2.prototype.remove = function(name310) {
-          this.scope.delete(name310);
+        Parser2.prototype.remove = function(name314) {
+          this.scope.delete(name314);
         };
         Parser2.prototype.clear = function() {
           this.scope.clear();
@@ -52042,7 +52282,7 @@ svg {
           typed: typed3,
           matrix: matrix2,
           zeros: zeros3,
-          identity: identity2,
+          identity: identity3,
           isZero: isZero2,
           equal: equal2,
           sign: sign4,
@@ -52076,7 +52316,7 @@ svg {
         function _denseQRimpl(m3) {
           var rows = m3._size[0];
           var cols = m3._size[1];
-          var Q3 = identity2([rows], "dense");
+          var Q3 = identity3([rows], "dense");
           var Qdata = Q3._data;
           var R2 = m3.clone();
           var Rdata = R2._data;
@@ -52379,7 +52619,7 @@ svg {
           var mark = _initializeQuotientGraph(n3, cptr, W2, len, head, last, next, hhead, nv, w4, elen, degree);
           var nel = _initializeDegreeLists(n3, cptr, W2, degree, elen, w4, dense, nv, head, last, next);
           var mindeg = 0;
-          var i4, j4, k4, k1, k22, e6, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
+          var i4, j4, k4, k1, k22, e5, pj, ln3, nvi, pk, eln, p1, p22, pn2, h3, d3;
           while (nel < n3) {
             for (k4 = -1; mindeg < n3 && (k4 = W2[head + mindeg]) === -1; mindeg++)
               ;
@@ -52397,13 +52637,13 @@ svg {
             var pk2 = pk1;
             for (k1 = 1; k1 <= elenk + 1; k1++) {
               if (k1 > elenk) {
-                e6 = k4;
+                e5 = k4;
                 pj = p3;
                 ln3 = W2[len + k4] - elenk;
               } else {
-                e6 = cindex[p3++];
-                pj = cptr[e6];
-                ln3 = W2[len + e6];
+                e5 = cindex[p3++];
+                pj = cptr[e5];
+                ln3 = W2[len + e5];
               }
               for (k22 = 1; k22 <= ln3; k22++) {
                 i4 = cindex[pj++];
@@ -52422,9 +52662,9 @@ svg {
                   W2[head + W2[degree + i4]] = W2[next + i4];
                 }
               }
-              if (e6 !== k4) {
-                cptr[e6] = csFlip(k4);
-                W2[w4 + e6] = 0;
+              if (e5 !== k4) {
+                cptr[e5] = csFlip(k4);
+                W2[w4 + e5] = 0;
               }
             }
             if (elenk !== 0) {
@@ -52443,11 +52683,11 @@ svg {
               nvi = -W2[nv + i4];
               var wnvi = mark - nvi;
               for (p3 = cptr[i4], p1 = cptr[i4] + eln - 1; p3 <= p1; p3++) {
-                e6 = cindex[p3];
-                if (W2[w4 + e6] >= mark) {
-                  W2[w4 + e6] -= nvi;
-                } else if (W2[w4 + e6] !== 0) {
-                  W2[w4 + e6] = W2[degree + e6] + wnvi;
+                e5 = cindex[p3];
+                if (W2[w4 + e5] >= mark) {
+                  W2[w4 + e5] -= nvi;
+                } else if (W2[w4 + e5] !== 0) {
+                  W2[w4 + e5] = W2[degree + e5] + wnvi;
                 }
               }
             }
@@ -52457,16 +52697,16 @@ svg {
               p22 = p1 + W2[elen + i4] - 1;
               pn2 = p1;
               for (h3 = 0, d3 = 0, p3 = p1; p3 <= p22; p3++) {
-                e6 = cindex[p3];
-                if (W2[w4 + e6] !== 0) {
-                  var dext = W2[w4 + e6] - mark;
+                e5 = cindex[p3];
+                if (W2[w4 + e5] !== 0) {
+                  var dext = W2[w4 + e5] - mark;
                   if (dext > 0) {
                     d3 += dext;
-                    cindex[pn2++] = e6;
-                    h3 += e6;
+                    cindex[pn2++] = e5;
+                    h3 += e5;
                   } else {
-                    cptr[e6] = csFlip(k4);
-                    W2[w4 + e6] = 0;
+                    cptr[e5] = csFlip(k4);
+                    W2[w4 + e5] = 0;
                   }
                 }
               }
@@ -52582,13 +52822,13 @@ svg {
             W2[next + j4] = W2[head + cptr[j4]];
             W2[head + cptr[j4]] = j4;
           }
-          for (e6 = n3; e6 >= 0; e6--) {
-            if (W2[nv + e6] <= 0) {
+          for (e5 = n3; e5 >= 0; e5--) {
+            if (W2[nv + e5] <= 0) {
               continue;
             }
-            if (cptr[e6] !== -1) {
-              W2[next + e6] = W2[head + cptr[e6]];
-              W2[head + cptr[e6]] = e6;
+            if (cptr[e5] !== -1) {
+              W2[next + e5] = W2[head + cptr[e5]];
+              W2[head + cptr[e5]] = e5;
             }
           }
           for (k4 = 0, i4 = 0; i4 <= n3; i4++) {
@@ -53447,7 +53687,7 @@ svg {
                   Ccubed = divide3(add3(Delta1, sqrt3(subtract2(multiply2(Delta1, Delta1), multiply2(4, Delta0, Delta0, Delta0)))), 2);
                 }
                 var allRoots = true;
-                var rawRoots = cbrt5(Ccubed, allRoots).toArray().map((C3) => divide3(add3(_b, C3, divide3(Delta0, C3)), _denom));
+                var rawRoots = cbrt5(Ccubed, allRoots).toArray().map((C4) => divide3(add3(_b, C4, divide3(Delta0, C4)), _denom));
                 return rawRoots.map((r3) => {
                   if (typeOf3(r3) === "Complex" && equalScalar2(re2(r3), re2(r3) + im2(r3))) {
                     return re2(r3);
@@ -53473,10 +53713,10 @@ svg {
       init_string();
       init_factory();
       name237 = "Help";
-      dependencies237 = ["parse"];
+      dependencies237 = ["evaluate"];
       createHelpClass = /* @__PURE__ */ factory(name237, dependencies237, (_ref) => {
         var {
-          parse: parse2
+          evaluate: evaluate2
         } = _ref;
         function Help2(doc) {
           if (!(this instanceof Help2)) {
@@ -53505,15 +53745,24 @@ svg {
           }
           if (doc.examples) {
             desc += "Examples:\n";
-            var scope = {};
+            var configChanged = false;
+            var originalConfig = evaluate2("config()");
+            var scope = {
+              config: (newConfig) => {
+                configChanged = true;
+                return evaluate2("config(newConfig)", {
+                  newConfig
+                });
+              }
+            };
             for (var i4 = 0; i4 < doc.examples.length; i4++) {
               var expr = doc.examples[i4];
               desc += "    " + expr + "\n";
               var res = void 0;
               try {
-                res = parse2(expr).compile().evaluate(scope);
-              } catch (e6) {
-                res = e6;
+                res = evaluate2(expr, scope);
+              } catch (e5) {
+                res = e5;
               }
               if (res !== void 0 && !isHelp(res)) {
                 desc += "        " + format3(res, {
@@ -53522,6 +53771,11 @@ svg {
               }
             }
             desc += "\n";
+            if (configChanged) {
+              evaluate2("config(originalConfig)", {
+                originalConfig
+              });
+            }
           }
           if (doc.mayThrow && doc.mayThrow.length) {
             desc += "Throws: " + doc.mayThrow.join(", ") + "\n\n";
@@ -53597,13 +53851,13 @@ svg {
         Chain2.fromJSON = function(json) {
           return new Chain2(json.value);
         };
-        function createProxy(name310, fn2) {
+        function createProxy(name314, fn2) {
           if (typeof fn2 === "function") {
-            Chain2.prototype[name310] = chainify(fn2);
+            Chain2.prototype[name314] = chainify(fn2);
           }
         }
-        function createLazyProxy(name310, resolver) {
-          lazy(Chain2.prototype, name310, function outerResolver() {
+        function createLazyProxy(name314, resolver) {
+          lazy(Chain2.prototype, name314, function outerResolver() {
             var fn2 = resolver();
             if (typeof fn2 === "function") {
               return chainify(fn2);
@@ -53656,9 +53910,9 @@ svg {
         };
         Chain2.createProxy(math2);
         if (on2) {
-          on2("import", function(name310, resolver, path) {
+          on2("import", function(name314, resolver, path) {
             if (!path) {
-              createLazyProxy(name310, resolver);
+              createLazyProxy(name314, resolver);
             }
           });
         }
@@ -54831,9 +55085,9 @@ svg {
       roundDocs = {
         name: "round",
         category: "Arithmetic",
-        syntax: ["round(x)", "round(x, n)"],
+        syntax: ["round(x)", "round(x, n)", "round(unit, valuelessUnit)", "round(unit, n, valuelessUnit)"],
         description: "round a value towards the nearest integer.If x is complex, both real and imaginary part are rounded towards the nearest integer. When n is specified, the value is rounded to n decimals.",
-        examples: ["round(3.2)", "round(3.8)", "round(-4.2)", "round(-4.8)", "round(pi, 3)", "round(123.45678, 2)"],
+        examples: ["round(3.2)", "round(3.8)", "round(-4.2)", "round(-4.8)", "round(pi, 3)", "round(123.45678, 2)", "round(3.241cm, 2, cm)", "round([3.2, 3.8, -4.7])"],
         seealso: ["ceil", "floor", "fix"]
       };
     }
@@ -55492,8 +55746,8 @@ svg {
         name: "eigs",
         category: "Matrix",
         syntax: ["eigs(x)"],
-        description: "Calculate the eigenvalues and eigenvectors of a real symmetric matrix",
-        examples: ["eigs([[5, 2.3], [2.3, 1]])"],
+        description: "Calculate the eigenvalues and optionally eigenvectors of a square matrix",
+        examples: ["eigs([[5, 2.3], [2.3, 1]])", "eigs([[1, 2, 3], [4, 5, 6], [7, 8, 9]], { precision: 1e-6, eigenvectors: false })"],
         seealso: ["inv"]
       };
     }
@@ -58225,7 +58479,7 @@ svg {
           multiply: multiply2,
           unaryMinus: unaryMinus2,
           det: det2,
-          identity: identity2,
+          identity: identity3,
           abs: abs3
         } = _ref;
         return typed3(name242, {
@@ -58282,7 +58536,7 @@ svg {
             for (r3 = 0; r3 < rows; r3++) {
               A4[r3] = A4[r3].concat();
             }
-            var B4 = identity2(rows).valueOf();
+            var B4 = identity3(rows).valueOf();
             for (var c3 = 0; c3 < cols; c3++) {
               var ABig = abs3(A4[c3][c3]);
               var rBig = c3;
@@ -58410,10 +58664,10 @@ svg {
         });
         function _pinv(mat, rows, cols) {
           var {
-            C: C3,
+            C: C4,
             F: F4
           } = _rankFact(mat, rows, cols);
-          var Cpinv = multiply2(inv2(multiply2(ctranspose2(C3), C3)), ctranspose2(C3));
+          var Cpinv = multiply2(inv2(multiply2(ctranspose2(C4), C4)), ctranspose2(C4));
           var Fpinv = multiply2(ctranspose2(F4), inv2(multiply2(F4, ctranspose2(F4))));
           return multiply2(Fpinv, Cpinv);
         }
@@ -58454,10 +58708,10 @@ svg {
         }
         function _rankFact(mat, rows, cols) {
           var rref = _rref(mat, rows, cols);
-          var C3 = mat.map((_3, i4) => _3.filter((_4, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
+          var C4 = mat.map((_3, i4) => _3.filter((_4, j4) => j4 < rows && !_isZero(dot2(rref[j4], rref[j4]))));
           var F4 = rref.filter((_3, i4) => !_isZero(dot2(rref[i4], rref[i4])));
           return {
-            C: C3,
+            C: C4,
             F: F4
           };
         }
@@ -58484,6 +58738,8 @@ svg {
       abs: abs3,
       bignumber: bignumber2,
       diag: diag2,
+      size: size2,
+      reshape: reshape3,
       inv: inv2,
       qr: qr2,
       usolve: usolve2,
@@ -58495,24 +58751,23 @@ svg {
       matrixFromColumns: matrixFromColumns2,
       dot: dot2
     } = _ref;
-    function complexEigs(arr, N3, prec, type, findVectors) {
-      if (findVectors === void 0) {
-        findVectors = true;
-      }
+    function complexEigs(arr, N3, prec, type) {
+      var findVectors = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : true;
       var R2 = balance(arr, N3, prec, type, findVectors);
       reduceToHessenberg(arr, N3, prec, type, findVectors, R2);
       var {
         values,
-        C: C3
+        C: C4
       } = iterateUntilTriangular(arr, N3, prec, type, findVectors);
-      var vectors;
       if (findVectors) {
-        vectors = findEigenvectors(arr, N3, C3, R2, values, prec, type);
-        vectors = matrixFromColumns2(...vectors);
+        var eigenvectors = findEigenvectors(arr, N3, C4, R2, values, prec, type);
+        return {
+          values,
+          eigenvectors
+        };
       }
       return {
-        values,
-        vectors
+        values
       };
     }
     function balance(arr, N3, prec, type, findVectors) {
@@ -58536,24 +58791,23 @@ svg {
           for (var j4 = 0; j4 < N3; j4++) {
             if (i4 === j4)
               continue;
-            var c3 = abs3(arr[i4][j4]);
-            colNorm = addScalar2(colNorm, c3);
-            rowNorm = addScalar2(rowNorm, c3);
+            colNorm = addScalar2(colNorm, abs3(arr[j4][i4]));
+            rowNorm = addScalar2(rowNorm, abs3(arr[i4][j4]));
           }
           if (!equal2(colNorm, 0) && !equal2(rowNorm, 0)) {
             var f3 = realone;
-            var _c = colNorm;
+            var c3 = colNorm;
             var rowDivRadix = divideScalar2(rowNorm, radix);
             var rowMulRadix = multiplyScalar2(rowNorm, radix);
-            while (smaller2(_c, rowDivRadix)) {
-              _c = multiplyScalar2(_c, radixSq);
+            while (smaller2(c3, rowDivRadix)) {
+              c3 = multiplyScalar2(c3, radixSq);
               f3 = multiplyScalar2(f3, radix);
             }
-            while (larger2(_c, rowMulRadix)) {
-              _c = divideScalar2(_c, radixSq);
+            while (larger2(c3, rowMulRadix)) {
+              c3 = divideScalar2(c3, radixSq);
               f3 = divideScalar2(f3, radix);
             }
-            var condition = smaller2(divideScalar2(addScalar2(_c, rowNorm), f3), multiplyScalar2(addScalar2(colNorm, rowNorm), 0.95));
+            var condition = smaller2(divideScalar2(addScalar2(c3, rowNorm), f3), multiplyScalar2(addScalar2(colNorm, rowNorm), 0.95));
             if (condition) {
               last = false;
               var g4 = divideScalar2(1, f3);
@@ -58561,17 +58815,17 @@ svg {
                 if (i4 === _j) {
                   continue;
                 }
-                arr[i4][_j] = multiplyScalar2(arr[i4][_j], f3);
-                arr[_j][i4] = multiplyScalar2(arr[_j][i4], g4);
+                arr[i4][_j] = multiplyScalar2(arr[i4][_j], g4);
+                arr[_j][i4] = multiplyScalar2(arr[_j][i4], f3);
               }
               if (findVectors) {
-                Rdiag[i4] = multiplyScalar2(Rdiag[i4], f3);
+                Rdiag[i4] = multiplyScalar2(Rdiag[i4], g4);
               }
             }
           }
         }
       }
-      return diag2(Rdiag);
+      return findVectors ? diag2(Rdiag) : null;
     }
     function reduceToHessenberg(arr, N3, prec, type, findVectors, R2) {
       var big = type === "BigNumber";
@@ -58644,7 +58898,7 @@ svg {
       var lastConvergenceBefore = 0;
       while (lastConvergenceBefore <= 100) {
         lastConvergenceBefore += 1;
-        var k4 = 0;
+        var k4 = arr[n3 - 1][n3 - 1];
         for (var i4 = 0; i4 < n3; i4++) {
           arr[i4][i4] = subtract2(arr[i4][i4], k4);
         }
@@ -58706,25 +58960,25 @@ svg {
         err.vectors = [];
         throw err;
       }
-      var C3 = findVectors ? multiply2(Qtotal, blockDiag(Sdiag, N3)) : void 0;
+      var C4 = findVectors ? multiply2(Qtotal, blockDiag(Sdiag, N3)) : void 0;
       return {
         values: lambdas,
-        C: C3
+        C: C4
       };
     }
-    function findEigenvectors(A4, N3, C3, R2, values, prec, type) {
-      var Cinv = inv2(C3);
-      var U2 = multiply2(Cinv, A4, C3);
+    function findEigenvectors(A4, N3, C4, R2, values, prec, type) {
+      var Cinv = inv2(C4);
+      var U2 = multiply2(Cinv, A4, C4);
       var big = type === "BigNumber";
       var cplx = type === "Complex";
       var zero = big ? bignumber2(0) : cplx ? complex2(0) : 0;
       var one = big ? bignumber2(1) : cplx ? complex2(1) : 1;
       var uniqueValues = [];
       var multiplicities = [];
-      for (var \u03BB of values) {
-        var i4 = indexOf(uniqueValues, \u03BB, equal2);
+      for (var lambda of values) {
+        var i4 = indexOf(uniqueValues, lambda, equal2);
         if (i4 === -1) {
-          uniqueValues.push(\u03BB);
+          uniqueValues.push(lambda);
           multiplicities.push(1);
         } else {
           multiplicities[i4] += 1;
@@ -58734,32 +58988,27 @@ svg {
       var len = uniqueValues.length;
       var b3 = Array(N3).fill(zero);
       var E3 = diag2(Array(N3).fill(one));
-      var failedLambdas = [];
       var _loop = function _loop2() {
-        var \u03BB2 = uniqueValues[_i4];
-        var S2 = subtract2(U2, multiply2(\u03BB2, E3));
+        var lambda2 = uniqueValues[_i4];
+        var S2 = subtract2(U2, multiply2(lambda2, E3));
         var solutions = usolveAll2(S2, b3);
         solutions.shift();
         while (solutions.length < multiplicities[_i4]) {
           var approxVec = inverseIterate(S2, N3, solutions, prec, type);
-          if (approxVec == null) {
-            failedLambdas.push(\u03BB2);
+          if (approxVec === null) {
             break;
           }
           solutions.push(approxVec);
         }
-        var correction = multiply2(inv2(R2), C3);
+        var correction = multiply2(inv2(R2), C4);
         solutions = solutions.map((v3) => multiply2(correction, v3));
-        vectors.push(...solutions.map((v3) => flatten3(v3)));
+        vectors.push(...solutions.map((v3) => ({
+          value: lambda2,
+          vector: flatten3(v3)
+        })));
       };
       for (var _i4 = 0; _i4 < len; _i4++) {
         _loop();
-      }
-      if (failedLambdas.length !== 0) {
-        var err = new Error("Failed to find eigenvectors for the following eigenvalues: " + failedLambdas.join(", "));
-        err.values = values;
-        err.vectors = vectors;
-        throw err;
       }
       return vectors;
     }
@@ -58782,13 +59031,11 @@ svg {
         return [[subtract2(l1, d3), subtract2(l22, d3)], [c3, c3]];
       }
       var na = subtract2(a3, l1);
-      var nb = subtract2(b3, l1);
-      var nc = subtract2(c3, l1);
       var nd = subtract2(d3, l1);
-      if (smaller2(abs3(nb), prec)) {
-        return [[na, one], [nc, zero]];
+      if (smaller2(abs3(b3), prec) && smaller2(abs3(nd), prec)) {
+        return [[na, one], [c3, zero]];
       } else {
-        return [[nb, zero], [nd, one]];
+        return [[b3, zero], [nd, one]];
       }
     }
     function inflateMatrix(arr, N3) {
@@ -58830,15 +59077,19 @@ svg {
       var largeNum = type === "BigNumber" ? bignumber2(1e3) : 1e3;
       var b3;
       var i4 = 0;
-      while (true) {
+      for (; i4 < 5; ++i4) {
         b3 = randomOrthogonalVector(N3, orthog, type);
-        b3 = usolve2(A4, b3);
+        try {
+          b3 = usolve2(A4, b3);
+        } catch (_unused) {
+          continue;
+        }
         if (larger2(norm2(b3), largeNum)) {
           break;
         }
-        if (++i4 >= 5) {
-          return null;
-        }
+      }
+      if (i4 >= 5) {
+        return null;
       }
       i4 = 0;
       while (true) {
@@ -58867,7 +59118,9 @@ svg {
       return normalize(v3, type);
     }
     function orthogonalComplement(v3, orthog) {
+      var vectorShape = size2(v3);
       for (var w4 of orthog) {
+        w4 = reshape3(w4, vectorShape);
         v3 = subtract2(v3, multiply2(divideScalar2(dot2(w4, v3), dot2(w4, w4)), w4));
       }
       return v3;
@@ -58889,7 +59142,7 @@ svg {
     }
   });
 
-  // node_modules/mathjs/lib/esm/function/matrix/eigs/realSymetric.js
+  // node_modules/mathjs/lib/esm/function/matrix/eigs/realSymmetric.js
   function createRealSymmetric(_ref) {
     var {
       config: config4,
@@ -58908,22 +59161,26 @@ svg {
     function main(arr, N3) {
       var prec = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : config4.epsilon;
       var type = arguments.length > 3 ? arguments[3] : void 0;
+      var computeVectors = arguments.length > 4 ? arguments[4] : void 0;
       if (type === "number") {
-        return diag2(arr, prec);
+        return diag2(arr, prec, computeVectors);
       }
       if (type === "BigNumber") {
-        return diagBig(arr, prec);
+        return diagBig(arr, prec, computeVectors);
       }
       throw TypeError("Unsupported data type: " + type);
     }
-    function diag2(x4, precision) {
+    function diag2(x4, precision, computeVectors) {
       var N3 = x4.length;
       var e0 = Math.abs(precision / N3);
       var psi;
-      var Sij = new Array(N3);
-      for (var i4 = 0; i4 < N3; i4++) {
-        Sij[i4] = createArray(N3, 0);
-        Sij[i4][i4] = 1;
+      var Sij;
+      if (computeVectors) {
+        Sij = new Array(N3);
+        for (var i4 = 0; i4 < N3; i4++) {
+          Sij[i4] = Array(N3).fill(0);
+          Sij[i4][i4] = 1;
+        }
       }
       var Vab = getAij(x4);
       while (Math.abs(Vab[1]) >= Math.abs(e0)) {
@@ -58931,23 +59188,27 @@ svg {
         var j4 = Vab[0][1];
         psi = getTheta(x4[_i][_i], x4[j4][j4], x4[_i][j4]);
         x4 = x1(x4, psi, _i, j4);
-        Sij = Sij1(Sij, psi, _i, j4);
+        if (computeVectors)
+          Sij = Sij1(Sij, psi, _i, j4);
         Vab = getAij(x4);
       }
-      var Ei = createArray(N3, 0);
+      var Ei = Array(N3).fill(0);
       for (var _i2 = 0; _i2 < N3; _i2++) {
         Ei[_i2] = x4[_i2][_i2];
       }
-      return sorting(clone(Ei), clone(Sij));
+      return sorting(clone(Ei), Sij, computeVectors);
     }
-    function diagBig(x4, precision) {
+    function diagBig(x4, precision, computeVectors) {
       var N3 = x4.length;
       var e0 = abs3(precision / N3);
       var psi;
-      var Sij = new Array(N3);
-      for (var i4 = 0; i4 < N3; i4++) {
-        Sij[i4] = createArray(N3, 0);
-        Sij[i4][i4] = 1;
+      var Sij;
+      if (computeVectors) {
+        Sij = new Array(N3);
+        for (var i4 = 0; i4 < N3; i4++) {
+          Sij[i4] = Array(N3).fill(0);
+          Sij[i4][i4] = 1;
+        }
       }
       var Vab = getAijBig(x4);
       while (abs3(Vab[1]) >= abs3(e0)) {
@@ -58955,14 +59216,15 @@ svg {
         var j4 = Vab[0][1];
         psi = getThetaBig(x4[_i3][_i3], x4[j4][j4], x4[_i3][j4]);
         x4 = x1Big(x4, psi, _i3, j4);
-        Sij = Sij1Big(Sij, psi, _i3, j4);
+        if (computeVectors)
+          Sij = Sij1Big(Sij, psi, _i3, j4);
         Vab = getAijBig(x4);
       }
-      var Ei = createArray(N3, 0);
+      var Ei = Array(N3).fill(0);
       for (var _i4 = 0; _i4 < N3; _i4++) {
         Ei[_i4] = x4[_i4][_i4];
       }
-      return sorting(clone(Ei), clone(Sij));
+      return sorting(clone(Ei), Sij, computeVectors);
     }
     function getTheta(aii, ajj, aij) {
       var denom = ajj - aii;
@@ -58984,8 +59246,8 @@ svg {
       var N3 = Sij.length;
       var c3 = Math.cos(theta);
       var s3 = Math.sin(theta);
-      var Ski = createArray(N3, 0);
-      var Skj = createArray(N3, 0);
+      var Ski = Array(N3).fill(0);
+      var Skj = Array(N3).fill(0);
       for (var k4 = 0; k4 < N3; k4++) {
         Ski[k4] = c3 * Sij[k4][i4] - s3 * Sij[k4][j4];
         Skj[k4] = s3 * Sij[k4][i4] + c3 * Sij[k4][j4];
@@ -59000,8 +59262,8 @@ svg {
       var N3 = Sij.length;
       var c3 = cos3(theta);
       var s3 = sin3(theta);
-      var Ski = createArray(N3, bignumber2(0));
-      var Skj = createArray(N3, bignumber2(0));
+      var Ski = Array(N3).fill(bignumber2(0));
+      var Skj = Array(N3).fill(bignumber2(0));
       for (var k4 = 0; k4 < N3; k4++) {
         Ski[k4] = subtract2(multiplyScalar2(c3, Sij[k4][i4]), multiplyScalar2(s3, Sij[k4][j4]));
         Skj[k4] = addScalar2(multiplyScalar2(s3, Sij[k4][i4]), multiplyScalar2(c3, Sij[k4][j4]));
@@ -59018,8 +59280,8 @@ svg {
       var s3 = bignumber2(sin3(theta));
       var c22 = multiplyScalar2(c3, c3);
       var s22 = multiplyScalar2(s3, s3);
-      var Aki = createArray(N3, bignumber2(0));
-      var Akj = createArray(N3, bignumber2(0));
+      var Aki = Array(N3).fill(bignumber2(0));
+      var Akj = Array(N3).fill(bignumber2(0));
       var csHij = multiply2(bignumber2(2), c3, s3, Hij[i4][j4]);
       var Aii = addScalar2(subtract2(multiplyScalar2(c22, Hij[i4][i4]), csHij), multiplyScalar2(s22, Hij[j4][j4]));
       var Ajj = add3(multiplyScalar2(s22, Hij[i4][i4]), csHij, multiplyScalar2(c22, Hij[j4][j4]));
@@ -59047,8 +59309,8 @@ svg {
       var s3 = Math.sin(theta);
       var c22 = c3 * c3;
       var s22 = s3 * s3;
-      var Aki = createArray(N3, 0);
-      var Akj = createArray(N3, 0);
+      var Aki = Array(N3).fill(0);
+      var Akj = Array(N3).fill(0);
       var Aii = c22 * Hij[i4][i4] - 2 * c3 * s3 * Hij[i4][j4] + s22 * Hij[j4][j4];
       var Ajj = s22 * Hij[i4][i4] + 2 * c3 * s3 * Hij[i4][j4] + c22 * Hij[j4][j4];
       for (var k4 = 0; k4 < N3; k4++) {
@@ -59097,12 +59359,15 @@ svg {
       }
       return [maxIJ, maxMij];
     }
-    function sorting(E3, S2) {
+    function sorting(E3, S2, computeVectors) {
       var N3 = E3.length;
       var values = Array(N3);
-      var vectors = Array(N3);
-      for (var k4 = 0; k4 < N3; k4++) {
-        vectors[k4] = Array(N3);
+      var vecs;
+      if (computeVectors) {
+        vecs = Array(N3);
+        for (var k4 = 0; k4 < N3; k4++) {
+          vecs[k4] = Array(N3);
+        }
       }
       for (var i4 = 0; i4 < N3; i4++) {
         var minID = 0;
@@ -59114,27 +59379,30 @@ svg {
           }
         }
         values[i4] = E3.splice(minID, 1)[0];
-        for (var _k5 = 0; _k5 < N3; _k5++) {
-          vectors[_k5][i4] = S2[_k5][minID];
-          S2[_k5].splice(minID, 1);
+        if (computeVectors) {
+          for (var _k5 = 0; _k5 < N3; _k5++) {
+            vecs[i4][_k5] = S2[_k5][minID];
+            S2[_k5].splice(minID, 1);
+          }
         }
       }
+      if (!computeVectors)
+        return {
+          values
+        };
+      var eigenvectors = vecs.map((vector, i5) => ({
+        value: values[i5],
+        vector
+      }));
       return {
         values,
-        vectors
+        eigenvectors
       };
-    }
-    function createArray(size2, value2) {
-      var array = new Array(size2);
-      for (var i4 = 0; i4 < size2; i4++) {
-        array[i4] = value2;
-      }
-      return array;
     }
     return main;
   }
-  var init_realSymetric = __esm({
-    "node_modules/mathjs/lib/esm/function/matrix/eigs/realSymetric.js"() {
+  var init_realSymmetric = __esm({
+    "node_modules/mathjs/lib/esm/function/matrix/eigs/realSymmetric.js"() {
       init_object();
     }
   });
@@ -59143,13 +59411,14 @@ svg {
   var name244, dependencies244, createEigs;
   var init_eigs2 = __esm({
     "node_modules/mathjs/lib/esm/function/matrix/eigs.js"() {
+      init_extends();
       init_factory();
       init_string();
       init_complexEigs();
-      init_realSymetric();
+      init_realSymmetric();
       init_is();
       name244 = "eigs";
-      dependencies244 = ["config", "typed", "matrix", "addScalar", "equal", "subtract", "abs", "atan", "cos", "sin", "multiplyScalar", "divideScalar", "inv", "bignumber", "multiply", "add", "larger", "column", "flatten", "number", "complex", "sqrt", "diag", "qr", "usolve", "usolveAll", "im", "re", "smaller", "matrixFromColumns", "dot"];
+      dependencies244 = ["config", "typed", "matrix", "addScalar", "equal", "subtract", "abs", "atan", "cos", "sin", "multiplyScalar", "divideScalar", "inv", "bignumber", "multiply", "add", "larger", "column", "flatten", "number", "complex", "sqrt", "diag", "size", "reshape", "qr", "usolve", "usolveAll", "im", "re", "smaller", "matrixFromColumns", "dot"];
       createEigs = /* @__PURE__ */ factory(name244, dependencies244, (_ref) => {
         var {
           config: config4,
@@ -59175,6 +59444,8 @@ svg {
           complex: complex2,
           sqrt: sqrt3,
           diag: diag2,
+          size: size2,
+          reshape: reshape3,
           qr: qr2,
           usolve: usolve2,
           usolveAll: usolveAll2,
@@ -59184,7 +59455,7 @@ svg {
           matrixFromColumns: matrixFromColumns2,
           dot: dot2
         } = _ref;
-        var doRealSymetric = createRealSymmetric({
+        var doRealSymmetric = createRealSymmetric({
           config: config4,
           addScalar: addScalar2,
           subtract: subtract2,
@@ -59214,6 +59485,8 @@ svg {
           abs: abs3,
           bignumber: bignumber2,
           diag: diag2,
+          size: size2,
+          reshape: reshape3,
           qr: qr2,
           inv: inv2,
           usolve: usolve2,
@@ -59226,54 +59499,91 @@ svg {
           dot: dot2
         });
         return typed3("eigs", {
+          // The conversion to matrix in the first two implementations,
+          // just to convert back to an array right away in
+          // computeValuesAndVectors, is unfortunate, and should perhaps be
+          // streamlined. It is done because the Matrix object carries some
+          // type information about its entries, and so constructing the matrix
+          // is a roundabout way of doing type detection.
           Array: function Array2(x4) {
-            var mat = matrix2(x4);
-            return computeValuesAndVectors(mat);
+            return doEigs(matrix2(x4));
           },
           "Array, number|BigNumber": function ArrayNumberBigNumber(x4, prec) {
-            var mat = matrix2(x4);
-            return computeValuesAndVectors(mat, prec);
+            return doEigs(matrix2(x4), {
+              precision: prec
+            });
+          },
+          "Array, Object"(x4, opts) {
+            return doEigs(matrix2(x4), opts);
           },
           Matrix: function Matrix2(mat) {
-            var {
-              values,
-              vectors
-            } = computeValuesAndVectors(mat);
-            return {
-              values: matrix2(values),
-              vectors: matrix2(vectors)
-            };
+            return doEigs(mat, {
+              matricize: true
+            });
           },
           "Matrix, number|BigNumber": function MatrixNumberBigNumber(mat, prec) {
-            var {
-              values,
-              vectors
-            } = computeValuesAndVectors(mat, prec);
-            return {
-              values: matrix2(values),
-              vectors: matrix2(vectors)
+            return doEigs(mat, {
+              precision: prec,
+              matricize: true
+            });
+          },
+          "Matrix, Object": function MatrixObject(mat, opts) {
+            var useOpts = {
+              matricize: true
             };
+            _extends(useOpts, opts);
+            return doEigs(mat, useOpts);
           }
         });
-        function computeValuesAndVectors(mat, prec) {
-          if (prec === void 0) {
-            prec = config4.epsilon;
+        function doEigs(mat) {
+          var _opts$precision;
+          var opts = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+          var computeVectors = "eigenvectors" in opts ? opts.eigenvectors : true;
+          var prec = (_opts$precision = opts.precision) !== null && _opts$precision !== void 0 ? _opts$precision : config4.epsilon;
+          var result = computeValuesAndVectors(mat, prec, computeVectors);
+          if (opts.matricize) {
+            result.values = matrix2(result.values);
+            if (computeVectors) {
+              result.eigenvectors = result.eigenvectors.map((_ref2) => {
+                var {
+                  value: value2,
+                  vector
+                } = _ref2;
+                return {
+                  value: value2,
+                  vector: matrix2(vector)
+                };
+              });
+            }
           }
-          var size2 = mat.size();
-          if (size2.length !== 2 || size2[0] !== size2[1]) {
-            throw new RangeError("Matrix must be square (size: " + format3(size2) + ")");
+          if (computeVectors) {
+            Object.defineProperty(result, "vectors", {
+              enumerable: false,
+              // to make sure that the eigenvectors can still be
+              // converted to string.
+              get: () => {
+                throw new Error("eigs(M).vectors replaced with eigs(M).eigenvectors");
+              }
+            });
           }
+          return result;
+        }
+        function computeValuesAndVectors(mat, prec, computeVectors) {
           var arr = mat.toArray();
-          var N3 = size2[0];
+          var asize = mat.size();
+          if (asize.length !== 2 || asize[0] !== asize[1]) {
+            throw new RangeError("Matrix must be square (size: ".concat(format3(asize), ")"));
+          }
+          var N3 = asize[0];
           if (isReal(arr, N3, prec)) {
             coerceReal(arr, N3);
             if (isSymmetric(arr, N3, prec)) {
               var _type = coerceTypes(mat, arr, N3);
-              return doRealSymetric(arr, N3, prec, _type);
+              return doRealSymmetric(arr, N3, prec, _type, computeVectors);
             }
           }
           var type = coerceTypes(mat, arr, N3);
-          return doComplexEigs(arr, N3, prec, type);
+          return doComplexEigs(arr, N3, prec, type, computeVectors);
         }
         function isSymmetric(arr, N3, prec) {
           for (var i4 = 0; i4 < N3; i4++) {
@@ -59372,7 +59682,7 @@ svg {
           typed: typed3,
           abs: abs3,
           add: add3,
-          identity: identity2,
+          identity: identity3,
           inv: inv2,
           multiply: multiply2
         } = _ref;
@@ -59389,8 +59699,8 @@ svg {
             var q4 = params.q;
             var j4 = params.j;
             var Apos = multiply2(A4, Math.pow(2, -j4));
-            var N3 = identity2(n3);
-            var D3 = identity2(n3);
+            var N3 = identity3(n3);
+            var D4 = identity3(n3);
             var factor = 1;
             var AposToI = Apos;
             var alternate = -1;
@@ -59401,9 +59711,9 @@ svg {
               }
               factor = factor * (q4 - i4 + 1) / ((2 * q4 - i4 + 1) * i4);
               N3 = add3(N3, multiply2(factor, AposToI));
-              D3 = add3(D3, multiply2(factor * alternate, AposToI));
+              D4 = add3(D4, multiply2(factor * alternate, AposToI));
             }
-            var R2 = multiply2(inv2(D3), N3);
+            var R2 = multiply2(inv2(D4), N3);
             for (var _i = 0; _i < j4; _i++) {
               R2 = multiply2(R2, R2);
             }
@@ -59475,7 +59785,7 @@ svg {
           inv: inv2,
           size: size2,
           max: max3,
-          identity: identity2
+          identity: identity3
         } = _ref;
         var _maxIterations = 1e3;
         var _tolerance = 1e-6;
@@ -59483,7 +59793,7 @@ svg {
           var error;
           var iterations = 0;
           var Y2 = A4;
-          var Z2 = identity2(size2(A4));
+          var Z2 = identity3(size2(A4));
           do {
             var Yk = Y2;
             Y2 = multiply2(0.5, add3(Yk, inv2(Z2)));
@@ -59544,70 +59854,70 @@ svg {
           subset: subset2,
           add: add3,
           subtract: subtract2,
-          identity: identity2,
+          identity: identity3,
           lusolve: lusolve2,
           abs: abs3
         } = _ref;
         return typed3(name247, {
           "Matrix, Matrix, Matrix": _sylvester,
-          "Array, Matrix, Matrix": function ArrayMatrixMatrix(A4, B4, C3) {
-            return _sylvester(matrix2(A4), B4, C3);
+          "Array, Matrix, Matrix": function ArrayMatrixMatrix(A4, B4, C4) {
+            return _sylvester(matrix2(A4), B4, C4);
           },
-          "Array, Array, Matrix": function ArrayArrayMatrix(A4, B4, C3) {
-            return _sylvester(matrix2(A4), matrix2(B4), C3);
+          "Array, Array, Matrix": function ArrayArrayMatrix(A4, B4, C4) {
+            return _sylvester(matrix2(A4), matrix2(B4), C4);
           },
-          "Array, Matrix, Array": function ArrayMatrixArray(A4, B4, C3) {
-            return _sylvester(matrix2(A4), B4, matrix2(C3));
+          "Array, Matrix, Array": function ArrayMatrixArray(A4, B4, C4) {
+            return _sylvester(matrix2(A4), B4, matrix2(C4));
           },
-          "Matrix, Array, Matrix": function MatrixArrayMatrix(A4, B4, C3) {
-            return _sylvester(A4, matrix2(B4), C3);
+          "Matrix, Array, Matrix": function MatrixArrayMatrix(A4, B4, C4) {
+            return _sylvester(A4, matrix2(B4), C4);
           },
-          "Matrix, Array, Array": function MatrixArrayArray(A4, B4, C3) {
-            return _sylvester(A4, matrix2(B4), matrix2(C3));
+          "Matrix, Array, Array": function MatrixArrayArray(A4, B4, C4) {
+            return _sylvester(A4, matrix2(B4), matrix2(C4));
           },
-          "Matrix, Matrix, Array": function MatrixMatrixArray(A4, B4, C3) {
-            return _sylvester(A4, B4, matrix2(C3));
+          "Matrix, Matrix, Array": function MatrixMatrixArray(A4, B4, C4) {
+            return _sylvester(A4, B4, matrix2(C4));
           },
-          "Array, Array, Array": function ArrayArrayArray(A4, B4, C3) {
-            return _sylvester(matrix2(A4), matrix2(B4), matrix2(C3)).toArray();
+          "Array, Array, Array": function ArrayArrayArray(A4, B4, C4) {
+            return _sylvester(matrix2(A4), matrix2(B4), matrix2(C4)).toArray();
           }
         });
-        function _sylvester(A4, B4, C3) {
+        function _sylvester(A4, B4, C4) {
           var n3 = B4.size()[0];
           var m3 = A4.size()[0];
           var sA = schur2(A4);
           var F4 = sA.T;
           var U2 = sA.U;
           var sB = schur2(multiply2(-1, B4));
-          var G2 = sB.T;
+          var G3 = sB.T;
           var V3 = sB.U;
-          var D3 = multiply2(multiply2(transpose2(U2), C3), V3);
+          var D4 = multiply2(multiply2(transpose2(U2), C4), V3);
           var all = range2(0, m3);
           var y3 = [];
           var hc = (a3, b3) => concat3(a3, b3, 1);
           var vc = (a3, b3) => concat3(a3, b3, 0);
           for (var k4 = 0; k4 < n3; k4++) {
-            if (k4 < n3 - 1 && abs3(subset2(G2, index2(k4 + 1, k4))) > 1e-5) {
-              var RHS = vc(subset2(D3, index2(all, k4)), subset2(D3, index2(all, k4 + 1)));
+            if (k4 < n3 - 1 && abs3(subset2(G3, index2(k4 + 1, k4))) > 1e-5) {
+              var RHS = vc(subset2(D4, index2(all, k4)), subset2(D4, index2(all, k4 + 1)));
               for (var j4 = 0; j4 < k4; j4++) {
-                RHS = add3(RHS, vc(multiply2(y3[j4], subset2(G2, index2(j4, k4))), multiply2(y3[j4], subset2(G2, index2(j4, k4 + 1)))));
+                RHS = add3(RHS, vc(multiply2(y3[j4], subset2(G3, index2(j4, k4))), multiply2(y3[j4], subset2(G3, index2(j4, k4 + 1)))));
               }
-              var gkk = multiply2(identity2(m3), multiply2(-1, subset2(G2, index2(k4, k4))));
-              var gmk = multiply2(identity2(m3), multiply2(-1, subset2(G2, index2(k4 + 1, k4))));
-              var gkm = multiply2(identity2(m3), multiply2(-1, subset2(G2, index2(k4, k4 + 1))));
-              var gmm = multiply2(identity2(m3), multiply2(-1, subset2(G2, index2(k4 + 1, k4 + 1))));
+              var gkk = multiply2(identity3(m3), multiply2(-1, subset2(G3, index2(k4, k4))));
+              var gmk = multiply2(identity3(m3), multiply2(-1, subset2(G3, index2(k4 + 1, k4))));
+              var gkm = multiply2(identity3(m3), multiply2(-1, subset2(G3, index2(k4, k4 + 1))));
+              var gmm = multiply2(identity3(m3), multiply2(-1, subset2(G3, index2(k4 + 1, k4 + 1))));
               var LHS = vc(hc(add3(F4, gkk), gmk), hc(gkm, add3(F4, gmm)));
               var yAux = lusolve2(LHS, RHS);
               y3[k4] = yAux.subset(index2(range2(0, m3), 0));
               y3[k4 + 1] = yAux.subset(index2(range2(m3, 2 * m3), 0));
               k4++;
             } else {
-              var _RHS = subset2(D3, index2(all, k4));
+              var _RHS = subset2(D4, index2(all, k4));
               for (var _j = 0; _j < k4; _j++) {
-                _RHS = add3(_RHS, multiply2(y3[_j], subset2(G2, index2(_j, k4))));
+                _RHS = add3(_RHS, multiply2(y3[_j], subset2(G3, index2(_j, k4))));
               }
-              var _gkk = subset2(G2, index2(k4, k4));
-              var _LHS = subtract2(F4, multiply2(_gkk, identity2(m3)));
+              var _gkk = subset2(G3, index2(k4, k4));
+              var _LHS = subtract2(F4, multiply2(_gkk, identity3(m3)));
               y3[k4] = lusolve2(_LHS, _RHS);
             }
           }
@@ -59630,7 +59940,7 @@ svg {
         var {
           typed: typed3,
           matrix: matrix2,
-          identity: identity2,
+          identity: identity3,
           multiply: multiply2,
           qr: qr2,
           norm: norm2,
@@ -59651,7 +59961,7 @@ svg {
         function _schur(X2) {
           var n3 = X2.size()[0];
           var A4 = X2;
-          var U2 = identity2(n3);
+          var U2 = identity3(n3);
           var k4 = 0;
           var A0;
           do {
@@ -60129,9 +60439,9 @@ svg {
           var t3 = divideScalar2(addScalar2(subtract2(subtract2(d20o11, d21o10), d20o21), d21o20), det2);
           return add3(multiply2(d1, t3), o1);
         }
-        function _intersect3dHelper(a3, b3, c3, d3, e6, f3, g4, h3, i4, j4, k4, l3) {
+        function _intersect3dHelper(a3, b3, c3, d3, e5, f3, g4, h3, i4, j4, k4, l3) {
           var add1 = multiplyScalar2(subtract2(a3, b3), subtract2(c3, d3));
-          var add22 = multiplyScalar2(subtract2(e6, f3), subtract2(g4, h3));
+          var add22 = multiplyScalar2(subtract2(e5, f3), subtract2(g4, h3));
           var add32 = multiplyScalar2(subtract2(i4, j4), subtract2(k4, l3));
           return addScalar2(addScalar2(add1, add22), add32);
         }
@@ -61903,7 +62213,7 @@ svg {
             for (prop in obj) {
               try {
                 result.push(flatten3(obj[prop], depth - 1));
-              } catch (e6) {
+              } catch (e5) {
               }
             }
           }
@@ -61926,7 +62236,7 @@ svg {
               (global2.crypto || global2.msCrypto).getRandomValues(out);
             }
             return tostring(out);
-          } catch (e6) {
+          } catch (e5) {
             var browser = global2.navigator, plugins = browser && browser.plugins;
             return [+/* @__PURE__ */ new Date(), global2, plugins, global2.screen, tostring(pool)];
           }
@@ -62422,26 +62732,26 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/function/algebra/simplify/util.js
-  function ownKeys3(e6, r3) {
-    var t3 = Object.keys(e6);
+  function ownKeys3(e5, r3) {
+    var t3 = Object.keys(e5);
     if (Object.getOwnPropertySymbols) {
-      var o3 = Object.getOwnPropertySymbols(e6);
+      var o3 = Object.getOwnPropertySymbols(e5);
       r3 && (o3 = o3.filter(function(r4) {
-        return Object.getOwnPropertyDescriptor(e6, r4).enumerable;
+        return Object.getOwnPropertyDescriptor(e5, r4).enumerable;
       })), t3.push.apply(t3, o3);
     }
     return t3;
   }
-  function _objectSpread3(e6) {
+  function _objectSpread3(e5) {
     for (var r3 = 1; r3 < arguments.length; r3++) {
       var t3 = null != arguments[r3] ? arguments[r3] : {};
       r3 % 2 ? ownKeys3(Object(t3), true).forEach(function(r4) {
-        _defineProperty(e6, r4, t3[r4]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e6, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
-        Object.defineProperty(e6, r4, Object.getOwnPropertyDescriptor(t3, r4));
+        _defineProperty(e5, r4, t3[r4]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e5, Object.getOwnPropertyDescriptors(t3)) : ownKeys3(Object(t3)).forEach(function(r4) {
+        Object.defineProperty(e5, r4, Object.getOwnPropertyDescriptor(t3, r4));
       });
     }
-    return e6;
+    return e5;
   }
   var name278, dependencies278, createUtil;
   var init_util = __esm({
@@ -62533,23 +62843,23 @@ svg {
         };
         function hasProperty(nodeOrName, property) {
           var context = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : defaultContext;
-          var name310 = defaultName2;
+          var name314 = defaultName2;
           if (typeof nodeOrName === "string") {
-            name310 = nodeOrName;
+            name314 = nodeOrName;
           } else if (isOperatorNode(nodeOrName)) {
-            name310 = nodeOrName.fn.toString();
+            name314 = nodeOrName.fn.toString();
           } else if (isFunctionNode(nodeOrName)) {
-            name310 = nodeOrName.name;
+            name314 = nodeOrName.name;
           } else if (isParenthesisNode(nodeOrName)) {
-            name310 = "paren";
+            name314 = "paren";
           }
-          if (hasOwnProperty(context, name310)) {
-            var properties2 = context[name310];
+          if (hasOwnProperty(context, name314)) {
+            var properties2 = context[name314];
             if (hasOwnProperty(properties2, property)) {
               return properties2[property];
             }
-            if (hasOwnProperty(defaultContext, name310)) {
-              return defaultContext[name310][property];
+            if (hasOwnProperty(defaultContext, name314)) {
+              return defaultContext[name314][property];
             }
           }
           if (hasOwnProperty(context, defaultName2)) {
@@ -62559,8 +62869,8 @@ svg {
             }
             return defaultContext[defaultName2][property];
           }
-          if (hasOwnProperty(defaultContext, name310)) {
-            var _properties2 = defaultContext[name310];
+          if (hasOwnProperty(defaultContext, name314)) {
+            var _properties2 = defaultContext[name314];
             if (hasOwnProperty(_properties2, property)) {
               return _properties2[property];
             }
@@ -63776,7 +64086,7 @@ svg {
             return new ConstantNode2(s3);
           },
           Matrix: function Matrix2(m3) {
-            return new ArrayNode2(m3.valueOf().map((e6) => _toNode(e6)));
+            return new ArrayNode2(m3.valueOf().map((e5) => _toNode(e5)));
           }
         });
         function _ensureNode(thing) {
@@ -64237,6 +64547,9 @@ svg {
                 if (_a.value) {
                   if (isAlwaysBoolean(a1))
                     return a1;
+                  if (isConstantNode(a1)) {
+                    return a1.value ? nodeT : nodeF;
+                  }
                 } else {
                   return nodeF;
                 }
@@ -64545,9 +64858,6 @@ svg {
             return _derivative(node.expr, constNodes);
           },
           "FunctionNode, Object": function FunctionNodeObject(node, constNodes) {
-            if (node.args.length !== 1) {
-              funcArgsCheck(node);
-            }
             if (constNodes[node] !== void 0) {
               return createConstantNode2(0);
             }
@@ -64586,8 +64896,11 @@ svg {
                 }
                 break;
               case "pow":
-                constNodes[arg1] = constNodes[node.args[1]];
-                return _derivative(new OperatorNode2("^", "pow", [arg0, node.args[1]]), constNodes);
+                if (node.args.length === 2) {
+                  constNodes[arg1] = constNodes[node.args[1]];
+                  return _derivative(new OperatorNode2("^", "pow", [arg0, node.args[1]]), constNodes);
+                }
+                break;
               case "exp":
                 funcDerivative = new FunctionNode2("exp", [arg0.clone()]);
                 break;
@@ -64691,7 +65004,7 @@ svg {
                 break;
               case "gamma":
               default:
-                throw new Error('Function "' + node.name + '" is not supported by derivative, or a wrong number of arguments is passed');
+                throw new Error('Cannot process function "' + node.name + '" in derivative: the function is not supported, undefined, or the number of arguments passed to it are not supported');
             }
             var op, func;
             if (div2) {
@@ -64776,19 +65089,9 @@ svg {
               }
               return new OperatorNode2("*", "multiply", [new OperatorNode2("^", "pow", [_arg.clone(), _arg2.clone()]), new OperatorNode2("+", "add", [new OperatorNode2("*", "multiply", [_derivative(_arg, constNodes), new OperatorNode2("/", "divide", [_arg2.clone(), _arg.clone()])]), new OperatorNode2("*", "multiply", [_derivative(_arg2, constNodes), new FunctionNode2("log", [_arg.clone()])])])]);
             }
-            throw new Error('Operator "' + node.op + '" is not supported by derivative, or a wrong number of arguments is passed');
+            throw new Error('Cannot process operator "' + node.op + '" in derivative: the operator is not supported, undefined, or the number of arguments passed to it are not supported');
           }
         });
-        function funcArgsCheck(node) {
-          if ((node.name === "log" || node.name === "nthRoot" || node.name === "pow") && node.args.length === 2) {
-            return;
-          }
-          for (var i4 = 0; i4 < node.args.length; ++i4) {
-            node.args[i4] = createConstantNode2(0);
-          }
-          node.compile().evaluate();
-          throw new Error('Function "' + node.name + '" is not supported by derivative, or a wrong number of arguments is passed');
-        }
         function createConstantNode2(value2, valueType) {
           return new ConstantNode2(numeric3(value2, valueType || config4.number));
         }
@@ -65626,13 +65929,13 @@ svg {
   var version;
   var init_version2 = __esm({
     "node_modules/mathjs/lib/esm/version.js"() {
-      version = "11.12.0";
+      version = "12.4.1";
     }
   });
 
   // node_modules/mathjs/lib/esm/constants.js
-  function recreateFactory(name310, dependencies310, create2) {
-    return factory(name310, dependencies310, create2, {
+  function recreateFactory(name314, dependencies314, create2) {
+    return factory(name314, dependencies314, create2, {
       recreateOnConfigChange: true
     });
   }
@@ -65746,9 +66049,9 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/type/unit/physicalConstants.js
-  function unitFactory(name310, valueStr, unitStr) {
-    var dependencies310 = ["config", "Unit", "BigNumber"];
-    return factory(name310, dependencies310, (_ref) => {
+  function unitFactory(name314, valueStr, unitStr) {
+    var dependencies314 = ["config", "Unit", "BigNumber"];
+    return factory(name314, dependencies314, (_ref) => {
       var {
         config: config4,
         Unit: Unit2,
@@ -65760,9 +66063,9 @@ svg {
       return unit2;
     });
   }
-  function numberFactory(name310, value2) {
-    var dependencies310 = ["config", "BigNumber"];
-    return factory(name310, dependencies310, (_ref2) => {
+  function numberFactory(name314, value2) {
+    var dependencies314 = ["config", "BigNumber"];
+    return factory(name314, dependencies314, (_ref2) => {
       var {
         config: config4,
         BigNumber: BigNumber2
@@ -65918,18 +66221,19 @@ svg {
     if (!symbol) {
       throw new Error('No undefined variable found in inline expression "' + expression + '"');
     }
-    var name310 = symbol.name;
-    var subScope = createSubScope(scope);
+    var name314 = symbol.name;
+    var argsScope = /* @__PURE__ */ new Map();
+    var subScope = new PartitionedMap(scope, argsScope, /* @__PURE__ */ new Set([name314]));
     var eq = expression.compile();
     return function inlineExpression(x4) {
-      subScope.set(name310, x4);
+      argsScope.set(name314, x4);
       return eq.evaluate(subScope);
     };
   }
   var init_compileInlineExpression = __esm({
     "node_modules/mathjs/lib/esm/expression/transform/utils/compileInlineExpression.js"() {
       init_is();
-      init_scope();
+      init_map();
     }
   });
 
@@ -66763,6 +67067,183 @@ svg {
     }
   });
 
+  // node_modules/mathjs/lib/esm/expression/transform/and.transform.js
+  var name310, dependencies310, createAndTransform;
+  var init_and_transform = __esm({
+    "node_modules/mathjs/lib/esm/expression/transform/and.transform.js"() {
+      init_and();
+      init_factory();
+      init_is();
+      name310 = "and";
+      dependencies310 = ["typed", "matrix", "zeros", "add", "equalScalar", "not", "concat"];
+      createAndTransform = /* @__PURE__ */ factory(name310, dependencies310, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          not: not2,
+          concat: concat3
+        } = _ref;
+        var and2 = createAnd({
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          not: not2,
+          concat: concat3
+        });
+        function andTransform(args, math2, scope) {
+          var condition1 = args[0].compile().evaluate(scope);
+          if (!isCollection(condition1) && !and2(condition1, true)) {
+            return false;
+          }
+          var condition2 = args[1].compile().evaluate(scope);
+          return and2(condition1, condition2);
+        }
+        andTransform.rawArgs = true;
+        return andTransform;
+      }, {
+        isTransformFunction: true
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/expression/transform/or.transform.js
+  var name311, dependencies311, createOrTransform;
+  var init_or_transform = __esm({
+    "node_modules/mathjs/lib/esm/expression/transform/or.transform.js"() {
+      init_or();
+      init_factory();
+      init_is();
+      name311 = "or";
+      dependencies311 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
+      createOrTransform = /* @__PURE__ */ factory(name311, dependencies311, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        } = _ref;
+        var or2 = createOr({
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        });
+        function orTransform(args, math2, scope) {
+          var condition1 = args[0].compile().evaluate(scope);
+          if (!isCollection(condition1) && or2(condition1, false)) {
+            return true;
+          }
+          var condition2 = args[1].compile().evaluate(scope);
+          return or2(condition1, condition2);
+        }
+        orTransform.rawArgs = true;
+        return orTransform;
+      }, {
+        isTransformFunction: true
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/expression/transform/bitAnd.transform.js
+  var name312, dependencies312, createBitAndTransform;
+  var init_bitAnd_transform = __esm({
+    "node_modules/mathjs/lib/esm/expression/transform/bitAnd.transform.js"() {
+      init_bitAnd();
+      init_factory();
+      init_is();
+      name312 = "bitAnd";
+      dependencies312 = ["typed", "matrix", "zeros", "add", "equalScalar", "not", "concat"];
+      createBitAndTransform = /* @__PURE__ */ factory(name312, dependencies312, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          not: not2,
+          concat: concat3
+        } = _ref;
+        var bitAnd2 = createBitAnd({
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          zeros: zeros3,
+          not: not2,
+          concat: concat3
+        });
+        function bitAndTransform(args, math2, scope) {
+          var condition1 = args[0].compile().evaluate(scope);
+          if (!isCollection(condition1)) {
+            if (isNaN(condition1)) {
+              return NaN;
+            }
+            if (condition1 === 0 || condition1 === false) {
+              return 0;
+            }
+          }
+          var condition2 = args[1].compile().evaluate(scope);
+          return bitAnd2(condition1, condition2);
+        }
+        bitAndTransform.rawArgs = true;
+        return bitAndTransform;
+      }, {
+        isTransformFunction: true
+      });
+    }
+  });
+
+  // node_modules/mathjs/lib/esm/expression/transform/bitOr.transform.js
+  var name313, dependencies313, createBitOrTransform;
+  var init_bitOr_transform = __esm({
+    "node_modules/mathjs/lib/esm/expression/transform/bitOr.transform.js"() {
+      init_bitOr();
+      init_factory();
+      init_is();
+      name313 = "bitOr";
+      dependencies313 = ["typed", "matrix", "equalScalar", "DenseMatrix", "concat"];
+      createBitOrTransform = /* @__PURE__ */ factory(name313, dependencies313, (_ref) => {
+        var {
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        } = _ref;
+        var bitOr2 = createBitOr({
+          typed: typed3,
+          matrix: matrix2,
+          equalScalar: equalScalar2,
+          DenseMatrix: DenseMatrix2,
+          concat: concat3
+        });
+        function bitOrTransform(args, math2, scope) {
+          var condition1 = args[0].compile().evaluate(scope);
+          if (!isCollection(condition1)) {
+            if (isNaN(condition1)) {
+              return NaN;
+            }
+            if (condition1 === -1) {
+              return -1;
+            }
+            if (condition1 === true) {
+              return 1;
+            }
+          }
+          var condition2 = args[1].compile().evaluate(scope);
+          return bitOr2(condition1, condition2);
+        }
+        bitOrTransform.rawArgs = true;
+        return bitOrTransform;
+      }, {
+        isTransformFunction: true
+      });
+    }
+  });
+
   // node_modules/mathjs/lib/esm/factoriesAny.js
   var init_factoriesAny = __esm({
     "node_modules/mathjs/lib/esm/factoriesAny.js"() {
@@ -67056,11 +67537,15 @@ svg {
       init_cumsum_transform();
       init_variance_transform();
       init_print_transform();
+      init_and_transform();
+      init_or_transform();
+      init_bitAnd_transform();
+      init_bitOr_transform();
     }
   });
 
   // node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js
-  var BigNumber, Complex2, e4, _false, fineStructure, Fraction2, i3, _Infinity, LN102, LOG10E, Matrix, _NaN, _null, phi2, Range, ResultSet, SQRT1_2, sackurTetrode, tau2, _true, version2, DenseMatrix, efimovFactor, LN2, pi2, replacer, SQRT2, typed2, unaryPlus, weakMixingAngle, abs2, acos2, acot, acsc, addScalar, arg, asech, asinh3, atan3, atanh3, bignumber, bitNot, boolean, clone4, combinations, complex, conj, cos2, cot, csc, cube, equalScalar, erf, exp2, expm13, filter2, forEach2, format4, getMatrixDataType, hex, im, isInteger2, isNegative, isPositive, isZero, LOG2E, lgamma, log104, log24, map2, multiplyScalar, not, number, oct, pickRandom, print, random2, re, sec, sign3, sin2, SparseMatrix, splitUnit, square, string, subtractScalar, tan2, typeOf2, acosh3, acsch, apply, asec, bin, combinationsWithRep, cosh3, csch, isNaN2, isPrime, randomInt, sech, sinh3, sparse, sqrt2, tanh3, unaryMinus, acoth, coth, fraction, isNumeric, matrix, matrixFromFunction, mode, numeric2, prod, reshape2, size, squeeze2, transpose, xgcd, zeros2, asin2, cbrt4, concat2, count, ctranspose, diag, divideScalar, dotDivide, equal, flatten2, hasNumericValue, identity, kron, largerEq, leftShift, lsolve, matrixFromColumns, nthRoot, ones, qr, resize2, rightArithShift, round2, smaller, subtract, to, unequal, usolve, xor, add2, atan22, bitAnd, bitXor2, catalan, compare2, compareText2, cumsum, deepEqual, diff, distance, dot, equalText, floor2, gcd, hypot2, ImmutableDenseMatrix, Index, larger, log3, lsolveAll, matrixFromRows, min2, mod2, multiply, nthRoots, or, partitionSelect, rightLogShift, slu, subset, sum2, trace, usolveAll, zpk2tf, bitOr, ceil2, compareNatural, composition, cross, det, dotMultiply, FibonacciHeap, fix, index, intersect, invmod, lcm, log1p2, max2, setCartesian, setDistinct, setIsSubset, setPowerset, smallerEq, sort, and, range, row, setDifference, setMultiplicity, setSymDifference, Spa, column, inv, lup, pinv, pow2, setIntersect, setUnion, sqrtm, Unit, vacuumImpedance, wienDisplacement, atomicMass, bohrMagneton, boltzmann, conductanceQuantum, coulomb, deuteronMass, dotPow, electricConstant, elementaryCharge, expm, faraday, fft, gamma, gravitationConstant, hartreeEnergy, ifft, klitzing, loschmidt, magneticConstant, molarMass, molarPlanckConstant, neutronMass, nuclearMagneton, planckCharge, planckLength, planckTemperature, protonMass, quantumOfCirculation, reducedPlanckConstant, rydberg, secondRadiation, speedOfLight, stefanBoltzmann, thomsonCrossSection, avogadro, bohrRadius, createUnit, divide2, electronMass, factorial, firstRadiation, gravity, inverseConductanceQuantum, lusolve, magneticFluxQuantum, molarMassC12, multinomial, permutations, planckMass, polynomialRoot, setSize, solveODE, stirlingS2, unit, bellNumbers, eigs, fermiCoupling, gasConstant, mean, molarVolume, planckConstant, quantileSeq, variance, classicalElectronRadius, median, corr, freqz, mad, std, zeta, norm, rotationMatrix, kldivergence, planckTime, schur, rotate, sylvester, lyap;
+  var BigNumber, Complex2, e4, _false, fineStructure, Fraction2, i3, _Infinity, LN102, LOG10E, Matrix, _NaN, _null, phi2, Range, ResultSet, SQRT1_2, sackurTetrode, tau2, _true, version2, DenseMatrix, efimovFactor, LN2, pi2, replacer, SQRT2, typed2, unaryPlus, weakMixingAngle, abs2, acos2, acot, acsc, addScalar, arg, asech, asinh3, atan3, atanh3, bignumber, bitNot, boolean, clone4, combinations, complex, conj, cos2, cot, csc, cube, equalScalar, erf, exp2, expm13, filter2, forEach2, format4, getMatrixDataType, hex, im, isInteger2, isNegative, isPositive, isZero, LOG2E, lgamma, log104, log24, map2, multiplyScalar, not, number, oct, pickRandom, print, random2, re, sec, sign3, sin2, SparseMatrix, splitUnit, square, string, subtractScalar, tan2, typeOf2, acosh3, acsch, apply, asec, bin, combinationsWithRep, cosh3, csch, isNaN2, isPrime, randomInt, sech, sinh3, sparse, sqrt2, tanh3, unaryMinus, acoth, coth, fraction, isNumeric, matrix, matrixFromFunction, mode, numeric2, prod, reshape2, size, squeeze2, transpose, xgcd, zeros2, asin2, cbrt4, concat2, count, ctranspose, diag, divideScalar, dotDivide, equal, flatten2, hasNumericValue, identity2, kron, largerEq, leftShift, lsolve, matrixFromColumns, nthRoot, ones, qr, resize2, rightArithShift, round2, smaller, subtract, to, unequal, usolve, xor, add2, atan22, bitAnd, bitOr, bitXor2, catalan, compare2, compareText2, cumsum, deepEqual, diff, distance, dot, equalText, floor2, gcd, hypot2, ImmutableDenseMatrix, Index, larger, log3, lsolveAll, matrixFromRows, min2, mod2, multiply, nthRoots, or, partitionSelect, rightLogShift, slu, subset, sum2, trace, usolveAll, zpk2tf, ceil2, compareNatural, composition, cross, det, dotMultiply, FibonacciHeap, fix, index, intersect, invmod, lcm, log1p2, max2, setCartesian, setDistinct, setIsSubset, setPowerset, smallerEq, sort, and, range, row, setDifference, setMultiplicity, setSymDifference, Spa, column, inv, lup, pinv, pow2, setIntersect, setUnion, sqrtm, Unit, vacuumImpedance, wienDisplacement, atomicMass, bohrMagneton, boltzmann, conductanceQuantum, coulomb, deuteronMass, dotPow, electricConstant, elementaryCharge, expm, faraday, fft, gamma, gravitationConstant, hartreeEnergy, ifft, klitzing, loschmidt, magneticConstant, molarMass, molarPlanckConstant, neutronMass, nuclearMagneton, planckCharge, planckLength, planckTemperature, protonMass, quantumOfCirculation, reducedPlanckConstant, rydberg, secondRadiation, speedOfLight, stefanBoltzmann, thomsonCrossSection, avogadro, bohrRadius, createUnit, divide2, electronMass, factorial, firstRadiation, gravity, inverseConductanceQuantum, lusolve, magneticFluxQuantum, molarMassC12, multinomial, permutations, planckMass, polynomialRoot, setSize, solveODE, stirlingS2, unit, bellNumbers, eigs, fermiCoupling, gasConstant, kldivergence, mean, molarVolume, planckConstant, quantileSeq, variance, classicalElectronRadius, median, corr, freqz, mad, std, zeta, norm, rotationMatrix, planckTime, schur, rotate, sylvester, lyap;
   var init_pureFunctionsAny_generated = __esm({
     "node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js"() {
       init_configReadonly();
@@ -67564,7 +68049,7 @@ svg {
         isNumeric,
         typed: typed2
       });
-      identity = /* @__PURE__ */ createIdentity({
+      identity2 = /* @__PURE__ */ createIdentity({
         BigNumber,
         DenseMatrix,
         SparseMatrix,
@@ -67626,7 +68111,7 @@ svg {
         conj,
         divideScalar,
         equal,
-        identity,
+        identity: identity2,
         isZero,
         matrix,
         multiplyScalar,
@@ -67652,6 +68137,7 @@ svg {
       round2 = /* @__PURE__ */ createRound({
         BigNumber,
         DenseMatrix,
+        config,
         equalScalar,
         matrix,
         typed: typed2,
@@ -67719,6 +68205,13 @@ svg {
         typed: typed2
       });
       bitAnd = /* @__PURE__ */ createBitAnd({
+        concat: concat2,
+        equalScalar,
+        matrix,
+        typed: typed2
+      });
+      bitOr = /* @__PURE__ */ createBitOr({
+        DenseMatrix,
         concat: concat2,
         equalScalar,
         matrix,
@@ -67953,13 +68446,6 @@ svg {
         number,
         typed: typed2
       });
-      bitOr = /* @__PURE__ */ createBitOr({
-        DenseMatrix,
-        concat: concat2,
-        equalScalar,
-        matrix,
-        typed: typed2
-      });
       ceil2 = /* @__PURE__ */ createCeil({
         DenseMatrix,
         config,
@@ -68177,7 +68663,7 @@ svg {
         addScalar,
         det,
         divideScalar,
-        identity,
+        identity: identity2,
         matrix,
         multiply,
         typed: typed2,
@@ -68216,7 +68702,7 @@ svg {
         Complex: Complex2,
         config,
         fraction,
-        identity,
+        identity: identity2,
         inv,
         matrix,
         multiply,
@@ -68243,7 +68729,7 @@ svg {
       sqrtm = /* @__PURE__ */ createSqrtm({
         abs: abs2,
         add: add2,
-        identity,
+        identity: identity2,
         inv,
         map: map2,
         max: max2,
@@ -68332,7 +68818,7 @@ svg {
       expm = /* @__PURE__ */ createExpm({
         abs: abs2,
         add: add2,
-        identity,
+        identity: identity2,
         inv,
         multiply,
         typed: typed2
@@ -68641,7 +69127,9 @@ svg {
         number,
         qr,
         re,
+        reshape: reshape2,
         sin: sin2,
+        size,
         smaller,
         sqrt: sqrt2,
         subtract,
@@ -68658,6 +69146,17 @@ svg {
         BigNumber,
         Unit,
         config
+      });
+      kldivergence = /* @__PURE__ */ createKldivergence({
+        divide: divide2,
+        dotDivide,
+        isNumeric,
+        log: log3,
+        map: map2,
+        matrix,
+        multiply,
+        sum: sum2,
+        typed: typed2
       });
       mean = /* @__PURE__ */ createMean({
         add: add2,
@@ -68789,24 +69288,13 @@ svg {
         typed: typed2,
         unaryMinus
       });
-      kldivergence = /* @__PURE__ */ createKldivergence({
-        divide: divide2,
-        dotDivide,
-        isNumeric,
-        log: log3,
-        map: map2,
-        matrix,
-        multiply,
-        sum: sum2,
-        typed: typed2
-      });
       planckTime = /* @__PURE__ */ createPlanckTime({
         BigNumber,
         Unit,
         config
       });
       schur = /* @__PURE__ */ createSchur({
-        identity,
+        identity: identity2,
         matrix,
         multiply,
         norm,
@@ -68823,7 +69311,7 @@ svg {
         abs: abs2,
         add: add2,
         concat: concat2,
-        identity,
+        identity: identity2,
         index,
         lusolve,
         matrix,
@@ -68847,7 +69335,7 @@ svg {
   });
 
   // node_modules/mathjs/lib/esm/entry/impureFunctionsAny.generated.js
-  var math, mathWithTransform, classes, Node, ObjectNode, OperatorNode, ParenthesisNode, RelationalNode, ArrayNode, BlockNode, ConditionalNode, ConstantNode, RangeNode, reviver, Chain, FunctionAssignmentNode, chain, IndexNode, AccessorNode, AssignmentNode, SymbolNode, FunctionNode, parse, resolve, simplifyConstant, compile, Help, leafCount, simplifyCore, evaluate, help, Parser, simplify, symbolicEqual, parser, rationalize, derivative;
+  var math, mathWithTransform, classes, Node, ObjectNode, OperatorNode, ParenthesisNode, RelationalNode, ArrayNode, BlockNode, ConditionalNode, ConstantNode, RangeNode, reviver, Chain, FunctionAssignmentNode, chain, IndexNode, AccessorNode, AssignmentNode, SymbolNode, FunctionNode, parse, resolve, simplifyConstant, compile, simplifyCore, evaluate, Help, Parser, simplify, symbolicEqual, leafCount, parser, rationalize, derivative, help;
   var init_impureFunctionsAny_generated = __esm({
     "node_modules/mathjs/lib/esm/entry/impureFunctionsAny.generated.js"() {
       init_extends();
@@ -68974,13 +69462,6 @@ svg {
         parse,
         typed: typed2
       });
-      Help = createHelpClass({
-        parse
-      });
-      leafCount = createLeafCount({
-        parse,
-        typed: typed2
-      });
       simplifyCore = createSimplifyCore({
         AccessorNode,
         ArrayNode,
@@ -69005,10 +69486,8 @@ svg {
         parse,
         typed: typed2
       });
-      help = createHelp({
-        Help,
-        mathWithTransform,
-        typed: typed2
+      Help = createHelpClass({
+        evaluate
       });
       Parser = createParserClass({
         evaluate
@@ -69045,6 +69524,10 @@ svg {
         OperatorNode,
         parse,
         simplify,
+        typed: typed2
+      });
+      leafCount = createLeafCount({
+        parse,
         typed: typed2
       });
       parser = createParser({
@@ -69091,6 +69574,11 @@ svg {
         numeric: numeric2,
         parse,
         simplify,
+        typed: typed2
+      });
+      help = createHelp({
+        Help,
+        mathWithTransform,
         typed: typed2
       });
       _extends(math, {
@@ -69221,7 +69709,7 @@ svg {
         equal,
         flatten: flatten2,
         hasNumericValue,
-        identity,
+        identity: identity2,
         kron,
         largerEq,
         leftShift,
@@ -69242,6 +69730,7 @@ svg {
         add: add2,
         atan2: atan22,
         bitAnd,
+        bitOr,
         bitXor: bitXor2,
         catalan,
         compare: compare2,
@@ -69272,7 +69761,6 @@ svg {
         trace,
         usolveAll,
         zpk2tf,
-        bitOr,
         ceil: ceil2,
         compareNatural,
         composition,
@@ -69370,7 +69858,7 @@ svg {
         eigs,
         fermiCoupling,
         gasConstant,
-        leafCount,
+        kldivergence,
         mean,
         molarVolume,
         planckConstant,
@@ -69379,12 +69867,12 @@ svg {
         variance,
         classicalElectronRadius,
         evaluate,
-        help,
         median,
         simplify,
         symbolicEqual,
         corr,
         freqz,
+        leafCount,
         mad,
         parser,
         rationalize,
@@ -69393,7 +69881,7 @@ svg {
         derivative,
         norm,
         rotationMatrix,
-        kldivergence,
+        help,
         planckTime,
         schur,
         rotate,
@@ -69415,6 +69903,22 @@ svg {
           isInteger: isInteger2,
           typed: typed2
         }),
+        or: createOrTransform({
+          DenseMatrix,
+          concat: concat2,
+          equalScalar,
+          matrix,
+          typed: typed2
+        }),
+        and: createAndTransform({
+          add: add2,
+          concat: concat2,
+          equalScalar,
+          matrix,
+          not,
+          typed: typed2,
+          zeros: zeros2
+        }),
         concat: createConcatTransform({
           isInteger: isInteger2,
           matrix,
@@ -69429,6 +69933,15 @@ svg {
         print: createPrintTransform({
           add: add2,
           matrix,
+          typed: typed2,
+          zeros: zeros2
+        }),
+        bitAnd: createBitAndTransform({
+          add: add2,
+          concat: concat2,
+          equalScalar,
+          matrix,
+          not,
           typed: typed2,
           zeros: zeros2
         }),
@@ -69450,6 +69963,13 @@ svg {
           matrix,
           typed: typed2,
           zeros: zeros2
+        }),
+        bitOr: createBitOrTransform({
+          DenseMatrix,
+          concat: concat2,
+          equalScalar,
+          matrix,
+          typed: typed2
         }),
         cumsum: createCumSumTransform({
           add: add2,
@@ -69654,8 +70174,7 @@ svg {
         return result !== null ? result : { r: 0, g: 0, b: 0 };
       };
       rgbaFromHct = (hct) => {
-        const argb = argbFromHct(hct);
-        return rgbaFromArgb(argb);
+        return rgbaFromArgb(argbFromHct(hct));
       };
       hexFromHct = (hct) => {
         const argb = argbFromHct(hct);
@@ -69736,7 +70255,7 @@ svg {
                 truncatedExpression.replace(/h/gi, sourceHue.toString())
               );
               break;
-            } catch (e6) {
+            } catch (e5) {
             }
           }
           const hue = !isNaN(lastValidHue) ? Math.abs(lastValidHue % 360) : sourceHue;
@@ -69836,23 +70355,27 @@ svg {
     }
   });
 
+  // node_modules/nanoid/url-alphabet/index.js
+  var urlAlphabet;
+  var init_url_alphabet = __esm({
+    "node_modules/nanoid/url-alphabet/index.js"() {
+      urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
+    }
+  });
+
   // node_modules/nanoid/index.browser.js
   var nanoid;
   var init_index_browser = __esm({
     "node_modules/nanoid/index.browser.js"() {
-      nanoid = (size2 = 21) => crypto.getRandomValues(new Uint8Array(size2)).reduce((id, byte) => {
-        byte &= 63;
-        if (byte < 36) {
-          id += byte.toString(36);
-        } else if (byte < 62) {
-          id += (byte - 26).toString(36).toUpperCase();
-        } else if (byte > 62) {
-          id += "-";
-        } else {
-          id += "_";
+      init_url_alphabet();
+      nanoid = (size2 = 21) => {
+        let id = "";
+        let bytes = crypto.getRandomValues(new Uint8Array(size2));
+        while (size2--) {
+          id += urlAlphabet[bytes[size2] & 63];
         }
         return id;
-      }, "");
+      };
     }
   });
 
@@ -69864,10 +70387,10 @@ svg {
       init_lib3();
       init_esm();
       init_index_browser();
-      createAlias = (id = nanoid(12), name310 = "Alias", lightModeTone = 80, darkModeTone = 20) => {
+      createAlias = (id = nanoid(12), name314 = "Alias", lightModeTone = 80, darkModeTone = 20) => {
         return {
           id,
-          name: name310,
+          name: name314,
           lightModeTone,
           darkModeTone
         };
@@ -69885,20 +70408,20 @@ svg {
       capitalizeFirstLetter = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
       };
-      createAliasGroup = (id = nanoid(12), name310 = "Alias group", aliases = [
-        createAlias(nanoid(12), `${name310.toLowerCase()}`, 40, 80),
-        createAlias(nanoid(12), `on${capitalizeFirstLetter(name310)}`, 100, 20),
-        createAlias(nanoid(12), `${name310}Container`, 90, 30),
+      createAliasGroup = (id = nanoid(12), name314 = "Alias group", aliases = [
+        createAlias(nanoid(12), `${name314.toLowerCase()}`, 40, 80),
+        createAlias(nanoid(12), `on${capitalizeFirstLetter(name314)}`, 100, 20),
+        createAlias(nanoid(12), `${name314}Container`, 90, 30),
         createAlias(
           nanoid(12),
-          `on${capitalizeFirstLetter(name310.toLowerCase())}Container`,
+          `on${capitalizeFirstLetter(name314.toLowerCase())}Container`,
           10,
           90
         )
       ], themeColorIds = []) => {
         return {
           id,
-          name: name310,
+          name: name314,
           aliases,
           themeColorIds
         };
@@ -69929,7 +70452,7 @@ svg {
         set: {
           all: (aliasData2) => set2((state) => __spreadValues(__spreadValues({}, state), aliasData2)),
           id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name314 })),
           lightModeTone: (lightModeTone) => set2((state) => __spreadProps(__spreadValues({}, state), { lightModeTone })),
           darkModeTone: (darkModeTone) => set2((state) => __spreadProps(__spreadValues({}, state), { darkModeTone }))
         },
@@ -69971,7 +70494,7 @@ svg {
       aliasGroupActions = (set2) => ({
         setAll: (aliasGroupData4) => set2((state) => __spreadValues(__spreadValues({}, state), aliasGroupData4)),
         setId: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-        setName: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+        setName: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name314 })),
         setAliases: (aliases) => set2((state) => __spreadProps(__spreadValues({}, state), { aliases })),
         setThemeColorIds: (themeColors) => set2((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
         data: { id: "", name: "", aliases: [], themeColorIds: [] }
@@ -70110,10 +70633,10 @@ svg {
         98
       ];
       defaultAliasGroup = createAliasGroup(nanoid(12), "Alias group");
-      createThemeColor = (sourceHex2 = defaultSourceHex, name310 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, tones = defaultTones, aliasGroup = createAliasGroup(nanoid(12), `${name310}`)) => {
+      createThemeColor = (sourceHex2 = defaultSourceHex, name314 = defaultName, hueCalc = defaultHueCalc, chromaCalc = defaultChromaCalc, tones = defaultTones, aliasGroup = createAliasGroup(nanoid(12), `${name314}`)) => {
         return {
           id: nanoid(12),
-          name: name310,
+          name: name314,
           sourceHex: sourceHex2,
           sourceColor: createColorFrom().hex(sourceHex2),
           endColor: calculateEndColor(
@@ -70173,7 +70696,7 @@ svg {
         set: {
           all: (themeColor) => set2((state) => __spreadValues(__spreadValues({}, state), themeColor)),
           id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name314 })),
           sourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), {
             sourceHex: sourceHex2
           })),
@@ -70211,7 +70734,7 @@ svg {
         },
         set: __spreadProps(__spreadValues({}, themeColorActions(set2, get, ...a3).set), {
           id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name314 })),
           sourceHex: (sourceHex2) => set2((state) => __spreadProps(__spreadValues({}, state), {
             sourceHex: sourceHex2,
             sourceColor: __spreadValues(__spreadValues({}, state.sourceColor), createColorFrom().hex(sourceHex2)),
@@ -70379,7 +70902,7 @@ svg {
                 truncatedExpression.replace(/h/gi, sourceHue.toString())
               );
               break;
-            } catch (e6) {
+            } catch (e5) {
               continue;
             }
           }
@@ -70438,14 +70961,14 @@ svg {
         onSetDarkTone,
         onRemoveAlias
       }) => {
-        const [aliasName, setAliasName] = h2(alias.name);
-        const [aliasColor, setAliasColor] = h2([
+        const [aliasName, setAliasName] = p2(alias.name);
+        const [aliasColor, setAliasColor] = p2([
           alias.lightModeTone,
           alias.darkModeTone
         ]);
-        const onSetAliasName = (id, name310) => {
-          setAliasName(name310);
-          onSetName(id, name310);
+        const onSetAliasName = (id, name314) => {
+          setAliasName(name314);
+          onSetName(id, name314);
         };
         const onSetAliasLightTone = (id, tone) => {
           setAliasColor([tone, alias.darkModeTone]);
@@ -70466,7 +70989,7 @@ svg {
             Textbox,
             {
               value: aliasName,
-              onChange: (e6) => onSetAliasName(alias.id, e6.currentTarget.value),
+              onChange: (e5) => onSetAliasName(alias.id, e5.currentTarget.value),
               placeholder: "Alias name"
             }
           )),
@@ -70474,9 +70997,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[0].toString(),
-              onInput: (e6) => onSetAliasLightTone(
+              onInput: (e5) => onSetAliasLightTone(
                 alias.id,
-                parseInt(e6.currentTarget.value)
+                parseInt(e5.currentTarget.value)
               ),
               placeholder: "light"
             }
@@ -70485,9 +71008,9 @@ svg {
             TextboxNumeric,
             {
               value: aliasColor[1].toString(),
-              onInput: (e6) => onSetAliasDarkTone(
+              onInput: (e5) => onSetAliasDarkTone(
                 alias.id,
-                parseInt(e6.currentTarget.value)
+                parseInt(e5.currentTarget.value)
               ),
               placeholder: "dark"
             }
@@ -70503,11 +71026,11 @@ svg {
         );
       };
       AliasList = ({ hue, chroma, aliases, onSetAliases }) => {
-        const [aliasItems, setAliasItems] = h2(aliases);
-        const onSetName = (id, name310) => {
+        const [aliasItems, setAliasItems] = p2(aliases);
+        const onSetName = (id, name314) => {
           const alias = aliases.find((alias2) => alias2.id === id);
           if (alias) {
-            alias.name = name310;
+            alias.name = name314;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
           }
@@ -70534,7 +71057,7 @@ svg {
           onSetAliases(newAliasItems);
           console.log(newAliasItems, id);
         };
-        p2(() => {
+        _2(() => {
           setAliasItems([...aliases]);
         }, [aliases]);
         const aliasList = aliasItems.map((alias) => {
@@ -70602,13 +71125,13 @@ svg {
       init_lib2();
       ThemeColorSwatch = ({
         themeColorId,
-        name: name310,
+        name: name314,
         hue,
         chroma,
         isSelected,
         onClick
       }) => {
-        return /* @__PURE__ */ y(IconButton, { title: name310, onClick: () => onClick(themeColorId) }, /* @__PURE__ */ y(
+        return /* @__PURE__ */ y(IconButton, { title: name314, onClick: () => onClick(themeColorId) }, /* @__PURE__ */ y(
           "div",
           {
             className: `theme-color-swatch h-6 w-6 rounded-full ${isSelected ? "selected-theme-color" : ""} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`,
@@ -70627,10 +71150,10 @@ svg {
         selectedThemeColor,
         onSelectThemeColor
       }) => {
-        const [themeColorSwatches, setThemeColorSwatches] = h2(
+        const [themeColorSwatches, setThemeColorSwatches] = p2(
           []
         );
-        p2(() => {
+        _2(() => {
           const newThemeColorSwatches = themeColors.map((themeColor) => {
             return /* @__PURE__ */ y("li", { key: themeColor.id, className: "swatch-li" }, /* @__PURE__ */ y(
               ThemeColorSwatch,
@@ -70834,10 +71357,10 @@ svg {
         createThemeColor(rose, "Rose", "", "", tailwindTones, tailwindAliasGroup)
       ];
       defaultAliasGroups = [createAliasGroup()];
-      createTheme = (id = nanoid(12), name310 = "Theme", themeColors = defaultThemeColors, aliasGroups = defaultAliasGroups) => {
+      createTheme = (id = nanoid(12), name314 = "Theme", themeColors = defaultThemeColors, aliasGroups = defaultAliasGroups) => {
         return {
           id,
-          name: name310,
+          name: name314,
           themeColors,
           aliasGroups
         };
@@ -70869,7 +71392,7 @@ svg {
         set: {
           all: (themeData2) => set2((state) => __spreadValues(__spreadValues({}, state), themeData2)),
           id: (id) => set2((state) => __spreadProps(__spreadValues({}, state), { id })),
-          name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name310 })),
+          name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), { name: name314 })),
           themeColors: (themeColors) => set2((state) => __spreadProps(__spreadValues({}, state), { themeColors })),
           aliasGroups: (aliasGroups) => set2((state) => __spreadProps(__spreadValues({}, state), { aliasGroups }))
         },
@@ -71022,7 +71545,7 @@ svg {
           const setProps = {
             all: (themeData2) => set2((state) => __spreadValues({}, state)),
             id: (id) => set2((state) => __spreadValues({}, state)),
-            name: (name310) => set2((state) => __spreadValues({}, state)),
+            name: (name314) => set2((state) => __spreadValues({}, state)),
             themeColors: (themeColors) => set2((state) => __spreadValues({}, state)),
             aliasGroups: (aliasGroups) => set2((state) => __spreadValues({}, state))
           };
@@ -71045,7 +71568,7 @@ svg {
             const setProps2 = {
               all: (themeColorData2) => set2((state) => __spreadValues({}, state)),
               id: (id2) => set2((state) => __spreadValues({}, state)),
-              name: (name310) => set2((state) => __spreadValues({}, state)),
+              name: (name314) => set2((state) => __spreadValues({}, state)),
               sourceHex: (sourceHex2) => set2((state) => __spreadValues({}, state)),
               sourceColor: (sourceColor) => set2((state) => __spreadValues({}, state)),
               endColor: (endColor) => set2((state) => __spreadValues({}, state)),
@@ -71066,7 +71589,7 @@ svg {
               const setProps3 = {
                 all: (aliasData2) => set2((state) => __spreadValues({}, state)),
                 id: (id3) => set2((state) => __spreadValues({}, state)),
-                name: (name310) => set2((state) => __spreadValues({}, state)),
+                name: (name314) => set2((state) => __spreadValues({}, state)),
                 lightModeTone: (lightModeTone) => set2((state) => __spreadValues({}, state)),
                 darkModeTone: (darkModeTone) => set2((state) => __spreadValues({}, state))
               };
@@ -71101,7 +71624,7 @@ svg {
             const setProps2 = {
               all: (aliasGroupData4) => set2((state) => __spreadValues({}, state)),
               id: (id2) => set2((state) => __spreadValues({}, state)),
-              name: (name310) => set2((state) => __spreadValues({}, state)),
+              name: (name314) => set2((state) => __spreadValues({}, state)),
               aliases: (aliases) => set2((state) => __spreadValues({}, state)),
               themeColorIds: (themeColorIds) => set2((state) => __spreadValues({}, state))
             };
@@ -71117,7 +71640,7 @@ svg {
               const setProps3 = {
                 all: (aliasData2) => set2((state) => __spreadValues({}, state)),
                 id: (id3) => set2((state) => __spreadValues({}, state)),
-                name: (name310) => set2((state) => __spreadValues({}, state)),
+                name: (name314) => set2((state) => __spreadValues({}, state)),
                 lightModeTone: (lightModeTone) => set2((state) => __spreadValues({}, state)),
                 darkModeTone: (darkModeTone) => set2((state) => __spreadValues({}, state))
               };
@@ -71233,9 +71756,9 @@ svg {
                   (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { id }) : t3
                 )
               })),
-              name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), {
+              name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), {
                 themes: state.themes.map(
-                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { name: name310 }) : t3
+                  (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), { name: name314 }) : t3
                 )
               })),
               themeColors: (themeColors) => set2((state) => __spreadProps(__spreadValues({}, state), {
@@ -71332,11 +71855,11 @@ svg {
                     }) : t3
                   )
                 })),
-                name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), {
+                name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       themeColors: t3.themeColors.map(
-                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), { name: name310 }) : c3
+                        (c3) => c3.id === id ? __spreadProps(__spreadValues({}, c3), { name: name314 }) : c3
                       )
                     }) : t3
                   )
@@ -71514,7 +72037,7 @@ svg {
                       }) : t3
                     )
                   })),
-                  name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), {
+                  name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), {
                     themes: state.themes.map(
                       (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                         themeColors: t3.themeColors.map(
@@ -71522,7 +72045,7 @@ svg {
                             aliasGroup: __spreadProps(__spreadValues({}, c3.aliasGroup), {
                               aliases: c3.aliasGroup.aliases.map(
                                 (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
-                                  name: name310
+                                  name: name314
                                 }) : a4
                               )
                             })
@@ -71663,11 +72186,11 @@ svg {
                     }) : t3
                   )
                 })),
-                name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), {
+                name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), {
                   themes: state.themes.map(
                     (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                       aliasGroups: t3.aliasGroups.map(
-                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), { name: name310 }) : a4
+                        (a4) => a4.id === id ? __spreadProps(__spreadValues({}, a4), { name: name314 }) : a4
                       )
                     }) : t3
                   )
@@ -71753,14 +72276,14 @@ svg {
                       }) : t3
                     )
                   })),
-                  name: (name310) => set2((state) => __spreadProps(__spreadValues({}, state), {
+                  name: (name314) => set2((state) => __spreadProps(__spreadValues({}, state), {
                     themes: state.themes.map(
                       (t3) => t3.id === theme.id ? __spreadProps(__spreadValues({}, t3), {
                         aliasGroups: t3.aliasGroups.map(
                           (a4) => a4.id === id2 ? __spreadProps(__spreadValues({}, a4), {
                             aliases: a4.aliases.map(
                               (a5) => a5.id === id2 ? __spreadProps(__spreadValues({}, a5), {
-                                name: name310
+                                name: name314
                               }) : a5
                             )
                           }) : a4
@@ -71850,10 +72373,10 @@ svg {
           setThemeColorId: (themeColorId) => set2({ themeColorId })
         }));
       };
-      IdContext = F(null);
+      IdContext = G(null);
       IdProvider = (_a) => {
         var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
-        const storeRef = _2();
+        const storeRef = F2();
         if (!storeRef.current) {
           storeRef.current = createIdStore(props);
         }
@@ -71907,8 +72430,8 @@ svg {
       init_useSettings();
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ className }) => {
-        const [tabValue, setTabValue] = h2("Settings");
-        const IdStore = q2(IdContext);
+        const [tabValue, setTabValue] = p2("Settings");
+        const IdStore = P2(IdContext);
         if (!IdStore) {
           throw new Error("IdStore is undefined");
         }
@@ -71917,7 +72440,7 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
-        p2(() => {
+        _2(() => {
           const newThemeIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
           );
@@ -71975,25 +72498,25 @@ svg {
         );
         const themeListStore = useThemeList;
         const themeList2 = themeListStore();
-        const themeIndexRef = _2(
+        const themeIndexRef = F2(
           themeList2.themes.findIndex((theme2) => theme2.id === themeId)
         );
-        const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
+        const [themeIndex, setThemeIndex] = p2(themeIndexRef.current);
         const theme = themeListStore((state) => state.themes[themeIndex]);
         const setTheme = themeList2.theme;
-        const themeColorsRef = _2(theme.themeColors.length);
-        p2(() => {
+        const themeColorsRef = F2(theme.themeColors.length);
+        _2(() => {
           if (themeColorsRef.current > theme.themeColors.length && themeColorIndex === 0) {
             setThemeColorId(theme.themeColors[0].id);
           }
           themeColorsRef.current = theme.themeColors.length;
         }, [theme.themeColors]);
-        const themeColorIndexRef = _2(
+        const themeColorIndexRef = F2(
           theme.themeColors.findIndex(
             (themeColor2) => themeColor2.id === themeColorId
           )
         );
-        const [themeColorIndex, setThemeColorIndex] = h2(
+        const [themeColorIndex, setThemeColorIndex] = p2(
           themeColorIndexRef.current
         );
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
@@ -72012,12 +72535,12 @@ svg {
           );
           return chroma2;
         };
-        const themeRef = _2(theme);
-        const themeColorRef = _2(themeColor);
-        const [hexColorInput, setHexColorInput] = h2(
+        const themeRef = F2(theme);
+        const themeColorRef = F2(themeColor);
+        const [hexColorInput, setHexColorInput] = p2(
           themeColor.sourceColor.sourceHex
         );
-        p2(() => {
+        _2(() => {
           const calculatedHue = round2(
             calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc)
           );
@@ -72042,28 +72565,28 @@ svg {
             setChromaCalcInput(`${calculatedChroma}`);
           }
         }, [hexColorInput]);
-        const [tones, setTones] = h2(themeColor.tones.join(", "));
-        p2(() => {
+        const [tones, setTones] = p2(themeColor.tones.join(", "));
+        _2(() => {
           setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
         }, [tones]);
-        const [hueSlider, setHueSlider] = h2(hue);
-        const [hueCalcInput, setHueCalcInput] = h2(
+        const [hueSlider, setHueSlider] = p2(hue);
+        const [hueCalcInput, setHueCalcInput] = p2(
           themeColor.hueCalc
         );
-        p2(() => {
+        _2(() => {
           setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
           setThemeColor(themeColorId).setProps.hueCalc(hueCalcInput);
           setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
         }, [hueCalcInput]);
-        const [chromaSlider, setChromaSlider] = h2(chroma);
-        const [chromaCalcInput, setChromaCalcInput] = h2(
+        const [chromaSlider, setChromaSlider] = p2(chroma);
+        const [chromaCalcInput, setChromaCalcInput] = p2(
           themeColor.chromaCalc
         );
-        p2(() => {
+        _2(() => {
           setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
         }, [chromaCalcInput]);
         const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
-        const maxChromaHues = F2(() => {
+        const maxChromaHues = q2(() => {
           return findHighestChromaPerHue().map(({ hue: hue2, chroma: chroma2, tone }) => {
             return hexFromHct(Hct.from(hue2, chroma2, tone));
           }).join(", ");
@@ -72094,8 +72617,8 @@ svg {
           setTheme(themeId).add.themeColor(newThemeColor);
           setThemeColorId(newThemeColor.id);
         };
-        const onHexColorInput = (e6) => {
-          const newHexColor = e6.currentTarget.value;
+        const onHexColorInput = (e5) => {
+          const newHexColor = e5.currentTarget.value;
           setHexColorInput(newHexColor);
           setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
           setHueSlider(roundedHue);
@@ -72113,14 +72636,14 @@ svg {
             setChromaCalcInput(`${roundedChroma}`);
           }
         };
-        const onHueSliderInput = (e6) => {
-          const newHueCalcInput = e6.currentTarget.value;
+        const onHueSliderInput = (e5) => {
+          const newHueCalcInput = e5.currentTarget.value;
           setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
           setHueSlider(newHueCalcInput);
           setHueCalcInput(`${newHueCalcInput}`);
         };
-        const onHueCalcInput = (e6) => {
-          const newHueCalcInput = e6.currentTarget.value;
+        const onHueCalcInput = (e5) => {
+          const newHueCalcInput = e5.currentTarget.value;
           const calculatedHue = calculateHue2(
             themeColor.sourceColor.hct.hue,
             newHueCalcInput
@@ -72135,16 +72658,16 @@ svg {
             setHueSlider(themeColor.sourceColor.hct.hue);
           }
         };
-        const onChromaSliderInput = (e6) => {
-          const newChromaCalcInput = e6.currentTarget.value;
+        const onChromaSliderInput = (e5) => {
+          const newChromaCalcInput = e5.currentTarget.value;
           setThemeColor(themeColorId).setProps.chromaCalc(
             `${newChromaCalcInput}`
           );
           setChromaCalcInput(`${newChromaCalcInput}`);
           setChromaSlider(newChromaCalcInput);
         };
-        const onChromaCalcInput = (e6) => {
-          const newChromaCalcInput = e6.currentTarget.value;
+        const onChromaCalcInput = (e5) => {
+          const newChromaCalcInput = e5.currentTarget.value;
           const calculatedChroma = round2(
             calculateChroma2(
               themeColor.sourceColor.hct.chroma,
@@ -72173,12 +72696,12 @@ svg {
             value: "Delete theme color"
           }
         ];
-        const maxChroma = F2(
+        const maxChroma = q2(
           () => Math.max(ceil2(findMaxChroma(hue())), 1),
           [themeColor.endColor.hct.hue, themeColorId]
         );
-        const [themeColorToDelete, setThemeColorToDelete] = h2("");
-        p2(() => {
+        const [themeColorToDelete, setThemeColorToDelete] = p2("");
+        _2(() => {
           const themeColorToDeleteExists = theme.themeColors.some(
             (themeColor2) => themeColor2.id === themeColorToDelete
           );
@@ -72213,7 +72736,7 @@ svg {
         const setBindStyles = settings.setBindVariables;
         const collectionName = settings.collectionName;
         const setCollectionName = settings.setCollectionName;
-        const [collectionOptions, setCollectionOptions] = h2([
+        const [collectionOptions, setCollectionOptions] = p2([
           {
             value: "Collection 1",
             text: "Collection 1 ID"
@@ -72254,7 +72777,7 @@ svg {
           console.log("Build Collections:", collections2);
           return collections2;
         };
-        const [collections, setCollections] = h2([]);
+        const [collections, setCollections] = p2([]);
         onmessage = async (event) => {
           var _a;
           const message = await event.data.pluginMessage;
@@ -72352,11 +72875,11 @@ svg {
               {
                 title: "Color name",
                 value: themeColor.name,
-                onChange: (e6) => {
+                onChange: (e5) => {
                   setThemeColor(
                     themeColorId
                   ).setProps.name(
-                    e6.currentTarget.value
+                    e5.currentTarget.value
                   );
                 },
                 onBlur: () => nameTheNameless(),
@@ -72407,8 +72930,8 @@ svg {
               {
                 title: "Source color",
                 hexColor: themeColor.sourceColor.sourceHex,
-                onHexColorInput: (e6) => onHexColorInput(e6),
-                onOpacityInput: (e6) => "100%",
+                onHexColorInput: (e5) => onHexColorInput(e5),
+                onOpacityInput: (e5) => "100%",
                 opacity: "100%"
               }
             )), /* @__PURE__ */ y("div", { className: "flex gap-4 px-2 pt-2 opacity-60" }, /* @__PURE__ */ y(Muted, { title: "Source color hue, chroma, tone" }, "H:", " ", round2(
@@ -72434,7 +72957,7 @@ svg {
                 title: "Adjust hue",
                 maximum: 360,
                 minimum: 0,
-                onInput: (e6) => onHueSliderInput(e6),
+                onInput: (e5) => onHueSliderInput(e5),
                 value: `${Math.round(calculateHue2(themeColor.sourceColor.hct.hue, themeColor.hueCalc))}`
               }
             ), /* @__PURE__ */ y(
@@ -72448,7 +72971,7 @@ svg {
               {
                 title: "Hue expression",
                 value: themeColor.hueCalc,
-                onInput: (e6) => onHueCalcInput(e6),
+                onInput: (e5) => onHueCalcInput(e5),
                 placeholder: "Hue value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Hue (h) =", " ", round2(
@@ -72464,7 +72987,7 @@ svg {
                 title: "Adjust chroma",
                 maximum: Math.max(maxChroma, 1),
                 minimum: 0,
-                onInput: (e6) => onChromaSliderInput(e6),
+                onInput: (e5) => onChromaSliderInput(e5),
                 value: `${calculateChroma2(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)}`
               }
             ), /* @__PURE__ */ y(
@@ -72478,7 +73001,7 @@ svg {
               {
                 title: "Chroma expression",
                 value: themeColor.chromaCalc,
-                onInput: (e6) => onChromaCalcInput(e6),
+                onInput: (e5) => onChromaCalcInput(e5),
                 placeholder: "Chroma value or expression"
               }
             ), /* @__PURE__ */ y("div", { className: "px-2 py-1 opacity-60" }, /* @__PURE__ */ y(Muted, null, "Source Chroma (c) =", " ", round2(
@@ -72499,7 +73022,7 @@ svg {
               {
                 title: "Tones",
                 value: tones,
-                onInput: (e6) => setTones(e6.currentTarget.value),
+                onInput: (e5) => setTones(e5.currentTarget.value),
                 placeholder: "Return tones 0-100"
               }
             ))), /* @__PURE__ */ y(
@@ -72581,8 +73104,8 @@ svg {
                     );
                   }
                 },
-                onKeyDown: (e6) => {
-                  if (e6.key === "Enter" || e6.key === "Escape") {
+                onKeyDown: (e5) => {
+                  if (e5.key === "Enter" || e5.key === "Escape") {
                     if (collectionName === "") {
                       setCollectionName(
                         "Theme Engine"
@@ -72598,7 +73121,7 @@ svg {
             )), /* @__PURE__ */ y(
               Checkbox,
               {
-                onChange: (e6) => {
+                onChange: (e5) => {
                   setOverwrite(!overwrite);
                 },
                 value: overwrite
@@ -72974,7 +73497,7 @@ svg {
               return types;
             }
             return freeProcess && freeProcess.binding && freeProcess.binding("util");
-          } catch (e6) {
+          } catch (e5) {
           }
         }();
         var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer, nodeIsDate = nodeUtil && nodeUtil.isDate, nodeIsMap = nodeUtil && nodeUtil.isMap, nodeIsRegExp = nodeUtil && nodeUtil.isRegExp, nodeIsSet = nodeUtil && nodeUtil.isSet, nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -73346,7 +73869,7 @@ svg {
               var func = getNative(Object2, "defineProperty");
               func({}, "", {});
               return func;
-            } catch (e6) {
+            } catch (e5) {
             }
           }();
           var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout, ctxNow = Date2 && Date2.now !== root.Date.now && Date2.now, ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
@@ -74140,7 +74663,7 @@ svg {
               return value2;
             }
             if (value2 == null) {
-              return identity2;
+              return identity3;
             }
             if (typeof value2 == "object") {
               return isArray2(value2) ? baseMatchesProperty(value2[0], value2[1]) : baseMatches(value2);
@@ -74278,7 +74801,7 @@ svg {
                 return iteratee2;
               });
             } else {
-              iteratees = [identity2];
+              iteratees = [identity3];
             }
             var index2 = -1;
             iteratees = arrayMap(iteratees, baseUnary(getIteratee()));
@@ -74374,7 +74897,7 @@ svg {
             return result2;
           }
           function baseRest(func, start) {
-            return setToString(overRest(func, start, identity2), func + "");
+            return setToString(overRest(func, start, identity3), func + "");
           }
           function baseSample(collection) {
             return arraySample(values(collection));
@@ -74406,11 +74929,11 @@ svg {
             }
             return object;
           }
-          var baseSetData = !metaMap ? identity2 : function(func, data) {
+          var baseSetData = !metaMap ? identity3 : function(func, data) {
             metaMap.set(func, data);
             return func;
           };
-          var baseSetToString = !defineProperty ? identity2 : function(func, string2) {
+          var baseSetToString = !defineProperty ? identity3 : function(func, string2) {
             return defineProperty(func, "toString", {
               "configurable": true,
               "enumerable": false,
@@ -74459,7 +74982,7 @@ svg {
               }
               return high;
             }
-            return baseSortedIndexBy(array, value2, identity2, retHighest);
+            return baseSortedIndexBy(array, value2, identity3, retHighest);
           }
           function baseSortedIndexBy(array, value2, iteratee2, retHighest) {
             var low = 0, high = array == null ? 0 : array.length;
@@ -74615,7 +75138,7 @@ svg {
             return isArrayLikeObject(value2) ? value2 : [];
           }
           function castFunction(value2) {
-            return typeof value2 == "function" ? value2 : identity2;
+            return typeof value2 == "function" ? value2 : identity3;
           }
           function castPath(value2, object) {
             if (isArray2(value2)) {
@@ -75378,7 +75901,7 @@ svg {
             try {
               value2[symToStringTag] = undefined2;
               var unmasked = true;
-            } catch (e6) {
+            } catch (e5) {
             }
             var result2 = nativeObjectToString.call(value2);
             if (unmasked) {
@@ -75735,11 +76258,11 @@ svg {
             if (func != null) {
               try {
                 return funcToString.call(func);
-              } catch (e6) {
+              } catch (e5) {
               }
               try {
                 return func + "";
-              } catch (e6) {
+              } catch (e5) {
               }
             }
             return "";
@@ -76874,7 +77397,7 @@ svg {
           function toString2(value2) {
             return value2 == null ? "" : baseToString(value2);
           }
-          var assign2 = createAssigner(function(object, source) {
+          var assign = createAssigner(function(object, source) {
             if (isPrototype(source) || isArrayLike(source)) {
               copyObject(source, keys(source), object);
               return;
@@ -76965,7 +77488,7 @@ svg {
               value2 = nativeObjectToString.call(value2);
             }
             result2[value2] = key;
-          }, constant(identity2));
+          }, constant(identity3));
           var invertBy = createInverter(function(result2, value2, key) {
             if (value2 != null && typeof value2.toString != "function") {
               value2 = nativeObjectToString.call(value2);
@@ -77426,8 +77949,8 @@ svg {
           var attempt = baseRest(function(func, args) {
             try {
               return apply2(func, undefined2, args);
-            } catch (e6) {
-              return isError(e6) ? e6 : new Error2(e6);
+            } catch (e5) {
+              return isError(e5) ? e5 : new Error2(e5);
             }
           });
           var bindAll = flatRest(function(object, methodNames) {
@@ -77468,7 +77991,7 @@ svg {
           }
           var flow = createFlow();
           var flowRight = createFlow(true);
-          function identity2(value2) {
+          function identity3(value2) {
             return value2;
           }
           function iteratee(func) {
@@ -77592,19 +78115,19 @@ svg {
           }, 1);
           var floor3 = createRound2("floor");
           function max3(array) {
-            return array && array.length ? baseExtremum(array, identity2, baseGt) : undefined2;
+            return array && array.length ? baseExtremum(array, identity3, baseGt) : undefined2;
           }
           function maxBy(array, iteratee2) {
             return array && array.length ? baseExtremum(array, getIteratee(iteratee2, 2), baseGt) : undefined2;
           }
           function mean2(array) {
-            return baseMean(array, identity2);
+            return baseMean(array, identity3);
           }
           function meanBy(array, iteratee2) {
             return baseMean(array, getIteratee(iteratee2, 2));
           }
           function min3(array) {
-            return array && array.length ? baseExtremum(array, identity2, baseLt) : undefined2;
+            return array && array.length ? baseExtremum(array, identity3, baseLt) : undefined2;
           }
           function minBy(array, iteratee2) {
             return array && array.length ? baseExtremum(array, getIteratee(iteratee2, 2), baseLt) : undefined2;
@@ -77617,14 +78140,14 @@ svg {
             return minuend - subtrahend;
           }, 0);
           function sum3(array) {
-            return array && array.length ? baseSum(array, identity2) : 0;
+            return array && array.length ? baseSum(array, identity3) : 0;
           }
           function sumBy(array, iteratee2) {
             return array && array.length ? baseSum(array, getIteratee(iteratee2, 2)) : 0;
           }
           lodash.after = after;
           lodash.ary = ary;
-          lodash.assign = assign2;
+          lodash.assign = assign;
           lodash.assignIn = assignIn;
           lodash.assignInWith = assignInWith;
           lodash.assignWith = assignWith;
@@ -77814,7 +78337,7 @@ svg {
           lodash.has = has;
           lodash.hasIn = hasIn;
           lodash.head = head;
-          lodash.identity = identity2;
+          lodash.identity = identity3;
           lodash.includes = includes;
           lodash.indexOf = indexOf;
           lodash.inRange = inRange;
@@ -77984,7 +78507,7 @@ svg {
             };
           });
           LazyWrapper.prototype.compact = function() {
-            return this.filter(identity2);
+            return this.filter(identity3);
           };
           LazyWrapper.prototype.find = function(predicate) {
             return this.filter(predicate).head();
@@ -78133,7 +78656,7 @@ svg {
       init_color_utils2();
       init_useSettings();
       Plugin = () => {
-        const IdStore = q2(IdContext);
+        const IdStore = P2(IdContext);
         if (!IdStore) {
           throw new Error("IdStore is undefined");
         }
@@ -78142,8 +78665,8 @@ svg {
           IdStore,
           (state) => state.themeColorId
         );
-        const [themeToDelete, setThemeToDelete] = h2("");
-        p2(() => {
+        const [themeToDelete, setThemeToDelete] = p2("");
+        _2(() => {
           const themeToDeleteIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeToDelete
           );
@@ -78161,7 +78684,7 @@ svg {
             setThemeColorId(themeList2.themes[newThemeIndex].themeColors[0].id);
           }
         }, [themeToDelete]);
-        p2(() => {
+        _2(() => {
           const newThemeIndex = themeList2.themes.findIndex(
             (theme2) => theme2.id === themeId
           );
@@ -78204,18 +78727,18 @@ svg {
         );
         const themeListStore = useThemeList;
         const themeList2 = themeListStore();
-        const themeIndexRef = _2(
+        const themeIndexRef = F2(
           themeList2.themes.findIndex((theme2) => theme2.id === themeId)
         );
-        const [themeIndex, setThemeIndex] = h2(themeIndexRef.current);
+        const [themeIndex, setThemeIndex] = p2(themeIndexRef.current);
         const theme = themeListStore((state) => state.themes[themeIndex]);
         const setTheme = themeList2.theme(themeId);
-        const themeColorIndexRef = _2(
+        const themeColorIndexRef = F2(
           themeList2.themes[themeIndex].themeColors.findIndex(
             (themeColor2) => themeColor2.id === themeColorId
           )
         );
-        const [themeColorIndex, setThemeColorIndex] = h2(
+        const [themeColorIndex, setThemeColorIndex] = p2(
           themeColorIndexRef.current
         );
         const hue = () => {
@@ -78234,8 +78757,8 @@ svg {
         };
         const themeColor = themeList2.themes[themeIndex].themeColors[themeColorIndex];
         const setThemeColor = themeList2.theme(themeId).themeColor;
-        const themeRef = _2(theme);
-        const themeColorRef = _2(themeColor);
+        const themeRef = F2(theme);
+        const themeColorRef = F2(themeColor);
         const findThemeById = (id) => {
           const theme2 = themeList2.themes.find((theme3) => theme3.id === id);
           if (!theme2) {
@@ -78243,9 +78766,9 @@ svg {
           }
           return theme2;
         };
-        const [isEditing, setIsEditing] = h2(false);
-        const inputRef = _2(null);
-        p2(() => {
+        const [isEditing, setIsEditing] = p2(false);
+        const inputRef = F2(null);
+        _2(() => {
           if (isEditing && inputRef.current) {
             inputRef.current.focus();
             inputRef.current.select();
@@ -78358,8 +78881,8 @@ svg {
           {
             ref: inputRef,
             value: theme.name,
-            onChange: (e6) => setTheme.setProps.name(
-              e6.currentTarget.value
+            onChange: (e5) => setTheme.setProps.name(
+              e5.currentTarget.value
             ),
             onBlur: handleTextboxBlur,
             onKeyDown: handleTextboxKeyDown,

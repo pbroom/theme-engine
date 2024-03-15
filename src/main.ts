@@ -1,13 +1,6 @@
 import { showUI } from '@create-figma-plugin/utilities';
-// import { paletteTones } from './color';
-// import { paletteGroup } from './palette-swatches';
-// import { paletteVariableCollection } from './palette-variables';
-import VariableCollection from './variable-collection';
-import { useThemeList } from './hooks/useThemeList';
-import { IdContext, IdState } from './hooks/useId';
 import { ThemeData } from './hooks/useTheme';
-import { re } from 'mathjs';
-import { SolidColorFromRgbColor, rgbaFromHct } from './hooks/useColor';
+import { SolidColor, argbFromHct, rgbaFromHct } from './hooks/useColor';
 import { Hct } from '@material/material-color-utilities';
 
 const height = (pixelHeight: number) => {
@@ -145,6 +138,50 @@ type VariableData = {
     darkValue?: VariableValue;
 };
 
+const findColorVariableByName = async (
+    name: string,
+): Promise<Variable | undefined> => {
+    const variables = await figma.variables.getLocalVariablesAsync('COLOR');
+    const colorVariable = variables.find((variable) => variable.name === name);
+    return colorVariable;
+};
+
+const SolidColorFromRgbColor = (rgbColor: RGB): SolidColor => {
+    if (!rgbColor) {
+        return {
+            type: 'SOLID',
+            color: { r: 0, g: 0, b: 0 },
+        };
+    }
+    return { type: 'SOLID', color: rgbColor };
+};
+
+type Rgba = {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+};
+const aFromArgb = (argb: number): number => {
+    return (argb >> 24) & 255;
+};
+const rFromArgb = (argb: number): number => {
+    return (argb >> 16) & 255;
+};
+const gFromArgb = (argb: number): number => {
+    return (argb >> 8) & 255;
+};
+const bFromArgb = (argb: number): number => {
+    return argb & 255;
+};
+const rgbaFromArgb = (argb: number): Rgba => {
+    const r = rFromArgb(argb);
+    const g = gFromArgb(argb);
+    const b = bFromArgb(argb);
+    const a = aFromArgb(argb);
+    return { r, g, b, a };
+};
+
 figma.ui.onmessage = async (pluginMessage: any) => {
     if (pluginMessage.type === 'localCollections') {
         await sendLocalCollections();
@@ -164,6 +201,48 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 ? await getCollectionById(collectionId)
                 : figma.variables.createVariableCollection(collectionName);
         // Mode setup
+        const variables = theme.themeColors.map((themeColor) => {
+            const primitives = themeColor.tones.map((tone) => {
+                const primitiveName = `${theme.name}/${themeColor.name}/${themeColor.name}${tone}`;
+                const toneColor = SolidColorFromRgbColor(
+                    rgbaFromArgb(
+                        Hct.from(
+                            themeColor.endColor.hct.hue,
+                            tone,
+                            themeColor.endColor.hct.chroma,
+                        ).toInt(),
+                    ),
+                );
+                const variable = {
+                    name: primitiveName,
+                    resolvedType: 'COLOR',
+                    value: toneColor,
+                    darkValue: toneColor,
+                };
+                return variable;
+            });
+            const aliases = themeColor.aliasGroup.aliases.map((alias) => {
+                const aliasName = `${theme.name}/${alias.name}`;
+                const lightTone: number = alias.lightModeTone;
+                const darkTone: number = alias.darkModeTone;
+                const lightColor = findColorVariableByName(
+                    `${theme.name}/${themeColor.name}/${themeColor.name}${lightTone}`,
+                );
+                const darkColor = findColorVariableByName(
+                    `${theme.name}/${themeColor.name}/${themeColor.name}${darkTone}`,
+                );
+                const createAlias = (tone: number) => {};
+                const variable = {
+                    name: aliasName,
+                    resolvedType: 'COLOR',
+                    value: createAlias(lightTone),
+                    darkValue: createAlias(darkTone),
+                };
+                return variable;
+            });
+        });
+        const variablesFlat = variables.flat();
+        console.log('%cVARIABLES', 'color: #FF0000', variablesFlat);
         if (collection) {
             const lightModeId = collection.modes[0].modeId;
             if (
@@ -177,32 +256,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 ? collection.modes[1].modeId
                 : collection.addMode('dark');
             console.log('%cTHEME', 'color: #FF0000', theme);
-
-            const variables = theme.themeColors.map((themeColor) => {
-                const primitives = themeColor.tones.map((tone) => {
-                    const primitiveName = `${theme.name}/${themeColor.name}/${themeColor.name}${tone}`;
-                    const toneColor = SolidColorFromRgbColor(
-                        rgbaFromHct(
-                            Hct.from(
-                                themeColor.endColor.hct.hue,
-                                tone,
-                                themeColor.endColor.hct.chroma,
-                            ),
-                        ),
-                    );
-                    const variable = {
-                        name: primitiveName,
-                        variableCollectionId: collection.id,
-                        resolvedType: 'COLOR',
-                        value: toneColor,
-                        darkValue: toneColor,
-                    };
-                    return variable;
-                });
-                return primitives;
-            });
-            const variablesFlat = variables.flat();
-            console.log('%cVARIABLES', 'color: #FF0000', variables);
         }
     }
     // console.log(pluginMessage);

@@ -397,3 +397,55 @@ const calculateChroma = (
         return lastValidChroma;
     }
 };
+
+/**
+ * RGBA component
+ *
+ * @param r Red value should be between 0-255
+ * @param g Green value should be between 0-255
+ * @param b Blue value should be between 0-255
+ * @param a Alpha value should be between 0-255
+ */
+export interface Rgba {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+}
+
+/**
+ * Returns the alpha component of a color in ARGB format.
+ */
+export function alphaFromArgb(argb: number): number {
+    return (argb >> 24) & 255;
+}
+
+/**
+ * Returns the red component of a color in ARGB format.
+ */
+export function redFromArgb(argb: number): number {
+    return (argb >> 16) & 255;
+}
+
+/**
+ * Returns the green component of a color in ARGB format.
+ */
+export function greenFromArgb(argb: number): number {
+    return (argb >> 8) & 255;
+}
+
+/**
+ * Returns the blue component of a color in ARGB format.
+ */
+export function blueFromArgb(argb: number): number {
+    // return argb & 255;
+    return 255;
+}
+
+export function rgbaFromArgb(argb: number): Rgba {
+    const r = redFromArgb(argb);
+    const g = greenFromArgb(argb);
+    const b = blueFromArgb(argb);
+    const a = alphaFromArgb(argb);
+    return { r, g, b, a };
+}

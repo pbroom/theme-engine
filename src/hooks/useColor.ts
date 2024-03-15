@@ -137,8 +137,7 @@ const rgbFromHex = (hex: string) => {
     return result !== null ? result : { r: 0, g: 0, b: 0 };
 };
 const rgbaFromHct = (hct: Hct) => {
-    const argb = argbFromHct(hct);
-    return rgbaFromArgb(argb);
+    return rgbaFromArgb(argbFromHct(hct));
 };
 const hexFromHct = (hct: Hct) => {
     const argb = argbFromHct(hct);

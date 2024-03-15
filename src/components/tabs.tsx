@@ -6,7 +6,6 @@ import { CopyPlus } from 'lucide-react';
 import {
     IconButton,
     IconMinus32,
-    Dropdown,
     Muted,
     RangeSlider,
     Tabs,
@@ -16,49 +15,31 @@ import {
     TextboxColor,
     TextboxMultiline,
     DropdownOption,
-    createClassName,
-    Divider,
     Checkbox,
     VerticalSpace,
     TextboxAutocomplete,
-    TextboxAutocompleteOption,
 } from '@create-figma-plugin/ui';
 import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
-import {
-    ThemeColor,
-    ThemeColorData,
-    createThemeColor,
-    useThemeColor,
-} from '../hooks/useThemeColor';
-import { ceil, e, round } from 'mathjs';
+import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
+import { ceil, round } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
     calculateChroma,
     hctTonalGradient,
-    findMaxChromaForHueAtTone,
     findHighestChromaPerHue,
     findMaxChroma,
 } from '../lib/color-utils';
-import { maxChromaAtTonePerHue } from '../ref';
-import { calculateEndColor, hexFromHct } from '../hooks/useColor';
+import { hexFromHct } from '../hooks/useColor';
 import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
-import {
-    ThemeListActions,
-    ThemeListData,
-    useThemeList,
-} from '../hooks/useThemeList';
-import _, { create, findIndex, get, set } from 'lodash';
-import { useAtom } from 'jotai';
+import { useThemeList } from '../hooks/useThemeList';
+import _ from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { ThemeActions, ThemeData } from '../hooks/useTheme';
 import { useStore } from 'zustand';
-import React from 'preact/compat';
-import { on } from '@create-figma-plugin/utilities';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { useID } from '../hooks/useId';

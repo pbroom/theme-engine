@@ -56,8 +56,8 @@ export const paletteColorVariable = (
         figma.notify('Variable not found');
         return;
     }
-    variable.setValueForMode(lightModeId, fill);
-    variable.setValueForMode(darkModeId, fill);
+    // variable.setValueForMode(lightModeId, fill);
+    // variable.setValueForMode(darkModeId, fill);
 
     const boundVariable = bindVariables ? variable : undefined;
     bindVariablesToStyles(boundVariable, toneColorName);
@@ -102,44 +102,44 @@ export const bindVariablesToStyles = (
  * @param overwriteVariables - Optional. If true, overwrites any existing variables with the same name.
  * @returns An array of the created Figma color variables.
  */
-export const paletteVariableCollection = (
-    collectionId: string,
-    colorName: string,
-    originalColor: string,
-    palette: { [key: number]: string },
-    overwriteVariables?: boolean,
-    bindVariables?: boolean,
-) => {
-    const collection = collectionId;
-    const name = colorName;
-    const color = originalColor;
-    if (overwriteVariables === true) {
-        paletteColorVariable(collection, name, color);
-    }
-    let variables = Object.entries(palette).map(([tone, color]) => {
-        return paletteColorVariable(
-            collection,
-            name,
-            color,
-            Number(tone),
-            overwriteVariables,
-            bindVariables,
-        );
-    });
-    const numVariables = variables.filter(
-        (variable) => variable !== undefined,
-    ).length;
-    if (numVariables < Object.keys(palette).length) {
-        figma.notify(
-            'Some variables didn’t generate. Check console for details',
-            {
-                timeout: 5000,
-                error: true,
-            },
-        );
-    }
-    return variables;
-};
+// export const paletteVariableCollection = (
+//     collectionId: string,
+//     colorName: string,
+//     originalColor: string,
+//     palette: { [key: number]: string },
+//     overwriteVariables?: boolean,
+//     bindVariables?: boolean,
+// ) => {
+//     const collection = collectionId;
+//     const name = colorName;
+//     const color = originalColor;
+//     if (overwriteVariables === true) {
+//         paletteColorVariable(collection, name, color);
+//     }
+//     let variables = Object.entries(palette).map(([tone, color]) => {
+//         return paletteColorVariable(
+//             collection,
+//             name,
+//             color,
+//             Number(tone),
+//             overwriteVariables,
+//             bindVariables,
+//         );
+//     });
+//     const numVariables = variables.filter(
+//         (variable) => variable !== undefined,
+//     ).length;
+//     if (numVariables < Object.keys(palette).length) {
+//         figma.notify(
+//             'Some variables didn’t generate. Check console for details',
+//             {
+//                 timeout: 5000,
+//                 error: true,
+//             },
+//         );
+//     }
+//     return variables;
+// };
 
 // Function to bind variables to styles
 // Finds all styles with the same name as the variable
