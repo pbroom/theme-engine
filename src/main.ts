@@ -234,30 +234,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 return colorVariable;
             };
 
-            // TEST
-            const existingTestVariable =
-                findColorVariableByName('TEST VARIABLE');
-            const testVariable = existingTestVariable
-                ? existingTestVariable
-                : figma.variables.createVariable(
-                      'TEST VARIABLE',
-                      collection,
-                      'COLOR',
-                  );
-            testVariable.setValueForMode(lightModeId, {
-                r: Math.random(),
-                g: Math.random(),
-                b: Math.random(),
-            });
-            testVariable.setValueForMode(darkModeId, {
-                r: Math.random(),
-                g: Math.random(),
-                b: Math.random(),
-            });
-
-            // const primitiveVariableData: PrimitiveVariableData[] = [];
-            // const semanticVariableData: SemanticVariableData[] = [];
-
             const createColorVariable = (
                 name: string,
                 newLightModeValue: Rgba | RGB | RGBA | VariableAlias = {

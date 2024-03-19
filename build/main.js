@@ -3072,22 +3072,6 @@ var init_main = __esm({
             );
             return colorVariable;
           };
-          const existingTestVariable = findColorVariableByName("TEST VARIABLE");
-          const testVariable = existingTestVariable ? existingTestVariable : figma.variables.createVariable(
-            "TEST VARIABLE",
-            collection,
-            "COLOR"
-          );
-          testVariable.setValueForMode(lightModeId, {
-            r: Math.random(),
-            g: Math.random(),
-            b: Math.random()
-          });
-          testVariable.setValueForMode(darkModeId, {
-            r: Math.random(),
-            g: Math.random(),
-            b: Math.random()
-          });
           const createColorVariable = (name, newLightModeValue = {
             r: 1,
             g: 1,
