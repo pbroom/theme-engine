@@ -3003,7 +3003,6 @@ var init_main = __esm({
       });
       const data = await Promise.all(collections);
       const message = { type, data };
-      console.log("PLUGIN SENT:", message);
       figma.ui.postMessage(message);
     };
     figma.on("run", async () => {
@@ -3053,7 +3052,6 @@ var init_main = __esm({
         await sendLocalCollections("preBuild");
       }
       if (pluginMessage.type === "build") {
-        console.log(`PLUGIN RECEIVED: `, pluginMessage);
         const theme = pluginMessage.data.theme;
         const collectionId = pluginMessage.data.collectionId;
         const collectionName = pluginMessage.data.collectionName;
@@ -3066,7 +3064,6 @@ var init_main = __esm({
             collection.renameMode(collection.modes[0].modeId, "light");
           }
           const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
-          console.log("%cTHEME", "color: #FF0000", theme);
           const existingColorVariables = await figma.variables.getLocalVariablesAsync("COLOR");
           await Promise.all(existingColorVariables);
           const findColorVariableByName = (name, variableList = existingColorVariables) => {
@@ -3238,7 +3235,6 @@ var init_main = __esm({
                 };
                 return semanticVariable();
               });
-              console.log("SEMANTICS", variableDataResolved.semantics);
               const updatedColorVariables = await figma.variables.getLocalVariablesAsync("COLOR");
               const setSemantics = (await variableData).semantics.map(async (semantic) => {
                 const existingSemantic = findColorVariableByName(
@@ -3251,10 +3247,6 @@ var init_main = __esm({
                     updatedColorVariables
                   );
                   if (existingPrimitive) {
-                    console.log(
-                      "EXISTING PRIMITIVE",
-                      existingPrimitive
-                    );
                     return {
                       type: "VARIABLE_ALIAS",
                       id: existingPrimitive.id
@@ -3264,7 +3256,6 @@ var init_main = __esm({
                 const newLightModeValue = await variableAlias(semantic.lightModeValue);
                 const newDarkModeValue = await variableAlias(semantic.darkModeValue);
                 if (existingSemantic && newLightModeValue && newDarkModeValue) {
-                  console.log("EXISTING SEMANTIC", existingSemantic);
                   existingSemantic.setValueForMode(
                     lightModeId,
                     newLightModeValue

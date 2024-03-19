@@ -509,7 +509,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             },
             [],
         );
-        console.log('Build Collections:', collections);
+        // console.log('Build Collections:', collections);
         return collections;
     };
 
@@ -517,12 +517,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     onmessage = async (event) => {
         const message = await event.data.pluginMessage;
-        console.log('TAB UI RECEIVED:', message);
+        // console.log('TAB UI RECEIVED:', message);
         if (message.type === 'localCollections') {
             const localCollections = message.collections;
             setCollections(localCollections);
 
-            console.log('Collections:', message.data);
+            // console.log('Collections:', message.data);
             const collectionOptions: Array<DropdownOption> =
                 message.data.reduce(
                     (
@@ -563,12 +563,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
             setCollections(localCollections);
 
             const collections = await buildCollections(message.data);
-            console.log('Collections:', collections);
+            // console.log('Collections:', collections);
             const collectionId = collections.find(
                 (collection) => collection.name === collectionName,
             )?.id;
-            console.log('collectionName:', collectionName);
-            console.log('CollectionID:', collectionId);
+            // console.log('collectionName:', collectionName);
+            // console.log('CollectionID:', collectionId);
             const pluginMessage: PluginMessage = {
                 type: 'build',
                 data: {
@@ -580,7 +580,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 },
             };
             parent.postMessage({ pluginMessage }, '*');
-            console.log('TAB UI SENT:', pluginMessage);
+            // console.log('TAB UI SENT:', pluginMessage);
         }
     };
     // TODO: account for starter plans with one mode
@@ -595,7 +595,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         event: h.JSX.TargetedEvent<HTMLInputElement>,
     ) => {
         const newValue = event.currentTarget.value;
-        console.log(newValue);
+        // console.log(newValue);
         setCollectionName(newValue);
     };
 

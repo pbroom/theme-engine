@@ -41,7 +41,7 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
     // map data to: { id: string, name: string, modes: Array<{modeId: string, name: string}>, defaultMode: string }
 
     const message = { type: type, data: data };
-    console.log('PLUGIN SENT:', message);
+    // console.log('PLUGIN SENT:', message);
     figma.ui.postMessage(message);
 };
 
@@ -194,7 +194,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
         await sendLocalCollections('preBuild');
     }
     if (pluginMessage.type === 'build') {
-        console.log(`PLUGIN RECEIVED: `, pluginMessage);
+        // console.log(`PLUGIN RECEIVED: `, pluginMessage);
         const theme: ThemeData = pluginMessage.data.theme;
         const collectionId = pluginMessage.data.collectionId;
         const collectionName = pluginMessage.data.collectionName;
@@ -217,7 +217,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             const darkModeId = collection.modes[1]
                 ? collection.modes[1].modeId
                 : collection.addMode('dark');
-            console.log('%cTHEME', 'color: #FF0000', theme);
+            // console.log('%cTHEME', 'color: #FF0000', theme);
 
             const existingColorVariables =
                 await figma.variables.getLocalVariablesAsync('COLOR');
@@ -423,9 +423,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                             return semanticVariable();
                         });
 
-                    console.log('SEMANTICS', variableDataResolved.semantics);
-                    // Wait for all primitives to be written, then fetch them and use them to create semantic variables:
-
                     const updatedColorVariables =
                         await figma.variables.getLocalVariablesAsync('COLOR');
 
@@ -444,10 +441,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                 updatedColorVariables,
                             );
                             if (existingPrimitive) {
-                                console.log(
-                                    'EXISTING PRIMITIVE',
-                                    existingPrimitive,
-                                );
                                 return {
                                     type: 'VARIABLE_ALIAS',
                                     id: existingPrimitive.id,
@@ -463,7 +456,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                             newLightModeValue &&
                             newDarkModeValue
                         ) {
-                            console.log('EXISTING SEMANTIC', existingSemantic);
                             existingSemantic.setValueForMode(
                                 lightModeId,
                                 newLightModeValue,
