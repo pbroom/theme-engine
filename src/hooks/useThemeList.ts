@@ -26,7 +26,7 @@ export {
 
 export const defaultThemes: ThemeData[] = [
     createTheme(nanoid(12), 'Material 3'),
-    createTheme(nanoid(12), 'Tailwind', defaultThemeColors2),
+    createTheme(nanoid(12), 'Tailwindy', defaultThemeColors2),
 ];
 
 /**
