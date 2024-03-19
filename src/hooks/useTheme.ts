@@ -135,7 +135,7 @@ const tailwindAliases = [
 
 const tailwindAliasGroup = {
     ...createAliasGroup(),
-    name: 'Tailwind',
+    name: 'Tailwindy',
     aliases: tailwindAliases,
 };
 
