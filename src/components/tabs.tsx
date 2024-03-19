@@ -53,7 +53,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Settings');
+    const [tabValue, setTabValue] = useState<string>('Primitives');
 
     // ID state
     const IdStore = useContext(IdContext);
@@ -214,78 +214,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const themeRef = useRef(theme);
     const themeColorRef = useRef(themeColor);
-
-    // // Debugging
-    // const themeIdRef = useRef(themeId);
-    // const themeColorIdRef = useRef(themeColorId);
-    // const themeColorIdRef2 = useRef(themeColor.id);
-    // const themeColorNameRef = useRef(themeColor.name);
-    // const themeColorHexRef = useRef(themeColor.sourceColor.sourceHex);
-    // const themeColorHueRef = useRef(themeColor.sourceColor.hct.hue);
-    // const themeColorChromaRef = useRef(themeColor.sourceColor.hct.chroma);
-    // const themeColorTonesRef = useRef(themeColor.tones);
-    // const themeColorHueCalcRef = useRef(themeColor.hueCalc);
-    // const themeColorChromaCalcRef = useRef(themeColor.chromaCalc);
-    // const themeListRef = useRef(themeList);
-    // useEffect(() => {
-    //     const logUpdate = (match: boolean) => {
-    //         return !match ? 'Updated' : '-';
-    //     };
-    //     const tableLog = {
-    //         themeId: logUpdate(themeId === themeIdRef.current),
-    //         themeColorId: logUpdate(themeColorId === themeColorIdRef.current),
-    //         'themeColor.id': logUpdate(
-    //             themeColor.id === themeColorIdRef2.current,
-    //         ),
-    //         'themeColor.name': logUpdate(
-    //             themeColor.name === themeColorNameRef.current,
-    //         ),
-    //         'themeColor.sourceColor.sourceHex': logUpdate(
-    //             themeColor.sourceColor.sourceHex === themeColorHexRef.current,
-    //         ),
-    //         'themeColor.sourceColor.hct.hue': logUpdate(
-    //             themeColor.sourceColor.hct.hue === themeColorHueRef.current,
-    //         ),
-    //         'themeColor.sourceColor.hct.chroma': logUpdate(
-    //             themeColor.sourceColor.hct.chroma ===
-    //                 themeColorChromaRef.current,
-    //         ),
-    //         'themeColor.tones': logUpdate(
-    //             themeColor.tones === themeColorTonesRef.current,
-    //         ),
-    //         'themeColor.hueCalc': logUpdate(
-    //             themeColor.hueCalc === themeColorHueCalcRef.current,
-    //         ),
-    //         'themeColor.chromaCalc': logUpdate(
-    //             themeColor.chromaCalc === themeColorChromaCalcRef.current,
-    //         ),
-    //         themeIndex: logUpdate(themeIndex === themeIndexRef.current),
-    //         themeColorIndex: logUpdate(
-    //             themeColorIndex === themeColorIndexRef.current,
-    //         ),
-    //         themeList: logUpdate(themeList === themeListRef.current),
-    //         theme: logUpdate(theme === themeRef.current),
-    //         themeColor: logUpdate(themeColor === themeColorRef.current),
-    //     };
-    //     console.table(tableLog);
-    // }, [
-    //     themeId,
-    //     themeColorId,
-    //     themeColor.id,
-    //     themeColor.name,
-    //     themeColor.sourceColor.sourceHex,
-    //     themeColor.sourceColor.hct.hue,
-    //     themeColor.sourceColor.hct.chroma,
-    //     themeColor.tones,
-    //     themeColor.hueCalc,
-    //     themeColor.chromaCalc,
-    //     themeIndex,
-    //     themeColorIndex,
-    //     themeList,
-    //     theme,
-    //     themeColor,
-    // ]);
-    // // End debugging
 
     const [hexColorInput, setHexColorInput] = useState<string>(
         themeColor.sourceColor.sourceHex,
@@ -997,55 +925,55 @@ const TabGroup = ({ className }: TabGroupProps) => {
             ),
             value: 'Primitives',
         },
-        {
-            children: (
-                <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-t border-gridlines">
-                        <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
-                                <span className="absolute">
-                                    <IconChevronDown16 />
-                                </span>
-                            </div>
-                        </div>
-                        <div className="h-full grow">
-                            <div className="flex h-24 grow flex-row">
-                                <div className="flex grow flex-row"></div>
-                                <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex w-full flex-row border-t border-gridlines">
-                        <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-                            <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-                            <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
-                                <span className="absolute">
-                                    <IconChevronDown16 />
-                                </span>
-                            </div>
-                        </div>
-                        <div className="h-full grow">
-                            <div className="flex h-24 grow flex-row">
-                                <div className="flex grow flex-row"></div>
-                                <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ),
-            value: 'Aliases',
-        },
+        // {
+        //     children: (
+        //         <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
+        //             <div className="flex w-full flex-row border-t border-gridlines">
+        //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
+        //                         <span className="absolute">
+        //                             <IconChevronDown16 />
+        //                         </span>
+        //                     </div>
+        //                 </div>
+        //                 <div className="h-full grow">
+        //                     <div className="flex h-24 grow flex-row">
+        //                         <div className="flex grow flex-row"></div>
+        //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //             <div className="flex w-full flex-row border-t border-gridlines">
+        //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+        //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
+        //                         <span className="absolute">
+        //                             <IconChevronDown16 />
+        //                         </span>
+        //                     </div>
+        //                 </div>
+        //                 <div className="h-full grow">
+        //                     <div className="flex h-24 grow flex-row">
+        //                         <div className="flex grow flex-row"></div>
+        //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     ),
+        //     value: 'Aliases',
+        // },
         {
             children: (
                 <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
@@ -1091,7 +1019,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         variant="border"
                                     />
                                 </div>
-                                <Checkbox
+                                {/* <Checkbox
                                     onChange={(e) => {
                                         setOverwrite(!overwrite);
                                     }}
@@ -1112,7 +1040,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         Bind styles to variables with matching
                                         names
                                     </Text>
-                                </Checkbox>
+                                </Checkbox> */}
                             </div>
                             <div className="h-full w-32"></div>
                         </div>

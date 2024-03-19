@@ -2971,7 +2971,7 @@ __export(main_exports, {
 function main_default() {
   showUI({ height: height(640), width: 512, title: "Theme Engine" });
 }
-var height, localCollectionsIds, getCollectionById, sendLocalCollections, findColorVariableByName, SolidColorFromRgbColor, aFromArgb, rFromArgb, gFromArgb, bFromArgb, rgbaFromArgb;
+var height, localCollectionsIds, getCollectionById, sendLocalCollections, SolidColorFromRgbColor, alphaFromArgb2, redFromArgb2, greenFromArgb2, blueFromArgb2, rgbaFromArgb;
 var init_main = __esm({
   "src/main.ts"() {
     "use strict";
@@ -3009,37 +3009,40 @@ var init_main = __esm({
     figma.on("run", async () => {
       sendLocalCollections();
     });
-    findColorVariableByName = async (name) => {
-      const variables = await figma.variables.getLocalVariablesAsync("COLOR");
-      const colorVariable = variables.find((variable) => variable.name === name);
-      return colorVariable;
-    };
     SolidColorFromRgbColor = (rgbColor) => {
       if (!rgbColor) {
         return {
-          type: "SOLID",
-          color: { r: 0, g: 0, b: 0 }
+          r: 0,
+          g: 0,
+          b: 0
         };
       }
-      return { type: "SOLID", color: rgbColor };
+      const red = rgbColor.r / 255;
+      const green = rgbColor.g / 255;
+      const blue = rgbColor.b / 255;
+      return {
+        r: red,
+        g: green,
+        b: blue
+      };
     };
-    aFromArgb = (argb) => {
+    alphaFromArgb2 = (argb) => {
       return argb >> 24 & 255;
     };
-    rFromArgb = (argb) => {
+    redFromArgb2 = (argb) => {
       return argb >> 16 & 255;
     };
-    gFromArgb = (argb) => {
+    greenFromArgb2 = (argb) => {
       return argb >> 8 & 255;
     };
-    bFromArgb = (argb) => {
+    blueFromArgb2 = (argb) => {
       return argb & 255;
     };
     rgbaFromArgb = (argb) => {
-      const r = rFromArgb(argb);
-      const g = gFromArgb(argb);
-      const b = bFromArgb(argb);
-      const a = aFromArgb(argb);
+      const r = redFromArgb2(argb);
+      const g = greenFromArgb2(argb);
+      const b = blueFromArgb2(argb);
+      const a = alphaFromArgb2(argb);
       return { r, g, b, a };
     };
     figma.ui.onmessage = async (pluginMessage) => {
@@ -3057,49 +3060,6 @@ var init_main = __esm({
         const overwriteVariables = pluginMessage.data.overwriteVariables;
         const bindVariables = pluginMessage.data.bindVariables;
         const collection = collectionId && collectionId !== "" ? await getCollectionById(collectionId) : figma.variables.createVariableCollection(collectionName);
-        const variables = theme.themeColors.map((themeColor) => {
-          const primitives = themeColor.tones.map((tone) => {
-            const primitiveName = `${theme.name}/${themeColor.name}/${themeColor.name}${tone}`;
-            const toneColor = SolidColorFromRgbColor(
-              rgbaFromArgb(
-                Hct.from(
-                  themeColor.endColor.hct.hue,
-                  tone,
-                  themeColor.endColor.hct.chroma
-                ).toInt()
-              )
-            );
-            const variable = {
-              name: primitiveName,
-              resolvedType: "COLOR",
-              value: toneColor,
-              darkValue: toneColor
-            };
-            return variable;
-          });
-          const aliases = themeColor.aliasGroup.aliases.map((alias) => {
-            const aliasName = `${theme.name}/${alias.name}`;
-            const lightTone = alias.lightModeTone;
-            const darkTone = alias.darkModeTone;
-            const lightColor = findColorVariableByName(
-              `${theme.name}/${themeColor.name}/${themeColor.name}${lightTone}`
-            );
-            const darkColor = findColorVariableByName(
-              `${theme.name}/${themeColor.name}/${themeColor.name}${darkTone}`
-            );
-            const createAlias = (tone) => {
-            };
-            const variable = {
-              name: aliasName,
-              resolvedType: "COLOR",
-              value: createAlias(lightTone),
-              darkValue: createAlias(darkTone)
-            };
-            return variable;
-          });
-        });
-        const variablesFlat = variables.flat();
-        console.log("%cVARIABLES", "color: #FF0000", variablesFlat);
         if (collection) {
           const lightModeId = collection.modes[0].modeId;
           if (collection.modes.length === 1 && (collection.modes[0].name === "Value" || collection.modes[0].name === "Mode 1")) {
@@ -3107,6 +3067,242 @@ var init_main = __esm({
           }
           const darkModeId = collection.modes[1] ? collection.modes[1].modeId : collection.addMode("dark");
           console.log("%cTHEME", "color: #FF0000", theme);
+          const existingColorVariables = await figma.variables.getLocalVariablesAsync("COLOR");
+          await Promise.all(existingColorVariables);
+          const findColorVariableByName = (name, variableList = existingColorVariables) => {
+            const colorVariable = variableList.find(
+              (variable) => variable.name === name
+            );
+            return colorVariable;
+          };
+          const existingTestVariable = findColorVariableByName("TEST VARIABLE");
+          const testVariable = existingTestVariable ? existingTestVariable : figma.variables.createVariable(
+            "TEST VARIABLE",
+            collection,
+            "COLOR"
+          );
+          testVariable.setValueForMode(lightModeId, {
+            r: Math.random(),
+            g: Math.random(),
+            b: Math.random()
+          });
+          testVariable.setValueForMode(darkModeId, {
+            r: Math.random(),
+            g: Math.random(),
+            b: Math.random()
+          });
+          const createColorVariable = (name, newLightModeValue = {
+            r: 1,
+            g: 1,
+            b: 1,
+            a: 1
+          }, newDarkModeValue = {
+            r: 0,
+            g: 0,
+            b: 0,
+            a: 1
+          }) => {
+            const newVariable = figma.variables.createVariable(
+              name,
+              collection,
+              "COLOR"
+            );
+            newVariable.setValueForMode(lightModeId, newLightModeValue);
+            newVariable.setValueForMode(darkModeId, newDarkModeValue);
+            return newVariable;
+          };
+          const themeColorVariables = theme.themeColors.map(
+            async (themeColor) => {
+              const solidColorFromTone = (tone) => {
+                const solidColor = SolidColorFromRgbColor(
+                  rgbaFromArgb(
+                    Hct.from(
+                      themeColor.endColor.hct.hue,
+                      themeColor.endColor.hct.chroma,
+                      tone
+                    ).toInt()
+                  )
+                );
+                return solidColor;
+              };
+              const primitives = themeColor.tones.map(async (tone) => {
+                const name = `${theme.name}/${themeColor.name}/${themeColor.name}${tone}`;
+                const lightModeValue = solidColorFromTone(tone);
+                const darkModeValue = solidColorFromTone(tone);
+                const data = {
+                  name,
+                  lightModeValue,
+                  darkModeValue
+                };
+                return data;
+              }, []);
+              const aliasPrimitives = themeColor.aliasGroup.aliases.map(
+                async (alias) => {
+                  const aliasLightToneName = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
+                  const aliasDarkToneName = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
+                  const lightModeTone = solidColorFromTone(
+                    alias.lightModeTone
+                  );
+                  const darkModeTone = solidColorFromTone(
+                    alias.darkModeTone
+                  );
+                  const lightModeToneData = {
+                    name: aliasLightToneName,
+                    lightModeValue: lightModeTone,
+                    darkModeValue: lightModeTone
+                  };
+                  const darkModeToneData = {
+                    name: aliasDarkToneName,
+                    lightModeValue: darkModeTone,
+                    darkModeValue: darkModeTone
+                  };
+                  const data = [lightModeToneData, darkModeToneData];
+                  return data;
+                },
+                []
+              );
+              const aliasSemantics = themeColor.aliasGroup.aliases.map(
+                async (alias) => {
+                  const aliasName = `${theme.name}/${alias.name}`;
+                  const lightModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
+                  const darkModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
+                  const data = {
+                    name: aliasName,
+                    lightModeValue: lightModeTone,
+                    darkModeValue: darkModeTone
+                  };
+                  return data;
+                },
+                []
+              );
+              const primitivesResolved = await Promise.all(primitives);
+              const aliasPrimitivesResolved = await Promise.all(aliasPrimitives);
+              const aliasSemanticsResolved = await Promise.all(aliasSemantics);
+              const primitivesFlat = primitivesResolved.flat();
+              const aliasPrimitivesFlat = aliasPrimitivesResolved.flat();
+              const combinedPrimitives = [
+                ...primitivesFlat,
+                ...aliasPrimitivesFlat
+              ];
+              const semanticsFlat = aliasSemanticsResolved.flat();
+              const themeColorVariableData = {
+                primitives: combinedPrimitives,
+                semantics: semanticsFlat
+              };
+              return themeColorVariableData;
+            }
+          );
+          await Promise.all(themeColorVariables);
+          const createVariables = themeColorVariables.map(
+            async (variableData) => {
+              const variableDataResolved = await variableData;
+              const primitives = variableDataResolved.primitives.map(
+                async (primitive) => {
+                  const existingPrimitive = findColorVariableByName(primitive.name);
+                  if (existingPrimitive) {
+                    existingPrimitive.setValueForMode(
+                      lightModeId,
+                      primitive.lightModeValue
+                    );
+                    existingPrimitive.setValueForMode(
+                      darkModeId,
+                      primitive.darkModeValue
+                    );
+                    return;
+                  }
+                  const primitiveVariable = () => {
+                    const newPrimitive = createColorVariable(
+                      primitive.name,
+                      primitive.lightModeValue,
+                      primitive.darkModeValue
+                    );
+                    return newPrimitive;
+                  };
+                  return primitiveVariable();
+                }
+              );
+              const semantics = variableDataResolved.semantics.map(async (semantic) => {
+                const existingSemantic = findColorVariableByName(
+                  semantic.name
+                );
+                if (existingSemantic) {
+                  return;
+                }
+                const semanticVariable = () => {
+                  const newSemantic = figma.variables.createVariable(
+                    semantic.name,
+                    collection,
+                    "COLOR"
+                  );
+                  return newSemantic;
+                };
+                return semanticVariable();
+              });
+              console.log("SEMANTICS", variableDataResolved.semantics);
+              const updatedColorVariables = await figma.variables.getLocalVariablesAsync("COLOR");
+              const setSemantics = (await variableData).semantics.map(async (semantic) => {
+                const existingSemantic = findColorVariableByName(
+                  semantic.name,
+                  updatedColorVariables
+                );
+                const variableAlias = async (name) => {
+                  const existingPrimitive = findColorVariableByName(
+                    name,
+                    updatedColorVariables
+                  );
+                  if (existingPrimitive) {
+                    console.log(
+                      "EXISTING PRIMITIVE",
+                      existingPrimitive
+                    );
+                    return {
+                      type: "VARIABLE_ALIAS",
+                      id: existingPrimitive.id
+                    };
+                  }
+                };
+                const newLightModeValue = await variableAlias(semantic.lightModeValue);
+                const newDarkModeValue = await variableAlias(semantic.darkModeValue);
+                if (existingSemantic && newLightModeValue && newDarkModeValue) {
+                  console.log("EXISTING SEMANTIC", existingSemantic);
+                  existingSemantic.setValueForMode(
+                    lightModeId,
+                    newLightModeValue
+                  );
+                  existingSemantic.setValueForMode(
+                    darkModeId,
+                    newDarkModeValue
+                  );
+                  return;
+                }
+                const semanticVariable = async () => {
+                  const newSemantic = figma.variables.createVariable(
+                    semantic.name,
+                    collection,
+                    "COLOR"
+                  );
+                  if (newLightModeValue && newDarkModeValue) {
+                    newSemantic.setValueForMode(
+                      lightModeId,
+                      newLightModeValue
+                    );
+                    newSemantic.setValueForMode(
+                      darkModeId,
+                      newDarkModeValue
+                    );
+                  }
+                  return newSemantic;
+                };
+                return semanticVariable();
+              });
+              return await Promise.all([
+                primitives,
+                semantics,
+                setSemantics
+              ]);
+            }
+          );
+          await Promise.all(createVariables);
         }
       }
     };

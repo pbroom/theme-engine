@@ -102,9 +102,9 @@
     }, "return" in obj && method("return"), it;
   };
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57aa50a4-ef4d-45a8-8d13-c9129b381d3d/tailwind.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a4ea221-8603-4bea-903f-12f089364095/tailwind.js
   var init_tailwind = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/57aa50a4-ef4d-45a8-8d13-c9129b381d3d/tailwind.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a4ea221-8603-4bea-903f-12f089364095/tailwind.js"() {
       if (document.getElementById("daf6ec3404") === null) {
         const element = document.createElement("style");
         element.id = "daf6ec3404";
@@ -2471,10 +2471,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b42120-940f-4d80-840b-cb2dde6ff733/icon.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2adcd6f5-7798-4905-ac0e-ab5632e51135/icon.module.js
   var icon_module_default;
   var init_icon_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/43b42120-940f-4d80-840b-cb2dde6ff733/icon.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2adcd6f5-7798-4905-ac0e-ab5632e51135/icon.module.js"() {
       if (document.getElementById("4445490750") === null) {
         const element = document.createElement("style");
         element.id = "4445490750";
@@ -2511,155 +2511,10 @@ video {
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/icons/icon-12/icon-control-checkbox-checked-12.js
-  var IconControlCheckboxChecked12;
-  var init_icon_control_checkbox_checked_12 = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/icon-12/icon-control-checkbox-checked-12.js"() {
-      init_create_icon();
-      IconControlCheckboxChecked12 = createIcon("m3.17647 4.82377 1.88235 1.88236 3.76471-3.76472L10 4.11788l-4.94118 4.9412L2 6.00024z", { height: 12, width: 12 });
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34c68466-5150-4db1-b8fb-8608a6dda9f2/checkbox.module.js
-  var checkbox_module_default;
-  var init_checkbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/34c68466-5150-4db1-b8fb-8608a6dda9f2/checkbox.module.js"() {
-      if (document.getElementById("e671155e7e") === null) {
-        const element = document.createElement("style");
-        element.id = "e671155e7e";
-        element.textContent = `._checkbox_hvyza_1 {
-  position: relative;
-  z-index: var(--z-index-1);
-}
-
-._input_hvyza_6 {
-  position: absolute;
-  z-index: var(
-    --z-index-1
-  ); /* stack \`.input\` over all other elements within \`.checkbox\` */
-  top: -8px;
-  right: -16px;
-  bottom: -8px;
-  left: -16px;
-  display: block;
-  width: calc(100% + 32px);
-}
-._disabled_hvyza_18 ._input_hvyza_6 {
-  cursor: not-allowed;
-}
-
-._fill_hvyza_22,
-._border_hvyza_23 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: var(--border-radius-2);
-}
-
-._border_hvyza_23 {
-  border: 1px solid var(--figma-color-border-strong);
-}
-._checkbox_hvyza_1:not(._disabled_hvyza_18) ._input_hvyza_6:focus ~ ._border_hvyza_23 {
-  border-color: var(--figma-color-border-brand-strong);
-  box-shadow: 0 0 0 1px var(--figma-color-border-brand-strong);
-}
-._checkbox_hvyza_1:not(._disabled_hvyza_18) ._input_hvyza_6:checked ~ ._border_hvyza_23 {
-  border: 0;
-}
-._checkbox_hvyza_1:not(._disabled_hvyza_18) ._input_hvyza_6:checked:focus ~ ._border_hvyza_23 {
-  box-shadow:
-    0 0 0 1px var(--figma-color-bg),
-    0 0 0 2px var(--figma-color-border-brand-strong);
-}
-._disabled_hvyza_18 ._input_hvyza_6 ~ ._border_hvyza_23 {
-  border-color: var(--figma-color-border-disabled-strong);
-}
-._disabled_hvyza_18 ._input_hvyza_6:checked ~ ._border_hvyza_23 {
-  border: 0;
-}
-
-._checkbox_hvyza_1:not(._disabled_hvyza_18) ._input_hvyza_6:checked ~ ._fill_hvyza_22 {
-  background-color: var(--figma-color-bg-brand);
-}
-._disabled_hvyza_18 ._input_hvyza_6:checked ~ ._fill_hvyza_22 {
-  background-color: var(--figma-color-bg-disabled);
-}
-
-._checkIcon_hvyza_61 {
-  color: var(--figma-color-icon-onbrand);
-}
-._disabled_hvyza_18 ._checkIcon_hvyza_61 {
-  color: var(--figma-color-icon-ondisabled);
-}
-
-._children_hvyza_68 {
-  min-height: 12px;
-  padding: 2px 0 0 20px;
-  color: var(--figma-color-text);
-}
-._disabled_hvyza_18 ._children_hvyza_68 {
-  opacity: var(--opacity-30);
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9AY3JlYXRlLWZpZ21hLXBsdWdpbi91aS9saWIvY29tcG9uZW50cy9jaGVja2JveC9jaGVja2JveC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQjs7R0FFQyxFQUFFLDhEQUE4RDtFQUNqRSxTQUFTO0VBQ1QsWUFBWTtFQUNaLFlBQVk7RUFDWixXQUFXO0VBQ1gsY0FBYztFQUNkLHdCQUF3QjtBQUMxQjtBQUNBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBOztFQUVFLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1oscUNBQXFDO0FBQ3ZDOztBQUVBO0VBQ0Usa0RBQWtEO0FBQ3BEO0FBQ0E7RUFDRSxvREFBb0Q7RUFDcEQsNERBQTREO0FBQzlEO0FBQ0E7RUFDRSxTQUFTO0FBQ1g7QUFDQTtFQUNFOztvREFFa0Q7QUFDcEQ7QUFDQTtFQUNFLHVEQUF1RDtBQUN6RDtBQUNBO0VBQ0UsU0FBUztBQUNYOztBQUVBO0VBQ0UsNkNBQTZDO0FBQy9DO0FBQ0E7RUFDRSxnREFBZ0Q7QUFDbEQ7O0FBRUE7RUFDRSxzQ0FBc0M7QUFDeEM7QUFDQTtFQUNFLHlDQUF5QztBQUMzQzs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUI7RUFDckIsOEJBQThCO0FBQ2hDO0FBQ0E7RUFDRSwwQkFBMEI7QUFDNUIiLCJmaWxlIjoibm9kZV9tb2R1bGVzL0BjcmVhdGUtZmlnbWEtcGx1Z2luL3VpL2xpYi9jb21wb25lbnRzL2NoZWNrYm94L2NoZWNrYm94Lm1vZHVsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2hlY2tib3gge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHotaW5kZXg6IHZhcigtLXotaW5kZXgtMSk7XG59XG5cbi5pbnB1dCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgei1pbmRleDogdmFyKFxuICAgIC0tei1pbmRleC0xXG4gICk7IC8qIHN0YWNrIGAuaW5wdXRgIG92ZXIgYWxsIG90aGVyIGVsZW1lbnRzIHdpdGhpbiBgLmNoZWNrYm94YCAqL1xuICB0b3A6IC04cHg7XG4gIHJpZ2h0OiAtMTZweDtcbiAgYm90dG9tOiAtOHB4O1xuICBsZWZ0OiAtMTZweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiBjYWxjKDEwMCUgKyAzMnB4KTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQge1xuICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xufVxuXG4uZmlsbCxcbi5ib3JkZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgd2lkdGg6IDEycHg7XG4gIGhlaWdodDogMTJweDtcbiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cy0yKTtcbn1cblxuLmJvcmRlciB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1zdHJvbmcpO1xufVxuLmNoZWNrYm94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpmb2N1cyB+IC5ib3JkZXIge1xuICBib3JkZXItY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJvcmRlci1icmFuZC1zdHJvbmcpO1xuICBib3gtc2hhZG93OiAwIDAgMCAxcHggdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG4uY2hlY2tib3g6bm90KC5kaXNhYmxlZCkgLmlucHV0OmNoZWNrZWQgfiAuYm9yZGVyIHtcbiAgYm9yZGVyOiAwO1xufVxuLmNoZWNrYm94Om5vdCguZGlzYWJsZWQpIC5pbnB1dDpjaGVja2VkOmZvY3VzIH4gLmJvcmRlciB7XG4gIGJveC1zaGFkb3c6XG4gICAgMCAwIDAgMXB4IHZhcigtLWZpZ21hLWNvbG9yLWJnKSxcbiAgICAwIDAgMCAycHggdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWJyYW5kLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmlucHV0IH4gLmJvcmRlciB7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYm9yZGVyLWRpc2FibGVkLXN0cm9uZyk7XG59XG4uZGlzYWJsZWQgLmlucHV0OmNoZWNrZWQgfiAuYm9yZGVyIHtcbiAgYm9yZGVyOiAwO1xufVxuXG4uY2hlY2tib3g6bm90KC5kaXNhYmxlZCkgLmlucHV0OmNoZWNrZWQgfiAuZmlsbCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWJnLWJyYW5kKTtcbn1cbi5kaXNhYmxlZCAuaW5wdXQ6Y2hlY2tlZCB+IC5maWxsIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tZmlnbWEtY29sb3ItYmctZGlzYWJsZWQpO1xufVxuXG4uY2hlY2tJY29uIHtcbiAgY29sb3I6IHZhcigtLWZpZ21hLWNvbG9yLWljb24tb25icmFuZCk7XG59XG4uZGlzYWJsZWQgLmNoZWNrSWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci1pY29uLW9uZGlzYWJsZWQpO1xufVxuXG4uY2hpbGRyZW4ge1xuICBtaW4taGVpZ2h0OiAxMnB4O1xuICBwYWRkaW5nOiAycHggMCAwIDIwcHg7XG4gIGNvbG9yOiB2YXIoLS1maWdtYS1jb2xvci10ZXh0KTtcbn1cbi5kaXNhYmxlZCAuY2hpbGRyZW4ge1xuICBvcGFjaXR5OiB2YXIoLS1vcGFjaXR5LTMwKTtcbn1cbiJdfQ== */`;
-        document.head.append(element);
-      }
-      checkbox_module_default = { "checkbox": "_checkbox_hvyza_1", "input": "_input_hvyza_6", "disabled": "_disabled_hvyza_18", "fill": "_fill_hvyza_22", "border": "_border_hvyza_23", "checkIcon": "_checkIcon_hvyza_61", "children": "_children_hvyza_68" };
-    }
-  });
-
-  // node_modules/@create-figma-plugin/ui/lib/components/checkbox/checkbox.js
-  var Checkbox;
-  var init_checkbox = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/components/checkbox/checkbox.js"() {
-      init_preact_module();
-      init_hooks_module();
-      init_icon_control_checkbox_checked_12();
-      init_create_class_name();
-      init_create_component();
-      init_no_op();
-      init_checkbox_module();
-      Checkbox = createComponent(function(_a, ref) {
-        var _b = _a, { children, disabled = false, onChange = noop, onKeyDown = noop, onValueChange = noop, propagateEscapeKeyDown = true, value: value2 } = _b, rest = __objRest(_b, ["children", "disabled", "onChange", "onKeyDown", "onValueChange", "propagateEscapeKeyDown", "value"]);
-        const handleChange = x2(function(event) {
-          onChange(event);
-          const newValue = event.currentTarget.checked === true;
-          onValueChange(newValue);
-        }, [onChange, onValueChange]);
-        const handleKeyDown = x2(function(event) {
-          onKeyDown(event);
-          if (event.key === "Escape") {
-            if (propagateEscapeKeyDown === false) {
-              event.stopPropagation();
-            }
-            event.currentTarget.blur();
-          }
-        }, [onKeyDown, propagateEscapeKeyDown]);
-        return y(
-          "label",
-          { class: createClassName([
-            checkbox_module_default.checkbox,
-            disabled === true ? checkbox_module_default.disabled : null
-          ]) },
-          y("input", __spreadProps(__spreadValues({}, rest), { ref, checked: value2 === true, class: checkbox_module_default.input, disabled: disabled === true, onChange: handleChange, onKeyDown: handleKeyDown, tabIndex: 0, type: "checkbox" })),
-          y("div", { class: checkbox_module_default.fill }, value2 === true ? y(
-            "div",
-            { class: checkbox_module_default.checkIcon },
-            y(IconControlCheckboxChecked12, null)
-          ) : null),
-          y("div", { class: checkbox_module_default.border }),
-          y("div", { class: checkbox_module_default.children }, children)
-        );
-      });
-    }
-  });
-
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48235073-ffae-4f6a-a7ac-9169473fbc1a/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b68dc610-b4c7-4af6-a2db-0a4ce3ea76e1/menu.module.js
   var menu_module_default;
   var init_menu_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/48235073-ffae-4f6a-a7ac-9169473fbc1a/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/b68dc610-b4c7-4af6-a2db-0a4ce3ea76e1/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -2897,10 +2752,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ddf0be0-72da-4c17-b673-6c6ff41c845a/dropdown.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8ae9a3fa-8c36-417d-afc6-d9100052998c/dropdown.module.js
   var dropdown_module_default;
   var init_dropdown_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3ddf0be0-72da-4c17-b673-6c6ff41c845a/dropdown.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8ae9a3fa-8c36-417d-afc6-d9100052998c/dropdown.module.js"() {
       if (document.getElementById("3f20a96f51") === null) {
         const element = document.createElement("style");
         element.id = "3f20a96f51";
@@ -3374,10 +3229,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b9e787c-f61a-4543-90bf-a4e1ff578b87/icon-button.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4ec609-b82b-4746-895d-7dbf8de19e07/icon-button.module.js
   var icon_button_module_default;
   var init_icon_button_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/8b9e787c-f61a-4543-90bf-a4e1ff578b87/icon-button.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/dc4ec609-b82b-4746-895d-7dbf8de19e07/icon-button.module.js"() {
       if (document.getElementById("8f2c81b575") === null) {
         const element = document.createElement("style");
         element.id = "8f2c81b575";
@@ -3447,10 +3302,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d7f22592-eecd-47b3-aeaf-fdee87a79935/text.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f26bb2ad-38aa-496a-97fd-8f815b05c20c/text.module.js
   var text_module_default;
   var init_text_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d7f22592-eecd-47b3-aeaf-fdee87a79935/text.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/f26bb2ad-38aa-496a-97fd-8f815b05c20c/text.module.js"() {
       if (document.getElementById("b5e8426b1e") === null) {
         const element = document.createElement("style");
         element.id = "b5e8426b1e";
@@ -3508,10 +3363,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3034dc0b-3ddb-463e-864c-e656353acdbb/range-slider.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/530f3e8b-4683-430b-bf64-cddfc80d8824/range-slider.module.js
   var range_slider_module_default;
   var init_range_slider_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/3034dc0b-3ddb-463e-864c-e656353acdbb/range-slider.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/530f3e8b-4683-430b-bf64-cddfc80d8824/range-slider.module.js"() {
       if (document.getElementById("e7dc3a2421") === null) {
         const element = document.createElement("style");
         element.id = "e7dc3a2421";
@@ -3615,10 +3470,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a81b9e52-c2b9-4139-aeec-411d9370ad0f/tabs.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b9331c7-f031-4e69-b903-920a62b0364e/tabs.module.js
   var tabs_module_default;
   var init_tabs_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/a81b9e52-c2b9-4139-aeec-411d9370ad0f/tabs.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2b9331c7-f031-4e69-b903-920a62b0364e/tabs.module.js"() {
       if (document.getElementById("9057b706f3") === null) {
         const element = document.createElement("style");
         element.id = "9057b706f3";
@@ -4215,10 +4070,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/37f5477b-666c-4fb0-b23c-f29197893b12/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4d0b80b3-c608-473a-93bd-f190b7d07f8e/textbox.module.js
   var textbox_module_default;
   var init_textbox_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/37f5477b-666c-4fb0-b23c-f29197893b12/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/4d0b80b3-c608-473a-93bd-f190b7d07f8e/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4342,10 +4197,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6220cf71-015d-4952-8c43-afea735471f7/menu.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67046ede-13f7-4e83-8c49-024e4db5ce0e/menu.module.js
   var menu_module_default2;
   var init_menu_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/6220cf71-015d-4952-8c43-afea735471f7/menu.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/67046ede-13f7-4e83-8c49-024e4db5ce0e/menu.module.js"() {
       if (document.getElementById("4fc51b39c8") === null) {
         const element = document.createElement("style");
         element.id = "4fc51b39c8";
@@ -4448,10 +4303,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f3b3e3d-fb92-4a5e-8918-b8cb5c5ca0c4/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/447140ab-4d25-475e-a647-79ab02a6451c/textbox.module.js
   var textbox_module_default2;
   var init_textbox_module2 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/2f3b3e3d-fb92-4a5e-8918-b8cb5c5ca0c4/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/447140ab-4d25-475e-a647-79ab02a6451c/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -4544,10 +4399,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7c53a64-305d-4815-8114-b48049fd8270/textbox-autocomplete.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a20741e-2dd6-4232-8d19-5a6e2f9eb834/textbox-autocomplete.module.js
   var textbox_autocomplete_module_default;
   var init_textbox_autocomplete_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/e7c53a64-305d-4815-8114-b48049fd8270/textbox-autocomplete.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9a20741e-2dd6-4232-8d19-5a6e2f9eb834/textbox-autocomplete.module.js"() {
       if (document.getElementById("b1ea8b97d3") === null) {
         const element = document.createElement("style");
         element.id = "b1ea8b97d3";
@@ -5404,10 +5259,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fd4762-9f8b-4050-87d0-87759c95861d/textbox-color.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05143ab8-d011-47e6-9eeb-a51f50658c83/textbox-color.module.js
   var textbox_color_module_default;
   var init_textbox_color_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d6fd4762-9f8b-4050-87d0-87759c95861d/textbox-color.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/05143ab8-d011-47e6-9eeb-a51f50658c83/textbox-color.module.js"() {
       if (document.getElementById("05ec761a3f") === null) {
         const element = document.createElement("style");
         element.id = "05ec761a3f";
@@ -5747,10 +5602,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7563c8f8-1003-4d11-aaf7-6f572bb41603/textbox-multiline.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/618c099c-bf2c-4bc4-9751-397d4544f7cf/textbox-multiline.module.js
   var textbox_multiline_module_default;
   var init_textbox_multiline_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7563c8f8-1003-4d11-aaf7-6f572bb41603/textbox-multiline.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/618c099c-bf2c-4bc4-9751-397d4544f7cf/textbox-multiline.module.js"() {
       if (document.getElementById("593e330747") === null) {
         const element = document.createElement("style");
         element.id = "593e330747";
@@ -5949,10 +5804,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef52ea50-a037-4c70-aa9a-aaf2a57e9cf9/textbox.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/84244cf6-3cb8-4722-880f-0a090b160958/textbox.module.js
   var textbox_module_default3;
   var init_textbox_module3 = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/ef52ea50-a037-4c70-aa9a-aaf2a57e9cf9/textbox.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/84244cf6-3cb8-4722-880f-0a090b160958/textbox.module.js"() {
       if (document.getElementById("d6f1162d61") === null) {
         const element = document.createElement("style");
         element.id = "d6f1162d61";
@@ -6045,10 +5900,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb92b76b-8fb7-4105-bb52-f2f504a5dfd5/textbox-numeric.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/457bf97e-79c7-4da0-a69e-c72662fc78d3/textbox-numeric.module.js
   var textbox_numeric_module_default;
   var init_textbox_numeric_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/eb92b76b-8fb7-4105-bb52-f2f504a5dfd5/textbox-numeric.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/457bf97e-79c7-4da0-a69e-c72662fc78d3/textbox-numeric.module.js"() {
       if (document.getElementById("07c5d63dfb") === null) {
         const element = document.createElement("style");
         element.id = "07c5d63dfb";
@@ -6099,15 +5954,6 @@ video {
     }
   });
 
-  // node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-chevron-down-16.js
-  var IconChevronDown16;
-  var init_icon_chevron_down_16 = __esm({
-    "node_modules/@create-figma-plugin/ui/lib/icons/icon-16/icon-chevron-down-16.js"() {
-      init_create_icon();
-      IconChevronDown16 = createIcon("m7.646 9.708-3-3L5.354 6 8 8.647 10.646 6l.708.708-3 3-.354.353z", { height: 16, width: 16 });
-    }
-  });
-
   // node_modules/@create-figma-plugin/ui/lib/icons/icon-32/icon-minus-32.js
   var IconMinus32;
   var init_icon_minus_32 = __esm({
@@ -6129,10 +5975,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9de7c4a9-1514-4509-9bb0-b43c50200419/muted.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c73d97d-315d-4d54-a9f3-9ae5ce72d406/muted.module.js
   var muted_module_default;
   var init_muted_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/9de7c4a9-1514-4509-9bb0-b43c50200419/muted.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/7c73d97d-315d-4d54-a9f3-9ae5ce72d406/muted.module.js"() {
       if (document.getElementById("0e85596823") === null) {
         const element = document.createElement("style");
         element.id = "0e85596823";
@@ -6161,10 +6007,10 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01e7e961-7174-4861-ba82-417f5bc404a0/vertical-space.module.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/30e2bf88-d603-4691-8c8f-211ee1069967/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/01e7e961-7174-4861-ba82-417f5bc404a0/vertical-space.module.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/30e2bf88-d603-4691-8c8f-211ee1069967/vertical-space.module.js"() {
       if (document.getElementById("554f9616f5") === null) {
         const element = document.createElement("style");
         element.id = "554f9616f5";
@@ -6205,9 +6051,9 @@ video {
     }
   });
 
-  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5da9825-eaaa-4162-97db-dd82d83852b7/base.js
+  // ../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06b9918d-bf5f-4ce4-b5ef-f7d15d20921c/base.js
   var init_base = __esm({
-    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/d5da9825-eaaa-4162-97db-dd82d83852b7/base.js"() {
+    "../../../private/var/folders/9b/7w9djy9j5dlfjn79khk4l92h0000gn/T/06b9918d-bf5f-4ce4-b5ef-f7d15d20921c/base.js"() {
       if (document.getElementById("a3b0e59720") === null) {
         const element = document.createElement("style");
         element.id = "a3b0e59720";
@@ -6330,7 +6176,6 @@ svg {
   // node_modules/@create-figma-plugin/ui/lib/index.js
   var init_lib2 = __esm({
     "node_modules/@create-figma-plugin/ui/lib/index.js"() {
-      init_checkbox();
       init_dropdown();
       init_icon_button();
       init_range_slider();
@@ -6341,7 +6186,6 @@ svg {
       init_textbox_color();
       init_textbox_multiline();
       init_textbox_numeric();
-      init_icon_chevron_down_16();
       init_icon_minus_32();
       init_icon_plus_32();
       init_muted();
@@ -72430,7 +72274,7 @@ svg {
       init_useSettings();
       CopyPlusIcon = CopyPlus;
       TabGroup = ({ className }) => {
-        const [tabValue, setTabValue] = p2("Settings");
+        const [tabValue, setTabValue] = p2("Primitives");
         const IdStore = P2(IdContext);
         if (!IdStore) {
           throw new Error("IdStore is undefined");
@@ -73080,10 +72924,55 @@ svg {
             ))),
             value: "Primitives"
           },
-          {
-            children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" })))), /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }, /* @__PURE__ */ y("div", { className: "flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2" }, /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue" }), /* @__PURE__ */ y("div", { className: " h-6 w-6 rounded-full bg-gradient-conic opacity-20" }), /* @__PURE__ */ y("div", { className: " relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500" }, /* @__PURE__ */ y("span", { className: "absolute" }, /* @__PURE__ */ y(IconChevronDown16, null)))), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row" }, /* @__PURE__ */ y("div", { className: "flex grow flex-row" }), /* @__PURE__ */ y("div", { className: "h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black" }))))),
-            value: "Aliases"
-          },
+          // {
+          //     children: (
+          //         <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
+          //             <div className="flex w-full flex-row border-t border-gridlines">
+          //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
+          //                         <span className="absolute">
+          //                             <IconChevronDown16 />
+          //                         </span>
+          //                     </div>
+          //                 </div>
+          //                 <div className="h-full grow">
+          //                     <div className="flex h-24 grow flex-row">
+          //                         <div className="flex grow flex-row"></div>
+          //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+          //                     </div>
+          //                 </div>
+          //             </div>
+          //             <div className="flex w-full flex-row border-t border-gridlines">
+          //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
+          //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
+          //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
+          //                         <span className="absolute">
+          //                             <IconChevronDown16 />
+          //                         </span>
+          //                     </div>
+          //                 </div>
+          //                 <div className="h-full grow">
+          //                     <div className="flex h-24 grow flex-row">
+          //                         <div className="flex grow flex-row"></div>
+          //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+          //                     </div>
+          //                 </div>
+          //             </div>
+          //         </div>
+          //     ),
+          //     value: 'Aliases',
+          // },
           {
             children: /* @__PURE__ */ y("div", { className: "absolute left-0 top-10 h-full w-full overflow-y-scroll" }, /* @__PURE__ */ y("div", { className: "flex w-full flex-row border-t border-gridlines" }), /* @__PURE__ */ y("div", { className: "h-full grow" }, /* @__PURE__ */ y("div", { className: "flex h-24 grow flex-row pl-10" }, /* @__PURE__ */ y("div", { className: "flex grow flex-col gap-4 p-4" }, /* @__PURE__ */ y("div", null, /* @__PURE__ */ y(Text, null, "Variable collection name"), /* @__PURE__ */ y(VerticalSpace, { space: "extraSmall" }), /* @__PURE__ */ y(
               TextboxAutocomplete,
@@ -73118,25 +73007,7 @@ svg {
                 placeholder: "Collection name",
                 variant: "border"
               }
-            )), /* @__PURE__ */ y(
-              Checkbox,
-              {
-                onChange: (e5) => {
-                  setOverwrite(!overwrite);
-                },
-                value: overwrite
-              },
-              /* @__PURE__ */ y(Text, null, "Overwrite variables with conflicting names")
-            ), /* @__PURE__ */ y(
-              Checkbox,
-              {
-                onChange: () => {
-                  setBindStyles(!bindStyles);
-                },
-                value: bindStyles
-              },
-              /* @__PURE__ */ y(Text, null, "Bind styles to variables with matching names")
-            )), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
+            ))), /* @__PURE__ */ y("div", { className: "h-full w-32" })))),
             value: `Settings`
           }
         ];
