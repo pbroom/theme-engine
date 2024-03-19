@@ -1,10 +1,9 @@
 {
-  "api": "1.0.0",
-  "editorType": [
-    "figma"
-  ],
-  "id": "react-editor",
-  "name": "Dev | Dynamic Color Generator",
-  "main": "build/main.js",
-  "ui": "build/ui.js"
+    "api": "1.0.0",
+    "editorType": ["figma"],
+    "id": "react-editor",
+    "name": "Theme Engine",
+    "main": "build/main.js",
+    "ui": "build/ui.js",
+    "documentAccess": "dynamic-page"
 }
