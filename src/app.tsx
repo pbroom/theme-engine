@@ -355,7 +355,7 @@ export const Plugin = () => {
                                 }
                                 onBlur={handleTextboxBlur}
                                 onKeyDown={handleTextboxKeyDown}
-                                onfocusout={handleTextboxBlur}
+                                onFocusOut={handleTextboxBlur}
                                 placeholder="Theme name"
                             />
                         ) : (
