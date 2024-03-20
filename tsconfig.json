@@ -10,6 +10,6 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/.ui-copy.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["node_modules", "dist"]
 }
