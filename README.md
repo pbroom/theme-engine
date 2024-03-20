@@ -1,4 +1,4 @@
-# React Editor
+# Theme Engine
 
 ## Development guide
 
@@ -6,11 +6,11 @@
 
 ### Instalation
 
-Clone the repository to local, then 
+Clone the repository to local, then
 
 ```
-$ cd react-figma-plugin
-$ npm i
+cd theme-engine
+npm i
 ```
 
 ### Pre-requisites
@@ -23,7 +23,7 @@ $ npm i
 To build the plugin:
 
 ```
-$ npm run build
+npm run build
 ```
 
 This will generate a [`manifest.json`](https://figma.com/plugin-docs/manifest/) file and a `build/` directory containing the JavaScript bundle(s) for the plugin.
@@ -31,14 +31,13 @@ This will generate a [`manifest.json`](https://figma.com/plugin-docs/manifest/) 
 To watch for code changes and rebuild the plugin automatically:
 
 ```
-$ npm run watch
+npm run watch
 ```
 
 To use Tailwind for styling:
 
-
 ```
-$ npm run tailwind
+npm run tailwind
 ```
 
 ### Add the plugin to Figma
@@ -57,7 +56,6 @@ Use `console.log` statements to inspect values in your code.
 To open the developer console, search for and run `Open Console` via the Quick Actions search bar (`Ctrl + /` or `Cmd + /`).
 
 <img width="982" alt="open-figma-console" src="https://github.com/pbroom/react-figma-plugin/assets/116581966/fa3b26de-787f-430b-a3d7-d4890b323354">
-
 
 ## See also
 
