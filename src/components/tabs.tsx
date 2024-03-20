@@ -640,7 +640,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                     );
                                                 }}
                                                 onBlur={() => nameTheNameless()}
-                                                onfocusout={() =>
+                                                onFocusOut={() =>
                                                     nameTheNameless()
                                                 }
                                                 placeholder="Color name"
@@ -994,7 +994,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                 );
                                             }
                                         }}
-                                        onfocusout={() => {
+                                        onFocusOut={() => {
                                             if (collectionName === '') {
                                                 setCollectionName(
                                                     'Theme Engine',

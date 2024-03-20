@@ -1,10 +1,10 @@
 {
-    "api": "1.0.0",
-    "editorType": ["figma"],
-    "id": "1351760630951154540",
-    "name": "Theme Engine",
-    "main": "build/main.js",
-    "ui": "build/ui.js",
-    "documentAccess": "dynamic-page",
-    "networkAccess": { "allowedDomains": ["none"] }
+  "api": "1.0.0",
+  "editorType": [
+    "figma"
+  ],
+  "id": "1351760630951154540",
+  "name": "Theme Engine",
+  "main": "build/main.js",
+  "ui": "build/ui.js"
 }

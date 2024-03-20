@@ -1,6 +1,7 @@
-node_modules/
-dist/
+*.log
+.DS_Store
 .env
 .vercel
-.DS_Store
 build/
+dist/
+node_modules/
