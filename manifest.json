@@ -6,5 +6,5 @@
     "main": "build/main.js",
     "ui": "build/ui.js",
     "documentAccess": "dynamic-page",
-    "networkAccess": "none"
+    "networkAccess": { "allowedDomains": ["none"] }
 }
