@@ -13,6 +13,7 @@ declare const styles: {
   readonly "selected-theme-color": string;
   readonly "swatch-li": string;
   readonly "bg-checkerboard": string;
+  readonly "scrollbar-hide": string;
 };
 export = styles;
 

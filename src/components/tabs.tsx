@@ -45,12 +45,13 @@ import {
 } from '../lib/color-utils';
 import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
 import {
+    AliasGroup,
     AliasList,
     OpacityToggle,
     opacityToggleStore,
 } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
-import { AliasData, createAlias } from '../hooks/useAliasGroup';
+import { AliasData, AliasGroupData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
 import { ThemeListContext } from '../hooks/useThemeList';
 import _, { set } from 'lodash';
@@ -80,7 +81,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Primitives');
+    const [tabValue, setTabValue] = useState<string>('Aliases');
 
     // ID state
     const IdStore = useContext(IdContext);
@@ -698,8 +699,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const options: Array<TabsOption> = [
         {
             children: (
-                <div className="tab-content absolute left-0 top-10 flex w-full flex-row overflow-y-scroll">
-                    <div className="flex h-full w-10 flex-col items-center overflow-y-scroll pt-2">
+                <div className="tab-content scrollbar-hide absolute left-0 top-10 flex w-full flex-row overflow-y-scroll">
+                    <div className="scrollbar-hide flex h-full w-10 flex-col items-center overflow-y-scroll pt-2">
                         <ThemeColorSelect
                             themeColors={
                                 themeList.themes[themeIndex].themeColors
@@ -718,7 +719,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                             </IconButton>
                         </div>
                     </div>
-                    <div className="flex h-full flex-col overflow-hidden">
+                    <div className="scrollbar-hide flex h-full flex-col overflow-hidden">
                         <div className="flex h-24 shrink-0 flex-row">
                             <div className="flex grow flex-row">
                                 {/* Section 1A */}
@@ -1047,7 +1048,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                         </div>
                         <div
                             id="alias-list-container"
-                            className="flex grow flex-col overflow-y-scroll"
+                            className="scrollbar-hide flex grow flex-col overflow-y-scroll"
                         >
                             <AliasList
                                 hue={themeColor.endColor.hct.hue}
@@ -1068,50 +1069,77 @@ const TabGroup = ({ className }: TabGroupProps) => {
             ),
             value: 'Primitives',
         },
-        // {
-        //     children: (
-        //         <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
-        //             <div className="flex w-full flex-row border-t border-gridlines">
-        //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-        //                     {/* Sidebar */}
-        //                 </div>
-        //                 <div className="h-full grow">
-        //                     <div className="flex h-24 grow flex-row">
-        //                         <div className="flex grow flex-row">
-        //                             {/* Control Area */}
-        //                             <div className="flex grow justify-between">
-        //                                 <span className="p-2">
-        //                                     Alias Groups
-        //                                 </span>
-        //                                 <IconButton
-        //                                     title="Create alias group"
-        //                                     onClick={() => {
-        //                                         // setThemeColor(
-        //                                         //     themeColorId,
-        //                                         // ).add.alias(createAlias());
-        //                                         console.log(
-        //                                             themeColor.aliasGroup
-        //                                                 .aliases,
-        //                                         );
-        //                                     }}
-        //                                 >
-        //                                     <IconPlus32 />
-        //                                 </IconButton>
-        //                             </div>
-        //                         </div>
-        //                         <div className="h-full w-32">
-        //                             {/* Preview area */}
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     ),
-        //     value: 'Aliases',
-        // },
         {
             children: (
-                <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
+                <div className="scrollbar-hide absolute left-0 top-10 w-full overflow-y-scroll">
+                    <div className="flex w-full flex-row border-t border-gridlines">
+                        <div className="flex flex-grow flex-col">
+                            <div className="grow">
+                                <div className="flex flex-row items-center">
+                                    <div className="flex grow flex-row">
+                                        {/* Control Area */}
+                                        <div className="bg-fig-bg flex grow items-center justify-between px-2 py-1">
+                                            <span className="p-2">
+                                                Alias Groups
+                                            </span>
+                                            <div className="flex">
+                                                <IconButton
+                                                    title={`${opacityVisibility ? 'Hide opacity' : 'Show opacity'}`}
+                                                    onClick={() => {
+                                                        setOpacityVisibility(
+                                                            !opacityVisibility,
+                                                        );
+                                                    }}
+                                                >
+                                                    {opacityVisibility ? (
+                                                        <IconBlendEmpty32 />
+                                                    ) : (
+                                                        <IconBlend32 />
+                                                    )}
+                                                </IconButton>
+                                                <IconButton
+                                                    title="Create alias group"
+                                                    onClick={() => {
+                                                        null;
+                                                    }}
+                                                >
+                                                    <IconPlus32 />
+                                                </IconButton>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <div className="flex h-8 w-32 items-center justify-around">
+                                        <Muted>Light</Muted>
+                                        <Muted>Dark</Muted>
+                                    </div> */}
+                                </div>
+                            </div>
+                            <div>
+                                <AliasGroup
+                                    hue={themeColor.endColor.hct.hue}
+                                    chroma={themeColor.endColor.hct.chroma}
+                                    aliasGroup={theme.aliasGroups[0]}
+                                    onSetAliasGroup={(
+                                        aliasGroup: AliasGroupData,
+                                    ) =>
+                                        setTheme(themeId)
+                                            .aliasGroup(theme.aliasGroups[0].id)
+                                            .setProps.all({
+                                                ...theme.aliasGroups[0],
+                                                ...aliasGroup,
+                                            })
+                                    }
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ),
+            value: 'Aliases',
+        },
+        {
+            children: (
+                <div className="scrollbar-hide absolute left-0 top-10 h-full w-full overflow-y-scroll">
                     <div className="flex w-full flex-row border-t border-gridlines"></div>
                     <div className="h-full grow">
                         <div className="flex h-24 grow flex-row pl-10">

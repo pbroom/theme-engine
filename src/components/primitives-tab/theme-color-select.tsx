@@ -14,26 +14,30 @@ type ThemeColorSwatchProps = {
     chroma: number;
     isSelected: boolean;
     onClick: (themeColorId: string) => void;
+    pixelSize?: number;
 };
 
-const ThemeColorSwatch = ({
+export const ThemeColorSwatch = ({
     themeColorId,
     name,
     hue,
     chroma,
     isSelected,
     onClick,
+    pixelSize = 24,
 }: ThemeColorSwatchProps) => {
     return (
         <IconButton title={name} onClick={() => onClick(themeColorId)}>
             <div
-                className={`theme-color-swatch h-6 w-6 rounded-full ${isSelected ? 'selected-theme-color' : ''} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
+                className={`theme-color-swatch rounded-full ${isSelected ? 'selected-theme-color' : ''} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
                 style={{
                     background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                         hue,
                         chroma,
                         75,
                     )}, ${quickHexFromHct(hue, chroma, 50)}, ${quickHexFromHct(hue, chroma, 25)}, black)`,
+                    width: `${pixelSize / 16}rem`,
+                    height: `${pixelSize / 16}rem`,
                 }}
             />
         </IconButton>

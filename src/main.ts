@@ -142,6 +142,10 @@ type SemanticVariableData = {
 };
 
 figma.ui.onmessage = async (pluginMessage: any) => {
+    if (pluginMessage.type === 'copy-to-clipboard') {
+        const text = pluginMessage.data;
+        figma.notify(`${text} copied clipboard`, { timeout: 1600 });
+    }
     if (pluginMessage.type === 'setPluginData') {
         figma.root.setPluginData(pluginDataKey, `${pluginMessage.data}`);
         // console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));

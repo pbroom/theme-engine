@@ -10,6 +10,7 @@ import { evaluate } from 'mathjs';
 export type { PaletteObject, HSBColor };
 
 export {
+    convertTo8DigitHex,
     quickHexFromHct,
     toneStops,
     paletteTones,
@@ -25,6 +26,32 @@ export {
     hexToHSB,
     calculateHue,
     calculateChroma,
+};
+
+/**
+ * Converts a 6-digit hexadecimal color code to an 8-digit hexadecimal color code by adding an alpha value.
+ * @param color - The 6-digit hexadecimal color code.
+ * @param alpha - The alpha value, ranging from 0 to 100.
+ * @returns The 8-digit hexadecimal color code.
+ * @throws Error if the alpha value is not within the range of 0 to 100.
+ */
+const convertTo8DigitHex = (color: string, alpha: number): string => {
+    // Ensure alpha is within the correct range
+    if (alpha < 0 || alpha > 100) {
+        throw new Error('Alpha value must be between 0 and 100');
+    }
+
+    // Calculate the alpha value in a 0 to 255 range
+    const alpha255 = Math.round((alpha / 100) * 255);
+
+    // Convert the 0-255 alpha value to a hexadecimal string
+    let alphaHex = alpha255.toString(16);
+
+    // Pad with zero if necessary to ensure it's always two characters
+    alphaHex = alphaHex.length === 1 ? '0' + alphaHex : alphaHex;
+
+    // Append the alpha hex to the 6-digit hex color
+    return `${color}${alphaHex}`;
 };
 
 /**
