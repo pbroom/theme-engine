@@ -55,7 +55,7 @@ Use `console.log` statements to inspect values in your code.
 
 To open the developer console, search for and run `Open Console` via the Quick Actions search bar (`Ctrl + /` or `Cmd + /`).
 
-<img width="982" alt="open-figma-console" src="https://github.com/pbroom/react-figma-plugin/assets/116581966/fa3b26de-787f-430b-a3d7-d4890b323354">
+<img width="982" alt="open-figma-console" src="https://github.com/pbroom/theme-engine/assets/116581966/fa3b26de-787f-430b-a3d7-d4890b323354">
 
 ## See also
 
