@@ -36,7 +36,7 @@ import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
 import { useThemeList } from '../hooks/useThemeList';
-import _ from 'lodash';
+import _, { set } from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
 import { useStore } from 'zustand';
@@ -78,6 +78,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
         setThemeIndex(newThemeIndex);
         setThemeColorIndex(newThemeColorIndex);
+        setTones(
+            `${themeList.themes[newThemeIndex].themeColors[
+                newThemeColorIndex
+            ].tones.join(', ')}`,
+        );
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
             // console.log('%cNew theme ID', 'color: #6AAFFF', newThemeIndex);
             themeRef.current = themeList.themes[newThemeIndex];
@@ -96,11 +101,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
             setThemeColor(themeColorId).setProps.chromaCalc(
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
                     .chromaCalc,
-            );
-            setTones(
-                themeList.themes[newThemeIndex].themeColors[
-                    newThemeColorIndex
-                ].tones.join(', '),
             );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
@@ -246,9 +246,25 @@ const TabGroup = ({ className }: TabGroupProps) => {
     }, [hexColorInput]);
 
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
-    useEffect(() => {
-        setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
-    }, [tones]);
+    // useEffect(() => {
+    //     setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
+    // }, [tones]);
+
+    const handleSetTones = (e: any) => {
+        const newFieldValue: string = e.currentTarget.value;
+        setTones(newFieldValue);
+        const newTonesValue = newFieldValue.toLowerCase().includes('all')
+            ? Array.from({ length: 101 }, (_, i) => i)
+            : getStopsFromString(newFieldValue);
+        setThemeColor(themeColorId).setProps.tones(newTonesValue);
+    };
+
+    const handleTonesBlur = () => {
+        const newFieldValue = tones.toLowerCase().includes('all')
+            ? 'all'
+            : themeColor.tones.join(', ');
+        setTones(newFieldValue);
+    };
 
     const [hueSlider, setHueSlider] = useState<number>(hue);
     const [hueCalcInput, setHueCalcInput] = useState<string>(
@@ -846,10 +862,10 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <TextboxMultiline
                                         title="Tones"
                                         value={tones}
-                                        onInput={(e) =>
-                                            setTones(e.currentTarget.value)
-                                        }
-                                        placeholder="Return tones 0-100"
+                                        onInput={(e) => handleSetTones(e)}
+                                        onBlur={() => handleTonesBlur()}
+                                        onFocusOut={() => handleTonesBlur()}
+                                        placeholder="Input tones. Use 'all' for tones 0-100."
                                     />
                                 </div>
                             </div>
