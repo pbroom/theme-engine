@@ -60,6 +60,7 @@ const AliasItem = ({
         >
             <div className="flex-grow">
                 <Textbox
+                    title="Alias name"
                     value={aliasName}
                     onChange={(e) =>
                         onSetAliasName(alias.id, e.currentTarget.value)
@@ -69,6 +70,7 @@ const AliasItem = ({
             </div>
             <div className="w-12">
                 <TextboxNumeric
+                    title={`Light mode tone`}
                     value={aliasColor[0].toString()}
                     onInput={(e) =>
                         onSetAliasLightTone(
@@ -81,6 +83,7 @@ const AliasItem = ({
             </div>
             <div className="w-12">
                 <TextboxNumeric
+                    title={`Dark mode tone`}
                     value={aliasColor[1].toString()}
                     onInput={(e) =>
                         onSetAliasDarkTone(
@@ -215,12 +218,14 @@ const AliasTonePreview = ({
     return (
         <div className="flex h-8 w-full">
             <div
+                title={`${lightHex}`}
                 className="h-full w-16"
                 style={`background: ${lightHex}; color: ${textColor(lightModeTone)}`}
             >
                 {/* <Code>{lightHex}</Code> */}
             </div>
             <div
+                title={`${darkHex}`}
                 className="h-full w-16"
                 style={`background: ${darkHex}; color: ${textColor(darkModeTone)}`}
             >
