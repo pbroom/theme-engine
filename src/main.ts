@@ -6,12 +6,20 @@ const height = (pixelHeight: number) => {
     return pixelHeight;
 };
 
-figma.root.setPluginData('themeEngine', 'I am a plugin data value.');
+const pluginDataKey = 'themeEngine';
+export const pluginData = figma.root.getPluginData(pluginDataKey);
+console.log(pluginDataKey, JSON.parse(pluginData));
 
-const pluginDataKeys = figma.root.getPluginDataKeys();
-const pluginData = figma.root.getPluginData('themeEngine');
-console.log(pluginDataKeys);
-console.log(pluginData);
+const sendPluginData = (type: string) => {
+    const message = { type: type, data: pluginData };
+    figma.ui.postMessage(message);
+};
+
+figma.on('run', () => {
+    sendPluginData('pluginData');
+});
+
+// figma.root.setPluginData(pluginDataKey, '');
 
 export default function () {
     showUI({ height: height(640), width: 512, title: 'Theme Engine' });
@@ -56,6 +64,7 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
  */
 figma.on('run', async () => {
     sendLocalCollections();
+    sendPluginData('pluginData');
 });
 
 export type PluginMessage = {
@@ -125,6 +134,10 @@ type SemanticVariableData = {
 };
 
 figma.ui.onmessage = async (pluginMessage: any) => {
+    if (pluginMessage.type === 'setPluginData') {
+        figma.root.setPluginData(pluginDataKey, `${pluginMessage.data}`);
+        console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));
+    }
     if (pluginMessage.type === 'localCollections') {
         await sendLocalCollections();
     }

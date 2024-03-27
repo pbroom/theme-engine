@@ -389,8 +389,8 @@ const themeList: StateCreator<ThemeListData & ThemeListActions> = (
 const useThemeList = create<ThemeListData & ThemeListActions>(
     (set, get, ...a) => ({
         ...themeList(set, get, ...a),
-        // id: themeListId,
-        id: 'THEME_LIST_STORE_ID',
+        id: themeListId,
+        // id: 'THEME_LIST_STORE_ID',
         themes: defaultThemes,
         data: {
             id: themeList(set, get, ...a).id,

@@ -42,6 +42,7 @@ import { IdContext, IdState } from '../hooks/useId';
 import { useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
+import { ThemeData } from '../hooks/useTheme';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -61,6 +62,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         throw new Error('IdStore is undefined');
     }
     const themeId = useStore(IdStore, (state: IdState) => state.themeId);
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
     const themeColorId: string = useStore(
         IdStore,
         (state: IdState) => state.themeColorId,
@@ -534,6 +536,37 @@ const TabGroup = ({ className }: TabGroupProps) => {
     onmessage = async (event) => {
         const message = await event.data.pluginMessage;
         // console.log('TAB UI RECEIVED:', message);
+        // if (message.type === 'pluginData') {
+        //     const pluginData = await message.data;
+        //     console.log(
+        //         '%cpluginData:',
+        //         'color: #6DFF6A',
+        //         JSON.parse(pluginData),
+        //     );
+        //     if (pluginData && pluginData !== '') {
+        //         // console.log('BOOP:');
+        //         const pluginDataParsed: ThemeData[] =
+        //             await JSON.parse(pluginData);
+        //         console.log(
+        //             '%cpluginData:',
+        //             'color: #FF0000',
+        //             pluginDataParsed,
+        //         );
+        //         themeList.setProps.themes(pluginDataParsed);
+        //         setThemeId(pluginDataParsed[0].id);
+        //         setThemeColorId(pluginDataParsed[0].themeColors[0].id);
+
+        //         console.log('THEMELIST AFTER:', themeList);
+        //     }
+        //     if (pluginData === '') {
+        //         // console.log('No plugin data');
+        //         const pluginMessage = {
+        //             type: 'setPluginData',
+        //             data: `${JSON.stringify(themeList.themes)}`,
+        //         };
+        //         parent.postMessage({ pluginMessage }, '*');
+        //     }
+        // }
         if (message.type === 'localCollections') {
             const localCollections = message.collections;
             setCollections(localCollections);
