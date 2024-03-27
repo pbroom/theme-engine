@@ -70,6 +70,7 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
 figma.on('run', async () => {
     sendPluginData('pluginData');
     sendLocalCollections();
+    sendPluginData('pluginData');
 });
 
 export type PluginMessage = {
