@@ -924,6 +924,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         </span>
                                     </div>
                                     <div className="chroma-slider px-2 pb-2">
+                                        {console.log(
+                                            '%cThemeColor:',
+                                            'color: #0ff000',
+                                            themeColor,
+                                        )}
+                                        {console.log(
+                                            '%cThemeColor.chromaCalc:',
+                                            'color: #0ff000',
+                                            themeColor.chromaCalc,
+                                        )}
+                                        {console.log(
+                                            '%cThemeColor.sourceColor.hct:',
+                                            'color: #0ff000',
+                                            themeColor.sourceColor.hct.hue,
+                                        )}
                                         <RangeSlider
                                             title="Adjust chroma"
                                             maximum={Math.max(maxChroma, 1)}

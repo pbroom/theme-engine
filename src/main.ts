@@ -71,6 +71,7 @@ figma.on('run', async () => {
     sendPluginData('pluginData');
     sendLocalCollections();
     sendPluginData('pluginData');
+    sendLocalCollections();
 });
 
 export type PluginMessage = {

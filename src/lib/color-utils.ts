@@ -389,7 +389,7 @@ const calculateHue = (originalHueValue: number, hueCalcValue: string) => {
 const calculateChroma = (sourceChroma: number, chromaCalc: string) => {
     // Get source chroma
     // Check if chromaCalc is empty or just whitespace
-    if (!chromaCalc.trim() || chromaCalc === '') {
+    if (!chromaCalc.trim() || chromaCalc === '' || !chromaCalc) {
         return sourceChroma;
     }
     try {
