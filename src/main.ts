@@ -63,8 +63,8 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
  * This function is triggered when the plugin is run. It retrieves all local variable collections and sends a message to the UI with the collections and their names as options.
  */
 figma.on('run', async () => {
-    sendLocalCollections();
     sendPluginData('pluginData');
+    sendLocalCollections();
 });
 
 export type PluginMessage = {

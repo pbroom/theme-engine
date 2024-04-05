@@ -53,6 +53,7 @@ const HctSchema = z.object({
     chroma: z.number().min(0).max(150),
     tone: z.number().min(0).max(100),
 });
+export type HctColor = z.infer<typeof HctSchema>;
 
 const SolidColorSchema = z.object({
     color: z.object({
@@ -128,8 +129,15 @@ const setTone = (newTone: number) =>
     );
 
 const hexFromString = (hexColor: string) => cleanedHexColor(hexColor);
-const HctFromHex = (hexColor: string) =>
+const HctFromHex = (hexColor: string): Hct =>
     Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+const HctValuesFromHex = (hexColor: string): HctColor => {
+    const hct = Hct.fromInt(argbFromHex(hexFromString(hexColor)));
+    const h: number = hct.hue;
+    const c: number = hct.chroma;
+    const t: number = hct.tone;
+    return { hue: h, chroma: c, tone: t };
+};
 const argbFromHct = (hctColor?: Hct) =>
     hctColor?.toInt() || Hct.from(0, 0, 0).toInt();
 const rgbFromHex = (hex: string) => {
@@ -195,7 +203,7 @@ const createColorFrom = () => {
     const hex = (hexColor: string) => {
         return {
             sourceHex: hexColor,
-            hct: HctFromHex(hexColor),
+            hct: HctValuesFromHex(hexColor),
             rgba: rgbaFromHct(HctFromHex(hexColor)),
             hex: hexFromHct(HctFromHex(hexColor)),
             figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor)),

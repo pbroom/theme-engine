@@ -15,11 +15,10 @@ import {
     TextboxColor,
     TextboxMultiline,
     DropdownOption,
-    Checkbox,
     VerticalSpace,
     TextboxAutocomplete,
 } from '@create-figma-plugin/ui';
-import { IconPlus32, IconChevronDown16 } from '@create-figma-plugin/ui';
+import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
 import { ceil, round } from 'mathjs';
 import {
@@ -35,14 +34,18 @@ import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
-import { useThemeList } from '../hooks/useThemeList';
+import { ThemeListContext } from '../hooks/useThemeList';
 import _, { set } from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
 import { useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
+// import { pluginThemeData } from '../ui';
 import { ThemeData } from '../hooks/useTheme';
+import { useDebounce } from '../hooks/useDebounce';
+import { signal } from '@preact/signals';
+import { initialization, useMessageContext } from '../hooks/useMessageProvider';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -158,8 +161,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
     );
 
     // themeList state
-    const themeListStore = useThemeList;
-    const themeList = themeListStore();
+    const useThemeListStore = useContext(ThemeListContext);
+    if (!useThemeListStore) {
+        throw new Error('ThemeListContext is undefined');
+    }
+    // const themeListStore = useStore(useThemeListStore);
+    const themeList = useStore(useThemeListStore, (state) => state);
 
     const themeIndexRef = useRef(
         themeList.themes.findIndex((theme) => theme.id === themeId),
@@ -167,8 +174,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
 
     // theme state
-    const theme = themeListStore((state) => state.themes[themeIndex]);
+    const theme = themeList.themes[themeIndex];
     const setTheme = themeList.theme;
+
+    const updatePluginData = async () => {
+        const pluginMessage = {
+            type: 'setPluginData',
+            data: `${JSON.stringify(themeList.themes)}`,
+        };
+        parent.postMessage({ pluginMessage }, '*');
+    };
 
     // This useEffect is to handle the case where the first themeColor is
     // deleted. The themeColor index is 0 so it doesn't update otherwise.
@@ -221,7 +236,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeColor.sourceColor.sourceHex,
     );
     useEffect(() => {
-        const calculatedHue: number = round(
+        const calculatedHue: number = Math.round(
             calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc),
         );
         setHueSlider(calculatedHue);
@@ -232,7 +247,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             setHueCalcInput(`${calculatedHue}`);
         }
 
-        const calculatedChroma: number = round(
+        const calculatedChroma: number = Math.round(
             calculateChroma(
                 themeColor.sourceColor.hct.chroma,
                 themeColor.chromaCalc,
@@ -391,7 +406,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     };
     const onChromaCalcInput = (e: any) => {
         const newChromaCalcInput: string = e.currentTarget.value;
-        const calculatedChroma: number = round(
+        const calculatedChroma: number = Math.round(
             calculateChroma(
                 themeColor.sourceColor.hct.chroma,
                 newChromaCalcInput,
@@ -533,105 +548,75 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const [collections, setCollections] = useState<VariableCollection[]>([]);
 
-    onmessage = async (event) => {
-        const message = await event.data.pluginMessage;
-        // console.log('TAB UI RECEIVED:', message);
-        // if (message.type === 'pluginData') {
-        //     const pluginData = await message.data;
-        //     console.log(
-        //         '%cpluginData:',
-        //         'color: #6DFF6A',
-        //         JSON.parse(pluginData),
-        //     );
-        //     if (pluginData && pluginData !== '') {
-        //         // console.log('BOOP:');
-        //         const pluginDataParsed: ThemeData[] =
-        //             await JSON.parse(pluginData);
-        //         console.log(
-        //             '%cpluginData:',
-        //             'color: #FF0000',
-        //             pluginDataParsed,
-        //         );
-        //         themeList.setProps.themes(pluginDataParsed);
-        //         setThemeId(pluginDataParsed[0].id);
-        //         setThemeColorId(pluginDataParsed[0].themeColors[0].id);
-
-        //         console.log('THEMELIST AFTER:', themeList);
-        //     }
-        //     if (pluginData === '') {
-        //         // console.log('No plugin data');
-        //         const pluginMessage = {
-        //             type: 'setPluginData',
-        //             data: `${JSON.stringify(themeList.themes)}`,
-        //         };
-        //         parent.postMessage({ pluginMessage }, '*');
-        //     }
-        // }
-        if (message.type === 'localCollections') {
-            const localCollections = message.collections;
-            setCollections(localCollections);
-
-            // console.log('Collections:', message.data);
-            const collectionOptions: Array<DropdownOption> =
-                message.data.reduce(
-                    (
-                        options: Array<{ value: string; text: string }>,
-                        collection: VariableCollection,
-                    ) => {
-                        const existingOption = options.find(
-                            (option) => option.value === collection.name,
-                        );
-                        if (existingOption) {
-                            const count = options.filter(
-                                (option) => option.value === collection.name,
-                            ).length;
-                            options.push({
-                                value: `${collection.name} (${count + 1})`,
-                                text: collection.id,
-                            });
-                        } else {
-                            options.push({
-                                value: collection.name,
-                                text: collection.id,
-                            });
-                        }
-                        return options;
-                    },
-                    [],
+    const handleLocalCollectionsMessage = async (message: any) => {
+        const localCollections = await message.collections;
+        setCollections(localCollections);
+        const collectionOptions: Array<DropdownOption> = message.data.reduce(
+            (
+                options: Array<{ value: string; text: string }>,
+                collection: VariableCollection,
+            ) => {
+                const existingOption = options.find(
+                    (option) => option.value === collection.name,
                 );
-            const dropdownOptions: Array<DropdownOption> = [
-                {
-                    header: 'Existing collections',
-                },
-                ...collectionOptions,
-            ];
-            setCollectionOptions(dropdownOptions);
+                if (existingOption) {
+                    const count = options.filter(
+                        (option) => option.value === collection.name,
+                    ).length;
+                    options.push({
+                        value: `${collection.name} (${count + 1})`,
+                        text: collection.id,
+                    });
+                } else {
+                    options.push({
+                        value: collection.name,
+                        text: collection.id,
+                    });
+                }
+                return options;
+            },
+            [],
+        );
+        const dropdownOptions: Array<DropdownOption> = [
+            {
+                header: 'Existing collections',
+            },
+            ...collectionOptions,
+        ];
+        setCollectionOptions(dropdownOptions);
+    };
+    const handlePreBuildMessage = async (message: any) => {
+        const localCollections = message.collections;
+        setCollections(localCollections);
+
+        const collections = await buildCollections(message.data);
+        // console.log('Collections:', collections);
+        const collectionId = collections.find(
+            (collection) => collection.name === collectionName,
+        )?.id;
+        const pluginMessage: PluginMessage = {
+            type: 'build',
+            data: {
+                theme: theme,
+                collectionId: collectionId ? collectionId : '',
+                collectionName: collectionName,
+                overwriteVariables: overwrite,
+                bindVariables: bindStyles,
+            },
+        };
+        parent.postMessage({ pluginMessage }, '*');
+    };
+    const message = useMessageContext((state) => state);
+
+    useEffect(() => {
+        if (message.type === 'localCollections') {
+            handleLocalCollectionsMessage(message);
         }
         if (message.type === 'preBuild') {
-            const localCollections = message.collections;
-            setCollections(localCollections);
-
-            const collections = await buildCollections(message.data);
-            // console.log('Collections:', collections);
-            const collectionId = collections.find(
-                (collection) => collection.name === collectionName,
-            )?.id;
-            // console.log('collectionName:', collectionName);
-            // console.log('CollectionID:', collectionId);
-            const pluginMessage: PluginMessage = {
-                type: 'build',
-                data: {
-                    theme: theme,
-                    collectionId: collectionId ? collectionId : '',
-                    collectionName: collectionName,
-                    overwriteVariables: overwrite,
-                    bindVariables: bindStyles,
-                },
-            };
-            parent.postMessage({ pluginMessage }, '*');
-            // console.log('TAB UI SENT:', pluginMessage);
+            handlePreBuildMessage(message);
         }
-    };
+    }, [message]);
+
     // TODO: account for starter plans with one mode
     const getLocalCollections = async () => {
         parent.postMessage(
@@ -647,6 +632,25 @@ const TabGroup = ({ className }: TabGroupProps) => {
         // console.log(newValue);
         setCollectionName(newValue);
     };
+
+    const [timeoutState, setTimeoutState] =
+        useState<ReturnType<typeof setTimeout>>();
+
+    const appInitialized = initialization().isInitialized;
+
+    useEffect(() => {
+        if (appInitialized) {
+            console.log('%cApp initialized', 'color: #FF0000');
+            const newTimeout = setTimeout(() => {
+                updatePluginData();
+            }, 1000);
+            setTimeoutState(newTimeout);
+
+            return () => {
+                clearTimeout(timeoutState);
+            };
+        }
+    }, [themeList.themes]);
 
     const options: Array<TabsOption> = [
         {
@@ -763,16 +767,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="flex gap-4 px-2 pt-2 opacity-60">
                                         <Muted title="Source color hue, chroma, tone">
                                             H:{' '}
-                                            {round(
+                                            {Math.round(
                                                 themeColor.sourceColor.hct.hue,
                                             )}{' '}
                                             C:{' '}
-                                            {round(
+                                            {Math.round(
                                                 themeColor.sourceColor.hct
                                                     .chroma,
                                             )}{' '}
                                             T:{' '}
-                                            {round(
+                                            {Math.round(
                                                 themeColor.sourceColor.hct.tone,
                                             )}
                                         </Muted>
@@ -796,7 +800,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="flex flex-row justify-between">
                                         <span className="p-2">Hue</span>
                                         <span className="p-2">
-                                            {round(hue())}
+                                            {Math.round(hue())}
                                         </span>
                                     </div>
                                     <div className="hue-slider px-2 pb-2">
@@ -821,7 +825,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="px-2 py-1 opacity-60">
                                         <Muted>
                                             Source Hue (h) ={' '}
-                                            {round(
+                                            {Math.round(
                                                 themeColor.sourceColor.hct.hue,
                                             )}
                                         </Muted>
@@ -832,7 +836,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="flex flex-row justify-between">
                                         <span className="p-2">Chroma</span>
                                         <span className="p-2">
-                                            {round(
+                                            {Math.round(
                                                 calculateChroma(
                                                     themeColor.sourceColor.hct
                                                         .chroma,
@@ -845,6 +849,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         </span>
                                     </div>
                                     <div className="chroma-slider px-2 pb-2">
+                                        {console.log(
+                                            '%cThemeColor:',
+                                            'color: #0ff000',
+                                            themeColor,
+                                        )}
+                                        {console.log(
+                                            '%cThemeColor.chromaCalc:',
+                                            'color: #0ff000',
+                                            themeColor.chromaCalc,
+                                        )}
+                                        {console.log(
+                                            '%cThemeColor.sourceColor.hct:',
+                                            'color: #0ff000',
+                                            themeColor.sourceColor.hct.hue,
+                                        )}
                                         <RangeSlider
                                             title="Adjust chroma"
                                             maximum={Math.max(maxChroma, 1)}
@@ -868,7 +887,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     <div className="px-2 py-1 opacity-60">
                                         <Muted>
                                             Source Chroma (c) ={' '}
-                                            {round(
+                                            {Math.round(
                                                 themeColor.sourceColor.hct
                                                     .chroma,
                                             )}

@@ -1,27 +1,21 @@
 import '!./dist/tailwind.css';
-import {
-    Textbox,
-    Dropdown,
-    DropdownOption,
-    render,
-} from '@create-figma-plugin/ui';
+import { Textbox, Dropdown, DropdownOption } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
 import { nanoid } from 'nanoid';
-import { ThemeData, createTheme } from './hooks/useTheme';
+import { createTheme } from './hooks/useTheme';
 import { useContext, useEffect, useState, useRef } from 'preact/hooks';
-import { defaultThemes, useThemeList } from './hooks/useThemeList';
+import { ThemeListContext } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
-import { findIndex, set } from 'lodash';
+import { findIndex } from 'lodash';
 import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
-import { PluginMessage } from './main';
-import React from 'preact/compat';
 import { useSettings } from './components/settings-tab/useSettings';
-import { re } from 'mathjs';
+import { initialization } from './hooks/useMessageProvider';
 
 export const Plugin = () => {
+    const isInitialized = initialization((state) => state.isInitialized);
     // ID state
     const IdStore = useContext(IdContext);
     if (!IdStore) {
@@ -58,6 +52,18 @@ export const Plugin = () => {
             setThemeColorId(themeList.themes[newThemeIndex].themeColors[0].id);
         }
     }, [themeToDelete]);
+
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
+    const setThemeColorId = useStore(
+        IdStore,
+        (state: IdState) => state.setThemeColorId,
+    );
+    // themeList state
+    const useThemeListStore = useContext(ThemeListContext);
+    if (!useThemeListStore) {
+        throw new Error('ThemeListContext is undefined');
+    }
+    const themeList = useStore(useThemeListStore, (state) => state);
 
     useEffect(() => {
         const newThemeIndex = themeList.themes.findIndex(
@@ -133,23 +139,18 @@ export const Plugin = () => {
         }
     }, [themeId, themeColorId]);
 
-    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
-    const setThemeColorId = useStore(
-        IdStore,
-        (state: IdState) => state.setThemeColorId,
-    );
-    // themeList state
-    const themeListStore = useThemeList;
-    const themeList = themeListStore();
-
     const themeIndexRef = useRef(
         themeList.themes.findIndex((theme) => theme.id === themeId),
     );
     const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
 
     // theme state
-    const theme = themeListStore((state) => state.themes[themeIndex]);
-    const setTheme = themeList.theme(themeId);
+    const theme = themeList.themes[themeIndex];
+    console.log('THEME_LIST', themeList); // found
+    console.log('THEME_ID', themeId); //
+    console.log('THEME_INDEX', themeIndex); // -1
+    console.log('THEME', themeList.themes); // found
+    const setTheme = themeList.theme(themeId); //FIXME: This causes an error
 
     const themeColorIndexRef = useRef(
         themeList.themes[themeIndex].themeColors.findIndex(
