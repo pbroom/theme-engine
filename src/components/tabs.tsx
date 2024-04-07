@@ -45,7 +45,11 @@ import { PluginMessage } from '../main';
 import { ThemeData } from '../hooks/useTheme';
 import { useDebounce } from '../hooks/useDebounce';
 import { signal } from '@preact/signals';
-import { initialization, useMessageContext } from '../hooks/useMessageProvider';
+import {
+    MessageContext,
+    initialization,
+    useMessageContext,
+} from '../hooks/useMessageProvider';
 // import { useID } from '../hooks/useId';
 
 type TabGroupProps = {
@@ -327,7 +331,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     const onSelectThemeColor = (newThemeColorId: string) => {
         setThemeColorId(newThemeColorId);
-        // console.log('%ctheme.themeColors', 'color: #6AAFFF', theme.themeColors);
     };
 
     const onAddThemeColor = () => {
@@ -339,12 +342,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
         };
         setTheme(themeId).add.themeColor(newThemeColor);
         setThemeColorId(newThemeColor.id);
-        // console.log('%cNEW themeColor ID:', 'color: #6AAFFF', newId);
-        // console.log(
-        //     '%ctheme.themeColors:',
-        //     'color: #6AAFFF',
-        //     theme.themeColors,
-        // );
     };
 
     const onHexColorInput = (e: any) => {
@@ -606,9 +603,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
         };
         parent.postMessage({ pluginMessage }, '*');
     };
-    const message = useMessageContext((state) => state);
+
+    const message = useMessageContext((s) => s);
 
     useEffect(() => {
+        console.log('message in TABS:', message);
         if (message.type === 'localCollections') {
             handleLocalCollectionsMessage(message);
         }
@@ -849,21 +848,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         </span>
                                     </div>
                                     <div className="chroma-slider px-2 pb-2">
-                                        {console.log(
-                                            '%cThemeColor:',
-                                            'color: #0ff000',
-                                            themeColor,
-                                        )}
-                                        {console.log(
-                                            '%cThemeColor.chromaCalc:',
-                                            'color: #0ff000',
-                                            themeColor.chromaCalc,
-                                        )}
-                                        {console.log(
-                                            '%cThemeColor.sourceColor.hct:',
-                                            'color: #0ff000',
-                                            themeColor.sourceColor.hct.hue,
-                                        )}
                                         <RangeSlider
                                             title="Adjust chroma"
                                             maximum={Math.max(maxChroma, 1)}

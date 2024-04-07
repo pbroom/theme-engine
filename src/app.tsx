@@ -146,11 +146,7 @@ export const Plugin = () => {
 
     // theme state
     const theme = themeList.themes[themeIndex];
-    console.log('THEME_LIST', themeList); // found
-    console.log('THEME_ID', themeId); //
-    console.log('THEME_INDEX', themeIndex); // -1
-    console.log('THEME', themeList.themes); // found
-    const setTheme = themeList.theme(themeId); //FIXME: This causes an error
+    const setTheme = themeList.theme(themeId);
 
     const themeColorIndexRef = useRef(
         themeList.themes[themeIndex].themeColors.findIndex(

@@ -26,8 +26,6 @@ export const Ui = () => {
     const messageStore = useRef(createMassageStore()).current;
     const message = useStore(messageStore);
 
-    const [messageCount, setMessageCount] = useState(0);
-
     const [initialThemeData, setInitialThemeData] = useState<
         null | ThemeData[]
     >(null);
@@ -35,34 +33,31 @@ export const Ui = () => {
     onmessage = async (event) => {
         const newMessage = await event.data.pluginMessage;
         console.log('ROOT UI RECEIVED:', newMessage);
-        console.log('ROOT UI RECEIVED:', messageCount);
         message.setMessage(newMessage);
-        setMessageCount((count) => count + 1);
+        console.log('message:', message);
     };
 
     const handlePluginDataMessage = async (message: any) => {
         const pluginData = await message.data;
         const pluginDataParsed: Array<ThemeData> = await JSON.parse(pluginData);
-        console.log('%cpluginData:', 'color: #6DFF6A', pluginDataParsed);
+        // console.log('%cpluginData:', 'color: #6DFF6A', pluginDataParsed);
         const themeData = pluginDataParsed ? pluginDataParsed : defaultThemes;
         setInitialThemeData(themeData);
     };
 
     useEffect(() => {
-        console.log('MESSAGE:', message);
         if (message.type === 'pluginData') {
             if (message.data === null) {
                 console.log('No plugin data');
                 setIsInitialized(true);
                 return;
             }
-            console.log('handling: ', message.type);
             handlePluginDataMessage(message);
         }
+        console.log('message in UI:', message);
     }, [message]);
 
     useEffect(() => {
-        console.log('initialThemeData:', initialThemeData);
         if (initialThemeData) {
             setIsInitialized(true);
         }
@@ -70,16 +65,16 @@ export const Ui = () => {
 
     if (isInitialized && initialThemeData !== null) {
         const themeListId = nanoid(12);
-        const themeListStore = useRef(
-            createThemeListStore({ id: themeListId, themes: initialThemeData }),
-        ).current;
-        if (!themeListStore) {
-            throw new Error('Missing ThemeListContext.Provider in the tree');
-        }
-        const themeList = useStore(themeListStore);
+        // const themeListStore = useRef(
+        //     createThemeListStore({ id: themeListId, themes: initialThemeData }),
+        // ).current;
+        // if (!themeListStore) {
+        //     throw new Error('Missing ThemeListContext.Provider in the tree');
+        // }
+        // const themeList = useStore(themeListStore);
+        const themeList = { id: themeListId, themes: initialThemeData };
 
         const themeId = themeList.themes[0].id;
-        console.log('The FIRST themeId:', themeId);
         const themeColorId = themeList.themes[0].themeColors[0].id;
 
         return (

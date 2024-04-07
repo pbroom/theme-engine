@@ -1,14 +1,14 @@
-import { set } from 'lodash';
 import { createContext, h } from 'preact';
-import { useContext, useRef, useState } from 'preact/hooks';
+import { useContext, useRef } from 'preact/hooks';
 import { StateCreator, create, createStore, useStore } from 'zustand';
 
-type MessageType = { type: string; data: any };
+type MessageProps = { type: string; data: any };
 type MessageActions = {
-    setMessage: (message: MessageType) => void;
+    setMessage: (message: MessageProps) => void;
 };
+type MessageState = MessageProps & MessageActions;
 
-const message: StateCreator<MessageType & MessageActions> = (set) => ({
+const message: StateCreator<MessageProps & MessageActions> = (set) => ({
     type: '',
     data: null,
     setMessage: (message) => set(message),
@@ -16,7 +16,7 @@ const message: StateCreator<MessageType & MessageActions> = (set) => ({
 
 type MessageStore = ReturnType<typeof createMassageStore>;
 
-type MessageProviderProps = React.PropsWithChildren<MessageType>;
+type MessageProviderProps = React.PropsWithChildren<MessageProps>;
 
 export const MessageProvider = ({
     children,
@@ -33,7 +33,7 @@ export const MessageProvider = ({
     );
 };
 
-export function useMessageContext<T>(selector: (state: MessageType) => T): T {
+export function useMessageContext<T>(selector: (state: MessageState) => T): T {
     const store = useContext(MessageContext);
     if (!store) {
         throw new Error('Missing MessageContext.Provider in the tree');
@@ -43,13 +43,12 @@ export function useMessageContext<T>(selector: (state: MessageType) => T): T {
 
 export const MessageContext = createContext<MessageStore | null>(null);
 
-export const createMassageStore = (initProps?: Partial<MessageType>) => {
-    const DEFAULT_PROPS = { type: '', data: null } as MessageType;
-    return createStore<MessageType & MessageActions>()((set, ...a) => ({
-        ...message(set, ...a),
+export const createMassageStore = (initProps?: Partial<MessageProps>) => {
+    const DEFAULT_PROPS = { type: '', data: null } as MessageProps;
+    return createStore<MessageState>()((set) => ({
         ...DEFAULT_PROPS,
         ...initProps,
-        setMessage: (message) => set(message),
+        setMessage: (message) => set((state) => ({ ...state, ...message })),
     }));
 };
 
