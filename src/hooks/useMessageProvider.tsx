@@ -1,3 +1,4 @@
+import { set } from 'lodash';
 import { createContext, h } from 'preact';
 import { useContext, useRef } from 'preact/hooks';
 import { StateCreator, create, createStore, useStore } from 'zustand';
@@ -60,4 +61,10 @@ type InitializationType = {
 export const initialization = create<InitializationType>((set) => ({
     isInitialized: false,
     setIsInitialized: (isInitialized) => set({ isInitialized }),
+}));
+
+export const useMessageStore = create<MessageState>((set) => ({
+    type: '',
+    data: null,
+    setMessage: (message) => set(message),
 }));

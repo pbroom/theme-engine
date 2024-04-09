@@ -8,7 +8,12 @@ const height = (pixelHeight: number) => {
 
 const pluginDataKey = 'themeEngine';
 export const pluginData = figma.root.getPluginData(pluginDataKey);
-console.log(pluginDataKey, JSON.parse(pluginData));
+try {
+    console.log(pluginDataKey, JSON.parse(pluginData));
+} catch (error) {
+    console.error('Error parsing pluginData:', error);
+}
+// console.log('PLUGIN DATA:', pluginData);
 
 const sendPluginData = (type: string) => {
     const message = { type: type, data: pluginData };
@@ -139,6 +144,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
         console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));
     }
     if (pluginMessage.type === 'localCollections') {
+        console.log('PLUGIN RECEIVED:', pluginMessage);
         await sendLocalCollections();
     }
     if (pluginMessage.type === 'preBuild') {
@@ -263,7 +269,19 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                     );
                     const aliasSemantics = themeColor.aliasGroup.aliases.map(
                         async (alias) => {
-                            const aliasName = `${theme.name}/${alias.name}`;
+                            const aliasName = `${theme.name}/${alias.name.replace(
+                                /\$/g,
+                                (match, offset, string) => {
+                                    if (
+                                        offset > 0 &&
+                                        string[offset - 1].match(/[a-z]/)
+                                    ) {
+                                        return themeColor.name.toUpperCase();
+                                    } else {
+                                        return themeColor.name.toLowerCase();
+                                    }
+                                },
+                            )}`;
                             const lightModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
                             const darkModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
                             const data: SemanticVariableData = {
@@ -332,6 +350,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
 
                     const semantics: Promise<Variable | undefined>[] =
                         variableDataResolved.semantics.map(async (semantic) => {
+                            const name = semantic.name;
                             const existingSemantic = findColorVariableByName(
                                 semantic.name,
                             );

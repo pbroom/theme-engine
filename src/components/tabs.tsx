@@ -49,6 +49,7 @@ import {
     MessageContext,
     initialization,
     useMessageContext,
+    useMessageStore,
 } from '../hooks/useMessageProvider';
 // import { useID } from '../hooks/useId';
 
@@ -604,7 +605,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         parent.postMessage({ pluginMessage }, '*');
     };
 
-    const message = useMessageContext((s) => s);
+    const message = useMessageStore();
 
     useEffect(() => {
         console.log('message in TABS:', message);
@@ -690,6 +691,13 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                     ).setProps.name(
                                                         e.currentTarget.value,
                                                     );
+                                                    setThemeColor(
+                                                        themeColorId,
+                                                    ).setProps.aliasGroup({
+                                                        ...themeColor.aliasGroup,
+                                                        name: e.currentTarget
+                                                            .value,
+                                                    });
                                                 }}
                                                 onBlur={() => nameTheNameless()}
                                                 onFocusOut={() =>

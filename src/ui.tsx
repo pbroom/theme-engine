@@ -4,6 +4,8 @@ import {
     MessageProvider,
     createMassageStore,
     initialization,
+    useMessageContext,
+    useMessageStore,
 } from './hooks/useMessageProvider';
 import { IdProvider } from './hooks/useId';
 import {
@@ -23,8 +25,7 @@ export const Ui = () => {
     const isInitialized = initialization((state) => state.isInitialized);
     const setIsInitialized = initialization((state) => state.setIsInitialized);
 
-    const messageStore = useRef(createMassageStore()).current;
-    const message = useStore(messageStore);
+    const message = useMessageStore();
 
     const [initialThemeData, setInitialThemeData] = useState<
         null | ThemeData[]
@@ -39,7 +40,9 @@ export const Ui = () => {
 
     const handlePluginDataMessage = async (message: any) => {
         const pluginData = await message.data;
-        const pluginDataParsed: Array<ThemeData> = await JSON.parse(pluginData);
+        const pluginDataParsed: Array<ThemeData> | null = pluginData
+            ? await JSON.parse(pluginData)
+            : null;
         // console.log('%cpluginData:', 'color: #6DFF6A', pluginDataParsed);
         const themeData = pluginDataParsed ? pluginDataParsed : defaultThemes;
         setInitialThemeData(themeData);
@@ -54,7 +57,7 @@ export const Ui = () => {
             }
             handlePluginDataMessage(message);
         }
-        console.log('message in UI:', message);
+        // console.log('message in UI:', message);
     }, [message]);
 
     useEffect(() => {
@@ -65,26 +68,17 @@ export const Ui = () => {
 
     if (isInitialized && initialThemeData !== null) {
         const themeListId = nanoid(12);
-        // const themeListStore = useRef(
-        //     createThemeListStore({ id: themeListId, themes: initialThemeData }),
-        // ).current;
-        // if (!themeListStore) {
-        //     throw new Error('Missing ThemeListContext.Provider in the tree');
-        // }
-        // const themeList = useStore(themeListStore);
         const themeList = { id: themeListId, themes: initialThemeData };
 
         const themeId = themeList.themes[0].id;
         const themeColorId = themeList.themes[0].themeColors[0].id;
 
         return (
-            <MessageProvider type={''} data={null}>
-                <ThemeListProvider id={themeListId} themes={initialThemeData}>
-                    <IdProvider themeId={themeId} themeColorId={themeColorId}>
-                        <Plugin />
-                    </IdProvider>
-                </ThemeListProvider>
-            </MessageProvider>
+            <ThemeListProvider id={themeListId} themes={initialThemeData}>
+                <IdProvider themeId={themeId} themeColorId={themeColorId}>
+                    <Plugin />
+                </IdProvider>
+            </ThemeListProvider>
         );
     }
     return <div className="p-2">Loading...</div>;
