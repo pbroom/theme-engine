@@ -1,3 +1,4 @@
+import { set } from 'lodash';
 import { createContext, h } from 'preact';
 import { useContext, useRef } from 'preact/hooks';
 import { StateCreator, create, createStore, useStore } from 'zustand';
