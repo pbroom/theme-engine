@@ -1,6 +1,13 @@
 /* eslint-disable */
 import { h } from 'preact';
-import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import {
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
 import { CopyPlus } from 'lucide-react';
 import {
@@ -240,32 +247,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const [hexColorInput, setHexColorInput] = useState<string>(
         themeColor.sourceColor.sourceHex,
     );
-    useEffect(() => {
-        const calculatedHue: number = Math.round(
-            calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc),
-        );
-        setHueSlider(calculatedHue);
-        if (!themeColor.hueCalc.toLowerCase().includes('h')) {
-            setThemeColor(themeColorId).setProps.hueCalc(
-                `${themeColor.sourceColor.hct.hue}`,
-            );
-            setHueCalcInput(`${calculatedHue}`);
-        }
-
-        const calculatedChroma: number = Math.round(
-            calculateChroma(
-                themeColor.sourceColor.hct.chroma,
-                themeColor.chromaCalc,
-            ),
-        );
-        setChromaSlider(calculatedChroma);
-        if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
-            setThemeColor(themeColorId).setProps.chromaCalc(
-                `${themeColor.sourceColor.hct.chroma}`,
-            );
-            setChromaCalcInput(`${calculatedChroma}`);
-        }
-    }, [hexColorInput]);
 
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
     // useEffect(() => {
@@ -288,7 +269,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setTones(newFieldValue);
     };
 
-    const [hueSlider, setHueSlider] = useState<number>(hue);
+    // const [hueSlider, setHueSlider] = useState<number>(hue);
     const [hueCalcInput, setHueCalcInput] = useState<string>(
         themeColor.hueCalc,
     );
@@ -298,7 +279,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeColor(themeColorId).setProps.chromaCalc(chromaCalcInput);
     }, [hueCalcInput]);
 
-    const [chromaSlider, setChromaSlider] = useState<number>(chroma);
+    // const [chromaSlider, setChromaSlider] = useState<number>(chroma);
     const [chromaCalcInput, setChromaCalcInput] = useState<string>(
         themeColor.chromaCalc,
     );
@@ -307,6 +288,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     }, [chromaCalcInput]);
 
     const maxChromaHex = hexFromHct(Hct.from(hue(), findMaxChroma(hue()), 50));
+
     const maxChromaHues = useMemo(() => {
         return findHighestChromaPerHue()
             .map(({ hue, chroma, tone }) => {
@@ -349,29 +331,33 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
         setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
-
-        setHueSlider(roundedHue);
-        // if the hueCalcInput is an expression, don't update it
-        if (!themeColor.hueCalc.toLowerCase().includes('h')) {
-            setThemeColor(themeColorId).setProps.hueCalc(
-                `${themeColor.sourceColor.hct.hue}`,
-            );
-            setHueCalcInput(`${roundedHue}`);
-        }
-
-        setChromaSlider(roundedChroma);
-        if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
-            setThemeColor(themeColorId).setProps.chromaCalc(
-                `${themeColor.sourceColor.hct.chroma}`,
-            );
-            setChromaCalcInput(`${roundedChroma}`);
-        }
+        console.log(newHexColor);
     };
+
+    useEffect(() => {
+        console.log(hexColorInput);
+        console.log(themeColor.sourceColor.sourceHex);
+        // setHueSlider(calculatedHue);
+        if (!themeColor.hueCalc.toLowerCase().includes('h')) {
+            const hue: number = Math.round(themeColor.sourceColor.hct.hue);
+            setThemeColor(themeColorId).setProps.hueCalc(`${hue}`);
+            setHueCalcInput(`${hue}`);
+        }
+
+        // setChromaSlider(calculatedChroma);
+        if (!themeColor.chromaCalc.toLowerCase().includes('c')) {
+            const chroma: number = Math.round(
+                themeColor.sourceColor.hct.chroma,
+            );
+            setThemeColor(themeColorId).setProps.chromaCalc(`${chroma}`);
+            setChromaCalcInput(`${chroma}`);
+        }
+    }, [hexColorInput]);
 
     const onHueSliderInput = (e: any) => {
         const newHueCalcInput: number = e.currentTarget.value;
         setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
-        setHueSlider(newHueCalcInput);
+        // setHueSlider(newHueCalcInput);
         setHueCalcInput(`${newHueCalcInput}`);
         // console.log(
         //     calculateHue(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`),
@@ -385,12 +371,12 @@ const TabGroup = ({ className }: TabGroupProps) => {
         );
         setThemeColor(themeColorId).setProps.hueCalc(newHueCalcInput);
         setHueCalcInput(newHueCalcInput);
-        setHueSlider(calculatedHue);
+        // setHueSlider(calculatedHue);
         if (newHueCalcInput === '') {
             setThemeColor(themeColorId).setProps.hueCalc(
                 `${themeColor.sourceColor.hct.hue}`,
             );
-            setHueSlider(themeColor.sourceColor.hct.hue);
+            // setHueSlider(themeColor.sourceColor.hct.hue);
         }
     };
     const onChromaSliderInput = (e: any) => {
@@ -399,7 +385,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
             `${newChromaCalcInput}`,
         );
         setChromaCalcInput(`${newChromaCalcInput}`);
-        setChromaSlider(newChromaCalcInput);
+        // setChromaSlider(newChromaCalcInput);
         // console.log(themeColor.endColor.hct);
     };
     const onChromaCalcInput = (e: any) => {
@@ -411,13 +397,13 @@ const TabGroup = ({ className }: TabGroupProps) => {
             ),
         );
         setThemeColor(themeColorId).setProps.chromaCalc(newChromaCalcInput);
-        setChromaSlider(calculatedChroma);
+        // setChromaSlider(calculatedChroma);
         setChromaCalcInput(newChromaCalcInput);
         if (newChromaCalcInput === '') {
             setThemeColor(themeColorId).setProps.chromaCalc(
                 `${themeColor.sourceColor.hct.chroma}`,
             );
-            setChromaSlider(themeColor.sourceColor.hct.chroma);
+            // setChromaSlider(themeColor.sourceColor.hct.chroma);
         }
     };
 
