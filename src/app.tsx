@@ -322,6 +322,7 @@ export const Plugin = () => {
                     <div className="flex h-full items-center px-2">
                         {isEditing ? (
                             <Textbox
+                                title="Theme name"
                                 ref={inputRef}
                                 value={theme.name}
                                 onChange={(e) =>
@@ -336,6 +337,7 @@ export const Plugin = () => {
                             />
                         ) : (
                             <Dropdown
+                                title="Select theme"
                                 value={themeId}
                                 options={themeListMenuOptions}
                                 onChange={handleOptionSelect}

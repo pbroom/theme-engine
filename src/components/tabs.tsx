@@ -24,6 +24,7 @@ import {
     DropdownOption,
     VerticalSpace,
     TextboxAutocomplete,
+    IconChevronDown16,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -964,43 +965,35 @@ const TabGroup = ({ className }: TabGroupProps) => {
         //         <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
         //             <div className="flex w-full flex-row border-t border-gridlines">
         //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
-        //                         <span className="absolute">
-        //                             <IconChevronDown16 />
-        //                         </span>
-        //                     </div>
+        //                     {/* Sidebar */}
         //                 </div>
         //                 <div className="h-full grow">
         //                     <div className="flex h-24 grow flex-row">
-        //                         <div className="flex grow flex-row"></div>
-        //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div className="flex w-full flex-row border-t border-gridlines">
-        //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic outline outline-2 outline-offset-2 outline-fig-blue"></div>
-        //                     <div className=" h-6 w-6 rounded-full bg-gradient-conic opacity-20"></div>
-        //                     <div className=" relative flex h-6 w-6 items-center justify-center rounded-full outline-dashed outline-2 outline-neutral-500">
-        //                         <span className="absolute">
-        //                             <IconChevronDown16 />
-        //                         </span>
-        //                     </div>
-        //                 </div>
-        //                 <div className="h-full grow">
-        //                     <div className="flex h-24 grow flex-row">
-        //                         <div className="flex grow flex-row"></div>
-        //                         <div className="h-full w-32 bg-gradient-to-r from-white via-indigo-500 via-30% to-black"></div>
+        //                         <div className="flex grow flex-row">
+        //                             {/* Control Area */}
+        //                             <div className="flex grow justify-between">
+        //                                 <span className="p-2">
+        //                                     Alias Groups
+        //                                 </span>
+        //                                 <IconButton
+        //                                     title="Create alias group"
+        //                                     onClick={() => {
+        //                                         // setThemeColor(
+        //                                         //     themeColorId,
+        //                                         // ).add.alias(createAlias());
+        //                                         console.log(
+        //                                             themeColor.aliasGroup
+        //                                                 .aliases,
+        //                                         );
+        //                                     }}
+        //                                 >
+        //                                     <IconPlus32 />
+        //                                 </IconButton>
+        //                             </div>
+        //                         </div>
+        //                         <div className="h-full w-32">
+        //                             {/* Preview area */}
+        //                         </div>
         //                     </div>
         //                 </div>
         //             </div>
