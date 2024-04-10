@@ -81,7 +81,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Aliases');
+    const [tabValue, setTabValue] = useState<string>('Primitives');
 
     // ID state
     const IdStore = useContext(IdContext);
