@@ -1,25 +1,17 @@
 import '!./dist/tailwind.css';
-import {
-    Textbox,
-    Dropdown,
-    DropdownOption,
-    render,
-} from '@create-figma-plugin/ui';
+import { Textbox, Dropdown, DropdownOption } from '@create-figma-plugin/ui';
 import { h } from 'preact';
 import TabGroup from './components/tabs';
 import { nanoid } from 'nanoid';
-import { ThemeData, createTheme } from './hooks/useTheme';
+import { createTheme } from './hooks/useTheme';
 import { useContext, useEffect, useState, useRef } from 'preact/hooks';
-import { defaultThemes, useThemeList } from './hooks/useThemeList';
+import { ThemeListContext } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
-import { findIndex, set } from 'lodash';
+import { findIndex } from 'lodash';
 import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
-import { PluginMessage } from './main';
-import React from 'preact/compat';
 import { useSettings } from './components/settings-tab/useSettings';
-import { re } from 'mathjs';
 
 export const Plugin = () => {
     // ID state
@@ -59,6 +51,18 @@ export const Plugin = () => {
         }
     }, [themeToDelete]);
 
+    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
+    const setThemeColorId = useStore(
+        IdStore,
+        (state: IdState) => state.setThemeColorId,
+    );
+    // themeList state
+    const useThemeListStore = useContext(ThemeListContext);
+    if (!useThemeListStore) {
+        throw new Error('ThemeListContext is undefined');
+    }
+    const themeList = useStore(useThemeListStore, (state) => state);
+
     useEffect(() => {
         const newThemeIndex = themeList.themes.findIndex(
             (theme) => theme.id === themeId,
@@ -83,16 +87,6 @@ export const Plugin = () => {
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
             themeRef.current = themeList.themes[newThemeIndex];
-            // console.log(
-            //     '%cthemeRef.current:',
-            //     'color: #FF0000',
-            //     themeRef.current.id,
-            // );
-            // console.log(
-            //     '%cthemes[themeId]:',
-            //     'color: #FF0000',
-            //     themeList.themes[newThemeIndex].id,
-            // );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor =
@@ -100,13 +94,22 @@ export const Plugin = () => {
             if (!newThemeColor) {
                 throw new Error('Theme color not found');
             }
+            const hue: number = calculateHue(
+                themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
+                    .sourceColor.hct.hue,
+                newThemeColor.hueCalc,
+            );
+            const chroma: number = calculateChroma(
+                newThemeColor.sourceColor.hct.chroma,
+                newThemeColor.chromaCalc,
+            );
             setThemeColor(newThemeColorId).setProps.all({
                 ...newThemeColor,
                 endColor: {
                     ...newThemeColor.endColor,
                     hct: Hct.from(
-                        hue(),
-                        chroma(),
+                        hue,
+                        chroma,
                         newThemeColor.sourceColor.hct.tone,
                     ),
                 },
@@ -133,22 +136,13 @@ export const Plugin = () => {
         }
     }, [themeId, themeColorId]);
 
-    const setThemeId = useStore(IdStore, (state: IdState) => state.setThemeId);
-    const setThemeColorId = useStore(
-        IdStore,
-        (state: IdState) => state.setThemeColorId,
-    );
-    // themeList state
-    const themeListStore = useThemeList;
-    const themeList = themeListStore();
-
     const themeIndexRef = useRef(
         themeList.themes.findIndex((theme) => theme.id === themeId),
     );
     const [themeIndex, setThemeIndex] = useState<number>(themeIndexRef.current);
 
     // theme state
-    const theme = themeListStore((state) => state.themes[themeIndex]);
+    const theme = themeList.themes[themeIndex];
     const setTheme = themeList.theme(themeId);
 
     const themeColorIndexRef = useRef(
@@ -159,22 +153,6 @@ export const Plugin = () => {
     const [themeColorIndex, setThemeColorIndex] = useState<number>(
         themeColorIndexRef.current,
     );
-
-    const hue = () => {
-        const hue: number = calculateHue(
-            themeList.themes[themeIndex].themeColors[themeColorIndex]
-                .sourceColor.hct.hue,
-            themeColor.hueCalc,
-        );
-        return hue;
-    };
-    const chroma = () => {
-        const chroma: number = calculateChroma(
-            themeColor.sourceColor.hct.chroma,
-            themeColor.chromaCalc,
-        );
-        return chroma;
-    };
 
     // themeColor state
     const themeColor =
@@ -244,8 +222,6 @@ export const Plugin = () => {
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList.add.theme(newTheme);
             // setThemeId(newTheme.id);
-            // console.log(newTheme);
-            // console.log(themeList);
         }
         if (selectedValue === 'Rename...') {
             setIsEditing(true);

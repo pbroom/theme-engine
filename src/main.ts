@@ -1,12 +1,31 @@
 import { showUI } from '@create-figma-plugin/utilities';
 import { ThemeData } from './hooks/useTheme';
-import { SolidColor, argbFromHct, rgbaFromHct } from './hooks/useColor';
 import { Hct } from '@material/material-color-utilities';
-import { e, re } from 'mathjs';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
 };
+
+const pluginDataKey = 'themeEngine';
+export const pluginData = figma.root.getPluginData(pluginDataKey);
+try {
+    console.log(pluginDataKey, JSON.parse(pluginData));
+} catch (error) {
+    console.error('Error parsing pluginData:', error);
+}
+// console.log('PLUGIN DATA:', pluginData);
+
+const sendPluginData = (type: string) => {
+    const message = { type: type, data: pluginData };
+    figma.ui.postMessage(message);
+};
+
+figma.on('run', () => {
+    sendPluginData('pluginData');
+});
+
+// figma.root.setPluginData(pluginDataKey, '');
+
 export default function () {
     showUI({ height: height(640), width: 512, title: 'Theme Engine' });
 }
@@ -49,76 +68,9 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
  * This function is triggered when the plugin is run. It retrieves all local variable collections and sends a message to the UI with the collections and their names as options.
  */
 figma.on('run', async () => {
+    sendPluginData('pluginData');
     sendLocalCollections();
 });
-
-// figma.on('documentchange', async (event) => {
-//     for (const change of event.documentChanges) {
-//         switch (change.type) {
-//             case 'CREATE':
-//                 console.log(
-//                     `Node ${change.id} created by a ${change.origin.toLowerCase()} user`,
-//                 );
-//                 break;
-
-//             case 'DELETE':
-//                 console.log(
-//                     `Node ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
-//                 );
-//                 break;
-
-//             case 'PROPERTY_CHANGE':
-//                 for (const prop of change.properties) {
-//                     console.log(
-//                         `Node ${
-//                             change.id
-//                         } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
-//                     );
-//                 }
-//                 break;
-
-//             case 'STYLE_CREATE':
-//                 console.log(
-//                     `Style ${change.id} created by a ${change.origin.toLowerCase()} user`,
-//                 );
-//                 break;
-
-//             case 'STYLE_DELETE':
-//                 console.log(
-//                     `Style ${change.id} deleted by a ${change.origin.toLowerCase()} user`,
-//                 );
-//                 break;
-
-//             case 'STYLE_PROPERTY_CHANGE':
-//                 for (const prop of change.properties) {
-//                     console.log(
-//                         `Style ${
-//                             change.id
-//                         } had ${prop} changed by a ${change.origin.toLowerCase()} user`,
-//                     );
-//                 }
-//                 break;
-//         }
-//     }
-// });
-
-// const buildTheme = (theme: ThemeData) => {
-//     const collectionId = theme.collectionId;
-// };
-
-/**
- * This code block listens for messages from the UI and performs actions based on the message type.
- * If the message type is 'build', it generates a palette of colors based on the provided hex color and tone stops, and returns the swatches.
- * If the message type is 'createVariables', it generates a palette of colors based on the provided hex color and tone stops, and creates variables in the specified collection.
- * @param {Object} pluginMessage - The message received from the UI.
- * @param {string} pluginMessage.type - The type of message received from the UI.
- * @param {string} [pluginMessage.name='color'] - The name of the color.
- * @param {number} pluginMessage.toneStops - The number of tone stops.
- * @param {string} pluginMessage.color - The hex color value.
- * @param {string} [pluginMessage.collectionId] - The ID of the collection to create variables in.
- * @param {boolean} [pluginMessage.overwriteVariables=false] - Whether to overwrite existing variables in the collection.
- * @returns {Object} - The swatches or variables generated based on the message type.
- */
 
 export type PluginMessage = {
     type: string;
@@ -187,7 +139,12 @@ type SemanticVariableData = {
 };
 
 figma.ui.onmessage = async (pluginMessage: any) => {
+    if (pluginMessage.type === 'setPluginData') {
+        figma.root.setPluginData(pluginDataKey, `${pluginMessage.data}`);
+        // console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));
+    }
     if (pluginMessage.type === 'localCollections') {
+        // console.log('PLUGIN RECEIVED:', pluginMessage);
         await sendLocalCollections();
     }
     if (pluginMessage.type === 'preBuild') {
@@ -312,7 +269,19 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                     );
                     const aliasSemantics = themeColor.aliasGroup.aliases.map(
                         async (alias) => {
-                            const aliasName = `${theme.name}/${alias.name}`;
+                            const aliasName = `${theme.name}/${alias.name.replace(
+                                /\$/g,
+                                (match, offset, string) => {
+                                    if (
+                                        offset > 0 &&
+                                        string[offset - 1].match(/[a-z]/)
+                                    ) {
+                                        return themeColor.name.toUpperCase();
+                                    } else {
+                                        return themeColor.name.toLowerCase();
+                                    }
+                                },
+                            )}`;
                             const lightModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
                             const darkModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
                             const data: SemanticVariableData = {
@@ -381,6 +350,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
 
                     const semantics: Promise<Variable | undefined>[] =
                         variableDataResolved.semantics.map(async (semantic) => {
+                            const name = semantic.name;
                             const existingSemantic = findColorVariableByName(
                                 semantic.name,
                             );

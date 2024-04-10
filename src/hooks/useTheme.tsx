@@ -16,6 +16,7 @@ import {
     createAliasGroup,
     AliasCrud,
     createAlias,
+    AliasData,
 } from './useAliasGroup';
 import { subscribeWithSelector } from 'zustand/middleware';
 
@@ -55,7 +56,6 @@ const materialNeutralAliases = [
 
 const materialNeutralAliasGroup = {
     ...createAliasGroup(),
-    name: 'Neutral',
     aliases: materialNeutralAliases,
 };
 
@@ -67,7 +67,6 @@ const materialNeutralVariantAliases = [
 
 const materialNeutralVariantAliasGroup = {
     ...createAliasGroup(),
-    name: 'Neutral',
     aliases: materialNeutralVariantAliases,
 };
 
@@ -94,32 +93,48 @@ const defaultThemeColors: ThemeColorData[] = [
     createThemeColor(sourceHex, 'error', '25', '89'),
 ];
 
-const slate = '475569';
-const gray = '4b5563';
-const zinc = '52525b';
-const neutral = 'a3a3a3';
-const stone = '78716c';
-const red = 'dc2626';
-const orange = 'f97316';
-const amber = 'f59e0b';
-const yellow = 'fde047';
-const lime = 'a3e635';
-const green = '22c55e';
-const emerald = '10b981';
-const teal = '14b8a6';
-const cyan = '22d3ee';
-const sky = '38bdf8';
-const blue = '2563eb';
-const indigo = '4f46e5';
-const violet = '7c3aed';
-const purple = 'a855f7';
-const fuchsia = 'd946ef';
-const pink = 'ec4899';
-const rose = 'f43f5e';
+const tailwindColors = [
+    { name: 'slate', color: '475569' },
+    { name: 'gray', color: '4b5563' },
+    { name: 'zinc', color: '52525b' },
+    { name: 'neutral', color: 'a3a3a3' },
+    { name: 'stone', color: '78716c' },
+    { name: 'red', color: 'dc2626' },
+    { name: 'orange', color: 'f97316' },
+    { name: 'amber', color: 'f59e0b' },
+    { name: 'yellow', color: 'fde047' },
+    { name: 'lime', color: 'a3e635' },
+    { name: 'green', color: '22c55e' },
+    { name: 'emerald', color: '10b981' },
+    { name: 'teal', color: '14b8a6' },
+    { name: 'cyan', color: '22d3ee' },
+    { name: 'sky', color: '38bdf8' },
+    { name: 'blue', color: '2563eb' },
+    { name: 'indigo', color: '4f46e5' },
+    { name: 'violet', color: '7c3aed' },
+    { name: 'purple', color: 'a855f7' },
+    { name: 'fuchsia', color: 'd946ef' },
+    { name: 'pink', color: 'ec4899' },
+    { name: 'rose', color: 'f43f5e' },
+];
 
 const tailwindTones = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
 
-const tailwindAliases = [
+const tailwindAliasTones = [
+    { name: '50', value: 95 },
+    { name: '100', value: 90 },
+    { name: '200', value: 80 },
+    { name: '300', value: 70 },
+    { name: '400', value: 60 },
+    { name: '500', value: 50 },
+    { name: '600', value: 40 },
+    { name: '700', value: 30 },
+    { name: '800', value: 20 },
+    { name: '900', value: 10 },
+    { name: '950', value: 5 },
+];
+
+const tailwindAliases: AliasData[] = [
     createAlias(nanoid(12), '50', 95, 95),
     createAlias(nanoid(12), '100', 90, 90),
     createAlias(nanoid(12), '200', 80, 80),
@@ -133,92 +148,28 @@ const tailwindAliases = [
     createAlias(nanoid(12), '950', 5, 5),
 ];
 
-const tailwindAliasGroup = {
-    ...createAliasGroup(),
-    name: 'Tailwindy',
-    aliases: tailwindAliases,
-};
+const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
+    createThemeColor(
+        color.color,
+        color.name,
+        '',
+        '',
+        tailwindTones,
+        createAliasGroup(
+            nanoid(12),
+            color.name,
+            tailwindAliasTones.map((tone) =>
+                createAlias(
+                    nanoid(12),
+                    `$-${tone.name}`,
+                    tone.value,
+                    tone.value,
+                ),
+            ),
+        ),
+    ),
+);
 
-const defaultThemeColors2: ThemeColorData[] = [
-    createThemeColor(slate, 'Slate', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(gray, 'Gray', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(zinc, 'Zinc', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(
-        neutral,
-        'Neutral',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(stone, 'Stone', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(red, 'Red', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(
-        orange,
-        'Orange',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(amber, 'Amber', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(
-        yellow,
-        'Yellow',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(lime, 'Lime', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(green, 'Green', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(
-        emerald,
-        'Emerald',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(teal, 'Teal', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(cyan, 'Cyan', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(sky, 'Sky', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(blue, 'Blue', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(
-        indigo,
-        'Indigo',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(
-        violet,
-        'Violet',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(
-        purple,
-        'Purple',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(
-        fuchsia,
-        'Fuchsia',
-        '',
-        '',
-        tailwindTones,
-        tailwindAliasGroup,
-    ),
-    createThemeColor(pink, 'Pink', '', '', tailwindTones, tailwindAliasGroup),
-    createThemeColor(rose, 'Rose', '', '', tailwindTones, tailwindAliasGroup),
-];
 const defaultAliasGroups: AliasGroupData[] = [createAliasGroup()];
 
 /**
