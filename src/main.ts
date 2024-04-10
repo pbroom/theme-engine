@@ -272,14 +272,20 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                             const aliasName = `${theme.name}/${alias.name.replace(
                                 /\$/g,
                                 (match, offset, string) => {
-                                    if (
-                                        offset > 0 &&
-                                        string[offset - 1].match(/[a-z]/)
-                                    ) {
-                                        return themeColor.name.toUpperCase();
-                                    } else {
-                                        return themeColor.name.toLowerCase();
+                                    // Check if offset is greater than 0 to avoid accessing negative index
+                                    if (offset > 0) {
+                                        const precedingChar =
+                                            string[offset - 1];
+                                        if (/[a-zA-Z]/.test(precedingChar)) {
+                                            return (
+                                                themeColor.name
+                                                    .charAt(0)
+                                                    .toUpperCase() +
+                                                themeColor.name.slice(1)
+                                            );
+                                        }
                                     }
+                                    return themeColor.name.toLowerCase();
                                 },
                             )}`;
                             const lightModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;

@@ -70,7 +70,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Aliases');
+    const [tabValue, setTabValue] = useState<string>('Primitives');
 
     // ID state
     const IdStore = useContext(IdContext);
@@ -960,47 +960,47 @@ const TabGroup = ({ className }: TabGroupProps) => {
             ),
             value: 'Primitives',
         },
-        {
-            children: (
-                <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-t border-gridlines">
-                        <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
-                            {/* Sidebar */}
-                        </div>
-                        <div className="h-full grow">
-                            <div className="flex h-24 grow flex-row">
-                                <div className="flex grow flex-row">
-                                    {/* Control Area */}
-                                    <div className="flex grow justify-between">
-                                        <span className="p-2">
-                                            Alias Groups
-                                        </span>
-                                        <IconButton
-                                            title="Create alias group"
-                                            onClick={() => {
-                                                // setThemeColor(
-                                                //     themeColorId,
-                                                // ).add.alias(createAlias());
-                                                console.log(
-                                                    themeColor.aliasGroup
-                                                        .aliases,
-                                                );
-                                            }}
-                                        >
-                                            <IconPlus32 />
-                                        </IconButton>
-                                    </div>
-                                </div>
-                                <div className="h-full w-32">
-                                    {/* Preview area */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ),
-            value: 'Aliases',
-        },
+        // {
+        //     children: (
+        //         <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
+        //             <div className="flex w-full flex-row border-t border-gridlines">
+        //                 <div className="flex w-10 flex-col items-center gap-2 overflow-y-scroll py-2">
+        //                     {/* Sidebar */}
+        //                 </div>
+        //                 <div className="h-full grow">
+        //                     <div className="flex h-24 grow flex-row">
+        //                         <div className="flex grow flex-row">
+        //                             {/* Control Area */}
+        //                             <div className="flex grow justify-between">
+        //                                 <span className="p-2">
+        //                                     Alias Groups
+        //                                 </span>
+        //                                 <IconButton
+        //                                     title="Create alias group"
+        //                                     onClick={() => {
+        //                                         // setThemeColor(
+        //                                         //     themeColorId,
+        //                                         // ).add.alias(createAlias());
+        //                                         console.log(
+        //                                             themeColor.aliasGroup
+        //                                                 .aliases,
+        //                                         );
+        //                                     }}
+        //                                 >
+        //                                     <IconPlus32 />
+        //                                 </IconButton>
+        //                             </div>
+        //                         </div>
+        //                         <div className="h-full w-32">
+        //                             {/* Preview area */}
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     ),
+        //     value: 'Aliases',
+        // },
         {
             children: (
                 <div className="absolute left-0 top-10 h-full w-full overflow-y-scroll">
