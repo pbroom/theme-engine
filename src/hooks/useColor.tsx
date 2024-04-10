@@ -334,7 +334,13 @@ const calculateEndColor = (
 ) => {
     const hue = calculateHue(sourceHct.hue, hueCalc);
     const chroma = calculateChroma(sourceHct.chroma, chromaCalc);
-    return createColorFrom().hct({ hue, chroma, tone: sourceHct.tone });
+    const endColor = createColorFrom().hct({
+        hue,
+        chroma,
+        tone: sourceHct.tone,
+    });
+
+    return endColor;
 };
 
 const color: StateCreator<Color> = (set, get, ...a) => ({

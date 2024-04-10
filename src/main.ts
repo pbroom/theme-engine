@@ -141,10 +141,10 @@ type SemanticVariableData = {
 figma.ui.onmessage = async (pluginMessage: any) => {
     if (pluginMessage.type === 'setPluginData') {
         figma.root.setPluginData(pluginDataKey, `${pluginMessage.data}`);
-        console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));
+        // console.log('PLUGIN DATA SET:', JSON.parse(pluginMessage.data));
     }
     if (pluginMessage.type === 'localCollections') {
-        console.log('PLUGIN RECEIVED:', pluginMessage);
+        // console.log('PLUGIN RECEIVED:', pluginMessage);
         await sendLocalCollections();
     }
     if (pluginMessage.type === 'preBuild') {

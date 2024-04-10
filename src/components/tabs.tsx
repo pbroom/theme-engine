@@ -331,12 +331,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
         setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
-        console.log(newHexColor);
     };
 
     useEffect(() => {
-        console.log(hexColorInput);
-        console.log(themeColor.sourceColor.sourceHex);
         // setHueSlider(calculatedHue);
         if (!themeColor.hueCalc.toLowerCase().includes('h')) {
             const hue: number = Math.round(themeColor.sourceColor.hct.hue);
@@ -594,7 +591,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const message = useMessageStore();
 
     useEffect(() => {
-        console.log('message in TABS:', message);
+        // console.log('message in TABS:', message);
         if (message.type === 'localCollections') {
             handleLocalCollectionsMessage(message);
         }
@@ -626,7 +623,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
 
     useEffect(() => {
         if (appInitialized) {
-            console.log('%cApp initialized', 'color: #FF0000');
+            // console.log('%cApp initialized', 'color: #FF0000');
             const newTimeout = setTimeout(() => {
                 updatePluginData();
             }, 1000);

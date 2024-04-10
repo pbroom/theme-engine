@@ -737,9 +737,9 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                                                 endColor: {
                                                                     ...c.endColor,
                                                                     ...calculateEndColor(
-                                                                        c
-                                                                            .sourceColor
-                                                                            .hct,
+                                                                        createColorFrom().hex(
+                                                                            sourceHex,
+                                                                        ).hct,
                                                                         c.hueCalc,
                                                                         c.chromaCalc,
                                                                     ),
