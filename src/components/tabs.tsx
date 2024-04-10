@@ -302,15 +302,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
             setThemeColor(themeColorId).setProps.name('Color');
         }
     };
-    const roundedHue: number = Math.round(
-        calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc),
-    );
-    const roundedChroma: number = Math.round(
-        calculateChroma(
-            themeColor.sourceColor.hct.chroma,
-            themeColor.chromaCalc,
-        ),
-    );
 
     const onSelectThemeColor = (newThemeColorId: string) => {
         setThemeColorId(newThemeColorId);

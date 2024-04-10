@@ -12,10 +12,8 @@ import { useStore } from 'zustand';
 import { Hct } from '@material/material-color-utilities';
 import { calculateChroma, calculateHue } from './lib/color-utils';
 import { useSettings } from './components/settings-tab/useSettings';
-import { initialization } from './hooks/useMessageProvider';
 
 export const Plugin = () => {
-    const isInitialized = initialization((state) => state.isInitialized);
     // ID state
     const IdStore = useContext(IdContext);
     if (!IdStore) {
@@ -89,16 +87,6 @@ export const Plugin = () => {
         setThemeColorIndex(newThemeColorIndex);
         if (themeRef.current.id !== themeList.themes[newThemeIndex].id) {
             themeRef.current = themeList.themes[newThemeIndex];
-            // console.log(
-            //     '%cthemeRef.current:',
-            //     'color: #FF0000',
-            //     themeRef.current.id,
-            // );
-            // console.log(
-            //     '%cthemes[themeId]:',
-            //     'color: #FF0000',
-            //     themeList.themes[newThemeIndex].id,
-            // );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor =
@@ -106,13 +94,22 @@ export const Plugin = () => {
             if (!newThemeColor) {
                 throw new Error('Theme color not found');
             }
+            const hue: number = calculateHue(
+                themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
+                    .sourceColor.hct.hue,
+                newThemeColor.hueCalc,
+            );
+            const chroma: number = calculateChroma(
+                newThemeColor.sourceColor.hct.chroma,
+                newThemeColor.chromaCalc,
+            );
             setThemeColor(newThemeColorId).setProps.all({
                 ...newThemeColor,
                 endColor: {
                     ...newThemeColor.endColor,
                     hct: Hct.from(
-                        hue(),
-                        chroma(),
+                        hue,
+                        chroma,
                         newThemeColor.sourceColor.hct.tone,
                     ),
                 },
@@ -156,22 +153,6 @@ export const Plugin = () => {
     const [themeColorIndex, setThemeColorIndex] = useState<number>(
         themeColorIndexRef.current,
     );
-
-    const hue = () => {
-        const hue: number = calculateHue(
-            themeList.themes[themeIndex].themeColors[themeColorIndex]
-                .sourceColor.hct.hue,
-            themeColor.hueCalc,
-        );
-        return hue;
-    };
-    const chroma = () => {
-        const chroma: number = calculateChroma(
-            themeColor.sourceColor.hct.chroma,
-            themeColor.chromaCalc,
-        );
-        return chroma;
-    };
 
     // themeColor state
     const themeColor =
@@ -241,8 +222,6 @@ export const Plugin = () => {
             const newTheme = createTheme(nanoid(12), newThemeName);
             themeList.add.theme(newTheme);
             // setThemeId(newTheme.id);
-            // console.log(newTheme);
-            // console.log(themeList);
         }
         if (selectedValue === 'Rename...') {
             setIsEditing(true);
