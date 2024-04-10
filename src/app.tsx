@@ -14,7 +14,6 @@ import { calculateChroma, calculateHue } from './lib/color-utils';
 import { useSettings } from './components/settings-tab/useSettings';
 
 export const Plugin = () => {
-    const isInitialized = initialization((state) => state.isInitialized);
     // ID state
     const IdStore = useContext(IdContext);
     if (!IdStore) {
