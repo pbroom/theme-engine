@@ -72,8 +72,24 @@ const materialNeutralVariantAliasGroup = {
 
 const defaultThemeColors: ThemeColorData[] = [
     createThemeColor(sourceHex, 'primary', '', ''),
-    createThemeColor(sourceHex, 'secondary', '', 'c/3'),
-    createThemeColor(sourceHex, 'tertiary', 'h+60', 'c/2'),
+    createThemeColor(
+        sourceHex,
+        'secondary',
+        '',
+        'c/3',
+        defaultTones,
+        createAliasGroup(nanoid(12), 'secondary'),
+        true,
+    ),
+    createThemeColor(
+        sourceHex,
+        'tertiary',
+        'h+60',
+        'c/2',
+        defaultTones,
+        createAliasGroup(nanoid(12), 'tertiary'),
+        true,
+    ),
     createThemeColor(
         sourceHex,
         'neutral',
@@ -81,6 +97,7 @@ const defaultThemeColors: ThemeColorData[] = [
         'c/12',
         defaultTones,
         materialNeutralAliasGroup,
+        true,
     ),
     createThemeColor(
         sourceHex,
@@ -89,8 +106,17 @@ const defaultThemeColors: ThemeColorData[] = [
         'c/8',
         defaultTones,
         materialNeutralVariantAliasGroup,
+        true,
     ),
-    createThemeColor(sourceHex, 'error', '25', '89'),
+    createThemeColor(
+        sourceHex,
+        'error',
+        '25',
+        '89',
+        defaultTones,
+        createAliasGroup(nanoid(12), 'error'),
+        true,
+    ),
 ];
 
 const tailwindColors = [

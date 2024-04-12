@@ -100,6 +100,7 @@ type SetThemeColorProps = {
     hueCalc: (hueCalc: string) => void;
     chromaCalc: (chromaCalc: string) => void;
     aliasGroup: (aliasGroup: AliasGroupData) => void;
+    child: (child: boolean) => void;
 };
 
 type ThemeColorActions = {
@@ -240,6 +241,7 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
                     set((state) => ({ ...state })),
                 aliasGroup: (aliasGroup: AliasGroupData) =>
                     set((state) => ({ ...state })),
+                child: (child: boolean) => set((state) => ({ ...state })),
             };
             const alias = (id: string): AliasActions => {
                 const alias: AliasData | undefined =
@@ -900,6 +902,26 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                                           ? {
                                                                 ...c,
                                                                 aliasGroup,
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
+                        child: (child: boolean) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                child,
                                                             }
                                                           : c,
                                               ),
