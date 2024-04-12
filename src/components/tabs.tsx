@@ -800,7 +800,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         </IconButton>
                                     </div>
                                     <div className="flex flex-row items-center">
-                                        <div className="w-20">
+                                        <div className="w-20 py-px">
                                             <TextboxColor
                                                 title="Source color"
                                                 hexColor={
@@ -815,42 +815,34 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             />
                                         </div>
                                         <div className="flex flex-grow items-center px-px">
-                                            <IconToggleButton
-                                                title={
-                                                    themeColor.child
-                                                        ? `Unlink ${theme.themeColors[0].name} as source color`
-                                                        : `Use ${theme.themeColors[0].name} as source color`
-                                                }
-                                                value={
-                                                    themeColorIndex === 0
-                                                        ? false
-                                                        : themeColor.child
-                                                }
-                                                onChange={() =>
-                                                    setIsDriven(!isDriven)
-                                                }
-                                                disabled={
-                                                    themeColorId ===
-                                                    theme.themeColors[0].id
-                                                }
-                                            >
-                                                {themeColor.child &&
-                                                themeColorId !==
-                                                    theme.themeColors[0].id ? (
-                                                    <IconLinkLinked32 />
-                                                ) : (
-                                                    <IconLinkBreak32 />
-                                                )}
-                                            </IconToggleButton>
+                                            {themeColorId !==
+                                                theme.themeColors[0].id && (
+                                                <IconToggleButton
+                                                    title={
+                                                        themeColor.child
+                                                            ? `Unlink ${theme.themeColors[0].name} as source color`
+                                                            : `Use ${theme.themeColors[0].name} as source color`
+                                                    }
+                                                    value={
+                                                        themeColorIndex === 0
+                                                            ? false
+                                                            : themeColor.child
+                                                    }
+                                                    onChange={() =>
+                                                        setIsDriven(!isDriven)
+                                                    }
+                                                >
+                                                    {themeColor.child &&
+                                                    themeColorId !==
+                                                        theme.themeColors[0]
+                                                            .id ? (
+                                                        <IconLinkLinked32 />
+                                                    ) : (
+                                                        <IconLinkBreak32 />
+                                                    )}
+                                                </IconToggleButton>
+                                            )}
                                         </div>
-                                        {/* TODO: Build out ability to choose source color from preceeding themeColors
-                                        <Dropdown
-                                            title="Source color options"
-                                            options={themeColorOptions}
-                                            value={'Custom source'}
-                                            placeholder="Source color options"
-                                            disabled={themeColorIndex === 0}
-                                        /> */}
                                     </div>
                                     <div className="flex gap-4 px-2 pt-2 opacity-60">
                                         <Muted title="Source color hue, chroma, tone">
