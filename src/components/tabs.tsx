@@ -25,10 +25,14 @@ import {
     VerticalSpace,
     TextboxAutocomplete,
     IconChevronDown16,
+    Checkbox,
+    IconToggleButton,
+    IconLinkLinked32,
+    IconLinkBreak32,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
-import { ceil, round } from 'mathjs';
+import { ceil, i, round } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -37,7 +41,7 @@ import {
     findHighestChromaPerHue,
     findMaxChroma,
 } from '../lib/color-utils';
-import { hexFromHct } from '../hooks/useColor';
+import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
 import { AliasList } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
@@ -249,6 +253,20 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeColor.sourceColor.sourceHex,
     );
 
+    const [isDriven, setIsDriven] = useState<boolean>(false);
+
+    useEffect(() => {
+        setThemeColor(themeColorId).setProps.child(!themeColor.child);
+        setThemeColor(themeColorId).setProps.sourceHex(
+            cleanedHexColor(
+                themeList.themes[themeIndex].themeColors[0].endColor.hex,
+            ),
+        );
+    }, [isDriven]);
+    useEffect(() => {
+        setThemeColor(0).setProps.child(false);
+    }, [theme.themeColors[0].id]);
+
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
     // useEffect(() => {
     //     setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
@@ -323,6 +341,19 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
         setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
+        // set the sourceHex for all themeColors with themeColor.child === true
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        cleanedHexColor(newHexColor),
+                    );
+                }
+            });
+        }
+        if (themeColorIndex !== 0) {
+            setThemeColor(themeColorId).setProps.child(false);
+        }
     };
 
     useEffect(() => {
@@ -348,6 +379,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
         // setHueSlider(newHueCalcInput);
         setHueCalcInput(`${newHueCalcInput}`);
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
         // console.log(
         //     calculateHue(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`),
         // );
@@ -367,6 +408,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
             );
             // setHueSlider(themeColor.sourceColor.hct.hue);
         }
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
     };
     const onChromaSliderInput = (e: any) => {
         const newChromaCalcInput: number = e.currentTarget.value;
@@ -374,6 +425,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
             `${newChromaCalcInput}`,
         );
         setChromaCalcInput(`${newChromaCalcInput}`);
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
         // setChromaSlider(newChromaCalcInput);
         // console.log(themeColor.endColor.hct);
     };
@@ -393,6 +454,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 `${themeColor.sourceColor.hct.chroma}`,
             );
             // setChromaSlider(themeColor.sourceColor.hct.chroma);
+        }
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
         }
     };
 
@@ -434,6 +505,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 ) - 1,
             );
             const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+            setThemeColor(newThemeColorId).setProps.child(false);
 
             setThemeColorId(newThemeColorId);
             setTheme(themeId).themeColor(themeColorToDelete).remove();
@@ -450,6 +522,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                     (themeColor) => themeColor.id === themeColorToDelete,
                 ) - 1,
             );
+            const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+            setThemeColor(newThemeColorId).setProps.child(false);
             setThemeColorId(theme.themeColors[newThemeColorIndex].id);
         }
     }, [themeColorToDelete]);
@@ -725,26 +799,50 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             <IconMinus32 />
                                         </IconButton>
                                     </div>
-                                    <div className="flex flex-row">
-                                        <TextboxColor
-                                            title="Source color"
-                                            hexColor={
-                                                themeColor.sourceColor.sourceHex
-                                            }
-                                            onHexColorInput={(e) =>
-                                                onHexColorInput(e)
-                                            }
-                                            onOpacityInput={(e) => '100%'}
-                                            opacity={'100%'}
-                                        />
-                                        {/* TODO: Build out ability to choose source color from preceeding themeColors
-                                        <Dropdown
-                                            title="Source color options"
-                                            options={themeColorOptions}
-                                            value={'Custom source'}
-                                            placeholder="Source color options"
-                                            disabled={themeColorIndex === 0}
-                                        /> */}
+                                    <div className="flex flex-row items-center">
+                                        <div className="w-20 py-px">
+                                            <TextboxColor
+                                                title="Source color"
+                                                hexColor={
+                                                    themeColor.sourceColor
+                                                        .sourceHex
+                                                }
+                                                onHexColorInput={(e) =>
+                                                    onHexColorInput(e)
+                                                }
+                                                onOpacityInput={(e) => '100%'}
+                                                opacity={'100%'}
+                                            />
+                                        </div>
+                                        <div className="flex flex-grow items-center px-px">
+                                            {themeColorId !==
+                                                theme.themeColors[0].id && (
+                                                <IconToggleButton
+                                                    title={
+                                                        themeColor.child
+                                                            ? `Unlink ${theme.themeColors[0].name} as source color`
+                                                            : `Use ${theme.themeColors[0].name} as source color`
+                                                    }
+                                                    value={
+                                                        themeColorIndex === 0
+                                                            ? false
+                                                            : themeColor.child
+                                                    }
+                                                    onChange={() =>
+                                                        setIsDriven(!isDriven)
+                                                    }
+                                                >
+                                                    {themeColor.child &&
+                                                    themeColorId !==
+                                                        theme.themeColors[0]
+                                                            .id ? (
+                                                        <IconLinkLinked32 />
+                                                    ) : (
+                                                        <IconLinkBreak32 />
+                                                    )}
+                                                </IconToggleButton>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="flex gap-4 px-2 pt-2 opacity-60">
                                         <Muted title="Source color hue, chroma, tone">
