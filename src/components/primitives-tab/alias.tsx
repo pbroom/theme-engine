@@ -647,6 +647,13 @@ const AliasTonePreview = ({
                     style={`background: ${darkRgba}; color: ${darkRgba}`}
                 ></div>
             </div>
+            <div
+                title={`${darkHex} / ${darkModeAlpha}%`}
+                className="h-full w-8"
+                style={`background: ${darkRgba}; color: ${darkRgba}`}
+            >
+                {/* <Code>{darkHex}</Code> */}
+            </div>
         </div>
     );
 };
