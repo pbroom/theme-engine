@@ -178,7 +178,7 @@ const AliasItem = ({
                 />
             </div>
             {opacityVisibility && (
-                <div className="w-12 opacity-85">
+                <div className="w-12 opacity-80">
                     <TextboxNumeric
                         title={`Light mode opacity`}
                         value={lightOpacity}
@@ -205,7 +205,7 @@ const AliasItem = ({
                 />
             </div>
             {opacityVisibility && (
-                <div className="w-12 opacity-85">
+                <div className="w-12 opacity-80">
                     <TextboxNumeric
                         title={`Dark mode opacity`}
                         value={darkOpacity}
