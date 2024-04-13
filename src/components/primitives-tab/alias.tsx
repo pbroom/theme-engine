@@ -9,8 +9,9 @@ import {
 } from '@create-figma-plugin/ui';
 import { AliasData } from '@/src/hooks/useAliasGroup';
 import { useEffect } from 'react';
-import { hexFromHct } from '@/src/hooks/useColor';
+import { hexFromHct, rgbFromHex, rgbaFromHct } from '@/src/hooks/useColor';
 import { Hct } from '@material/material-color-utilities';
+import { set } from 'lodash';
 
 export { AliasList, AliasItem, AliasPreviewList, AliasTonePreview };
 
@@ -18,7 +19,9 @@ type AliasItemProps = {
     alias: AliasData;
     onSetName: (id: string, name: string) => void;
     onSetLightTone: (id: string, tone: number) => void;
+    onSetLightOpacity: (id: string, tone: number) => void;
     onSetDarkTone: (id: string, tone: number) => void;
+    onSetDarkOpacity: (id: string, tone: number) => void;
     onRemoveAlias: (id: string) => void;
 };
 
@@ -32,7 +35,9 @@ const AliasItem = ({
     alias,
     onSetName,
     onSetLightTone,
+    onSetLightOpacity,
     onSetDarkTone,
+    onSetDarkOpacity,
     onRemoveAlias,
 }: AliasItemProps) => {
     const [aliasName, setAliasName] = useState(alias.name);
@@ -40,6 +45,21 @@ const AliasItem = ({
         alias.lightModeTone,
         alias.darkModeTone,
     ]);
+    const [aliasOpacity, setAliasOpacity] = useState([
+        alias.lightModeAlpha,
+        alias.darkModeAlpha,
+    ]);
+    const [lightTone, setLightTone] = useState<string>(
+        `${alias.lightModeTone}`,
+    );
+    const [lightOpacity, setLightOpacity] = useState<string>(
+        `${alias.lightModeAlpha}%`,
+    );
+    const [darkTone, setDarkTone] = useState<string>(`${alias.darkModeTone}`);
+    const [darkOpacity, setDarkOpacity] = useState<string>(
+        `${alias.darkModeAlpha}%`,
+    );
+
     const onSetAliasName = (id: string, name: string) => {
         setAliasName(name);
         onSetName(id, name);
@@ -48,9 +68,73 @@ const AliasItem = ({
         setAliasColor([tone, alias.darkModeTone]);
         onSetLightTone(id, tone);
     };
+    const onSetAliasLightOpacity = (id: string, alpha: number) => {
+        setAliasOpacity([alias.lightModeAlpha, alpha]);
+        onSetLightOpacity(id, alpha);
+    };
     const onSetAliasDarkTone = (id: string, tone: number) => {
         setAliasColor([alias.lightModeTone, tone]);
         onSetDarkTone(id, tone);
+    };
+    const onSetAliasDarkOpacity = (id: string, alpha: number) => {
+        setAliasOpacity([alias.darkModeAlpha, alpha]);
+        onSetDarkOpacity(id, alpha);
+    };
+    const handleLightToneInput = (
+        aliasId: string,
+        e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
+    ) => {
+        const input = e.currentTarget.value;
+        onSetAliasLightTone(aliasId, parseInt(input));
+        setLightTone(input);
+    };
+    const handleLightOpacityInput = (
+        aliasId: string,
+        e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
+    ) => {
+        const input = e.currentTarget.value;
+        console.log('Light alpha input:', parseInt(input.replace('%', '')));
+        onSetAliasLightOpacity(aliasId, parseInt(input.replace('%', '')));
+        setLightOpacity(input);
+    };
+    const handleDarkToneInput = (
+        aliasId: string,
+        e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
+    ) => {
+        const input = e.currentTarget.value;
+        onSetAliasDarkTone(aliasId, parseInt(input));
+        setDarkTone(input);
+    };
+    const handleDarkOpacityInput = (
+        aliasId: string,
+        e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
+    ) => {
+        const input = e.currentTarget.value;
+        console.log('Dark alpha input:', input);
+        onSetAliasDarkOpacity(aliasId, parseInt(input.replace('%', '')));
+        setDarkOpacity(input);
+    };
+    const handleBlur = () => {
+        if (aliasName === '') {
+            onSetAliasName(alias.id, 'Alias name');
+            setAliasName('Alias name');
+        }
+        if (lightTone === '' || Number.isNaN(parseInt(lightTone))) {
+            onSetAliasLightTone(alias.id, 0);
+            setLightTone(`0`);
+        }
+        if (lightOpacity === '' || Number.isNaN(parseInt(lightOpacity))) {
+            onSetAliasLightOpacity(alias.id, 100);
+            setLightOpacity(`100`);
+        }
+        if (darkTone === '' || Number.isNaN(parseInt(darkTone))) {
+            onSetAliasDarkTone(alias.id, 0);
+            setDarkTone(`0`);
+        }
+        if (darkOpacity === '' || Number.isNaN(parseInt(darkOpacity))) {
+            onSetAliasDarkOpacity(alias.id, 100);
+            setDarkOpacity(`100`);
+        }
     };
     return (
         <div
@@ -66,32 +150,58 @@ const AliasItem = ({
                         onSetAliasName(alias.id, e.currentTarget.value)
                     }
                     placeholder="Alias name"
+                    onBlur={handleBlur}
+                    onFocusOut={handleBlur}
                 />
             </div>
-            <div className="w-12">
+            <div className="w-10">
                 <TextboxNumeric
                     title={`Light mode tone`}
-                    value={aliasColor[0].toString()}
-                    onInput={(e) =>
-                        onSetAliasLightTone(
-                            alias.id,
-                            parseInt(e.currentTarget.value),
-                        )
-                    }
-                    placeholder="light"
+                    value={lightTone}
+                    onInput={(e) => handleLightToneInput(alias.id, e)}
+                    placeholder="0"
+                    onBlur={handleBlur}
+                    onFocusOut={handleBlur}
+                    max={100}
+                    min={0}
                 />
             </div>
             <div className="w-12">
                 <TextboxNumeric
+                    title={`Light mode opacity`}
+                    value={lightOpacity}
+                    onInput={(e) => handleLightOpacityInput(alias.id, e)}
+                    placeholder="0"
+                    onBlur={handleBlur}
+                    onFocusOut={handleBlur}
+                    max={100}
+                    min={0}
+                    suffix="%"
+                />
+            </div>
+            <div className="w-10">
+                <TextboxNumeric
                     title={`Dark mode tone`}
-                    value={aliasColor[1].toString()}
-                    onInput={(e) =>
-                        onSetAliasDarkTone(
-                            alias.id,
-                            parseInt(e.currentTarget.value),
-                        )
-                    }
-                    placeholder="dark"
+                    value={darkTone}
+                    onInput={(e) => handleDarkToneInput(alias.id, e)}
+                    placeholder="0"
+                    onBlur={handleBlur}
+                    onFocusOut={handleBlur}
+                    max={100}
+                    min={0}
+                />
+            </div>
+            <div className="w-12">
+                <TextboxNumeric
+                    title={`Dark mode opacity`}
+                    value={darkOpacity}
+                    onInput={(e) => handleDarkOpacityInput(alias.id, e)}
+                    placeholder="0"
+                    onBlur={handleBlur}
+                    onFocusOut={handleBlur}
+                    max={100}
+                    min={0}
+                    suffix="%"
                 />
             </div>
             <IconButton
@@ -136,10 +246,26 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
             onSetAliases([...aliases]);
         }
     };
+    const onSetLightOpacity = (id: string, alpha: number) => {
+        const alias = aliases.find((alias) => alias.id === id);
+        if (alias) {
+            alias.lightModeAlpha = alpha;
+            setAliasItems([...aliases]);
+            onSetAliases([...aliases]);
+        }
+    };
     const onSetDarkTone = (id: string, tone: number) => {
         const alias = aliases.find((alias) => alias.id === id);
         if (alias) {
             alias.darkModeTone = tone;
+            setAliasItems([...aliases]);
+            onSetAliases([...aliases]);
+        }
+    };
+    const onSetDarkOpacity = (id: string, alpha: number) => {
+        const alias = aliases.find((alias) => alias.id === id);
+        if (alias) {
+            alias.darkModeAlpha = alpha;
             setAliasItems([...aliases]);
             onSetAliases([...aliases]);
         }
@@ -162,7 +288,9 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
                 alias={alias}
                 onSetName={onSetName}
                 onSetLightTone={onSetLightTone}
+                onSetLightOpacity={onSetLightOpacity}
                 onSetDarkTone={onSetDarkTone}
+                onSetDarkOpacity={onSetDarkOpacity}
                 onRemoveAlias={onRemoveAlias}
             />
         );
@@ -173,7 +301,9 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
                 hue={hue}
                 chroma={chroma}
                 lightModeTone={alias.lightModeTone}
+                lightModeAlpha={alias.lightModeAlpha}
                 darkModeTone={alias.darkModeTone}
+                darkModeAlpha={alias.darkModeAlpha}
             />
         );
     });
@@ -189,7 +319,9 @@ type AliasTonePreviewProps = {
     hue: number;
     chroma: number;
     lightModeTone: number;
+    lightModeAlpha: number;
     darkModeTone: number;
+    darkModeAlpha: number;
 };
 
 /**
@@ -205,29 +337,49 @@ const AliasTonePreview = ({
     hue,
     chroma,
     lightModeTone,
+    lightModeAlpha,
     darkModeTone,
+    darkModeAlpha,
 }: AliasTonePreviewProps) => {
     const lightHct = Hct.from(hue, chroma, lightModeTone);
     const darkHct = Hct.from(hue, chroma, darkModeTone);
     const lightHex = hexFromHct(lightHct);
+    const lightRgb = rgbaFromHct(lightHct);
+    const lightRgba = `rgba(${lightRgb.r}, ${lightRgb.g}, ${lightRgb.b}, ${lightModeAlpha / 100})`;
     const darkHex = hexFromHct(darkHct);
+    const darkRgb = rgbaFromHct(darkHct);
+    const darkRgba = `rgba(${darkRgb.r}, ${darkRgb.g}, ${darkRgb.b}, ${darkModeAlpha / 100})`;
     const textColor = (tone: number) =>
         tone > 50 ? 'rgb(0,0,0,0.85)' : 'rgb(255,255,255,0.9)';
     // TODO: Figure out how to write to clipboard.
 
     return (
-        <div className="flex h-8 w-full">
+        <div className="bg-checkerboard flex h-8 w-full">
             <div
                 title={`${lightHex}`}
-                className="h-full w-16"
+                className="h-full w-8"
                 style={`background: ${lightHex}; color: ${textColor(lightModeTone)}`}
             >
                 {/* <Code>{lightHex}</Code> */}
             </div>
             <div
+                title={`${lightHex} / ${lightModeAlpha}%`}
+                className="h-full w-8"
+                style={`background: ${lightRgba}; color: ${lightRgba}`}
+            >
+                {/* <Code>{lightHex}</Code> */}
+            </div>
+            <div
                 title={`${darkHex}`}
-                className="h-full w-16"
+                className="h-full w-8"
                 style={`background: ${darkHex}; color: ${textColor(darkModeTone)}`}
+            >
+                {/* <Code>{darkHex}</Code> */}
+            </div>
+            <div
+                title={`${darkHex} / ${darkModeAlpha}%`}
+                className="h-full w-8"
+                style={`background: ${darkRgba}; color: ${darkRgba}`}
             >
                 {/* <Code>{darkHex}</Code> */}
             </div>
@@ -258,7 +410,9 @@ const AliasPreviewList = ({ hue, chroma, aliases }: AliasPreviewListProps) => {
                     hue={hue}
                     chroma={chroma}
                     lightModeTone={alias.lightModeTone}
+                    lightModeAlpha={alias.lightModeAlpha}
                     darkModeTone={alias.darkModeTone}
+                    darkModeAlpha={alias.darkModeAlpha}
                 />
             ))}
         </div>

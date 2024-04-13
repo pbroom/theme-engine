@@ -39,19 +39,19 @@ export {
 const sourceHex = '397456';
 
 const materialNeutralAliases = [
-    createAlias(nanoid(12), 'surface', 98, 6),
-    createAlias(nanoid(12), 'onSurface', 10, 90),
-    createAlias(nanoid(12), 'surfaceContainerLowest', 100, 4),
-    createAlias(nanoid(12), 'surfaceContainerLow', 96, 10),
-    createAlias(nanoid(12), 'surfaceContainer', 94, 12),
-    createAlias(nanoid(12), 'surfaceContainerHigh', 92, 17),
-    createAlias(nanoid(12), 'surfaceContainerHighest', 90, 22),
-    createAlias(nanoid(12), 'surfaceDim', 87, 6),
-    createAlias(nanoid(12), 'surfaceBright', 98, 24),
-    createAlias(nanoid(12), 'inverseSurface', 20, 90),
-    createAlias(nanoid(12), 'inverseOnSurface', 95, 20),
-    createAlias(nanoid(12), 'srim', 0, 0),
-    createAlias(nanoid(12), 'shadow', 0, 0),
+    createAlias(nanoid(12), 'surface', 98, 100, 6, 100),
+    createAlias(nanoid(12), 'onSurface', 10, 100, 90, 100),
+    createAlias(nanoid(12), 'surfaceContainerLowest', 100, 100, 4, 100),
+    createAlias(nanoid(12), 'surfaceContainerLow', 96, 100, 10, 100),
+    createAlias(nanoid(12), 'surfaceContainer', 94, 100, 12, 100),
+    createAlias(nanoid(12), 'surfaceContainerHigh', 92, 100, 17, 100),
+    createAlias(nanoid(12), 'surfaceContainerHighest', 90, 100, 22, 100),
+    createAlias(nanoid(12), 'surfaceDim', 87, 100, 6, 100),
+    createAlias(nanoid(12), 'surfaceBright', 98, 100, 24, 100),
+    createAlias(nanoid(12), 'inverseSurface', 20, 100, 90, 100),
+    createAlias(nanoid(12), 'inverseOnSurface', 95, 100, 20, 100),
+    createAlias(nanoid(12), 'srim', 0, 100, 0, 100),
+    createAlias(nanoid(12), 'shadow', 0, 100, 0, 100),
 ];
 
 const materialNeutralAliasGroup = {
@@ -60,9 +60,9 @@ const materialNeutralAliasGroup = {
 };
 
 const materialNeutralVariantAliases = [
-    createAlias(nanoid(12), 'outline', 50, 60),
-    createAlias(nanoid(12), 'outlineVariant', 80, 30),
-    createAlias(nanoid(12), 'onSurfaceVariant', 30, 80),
+    createAlias(nanoid(12), 'outline', 50, 100, 60, 100),
+    createAlias(nanoid(12), 'outlineVariant', 80, 100, 30, 100),
+    createAlias(nanoid(12), 'onSurfaceVariant', 30, 100, 80, 100),
 ];
 
 const materialNeutralVariantAliasGroup = {
@@ -161,17 +161,17 @@ const tailwindAliasTones = [
 ];
 
 const tailwindAliases: AliasData[] = [
-    createAlias(nanoid(12), '50', 95, 95),
-    createAlias(nanoid(12), '100', 90, 90),
-    createAlias(nanoid(12), '200', 80, 80),
-    createAlias(nanoid(12), '300', 70, 70),
-    createAlias(nanoid(12), '400', 60, 60),
-    createAlias(nanoid(12), '500', 50, 50),
-    createAlias(nanoid(12), '600', 40, 40),
-    createAlias(nanoid(12), '700', 30, 30),
-    createAlias(nanoid(12), '800', 20, 20),
-    createAlias(nanoid(12), '900', 10, 10),
-    createAlias(nanoid(12), '950', 5, 5),
+    createAlias(nanoid(12), '50', 95, 100, 95, 100),
+    createAlias(nanoid(12), '100', 90, 100, 90, 100),
+    createAlias(nanoid(12), '200', 80, 100, 80, 100),
+    createAlias(nanoid(12), '300', 70, 100, 70, 100),
+    createAlias(nanoid(12), '400', 60, 100, 60, 100),
+    createAlias(nanoid(12), '500', 50, 100, 50, 100),
+    createAlias(nanoid(12), '600', 40, 100, 40, 100),
+    createAlias(nanoid(12), '700', 30, 100, 30, 100),
+    createAlias(nanoid(12), '800', 20, 100, 20, 100),
+    createAlias(nanoid(12), '900', 10, 100, 10, 100),
+    createAlias(nanoid(12), '950', 5, 100, 5, 100),
 ];
 
 const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
@@ -189,7 +189,9 @@ const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
                     nanoid(12),
                     `$-${tone.name}`,
                     tone.value,
+                    100,
                     tone.value,
+                    100,
                 ),
             ),
         ),

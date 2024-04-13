@@ -36,13 +36,17 @@ const createAlias = (
     id: string = nanoid(12),
     name: string = 'Alias',
     lightModeTone: number = 80,
+    lightModeAlpha: number = 100,
     darkModeTone: number = 20,
+    darkModeAlpha: number = 100,
 ) => {
     return {
         id: id,
         name: name,
         lightModeTone: lightModeTone,
+        lightModeAlpha: lightModeAlpha,
         darkModeTone: darkModeTone,
+        darkModeAlpha: darkModeAlpha,
     };
 };
 
@@ -57,7 +61,9 @@ const createAliasList = (aliases: AliasData[] = []): AliasData[] => {
             alias.id,
             alias.name,
             alias.lightModeTone,
+            alias.lightModeAlpha,
             alias.darkModeTone,
+            alias.darkModeAlpha,
         ),
     );
 };
@@ -79,10 +85,10 @@ const createAliasGroup = (
     id: string = nanoid(12),
     name: string = 'Alias group',
     aliases: AliasData[] = [
-        createAlias(nanoid(12), `$`, 40, 80),
-        createAlias(nanoid(12), `on$`, 100, 20),
-        createAlias(nanoid(12), `$Container`, 90, 30),
-        createAlias(nanoid(12), `on$Container`, 10, 90),
+        createAlias(nanoid(12), `$`, 40, 100, 80, 100),
+        createAlias(nanoid(12), `on$`, 100, 100, 20, 100),
+        createAlias(nanoid(12), `$Container`, 90, 100, 30, 100),
+        createAlias(nanoid(12), `on$Container`, 10, 100, 90, 100),
     ],
     themeColorIds: string[] = [],
 ): AliasGroupData => {
@@ -97,8 +103,10 @@ const createAliasGroup = (
 const AliasDataSchema = z.object({
     id: z.string(),
     name: z.string(),
-    lightModeTone: z.number().int().min(0).max(100),
-    darkModeTone: z.number().int().min(0).max(100),
+    lightModeTone: z.number(),
+    lightModeAlpha: z.number(),
+    darkModeTone: z.number(),
+    darkModeAlpha: z.number(),
 });
 type AliasData = z.infer<typeof AliasDataSchema>;
 
@@ -108,7 +116,9 @@ const AliasActionsSchema = z.object({
         id: z.function().args(z.string(), z.void()),
         name: z.function().args(z.string(), z.void()),
         lightModeTone: z.function().args(z.number(), z.void()),
+        lightModeAlpha: z.function().args(z.number(), z.void()),
         darkModeTone: z.function().args(z.number(), z.void()),
+        darkModeAlpha: z.function().args(z.number(), z.void()),
     }),
     data: AliasDataSchema,
 });
@@ -120,7 +130,9 @@ const aliasData: StateCreator<AliasData> = () => ({
     id: nanoid(12),
     name: 'Alias',
     lightModeTone: 80,
+    lightModeAlpha: 100,
     darkModeTone: 20,
+    darkModeAlpha: 100,
 });
 
 const aliasActions: StateCreator<AliasActions> = (set, get) => ({
@@ -130,10 +142,21 @@ const aliasActions: StateCreator<AliasActions> = (set, get) => ({
         name: (name) => set((state) => ({ ...state, name })),
         lightModeTone: (lightModeTone) =>
             set((state) => ({ ...state, lightModeTone })),
+        lightModeAlpha: (lightModeAlpha) =>
+            set((state) => ({ ...state, lightModeAlpha })),
         darkModeTone: (darkModeTone) =>
             set((state) => ({ ...state, darkModeTone })),
+        darkModeAlpha: (darkModeAlpha) =>
+            set((state) => ({ ...state, darkModeAlpha })),
     },
-    data: { id: '', name: '', lightModeTone: 0, darkModeTone: 0 },
+    data: {
+        id: '',
+        name: '',
+        lightModeTone: 0,
+        lightModeAlpha: 100,
+        darkModeTone: 0,
+        darkModeAlpha: 100,
+    },
 });
 
 const useAlias = create<AliasData & AliasActions>((set, get, ...a) => ({
@@ -143,7 +166,9 @@ const useAlias = create<AliasData & AliasActions>((set, get, ...a) => ({
         id: aliasData(set, get, ...a).id,
         name: aliasData(set, get, ...a).name,
         lightModeTone: aliasData(set, get, ...a).lightModeTone,
+        lightModeAlpha: aliasData(set, get, ...a).lightModeAlpha,
         darkModeTone: aliasData(set, get, ...a).darkModeTone,
+        darkModeAlpha: aliasData(set, get, ...a).darkModeAlpha,
     },
 }));
 
@@ -160,10 +185,10 @@ const aliasGroupData: StateCreator<AliasGroupData> = () => ({
     id: nanoid(12),
     name: 'Alias group',
     aliases: createAliasList([
-        createAlias(nanoid(12), 'color', 40, 80),
-        createAlias(nanoid(12), 'onColor', 100, 20),
-        createAlias(nanoid(12), 'colorContainer', 90, 30),
-        createAlias(nanoid(12), 'onColorContainer', 10, 90),
+        createAlias(nanoid(12), 'color', 40, 100, 80, 100),
+        createAlias(nanoid(12), 'onColor', 100, 100, 20, 100),
+        createAlias(nanoid(12), 'colorContainer', 90, 100, 30, 100),
+        createAlias(nanoid(12), 'onColorContainer', 10, 100, 90, 100),
     ]),
     themeColorIds: [],
 });
