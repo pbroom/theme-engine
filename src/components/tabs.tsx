@@ -29,6 +29,8 @@ import {
     IconToggleButton,
     IconLinkLinked32,
     IconLinkBreak32,
+    IconBlend32,
+    IconBlendEmpty32,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -42,7 +44,11 @@ import {
     findMaxChroma,
 } from '../lib/color-utils';
 import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
-import { AliasList } from './primitives-tab/alias';
+import {
+    AliasList,
+    OpacityToggle,
+    opacityToggleStore,
+} from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
@@ -50,7 +56,7 @@ import { ThemeListContext } from '../hooks/useThemeList';
 import _, { set } from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { useStore } from 'zustand';
+import { create, useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
@@ -268,9 +274,10 @@ const TabGroup = ({ className }: TabGroupProps) => {
     }, [theme.themeColors[0].id]);
 
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
-    // useEffect(() => {
-    //     setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
-    // }, [tones]);
+
+    const opacityToggle: OpacityToggle = opacityToggleStore();
+    const opacityVisibility = opacityToggle.opacityVisibility;
+    const setOpacityVisibility = opacityToggle.setOpacityVisibility;
 
     const handleSetTones = (e: any) => {
         const newFieldValue: string = e.currentTarget.value;
@@ -466,19 +473,6 @@ const TabGroup = ({ className }: TabGroupProps) => {
             });
         }
     };
-
-    const themeColorOptions: Array<DropdownOption> = [
-        {
-            value: 'Custom source',
-        },
-        '-',
-        {
-            header: 'Drive via',
-        },
-        {
-            value: 'Delete theme color',
-        },
-    ];
 
     const maxChroma = useMemo(
         () => Math.max(ceil(findMaxChroma(hue())), 1),
@@ -1015,19 +1009,35 @@ const TabGroup = ({ className }: TabGroupProps) => {
                         <div className="flex flex-row border-t border-gridlines">
                             <div className="flex grow justify-between">
                                 <span className="p-2">Aliases</span>
-                                <IconButton
-                                    title="Create alias"
-                                    onClick={() => {
-                                        setThemeColor(themeColorId).add.alias(
-                                            createAlias(),
-                                        );
-                                        // console.log(
-                                        //     themeColor.aliasGroup.aliases,
-                                        // );
-                                    }}
-                                >
-                                    <IconPlus32 />
-                                </IconButton>
+                                <div className="flex">
+                                    <IconButton
+                                        title={`${opacityVisibility ? 'Hide opacity' : 'Show opacity'}`}
+                                        onClick={() => {
+                                            setOpacityVisibility(
+                                                !opacityVisibility,
+                                            );
+                                        }}
+                                    >
+                                        {opacityVisibility ? (
+                                            <IconBlendEmpty32 />
+                                        ) : (
+                                            <IconBlend32 />
+                                        )}
+                                    </IconButton>
+                                    <IconButton
+                                        title="Create alias"
+                                        onClick={() => {
+                                            setThemeColor(
+                                                themeColorId,
+                                            ).add.alias(createAlias());
+                                            // console.log(
+                                            //     themeColor.aliasGroup.aliases,
+                                            // );
+                                        }}
+                                    >
+                                        <IconPlus32 />
+                                    </IconButton>
+                                </div>
                             </div>
 
                             <div className="flex h-8 w-32 items-center justify-around">

@@ -83,21 +83,24 @@ export type PluginMessage = {
     };
 };
 
-const SolidColorFromRgbColor = (rgbColor: Rgba): RGB => {
+const SolidColorFromRgbColor = (rgbColor: Rgba): RGB | RGBA => {
     if (!rgbColor) {
         return {
             r: 0,
             g: 0,
             b: 0,
+            a: 1,
         };
     }
     const red = rgbColor.r / 255;
     const green = rgbColor.g / 255;
     const blue = rgbColor.b / 255;
+    const alpha = rgbColor.a / 100;
     return {
         r: red,
         g: green,
         b: blue,
+        a: alpha,
     };
 };
 
@@ -217,16 +220,24 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             };
             const themeColorVariables = theme.themeColors.map(
                 async (themeColor) => {
-                    const solidColorFromTone = (tone: number): RGB | RGBA => {
-                        const solidColor = SolidColorFromRgbColor(
-                            rgbaFromArgb(
-                                Hct.from(
-                                    themeColor.endColor.hct.hue,
-                                    themeColor.endColor.hct.chroma,
-                                    tone,
-                                ).toInt(),
-                            ),
-                        );
+                    const solidColorFromTone = (
+                        tone: number,
+                        alpha: number = 100,
+                    ): RGB | RGBA => {
+                        const rgba = () => {
+                            const argb = Hct.from(
+                                themeColor.endColor.hct.hue,
+                                themeColor.endColor.hct.chroma,
+                                tone,
+                            ).toInt();
+                            const color = rgbaFromArgb(argb);
+                            const r = color.r;
+                            const g = color.g;
+                            const b = color.b;
+                            const a = alpha;
+                            return { r, g, b, a };
+                        };
+                        const solidColor = SolidColorFromRgbColor(rgba());
                         // console.log(solidColor);
                         return solidColor;
                     };
@@ -244,13 +255,21 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                     }, []);
                     const aliasPrimitives = themeColor.aliasGroup.aliases.map(
                         async (alias) => {
-                            const aliasLightToneName = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
-                            const aliasDarkToneName = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
+                            const aliasLightToneName =
+                                alias.lightModeAlpha === 100
+                                    ? `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`
+                                    : `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}/@${alias.lightModeAlpha}%`;
+                            const aliasDarkToneName =
+                                alias.darkModeAlpha === 100
+                                    ? `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`
+                                    : `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}/@${alias.darkModeAlpha}%`;
                             const lightModeTone = solidColorFromTone(
                                 alias.lightModeTone,
+                                alias.lightModeAlpha,
                             );
                             const darkModeTone = solidColorFromTone(
                                 alias.darkModeTone,
+                                alias.darkModeAlpha,
                             );
                             const lightModeToneData: PrimitiveVariableData = {
                                 name: aliasLightToneName,
@@ -288,8 +307,14 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                     return themeColor.name.toLowerCase();
                                 },
                             )}`;
-                            const lightModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`;
-                            const darkModeTone = `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`;
+                            const lightModeTone =
+                                alias.lightModeAlpha === 100
+                                    ? `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}`
+                                    : `${theme.name}/${themeColor.name}/${themeColor.name}${alias.lightModeTone}/@${alias.lightModeAlpha}%`;
+                            const darkModeTone =
+                                alias.darkModeAlpha === 100
+                                    ? `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}`
+                                    : `${theme.name}/${themeColor.name}/${themeColor.name}${alias.darkModeTone}/@${alias.darkModeAlpha}%`;
                             const data: SemanticVariableData = {
                                 name: aliasName,
                                 lightModeValue: lightModeTone,

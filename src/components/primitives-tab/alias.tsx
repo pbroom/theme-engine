@@ -12,8 +12,19 @@ import { useEffect } from 'react';
 import { hexFromHct, rgbFromHex, rgbaFromHct } from '@/src/hooks/useColor';
 import { Hct } from '@material/material-color-utilities';
 import { set } from 'lodash';
+import { create } from 'zustand';
 
 export { AliasList, AliasItem, AliasPreviewList, AliasTonePreview };
+
+export type OpacityToggle = {
+    opacityVisibility: boolean;
+    setOpacityVisibility: (value: boolean) => void;
+};
+
+export const opacityToggleStore = create<OpacityToggle>()((set) => ({
+    opacityVisibility: false,
+    setOpacityVisibility: (value: boolean) => set({ opacityVisibility: value }),
+}));
 
 type AliasItemProps = {
     alias: AliasData;
@@ -60,6 +71,8 @@ const AliasItem = ({
         `${alias.darkModeAlpha}%`,
     );
 
+    const opacityVisibility = opacityToggleStore().opacityVisibility;
+
     const onSetAliasName = (id: string, name: string) => {
         setAliasName(name);
         onSetName(id, name);
@@ -93,7 +106,6 @@ const AliasItem = ({
         e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
     ) => {
         const input = e.currentTarget.value;
-        console.log('Light alpha input:', parseInt(input.replace('%', '')));
         onSetAliasLightOpacity(aliasId, parseInt(input.replace('%', '')));
         setLightOpacity(input);
     };
@@ -110,7 +122,6 @@ const AliasItem = ({
         e: h.JSX.TargetedEvent<HTMLInputElement, Event>,
     ) => {
         const input = e.currentTarget.value;
-        console.log('Dark alpha input:', input);
         onSetAliasDarkOpacity(aliasId, parseInt(input.replace('%', '')));
         setDarkOpacity(input);
     };
@@ -125,7 +136,7 @@ const AliasItem = ({
         }
         if (lightOpacity === '' || Number.isNaN(parseInt(lightOpacity))) {
             onSetAliasLightOpacity(alias.id, 100);
-            setLightOpacity(`100`);
+            setLightOpacity(`100%`);
         }
         if (darkTone === '' || Number.isNaN(parseInt(darkTone))) {
             onSetAliasDarkTone(alias.id, 0);
@@ -133,7 +144,7 @@ const AliasItem = ({
         }
         if (darkOpacity === '' || Number.isNaN(parseInt(darkOpacity))) {
             onSetAliasDarkOpacity(alias.id, 100);
-            setDarkOpacity(`100`);
+            setDarkOpacity(`100%`);
         }
     };
     return (
@@ -162,23 +173,25 @@ const AliasItem = ({
                     placeholder="0"
                     onBlur={handleBlur}
                     onFocusOut={handleBlur}
-                    max={100}
-                    min={0}
+                    minimum={0}
+                    maximum={100}
                 />
             </div>
-            <div className="w-12">
-                <TextboxNumeric
-                    title={`Light mode opacity`}
-                    value={lightOpacity}
-                    onInput={(e) => handleLightOpacityInput(alias.id, e)}
-                    placeholder="0"
-                    onBlur={handleBlur}
-                    onFocusOut={handleBlur}
-                    max={100}
-                    min={0}
-                    suffix="%"
-                />
-            </div>
+            {opacityVisibility && (
+                <div className="w-12 opacity-85">
+                    <TextboxNumeric
+                        title={`Light mode opacity`}
+                        value={lightOpacity}
+                        onInput={(e) => handleLightOpacityInput(alias.id, e)}
+                        placeholder="100%"
+                        onBlur={handleBlur}
+                        onFocusOut={handleBlur}
+                        minimum={0}
+                        maximum={100}
+                        suffix="%"
+                    />
+                </div>
+            )}
             <div className="w-10">
                 <TextboxNumeric
                     title={`Dark mode tone`}
@@ -187,23 +200,25 @@ const AliasItem = ({
                     placeholder="0"
                     onBlur={handleBlur}
                     onFocusOut={handleBlur}
-                    max={100}
-                    min={0}
+                    minimum={0}
+                    maximum={100}
                 />
             </div>
-            <div className="w-12">
-                <TextboxNumeric
-                    title={`Dark mode opacity`}
-                    value={darkOpacity}
-                    onInput={(e) => handleDarkOpacityInput(alias.id, e)}
-                    placeholder="0"
-                    onBlur={handleBlur}
-                    onFocusOut={handleBlur}
-                    max={100}
-                    min={0}
-                    suffix="%"
-                />
-            </div>
+            {opacityVisibility && (
+                <div className="w-12 opacity-85">
+                    <TextboxNumeric
+                        title={`Dark mode opacity`}
+                        value={darkOpacity}
+                        onInput={(e) => handleDarkOpacityInput(alias.id, e)}
+                        placeholder="100%"
+                        onBlur={handleBlur}
+                        onFocusOut={handleBlur}
+                        minimum={0}
+                        maximum={100}
+                        suffix="%"
+                    />
+                </div>
+            )}
             <IconButton
                 title="Remove alias"
                 onClick={() => onRemoveAlias(alias.id)}
@@ -274,7 +289,6 @@ const AliasList = ({ hue, chroma, aliases, onSetAliases }: AliasListProps) => {
         const newAliasItems = aliasItems.filter((alias) => alias.id !== id);
         setAliasItems(newAliasItems);
         onSetAliases(newAliasItems);
-        console.log(newAliasItems, id);
     };
 
     useEffect(() => {
