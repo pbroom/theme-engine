@@ -25,10 +25,16 @@ import {
     VerticalSpace,
     TextboxAutocomplete,
     IconChevronDown16,
+    Checkbox,
+    IconToggleButton,
+    IconLinkLinked32,
+    IconLinkBreak32,
+    IconBlend32,
+    IconBlendEmpty32,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
-import { ceil, round } from 'mathjs';
+import { ceil, i, round } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -37,8 +43,12 @@ import {
     findHighestChromaPerHue,
     findMaxChroma,
 } from '../lib/color-utils';
-import { hexFromHct } from '../hooks/useColor';
-import { AliasList } from './primitives-tab/alias';
+import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
+import {
+    AliasList,
+    OpacityToggle,
+    opacityToggleStore,
+} from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
 import { AliasData, createAlias } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
@@ -46,7 +56,7 @@ import { ThemeListContext } from '../hooks/useThemeList';
 import _, { set } from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { useStore } from 'zustand';
+import { create, useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
@@ -249,10 +259,25 @@ const TabGroup = ({ className }: TabGroupProps) => {
         themeColor.sourceColor.sourceHex,
     );
 
+    const [isDriven, setIsDriven] = useState<boolean>(false);
+
+    useEffect(() => {
+        setThemeColor(themeColorId).setProps.child(!themeColor.child);
+        setThemeColor(themeColorId).setProps.sourceHex(
+            cleanedHexColor(
+                themeList.themes[themeIndex].themeColors[0].endColor.hex,
+            ),
+        );
+    }, [isDriven]);
+    useEffect(() => {
+        setThemeColor(0).setProps.child(false);
+    }, [theme.themeColors[0].id]);
+
     const [tones, setTones] = useState<string>(themeColor.tones.join(', '));
-    // useEffect(() => {
-    //     setThemeColor(themeColorId).setProps.tones(getStopsFromString(tones));
-    // }, [tones]);
+
+    const opacityToggle: OpacityToggle = opacityToggleStore();
+    const opacityVisibility = opacityToggle.opacityVisibility;
+    const setOpacityVisibility = opacityToggle.setOpacityVisibility;
 
     const handleSetTones = (e: any) => {
         const newFieldValue: string = e.currentTarget.value;
@@ -323,6 +348,19 @@ const TabGroup = ({ className }: TabGroupProps) => {
         const newHexColor: string = e.currentTarget.value;
         setHexColorInput(newHexColor);
         setThemeColor(themeColorId).setProps.sourceHex(newHexColor);
+        // set the sourceHex for all themeColors with themeColor.child === true
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        cleanedHexColor(newHexColor),
+                    );
+                }
+            });
+        }
+        if (themeColorIndex !== 0) {
+            setThemeColor(themeColorId).setProps.child(false);
+        }
     };
 
     useEffect(() => {
@@ -348,6 +386,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
         setThemeColor(themeColorId).setProps.hueCalc(`${newHueCalcInput}`);
         // setHueSlider(newHueCalcInput);
         setHueCalcInput(`${newHueCalcInput}`);
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
         // console.log(
         //     calculateHue(themeColor.sourceColor.hct.hue, `${newHueCalcInput}`),
         // );
@@ -367,6 +415,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
             );
             // setHueSlider(themeColor.sourceColor.hct.hue);
         }
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
     };
     const onChromaSliderInput = (e: any) => {
         const newChromaCalcInput: number = e.currentTarget.value;
@@ -374,6 +432,16 @@ const TabGroup = ({ className }: TabGroupProps) => {
             `${newChromaCalcInput}`,
         );
         setChromaCalcInput(`${newChromaCalcInput}`);
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
         // setChromaSlider(newChromaCalcInput);
         // console.log(themeColor.endColor.hct);
     };
@@ -394,20 +462,17 @@ const TabGroup = ({ className }: TabGroupProps) => {
             );
             // setChromaSlider(themeColor.sourceColor.hct.chroma);
         }
+        const newHexColor: string = cleanedHexColor(themeColor.endColor.hex);
+        if (themeColorIndex === 0) {
+            theme.themeColors.forEach((themeColor) => {
+                if (themeColor.child) {
+                    setThemeColor(themeColor.id).setProps.sourceHex(
+                        newHexColor,
+                    );
+                }
+            });
+        }
     };
-
-    const themeColorOptions: Array<DropdownOption> = [
-        {
-            value: 'Custom source',
-        },
-        '-',
-        {
-            header: 'Drive via',
-        },
-        {
-            value: 'Delete theme color',
-        },
-    ];
 
     const maxChroma = useMemo(
         () => Math.max(ceil(findMaxChroma(hue())), 1),
@@ -434,6 +499,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 ) - 1,
             );
             const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+            setThemeColor(newThemeColorId).setProps.child(false);
 
             setThemeColorId(newThemeColorId);
             setTheme(themeId).themeColor(themeColorToDelete).remove();
@@ -450,6 +516,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                     (themeColor) => themeColor.id === themeColorToDelete,
                 ) - 1,
             );
+            const newThemeColorId = theme.themeColors[newThemeColorIndex].id;
+            setThemeColor(newThemeColorId).setProps.child(false);
             setThemeColorId(theme.themeColors[newThemeColorIndex].id);
         }
     }, [themeColorToDelete]);
@@ -725,26 +793,50 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             <IconMinus32 />
                                         </IconButton>
                                     </div>
-                                    <div className="flex flex-row">
-                                        <TextboxColor
-                                            title="Source color"
-                                            hexColor={
-                                                themeColor.sourceColor.sourceHex
-                                            }
-                                            onHexColorInput={(e) =>
-                                                onHexColorInput(e)
-                                            }
-                                            onOpacityInput={(e) => '100%'}
-                                            opacity={'100%'}
-                                        />
-                                        {/* TODO: Build out ability to choose source color from preceeding themeColors
-                                        <Dropdown
-                                            title="Source color options"
-                                            options={themeColorOptions}
-                                            value={'Custom source'}
-                                            placeholder="Source color options"
-                                            disabled={themeColorIndex === 0}
-                                        /> */}
+                                    <div className="flex flex-row items-center">
+                                        <div className="w-20 py-px">
+                                            <TextboxColor
+                                                title="Source color"
+                                                hexColor={
+                                                    themeColor.sourceColor
+                                                        .sourceHex
+                                                }
+                                                onHexColorInput={(e) =>
+                                                    onHexColorInput(e)
+                                                }
+                                                onOpacityInput={(e) => '100%'}
+                                                opacity={'100%'}
+                                            />
+                                        </div>
+                                        <div className="flex flex-grow items-center px-px">
+                                            {themeColorId !==
+                                                theme.themeColors[0].id && (
+                                                <IconToggleButton
+                                                    title={
+                                                        themeColor.child
+                                                            ? `Unlink ${theme.themeColors[0].name} as source color`
+                                                            : `Use ${theme.themeColors[0].name} as source color`
+                                                    }
+                                                    value={
+                                                        themeColorIndex === 0
+                                                            ? false
+                                                            : themeColor.child
+                                                    }
+                                                    onChange={() =>
+                                                        setIsDriven(!isDriven)
+                                                    }
+                                                >
+                                                    {themeColor.child &&
+                                                    themeColorId !==
+                                                        theme.themeColors[0]
+                                                            .id ? (
+                                                        <IconLinkLinked32 />
+                                                    ) : (
+                                                        <IconLinkBreak32 />
+                                                    )}
+                                                </IconToggleButton>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="flex gap-4 px-2 pt-2 opacity-60">
                                         <Muted title="Source color hue, chroma, tone">
@@ -917,19 +1009,35 @@ const TabGroup = ({ className }: TabGroupProps) => {
                         <div className="flex flex-row border-t border-gridlines">
                             <div className="flex grow justify-between">
                                 <span className="p-2">Aliases</span>
-                                <IconButton
-                                    title="Create alias"
-                                    onClick={() => {
-                                        setThemeColor(themeColorId).add.alias(
-                                            createAlias(),
-                                        );
-                                        // console.log(
-                                        //     themeColor.aliasGroup.aliases,
-                                        // );
-                                    }}
-                                >
-                                    <IconPlus32 />
-                                </IconButton>
+                                <div className="flex">
+                                    <IconButton
+                                        title={`${opacityVisibility ? 'Hide opacity' : 'Show opacity'}`}
+                                        onClick={() => {
+                                            setOpacityVisibility(
+                                                !opacityVisibility,
+                                            );
+                                        }}
+                                    >
+                                        {opacityVisibility ? (
+                                            <IconBlendEmpty32 />
+                                        ) : (
+                                            <IconBlend32 />
+                                        )}
+                                    </IconButton>
+                                    <IconButton
+                                        title="Create alias"
+                                        onClick={() => {
+                                            setThemeColor(
+                                                themeColorId,
+                                            ).add.alias(createAlias());
+                                            // console.log(
+                                            //     themeColor.aliasGroup.aliases,
+                                            // );
+                                        }}
+                                    >
+                                        <IconPlus32 />
+                                    </IconButton>
+                                </div>
                             </div>
 
                             <div className="flex h-8 w-32 items-center justify-around">

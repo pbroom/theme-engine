@@ -1,4 +1,4 @@
-import { createColorFrom, calculateEndColor } from './useColor';
+import { createColorFrom, calculateEndColor, ColorData } from './useColor';
 import { ColorSchema } from './useColor';
 import { nanoid } from 'nanoid';
 import z from 'zod';
@@ -60,6 +60,7 @@ const createThemeColor = (
     chromaCalc: string = defaultChromaCalc,
     tones: number[] = defaultTones,
     aliasGroup: AliasGroupData = createAliasGroup(nanoid(12), `${name}`),
+    child: boolean = false,
 ): ThemeColorData => {
     return {
         id: nanoid(12),
@@ -75,6 +76,7 @@ const createThemeColor = (
         hueCalc: hueCalc,
         chromaCalc: chromaCalc,
         aliasGroup: aliasGroup,
+        child: child,
     };
 };
 
@@ -88,8 +90,20 @@ const ThemeColorDataSchema = z.object({
     hueCalc: z.string(),
     chromaCalc: z.string(),
     aliasGroup: AliasGroupDataSchema,
+    child: z.boolean(),
 });
-type ThemeColorData = z.infer<typeof ThemeColorDataSchema>;
+type ThemeColorData = {
+    id: string;
+    name: string;
+    sourceHex: string;
+    sourceColor: ColorData;
+    endColor: ColorData;
+    tones: number[];
+    hueCalc: string;
+    chromaCalc: string;
+    aliasGroup: AliasGroupData;
+    child: boolean;
+};
 
 const themeColorData: StateCreator<ThemeColorData> = () => ({
     id: nanoid(12),
@@ -105,6 +119,7 @@ const themeColorData: StateCreator<ThemeColorData> = () => ({
     hueCalc: defaultHueCalc,
     chromaCalc: defaultChromaCalc,
     aliasGroup: defaultAliasGroup,
+    child: false,
 });
 
 const useThemeColorData = create<ThemeColorData>((...a) => ({
@@ -123,6 +138,7 @@ const ThemeColorActionsSchema = z.object({
         hueCalc: z.function().args(z.string(), z.void()),
         chromaCalc: z.function().args(z.string(), z.void()),
         aliasGroup: z.function().args(AliasGroupDataSchema, z.void()),
+        child: z.function().args(z.boolean(), z.void()),
     }),
     data: ThemeColorDataSchema,
 });
@@ -148,6 +164,7 @@ const themeColorActions: StateCreator<ThemeColorActions> = (set, get) => ({
             set((state) => ({ ...state, chromaCalc: chromaCalc })),
         aliasGroup: (aliasGroup) =>
             set((state) => ({ ...state, aliasGroup: aliasGroup })),
+        child: (child) => set((state) => ({ ...state, child: child })),
     },
     data: {
         id: '',
@@ -159,6 +176,7 @@ const themeColorActions: StateCreator<ThemeColorActions> = (set, get) => ({
         hueCalc: '',
         chromaCalc: '',
         aliasGroup: createAliasGroup(),
+        child: false,
     },
 });
 
@@ -182,6 +200,7 @@ const themeColorStore: StateCreator<ThemeColor> = (set, get, ...a) => ({
         hueCalc: themeColorData(set, get, ...a).hueCalc,
         chromaCalc: themeColorData(set, get, ...a).chromaCalc,
         aliasGroup: themeColorData(set, get, ...a).aliasGroup,
+        child: themeColorData(set, get, ...a).child,
     },
     set: {
         ...themeColorActions(set, get, ...a).set,

@@ -12,6 +12,7 @@ declare const styles: {
   readonly "input": string;
   readonly "selected-theme-color": string;
   readonly "swatch-li": string;
+  readonly "bg-checkerboard": string;
 };
 export = styles;
 

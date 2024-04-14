@@ -59,7 +59,9 @@ type SetAliasProps = {
     id: (id: string) => void;
     name: (name: string) => void;
     lightModeTone: (lightModeTone: number) => void;
+    lightModeAlpha: (lightModeAlpha: number) => void;
     darkModeTone: (darkModeTone: number) => void;
+    darkModeAlpha: (darkModeAlpha: number) => void;
 };
 
 type AliasActions = {
@@ -100,6 +102,7 @@ type SetThemeColorProps = {
     hueCalc: (hueCalc: string) => void;
     chromaCalc: (chromaCalc: string) => void;
     aliasGroup: (aliasGroup: AliasGroupData) => void;
+    child: (child: boolean) => void;
 };
 
 type ThemeColorActions = {
@@ -240,6 +243,7 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
                     set((state) => ({ ...state })),
                 aliasGroup: (aliasGroup: AliasGroupData) =>
                     set((state) => ({ ...state })),
+                child: (child: boolean) => set((state) => ({ ...state })),
             };
             const alias = (id: string): AliasActions => {
                 const alias: AliasData | undefined =
@@ -259,7 +263,11 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
                     name: (name: string) => set((state) => ({ ...state })),
                     lightModeTone: (lightModeTone: number) =>
                         set((state) => ({ ...state })),
+                    lightModeAlpha: (lightModeAlpha: number) =>
+                        set((state) => ({ ...state })),
                     darkModeTone: (darkModeTone: number) =>
+                        set((state) => ({ ...state })),
+                    darkModeAlpha: (darkModeAlpha: number) =>
                         set((state) => ({ ...state })),
                 };
                 return {
@@ -321,7 +329,11 @@ const themeListActions: StateCreator<ThemeListActions> = (set, get) => ({
                     name: (name: string) => set((state) => ({ ...state })),
                     lightModeTone: (lightModeTone: number) =>
                         set((state) => ({ ...state })),
+                    lightModeAlpha: (lightModeAlpha: number) =>
+                        set((state) => ({ ...state })),
                     darkModeTone: (darkModeTone: number) =>
+                        set((state) => ({ ...state })),
+                    darkModeAlpha: (darkModeAlpha: number) =>
                         set((state) => ({ ...state })),
                 };
                 return {
@@ -907,6 +919,26 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                         : t,
                                 ),
                             })),
+                        child: (child: boolean) =>
+                            set((state) => ({
+                                ...state,
+                                themes: state.themes.map((t) =>
+                                    t.id === theme.id
+                                        ? {
+                                              ...t,
+                                              themeColors: t.themeColors.map(
+                                                  (c) =>
+                                                      c.id === id
+                                                          ? {
+                                                                ...c,
+                                                                child,
+                                                            }
+                                                          : c,
+                                              ),
+                                          }
+                                        : t,
+                                ),
+                            })),
                     };
                     const alias = (id: string): AliasActions => {
                         const alias: AliasData | undefined =
@@ -1120,6 +1152,42 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                             : t,
                                     ),
                                 })),
+                            lightModeAlpha: (lightModeAlpha: number) =>
+                                set((state) => ({
+                                    ...state,
+                                    themes: state.themes.map((t) =>
+                                        t.id === theme.id
+                                            ? {
+                                                  ...t,
+                                                  themeColors:
+                                                      t.themeColors.map((c) =>
+                                                          c.id === id
+                                                              ? {
+                                                                    ...c,
+                                                                    aliasGroup:
+                                                                        {
+                                                                            ...c.aliasGroup,
+                                                                            aliases:
+                                                                                c.aliasGroup.aliases.map(
+                                                                                    (
+                                                                                        a,
+                                                                                    ) =>
+                                                                                        a.id ===
+                                                                                        id
+                                                                                            ? {
+                                                                                                  ...a,
+                                                                                                  lightModeAlpha,
+                                                                                              }
+                                                                                            : a,
+                                                                                ),
+                                                                        },
+                                                                }
+                                                              : c,
+                                                      ),
+                                              }
+                                            : t,
+                                    ),
+                                })),
                             darkModeTone: (darkModeTone: number) =>
                                 set((state) => ({
                                     ...state,
@@ -1145,6 +1213,42 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                                                                             ? {
                                                                                                   ...a,
                                                                                                   darkModeTone,
+                                                                                              }
+                                                                                            : a,
+                                                                                ),
+                                                                        },
+                                                                }
+                                                              : c,
+                                                      ),
+                                              }
+                                            : t,
+                                    ),
+                                })),
+                            darkModeAlpha: (darkModeAlpha: number) =>
+                                set((state) => ({
+                                    ...state,
+                                    themes: state.themes.map((t) =>
+                                        t.id === theme.id
+                                            ? {
+                                                  ...t,
+                                                  themeColors:
+                                                      t.themeColors.map((c) =>
+                                                          c.id === id
+                                                              ? {
+                                                                    ...c,
+                                                                    aliasGroup:
+                                                                        {
+                                                                            ...c.aliasGroup,
+                                                                            aliases:
+                                                                                c.aliasGroup.aliases.map(
+                                                                                    (
+                                                                                        a,
+                                                                                    ) =>
+                                                                                        a.id ===
+                                                                                        id
+                                                                                            ? {
+                                                                                                  ...a,
+                                                                                                  darkModeAlpha,
                                                                                               }
                                                                                             : a,
                                                                                 ),
@@ -1538,6 +1642,38 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                             : t,
                                     ),
                                 })),
+                            lightModeAlpha: (lightModeAlpha: number) =>
+                                set((state) => ({
+                                    ...state,
+                                    themes: state.themes.map((t) =>
+                                        t.id === theme.id
+                                            ? {
+                                                  ...t,
+                                                  aliasGroups:
+                                                      t.aliasGroups.map((a) =>
+                                                          a.id === id
+                                                              ? {
+                                                                    ...a,
+                                                                    aliases:
+                                                                        a.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          lightModeAlpha,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                }
+                                                              : a,
+                                                      ),
+                                              }
+                                            : t,
+                                    ),
+                                })),
                             darkModeTone: (darkModeTone: number) =>
                                 set((state) => ({
                                     ...state,
@@ -1560,6 +1696,38 @@ const createThemeListStore = (initProps?: Partial<ThemeListData>) => {
                                                                                     ? {
                                                                                           ...a,
                                                                                           darkModeTone,
+                                                                                      }
+                                                                                    : a,
+                                                                        ),
+                                                                }
+                                                              : a,
+                                                      ),
+                                              }
+                                            : t,
+                                    ),
+                                })),
+                            darkModeAlpha: (darkModeAlpha: number) =>
+                                set((state) => ({
+                                    ...state,
+                                    themes: state.themes.map((t) =>
+                                        t.id === theme.id
+                                            ? {
+                                                  ...t,
+                                                  aliasGroups:
+                                                      t.aliasGroups.map((a) =>
+                                                          a.id === id
+                                                              ? {
+                                                                    ...a,
+                                                                    aliases:
+                                                                        a.aliases.map(
+                                                                            (
+                                                                                a,
+                                                                            ) =>
+                                                                                a.id ===
+                                                                                id
+                                                                                    ? {
+                                                                                          ...a,
+                                                                                          darkModeAlpha,
                                                                                       }
                                                                                     : a,
                                                                         ),
