@@ -17,12 +17,12 @@ import {
     DropdownOption,
     VerticalSpace,
     TextboxAutocomplete,
+    Bold,
     IconToggleButton,
     IconLinkLinked32,
     IconLinkBreak32,
     IconBlend32,
     IconBlendEmpty32,
-    Bold,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -59,7 +59,7 @@ import { ThemeListContext } from '../hooks/useThemeList';
 import _ from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { useStore } from 'zustand';
+import { create, useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
