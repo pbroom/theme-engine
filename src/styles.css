@@ -81,16 +81,81 @@
 } */
 
 .selected-theme-color {
-    outline: #18a0fb;
+    outline: var(--figma-color-bg-brand);
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px;
 }
 
-.swatch-li button {
+.swatch-button button {
     border-radius: 99px;
     &:focus {
-        border: none;
+        border-color: transparent !important;
+    }
+    &:focus-visible {
+        border-color: var(--figma-color-border-brand-strong) !important;
+    }
+}
+
+.bg-checkerboard {
+    background-image: linear-gradient(
+            45deg,
+            #808080 25%,
+            transparent 25%,
+            transparent 75%,
+            #808080 75%,
+            #808080 100%
+        ),
+        linear-gradient(
+            45deg,
+            #808080 25%,
+            transparent 25%,
+            transparent 75%,
+            #808080 75%,
+            #808080 100%
+        );
+    background-size: 8px 8px;
+    background-position:
+        0 0,
+        4px 4px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.toggled-theme-color {
+    outline: var(--figma-color-bg-brand);
+    outline-style: solid;
+    outline-width: 4px;
+    outline-offset: 2px;
+}
+
+.icon-toggle-styles {
+    background-color: transparent !important;
+    & > label > input {
+        & ~ div {
+            border-radius: 99px;
+            border-color: transparent !important;
+        }
+        &:focus ~ div {
+            border-color: transparent !important;
+        }
+        &:focus-visible ~ div {
+            border-color: var(--figma-color-border-brand-strong) !important;
+        }
+        &:checked:not(:hover) ~ div {
+            background-color: transparent !important;
+        }
+        &:checked:hover ~ div {
+            background-color: var(--figma-color-bg-brand) !important;
+        }
     }
 }
 

@@ -28,6 +28,7 @@ module.exports = {
             colors: {
                 fig: {
                     blue: '#18A0FB',
+                    bg: 'var(--figma-color-bg)',
                 },
                 gridlines: {
                     DEFAULT: 'hsl(0, 0%, 50%, 0.25)',
