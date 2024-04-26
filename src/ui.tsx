@@ -33,9 +33,9 @@ export const Ui = () => {
 
     onmessage = async (event) => {
         const newMessage = await event.data.pluginMessage;
-        console.log('ROOT UI RECEIVED:', newMessage);
+        // console.log('ROOT UI RECEIVED:', newMessage);
         message.setMessage(newMessage);
-        console.log('message:', message);
+        // console.log('message:', message);
     };
 
     const handlePluginDataMessage = async (message: any) => {
@@ -51,7 +51,7 @@ export const Ui = () => {
     useEffect(() => {
         if (message.type === 'pluginData') {
             if (message.data === null) {
-                console.log('No plugin data');
+                // console.log('No plugin data');
                 setIsInitialized(true);
                 return;
             }

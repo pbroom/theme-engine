@@ -792,7 +792,7 @@ const AliasTonePreview = ({
         textarea.select();
         try {
             document.execCommand('copy');
-            console.log(`"${text}" copied to clipboard`);
+            // console.log(`"${text}" copied to clipboard`);
             parent.postMessage(
                 { pluginMessage: { type: 'copy-to-clipboard', data: text } },
                 '*',
