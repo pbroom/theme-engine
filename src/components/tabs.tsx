@@ -31,6 +31,7 @@ import {
     IconLinkBreak32,
     IconBlend32,
     IconBlendEmpty32,
+    Bold,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -46,12 +47,18 @@ import {
 import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
 import {
     AliasGroup,
+    AliasGroupList,
     AliasList,
     OpacityToggle,
     opacityToggleStore,
 } from './primitives-tab/alias';
 import { ThemeColorSelect } from './primitives-tab/theme-color-select';
-import { AliasData, AliasGroupData, createAlias } from '../hooks/useAliasGroup';
+import {
+    AliasData,
+    AliasGroupData,
+    createAlias,
+    createAliasGroup,
+} from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
 import { ThemeListContext } from '../hooks/useThemeList';
 import _, { set } from 'lodash';
@@ -1054,6 +1061,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 hue={themeColor.endColor.hct.hue}
                                 chroma={themeColor.endColor.hct.chroma}
                                 aliases={themeColor.aliasGroup.aliases}
+                                aliasGroupName={themeColor.aliasGroup.name}
+                                themeColorName={themeColor.name}
                                 onSetAliases={(aliases: AliasData[]) => {
                                     setThemeColor(
                                         themeColorId,
@@ -1071,36 +1080,30 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
         {
             children: (
-                <div className="scrollbar-hide absolute left-0 top-10 w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-t border-gridlines">
+                <div className="scrollbar-hide absolute bottom-0 left-0 top-10 w-full overflow-y-scroll border-t border-gridlines bg-fig-bg">
+                    <div className="flex w-full flex-row">
                         <div className="flex flex-grow flex-col">
                             <div className="grow">
                                 <div className="flex flex-row items-center">
                                     <div className="flex grow flex-row">
                                         {/* Control Area */}
-                                        <div className="bg-fig-bg flex grow items-center justify-between px-2 py-1">
+                                        <div className="flex grow items-center justify-between bg-fig-bg px-2 py-2">
                                             <span className="p-2">
-                                                Alias Groups
+                                                <Bold>Alias groups</Bold>
                                             </span>
                                             <div className="flex">
                                                 <IconButton
-                                                    title={`${opacityVisibility ? 'Hide opacity' : 'Show opacity'}`}
-                                                    onClick={() => {
-                                                        setOpacityVisibility(
-                                                            !opacityVisibility,
-                                                        );
-                                                    }}
-                                                >
-                                                    {opacityVisibility ? (
-                                                        <IconBlendEmpty32 />
-                                                    ) : (
-                                                        <IconBlend32 />
-                                                    )}
-                                                </IconButton>
-                                                <IconButton
                                                     title="Create alias group"
                                                     onClick={() => {
-                                                        null;
+                                                        setTheme(
+                                                            themeId,
+                                                        ).add.aliasGroup(
+                                                            createAliasGroup(
+                                                                nanoid(12),
+                                                                'New alias group',
+                                                                [],
+                                                            ),
+                                                        );
                                                     }}
                                                 >
                                                     <IconPlus32 />
@@ -1115,19 +1118,15 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 </div>
                             </div>
                             <div>
-                                <AliasGroup
-                                    hue={themeColor.endColor.hct.hue}
-                                    chroma={themeColor.endColor.hct.chroma}
-                                    aliasGroup={theme.aliasGroups[0]}
-                                    onSetAliasGroup={(
-                                        aliasGroup: AliasGroupData,
+                                <AliasGroupList
+                                    aliasGroups={theme.aliasGroups}
+                                    themeColors={theme.themeColors}
+                                    onSetAliasGroups={(
+                                        aliasGroups: AliasGroupData[],
                                     ) =>
-                                        setTheme(themeId)
-                                            .aliasGroup(theme.aliasGroups[0].id)
-                                            .setProps.all({
-                                                ...theme.aliasGroups[0],
-                                                ...aliasGroup,
-                                            })
+                                        setTheme(themeId).setProps.aliasGroups(
+                                            aliasGroups,
+                                        )
                                     }
                                 />
                             </div>

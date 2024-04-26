@@ -198,7 +198,7 @@ const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
     ),
 );
 
-const defaultAliasGroups: AliasGroupData[] = [createAliasGroup()];
+const defaultAliasGroups: AliasGroupData[] = [];
 
 /**
  * Creates a theme object with the specified parameters.

@@ -40,6 +40,9 @@ const convertTo8DigitHex = (color: string, alpha: number): string => {
     if (alpha < 0 || alpha > 100) {
         throw new Error('Alpha value must be between 0 and 100');
     }
+    if (alpha === 100) {
+        return color;
+    }
 
     // Calculate the alpha value in a 0 to 255 range
     const alpha255 = Math.round((alpha / 100) * 255);

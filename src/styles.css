@@ -81,16 +81,19 @@
 } */
 
 .selected-theme-color {
-    outline: #18a0fb;
+    outline: var(--figma-color-bg-brand);
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px;
 }
 
-.swatch-li button {
+.swatch-button button {
     border-radius: 99px;
     &:focus {
-        border: none;
+        border-color: transparent !important;
+    }
+    &:focus-visible {
+        border-color: var(--figma-color-border-brand-strong) !important;
     }
 }
 
@@ -125,4 +128,33 @@
 .scrollbar-hide {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+.toggled-theme-color {
+    outline: var(--figma-color-bg-brand);
+    outline-style: solid;
+    outline-width: 4px;
+    outline-offset: 2px;
+}
+
+.icon-toggle-styles {
+    background-color: transparent !important;
+    & > label > input {
+        & ~ div {
+            border-radius: 99px;
+            border-color: transparent !important;
+        }
+        &:focus ~ div {
+            border-color: transparent !important;
+        }
+        &:focus-visible ~ div {
+            border-color: var(--figma-color-border-brand-strong) !important;
+        }
+        &:checked:not(:hover) ~ div {
+            background-color: transparent !important;
+        }
+        &:checked:hover ~ div {
+            background-color: var(--figma-color-bg-brand) !important;
+        }
+    }
 }

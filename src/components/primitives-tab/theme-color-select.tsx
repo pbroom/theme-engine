@@ -67,7 +67,7 @@ const ThemeColorSelect = ({
     useEffect(() => {
         const newThemeColorSwatches = themeColors.map((themeColor) => {
             return (
-                <li key={themeColor.id} className="swatch-li">
+                <li key={themeColor.id} className="swatch-button">
                     <ThemeColorSwatch
                         themeColorId={themeColor.id}
                         name={themeColor.name}
