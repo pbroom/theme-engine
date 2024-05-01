@@ -3,11 +3,11 @@ import { createContext, h } from 'preact';
 import { useContext, useRef } from 'preact/hooks';
 import { StateCreator, create, createStore, useStore } from 'zustand';
 
-type MessageProps = { type: string; data: any };
-type MessageActions = {
+export type MessageProps = { type: string; data: any };
+export type MessageActions = {
     setMessage: (message: MessageProps) => void;
 };
-type MessageState = MessageProps & MessageActions;
+export type MessageState = MessageProps & MessageActions;
 
 const message: StateCreator<MessageProps & MessageActions> = (set) => ({
     type: '',
