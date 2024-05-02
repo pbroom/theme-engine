@@ -383,7 +383,6 @@ export const Plugin = () => {
 
     const handleBuildTheme = async () => {
         await getLocalCollections('preBuild');
-        console.log(theme);
     };
 
     const handleImportTheme = async () => {

@@ -8,11 +8,11 @@ const height = (pixelHeight: number) => {
 
 const pluginDataKey = 'themeEngine';
 export const pluginData = figma.root.getPluginData(pluginDataKey);
-try {
-    console.log(pluginDataKey, JSON.parse(pluginData));
-} catch (error) {
-    console.error('Error parsing pluginData:', error);
-}
+// try {
+//     console.log(pluginDataKey, JSON.parse(pluginData));
+// } catch (error) {
+//     console.error('Error parsing pluginData:', error);
+// }
 // console.log('PLUGIN DATA:', pluginData);
 
 const sendPluginData = (type: string) => {
@@ -33,7 +33,6 @@ export default function () {
 const localCollectionsIds = async () => {
     const localCollectionsIds =
         await figma.variables.getLocalVariableCollectionsAsync();
-    // console.log(localCollections);
     return localCollectionsIds;
 };
 
@@ -76,14 +75,12 @@ figma.on('run', async () => {
 
 figma.on('selectionchange', async () => {
     const selection = figma.currentPage.selection;
-    console.log('Selection:', selection);
     if (selection.length === 1) {
         const node = selection[0];
         if (node.type === 'FRAME') {
             const themeData = node.getPluginData('THEME_ENGINE_THEME');
             if (themeData) {
                 const theme: ThemeData = JSON.parse(themeData);
-                console.log('THEME:', theme);
                 const message: PluginMessage = {
                     type: 'themeImportReady',
                     data: {
@@ -203,7 +200,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
     }
     if (pluginMessage.type === 'exportTheme') {
         const theme: ThemeData = pluginMessage.data;
-        console.log('EXPORT THEME:', theme);
         const frame = figma.createFrame();
         frame.name = theme.name;
         frame.resize(512, 512);
@@ -290,7 +286,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             swatchFrame.name = themeColor.name;
             const solidPaint = figma.util.solidPaint;
             const hex = themeColor.endColor.hex;
-            console.log('HEX:', hex);
             swatchFrame.resize(12, 12);
             swatchFrame.cornerRadius = 999;
             swatchFrame.fills = [solidPaint(hex)];
@@ -393,7 +388,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                             return { r, g, b, a };
                         };
                         const solidColor = SolidColorFromRgbColor(rgba());
-                        // console.log(solidColor);
                         return solidColor;
                     };
                     const primitives = themeColor.tones.map(async (tone) => {
@@ -528,7 +522,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                 };
                                 const solidColor =
                                     SolidColorFromRgbColor(rgba());
-                                // console.log(solidColor);
                                 return solidColor;
                             };
                             const aliasPrimitives = aliasGroup.aliases.map(
@@ -814,5 +807,4 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             await Promise.all(createVariables);
         }
     }
-    // console.log(pluginMessage);
 };
