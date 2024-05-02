@@ -43,8 +43,13 @@ import {
     hctTonalGradient,
     findHighestChromaPerHue,
     findMaxChroma,
+    randomHex,
 } from '../lib/color-utils';
-import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
+import {
+    cleanedHexColor,
+    createColorFrom,
+    hexFromHct,
+} from '../hooks/useColor';
 import {
     AliasGroup,
     AliasGroupList,
@@ -124,7 +129,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
             themeRef.current = themeList.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor({
                 ...themeColor.endColor,
-                hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone),
+                hct: {
+                    hue: hue(),
+                    chroma: chroma(),
+                    tone: themeColor.sourceColor.hct.tone,
+                },
             });
             setThemeColor(themeColorId).setProps.tones(
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
@@ -149,11 +158,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 ...newThemeColor,
                 endColor: {
                     ...newThemeColor.endColor,
-                    hct: Hct.from(
-                        hue(),
-                        chroma(),
-                        newThemeColor.sourceColor.hct.tone,
-                    ),
+                    hct: {
+                        hue: hue(),
+                        chroma: chroma(),
+                        tone: newThemeColor.sourceColor.hct.tone,
+                    },
                 },
                 hueCalc: newThemeColor.hueCalc,
             });
@@ -342,11 +351,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
     };
 
     const onAddThemeColor = () => {
-        const newId: string = nanoid(12);
+        const hex = randomHex();
         const newThemeColor: ThemeColorData = {
             ...createThemeColor(),
-            id: newId,
+            id: nanoid(12),
+            sourceHex: hex,
+            sourceColor: createColorFrom().hex(hex),
+            endColor: createColorFrom().hex(hex),
             name: `Color ${theme.themeColors.length + 1}`,
+            tones: [],
+            aliasGroup: {
+                ...createAliasGroup(),
+                id: nanoid(12),
+                name: 'Color',
+                aliases: [],
+            },
         };
         setTheme(themeId).add.themeColor(newThemeColor);
         setThemeColorId(newThemeColor.id);

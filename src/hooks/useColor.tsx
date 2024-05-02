@@ -29,6 +29,7 @@ export {
     setTone,
     hexFromString,
     HctFromHex,
+    HctValuesFromHex,
     argbFromHct,
     rgbFromHex,
     rgbaFromHct,
@@ -162,7 +163,7 @@ const hexColor = '397456';
 
 const colorData: StateCreator<ColorData> = () => ({
     sourceHex: hexColor,
-    hct: HctFromHex(hexColor),
+    hct: HctValuesFromHex(hexColor),
     rgba: rgbaFromHct(HctFromHex(hexColor)),
     hex: hexFromHct(HctFromHex(hexColor)),
     figmaSolidColor: SolidColorFromRgbColor(rgbFromHex(hexColor)),

@@ -19,6 +19,7 @@ import {
     AliasData,
 } from './useAliasGroup';
 import { subscribeWithSelector } from 'zustand/middleware';
+import { createColorFrom } from './useColor';
 
 export {
     createThemeColor,
@@ -71,7 +72,11 @@ const materialNeutralVariantAliasGroup = {
 };
 
 const defaultThemeColors: ThemeColorData[] = [
-    createThemeColor(sourceHex, 'primary', '', ''),
+    {
+        ...createThemeColor(sourceHex, 'primary', '', ''),
+        sourceColor: createColorFrom().hex(sourceHex),
+        endColor: createColorFrom().hex(sourceHex),
+    },
     createThemeColor(
         sourceHex,
         'secondary',
@@ -174,14 +179,15 @@ const tailwindAliases: AliasData[] = [
     createAlias(nanoid(12), '950', 5, 100, 5, 100),
 ];
 
-const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
-    createThemeColor(
-        color.color,
-        color.name,
-        '',
-        '',
-        tailwindTones,
-        createAliasGroup(
+const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) => {
+    const newColor: ThemeColorData = {
+        ...createThemeColor(),
+        sourceHex: color.color,
+        name: color.name,
+        tones: [],
+        sourceColor: createColorFrom().hex(color.color),
+        endColor: createColorFrom().hex(color.color),
+        aliasGroup: createAliasGroup(
             nanoid(12),
             color.name,
             tailwindAliasTones.map((tone) =>
@@ -195,8 +201,9 @@ const defaultThemeColors2: ThemeColorData[] = tailwindColors.map((color) =>
                 ),
             ),
         ),
-    ),
-);
+    };
+    return newColor;
+});
 
 const defaultAliasGroups: AliasGroupData[] = [];
 

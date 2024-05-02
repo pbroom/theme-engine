@@ -251,7 +251,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 ],
             },
         ];
-        frame.strokeWeight = 1;
+        frame.strokeWeight = 5;
         const fillAngle = angle(90);
         frame.fills = [
             {
@@ -273,6 +273,30 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             },
         ];
         frame.setPluginData('THEME_ENGINE_THEME', JSON.stringify(theme));
+        frame.layoutPositioning = 'AUTO';
+        frame.primaryAxisSizingMode = 'FIXED';
+        frame.counterAxisSizingMode = 'FIXED';
+        frame.primaryAxisAlignItems = 'CENTER';
+        frame.counterAxisAlignItems = 'CENTER';
+        frame.layoutMode = 'HORIZONTAL';
+        frame.paddingLeft = 160;
+        frame.paddingRight = 160;
+        frame.itemSpacing = 8;
+        frame.counterAxisSpacing = 8;
+        frame.layoutWrap = 'WRAP';
+
+        theme.themeColors.map((themeColor) => {
+            const swatchFrame = figma.createFrame();
+            swatchFrame.name = themeColor.name;
+            const solidPaint = figma.util.solidPaint;
+            const hex = themeColor.endColor.hex;
+            console.log('HEX:', hex);
+            swatchFrame.resize(12, 12);
+            swatchFrame.cornerRadius = 999;
+            swatchFrame.fills = [solidPaint(hex)];
+            frame.appendChild(swatchFrame);
+            return swatchFrame;
+        });
     }
     if (pluginMessage.type === 'build') {
         // console.log(`PLUGIN RECEIVED: `, pluginMessage);
@@ -351,6 +375,16 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                 themeColor.endColor.hct.chroma,
                                 tone,
                             ).toInt();
+                            if (
+                                !themeColor.endColor.hct.hue ||
+                                !themeColor.endColor.hct.chroma ||
+                                !themeColor.endColor.hct.tone
+                            ) {
+                                console.error(
+                                    `Error parsing HCT values for ${themeColor.name}:`,
+                                    themeColor.endColor.hct,
+                                );
+                            }
                             const color = rgbaFromArgb(argb);
                             const r = color.r;
                             const g = color.g;

@@ -10,6 +10,7 @@ import { evaluate } from 'mathjs';
 export type { PaletteObject, HSBColor };
 
 export {
+    randomHex,
     convertTo8DigitHex,
     quickHexFromHct,
     toneStops,
@@ -26,6 +27,10 @@ export {
     hexToHSB,
     calculateHue,
     calculateChroma,
+};
+
+const randomHex = () => {
+    return Math.floor(Math.random() * 16777215).toString(16);
 };
 
 /**

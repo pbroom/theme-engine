@@ -8,16 +8,22 @@ import {
 import { h } from 'preact';
 import TabGroup from './components/tabs';
 import { nanoid } from 'nanoid';
-import { ThemeData, createTheme } from './hooks/useTheme';
+import {
+    ThemeColorData,
+    ThemeData,
+    createTheme,
+    createThemeColor,
+} from './hooks/useTheme';
 import { useContext, useEffect, useState, useRef } from 'preact/hooks';
 import { ThemeListContext } from './hooks/useThemeList';
 import { IdContext, IdState } from './hooks/useId';
 import { findIndex, set } from 'lodash';
 import { useStore } from 'zustand';
-import { Hct } from '@material/material-color-utilities';
-import { calculateChroma, calculateHue } from './lib/color-utils';
+import { calculateChroma, calculateHue, randomHex } from './lib/color-utils';
 import { useSettings } from './components/settings-tab/useSettings';
 import { useMessageStore } from './hooks/useMessageProvider';
+import { createAliasGroup } from './hooks/useAliasGroup';
+import { createColorFrom } from './hooks/useColor';
 
 export const Plugin = () => {
     // ID state
@@ -131,11 +137,11 @@ export const Plugin = () => {
                 ...newThemeColor,
                 endColor: {
                     ...newThemeColor.endColor,
-                    hct: Hct.from(
-                        hue,
-                        chroma,
-                        newThemeColor.sourceColor.hct.tone,
-                    ),
+                    hct: {
+                        hue: hue,
+                        chroma: chroma,
+                        tone: newThemeColor.sourceColor.hct.tone,
+                    },
                 },
                 hueCalc: newThemeColor.hueCalc,
             });
@@ -251,7 +257,28 @@ export const Plugin = () => {
         const selectedValue = event.currentTarget.value;
         if (selectedValue === 'New theme...') {
             const newThemeName = `Theme ${Object.keys(themeList.themes).length + 1}`;
-            const newTheme = createTheme(nanoid(12), newThemeName);
+            const hex = randomHex();
+            const newThemeColor: ThemeColorData = {
+                ...createThemeColor(),
+                id: nanoid(12),
+                sourceHex: hex,
+                sourceColor: createColorFrom().hex(hex),
+                endColor: createColorFrom().hex(hex),
+                name: 'Color',
+                tones: [],
+                aliasGroup: {
+                    ...createAliasGroup(),
+                    id: nanoid(12),
+                    name: 'Color',
+                    aliases: [],
+                },
+            };
+            const newTheme = {
+                ...createTheme(),
+                id: nanoid(12),
+                name: newThemeName,
+                themeColors: [newThemeColor],
+            };
             themeList.add.theme(newTheme);
             const message = {
                 type: 'figmaNotify',
@@ -356,6 +383,7 @@ export const Plugin = () => {
 
     const handleBuildTheme = async () => {
         await getLocalCollections('preBuild');
+        console.log(theme);
     };
 
     const handleImportTheme = async () => {
