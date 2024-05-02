@@ -201,7 +201,7 @@ figma.ui.onmessage = async (pluginMessage: any) => {
     if (pluginMessage.type === 'exportTheme') {
         const theme: ThemeData = pluginMessage.data;
         const frame = figma.createFrame();
-        frame.name = theme.name;
+        frame.name = `Theme: ${theme.name}`;
         frame.resize(512, 512);
         frame.x = figma.viewport.center.x - 256;
         frame.y = figma.viewport.center.y - 256;

@@ -722,6 +722,105 @@ const TabGroup = ({ className }: TabGroupProps) => {
         }
     }, [themeList.themes]);
 
+    const handleSwapThemeColor = (
+        themeColorId: string,
+        swapThemeColorId: string,
+    ) => {
+        const firstThemeColor = themeList.themes[themeIndex].themeColors[0];
+        const isFirstThemeColorChanged =
+            themeColorId === firstThemeColor.id ||
+            swapThemeColorId === firstThemeColor.id;
+        setTheme(themeIndex).setProps.themeColors(
+            theme.themeColors.map((themeColor) => {
+                const selectedThemeColor = theme.themeColors.find(
+                    (themeColor) => themeColor.id === themeColorId,
+                );
+                const swapThemeColor = theme.themeColors.find(
+                    (themeColor) => themeColor.id === swapThemeColorId,
+                );
+                if (selectedThemeColor && swapThemeColor) {
+                    if (
+                        themeColor.id === themeColorId ||
+                        themeColor.id === swapThemeColorId
+                    ) {
+                        return themeColor.id === themeColorId
+                            ? {
+                                  ...swapThemeColor,
+                                  child: isFirstThemeColorChanged
+                                      ? false
+                                      : swapThemeColor.child,
+                              }
+                            : {
+                                  ...selectedThemeColor,
+                                  child: isFirstThemeColorChanged
+                                      ? false
+                                      : selectedThemeColor.child,
+                              };
+                    }
+                }
+                return {
+                    ...themeColor,
+                    child: isFirstThemeColorChanged ? false : themeColor.child,
+                };
+            }),
+        );
+        const newThemeColorIndex = themeList.themes[
+            themeIndex
+        ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
+        themeColorIndexRef.current = newThemeColorIndex;
+
+        setThemeIndex(themeIndex);
+        setThemeColorIndex(newThemeColorIndex);
+        setTones(
+            `${themeList.themes[themeIndex].themeColors[
+                newThemeColorIndex
+            ].tones.join(', ')}`,
+        );
+        if (themeRef.current.id !== themeList.themes[themeIndex].id) {
+            // console.log('%cNew theme ID', 'color: #6AAFFF', themeIndex);
+            themeRef.current = themeList.themes[themeIndex];
+            setThemeColor(themeColorId).setProps.endColor({
+                ...themeColor.endColor,
+                hct: {
+                    hue: hue(),
+                    chroma: chroma(),
+                    tone: themeColor.sourceColor.hct.tone,
+                },
+            });
+            setThemeColor(themeColorId).setProps.tones(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .tones,
+            );
+            setThemeColor(themeColorId).setProps.hueCalc(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .hueCalc,
+            );
+            setThemeColor(themeColorId).setProps.chromaCalc(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .chromaCalc,
+            );
+            const newThemeColorId =
+                themeList.themes[themeIndex].themeColors[0].id;
+            const newThemeColor =
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex];
+            if (!newThemeColor) {
+                throw new Error('Theme color not found');
+            }
+            setThemeColor(newThemeColorId).setProps.all({
+                ...newThemeColor,
+                endColor: {
+                    ...newThemeColor.endColor,
+                    hct: {
+                        hue: hue(),
+                        chroma: chroma(),
+                        tone: newThemeColor.sourceColor.hct.tone,
+                    },
+                },
+                hueCalc: newThemeColor.hueCalc,
+            });
+        }
+    };
+
     const options: Array<TabsOption> = [
         {
             children: (
@@ -735,6 +834,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                             onSelectThemeColor={(themeColorId) => {
                                 onSelectThemeColor(themeColorId);
                             }}
+                            onSwapThemeColor={handleSwapThemeColor}
                         />
                         <div className="min-h-max pb-10 pt-1">
                             <IconButton
