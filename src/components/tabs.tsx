@@ -147,6 +147,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
                     .chromaCalc,
             );
+            setTheme(themeId).setProps.aliasGroups(
+                themeList.themes[newThemeIndex].aliasGroups,
+            );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor =
@@ -562,15 +565,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     >([
         {
             value: 'Collection 1',
-            text: 'Collection 1 ID',
-        },
-        {
-            value: 'Collection 2',
-            text: 'Collection 2 ID',
-        },
-        {
-            value: 'Collection 3',
-            text: 'Collection 3 ID',
+            text: 'Collection 1',
         },
     ]);
 
@@ -1182,6 +1177,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 aliases={themeColor.aliasGroup.aliases}
                                 aliasGroupName={themeColor.aliasGroup.name}
                                 themeColorName={themeColor.name}
+                                themeId={themeId}
                                 onSetAliases={(aliases: AliasData[]) => {
                                     setThemeColor(
                                         themeColorId,
@@ -1240,6 +1236,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 <AliasGroupList
                                     aliasGroups={theme.aliasGroups}
                                     themeColors={theme.themeColors}
+                                    themeId={themeId}
                                     onSetAliasGroups={(
                                         aliasGroups: AliasGroupData[],
                                     ) =>

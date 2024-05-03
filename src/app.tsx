@@ -291,11 +291,20 @@ export const Plugin = () => {
             setIsEditing(true);
         }
         if (selectedValue === 'Duplicate') {
+            const newThemeAliasGroups = theme.aliasGroups.map((aliasGroup) => {
+                return {
+                    ...aliasGroup,
+                    id: nanoid(12),
+                };
+            });
             const newTheme = {
                 ...theme,
                 id: nanoid(12),
+                aliasGroups: newThemeAliasGroups,
                 name: `${theme.name} copy`,
             };
+            console.log('theme:', theme);
+            console.log('newTheme:', newTheme);
             themeList.add.theme(newTheme);
             const message = {
                 type: 'figmaNotify',
