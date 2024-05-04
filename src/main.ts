@@ -323,13 +323,16 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 await figma.variables.getLocalVariablesAsync('COLOR');
 
             await Promise.all(existingColorVariables);
+            console.log('EXISTING VARIABLES:', existingColorVariables);
 
             const findColorVariableByName = (
                 name: string,
                 variableList: Variable[] = existingColorVariables,
             ): Variable | undefined => {
                 const colorVariable = variableList.find(
-                    (variable) => variable.name === name,
+                    (variable) =>
+                        variable.name === name &&
+                        variable.variableCollectionId === collection.id,
                 );
                 return colorVariable;
             };
