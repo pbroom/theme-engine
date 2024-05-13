@@ -443,8 +443,9 @@ export const Plugin = () => {
                         </button>
                     )}
                 </div>
+                {/* TODO: fix layout break when the dropdown takes up more than its allotted space */}
                 <div className="flex grow flex-row justify-between pr-2">
-                    <div className="flex h-full items-center px-2">
+                    <div className="flex h-full max-w-36 items-center px-2">
                         {isEditing ? (
                             <Textbox
                                 title="Theme name"
@@ -469,10 +470,7 @@ export const Plugin = () => {
                             />
                         )}
                     </div>
-                    <TabGroup
-                    // themeData={currentTheme}
-                    // onSetThemeData={onSetThemeData}
-                    />
+                    <TabGroup />
                 </div>
                 <button
                     title="Build theme"

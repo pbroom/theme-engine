@@ -1,13 +1,6 @@
 /* eslint-disable */
 import { h } from 'preact';
-import {
-    useCallback,
-    useContext,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'preact/hooks';
+import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
 import { CopyPlus } from 'lucide-react';
 import {
@@ -24,8 +17,6 @@ import {
     DropdownOption,
     VerticalSpace,
     TextboxAutocomplete,
-    IconChevronDown16,
-    Checkbox,
     IconToggleButton,
     IconLinkLinked32,
     IconLinkBreak32,
@@ -35,7 +26,7 @@ import {
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
-import { ceil, i, round } from 'mathjs';
+import { ceil } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -51,7 +42,6 @@ import {
     hexFromHct,
 } from '../hooks/useColor';
 import {
-    AliasGroup,
     AliasGroupList,
     AliasList,
     OpacityToggle,
@@ -66,23 +56,15 @@ import {
 } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
 import { ThemeListContext } from '../hooks/useThemeList';
-import _, { set } from 'lodash';
+import _ from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { create, useStore } from 'zustand';
+import { useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
-import { ThemeData } from '../hooks/useTheme';
-import { useDebounce } from '../hooks/useDebounce';
-import { signal } from '@preact/signals';
-import {
-    MessageContext,
-    initialization,
-    useMessageContext,
-    useMessageStore,
-} from '../hooks/useMessageProvider';
-// import { useID } from '../hooks/useId';
+import { initialization, useMessageStore } from '../hooks/useMessageProvider';
+import { CodeOutput } from './settings-tab/codeOutput';
 
 type TabGroupProps = {
     // themeData: ThemeData;
@@ -93,7 +75,7 @@ type TabGroupProps = {
 const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
-    const [tabValue, setTabValue] = useState<string>('Primitives');
+    const [tabValue, setTabValue] = useState<string>('Settings');
 
     // ID state
     const IdStore = useContext(IdContext);
@@ -1255,9 +1237,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         {
             children: (
                 <div className="scrollbar-hide absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-t border-gridlines"></div>
-                    <div className="h-full grow">
-                        <div className="flex h-24 grow flex-row pl-10">
+                    <div className="flex w-full flex-row border-b border-gridlines"></div>
+                    <div className="h-full grow bg-fig-bg">
+                        <div className="flex h-24 grow flex-row p-1">
                             <div className="flex grow flex-col gap-4 p-4">
                                 <div>
                                     <Text>Variable collection name</Text>
@@ -1297,6 +1279,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         variant="border"
                                     />
                                 </div>
+                                <CodeOutput themeData={theme} />
                                 {/* <Checkbox
                                     onChange={(e) => {
                                         setOverwrite(!overwrite);
@@ -1320,7 +1303,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     </Text>
                                 </Checkbox> */}
                             </div>
-                            <div className="h-full w-32"></div>
+                            {/* <div className="h-full w-32"></div> */}
                         </div>
                     </div>
                 </div>
