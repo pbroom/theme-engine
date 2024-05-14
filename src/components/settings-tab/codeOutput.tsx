@@ -360,13 +360,9 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
         return filteredDarkAliases.join('\n\t');
     });
 
-    const cssOutput = `:root {\n${lightAliases
+    const cssOutput = `:root {\n${lightAliases.map((alias) => `\t${alias}`).join('\n\n')}\n\n${primitives.map((primitive) => `\t${primitive}`).join('\n\n')}\n}\n\n.dark {\n${darkAliases
         .map((alias) => `\t${alias}`)
-        .join('\n\n')}\n\n\t.dark {\n${darkAliases
-        .map((alias) => `\t${alias}`)
-        .join(
-            '\n\n',
-        )}\n}\n${primitives.map((primitive) => `\t${primitive}`).join('\n\n')}\n}`;
+        .join('\n\n')}\n}\n`;
 
     const colorConfig = themeData.themeData.themeColors.map((themeColor) => {
         const themeColorName = themeColor.name.replace(/ /g, '-');
