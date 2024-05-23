@@ -8,11 +8,11 @@ const height = (pixelHeight: number) => {
 
 const pluginDataKey = 'themeEngine';
 export const pluginData = figma.root.getPluginData(pluginDataKey);
-try {
-    console.log(pluginDataKey, JSON.parse(pluginData));
-} catch (error) {
-    console.error('Error parsing pluginData:', error);
-}
+// try {
+//     console.log(pluginDataKey, JSON.parse(pluginData));
+// } catch (error) {
+//     console.error('Error parsing pluginData:', error);
+// }
 // console.log('PLUGIN DATA:', pluginData);
 
 const sendPluginData = (type: string) => {
@@ -33,7 +33,6 @@ export default function () {
 const localCollectionsIds = async () => {
     const localCollectionsIds =
         await figma.variables.getLocalVariableCollectionsAsync();
-    // console.log(localCollections);
     return localCollectionsIds;
 };
 
@@ -72,6 +71,42 @@ figma.on('run', async () => {
     sendLocalCollections();
     sendPluginData('pluginData');
     sendLocalCollections();
+});
+
+figma.on('selectionchange', async () => {
+    const selection = figma.currentPage.selection;
+    if (selection.length === 1) {
+        const node = selection[0];
+        if (node.type === 'FRAME') {
+            const themeData = node.getPluginData('THEME_ENGINE_THEME');
+            if (themeData) {
+                const theme: ThemeData = JSON.parse(themeData);
+                const message: PluginMessage = {
+                    type: 'themeImportReady',
+                    data: {
+                        theme: theme,
+                        collectionId: '',
+                        collectionName: '',
+                        overwriteVariables: false,
+                        bindVariables: false,
+                    },
+                };
+                figma.ui.postMessage(message);
+            } else {
+                const message = {
+                    type: 'noThemeImportReady',
+                    data: {},
+                };
+                figma.ui.postMessage(message);
+            }
+        }
+    } else {
+        const message = {
+            type: 'noThemeImportReady',
+            data: {},
+        };
+        figma.ui.postMessage(message);
+    }
 });
 
 export type PluginMessage = {
@@ -146,7 +181,7 @@ type SemanticVariableData = {
 figma.ui.onmessage = async (pluginMessage: any) => {
     if (pluginMessage.type === 'copy-to-clipboard') {
         const text = pluginMessage.data;
-        figma.notify(`${text} copied clipboard`, { timeout: 1600 });
+        figma.notify(`${text}`, { timeout: 1600 });
     }
     if (pluginMessage.type === 'setPluginData') {
         figma.root.setPluginData(pluginDataKey, `${pluginMessage.data}`);
@@ -158,6 +193,105 @@ figma.ui.onmessage = async (pluginMessage: any) => {
     }
     if (pluginMessage.type === 'preBuild') {
         await sendLocalCollections('preBuild');
+    }
+    if (pluginMessage.type === 'figmaNotify') {
+        const message = pluginMessage.data;
+        figma.notify(message, { timeout: 2000 });
+    }
+    if (pluginMessage.type === 'exportTheme') {
+        const theme: ThemeData = pluginMessage.data;
+        const frame = figma.createFrame();
+        frame.name = `Theme: ${theme.name}`;
+        frame.resize(512, 512);
+        frame.x = figma.viewport.center.x - 256;
+        frame.y = figma.viewport.center.y - 256;
+        frame.cornerRadius = 999;
+        const angle = (degrees: number) => degrees * (Math.PI / 180);
+        const strokeFillAngle = angle(90);
+        frame.strokes = [
+            {
+                type: 'GRADIENT_ANGULAR',
+                gradientTransform: [
+                    [Math.cos(strokeFillAngle), Math.sin(strokeFillAngle), 0],
+                    [-Math.sin(strokeFillAngle), Math.cos(strokeFillAngle), 1],
+                ],
+                gradientStops: [
+                    {
+                        color: { r: 1, g: 0, b: 0, a: 1 },
+                        position: 0,
+                    },
+                    {
+                        color: { r: 1, g: 1, b: 0, a: 1 },
+                        position: 5 / 6,
+                    },
+                    {
+                        color: { r: 0, g: 1, b: 0, a: 1 },
+                        position: 4 / 6,
+                    },
+                    {
+                        color: { r: 0, g: 1, b: 1, a: 1 },
+                        position: 3 / 6,
+                    },
+                    {
+                        color: { r: 0, g: 0, b: 1, a: 1 },
+                        position: 2 / 6,
+                    },
+                    {
+                        color: { r: 1, g: 0, b: 1, a: 1 },
+                        position: 1 / 6,
+                    },
+                    {
+                        color: { r: 1, g: 0, b: 0, a: 1 },
+                        position: 1,
+                    },
+                ],
+            },
+        ];
+        frame.strokeWeight = 5;
+        const fillAngle = angle(90);
+        frame.fills = [
+            {
+                type: 'GRADIENT_LINEAR',
+                gradientTransform: [
+                    [Math.cos(fillAngle), Math.sin(fillAngle), 0],
+                    [-Math.sin(fillAngle), Math.cos(fillAngle), 0],
+                ],
+                gradientStops: [
+                    {
+                        color: { r: 0.08, g: 0.08, b: 0.08, a: 1 },
+                        position: 0,
+                    },
+                    {
+                        color: { r: 0, g: 0, b: 0, a: 1 },
+                        position: 1,
+                    },
+                ],
+            },
+        ];
+        frame.setPluginData('THEME_ENGINE_THEME', JSON.stringify(theme));
+        frame.layoutPositioning = 'AUTO';
+        frame.primaryAxisSizingMode = 'FIXED';
+        frame.counterAxisSizingMode = 'FIXED';
+        frame.primaryAxisAlignItems = 'CENTER';
+        frame.counterAxisAlignItems = 'CENTER';
+        frame.layoutMode = 'HORIZONTAL';
+        frame.paddingLeft = 160;
+        frame.paddingRight = 160;
+        frame.itemSpacing = 8;
+        frame.counterAxisSpacing = 8;
+        frame.layoutWrap = 'WRAP';
+
+        theme.themeColors.map((themeColor) => {
+            const swatchFrame = figma.createFrame();
+            swatchFrame.name = themeColor.name;
+            const solidPaint = figma.util.solidPaint;
+            const hex = themeColor.endColor.hex;
+            swatchFrame.resize(12, 12);
+            swatchFrame.cornerRadius = 999;
+            swatchFrame.fills = [solidPaint(hex)];
+            frame.appendChild(swatchFrame);
+            return swatchFrame;
+        });
     }
     if (pluginMessage.type === 'build') {
         // console.log(`PLUGIN RECEIVED: `, pluginMessage);
@@ -189,13 +323,16 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                 await figma.variables.getLocalVariablesAsync('COLOR');
 
             await Promise.all(existingColorVariables);
+            console.log('EXISTING VARIABLES:', existingColorVariables);
 
             const findColorVariableByName = (
                 name: string,
                 variableList: Variable[] = existingColorVariables,
             ): Variable | undefined => {
                 const colorVariable = variableList.find(
-                    (variable) => variable.name === name,
+                    (variable) =>
+                        variable.name === name &&
+                        variable.variableCollectionId === collection.id,
                 );
                 return colorVariable;
             };
@@ -236,6 +373,16 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                 themeColor.endColor.hct.chroma,
                                 tone,
                             ).toInt();
+                            if (
+                                !themeColor.endColor.hct.hue ||
+                                !themeColor.endColor.hct.chroma ||
+                                !themeColor.endColor.hct.tone
+                            ) {
+                                console.error(
+                                    `Error parsing HCT values for ${themeColor.name}:`,
+                                    themeColor.endColor.hct,
+                                );
+                            }
                             const color = rgbaFromArgb(argb);
                             const r = color.r;
                             const g = color.g;
@@ -244,7 +391,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                             return { r, g, b, a };
                         };
                         const solidColor = SolidColorFromRgbColor(rgba());
-                        // console.log(solidColor);
                         return solidColor;
                     };
                     const primitives = themeColor.tones.map(async (tone) => {
@@ -379,7 +525,6 @@ figma.ui.onmessage = async (pluginMessage: any) => {
                                 };
                                 const solidColor =
                                     SolidColorFromRgbColor(rgba());
-                                // console.log(solidColor);
                                 return solidColor;
                             };
                             const aliasPrimitives = aliasGroup.aliases.map(
@@ -665,5 +810,4 @@ figma.ui.onmessage = async (pluginMessage: any) => {
             await Promise.all(createVariables);
         }
     }
-    // console.log(pluginMessage);
 };

@@ -9,6 +9,8 @@ declare const styles: {
     readonly 'tab-content': string;
     readonly 'build-button': string;
     readonly gradientMove: string;
+    readonly 'import-button': string;
+    readonly fadeInOut: string;
     readonly input: string;
     readonly 'selected-theme-color': string;
     readonly 'swatch-button': string;

@@ -10,6 +10,7 @@ import { evaluate } from 'mathjs';
 export type { PaletteObject, HSBColor };
 
 export {
+    randomHex,
     convertTo8DigitHex,
     quickHexFromHct,
     toneStops,
@@ -26,6 +27,107 @@ export {
     hexToHSB,
     calculateHue,
     calculateChroma,
+    rgbFromHex,
+    colorToHsl,
+    getColorValues,
+};
+
+const randomHex = () => {
+    return Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, '0');
+};
+
+const rgbFromHex = (hex: string): [number, number, number] => {
+    // Remove the hash at the start if it's there
+    hex = hex.replace(/^#/, '');
+    let r, g, b;
+
+    if (hex.length === 3) {
+        r = parseInt(hex[0] + hex[0], 16);
+        g = parseInt(hex[1] + hex[1], 16);
+        b = parseInt(hex[2] + hex[2], 16);
+    } else {
+        r = parseInt(hex.substring(0, 2), 16);
+        g = parseInt(hex.substring(2, 4), 16);
+        b = parseInt(hex.substring(4, 6), 16);
+    }
+    return [r, g, b];
+};
+
+const rgbaToHsl = (r: number, g: number, b: number, a: number = 1) => {
+    // Make r, g, and b fractions of 1
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    // Find greatest and smallest channel values
+    let cmin = Math.min(r, g, b),
+        cmax = Math.max(r, g, b),
+        delta = cmax - cmin,
+        h = 0,
+        s = 0,
+        l = 0;
+
+    // Calculate hue
+    // No difference
+    if (delta == 0) h = 0;
+    // Red is max
+    else if (cmax == r) h = ((g - b) / delta) % 6;
+    // Green is max
+    else if (cmax == g) h = (b - r) / delta + 2;
+    // Blue is max
+    else h = (r - g) / delta + 4;
+
+    h = Math.round(h * 60);
+
+    // Make negative hues positive behind 360°
+    if (h < 0) h += 360;
+
+    // Calculate lightness
+    l = (cmax + cmin) / 2;
+
+    // Calculate saturation
+    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    // Multiply l and s by 100
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+
+    const hsl =
+        a === 1
+            ? `hsl(${h}deg ${s}% ${l}%)`
+            : `hsla(${h}deg ${s}% ${l}% / ${a})`;
+
+    return hsl;
+};
+
+const colorToHsl = (color: string): string => {
+    if (color.startsWith('#')) {
+        const [r, g, b] = rgbFromHex(color);
+        return rgbaToHsl(r, g, b);
+    } else if (color.startsWith('rgba')) {
+        const parts = color.match(
+            /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)/,
+        );
+        if (!parts) throw new Error('Invalid color format');
+        const [r, g, b, a] = parts.slice(1).map(Number);
+        return rgbaToHsl(r, g, b, a);
+    } else {
+        throw new Error('Unsupported color format');
+    }
+};
+
+const getColorValues = (color: string): string => {
+    // Check if the color is in RGB or HSL format
+    if (color.startsWith('rgb') || color.startsWith('hsl')) {
+        // Split the string on the parentheses and take the second element
+        const colorValues = color.split('(')[1].replace(')', '');
+        return colorValues;
+    }
+
+    // If the color format is not recognized, return an empty string
+    return '';
 };
 
 /**

@@ -1,13 +1,6 @@
 /* eslint-disable */
 import { h } from 'preact';
-import {
-    useCallback,
-    useContext,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'preact/hooks';
+import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
 import { CopyPlus } from 'lucide-react';
 import {
@@ -24,8 +17,6 @@ import {
     DropdownOption,
     VerticalSpace,
     TextboxAutocomplete,
-    IconChevronDown16,
-    Checkbox,
     IconToggleButton,
     IconLinkLinked32,
     IconLinkBreak32,
@@ -35,7 +26,7 @@ import {
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
-import { ceil, i, round } from 'mathjs';
+import { ceil } from 'mathjs';
 import {
     getStopsFromString,
     calculateHue,
@@ -43,10 +34,14 @@ import {
     hctTonalGradient,
     findHighestChromaPerHue,
     findMaxChroma,
+    randomHex,
 } from '../lib/color-utils';
-import { cleanedHexColor, hexFromHct } from '../hooks/useColor';
 import {
-    AliasGroup,
+    cleanedHexColor,
+    createColorFrom,
+    hexFromHct,
+} from '../hooks/useColor';
+import {
     AliasGroupList,
     AliasList,
     OpacityToggle,
@@ -61,23 +56,15 @@ import {
 } from '../hooks/useAliasGroup';
 import { nanoid } from 'nanoid';
 import { ThemeListContext } from '../hooks/useThemeList';
-import _, { set } from 'lodash';
+import _ from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { create, useStore } from 'zustand';
+import { useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
-import { ThemeData } from '../hooks/useTheme';
-import { useDebounce } from '../hooks/useDebounce';
-import { signal } from '@preact/signals';
-import {
-    MessageContext,
-    initialization,
-    useMessageContext,
-    useMessageStore,
-} from '../hooks/useMessageProvider';
-// import { useID } from '../hooks/useId';
+import { initialization, useMessageStore } from '../hooks/useMessageProvider';
+import { CodeOutput } from './settings-tab/codeOutput';
 
 type TabGroupProps = {
     // themeData: ThemeData;
@@ -124,7 +111,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
             themeRef.current = themeList.themes[newThemeIndex];
             setThemeColor(themeColorId).setProps.endColor({
                 ...themeColor.endColor,
-                hct: Hct.from(hue(), chroma(), themeColor.sourceColor.hct.tone),
+                hct: {
+                    hue: hue(),
+                    chroma: chroma(),
+                    tone: themeColor.sourceColor.hct.tone,
+                },
             });
             setThemeColor(themeColorId).setProps.tones(
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
@@ -138,6 +129,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 themeList.themes[newThemeIndex].themeColors[newThemeColorIndex]
                     .chromaCalc,
             );
+            setTheme(themeId).setProps.aliasGroups(
+                themeList.themes[newThemeIndex].aliasGroups,
+            );
             const newThemeColorId =
                 themeList.themes[newThemeIndex].themeColors[0].id;
             const newThemeColor =
@@ -149,11 +143,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
                 ...newThemeColor,
                 endColor: {
                     ...newThemeColor.endColor,
-                    hct: Hct.from(
-                        hue(),
-                        chroma(),
-                        newThemeColor.sourceColor.hct.tone,
-                    ),
+                    hct: {
+                        hue: hue(),
+                        chroma: chroma(),
+                        tone: newThemeColor.sourceColor.hct.tone,
+                    },
                 },
                 hueCalc: newThemeColor.hueCalc,
             });
@@ -342,11 +336,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
     };
 
     const onAddThemeColor = () => {
-        const newId: string = nanoid(12);
+        const hex = randomHex();
         const newThemeColor: ThemeColorData = {
             ...createThemeColor(),
-            id: newId,
+            id: nanoid(12),
+            sourceHex: hex,
+            sourceColor: createColorFrom().hex(hex),
+            endColor: createColorFrom().hex(hex),
             name: `Color ${theme.themeColors.length + 1}`,
+            tones: [],
+            aliasGroup: {
+                ...createAliasGroup(),
+                id: nanoid(12),
+                name: 'Color',
+                aliases: [],
+            },
         };
         setTheme(themeId).add.themeColor(newThemeColor);
         setThemeColorId(newThemeColor.id);
@@ -543,15 +547,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
     >([
         {
             value: 'Collection 1',
-            text: 'Collection 1 ID',
-        },
-        {
-            value: 'Collection 2',
-            text: 'Collection 2 ID',
-        },
-        {
-            value: 'Collection 3',
-            text: 'Collection 3 ID',
+            text: 'Collection 1',
         },
     ]);
 
@@ -703,6 +699,105 @@ const TabGroup = ({ className }: TabGroupProps) => {
         }
     }, [themeList.themes]);
 
+    const handleSwapThemeColor = (
+        themeColorId: string,
+        swapThemeColorId: string,
+    ) => {
+        const firstThemeColor = themeList.themes[themeIndex].themeColors[0];
+        const isFirstThemeColorChanged =
+            themeColorId === firstThemeColor.id ||
+            swapThemeColorId === firstThemeColor.id;
+        setTheme(themeIndex).setProps.themeColors(
+            theme.themeColors.map((themeColor) => {
+                const selectedThemeColor = theme.themeColors.find(
+                    (themeColor) => themeColor.id === themeColorId,
+                );
+                const swapThemeColor = theme.themeColors.find(
+                    (themeColor) => themeColor.id === swapThemeColorId,
+                );
+                if (selectedThemeColor && swapThemeColor) {
+                    if (
+                        themeColor.id === themeColorId ||
+                        themeColor.id === swapThemeColorId
+                    ) {
+                        return themeColor.id === themeColorId
+                            ? {
+                                  ...swapThemeColor,
+                                  child: isFirstThemeColorChanged
+                                      ? false
+                                      : swapThemeColor.child,
+                              }
+                            : {
+                                  ...selectedThemeColor,
+                                  child: isFirstThemeColorChanged
+                                      ? false
+                                      : selectedThemeColor.child,
+                              };
+                    }
+                }
+                return {
+                    ...themeColor,
+                    child: isFirstThemeColorChanged ? false : themeColor.child,
+                };
+            }),
+        );
+        const newThemeColorIndex = themeList.themes[
+            themeIndex
+        ].themeColors.findIndex((themeColor) => themeColor.id === themeColorId);
+        themeColorIndexRef.current = newThemeColorIndex;
+
+        setThemeIndex(themeIndex);
+        setThemeColorIndex(newThemeColorIndex);
+        setTones(
+            `${themeList.themes[themeIndex].themeColors[
+                newThemeColorIndex
+            ].tones.join(', ')}`,
+        );
+        if (themeRef.current.id !== themeList.themes[themeIndex].id) {
+            // console.log('%cNew theme ID', 'color: #6AAFFF', themeIndex);
+            themeRef.current = themeList.themes[themeIndex];
+            setThemeColor(themeColorId).setProps.endColor({
+                ...themeColor.endColor,
+                hct: {
+                    hue: hue(),
+                    chroma: chroma(),
+                    tone: themeColor.sourceColor.hct.tone,
+                },
+            });
+            setThemeColor(themeColorId).setProps.tones(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .tones,
+            );
+            setThemeColor(themeColorId).setProps.hueCalc(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .hueCalc,
+            );
+            setThemeColor(themeColorId).setProps.chromaCalc(
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex]
+                    .chromaCalc,
+            );
+            const newThemeColorId =
+                themeList.themes[themeIndex].themeColors[0].id;
+            const newThemeColor =
+                themeList.themes[themeIndex].themeColors[newThemeColorIndex];
+            if (!newThemeColor) {
+                throw new Error('Theme color not found');
+            }
+            setThemeColor(newThemeColorId).setProps.all({
+                ...newThemeColor,
+                endColor: {
+                    ...newThemeColor.endColor,
+                    hct: {
+                        hue: hue(),
+                        chroma: chroma(),
+                        tone: newThemeColor.sourceColor.hct.tone,
+                    },
+                },
+                hueCalc: newThemeColor.hueCalc,
+            });
+        }
+    };
+
     const options: Array<TabsOption> = [
         {
             children: (
@@ -716,6 +811,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                             onSelectThemeColor={(themeColorId) => {
                                 onSelectThemeColor(themeColorId);
                             }}
+                            onSwapThemeColor={handleSwapThemeColor}
                         />
                         <div className="min-h-max pb-10 pt-1">
                             <IconButton
@@ -1063,6 +1159,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 aliases={themeColor.aliasGroup.aliases}
                                 aliasGroupName={themeColor.aliasGroup.name}
                                 themeColorName={themeColor.name}
+                                themeId={themeId}
                                 onSetAliases={(aliases: AliasData[]) => {
                                     setThemeColor(
                                         themeColorId,
@@ -1121,6 +1218,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 <AliasGroupList
                                     aliasGroups={theme.aliasGroups}
                                     themeColors={theme.themeColors}
+                                    themeId={themeId}
                                     onSetAliasGroups={(
                                         aliasGroups: AliasGroupData[],
                                     ) =>
@@ -1139,9 +1237,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
         {
             children: (
                 <div className="scrollbar-hide absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-t border-gridlines"></div>
-                    <div className="h-full grow">
-                        <div className="flex h-24 grow flex-row pl-10">
+                    <div className="flex w-full flex-row border-b border-gridlines"></div>
+                    <div className="h-full grow bg-fig-bg">
+                        <div className="flex h-24 grow flex-row p-1">
                             <div className="flex grow flex-col gap-4 p-4">
                                 <div>
                                     <Text>Variable collection name</Text>
@@ -1181,6 +1279,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                         variant="border"
                                     />
                                 </div>
+                                <CodeOutput themeData={theme} />
                                 {/* <Checkbox
                                     onChange={(e) => {
                                         setOverwrite(!overwrite);
@@ -1204,7 +1303,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                     </Text>
                                 </Checkbox> */}
                             </div>
-                            <div className="h-full w-32"></div>
+                            {/* <div className="h-full w-32"></div> */}
                         </div>
                     </div>
                 </div>

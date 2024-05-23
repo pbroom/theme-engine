@@ -49,6 +49,7 @@ type AliasItemProps = {
     alias: AliasData;
     aliasGroupName: string;
     themeColorName: string;
+    themeId: string;
     onSetName: (id: string, name: string) => void;
     onSetLightTone: (id: string, tone: number) => void;
     onSetLightOpacity: (id: string, tone: number) => void;
@@ -67,6 +68,7 @@ const AliasItem = ({
     alias,
     aliasGroupName,
     themeColorName,
+    themeId,
     onSetName,
     onSetLightTone,
     onSetLightOpacity,
@@ -93,6 +95,15 @@ const AliasItem = ({
     const [darkOpacity, setDarkOpacity] = useState<string>(
         `${alias.darkModeAlpha}%`,
     );
+    useEffect(() => {
+        setAliasName(alias.name);
+        setAliasColor([alias.lightModeTone, alias.darkModeTone]);
+        setAliasOpacity([alias.lightModeAlpha, alias.darkModeAlpha]);
+        setLightTone(`${alias.lightModeTone}`);
+        setLightOpacity(`${alias.lightModeAlpha}%`);
+        setDarkTone(`${alias.darkModeTone}`);
+        setDarkOpacity(`${alias.darkModeAlpha}%`);
+    }, [alias, themeId]);
 
     const opacityVisibility = opacityToggleStore().opacityVisibility;
 
@@ -274,6 +285,7 @@ type AliasListProps = {
     aliases: AliasData[];
     aliasGroupName: string;
     themeColorName: string;
+    themeId: string;
     onSetAliases: (aliases: AliasData[]) => void;
 };
 
@@ -290,6 +302,7 @@ const AliasList = ({
     aliases,
     aliasGroupName,
     themeColorName,
+    themeId,
     onSetAliases,
 }: AliasListProps) => {
     const [aliasItems, setAliasItems] = useState(aliases);
@@ -341,7 +354,7 @@ const AliasList = ({
 
     useEffect(() => {
         setAliasItems([...aliases]);
-    }, [aliases]);
+    }, [aliases, themeId]);
 
     const aliasList = aliasItems.map((alias) => {
         return (
@@ -350,6 +363,7 @@ const AliasList = ({
                 alias={alias}
                 aliasGroupName={aliasGroupName}
                 themeColorName={themeColorName}
+                themeId={themeId}
                 onSetName={onSetName}
                 onSetLightTone={onSetLightTone}
                 onSetLightOpacity={onSetLightOpacity}
@@ -371,6 +385,7 @@ const AliasList = ({
             />
         );
     });
+
     return (
         <div className="flex flex-row pb-px">
             <div className="grow">{aliasList}</div>
@@ -384,6 +399,7 @@ type AliasGroupProps = {
     chroma: number;
     aliasGroup: AliasGroupData;
     themeColors: ThemeColorData[];
+    themeId: string;
     onSetAliasGroup: (aliasGroup: AliasGroupData) => void;
     onRemoveAliasGroup: (id: string) => void;
     onDuplicateAliasGroup: (id: string) => void;
@@ -392,18 +408,22 @@ type AliasGroupProps = {
 type AliasGroupListProps = {
     aliasGroups: AliasGroupData[];
     themeColors: ThemeColorData[];
+    themeId: string;
     onSetAliasGroups: (aliasGroups: AliasGroupData[]) => void;
 };
 
 export const AliasGroupList = ({
     aliasGroups,
     themeColors,
+    themeId,
     onSetAliasGroups,
 }: AliasGroupListProps) => {
     const [aliasGroupItems, setAliasGroupItems] = useState(aliasGroups);
     useEffect(() => {
         setAliasGroupItems([...aliasGroups]);
-    }, [aliasGroups]);
+        console.log('aliasGroups:', aliasGroups);
+        console.log('theme:', themeId);
+    }, [aliasGroups, themeColors, themeId]);
     const onSetAliasGroup = (aliasGroup: AliasGroupData) => {
         const newAliasGroupItems = aliasGroupItems.map((group) => {
             if (group.id === aliasGroup.id) {
@@ -426,10 +446,14 @@ export const AliasGroupList = ({
             (group) => group.id === aliasGroupId,
         );
         if (aliasGroup) {
+            const newAliases = aliasGroup.aliases.map((alias) => ({
+                ...alias,
+                id: nanoid(12),
+            }));
             const newAliasGroup: AliasGroupData = {
                 id: nanoid(12),
                 name: `${aliasGroup.name} copy`,
-                aliases: aliasGroup.aliases,
+                aliases: newAliases,
                 themeColorIds: aliasGroup.themeColorIds,
             };
             setAliasGroupItems([...aliasGroupItems, newAliasGroup]);
@@ -444,6 +468,7 @@ export const AliasGroupList = ({
                 chroma={0}
                 aliasGroup={aliasGroup}
                 themeColors={themeColors}
+                themeId={themeId}
                 onSetAliasGroup={onSetAliasGroup}
                 onRemoveAliasGroup={onRemoveAliasGroup}
                 onDuplicateAliasGroup={() =>
@@ -460,6 +485,7 @@ export const AliasGroup = ({
     chroma,
     aliasGroup,
     themeColors,
+    themeId,
     onSetAliasGroup,
     onRemoveAliasGroup,
     onDuplicateAliasGroup,
@@ -729,6 +755,7 @@ export const AliasGroup = ({
                     themeColorName={
                         selectedThemeColorId ? selectedThemeColorId.name : ''
                     }
+                    themeId={themeId}
                     onSetAliases={(aliases: AliasData[]) => {
                         onSetAliases(aliases);
                     }}
@@ -794,7 +821,12 @@ const AliasTonePreview = ({
             document.execCommand('copy');
             // console.log(`"${text}" copied to clipboard`);
             parent.postMessage(
-                { pluginMessage: { type: 'copy-to-clipboard', data: text } },
+                {
+                    pluginMessage: {
+                        type: 'copy-to-clipboard',
+                        data: `Copied "${text}" to clipboard`,
+                    },
+                },
                 '*',
             );
         } catch (err) {

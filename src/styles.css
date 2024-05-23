@@ -67,6 +67,79 @@
     }
 }
 
+.import-button {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        background: linear-gradient(
+            60deg,
+            #f00,
+            #ff0,
+            #0f0,
+            #0ff,
+            #00f,
+            #f0f,
+            #f00
+        );
+        background-size: 800% auto;
+
+        animation:
+            gradientMove 45s linear infinite,
+            fadeInOut 2.5s forwards;
+    }
+
+    &:hover {
+        background: none;
+        background-color: rgba(128, 128, 128, 0.08);
+    }
+
+    &:active {
+        background: linear-gradient(
+            60deg,
+            #f00,
+            #ff0,
+            #0f0,
+            #0ff,
+            #00f,
+            #f0f,
+            #f00
+        );
+        background-size: 800% auto;
+        animation: gradientMove 45s linear infinite;
+    }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 800% 0%;
+        }
+        100% {
+            background-position: -800% 0%;
+        }
+    }
+
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+        }
+        15%,
+        66% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}
+
 .input::-webkit-slider-thumb {
     height: 12px !important;
     width: 12px !important;

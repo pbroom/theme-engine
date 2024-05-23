@@ -11,6 +11,6 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/lib/color-conversions.js"],
     "exclude": ["node_modules", "dist"]
 }
