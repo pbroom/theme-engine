@@ -821,7 +821,12 @@ const AliasTonePreview = ({
             document.execCommand('copy');
             // console.log(`"${text}" copied to clipboard`);
             parent.postMessage(
-                { pluginMessage: { type: 'copy-to-clipboard', data: text } },
+                {
+                    pluginMessage: {
+                        type: 'copy-to-clipboard',
+                        data: `Copied "${text}" to clipboard`,
+                    },
+                },
                 '*',
             );
         } catch (err) {

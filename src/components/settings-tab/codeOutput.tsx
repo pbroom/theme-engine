@@ -2,15 +2,20 @@ import { hexFromHct, rgbFromHex } from '@/src/hooks/useColor';
 import { ThemeData } from '@/src/hooks/useTheme';
 import { colorToHsl, getColorValues } from '@/src/lib/color-utils';
 import {
+    IconButton,
     SegmentedControl,
     SegmentedControlOption,
     TextboxMultiline,
     Text,
+    IconCheckCircleFilled32,
 } from '@create-figma-plugin/ui';
 import { Hct } from '@material/material-color-utilities';
+import { Copy } from 'lucide-react';
 import { re } from 'mathjs';
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
+
+const CopyIcon = Copy as any;
 
 export interface CodeOutputProps {
     themeData: ThemeData;
@@ -534,6 +539,36 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
         console.log(newValue);
         setFormatValue(newValue);
     }
+
+    const [copied, setCopied] = useState(false);
+    const copyToClipboard = (text: string): void => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            // console.log(`"${text}" copied to clipboard`);
+            parent.postMessage(
+                {
+                    pluginMessage: {
+                        type: 'copy-to-clipboard',
+                        data: `Copied ${formatValue} styles to clipboard`,
+                    },
+                },
+                '*',
+            );
+        } catch (err) {
+            console.error('Error copying text to clipboard', err);
+        }
+        document.body.removeChild(textarea);
+    };
+    const handleClick = (text: string) => {
+        copyToClipboard(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     const options: Array<SegmentedControlOption> = [
         {
             value: 'HEX',
@@ -568,6 +603,15 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
                     value={textContent}
                     rows={16}
                 />
+            </div>
+            <div className="flex items-center justify-end gap-1">
+                <IconButton onClick={() => handleClick(textContent)}>
+                    {copied ? (
+                        <IconCheckCircleFilled32 />
+                    ) : (
+                        <CopyIcon size={15} strokeWidth={1.4} />
+                    )}
+                </IconButton>
             </div>
         </div>
     );
