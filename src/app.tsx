@@ -303,8 +303,8 @@ export const Plugin = () => {
                 aliasGroups: newThemeAliasGroups,
                 name: `${theme.name} copy`,
             };
-            console.log('theme:', theme);
-            console.log('newTheme:', newTheme);
+            // console.log('theme:', theme);
+            // console.log('newTheme:', newTheme);
             themeList.add.theme(newTheme);
             const message = {
                 type: 'figmaNotify',

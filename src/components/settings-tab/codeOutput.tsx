@@ -532,11 +532,9 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
 
     function handleInput(event: h.JSX.TargetedEvent<HTMLTextAreaElement>) {
         const newValue = event.currentTarget.value;
-        console.log(newValue);
     }
     function handleChange(event: h.JSX.TargetedEvent<HTMLInputElement>) {
         const newValue = event.currentTarget.value;
-        console.log(newValue);
         setFormatValue(newValue);
     }
 
