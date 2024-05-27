@@ -23,6 +23,7 @@ import {
     IconBlend32,
     IconBlendEmpty32,
     Bold,
+    IconEyedropper32,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -65,6 +66,7 @@ import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
 import { initialization, useMessageStore } from '../hooks/useMessageProvider';
 import { CodeOutput } from './settings-tab/codeOutput';
+import React from 'preact/compat';
 
 type TabGroupProps = {
     // themeData: ThemeData;
@@ -798,6 +800,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
         }
     };
 
+    const colorInputRef = useRef<HTMLInputElement>(null);
+
     const options: Array<TabsOption> = [
         {
             children: (
@@ -1073,7 +1077,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                             <div className="flex grow flex-row border-t border-gridlines">
                                 {/* Section 3A */}
                                 <div className="h-full grow">
-                                    <p className="p-2">Tones</p>
+                                    <div className="flex items-center">
+                                        <p className="p-2">Tones</p>
+                                    </div>
                                     <TextboxMultiline
                                         title="Tones"
                                         value={tones}

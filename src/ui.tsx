@@ -1,18 +1,19 @@
 import { Plugin } from './app';
 import { h } from 'preact';
+import React from 'preact/compat';
 import {
-  MessageProvider,
-  createMassageStore,
-  initialization,
-  useMessageContext,
-  useMessageStore,
+    MessageProvider,
+    createMassageStore,
+    initialization,
+    useMessageContext,
+    useMessageStore,
 } from './hooks/useMessageProvider';
 import { IdProvider } from './hooks/useId';
 import {
-  ThemeListData,
-  ThemeListProvider,
-  createThemeListStore,
-  defaultThemes,
+    ThemeListData,
+    ThemeListProvider,
+    createThemeListStore,
+    defaultThemes,
 } from './hooks/useThemeList';
 import { render, LoadingIndicator } from '@create-figma-plugin/ui';
 import { useRef, useState } from 'preact/hooks';
@@ -22,73 +23,73 @@ import { ThemeData } from './hooks/useTheme';
 import { useEffect } from 'react';
 
 export const Ui = () => {
-  const isInitialized = initialization((state) => state.isInitialized);
-  const setIsInitialized = initialization((state) => state.setIsInitialized);
+    const isInitialized = initialization((state) => state.isInitialized);
+    const setIsInitialized = initialization((state) => state.setIsInitialized);
 
-  const message = useMessageStore();
+    const message = useMessageStore();
 
-  const [initialThemeData, setInitialThemeData] = useState<null | ThemeData[]>(
-    null,
-  );
+    const [initialThemeData, setInitialThemeData] = useState<
+        null | ThemeData[]
+    >(null);
 
-  onmessage = async (event) => {
-    const newMessage = await event.data.pluginMessage;
-    // console.log('ROOT UI RECEIVED:', newMessage);
-    message.setMessage(newMessage);
-    // console.log('message:', message);
-  };
+    onmessage = async (event) => {
+        const newMessage = await event.data.pluginMessage;
+        // console.log('ROOT UI RECEIVED:', newMessage);
+        message.setMessage(newMessage);
+        // console.log('message:', message);
+    };
 
-  const handlePluginDataMessage = async (message: any) => {
-    const pluginData = await message.data;
-    const pluginDataParsed: Array<ThemeData> | null = pluginData
-      ? await JSON.parse(pluginData)
-      : null;
-    // console.log('%cpluginData:', 'color: #6DFF6A', pluginDataParsed);
-    const themeData = pluginDataParsed ? pluginDataParsed : defaultThemes;
-    setInitialThemeData(themeData);
-  };
+    const handlePluginDataMessage = async (message: any) => {
+        const pluginData = await message.data;
+        const pluginDataParsed: Array<ThemeData> | null = pluginData
+            ? await JSON.parse(pluginData)
+            : null;
+        // console.log('%cpluginData:', 'color: #6DFF6A', pluginDataParsed);
+        const themeData = pluginDataParsed ? pluginDataParsed : defaultThemes;
+        setInitialThemeData(themeData);
+    };
 
-  useEffect(() => {
-    if (message.type === 'pluginData') {
-      if (message.data === null) {
-        // console.log('No plugin data');
-        setIsInitialized(true);
-        return;
-      }
-      handlePluginDataMessage(message);
+    useEffect(() => {
+        if (message.type === 'pluginData') {
+            if (message.data === null) {
+                // console.log('No plugin data');
+                setIsInitialized(true);
+                return;
+            }
+            handlePluginDataMessage(message);
+        }
+        // console.log('message in UI:', message);
+    }, [message]);
+
+    useEffect(() => {
+        if (initialThemeData) {
+            setIsInitialized(true);
+        }
+    }, [initialThemeData]);
+
+    if (isInitialized && initialThemeData !== null) {
+        const themeListId = nanoid(12);
+        const themeList = { id: themeListId, themes: initialThemeData };
+
+        const themeId = themeList.themes[0].id;
+        const themeColorId = themeList.themes[0].themeColors[0].id;
+
+        return (
+            <ThemeListProvider id={themeListId} themes={initialThemeData}>
+                <IdProvider themeId={themeId} themeColorId={themeColorId}>
+                    <Plugin />
+                </IdProvider>
+            </ThemeListProvider>
+        );
     }
-    // console.log('message in UI:', message);
-  }, [message]);
-
-  useEffect(() => {
-    if (initialThemeData) {
-      setIsInitialized(true);
-    }
-  }, [initialThemeData]);
-
-  if (isInitialized && initialThemeData !== null) {
-    const themeListId = nanoid(12);
-    const themeList = { id: themeListId, themes: initialThemeData };
-
-    const themeId = themeList.themes[0].id;
-    const themeColorId = themeList.themes[0].themeColors[0].id;
-
     return (
-      <ThemeListProvider id={themeListId} themes={initialThemeData}>
-        <IdProvider themeId={themeId} themeColorId={themeColorId}>
-          <Plugin />
-        </IdProvider>
-      </ThemeListProvider>
+        <div className="flex h-full w-full items-center justify-center p-2">
+            <div className="flex gap-2">
+                <LoadingIndicator />
+                <span>Loading...</span>
+            </div>
+        </div>
     );
-  }
-  return (
-    <div className="flex h-full w-full items-center justify-center p-2">
-      <div className="flex gap-2">
-        <LoadingIndicator />
-        <span>Loading...</span>
-      </div>
-    </div>
-  );
 };
 
 export default render(Ui);

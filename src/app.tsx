@@ -24,6 +24,7 @@ import { useSettings } from './components/settings-tab/useSettings';
 import { useMessageStore } from './hooks/useMessageProvider';
 import { createAliasGroup } from './hooks/useAliasGroup';
 import { createColorFrom } from './hooks/useColor';
+import React from 'preact/compat';
 
 export const Plugin = () => {
     // ID state
