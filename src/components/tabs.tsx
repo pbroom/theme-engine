@@ -1242,8 +1242,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
         {
             children: (
-                <div className="scrollbar-hide absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-b border-gridlines"></div>
+                <div className="scrollbar-hide absolute left-0 top-0 h-full w-full overflow-y-scroll pt-10">
+                    <div className="absolute flex h-px w-full flex-row bg-gridlines"></div>
                     <div className="h-full grow bg-fig-bg">
                         <div className="flex h-24 grow flex-row p-1">
                             <div className="flex grow flex-col gap-4 p-4">
