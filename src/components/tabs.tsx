@@ -865,6 +865,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                         ...themeColor,
                                                         id: nanoid(12),
                                                         name: `${themeColor.name} copy`,
+                                                        aliasGroup: {
+                                                            ...themeColor.aliasGroup,
+                                                            id: nanoid(12),
+                                                            aliases:
+                                                                themeColor.aliasGroup.aliases.map(
+                                                                    (alias) => {
+                                                                        return {
+                                                                            ...alias,
+                                                                            id: nanoid(
+                                                                                12,
+                                                                            ),
+                                                                        };
+                                                                    },
+                                                                ),
+                                                        },
                                                     };
                                                 setTheme(
                                                     themeId,
