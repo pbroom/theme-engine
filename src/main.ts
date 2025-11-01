@@ -1,7 +1,6 @@
 import { showUI } from '@create-figma-plugin/utilities';
 import { ThemeColorData, ThemeData } from './hooks/useTheme';
 import { Hct } from '@material/material-color-utilities';
-import { Eye } from 'lucide-react';
 
 const height = (pixelHeight: number) => {
     return pixelHeight;
@@ -60,7 +59,7 @@ const sendLocalCollections = async (type: string = 'localCollections') => {
     // map data to: { id: string, name: string, modes: Array<{modeId: string, name: string}>, defaultMode: string }
 
     const message = { type: type, data: data };
-    console.log('PLUGIN SENT:', message);
+    // console.log('PLUGIN SENT:', message);
     figma.ui.postMessage(message);
 };
 

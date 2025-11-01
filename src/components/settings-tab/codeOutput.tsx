@@ -607,7 +607,7 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
                     {copied ? (
                         <IconCheckCircleFilled32 />
                     ) : (
-                        <CopyIcon size={15} strokeWidth={1.5} />
+                        <CopyIcon size={15} strokeWidth={1.4} />
                     )}
                 </IconButton>
             </div>
