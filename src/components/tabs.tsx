@@ -17,12 +17,12 @@ import {
     DropdownOption,
     VerticalSpace,
     TextboxAutocomplete,
+    Bold,
     IconToggleButton,
     IconLinkLinked32,
     IconLinkBreak32,
     IconBlend32,
     IconBlendEmpty32,
-    Bold,
 } from '@create-figma-plugin/ui';
 import { IconPlus32 } from '@create-figma-plugin/ui';
 import { ThemeColorData, createThemeColor } from '../hooks/useThemeColor';
@@ -59,7 +59,7 @@ import { ThemeListContext } from '../hooks/useThemeList';
 import _ from 'lodash';
 import { IdContext, IdState } from '../hooks/useId';
 
-import { useStore } from 'zustand';
+import { create, useStore } from 'zustand';
 import { useSettings } from './settings-tab/useSettings';
 import { PluginMessage } from '../main';
 // import { pluginThemeData } from '../ui';
@@ -861,6 +861,21 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                         ...themeColor,
                                                         id: nanoid(12),
                                                         name: `${themeColor.name} copy`,
+                                                        aliasGroup: {
+                                                            ...themeColor.aliasGroup,
+                                                            id: nanoid(12),
+                                                            aliases:
+                                                                themeColor.aliasGroup.aliases.map(
+                                                                    (alias) => {
+                                                                        return {
+                                                                            ...alias,
+                                                                            id: nanoid(
+                                                                                12,
+                                                                            ),
+                                                                        };
+                                                                    },
+                                                                ),
+                                                        },
                                                     };
                                                 setTheme(
                                                     themeId,
@@ -1236,8 +1251,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
         {
             children: (
-                <div className="scrollbar-hide absolute left-0 top-10 h-full w-full overflow-y-scroll">
-                    <div className="flex w-full flex-row border-b border-gridlines"></div>
+                <div className="scrollbar-hide absolute left-0 top-0 h-full w-full overflow-y-scroll pt-10">
+                    <div className="absolute flex h-px w-full flex-row bg-gridlines"></div>
                     <div className="h-full grow bg-fig-bg">
                         <div className="flex h-24 grow flex-row p-1">
                             <div className="flex grow flex-col gap-4 p-4">
