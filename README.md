@@ -20,19 +20,30 @@ npm i
 
 ### Build the plugin
 
-To build the plugin:
+To build the plugin (main) and the React UI with React Compiler:
 
 ```
 npm run build
 ```
 
-This will generate a [`manifest.json`](https://figma.com/plugin-docs/manifest/) file and a `build/` directory containing the JavaScript bundle(s) for the plugin.
+This generates a [`manifest.json`](https://figma.com/plugin-docs/manifest/) and a `build/` directory that contains:
 
-To watch for code changes and rebuild the plugin automatically:
+- `build/main.js` (plugin main, built with `@create-figma-plugin/build`)
+- `build/ui/index.html` (UI built by Vite + React 19 + React Compiler)
+
+To watch for code changes and rebuild the plugin main automatically:
 
 ```
 npm run watch
 ```
+
+For iterating on the UI in a browser (outside Figma):
+
+```
+npm run dev
+```
+
+Note: Figma requires a built HTML for the plugin UI; `npm run build` updates `manifest.json` to point `ui` to `build/ui/index.html`.
 
 To use Tailwind for styling:
 
@@ -61,6 +72,7 @@ To open the developer console, search for and run `Open Console` via the Quick A
 
 -   [Create Figma Plugin docs](https://yuanqing.github.io/create-figma-plugin/)
 -   [`yuanqing/figma-plugins`](https://github.com/yuanqing/figma-plugins#readme)
+-   Figma Kit React components: [`figma-kit`](https://github.com/tigranpetrossian/figma-kit?tab=readme-ov-file) and Storybook: [`storybook.figma-kit.dev`](https://storybook.figma-kit.dev)
 
 Official docs and code samples from Figma:
 

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "figma-kit": "^0.1.0",
     "@create-figma-plugin/ui": "3.1.0",
     "@create-figma-plugin/utilities": "3.1.0",
     "@material/material-color-utilities": "^0.2.7",
@@ -19,7 +20,7 @@
     "preact": "^10.19.2",
     "prettier": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.0.0",
     "typed-function": "^4.1.1",
     "uuid": "^9.0.0",
     "validator": "^13.11.0",
@@ -33,7 +34,7 @@
     "@figma/plugin-typings": "^1.88.0",
     "@types/bun": "^1.0.5",
     "@types/lodash": "^4.14.196",
-    "@types/react": ">=18",
+    "@types/react": "^19.0.0",
     "@types/uuid": "^9.0.2",
     "@types/validator": "^13.11.9",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -45,15 +46,22 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.25",
     "postcss-cli": "^10.1.0",
-    "react": "^18.2.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "babel-plugin-react-compiler": "^0.2.0",
+    "react": "^19.0.0",
     "style-loader": "^3.3.3",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.4.0"
   },
   "scripts": {
-    "build": "build-figma-plugin --typecheck --minify",
+    "build": "npm run build:plugin && npm run build:ui",
+    "build:plugin": "build-figma-plugin --typecheck --minify",
+    "build:ui": "vite build",
+    "dev": "vite",
+    "ui:activate": "node scripts/update-manifest-ui.mjs",
     "watch": "build-figma-plugin --typecheck --watch",
     "tailwind": "postcss ./src/styles.css -o ./src/dist/tailwind.css --watch"
   },
