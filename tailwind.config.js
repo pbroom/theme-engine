@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    presets: [
-        // Figma Kit Tailwind preset (requires figma-kit installed)
-        // If this path differs, adjust according to figma-kit docs
-        require('figma-kit/tailwind-preset'),
-    ],
+    presets: [],
     darkMode: ['class'],
     content: [
         './pages/**/*.{ts,tsx}',
