@@ -1,16 +1,14 @@
 {
-    "extends": "@create-figma-plugin/tsconfig",
     "compilerOptions": {
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
         "forceConsistentCasingInFileNames": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "baseUrl": ".",
         "paths": {
             "@/*": ["./*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/lib/color-conversions.js"],
-    "exclude": ["node_modules", "dist"]
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules", "dist", "old-plugin/**"]
 }
