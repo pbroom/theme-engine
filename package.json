@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "figma-kit": "^0.1.0",
     "@create-figma-plugin/ui": "3.1.0",
     "@create-figma-plugin/utilities": "3.1.0",
     "@material/material-color-utilities": "^0.2.7",
@@ -47,7 +46,7 @@
     "postcss": "^8.4.25",
     "postcss-cli": "^10.1.0",
     "@vitejs/plugin-react": "^4.3.0",
-    "babel-plugin-react-compiler": "^0.2.0",
+    
     "react": "^19.0.0",
     "style-loader": "^3.3.3",
     "tailwind-merge": "^1.14.0",
