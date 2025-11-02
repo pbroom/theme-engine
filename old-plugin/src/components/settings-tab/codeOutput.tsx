@@ -10,12 +10,9 @@ import {
     IconCheckCircleFilled32,
 } from '@create-figma-plugin/ui';
 import { Hct } from '@material/material-color-utilities';
-import { Copy } from 'lucide-react';
 import { re } from 'mathjs';
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-
-const CopyIcon = Copy as any;
 
 export interface CodeOutputProps {
     themeData: ThemeData;
@@ -585,7 +582,7 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
         },
     ];
     return (
-        <div className="flex flex-col gap-1">
+        <div className="gap-1 flex flex-col">
             <div className="flex items-center justify-between">
                 <Text>CSS</Text>
                 <SegmentedControl
@@ -602,13 +599,9 @@ export const CodeOutput = (themeData: CodeOutputProps) => {
                     rows={16}
                 />
             </div>
-            <div className="flex items-center justify-end gap-1">
+            <div className="gap-1 flex items-center justify-end">
                 <IconButton onClick={() => handleClick(textContent)}>
-                    {copied ? (
-                        <IconCheckCircleFilled32 />
-                    ) : (
-                        <CopyIcon size={15} strokeWidth={1.4} />
-                    )}
+                    {copied ? <IconCheckCircleFilled32 /> : <Text>Copy</Text>}
                 </IconButton>
             </div>
         </div>

@@ -2,7 +2,6 @@
 import { h } from 'preact';
 import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Hct } from '@material/material-color-utilities';
-import { CopyPlus } from 'lucide-react';
 import {
     IconButton,
     IconMinus32,
@@ -71,8 +70,6 @@ type TabGroupProps = {
     // onSetThemeData: (themeData: ThemeData) => void;
     className?: string;
 };
-
-const CopyPlusIcon = CopyPlus as any;
 
 const TabGroup = ({ className }: TabGroupProps) => {
     const [tabValue, setTabValue] = useState<string>('Primitives');
@@ -801,8 +798,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
     const options: Array<TabsOption> = [
         {
             children: (
-                <div className="tab-content scrollbar-hide absolute left-0 top-10 flex w-full flex-row overflow-y-scroll">
-                    <div className="scrollbar-hide flex h-full w-10 flex-col items-center overflow-y-scroll pt-2">
+                <div className="tab-content scrollbar-hide left-0 top-10 w-full absolute flex flex-row overflow-y-scroll">
+                    <div className="scrollbar-hide h-full w-10 pt-2 flex flex-col items-center overflow-y-scroll">
                         <ThemeColorSelect
                             themeColors={
                                 themeList.themes[themeIndex].themeColors
@@ -822,9 +819,9 @@ const TabGroup = ({ className }: TabGroupProps) => {
                             </IconButton>
                         </div>
                     </div>
-                    <div className="scrollbar-hide flex h-full flex-col overflow-hidden">
-                        <div className="flex h-24 shrink-0 flex-row">
-                            <div className="flex grow flex-row">
+                    <div className="scrollbar-hide h-full flex flex-col overflow-hidden">
+                        <div className="h-24 shrink-0 flex flex-row">
+                            <div className="grow flex flex-row">
                                 {/* Section 1A */}
                                 <div className="h-full w-344 pt-1">
                                     <div className="flex flex-row">
@@ -885,10 +882,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                 );
                                             }}
                                         >
-                                            <CopyPlusIcon
-                                                size={17}
-                                                strokeWidth={1.3}
-                                            />
+                                            <IconPlus32 />
                                         </IconButton>
                                         <IconButton
                                             title={`Remove color from theme`}
@@ -927,7 +921,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                                 opacity={'100%'}
                                             />
                                         </div>
-                                        <div className="flex flex-grow items-center px-px">
+                                        <div className="flex-grow px-px flex items-center">
                                             {themeColorId !==
                                                 theme.themeColors[0].id && (
                                                 <IconToggleButton
@@ -957,7 +951,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="flex gap-4 px-2 pt-2 opacity-60">
+                                    <div className="gap-4 px-2 pt-2 opacity-60 flex">
                                         <Muted title="Source color hue, chroma, tone">
                                             H:{' '}
                                             {Math.round(
@@ -986,8 +980,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 }}
                             ></div>
                         </div>
-                        <div className="flex h-24 shrink-0 flex-row">
-                            <div className="flex grow flex-row">
+                        <div className="h-24 shrink-0 flex flex-row">
+                            <div className="grow flex flex-row">
                                 {/* Section 2A */}
                                 <div className="h-full w-172 grow border-t border-gridlines">
                                     <div className="flex flex-row justify-between">
@@ -1005,7 +999,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             value={`${Math.round(calculateHue(themeColor.sourceColor.hct.hue, themeColor.hueCalc))}`}
                                         />
                                         <div
-                                            className="hue-slider-bar absolute h-2 rounded-full"
+                                            className="hue-slider-bar h-2 rounded-full absolute"
                                             style={`width: 157px; transform: translate(-1px, -4px); background: linear-gradient(to right, ${maxChromaHues}`}
                                         />
                                     </div>
@@ -1052,7 +1046,7 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                             value={`${calculateChroma(themeColor.sourceColor.hct.chroma, themeColor.chromaCalc)}`}
                                         />
                                         <div
-                                            className="chroma-slider-bar absolute h-2 rounded-full"
+                                            className="chroma-slider-bar h-2 rounded-full absolute"
                                             style={`width: 156px; transform: translate(-1px, -4px); background: linear-gradient(to right, #777, ${maxChromaHex}`}
                                         />
                                     </div>
@@ -1084,8 +1078,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 }}
                             ></div>
                         </div>
-                        <div className="flex h-24 shrink-0 flex-row">
-                            <div className="flex grow flex-row border-t border-gridlines">
+                        <div className="h-24 shrink-0 flex flex-row">
+                            <div className="grow border-t border-gridlines flex flex-row">
                                 {/* Section 3A */}
                                 <div className="h-full grow">
                                     <p className="p-2">Tones</p>
@@ -1125,8 +1119,8 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 }}
                             ></div>
                         </div>
-                        <div className="flex flex-row border-t border-gridlines">
-                            <div className="flex grow justify-between">
+                        <div className="border-t border-gridlines flex flex-row">
+                            <div className="grow flex justify-between">
                                 <span className="p-2">Aliases</span>
                                 <div className="flex">
                                     <IconButton
@@ -1159,14 +1153,14 @@ const TabGroup = ({ className }: TabGroupProps) => {
                                 </div>
                             </div>
 
-                            <div className="flex h-8 w-32 items-center justify-around">
+                            <div className="h-8 w-32 flex items-center justify-around">
                                 <span>Light</span>
                                 <span>Dark</span>
                             </div>
                         </div>
                         <div
                             id="alias-list-container"
-                            className="scrollbar-hide flex grow flex-col overflow-y-scroll"
+                            className="scrollbar-hide grow flex flex-col overflow-y-scroll"
                         >
                             <AliasList
                                 hue={themeColor.endColor.hct.hue}
@@ -1192,14 +1186,14 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
         {
             children: (
-                <div className="scrollbar-hide absolute bottom-0 left-0 top-10 w-full overflow-y-scroll border-t border-gridlines bg-fig-bg">
-                    <div className="flex w-full flex-row">
-                        <div className="flex flex-grow flex-col">
+                <div className="scrollbar-hide bottom-0 left-0 top-10 w-full border-t border-gridlines bg-fig-bg absolute overflow-y-scroll">
+                    <div className="w-full flex flex-row">
+                        <div className="flex-grow flex flex-col">
                             <div className="grow">
                                 <div className="flex flex-row items-center">
-                                    <div className="flex grow flex-row">
+                                    <div className="grow flex flex-row">
                                         {/* Control Area */}
-                                        <div className="flex grow items-center justify-between bg-fig-bg px-2 py-2">
+                                        <div className="grow bg-fig-bg px-2 py-2 flex items-center justify-between">
                                             <span className="p-2">
                                                 <Bold>Alias groups</Bold>
                                             </span>
@@ -1251,11 +1245,11 @@ const TabGroup = ({ className }: TabGroupProps) => {
         },
         {
             children: (
-                <div className="scrollbar-hide absolute left-0 top-0 h-full w-full overflow-y-scroll pt-10">
-                    <div className="absolute flex h-px w-full flex-row bg-gridlines"></div>
+                <div className="scrollbar-hide left-0 top-0 h-full w-full pt-10 absolute overflow-y-scroll">
+                    <div className="h-px w-full bg-gridlines absolute flex flex-row"></div>
                     <div className="h-full grow bg-fig-bg">
-                        <div className="flex h-24 grow flex-row p-1">
-                            <div className="flex grow flex-col gap-4 p-4">
+                        <div className="h-24 grow p-1 flex flex-row">
+                            <div className="grow gap-4 p-4 flex flex-col">
                                 <div>
                                     <Text>Variable collection name</Text>
                                     <VerticalSpace space="extraSmall" />

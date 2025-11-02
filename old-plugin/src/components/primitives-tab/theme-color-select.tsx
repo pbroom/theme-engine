@@ -36,7 +36,7 @@ export const ThemeColorSwatch = ({
             onKeyDown={onKeyDown}
         >
             <div
-                className={`theme-color-swatch rounded-full ${isSelected ? 'selected-theme-color' : ''} hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
+                className={`theme-color-swatch rounded-full ${isSelected ? 'selected-theme-color' : ''} hover:outline-2 hover:outline-offset-2 hover:outline-gridlines hover:outline`}
                 style={{
                     background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                         hue,
@@ -69,9 +69,9 @@ const ThemeColorSelect = ({
     onSelectThemeColor,
     onSwapThemeColor,
 }: ThemeColorSelectProps) => {
-    const [themeColorSwatches, setThemeColorSwatches] = useState<JSX.Element[]>(
-        [],
-    );
+    const [themeColorSwatches, setThemeColorSwatches] = useState<
+        h.JSX.Element[]
+    >([]);
 
     const handleKeyDown = (
         event: h.JSX.TargetedKeyboardEvent<HTMLElement>,
@@ -146,5 +146,5 @@ const ThemeColorSelect = ({
         setThemeColorSwatches(newThemeColorSwatches);
     }, [themeColors, selectedThemeColor]);
 
-    return <ul className="flex flex-col gap-1">{themeColorSwatches}</ul>;
+    return <ul className="gap-1 flex flex-col">{themeColorSwatches}</ul>;
 };

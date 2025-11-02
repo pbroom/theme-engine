@@ -28,7 +28,6 @@ import { set, some } from 'lodash';
 import { create } from 'zustand';
 import { nanoid } from 'nanoid';
 import { convertTo8DigitHex, quickHexFromHct } from '@/src/lib/color-utils';
-import { CopyPlus, CopyPlusIcon } from 'lucide-react';
 import { ThemeColorData } from '@/src/hooks/useThemeColor';
 import { e, exp } from 'mathjs';
 import { on } from '@create-figma-plugin/utilities';
@@ -201,7 +200,7 @@ const AliasItem = ({
         <div
             key={alias.id}
             id={alias.id}
-            className="flex h-8 flex-row items-center"
+            className="h-8 flex flex-row items-center"
         >
             <div className="flex-grow">
                 <Textbox
@@ -387,7 +386,7 @@ const AliasList = ({
     });
 
     return (
-        <div className="flex flex-row pb-px">
+        <div className="pb-px flex flex-row">
             <div className="grow">{aliasList}</div>
             <div className="w-32">{aliasPreview}</div>
         </div>
@@ -525,12 +524,10 @@ export const AliasGroup = ({
     const opacityVisibility = opacityToggle.opacityVisibility;
     const setOpacityVisibility = opacityToggle.setOpacityVisibility;
 
-    const CopyPlusIcon = CopyPlus as any;
-
     const ThemeColorPreview = themeColors.map((themeColor) => {
         if (aliasGroup.themeColorIds.includes(themeColor.id)) {
             return (
-                <div className="swatch-button overflow-hidden rounded-full">
+                <div className="swatch-button rounded-full overflow-hidden">
                     <IconButton
                         title={themeColor.name}
                         onClick={() => setSelectedThemeColor(themeColor.id)}
@@ -540,7 +537,7 @@ export const AliasGroup = ({
                                 themeColor.id === selectedThemeColor
                                     ? 'selected-theme-color'
                                     : ''
-                            } rounded-full hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
+                            } rounded-full hover:outline-2 hover:outline-offset-2 hover:outline-gridlines hover:outline`}
                             style={{
                                 background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                                     themeColor.endColor.hct.hue,
@@ -567,7 +564,7 @@ export const AliasGroup = ({
 
     const ThemeColorOptions = themeColors.map((themeColor) => {
         return (
-            <div className="icon-toggle-styles overflow-hidden rounded-full">
+            <div className="icon-toggle-styles rounded-full overflow-hidden">
                 <IconToggleButton
                     title={themeColor.name}
                     onClick={() => {
@@ -596,7 +593,7 @@ export const AliasGroup = ({
                             )
                                 ? 'toggled-theme-color'
                                 : ''
-                        } rounded-full hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-gridlines`}
+                        } rounded-full hover:outline-2 hover:outline-offset-2 hover:outline-gridlines hover:outline`}
                         style={{
                             background: `conic-gradient(from 180deg, white, ${quickHexFromHct(
                                 themeColor.endColor.hct.hue,
@@ -631,9 +628,9 @@ export const AliasGroup = ({
     };
 
     return (
-        <div className="flex border-t border-gridlines bg-fig-bg pl-2">
+        <div className="border-t border-gridlines bg-fig-bg pl-2 flex">
             <div className="flex-grow">
-                <div className="flex gap-1 pt-2">
+                <div className="gap-1 pt-2 flex">
                     <div className="flex-grow">
                         <Textbox
                             title="Alias group name"
@@ -650,9 +647,9 @@ export const AliasGroup = ({
                             placeholder="Alias group name"
                         />
                     </div>
-                    <div className="flex pr-2">
+                    <div className="pr-2 flex">
                         {editing && (
-                            <div className="flex px-1">
+                            <div className="px-1 flex">
                                 <IconButton
                                     title="Delete alias group"
                                     onClick={() =>
@@ -667,7 +664,7 @@ export const AliasGroup = ({
                                         onDuplicateAliasGroup(aliasGroup.id)
                                     }
                                 >
-                                    <CopyPlusIcon size={17} strokeWidth={1.3} />
+                                    <IconPlus32 />
                                 </IconButton>
                             </div>
                         )}
@@ -680,7 +677,7 @@ export const AliasGroup = ({
                         </IconToggleButton>
                     </div>
                 </div>
-                <div className="flex flex-wrap gap-px px-1 pt-2">
+                <div className="gap-px px-1 pt-2 flex flex-wrap">
                     {!editing && ThemeColorPreview}
                     {!editing && (
                         <IconButton
@@ -704,7 +701,7 @@ export const AliasGroup = ({
                         </IconButton>
                     )}
                 </div>
-                <div className="flex flex-shrink-0 items-center pl-2 pt-3">
+                <div className="flex-shrink-0 pl-2 pt-3 flex items-center">
                     <div className="flex-grow">Aliases</div>
                     <IconButton
                         title={`${opacityVisibility ? 'Hide opacity' : 'Show opacity'}`}
@@ -734,7 +731,7 @@ export const AliasGroup = ({
                     >
                         <IconPlus32 />
                     </IconButton>
-                    <div className="flex h-8 w-32 items-center justify-around border-l border-gridlines">
+                    <div className="h-8 w-32 border-l border-gridlines flex items-center justify-around">
                         <Muted>Light</Muted>
                         <Muted>Dark</Muted>
                     </div>
@@ -842,10 +839,10 @@ const AliasTonePreview = ({
     };
 
     return (
-        <div className="bg-checkerboard flex h-8 w-full">
+        <div className="bg-checkerboard h-8 w-full flex">
             <div className="relative flex justify-center">
                 <div
-                    className="absolute flex h-8 w-full cursor-pointer items-center justify-center opacity-0 transition-all duration-100 ease-out hover:opacity-100"
+                    className="h-8 w-full cursor-pointer opacity-0 transition-all duration-100 ease-out hover:opacity-100 absolute flex items-center justify-center"
                     style={`background: ${lightHex}; color: ${textColor(lightModeTone)}`}
                     onClick={() => handleClick(lightHexAlpha)}
                     onMouseOut={() => setCopied(false)}
@@ -865,7 +862,7 @@ const AliasTonePreview = ({
             </div>
             <div className="relative flex justify-center">
                 <div
-                    className="absolute flex h-8 w-full cursor-pointer items-center justify-center opacity-0 transition-all duration-100 ease-out hover:opacity-100"
+                    className="h-8 w-full cursor-pointer opacity-0 transition-all duration-100 ease-out hover:opacity-100 absolute flex items-center justify-center"
                     style={`background: ${darkHex}; color: ${textColor(darkModeTone)}`}
                     onClick={() => handleClick(darkHexAlpha)}
                     onMouseOut={() => setCopied(false)}
